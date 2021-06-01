@@ -1,0 +1,33 @@
+f1:
+  exposure:
+    properties:
+      tempo: tttejmpo
+      url: postgres
+spring:
+  application:
+    name: f1-exposure-rest-api
+  datasource:
+    f1-exposure:
+      driver-class-name: org.postgresql.Driver
+      jdbc-url: jdbc:postgresql://localhost:5432/postgres?currentSchema=public
+      username: postgres
+      password: postgres
+      auto-commit: true
+      connection-timeout: 1000
+      idle-timeout: 30000
+      login-timeout: 1000
+      pool-name: DB-PROFILE-POOL
+      maximum-pool-size: 5
+      minimum-idle: 3
+      query-timeout: 3000
+  autoconfigure:
+    exclude: >
+      org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+  liquibase:
+    datasource:
+      f1-exposure:
+        enabled: true
+        change-log: classpath:/db/liquibase-changelog.xml
+        drop-first: true
+        user: postgres
+        password: postgres
