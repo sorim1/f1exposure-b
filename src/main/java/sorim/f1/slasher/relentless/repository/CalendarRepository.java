@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 import sorim.f1.slasher.relentless.entities.F1Calendar;
 
 import javax.transaction.Transactional;
+import java.time.LocalDateTime;
 
 @Repository
 @Transactional
@@ -14,4 +15,6 @@ import javax.transaction.Transactional;
 public interface CalendarRepository extends PagingAndSortingRepository<F1Calendar, String>, CrudRepository<F1Calendar, String> {
 
     F1Calendar findById(Integer id);
+
+  //  F1Calendar findF1CalendarWithRaceAfter(LocalDateTime now);
 }
