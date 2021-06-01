@@ -22,8 +22,4 @@ public class Drivers {
 
     private String name;
 
-    @Column(name="driver_id")
-    private Integer driverId;
-
-
 }

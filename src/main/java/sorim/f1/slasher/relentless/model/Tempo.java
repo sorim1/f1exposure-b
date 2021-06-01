@@ -1,4 +1,4 @@
-package sorim.f1.slasher.relentless.entities;
+package sorim.f1.slasher.relentless.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,9 +9,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class ExposedChart {
+public class Tempo {
 
-    private Integer[] drivers;
-    private Integer[] results;
+    private Boolean success;
+    private String tempo1;
+    private Integer tempo2;
 
 }

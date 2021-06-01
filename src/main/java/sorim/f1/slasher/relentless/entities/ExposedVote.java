@@ -10,7 +10,6 @@ import org.hibernate.annotations.TypeDef;
 import org.hibernate.annotations.TypeDefs;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Table(name = "EXPOSED_VOTE")
@@ -38,7 +37,7 @@ public class ExposedVote {
     )
     private String[] drivers;
 
-    @Column(name="ip_address")
+    @Column(name = "ip_address")
     private String ipAddress;
 
 

@@ -9,6 +9,6 @@ import org.springframework.context.annotation.Configuration;
 @ConfigurationProperties(prefix = "f1.exposure.properties")
 public class MainProperties {
 
-  private String tempo;
+    private String tempo;
 
 }

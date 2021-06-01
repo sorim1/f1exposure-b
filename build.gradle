@@ -21,6 +21,7 @@ dependencies {
 	implementation group: 'org.liquibase', name: 'liquibase-core', version: '4.3.5'
 	implementation group: 'org.postgresql', name: 'postgresql', version: '42.2.20'
 	implementation group: 'com.vladmihalcea', name: 'hibernate-types-52', version: '2.11.1'
+	implementation group: 'org.mnode.ical4j', name: 'ical4j', version: '4.0.0-alpha9'
 
 
 }
