@@ -1,6 +1,6 @@
 package sorim.f1.slasher.relentless.service;
 
-import sorim.f1.slasher.relentless.model.CountdownData;
+import sorim.f1.slasher.relentless.model.CalendarData;
 import sorim.f1.slasher.relentless.model.ExposedChart;
 
 import javax.servlet.http.HttpServletRequest;
@@ -14,5 +14,5 @@ public interface ClientService {
 
     ExposedChart getExposedChartData();
 
-    CountdownData getCountdownData();
+    CalendarData getCountdownData();
 }

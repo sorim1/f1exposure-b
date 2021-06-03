@@ -6,14 +6,15 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import sorim.f1.slasher.relentless.entities.F1Calendar;
 
+import java.util.Map;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class CountdownData {
+public class CalendarData {
 
     private F1Calendar f1Calendar;
-    private Integer days;
-    private Integer seconds;
+    private Map<String, Integer> countdownData;
 
 }

@@ -3,7 +3,7 @@ package sorim.f1.slasher.relentless.controller;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import sorim.f1.slasher.relentless.model.CountdownData;
+import sorim.f1.slasher.relentless.model.CalendarData;
 import sorim.f1.slasher.relentless.model.ExposedChart;
 import sorim.f1.slasher.relentless.service.ClientService;
 
@@ -29,7 +29,7 @@ public class ClientController {
     }
 
     @GetMapping("/countdown")
-    CountdownData getCountdownData(@RequestHeader String authorization) throws Exception {
+    CalendarData getCountdownData(@RequestHeader String authorization) throws Exception {
         service.validateHeader(authorization);
         return service.getCountdownData();
     }

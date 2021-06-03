@@ -7,7 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import sorim.f1.slasher.relentless.entities.Exposed;
 import sorim.f1.slasher.relentless.entities.ExposedVote;
-import sorim.f1.slasher.relentless.model.CountdownData;
+import sorim.f1.slasher.relentless.entities.F1Calendar;
+import sorim.f1.slasher.relentless.model.CalendarData;
 import sorim.f1.slasher.relentless.model.ExposedChart;
 import sorim.f1.slasher.relentless.repository.CalendarRepository;
 import sorim.f1.slasher.relentless.repository.ExposedRepository;
@@ -16,11 +17,14 @@ import sorim.f1.slasher.relentless.service.ClientService;
 
 import javax.security.sasl.AuthenticationException;
 import javax.servlet.http.HttpServletRequest;
+import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Slf4j
 @Service
@@ -76,18 +80,34 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
-    public CountdownData getCountdownData() {
+    public CalendarData getCountdownData() {
         System.setProperty("net.fortuna.ical4j.timezone.cache.impl", MapTimeZoneCache.class.getName());
-        ZonedDateTime z1 = ZonedDateTime.now(ZoneId.of("Europe/London"));
-        LocalDateTime l1 = z1.toLocalDateTime();
-        LocalDateTime l2 = LocalDateTime.now();
-        log.info("z1");
-        log.info(String.valueOf(z1));
-        log.info("l1");
-        log.info(String.valueOf(l1));
-        log.info("l2");
-        log.info(String.valueOf(l2));
-      //  calendarRepository.findF1CalendarWithRaceAfter(l1);
-        return null;
+        ZonedDateTime gmtZoned = ZonedDateTime.now(ZoneId.of("Europe/London"));
+        LocalDateTime gmtDateTime = gmtZoned.toLocalDateTime();
+        log.info(String.valueOf(gmtDateTime));
+        F1Calendar f1calendar = calendarRepository.findFirstByRaceAfterOrderByRace(gmtDateTime);
+        Map<String, Integer> countdownData = getRemainingTime(gmtDateTime, f1calendar)   ;
+        return CalendarData.builder().f1Calendar(f1calendar).countdownData(countdownData).build();
+    }
+
+    private Map<String, Integer> getRemainingTime(LocalDateTime gmtDateTime, F1Calendar f1calendar) {
+        Map<String, Integer> output = new HashMap<>();
+        Duration duration;
+        duration = Duration.between(gmtDateTime, f1calendar.getPractice1());
+        output.put("FP1Days", (int) duration.toDays());
+        output.put("FP1Seconds", (int) duration.toSeconds());
+        duration = Duration.between(gmtDateTime, f1calendar.getPractice2());
+        output.put("FP2Days", (int) duration.toDays());
+        output.put("FP2Seconds", (int) duration.toSeconds());
+        duration = Duration.between(gmtDateTime, f1calendar.getPractice3());
+        output.put("FP3Days", (int) duration.toDays());
+        output.put("FP3Seconds", (int) duration.toSeconds());
+        duration = Duration.between(gmtDateTime, f1calendar.getQualifying());
+        output.put("qualifyingDays", (int) duration.toDays());
+        output.put("qualifyingSeconds", (int) duration.toSeconds());
+        duration = Duration.between(gmtDateTime, f1calendar.getRace());
+        output.put("raceDays", (int) duration.toDays());
+        output.put("raceSeconds", (int) duration.toSeconds());
+        return output;
     }
 }

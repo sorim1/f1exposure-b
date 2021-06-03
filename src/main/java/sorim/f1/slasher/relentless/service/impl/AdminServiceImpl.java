@@ -55,7 +55,6 @@ public class AdminServiceImpl implements AdminService {
                 }
             }
         }
-        log.info("size123: {}", f1calendarList.size());
         calendarRepository.saveAll(f1calendarList);
 
     }
