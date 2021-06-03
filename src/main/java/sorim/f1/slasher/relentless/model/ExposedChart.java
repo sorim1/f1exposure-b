@@ -12,6 +12,7 @@ import lombok.NoArgsConstructor;
 public class ExposedChart {
 
     private Integer[] drivers;
+    private String[] driverNames;
     private Integer[] results;
 
 }

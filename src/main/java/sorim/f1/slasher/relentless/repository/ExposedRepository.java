@@ -16,9 +16,9 @@ import java.util.List;
 @EnableJpaAuditing
 public interface ExposedRepository extends PagingAndSortingRepository<Exposed, String>, CrudRepository<Exposed, String> {
 
-    List<Exposed> findByRaceId(Integer raceId);
+    List<Exposed> findByRaceIdOrderByCounterDesc(Integer raceId);
 
     @Modifying
-    @Query("update Exposed set counter = counter+1 where raceId = ?1 and driverId = ?2 ")
+    @Query("update Exposed set counter = counter+1 where raceId = ?1 and driver.id = ?2 ")
     Integer incrementExposed(Integer raceId, Integer driverId);
 }

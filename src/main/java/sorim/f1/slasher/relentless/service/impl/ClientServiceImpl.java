@@ -12,7 +12,6 @@ import sorim.f1.slasher.relentless.model.ExposedChart;
 import sorim.f1.slasher.relentless.repository.*;
 import sorim.f1.slasher.relentless.service.ClientService;
 
-import javax.security.sasl.AuthenticationException;
 import javax.servlet.http.HttpServletRequest;
 import java.time.Duration;
 import java.time.LocalDateTime;
@@ -64,15 +63,18 @@ public class ClientServiceImpl implements ClientService {
     @Override
     public ExposedChart getExposedChartData() {
         List<Integer> drivers = new ArrayList<>();
+        List<String> driverNames = new ArrayList<>();
         List<Integer> results = new ArrayList<>();
 
-        List<Exposed> list = exposedRepository.findByRaceId(raceId);
+        List<Exposed> list = exposedRepository.findByRaceIdOrderByCounterDesc(raceId);
         list.stream().forEach((exposed) -> {
-            drivers.add(exposed.getDriverId());
+            drivers.add(exposed.getDriver().getId());
+            driverNames.add(exposed.getDriver().getLastName());
             results.add(exposed.getCounter());
         });
         return ExposedChart.builder()
                 .drivers(drivers.toArray(new Integer[drivers.size()]))
+                .driverNames(driverNames.toArray(new String[driverNames.size()]))
                 .results(results.toArray(new Integer[results.size()])).build();
     }
 

@@ -23,8 +23,9 @@ public class Exposed {
     @Column(name = "race_id")
     private Integer raceId;
 
-    @Column(name = "driver_id")
-    private Integer driverId;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "driver_id", referencedColumnName = "id")
+    private Driver driver;
 
     private Integer counter;
 
