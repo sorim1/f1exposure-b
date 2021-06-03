@@ -5,14 +5,11 @@ import lombok.extern.slf4j.Slf4j;
 import net.fortuna.ical4j.util.MapTimeZoneCache;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import sorim.f1.slasher.relentless.entities.Exposed;
-import sorim.f1.slasher.relentless.entities.ExposedVote;
-import sorim.f1.slasher.relentless.entities.F1Calendar;
+import sorim.f1.slasher.relentless.entities.*;
+import sorim.f1.slasher.relentless.handling.ExceptionHandling;
 import sorim.f1.slasher.relentless.model.CalendarData;
 import sorim.f1.slasher.relentless.model.ExposedChart;
-import sorim.f1.slasher.relentless.repository.CalendarRepository;
-import sorim.f1.slasher.relentless.repository.ExposedRepository;
-import sorim.f1.slasher.relentless.repository.ExposedVoteRepository;
+import sorim.f1.slasher.relentless.repository.*;
 import sorim.f1.slasher.relentless.service.ClientService;
 
 import javax.security.sasl.AuthenticationException;
@@ -35,11 +32,12 @@ public class ClientServiceImpl implements ClientService {
     private final ExposedVoteRepository exposedVoteRepository;
     private final ExposedRepository exposedRepository;
     private final CalendarRepository calendarRepository;
+    private final DriverStandingsRepository driverStandingsRepository;
+    private final ConstructorStandingsRepository constructorStandingsRepository;
+    private final DriverRepository driverRepository;
 
     @Override
     public Boolean exposeDrivers(String[] exposedList, String ipAddress) {
-        log.info("exposeDrivers: {}", exposedList);
-
         boolean alreadyExists = exposedVoteRepository.existsExposedVoteByIpAddress(ipAddress);
         exposedVoteRepository.save(ExposedVote.builder().drivers(exposedList).ipAddress(ipAddress).build());
         for (String s : exposedList) {
@@ -51,16 +49,15 @@ public class ClientServiceImpl implements ClientService {
     @Override
     public void validateHeader(String authorization) throws Exception {
         if (!"md123".equals(authorization)) {
-            throw new AuthenticationException("not authorized");
+            ExceptionHandling.raiseException("not authorized");
         }
     }
 
     @Override
     public String validateIp(HttpServletRequest request) {
-        log.info("validateIp1");
-        log.info(request.getRemoteAddr());
-        log.info(request.getRequestURI());
-        log.info(request.getLocalAddr());
+//        log.info(request.getRemoteAddr());
+//        log.info(request.getRequestURI());
+//        log.info(request.getLocalAddr());
         return request.getRemoteAddr();
     }
 
@@ -75,8 +72,8 @@ public class ClientServiceImpl implements ClientService {
             results.add(exposed.getCounter());
         });
         return ExposedChart.builder()
-                .drivers((Integer[]) drivers.toArray())
-                .results((Integer[]) results.toArray()).build();
+                .drivers(drivers.toArray(new Integer[drivers.size()]))
+                .results(results.toArray(new Integer[results.size()])).build();
     }
 
     @Override
@@ -88,6 +85,21 @@ public class ClientServiceImpl implements ClientService {
         F1Calendar f1calendar = calendarRepository.findFirstByRaceAfterOrderByRace(gmtDateTime);
         Map<String, Integer> countdownData = getRemainingTime(gmtDateTime, f1calendar)   ;
         return CalendarData.builder().f1Calendar(f1calendar).countdownData(countdownData).build();
+    }
+
+    @Override
+    public List<DriverStanding> getDriverStandings() {
+        return driverStandingsRepository.findAll();
+    }
+
+    @Override
+    public List<ConstructorStanding> getConstructorStandings() {
+        return constructorStandingsRepository.findAll();
+    }
+
+    @Override
+    public List<Driver> getExposureDriverList() {
+        return driverRepository.findAll();
     }
 
     private Map<String, Integer> getRemainingTime(LocalDateTime gmtDateTime, F1Calendar f1calendar) {

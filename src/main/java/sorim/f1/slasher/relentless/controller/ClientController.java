@@ -3,17 +3,27 @@ package sorim.f1.slasher.relentless.controller;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import sorim.f1.slasher.relentless.entities.ConstructorStanding;
+import sorim.f1.slasher.relentless.entities.Driver;
+import sorim.f1.slasher.relentless.entities.DriverStanding;
 import sorim.f1.slasher.relentless.model.CalendarData;
 import sorim.f1.slasher.relentless.model.ExposedChart;
 import sorim.f1.slasher.relentless.service.ClientService;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 @RestController
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class ClientController {
 
     private final ClientService service;
+
+    @GetMapping("/getExposureDriverList")
+    List<Driver> getExposureDriverList(@RequestHeader String authorization) throws Exception {
+        service.validateHeader(authorization);
+        return service.getExposureDriverList();
+    }
 
     @PostMapping("/expose")
     Boolean exposeDrivers(@RequestHeader String authorization, @RequestBody String[] exposedList, HttpServletRequest request) throws Exception {
@@ -33,4 +43,16 @@ public class ClientController {
         service.validateHeader(authorization);
         return service.getCountdownData();
     }
+
+    @GetMapping("/getDriverStandings")
+    List<DriverStanding> getDriverStandings(@RequestHeader String authorization) throws Exception {
+        service.validateHeader(authorization);
+        return service.getDriverStandings();
+    }
+    @GetMapping("/getConstructorStandings")
+    List<ConstructorStanding> getConstructorStandings(@RequestHeader String authorization) throws Exception {
+        service.validateHeader(authorization);
+        return service.getConstructorStandings();
+    }
+
 }

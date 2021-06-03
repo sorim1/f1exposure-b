@@ -6,7 +6,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import sorim.f1.slasher.relentless.entities.F1Calendar;
+import sorim.f1.slasher.relentless.entities.DriverStanding;
 import sorim.f1.slasher.relentless.service.AdminService;
+
+import java.util.List;
 
 @RestController
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
@@ -14,6 +17,7 @@ import sorim.f1.slasher.relentless.service.AdminService;
 public class AdminController {
 
     private final AdminService service;
+    //TODO validacija, zasebni key za admin sučelje
 
     @GetMapping("/refreshCalendar")
     boolean refreshCalendar() throws Exception {
@@ -21,9 +25,19 @@ public class AdminController {
         return true;
     }
 
-    @GetMapping("/getCalendar")
-    F1Calendar getCalendar() throws Exception {
-        return service.getCalendar();
+    @GetMapping("/initialize")
+    boolean initialize() throws Exception {
+        service.initialize();
+        return true;
+    }
+
+    @GetMapping("/refreshStandings")
+    List<DriverStanding> refreshStandings() throws Exception {
+        return service.refreshStandings();
+    }
+    @GetMapping("/initializeStandings")
+    List<DriverStanding> intializeStandings() throws Exception {
+        return service.initializeStandings();
     }
 
 }

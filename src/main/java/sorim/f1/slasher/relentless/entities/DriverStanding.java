@@ -8,18 +8,24 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "DRIVERS")
+@Table(name = "CURRENT_DRIVER_STANDINGS")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Drivers {
+public class DriverStanding {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(columnDefinition = "serial")
     private Integer id;
-
+    private Integer position;
     private String name;
+    private String code;
+    private String nationality;
+    private String car;
+    private Integer points;
 
+    @Transient
+    private String firstName;
+    @Transient
+    private String lastName;
 }

@@ -2,6 +2,7 @@ package sorim.f1.slasher.relentless.model.enums;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
+import sorim.f1.slasher.relentless.handling.ExceptionHandling;
 
 @Getter
 @RequiredArgsConstructor
@@ -22,7 +23,8 @@ public enum RoundEnum {
                 return e.value;
             }
         }
-        throw new Exception();
+        ExceptionHandling.raiseException("RoundEnum description not found: " + description);
+        return null;
     }
 
     public static RoundEnum fromDescription(String description) throws Exception {
@@ -31,6 +33,7 @@ public enum RoundEnum {
                 return e;
             }
         }
-        throw new Exception(description + " isn't enum");
+        ExceptionHandling.raiseException("RoundEnum description not found: " + description);
+        return null;
     }
 }

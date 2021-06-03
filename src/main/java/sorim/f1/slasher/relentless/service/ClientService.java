@@ -1,9 +1,13 @@
 package sorim.f1.slasher.relentless.service;
 
+import sorim.f1.slasher.relentless.entities.ConstructorStanding;
+import sorim.f1.slasher.relentless.entities.Driver;
+import sorim.f1.slasher.relentless.entities.DriverStanding;
 import sorim.f1.slasher.relentless.model.CalendarData;
 import sorim.f1.slasher.relentless.model.ExposedChart;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 public interface ClientService {
     Boolean exposeDrivers(String[] exposedList, String ipAddress);
@@ -15,4 +19,10 @@ public interface ClientService {
     ExposedChart getExposedChartData();
 
     CalendarData getCountdownData();
+
+    List<DriverStanding> getDriverStandings();
+
+    List<ConstructorStanding> getConstructorStandings();
+
+    List<Driver> getExposureDriverList();
 }

@@ -1,11 +1,38 @@
-INSERT INTO drivers
-(name)
-VALUES('L.Hamilton'),('V.Bottas'),('M.Verstappen'),('S.Perez'),('C.Leclerc'),('C.Sainz'),('F.Alonso'),('E.Ocon'),
-       ('D.Ricciardo'),('L.Norris'),('P.Gasly'),('Y.Tsunoda'),('K.Raikkonnen'),('A.Giovinazzi'),('G.Russell'),('N.Latifi'),
-       ('M.Schumacher'),('N.Mazepin'),('S.Vettel'),('L.Stroll')
-;
+INSERT INTO drivers (first_name,last_name,full_name) VALUES
+('Max','Verstappen','Max Verstappen'),
+('Lewis','Hamilton','Lewis Hamilton'),
+('Lando','Norris','Lando Norris'),
+('Valtteri','Bottas','Valtteri Bottas'),
+('Sergio','Perez','Sergio Perez'),
+('Charles','Leclerc','Charles Leclerc'),
+('Carlos','Sainz','Carlos Sainz'),
+('Daniel','Ricciardo','Daniel Ricciardo'),
+('Pierre','Gasly','Pierre Gasly'),
+('Esteban','Ocon','Esteban Ocon');
+INSERT INTO drivers (first_name,last_name,full_name) VALUES
+('Sebastian','Vettel','Sebastian Vettel'),
+('Lance','Stroll','Lance Stroll'),
+('Fernando','Alonso','Fernando Alonso'),
+('Yuki','Tsunoda','Yuki Tsunoda'),
+('Antonio','Giovinazzi','Antonio Giovinazzi'),
+('Kimi','Räikkönen','Kimi Räikkönen'),
+('George','Russell','George Russell'),
+('Nicholas','Latifi','Nicholas Latifi'),
+('Mick','Schumacher','Mick Schumacher'),
+('Nikita','Mazepin','Nikita Mazepin');
+INSERT INTO public.constructors ("name") VALUES
+('Red Bull Racing Honda'),
+('Mercedes'),
+('McLaren Mercedes'),
+('Ferrari'),
+('Aston Martin Mercedes'),
+('AlphaTauri Honda'),
+('Alpine Renault'),
+('Alfa Romeo Racing Ferrari'),
+('Williams Mercedes'),
+('Haas Ferrari');
 INSERT INTO exposed
-(match_id, driver_id, counter)
+(race_id, driver_id, counter)
 VALUES(1, 0, 0),
       (1, 1, 0),
       (1, 2, 0),

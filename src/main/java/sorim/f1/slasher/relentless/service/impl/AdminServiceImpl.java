@@ -7,17 +7,23 @@ import net.fortuna.ical4j.model.Calendar;
 import net.fortuna.ical4j.model.PropertyList;
 import net.fortuna.ical4j.model.component.CalendarComponent;
 import net.fortuna.ical4j.util.MapTimeZoneCache;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import sorim.f1.slasher.relentless.entities.F1Calendar;
-import sorim.f1.slasher.relentless.repository.CalendarRepository;
+import sorim.f1.slasher.relentless.entities.*;
+import sorim.f1.slasher.relentless.repository.*;
 import sorim.f1.slasher.relentless.service.AdminService;
 
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Slf4j
 @Service
@@ -25,7 +31,20 @@ import java.util.List;
 public class AdminServiceImpl implements AdminService {
 
     private static final String CALENDAR_URL = "https://www.formula1.com/calendar/Formula_1_Official_Calendar.ics";
+    private static final String DRIVER_STANDINGS_URL = "https://www.formula1.com/en/results.html/2021/drivers.html";
+    private static final String CONSTRUCTOR_STANDINGS_URL = "https://www.formula1.com/en/results.html/2021/team.html";
+
     private final CalendarRepository calendarRepository;
+    private final DriverStandingsRepository driverStandingsRepository;
+    private final ConstructorStandingsRepository constructorStandingsRepository;
+    private final DriverRepository driverRepository;
+    private final ConstructorRepository constructorRepository;
+
+    @Override
+    public void initialize() throws Exception {
+        refreshCalendar();
+        initializeStandings();
+    }
 
     @Override
     public void refreshCalendar() throws Exception {
@@ -34,7 +53,6 @@ public class AdminServiceImpl implements AdminService {
         Reader r = new InputStreamReader(url.openStream());
         CalendarBuilder builder = new CalendarBuilder();
         Calendar calendar = builder.build(r);
-        int counter = 1;
         int raceId = 0;
         int currentRaceId;
         List<F1Calendar> f1calendarList = new ArrayList<>();
@@ -60,8 +78,99 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
-    public F1Calendar getCalendar() {
-        return calendarRepository.findById(4);
+    public List<DriverStanding> initializeStandings() throws IOException {
+        List<DriverStanding> driverStandings = initializeDriverStandings();
+        List<ConstructorStanding> constructorStandings = initializeConstructorStandings();
+        return driverStandings;
+    }
+    private List<DriverStanding> initializeDriverStandings() throws IOException {
+        List<DriverStanding> driverStandings = new ArrayList<>();
+        Document doc = Jsoup.connect(DRIVER_STANDINGS_URL).get();
+        Elements tBody = doc.select("tbody");
+        Elements tRows = tBody.select("tr");
+        tRows.forEach(row -> {
+            DriverStanding driverStanding = createNewDriverStandingFromRow(row);
+            driverStandings.add(driverStanding);
+        });
+        enrichDriverListWithId(driverStandings);
+        driverStandingsRepository.deleteAll();
+        driverStandingsRepository.saveAll(driverStandings);
+        return driverStandings;
     }
 
+    private void enrichDriverListWithId(List<DriverStanding> driverStandings) {
+        List<Driver> drivers = driverRepository.findAll();
+        for(DriverStanding driverStanding: driverStandings){
+            Optional<Driver> foundDriver = drivers.stream().filter(x -> driverStanding.getName().equals(x.getFullName()))
+                    .findFirst();
+            if(foundDriver.isPresent()){
+                driverStanding.setId(foundDriver.get().getId());
+            } else{
+                Driver newDriver = Driver.builder().firstName(driverStanding.getFirstName())
+                        .lastName(driverStanding.getLastName()).fullName(driverStanding.getName())
+                        .build();
+               newDriver = driverRepository.save(newDriver);
+                driverStanding.setId(newDriver.getId());
+            }
+        }
+    }
+    private void enrichConstructorListWithId(List<ConstructorStanding> constructorStandings) {
+        List<Constructor> constructors = constructorRepository.findAll();
+        for(ConstructorStanding constructorStanding: constructorStandings){
+            Optional<Constructor> found = constructors.stream().filter(x -> constructorStanding.getName().equals(x.getName()))
+                    .findFirst();
+            if(found.isPresent()){
+                constructorStanding.setId(found.get().getId());
+            } else{
+                Constructor newConstructor = Constructor.builder().name(constructorStanding.getName()).build();
+                newConstructor = constructorRepository.save(newConstructor);
+                constructorStanding.setId(newConstructor.getId());
+            }
+        }
+    }
+
+    private List<ConstructorStanding> initializeConstructorStandings() throws IOException {
+        List<ConstructorStanding> constructorStandings = new ArrayList<>();
+        Document doc = Jsoup.connect(CONSTRUCTOR_STANDINGS_URL).get();
+        Elements tBody = doc.select("tbody");
+        Elements tRows = tBody.select("tr");
+        tRows.forEach(row -> {
+            ConstructorStanding constructorStanding = createNewConstructorStandingFromRow(row);
+            constructorStandings.add(constructorStanding);
+        });
+        enrichConstructorListWithId(constructorStandings);
+        constructorStandingsRepository.deleteAll();
+        constructorStandingsRepository.saveAll(constructorStandings);
+        return constructorStandings;
+    }
+
+    @Override
+    public List<DriverStanding> refreshStandings() throws IOException {
+        List<DriverStanding> driverStandings = new ArrayList<>();
+        return driverStandings;
+    }
+
+    private DriverStanding createNewDriverStandingFromRow(Element row) {
+        Elements tColumns = row.select("td");
+        Elements spans = tColumns.select("span");
+        Elements links = tColumns.select("a");
+        DriverStanding driverStanding = new DriverStanding();
+        driverStanding.setPosition(Integer.valueOf(tColumns.get(1).wholeText()));
+        driverStanding.setNationality(tColumns.get(3).wholeText());
+        driverStanding.setPoints(Integer.valueOf(tColumns.get(5).wholeText()));
+        driverStanding.setFirstName(spans.get(0).wholeText());
+        driverStanding.setLastName(spans.get(1).wholeText());
+        driverStanding.setName(spans.get(0).wholeText() + " " + spans.get(1).wholeText());
+        driverStanding.setCode(spans.get(2).wholeText());
+        driverStanding.setCar(links.get(1).wholeText());
+        return driverStanding;
+    }
+    private ConstructorStanding createNewConstructorStandingFromRow(Element row) {
+        Elements tColumns = row.select("td");
+        ConstructorStanding constructorStanding = new ConstructorStanding();
+        constructorStanding.setPosition(Integer.valueOf(tColumns.get(1).wholeText()));
+        constructorStanding.setName(tColumns.get(2).wholeText().trim());
+        constructorStanding.setPoints(Integer.valueOf(tColumns.get(3).wholeText()));
+        return constructorStanding;
+    }
 }

@@ -6,13 +6,20 @@ CREATE TABLE EXPOSED_VOTE (
 );
 CREATE TABLE EXPOSED (
      id  SERIAL PRIMARY KEY,
-     match_id numeric,
+     race_id numeric,
      driver_id numeric,
      counter numeric
 );
 CREATE TABLE DRIVERS (
       id  SERIAL PRIMARY KEY,
-      name text
+      first_name text,
+      last_name text,
+      full_name text
+);
+
+CREATE TABLE CONSTRUCTORS (
+     id  SERIAL PRIMARY KEY,
+     name text
 );
 
 CREATE TABLE CALENDAR (
@@ -25,4 +32,21 @@ CREATE TABLE CALENDAR (
      race TIMESTAMP,
      location text,
      summary text
+);
+
+CREATE TABLE CURRENT_DRIVER_STANDINGS (
+   id numeric,
+   position numeric,
+   name text,
+   code text,
+   nationality text,
+   car text,
+   points numeric
+);
+
+CREATE TABLE CURRENT_CONSTRUCTOR_STANDINGS (
+  id numeric,
+  position numeric,
+  name text,
+  points numeric
 );
