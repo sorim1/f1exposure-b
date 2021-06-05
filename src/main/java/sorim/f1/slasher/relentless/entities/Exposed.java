@@ -20,7 +20,6 @@ public class Exposed {
     @Column(columnDefinition = "serial")
     private Integer id;
 
-    @Column(name = "race_id")
     private Integer raceId;
 
     @OneToOne(cascade = CascadeType.ALL)

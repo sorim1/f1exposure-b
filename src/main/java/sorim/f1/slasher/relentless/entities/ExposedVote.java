@@ -37,7 +37,6 @@ public class ExposedVote {
     )
     private String[] drivers;
 
-    @Column(name = "ip_address")
     private String ipAddress;
 
 

@@ -5,8 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import sorim.f1.slasher.relentless.entities.F1Calendar;
 import sorim.f1.slasher.relentless.entities.DriverStanding;
+import sorim.f1.slasher.relentless.entities.SportSurgeEvent;
 import sorim.f1.slasher.relentless.service.AdminService;
 
 import java.util.List;
@@ -31,13 +31,14 @@ public class AdminController {
         return true;
     }
 
-    @GetMapping("/refreshStandings")
-    List<DriverStanding> refreshStandings() throws Exception {
-        return service.refreshStandings();
-    }
     @GetMapping("/initializeStandings")
     List<DriverStanding> intializeStandings() throws Exception {
         return service.initializeStandings();
+    }
+
+    @GetMapping("/fetchSportSurgeLinks")
+    void fetchSportSurgeLinks() throws Exception {
+        service.fetchSportSurgeLinks();
     }
 
 }

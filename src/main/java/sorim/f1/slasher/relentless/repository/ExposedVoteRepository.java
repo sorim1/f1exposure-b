@@ -11,7 +11,7 @@ import javax.transaction.Transactional;
 @Repository
 @Transactional
 @EnableJpaAuditing
-public interface ExposedVoteRepository extends PagingAndSortingRepository<ExposedVote, String>, CrudRepository<ExposedVote, String> {
+public interface ExposedVoteRepository extends CrudRepository<ExposedVote, String> {
 
     boolean existsExposedVoteByIpAddress(String ipAddress);
 }

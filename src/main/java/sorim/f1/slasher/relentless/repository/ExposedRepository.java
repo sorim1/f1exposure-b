@@ -14,7 +14,7 @@ import java.util.List;
 @Repository
 @Transactional
 @EnableJpaAuditing
-public interface ExposedRepository extends PagingAndSortingRepository<Exposed, String>, CrudRepository<Exposed, String> {
+public interface ExposedRepository extends CrudRepository<Exposed, String> {
 
     List<Exposed> findByRaceIdOrderByCounterDesc(Integer raceId);
 

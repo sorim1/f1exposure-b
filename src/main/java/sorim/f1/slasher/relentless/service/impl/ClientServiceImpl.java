@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import sorim.f1.slasher.relentless.entities.*;
 import sorim.f1.slasher.relentless.handling.ExceptionHandling;
+import sorim.f1.slasher.relentless.model.AllStandings;
 import sorim.f1.slasher.relentless.model.CalendarData;
 import sorim.f1.slasher.relentless.model.ExposedChart;
 import sorim.f1.slasher.relentless.repository.*;
@@ -34,6 +35,7 @@ public class ClientServiceImpl implements ClientService {
     private final DriverStandingsRepository driverStandingsRepository;
     private final ConstructorStandingsRepository constructorStandingsRepository;
     private final DriverRepository driverRepository;
+    private final SportSurgeEventRepository sportSurgeEventRepository;
 
     @Override
     public Boolean exposeDrivers(String[] exposedList, String ipAddress) {
@@ -102,6 +104,19 @@ public class ClientServiceImpl implements ClientService {
     @Override
     public List<Driver> getExposureDriverList() {
         return driverRepository.findAll();
+    }
+
+    @Override
+    public AllStandings getStandings() {
+        return AllStandings.builder()
+                .driverStandings(getDriverStandings())
+                .constructorStandings(getConstructorStandings())
+                .build();
+    }
+
+    @Override
+    public List<SportSurgeEvent> getSportSurge() {
+        return sportSurgeEventRepository.findAllOrderByIdDesc();
     }
 
     private Map<String, Integer> getRemainingTime(LocalDateTime gmtDateTime, F1Calendar f1calendar) {

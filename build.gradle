@@ -23,6 +23,7 @@ dependencies {
 	implementation group: 'com.vladmihalcea', name: 'hibernate-types-52', version: '2.11.1'
 	implementation group: 'org.mnode.ical4j', name: 'ical4j', version: '4.0.0-alpha9'
 	implementation group: 'org.jsoup', name: 'jsoup', version: '1.13.1'
+	implementation group: 'net.sourceforge.htmlunit', name: 'htmlunit', version: '2.50.0'
 
 
 

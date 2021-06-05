@@ -3,6 +3,8 @@ package sorim.f1.slasher.relentless.service;
 import sorim.f1.slasher.relentless.entities.ConstructorStanding;
 import sorim.f1.slasher.relentless.entities.Driver;
 import sorim.f1.slasher.relentless.entities.DriverStanding;
+import sorim.f1.slasher.relentless.entities.SportSurgeEvent;
+import sorim.f1.slasher.relentless.model.AllStandings;
 import sorim.f1.slasher.relentless.model.CalendarData;
 import sorim.f1.slasher.relentless.model.ExposedChart;
 
@@ -25,4 +27,8 @@ public interface ClientService {
     List<ConstructorStanding> getConstructorStandings();
 
     List<Driver> getExposureDriverList();
+
+    AllStandings getStandings();
+
+    List<SportSurgeEvent> getSportSurge();
 }

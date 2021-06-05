@@ -1,5 +1,9 @@
 package sorim.f1.slasher.relentless.service.impl;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.gargoylesoftware.htmlunit.Page;
+import com.gargoylesoftware.htmlunit.WebClient;
+import com.gargoylesoftware.htmlunit.WebResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import net.fortuna.ical4j.data.CalendarBuilder;
@@ -12,8 +16,11 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.*;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 import sorim.f1.slasher.relentless.entities.*;
+import sorim.f1.slasher.relentless.model.SportSurge;
 import sorim.f1.slasher.relentless.repository.*;
 import sorim.f1.slasher.relentless.service.AdminService;
 
@@ -21,9 +28,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @Slf4j
 @Service
@@ -33,12 +38,17 @@ public class AdminServiceImpl implements AdminService {
     private static final String CALENDAR_URL = "https://www.formula1.com/calendar/Formula_1_Official_Calendar.ics";
     private static final String DRIVER_STANDINGS_URL = "https://www.formula1.com/en/results.html/2021/drivers.html";
     private static final String CONSTRUCTOR_STANDINGS_URL = "https://www.formula1.com/en/results.html/2021/team.html";
+    private static final String SPORTSURGE_GROUP_13 = "https://api.sportsurge.net/events/list?group=13";
+    private static final String SPORTSURGE_GROUP = "https://api.sportsurge.net/events/list";
+    private static final String SPORTSURGE_STREAMS = "https://api.sportsurge.net/streams/list?event=";
 
     private final CalendarRepository calendarRepository;
     private final DriverStandingsRepository driverStandingsRepository;
     private final ConstructorStandingsRepository constructorStandingsRepository;
     private final DriverRepository driverRepository;
     private final ConstructorRepository constructorRepository;
+    private final SportSurgeStreamRepository sportSurgeStreamRepository;
+    private final SportSurgeEventRepository sportSurgeEventRepository;
 
     @Override
     public void initialize() throws Exception {
@@ -145,9 +155,21 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
-    public List<DriverStanding> refreshStandings() throws IOException {
-        List<DriverStanding> driverStandings = new ArrayList<>();
-        return driverStandings;
+    public void fetchSportSurgeLinks() throws IOException {
+        WebClient client = new WebClient();
+        Page page = client.getPage(SPORTSURGE_GROUP_13);
+        WebResponse response = page.getWebResponse();
+        SportSurge sportSurge = new ObjectMapper().readValue(response.getContentAsString(), SportSurge.class);
+        List<SportSurgeEvent> events = sportSurge.getEvents();
+        List<SportSurgeStream> streams = new ArrayList<>();
+        for(SportSurgeEvent event: events){
+            page = client.getPage(SPORTSURGE_STREAMS + event.getId());
+            response = page.getWebResponse();
+            sportSurge = new ObjectMapper().readValue(response.getContentAsString(), SportSurge.class);
+            streams.addAll(sportSurge.getStreams());
+        }
+        sportSurgeStreamRepository.saveAll(streams);
+        sportSurgeEventRepository.saveAll(events);
     }
 
     private DriverStanding createNewDriverStandingFromRow(Element row) {

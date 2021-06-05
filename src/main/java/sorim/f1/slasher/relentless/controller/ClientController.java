@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.*;
 import sorim.f1.slasher.relentless.entities.ConstructorStanding;
 import sorim.f1.slasher.relentless.entities.Driver;
 import sorim.f1.slasher.relentless.entities.DriverStanding;
+import sorim.f1.slasher.relentless.entities.SportSurgeEvent;
+import sorim.f1.slasher.relentless.model.AllStandings;
 import sorim.f1.slasher.relentless.model.CalendarData;
 import sorim.f1.slasher.relentless.model.ExposedChart;
 import sorim.f1.slasher.relentless.service.ClientService;
@@ -55,4 +57,15 @@ public class ClientController {
         return service.getConstructorStandings();
     }
 
+    @GetMapping("/getStandings")
+    AllStandings getStandings(@RequestHeader String authorization) throws Exception {
+        service.validateHeader(authorization);
+        return service.getStandings();
+    }
+
+    @GetMapping("/getSportSurge")
+    List<SportSurgeEvent> getSportSurge(@RequestHeader String authorization) throws Exception {
+        service.validateHeader(authorization);
+        return service.getSportSurge();
+    }
 }

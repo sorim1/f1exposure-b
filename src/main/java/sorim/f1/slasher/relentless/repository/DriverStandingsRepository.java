@@ -12,6 +12,6 @@ import java.util.List;
 @Repository
 @Transactional
 @EnableJpaAuditing
-public interface DriverStandingsRepository extends PagingAndSortingRepository<DriverStanding, String>, CrudRepository<DriverStanding, String> {
+public interface DriverStandingsRepository extends CrudRepository<DriverStanding, String> {
     List<DriverStanding> findAll();
 }

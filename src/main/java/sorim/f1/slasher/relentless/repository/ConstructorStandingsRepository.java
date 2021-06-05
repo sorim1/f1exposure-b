@@ -13,6 +13,6 @@ import java.util.List;
 @Repository
 @Transactional
 @EnableJpaAuditing
-public interface ConstructorStandingsRepository extends PagingAndSortingRepository<ConstructorStanding, String>, CrudRepository<ConstructorStanding, String> {
+public interface ConstructorStandingsRepository extends CrudRepository<ConstructorStanding, String> {
     List<ConstructorStanding> findAll();
 }

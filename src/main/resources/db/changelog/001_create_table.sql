@@ -50,3 +50,16 @@ CREATE TABLE CURRENT_CONSTRUCTOR_STANDINGS (
   name text,
   points numeric
 );
+
+CREATE TABLE SS_EVENT (
+   id numeric,
+   name text,
+   event_group numeric
+);
+
+CREATE TABLE SS_STREAM (
+   id numeric,
+   name text,
+   event numeric,
+   url text
+);

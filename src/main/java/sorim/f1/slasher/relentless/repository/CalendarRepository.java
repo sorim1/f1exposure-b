@@ -13,7 +13,7 @@ import java.util.List;
 @Repository
 @Transactional
 @EnableJpaAuditing
-public interface CalendarRepository extends PagingAndSortingRepository<F1Calendar, String>, CrudRepository<F1Calendar, String> {
+public interface CalendarRepository extends CrudRepository<F1Calendar, String> {
 
     F1Calendar findById(Integer id);
 
