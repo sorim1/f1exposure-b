@@ -16,9 +16,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.*;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 import sorim.f1.slasher.relentless.entities.*;
 import sorim.f1.slasher.relentless.model.SportSurge;
 import sorim.f1.slasher.relentless.repository.*;
@@ -28,7 +26,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.net.URL;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
 @Slf4j
 @Service
@@ -58,7 +58,7 @@ public class AdminServiceImpl implements AdminService {
 
     @Override
     public void refreshCalendar() throws Exception {
-        System.setProperty("net.fortuna.ical4j.timezone.cache.impl", MapTimeZoneCache.class.getName());
+      //  System.setProperty("net.fortuna.ical4j.timezone.cache.impl", MapTimeZoneCache.class.getName());
         URL url = new URL(CALENDAR_URL);
         Reader r = new InputStreamReader(url.openStream());
         CalendarBuilder builder = new CalendarBuilder();

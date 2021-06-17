@@ -18,5 +18,5 @@ public interface CalendarRepository extends CrudRepository<F1Calendar, String> {
     F1Calendar findById(Integer id);
 
     F1Calendar findFirstByRaceAfterOrderByRace(LocalDateTime date);
-
+    F1Calendar findFirstByRaceBeforeOrderByRaceDesc(LocalDateTime date);
 }

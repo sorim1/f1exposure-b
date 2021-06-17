@@ -63,3 +63,4 @@ CREATE TABLE SS_STREAM (
    event numeric,
    url text
 );
+
