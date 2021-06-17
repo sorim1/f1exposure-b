@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import sorim.f1.slasher.relentless.model.LiveTimingData;
 import sorim.f1.slasher.relentless.service.LiveTimingService;
 
 @RestController
@@ -19,6 +20,17 @@ public class LiveTimingController {
     boolean getLatestRaceData() throws Exception {
         service.getLatestRaceData();
         return true;
+    }
+
+    @GetMapping("/getAllRaceData")
+    boolean getAllRaceDataFromErgastTable() throws Exception {
+        service.getAllRaceDataFromErgastTable();
+        return true;
+    }
+
+    @GetMapping("/processSingleRace")
+    LiveTimingData processSingleRace() throws Exception {
+        return service.processSingleRace();
     }
 
 }

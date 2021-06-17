@@ -1,15 +1,20 @@
 package sorim.f1.slasher.relentless.entities.ergast;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.vladmihalcea.hibernate.type.json.JsonBinaryType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Type;
+import org.hibernate.annotations.TypeDef;
+import sorim.f1.slasher.relentless.model.ergast.Circuit;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "ERGAST_CURRENT_SEASON_RACES")
+@TypeDef(name = "jsonb", typeClass = JsonBinaryType.class)
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -21,11 +26,14 @@ public class Race {
     private String season;
     private String url;
     private String raceName;
-
-    @JsonProperty("Circuit")
-    @OneToOne(mappedBy="race",cascade= CascadeType.ALL)
-    private Circuit circuit;
     private String date;
     private String time;
+
+    @JsonProperty("Circuit")
+    @Type(type = "jsonb")
+    @Column(columnDefinition = "jsonb")
+    private Circuit circuit;
+
+    private String liveTiming;
 
 }

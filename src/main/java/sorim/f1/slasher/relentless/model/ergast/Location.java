@@ -1,4 +1,4 @@
-package sorim.f1.slasher.relentless.entities.ergast;
+package sorim.f1.slasher.relentless.model.ergast;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
@@ -8,8 +8,8 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
-@Entity
-@Table(name = "ERGAST_LOCATION")
+//@Entity
+//@Table(name = "ERGAST_LOCATION")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -21,8 +21,4 @@ public class Location {
     @JsonProperty("long")
     private String longitude;
     private String country;
-    @OneToOne(optional = false, fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
-    @JoinColumn(name="circuit", referencedColumnName = "circuitId")
-    private Circuit circuit;
-
 }

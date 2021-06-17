@@ -1,7 +1,16 @@
 package sorim.f1.slasher.relentless.service;
 
+import sorim.f1.slasher.relentless.entities.ergast.Race;
+
+import java.util.List;
+
 public interface ErgastService {
 
-    String fetchCurrentSeason();
+    List<Race> fetchCurrentSeason();
 
+    List<Race> getAllRaces();
+
+    void saveRaces(List<Race> races);
+
+    Race fetchSingleRace();
 }

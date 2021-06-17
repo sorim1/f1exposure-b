@@ -5,9 +5,12 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+import sorim.f1.slasher.relentless.entities.ergast.Race;
 import sorim.f1.slasher.relentless.model.ergast.ErgastResponse;
 import sorim.f1.slasher.relentless.repository.ErgastRaceRepository;
 import sorim.f1.slasher.relentless.service.ErgastService;
+
+import java.util.List;
 
 @Slf4j
 @Service
@@ -17,17 +20,25 @@ public class ErgastServiceImpl implements ErgastService {
 
     private final ErgastRaceRepository ergastRaceRepository;
     @Override
-    public String fetchCurrentSeason() {
+    public List<Race> fetchCurrentSeason() {
         RestTemplate restTemplate = new RestTemplate();
-        String foo1 = restTemplate
-                .getForObject(CURRENT_SEASON, String.class);
-        log.info(String.valueOf(foo1));
-        ErgastResponse foo = restTemplate
+        ErgastResponse ergastResponse = restTemplate
                 .getForObject(CURRENT_SEASON, ErgastResponse.class);
-        log.info(String.valueOf(foo));
-        ergastRaceRepository.saveAll(foo.getMrData().getRaceTable().getRaces());
-        return foo.getMrData().getUrl();
+        return ergastResponse.getMrData().getRaceTable().getRaces();
     }
 
+    @Override
+    public List<Race> getAllRaces() {
+        return ergastRaceRepository.findAll();
+    }
 
+    @Override
+    public void saveRaces(List<Race> races) {
+        ergastRaceRepository.saveAll(races);
+    }
+
+    @Override
+    public Race fetchSingleRace() {
+        return ergastRaceRepository.findByRound(6);
+    }
 }
