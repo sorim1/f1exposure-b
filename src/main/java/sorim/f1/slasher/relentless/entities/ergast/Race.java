@@ -22,6 +22,9 @@ import javax.persistence.*;
 public class Race {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(columnDefinition = "serial")
+    private Integer id;
     private Integer round;
     private String season;
     private String url;
@@ -35,5 +38,5 @@ public class Race {
     private Circuit circuit;
 
     private String liveTiming;
-
+    private String circuitId;
 }

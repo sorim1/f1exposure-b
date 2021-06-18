@@ -13,6 +13,8 @@ import javax.annotation.PostConstruct;
 public class MainProperties {
 
     private String tempo;
+    private Integer currentYear;
+
     @PostConstruct
     public void setProperty() {
         System.setProperty("net.fortuna.ical4j.timezone.cache.impl", MapTimeZoneCache.class.getName());

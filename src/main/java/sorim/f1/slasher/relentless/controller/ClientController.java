@@ -51,6 +51,7 @@ public class ClientController {
         service.validateHeader(authorization);
         return service.getDriverStandings();
     }
+
     @GetMapping("/getConstructorStandings")
     List<ConstructorStanding> getConstructorStandings(@RequestHeader String authorization) throws Exception {
         service.validateHeader(authorization);

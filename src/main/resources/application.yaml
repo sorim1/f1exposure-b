@@ -2,7 +2,14 @@ f1:
   exposure:
     properties:
       tempo: tttejmpo
-      url: postgres
+      currentYear: 2021
+logging:
+  level:
+    org:
+      springframework:
+        web:
+          client:
+            RestTemplate=DEBUG:
 spring:
   application:
     name: f1-exposure-rest-api

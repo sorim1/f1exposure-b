@@ -14,5 +14,8 @@ import java.util.List;
 public interface ErgastRaceRepository extends CrudRepository<Race, String> {
 
     List<Race> findAll();
+
     Race findByRound(Integer round);
+
+    List<Race> findByCircuitId(String circuitId);
 }

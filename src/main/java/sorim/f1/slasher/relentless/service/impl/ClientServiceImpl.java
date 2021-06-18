@@ -2,7 +2,6 @@ package sorim.f1.slasher.relentless.service.impl;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import net.fortuna.ical4j.util.MapTimeZoneCache;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import sorim.f1.slasher.relentless.entities.*;
@@ -82,11 +81,11 @@ public class ClientServiceImpl implements ClientService {
 
     @Override
     public CalendarData getCountdownData() {
-       // System.setProperty("net.fortuna.ical4j.timezone.cache.impl", MapTimeZoneCache.class.getName());
+        // System.setProperty("net.fortuna.ical4j.timezone.cache.impl", MapTimeZoneCache.class.getName());
         ZonedDateTime gmtZoned = ZonedDateTime.now(ZoneId.of("Europe/London"));
         LocalDateTime gmtDateTime = gmtZoned.toLocalDateTime();
         F1Calendar f1calendar = calendarRepository.findFirstByRaceAfterOrderByRace(gmtDateTime);
-        Map<String, Integer> countdownData = getRemainingTime(gmtDateTime, f1calendar)   ;
+        Map<String, Integer> countdownData = getRemainingTime(gmtDateTime, f1calendar);
         return CalendarData.builder().f1Calendar(f1calendar).countdownData(countdownData).build();
     }
 

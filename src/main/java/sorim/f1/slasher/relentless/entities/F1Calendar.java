@@ -37,7 +37,7 @@ public class F1Calendar {
         String[] idAndRound = properties.get("UID").get(0).getValue().split("@");
         this.raceId = Integer.valueOf(idAndRound[1]);
         this.location = properties.get("LOCATION").get(0).getValue();
-        this.summary = properties.get("SUMMARY").get(0).getValue().replace(" - Practice 1","");
+        this.summary = properties.get("SUMMARY").get(0).getValue().replace(" - Practice 1", "");
         setDateFromRoundDescription(idAndRound[0], properties.get("DTSTART").get(0).getValue());
     }
 

@@ -10,15 +10,31 @@ import sorim.f1.slasher.relentless.model.ergast.ErgastResponse;
 import sorim.f1.slasher.relentless.repository.ErgastRaceRepository;
 import sorim.f1.slasher.relentless.service.ErgastService;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Slf4j
 @Service
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class ErgastServiceImpl implements ErgastService {
-        private final static String  CURRENT_SEASON = "http://ergast.com/api/f1/current.json";
+    private final static String CURRENT_SEASON = "http://ergast.com/api/f1/current.json";
+    private final static String GET_SEASON = "https://ergast.com/api/f1/{year}.json";
+
 
     private final ErgastRaceRepository ergastRaceRepository;
+
+    @Override
+    public List<Race> fetchSeason(String year) {
+        RestTemplate restTemplate = new RestTemplate();
+        Map<String, String> uriVariables = new HashMap<>();
+        uriVariables.put("year", year);
+
+        ErgastResponse ergastResponse = restTemplate
+                .getForObject(GET_SEASON, ErgastResponse.class, uriVariables);
+        return ergastResponse.getMrData().getRaceTable().getRaces();
+    }
+
     @Override
     public List<Race> fetchCurrentSeason() {
         RestTemplate restTemplate = new RestTemplate();
@@ -40,5 +56,10 @@ public class ErgastServiceImpl implements ErgastService {
     @Override
     public Race fetchSingleRace() {
         return ergastRaceRepository.findByRound(6);
+    }
+
+    @Override
+    public List<Race> findByCircuitId(String circuitId) {
+        return ergastRaceRepository.findByCircuitId(circuitId);
     }
 }

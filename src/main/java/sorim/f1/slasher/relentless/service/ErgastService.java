@@ -8,9 +8,13 @@ public interface ErgastService {
 
     List<Race> fetchCurrentSeason();
 
+    List<Race> fetchSeason(String year);
+
     List<Race> getAllRaces();
 
     void saveRaces(List<Race> races);
 
     Race fetchSingleRace();
+
+    List<Race> findByCircuitId(String circuitId);
 }

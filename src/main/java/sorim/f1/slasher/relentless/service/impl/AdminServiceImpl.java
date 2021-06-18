@@ -10,7 +10,6 @@ import net.fortuna.ical4j.data.CalendarBuilder;
 import net.fortuna.ical4j.model.Calendar;
 import net.fortuna.ical4j.model.PropertyList;
 import net.fortuna.ical4j.model.component.CalendarComponent;
-import net.fortuna.ical4j.util.MapTimeZoneCache;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -58,7 +57,7 @@ public class AdminServiceImpl implements AdminService {
 
     @Override
     public void refreshCalendar() throws Exception {
-      //  System.setProperty("net.fortuna.ical4j.timezone.cache.impl", MapTimeZoneCache.class.getName());
+        //  System.setProperty("net.fortuna.ical4j.timezone.cache.impl", MapTimeZoneCache.class.getName());
         URL url = new URL(CALENDAR_URL);
         Reader r = new InputStreamReader(url.openStream());
         CalendarBuilder builder = new CalendarBuilder();
@@ -93,6 +92,7 @@ public class AdminServiceImpl implements AdminService {
         List<ConstructorStanding> constructorStandings = initializeConstructorStandings();
         return driverStandings;
     }
+
     private List<DriverStanding> initializeDriverStandings() throws IOException {
         List<DriverStanding> driverStandings = new ArrayList<>();
         Document doc = Jsoup.connect(DRIVER_STANDINGS_URL).get();
@@ -110,28 +110,29 @@ public class AdminServiceImpl implements AdminService {
 
     private void enrichDriverListWithId(List<DriverStanding> driverStandings) {
         List<Driver> drivers = driverRepository.findAll();
-        for(DriverStanding driverStanding: driverStandings){
+        for (DriverStanding driverStanding : driverStandings) {
             Optional<Driver> foundDriver = drivers.stream().filter(x -> driverStanding.getName().equals(x.getFullName()))
                     .findFirst();
-            if(foundDriver.isPresent()){
+            if (foundDriver.isPresent()) {
                 driverStanding.setId(foundDriver.get().getId());
-            } else{
+            } else {
                 Driver newDriver = Driver.builder().firstName(driverStanding.getFirstName())
                         .lastName(driverStanding.getLastName()).fullName(driverStanding.getName())
                         .build();
-               newDriver = driverRepository.save(newDriver);
+                newDriver = driverRepository.save(newDriver);
                 driverStanding.setId(newDriver.getId());
             }
         }
     }
+
     private void enrichConstructorListWithId(List<ConstructorStanding> constructorStandings) {
         List<Constructor> constructors = constructorRepository.findAll();
-        for(ConstructorStanding constructorStanding: constructorStandings){
+        for (ConstructorStanding constructorStanding : constructorStandings) {
             Optional<Constructor> found = constructors.stream().filter(x -> constructorStanding.getName().equals(x.getName()))
                     .findFirst();
-            if(found.isPresent()){
+            if (found.isPresent()) {
                 constructorStanding.setId(found.get().getId());
-            } else{
+            } else {
                 Constructor newConstructor = Constructor.builder().name(constructorStanding.getName()).build();
                 newConstructor = constructorRepository.save(newConstructor);
                 constructorStanding.setId(newConstructor.getId());
@@ -162,7 +163,7 @@ public class AdminServiceImpl implements AdminService {
         SportSurge sportSurge = new ObjectMapper().readValue(response.getContentAsString(), SportSurge.class);
         List<SportSurgeEvent> events = sportSurge.getEvents();
         List<SportSurgeStream> streams = new ArrayList<>();
-        for(SportSurgeEvent event: events){
+        for (SportSurgeEvent event : events) {
             page = client.getPage(SPORTSURGE_STREAMS + event.getId());
             response = page.getWebResponse();
             sportSurge = new ObjectMapper().readValue(response.getContentAsString(), SportSurge.class);
@@ -187,6 +188,7 @@ public class AdminServiceImpl implements AdminService {
         driverStanding.setCar(links.get(1).wholeText());
         return driverStanding;
     }
+
     private ConstructorStanding createNewConstructorStandingFromRow(Element row) {
         Elements tColumns = row.select("td");
         ConstructorStanding constructorStanding = new ConstructorStanding();
