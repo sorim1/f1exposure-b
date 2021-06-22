@@ -1,11 +1,9 @@
 package sorim.f1.slasher.relentless.service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import sorim.f1.slasher.relentless.model.FrontendGraphWeatherData;
-import sorim.f1.slasher.relentless.model.LiveTimingData;
-import sorim.f1.slasher.relentless.model.WeatherData;
-
-import java.util.List;
+import sorim.f1.slasher.relentless.model.livetiming.LiveTimingData;
+import sorim.f1.slasher.relentless.model.livetiming.RaceAnalysis;
+import sorim.f1.slasher.relentless.model.livetiming.WeatherData;
 
 public interface LiveTimingService {
 
@@ -17,5 +15,6 @@ public interface LiveTimingService {
 
     WeatherData getWeather() throws JsonProcessingException;
 
-    List<FrontendGraphWeatherData> getWeatherThroughYears(String circuitId) throws JsonProcessingException, Exception;
+    RaceAnalysis getRaceAnalysis() throws JsonProcessingException, Exception;
+
 }

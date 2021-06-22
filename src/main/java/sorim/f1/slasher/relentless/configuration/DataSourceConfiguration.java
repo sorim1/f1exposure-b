@@ -22,19 +22,6 @@ import java.util.Properties;
 public class DataSourceConfiguration {
 
 
-//    @Bean(name = "profileDpsManagerFactory")
-//    public LocalContainerEntityManagerFactoryBean profileDpsManagerFactory() {
-//        LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
-//        em.setDataSource(profileDpsDataSource());
-//        em.setPackagesToScan(new String[] {"hr.ht.hal.dps.pf.db.adapter.entities"});
-//        JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
-//        em.setJpaVendorAdapter(vendorAdapter);
-//        em.setJpaProperties(additionalJpaProperties());
-//        em.setPersistenceUnitName("profileDps");
-//        em.setPackagesToScan("hr.ht.hal.dps.pf.db.adapter.entities");
-//        return em;
-//    }
-
     public static void setLiquibaseProperties(SpringLiquibase liquibase, DataSource dataSource, LiquibaseProperties properties) {
         liquibase.setDataSource(dataSource);
         liquibase.setChangeLog(properties.getChangeLog());
@@ -57,7 +44,7 @@ public class DataSourceConfiguration {
 
     @Bean
     @ConfigurationProperties(prefix = "spring.liquibase.datasource.f1-exposure")
-    public LiquibaseProperties consolidatedLiquibaseProperties() {
+    public LiquibaseProperties liquibaseProperties() {
         return new LiquibaseProperties();
     }
 

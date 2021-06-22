@@ -1,4 +1,4 @@
-package sorim.f1.slasher.relentless.model;
+package sorim.f1.slasher.relentless.model.livetiming;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -20,12 +20,16 @@ public class FrontendGraphWeatherData {
     public List<Double> yWindSpeed = new ArrayList<>();
     public List<Double> yHumidity = new ArrayList<>();
     public List<Double> yPressure = new ArrayList<>();
-    public List<Double> yWindDir = new ArrayList<>();
+    public List<Integer> yWindDir = new ArrayList<>();
     public List<Integer> xAxis = new ArrayList<>();
 
 
     public FrontendGraphWeatherData(WeatherData weatherData, Integer year) {
         this.year = year;
+        for (int i = 0; i < 19; i++) {
+            this.yWindDir.add(0);
+        }
+
         for (int i = 0; i < weatherData.getPTrack().size(); i++) {
             if (i % 2 == 0) {
                 int minute = (int) Math.round(weatherData.getPTrack().get(i) / 60);
@@ -37,9 +41,14 @@ public class FrontendGraphWeatherData {
                 yWindSpeed.add(weatherData.getPWindSpeed().get(i));
                 yHumidity.add(weatherData.getPHumidity().get(i));
                 yPressure.add(weatherData.getPPressure().get(i));
-                yWindDir.add(weatherData.getPWindDir().get(i));
+                int direction = Math.toIntExact(Math.round(weatherData.getPWindDir().get(i) / 20.0));
+                yWindDir.set(direction,
+                        yWindDir.get(direction) + 1);
             }
         }
+        yWindDir.set(0,
+                yWindDir.get(0) + yWindDir.get(18));
+        yWindDir.remove(18);
     }
 
 }

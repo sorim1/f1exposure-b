@@ -7,12 +7,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import sorim.f1.slasher.relentless.model.FrontendGraphWeatherData;
-import sorim.f1.slasher.relentless.model.LiveTimingData;
-import sorim.f1.slasher.relentless.model.WeatherData;
+import sorim.f1.slasher.relentless.model.livetiming.FrontendGraphWeatherData;
+import sorim.f1.slasher.relentless.model.livetiming.LiveTimingData;
+import sorim.f1.slasher.relentless.model.livetiming.RaceAnalysis;
+import sorim.f1.slasher.relentless.model.livetiming.WeatherData;
 import sorim.f1.slasher.relentless.service.LiveTimingService;
-
-import java.util.List;
 
 @RestController
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
@@ -47,9 +46,8 @@ public class LiveTimingController {
         return new FrontendGraphWeatherData(weatherData, null);
     }
 
-    @GetMapping("/getWeatherThroughYears/{circuitId}")
-    List<FrontendGraphWeatherData> getWeatherThroughYears(@PathVariable("circuitId") String circuitId) throws Exception {
-        return service.getWeatherThroughYears(circuitId);
-
+    @GetMapping("/getRaceAnalysis")
+    RaceAnalysis getRaceAnalysis() throws Exception {
+        return service.getRaceAnalysis();
     }
 }

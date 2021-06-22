@@ -14,7 +14,7 @@ public interface ErgastService {
 
     void saveRaces(List<Race> races);
 
-    Race fetchSingleRace();
+    Race fetchLatestRace();
 
     List<Race> findByCircuitId(String circuitId);
 }

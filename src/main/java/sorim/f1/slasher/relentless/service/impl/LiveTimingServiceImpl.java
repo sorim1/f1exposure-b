@@ -10,18 +10,18 @@ import org.springframework.web.client.RestTemplate;
 import sorim.f1.slasher.relentless.configuration.MainProperties;
 import sorim.f1.slasher.relentless.entities.F1Calendar;
 import sorim.f1.slasher.relentless.entities.ergast.Race;
-import sorim.f1.slasher.relentless.model.FrontendGraphWeatherData;
-import sorim.f1.slasher.relentless.model.LiveTimingData;
-import sorim.f1.slasher.relentless.model.WeatherData;
+import sorim.f1.slasher.relentless.model.livetiming.*;
 import sorim.f1.slasher.relentless.repository.CalendarRepository;
 import sorim.f1.slasher.relentless.service.ErgastService;
 import sorim.f1.slasher.relentless.service.LiveTimingService;
+import sorim.f1.slasher.relentless.util.MainUtility;
 
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicReference;
 
 @Slf4j
 @Service
@@ -68,7 +68,7 @@ public class LiveTimingServiceImpl implements LiveTimingService {
 
     @Override
     public LiveTimingData processSingleRace() throws JsonProcessingException {
-        Race race = service.fetchSingleRace();
+        Race race = service.fetchLatestRace();
         ObjectMapper mapper = new ObjectMapper();
         LiveTimingData response = mapper.readValue(race.getLiveTiming(), LiveTimingData.class);
         return response;
@@ -80,21 +80,37 @@ public class LiveTimingServiceImpl implements LiveTimingService {
     }
 
     @Override
-    public List<FrontendGraphWeatherData> getWeatherThroughYears(String circuitId) throws Exception {
+    public RaceAnalysis getRaceAnalysis() throws Exception {
+        ObjectMapper mapper = new ObjectMapper();
+        String circuitId = service.fetchLatestRace().getCircuitId();
         List<Race> races = service.findByCircuitId(circuitId);
-        List<FrontendGraphWeatherData> output = new ArrayList<>();
+        List<FrontendGraphWeatherData> weatherChartData = new ArrayList<>();
+        AtomicReference<Boolean> zeroBoolean = new AtomicReference<>(true);
+        AtomicReference<FrontendGraphScoringData> scoringData = new AtomicReference<>();;
+        AtomicReference<FrontendGraphLapPosData> lapPosData = new AtomicReference<>();;
+        AtomicReference<List<Driver>> drivers = new AtomicReference<>();;
         races.forEach(race -> {
-            ObjectMapper mapper = new ObjectMapper();
             try {
                 LiveTimingData response = mapper.readValue(race.getLiveTiming(), LiveTimingData.class);
-                WeatherData weatherData = response.getWeather().getGraph().getData();
-                FrontendGraphWeatherData row = new FrontendGraphWeatherData(weatherData, Integer.valueOf(race.getSeason()));
-                output.add(row);
+                FrontendGraphWeatherData weatherRow = new FrontendGraphWeatherData(response.getWeather().getGraph().getData(), Integer.valueOf(race.getSeason()));
+                weatherChartData.add(weatherRow);
+                if(zeroBoolean.get()){
+                    drivers.set(response.getInit().getData().getDrivers());
+                    List<String> driverCodes =MainUtility.extractDriverCodesOrdered(drivers.get());
+                    scoringData.set(new FrontendGraphScoringData(response.getScores().getGraph(), Integer.valueOf(race.getSeason()), driverCodes));
+                    lapPosData.set(new FrontendGraphLapPosData(response.getLapPos().getGraph(), driverCodes));
+                    zeroBoolean.set(false);
+                }
             } catch (JsonProcessingException e) {
                 e.printStackTrace();
             }
         });
-        return output;
+                return RaceAnalysis.builder()
+                .weatherChartData(weatherChartData)
+                .scoringChartData(scoringData.get())
+                .lapPosChartData(lapPosData.get())
+                .driverData(drivers.get())
+                .title(races.get(0).getRaceName()).build();
     }
 
     private void getDataUrl() {

@@ -1,12 +1,9 @@
-package sorim.f1.slasher.relentless.model;
+package sorim.f1.slasher.relentless.model.livetiming;
 
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.HashMap;
 import java.util.List;
@@ -35,11 +32,6 @@ public class LiveTimingData {
     public Integer timezoneOffset;
 }
 
-
-class InitData {
-    @JsonProperty("Drivers")
-    public List<Driver> drivers;
-}
 
 class RawData {
     private Map<String, Object> dataFields = new HashMap<>();
@@ -79,50 +71,6 @@ class ScoresGraph {
     public List<String> trackStatus;
 }
 
-class LapPosGraph {
-    public String xtitle;
-    public String ytitle;
-    public String ztitle;
-    public RawData data;
-    @JsonProperty("TrackStatus")
-    public List<String> trackStatus;
-}
-
-class Scores {
-    public ScoresGraph graph;
-}
-
-class LapPos {
-    public LapPosGraph graph;
-}
-
-class Driver {
-    @JsonProperty("Name")
-    public String name;
-    @JsonProperty("Initials")
-    public String initials;
-    @JsonProperty("FullName")
-    public String fullName;
-    @JsonProperty("FirstName")
-    public String firstName;
-    @JsonProperty("LastName")
-    public String lastName;
-    @JsonProperty("Color")
-    public String color;
-    @JsonProperty("Team")
-    public String team;
-    @JsonProperty("Num")
-    public String num;
-}
-
-class Init {
-    public InitData data;
-    public Integer seq;
-    @JsonProperty("T")
-    public long t;
-    @JsonProperty("TY")
-    public String tY;
-}
 
 class DR {
     @JsonProperty("B")
@@ -145,15 +93,6 @@ class DR {
     public List<Integer> tI;
 }
 
-
-class Best {
-    public RawData data;
-    public Integer seq;
-    @JsonProperty("T")
-    public long t;
-    @JsonProperty("TY")
-    public String tY;
-}
 
 class Opt {
     public RawData data;

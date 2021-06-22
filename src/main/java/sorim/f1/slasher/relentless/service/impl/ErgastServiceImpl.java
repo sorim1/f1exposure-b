@@ -54,12 +54,12 @@ public class ErgastServiceImpl implements ErgastService {
     }
 
     @Override
-    public Race fetchSingleRace() {
-        return ergastRaceRepository.findByRound(6);
+    public Race fetchLatestRace() {
+        return ergastRaceRepository.findFirstByCircuitIdNotNullOrderByDateDesc();
     }
 
     @Override
     public List<Race> findByCircuitId(String circuitId) {
-        return ergastRaceRepository.findByCircuitId(circuitId);
+        return ergastRaceRepository.findByCircuitIdOrderBySeasonDesc(circuitId);
     }
 }
