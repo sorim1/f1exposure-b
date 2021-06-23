@@ -9,6 +9,8 @@ import java.util.concurrent.atomic.AtomicReference;
 @Slf4j
 public class MainUtility {
 
+    public static Map<String, String> driverMap = new HashMap<>();
+
     public static List<String> extractDriverCodes(Set<String> keySet) {
         List<String> response = new ArrayList<>();
         List<String> list = new ArrayList<>(keySet);
@@ -19,11 +21,17 @@ public class MainUtility {
     }
 
     public static List<String> extractDriverCodesOrdered(List<Driver> drivers) {
+        driverMap = new HashMap<>();
         List<String> response = new ArrayList<>();
         drivers.forEach(driver -> {
             response.add(driver.initials);
+            driverMap.put(driver.initials, driver.fullName);
         });
         return response;
+    }
+
+    public static String getDriverNameFromCode(String code) {
+        return driverMap.get(code);
     }
 
     public static List<Integer> orderDriverCodes(List<String> driverCodes, List<String> orderedDriverCodes) {

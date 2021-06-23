@@ -16,5 +16,6 @@ public class RaceAnalysis {
     List<FrontendGraphWeatherData> weatherChartData;
     FrontendGraphScoringData scoringChartData;
     FrontendGraphLapPosData lapPosChartData;
+    FrontendGraphLeaderboardData leaderboardData;
     List<Driver> driverData;
 }

@@ -7,10 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import sorim.f1.slasher.relentless.util.MainUtility;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
 @Data
@@ -22,7 +19,7 @@ public class FrontendGraphLapPosData {
     public List<String> driverCodes = new ArrayList<>();
     public List<LapPosition> lapPositions = new ArrayList<>();
 
-    public FrontendGraphLapPosData(LapPosGraph graph, List<String> driverCodes) {
+    public FrontendGraphLapPosData(LapPosGraph graph, RawData xtraData, List<String> driverCodes) {
         Map<String, Object> map = graph.data.getDataFields();
         this.driverCodes = driverCodes;
         List<String> driverCodesDisorder = MainUtility.extractDriverCodes(map.keySet());
@@ -32,13 +29,34 @@ public class FrontendGraphLapPosData {
         map.forEach((ka, v) -> {
             List<Integer> laps = (List<Integer>) v;
             for (int i = laps.size()-2; i >= 0; i -= 2) {
-          //  for (int i = 0; i<laps.size()/2; i ++) {
                 laps.remove(i);
             }
-            lpArray[order.get(driverCounter.get())] =new LapPosition(laps);
+            lpArray[order.get(driverCounter.get())] = new LapPosition(laps, new ArrayList<>());
             driverCounter.getAndIncrement();
         });
+
+        List<LinkedHashMap> dr = (List<LinkedHashMap>) xtraData.getDataField("DR");
+        driverCounter.set(0);
+        dr.forEach(row ->{
+            List<Integer> coreData = (List<Integer>) row.get("TI");
+            for(int i=0;i<coreData.size();i=i+3){
+                lpArray[(driverCounter.get())].getTyres()
+                        .add(new Tyre(coreData.get(i), coreData.get(i+1)));
+            }
+            driverCounter.incrementAndGet();
+        });
+        stackTheTyres(Arrays.asList(lpArray));
         lapPositions.addAll(Arrays.asList(lpArray));
 
+    }
+
+    private void stackTheTyres(List<LapPosition> lapPositions) {
+        int maximumPits = 0;
+        lapPositions.forEach(lap ->{
+            AtomicInteger driverCounter = new AtomicInteger();
+            lap.getTyres().forEach(tyre ->{
+                driverCounter.getAndIncrement();
+            });
+        });
     }
 }

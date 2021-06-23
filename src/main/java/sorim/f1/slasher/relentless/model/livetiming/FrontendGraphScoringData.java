@@ -39,16 +39,4 @@ public class FrontendGraphScoringData {
         this.performance = MainUtility.extractDataFields(scoresGraph.performance.getDataFields(), order);
         this.throttle = MainUtility.extractDataFields(scoresGraph.throttle.getDataFields(), order);
     }
-
-//    private List<Integer> extractDataFields(Map<String, Object> dataFields, List<Integer> order) {
-//        List<Integer> output = new ArrayList<>();
-//        AtomicReference<Integer> counter = new AtomicReference<>(0);
-//        dataFields.values().forEach(row -> {
-//            List<Integer> list = (List<Integer>) row;
-//            output.add(order.get(counter.get()), list.get(1));
-//            counter.set(counter.get() + 1);
-//        });
-//        return output;
-//    }
-
 }

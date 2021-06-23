@@ -86,9 +86,10 @@ public class LiveTimingServiceImpl implements LiveTimingService {
         List<Race> races = service.findByCircuitId(circuitId);
         List<FrontendGraphWeatherData> weatherChartData = new ArrayList<>();
         AtomicReference<Boolean> zeroBoolean = new AtomicReference<>(true);
-        AtomicReference<FrontendGraphScoringData> scoringData = new AtomicReference<>();;
-        AtomicReference<FrontendGraphLapPosData> lapPosData = new AtomicReference<>();;
-        AtomicReference<List<Driver>> drivers = new AtomicReference<>();;
+        AtomicReference<FrontendGraphScoringData> scoringData = new AtomicReference<>();
+        AtomicReference<FrontendGraphLapPosData> lapPosData = new AtomicReference<>();
+        AtomicReference<List<Driver>> drivers = new AtomicReference<>();
+        AtomicReference<FrontendGraphLeaderboardData> leaderboards = new AtomicReference<>();
         races.forEach(race -> {
             try {
                 LiveTimingData response = mapper.readValue(race.getLiveTiming(), LiveTimingData.class);
@@ -98,7 +99,8 @@ public class LiveTimingServiceImpl implements LiveTimingService {
                     drivers.set(response.getInit().getData().getDrivers());
                     List<String> driverCodes =MainUtility.extractDriverCodesOrdered(drivers.get());
                     scoringData.set(new FrontendGraphScoringData(response.getScores().getGraph(), Integer.valueOf(race.getSeason()), driverCodes));
-                    lapPosData.set(new FrontendGraphLapPosData(response.getLapPos().getGraph(), driverCodes));
+                    leaderboards.set(new FrontendGraphLeaderboardData(response.getFree().data, response.getBest().data));
+                    lapPosData.set(new FrontendGraphLapPosData(response.getLapPos().getGraph(), response.getXtra().data, driverCodes));
                     zeroBoolean.set(false);
                 }
             } catch (JsonProcessingException e) {
@@ -110,7 +112,8 @@ public class LiveTimingServiceImpl implements LiveTimingService {
                 .scoringChartData(scoringData.get())
                 .lapPosChartData(lapPosData.get())
                 .driverData(drivers.get())
-                .title(races.get(0).getRaceName()).build();
+                .leaderboardData(leaderboards.get())
+                .title(leaderboards.get().title).build();
     }
 
     private void getDataUrl() {

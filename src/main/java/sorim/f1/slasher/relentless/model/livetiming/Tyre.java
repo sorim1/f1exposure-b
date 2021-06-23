@@ -5,15 +5,14 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class LapPosition {
-    public List<Integer> positions;
-    public List<Tyre> tyres;
+public class Tyre {
+    public Integer type;
+    public Integer duration;
 
 }

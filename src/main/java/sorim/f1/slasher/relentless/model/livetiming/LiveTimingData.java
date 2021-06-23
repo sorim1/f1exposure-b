@@ -112,24 +112,6 @@ class Sq {
     public String tY;
 }
 
-class Free {
-    public RawData data;
-    public Integer seq;
-    @JsonProperty("T")
-    public long t;
-    @JsonProperty("TY")
-    public String tY;
-}
-
-class Xtra {
-    public RawData data;
-    public Integer seq;
-    @JsonProperty("T")
-    public long t;
-    @JsonProperty("TY")
-    public String tY;
-}
-
 class Commentary {
     public RawData data;
     public Integer seq;
