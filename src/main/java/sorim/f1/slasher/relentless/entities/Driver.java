@@ -16,10 +16,7 @@ import javax.persistence.*;
 public class Driver {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(columnDefinition = "serial")
-    private Integer id;
-
+    private String code;
     private String firstName;
     private String lastName;
     private String fullName;

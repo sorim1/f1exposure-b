@@ -45,18 +45,8 @@ public class FrontendGraphLapPosData {
             }
             driverCounter.incrementAndGet();
         });
-        stackTheTyres(Arrays.asList(lpArray));
         lapPositions.addAll(Arrays.asList(lpArray));
 
     }
 
-    private void stackTheTyres(List<LapPosition> lapPositions) {
-        int maximumPits = 0;
-        lapPositions.forEach(lap ->{
-            AtomicInteger driverCounter = new AtomicInteger();
-            lap.getTyres().forEach(tyre ->{
-                driverCounter.getAndIncrement();
-            });
-        });
-    }
 }

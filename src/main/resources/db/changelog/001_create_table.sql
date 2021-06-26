@@ -7,11 +7,11 @@ CREATE TABLE EXPOSED_VOTE (
 CREATE TABLE EXPOSED (
      id  SERIAL PRIMARY KEY,
      race_id numeric,
-     driver_id numeric,
+     driver_code text,
      counter numeric
 );
 CREATE TABLE DRIVERS (
-      id  SERIAL PRIMARY KEY,
+      code text,
       first_name text,
       last_name text,
       full_name text
@@ -64,3 +64,10 @@ CREATE TABLE SS_STREAM (
    url text
 );
 
+CREATE TABLE COMMENTS (
+  id  SERIAL PRIMARY KEY,
+  page numeric,
+  nickname text,
+  comment text,
+  timestamp TIMESTAMP
+);

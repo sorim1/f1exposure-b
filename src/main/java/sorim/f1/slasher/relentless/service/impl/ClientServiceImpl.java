@@ -17,10 +17,7 @@ import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Slf4j
 @Service
@@ -35,13 +32,18 @@ public class ClientServiceImpl implements ClientService {
     private final ConstructorStandingsRepository constructorStandingsRepository;
     private final DriverRepository driverRepository;
     private final SportSurgeEventRepository sportSurgeEventRepository;
+    private final F1CommentRepository f1CommentRepository;
+
 
     @Override
     public Boolean exposeDrivers(String[] exposedList, String ipAddress) {
         boolean alreadyExists = exposedVoteRepository.existsExposedVoteByIpAddress(ipAddress);
         exposedVoteRepository.save(ExposedVote.builder().drivers(exposedList).ipAddress(ipAddress).build());
         for (String s : exposedList) {
-            exposedRepository.incrementExposed(raceId, Integer.valueOf(s));
+            Integer counter = exposedRepository.incrementExposed(raceId, s);
+            if(counter==0){
+                exposedRepository.saveExposureData(raceId, s);
+            }
         }
         return !alreadyExists;
     }
@@ -63,25 +65,24 @@ public class ClientServiceImpl implements ClientService {
 
     @Override
     public ExposedChart getExposedChartData() {
-        List<Integer> drivers = new ArrayList<>();
+        List<String> drivers = new ArrayList<>();
         List<String> driverNames = new ArrayList<>();
         List<Integer> results = new ArrayList<>();
 
         List<Exposed> list = exposedRepository.findByRaceIdOrderByCounterDesc(raceId);
         list.stream().forEach((exposed) -> {
-            drivers.add(exposed.getDriver().getId());
+            drivers.add(exposed.getDriver().getCode());
             driverNames.add(exposed.getDriver().getLastName());
             results.add(exposed.getCounter());
         });
         return ExposedChart.builder()
-                .drivers(drivers.toArray(new Integer[drivers.size()]))
+                .drivers(drivers.toArray(new String[drivers.size()]))
                 .driverNames(driverNames.toArray(new String[driverNames.size()]))
                 .results(results.toArray(new Integer[results.size()])).build();
     }
 
     @Override
     public CalendarData getCountdownData() {
-        // System.setProperty("net.fortuna.ical4j.timezone.cache.impl", MapTimeZoneCache.class.getName());
         ZonedDateTime gmtZoned = ZonedDateTime.now(ZoneId.of("Europe/London"));
         LocalDateTime gmtDateTime = gmtZoned.toLocalDateTime();
         F1Calendar f1calendar = calendarRepository.findFirstByRaceAfterOrderByRace(gmtDateTime);
@@ -115,6 +116,18 @@ public class ClientServiceImpl implements ClientService {
     @Override
     public List<SportSurgeEvent> getSportSurge() {
         return sportSurgeEventRepository.findAllByOrderByIdDesc();
+    }
+
+    @Override
+    public List<F1Comment> postComment(F1Comment comment) {
+        comment.setTimestamp(new Date());
+        f1CommentRepository.save(comment);
+        return f1CommentRepository.findFirst30ByPageOrderByTimestampDesc(comment.getPage());
+    }
+
+    @Override
+    public List<F1Comment> getComments(String page) {
+        return f1CommentRepository.findFirst30ByPageOrderByTimestampDesc(Integer.valueOf(page));
     }
 
     private Map<String, Integer> getRemainingTime(LocalDateTime gmtDateTime, F1Calendar f1calendar) {

@@ -18,10 +18,9 @@ import javax.persistence.Transient;
 @Builder
 public class DriverStanding {
 
-    @Id
-    private Integer id;
     private Integer position;
     private String name;
+    @Id
     private String code;
     private String nationality;
     private String car;

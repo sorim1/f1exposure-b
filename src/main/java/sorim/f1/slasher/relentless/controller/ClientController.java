@@ -3,10 +3,7 @@ package sorim.f1.slasher.relentless.controller;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import sorim.f1.slasher.relentless.entities.ConstructorStanding;
-import sorim.f1.slasher.relentless.entities.Driver;
-import sorim.f1.slasher.relentless.entities.DriverStanding;
-import sorim.f1.slasher.relentless.entities.SportSurgeEvent;
+import sorim.f1.slasher.relentless.entities.*;
 import sorim.f1.slasher.relentless.model.AllStandings;
 import sorim.f1.slasher.relentless.model.CalendarData;
 import sorim.f1.slasher.relentless.model.ExposedChart;
@@ -68,5 +65,16 @@ public class ClientController {
     List<SportSurgeEvent> getSportSurge(@RequestHeader String authorization) throws Exception {
         service.validateHeader(authorization);
         return service.getSportSurge();
+    }
+
+    @PostMapping("/postComment")
+    List<F1Comment> postComment(@RequestHeader String authorization, @RequestBody F1Comment comment) throws Exception {
+        service.validateHeader(authorization);
+        return service.postComment(comment);
+    }
+
+    @GetMapping("/getComments/{page}")
+    List<F1Comment> getComments(@PathVariable("page") String page) {
+        return service.getComments(page);
     }
 }

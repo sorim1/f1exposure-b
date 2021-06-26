@@ -53,11 +53,11 @@ public class AdminServiceImpl implements AdminService {
     public void initialize() throws Exception {
         refreshCalendar();
         initializeStandings();
+        fetchSportSurgeLinks();
     }
 
     @Override
     public void refreshCalendar() throws Exception {
-        //  System.setProperty("net.fortuna.ical4j.timezone.cache.impl", MapTimeZoneCache.class.getName());
         URL url = new URL(CALENDAR_URL);
         Reader r = new InputStreamReader(url.openStream());
         CalendarBuilder builder = new CalendarBuilder();
@@ -114,13 +114,11 @@ public class AdminServiceImpl implements AdminService {
             Optional<Driver> foundDriver = drivers.stream().filter(x -> driverStanding.getName().equals(x.getFullName()))
                     .findFirst();
             if (foundDriver.isPresent()) {
-                driverStanding.setId(foundDriver.get().getId());
             } else {
                 Driver newDriver = Driver.builder().firstName(driverStanding.getFirstName())
                         .lastName(driverStanding.getLastName()).fullName(driverStanding.getName())
-                        .build();
+                        .code(driverStanding.getCode()).build();
                 newDriver = driverRepository.save(newDriver);
-                driverStanding.setId(newDriver.getId());
             }
         }
     }

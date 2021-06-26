@@ -32,7 +32,7 @@ INSERT INTO public.constructors ("name") VALUES
 ('Williams Mercedes'),
 ('Haas Ferrari');
 INSERT INTO exposed
-(race_id, driver_id, counter)
+(race_id, driver_code, counter)
 VALUES(1, 1, 0),
       (1, 2, 0),
       (1, 3, 0),
