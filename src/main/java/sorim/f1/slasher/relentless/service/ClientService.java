@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 public interface ClientService {
-    Boolean exposeDrivers(String[] exposedList, String ipAddress);
+    Boolean exposeDrivers(String[] exposedList, String ipAddress) throws Exception;
 
     void validateHeader(String authorization) throws Exception;
 

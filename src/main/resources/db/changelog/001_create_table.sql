@@ -2,11 +2,12 @@ CREATE TABLE EXPOSED_VOTE (
 	id  SERIAL PRIMARY KEY,
 	drivers text[],
     ip_address varchar(40),
+    race_id varchar(60),
     insert_timestamp timestamp DEFAULT CURRENT_TIMESTAMP
 );
 CREATE TABLE EXPOSED (
      id  SERIAL PRIMARY KEY,
-     race_id numeric,
+     race_id text,
      driver_code text,
      counter numeric
 );

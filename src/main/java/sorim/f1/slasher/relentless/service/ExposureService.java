@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 public interface ExposureService {
-    Boolean exposeDrivers(String[] exposedList, String ipAddress);
+    Boolean exposeDrivers(String[] exposedList, String ipAddress) throws Exception;
 
     ExposedChart getExposedChartData();
 

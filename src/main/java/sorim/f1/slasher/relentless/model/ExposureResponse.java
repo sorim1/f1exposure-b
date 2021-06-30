@@ -18,4 +18,5 @@ public class ExposureResponse {
     private List<Driver> drivers;
     private ExposureStatusEnum status;
     private String title;
+    private String year;
 }

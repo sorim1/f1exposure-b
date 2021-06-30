@@ -39,5 +39,5 @@ public class ExposedVote {
 
     private String ipAddress;
 
-
+    private String raceId;
 }

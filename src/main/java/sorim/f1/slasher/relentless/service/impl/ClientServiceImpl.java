@@ -35,7 +35,7 @@ public class ClientServiceImpl implements ClientService {
     private final ExposureService exposureService;
 
     @Override
-    public Boolean exposeDrivers(String[] exposedList, String ipAddress) {
+    public Boolean exposeDrivers(String[] exposedList, String ipAddress) throws Exception {
         return exposureService.exposeDrivers(exposedList, ipAddress);
     }
 
@@ -48,14 +48,15 @@ public class ClientServiceImpl implements ClientService {
 
     @Override
     public String validateIp(HttpServletRequest request) {
-//        log.info(request.getRemoteAddr());
-//        log.info(request.getRequestURI());
-//        log.info(request.getLocalAddr());
+        log.info(request.getRemoteAddr());
+        log.info(request.getRequestURI());
+        log.info(request.getLocalAddr());
         return request.getRemoteAddr();
     }
 
     @Override
     public ExposedChart getExposedChartData() {
+
         return exposureService.getExposedChartData();
     }
 

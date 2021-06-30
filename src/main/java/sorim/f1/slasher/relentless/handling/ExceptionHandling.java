@@ -31,10 +31,14 @@ public class ExceptionHandling {
         throw new Exception(info);
     }
 
-    public void raiseException(String code, String message) throws Exception {
+    public static void raiseException(String code, String message) throws Exception {
         log.error(message);
         repository.save(Log.builder().code(code).message(message).build());
         throw new Exception(message);
     }
 
+    public static void logException(String code, String message) throws Exception {
+        log.error(message);
+        repository.save(Log.builder().code(code).message(message).build());
+    }
 }

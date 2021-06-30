@@ -13,4 +13,6 @@ import javax.transaction.Transactional;
 public interface ExposedVoteRepository extends CrudRepository<ExposedVote, String> {
 
     boolean existsExposedVoteByIpAddress(String ipAddress);
+
+    boolean existsExposedVoteByIpAddressAndRaceId(String ipAddress, String raceId);
 }
