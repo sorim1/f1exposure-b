@@ -1,12 +1,11 @@
 package sorim.f1.slasher.relentless.controller;
 
+import com.github.instagram4j.instagram4j.exceptions.IGLoginException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import sorim.f1.slasher.relentless.entities.*;
-import sorim.f1.slasher.relentless.model.AllStandings;
-import sorim.f1.slasher.relentless.model.CalendarData;
-import sorim.f1.slasher.relentless.model.ExposedChart;
+import sorim.f1.slasher.relentless.model.*;
 import sorim.f1.slasher.relentless.service.ClientService;
 
 import javax.servlet.http.HttpServletRequest;
@@ -19,7 +18,7 @@ public class ClientController {
     private final ClientService service;
 
     @GetMapping("/getExposureDriverList")
-    List<Driver> getExposureDriverList(@RequestHeader String authorization) throws Exception {
+    ExposureResponse getExposureDriverList(@RequestHeader String authorization) throws Exception {
         service.validateHeader(authorization);
         return service.getExposureDriverList();
     }
@@ -76,5 +75,15 @@ public class ClientController {
     @GetMapping("/getComments/{page}")
     List<F1Comment> getComments(@PathVariable("page") String page) {
         return service.getComments(page);
+    }
+
+    @GetMapping("/fetchInstagramFeed")
+    List<InstagramPost> fetchInstagramFeed() throws IGLoginException {
+        return service.fetchInstagramFeed();
+    }
+
+    @GetMapping("/getInstagramFeed")
+    TripleInstagramFeed getInstagramFeed() throws IGLoginException {
+        return service.getInstagramFeed();
     }
 }

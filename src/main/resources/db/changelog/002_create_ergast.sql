@@ -11,3 +11,18 @@ CREATE TABLE ERGAST_CURRENT_SEASON_RACES (
        circuit_id text
 );
 
+CREATE TABLE INSTAGRAM_POSTS (
+     code text,
+     device_timestamp numeric,
+     likes numeric,
+     comments text
+);
+
+CREATE TABLE log_table (
+      id  SERIAL PRIMARY KEY,
+      code text,
+      message text,
+      created timestamp(0) DEFAULT CURRENT_TIMESTAMP
+);
+
+

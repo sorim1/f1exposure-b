@@ -1,9 +1,8 @@
 package sorim.f1.slasher.relentless.service;
 
+import com.github.instagram4j.instagram4j.exceptions.IGLoginException;
 import sorim.f1.slasher.relentless.entities.*;
-import sorim.f1.slasher.relentless.model.AllStandings;
-import sorim.f1.slasher.relentless.model.CalendarData;
-import sorim.f1.slasher.relentless.model.ExposedChart;
+import sorim.f1.slasher.relentless.model.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
@@ -23,7 +22,7 @@ public interface ClientService {
 
     List<ConstructorStanding> getConstructorStandings();
 
-    List<Driver> getExposureDriverList();
+    ExposureResponse getExposureDriverList();
 
     AllStandings getStandings();
 
@@ -32,4 +31,8 @@ public interface ClientService {
     List<F1Comment> postComment(F1Comment comment);
 
     List<F1Comment> getComments(String page);
+
+    List<InstagramPost>  fetchInstagramFeed() throws IGLoginException;
+
+    TripleInstagramFeed getInstagramFeed() throws IGLoginException;
 }

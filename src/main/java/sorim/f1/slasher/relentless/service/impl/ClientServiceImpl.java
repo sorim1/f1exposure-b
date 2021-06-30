@@ -1,16 +1,18 @@
 package sorim.f1.slasher.relentless.service.impl;
 
+import com.github.instagram4j.instagram4j.exceptions.IGLoginException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import sorim.f1.slasher.relentless.entities.*;
 import sorim.f1.slasher.relentless.handling.ExceptionHandling;
-import sorim.f1.slasher.relentless.model.AllStandings;
-import sorim.f1.slasher.relentless.model.CalendarData;
-import sorim.f1.slasher.relentless.model.ExposedChart;
+import sorim.f1.slasher.relentless.model.*;
+
 import sorim.f1.slasher.relentless.repository.*;
 import sorim.f1.slasher.relentless.service.ClientService;
+import sorim.f1.slasher.relentless.service.ExposureService;
+import sorim.f1.slasher.relentless.service.InstagramService;
 
 import javax.servlet.http.HttpServletRequest;
 import java.time.Duration;
@@ -24,28 +26,17 @@ import java.util.*;
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class ClientServiceImpl implements ClientService {
 
-    private final static Integer raceId = 1;
-    private final ExposedVoteRepository exposedVoteRepository;
-    private final ExposedRepository exposedRepository;
     private final CalendarRepository calendarRepository;
     private final DriverStandingsRepository driverStandingsRepository;
     private final ConstructorStandingsRepository constructorStandingsRepository;
-    private final DriverRepository driverRepository;
     private final SportSurgeEventRepository sportSurgeEventRepository;
     private final F1CommentRepository f1CommentRepository;
-
+    private final InstagramService instagramService;
+    private final ExposureService exposureService;
 
     @Override
     public Boolean exposeDrivers(String[] exposedList, String ipAddress) {
-        boolean alreadyExists = exposedVoteRepository.existsExposedVoteByIpAddress(ipAddress);
-        exposedVoteRepository.save(ExposedVote.builder().drivers(exposedList).ipAddress(ipAddress).build());
-        for (String s : exposedList) {
-            Integer counter = exposedRepository.incrementExposed(raceId, s);
-            if(counter==0){
-                exposedRepository.saveExposureData(raceId, s);
-            }
-        }
-        return !alreadyExists;
+        return exposureService.exposeDrivers(exposedList, ipAddress);
     }
 
     @Override
@@ -65,20 +56,7 @@ public class ClientServiceImpl implements ClientService {
 
     @Override
     public ExposedChart getExposedChartData() {
-        List<String> drivers = new ArrayList<>();
-        List<String> driverNames = new ArrayList<>();
-        List<Integer> results = new ArrayList<>();
-
-        List<Exposed> list = exposedRepository.findByRaceIdOrderByCounterDesc(raceId);
-        list.stream().forEach((exposed) -> {
-            drivers.add(exposed.getDriver().getCode());
-            driverNames.add(exposed.getDriver().getLastName());
-            results.add(exposed.getCounter());
-        });
-        return ExposedChart.builder()
-                .drivers(drivers.toArray(new String[drivers.size()]))
-                .driverNames(driverNames.toArray(new String[driverNames.size()]))
-                .results(results.toArray(new Integer[results.size()])).build();
+        return exposureService.getExposedChartData();
     }
 
     @Override
@@ -101,9 +79,10 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
-    public List<Driver> getExposureDriverList() {
-        return driverRepository.findAll();
+    public ExposureResponse getExposureDriverList() {
+        return exposureService.getExposureDriverList();
     }
+
 
     @Override
     public AllStandings getStandings() {
@@ -128,6 +107,16 @@ public class ClientServiceImpl implements ClientService {
     @Override
     public List<F1Comment> getComments(String page) {
         return f1CommentRepository.findFirst30ByPageOrderByTimestampDesc(Integer.valueOf(page));
+    }
+
+    @Override
+    public List<InstagramPost> fetchInstagramFeed() throws IGLoginException {
+        return instagramService.fetchInstagramFeed();
+    }
+
+    @Override
+    public TripleInstagramFeed getInstagramFeed() throws IGLoginException {
+        return instagramService.getInstagramFeed();
     }
 
     private Map<String, Integer> getRemainingTime(LocalDateTime gmtDateTime, F1Calendar f1calendar) {
