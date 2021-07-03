@@ -20,4 +20,8 @@ public class MRData {
 
     @JsonProperty("RaceTable")
     private RaceTable raceTable;
+
+    @JsonProperty("StandingsTable")
+    private StandingsTable standingsTable;
+
 }

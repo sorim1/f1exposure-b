@@ -12,7 +12,7 @@ import java.util.List;
 @Transactional
 @EnableJpaAuditing
 public interface ConstructorRepository extends CrudRepository<Constructor, String> {
-
+        //OVO SE NIGDJE NE KORISTI
     List<Constructor> findAll();
 
 }

@@ -41,7 +41,7 @@ public class ExposureServiceImpl implements ExposureService {
     private static LocalDateTime exposureTime;
     private static String title = "Default";
     private static String raceId = "2021-default";
-
+    
     @Override
     public Boolean exposeDrivers(String[] exposedList, String ipAddress) throws Exception {
         boolean alreadyExists = exposedVoteRepository.existsExposedVoteByIpAddressAndRaceId(ipAddress, raceId);
@@ -102,9 +102,13 @@ public class ExposureServiceImpl implements ExposureService {
             title = f1calendar.getLocation();
             raceId = properties.getCurrentYear()+title;
             exposureTime = LocalDateTime.now().plus(duration).plusHours(1);
+            scanForRaceAnalysis();
         }
 
         return true;
+    }
+
+    private void scanForRaceAnalysis() {
     }
 
     @Override

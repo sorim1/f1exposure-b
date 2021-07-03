@@ -1,6 +1,8 @@
 package sorim.f1.slasher.relentless.service;
 
+import sorim.f1.slasher.relentless.entities.DriverStanding;
 import sorim.f1.slasher.relentless.entities.ergast.Race;
+import sorim.f1.slasher.relentless.model.ergast.ErgastResponse;
 
 import java.util.List;
 
@@ -17,4 +19,8 @@ public interface ErgastService {
     Race fetchLatestRace();
 
     List<Race> findByCircuitId(String circuitId);
+
+    ErgastResponse getDriverStandings();
+
+    ErgastResponse getConstructorStandings();
 }

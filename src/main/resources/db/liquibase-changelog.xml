@@ -8,4 +8,7 @@
     <changeSet author="mcom_mdragicevic" id="002_create_ergast">
         <sqlFile path="changelog/002_create_ergast.sql" endDelimiter="/" relativeToChangelogFile="true"/>
     </changeSet>
+    <changeSet author="mcom_mdragicevic" id="002_inserts.sql">
+        <sqlFile path="changelog/002_inserts.sql" endDelimiter="/" relativeToChangelogFile="true"/>
+    </changeSet>
 </databaseChangeLog>

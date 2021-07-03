@@ -31,7 +31,7 @@ public class AdminController {
     }
 
     @GetMapping("/initializeStandings")
-    List<DriverStanding> intializeStandings() throws Exception {
+    Boolean intializeStandings() throws Exception {
         return service.initializeStandings();
     }
 

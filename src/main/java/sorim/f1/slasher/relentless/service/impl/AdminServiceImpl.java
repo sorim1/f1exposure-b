@@ -16,11 +16,15 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import sorim.f1.slasher.relentless.configuration.MainProperties;
 import sorim.f1.slasher.relentless.entities.*;
 import sorim.f1.slasher.relentless.model.SportSurge;
+import sorim.f1.slasher.relentless.model.ergast.ErgastResponse;
 import sorim.f1.slasher.relentless.repository.*;
 import sorim.f1.slasher.relentless.service.AdminService;
+import sorim.f1.slasher.relentless.service.ErgastService;
 
+import javax.annotation.PostConstruct;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Reader;
@@ -35,19 +39,30 @@ import java.util.Optional;
 public class AdminServiceImpl implements AdminService {
 
     private static final String CALENDAR_URL = "https://www.formula1.com/calendar/Formula_1_Official_Calendar.ics";
-    private static final String DRIVER_STANDINGS_URL = "https://www.formula1.com/en/results.html/2021/drivers.html";
-    private static final String CONSTRUCTOR_STANDINGS_URL = "https://www.formula1.com/en/results.html/2021/team.html";
+    private static String DRIVER_STANDINGS_URL = "https://www.formula1.com/en/results.html/2021/drivers.html";
+    private static String CONSTRUCTOR_STANDINGS_URL = "https://www.formula1.com/en/results.html/2021/team.html";
     private static final String SPORTSURGE_GROUP_13 = "https://api.sportsurge.net/events/list?group=13";
     private static final String SPORTSURGE_GROUP = "https://api.sportsurge.net/events/list";
     private static final String SPORTSURGE_STREAMS = "https://api.sportsurge.net/streams/list?event=";
+    private static Integer CURRENT_ROUND;
 
     private final CalendarRepository calendarRepository;
     private final DriverStandingsRepository driverStandingsRepository;
     private final ConstructorStandingsRepository constructorStandingsRepository;
     private final DriverRepository driverRepository;
-    private final ConstructorRepository constructorRepository;
     private final SportSurgeStreamRepository sportSurgeStreamRepository;
     private final SportSurgeEventRepository sportSurgeEventRepository;
+    private final PropertiesRepository propertiesRepository;
+
+    private final ErgastService ergastService;
+    private final MainProperties properties;
+
+    @PostConstruct
+    public void onInit() {
+        DRIVER_STANDINGS_URL = DRIVER_STANDINGS_URL.replace("2021", properties.getCurrentYear().toString());
+        CONSTRUCTOR_STANDINGS_URL = CONSTRUCTOR_STANDINGS_URL.replace("2021", properties.getCurrentYear().toString());
+        CURRENT_ROUND = Integer.valueOf(propertiesRepository.findDistinctFirstByName("round").getValue());
+            }
 
     @Override
     public void initialize() throws Exception {
@@ -87,13 +102,36 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
-    public List<DriverStanding> initializeStandings() throws IOException {
-        List<DriverStanding> driverStandings = initializeDriverStandings();
-        List<ConstructorStanding> constructorStandings = initializeConstructorStandings();
-        return driverStandings;
+    public Boolean initializeStandings() throws IOException {
+        List<DriverStanding> driverStandings = initializeDriverStandingsFromErgast();
+        if(driverStandings== null){
+            log.info("initializeStandings - nista novo");
+            return false;
+        }
+        initializeConstructorStandings();
+        return true;
     }
 
-    private List<DriverStanding> initializeDriverStandings() throws IOException {
+    private List<DriverStanding> initializeDriverStandingsFromErgast() {
+        List<DriverStanding> driverStandings = new ArrayList<>();
+         ErgastResponse response = ergastService.getDriverStandings();
+         if(response.getMrData().getStandingsTable().getStandingsLists().get(0).getRound()!=CURRENT_ROUND){
+             response.getMrData().getStandingsTable().getStandingsLists().get(0).getDriverStandings()
+                     .forEach(ergastStanding -> {
+                         driverStandings.add(new DriverStanding(ergastStanding));
+                     });
+             updateExposureDriverList(driverStandings);
+             driverStandingsRepository.deleteAll();
+             driverStandingsRepository.saveAll(driverStandings);
+             CURRENT_ROUND = response.getMrData().getStandingsTable().getStandingsLists().get(0).getRound();
+             propertiesRepository.updateProperty("round", CURRENT_ROUND.toString());
+             return driverStandings;
+         } else {
+             return null;
+         }
+    }
+
+    private List<DriverStanding> initializeDriverStandingsFromOfficialWebsite() throws IOException {
         List<DriverStanding> driverStandings = new ArrayList<>();
         Document doc = Jsoup.connect(DRIVER_STANDINGS_URL).get();
         Elements tBody = doc.select("tbody");
@@ -102,13 +140,15 @@ public class AdminServiceImpl implements AdminService {
             DriverStanding driverStanding = createNewDriverStandingFromRow(row);
             driverStandings.add(driverStanding);
         });
-        enrichDriverListWithId(driverStandings);
+        updateExposureDriverList(driverStandings);
         driverStandingsRepository.deleteAll();
         driverStandingsRepository.saveAll(driverStandings);
         return driverStandings;
     }
 
-    private void enrichDriverListWithId(List<DriverStanding> driverStandings) {
+
+    private void updateExposureDriverList(List<DriverStanding> driverStandings) {
+        //poveznica između exposure liste i standings liste
         List<Driver> drivers = driverRepository.findAll();
         for (DriverStanding driverStanding : driverStandings) {
             Optional<Driver> foundDriver = drivers.stream().filter(x -> driverStanding.getName().equals(x.getFullName()))
@@ -118,27 +158,24 @@ public class AdminServiceImpl implements AdminService {
                 Driver newDriver = Driver.builder().firstName(driverStanding.getFirstName())
                         .lastName(driverStanding.getLastName()).fullName(driverStanding.getName())
                         .code(driverStanding.getCode()).build();
-                newDriver = driverRepository.save(newDriver);
-            }
-        }
-    }
-
-    private void enrichConstructorListWithId(List<ConstructorStanding> constructorStandings) {
-        List<Constructor> constructors = constructorRepository.findAll();
-        for (ConstructorStanding constructorStanding : constructorStandings) {
-            Optional<Constructor> found = constructors.stream().filter(x -> constructorStanding.getName().equals(x.getName()))
-                    .findFirst();
-            if (found.isPresent()) {
-                constructorStanding.setId(found.get().getId());
-            } else {
-                Constructor newConstructor = Constructor.builder().name(constructorStanding.getName()).build();
-                newConstructor = constructorRepository.save(newConstructor);
-                constructorStanding.setId(newConstructor.getId());
+                driverRepository.save(newDriver);
             }
         }
     }
 
     private List<ConstructorStanding> initializeConstructorStandings() throws IOException {
+
+        List<ConstructorStanding> constructorStandings = new ArrayList<>();
+        ErgastResponse response = ergastService.getConstructorStandings();
+        response.getMrData().getStandingsTable().getStandingsLists().get(0).getConstructorStandings()
+                    .forEach(ergastStanding -> {
+                        constructorStandings.add(new ConstructorStanding(ergastStanding));
+                    });
+        constructorStandingsRepository.deleteAll();
+        constructorStandingsRepository.saveAll(constructorStandings);
+        return constructorStandings;
+    }
+    private List<ConstructorStanding> initializeConstructorStandingsFromOfficialWebsite() throws IOException {
         List<ConstructorStanding> constructorStandings = new ArrayList<>();
         Document doc = Jsoup.connect(CONSTRUCTOR_STANDINGS_URL).get();
         Elements tBody = doc.select("tbody");
@@ -147,7 +184,6 @@ public class AdminServiceImpl implements AdminService {
             ConstructorStanding constructorStanding = createNewConstructorStandingFromRow(row);
             constructorStandings.add(constructorStanding);
         });
-        enrichConstructorListWithId(constructorStandings);
         constructorStandingsRepository.deleteAll();
         constructorStandingsRepository.saveAll(constructorStandings);
         return constructorStandings;

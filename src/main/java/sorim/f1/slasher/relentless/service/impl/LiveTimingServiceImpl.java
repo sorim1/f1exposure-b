@@ -10,6 +10,7 @@ import org.springframework.web.client.RestTemplate;
 import sorim.f1.slasher.relentless.configuration.MainProperties;
 import sorim.f1.slasher.relentless.entities.F1Calendar;
 import sorim.f1.slasher.relentless.entities.ergast.Race;
+import sorim.f1.slasher.relentless.handling.ExceptionHandling;
 import sorim.f1.slasher.relentless.model.livetiming.*;
 import sorim.f1.slasher.relentless.repository.CalendarRepository;
 import sorim.f1.slasher.relentless.service.ErgastService;
@@ -55,12 +56,11 @@ public class LiveTimingServiceImpl implements LiveTimingService {
             try {
                 response = restTemplate
                         .getForObject(liveTimingUrl, String.class, race.getSeason(), grandPrix, raceName);
-                // race.setLiveTiming(response.substring(1));
                 race.setLiveTiming(response.substring(response.indexOf("{")));
                 race.setCircuitId(race.getCircuit().getCircuitId());
             } catch (Exception e) {
-                race.setLiveTiming("ERROR OCCURED: " + e.getMessage());
                 log.error("error1:", e);
+                ExceptionHandling.logException("LIVETIMING_ERROR", e.getMessage());
             }
         });
         service.saveRaces(races);

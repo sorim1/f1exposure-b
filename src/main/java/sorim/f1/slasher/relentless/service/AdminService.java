@@ -10,7 +10,7 @@ public interface AdminService {
 
     void refreshCalendar() throws Exception;
 
-    List<DriverStanding> initializeStandings() throws IOException;
+    Boolean initializeStandings() throws IOException;
 
     void fetchSportSurgeLinks() throws IOException;
 }

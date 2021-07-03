@@ -5,11 +5,13 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+import sorim.f1.slasher.relentless.entities.DriverStanding;
 import sorim.f1.slasher.relentless.entities.ergast.Race;
 import sorim.f1.slasher.relentless.model.ergast.ErgastResponse;
 import sorim.f1.slasher.relentless.repository.ErgastRaceRepository;
 import sorim.f1.slasher.relentless.service.ErgastService;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -20,9 +22,11 @@ import java.util.Map;
 public class ErgastServiceImpl implements ErgastService {
     private final static String CURRENT_SEASON = "http://ergast.com/api/f1/current.json";
     private final static String GET_SEASON = "https://ergast.com/api/f1/{year}.json";
-
+    private final static String ERGAST_URL = "https://ergast.com/api/f1/";
 
     private final ErgastRaceRepository ergastRaceRepository;
+    private RestTemplate restTemplate = new RestTemplate();
+
 
     @Override
     public List<Race> fetchSeason(String year) {
@@ -61,5 +65,18 @@ public class ErgastServiceImpl implements ErgastService {
     @Override
     public List<Race> findByCircuitId(String circuitId) {
         return ergastRaceRepository.findByCircuitIdOrderBySeasonDesc(circuitId);
+    }
+
+    @Override
+    public ErgastResponse getDriverStandings() {
+        return restTemplate
+                .getForObject(ERGAST_URL + "current/driverStandings.json", ErgastResponse.class);
+    }
+
+    @Override
+    public ErgastResponse getConstructorStandings() {
+        return restTemplate
+                .getForObject(ERGAST_URL + "current/constructorStandings.json", ErgastResponse.class);
+
     }
 }
