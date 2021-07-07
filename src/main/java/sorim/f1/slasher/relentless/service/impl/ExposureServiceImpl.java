@@ -5,18 +5,12 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import sorim.f1.slasher.relentless.configuration.MainProperties;
-import sorim.f1.slasher.relentless.entities.Driver;
-import sorim.f1.slasher.relentless.entities.Exposed;
-import sorim.f1.slasher.relentless.entities.ExposedVote;
-import sorim.f1.slasher.relentless.entities.F1Calendar;
+import sorim.f1.slasher.relentless.entities.*;
 import sorim.f1.slasher.relentless.handling.ExceptionHandling;
 import sorim.f1.slasher.relentless.model.ExposedChart;
 import sorim.f1.slasher.relentless.model.ExposureResponse;
 import sorim.f1.slasher.relentless.model.enums.ExposureStatusEnum;
-import sorim.f1.slasher.relentless.repository.CalendarRepository;
-import sorim.f1.slasher.relentless.repository.DriverRepository;
-import sorim.f1.slasher.relentless.repository.ExposedRepository;
-import sorim.f1.slasher.relentless.repository.ExposedVoteRepository;
+import sorim.f1.slasher.relentless.repository.*;
 import sorim.f1.slasher.relentless.service.ExposureService;
 
 import java.time.Duration;
@@ -36,27 +30,29 @@ public class ExposureServiceImpl implements ExposureService {
     private final DriverRepository driverRepository;
     private final CalendarRepository calendarRepository;
     private final MainProperties properties;
+    private final PropertiesRepository propertiesRepository;
     private static boolean exposureToday = false;
     private static boolean exposureNow = false;
     private static LocalDateTime exposureTime;
     private static String title = "Default";
-    private static String raceId = "2021-default";
-    
+    private static Integer currentRound = 0;
+    private static String nextRaceId = "2021-default-next";
     @Override
     public Boolean exposeDrivers(String[] exposedList, String ipAddress) throws Exception {
-        boolean alreadyExists = exposedVoteRepository.existsExposedVoteByIpAddressAndRaceId(ipAddress, raceId);
+        boolean alreadyExists = exposedVoteRepository.existsExposedVoteByIpAddressAndSeasonAndRound(ipAddress, properties.getCurrentYear(), currentRound);
         if(alreadyExists){
             ExceptionHandling.logException("IP_CHEATER", ipAddress);
            // return false;
         }
         exposedVoteRepository.save(ExposedVote.builder().drivers(exposedList)
                 .ipAddress(ipAddress)
-                .raceId(raceId)
+                .season(properties.getCurrentYear())
+                .round(currentRound)
                 .build());
-        for (String s : exposedList) {
-            Integer counter = exposedRepository.incrementExposed(raceId, s);
+        for (String driverCode : exposedList) {
+            Integer counter = exposedRepository.incrementExposed(properties.getCurrentYear(), currentRound, driverCode);
             if(counter==0){
-                exposedRepository.saveExposureData(raceId, s);
+                exposedRepository.saveExposureData(properties.getCurrentYear(), currentRound, driverCode, 1);
             }
         }
         return !alreadyExists;
@@ -67,10 +63,10 @@ public class ExposureServiceImpl implements ExposureService {
         List<String> drivers = new ArrayList<>();
         List<String> driverNames = new ArrayList<>();
         List<Integer> results = new ArrayList<>();
-        List<Exposed> list = exposedRepository.findByRaceIdOrderByCounterDesc(raceId);
+        List<Exposed> list = exposedRepository.findBySeasonAndRoundOrderByCounterDesc(properties.getCurrentYear(), currentRound);
         list.stream().forEach((exposed) -> {
             drivers.add(exposed.getDriver().getCode());
-            driverNames.add(exposed.getDriver().getLastName());
+            driverNames.add(exposed.getDriver().getFullName());
             results.add(exposed.getCounter());
         });
         return ExposedChart.builder()
@@ -96,20 +92,18 @@ public class ExposureServiceImpl implements ExposureService {
         Duration duration = Duration.between(gmtDateTime, f1calendar.getRace());
         if(duration.toDays()>0){
             exposureToday=false;
-            log.info(String.valueOf(exposureToday));
+            log.info("exposureToday: {}", exposureToday);
         } else {
             exposureToday=true;
             title = f1calendar.getLocation();
-            raceId = properties.getCurrentYear()+title;
+            currentRound = Integer.valueOf(propertiesRepository.findDistinctFirstByName("round").getValue())+1;
+            propertiesRepository.updateProperty("round", currentRound.toString());
             exposureTime = LocalDateTime.now().plus(duration).plusHours(1);
-            scanForRaceAnalysis();
         }
 
         return true;
     }
 
-    private void scanForRaceAnalysis() {
-    }
 
     @Override
     public boolean setExposureCloseTime() {
@@ -132,6 +126,13 @@ public class ExposureServiceImpl implements ExposureService {
         }
 
         return false;
+    }
+
+    @Override
+    public void setNextRoundOfExposure(List<DriverStanding> driverStandings, int round) {
+        driverStandings.forEach(standing->{
+            exposedRepository.saveExposureData(properties.getCurrentYear(), currentRound+1, standing.getCode(), 0);
+        });
     }
 
 

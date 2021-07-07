@@ -19,4 +19,6 @@ public interface ExposureService {
     boolean setExposureCloseTime();
 
     boolean exposureOn();
+
+    void setNextRoundOfExposure(List<DriverStanding> driverStandings, int round);
 }

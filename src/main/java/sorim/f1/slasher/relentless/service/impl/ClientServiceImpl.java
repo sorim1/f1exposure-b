@@ -120,6 +120,10 @@ public class ClientServiceImpl implements ClientService {
         return instagramService.getInstagramFeed();
     }
 
+    @Override
+    public TripleInstagramFeed getInstagramFeedPage(Integer page) throws IGLoginException {
+        return instagramService.getInstagramFeedPage(page);
+    }
     private Map<String, Integer> getRemainingTime(LocalDateTime gmtDateTime, F1Calendar f1calendar) {
         Map<String, Integer> output = new HashMap<>();
         Duration duration;

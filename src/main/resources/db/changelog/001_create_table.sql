@@ -2,7 +2,8 @@ CREATE TABLE EXPOSED_VOTE (
 	id  SERIAL PRIMARY KEY,
 	drivers text[],
     ip_address varchar(40),
-    race_id varchar(60),
+    season numeric,
+    round numeric,
     insert_timestamp timestamp DEFAULT CURRENT_TIMESTAMP
 );
 
@@ -12,7 +13,8 @@ CREATE TABLE APP_PROPERTIES (
 );
 CREATE TABLE EXPOSED (
      id  SERIAL PRIMARY KEY,
-     race_id text,
+     season numeric,
+     round numeric,
      driver_code text,
      counter numeric
 );
@@ -29,7 +31,6 @@ CREATE TABLE CONSTRUCTORS (
 );
 
 CREATE TABLE CALENDAR (
-     id  SERIAL PRIMARY KEY,
      race_id numeric,
      practice1 TIMESTAMP,
      practice2 TIMESTAMP,

@@ -14,5 +14,5 @@ public interface ExposedVoteRepository extends CrudRepository<ExposedVote, Strin
 
     boolean existsExposedVoteByIpAddress(String ipAddress);
 
-    boolean existsExposedVoteByIpAddressAndRaceId(String ipAddress, String raceId);
+    boolean existsExposedVoteByIpAddressAndSeasonAndRound(String ipAddress, Integer season, Integer Round);
 }

@@ -20,7 +20,11 @@ public class InstagramPost {
 
     @Id
     private String code;
-    private Long deviceTimestamp;
     private Integer likes;
     private Integer comments;
+    private Integer postType;
+    private String url;
+    private String location;
+    private String username;
+    private String userpic;
 }

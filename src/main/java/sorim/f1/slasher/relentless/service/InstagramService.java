@@ -12,5 +12,7 @@ public interface InstagramService {
 
     TripleInstagramFeed getInstagramFeed() throws IGLoginException;
 
+    TripleInstagramFeed getInstagramFeedPage(Integer page);
 
+    void getMyFollows() throws IGLoginException;
 }

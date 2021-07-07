@@ -20,9 +20,6 @@ import java.time.format.DateTimeFormatter;
 public class F1Calendar {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(columnDefinition = "serial")
-    private Integer id;
     @Column(columnDefinition = "race_id")
     private Integer raceId;
     private LocalDateTime practice1;

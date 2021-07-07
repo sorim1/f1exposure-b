@@ -2,6 +2,7 @@ package sorim.f1.slasher.relentless.controller;
 
 import com.github.instagram4j.instagram4j.exceptions.IGLoginException;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import sorim.f1.slasher.relentless.entities.*;
@@ -13,6 +14,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
+@Slf4j
 public class ClientController {
 
     private final ClientService service;
@@ -85,5 +87,11 @@ public class ClientController {
     @GetMapping("/getInstagramFeed")
     TripleInstagramFeed getInstagramFeed() throws IGLoginException {
         return service.getInstagramFeed();
+    }
+
+    @GetMapping("/getInstagramFeedPage/{page}")
+    TripleInstagramFeed getInstagramFeedPage(@PathVariable("page") String page) throws IGLoginException {
+        log.info("getInstagramFeedPage: {}", page);
+        return service.getInstagramFeedPage(Integer.valueOf(page));
     }
 }

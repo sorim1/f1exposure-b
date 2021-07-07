@@ -35,4 +35,6 @@ public interface ClientService {
     List<InstagramPost>  fetchInstagramFeed() throws IGLoginException;
 
     TripleInstagramFeed getInstagramFeed() throws IGLoginException;
+
+    TripleInstagramFeed getInstagramFeedPage(Integer page) throws IGLoginException;
 }

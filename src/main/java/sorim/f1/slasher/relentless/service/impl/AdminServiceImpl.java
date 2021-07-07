@@ -18,11 +18,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import sorim.f1.slasher.relentless.configuration.MainProperties;
 import sorim.f1.slasher.relentless.entities.*;
+import sorim.f1.slasher.relentless.model.CalendarData;
 import sorim.f1.slasher.relentless.model.SportSurge;
 import sorim.f1.slasher.relentless.model.ergast.ErgastResponse;
 import sorim.f1.slasher.relentless.repository.*;
 import sorim.f1.slasher.relentless.service.AdminService;
+import sorim.f1.slasher.relentless.service.ClientService;
 import sorim.f1.slasher.relentless.service.ErgastService;
+import sorim.f1.slasher.relentless.service.ExposureService;
 
 import javax.annotation.PostConstruct;
 import java.io.IOException;
@@ -56,6 +59,10 @@ public class AdminServiceImpl implements AdminService {
 
     private final ErgastService ergastService;
     private final MainProperties properties;
+    private final ClientService clientService;
+    private final ExposureService exposureService;
+
+
 
     @PostConstruct
     public void onInit() {
@@ -120,11 +127,11 @@ public class AdminServiceImpl implements AdminService {
                      .forEach(ergastStanding -> {
                          driverStandings.add(new DriverStanding(ergastStanding));
                      });
-             updateExposureDriverList(driverStandings);
              driverStandingsRepository.deleteAll();
              driverStandingsRepository.saveAll(driverStandings);
              CURRENT_ROUND = response.getMrData().getStandingsTable().getStandingsLists().get(0).getRound();
              propertiesRepository.updateProperty("round", CURRENT_ROUND.toString());
+             updateExposureDriverList(driverStandings);
              return driverStandings;
          } else {
              return null;
@@ -150,6 +157,7 @@ public class AdminServiceImpl implements AdminService {
     private void updateExposureDriverList(List<DriverStanding> driverStandings) {
         //poveznica između exposure liste i standings liste
         List<Driver> drivers = driverRepository.findAll();
+        exposureService.setNextRoundOfExposure(driverStandings, CURRENT_ROUND+1);
         for (DriverStanding driverStanding : driverStandings) {
             Optional<Driver> foundDriver = drivers.stream().filter(x -> driverStanding.getName().equals(x.getFullName()))
                     .findFirst();
@@ -190,7 +198,7 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
-    public void fetchSportSurgeLinks() throws IOException {
+    public Integer fetchSportSurgeLinks() throws IOException {
         WebClient client = new WebClient();
         Page page = client.getPage(SPORTSURGE_GROUP_13);
         WebResponse response = page.getWebResponse();
@@ -203,8 +211,42 @@ public class AdminServiceImpl implements AdminService {
             sportSurge = new ObjectMapper().readValue(response.getContentAsString(), SportSurge.class);
             streams.addAll(sportSurge.getStreams());
         }
+        deleteSportSurgeLinks();
         sportSurgeStreamRepository.saveAll(streams);
         sportSurgeEventRepository.saveAll(events);
+        return getNextRefreshTick();
+
+
+
+    }
+
+    @Override
+    public void deleteSportSurgeLinks() {
+        sportSurgeStreamRepository.deleteAll();
+        sportSurgeEventRepository.deleteAll();
+    }
+
+    private Integer getNextRefreshTick() {
+        CalendarData calendarData = clientService.getCountdownData();
+        if(calendarData.getCountdownData().get("raceDays")>2){
+            return null;
+        }
+        if(calendarData.getCountdownData().get("FP1Seconds")>600){
+            return calendarData.getCountdownData().get("FP1Seconds")-600;
+        }
+        if(calendarData.getCountdownData().get("FP2Seconds")>600){
+            return calendarData.getCountdownData().get("FP2Seconds")-600;
+        }
+        if(calendarData.getCountdownData().get("FP3Seconds")>600){
+            return calendarData.getCountdownData().get("FP3Seconds")-600;
+        }
+        if(calendarData.getCountdownData().get("qualifyingSeconds")>600){
+            return calendarData.getCountdownData().get("qualifyingSeconds")-600;
+        }
+        if(calendarData.getCountdownData().get("raceSeconds")>600){
+            return calendarData.getCountdownData().get("raceSeconds")-600;
+        }
+        return null;
     }
 
     private DriverStanding createNewDriverStandingFromRow(Element row) {

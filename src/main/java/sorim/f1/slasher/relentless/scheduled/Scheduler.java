@@ -1,6 +1,7 @@
 package sorim.f1.slasher.relentless.scheduled;
 
 import lombok.RequiredArgsConstructor;
+import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -21,21 +22,58 @@ public class Scheduler {
 
    // @Scheduled(fixedDelayString = "3600000", initialDelayString = "3600000")
    @Scheduled(cron = "0 0 10 * * SUN")
-    public void sundayJobs() throws IOException {
+    public void sundayJobs(){
         log.info("sundayJobs called");
        exposureService.setExposureStartTime();
-       checkNewStandings();
+
     }
 
-    private void checkNewStandings() throws IOException {
-        adminService.initializeStandings();
+    @Scheduled(cron = "0 0 15 * * SUN")
+    private void checkNewStandingsJob() throws IOException {
+       int delay = 900000;
+        log.info("checkNewStandingsJob called");
+        Boolean updated = adminService.initializeStandings();
+        if(!updated){
+            new java.util.Timer().schedule(
+                    new java.util.TimerTask() {
+                        @SneakyThrows
+                        @Override
+                        public void run() {
+                            checkNewStandingsJob();
+                        }
+                    },
+                    delay
+            );
+        }
     }
 
     @Scheduled(cron = "0 0 10 * * MON")
-    public void mondayJobs(){
+    public void mondayJobs() {
         log.info("mondayJobs called");
         exposureService.setExposureCloseTime();
+        adminService.deleteSportSurgeLinks();
     }
 
+    @Scheduled(cron = "0 0 15 * * FRI")
+    private void fridayJobs() throws IOException {
+        log.info("fridayJobs called");
+        fetchSportSurgeLinks();
+    }
 
+    private void fetchSportSurgeLinks() throws IOException {
+        Integer delay = adminService.fetchSportSurgeLinks();
+        log.info("fetchSportSurgeLinksSCh called");
+        if(delay!=null){
+            new java.util.Timer().schedule(
+                    new java.util.TimerTask() {
+                        @SneakyThrows
+                        @Override
+                        public void run() {
+                            fetchSportSurgeLinks();
+                        }
+                    },
+                    delay*1000
+            );
+        }
+    }
 }

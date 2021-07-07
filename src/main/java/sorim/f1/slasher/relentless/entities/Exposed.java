@@ -20,7 +20,8 @@ public class Exposed {
     @Column(columnDefinition = "serial")
     private Integer id;
 
-    private String raceId;
+    private Integer season;
+    private Integer round;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "driver_code", referencedColumnName = "code")
