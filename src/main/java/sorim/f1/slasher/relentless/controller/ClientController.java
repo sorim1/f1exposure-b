@@ -1,9 +1,9 @@
 package sorim.f1.slasher.relentless.controller;
 
-import com.github.instagram4j.instagram4j.exceptions.IGLoginException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import sorim.f1.slasher.relentless.entities.*;
 import sorim.f1.slasher.relentless.model.*;
@@ -75,23 +75,35 @@ public class ClientController {
     }
 
     @GetMapping("/getComments/{page}")
-    List<F1Comment> getComments(@PathVariable("page") String page) {
+    List<F1Comment> getComments(@RequestHeader String authorization, @PathVariable("page") String page) throws Exception {
+        service.validateHeader(authorization);
         return service.getComments(page);
     }
 
     @GetMapping("/fetchInstagramFeed")
-    List<InstagramPost> fetchInstagramFeed() throws IGLoginException {
+    List<InstagramPost> fetchInstagramFeed(@RequestHeader String authorization) throws Exception {
+        service.validateHeader(authorization);
         return service.fetchInstagramFeed();
     }
 
     @GetMapping("/getInstagramFeed")
-    TripleInstagramFeed getInstagramFeed() throws IGLoginException {
+    TripleInstagramFeed getInstagramFeed(@RequestHeader String authorization) throws Exception {
+        service.validateHeader(authorization);
         return service.getInstagramFeed();
     }
 
     @GetMapping("/getInstagramFeedPage/{page}")
-    TripleInstagramFeed getInstagramFeedPage(@PathVariable("page") String page) throws IGLoginException {
+    TripleInstagramFeed getInstagramFeedPage(@RequestHeader String authorization, @PathVariable("page") String page) throws Exception {
         log.info("getInstagramFeedPage: {}", page);
+        service.validateHeader(authorization);
         return service.getInstagramFeedPage(Integer.valueOf(page));
+    }
+
+    @GetMapping(
+            value = "/getImage/{code}",
+            produces = MediaType.IMAGE_JPEG_VALUE
+    )
+    byte[] getImage(@PathVariable("code") String code) {
+        return service.getImage(code);
     }
 }

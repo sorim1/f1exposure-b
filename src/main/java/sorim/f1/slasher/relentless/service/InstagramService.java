@@ -15,4 +15,6 @@ public interface InstagramService {
     TripleInstagramFeed getInstagramFeedPage(Integer page);
 
     void getMyFollows() throws IGLoginException;
+
+    byte[] getImage(String code);
 }

@@ -13,13 +13,20 @@ CREATE TABLE ERGAST_CURRENT_SEASON_RACES (
 
 CREATE TABLE INSTAGRAM_POSTS (
      code text,
+     taken_at numeric,
      likes numeric,
      comments numeric,
      post_type numeric,
      url text,
      location text,
+     caption text,
      username text,
      userpic text
+);
+
+CREATE TABLE IMAGES (
+     code text,
+     image bytea
 );
 
 CREATE TABLE log_table (

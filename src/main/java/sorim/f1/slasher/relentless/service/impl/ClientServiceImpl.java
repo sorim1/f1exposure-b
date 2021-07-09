@@ -47,6 +47,11 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
+    public void checkHeader(String authorization) {
+        log.info("ovo je authorization: {}", authorization);
+    }
+
+    @Override
     public String validateIp(HttpServletRequest request) {
         log.info(request.getRemoteAddr());
         log.info(request.getRequestURI());
@@ -124,6 +129,12 @@ public class ClientServiceImpl implements ClientService {
     public TripleInstagramFeed getInstagramFeedPage(Integer page) throws IGLoginException {
         return instagramService.getInstagramFeedPage(page);
     }
+
+    @Override
+    public byte[] getImage(String code) {
+        return instagramService.getImage(code);
+    }
+
     private Map<String, Integer> getRemainingTime(LocalDateTime gmtDateTime, F1Calendar f1calendar) {
         Map<String, Integer> output = new HashMap<>();
         Duration duration;

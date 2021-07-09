@@ -13,16 +13,25 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import sorim.f1.slasher.relentless.entities.ImageRow;
 import sorim.f1.slasher.relentless.entities.InstagramPost;
 import sorim.f1.slasher.relentless.model.TripleInstagramFeed;
 import sorim.f1.slasher.relentless.model.enums.InstagramPostType;
+import sorim.f1.slasher.relentless.repository.ImageRepository;
 import sorim.f1.slasher.relentless.repository.InstagramRepository;
 import sorim.f1.slasher.relentless.service.InstagramService;
 
 import javax.annotation.PostConstruct;
+import javax.imageio.ImageIO;
+import java.awt.*;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @Slf4j
 @Service
@@ -31,7 +40,9 @@ public class InstagramServiceImpl implements InstagramService {
 
     private static IGClient client;
     private final InstagramRepository instagramRepository;
-    private static List<String> follows = new ArrayList<>();
+    private final ImageRepository imageRepository;
+
+    private static final List<String> follows = new ArrayList<>();
 
     @Override
     public List<InstagramPost> fetchInstagramFeed() throws IGLoginException {
@@ -45,56 +56,70 @@ public class InstagramServiceImpl implements InstagramService {
             timelineMedias.forEach(post -> {
                 if (follows.contains(post.getUser().getUsername())) {
                     String url = "";
-                    String location = null;
+                    String location = " ";
                     if (post.getLocation() != null) {
                         location = post.getLocation().getName();
                     }
-
                     if (post instanceof TimelineCarouselMedia) {
                         TimelineCarouselMedia timelineCarouselMedia = (TimelineCarouselMedia) post;
                         List<String> urlList = new ArrayList<>();
                         timelineCarouselMedia.getCarousel_media().forEach(cItem -> {
                             if (cItem instanceof ImageCaraouselItem) {
                                 ImageCaraouselItem cItem2 = (ImageCaraouselItem) cItem;
-                                urlList.add(cItem2.getImage_versions2().getCandidates().get(0).getUrl());
+                                urlList.add(cItem2.getImage_versions2().getCandidates()
+                                        .get(cItem2.getImage_versions2().getCandidates().size()-1)
+                                        .getUrl());
                             } else if (cItem instanceof VideoCaraouselItem) {
                                 VideoCaraouselItem cItem2 = (VideoCaraouselItem) cItem;
-                                urlList.add(cItem2.getImage_versions2().getCandidates().get(0).getUrl());
+                                urlList.add(cItem2.getImage_versions2().getCandidates()
+                                        .get(cItem2.getImage_versions2().getCandidates().size()-1)
+                                        .getUrl());
                             } else {
                                 log.error("OVO NIJE ImageCaraouselItem: {}", cItem.getClass().getName());
                             }
                         });
-                        url = String.join(",", urlList);
+                        //url = String.join(",", urlList);
+                        url = urlList.get(0);
                         instagramPosts.add(InstagramPost.builder().code(timelineCarouselMedia.getCode())
+                                .takenAt(post.getTaken_at())
                                 .comments(timelineCarouselMedia.getComment_count())
                                 .likes(timelineCarouselMedia.getLike_count())
                                 .postType(InstagramPostType.TimelineCarouselMedia.getValue())
                                 .url(url)
                                 .location(location)
+                                .caption(post.getCaption().getText())
                                 .username(post.getUser().getFull_name())
                                 .userpic(post.getUser().getProfile_pic_url())
                                 .build());
                     } else if (post instanceof TimelineImageMedia) {
                         TimelineImageMedia timelineImageMedia = (TimelineImageMedia) post;
-                        url = timelineImageMedia.getImage_versions2().getCandidates().get(0).getUrl();
+                        url = timelineImageMedia.getImage_versions2().getCandidates()
+                                .get(timelineImageMedia.getImage_versions2().getCandidates().size()-1)
+                                .getUrl();
                         instagramPosts.add(InstagramPost.builder().code(timelineImageMedia.getCode())
+                                .takenAt(post.getTaken_at())
                                 .comments(timelineImageMedia.getComment_count())
                                 .likes(timelineImageMedia.getLike_count())
                                 .postType(InstagramPostType.TimelineImageMedia.getValue())
                                 .url(url)
                                 .location(location)
+                                .caption(post.getCaption().getText())
                                 .username(post.getUser().getFull_name())
                                 .userpic(post.getUser().getProfile_pic_url())
                                 .build());
                     } else if (post instanceof TimelineVideoMedia) {
                         TimelineVideoMedia timelineVideoMedia = (TimelineVideoMedia) post;
-                        url = timelineVideoMedia.getImage_versions2().getCandidates().get(0).getUrl();
+                        url = timelineVideoMedia.getImage_versions2().getCandidates()
+                                .get(timelineVideoMedia.getImage_versions2().getCandidates().size()-1)
+                                .getUrl();
                         instagramPosts.add(InstagramPost.builder().code(timelineVideoMedia.getCode())
+                                .takenAt(post.getTaken_at())
                                 .comments(timelineVideoMedia.getComment_count())
                                 .likes(timelineVideoMedia.getLike_count())
                                 .postType(InstagramPostType.TimelineVideoMedia.getValue())
                                 .url(url)
                                 .location(location)
+                                .caption(post.getCaption().getText())
                                 .username(post.getUser().getFull_name())
                                 .userpic(post.getUser().getProfile_pic_url())
                                 .build());
@@ -109,7 +134,51 @@ public class InstagramServiceImpl implements InstagramService {
 
         });
         instagramRepository.saveAll(instagramPosts);
+        fetchImages(instagramPosts);
         return instagramPosts;
+    }
+
+    private void fetchImages(List<InstagramPost> instagramPosts) {
+        List<ImageRow> images = new ArrayList<>();
+//        instagramPosts.forEach(post->{
+//            if(post.getPostType().equals(InstagramPostType.TimelineCarouselMedia.getValue())){
+//                List<String> urlList = Stream.of(post.getUrl().split(",", -1))
+//                        .collect(Collectors.toList());
+//                for(int i=0; i<urlList.size(); i++){
+//                    byte[] image = getImageFromUrl(urlList.get(i));
+//                    images.add(ImageRow.builder().code(post.getCode()+"-"+i).image(image).build());
+//                }
+//            } else {
+//                byte[] image = getImageFromUrl(post.getUrl());
+//                images.add(ImageRow.builder().code(post.getCode()).image(image).build());
+//            }
+//        });
+        instagramPosts.forEach(post->{
+                byte[] image = getImageFromUrl(post.getUrl());
+                images.add(ImageRow.builder().code(post.getCode()).image(image).build());
+        });
+        imageRepository.saveAll(images);
+    }
+
+    private byte[] getImageFromUrl(String urlString) {
+        try {
+            URL url = new URL(urlString);
+            ByteArrayOutputStream output = new ByteArrayOutputStream();
+
+            try (InputStream stream = url.openStream())
+            {byte[] buffer = new byte[4096];
+                while (true)
+                {
+                    int bytesRead = stream.read(buffer);
+                    if (bytesRead < 0) { break; }
+                    output.write(buffer, 0, bytesRead);
+                }
+            }
+            return output.toByteArray();
+        } catch (IOException e) {
+            log.error("fetchImages ", e);
+        }
+        return null;
     }
 
     @Override
@@ -122,7 +191,7 @@ public class InstagramServiceImpl implements InstagramService {
     @Override
     public TripleInstagramFeed getInstagramFeedPage(Integer page) {
         Pageable paging = PageRequest.of(page, 20);
-        List<InstagramPost> posts = instagramRepository.findAllByOrderByLikesDesc(paging);
+        List<InstagramPost> posts = instagramRepository.findAllByOrderByTakenAtDesc(paging);
 
         return new TripleInstagramFeed(posts);
     }
@@ -137,6 +206,12 @@ public class InstagramServiceImpl implements InstagramService {
             follows.add(profile.getUsername());
         });
 
+    }
+
+    @Override
+    public byte[] getImage(String code) {
+        ImageRow result = imageRepository.findFirstByCode(code);
+        return result.getImage();
     }
 
     @PostConstruct

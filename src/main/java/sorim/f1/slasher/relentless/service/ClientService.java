@@ -12,6 +12,8 @@ public interface ClientService {
 
     void validateHeader(String authorization) throws Exception;
 
+    void checkHeader(String authorization) throws Exception;
+
     String validateIp(HttpServletRequest request);
 
     ExposedChart getExposedChartData();
@@ -37,4 +39,6 @@ public interface ClientService {
     TripleInstagramFeed getInstagramFeed() throws IGLoginException;
 
     TripleInstagramFeed getInstagramFeedPage(Integer page) throws IGLoginException;
+
+    byte[] getImage(String code);
 }
