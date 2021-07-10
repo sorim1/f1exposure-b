@@ -13,6 +13,7 @@ import sorim.f1.slasher.relentless.repository.*;
 import sorim.f1.slasher.relentless.service.ClientService;
 import sorim.f1.slasher.relentless.service.ExposureService;
 import sorim.f1.slasher.relentless.service.InstagramService;
+import sorim.f1.slasher.relentless.service.TwitterService;
 
 import javax.servlet.http.HttpServletRequest;
 import java.time.Duration;
@@ -32,6 +33,7 @@ public class ClientServiceImpl implements ClientService {
     private final SportSurgeEventRepository sportSurgeEventRepository;
     private final F1CommentRepository f1CommentRepository;
     private final InstagramService instagramService;
+    private final TwitterService twitterService;
     private final ExposureService exposureService;
 
     @Override
@@ -106,6 +108,9 @@ public class ClientServiceImpl implements ClientService {
     @Override
     public List<F1Comment> postComment(F1Comment comment) {
         comment.setTimestamp(new Date());
+        if(comment.getComment().length()>900){
+            comment.setComment(comment.getComment().substring(0,900));
+        }
         f1CommentRepository.save(comment);
         return f1CommentRepository.findFirst30ByPageOrderByTimestampDesc(comment.getPage());
     }
@@ -128,6 +133,16 @@ public class ClientServiceImpl implements ClientService {
     @Override
     public TripleInstagramFeed getInstagramFeedPage(Integer page) throws IGLoginException {
         return instagramService.getInstagramFeedPage(page);
+    }
+
+    @Override
+    public DoubleTwitterFeed getTwitterPosts(Integer page) {
+        return new DoubleTwitterFeed(twitterService.getTwitterPosts(page));
+    }
+
+    @Override
+    public List<TwitterPost> fetchTwitterPosts() throws Exception {
+        return twitterService.fetchTwitterPosts();
     }
 
     @Override

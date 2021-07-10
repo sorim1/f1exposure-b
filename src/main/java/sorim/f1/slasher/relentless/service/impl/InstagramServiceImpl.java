@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import sorim.f1.slasher.relentless.configuration.MainProperties;
 import sorim.f1.slasher.relentless.entities.ImageRow;
 import sorim.f1.slasher.relentless.entities.InstagramPost;
 import sorim.f1.slasher.relentless.model.TripleInstagramFeed;
@@ -38,6 +39,7 @@ import java.util.stream.Stream;
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class InstagramServiceImpl implements InstagramService {
 
+    private final MainProperties properties;
     private static IGClient client;
     private final InstagramRepository instagramRepository;
     private final ImageRepository imageRepository;
@@ -198,14 +200,15 @@ public class InstagramServiceImpl implements InstagramService {
 
     @Override
     public void getMyFollows() {
-        List<Profile> result = client.actions().users().findByUsername("miroslav.dragicevic1")
+        List<Profile> result = client.actions().users().findByUsername(properties.getInstagramUsername())
                 .thenApply(userAction -> userAction.followingFeed().stream()
                         .flatMap(feedUsersResponse -> feedUsersResponse.getUsers().stream()).collect(Collectors.toList())
                 ).join();
         result.forEach(profile -> {
             follows.add(profile.getUsername());
         });
-
+        log.info(String.valueOf(follows));
+        log.info(String.valueOf(follows.size()));
     }
 
     @Override
@@ -217,8 +220,8 @@ public class InstagramServiceImpl implements InstagramService {
     @PostConstruct
     void init() throws IGLoginException {
         client = IGClient.builder()
-                .username("miroslav.dragicevic1")
-                .password("!qwadrat1")
+                .username(properties.getInstagramUsername())
+                .password(properties.getInstagramPassword())
                 .login();
         getMyFollows();
     }

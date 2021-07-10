@@ -14,6 +14,13 @@ public class MainProperties {
 
     private String tempo;
     private Integer currentYear;
+    private Boolean twitterDebug;
+    private String twitterKey;
+    private String twitterSecret;
+    private String twitterAccessToken;
+    private String twitterAccessTokenSecret;
+    private String instagramUsername;
+    private String instagramPassword;
 
     @PostConstruct
     public void setProperty() {

@@ -92,7 +92,7 @@ public class ClientController {
         return service.getInstagramFeed();
     }
 
-    @GetMapping("/getInstagramFeedPage/{page}")
+    @GetMapping("/getInstagramPosts/{page}")
     TripleInstagramFeed getInstagramFeedPage(@RequestHeader String authorization, @PathVariable("page") String page) throws Exception {
         log.info("getInstagramFeedPage: {}", page);
         service.validateHeader(authorization);
@@ -105,5 +105,17 @@ public class ClientController {
     )
     byte[] getImage(@PathVariable("code") String code) {
         return service.getImage(code);
+    }
+
+    @GetMapping("/getTwitterPosts/{page}")
+    DoubleTwitterFeed getTwitterPosts(@RequestHeader String authorization, @PathVariable("page") String page) throws Exception {
+        service.validateHeader(authorization);
+        return service.getTwitterPosts(Integer.valueOf(page));
+    }
+
+    @GetMapping("/fetchTwitterPosts")
+    List<TwitterPost> fetchTwitterPosts(@RequestHeader String authorization) throws Exception {
+        service.validateHeader(authorization);
+        return service.fetchTwitterPosts();
     }
 }

@@ -40,5 +40,9 @@ public interface ClientService {
 
     TripleInstagramFeed getInstagramFeedPage(Integer page) throws IGLoginException;
 
+    DoubleTwitterFeed getTwitterPosts(Integer page);
+
+    List<TwitterPost> fetchTwitterPosts() throws Exception;
+
     byte[] getImage(String code);
 }

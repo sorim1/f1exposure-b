@@ -24,6 +24,18 @@ CREATE TABLE INSTAGRAM_POSTS (
      userpic text
 );
 
+CREATE TABLE TWITTER_POSTS (
+     id numeric,
+     text text,
+     favorite_count numeric,
+     retweet_count numeric,
+     url text,
+     media_url text,
+     username text,
+     user_picture text,
+     created_at TIMESTAMP
+);
+
 CREATE TABLE IMAGES (
      code text,
      image bytea
