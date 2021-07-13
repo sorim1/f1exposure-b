@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import sorim.f1.slasher.relentless.service.AdminService;
-import sorim.f1.slasher.relentless.service.ErgastService;
 import sorim.f1.slasher.relentless.service.ExposureService;
 
 import java.io.IOException;
@@ -50,7 +49,7 @@ public class Scheduler {
     @Scheduled(cron = "0 0 10 * * MON")
     public void mondayJobs() {
         log.info("mondayJobs called");
-        exposureService.setExposureCloseTime();
+        exposureService.closeExposurePoll();
         adminService.deleteSportSurgeLinks();
     }
 

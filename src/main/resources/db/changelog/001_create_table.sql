@@ -18,6 +18,30 @@ CREATE TABLE EXPOSED (
      driver_code text,
      counter numeric
 );
+
+CREATE TABLE exposed_vote_totals (
+   season numeric NOT NULL,
+   round numeric NOT NULL,
+   voters numeric,
+   votes numeric NULL
+);
+
+CREATE TABLE exposure_championship (
+     season numeric NOT NULL,
+     round numeric NOT NULL,
+     driver text,
+     exposure numeric NULL,
+     mode numeric
+);
+
+CREATE TABLE exposure_championship_standings (
+   season numeric NOT NULL,
+   driver text NOT NULL,
+   exposure numeric NULL,
+   mode numeric NOT NULL
+);
+
+
 CREATE TABLE DRIVERS (
       code text,
       first_name text,

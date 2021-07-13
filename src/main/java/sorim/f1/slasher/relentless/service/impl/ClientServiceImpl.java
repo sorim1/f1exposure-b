@@ -62,9 +62,13 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
-    public ExposedChart getExposedChartData() {
-
-        return exposureService.getExposedChartData();
+    public ExposureData getExposedChartData() {
+        return ExposureData.builder()
+                .activeExposureChart(exposureService.getExposedChartData())
+                .exposureChampionshipData(exposureService.getExposureChampionshipData())
+                .standings(exposureService.getExposureStandings())
+                .standingsLegacy(exposureService.getExposureStandingsLegacy())
+                .build();
     }
 
     @Override

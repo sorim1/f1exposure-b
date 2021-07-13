@@ -15,4 +15,6 @@ public interface AdminService {
     Integer fetchSportSurgeLinks() throws IOException;
 
     void deleteSportSurgeLinks();
+
+    void closeExposurePoll();
 }

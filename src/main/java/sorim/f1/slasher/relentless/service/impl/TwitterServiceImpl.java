@@ -63,7 +63,7 @@ public class TwitterServiceImpl implements TwitterService {
             if(url==null && item.getURLEntities().length>0){
                 url = item.getURLEntities()[0].getURL();
             }
-            if(url==null && item.getRetweetedStatus().getURLEntities().length>0){
+            if(url==null && item.getRetweetedStatus()!=null && item.getRetweetedStatus().getURLEntities().length>0){
                 url = item.getRetweetedStatus().getURLEntities()[0].getURL();
             }
             list.add(TwitterPost.builder()

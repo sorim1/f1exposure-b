@@ -40,4 +40,8 @@ public class AdminController {
         service.fetchSportSurgeLinks();
     }
 
+    @GetMapping("/closeExposurePoll")
+    void closeExposurePoll() {
+        service.closeExposurePoll();
+    }
 }

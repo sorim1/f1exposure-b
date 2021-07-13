@@ -32,8 +32,8 @@ public class ClientController {
         return service.exposeDrivers(exposedList, ipAddress);
     }
 
-    @GetMapping("/exposed")
-    ExposedChart getExposedChartData(@RequestHeader String authorization) throws Exception {
+    @GetMapping("/getExposureResults")
+    ExposureData getExposedChartData(@RequestHeader String authorization) throws Exception {
         service.validateHeader(authorization);
         return service.getExposedChartData();
     }

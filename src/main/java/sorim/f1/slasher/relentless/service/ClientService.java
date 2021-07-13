@@ -16,7 +16,7 @@ public interface ClientService {
 
     String validateIp(HttpServletRequest request);
 
-    ExposedChart getExposedChartData();
+    ExposureData getExposedChartData();
 
     CalendarData getCountdownData();
 

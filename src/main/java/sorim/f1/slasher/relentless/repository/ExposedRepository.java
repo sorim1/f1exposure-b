@@ -7,6 +7,7 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import sorim.f1.slasher.relentless.entities.Exposed;
+import sorim.f1.slasher.relentless.entities.ExposedVoteTotals;
 
 import javax.transaction.Transactional;
 import java.util.List;
@@ -26,4 +27,14 @@ public interface ExposedRepository extends CrudRepository<Exposed, String> {
     @Query(value = "insert into Exposed (season, round, driver_code, counter) VALUES (:season, :round,:driverCode, :counter)", nativeQuery = true)
     Integer saveExposureData(@Param("season") Integer season, @Param("round") Integer round, @Param("driverCode")String driverCode, @Param("counter")int counter);
 
+    @Modifying
+    @Query("update ExposedVoteTotals set voters = voters+1 , votes = votes + ?3 where id.season = ?1 and id.round = ?2")
+    Integer incrementTotal(Integer season, Integer round, int votes);
+
+    @Modifying
+    @Query(value = "insert into EXPOSED_VOTE_TOTALS(season, round, voters, votes) VALUES (:season, :round, 1, :votes)", nativeQuery = true)
+    void insertExposureTotal(Integer season, Integer round, Integer votes);
+
+    @Query("select t from ExposedVoteTotals t where t.id.season = ?1 and t.id.round = ?2")
+    ExposedVoteTotals findExposedTotalBySeasonAndRound(Integer season, Integer round);
 }

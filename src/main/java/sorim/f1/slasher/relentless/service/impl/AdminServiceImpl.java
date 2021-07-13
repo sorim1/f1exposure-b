@@ -226,6 +226,11 @@ public class AdminServiceImpl implements AdminService {
         sportSurgeEventRepository.deleteAll();
     }
 
+    @Override
+    public void closeExposurePoll() {
+        exposureService.closeExposurePoll();
+    }
+
     private Integer getNextRefreshTick() {
         CalendarData calendarData = clientService.getCountdownData();
         if(calendarData.getCountdownData().get("raceDays")>2){
