@@ -12,5 +12,5 @@ import java.util.List;
 @Transactional
 @EnableJpaAuditing
 public interface ConstructorStandingsRepository extends CrudRepository<ConstructorStanding, String> {
-    List<ConstructorStanding> findAll();
+    List<ConstructorStanding> findAllByOrderByPositionAsc();
 }

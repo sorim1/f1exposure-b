@@ -10,6 +10,18 @@ import java.util.concurrent.atomic.AtomicReference;
 public class MainUtility {
 
     public static Map<String, String> driverMap = new HashMap<>();
+    public static Map<String, String> colorMap = new HashMap<>() {{
+        put("mercedes", "#00D2BE");
+        put("aston_martin", "#006F62");
+        put("williams", "#005AFF");
+        put("ferrari", "#DC0004");
+        put("haas", "#FFFFFF");
+        put("alfa", "#900000");
+        put("mclaren", "#FF9800");
+        put("alphatauri", "#2B4562");
+        put("red_bull", "#0600EF");
+        put("alpine", "#0090FF");
+    }};
 
     public static List<String> extractDriverCodes(Set<String> keySet) {
         List<String> response = new ArrayList<>();
@@ -44,14 +56,25 @@ public class MainUtility {
     }
 
     public static List<Integer> extractDataFields(Map<String, Object> dataFields, List<Integer> order) {
-        Integer[] output= new Integer[order.size()];
+        Integer size = 20;
+        if(order.size()>size){
+            size=order.size();
+        }
+        Integer[] output= new Integer[size];
         AtomicReference<Integer> counter = new AtomicReference<>(0);
         dataFields.values().forEach(row -> {
             List<Integer> list = (List<Integer>) row;
+            log.info(String.valueOf(output.length));
+            log.info(String.valueOf(order.get(counter.get())));
             output[order.get(counter.get())]=list.get(1);
             counter.set(counter.get() + 1);
         });
         return Arrays.asList(output);
     }
+
+    public static String getTeamColor(String team) {
+        return colorMap.get(team);
+    }
+
 
 }

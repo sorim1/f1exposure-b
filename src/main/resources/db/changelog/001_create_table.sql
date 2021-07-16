@@ -31,7 +31,8 @@ CREATE TABLE exposure_championship (
      round numeric NOT NULL,
      driver text,
      exposure numeric NULL,
-     mode numeric
+     mode numeric,
+     color text
 );
 
 CREATE TABLE exposure_championship_standings (
@@ -77,6 +78,23 @@ CREATE TABLE CURRENT_DRIVER_STANDINGS (
    permanent_number numeric
 );
 
+CREATE TABLE DRIVER_STANDINGS_BY_ROUND (
+        season numeric,
+        round numeric,
+          id text,
+          position numeric,
+          name text,
+          code text,
+          nationality text,
+          car text,
+          points numeric,
+        points_this_round numeric,
+          wins numeric,
+          permanent_number numeric,
+        color text
+);
+
+
 CREATE TABLE CURRENT_CONSTRUCTOR_STANDINGS (
   id text,
   position numeric,
@@ -84,6 +102,19 @@ CREATE TABLE CURRENT_CONSTRUCTOR_STANDINGS (
   points numeric,
   wins numeric
 );
+
+CREATE TABLE CONSTRUCTOR_STANDINGS_BY_ROUND (
+      season numeric,
+      round numeric,
+       id text,
+       position numeric,
+       name text,
+       points numeric,
+      points_this_round numeric,
+       wins numeric,
+      color text
+);
+
 
 CREATE TABLE SS_EVENT (
    id numeric,

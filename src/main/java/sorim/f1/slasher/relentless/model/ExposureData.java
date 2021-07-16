@@ -13,6 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 public class ExposureData {
+    private String title;
     private ActiveExposureChart activeExposureChart;
     private List<ExposureChampionshipData> exposureChampionshipData;
     private List<ExposureChampionshipStanding> standings;

@@ -12,6 +12,8 @@ public interface AdminService {
 
     Boolean initializeStandings() throws IOException;
 
+    Boolean initializeFullStandingsThroughRounds() throws IOException;
+
     Integer fetchSportSurgeLinks() throws IOException;
 
     void deleteSportSurgeLinks();

@@ -5,13 +5,11 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-import sorim.f1.slasher.relentless.entities.DriverStanding;
 import sorim.f1.slasher.relentless.entities.ergast.Race;
 import sorim.f1.slasher.relentless.model.ergast.ErgastResponse;
 import sorim.f1.slasher.relentless.repository.ErgastRaceRepository;
 import sorim.f1.slasher.relentless.service.ErgastService;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -40,6 +38,11 @@ public class ErgastServiceImpl implements ErgastService {
     }
 
     @Override
+    public void saveRace(Race race) {
+        ergastRaceRepository.save(race);
+    }
+
+    @Override
     public List<Race> fetchCurrentSeason() {
         RestTemplate restTemplate = new RestTemplate();
         ErgastResponse ergastResponse = restTemplate
@@ -48,22 +51,22 @@ public class ErgastServiceImpl implements ErgastService {
     }
 
     @Override
-    public List<Race> getAllRaces() {
-        return ergastRaceRepository.findAll();
-    }
-
-    @Override
     public void saveRaces(List<Race> races) {
         ergastRaceRepository.saveAll(races);
     }
 
     @Override
-    public Race fetchLatestRace() {
-        return ergastRaceRepository.findFirstByCircuitIdNotNullOrderByDateDesc();
+    public Race getLatestAnalyzedRace() {
+        return ergastRaceRepository.findFirstByRaceAnalysisNotNullOrderByDateDesc();
     }
 
     @Override
-    public List<Race> findByCircuitId(String circuitId) {
+    public Race getLatestNonAnalyzedRace() {
+        return ergastRaceRepository.findFirstByRaceAnalysisIsNullOrderByDateAsc();
+    }
+
+    @Override
+    public List<Race> findByCircuitIdOrderBySeasonDesc(String circuitId) {
         return ergastRaceRepository.findByCircuitIdOrderBySeasonDesc(circuitId);
     }
 
@@ -78,5 +81,23 @@ public class ErgastServiceImpl implements ErgastService {
         return restTemplate
                 .getForObject(ERGAST_URL + "current/constructorStandings.json", ErgastResponse.class);
 
+    }
+
+    @Override
+    public ErgastResponse getDriverStandingsByRound(Integer season, Integer round) {
+        return restTemplate
+                .getForObject(ERGAST_URL + season+ "/" + round+ "/driverStandings.json", ErgastResponse.class);
+    }
+
+    @Override
+    public ErgastResponse getConstructorStandingsByRound(Integer season, Integer round) {
+        return restTemplate
+                .getForObject(ERGAST_URL + season+ "/" + round+ "/constructorStandings.json", ErgastResponse.class);
+    }
+
+    @Override
+    public ErgastResponse getResultsByRound(Integer season, Integer round) {
+        return restTemplate
+                .getForObject(ERGAST_URL + season+ "/" + round+ "/results.json", ErgastResponse.class);
     }
 }

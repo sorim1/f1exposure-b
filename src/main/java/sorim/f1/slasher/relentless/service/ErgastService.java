@@ -12,15 +12,23 @@ public interface ErgastService {
 
     List<Race> fetchSeason(String year);
 
-    List<Race> getAllRaces();
+    void saveRace(Race race);
 
     void saveRaces(List<Race> races);
 
-    Race fetchLatestRace();
+    Race getLatestAnalyzedRace();
+    Race getLatestNonAnalyzedRace();
 
-    List<Race> findByCircuitId(String circuitId);
+
+    List<Race> findByCircuitIdOrderBySeasonDesc(String circuitId);
 
     ErgastResponse getDriverStandings();
 
     ErgastResponse getConstructorStandings();
+
+    ErgastResponse getDriverStandingsByRound(Integer season, Integer round);
+
+    ErgastResponse getConstructorStandingsByRound(Integer season, Integer round);
+
+    ErgastResponse getResultsByRound(Integer season, Integer round);
 }

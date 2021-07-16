@@ -19,10 +19,7 @@ import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Slf4j
 @Service
@@ -33,6 +30,7 @@ public class ExposureServiceImpl implements ExposureService {
     private final ExposedRepository exposedRepository;
     private final ExposureChampionshipRepository exposureChampionshipRepository;
     private final ExposureChampionshipStandingsRepository exposureChampionshipStandingsRepository;
+    private final DriverStandingsByRoundRepository driverStandingsByRoundRepository;
     private final DriverRepository driverRepository;
     private final CalendarRepository calendarRepository;
     private final MainProperties properties;
@@ -40,7 +38,7 @@ public class ExposureServiceImpl implements ExposureService {
     private static boolean exposureToday = false;
     private static boolean exposureNow = false;
     private static LocalDateTime exposureTime;
-    private static String title = "Default";
+    private static String title = "Something Went Wrong";
     private static Integer currentRound = 3;
 
     @Override
@@ -141,9 +139,15 @@ public class ExposureServiceImpl implements ExposureService {
                     .round(currentRound)
                     .driver(exposedData.getDrivers()[i])
                     .mode(ExposureModeEnum.Modern).build();
+            DriverStandingByRound dsbr = driverStandingsByRoundRepository.findFirstByCode(idModern.getDriver());
+            String color = null;
+            if(dsbr!=null){
+                color = dsbr.getColor();
+            }
             list.add(ExposureChampionship.builder()
                     .id(idModern)
                     .exposure(exposedData.getExposure()[i])
+                    .color(color)
                     .build());
 
             ExposureChampionshipId idLegacy = ExposureChampionshipId.builder()
@@ -154,6 +158,7 @@ public class ExposureServiceImpl implements ExposureService {
             list.add(ExposureChampionship.builder()
                     .id(idLegacy)
                     .exposure(exposedData.getExposureLegacy()[i])
+                    .color(color)
                     .build());
         }
         exposureChampionshipRepository.saveAll(list);
@@ -200,9 +205,8 @@ public class ExposureServiceImpl implements ExposureService {
 
     @Override
     public List<ExposureChampionshipData>  getExposureChampionshipData() {
-        List<ExposureChampionship> rawData = exposureChampionshipRepository.findAllByIdSeasonOrderByIdRoundAsc(properties.getCurrentYear());
-        Map<String, ExposureChampionshipData> map = new HashMap<>();
-        List<ExposureChampionshipData> response = new ArrayList<>();
+        List<ExposureChampionship> rawData = exposureChampionshipRepository.findAllByIdSeasonOrderByIdRound(properties.getCurrentYear());
+        Map<String, ExposureChampionshipData> map = new TreeMap<>();
         rawData.forEach(row->{
             if (map.containsKey(row.getId().getDriver())){
                 ExposureChampionshipData data = map.get(row.getId().getDriver());
@@ -231,6 +235,7 @@ public class ExposureServiceImpl implements ExposureService {
             } else{
                 ExposureChampionshipData data = new ExposureChampionshipData();
                 data.setCode(row.getId().getDriver());
+                data.setColor(row.getColor());
                 List<BigDecimal> newResult = new ArrayList<>();
                 newResult.add(BigDecimal.valueOf(row.getId().getRound()));
                 newResult.add(row.getExposure());
@@ -248,10 +253,7 @@ public class ExposureServiceImpl implements ExposureService {
                 map.put(row.getId().getDriver(), data);
             }
         });
-        map.forEach((key, value)->{
-            response.add(value);
-        });
-        return response;
+        return new ArrayList<>(map.values());
     }
 
     @Override
@@ -263,6 +265,11 @@ public class ExposureServiceImpl implements ExposureService {
     public List<ExposureChampionshipStanding> getExposureStandingsLegacy() {
         return exposureChampionshipStandingsRepository.findAllByIdSeasonAndIdModeOrderByExposureDesc(properties.getCurrentYear(), ExposureModeEnum.Legacy);
 
+    }
+
+    @Override
+    public String getTitle() {
+        return title;
     }
 
 }

@@ -14,5 +14,5 @@ import java.util.List;
 @Transactional
 @EnableJpaAuditing
 public interface ExposureChampionshipRepository extends CrudRepository<ExposureChampionship, String> {
-    List<ExposureChampionship> findAllByIdSeasonOrderByIdRoundAsc(Integer season);
+    List<ExposureChampionship> findAllByIdSeasonOrderByIdRound(Integer season);
 }

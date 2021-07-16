@@ -35,6 +35,11 @@ public class AdminController {
         return service.initializeStandings();
     }
 
+    @GetMapping("/initializeFullStandingsThroughRounds")
+    Boolean initializeFullStandingsThroughRounds() throws Exception {
+        return service.initializeFullStandingsThroughRounds();
+    }
+
     @GetMapping("/fetchSportSurgeLinks")
     void fetchSportSurgeLinks() throws Exception {
         service.fetchSportSurgeLinks();

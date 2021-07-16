@@ -15,6 +15,7 @@ import java.util.List;
 @Builder
 public class ExposureChampionshipData {
     private String code;
+    private String color;
     private BigDecimal score = BigDecimal.ZERO;
     private BigDecimal scoreLegacy = BigDecimal.ZERO;
     private List<List<BigDecimal>> scoresByRound = new ArrayList<>();

@@ -15,7 +15,8 @@ public class MRData {
     private String xmlns;
     private String series;
     private String url;
-    private String limit;
+    private Integer limit;
+    private Integer total;
     private String offset;
 
     @JsonProperty("RaceTable")

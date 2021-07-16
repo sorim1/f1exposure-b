@@ -39,9 +39,9 @@ public class ClientController {
     }
 
     @GetMapping("/countdown")
-    CalendarData getCountdownData(@RequestHeader String authorization) throws Exception {
+    CalendarData getCountdownData(@RequestHeader String authorization, @RequestParam String mode) throws Exception {
         service.validateHeader(authorization);
-        return service.getCountdownData();
+        return service.getCountdownData(Integer.valueOf(mode));
     }
 
     @GetMapping("/getDriverStandings")

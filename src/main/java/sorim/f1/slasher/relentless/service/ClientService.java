@@ -18,7 +18,7 @@ public interface ClientService {
 
     ExposureData getExposedChartData();
 
-    CalendarData getCountdownData();
+    CalendarData getCountdownData(Integer mode);
 
     List<DriverStanding> getDriverStandings();
 

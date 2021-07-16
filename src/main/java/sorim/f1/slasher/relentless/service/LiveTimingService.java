@@ -7,14 +7,11 @@ import sorim.f1.slasher.relentless.model.livetiming.WeatherData;
 
 public interface LiveTimingService {
 
-    void getLatestRaceData();
-
     void getAllRaceDataFromErgastTable(String year);
 
-    LiveTimingData processSingleRace() throws JsonProcessingException;
+    LiveTimingData processLatestRace() throws JsonProcessingException;
 
-    WeatherData getWeather() throws JsonProcessingException;
+    RaceAnalysis getRaceAnalysis() throws Exception;
 
-    RaceAnalysis getRaceAnalysis() throws JsonProcessingException, Exception;
-
+    Boolean analyzeLatestRace();
 }

@@ -12,5 +12,5 @@ import java.util.List;
 @Transactional
 @EnableJpaAuditing
 public interface DriverStandingsRepository extends CrudRepository<DriverStanding, String> {
-    List<DriverStanding> findAll();
+    List<DriverStanding> findAllByOrderByPositionAsc();
 }

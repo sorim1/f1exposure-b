@@ -9,8 +9,11 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.Type;
 import org.hibernate.annotations.TypeDef;
 import sorim.f1.slasher.relentless.model.ergast.Circuit;
+import sorim.f1.slasher.relentless.model.ergast.ErgastStanding;
+import sorim.f1.slasher.relentless.model.livetiming.RaceAnalysis;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "ERGAST_CURRENT_SEASON_RACES")
@@ -39,4 +42,12 @@ public class Race {
 
     private String liveTiming;
     private String circuitId;
+
+    @Type(type = "jsonb")
+    @Column(columnDefinition = "jsonb")
+    private RaceAnalysis raceAnalysis;
+
+    @JsonProperty("Results")
+    @Transient
+    private List<ErgastStanding> results;
 }

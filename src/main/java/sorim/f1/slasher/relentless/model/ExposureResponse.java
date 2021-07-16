@@ -14,7 +14,6 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 public class ExposureResponse {
-
     private List<Driver> drivers;
     private ExposureStatusEnum status;
     private String title;

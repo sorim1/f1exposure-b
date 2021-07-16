@@ -22,6 +22,6 @@ public class ExposureChampionship {
     @EmbeddedId
     private ExposureChampionshipId id;
     private BigDecimal exposure;
-
+    private String color;
 
 }

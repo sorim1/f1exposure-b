@@ -31,59 +31,72 @@ public class LiveTimingServiceImpl implements LiveTimingService {
 
     private final ErgastService service;
     private final MainProperties properties;
+    RestTemplate restTemplate = new RestTemplate();
 
-    String urlExample = "https://livetiming.formula1.com/static/2019/2019-03-17_Australian_Grand_Prix/2019-03-17_Race/SPFeed.json";
-    String LIVETIMING_URL = "https://livetiming.formula1.com/static/";
-    // 2019/2019-03-17_Australian_Grand_Prix/2019-03-17_Race/SPFeed.json
     String liveTimingUrl = "https://livetiming.formula1.com/static/{year}/{grandPrix}/{race}/SPFeed.json";
 
     private final CalendarRepository calendarRepository;
 
     @Override
-    public void getLatestRaceData() {
-        getDataUrl();
-    }
-
-    @Override
     public void getAllRaceDataFromErgastTable(String year) {
-        RestTemplate restTemplate = new RestTemplate();
         List<Race> races = service.fetchSeason(year);
         races.forEach(race -> {
-            String grandPrixName = race.getRaceName().replaceAll(" ", "_");
-            String grandPrix = race.getDate() + "_" + grandPrixName;
-            String raceName = race.getDate() + "_Race";
-            String response = null;
-            try {
-                response = restTemplate
-                        .getForObject(liveTimingUrl, String.class, race.getSeason(), grandPrix, raceName);
+            String response = getLiveTimingResponseOfErgastRace(race);
+            if(response!=null) {
                 race.setLiveTiming(response.substring(response.indexOf("{")));
                 race.setCircuitId(race.getCircuit().getCircuitId());
-            } catch (Exception e) {
-                log.error("error1:", e);
-                ExceptionHandling.logException("LIVETIMING_ERROR", e.getMessage());
             }
         });
         service.saveRaces(races);
     }
 
+    private String getLiveTimingResponseOfErgastRace(Race race) {
+        String grandPrixName = race.getRaceName().replaceAll(" ", "_");
+        String grandPrix = race.getDate() + "_" + grandPrixName;
+        String raceName = race.getDate() + "_Race";
+        // System.out.println("https://livetiming.formula1.com/static/"+ race.getSeason()+ "/"+ grandPrix + "/"+ raceName + "/SPFeed.json");
+        try {
+            return restTemplate
+                    .getForObject(liveTimingUrl, String.class, race.getSeason(), grandPrix, raceName);
+        } catch (Exception e) {
+            log.error("error1:", e);
+            ExceptionHandling.logException("LIVETIMING_ERROR", e.getMessage());
+        }
+        return null;
+    };
+
     @Override
-    public LiveTimingData processSingleRace() throws JsonProcessingException {
-        Race race = service.fetchLatestRace();
+    public LiveTimingData processLatestRace() throws JsonProcessingException {
+        Race race = service.getLatestAnalyzedRace();
         ObjectMapper mapper = new ObjectMapper();
         LiveTimingData response = mapper.readValue(race.getLiveTiming(), LiveTimingData.class);
         return response;
     }
 
     @Override
-    public WeatherData getWeather() throws JsonProcessingException {
-        return processSingleRace().getWeather().getGraph().getData();
+    public RaceAnalysis getRaceAnalysis(){
+        return service.getLatestAnalyzedRace().getRaceAnalysis();
     }
 
     @Override
-    public RaceAnalysis getRaceAnalysis() throws Exception {
+    public Boolean analyzeLatestRace() {
+        Race race = service.getLatestNonAnalyzedRace();
+        String response = getLiveTimingResponseOfErgastRace(race);
+        if(response!=null) {
+            race.setLiveTiming(response.substring(response.indexOf("{")));
+            race.setRaceAnalysis(fetchNewRaceAnalysis(race.getCircuit().getCircuitId()));
+            race.setCircuitId(race.getCircuit().getCircuitId());
+            service.saveRace(race);
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
+    public RaceAnalysis fetchNewRaceAnalysis(String circuitId) {
         ObjectMapper mapper = new ObjectMapper();
-        String circuitId = service.fetchLatestRace().getCircuitId();
-        List<Race> races = service.findByCircuitId(circuitId);
+        List<Race> races = service.findByCircuitIdOrderBySeasonDesc(circuitId);
         List<FrontendGraphWeatherData> weatherChartData = new ArrayList<>();
         AtomicReference<Boolean> zeroBoolean = new AtomicReference<>(true);
         AtomicReference<FrontendGraphScoringData> scoringData = new AtomicReference<>();
@@ -107,7 +120,43 @@ public class LiveTimingServiceImpl implements LiveTimingService {
                 e.printStackTrace();
             }
         });
-                return RaceAnalysis.builder()
+        return RaceAnalysis.builder()
+                .weatherChartData(weatherChartData)
+                .scoringChartData(scoringData.get())
+                .lapPosChartData(lapPosData.get())
+                .driverData(drivers.get())
+                .leaderboardData(leaderboards.get())
+                .title(leaderboards.get().title).build();
+    }
+
+    public RaceAnalysis getRaceAnalysisOld() {
+        ObjectMapper mapper = new ObjectMapper();
+        String circuitId = service.getLatestAnalyzedRace().getCircuitId();
+        List<Race> races = service.findByCircuitIdOrderBySeasonDesc(circuitId);
+        List<FrontendGraphWeatherData> weatherChartData = new ArrayList<>();
+        AtomicReference<Boolean> zeroBoolean = new AtomicReference<>(true);
+        AtomicReference<FrontendGraphScoringData> scoringData = new AtomicReference<>();
+        AtomicReference<FrontendGraphLapPosData> lapPosData = new AtomicReference<>();
+        AtomicReference<List<Driver>> drivers = new AtomicReference<>();
+        AtomicReference<FrontendGraphLeaderboardData> leaderboards = new AtomicReference<>();
+        races.forEach(race -> {
+            try {
+                LiveTimingData response = mapper.readValue(race.getLiveTiming(), LiveTimingData.class);
+                FrontendGraphWeatherData weatherRow = new FrontendGraphWeatherData(response.getWeather().getGraph().getData(), Integer.valueOf(race.getSeason()));
+                weatherChartData.add(weatherRow);
+                if(zeroBoolean.get()){
+                    drivers.set(response.getInit().getData().getDrivers());
+                    List<String> driverCodes =MainUtility.extractDriverCodesOrdered(drivers.get());
+                    scoringData.set(new FrontendGraphScoringData(response.getScores().getGraph(), Integer.valueOf(race.getSeason()), driverCodes));
+                    leaderboards.set(new FrontendGraphLeaderboardData(response.getFree().data, response.getBest().data));
+                    lapPosData.set(new FrontendGraphLapPosData(response.getLapPos().getGraph(), response.getXtra().data, driverCodes));
+                    zeroBoolean.set(false);
+                }
+            } catch (JsonProcessingException e) {
+                e.printStackTrace();
+            }
+        });
+        return RaceAnalysis.builder()
                 .weatherChartData(weatherChartData)
                 .scoringChartData(scoringData.get())
                 .lapPosChartData(lapPosData.get())

@@ -24,4 +24,6 @@ public interface ExposureService {
 
     List<ExposureChampionshipStanding> getExposureStandings();
     List<ExposureChampionshipStanding> getExposureStandingsLegacy();
+
+    String getTitle();
 }
