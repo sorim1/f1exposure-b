@@ -12,8 +12,8 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class LapPosition {
-    public List<Integer> positions;
-    public List<Tyre> tyres;
+public class LapByLapData {
+    public List<Integer> positions = new ArrayList<>();
+    public List<Tyre> tyres = new ArrayList<>();
 
 }

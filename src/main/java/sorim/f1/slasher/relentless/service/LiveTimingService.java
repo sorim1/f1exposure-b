@@ -9,9 +9,9 @@ public interface LiveTimingService {
 
     void getAllRaceDataFromErgastTable(String year);
 
-    LiveTimingData processLatestRace() throws JsonProcessingException;
-
     RaceAnalysis getRaceAnalysis() throws Exception;
 
     Boolean analyzeLatestRace();
+
+    Boolean resetLatestRaceAnalysis();
 }

@@ -10,7 +10,7 @@ import org.springframework.web.client.RestTemplate;
 import sorim.f1.slasher.relentless.configuration.MainProperties;
 import sorim.f1.slasher.relentless.entities.F1Calendar;
 import sorim.f1.slasher.relentless.entities.ergast.Race;
-import sorim.f1.slasher.relentless.handling.ExceptionHandling;
+import sorim.f1.slasher.relentless.handling.Logger;
 import sorim.f1.slasher.relentless.model.livetiming.*;
 import sorim.f1.slasher.relentless.repository.CalendarRepository;
 import sorim.f1.slasher.relentless.service.ErgastService;
@@ -20,9 +20,11 @@ import sorim.f1.slasher.relentless.util.MainUtility;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 @Slf4j
 @Service
@@ -60,18 +62,10 @@ public class LiveTimingServiceImpl implements LiveTimingService {
                     .getForObject(liveTimingUrl, String.class, race.getSeason(), grandPrix, raceName);
         } catch (Exception e) {
             log.error("error1:", e);
-            ExceptionHandling.logException("LIVETIMING_ERROR", e.getMessage());
+            Logger.log("LIVETIMING_ERROR", e.getMessage());
         }
         return null;
     };
-
-    @Override
-    public LiveTimingData processLatestRace() throws JsonProcessingException {
-        Race race = service.getLatestAnalyzedRace();
-        ObjectMapper mapper = new ObjectMapper();
-        LiveTimingData response = mapper.readValue(race.getLiveTiming(), LiveTimingData.class);
-        return response;
-    }
 
     @Override
     public RaceAnalysis getRaceAnalysis(){
@@ -84,8 +78,10 @@ public class LiveTimingServiceImpl implements LiveTimingService {
         String response = getLiveTimingResponseOfErgastRace(race);
         if(response!=null) {
             race.setLiveTiming(response.substring(response.indexOf("{")));
-            race.setRaceAnalysis(fetchNewRaceAnalysis(race.getCircuit().getCircuitId()));
             race.setCircuitId(race.getCircuit().getCircuitId());
+            service.saveRace(race);
+            race.setRaceAnalysis(fetchNewRaceAnalysis(race.getCircuit().getCircuitId()));
+
             service.saveRace(race);
             return true;
         } else {
@@ -94,27 +90,42 @@ public class LiveTimingServiceImpl implements LiveTimingService {
 
     }
 
+    @Override
+    public Boolean resetLatestRaceAnalysis() {
+        Race race = service.getLatestAnalyzedRace();
+        race.setRaceAnalysis(null);
+        race.setLiveTiming(null);
+        race.setCircuitId(null);
+        service.saveRace(race);
+        return true;
+    }
+
     public RaceAnalysis fetchNewRaceAnalysis(String circuitId) {
         ObjectMapper mapper = new ObjectMapper();
         List<Race> races = service.findByCircuitIdOrderBySeasonDesc(circuitId);
         List<FrontendGraphWeatherData> weatherChartData = new ArrayList<>();
-        AtomicReference<Boolean> zeroBoolean = new AtomicReference<>(true);
-        AtomicReference<FrontendGraphScoringData> scoringData = new AtomicReference<>();
-        AtomicReference<FrontendGraphLapPosData> lapPosData = new AtomicReference<>();
+        AtomicReference<Boolean> onlyFirstOne = new AtomicReference<>(true);
         AtomicReference<List<Driver>> drivers = new AtomicReference<>();
-        AtomicReference<FrontendGraphLeaderboardData> leaderboards = new AtomicReference<>();
+        AtomicReference<String> title = new AtomicReference<>();
         races.forEach(race -> {
             try {
                 LiveTimingData response = mapper.readValue(race.getLiveTiming(), LiveTimingData.class);
                 FrontendGraphWeatherData weatherRow = new FrontendGraphWeatherData(response.getWeather().getGraph().getData(), Integer.valueOf(race.getSeason()));
                 weatherChartData.add(weatherRow);
-                if(zeroBoolean.get()){
-                    drivers.set(response.getInit().getData().getDrivers());
-                    List<String> driverCodes =MainUtility.extractDriverCodesOrdered(drivers.get());
-                    scoringData.set(new FrontendGraphScoringData(response.getScores().getGraph(), Integer.valueOf(race.getSeason()), driverCodes));
-                    leaderboards.set(new FrontendGraphLeaderboardData(response.getFree().data, response.getBest().data));
-                    lapPosData.set(new FrontendGraphLapPosData(response.getLapPos().getGraph(), response.getXtra().data, driverCodes));
-                    zeroBoolean.set(false);
+                if(onlyFirstOne.get()){
+                    List<Driver> driversResponse = response.getInit().getData().getDrivers();
+                    Map<String, Driver> driversMap = driversResponse.stream()
+                            .collect(Collectors.toMap(Driver::getInitials, Function.identity(), (o1, o2) -> o1, TreeMap::new));
+                    List<String> driverCodes =MainUtility.extractDriverCodes(driversResponse);
+                    title.set((String) response.getFree().data.getDataField("R"));
+                    enrichDriversWithScoringData(driversMap, response.getScores().getGraph());
+                    enrichDriversWithFreeData(driversMap, response.getFree().data);
+                    enrichDriversWithBestData(driversMap, response.getBest().data, driverCodes);
+                    enrichDriversWithLapByLapData(driversMap, response.getLapPos().getGraph(), response.getXtra().data, driverCodes);
+                  //  leaderboards.set(new FrontendGraphLeaderboardData(response.getFree().data, response.getBest().data));
+                  //  lapPosData.set(new FrontendGraphLapPosData(response.getLapPos().getGraph(), response.getXtra().data, driverCodes));
+                    onlyFirstOne.set(false);
+                    drivers.set(new ArrayList<>(driversMap.values()));
                 }
             } catch (JsonProcessingException e) {
                 e.printStackTrace();
@@ -122,47 +133,79 @@ public class LiveTimingServiceImpl implements LiveTimingService {
         });
         return RaceAnalysis.builder()
                 .weatherChartData(weatherChartData)
-                .scoringChartData(scoringData.get())
-                .lapPosChartData(lapPosData.get())
                 .driverData(drivers.get())
-                .leaderboardData(leaderboards.get())
-                .title(leaderboards.get().title).build();
+                .title(title.get()).build();
     }
 
-    public RaceAnalysis getRaceAnalysisOld() {
-        ObjectMapper mapper = new ObjectMapper();
-        String circuitId = service.getLatestAnalyzedRace().getCircuitId();
-        List<Race> races = service.findByCircuitIdOrderBySeasonDesc(circuitId);
-        List<FrontendGraphWeatherData> weatherChartData = new ArrayList<>();
-        AtomicReference<Boolean> zeroBoolean = new AtomicReference<>(true);
-        AtomicReference<FrontendGraphScoringData> scoringData = new AtomicReference<>();
-        AtomicReference<FrontendGraphLapPosData> lapPosData = new AtomicReference<>();
-        AtomicReference<List<Driver>> drivers = new AtomicReference<>();
-        AtomicReference<FrontendGraphLeaderboardData> leaderboards = new AtomicReference<>();
-        races.forEach(race -> {
-            try {
-                LiveTimingData response = mapper.readValue(race.getLiveTiming(), LiveTimingData.class);
-                FrontendGraphWeatherData weatherRow = new FrontendGraphWeatherData(response.getWeather().getGraph().getData(), Integer.valueOf(race.getSeason()));
-                weatherChartData.add(weatherRow);
-                if(zeroBoolean.get()){
-                    drivers.set(response.getInit().getData().getDrivers());
-                    List<String> driverCodes =MainUtility.extractDriverCodesOrdered(drivers.get());
-                    scoringData.set(new FrontendGraphScoringData(response.getScores().getGraph(), Integer.valueOf(race.getSeason()), driverCodes));
-                    leaderboards.set(new FrontendGraphLeaderboardData(response.getFree().data, response.getBest().data));
-                    lapPosData.set(new FrontendGraphLapPosData(response.getLapPos().getGraph(), response.getXtra().data, driverCodes));
-                    zeroBoolean.set(false);
-                }
-            } catch (JsonProcessingException e) {
-                e.printStackTrace();
+    private void enrichDriversWithLapByLapData(Map<String, Driver> driversMap, LapPosGraph lapPos, RawData xtraData, List<String> driverCodes) {
+        Map<String, Object> map = lapPos.data.getDataFields();
+        map.forEach((key, v) -> {
+            List<Integer> laps = (List<Integer>) v;
+            //im deleting odd rows here because theyre lap counters, not positions
+            for (int i = laps.size()-2; i >= 0; i -= 2) {
+                laps.remove(i);
             }
+            driversMap.get(key.substring(1)).getLapByLapData().setPositions(laps);
         });
-        return RaceAnalysis.builder()
-                .weatherChartData(weatherChartData)
-                .scoringChartData(scoringData.get())
-                .lapPosChartData(lapPosData.get())
-                .driverData(drivers.get())
-                .leaderboardData(leaderboards.get())
-                .title(leaderboards.get().title).build();
+        List<LinkedHashMap> dr = (List<LinkedHashMap>) xtraData.getDataField("DR");
+        AtomicInteger driverCounter = new AtomicInteger();
+        dr.forEach(row ->{
+            List<String> xData = (List<String>) row.get("X");
+            List<Integer> tiData = (List<Integer>) row.get("TI");
+            String tyreSequence= xData.get(9);
+            for(int i=0;i<tiData.size();i=i+3){
+                driversMap.get(driverCodes.get(driverCounter.get())).getLapByLapData().getTyres()
+                        .add(new Tyre(String.valueOf(tyreSequence.charAt(i/3)), tiData.get(i+1)));
+            }
+            driverCounter.incrementAndGet();
+        });
+    }
+
+    private void enrichDriversWithBestData(Map<String, Driver> driversMap, RawData bestData, List<String> driverCodes) {
+        List<LinkedHashMap> dr = (List<LinkedHashMap>) bestData.getDataField("DR");
+       AtomicReference<Integer> counter = new AtomicReference<>(0);
+        dr.forEach(row ->{
+            List<String> data = (List<String>) row.get("B");
+            driversMap.get(driverCodes.get(counter.get())).setFastestLap(data.get(4));
+            counter.set(counter.get() + 1);
+        });
+    }
+
+    private void enrichDriversWithFreeData(Map<String, Driver> driversMap, RawData freeData) {
+        List<LinkedHashMap> dr = (List<LinkedHashMap>) freeData.getDataField("DR");
+        dr.forEach(row ->{
+            List<String> data = (List<String>) row.get("F");
+            driversMap.get(data.get(0)).setPosition(Integer.valueOf(data.get(3)));
+            driversMap.get(data.get(0)).setFinalGap(data.get(4));
+        });
+    }
+
+    public void enrichDriversWithScoringData(Map<String, Driver> driversMap, ScoresGraph scoresGraph) {
+        scoresGraph.steering.getDataFields().forEach((key,value)->{
+            log.info("key sa p: {} " + key);
+            List<Integer> list = (List<Integer>) value;
+            driversMap.get(key.substring(1)).setSteering(list.get(1));
+        });
+        scoresGraph.gforceLat.getDataFields().forEach((key,value)->{
+            List<Integer> list = (List<Integer>) value;
+            driversMap.get(key.substring(1)).setGforceLat(list.get(1));
+        });
+        scoresGraph.gforceLong.getDataFields().forEach((key,value)->{
+            List<Integer> list = (List<Integer>) value;
+            driversMap.get(key.substring(1)).setGforceLong(list.get(1));
+        });
+        scoresGraph.brake.getDataFields().forEach((key,value)->{
+            List<Integer> list = (List<Integer>) value;
+            driversMap.get(key.substring(1)).setBrake(list.get(1));
+        });
+        scoresGraph.performance.getDataFields().forEach((key,value)->{
+            List<Integer> list = (List<Integer>) value;
+            driversMap.get(key.substring(1)).setPerformance(list.get(1));
+        });
+        scoresGraph.throttle.getDataFields().forEach((key,value)->{
+            List<Integer> list = (List<Integer>) value;
+            driversMap.get(key.substring(1)).setThrottle(list.get(1));
+        });
     }
 
     private void getDataUrl() {

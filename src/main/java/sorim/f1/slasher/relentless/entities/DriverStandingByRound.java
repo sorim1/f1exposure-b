@@ -26,6 +26,7 @@ public class DriverStandingByRound {
     private String car;
     private Integer points;
     private Integer pointsThisRound = 0;
+    private Integer resultThisRound;
     private Integer wins;
     private Integer permanentNumber;
     private String color;

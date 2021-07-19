@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import sorim.f1.slasher.relentless.configuration.MainProperties;
 import sorim.f1.slasher.relentless.entities.*;
-import sorim.f1.slasher.relentless.handling.ExceptionHandling;
+import sorim.f1.slasher.relentless.handling.Logger;
 import sorim.f1.slasher.relentless.model.*;
 
 import sorim.f1.slasher.relentless.repository.*;
@@ -47,26 +47,6 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
-    public void validateHeader(String authorization) throws Exception {
-        if (!"md123".equals(authorization)) {
-            ExceptionHandling.raiseException("not authorized");
-        }
-    }
-
-    @Override
-    public void checkHeader(String authorization) {
-        log.info("ovo je authorization: {}", authorization);
-    }
-
-    @Override
-    public String validateIp(HttpServletRequest request) {
-        log.info(request.getRemoteAddr());
-        log.info(request.getRequestURI());
-        log.info(request.getLocalAddr());
-        return request.getRemoteAddr();
-    }
-
-    @Override
     public ExposureData getExposedChartData() {
         return ExposureData.builder()
                 .title(exposureService.getTitle())
@@ -100,6 +80,7 @@ public class ClientServiceImpl implements ClientService {
         List<DriverStandingByRound> standingsBySeason = driverStandingsByRoundRepository.findAllByIdSeasonOrderByIdRoundAscNameAsc(properties.getCurrentYear());
         Map<String, ChartSeries> totalPoints = new TreeMap<>();
         Map<String, ChartSeries> roundPoints = new TreeMap<>();
+        Map<String, ChartSeries> roundResults = new TreeMap<>();
         standingsBySeason.forEach(standing->{
             if(!totalPoints.containsKey(standing.getCode())){
                 totalPoints.put(standing.getCode(), ChartSeries.builder()
@@ -110,13 +91,19 @@ public class ClientServiceImpl implements ClientService {
                         .name(standing.getCode())
                         .color(standing.getColor())
                         .series(new ArrayList<>()).build());
+                roundResults.put(standing.getCode(), ChartSeries.builder()
+                        .name(standing.getCode())
+                        .color(standing.getColor())
+                        .series(new ArrayList<>()).build());
             }
             totalPoints.get(standing.getCode()).add(standing.getId().getRound(), standing.getPoints());
             roundPoints.get(standing.getCode()).add(standing.getId().getRound(), standing.getPointsThisRound());
+            roundResults.get(standing.getCode()).add(standing.getId().getRound(), standing.getResultThisRound());
         });
         List<List<ChartSeries>> output = new ArrayList<>();
         output.add(new ArrayList<>(totalPoints.values()));
         output.add(new ArrayList<>(roundPoints.values()));
+        output.add(new ArrayList<>(roundResults.values()));
         return output;
     }
 
@@ -159,6 +146,7 @@ public class ClientServiceImpl implements ClientService {
                 .constructorStandings(getConstructorStandings())
                 .driverStandingByRound(driverSeries.get(0))
                 .driverPointsByRound(driverSeries.get(1))
+                .driverResultByRound(driverSeries.get(2))
                 .constructorStandingByRound(constructorSeries.get(0))
                 .constructorPointsByRound(constructorSeries.get(1))
                 .build();

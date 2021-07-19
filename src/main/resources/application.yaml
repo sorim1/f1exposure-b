@@ -10,6 +10,16 @@ f1:
       twitterAccessTokenSecret: I56TyVDo9GVw0s9WfyMuyZt2K9tGrb4XAVO2wax8RKFbs
       instagramUsername: miroslav.dragicevic1
       instagramPassword: "!qwadrat1"
+      calendarUrl: https://www.formula1.com/calendar/Formula_1_Official_Calendar.ics
+      sportSurgeRoot: https://api.sportsurge.net/events/list?group=13
+      sportSurgeStreams: https://api.sportsurge.net/streams/list?event=
+      formula1RacingUrl: https://www.formula1.com/en/racing/
+      admins:
+        - fb26e2db-da1b-462e-aeea-fec3955b3e40
+        - sorimsquare33
+      clients:
+        - 36aed15c-f2ca-40a0-ae6d-96d82091df99
+        - 7c36a15a-019a-4c36-944d-c63423480ca5
 spring:
   application:
     name: f1-exposure-rest-api

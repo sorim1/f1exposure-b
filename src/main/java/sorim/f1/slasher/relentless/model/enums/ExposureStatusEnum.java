@@ -2,7 +2,7 @@ package sorim.f1.slasher.relentless.model.enums;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import sorim.f1.slasher.relentless.handling.ExceptionHandling;
+import sorim.f1.slasher.relentless.handling.Logger;
 
 @Getter
 @RequiredArgsConstructor
@@ -21,7 +21,7 @@ public enum ExposureStatusEnum {
                 return e.value;
             }
         }
-        ExceptionHandling.raiseException("RoundEnum description not found: " + description);
+        Logger.raiseException("RoundEnum description not found: " + description);
         return null;
     }
 
@@ -31,7 +31,7 @@ public enum ExposureStatusEnum {
                 return e;
             }
         }
-        ExceptionHandling.raiseException("RoundEnum description not found: " + description);
+        Logger.raiseException("RoundEnum description not found: " + description);
         return null;
     }
 }

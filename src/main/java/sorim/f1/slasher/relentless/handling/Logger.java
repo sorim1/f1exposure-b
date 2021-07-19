@@ -14,11 +14,12 @@ import javax.annotation.PostConstruct;
 @Slf4j
 @Service
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
-public class ExceptionHandling {
+public class Logger {
 
     private final LogRepository wiredRepository;
 
     private static LogRepository repository = null;
+    private static String INFO = "INFO";
 
     @PostConstruct
     public void init() {
@@ -37,8 +38,13 @@ public class ExceptionHandling {
         throw new Exception(message);
     }
 
-    public static void logException(String code, String message) {
+    public static void log(String code, String message) {
         log.error(message);
         repository.save(Log.builder().code(code).message(message).build());
+    }
+
+    public static void log(String message) {
+        log.info(message);
+        repository.save(Log.builder().code(INFO).message(message).build());
     }
 }

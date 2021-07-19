@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import sorim.f1.slasher.relentless.service.AdminService;
 import sorim.f1.slasher.relentless.service.ExposureService;
 
+import javax.annotation.PostConstruct;
 import java.io.IOException;
 
 @Service
@@ -74,5 +75,10 @@ public class Scheduler {
                     delay*1000
             );
         }
+    }
+    @PostConstruct
+    void onInit(){
+       log.info("onInitCalled");
+        sundayJobs();
     }
 }

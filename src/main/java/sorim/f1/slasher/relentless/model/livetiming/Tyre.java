@@ -12,7 +12,7 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 public class Tyre {
-    public Integer type;
+    public String type;
     public Integer duration;
 
 }

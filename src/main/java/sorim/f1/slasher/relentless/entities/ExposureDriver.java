@@ -13,12 +13,10 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Driver {
+public class ExposureDriver {
 
     @Id
     private String code;
-    private String firstName;
-    private String lastName;
     private String fullName;
     @Transient
     private boolean exposure;

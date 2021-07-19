@@ -12,6 +12,7 @@ import javax.annotation.PostConstruct;
 @ConfigurationProperties(prefix = "f1.exposure.properties")
 public class MainProperties {
 
+    public String formula1RacingUrl;
     private String tempo;
     private Integer currentYear;
     private Boolean twitterDebug;
@@ -21,6 +22,11 @@ public class MainProperties {
     private String twitterAccessTokenSecret;
     private String instagramUsername;
     private String instagramPassword;
+    private String[] clients;
+    private String[] admins;
+    private String calendarUrl;
+    private String sportSurgeRoot;
+    private String sportSurgeStreams;
 
     @PostConstruct
     public void setProperty() {

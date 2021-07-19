@@ -22,5 +22,5 @@ public interface ErgastRaceRepository extends CrudRepository<Race, String> {
     Race findFirstByRaceAnalysisIsNullOrderByDateAsc();
 
 
-    List<Race> findByCircuitIdOrderBySeasonDesc(String circuitId);
+    List<Race> findByCircuitIdOrderByIdDesc(String circuitId);
 }

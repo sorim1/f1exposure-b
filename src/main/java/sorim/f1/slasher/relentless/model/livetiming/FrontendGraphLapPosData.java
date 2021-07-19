@@ -17,36 +17,36 @@ import java.util.concurrent.atomic.AtomicInteger;
 @Slf4j
 public class FrontendGraphLapPosData {
     public List<String> driverCodes = new ArrayList<>();
-    public List<LapPosition> lapPositions = new ArrayList<>();
+    public List<LapByLapData> lapByLapData = new ArrayList<>();
 
-    public FrontendGraphLapPosData(LapPosGraph graph, RawData xtraData, List<String> driverCodes) {
-        Map<String, Object> map = graph.data.getDataFields();
-        this.driverCodes = driverCodes;
-        List<String> driverCodesDisorder = MainUtility.extractDriverCodes(map.keySet());
-        List<Integer> order = MainUtility.orderDriverCodes(driverCodesDisorder, this.driverCodes);
-        LapPosition[] lpArray = new LapPosition[driverCodes.size()];
-        AtomicInteger driverCounter = new AtomicInteger();
-        map.forEach((ka, v) -> {
-            List<Integer> laps = (List<Integer>) v;
-            for (int i = laps.size()-2; i >= 0; i -= 2) {
-                laps.remove(i);
-            }
-            lpArray[order.get(driverCounter.get())] = new LapPosition(laps, new ArrayList<>());
-            driverCounter.getAndIncrement();
-        });
-
-        List<LinkedHashMap> dr = (List<LinkedHashMap>) xtraData.getDataField("DR");
-        driverCounter.set(0);
-        dr.forEach(row ->{
-            List<Integer> coreData = (List<Integer>) row.get("TI");
-            for(int i=0;i<coreData.size();i=i+3){
-                lpArray[(driverCounter.get())].getTyres()
-                        .add(new Tyre(coreData.get(i), coreData.get(i+1)));
-            }
-            driverCounter.incrementAndGet();
-        });
-        lapPositions.addAll(Arrays.asList(lpArray));
-
-    }
+//    public FrontendGraphLapPosData(LapPosGraph graph, RawData xtraData, List<String> driverCodes) {
+//        Map<String, Object> map = graph.data.getDataFields();
+//        this.driverCodes = driverCodes;
+//        List<String> driverCodesDisorder = MainUtility.extractDriverCodes(map.keySet());
+//        List<Integer> order = MainUtility.orderDriverCodes(driverCodesDisorder, this.driverCodes);
+//        LapByLapData[] lpArray = new LapByLapData[driverCodes.size()];
+//        AtomicInteger driverCounter = new AtomicInteger();
+//        map.forEach((k, v) -> {
+//            List<Integer> laps = (List<Integer>) v;
+//            for (int i = laps.size()-2; i >= 0; i -= 2) {
+//                laps.remove(i);
+//            }
+//            lpArray[order.get(driverCounter.get())] = new LapByLapData(laps, new ArrayList<>());
+//            driverCounter.getAndIncrement();
+//        });
+//
+//        List<LinkedHashMap> dr = (List<LinkedHashMap>) xtraData.getDataField("DR");
+//        driverCounter.set(0);
+//        dr.forEach(row ->{
+//            List<Integer> coreData = (List<Integer>) row.get("TI");
+//            for(int i=0;i<coreData.size();i=i+3){
+//                lpArray[(driverCounter.get())].getTyres()
+//                        .add(new Tyre(coreData.get(i), coreData.get(i+1)));
+//            }
+//            driverCounter.incrementAndGet();
+//        });
+//        lapByLapData.addAll(Arrays.asList(lpArray));
+//
+//    }
 
 }

@@ -8,7 +8,10 @@ import java.util.List;
 public interface AdminService {
     void initialize() throws Exception;
 
-    void refreshCalendar() throws Exception;
+    void refreshCalendarOfCurrentSeason() throws Exception;
+
+    void validateCalendarForNextRace() throws Exception;
+
 
     Boolean initializeStandings() throws IOException;
 

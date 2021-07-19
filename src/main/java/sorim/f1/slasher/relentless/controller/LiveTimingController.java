@@ -3,13 +3,10 @@ package sorim.f1.slasher.relentless.controller;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-import sorim.f1.slasher.relentless.model.livetiming.LiveTimingData;
+import org.springframework.web.bind.annotation.*;
 import sorim.f1.slasher.relentless.model.livetiming.RaceAnalysis;
 import sorim.f1.slasher.relentless.service.LiveTimingService;
+import sorim.f1.slasher.relentless.service.SecurityService;
 
 @RestController
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
@@ -18,27 +15,32 @@ import sorim.f1.slasher.relentless.service.LiveTimingService;
 public class LiveTimingController {
 
     private final LiveTimingService service;
-    //TODO validacija, zasebni key za admin sučelje, ovo je isto admin-only kontroler
+    private final SecurityService securityService;
 
     @GetMapping("/getAllRaceData/{year}")
-    boolean getAllRaceDataFromErgastTable(@PathVariable("year") String year) throws Exception {
+    boolean getAllRaceDataFromErgastTable(@RequestHeader String client, @PathVariable("year") String year) throws Exception {
         log.info("getAllRaceDataFromErgastTable: {}", year);
+        securityService.validateAdminHeader(client);
         service.getAllRaceDataFromErgastTable(year);
         return true;
     }
 
-    @GetMapping("/processLatestRace")
-    LiveTimingData processLatestRace() throws Exception {
-        return service.processLatestRace();
-    }
-
     @GetMapping("/getRaceAnalysis")
-    RaceAnalysis getRaceAnalysis() throws Exception {
+    RaceAnalysis getRaceAnalysis(@RequestHeader String client) throws Exception {
+        securityService.validateHeader(client);
         return service.getRaceAnalysis();
     }
 
     @GetMapping("/analyzeLatestRace")
-    Boolean analyzeLatestRace() throws Exception {
+    Boolean analyzeLatestRace(@RequestHeader String client) throws Exception {
+        securityService.validateAdminHeader(client);
         return service.analyzeLatestRace();
     }
+
+    @GetMapping("/resetLatestRaceAnalysis")
+    Boolean resetLatestRaceAnalysis(@RequestHeader String client) throws Exception {
+        securityService.validateAdminHeader(client);
+        return service.resetLatestRaceAnalysis();
+    }
+
 }

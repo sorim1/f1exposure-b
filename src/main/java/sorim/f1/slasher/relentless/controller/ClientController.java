@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import sorim.f1.slasher.relentless.entities.*;
 import sorim.f1.slasher.relentless.model.*;
 import sorim.f1.slasher.relentless.service.ClientService;
+import sorim.f1.slasher.relentless.service.SecurityService;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
@@ -15,87 +16,89 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 @Slf4j
+@RequestMapping("f1exposure")
 public class ClientController {
 
     private final ClientService service;
+    private final SecurityService securityService;
+
+    @GetMapping("/countdown")
+    CalendarData getCountdownData(@RequestHeader String client, @RequestParam String mode) throws Exception {
+        securityService.validateHeader(client);
+        return service.getCountdownData(Integer.valueOf(mode));
+    }
 
     @GetMapping("/getExposureDriverList")
-    ExposureResponse getExposureDriverList(@RequestHeader String authorization) throws Exception {
-        service.validateHeader(authorization);
+    ExposureResponse getExposureDriverList(@RequestHeader String client) throws Exception {
+        securityService.validateHeader(client);
         return service.getExposureDriverList();
     }
 
     @PostMapping("/expose")
-    Boolean exposeDrivers(@RequestHeader String authorization, @RequestBody String[] exposedList, HttpServletRequest request) throws Exception {
-        service.validateHeader(authorization);
-        String ipAddress = service.validateIp(request);
+    Boolean exposeDrivers(@RequestHeader String client, @RequestBody String[] exposedList, HttpServletRequest request) throws Exception {
+        securityService.validateHeader(client);
+        String ipAddress = securityService.validateIp(request);
         return service.exposeDrivers(exposedList, ipAddress);
     }
 
     @GetMapping("/getExposureResults")
-    ExposureData getExposedChartData(@RequestHeader String authorization) throws Exception {
-        service.validateHeader(authorization);
+    ExposureData getExposedChartData(@RequestHeader String client) throws Exception {
+        securityService.validateHeader(client);
         return service.getExposedChartData();
     }
 
-    @GetMapping("/countdown")
-    CalendarData getCountdownData(@RequestHeader String authorization, @RequestParam String mode) throws Exception {
-        service.validateHeader(authorization);
-        return service.getCountdownData(Integer.valueOf(mode));
-    }
 
     @GetMapping("/getDriverStandings")
-    List<DriverStanding> getDriverStandings(@RequestHeader String authorization) throws Exception {
-        service.validateHeader(authorization);
+    List<DriverStanding> getDriverStandings(@RequestHeader String client) throws Exception {
+        securityService.validateHeader(client);
         return service.getDriverStandings();
     }
 
     @GetMapping("/getConstructorStandings")
-    List<ConstructorStanding> getConstructorStandings(@RequestHeader String authorization) throws Exception {
-        service.validateHeader(authorization);
+    List<ConstructorStanding> getConstructorStandings(@RequestHeader String client) throws Exception {
+        securityService.validateHeader(client);
         return service.getConstructorStandings();
     }
 
     @GetMapping("/getStandings")
-    AllStandings getStandings(@RequestHeader String authorization) throws Exception {
-        service.validateHeader(authorization);
+    AllStandings getStandings(@RequestHeader String client) throws Exception {
+        securityService.validateHeader(client);
         return service.getStandings();
     }
 
     @GetMapping("/getSportSurge")
-    List<SportSurgeEvent> getSportSurge(@RequestHeader String authorization) throws Exception {
-        service.validateHeader(authorization);
+    List<SportSurgeEvent> getSportSurge(@RequestHeader String client) throws Exception {
+        securityService.validateHeader(client);
         return service.getSportSurge();
     }
 
     @PostMapping("/postComment")
-    List<F1Comment> postComment(@RequestHeader String authorization, @RequestBody F1Comment comment) throws Exception {
-        service.validateHeader(authorization);
+    List<F1Comment> postComment(@RequestHeader String client, @RequestBody F1Comment comment) throws Exception {
+        securityService.validateHeader(client);
         return service.postComment(comment);
     }
 
     @GetMapping("/getComments/{page}")
-    List<F1Comment> getComments(@RequestHeader String authorization, @PathVariable("page") String page) throws Exception {
-        service.validateHeader(authorization);
+    List<F1Comment> getComments(@RequestHeader String client, @PathVariable("page") String page) throws Exception {
+        securityService.validateHeader(client);
         return service.getComments(page);
     }
 
     @GetMapping("/fetchInstagramFeed")
-    List<InstagramPost> fetchInstagramFeed(@RequestHeader String authorization) throws Exception {
-        service.validateHeader(authorization);
+    List<InstagramPost> fetchInstagramFeed(@RequestHeader String client) throws Exception {
+        securityService.validateHeader(client);
         return service.fetchInstagramFeed();
     }
 
     @GetMapping("/getInstagramFeed")
-    TripleInstagramFeed getInstagramFeed(@RequestHeader String authorization) throws Exception {
-        service.validateHeader(authorization);
+    TripleInstagramFeed getInstagramFeed(@RequestHeader String client) throws Exception {
+        securityService.validateHeader(client);
         return service.getInstagramFeed();
     }
 
     @GetMapping("/getInstagramPosts/{page}")
-    TripleInstagramFeed getInstagramFeedPage(@RequestHeader String authorization, @PathVariable("page") String page) throws Exception {
-        log.info("getInstagramFeedPage: {}", page);
-        service.validateHeader(authorization);
+    TripleInstagramFeed getInstagramFeedPage(@RequestHeader String client, @PathVariable("page") String page) throws Exception {
+        securityService.validateHeader(client);
         return service.getInstagramFeedPage(Integer.valueOf(page));
     }
 
@@ -108,14 +111,14 @@ public class ClientController {
     }
 
     @GetMapping("/getTwitterPosts/{page}")
-    DoubleTwitterFeed getTwitterPosts(@RequestHeader String authorization, @PathVariable("page") String page) throws Exception {
-        service.validateHeader(authorization);
+    DoubleTwitterFeed getTwitterPosts(@RequestHeader String client, @PathVariable("page") String page) throws Exception {
+        securityService.validateHeader(client);
         return service.getTwitterPosts(Integer.valueOf(page));
     }
 
     @GetMapping("/fetchTwitterPosts")
-    List<TwitterPost> fetchTwitterPosts(@RequestHeader String authorization) throws Exception {
-        service.validateHeader(authorization);
+    List<TwitterPost> fetchTwitterPosts(@RequestHeader String client) throws Exception {
+        securityService.validateHeader(client);
         return service.fetchTwitterPosts();
     }
 }

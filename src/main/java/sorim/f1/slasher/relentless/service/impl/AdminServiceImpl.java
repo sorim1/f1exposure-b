@@ -16,8 +16,10 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 import sorim.f1.slasher.relentless.configuration.MainProperties;
 import sorim.f1.slasher.relentless.entities.*;
+import sorim.f1.slasher.relentless.handling.Logger;
 import sorim.f1.slasher.relentless.model.CalendarData;
 import sorim.f1.slasher.relentless.model.SportSurge;
 import sorim.f1.slasher.relentless.model.ergast.ErgastResponse;
@@ -32,6 +34,10 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.*;
 
 @Slf4j
@@ -39,12 +45,6 @@ import java.util.*;
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class AdminServiceImpl implements AdminService {
 
-    private static final String CALENDAR_URL = "https://www.formula1.com/calendar/Formula_1_Official_Calendar.ics";
-    private static String DRIVER_STANDINGS_URL = "https://www.formula1.com/en/results.html/2021/drivers.html";
-    private static String CONSTRUCTOR_STANDINGS_URL = "https://www.formula1.com/en/results.html/2021/team.html";
-    private static final String SPORTSURGE_GROUP_13 = "https://api.sportsurge.net/events/list?group=13";
-    private static final String SPORTSURGE_GROUP = "https://api.sportsurge.net/events/list";
-    private static final String SPORTSURGE_STREAMS = "https://api.sportsurge.net/streams/list?event=";
     private static Integer CURRENT_ROUND;
 
     private final CalendarRepository calendarRepository;
@@ -61,27 +61,25 @@ public class AdminServiceImpl implements AdminService {
     private final MainProperties properties;
     private final ClientService clientService;
     private final ExposureService exposureService;
-
+    private RestTemplate restTemplate = new RestTemplate();
 
 
     @PostConstruct
     public void onInit() {
-        DRIVER_STANDINGS_URL = DRIVER_STANDINGS_URL.replace("2021", properties.getCurrentYear().toString());
-        CONSTRUCTOR_STANDINGS_URL = CONSTRUCTOR_STANDINGS_URL.replace("2021", properties.getCurrentYear().toString());
         CURRENT_ROUND = Integer.valueOf(propertiesRepository.findDistinctFirstByName("round").getValue());
             }
 
     @Override
     public void initialize() throws Exception {
-        refreshCalendar();
+        refreshCalendarOfCurrentSeason();
         initializeStandings();
         fetchSportSurgeLinks();
     }
 
     @Override
-    public void refreshCalendar() throws Exception {
-        URL url = new URL(CALENDAR_URL);
-        Reader r = new InputStreamReader(url.openStream());
+    public void refreshCalendarOfCurrentSeason() throws Exception {
+        URL url = new URL(properties.getCalendarUrl());
+        Reader r = new InputStreamReader(url.openStream(), StandardCharsets.UTF_8);
         CalendarBuilder builder = new CalendarBuilder();
         Calendar calendar = builder.build(r);
         int raceId = 0;
@@ -109,18 +107,43 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
-    public Boolean initializeStandings() throws IOException {
+    public void validateCalendarForNextRace() throws Exception {
+        ZonedDateTime gmtZoned = ZonedDateTime.now(ZoneId.of("Europe/London"));
+        LocalDateTime gmtDateTime = gmtZoned.toLocalDateTime();
+        F1Calendar f1calendar = calendarRepository.findFirstByRaceAfterOrderByRace(gmtDateTime);
+        String rawHtml = restTemplate
+                .getForObject(properties.getFormula1RacingUrl()+properties.getCurrentYear()+".html", String.class);
+            //todo TBC
+        Document doc = Jsoup.parse(rawHtml, null);
+        Elements clock = doc.getAllElements();
+        log.info("clock.wholeText()");
+        //Elements tRows1 = clock.getElementsByClass("f1-color--white countdown-text");
+        clock.forEach(row -> {
+            log.info("row.wholeText()1");
+            log.info(row.wholeText());
+            row.getAllElements().forEach(row2 -> {
+                log.info("row2.wholeText()1");
+                log.info(row2.wholeText());
+            });
+        });
+    }
+
+    @Override
+    public Boolean initializeStandings() {
+        Logger.log("initializeStandings");
         Integer currentRound = refreshDriverStandingsFromErgast();
         if(currentRound== null){
-            log.info("initializeStandings - nista novo");
+            Logger.log("initializeStandings - no changes detected");
             return false;
         }
         initializeConstructorStandings();
+        Logger.log("initializeStandings - changes detected");
         return true;
     }
 
     @Override
     public Boolean initializeFullStandingsThroughRounds() {
+        Logger.log("initializeFullStandingsThroughRounds");
         boolean iterate;
         Integer round = 1;
         Map<String, DriverStandingByRound> driverStandingsByRound = new HashMap<>();
@@ -175,6 +198,7 @@ public class AdminServiceImpl implements AdminService {
                 response.getMrData().getRaceTable().getRaces().get(0).getResults()
                         .forEach(ergastStanding -> {
                             driverStandingsByRound.get(ergastStanding.getDriver().getDriverId()+ finalRound).setPointsThisRound(ergastStanding.getPoints());
+                            driverStandingsByRound.get(ergastStanding.getDriver().getDriverId()+ finalRound).setResultThisRound(ergastStanding.getPosition());
                             constructorStandingByRound.get(ergastStanding.getConstructor().getConstructorId()+ finalRound).incrementPointsThisRound(ergastStanding.getPoints());
                         });
                 round++;
@@ -202,8 +226,7 @@ public class AdminServiceImpl implements AdminService {
              response.getMrData().getRaceTable().getRaces().get(0).getResults()
                      .forEach(ergastStanding -> {
                          driverStandingsByRound.get(ergastStanding.getDriver().getDriverId()).incrementPointsThisRound(ergastStanding.getPoints());
-                    //     driverStandingsByRound.get(ergastStanding.getConstructor().getConstructorId()).incrementPointsThisRound(ergastStanding.getPoints());
-                     });
+                                });
              driverStandingsRepository.deleteAll();
              driverStandingsRepository.saveAll(driverStandings);
              driverStandingsByRoundRepository.saveAll(driverStandingsByRound.values());
@@ -217,15 +240,15 @@ public class AdminServiceImpl implements AdminService {
 
     private void updateExposureDriverList(List<DriverStanding> driverStandings) {
         //poveznica između exposure liste i standings liste
-        List<Driver> drivers = driverRepository.findAll();
+        List<ExposureDriver> drivers = driverRepository.findAll();
         exposureService.setNextRoundOfExposure(driverStandings, CURRENT_ROUND+1);
         for (DriverStanding driverStanding : driverStandings) {
-            Optional<Driver> foundDriver = drivers.stream().filter(x -> driverStanding.getName().equals(x.getFullName()))
+            Optional<ExposureDriver> foundDriver = drivers.stream().filter(x -> driverStanding.getName().equals(x.getFullName()))
                     .findFirst();
             if (foundDriver.isPresent()) {
             } else {
-                Driver newDriver = Driver.builder().firstName(driverStanding.getFirstName())
-                        .lastName(driverStanding.getLastName()).fullName(driverStanding.getName())
+                ExposureDriver newDriver = ExposureDriver.builder()
+                        .fullName(driverStanding.getFirstName() + " " + driverStanding.getName())
                         .code(driverStanding.getCode()).build();
                 driverRepository.save(newDriver);
             }
@@ -233,7 +256,6 @@ public class AdminServiceImpl implements AdminService {
     }
 
     private void initializeConstructorStandings(){
-
         List<ConstructorStanding> constructorStandings = new ArrayList<>();
         Map<String, ConstructorStandingByRound> constructorStandingsByRound = new HashMap<>();
         ErgastResponse response = ergastService.getConstructorStandings();
@@ -254,14 +276,15 @@ public class AdminServiceImpl implements AdminService {
 
     @Override
     public Integer fetchSportSurgeLinks() throws IOException {
+        Logger.log("fetchSportSurgeLinks");
         WebClient client = new WebClient();
-        Page page = client.getPage(SPORTSURGE_GROUP_13);
+        Page page = client.getPage(properties.getSportSurgeRoot());
         WebResponse response = page.getWebResponse();
         SportSurge sportSurge = new ObjectMapper().readValue(response.getContentAsString(), SportSurge.class);
         List<SportSurgeEvent> events = sportSurge.getEvents();
         List<SportSurgeStream> streams = new ArrayList<>();
         for (SportSurgeEvent event : events) {
-            page = client.getPage(SPORTSURGE_STREAMS + event.getId());
+            page = client.getPage(properties.getSportSurgeStreams() + event.getId());
             response = page.getWebResponse();
             sportSurge = new ObjectMapper().readValue(response.getContentAsString(), SportSurge.class);
             streams.addAll(sportSurge.getStreams());
@@ -270,19 +293,18 @@ public class AdminServiceImpl implements AdminService {
         sportSurgeStreamRepository.saveAll(streams);
         sportSurgeEventRepository.saveAll(events);
         return getNextRefreshTick();
-
-
-
     }
 
     @Override
     public void deleteSportSurgeLinks() {
+        Logger.log("deleteSportSurgeLinks");
         sportSurgeStreamRepository.deleteAll();
         sportSurgeEventRepository.deleteAll();
     }
 
     @Override
     public void closeExposurePoll() {
+        Logger.log("closeExposurePoll");
         exposureService.closeExposurePoll();
     }
 

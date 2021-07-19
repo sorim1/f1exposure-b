@@ -12,10 +12,10 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 public class RaceAnalysis {
-    public String title;
+    String year;
+    String title;
     List<FrontendGraphWeatherData> weatherChartData;
-    FrontendGraphScoringData scoringChartData;
-    FrontendGraphLapPosData lapPosChartData;
-    FrontendGraphLeaderboardData leaderboardData;
+   // FrontendGraphLapPosData lapPosChartData;
+   // FrontendGraphLeaderboardData leaderboardData;
     List<Driver> driverData;
 }

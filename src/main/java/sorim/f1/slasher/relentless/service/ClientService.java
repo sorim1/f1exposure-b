@@ -10,12 +10,6 @@ import java.util.List;
 public interface ClientService {
     Boolean exposeDrivers(String[] exposedList, String ipAddress) throws Exception;
 
-    void validateHeader(String authorization) throws Exception;
-
-    void checkHeader(String authorization) throws Exception;
-
-    String validateIp(HttpServletRequest request);
-
     ExposureData getExposedChartData();
 
     CalendarData getCountdownData(Integer mode);

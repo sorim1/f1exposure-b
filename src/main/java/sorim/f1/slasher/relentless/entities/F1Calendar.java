@@ -27,6 +27,11 @@ public class F1Calendar {
     private LocalDateTime practice3;
     private LocalDateTime qualifying;
     private LocalDateTime race;
+    private LocalDateTime practice1Original;
+    private LocalDateTime practice2Original;
+    private LocalDateTime practice3Original;
+    private LocalDateTime qualifyingOriginal;
+    private LocalDateTime raceOriginal;
     private String location;
     private String summary;
 
@@ -35,6 +40,8 @@ public class F1Calendar {
         this.raceId = Integer.valueOf(idAndRound[1]);
         this.location = properties.get("LOCATION").get(0).getValue();
         this.summary = properties.get("SUMMARY").get(0).getValue().replace(" - Practice 1", "");
+        System.out.println("summary");
+        System.out.println(this.summary);
         setDateFromRoundDescription(idAndRound[0], properties.get("DTSTART").get(0).getValue());
     }
 
@@ -46,18 +53,23 @@ public class F1Calendar {
         switch (round) {
             case PRACTICE_1:
                 this.practice1 = dateTime;
+                this.practice1Original = dateTime;
                 break;
             case PRACTICE_2:
                 this.practice2 = dateTime;
+                this.practice2Original = dateTime;
                 break;
             case PRACTICE_3:
                 this.practice3 = dateTime;
+                this.practice3Original = dateTime;
                 break;
             case QUALIFYING:
                 this.qualifying = dateTime;
+                this.qualifyingOriginal = dateTime;
                 break;
             case RACE:
                 this.race = dateTime;
+                this.raceOriginal = dateTime;
                 break;
         }
     }

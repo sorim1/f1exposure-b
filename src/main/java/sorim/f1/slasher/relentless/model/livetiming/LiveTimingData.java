@@ -33,45 +33,6 @@ public class LiveTimingData {
 }
 
 
-class RawData {
-    private Map<String, Object> dataFields = new HashMap<>();
-
-    @JsonAnyGetter
-    public Map<String, Object> getDataFields() {
-        return dataFields;
-    }
-
-    @JsonAnySetter
-    public void setDataField(String fieldName, Object value) {
-        dataFields.put(fieldName, value);
-    }
-
-    public Object getDataField(String fieldName) {
-        return dataFields.get(fieldName);
-    }
-}
-
-class ScoresGraph {
-    public String xtitle;
-    public String ytitle;
-    public String ztitle;
-    @JsonProperty("Steering")
-    public RawData steering;
-    @JsonProperty("GforceLat")
-    public RawData gforceLat;
-    @JsonProperty("GforceLong")
-    public RawData gforceLong;
-    @JsonProperty("Brake")
-    public RawData brake;
-    @JsonProperty("Performance")
-    public RawData performance;
-    @JsonProperty("Throttle")
-    public RawData throttle;
-    @JsonProperty("TrackStatus")
-    public List<String> trackStatus;
-}
-
-
 class DR {
     @JsonProperty("B")
     public List<Object> b;

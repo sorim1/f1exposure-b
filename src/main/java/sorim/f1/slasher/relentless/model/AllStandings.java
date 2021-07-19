@@ -23,4 +23,7 @@ public class AllStandings {
     List<ChartSeries> constructorStandingByRound;
     List<ChartSeries> driverPointsByRound;
     List<ChartSeries> constructorPointsByRound;
+    List<ChartSeries> driverResultByRound;
+    List<ChartSeries> constructorResultByRound;
+
 }

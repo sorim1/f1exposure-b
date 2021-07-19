@@ -45,8 +45,6 @@ CREATE TABLE exposure_championship_standings (
 
 CREATE TABLE DRIVERS (
       code text,
-      first_name text,
-      last_name text,
       full_name text
 );
 
@@ -62,6 +60,11 @@ CREATE TABLE CALENDAR (
      practice3 TIMESTAMP,
      qualifying TIMESTAMP,
      race TIMESTAMP,
+     practice1original TIMESTAMP,
+     practice2original TIMESTAMP,
+     practice3original TIMESTAMP,
+     qualifying_original TIMESTAMP,
+     race_original TIMESTAMP,
      location text,
      summary text
 );
@@ -89,6 +92,7 @@ CREATE TABLE DRIVER_STANDINGS_BY_ROUND (
           car text,
           points numeric,
         points_this_round numeric,
+        result_this_round numeric,
           wins numeric,
           permanent_number numeric,
         color text

@@ -6,13 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import sorim.f1.slasher.relentless.configuration.MainProperties;
 import sorim.f1.slasher.relentless.entities.*;
-import sorim.f1.slasher.relentless.handling.ExceptionHandling;
+import sorim.f1.slasher.relentless.handling.Logger;
 import sorim.f1.slasher.relentless.model.*;
 import sorim.f1.slasher.relentless.model.enums.ExposureModeEnum;
 import sorim.f1.slasher.relentless.model.enums.ExposureStatusEnum;
 import sorim.f1.slasher.relentless.repository.*;
 import sorim.f1.slasher.relentless.service.ExposureService;
 
+import javax.annotation.PostConstruct;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.time.Duration;
@@ -45,8 +46,8 @@ public class ExposureServiceImpl implements ExposureService {
     public Boolean exposeDrivers(String[] exposedList, String ipAddress) throws Exception {
         boolean alreadyExists = exposedVoteRepository.existsExposedVoteByIpAddressAndSeasonAndRound(ipAddress, properties.getCurrentYear(), currentRound);
         if(alreadyExists){
-            ExceptionHandling.logException("IP_CHEATER", ipAddress);
-           // return false;
+            Logger.log("IP_CHEATER- exposeDrivers ", ipAddress + " - " + exposedList);
+            return false;
         }
         exposedVoteRepository.save(ExposedVote.builder().drivers(exposedList)
                 .ipAddress(ipAddress)
@@ -99,11 +100,26 @@ public class ExposureServiceImpl implements ExposureService {
 
     @Override
     public ExposureResponse getExposureDriverList() {
-        List<Driver> drivers = driverRepository.findAll();
-        return ExposureResponse.builder().drivers(drivers)
-                .status(ExposureStatusEnum.ACTIVE)
+        ExposureResponse response = ExposureResponse.builder()
                 .title(title)
-                .year(properties.getCurrentYear().toString()).build();
+                .exposureTime(exposureTime)
+                .exposureNow(exposureNow)
+                .exposureToday(exposureToday)
+                .currentRound(currentRound)
+                .build();
+        if(exposureOn()) {
+            List<ExposureDriver> drivers = driverRepository.findAll();
+            response.setDrivers(drivers);
+            response.setStatus(ExposureStatusEnum.ACTIVE);
+        } else {
+            if(exposureToday){
+                response.setStatus(ExposureStatusEnum.SOON);
+            } else {
+                response.setStatus(ExposureStatusEnum.OVER);
+            }
+
+        }
+        return response;
     }
 
     @Override
@@ -111,6 +127,7 @@ public class ExposureServiceImpl implements ExposureService {
         ZonedDateTime gmtZoned = ZonedDateTime.now(ZoneId.of("Europe/London"));
         LocalDateTime gmtDateTime = gmtZoned.toLocalDateTime();
         F1Calendar f1calendar = calendarRepository.findFirstByRaceAfterOrderByRace(gmtDateTime);
+        if(f1calendar!=null){
         Duration duration = Duration.between(gmtDateTime, f1calendar.getRace());
         if(duration.toDays()>0){
             exposureToday=false;
@@ -122,8 +139,23 @@ public class ExposureServiceImpl implements ExposureService {
             propertiesRepository.updateProperty("round", currentRound.toString());
             exposureTime = LocalDateTime.now().plus(duration).plusHours(1);
         }
-
+        }
         return true;
+    }
+
+    @PostConstruct
+    public void initializeExposure() {
+        ZonedDateTime gmtZoned = ZonedDateTime.now(ZoneId.of("Europe/London"));
+        LocalDateTime gmtDateTime = gmtZoned.toLocalDateTime();
+        F1Calendar f1calendar = calendarRepository.findFirstByRaceBeforeOrderByRaceDesc(gmtDateTime);
+        if(f1calendar!=null){
+        title = f1calendar.getLocation();
+        currentRound = Integer.parseInt(propertiesRepository.findDistinctFirstByName("round").getValue());
+        f1calendar = calendarRepository.findFirstByRaceAfterOrderByRace(gmtDateTime);
+        log.info("title2: {}" + title);
+        Duration duration = Duration.between(gmtDateTime, f1calendar.getRace());
+        exposureTime = LocalDateTime.now().plus(duration).plusHours(1);
+        }
     }
 
 

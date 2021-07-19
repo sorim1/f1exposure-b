@@ -15,7 +15,7 @@ public class MainUtility {
         put("aston_martin", "#006F62");
         put("williams", "#005AFF");
         put("ferrari", "#DC0004");
-        put("haas", "#FFFFFF");
+        put("haas", "#888888");
         put("alfa", "#900000");
         put("mclaren", "#FF9800");
         put("alphatauri", "#2B4562");
@@ -38,6 +38,14 @@ public class MainUtility {
         drivers.forEach(driver -> {
             response.add(driver.initials);
             driverMap.put(driver.initials, driver.fullName);
+        });
+        return response;
+    }
+
+    public static List<String> extractDriverCodes(List<Driver> drivers) {
+        List<String> response = new ArrayList<>();
+        drivers.forEach(driver -> {
+            response.add(driver.initials);
         });
         return response;
     }

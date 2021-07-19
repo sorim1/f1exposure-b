@@ -25,4 +25,16 @@ public class Driver {
     public String team;
     @JsonProperty("Num")
     public String num;
+
+    Integer steering;
+    Integer gforceLat;
+    Integer gforceLong;
+    Integer brake;
+    Integer performance;
+    Integer throttle;
+
+    private String finalGap;
+    private String fastestLap;
+    private Integer position;
+    private LapByLapData lapByLapData = new LapByLapData();
 }
