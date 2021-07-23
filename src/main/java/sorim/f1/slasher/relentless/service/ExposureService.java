@@ -16,6 +16,8 @@ public interface ExposureService {
 
     boolean closeExposurePoll();
 
+    Integer getCurrentRound();
+
     boolean exposureOn();
 
     void setNextRoundOfExposure(List<DriverStanding> driverStandings, int round);
@@ -23,7 +25,8 @@ public interface ExposureService {
     List<ExposureChampionshipData>  getExposureChampionshipData();
 
     List<ExposureChampionshipStanding> getExposureStandings();
-    List<ExposureChampionshipStanding> getExposureStandingsLegacy();
+
+    List<Integer> getExposureVoters();
 
     String getTitle();
 }

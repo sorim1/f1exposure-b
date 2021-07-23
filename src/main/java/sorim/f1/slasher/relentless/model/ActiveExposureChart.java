@@ -17,7 +17,6 @@ public class ActiveExposureChart {
     private String[] driverNames;
     private Integer[] results;
     private BigDecimal[] exposure;
-    private BigDecimal[] exposureLegacy;
     private Integer voters;
     private Integer votes;
     private Integer season;

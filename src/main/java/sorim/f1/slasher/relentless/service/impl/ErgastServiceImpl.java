@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import sorim.f1.slasher.relentless.entities.ergast.Race;
+import sorim.f1.slasher.relentless.model.ExposureRace;
 import sorim.f1.slasher.relentless.model.ergast.ErgastResponse;
 import sorim.f1.slasher.relentless.repository.ErgastRaceRepository;
 import sorim.f1.slasher.relentless.service.ErgastService;
@@ -61,13 +62,13 @@ public class ErgastServiceImpl implements ErgastService {
     }
 
     @Override
-    public Race getLatestNonAnalyzedRace() {
-        return ergastRaceRepository.findFirstByRaceAnalysisIsNullOrderByDateAsc();
+    public Race getLatestNonAnalyzedRace(Integer currentYear) {
+        return ergastRaceRepository.findFirstByRaceAnalysisIsNullAndSeasonOrderByDateAsc(String.valueOf(currentYear));
     }
 
     @Override
     public List<Race> findByCircuitIdOrderBySeasonDesc(String circuitId) {
-        return ergastRaceRepository.findByCircuitIdOrderByIdDesc(circuitId);
+        return ergastRaceRepository.findByCircuitIdOrderBySeasonDesc(circuitId);
     }
 
     @Override
@@ -99,5 +100,10 @@ public class ErgastServiceImpl implements ErgastService {
     public ErgastResponse getResultsByRound(Integer season, Integer round) {
         return restTemplate
                 .getForObject(ERGAST_URL + season+ "/" + round+ "/results.json", ErgastResponse.class);
+    }
+
+    @Override
+    public List<ExposureRace> getExposureRaces(String season, Integer round) {
+        return ergastRaceRepository.findAllBySeasonAndRoundLessThanEqualOrderByRoundAsc(season, round);
     }
 }

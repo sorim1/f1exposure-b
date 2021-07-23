@@ -1,10 +1,11 @@
 package sorim.f1.slasher.relentless.repository;
 
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 import sorim.f1.slasher.relentless.entities.ExposureChampionshipStanding;
-import sorim.f1.slasher.relentless.model.enums.ExposureModeEnum;
 
 import javax.transaction.Transactional;
 import java.util.List;
@@ -14,5 +15,10 @@ import java.util.List;
 @EnableJpaAuditing
 public interface ExposureChampionshipStandingsRepository extends CrudRepository<ExposureChampionshipStanding, String> {
 
-    List<ExposureChampionshipStanding> findAllByIdSeasonAndIdModeOrderByExposureDesc(Integer season, ExposureModeEnum mode);
+    List<ExposureChampionshipStanding> findAllByIdSeasonOrderByExposureDesc(Integer season);
+
+    @Modifying
+    @Query("update ExposureChampionshipStanding e set e.fullName = (select c.fullName from ExposureDriver c where c.code=e.id.driver) where e.fullName is null")
+    Integer updateChampionshipNames();
+
 }

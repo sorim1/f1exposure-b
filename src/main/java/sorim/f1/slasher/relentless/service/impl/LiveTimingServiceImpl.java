@@ -74,7 +74,7 @@ public class LiveTimingServiceImpl implements LiveTimingService {
 
     @Override
     public Boolean analyzeLatestRace() {
-        Race race = service.getLatestNonAnalyzedRace();
+        Race race = service.getLatestNonAnalyzedRace(properties.getCurrentYear());
         String response = getLiveTimingResponseOfErgastRace(race);
         if(response!=null) {
             race.setLiveTiming(response.substring(response.indexOf("{")));
@@ -134,6 +134,7 @@ public class LiveTimingServiceImpl implements LiveTimingService {
         return RaceAnalysis.builder()
                 .weatherChartData(weatherChartData)
                 .driverData(drivers.get())
+                .year(properties.getCurrentYear())
                 .title(title.get()).build();
     }
 
@@ -155,7 +156,7 @@ public class LiveTimingServiceImpl implements LiveTimingService {
             String tyreSequence= xData.get(9);
             for(int i=0;i<tiData.size();i=i+3){
                 driversMap.get(driverCodes.get(driverCounter.get())).getLapByLapData().getTyres()
-                        .add(new Tyre(String.valueOf(tyreSequence.charAt(i/3)), tiData.get(i+1)));
+                        .add(new Tyre(String.valueOf(tyreSequence.charAt(tyreSequence.length()-1-(i/3))), tiData.get(i+1)));
             }
             driverCounter.incrementAndGet();
         });
@@ -182,7 +183,6 @@ public class LiveTimingServiceImpl implements LiveTimingService {
 
     public void enrichDriversWithScoringData(Map<String, Driver> driversMap, ScoresGraph scoresGraph) {
         scoresGraph.steering.getDataFields().forEach((key,value)->{
-            log.info("key sa p: {} " + key);
             List<Integer> list = (List<Integer>) value;
             driversMap.get(key.substring(1)).setSteering(list.get(1));
         });

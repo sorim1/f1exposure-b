@@ -1,6 +1,7 @@
 package sorim.f1.slasher.relentless.service;
 
 import sorim.f1.slasher.relentless.entities.DriverStanding;
+import sorim.f1.slasher.relentless.entities.F1Calendar;
 
 import java.io.IOException;
 import java.util.List;
@@ -22,4 +23,8 @@ public interface AdminService {
     void deleteSportSurgeLinks();
 
     void closeExposurePoll();
+
+    F1Calendar getUpcomingRace();
+
+    F1Calendar updateUpcomingRace(F1Calendar entry);
 }

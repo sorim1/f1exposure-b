@@ -308,6 +308,19 @@ public class AdminServiceImpl implements AdminService {
         exposureService.closeExposurePoll();
     }
 
+    @Override
+    public F1Calendar getUpcomingRace() {
+        ZonedDateTime gmtZoned = ZonedDateTime.now(ZoneId.of("Europe/London"));
+        LocalDateTime gmtDateTime = gmtZoned.toLocalDateTime();
+        return calendarRepository.findFirstByRaceAfterOrderByRace(gmtDateTime);
+    }
+
+    @Override
+    public F1Calendar updateUpcomingRace(F1Calendar entry) {
+        calendarRepository.save(entry);
+        return entry;
+    }
+
     private Integer getNextRefreshTick() {
         CalendarData calendarData = clientService.getCountdownData(0);
         if(calendarData.getCountdownData().get("raceDays")>2){

@@ -12,7 +12,7 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 public class RaceAnalysis {
-    String year;
+    Integer year;
     String title;
     List<FrontendGraphWeatherData> weatherChartData;
    // FrontendGraphLapPosData lapPosChartData;

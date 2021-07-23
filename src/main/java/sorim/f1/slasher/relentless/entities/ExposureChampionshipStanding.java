@@ -21,6 +21,6 @@ public class ExposureChampionshipStanding {
     @EmbeddedId
     private ExposureChampionshipStandingId id;
     private BigDecimal exposure;
-
+    private String fullName;
 
 }

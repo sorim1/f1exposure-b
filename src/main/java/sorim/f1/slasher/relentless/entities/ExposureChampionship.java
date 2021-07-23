@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import sorim.f1.slasher.relentless.model.enums.ExposureModeEnum;
 
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
@@ -23,5 +22,4 @@ public class ExposureChampionship {
     private ExposureChampionshipId id;
     private BigDecimal exposure;
     private String color;
-
 }

@@ -8,7 +8,6 @@ import sorim.f1.slasher.relentless.configuration.MainProperties;
 import sorim.f1.slasher.relentless.entities.*;
 import sorim.f1.slasher.relentless.handling.Logger;
 import sorim.f1.slasher.relentless.model.*;
-import sorim.f1.slasher.relentless.model.enums.ExposureModeEnum;
 import sorim.f1.slasher.relentless.model.enums.ExposureStatusEnum;
 import sorim.f1.slasher.relentless.repository.*;
 import sorim.f1.slasher.relentless.service.ExposureService;
@@ -47,7 +46,8 @@ public class ExposureServiceImpl implements ExposureService {
         boolean alreadyExists = exposedVoteRepository.existsExposedVoteByIpAddressAndSeasonAndRound(ipAddress, properties.getCurrentYear(), currentRound);
         if(alreadyExists){
             Logger.log("IP_CHEATER- exposeDrivers ", ipAddress + " - " + exposedList);
-            return false;
+            //TODO uncomment
+        //    return false;
         }
         exposedVoteRepository.save(ExposedVote.builder().drivers(exposedList)
                 .ipAddress(ipAddress)
@@ -73,7 +73,6 @@ public class ExposureServiceImpl implements ExposureService {
         List<String> driverNames = new ArrayList<>();
         List<Integer> results = new ArrayList<>();
         List<BigDecimal> exposureList = new ArrayList<>();
-        List<BigDecimal> exposureLegacyList = new ArrayList<>();
         List<Exposed> list = exposedRepository.findBySeasonAndRoundOrderByCounterDesc(properties.getCurrentYear(), currentRound);
         ExposedVoteTotals total = exposedRepository.findExposedTotalBySeasonAndRound(properties.getCurrentYear(), currentRound);
          list.forEach((exposed) -> {
@@ -81,16 +80,13 @@ public class ExposureServiceImpl implements ExposureService {
              driverNames.add(exposed.getDriver().getFullName());
              results.add(exposed.getCounter());
              BigDecimal exposure = new BigDecimal(exposed.getCounter()*100).divide(new BigDecimal(total.getVoters()), 2, RoundingMode.HALF_UP);
-             BigDecimal exposureLegacy = new BigDecimal(exposed.getCounter()*100).divide(new BigDecimal(total.getVotes()), 2, RoundingMode.HALF_UP);
              exposureList.add(exposure);
-             exposureLegacyList.add(exposureLegacy);
          });
          return ActiveExposureChart.builder()
                 .drivers(drivers.toArray(new String[drivers.size()]))
                 .driverNames(driverNames.toArray(new String[driverNames.size()]))
                 .results(results.toArray(new Integer[results.size()]))
                  .exposure(exposureList.toArray(new BigDecimal[results.size()]))
-                 .exposureLegacy(exposureLegacyList.toArray(new BigDecimal[results.size()]))
                  .round(currentRound)
                  .season(properties.getCurrentYear())
                  .votes(total.getVotes())
@@ -102,12 +98,14 @@ public class ExposureServiceImpl implements ExposureService {
     public ExposureResponse getExposureDriverList() {
         ExposureResponse response = ExposureResponse.builder()
                 .title(title)
+                .year(properties.getCurrentYear())
                 .exposureTime(exposureTime)
                 .exposureNow(exposureNow)
                 .exposureToday(exposureToday)
                 .currentRound(currentRound)
                 .build();
-        if(exposureOn()) {
+     //   if(exposureOn()) {
+            if(true) {
             List<ExposureDriver> drivers = driverRepository.findAll();
             response.setDrivers(drivers);
             response.setStatus(ExposureStatusEnum.ACTIVE);
@@ -170,7 +168,7 @@ public class ExposureServiceImpl implements ExposureService {
                     .season(properties.getCurrentYear())
                     .round(currentRound)
                     .driver(exposedData.getDrivers()[i])
-                    .mode(ExposureModeEnum.Modern).build();
+                    .build();
             DriverStandingByRound dsbr = driverStandingsByRoundRepository.findFirstByCode(idModern.getDriver());
             String color = null;
             if(dsbr!=null){
@@ -181,17 +179,6 @@ public class ExposureServiceImpl implements ExposureService {
                     .exposure(exposedData.getExposure()[i])
                     .color(color)
                     .build());
-
-            ExposureChampionshipId idLegacy = ExposureChampionshipId.builder()
-                    .season(properties.getCurrentYear())
-                    .round(currentRound)
-                    .driver(exposedData.getDrivers()[i])
-                    .mode(ExposureModeEnum.Legacy).build();
-            list.add(ExposureChampionship.builder()
-                    .id(idLegacy)
-                    .exposure(exposedData.getExposureLegacy()[i])
-                    .color(color)
-                    .build());
         }
         exposureChampionshipRepository.saveAll(list);
         List<ExposureChampionshipData> exposureChampionshipData = getExposureChampionshipData();
@@ -200,16 +187,18 @@ public class ExposureServiceImpl implements ExposureService {
             ExposureChampionshipStandingId id = ExposureChampionshipStandingId.builder()
                     .season(properties.getCurrentYear())
                     .driver(v.getCode())
-                    .mode(ExposureModeEnum.Modern).build();
+                    .build();
             exposureStandings.add(ExposureChampionshipStanding.builder().id(id).exposure(v.getScore()).build());
-            id = ExposureChampionshipStandingId.builder()
-                    .season(properties.getCurrentYear())
-                    .driver(v.getCode())
-                    .mode(ExposureModeEnum.Legacy).build();
-            exposureStandings.add(ExposureChampionshipStanding.builder().id(id).exposure(v.getScoreLegacy()).build());
         });
         exposureChampionshipStandingsRepository.saveAll(exposureStandings);
+        exposureChampionshipStandingsRepository.updateChampionshipNames();
+
         return true;
+    }
+
+    @Override
+    public Integer getCurrentRound() {
+        return currentRound;
     }
 
     @Override
@@ -245,25 +234,15 @@ public class ExposureServiceImpl implements ExposureService {
                 List<BigDecimal> newResult = new ArrayList<>();
                 newResult.add(BigDecimal.valueOf(row.getId().getRound()));
                 newResult.add(row.getExposure());
-
-                if(row.getId().getMode().equals(ExposureModeEnum.Modern)){
                     BigDecimal newScore = data.getScore().add(row.getExposure());
                     List<BigDecimal> newStanding = new ArrayList<>();
                     newStanding.add(BigDecimal.valueOf(row.getId().getRound()));
                     newStanding.add(newScore);
                     data.getScoresByRound().add(newResult);
                     data.getScoresThroughRounds().add(newStanding);
-                    data.setScore(newScore);
-                }
-                if(row.getId().getMode().equals(ExposureModeEnum.Legacy)){
-                    BigDecimal newScore = data.getScoreLegacy().add(row.getExposure());
-                    List<BigDecimal> newStanding = new ArrayList<>();
-                    newStanding.add(BigDecimal.valueOf(row.getId().getRound()));
-                    newStanding.add(newScore);
-                    data.getScoresByRoundLegacy().add(newResult);
-                    data.getScoresThroughRoundsLegacy().add(newStanding);
-                    data.setScoreLegacy(newScore);
-                }
+                data.updateMaxExposure(row.getId().getRound(), row.getExposure());
+                 data.setScore(newScore);
+
             } else{
                 ExposureChampionshipData data = new ExposureChampionshipData();
                 data.setCode(row.getId().getDriver());
@@ -271,17 +250,11 @@ public class ExposureServiceImpl implements ExposureService {
                 List<BigDecimal> newResult = new ArrayList<>();
                 newResult.add(BigDecimal.valueOf(row.getId().getRound()));
                 newResult.add(row.getExposure());
-                if(row.getId().getMode().equals(ExposureModeEnum.Modern)){
                     data.getScoresByRound().add(newResult);
                     data.getScoresThroughRounds().add(newResult);
                     data.setScore(row.getExposure());
-
-                }
-                if(row.getId().getMode().equals(ExposureModeEnum.Legacy)){
-                    data.getScoresByRoundLegacy().add(newResult);
-                    data.getScoresThroughRoundsLegacy().add(newResult);
-                    data.setScoreLegacy(row.getExposure());
-                }
+                data.setMaxExposure(row.getExposure());
+                data.setMaxExposureRound(row.getId().getRound());
                 map.put(row.getId().getDriver(), data);
             }
         });
@@ -290,13 +263,12 @@ public class ExposureServiceImpl implements ExposureService {
 
     @Override
     public List<ExposureChampionshipStanding> getExposureStandings() {
-        return exposureChampionshipStandingsRepository.findAllByIdSeasonAndIdModeOrderByExposureDesc(properties.getCurrentYear(), ExposureModeEnum.Modern);
+        return exposureChampionshipStandingsRepository.findAllByIdSeasonOrderByExposureDesc(properties.getCurrentYear());
     }
 
     @Override
-    public List<ExposureChampionshipStanding> getExposureStandingsLegacy() {
-        return exposureChampionshipStandingsRepository.findAllByIdSeasonAndIdModeOrderByExposureDesc(properties.getCurrentYear(), ExposureModeEnum.Legacy);
-
+    public List<Integer> getExposureVoters() {
+        return exposedRepository.getVoterCountOfSeason(properties.getCurrentYear());
     }
 
     @Override

@@ -1,5 +1,6 @@
 package sorim.f1.slasher.relentless.repository;
 
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
@@ -15,4 +16,5 @@ import java.util.List;
 @EnableJpaAuditing
 public interface ExposureChampionshipRepository extends CrudRepository<ExposureChampionship, String> {
     List<ExposureChampionship> findAllByIdSeasonOrderByIdRound(Integer season);
+
 }

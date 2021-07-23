@@ -17,5 +17,6 @@ public class ExposureData {
     private ActiveExposureChart activeExposureChart;
     private List<ExposureChampionshipData> exposureChampionshipData;
     private List<ExposureChampionshipStanding> standings;
-    private List<ExposureChampionshipStanding> standingsLegacy;
+    private List<Integer> voters;
+    private List<ExposureRace> exposureRaces;
 }

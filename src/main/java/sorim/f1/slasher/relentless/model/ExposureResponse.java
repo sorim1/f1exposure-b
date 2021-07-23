@@ -19,7 +19,7 @@ public class ExposureResponse {
     private List<ExposureDriver> drivers;
     private ExposureStatusEnum status;
     private String title;
-    private String year;
+    private Integer year;
     private Boolean exposureNow;
     private Boolean exposureToday;
     private LocalDateTime exposureTime;

@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import sorim.f1.slasher.relentless.model.enums.ExposureModeEnum;
 
 import javax.persistence.Embeddable;
 import java.io.Serializable;
@@ -17,5 +16,4 @@ import java.io.Serializable;
 public class ExposureChampionshipStandingId implements Serializable {
     private Integer season;
     private String driver;
-    private ExposureModeEnum mode;
 }

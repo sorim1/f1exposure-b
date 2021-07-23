@@ -37,4 +37,8 @@ public interface ExposedRepository extends CrudRepository<Exposed, String> {
 
     @Query("select t from ExposedVoteTotals t where t.id.season = ?1 and t.id.round = ?2")
     ExposedVoteTotals findExposedTotalBySeasonAndRound(Integer season, Integer round);
+
+    @Query("select t.voters from ExposedVoteTotals t where t.id.season = ?1 order by t.id.round asc")
+    List<Integer> getVoterCountOfSeason(Integer season);
+
 }

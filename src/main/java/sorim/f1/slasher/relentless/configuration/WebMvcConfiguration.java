@@ -1,8 +1,10 @@
 package sorim.f1.slasher.relentless.configuration;
 
 import org.springframework.context.annotation.Configuration;
+import org.springframework.format.FormatterRegistry;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import sorim.f1.slasher.relentless.converters.ExposureRaceConverter;
 
 @Configuration
 public class WebMvcConfiguration implements WebMvcConfigurer {
@@ -16,6 +18,11 @@ public class WebMvcConfiguration implements WebMvcConfigurer {
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "HEAD")
                 .allowCredentials(true)
         ;
+    }
+
+    @Override
+    public void addFormatters(FormatterRegistry registry) {
+        registry.addConverter(new ExposureRaceConverter());
     }
 
 }

@@ -7,16 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import sorim.f1.slasher.relentless.configuration.MainProperties;
 import sorim.f1.slasher.relentless.entities.*;
-import sorim.f1.slasher.relentless.handling.Logger;
 import sorim.f1.slasher.relentless.model.*;
-
 import sorim.f1.slasher.relentless.repository.*;
-import sorim.f1.slasher.relentless.service.ClientService;
-import sorim.f1.slasher.relentless.service.ExposureService;
-import sorim.f1.slasher.relentless.service.InstagramService;
-import sorim.f1.slasher.relentless.service.TwitterService;
+import sorim.f1.slasher.relentless.service.*;
 
-import javax.servlet.http.HttpServletRequest;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
@@ -39,7 +33,10 @@ public class ClientServiceImpl implements ClientService {
     private final InstagramService instagramService;
     private final TwitterService twitterService;
     private final ExposureService exposureService;
+    private final ErgastService ergastService;
     private final MainProperties properties;
+
+
 
     @Override
     public Boolean exposeDrivers(String[] exposedList, String ipAddress) throws Exception {
@@ -53,7 +50,8 @@ public class ClientServiceImpl implements ClientService {
                 .activeExposureChart(exposureService.getExposedChartData())
                 .exposureChampionshipData(exposureService.getExposureChampionshipData())
                 .standings(exposureService.getExposureStandings())
-                .standingsLegacy(exposureService.getExposureStandingsLegacy())
+                .voters(exposureService.getExposureVoters())
+                .exposureRaces(ergastService.getExposureRaces(String.valueOf(properties.getCurrentYear()), exposureService.getCurrentRound()))
                 .build();
     }
 

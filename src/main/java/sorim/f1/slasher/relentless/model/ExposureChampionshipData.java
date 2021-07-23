@@ -15,11 +15,18 @@ import java.util.List;
 @Builder
 public class ExposureChampionshipData {
     private String code;
+    private String name;
     private String color;
     private BigDecimal score = BigDecimal.ZERO;
-    private BigDecimal scoreLegacy = BigDecimal.ZERO;
     private List<List<BigDecimal>> scoresByRound = new ArrayList<>();
-    private List<List<BigDecimal>> scoresByRoundLegacy = new ArrayList<>();
     private List<List<BigDecimal>> scoresThroughRounds = new ArrayList<>();
-    private List<List<BigDecimal>> scoresThroughRoundsLegacy = new ArrayList<>();
+    private Integer maxExposureRound;
+    private BigDecimal maxExposure = BigDecimal.ZERO;
+
+    public void updateMaxExposure(Integer round, BigDecimal exposure) {
+        if(exposure.compareTo(maxExposure) > 0){
+            this.maxExposure=exposure;
+            this.maxExposureRound=round;
+        }
+    }
 }

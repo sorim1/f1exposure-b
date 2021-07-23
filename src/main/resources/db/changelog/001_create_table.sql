@@ -31,7 +31,6 @@ CREATE TABLE exposure_championship (
      round numeric NOT NULL,
      driver text,
      exposure numeric NULL,
-     mode numeric,
      color text
 );
 
@@ -39,7 +38,7 @@ CREATE TABLE exposure_championship_standings (
    season numeric NOT NULL,
    driver text NOT NULL,
    exposure numeric NULL,
-   mode numeric NOT NULL
+   full_name text NULL,
 );
 
 
@@ -138,5 +137,6 @@ CREATE TABLE COMMENTS (
   page numeric,
   nickname text,
   comment text,
+  status numeric,
   timestamp TIMESTAMP
 );
