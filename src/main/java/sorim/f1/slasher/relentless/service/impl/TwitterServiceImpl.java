@@ -44,7 +44,7 @@ public class TwitterServiceImpl implements TwitterService {
         List<TwitterPost> list = new ArrayList<>();
         Twitter twitter = getTwitterinstance();
         twitter.getHomeTimeline().forEach(item -> {
-
+            Integer source = 0;
             String text = item.getText();
             String url = null;
             String mediaUrl = null;
@@ -52,19 +52,25 @@ public class TwitterServiceImpl implements TwitterService {
             if(splitter>0 && splitter>item.getText().length()-30){
                 text = item.getText().substring(0, splitter);
                 url = item.getText().substring(splitter);
+                source=0;
             }
 
             if(item.getMediaEntities()!=null && item.getMediaEntities().length>0){
                 mediaUrl = item.getMediaEntities()[0].getMediaURLHttps();
                 url = item.getMediaEntities()[0].getURL();
-            } else {
-                log.info("što sad");
+                source=1;
             }
             if(url==null && item.getURLEntities().length>0){
                 url = item.getURLEntities()[0].getURL();
+                source=2;
             }
             if(url==null && item.getRetweetedStatus()!=null && item.getRetweetedStatus().getURLEntities().length>0){
                 url = item.getRetweetedStatus().getURLEntities()[0].getURL();
+                source=3;
+            }
+            if(url==null){
+                url = "https://twitter.com/" + item.getUser().getScreenName() + "/status/" + item.getId() ;
+                source=4;
             }
             list.add(TwitterPost.builder()
             .id(item.getId())
@@ -72,6 +78,7 @@ public class TwitterServiceImpl implements TwitterService {
             .favoriteCount(item.getFavoriteCount())
             .retweetCount(item.getRetweetCount())
             .url(url)
+            .source(source)
             .mediaUrl(mediaUrl)
             .userPicture(item.getUser().getProfileImageURLHttps())
             .username(item.getUser().getName())
@@ -80,6 +87,11 @@ public class TwitterServiceImpl implements TwitterService {
         });
         twitterRepository.saveAll(list);
         return list;
+    }
+
+    private void getTwitterStatus(String screenName, long tweetID, Twitter twitter ) throws TwitterException {
+        Status status = twitter.showStatus(tweetID);
+        log.info(status.getText());
     }
 
 

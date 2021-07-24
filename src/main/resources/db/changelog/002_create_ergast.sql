@@ -34,6 +34,7 @@ CREATE TABLE TWITTER_POSTS (
      media_url text,
      username text,
      user_picture text,
+     source numeric,
      created_at TIMESTAMP
 );
 

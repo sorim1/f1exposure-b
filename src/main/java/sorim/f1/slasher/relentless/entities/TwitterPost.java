@@ -28,6 +28,7 @@ public class TwitterPost {
     private String url;
     private String mediaUrl;
     private String username;
+    private Integer source;
     private String userPicture;
     private Date createdAt;
 }

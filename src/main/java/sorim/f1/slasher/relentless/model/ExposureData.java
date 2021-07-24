@@ -18,5 +18,5 @@ public class ExposureData {
     private List<ExposureChampionshipData> exposureChampionshipData;
     private List<ExposureChampionshipStanding> standings;
     private List<Integer> voters;
-    private List<ExposureRace> exposureRaces;
+    private List<FrontendRace> exposureRaces;
 }

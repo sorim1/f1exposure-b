@@ -78,6 +78,14 @@ public class ClientController {
         return service.postComment(comment);
     }
 
+    @PostMapping("/sendMessage")
+    Boolean sendMessage(@RequestHeader String client, @RequestBody F1Comment message) throws Exception {
+        securityService.validateHeader(client);
+        service.sendMessage(message);
+        return true;
+    }
+
+
     @GetMapping("/getComments/{page}")
     List<F1Comment> getComments(@RequestHeader String client, @PathVariable("page") String page) throws Exception {
         securityService.validateHeader(client);
@@ -88,6 +96,12 @@ public class ClientController {
     List<InstagramPost> fetchInstagramFeed(@RequestHeader String client) throws Exception {
         securityService.validateHeader(client);
         return service.fetchInstagramFeed();
+    }
+
+    @GetMapping("/fetchTwitterPosts")
+    List<TwitterPost> fetchTwitterPosts(@RequestHeader String client) throws Exception {
+        securityService.validateHeader(client);
+        return service.fetchTwitterPosts();
     }
 
     @GetMapping("/getInstagramFeed")
@@ -114,11 +128,5 @@ public class ClientController {
     DoubleTwitterFeed getTwitterPosts(@RequestHeader String client, @PathVariable("page") String page) throws Exception {
         securityService.validateHeader(client);
         return service.getTwitterPosts(Integer.valueOf(page));
-    }
-
-    @GetMapping("/fetchTwitterPosts")
-    List<TwitterPost> fetchTwitterPosts(@RequestHeader String client) throws Exception {
-        securityService.validateHeader(client);
-        return service.fetchTwitterPosts();
     }
 }

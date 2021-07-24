@@ -20,13 +20,23 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class ExposureRace {
+public class FrontendRace {
 
     private Integer round;
     private String raceName;
+    private String url;
+    private String date;
+    private String circuitName;
+    private String x;
+    private String y;
 
-    public ExposureRace(Race race) {
+    public FrontendRace(Race race) {
         this.round=race.getRound();
         this.raceName=race.getRaceName();
+        this.url = race.getUrl();
+        this.date = race.getDate();
+        this.circuitName = race.getCircuit().getCircuitName();
+        this.x = race.getCircuit().getLocation().getLat();
+        this.y = race.getCircuit().getLocation().getLongitude();
     }
 }

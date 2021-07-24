@@ -26,6 +26,8 @@ public interface ClientService {
 
     List<F1Comment> postComment(F1Comment comment);
 
+    void sendMessage(F1Comment message);
+
     List<F1Comment> getComments(String page);
 
     List<InstagramPost>  fetchInstagramFeed() throws IGLoginException;

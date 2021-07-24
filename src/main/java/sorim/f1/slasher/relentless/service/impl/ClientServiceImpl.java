@@ -51,7 +51,7 @@ public class ClientServiceImpl implements ClientService {
                 .exposureChampionshipData(exposureService.getExposureChampionshipData())
                 .standings(exposureService.getExposureStandings())
                 .voters(exposureService.getExposureVoters())
-                .exposureRaces(ergastService.getExposureRaces(String.valueOf(properties.getCurrentYear()), exposureService.getCurrentRound()))
+                .exposureRaces(ergastService.getRacesSoFar(String.valueOf(properties.getCurrentYear()), exposureService.getCurrentRound()))
                 .build();
     }
 
@@ -147,6 +147,7 @@ public class ClientServiceImpl implements ClientService {
                 .driverResultByRound(driverSeries.get(2))
                 .constructorStandingByRound(constructorSeries.get(0))
                 .constructorPointsByRound(constructorSeries.get(1))
+                .races(ergastService.getRacesOfSeason(String.valueOf(properties.getCurrentYear())))
                 .build();
     }
 
@@ -163,6 +164,13 @@ public class ClientServiceImpl implements ClientService {
         }
         f1CommentRepository.save(comment);
         return f1CommentRepository.findFirst30ByPageOrderByTimestampDesc(comment.getPage());
+    }
+
+    @Override
+    public void sendMessage(F1Comment message) {
+        message.setTimestamp(new Date());
+        message.setPage(47);
+        f1CommentRepository.save(message);
     }
 
     @Override

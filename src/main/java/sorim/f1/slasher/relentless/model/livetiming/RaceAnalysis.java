@@ -15,7 +15,5 @@ public class RaceAnalysis {
     Integer year;
     String title;
     List<FrontendGraphWeatherData> weatherChartData;
-   // FrontendGraphLapPosData lapPosChartData;
-   // FrontendGraphLeaderboardData leaderboardData;
     List<Driver> driverData;
 }
