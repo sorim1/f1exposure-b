@@ -41,4 +41,14 @@ public interface ClientService {
     List<TwitterPost> fetchTwitterPosts() throws Exception;
 
     byte[] getImage(String code);
+
+    String postContent(AwsContent content);
+
+    List<AwsContent> getAwsContent(String page);
+
+    AwsContent getAwsPost(String code);
+
+    List<AwsComment> postAwsComment(AwsComment comment);
+
+    List<AwsComment> getAwsComments(String code);
 }

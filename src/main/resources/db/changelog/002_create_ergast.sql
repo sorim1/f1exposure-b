@@ -50,4 +50,24 @@ CREATE TABLE log_table (
       created timestamp(0) DEFAULT CURRENT_TIMESTAMP
 );
 
+CREATE TABLE aws (
+      code text NOT NULL,
+      title text NULL,
+      url text NULL,
+      text_content text NULL,
+      comment_count numeric NULL,
+      timestamp_created timestamp NULL DEFAULT NOW(),
+      timestamp_activity timestamp NULL DEFAULT NOW(),
+      username text NULL,
+      status numeric,
+      CONSTRAINT aws_pkey PRIMARY KEY (code)
+);
 
+CREATE TABLE AWS_COMMENT (
+     id  SERIAL PRIMARY KEY,
+     text_content text NULL,
+     content_code text NULL,
+     timestamp_created timestamp NULL DEFAULT NOW(),
+     username text NULL,
+     status numeric
+);

@@ -129,4 +129,35 @@ public class ClientController {
         securityService.validateHeader(client);
         return service.getTwitterPosts(Integer.valueOf(page));
     }
+
+    @PostMapping("/postAwsContent")
+    String postContent(@RequestHeader String client, @RequestBody AwsContent content) throws Exception {
+        securityService.validateHeader(client);
+        return service.postContent(content);
+    }
+
+    @GetMapping("/getAwsContent/{page}")
+    List<AwsContent> getAwsContent(@RequestHeader String client, @PathVariable("page") String page) throws Exception {
+        securityService.validateHeader(client);
+        return service.getAwsContent(page);
+    }
+
+    @GetMapping("/getAwsPost/{code}")
+    AwsContent getAwsPost(@RequestHeader String client, @PathVariable("code") String code) throws Exception {
+        securityService.validateHeader(client);
+        return service.getAwsPost(code);
+    }
+
+    @PostMapping("/postAwsComment")
+    List<AwsComment> postAwsComment(@RequestHeader String client, @RequestBody AwsComment comment) throws Exception {
+        securityService.validateHeader(client);
+        return service.postAwsComment(comment);
+    }
+
+    @GetMapping("/getAwsComments/{code}")
+    List<AwsComment> getAwsComments(@RequestHeader String client, @PathVariable("code") String code) throws Exception {
+        securityService.validateHeader(client);
+        return service.getAwsComments(code);
+    }
+
 }

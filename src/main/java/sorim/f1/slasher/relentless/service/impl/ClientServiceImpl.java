@@ -4,6 +4,8 @@ import com.github.instagram4j.instagram4j.exceptions.IGLoginException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import sorim.f1.slasher.relentless.configuration.MainProperties;
 import sorim.f1.slasher.relentless.entities.*;
@@ -30,6 +32,8 @@ public class ClientServiceImpl implements ClientService {
 
     private final SportSurgeEventRepository sportSurgeEventRepository;
     private final F1CommentRepository f1CommentRepository;
+    private final AwsRepository awsRepository;
+    private final AwsCommentRepository awsCommentRepository;
     private final InstagramService instagramService;
     private final TwitterService twitterService;
     private final ExposureService exposureService;
@@ -208,6 +212,45 @@ public class ClientServiceImpl implements ClientService {
         return instagramService.getImage(code);
     }
 
+    @Override
+    public String postContent(AwsContent content) {
+        String code = UUID.randomUUID().toString();
+        content.setCode(code);
+        content.setTimestampCreated(new Date());
+        content.setTimestampActivity(new Date());
+        content.setCommentCount(0);
+        if(content.getUsername().length()>12){
+            content.setUsername(content.getUsername().substring(0,12));
+        }
+        awsRepository.save(content);
+        return code;
+    }
+
+    @Override
+    public List<AwsContent> getAwsContent(String page) {
+        Pageable paging = PageRequest.of(Integer.parseInt(page), 20);
+        return awsRepository.findAllByOrderByTimestampActivityDesc(paging);
+    }
+
+    @Override
+    public AwsContent getAwsPost(String code) {
+        AwsContent response = awsRepository.findByCode(code);
+        response.setComments(awsCommentRepository.findAllByContentCodeOrderByTimestampCreatedDesc(code));
+        return response;
+    }
+
+    @Override
+    public List<AwsComment> postAwsComment(AwsComment comment) {
+        comment.setTimestampCreated(new Date());
+        awsCommentRepository.save(comment);
+        awsRepository.updateActivityAndCommentCount(comment.getContentCode(), new Date());
+        return awsCommentRepository.findAllByContentCodeOrderByTimestampCreatedDesc(comment.getContentCode());
+    }
+
+    @Override
+    public List<AwsComment> getAwsComments(String code) {
+        return awsCommentRepository.findAllByContentCodeOrderByTimestampCreatedDesc(code);
+    }
 
     private Map<String, Integer> getRemainingTime(LocalDateTime gmtDateTime, F1Calendar f1calendar, Integer mode) {
         Map<String, Integer> output = new HashMap<>();

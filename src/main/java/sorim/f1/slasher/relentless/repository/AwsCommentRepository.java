@@ -1,0 +1,18 @@
+package sorim.f1.slasher.relentless.repository;
+
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+import sorim.f1.slasher.relentless.entities.AwsComment;
+import sorim.f1.slasher.relentless.entities.AwsContent;
+
+import javax.transaction.Transactional;
+import java.util.List;
+
+@Repository
+@Transactional
+@EnableJpaAuditing
+public interface AwsCommentRepository extends CrudRepository<AwsComment, String> {
+    List<AwsComment> findAllByContentCodeOrderByTimestampCreatedDesc(String code);
+}
