@@ -3,6 +3,7 @@ package sorim.f1.slasher.relentless.controller;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import sorim.f1.slasher.relentless.entities.AwsContent;
 import sorim.f1.slasher.relentless.entities.F1Calendar;
 import sorim.f1.slasher.relentless.service.AdminService;
 import sorim.f1.slasher.relentless.service.SecurityService;
@@ -73,4 +74,15 @@ public class AdminController {
         service.closeExposurePoll();
     }
 
+    @GetMapping("/deleteComment/{mode}/{id}")
+    Integer closeExposurePoll(@RequestHeader String client, @PathVariable("mode") String mode, @PathVariable("id") String id) throws Exception {
+        securityService.validateAdminHeader(client);
+        return service.deleteComment(Integer.valueOf(mode),Integer.valueOf(id));
+    }
+
+    @PatchMapping("/updateAwsPost/")
+    AwsContent getAwsPost(@RequestHeader String client, @RequestBody AwsContent entry) throws Exception {
+        securityService.validateHeader(client);
+        return service.patchAwsPost(entry);
+    }
 }

@@ -1,5 +1,6 @@
 package sorim.f1.slasher.relentless.service;
 
+import sorim.f1.slasher.relentless.entities.AwsContent;
 import sorim.f1.slasher.relentless.entities.DriverStanding;
 import sorim.f1.slasher.relentless.entities.F1Calendar;
 
@@ -27,4 +28,8 @@ public interface AdminService {
     F1Calendar getUpcomingRace();
 
     F1Calendar updateUpcomingRace(F1Calendar entry);
+
+    Integer deleteComment(Integer mode, Integer id);
+
+    AwsContent patchAwsPost(AwsContent entry);
 }

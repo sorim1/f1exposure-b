@@ -25,6 +25,6 @@ public class AwsComment {
     private String contentCode;
     private String textContent;
     private Date timestampCreated;
-    private Integer status;
+    private Integer status=1;
     private String username;
 }

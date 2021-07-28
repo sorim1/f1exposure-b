@@ -167,7 +167,7 @@ public class ClientServiceImpl implements ClientService {
             comment.setComment(comment.getComment().substring(0,900));
         }
         f1CommentRepository.save(comment);
-        return f1CommentRepository.findFirst30ByPageOrderByTimestampDesc(comment.getPage());
+        return f1CommentRepository.findFirst30ByPageAndStatusOrderByTimestampDesc(comment.getPage(), 1);
     }
 
     @Override
@@ -179,7 +179,7 @@ public class ClientServiceImpl implements ClientService {
 
     @Override
     public List<F1Comment> getComments(String page) {
-        return f1CommentRepository.findFirst30ByPageOrderByTimestampDesc(Integer.valueOf(page));
+        return f1CommentRepository.findFirst30ByPageAndStatusOrderByTimestampDesc(Integer.valueOf(page), 1);
     }
 
     @Override
@@ -235,21 +235,24 @@ public class ClientServiceImpl implements ClientService {
     @Override
     public AwsContent getAwsPost(String code) {
         AwsContent response = awsRepository.findByCode(code);
-        response.setComments(awsCommentRepository.findAllByContentCodeOrderByTimestampCreatedDesc(code));
+        if(response!=null) {
+            response.setComments(awsCommentRepository.findAllByContentCodeAndStatusOrderByTimestampCreatedDesc(code, 1));
+        }
         return response;
     }
 
     @Override
     public List<AwsComment> postAwsComment(AwsComment comment) {
         comment.setTimestampCreated(new Date());
+        comment.setTextContent(comment.getTextContent().replaceAll("[\n\n\n]+", "\n"));
         awsCommentRepository.save(comment);
         awsRepository.updateActivityAndCommentCount(comment.getContentCode(), new Date());
-        return awsCommentRepository.findAllByContentCodeOrderByTimestampCreatedDesc(comment.getContentCode());
+        return awsCommentRepository.findAllByContentCodeAndStatusOrderByTimestampCreatedDesc(comment.getContentCode(), 1);
     }
 
     @Override
     public List<AwsComment> getAwsComments(String code) {
-        return awsCommentRepository.findAllByContentCodeOrderByTimestampCreatedDesc(code);
+        return awsCommentRepository.findAllByContentCodeAndStatusOrderByTimestampCreatedDesc(code, 1);
     }
 
     private Map<String, Integer> getRemainingTime(LocalDateTime gmtDateTime, F1Calendar f1calendar, Integer mode) {

@@ -56,13 +56,15 @@ public class AdminServiceImpl implements AdminService {
     private final SportSurgeStreamRepository sportSurgeStreamRepository;
     private final SportSurgeEventRepository sportSurgeEventRepository;
     private final PropertiesRepository propertiesRepository;
+    private final AwsRepository awsRepository;
+    private final AwsCommentRepository awsCommentRepository;
+    private final F1CommentRepository f1CommentRepository;
 
     private final ErgastService ergastService;
     private final MainProperties properties;
     private final ClientService clientService;
     private final ExposureService exposureService;
     private RestTemplate restTemplate = new RestTemplate();
-
 
     @PostConstruct
     public void onInit() {
@@ -319,6 +321,22 @@ public class AdminServiceImpl implements AdminService {
     public F1Calendar updateUpcomingRace(F1Calendar entry) {
         calendarRepository.save(entry);
         return entry;
+    }
+
+    @Override
+    public Integer deleteComment(Integer mode, Integer id) {
+        switch(mode) {
+            case 1:
+                return f1CommentRepository.updateStatus(id, 2);
+            case 2:
+                return awsCommentRepository.updateStatus(id, 2);
+        }
+        return -1;
+    }
+
+    @Override
+    public AwsContent patchAwsPost(AwsContent entry) {
+        return awsRepository.save(entry);
     }
 
     private Integer getNextRefreshTick() {

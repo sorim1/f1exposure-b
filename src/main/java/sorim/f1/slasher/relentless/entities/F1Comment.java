@@ -26,6 +26,7 @@ public class F1Comment {
     private Integer page;
     private String nickname;
     private String comment;
+    private Integer status=1;
     private Date timestamp;
 
 }
