@@ -19,7 +19,7 @@ import java.math.BigDecimal;
 public class ExposureChampionship {
 
     @EmbeddedId
-    private ExposureChampionshipId id;
+    private SeasonRoundDriverId id;
     private BigDecimal exposure;
     private String color;
 }

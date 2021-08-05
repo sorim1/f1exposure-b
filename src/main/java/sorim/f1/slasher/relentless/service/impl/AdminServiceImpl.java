@@ -247,7 +247,7 @@ public class AdminServiceImpl implements AdminService {
             if (foundDriver.isPresent()) {
             } else {
                 ExposureDriver newDriver = ExposureDriver.builder()
-                        .fullName(driverStanding.getFirstName() + " " + driverStanding.getName())
+                        .fullName(driverStanding.getName())
                         .code(driverStanding.getCode())
                         .ergastCode(driverStanding.getErgastCode())
                         .build();

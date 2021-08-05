@@ -15,17 +15,12 @@ import javax.persistence.*;
 @Builder
 public class Exposed {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(columnDefinition = "serial")
-    private Integer id;
-
-    private Integer season;
-    private Integer round;
+    @EmbeddedId
+    private SeasonRoundDriverId id;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "driver_code", referencedColumnName = "code")
-    private ExposureDriver driver;
+    @JoinColumn(name = "driver", referencedColumnName = "code", insertable = false, updatable = false)
+    private ExposureDriver relatedDriver;
 
     private Integer counter;
 

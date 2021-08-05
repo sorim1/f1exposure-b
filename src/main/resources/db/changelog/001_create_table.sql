@@ -12,10 +12,9 @@ CREATE TABLE APP_PROPERTIES (
   value text
 );
 CREATE TABLE EXPOSED (
-     id  SERIAL PRIMARY KEY,
      season numeric,
      round numeric,
-     driver_code text,
+     driver text,
      counter numeric
 );
 

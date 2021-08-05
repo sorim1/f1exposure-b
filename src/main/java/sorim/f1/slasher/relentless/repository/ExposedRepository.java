@@ -17,14 +17,14 @@ import java.util.List;
 @EnableJpaAuditing
 public interface ExposedRepository extends CrudRepository<Exposed, String> {
 
-    List<Exposed> findBySeasonAndRoundOrderByCounterDesc(Integer season, Integer round);
+    List<Exposed> findByIdSeasonAndIdRoundOrderByCounterDesc(Integer season, Integer round);
 
     @Modifying
-    @Query("update Exposed set counter = counter+1 where season = ?1 and round = ?2 and driver.code = ?3 ")
+    @Query("update Exposed set counter = counter+1 where id.season = ?1 and id.round = ?2 and id.driver = ?3 ")
     Integer incrementExposed(Integer season, Integer round, String driverCode);
 
     @Modifying
-    @Query(value = "insert into Exposed (season, round, driver_code, counter) VALUES (:season, :round,:driverCode, :counter)", nativeQuery = true)
+    @Query(value = "insert into Exposed (season, round, driver, counter) VALUES (:season, :round,:driverCode, :counter)", nativeQuery = true)
     Integer saveExposureData(@Param("season") Integer season, @Param("round") Integer round, @Param("driverCode")String driverCode, @Param("counter")int counter);
 
     @Modifying

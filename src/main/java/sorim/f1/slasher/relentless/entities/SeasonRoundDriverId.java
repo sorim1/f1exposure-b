@@ -16,7 +16,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class ExposureChampionshipId implements Serializable {
+public class SeasonRoundDriverId implements Serializable {
     private Integer season;
     private Integer round;
     private String driver;

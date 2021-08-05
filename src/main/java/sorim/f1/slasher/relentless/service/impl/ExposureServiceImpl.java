@@ -73,11 +73,12 @@ public class ExposureServiceImpl implements ExposureService {
         List<String> driverNames = new ArrayList<>();
         List<Integer> results = new ArrayList<>();
         List<BigDecimal> exposureList = new ArrayList<>();
-        List<Exposed> list = exposedRepository.findBySeasonAndRoundOrderByCounterDesc(properties.getCurrentYear(), currentRound);
-        ExposedVoteTotals total = exposedRepository.findExposedTotalBySeasonAndRound(properties.getCurrentYear(), currentRound);
+        List<Exposed> list = exposedRepository.findByIdSeasonAndIdRoundOrderByCounterDesc(properties.getCurrentYear(), currentRound);
+
+         ExposedVoteTotals total = exposedRepository.findExposedTotalBySeasonAndRound(properties.getCurrentYear(), currentRound);
          list.forEach((exposed) -> {
-             drivers.add(exposed.getDriver().getCode());
-             driverNames.add(exposed.getDriver().getFullName());
+             drivers.add(exposed.getRelatedDriver().getCode());
+             driverNames.add(exposed.getRelatedDriver().getFullName());
              results.add(exposed.getCounter());
              BigDecimal exposure = new BigDecimal(exposed.getCounter()*100).divide(new BigDecimal(total.getVoters()), 2, RoundingMode.HALF_UP);
              exposureList.add(exposure);
@@ -164,7 +165,7 @@ public class ExposureServiceImpl implements ExposureService {
         ActiveExposureChart exposedData = getExposedChartData();
         List<ExposureChampionship> list = new ArrayList<>();
         for(int i = 0; i<exposedData.getDrivers().length; i++){
-            ExposureChampionshipId idModern = ExposureChampionshipId.builder()
+            SeasonRoundDriverId idModern = SeasonRoundDriverId.builder()
                     .season(properties.getCurrentYear())
                     .round(currentRound)
                     .driver(exposedData.getDrivers()[i])
