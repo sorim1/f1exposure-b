@@ -35,12 +35,17 @@ public class Race {
     private String date;
     private String time;
 
+    @Transient
+    @JsonProperty("Laps")
+    private List<Lap> laps;
+
     @JsonProperty("Circuit")
     @Type(type = "jsonb")
     @Column(columnDefinition = "jsonb")
     private Circuit circuit;
 
     private String liveTiming;
+    private String timingAppData;
     private String circuitId;
 
     @Type(type = "jsonb")

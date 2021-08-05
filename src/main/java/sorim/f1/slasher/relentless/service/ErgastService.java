@@ -5,6 +5,7 @@ import sorim.f1.slasher.relentless.model.FrontendRace;
 import sorim.f1.slasher.relentless.model.ergast.ErgastResponse;
 
 import java.util.List;
+import java.util.Map;
 
 public interface ErgastService {
 
@@ -34,4 +35,8 @@ public interface ErgastService {
 
     List<FrontendRace> getRacesSoFar(String season, Integer round);
     List<FrontendRace> getRacesOfSeason(String season);
+
+    Map<String, String> connectDriverCodesWithErgastCodes();
+
+    ErgastResponse getRaceLaps(Integer season, Integer round);
 }

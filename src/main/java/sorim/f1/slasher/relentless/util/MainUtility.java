@@ -50,6 +50,14 @@ public class MainUtility {
         return response;
     }
 
+    public static Map<Integer, String> connectDriverCodesWithNumber(List<Driver> drivers) {
+        Map<Integer, String> response = new HashMap<>();
+        drivers.forEach(driver -> {
+            response.put(Integer.valueOf(driver.num), driver.initials);
+        });
+        return response;
+    }
+
     public static String getDriverNameFromCode(String code) {
         return driverMap.get(code);
     }

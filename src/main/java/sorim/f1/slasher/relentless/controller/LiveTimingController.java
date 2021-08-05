@@ -43,4 +43,9 @@ public class LiveTimingController {
         return service.resetLatestRaceAnalysis();
     }
 
+    @GetMapping("/validateLatestRaceAnalysis")
+    String validateLatestRaceAnalysis(@RequestHeader String client) throws Exception {
+        securityService.validateAdminHeader(client);
+        return service.validateLatestRaceAnalysis();
+    }
 }

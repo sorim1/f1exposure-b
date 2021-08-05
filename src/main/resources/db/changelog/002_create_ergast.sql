@@ -8,6 +8,7 @@ CREATE TABLE ERGAST_CURRENT_SEASON_RACES (
        date text,
        time text,
        live_timing text,
+       timing_app_data text,
        circuit_id text,
        race_analysis jsonb,
 );

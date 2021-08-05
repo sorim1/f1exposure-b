@@ -133,14 +133,9 @@ public class AdminServiceImpl implements AdminService {
     @Override
     public Boolean initializeStandings() {
         Logger.log("initializeStandings");
-        Integer currentRound = refreshDriverStandingsFromErgast();
-        if(currentRound== null){
-            Logger.log("initializeStandings - no changes detected");
-            return false;
-        }
+        Boolean currentRound = refreshDriverStandingsFromErgast();
         initializeConstructorStandings();
-        Logger.log("initializeStandings - changes detected");
-        return true;
+        return currentRound;
     }
 
     @Override
@@ -211,14 +206,19 @@ public class AdminServiceImpl implements AdminService {
         } while(iterate);
     }
 
-    private Integer refreshDriverStandingsFromErgast() {
+    private Boolean refreshDriverStandingsFromErgast() {
+        Boolean bool = false;
         List<DriverStanding> driverStandings = new ArrayList<>();
         Map<String,DriverStandingByRound> driverStandingsByRound = new HashMap<>();
          ErgastResponse response = ergastService.getDriverStandings();
-         if(response.getMrData().getStandingsTable().getStandingsLists().get(0).getRound()!=CURRENT_ROUND){
+         if(response.getMrData().getStandingsTable().getStandingsLists().get(0).getRound()!=CURRENT_ROUND) {
              CURRENT_ROUND = response.getMrData().getStandingsTable().getStandingsLists().get(0).getRound();
              propertiesRepository.updateProperty("round", CURRENT_ROUND.toString());
-
+             Logger.log("initializeStandings - changes detected");
+             bool = true;
+         } else{
+             Logger.log("initializeStandings - no changes detected");
+         }
              response.getMrData().getStandingsTable().getStandingsLists().get(0).getDriverStandings()
                      .forEach(ergastStanding -> {
                          driverStandings.add(new DriverStanding(ergastStanding));
@@ -233,10 +233,7 @@ public class AdminServiceImpl implements AdminService {
              driverStandingsRepository.saveAll(driverStandings);
              driverStandingsByRoundRepository.saveAll(driverStandingsByRound.values());
              updateExposureDriverList(driverStandings);
-             return CURRENT_ROUND;
-         } else {
-             return null;
-         }
+             return bool;
     }
 
 
@@ -251,7 +248,9 @@ public class AdminServiceImpl implements AdminService {
             } else {
                 ExposureDriver newDriver = ExposureDriver.builder()
                         .fullName(driverStanding.getFirstName() + " " + driverStanding.getName())
-                        .code(driverStanding.getCode()).build();
+                        .code(driverStanding.getCode())
+                        .ergastCode(driverStanding.getErgastCode())
+                        .build();
                 driverRepository.save(newDriver);
             }
         }

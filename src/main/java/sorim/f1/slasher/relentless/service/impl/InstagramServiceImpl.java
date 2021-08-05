@@ -217,7 +217,8 @@ public class InstagramServiceImpl implements InstagramService {
         return result.getImage();
     }
 
-    @PostConstruct
+    //@PostConstruct
+    //TODO UNCOMMENT
     void init() throws IGLoginException {
         client = IGClient.builder()
                 .username(properties.getInstagramUsername())

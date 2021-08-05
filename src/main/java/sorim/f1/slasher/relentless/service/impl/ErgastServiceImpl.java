@@ -5,15 +5,18 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+import sorim.f1.slasher.relentless.entities.ExposureDriver;
 import sorim.f1.slasher.relentless.entities.ergast.Race;
 import sorim.f1.slasher.relentless.model.FrontendRace;
 import sorim.f1.slasher.relentless.model.ergast.ErgastResponse;
+import sorim.f1.slasher.relentless.repository.DriverRepository;
 import sorim.f1.slasher.relentless.repository.ErgastRaceRepository;
 import sorim.f1.slasher.relentless.service.ErgastService;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 @Slf4j
 @Service
@@ -24,12 +27,12 @@ public class ErgastServiceImpl implements ErgastService {
     private final static String ERGAST_URL = "https://ergast.com/api/f1/";
 
     private final ErgastRaceRepository ergastRaceRepository;
+    private final DriverRepository driverRepository;
     private RestTemplate restTemplate = new RestTemplate();
 
 
     @Override
     public List<Race> fetchSeason(String year) {
-        RestTemplate restTemplate = new RestTemplate();
         Map<String, String> uriVariables = new HashMap<>();
         uriVariables.put("year", year);
 
@@ -45,7 +48,6 @@ public class ErgastServiceImpl implements ErgastService {
 
     @Override
     public List<Race> fetchCurrentSeason() {
-        RestTemplate restTemplate = new RestTemplate();
         ErgastResponse ergastResponse = restTemplate
                 .getForObject(CURRENT_SEASON, ErgastResponse.class);
         return ergastResponse.getMrData().getRaceTable().getRaces();
@@ -110,5 +112,19 @@ public class ErgastServiceImpl implements ErgastService {
     @Override
     public List<FrontendRace> getRacesOfSeason(String season) {
         return ergastRaceRepository.findAllBySeasonOrderByRoundAsc(season);
+    }
+
+    @Override
+    public Map<String, String> connectDriverCodesWithErgastCodes() {
+        List<ExposureDriver> drivers = driverRepository.findAll();
+        Map<String, String> map = drivers.stream()
+                .collect(Collectors.toMap(ExposureDriver::getErgastCode, ExposureDriver::getCode));
+        return map;
+    }
+
+    @Override
+    public ErgastResponse getRaceLaps(Integer season, Integer round) {
+        return restTemplate
+                .getForObject(ERGAST_URL + season+ "/" + round+ "/laps.json?limit=2000", ErgastResponse.class);
     }
 }

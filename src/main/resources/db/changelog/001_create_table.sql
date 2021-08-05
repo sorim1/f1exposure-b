@@ -44,6 +44,7 @@ CREATE TABLE exposure_championship_standings (
 
 CREATE TABLE DRIVERS (
       code text,
+      ergast_code text,
       full_name text
 );
 

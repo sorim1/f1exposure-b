@@ -17,6 +17,7 @@ public class ExposureDriver {
 
     @Id
     private String code;
+    private String ergastCode;
     private String fullName;
     @Transient
     private boolean exposure;

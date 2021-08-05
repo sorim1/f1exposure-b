@@ -23,6 +23,7 @@ public class DriverStanding {
     private Integer position;
     private String name;
     private String code;
+    private String ergastCode;
     private String nationality;
     private String car;
     private Integer points;
@@ -40,6 +41,7 @@ public class DriverStanding {
         this.position = ergastStanding.getPosition();
         this.name = ergastStanding.getDriver().getGivenName() + " " + ergastStanding.getDriver().getFamilyName();
         this.code = ergastStanding.getDriver().getCode();
+        this.ergastCode = ergastStanding.getDriver().getDriverId();
         this.nationality = ergastStanding.getDriver().getNationality();
         this.car = ergastStanding.getConstructors().get(0).getName();
         this.points = ergastStanding.getPoints();

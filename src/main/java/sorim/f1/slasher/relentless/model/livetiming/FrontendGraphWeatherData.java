@@ -13,7 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 public class FrontendGraphWeatherData {
-    public Integer year;
+    public String name;
     public List<Double> yTrack = new ArrayList<>();
     public List<Double> yAir = new ArrayList<>();
     public List<Double> yRaining = new ArrayList<>();
@@ -24,8 +24,8 @@ public class FrontendGraphWeatherData {
     public List<Integer> xAxis = new ArrayList<>();
 
 
-    public FrontendGraphWeatherData(WeatherData weatherData, Integer year) {
-        this.year = year;
+    public FrontendGraphWeatherData(WeatherData weatherData, String name) {
+        this.name = name;
         for (int i = 0; i < 19; i++) {
             this.yWindDir.add(0);
         }

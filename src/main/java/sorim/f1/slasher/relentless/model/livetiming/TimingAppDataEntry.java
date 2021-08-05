@@ -1,0 +1,22 @@
+package sorim.f1.slasher.relentless.model.livetiming;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.util.List;
+import java.util.Map;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class TimingAppDataEntry {
+    @JsonProperty("RacingNumber")
+    Integer racingNumber;
+        @JsonProperty("Stints")
+    Map<Integer, TimingAppDataStint> stints;
+}
+
