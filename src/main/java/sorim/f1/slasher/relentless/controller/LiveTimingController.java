@@ -18,7 +18,7 @@ public class LiveTimingController {
     private final SecurityService securityService;
 
     @GetMapping("/getAllRaceData/{year}")
-    boolean getAllRaceDataFromErgastTable(@RequestHeader String client, @PathVariable("year") String year) throws Exception {
+    public boolean getAllRaceDataFromErgastTable(@RequestHeader String client, @PathVariable("year") String year) throws Exception {
         log.info("getAllRaceDataFromErgastTable: {}", year);
         securityService.validateAdminHeader(client);
         service.getAllRaceDataFromErgastTable(year);
@@ -26,25 +26,25 @@ public class LiveTimingController {
     }
 
     @GetMapping("/getRaceAnalysis")
-    RaceAnalysis getRaceAnalysis(@RequestHeader String client) throws Exception {
+    public RaceAnalysis getRaceAnalysis(@RequestHeader String client) throws Exception {
         securityService.validateHeader(client);
         return service.getRaceAnalysis();
     }
 
     @GetMapping("/analyzeLatestRace")
-    Boolean analyzeLatestRace(@RequestHeader String client) throws Exception {
+    public Boolean analyzeLatestRace(@RequestHeader String client) throws Exception {
         securityService.validateAdminHeader(client);
         return service.analyzeLatestRace();
     }
 
     @GetMapping("/resetLatestRaceAnalysis")
-    Boolean resetLatestRaceAnalysis(@RequestHeader String client) throws Exception {
+    public Boolean resetLatestRaceAnalysis(@RequestHeader String client) throws Exception {
         securityService.validateAdminHeader(client);
         return service.resetLatestRaceAnalysis();
     }
 
     @GetMapping("/validateLatestRaceAnalysis")
-    String validateLatestRaceAnalysis(@RequestHeader String client) throws Exception {
+    public String validateLatestRaceAnalysis(@RequestHeader String client) throws Exception {
         securityService.validateAdminHeader(client);
         return service.validateLatestRaceAnalysis();
     }
