@@ -93,4 +93,23 @@ public class MainUtility {
     }
 
 
+    public static String getHashCode(String string) {
+        return String.valueOf(string.hashCode());
+    }
+
+    public static String handleUsername(String username) {
+        String finalUsername = username;
+        Integer passwordStart = username.indexOf("#");
+        if(passwordStart>0){
+            String password = String.valueOf(Math.abs(username.hashCode()));
+            if(password.length()>6){
+                password = password.substring(0,6);
+            }
+            finalUsername = (username.substring(0,passwordStart+1) + password);
+        }
+        if(finalUsername.length()>25){
+            finalUsername = finalUsername.substring(0,25);
+        }
+        return finalUsername;
+    }
 }

@@ -49,7 +49,7 @@ public class InstagramServiceImpl implements InstagramService {
     @Override
     public List<InstagramPost> fetchInstagramFeed() throws IGLoginException {
         List<InstagramPost> instagramPosts = new ArrayList<>();
-        if (!client.isLoggedIn()) {
+        if (client==null || !client.isLoggedIn()) {
             init();
         }
         FeedIterable<FeedTimelineRequest, FeedTimelineResponse> response = client.getActions().timeline().feed();

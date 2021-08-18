@@ -12,6 +12,7 @@ import sorim.f1.slasher.relentless.entities.*;
 import sorim.f1.slasher.relentless.model.*;
 import sorim.f1.slasher.relentless.repository.*;
 import sorim.f1.slasher.relentless.service.*;
+import sorim.f1.slasher.relentless.util.MainUtility;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
@@ -163,6 +164,8 @@ public class ClientServiceImpl implements ClientService {
     @Override
     public List<F1Comment> postComment(F1Comment comment) {
         comment.setTimestamp(new Date());
+        String username = MainUtility.handleUsername(comment.getNickname());
+        comment.setNickname(username);
         if(comment.getComment().length()>900){
             comment.setComment(comment.getComment().substring(0,900));
         }
@@ -219,9 +222,8 @@ public class ClientServiceImpl implements ClientService {
         content.setTimestampCreated(new Date());
         content.setTimestampActivity(new Date());
         content.setCommentCount(0);
-        if(content.getUsername().length()>12){
-            content.setUsername(content.getUsername().substring(0,12));
-        }
+        String username = MainUtility.handleUsername(content.getUsername());
+        content.setUsername(username);
         awsRepository.save(content);
         return code;
     }
@@ -245,6 +247,8 @@ public class ClientServiceImpl implements ClientService {
     public List<AwsComment> postAwsComment(AwsComment comment) {
         comment.setTimestampCreated(new Date());
         comment.setTextContent(comment.getTextContent().replaceAll("[\n\n\n]+", "\n"));
+        String username = MainUtility.handleUsername(comment.getUsername());
+        comment.setUsername(username);
         awsCommentRepository.save(comment);
         awsRepository.updateActivityAndCommentCount(comment.getContentCode(), new Date());
         return awsCommentRepository.findAllByContentCodeAndStatusOrderByTimestampCreatedDesc(comment.getContentCode(), 1);
