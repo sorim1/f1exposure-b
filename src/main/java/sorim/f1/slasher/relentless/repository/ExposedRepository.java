@@ -25,7 +25,7 @@ public interface ExposedRepository extends CrudRepository<Exposed, String> {
 
     @Modifying
     @Query(value = "insert into Exposed (season, round, driver, counter) VALUES (:season, :round,:driverCode, :counter)", nativeQuery = true)
-    Integer saveExposureData(@Param("season") Integer season, @Param("round") Integer round, @Param("driverCode")String driverCode, @Param("counter")int counter);
+    Integer insertExposureData(@Param("season") Integer season, @Param("round") Integer round, @Param("driverCode")String driverCode, @Param("counter")int counter);
 
     @Modifying
     @Query("update ExposedVoteTotals set voters = voters+1 , votes = votes + ?3 where id.season = ?1 and id.round = ?2")

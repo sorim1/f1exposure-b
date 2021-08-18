@@ -1,1 +1,0 @@
-GRANT SELECT, INSERT, UPDATE, DELETE ON delayed_dwh_messages TO profile_write ;

@@ -43,7 +43,7 @@ spring:
   liquibase:
     datasource:
       f1-exposure:
-        enabled: false
+        enabled: true
         change-log: classpath:/db/liquibase-changelog.xml
         drop-first: true
         user: postgres

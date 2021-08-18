@@ -57,7 +57,7 @@ public class ExposureServiceImpl implements ExposureService {
         for (String driverCode : exposedList) {
             Integer counter = exposedRepository.incrementExposed(properties.getCurrentYear(), currentRound, driverCode);
             if(counter==0){
-                exposedRepository.saveExposureData(properties.getCurrentYear(), currentRound, driverCode, 1);
+                exposedRepository.insertExposureData(properties.getCurrentYear(), currentRound, driverCode, 1);
             }
         }
         Integer counter = exposedRepository.incrementTotal(properties.getCurrentYear(), currentRound, exposedList.length);
@@ -221,7 +221,11 @@ public class ExposureServiceImpl implements ExposureService {
     @Override
     public void setNextRoundOfExposure(List<DriverStanding> driverStandings, int round) {
         driverStandings.forEach(standing->{
-            exposedRepository.saveExposureData(properties.getCurrentYear(), currentRound+1, standing.getCode(), 0);
+            try {
+                exposedRepository.insertExposureData(properties.getCurrentYear(), currentRound + 1, standing.getCode(), 0);
+            }catch(Exception e){
+                Logger.log("setNextRoundOfExposure->insertExposureData- FAIL ", e.getMessage());
+            }
         });
     }
 
