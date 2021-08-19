@@ -105,8 +105,8 @@ public class ExposureServiceImpl implements ExposureService {
                 .exposureToday(exposureToday)
                 .currentRound(currentRound)
                 .build();
-     //   if(exposureOn()) {
-            if(true) {
+        if(exposureOn()) {
+           // if(true) {
             List<ExposureDriver> drivers = driverRepository.findAll();
             response.setDrivers(drivers);
             response.setStatus(ExposureStatusEnum.ACTIVE);

@@ -47,7 +47,7 @@ public class InstagramServiceImpl implements InstagramService {
     private static final List<String> follows = new ArrayList<>();
 
     @Override
-    public List<InstagramPost> fetchInstagramFeed() throws IGLoginException {
+    public Boolean fetchInstagramFeed() throws IGLoginException {
         List<InstagramPost> instagramPosts = new ArrayList<>();
         if (client==null || !client.isLoggedIn()) {
             init();
@@ -137,7 +137,7 @@ public class InstagramServiceImpl implements InstagramService {
         });
         instagramRepository.saveAll(instagramPosts);
         fetchImages(instagramPosts);
-        return instagramPosts;
+        return true;
     }
 
     private void fetchImages(List<InstagramPost> instagramPosts) {

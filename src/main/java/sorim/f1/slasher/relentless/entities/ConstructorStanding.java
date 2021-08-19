@@ -24,11 +24,13 @@ public class ConstructorStanding {
     private Integer position;
     private Integer points;
     private Integer wins;
+    private String url;
 
     public ConstructorStanding(ErgastStanding ergastStanding) {
         this.id = ergastStanding.getConstructor().getConstructorId();
         this.position = ergastStanding.getPosition();
         this.name = ergastStanding.getConstructor().getName();
+        this.url = ergastStanding.getConstructor().getUrl();
         this.points = ergastStanding.getPoints();
         this.wins = ergastStanding.getWins();
     }

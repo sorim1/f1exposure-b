@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface InstagramService {
 
-    List<InstagramPost> fetchInstagramFeed() throws IGLoginException;
+    Boolean fetchInstagramFeed() throws IGLoginException;
 
     TripleInstagramFeed getInstagramFeed() throws IGLoginException;
 

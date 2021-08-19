@@ -186,7 +186,7 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
-    public List<InstagramPost> fetchInstagramFeed() throws IGLoginException {
+    public Boolean fetchInstagramFeed() throws IGLoginException {
         return instagramService.fetchInstagramFeed();
     }
 
@@ -206,7 +206,7 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
-    public List<TwitterPost> fetchTwitterPosts() throws Exception {
+    public Boolean fetchTwitterPosts() throws Exception {
         return twitterService.fetchTwitterPosts();
     }
 

@@ -30,7 +30,7 @@ public interface ClientService {
 
     List<F1Comment> getComments(String page);
 
-    List<InstagramPost>  fetchInstagramFeed() throws IGLoginException;
+    Boolean fetchInstagramFeed() throws IGLoginException;
 
     TripleInstagramFeed getInstagramFeed() throws IGLoginException;
 
@@ -38,7 +38,7 @@ public interface ClientService {
 
     DoubleTwitterFeed getTwitterPosts(Integer page);
 
-    List<TwitterPost> fetchTwitterPosts() throws Exception;
+    Boolean fetchTwitterPosts() throws Exception;
 
     byte[] getImage(String code);
 

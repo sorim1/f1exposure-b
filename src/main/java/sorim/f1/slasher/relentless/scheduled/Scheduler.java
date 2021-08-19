@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import sorim.f1.slasher.relentless.service.AdminService;
+import sorim.f1.slasher.relentless.service.ClientService;
 import sorim.f1.slasher.relentless.service.ExposureService;
 
 import javax.annotation.PostConstruct;
@@ -19,6 +20,7 @@ public class Scheduler {
 
     private final ExposureService exposureService;
     private final AdminService adminService;
+    private final ClientService clientService;
 
    // @Scheduled(fixedDelayString = "3600000", initialDelayString = "3600000")
    @Scheduled(cron = "0 0 10 * * SUN")
@@ -80,5 +82,12 @@ public class Scheduler {
     void onInit(){
        log.info("onInitCalled");
         sundayJobs();
+    }
+
+    @Scheduled(fixedRate=120*60*1000, initialDelay=60*1000)
+    void bihourlyJob() throws Exception {
+        log.info("bihourlyJob called");
+        clientService.fetchInstagramFeed();
+        clientService.fetchTwitterPosts();
     }
 }

@@ -95,6 +95,8 @@ CREATE TABLE CURRENT_DRIVER_STANDINGS
     ergast_code      text,
     nationality      text,
     car              text,
+    driver_url       text,
+    constructor_url  text,
     points           numeric,
     wins             numeric,
     permanent_number numeric,
@@ -128,6 +130,7 @@ CREATE TABLE CURRENT_CONSTRUCTOR_STANDINGS
     name     text,
     points   numeric,
     wins     numeric,
+    url     text,
     CONSTRAINT CURRENT_CONSTRUCTOR_STANDINGS_pkey PRIMARY KEY (name)
 );
 

@@ -40,7 +40,7 @@ public class TwitterServiceImpl implements TwitterService {
     }
 
     @Override
-    public List<TwitterPost> fetchTwitterPosts() throws Exception {
+    public Boolean fetchTwitterPosts() throws Exception {
         List<TwitterPost> list = new ArrayList<>();
         Twitter twitter = getTwitterinstance();
         twitter.getHomeTimeline().forEach(item -> {
@@ -72,6 +72,7 @@ public class TwitterServiceImpl implements TwitterService {
                 url = "https://twitter.com/" + item.getUser().getScreenName() + "/status/" + item.getId() ;
                 source=4;
             }
+            twitter.get
             list.add(TwitterPost.builder()
             .id(item.getId())
             .text(text)
@@ -86,14 +87,8 @@ public class TwitterServiceImpl implements TwitterService {
             .build());
         });
         twitterRepository.saveAll(list);
-        return list;
+        return true;
     }
-
-    private void getTwitterStatus(String screenName, long tweetID, Twitter twitter ) throws TwitterException {
-        Status status = twitter.showStatus(tweetID);
-        log.info(status.getText());
-    }
-
 
     private Twitter getTwitterinstance() {
         ConfigurationBuilder cb = new ConfigurationBuilder();

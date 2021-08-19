@@ -93,14 +93,14 @@ public class ClientController {
     }
 
     @GetMapping("/fetchInstagramFeed")
-    List<InstagramPost> fetchInstagramFeed(@RequestHeader String client) throws Exception {
-        securityService.validateHeader(client);
+    Boolean fetchInstagramFeed(@RequestHeader String client) throws Exception {
+        securityService.validateAdminHeader(client);
         return service.fetchInstagramFeed();
     }
 
     @GetMapping("/fetchTwitterPosts")
-    List<TwitterPost> fetchTwitterPosts(@RequestHeader String client) throws Exception {
-        securityService.validateHeader(client);
+    Boolean fetchTwitterPosts(@RequestHeader String client) throws Exception {
+        securityService.validateAdminHeader(client);
         return service.fetchTwitterPosts();
     }
 
