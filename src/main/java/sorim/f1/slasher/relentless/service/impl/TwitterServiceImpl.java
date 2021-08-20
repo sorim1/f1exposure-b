@@ -72,7 +72,10 @@ public class TwitterServiceImpl implements TwitterService {
                 url = "https://twitter.com/" + item.getUser().getScreenName() + "/status/" + item.getId() ;
                 source=4;
             }
-            twitter.get
+            if(mediaUrl==null){
+            getTwitterPost(twitter, item.getId());
+            }
+
             list.add(TwitterPost.builder()
             .id(item.getId())
             .text(text)
@@ -88,6 +91,16 @@ public class TwitterServiceImpl implements TwitterService {
         });
         twitterRepository.saveAll(list);
         return true;
+    }
+
+    private void getTwitterPost(Twitter twitter, long tweetID) {
+        try {
+            Status status = twitter.showStatus(tweetID);
+            log.info("getTwitterPost1");
+            log.info(status.getText());
+        } catch (TwitterException e) {
+            e.printStackTrace();
+        }
     }
 
     private Twitter getTwitterinstance() {
