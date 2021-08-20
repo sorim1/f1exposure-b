@@ -18,6 +18,8 @@ public interface ExposureService {
 
     Integer getCurrentRound();
 
+    void setCurrentRound(Integer newCurrentRound);
+
     boolean exposureOn();
 
     void setNextRoundOfExposure(List<DriverStanding> driverStandings, int round);

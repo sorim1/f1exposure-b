@@ -8,6 +8,8 @@ import sorim.f1.slasher.relentless.entities.F1Calendar;
 import sorim.f1.slasher.relentless.service.AdminService;
 import sorim.f1.slasher.relentless.service.SecurityService;
 
+import java.util.List;
+
 @RestController
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 @RequestMapping("sorimzone")
@@ -84,5 +86,24 @@ public class AdminController {
     AwsContent getAwsPost(@RequestHeader String client, @RequestBody AwsContent entry) throws Exception {
         securityService.validateHeader(client);
         return service.patchAwsPost(entry);
+    }
+
+
+    @GetMapping("/updateCurrentRound")
+    List<Integer> updateCurrentRound(@RequestHeader String client) throws Exception {
+        securityService.validateAdminHeader(client);
+        return service.updateCurrentRound(false);
+    }
+
+    @GetMapping("/updateCurrentRoundUp")
+    List<Integer> updateCurrentRoundUp(@RequestHeader String client) throws Exception {
+        securityService.validateAdminHeader(client);
+        return service.updateCurrentRound(true);
+    }
+
+    @GetMapping("/updateCurrentRound/{round}")
+    List<Integer> setCurrentRound(@RequestHeader String client, @PathVariable("round") String round) throws Exception {
+        securityService.validateAdminHeader(client);
+        return service.setCurrentRound(Integer.valueOf(round));
     }
 }

@@ -105,11 +105,13 @@ public class MainUtility {
             if(password.length()>6){
                 password = password.substring(0,6);
             }
-            finalUsername = (username.substring(0,passwordStart+1) + password);
+            if(passwordStart>20){
+                finalUsername = username.substring(0,20) +"#"+ password;
+            } else {
+                finalUsername = username.substring(0,passwordStart+1) + password;
+            }
         }
-        if(finalUsername.length()>25){
-            finalUsername = finalUsername.substring(0,25);
-        }
+
         return finalUsername;
     }
 }

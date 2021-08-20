@@ -692,4 +692,7 @@ VALUES (2021, 9, 543, 66);
 INSERT INTO exposed_vote_totals
     (season, round, voters, votes)
 VALUES (2021, 10, 374, 24);
+INSERT INTO exposed_vote_totals
+(season, round, voters, votes)
+VALUES (2021, 11, 374, 24);
 

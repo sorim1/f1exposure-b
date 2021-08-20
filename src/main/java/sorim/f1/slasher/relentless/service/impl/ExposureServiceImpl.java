@@ -39,7 +39,7 @@ public class ExposureServiceImpl implements ExposureService {
     private static boolean exposureNow = false;
     private static LocalDateTime exposureTime;
     private static String title = "Something Went Wrong";
-    private static Integer currentRound = 3;
+    private static Integer currentRound;
 
     @Override
     public Boolean exposeDrivers(String[] exposedList, String ipAddress) throws Exception {
@@ -200,6 +200,11 @@ public class ExposureServiceImpl implements ExposureService {
     @Override
     public Integer getCurrentRound() {
         return currentRound;
+    }
+
+    @Override
+    public void setCurrentRound(Integer newCurrentRound) {
+        currentRound = newCurrentRound;
     }
 
     @Override

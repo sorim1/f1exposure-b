@@ -338,6 +338,29 @@ public class AdminServiceImpl implements AdminService {
         return awsRepository.save(entry);
     }
 
+    @Override
+    public List<Integer> updateCurrentRound(boolean increaseOnly) {
+        List<Integer> response = new ArrayList<>();
+        response.add(CURRENT_ROUND);
+        refreshDriverStandingsFromErgast();
+        response.add(CURRENT_ROUND);
+        if(increaseOnly){
+            exposureService.setCurrentRound(CURRENT_ROUND);
+        }
+        return response;
+    }
+
+    @Override
+    public List<Integer> setCurrentRound(Integer newRound) {
+        List<Integer> response = new ArrayList<>();
+        response.add(CURRENT_ROUND);
+        CURRENT_ROUND = newRound;
+        propertiesRepository.updateProperty("round", CURRENT_ROUND.toString());
+        response.add(CURRENT_ROUND);
+        exposureService.setCurrentRound(CURRENT_ROUND);
+        return response;
+    }
+
     private Integer getNextRefreshTick() {
         CalendarData calendarData = clientService.getCountdownData(0);
         if(calendarData.getCountdownData().get("raceDays")>2){
