@@ -25,12 +25,15 @@ import java.util.*;
 public class SecurityServiceImpl implements SecurityService {
 
     private final MainProperties properties;
+    private final static String AUTHORIZATION_CLIENT_FAILURE = "AUTHORIZATION_CLIENT_FAILURE";
+    private final static String AUTHORIZATION_ADMIN_FAILURE = "AUTHORIZATION_ADMIN_FAILURE";
+    private final static String AUTHORIZATION_ADMIN_OK = "AUTHORIZATION_ADMIN_OK";
 
     @Override
     public void validateHeader(String authorization) throws Exception {
         boolean valid = Arrays.asList(properties.getClients()).contains(authorization) || Arrays.asList(properties.getAdmins()).contains(authorization);
         if (!valid) {
-            Logger.raiseException(authorization, "not authorized");
+            Logger.raiseException(AUTHORIZATION_CLIENT_FAILURE, authorization);
         }
     }
 
@@ -38,15 +41,14 @@ public class SecurityServiceImpl implements SecurityService {
     public void validateAdminHeader(String authorization) throws Exception {
         boolean valid = Arrays.asList(properties.getAdmins()).contains(authorization);
         if (!valid) {
-            Logger.raiseException("not authorized");
+            Logger.raiseException(AUTHORIZATION_ADMIN_FAILURE, authorization);
+        } else {
+            Logger.log(AUTHORIZATION_ADMIN_OK, authorization);
         }
     }
 
     @Override
     public String validateIp(HttpServletRequest request) {
-        log.info(request.getRemoteAddr());
-        log.info(request.getRequestURI());
-        log.info(request.getLocalAddr());
         return request.getRemoteAddr();
     }
 }

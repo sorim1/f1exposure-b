@@ -28,7 +28,7 @@ public class Logger {
 
     public static void raiseException(String info) throws Exception {
         log.error(info);
-        repository.save(Log.builder().code("REPLACE_ME").message(info).build());
+        repository.save(Log.builder().code("ERROR").message(info).build());
         throw new Exception(info);
     }
 

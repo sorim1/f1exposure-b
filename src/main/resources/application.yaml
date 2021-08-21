@@ -20,6 +20,14 @@ f1:
       clients:
         - 36aed15c-f2ca-40a0-ae6d-96d82091df99
         - 7c36a15a-019a-4c36-944d-c63423480ca5
+server:
+  port: 443
+#  ssl:
+#    key-store: classpath:keystore.p12
+#    key-store-password: password
+#    key-store-type: pkcs12
+#    key-alias: springboot
+#    key-password: password
 spring:
   application:
     name: f1-exposure-rest-api
