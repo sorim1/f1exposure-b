@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import net.fortuna.ical4j.model.PropertyList;
+import sorim.f1.slasher.relentless.entities.ergast.Race;
 import sorim.f1.slasher.relentless.model.enums.RoundEnum;
 
 import javax.persistence.*;
@@ -32,19 +33,23 @@ public class F1Calendar {
     private LocalDateTime practice3Original;
     private LocalDateTime qualifyingOriginal;
     private LocalDateTime raceOriginal;
+    private String ergastDateTime;
+    private String ergastName;
     private String location;
     private String summary;
 
-    public F1Calendar(PropertyList properties) throws Exception {
+    public F1Calendar(PropertyList properties, Race race) throws Exception {
         String[] idAndRound = properties.get("UID").get(0).getValue().split("@");
         this.raceId = Integer.valueOf(idAndRound[1]);
         this.location = properties.get("LOCATION").get(0).getValue();
         this.summary = properties.get("SUMMARY").get(0).getValue().replace(" - Practice 1", "");
-        System.out.println("summary");
-        System.out.println(this.summary);
+
+        if(race!=null) {
+            this.ergastDateTime = race.getDate() + " - " + race.getTime();
+            this.ergastName = race.getRaceName();
+        }
         setDateFromRoundDescription(idAndRound[0], properties.get("DTSTART").get(0).getValue());
     }
-
 
     public void setDateFromRoundDescription(String roundDesc, String dateTimeString) throws Exception {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd'T'HHmmss");

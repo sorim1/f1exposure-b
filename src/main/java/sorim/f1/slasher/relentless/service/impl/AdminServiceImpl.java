@@ -19,6 +19,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import sorim.f1.slasher.relentless.configuration.MainProperties;
 import sorim.f1.slasher.relentless.entities.*;
+import sorim.f1.slasher.relentless.entities.ergast.Race;
 import sorim.f1.slasher.relentless.handling.Logger;
 import sorim.f1.slasher.relentless.model.CalendarData;
 import sorim.f1.slasher.relentless.model.SportSurge;
@@ -85,9 +86,11 @@ public class AdminServiceImpl implements AdminService {
         CalendarBuilder builder = new CalendarBuilder();
         Calendar calendar = builder.build(r);
         int raceId = 0;
+        int ergastRound = -1;
         int currentRaceId;
         List<F1Calendar> f1calendarList = new ArrayList<>();
         F1Calendar f1Calendar = null;
+        List<Race> ergastRaces = ergastService.fetchSeason(String.valueOf(properties.getCurrentYear()));
         for (CalendarComponent component : calendar.getComponents().getAll()) {
             if (component.getName().equals("VEVENT")) {
                 PropertyList properties = component.getProperties();
@@ -100,7 +103,17 @@ public class AdminServiceImpl implements AdminService {
                         f1calendarList.add(f1Calendar);
                     }
                     raceId = currentRaceId;
-                    f1Calendar = new F1Calendar(properties);
+                    if(ergastRound==-1){
+                        f1Calendar = new F1Calendar(properties, null);
+                        ergastRound++;
+                    } else {
+                        if(ergastRound<ergastRaces.size()){
+                            f1Calendar = new F1Calendar(properties, ergastRaces.get(ergastRound++));
+                        } else {
+                            f1Calendar = new F1Calendar(properties, null);
+                        }
+
+                    }
                 }
             }
         }
@@ -113,21 +126,22 @@ public class AdminServiceImpl implements AdminService {
         ZonedDateTime gmtZoned = ZonedDateTime.now(ZoneId.of("Europe/London"));
         LocalDateTime gmtDateTime = gmtZoned.toLocalDateTime();
         F1Calendar f1calendar = calendarRepository.findFirstByRaceAfterOrderByRace(gmtDateTime);
+        String url = properties.getFormula1RacingUrl()+properties.getCurrentYear()+".html";
         String rawHtml = restTemplate
-                .getForObject(properties.getFormula1RacingUrl()+properties.getCurrentYear()+".html", String.class);
+                .getForObject(url, String.class);
             //todo TBC
-        Document doc = Jsoup.parse(rawHtml, null);
+        Document doc = Jsoup.parse(rawHtml);
         Elements clock = doc.getAllElements();
         log.info("clock.wholeText()");
         //Elements tRows1 = clock.getElementsByClass("f1-color--white countdown-text");
-        clock.forEach(row -> {
-            log.info("row.wholeText()1");
-            log.info(row.wholeText());
-            row.getAllElements().forEach(row2 -> {
-                log.info("row2.wholeText()1");
-                log.info(row2.wholeText());
-            });
-        });
+//        clock.forEach(row -> {
+//            log.info("row.wholeText()1");
+//            log.info(row.wholeText());
+//            row.getAllElements().forEach(row2 -> {
+//                log.info("row2.wholeText()1");
+//                log.info(row2.wholeText());
+//            });
+//        });
     }
 
     @Override

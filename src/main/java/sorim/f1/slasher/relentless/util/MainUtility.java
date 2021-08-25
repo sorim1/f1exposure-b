@@ -100,7 +100,7 @@ public class MainUtility {
     public static String handleUsername(String username) {
         String finalUsername = username;
         Integer passwordStart = username.indexOf("#");
-        if(passwordStart>0){
+        if(passwordStart>=0){
             String password = String.valueOf(Math.abs(username.hashCode()));
             if(password.length()>6){
                 password = password.substring(0,6);

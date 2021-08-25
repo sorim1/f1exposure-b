@@ -51,4 +51,6 @@ public interface ClientService {
     List<AwsComment> postAwsComment(AwsComment comment);
 
     List<AwsComment> getAwsComments(String code);
+
+    BasicResponse moderateComment(CommentModeration moderation);
 }

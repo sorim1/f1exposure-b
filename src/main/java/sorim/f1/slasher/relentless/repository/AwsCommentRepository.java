@@ -7,6 +7,7 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import sorim.f1.slasher.relentless.entities.AwsComment;
+import sorim.f1.slasher.relentless.entities.F1Comment;
 
 import javax.transaction.Transactional;
 import java.util.List;
@@ -16,6 +17,8 @@ import java.util.List;
 @EnableJpaAuditing
 public interface AwsCommentRepository extends CrudRepository<AwsComment, String> {
     List<AwsComment> findAllByContentCodeAndStatusOrderByTimestampCreatedDesc(String code, Integer status);
+
+    AwsComment findAwsCommentByIdAndStatus(Integer id, Integer status);
 
     @Modifying
     @Query("update AwsComment u set u.status = :newStatus where u.id = :id")

@@ -81,6 +81,8 @@ CREATE TABLE CALENDAR
     practice3original   TIMESTAMP,
     qualifying_original TIMESTAMP,
     race_original       TIMESTAMP,
+    ergast_date_time      text,
+    ergast_name      text,
     location            text,
     summary             text,
     CONSTRAINT CALENDAR_pkey PRIMARY KEY (race_id)

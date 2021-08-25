@@ -160,4 +160,10 @@ public class ClientController {
         return service.getAwsComments(code);
     }
 
+    @PostMapping("/moderateComment")
+    BasicResponse moderateComment(@RequestHeader String client, @RequestBody CommentModeration moderation) throws Exception {
+        securityService.validateHeader(client);
+        return service.moderateComment(moderation);
+    }
+
 }

@@ -45,7 +45,7 @@ public class ExposureServiceImpl implements ExposureService {
     public Boolean exposeDrivers(String[] exposedList, String ipAddress) throws Exception {
         boolean alreadyExists = exposedVoteRepository.existsExposedVoteByIpAddressAndSeasonAndRound(ipAddress, properties.getCurrentYear(), currentRound);
         if(alreadyExists){
-            Logger.log("IP_CHEATER- exposeDrivers ", ipAddress + " - " + exposedList);
+            Logger.log("IP_CHEATER- exposeDrivers ", ipAddress + " - " + Arrays.toString(exposedList));
             //TODO uncomment
         //    return false;
         }

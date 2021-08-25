@@ -40,7 +40,7 @@ public class ClientServiceImpl implements ClientService {
     private final ExposureService exposureService;
     private final ErgastService ergastService;
     private final MainProperties properties;
-
+    private static final String SYSTEM_MESSAGE = "### SYSTEM MESSAGE ###";
 
 
     @Override
@@ -257,6 +257,52 @@ public class ClientServiceImpl implements ClientService {
     @Override
     public List<AwsComment> getAwsComments(String code) {
         return awsCommentRepository.findAllByContentCodeAndStatusOrderByTimestampCreatedDesc(code, 1);
+    }
+
+    @Override
+    public BasicResponse moderateComment(CommentModeration moderation) {
+        String message;
+        Integer state = -1;
+        Integer oppositeStatus;
+        String executedAction = "";
+        if(moderation.getAction()==1){
+            oppositeStatus = 2;
+            executedAction = " restored";
+        } else {
+            oppositeStatus = 1;
+            executedAction = " deleted";
+        }
+        message = "Comment no." + moderation.getCommentId() + executedAction + " by moderator. Reason: " + moderation.getReason();
+        if(moderation.getPanel()==1){
+            F1Comment comment = f1CommentRepository.findF1CommentByIdAndStatus(moderation.getCommentId(), oppositeStatus);
+            if(comment!=null){
+                state = f1CommentRepository.updateStatus(moderation.getCommentId(), moderation.getAction());
+                F1Comment notification = F1Comment.builder()
+                        .comment(message)
+                        .page(comment.getPage())
+                        .status(1)
+                        .timestamp(new Date())
+                        .nickname(SYSTEM_MESSAGE)
+                        .build();
+                f1CommentRepository.save(notification);
+            }
+        }
+        if(moderation.getPanel()==2){
+            AwsComment comment = awsCommentRepository.findAwsCommentByIdAndStatus(moderation.getCommentId(), oppositeStatus);
+            if(comment!=null){
+                state = awsCommentRepository.updateStatus(moderation.getCommentId(), moderation.getAction());
+                AwsComment notification = AwsComment.builder()
+                        .textContent(message)
+                        .status(1)
+                        .contentCode(comment.getContentCode())
+                        .timestampCreated(new Date())
+                        .username(SYSTEM_MESSAGE)
+                        .build();
+                awsCommentRepository.save(notification);
+            }
+
+        }
+        return BasicResponse.builder().state(state).message(message).build();
     }
 
     private Map<String, Integer> getRemainingTime(LocalDateTime gmtDateTime, F1Calendar f1calendar, Integer mode) {

@@ -18,6 +18,8 @@ import java.util.List;
 public interface F1CommentRepository extends CrudRepository<F1Comment, String> {
     List<F1Comment> findFirst30ByPageAndStatusOrderByTimestampDesc(Integer page, Integer status);
 
+    F1Comment findF1CommentByIdAndStatus(Integer id, Integer status);
+
     @Modifying
     @Query("update F1Comment u set u.status = :newStatus where u.id = :id")
     Integer updateStatus(@Param(value = "id") Integer name, @Param(value = "newStatus") Integer newStatus);
