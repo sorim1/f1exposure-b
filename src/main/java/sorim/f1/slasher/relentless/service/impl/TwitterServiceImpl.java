@@ -72,9 +72,8 @@ public class TwitterServiceImpl implements TwitterService {
                 url = "https://twitter.com/" + item.getUser().getScreenName() + "/status/" + item.getId() ;
                 source=4;
             }
-            if(mediaUrl==null){
-            getTwitterPost(twitter, item.getId());
-            }
+            if(mediaUrl!=null){
+            //getTwitterPost(twitter, item.getId());
 
             list.add(TwitterPost.builder()
             .id(item.getId())
@@ -88,6 +87,7 @@ public class TwitterServiceImpl implements TwitterService {
             .username(item.getUser().getName())
             .createdAt(item.getCreatedAt())
             .build());
+            }
         });
         twitterRepository.saveAll(list);
         return true;
