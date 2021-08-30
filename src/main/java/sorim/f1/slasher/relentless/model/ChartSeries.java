@@ -16,11 +16,11 @@ import java.util.List;
 public class ChartSeries {
     private String name;
     private String color;
-    private List<List<Integer>> series = new ArrayList<>();
+    private List<List<BigDecimal>> series = new ArrayList<>();
 
-    public void add(Integer round, Integer point){
-        List<Integer> newPoint = new ArrayList<>();
-        newPoint.add(round);
+    public void add(Integer round, BigDecimal point){
+        List<BigDecimal> newPoint = new ArrayList<>();
+        newPoint.add(new BigDecimal(round));
         newPoint.add(point);
         series.add(newPoint);
     }

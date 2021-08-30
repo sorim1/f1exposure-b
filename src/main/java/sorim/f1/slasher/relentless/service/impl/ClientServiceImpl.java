@@ -14,6 +14,7 @@ import sorim.f1.slasher.relentless.repository.*;
 import sorim.f1.slasher.relentless.service.*;
 import sorim.f1.slasher.relentless.util.MainUtility;
 
+import java.math.BigDecimal;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
@@ -101,7 +102,7 @@ public class ClientServiceImpl implements ClientService {
             }
             totalPoints.get(standing.getCode()).add(standing.getId().getRound(), standing.getPoints());
             roundPoints.get(standing.getCode()).add(standing.getId().getRound(), standing.getPointsThisRound());
-            roundResults.get(standing.getCode()).add(standing.getId().getRound(), standing.getResultThisRound());
+            roundResults.get(standing.getCode()).add(standing.getId().getRound(), new BigDecimal(standing.getResultThisRound()));
         });
         List<List<ChartSeries>> output = new ArrayList<>();
         output.add(new ArrayList<>(totalPoints.values()));

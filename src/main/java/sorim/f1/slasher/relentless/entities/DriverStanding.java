@@ -10,6 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
+import java.math.BigDecimal;
 
 @Entity
 @Table(name = "CURRENT_DRIVER_STANDINGS")
@@ -26,7 +27,7 @@ public class DriverStanding {
     private String ergastCode;
     private String nationality;
     private String car;
-    private Integer points;
+    private BigDecimal points;
     private Integer wins;
     private Integer permanentNumber;
     private String driverUrl;

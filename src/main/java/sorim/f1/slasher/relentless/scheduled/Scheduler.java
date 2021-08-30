@@ -52,8 +52,13 @@ public class Scheduler {
     @Scheduled(cron = "0 0 10 * * MON")
     public void mondayJobs() {
         log.info("mondayJobs called");
-        exposureService.closeExposurePoll();
         adminService.deleteSportSurgeLinks();
+    }
+
+    @Scheduled(cron = "0 0 10 * * TUE")
+    public void tuesdayJobs() {
+        log.info("tuesdayJobs called");
+        exposureService.closeExposurePoll();
     }
 
     @Scheduled(cron = "0 0 15 * * FRI")

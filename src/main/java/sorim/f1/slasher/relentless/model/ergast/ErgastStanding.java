@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @Data
@@ -15,7 +16,7 @@ import java.util.List;
 public class ErgastStanding {
 
     private Integer position;
-    private Integer points;
+    private BigDecimal points;
     private Integer wins;
     @JsonProperty("Driver")
     private ErgastDriver driver;

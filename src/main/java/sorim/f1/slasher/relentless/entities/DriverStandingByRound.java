@@ -8,6 +8,7 @@ import sorim.f1.slasher.relentless.model.ergast.ErgastStanding;
 import sorim.f1.slasher.relentless.util.MainUtility;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 
 @Entity
 @Table(name = "DRIVER_STANDINGS_BY_ROUND")
@@ -24,8 +25,8 @@ public class DriverStandingByRound {
     private String code;
     private String nationality;
     private String car;
-    private Integer points;
-    private Integer pointsThisRound = 0;
+    private BigDecimal points;
+    private BigDecimal pointsThisRound = new BigDecimal(0);
     private Integer resultThisRound;
     private Integer wins;
     private Integer permanentNumber;
@@ -51,7 +52,7 @@ public class DriverStandingByRound {
         this.color = MainUtility.getTeamColor(ergastStanding.getConstructors().get(0).getConstructorId());
     }
 
-    public void incrementPointsThisRound(Integer value){
-        this.pointsThisRound= this.pointsThisRound+value;
+    public void incrementPointsThisRound(BigDecimal value){
+        this.pointsThisRound= this.pointsThisRound.add(value);
     }
 }

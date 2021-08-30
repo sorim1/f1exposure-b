@@ -11,6 +11,7 @@ import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.math.BigDecimal;
 
 @Entity
 @Table(name = "CONSTRUCTOR_STANDINGS_BY_ROUND")
@@ -24,9 +25,9 @@ public class ConstructorStandingByRound {
     private EmbeddedStandingId id;
     private String name;
     private Integer position;
-    private Integer points;
+    private BigDecimal points;
     private Integer wins;
-    private Integer pointsThisRound = 0;
+    private BigDecimal pointsThisRound = new BigDecimal(0);
     private String color;
 
     public ConstructorStandingByRound(ErgastStanding ergastStanding, Integer season, Integer round) {
@@ -41,7 +42,7 @@ public class ConstructorStandingByRound {
         this.color = MainUtility.getTeamColor(ergastStanding.getConstructor().getConstructorId());
     }
 
-    public void incrementPointsThisRound(Integer value){
-        this.pointsThisRound= this.pointsThisRound+value;
+    public void incrementPointsThisRound(BigDecimal value){
+        this.pointsThisRound= this.pointsThisRound.add(value);
     }
 }

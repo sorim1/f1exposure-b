@@ -9,6 +9,7 @@ import sorim.f1.slasher.relentless.model.ergast.ErgastStanding;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.math.BigDecimal;
 
 @Entity
 @Table(name = "CURRENT_CONSTRUCTOR_STANDINGS")
@@ -22,7 +23,7 @@ public class ConstructorStanding {
     private String id;
     private String name;
     private Integer position;
-    private Integer points;
+    private BigDecimal points;
     private Integer wins;
     private String url;
 
