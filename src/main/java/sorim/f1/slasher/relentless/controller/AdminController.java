@@ -5,6 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import sorim.f1.slasher.relentless.entities.AwsContent;
 import sorim.f1.slasher.relentless.entities.F1Calendar;
+import sorim.f1.slasher.relentless.model.ExposureResponse;
+import sorim.f1.slasher.relentless.model.FullExposure;
 import sorim.f1.slasher.relentless.service.AdminService;
 import sorim.f1.slasher.relentless.service.SecurityService;
 
@@ -105,5 +107,11 @@ public class AdminController {
     List<Integer> setCurrentRound(@RequestHeader String client, @PathVariable("round") String round) throws Exception {
         securityService.validateAdminHeader(client);
         return service.setCurrentRound(Integer.valueOf(round));
+    }
+
+    @GetMapping("/backupExposure")
+    FullExposure getExposureDriverList(@RequestHeader String client) throws Exception {
+        securityService.validateAdminHeader(client);
+        return service.backupExposure();
     }
 }

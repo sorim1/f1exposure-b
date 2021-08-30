@@ -3,6 +3,7 @@ package sorim.f1.slasher.relentless.service;
 import sorim.f1.slasher.relentless.entities.AwsContent;
 import sorim.f1.slasher.relentless.entities.DriverStanding;
 import sorim.f1.slasher.relentless.entities.F1Calendar;
+import sorim.f1.slasher.relentless.model.FullExposure;
 
 import java.io.IOException;
 import java.util.List;
@@ -36,4 +37,6 @@ public interface AdminService {
     List<Integer> updateCurrentRound(boolean increaseOnly);
 
     List<Integer> setCurrentRound(Integer newRound);
+
+    FullExposure backupExposure();
 }

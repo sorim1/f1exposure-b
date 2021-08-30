@@ -10,6 +10,7 @@ import sorim.f1.slasher.relentless.handling.Logger;
 import sorim.f1.slasher.relentless.model.*;
 import sorim.f1.slasher.relentless.model.enums.ExposureStatusEnum;
 import sorim.f1.slasher.relentless.repository.*;
+import sorim.f1.slasher.relentless.service.ErgastService;
 import sorim.f1.slasher.relentless.service.ExposureService;
 
 import javax.annotation.PostConstruct;
@@ -35,15 +36,17 @@ public class ExposureServiceImpl implements ExposureService {
     private final CalendarRepository calendarRepository;
     private final MainProperties properties;
     private final PropertiesRepository propertiesRepository;
+    private final ErgastService ergastService;
+
     private static boolean exposureToday = false;
     private static boolean exposureNow = false;
     private static LocalDateTime exposureTime;
     private static String title = "Something Went Wrong";
-    private static Integer currentRound;
+    private static Integer currentExposureRound;
 
     @Override
     public Boolean exposeDrivers(String[] exposedList, String ipAddress) throws Exception {
-        boolean alreadyExists = exposedVoteRepository.existsExposedVoteByIpAddressAndSeasonAndRound(ipAddress, properties.getCurrentYear(), currentRound);
+        boolean alreadyExists = exposedVoteRepository.existsExposedVoteByIpAddressAndSeasonAndRound(ipAddress, properties.getCurrentYear(), currentExposureRound);
         if(alreadyExists){
             Logger.log("IP_CHEATER- exposeDrivers ", ipAddress + " - " + Arrays.toString(exposedList));
             //TODO uncomment
@@ -52,17 +55,17 @@ public class ExposureServiceImpl implements ExposureService {
         exposedVoteRepository.save(ExposedVote.builder().drivers(exposedList)
                 .ipAddress(ipAddress)
                 .season(properties.getCurrentYear())
-                .round(currentRound)
+                .round(currentExposureRound)
                 .build());
         for (String driverCode : exposedList) {
-            Integer counter = exposedRepository.incrementExposed(properties.getCurrentYear(), currentRound, driverCode);
+            Integer counter = exposedRepository.incrementExposed(properties.getCurrentYear(), currentExposureRound, driverCode);
             if(counter==0){
-                exposedRepository.insertExposureData(properties.getCurrentYear(), currentRound, driverCode, 1);
+                exposedRepository.insertExposureData(properties.getCurrentYear(), currentExposureRound, driverCode, 1);
             }
         }
-        Integer counter = exposedRepository.incrementTotal(properties.getCurrentYear(), currentRound, exposedList.length);
+        Integer counter = exposedRepository.incrementTotal(properties.getCurrentYear(), currentExposureRound, exposedList.length);
         if(counter==0){
-            exposedRepository.insertExposureTotal(properties.getCurrentYear(), currentRound, exposedList.length);
+            exposedRepository.insertExposureTotal(properties.getCurrentYear(), currentExposureRound, exposedList.length);
         }
         return !alreadyExists;
     }
@@ -73,14 +76,18 @@ public class ExposureServiceImpl implements ExposureService {
         List<String> driverNames = new ArrayList<>();
         List<Integer> results = new ArrayList<>();
         List<BigDecimal> exposureList = new ArrayList<>();
-        List<Exposed> list = exposedRepository.findByIdSeasonAndIdRoundOrderByCounterDesc(properties.getCurrentYear(), currentRound);
+        List<Exposed> list = exposedRepository.findByIdSeasonAndIdRoundOrderByCounterDesc(properties.getCurrentYear(), currentExposureRound);
 
-         ExposedVoteTotals total = exposedRepository.findExposedTotalBySeasonAndRound(properties.getCurrentYear(), currentRound);
+         ExposedVoteTotals total = exposedRepository.findExposedTotalBySeasonAndRound(properties.getCurrentYear(), currentExposureRound);
+         if(total==null){
+             total = new ExposedVoteTotals();
+         }
+         ExposedVoteTotals finalTotal = total;
          list.forEach((exposed) -> {
              drivers.add(exposed.getRelatedDriver().getCode());
              driverNames.add(exposed.getRelatedDriver().getFullName());
              results.add(exposed.getCounter());
-             BigDecimal exposure = new BigDecimal(exposed.getCounter()*100).divide(new BigDecimal(total.getVoters()), 2, RoundingMode.HALF_UP);
+             BigDecimal exposure = new BigDecimal(exposed.getCounter()*100).divide(new BigDecimal(finalTotal.getVoters()), 2, RoundingMode.HALF_UP);
              exposureList.add(exposure);
          });
          return ActiveExposureChart.builder()
@@ -88,7 +95,7 @@ public class ExposureServiceImpl implements ExposureService {
                 .driverNames(driverNames.toArray(new String[driverNames.size()]))
                 .results(results.toArray(new Integer[results.size()]))
                  .exposure(exposureList.toArray(new BigDecimal[results.size()]))
-                 .round(currentRound)
+                 .round(currentExposureRound)
                  .season(properties.getCurrentYear())
                  .votes(total.getVotes())
                  .voters(total.getVoters())
@@ -103,7 +110,7 @@ public class ExposureServiceImpl implements ExposureService {
                 .exposureTime(exposureTime)
                 .exposureNow(exposureNow)
                 .exposureToday(exposureToday)
-                .currentRound(currentRound)
+                .currentRound(currentExposureRound)
                 .build();
         if(exposureOn()) {
            // if(true) {
@@ -122,7 +129,7 @@ public class ExposureServiceImpl implements ExposureService {
     }
 
     @Override
-    public boolean setExposureStartTime() {
+    public boolean setExposureStartTimeOnASunday() {
         ZonedDateTime gmtZoned = ZonedDateTime.now(ZoneId.of("Europe/London"));
         LocalDateTime gmtDateTime = gmtZoned.toLocalDateTime();
         F1Calendar f1calendar = calendarRepository.findFirstByRaceAfterOrderByRace(gmtDateTime);
@@ -134,12 +141,25 @@ public class ExposureServiceImpl implements ExposureService {
         } else {
             exposureToday=true;
             title = f1calendar.getLocation();
-            currentRound = Integer.parseInt(propertiesRepository.findDistinctFirstByName("round").getValue())+1;
-            propertiesRepository.updateProperty("round", currentRound.toString());
+            updateCurrentExposureRound(1);
             exposureTime = LocalDateTime.now().plus(duration).plusHours(1);
         }
         }
         return true;
+    }
+
+    private void updateCurrentExposureRound(Integer increment) {
+        Integer round;
+        try{
+            round = ergastService.getDriverStandings().getMrData().getStandingsTable().getStandingsLists().get(0).getRound();
+            currentExposureRound = round+increment;
+            propertiesRepository.updateProperty("round", currentExposureRound.toString());
+        }catch (Exception e){
+            log.error("updateCurrentExposureRound error", e);
+            Logger.log("updateCurrentExposureRound error", e.getMessage());
+            currentExposureRound = Integer.parseInt(propertiesRepository.findDistinctFirstByName("round").getValue())+1;
+            propertiesRepository.updateProperty("round", currentExposureRound.toString());
+        }
     }
 
     @PostConstruct
@@ -149,9 +169,8 @@ public class ExposureServiceImpl implements ExposureService {
         F1Calendar f1calendar = calendarRepository.findFirstByRaceBeforeOrderByRaceDesc(gmtDateTime);
         if(f1calendar!=null){
         title = f1calendar.getLocation();
-        currentRound = Integer.parseInt(propertiesRepository.findDistinctFirstByName("round").getValue());
+        updateCurrentExposureRound(0);
         f1calendar = calendarRepository.findFirstByRaceAfterOrderByRace(gmtDateTime);
-        log.info("title2: {}" + title);
         Duration duration = Duration.between(gmtDateTime, f1calendar.getRace());
         exposureTime = LocalDateTime.now().plus(duration).plusHours(1);
         }
@@ -167,7 +186,7 @@ public class ExposureServiceImpl implements ExposureService {
         for(int i = 0; i<exposedData.getDrivers().length; i++){
             SeasonRoundDriverId idModern = SeasonRoundDriverId.builder()
                     .season(properties.getCurrentYear())
-                    .round(currentRound)
+                    .round(currentExposureRound)
                     .driver(exposedData.getDrivers()[i])
                     .build();
             DriverStandingByRound dsbr = driverStandingsByRoundRepository.findFirstByCode(idModern.getDriver());
@@ -197,14 +216,13 @@ public class ExposureServiceImpl implements ExposureService {
         return true;
     }
 
-    @Override
-    public Integer getCurrentRound() {
-        return currentRound;
+    public Integer getCurrentExposureRound() {
+        return currentExposureRound;
     }
 
-    @Override
-    public void setCurrentRound(Integer newCurrentRound) {
-        currentRound = newCurrentRound;
+    public void setCurrentExposureRound(Integer newCurrentRound) {
+        currentExposureRound = newCurrentRound;
+        propertiesRepository.updateProperty("round", currentExposureRound.toString());
     }
 
     @Override
@@ -227,7 +245,7 @@ public class ExposureServiceImpl implements ExposureService {
     public void setNextRoundOfExposure(List<DriverStanding> driverStandings, int round) {
         driverStandings.forEach(standing->{
             try {
-                exposedRepository.insertExposureData(properties.getCurrentYear(), currentRound + 1, standing.getCode(), 0);
+                exposedRepository.insertExposureData(properties.getCurrentYear(), currentExposureRound + 1, standing.getCode(), 0);
             }catch(Exception e){
                 Logger.log("setNextRoundOfExposure->insertExposureData- FAIL ", e.getMessage());
             }
@@ -284,6 +302,16 @@ public class ExposureServiceImpl implements ExposureService {
     @Override
     public String getTitle() {
         return title;
+    }
+
+    @Override
+    public FullExposure backupExposure() {
+        return FullExposure.builder()
+        .exposedVote((List<ExposedVote>) exposedVoteRepository.findAll())
+        .exposed((List<Exposed>) exposedRepository.findAll())
+        .exposureChampionship((List<ExposureChampionship>) exposureChampionshipRepository.findAll())
+        .exposureChampionshipStandings((List<ExposureChampionshipStanding>) exposureChampionshipStandingsRepository.findAll())
+        .build();
     }
 
 }

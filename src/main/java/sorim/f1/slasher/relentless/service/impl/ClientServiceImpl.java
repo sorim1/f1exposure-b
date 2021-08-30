@@ -56,7 +56,7 @@ public class ClientServiceImpl implements ClientService {
                 .exposureChampionshipData(exposureService.getExposureChampionshipData())
                 .standings(exposureService.getExposureStandings())
                 .voters(exposureService.getExposureVoters())
-                .exposureRaces(ergastService.getRacesSoFar(String.valueOf(properties.getCurrentYear()), exposureService.getCurrentRound()))
+                .exposureRaces(ergastService.getRacesSoFar(String.valueOf(properties.getCurrentYear()), exposureService.getCurrentExposureRound()))
                 .build();
     }
 

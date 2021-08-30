@@ -6,10 +6,10 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 import sorim.f1.slasher.relentless.entities.Exposed;
 import sorim.f1.slasher.relentless.entities.ExposedVoteTotals;
 
-import javax.transaction.Transactional;
 import java.util.List;
 
 @Repository

@@ -1,14 +1,11 @@
 package sorim.f1.slasher.relentless.repository;
 
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
-import sorim.f1.slasher.relentless.entities.Exposed;
-import sorim.f1.slasher.relentless.entities.ExposedVote;
+import org.springframework.transaction.annotation.Transactional;
 import sorim.f1.slasher.relentless.entities.ExposureChampionship;
 
-import javax.transaction.Transactional;
 import java.util.List;
 
 @Repository

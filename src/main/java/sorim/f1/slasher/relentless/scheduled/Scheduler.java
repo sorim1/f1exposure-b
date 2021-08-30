@@ -26,7 +26,7 @@ public class Scheduler {
    @Scheduled(cron = "0 0 10 * * SUN")
     public void sundayJobs(){
         log.info("sundayJobs called");
-       exposureService.setExposureStartTime();
+       exposureService.setExposureStartTimeOnASunday();
 
     }
 

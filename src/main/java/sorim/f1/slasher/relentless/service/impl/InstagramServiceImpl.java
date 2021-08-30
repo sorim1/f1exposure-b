@@ -22,17 +22,14 @@ import sorim.f1.slasher.relentless.repository.ImageRepository;
 import sorim.f1.slasher.relentless.repository.InstagramRepository;
 import sorim.f1.slasher.relentless.service.InstagramService;
 
-import javax.annotation.PostConstruct;
-import javax.imageio.ImageIO;
-import java.awt.*;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 @Slf4j
 @Service
@@ -52,8 +49,10 @@ public class InstagramServiceImpl implements InstagramService {
         if (client==null || !client.isLoggedIn()) {
             init();
         }
+        AtomicReference<Integer> counter = new AtomicReference<>(0);
         FeedIterable<FeedTimelineRequest, FeedTimelineResponse> response = client.getActions().timeline().feed();
-        response.stream().limit(5).forEach(row -> {
+          AtomicReference<Boolean> iterate = new AtomicReference<>(true);
+        response.stream().takeWhile(n -> iterate.get()).forEach(row -> {
             List<TimelineMedia> timelineMedias = row.getFeed_items();
             timelineMedias.forEach(post -> {
                 if (follows.contains(post.getUser().getUsername())) {
@@ -133,7 +132,10 @@ public class InstagramServiceImpl implements InstagramService {
                     log.error("OVO JE REKLAMA: {}", post.getUser().getUsername());
                 }
             });
-
+            String code = instagramPosts.get(instagramPosts.size()-1).getCode();
+            boolean exists = instagramRepository.existsByCode(timelineMedias.get(timelineMedias.size() - 1).getCode());
+            iterate.set(counter.get()<7 && (!exists));
+            counter.set(counter.get() + 1);
         });
         instagramRepository.saveAll(instagramPosts);
         fetchImages(instagramPosts);
@@ -217,8 +219,6 @@ public class InstagramServiceImpl implements InstagramService {
         return result.getImage();
     }
 
-    //@PostConstruct
-    //TODO UNCOMMENT
     void init() throws IGLoginException {
         client = IGClient.builder()
                 .username(properties.getInstagramUsername())

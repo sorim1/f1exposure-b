@@ -56,7 +56,7 @@ public class LiveTimingServiceImpl implements LiveTimingService {
         String grandPrixName = race.getRaceName().replaceAll(" ", "_");
         String grandPrix = race.getDate() + "_" + grandPrixName;
         String raceName = race.getDate() + "_Race";
-        // System.out.println("https://livetiming.formula1.com/static/"+ race.getSeason()+ "/"+ grandPrix + "/"+ raceName + "/SPFeed.json");
+        System.out.println("https://livetiming.formula1.com/static/"+ race.getSeason()+ "/"+ grandPrix + "/"+ raceName + "/SPFeed.json");
         try {
             return restTemplate
                     .getForObject(liveTimingUrl, String.class, race.getSeason(), grandPrix, raceName);
@@ -71,6 +71,7 @@ public class LiveTimingServiceImpl implements LiveTimingService {
         String grandPrixName = race.getRaceName().replaceAll(" ", "_");
         String grandPrix = race.getDate() + "_" + grandPrixName;
         String raceName = race.getDate() + "_Race";
+        System.out.println(timingAppDataUrl + " : "+ race.getSeason()+ "/"+ grandPrix + "/"+ raceName);
         try {
             return restTemplate
                     .getForObject(timingAppDataUrl, String.class, race.getSeason(), grandPrix, raceName);

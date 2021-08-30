@@ -12,7 +12,6 @@ import net.fortuna.ical4j.model.PropertyList;
 import net.fortuna.ical4j.model.component.CalendarComponent;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,6 +21,7 @@ import sorim.f1.slasher.relentless.entities.*;
 import sorim.f1.slasher.relentless.entities.ergast.Race;
 import sorim.f1.slasher.relentless.handling.Logger;
 import sorim.f1.slasher.relentless.model.CalendarData;
+import sorim.f1.slasher.relentless.model.FullExposure;
 import sorim.f1.slasher.relentless.model.SportSurge;
 import sorim.f1.slasher.relentless.model.ergast.ErgastResponse;
 import sorim.f1.slasher.relentless.repository.*;
@@ -359,7 +359,7 @@ public class AdminServiceImpl implements AdminService {
         refreshDriverStandingsFromErgast();
         response.add(CURRENT_ROUND);
         if(increaseOnly){
-            exposureService.setCurrentRound(CURRENT_ROUND);
+            exposureService.setCurrentExposureRound(CURRENT_ROUND);
         }
         return response;
     }
@@ -371,8 +371,13 @@ public class AdminServiceImpl implements AdminService {
         CURRENT_ROUND = newRound;
         propertiesRepository.updateProperty("round", CURRENT_ROUND.toString());
         response.add(CURRENT_ROUND);
-        exposureService.setCurrentRound(CURRENT_ROUND);
+        exposureService.setCurrentExposureRound(CURRENT_ROUND);
         return response;
+    }
+
+    @Override
+    public FullExposure backupExposure() {
+        return exposureService.backupExposure();
     }
 
     private Integer getNextRefreshTick() {

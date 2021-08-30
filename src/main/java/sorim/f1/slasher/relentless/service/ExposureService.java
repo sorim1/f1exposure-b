@@ -12,13 +12,13 @@ public interface ExposureService {
 
     ExposureResponse getExposureDriverList();
 
-    boolean setExposureStartTime();
+    boolean setExposureStartTimeOnASunday();
 
     boolean closeExposurePoll();
 
-    Integer getCurrentRound();
+    Integer getCurrentExposureRound();
 
-    void setCurrentRound(Integer newCurrentRound);
+    void setCurrentExposureRound(Integer newCurrentRound);
 
     boolean exposureOn();
 
@@ -31,4 +31,6 @@ public interface ExposureService {
     List<Integer> getExposureVoters();
 
     String getTitle();
+
+    FullExposure backupExposure();
 }
