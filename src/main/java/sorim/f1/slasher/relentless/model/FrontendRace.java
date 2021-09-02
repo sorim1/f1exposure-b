@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import sorim.f1.slasher.relentless.entities.ergast.Race;
+import sorim.f1.slasher.relentless.entities.ergast.RaceData;
 
 @Data
 @NoArgsConstructor
@@ -20,13 +20,13 @@ public class FrontendRace {
     private String x;
     private String y;
 
-    public FrontendRace(Race race) {
-        this.round=race.getRound();
-        this.raceName=race.getRaceName();
-        this.url = race.getUrl();
-        this.date = race.getDate();
-        this.circuitName = race.getCircuit().getCircuitName();
-        this.x = race.getCircuit().getLocation().getLat();
-        this.y = race.getCircuit().getLocation().getLongitude();
+    public FrontendRace(RaceData raceData) {
+        this.round= raceData.getRound();
+        this.raceName= raceData.getRaceName();
+        this.url = raceData.getUrl();
+        this.date = raceData.getDate();
+        this.circuitName = raceData.getCircuit().getCircuitName();
+        this.x = raceData.getCircuit().getLocation().getLat();
+        this.y = raceData.getCircuit().getLocation().getLongitude();
     }
 }

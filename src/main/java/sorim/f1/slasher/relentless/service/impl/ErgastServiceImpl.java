@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import sorim.f1.slasher.relentless.entities.ExposureDriver;
-import sorim.f1.slasher.relentless.entities.ergast.Race;
+import sorim.f1.slasher.relentless.entities.ergast.RaceData;
 import sorim.f1.slasher.relentless.model.FrontendRace;
 import sorim.f1.slasher.relentless.model.ergast.ErgastResponse;
 import sorim.f1.slasher.relentless.repository.DriverRepository;
@@ -32,44 +32,44 @@ public class ErgastServiceImpl implements ErgastService {
 
 
     @Override
-    public List<Race> fetchSeason(String year) {
+    public List<RaceData> fetchSeason(String year) {
         Map<String, String> uriVariables = new HashMap<>();
         uriVariables.put("year", year);
 
         ErgastResponse ergastResponse = restTemplate
                 .getForObject(GET_SEASON, ErgastResponse.class, uriVariables);
-        return ergastResponse.getMrData().getRaceTable().getRaces();
+        return ergastResponse.getMrData().getRaceTable().getRaceData();
     }
 
     @Override
-    public void saveRace(Race race) {
-        ergastRaceRepository.save(race);
+    public void saveRace(RaceData raceData) {
+        ergastRaceRepository.save(raceData);
     }
 
     @Override
-    public List<Race> fetchCurrentSeason() {
+    public List<RaceData> fetchCurrentSeason() {
         ErgastResponse ergastResponse = restTemplate
                 .getForObject(CURRENT_SEASON, ErgastResponse.class);
-        return ergastResponse.getMrData().getRaceTable().getRaces();
+        return ergastResponse.getMrData().getRaceTable().getRaceData();
     }
 
     @Override
-    public void saveRaces(List<Race> races) {
-        ergastRaceRepository.saveAll(races);
+    public void saveRaces(List<RaceData> raceData) {
+        ergastRaceRepository.saveAll(raceData);
     }
 
     @Override
-    public Race getLatestAnalyzedRace() {
+    public RaceData getLatestAnalyzedRace() {
         return ergastRaceRepository.findFirstByRaceAnalysisNotNullOrderByDateDesc();
     }
 
     @Override
-    public Race getLatestNonAnalyzedRace(Integer currentYear) {
+    public RaceData getLatestNonAnalyzedRace(Integer currentYear) {
         return ergastRaceRepository.findFirstByRaceAnalysisIsNullAndSeasonOrderByDateAsc(String.valueOf(currentYear));
     }
 
     @Override
-    public List<Race> findByCircuitIdOrderBySeasonDesc(String circuitId) {
+    public List<RaceData> findByCircuitIdOrderBySeasonDesc(String circuitId) {
         return ergastRaceRepository.findByCircuitIdOrderBySeasonDesc(circuitId);
     }
 

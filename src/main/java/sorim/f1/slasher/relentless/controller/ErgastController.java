@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import sorim.f1.slasher.relentless.entities.ergast.Race;
+import sorim.f1.slasher.relentless.entities.ergast.RaceData;
 import sorim.f1.slasher.relentless.service.ErgastService;
 import sorim.f1.slasher.relentless.service.SecurityService;
 
@@ -20,13 +20,13 @@ public class ErgastController {
     private final SecurityService securityService;
 
     @GetMapping("/fetchCurrentSeason")
-    List<Race> fetchCurrentSeason(@RequestHeader String client) throws Exception {
+    List<RaceData> fetchCurrentSeason(@RequestHeader String client) throws Exception {
         securityService.validateAdminHeader(client);
         return service.fetchCurrentSeason();
     }
 
     @GetMapping("/fetchSeason")
-    List<Race> fetchSeason(@RequestHeader String client, @PathVariable String year) throws Exception {
+    List<RaceData> fetchSeason(@RequestHeader String client, @PathVariable String year) throws Exception {
         securityService.validateAdminHeader(client);
         log.info("year: {}", year);
         return service.fetchSeason(year);

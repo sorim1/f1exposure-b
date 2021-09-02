@@ -5,7 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import sorim.f1.slasher.relentless.entities.ergast.Race;
+import sorim.f1.slasher.relentless.entities.ergast.RaceData;
 
 import java.util.List;
 
@@ -16,6 +16,6 @@ import java.util.List;
 public class RaceTable {
 
     @JsonProperty("Races")
-    private List<Race> races;
+    private List<RaceData> raceData;
 
 }

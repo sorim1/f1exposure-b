@@ -1,6 +1,6 @@
 package sorim.f1.slasher.relentless.service;
 
-import sorim.f1.slasher.relentless.entities.ergast.Race;
+import sorim.f1.slasher.relentless.entities.ergast.RaceData;
 import sorim.f1.slasher.relentless.model.FrontendRace;
 import sorim.f1.slasher.relentless.model.ergast.ErgastResponse;
 
@@ -9,19 +9,19 @@ import java.util.Map;
 
 public interface ErgastService {
 
-    List<Race> fetchCurrentSeason();
+    List<RaceData> fetchCurrentSeason();
 
-    List<Race> fetchSeason(String year);
+    List<RaceData> fetchSeason(String year);
 
-    void saveRace(Race race);
+    void saveRace(RaceData raceData);
 
-    void saveRaces(List<Race> races);
+    void saveRaces(List<RaceData> raceData);
 
-    Race getLatestAnalyzedRace();
-    Race getLatestNonAnalyzedRace(Integer currentYear);
+    RaceData getLatestAnalyzedRace();
+    RaceData getLatestNonAnalyzedRace(Integer currentYear);
 
 
-    List<Race> findByCircuitIdOrderBySeasonDesc(String circuitId);
+    List<RaceData> findByCircuitIdOrderBySeasonDesc(String circuitId);
 
     ErgastResponse getDriverStandings();
 

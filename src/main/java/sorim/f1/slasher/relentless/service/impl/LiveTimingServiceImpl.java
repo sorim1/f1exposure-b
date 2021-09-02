@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import sorim.f1.slasher.relentless.configuration.MainProperties;
-import sorim.f1.slasher.relentless.entities.ergast.Race;
+import sorim.f1.slasher.relentless.entities.ergast.RaceData;
 import sorim.f1.slasher.relentless.handling.Logger;
 import sorim.f1.slasher.relentless.model.ergast.ErgastResponse;
 import sorim.f1.slasher.relentless.model.livetiming.*;
@@ -41,25 +41,25 @@ public class LiveTimingServiceImpl implements LiveTimingService {
 
     @Override
     public void getAllRaceDataFromErgastTable(String year) {
-        List<Race> races = ergastService.fetchSeason(year);
-        races.forEach(race -> {
+        List<RaceData> raceData = ergastService.fetchSeason(year);
+        raceData.forEach(race -> {
             String response = getLiveTimingResponseOfErgastRace(race);
             if(response!=null) {
                 race.setLiveTiming(response.substring(response.indexOf("{")));
                 race.setCircuitId(race.getCircuit().getCircuitId());
             }
         });
-        ergastService.saveRaces(races);
+        ergastService.saveRaces(raceData);
     }
 
-    private String getLiveTimingResponseOfErgastRace(Race race) {
-        String grandPrixName = race.getRaceName().replaceAll(" ", "_");
-        String grandPrix = race.getDate() + "_" + grandPrixName;
-        String raceName = race.getDate() + "_Race";
-        System.out.println("https://livetiming.formula1.com/static/"+ race.getSeason()+ "/"+ grandPrix + "/"+ raceName + "/SPFeed.json");
+    private String getLiveTimingResponseOfErgastRace(RaceData raceData) {
+        String grandPrixName = raceData.getRaceName().replaceAll(" ", "_");
+        String grandPrix = raceData.getDate() + "_" + grandPrixName;
+        String raceName = raceData.getDate() + "_Race";
+        System.out.println("https://livetiming.formula1.com/static/"+ raceData.getSeason()+ "/"+ grandPrix + "/"+ raceName + "/SPFeed.json");
         try {
             return restTemplate
-                    .getForObject(liveTimingUrl, String.class, race.getSeason(), grandPrix, raceName);
+                    .getForObject(liveTimingUrl, String.class, raceData.getSeason(), grandPrix, raceName);
         } catch (Exception e) {
             log.error("error1: {}", grandPrix);
             log.error("error2:", e);
@@ -67,14 +67,14 @@ public class LiveTimingServiceImpl implements LiveTimingService {
         }
         return null;
     };
-    private String getTimingAppDataResponseOfErgastRace(Race race) {
-        String grandPrixName = race.getRaceName().replaceAll(" ", "_");
-        String grandPrix = race.getDate() + "_" + grandPrixName;
-        String raceName = race.getDate() + "_Race";
-        System.out.println(timingAppDataUrl + " : "+ race.getSeason()+ "/"+ grandPrix + "/"+ raceName);
+    private String getTimingAppDataResponseOfErgastRace(RaceData raceData) {
+        String grandPrixName = raceData.getRaceName().replaceAll(" ", "_");
+        String grandPrix = raceData.getDate() + "_" + grandPrixName;
+        String raceName = raceData.getDate() + "_Race";
+        System.out.println(timingAppDataUrl + " : "+ raceData.getSeason()+ "/"+ grandPrix + "/"+ raceName);
         try {
             return restTemplate
-                    .getForObject(timingAppDataUrl, String.class, race.getSeason(), grandPrix, raceName);
+                    .getForObject(timingAppDataUrl, String.class, raceData.getSeason(), grandPrix, raceName);
         } catch (Exception e) {
             log.error("timingAppDataUrl error:", e);
             Logger.log("timingAppDataUrl", e.getMessage());
@@ -91,19 +91,19 @@ public class LiveTimingServiceImpl implements LiveTimingService {
 
     @Override
     public Boolean analyzeLatestRace() {
-        Race race = ergastService.getLatestNonAnalyzedRace(properties.getCurrentYear());
-        String liveTimingResponse = getLiveTimingResponseOfErgastRace(race);
-        String timingAppDataResponse = getTimingAppDataResponseOfErgastRace(race);
+        RaceData raceData = ergastService.getLatestNonAnalyzedRace(properties.getCurrentYear());
+        String liveTimingResponse = getLiveTimingResponseOfErgastRace(raceData);
+        String timingAppDataResponse = getTimingAppDataResponseOfErgastRace(raceData);
 //        log.info("1timingAppDataResponse");
 //        log.info(timingAppDataResponse);
         if(liveTimingResponse!=null) {
-            race.setLiveTiming(liveTimingResponse.substring(liveTimingResponse.indexOf("{")));
-            race.setTimingAppData(timingAppDataResponse.substring(timingAppDataResponse.indexOf("00")));
-            race.setCircuitId(race.getCircuit().getCircuitId());
-            ergastService.saveRace(race);
-            race.setRaceAnalysis(fetchNewRaceAnalysis(race.getCircuit().getCircuitId()));
+            raceData.setLiveTiming(liveTimingResponse.substring(liveTimingResponse.indexOf("{")));
+            raceData.setTimingAppData(timingAppDataResponse.substring(timingAppDataResponse.indexOf("00")));
+            raceData.setCircuitId(raceData.getCircuit().getCircuitId());
+            ergastService.saveRace(raceData);
+            raceData.setRaceAnalysis(fetchNewRaceAnalysis(raceData.getCircuit().getCircuitId()));
 
-            ergastService.saveRace(race);
+            ergastService.saveRace(raceData);
             return true;
         } else {
             return false;
@@ -113,12 +113,12 @@ public class LiveTimingServiceImpl implements LiveTimingService {
 
     @Override
     public Boolean resetLatestRaceAnalysis() {
-        Race race = ergastService.getLatestAnalyzedRace();
-        race.setRaceAnalysis(null);
-        race.setLiveTiming(null);
-        race.setTimingAppData(null);
-        race.setCircuitId(null);
-        ergastService.saveRace(race);
+        RaceData raceData = ergastService.getLatestAnalyzedRace();
+        raceData.setRaceAnalysis(null);
+        raceData.setLiveTiming(null);
+        raceData.setTimingAppData(null);
+        raceData.setCircuitId(null);
+        ergastService.saveRace(raceData);
         return true;
     }
 
@@ -131,11 +131,11 @@ public class LiveTimingServiceImpl implements LiveTimingService {
         log.info("info");
         log.info(new String(result));
         log.info(new String(result2));
-        Race race = ergastService.getLatestAnalyzedRace();
-        String response = getLiveTimingResponseOfErgastRace(race);
+        RaceData raceData = ergastService.getLatestAnalyzedRace();
+        String response = getLiveTimingResponseOfErgastRace(raceData);
         if(response!=null) {
             String newLiveTiming = response.substring(response.indexOf("{"));
-            String oldLiveTiming = race.getLiveTiming();
+            String oldLiveTiming = raceData.getLiveTiming();
             if(newLiveTiming.equals(oldLiveTiming)){
                 return "equal";
             }
@@ -148,12 +148,12 @@ public class LiveTimingServiceImpl implements LiveTimingService {
 
 
     public RaceAnalysis fetchNewRaceAnalysis(String circuitId) {
-        List<Race> races = ergastService.findByCircuitIdOrderBySeasonDesc(circuitId);
+        List<RaceData> raceData = ergastService.findByCircuitIdOrderBySeasonDesc(circuitId);
         List<FrontendGraphWeatherData> weatherChartData = new ArrayList<>();
         AtomicReference<Boolean> onlyFirstOne = new AtomicReference<>(true);
         AtomicReference<List<Driver>> drivers = new AtomicReference<>();
         AtomicReference<String> title = new AtomicReference<>();
-        races.forEach(race -> {
+        raceData.forEach(race -> {
             try {
                 LiveTimingData response = mapper.readValue(race.getLiveTiming(), LiveTimingData.class);
                 FrontendGraphWeatherData weatherRow = new FrontendGraphWeatherData(response.getWeather().getGraph().getData(), race.getSeason() + " (round "+ race.getRound() +")");
@@ -193,7 +193,7 @@ public class LiveTimingServiceImpl implements LiveTimingService {
 
     private void enrichDriversWithErgastLapTimes(Map<String, Driver> driversMap, Map<String, String> ergastCodes, String season, Integer round) throws JsonProcessingException {
         ErgastResponse response = ergastService.getRaceLaps(Integer.valueOf(season), round);
-        response.getMrData().getRaceTable().getRaces().get(0).getLaps().forEach(lap->{
+        response.getMrData().getRaceTable().getRaceData().get(0).getLaps().forEach(lap->{
             lap.getTimings().forEach(timing->{
                 driversMap.get(ergastCodes.get(timing.getDriverId())).getLapByLapData().addLapTime(lap.getNumber(), timing);
             });

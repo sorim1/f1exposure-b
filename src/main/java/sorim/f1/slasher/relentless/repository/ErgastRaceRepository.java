@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
-import sorim.f1.slasher.relentless.entities.ergast.Race;
+import sorim.f1.slasher.relentless.entities.ergast.RaceData;
 import sorim.f1.slasher.relentless.model.FrontendRace;
 
 import java.util.List;
@@ -13,16 +13,16 @@ import java.util.List;
 @Repository
 @Transactional
 @EnableJpaAuditing
-public interface ErgastRaceRepository extends CrudRepository<Race, String> {
+public interface ErgastRaceRepository extends CrudRepository<RaceData, String> {
 
     @NotNull
-    List<Race> findAll();
+    List<RaceData> findAll();
 
-    Race findFirstByRaceAnalysisNotNullOrderByDateDesc();
+    RaceData findFirstByRaceAnalysisNotNullOrderByDateDesc();
 
-    Race findFirstByRaceAnalysisIsNullAndSeasonOrderByDateAsc(String year);
+    RaceData findFirstByRaceAnalysisIsNullAndSeasonOrderByDateAsc(String year);
 
-    List<Race> findByCircuitIdOrderBySeasonDesc(String circuitId);
+    List<RaceData> findByCircuitIdOrderBySeasonDesc(String circuitId);
 
     List<FrontendRace> findAllBySeasonAndRoundLessThanEqualOrderByRoundAsc(String season, Integer round);
 

@@ -1,4 +1,4 @@
-CREATE TABLE ERGAST_CURRENT_SEASON_RACES
+CREATE TABLE RACE_DATA
 (
     id              SERIAL,
     round           numeric,
@@ -8,11 +8,17 @@ CREATE TABLE ERGAST_CURRENT_SEASON_RACES
     circuit         jsonb,
     date            text,
     time            text,
-    live_timing     text,
+    race_analysis   jsonb,
+    upcoming_race_analysis jsonb,
+    live_timing_race     text,
     timing_app_data text,
     circuit_id      text,
-    race_analysis   jsonb,
-    CONSTRAINT ERGAST_CURRENT_SEASON_RACES_pkey PRIMARY KEY (season, round)
+    live_timing_quali text NULL,
+    live_timing_fp3 text NULL,
+    live_timing_fp2 text NULL,
+    live_timing_fp1 text NULL,
+
+    CONSTRAINT RACE_DATA_pkey PRIMARY KEY (season, round)
 );
 
 CREATE TABLE INSTAGRAM_POSTS

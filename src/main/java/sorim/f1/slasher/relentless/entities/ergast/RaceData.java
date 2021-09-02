@@ -16,13 +16,13 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "ERGAST_CURRENT_SEASON_RACES")
+@Table(name = "RACE_DATA")
 @TypeDef(name = "jsonb", typeClass = JsonBinaryType.class)
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Race {
+public class RaceData {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
