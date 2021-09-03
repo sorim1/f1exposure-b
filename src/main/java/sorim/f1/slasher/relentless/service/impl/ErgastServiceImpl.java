@@ -38,7 +38,7 @@ public class ErgastServiceImpl implements ErgastService {
 
         ErgastResponse ergastResponse = restTemplate
                 .getForObject(GET_SEASON, ErgastResponse.class, uriVariables);
-        return ergastResponse.getMrData().getRaceTable().getRaceData();
+        return ergastResponse.getMrData().getRaceTable().getRaces();
     }
 
     @Override
@@ -50,7 +50,7 @@ public class ErgastServiceImpl implements ErgastService {
     public List<RaceData> fetchCurrentSeason() {
         ErgastResponse ergastResponse = restTemplate
                 .getForObject(CURRENT_SEASON, ErgastResponse.class);
-        return ergastResponse.getMrData().getRaceTable().getRaceData();
+        return ergastResponse.getMrData().getRaceTable().getRaces();
     }
 
     @Override
@@ -64,6 +64,11 @@ public class ErgastServiceImpl implements ErgastService {
     }
 
     @Override
+    public RaceData getUpcomingRace(Integer currentYear) {
+        return ergastRaceRepository.findFirstByRaceAnalysisNullAndSeasonOrderByDateAsc(currentYear.toString());
+    }
+
+    @Override
     public RaceData getLatestNonAnalyzedRace(Integer currentYear) {
         return ergastRaceRepository.findFirstByRaceAnalysisIsNullAndSeasonOrderByDateAsc(String.valueOf(currentYear));
     }
@@ -71,6 +76,11 @@ public class ErgastServiceImpl implements ErgastService {
     @Override
     public List<RaceData> findByCircuitIdOrderBySeasonDesc(String circuitId) {
         return ergastRaceRepository.findByCircuitIdOrderBySeasonDesc(circuitId);
+    }
+
+    @Override
+    public List<RaceData> findRacesBySeason(String season) {
+        return ergastRaceRepository.findAllBySeason(season);
     }
 
     @Override

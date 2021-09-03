@@ -16,6 +16,6 @@ import java.util.List;
 public class RaceTable {
 
     @JsonProperty("Races")
-    private List<RaceData> raceData;
+    private List<RaceData> races;
 
 }

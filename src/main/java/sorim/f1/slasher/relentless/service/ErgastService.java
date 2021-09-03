@@ -18,10 +18,15 @@ public interface ErgastService {
     void saveRaces(List<RaceData> raceData);
 
     RaceData getLatestAnalyzedRace();
+
+    RaceData getUpcomingRace(Integer currentYear);
+
     RaceData getLatestNonAnalyzedRace(Integer currentYear);
 
 
     List<RaceData> findByCircuitIdOrderBySeasonDesc(String circuitId);
+
+    List<RaceData> findRacesBySeason(String season);
 
     ErgastResponse getDriverStandings();
 

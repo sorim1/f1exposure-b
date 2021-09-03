@@ -27,6 +27,7 @@ public class MainProperties {
     private String calendarUrl;
     private String sportSurgeRoot;
     private String sportSurgeStreams;
+    private Integer howManySeasonsBack;
 
     @PostConstruct
     public void setProperty() {

@@ -206,7 +206,7 @@ public class AdminServiceImpl implements AdminService {
             ErgastResponse response = ergastService.getResultsByRound(properties.getCurrentYear(), round);
             if(response.getMrData().getTotal()>0){
                 Integer finalRound = round;
-                response.getMrData().getRaceTable().getRaceData().get(0).getResults()
+                response.getMrData().getRaceTable().getRaces().get(0).getResults()
                         .forEach(ergastStanding -> {
                             driverStandingsByRound.get(ergastStanding.getDriver().getDriverId()+ finalRound).setPointsThisRound(ergastStanding.getPoints());
                             driverStandingsByRound.get(ergastStanding.getDriver().getDriverId()+ finalRound).setResultThisRound(ergastStanding.getPosition());
@@ -239,7 +239,7 @@ public class AdminServiceImpl implements AdminService {
                          driverStandingsByRound.put(ergastStanding.getDriver().getDriverId(), new DriverStandingByRound(ergastStanding, properties.getCurrentYear(),CURRENT_ROUND));
                      });
              response = ergastService.getResultsByRound(properties.getCurrentYear(),CURRENT_ROUND);
-             response.getMrData().getRaceTable().getRaceData().get(0).getResults()
+             response.getMrData().getRaceTable().getRaces().get(0).getResults()
                      .forEach(ergastStanding -> {
                          driverStandingsByRound.get(ergastStanding.getDriver().getDriverId()).incrementPointsThisRound(ergastStanding.getPoints());
                                 });
@@ -280,7 +280,7 @@ public class AdminServiceImpl implements AdminService {
                         constructorStandingsByRound.put(ergastStanding.getConstructor().getConstructorId(), new ConstructorStandingByRound(ergastStanding, properties.getCurrentYear(), CURRENT_ROUND));
                     });
         response = ergastService.getResultsByRound(properties.getCurrentYear(),CURRENT_ROUND);
-        response.getMrData().getRaceTable().getRaceData().get(0).getResults()
+        response.getMrData().getRaceTable().getRaces().get(0).getResults()
                 .forEach(ergastStanding -> {
                     constructorStandingsByRound.get(ergastStanding.getConstructor().getConstructorId()).incrementPointsThisRound(ergastStanding.getPoints());
                 });

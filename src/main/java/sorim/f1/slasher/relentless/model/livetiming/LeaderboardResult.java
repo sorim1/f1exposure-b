@@ -16,12 +16,9 @@ import java.util.List;
 @Builder
 @Slf4j
 public class LeaderboardResult {
-   // private Integer position;
     private String driverCode;
     private String driverName;
     private String team;
-//    private String finalGap;
-//    private String fastestLap;
     private String finalGap;
     private String fastestLap;
     private Integer position;

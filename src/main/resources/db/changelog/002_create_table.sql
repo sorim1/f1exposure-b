@@ -4,6 +4,7 @@ CREATE TABLE RACE_DATA
     round           numeric,
     season          text,
     url             text,
+    image_url       text,
     race_name       text,
     circuit         jsonb,
     date            text,

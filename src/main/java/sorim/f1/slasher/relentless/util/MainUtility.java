@@ -3,6 +3,7 @@ package sorim.f1.slasher.relentless.util;
 import lombok.extern.slf4j.Slf4j;
 import sorim.f1.slasher.relentless.model.livetiming.Driver;
 
+import java.time.LocalDate;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -113,5 +114,10 @@ public class MainUtility {
         }
 
         return finalUsername;
+    }
+
+    public static String subtractDays(String date, Integer days) {
+        LocalDate localDate = LocalDate.parse(date);
+        return localDate.minusDays(days).toString();
     }
 }

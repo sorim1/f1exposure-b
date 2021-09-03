@@ -89,7 +89,7 @@ public class Scheduler {
         sundayJobs();
     }
 
-    @Scheduled(fixedRate=120*60*1000, initialDelay=60*1000)
+    //@Scheduled(fixedRate=120*60*1000, initialDelay=60*1000)
     void bihourlyJob() throws Exception {
         log.info("bihourlyJob called");
         clientService.fetchInstagramFeed();

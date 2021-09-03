@@ -11,6 +11,7 @@ import org.hibernate.annotations.TypeDef;
 import sorim.f1.slasher.relentless.model.ergast.Circuit;
 import sorim.f1.slasher.relentless.model.ergast.ErgastStanding;
 import sorim.f1.slasher.relentless.model.livetiming.RaceAnalysis;
+import sorim.f1.slasher.relentless.model.livetiming.UpcomingRaceAnalysis;
 
 import javax.persistence.*;
 import java.util.List;
@@ -44,15 +45,24 @@ public class RaceData {
     @Column(columnDefinition = "jsonb")
     private Circuit circuit;
 
-    private String liveTiming;
-    private String timingAppData;
-    private String circuitId;
-
     @Type(type = "jsonb")
     @Column(columnDefinition = "jsonb")
     private RaceAnalysis raceAnalysis;
 
+    @Type(type = "jsonb")
+    @Column(columnDefinition = "jsonb")
+    private UpcomingRaceAnalysis upcomingRaceAnalysis;
+
+    private String liveTimingRace;
+    private String liveTimingQuali;
+    private String liveTimingFp1;
+    private String liveTimingFp2;
+    private String liveTimingFp3;
+    private String timingAppData;
+    private String circuitId;
     @JsonProperty("Results")
     @Transient
     private List<ErgastStanding> results;
+
+    private String imageUrl;
 }
