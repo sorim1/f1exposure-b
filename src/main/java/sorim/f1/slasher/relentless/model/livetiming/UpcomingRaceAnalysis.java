@@ -26,6 +26,10 @@ public class UpcomingRaceAnalysis {
     List<Driver> fp2;
     List<Driver> fp3;
     List<Driver> quali;
+    List<LapTimeData> fp1Laps;
+    List<LapTimeData> fp2Laps;
+    List<LapTimeData> fp3Laps;
+    List<LapTimeData> qualiLaps;
 
     public UpcomingRaceAnalysis(RaceData raceData) {
         this.season = Integer.valueOf(raceData.getSeason());

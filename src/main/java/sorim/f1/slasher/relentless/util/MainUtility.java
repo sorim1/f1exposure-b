@@ -1,11 +1,13 @@
 package sorim.f1.slasher.relentless.util;
 
 import lombok.extern.slf4j.Slf4j;
+import sorim.f1.slasher.relentless.entities.ergast.Timing;
 import sorim.f1.slasher.relentless.model.livetiming.Driver;
 
 import java.time.LocalDate;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.regex.Pattern;
 
 @Slf4j
 public class MainUtility {
@@ -119,5 +121,14 @@ public class MainUtility {
     public static String subtractDays(String date, Integer days) {
         LocalDate localDate = LocalDate.parse(date);
         return localDate.minusDays(days).toString();
+    }
+
+    public static Integer lapTimeToMiliseconds(String time) {
+        String[] lapTime = time.split(":");
+        int miliseconds = Integer.parseInt(lapTime[0])*60000;
+        String[] lapTime2 = lapTime[1].split(Pattern.quote("."));
+        miliseconds += Integer.parseInt(lapTime2[0])*1000;
+        miliseconds += Integer.parseInt(lapTime2[1]);
+        return miliseconds;
     }
 }

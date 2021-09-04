@@ -38,20 +38,4 @@ public class LapByLapData {
         lapTimesY.add(timing.getTime());
     }
 
-//    public void addLapTime(Timing stint) {
-//        if(stint.getLapTime()!=null) {
-//            try {
-//                String[] lapTime = stint.getLapTime().split(":");
-//                int miliseconds = Integer.parseInt(lapTime[0])*60000;
-//                String[] lapTime2 = lapTime[1].split(Pattern.quote("."));
-//                miliseconds += Integer.parseInt(lapTime2[0])*1000;
-//                miliseconds += Integer.parseInt(lapTime2[1]);
-//                lapTimesYms.add(miliseconds);
-//                lapTimesX.add(stint.getLapNumber());
-//                lapTimesY.add(stint.getLapTime());
-//            } catch (Exception e) {
-//                log.error("addLapTime1 error:", e);
-//            }
-//        }
-//    }
 }
