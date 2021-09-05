@@ -22,7 +22,7 @@ public interface LiveTimingService {
 
     Boolean upcomingRacesAnalysisInitialLoad(String season);
 
-    Boolean analyzeUpcomingRace();
+    Integer analyzeUpcomingRace();
 
     Boolean updateAllImageUrlsDev();
 }

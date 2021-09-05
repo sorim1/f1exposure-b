@@ -15,6 +15,7 @@ import sorim.f1.slasher.relentless.handling.Logger;
 import sorim.f1.slasher.relentless.model.enums.RoundEnum;
 import sorim.f1.slasher.relentless.model.ergast.ErgastResponse;
 import sorim.f1.slasher.relentless.model.livetiming.*;
+import sorim.f1.slasher.relentless.service.AdminService;
 import sorim.f1.slasher.relentless.service.ErgastService;
 import sorim.f1.slasher.relentless.service.LiveTimingService;
 import sorim.f1.slasher.relentless.util.MainUtility;
@@ -34,6 +35,7 @@ import java.util.stream.Collectors;
 public class LiveTimingServiceImpl implements LiveTimingService {
 
     private final ErgastService ergastService;
+    private final AdminService adminService;
     private final MainProperties properties;
     RestTemplate restTemplate = new RestTemplate();
 
@@ -234,6 +236,7 @@ public class LiveTimingServiceImpl implements LiveTimingService {
             raceData.setRaceAnalysis(fetchNewRaceAnalysis(raceData.getCircuit().getCircuitId()));
 
             ergastService.saveRace(raceData);
+            analyzeUpcomingRace();
             return true;
         } else {
             return false;
@@ -318,7 +321,7 @@ public class LiveTimingServiceImpl implements LiveTimingService {
     }
 
     @Override
-    public Boolean analyzeUpcomingRace() {
+    public Integer analyzeUpcomingRace() {
         RaceData raceData = ergastService.getLatestNonAnalyzedRace(properties.getCurrentYear());
 
         if (raceData.getLiveTimingFp1() == null) {
@@ -367,7 +370,7 @@ public class LiveTimingServiceImpl implements LiveTimingService {
         }
 
         ergastService.saveRace(raceData);
-        return true;
+        return adminService.getNextRefreshTick(-1000);
     }
 
     private List<LapTimeData> createLapTimeDataList(String timingAppData, Map<String, String> driverMap ) {

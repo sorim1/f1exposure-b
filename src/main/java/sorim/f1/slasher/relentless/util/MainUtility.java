@@ -1,7 +1,6 @@
 package sorim.f1.slasher.relentless.util;
 
 import lombok.extern.slf4j.Slf4j;
-import sorim.f1.slasher.relentless.entities.ergast.Timing;
 import sorim.f1.slasher.relentless.model.livetiming.Driver;
 
 import java.time.LocalDate;
@@ -130,5 +129,11 @@ public class MainUtility {
         miliseconds += Integer.parseInt(lapTime2[0])*1000;
         miliseconds += Integer.parseInt(lapTime2[1]);
         return miliseconds;
+    }
+
+    public static int getWeekDay() {
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(new Date());
+        return cal.get(Calendar.DAY_OF_WEEK);
     }
 }

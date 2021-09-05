@@ -6,9 +6,12 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
+import sorim.f1.slasher.relentless.handling.Logger;
 import sorim.f1.slasher.relentless.service.AdminService;
 import sorim.f1.slasher.relentless.service.ClientService;
 import sorim.f1.slasher.relentless.service.ExposureService;
+import sorim.f1.slasher.relentless.service.LiveTimingService;
+import sorim.f1.slasher.relentless.util.MainUtility;
 
 import javax.annotation.PostConstruct;
 import java.io.IOException;
@@ -21,43 +24,22 @@ public class Scheduler {
     private final ExposureService exposureService;
     private final AdminService adminService;
     private final ClientService clientService;
+    private final LiveTimingService liveTimingService;
+    private final static String CODE="SCHEDULER";
 
-   // @Scheduled(fixedDelayString = "3600000", initialDelayString = "3600000")
-   @Scheduled(cron = "0 0 10 * * SUN")
-    public void sundayJobs(){
-        log.info("sundayJobs called");
-       exposureService.setExposureStartTimeOnASunday();
-
-    }
-
-    @Scheduled(cron = "0 0 15 * * SUN")
-    private void checkNewStandingsJob() throws IOException {
-       int delay = 900000;
-        log.info("checkNewStandingsJob called");
-        Boolean updated = adminService.initializeStandings();
-        if(!updated){
-            new java.util.Timer().schedule(
-                    new java.util.TimerTask() {
-                        @SneakyThrows
-                        @Override
-                        public void run() {
-                            checkNewStandingsJob();
-                        }
-                    },
-                    delay
-            );
-        }
-    }
 
     @Scheduled(cron = "0 0 10 * * MON")
     public void mondayJobs() {
         log.info("mondayJobs called");
+        Logger.log(CODE, "mondayJobs called");
         adminService.deleteSportSurgeLinks();
+        liveTimingService.analyzeLatestRace();
     }
 
     @Scheduled(cron = "0 0 10 * * TUE")
     public void tuesdayJobs() {
         log.info("tuesdayJobs called");
+        Logger.log(CODE, "tuesdayJobs called");
         exposureService.closeExposurePoll();
     }
 
@@ -65,11 +47,41 @@ public class Scheduler {
     private void fridayJobs() throws IOException {
         log.info("fridayJobs called");
         fetchSportSurgeLinks();
+        analyzeUpcomingRace();
+    }
+
+    // @Scheduled(fixedDelayString = "3600000", initialDelayString = "3600000")
+    @Scheduled(cron = "0 0 10 * * SUN")
+    public void sundayJobs(){
+        log.info("sundayJobs called");
+        exposureService.setExposureStartTimeOnASunday();
+
+    }
+
+    @Scheduled(cron = "0 0 15 * * SUN")
+    private void sundayJobs2() throws IOException {
+        int delay = 900000;
+        log.info("sundayJobs2 - checkNewStandingsJob called");
+        Boolean updated = adminService.initializeStandings();
+        if(!updated){
+            Logger.log(CODE, "checkNewStandingsJob delayed");
+            new java.util.Timer().schedule(
+                    new java.util.TimerTask() {
+                        @SneakyThrows
+                        @Override
+                        public void run() {
+                            sundayJobs2();
+                        }
+                    },
+                    delay
+            );
+        }
     }
 
     private void fetchSportSurgeLinks() throws IOException {
         Integer delay = adminService.fetchSportSurgeLinks();
-        log.info("fetchSportSurgeLinksSCh called");
+        log.info("fetchSportSurgeLinks called");
+        Logger.log(CODE, "fetchSportSurgeLinks called");
         if(delay!=null){
             new java.util.Timer().schedule(
                     new java.util.TimerTask() {
@@ -83,13 +95,53 @@ public class Scheduler {
             );
         }
     }
+
+    private void analyzeUpcomingRace() throws IOException {
+        Integer delay = liveTimingService.analyzeUpcomingRace();
+        log.info("fetchSportSurgeLinks called");
+        Logger.log(CODE, "analyzeUpcomingRace called");
+        if(delay!=null){
+            new java.util.Timer().schedule(
+                    new java.util.TimerTask() {
+                        @SneakyThrows
+                        @Override
+                        public void run() {
+                            analyzeUpcomingRace();
+                        }
+                    },
+                    delay*1000
+            );
+        }
+    }
     @PostConstruct
-    void onInit(){
+    void onInit() throws IOException {
        log.info("onInitCalled");
         sundayJobs();
+        Integer weekDay = MainUtility.getWeekDay();
+        switch (weekDay){
+            case 1:{
+                mondayJobs();
+            }
+            case 2:{
+                tuesdayJobs();
+            }
+            case 3:{
+            }
+            case 4:{
+            }
+            case 5:{
+                fridayJobs();
+            }
+            case 6:{
+                fridayJobs();
+            }
+            case 7:{
+                fridayJobs();
+            }
+        }
     }
 
-    //@Scheduled(fixedRate=120*60*1000, initialDelay=60*1000)
+    @Scheduled(fixedRate=120*60*1000, initialDelay=60*1000)
     void bihourlyJob() throws Exception {
         log.info("bihourlyJob called");
         clientService.fetchInstagramFeed();

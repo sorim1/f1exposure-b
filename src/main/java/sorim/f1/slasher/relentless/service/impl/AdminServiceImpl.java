@@ -307,7 +307,7 @@ public class AdminServiceImpl implements AdminService {
         deleteSportSurgeLinks();
         sportSurgeStreamRepository.saveAll(streams);
         sportSurgeEventRepository.saveAll(events);
-        return getNextRefreshTick();
+        return getNextRefreshTick(600);
     }
 
     @Override
@@ -380,25 +380,26 @@ public class AdminServiceImpl implements AdminService {
         return exposureService.backupExposure();
     }
 
-    private Integer getNextRefreshTick() {
+    @Override
+    public Integer getNextRefreshTick(Integer seconds) {
         CalendarData calendarData = clientService.getCountdownData(0);
         if(calendarData.getCountdownData().get("raceDays")>2){
             return null;
         }
-        if(calendarData.getCountdownData().get("FP1Seconds")>600){
-            return calendarData.getCountdownData().get("FP1Seconds")-600;
+        if(calendarData.getCountdownData().get("FP1Seconds")>seconds){
+            return calendarData.getCountdownData().get("FP1Seconds")-seconds;
         }
-        if(calendarData.getCountdownData().get("FP2Seconds")>600){
-            return calendarData.getCountdownData().get("FP2Seconds")-600;
+        if(calendarData.getCountdownData().get("FP2Seconds")>seconds){
+            return calendarData.getCountdownData().get("FP2Seconds")-seconds;
         }
-        if(calendarData.getCountdownData().get("FP3Seconds")>600){
-            return calendarData.getCountdownData().get("FP3Seconds")-600;
+        if(calendarData.getCountdownData().get("FP3Seconds")>seconds){
+            return calendarData.getCountdownData().get("FP3Seconds")-seconds;
         }
-        if(calendarData.getCountdownData().get("qualifyingSeconds")>600){
-            return calendarData.getCountdownData().get("qualifyingSeconds")-600;
+        if(calendarData.getCountdownData().get("qualifyingSeconds")>seconds){
+            return calendarData.getCountdownData().get("qualifyingSeconds")-seconds;
         }
-        if(calendarData.getCountdownData().get("raceSeconds")>600){
-            return calendarData.getCountdownData().get("raceSeconds")-600;
+        if(calendarData.getCountdownData().get("raceSeconds")>seconds){
+            return calendarData.getCountdownData().get("raceSeconds")-seconds;
         }
         return null;
     }

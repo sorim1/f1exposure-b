@@ -39,4 +39,6 @@ public interface AdminService {
     List<Integer> setCurrentRound(Integer newRound);
 
     FullExposure backupExposure();
+
+    Integer getNextRefreshTick(Integer seconds) ;
 }
