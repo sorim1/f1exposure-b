@@ -52,7 +52,11 @@ public class Logger {
 
     public static void logAdmin(String message) {
         log.info(message);
-        repository.save(Log.builder().code("ADMIN").message(message).build());
+        try {
+            repository.save(Log.builder().code("ADMIN").message(message).build());
+        } catch(Exception e ){
+            e.printStackTrace();
+        }
     }
 
     public static void log(String message) {

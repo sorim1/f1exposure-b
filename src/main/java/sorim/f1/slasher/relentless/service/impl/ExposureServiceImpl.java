@@ -130,31 +130,6 @@ public class ExposureServiceImpl implements ExposureService {
         return response;
     }
 
-    @Override
-    public boolean setExposureStartTimeOnASunday() {
-        Logger.logAdmin("setExposureStartTimeOnASunday");
-        ZonedDateTime gmtZoned = ZonedDateTime.now(ZoneId.of("Europe/London"));
-        LocalDateTime gmtDateTime = gmtZoned.toLocalDateTime();
-        F1Calendar f1calendar = calendarRepository.findFirstByRaceAfterOrderByRace(gmtDateTime);
-        if (f1calendar != null) {
-            Duration duration = Duration.between(gmtDateTime, f1calendar.getRace());
-            if (duration.toDays() > 0) {
-                exposureToday = false;
-                Logger.logAdmin("exposureToday: " + exposureToday);
-
-            } else {
-                exposureToday = true;
-                title = f1calendar.getLocation();
-                updateCurrentExposureRound(1);
-                exposureTime = LocalDateTime.now().plus(duration).plusHours(1);
-                Logger.logAdmin("exposureToday: " + exposureToday);
-                Logger.logAdmin("exposureToday exposureTime: " + exposureTime);
-                Logger.logAdmin("exposureToday currentExposureRound: " + currentExposureRound);
-            }
-        }
-        return true;
-    }
-
     private void updateCurrentExposureRound(Integer increment) {
         Integer round;
         try {
@@ -170,7 +145,9 @@ public class ExposureServiceImpl implements ExposureService {
     }
 
     @PostConstruct
+    @Override
     public void initializeExposure() {
+        Logger.logAdmin("initializeExposure called");
         ZonedDateTime gmtZoned = ZonedDateTime.now(ZoneId.of("Europe/London"));
         LocalDateTime gmtDateTime = gmtZoned.toLocalDateTime();
         F1Calendar f1calendar = calendarRepository.findFirstByRaceBeforeOrderByRaceDesc(gmtDateTime);
@@ -183,8 +160,22 @@ public class ExposureServiceImpl implements ExposureService {
                 exposureToday = true;
             } else {
                 f1calendar = calendarRepository.findFirstByRaceAfterOrderByRace(gmtDateTime);
-                Duration duration = Duration.between(gmtDateTime, f1calendar.getRace());
-                exposureTime = LocalDateTime.now().plus(duration).plusHours(1);
+                if (f1calendar != null) {
+                    Duration duration = Duration.between(gmtDateTime, f1calendar.getRace());
+                    if (duration.toDays() > 0) {
+                        exposureToday = false;
+                        Logger.logAdmin("exposureToday: " + exposureToday);
+
+                    } else {
+                        exposureToday = true;
+                        title = f1calendar.getLocation();
+                        updateCurrentExposureRound(1);
+                        exposureTime = LocalDateTime.now().plus(duration).plusHours(1);
+                        Logger.logAdmin("exposureToday: " + exposureToday);
+                        Logger.logAdmin("exposureToday exposureTime: " + exposureTime);
+                        Logger.logAdmin("exposureToday currentExposureRound: " + currentExposureRound);
+                    }
+                }
             }
         }
     }

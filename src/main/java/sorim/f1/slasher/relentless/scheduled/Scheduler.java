@@ -55,7 +55,7 @@ public class Scheduler {
     @Scheduled(cron = "0 0 10 * * SUN")
     public void sundayJobs(){
         log.info("sundayJobs called");
-        exposureService.setExposureStartTimeOnASunday();
+        exposureService.initializeExposure();
 
     }
 
@@ -123,22 +123,29 @@ public class Scheduler {
             switch (weekDay) {
                 case 1: {
                     fridayJobs();
+                    break;
                 }
                 case 2: {
                     mondayJobs();
+                    break;
                 }
                 case 3: {
                     tuesdayJobs();
+                    break;
                 }
                 case 4: {
+                    break;
                 }
                 case 5: {
+                    break;
                 }
                 case 6: {
                     fridayJobs();
+                    break;
                 }
                 case 7: {
                     fridayJobs();
+                    break;
                 }
             }
         }catch(Exception e ){

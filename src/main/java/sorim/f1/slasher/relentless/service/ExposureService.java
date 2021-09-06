@@ -12,8 +12,6 @@ public interface ExposureService {
 
     ExposureResponse getExposureDriverList();
 
-    boolean setExposureStartTimeOnASunday();
-
     boolean closeExposurePoll();
 
     Integer getCurrentExposureRound();
@@ -33,4 +31,6 @@ public interface ExposureService {
     String getTitle();
 
     FullExposure backupExposure();
+
+    void initializeExposure();
 }
