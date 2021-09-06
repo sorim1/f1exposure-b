@@ -10,6 +10,8 @@ import sorim.f1.slasher.relentless.repository.InstagramRepository;
 import sorim.f1.slasher.relentless.repository.LogRepository;
 
 import javax.annotation.PostConstruct;
+import java.util.Date;
+import java.util.List;
 
 @Slf4j
 @Service
@@ -43,8 +45,23 @@ public class Logger {
         repository.save(Log.builder().code(code).message(message).build());
     }
 
+    public static void logProblem(String message) {
+        log.error(message);
+        repository.save(Log.builder().code("ERROR").message(message).build());
+    }
+
+    public static void logAdmin(String message) {
+        log.info(message);
+        repository.save(Log.builder().code("ADMIN").message(message).build());
+    }
+
     public static void log(String message) {
         log.info(message);
         repository.save(Log.builder().code(INFO).message(message).build());
+    }
+
+    public static List<Log> getLogs(Integer mode, String filter) {
+        Date yesterday = new Date(System.currentTimeMillis()-24*60*60*1000);
+        return repository.findAllByCreatedBeforeOrderByIdDesc(yesterday);
     }
 }

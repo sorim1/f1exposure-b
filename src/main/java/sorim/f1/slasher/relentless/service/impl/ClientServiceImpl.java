@@ -85,8 +85,8 @@ public class ClientServiceImpl implements ClientService {
         Map<String, ChartSeries> totalPoints = new TreeMap<>();
         Map<String, ChartSeries> roundPoints = new TreeMap<>();
         Map<String, ChartSeries> roundResults = new TreeMap<>();
-        standingsBySeason.forEach(standing->{
-            if(!totalPoints.containsKey(standing.getCode())){
+        standingsBySeason.forEach(standing -> {
+            if (!totalPoints.containsKey(standing.getCode())) {
                 totalPoints.put(standing.getCode(), ChartSeries.builder()
                         .name(standing.getCode())
                         .color(standing.getColor())
@@ -102,7 +102,9 @@ public class ClientServiceImpl implements ClientService {
             }
             totalPoints.get(standing.getCode()).add(standing.getId().getRound(), standing.getPoints());
             roundPoints.get(standing.getCode()).add(standing.getId().getRound(), standing.getPointsThisRound());
-            roundResults.get(standing.getCode()).add(standing.getId().getRound(), new BigDecimal(standing.getResultThisRound()));
+            if (standing.getResultThisRound() != null) {
+                roundResults.get(standing.getCode()).add(standing.getId().getRound(), new BigDecimal(standing.getResultThisRound()));
+            }
         });
         List<List<ChartSeries>> output = new ArrayList<>();
         output.add(new ArrayList<>(totalPoints.values()));
@@ -115,8 +117,8 @@ public class ClientServiceImpl implements ClientService {
         List<ConstructorStandingByRound> standingsBySeason = constructorStandingsByRoundRepository.findAllByIdSeasonOrderByIdRoundAscNameAsc(properties.getCurrentYear());
         Map<String, ChartSeries> totalPoints = new TreeMap<>();
         Map<String, ChartSeries> roundPoints = new TreeMap<>();
-        standingsBySeason.forEach(standing->{
-            if(!totalPoints.containsKey(standing.getId().getId())){
+        standingsBySeason.forEach(standing -> {
+            if (!totalPoints.containsKey(standing.getId().getId())) {
                 totalPoints.put(standing.getId().getId(), ChartSeries.builder()
                         .name(standing.getName())
                         .color(standing.getColor())
@@ -167,8 +169,8 @@ public class ClientServiceImpl implements ClientService {
         comment.setTimestamp(new Date());
         String username = MainUtility.handleUsername(comment.getNickname());
         comment.setNickname(username);
-        if(comment.getComment().length()>900){
-            comment.setComment(comment.getComment().substring(0,900));
+        if (comment.getComment().length() > 900) {
+            comment.setComment(comment.getComment().substring(0, 900));
         }
         f1CommentRepository.save(comment);
         return f1CommentRepository.findFirst30ByPageAndStatusOrderByTimestampDesc(comment.getPage(), 1);
@@ -238,7 +240,7 @@ public class ClientServiceImpl implements ClientService {
     @Override
     public AwsContent getAwsPost(String code) {
         AwsContent response = awsRepository.findByCode(code);
-        if(response!=null) {
+        if (response != null) {
             response.setComments(awsCommentRepository.findAllByContentCodeAndStatusOrderByTimestampCreatedDesc(code, 1));
         }
         return response;
@@ -266,7 +268,7 @@ public class ClientServiceImpl implements ClientService {
         Integer state = -1;
         Integer oppositeStatus;
         String executedAction = "";
-        if(moderation.getAction()==1){
+        if (moderation.getAction() == 1) {
             oppositeStatus = 2;
             executedAction = " restored";
         } else {
@@ -274,9 +276,9 @@ public class ClientServiceImpl implements ClientService {
             executedAction = " deleted";
         }
         message = "Comment no." + moderation.getCommentId() + executedAction + " by moderator. Reason: " + moderation.getReason();
-        if(moderation.getPanel()==1){
+        if (moderation.getPanel() == 1) {
             F1Comment comment = f1CommentRepository.findF1CommentByIdAndStatus(moderation.getCommentId(), oppositeStatus);
-            if(comment!=null){
+            if (comment != null) {
                 state = f1CommentRepository.updateStatus(moderation.getCommentId(), moderation.getAction());
                 F1Comment notification = F1Comment.builder()
                         .comment(message)
@@ -288,9 +290,9 @@ public class ClientServiceImpl implements ClientService {
                 f1CommentRepository.save(notification);
             }
         }
-        if(moderation.getPanel()==2){
+        if (moderation.getPanel() == 2) {
             AwsComment comment = awsCommentRepository.findAwsCommentByIdAndStatus(moderation.getCommentId(), oppositeStatus);
-            if(comment!=null){
+            if (comment != null) {
                 state = awsCommentRepository.updateStatus(moderation.getCommentId(), moderation.getAction());
                 AwsComment notification = AwsComment.builder()
                         .textContent(message)
@@ -309,27 +311,27 @@ public class ClientServiceImpl implements ClientService {
     private Map<String, Integer> getRemainingTime(LocalDateTime gmtDateTime, F1Calendar f1calendar, Integer mode) {
         Map<String, Integer> output = new HashMap<>();
         Duration duration;
-        if(mode==0 || mode==1){
+        if (mode == 0 || mode == 1) {
             duration = Duration.between(gmtDateTime, f1calendar.getPractice1());
             output.put("FP1Days", (int) duration.toDays());
             output.put("FP1Seconds", (int) duration.toSeconds());
         }
-        if(mode==0 || mode==2){
+        if (mode == 0 || mode == 2) {
             duration = Duration.between(gmtDateTime, f1calendar.getPractice2());
             output.put("FP2Days", (int) duration.toDays());
             output.put("FP2Seconds", (int) duration.toSeconds());
         }
-        if(mode==0 || mode==3){
+        if (mode == 0 || mode == 3) {
             duration = Duration.between(gmtDateTime, f1calendar.getPractice3());
             output.put("FP3Days", (int) duration.toDays());
             output.put("FP3Seconds", (int) duration.toSeconds());
         }
-        if(mode==0 || mode==4){
+        if (mode == 0 || mode == 4) {
             duration = Duration.between(gmtDateTime, f1calendar.getQualifying());
             output.put("qualifyingDays", (int) duration.toDays());
             output.put("qualifyingSeconds", (int) duration.toSeconds());
         }
-        if(mode==0 || mode==5){
+        if (mode == 0 || mode == 5) {
             duration = Duration.between(gmtDateTime, f1calendar.getRace());
             output.put("raceDays", (int) duration.toDays());
             output.put("raceSeconds", (int) duration.toSeconds());

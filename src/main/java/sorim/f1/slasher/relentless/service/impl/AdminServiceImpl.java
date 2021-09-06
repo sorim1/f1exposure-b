@@ -65,12 +65,12 @@ public class AdminServiceImpl implements AdminService {
     private final MainProperties properties;
     private final ClientService clientService;
     private final ExposureService exposureService;
-    private RestTemplate restTemplate = new RestTemplate();
+    private final RestTemplate restTemplate = new RestTemplate();
 
     @PostConstruct
     public void onInit() {
         CURRENT_ROUND = Integer.valueOf(propertiesRepository.findDistinctFirstByName("round").getValue());
-            }
+    }
 
     @Override
     public void initialize() throws Exception {
@@ -103,11 +103,11 @@ public class AdminServiceImpl implements AdminService {
                         f1calendarList.add(f1Calendar);
                     }
                     raceId = currentRaceId;
-                    if(ergastRound==-1){
+                    if (ergastRound == -1) {
                         f1Calendar = new F1Calendar(properties, null);
                         ergastRound++;
                     } else {
-                        if(ergastRound< ergastRaceData.size()){
+                        if (ergastRound < ergastRaceData.size()) {
                             f1Calendar = new F1Calendar(properties, ergastRaceData.get(ergastRound++));
                         } else {
                             f1Calendar = new F1Calendar(properties, null);
@@ -126,10 +126,10 @@ public class AdminServiceImpl implements AdminService {
         ZonedDateTime gmtZoned = ZonedDateTime.now(ZoneId.of("Europe/London"));
         LocalDateTime gmtDateTime = gmtZoned.toLocalDateTime();
         F1Calendar f1calendar = calendarRepository.findFirstByRaceAfterOrderByRace(gmtDateTime);
-        String url = properties.getFormula1RacingUrl()+properties.getCurrentYear()+".html";
+        String url = properties.getFormula1RacingUrl() + properties.getCurrentYear() + ".html";
         String rawHtml = restTemplate
                 .getForObject(url, String.class);
-            //todo TBC
+        //todo TBC
         Document doc = Jsoup.parse(rawHtml);
         Elements clock = doc.getAllElements();
         log.info("clock.wholeText()");
@@ -158,40 +158,40 @@ public class AdminServiceImpl implements AdminService {
         boolean iterate;
         Integer round = 1;
         Map<String, DriverStandingByRound> driverStandingsByRound = new HashMap<>();
-        do{
+        do {
 
             ErgastResponse response = ergastService.getDriverStandingsByRound(properties.getCurrentYear(), round);
-            if(response.getMrData().getTotal()>0){
+            if (response.getMrData().getTotal() > 0) {
                 Integer finalRound = round;
                 response.getMrData().getStandingsTable().getStandingsLists().get(0).getDriverStandings()
                         .forEach(ergastStanding -> {
-                            driverStandingsByRound.put(ergastStanding.getDriver().getDriverId()+finalRound,new DriverStandingByRound(ergastStanding, properties.getCurrentYear(), finalRound) );
-                                });
+                            driverStandingsByRound.put(ergastStanding.getDriver().getDriverId() + finalRound, new DriverStandingByRound(ergastStanding, properties.getCurrentYear(), finalRound));
+                        });
                 round++;
                 iterate = true;
             } else {
-                iterate= false;
+                iterate = false;
             }
-        } while(iterate);
+        } while (iterate);
         round = 1;
 
         Map<String, ConstructorStandingByRound> constructorStandingByRound = new HashMap<>();
-        do{
+        do {
             ErgastResponse response = ergastService.getConstructorStandingsByRound(properties.getCurrentYear(), round);
-            if(response.getMrData().getTotal()>0){
+            if (response.getMrData().getTotal() > 0) {
                 Integer finalRound = round;
                 response.getMrData().getStandingsTable().getStandingsLists().get(0).getConstructorStandings()
                         .forEach(ergastStanding -> {
-                       constructorStandingByRound.put(ergastStanding.getConstructor().getConstructorId()+finalRound, new ConstructorStandingByRound(ergastStanding, properties.getCurrentYear(), finalRound) );
+                            constructorStandingByRound.put(ergastStanding.getConstructor().getConstructorId() + finalRound, new ConstructorStandingByRound(ergastStanding, properties.getCurrentYear(), finalRound));
 
                         });
                 round++;
                 iterate = true;
             } else {
-                iterate= false;
+                iterate = false;
             }
-        } while(iterate);
-        enrichStandingsWithRoundPoints(driverStandingsByRound, constructorStandingByRound);
+        } while (iterate);
+        enrichFullStandingsWithRoundPoints(driverStandingsByRound, constructorStandingByRound);
         driverStandingsByRoundRepository.deleteAll();
         driverStandingsByRoundRepository.saveAll(driverStandingsByRound.values());
         constructorStandingsByRoundRepository.deleteAll();
@@ -199,62 +199,79 @@ public class AdminServiceImpl implements AdminService {
         return true;
     }
 
-    private void enrichStandingsWithRoundPoints(Map<String, DriverStandingByRound> driverStandingsByRound, Map<String, ConstructorStandingByRound> constructorStandingByRound) {
+    private void enrichFullStandingsWithRoundPoints(Map<String, DriverStandingByRound> driverStandingsByRound, Map<String, ConstructorStandingByRound> constructorStandingByRound) {
         boolean iterate;
         Integer round = 1;
-        do{
+        do {
             ErgastResponse response = ergastService.getResultsByRound(properties.getCurrentYear(), round);
-            if(response.getMrData().getTotal()>0){
+            if (response.getMrData().getTotal() > 0) {
                 Integer finalRound = round;
                 response.getMrData().getRaceTable().getRaces().get(0).getResults()
                         .forEach(ergastStanding -> {
-                            driverStandingsByRound.get(ergastStanding.getDriver().getDriverId()+ finalRound).setPointsThisRound(ergastStanding.getPoints());
-                            driverStandingsByRound.get(ergastStanding.getDriver().getDriverId()+ finalRound).setResultThisRound(ergastStanding.getPosition());
-                            constructorStandingByRound.get(ergastStanding.getConstructor().getConstructorId()+ finalRound).incrementPointsThisRound(ergastStanding.getPoints());
+                            driverStandingsByRound.get(ergastStanding.getDriver().getDriverId() + finalRound).setPointsThisRound(ergastStanding.getPoints());
+                            driverStandingsByRound.get(ergastStanding.getDriver().getDriverId() + finalRound).setResultThisRound(ergastStanding.getPosition());
+                            constructorStandingByRound.get(ergastStanding.getConstructor().getConstructorId() + finalRound).incrementPointsThisRound(ergastStanding.getPoints());
                         });
                 round++;
                 iterate = true;
             } else {
-                iterate= false;
+                iterate = false;
             }
-        } while(iterate);
+        } while (iterate);
+    }
+
+    private void enrichSingleRoundStandingsWithRoundPoints(Map<String, DriverStandingByRound> driverStandingsByRound, Map<String, ConstructorStandingByRound> constructorStandingByRound) {
+        ErgastResponse response = ergastService.getResultsByRound(properties.getCurrentYear(), CURRENT_ROUND);
+        if (response.getMrData().getTotal() > 0) {
+            response.getMrData().getRaceTable().getRaces().get(0).getResults()
+                    .forEach(ergastStanding -> {
+                        if (driverStandingsByRound != null) {
+                            driverStandingsByRound.get(ergastStanding.getDriver().getDriverId()).setPointsThisRound(ergastStanding.getPoints());
+                            driverStandingsByRound.get(ergastStanding.getDriver().getDriverId()).setResultThisRound(ergastStanding.getPosition());
+                        }
+                        if (constructorStandingByRound != null) {
+                            constructorStandingByRound.get(ergastStanding.getConstructor().getConstructorId()).incrementPointsThisRound(ergastStanding.getPoints());
+                        }
+                    });
+        }
     }
 
     private Boolean refreshDriverStandingsFromErgast() {
         Boolean bool = false;
         List<DriverStanding> driverStandings = new ArrayList<>();
-        Map<String,DriverStandingByRound> driverStandingsByRound = new HashMap<>();
-         ErgastResponse response = ergastService.getDriverStandings();
-         if(response.getMrData().getStandingsTable().getStandingsLists().get(0).getRound()!=CURRENT_ROUND) {
-             CURRENT_ROUND = response.getMrData().getStandingsTable().getStandingsLists().get(0).getRound();
-             propertiesRepository.updateProperty("round", CURRENT_ROUND.toString());
-             Logger.log("initializeStandings - changes detected");
-             bool = true;
-         } else{
-             Logger.log("initializeStandings - no changes detected");
-         }
-             response.getMrData().getStandingsTable().getStandingsLists().get(0).getDriverStandings()
-                     .forEach(ergastStanding -> {
-                         driverStandings.add(new DriverStanding(ergastStanding));
-                         driverStandingsByRound.put(ergastStanding.getDriver().getDriverId(), new DriverStandingByRound(ergastStanding, properties.getCurrentYear(),CURRENT_ROUND));
-                     });
-             response = ergastService.getResultsByRound(properties.getCurrentYear(),CURRENT_ROUND);
-             response.getMrData().getRaceTable().getRaces().get(0).getResults()
-                     .forEach(ergastStanding -> {
-                         driverStandingsByRound.get(ergastStanding.getDriver().getDriverId()).incrementPointsThisRound(ergastStanding.getPoints());
-                                });
-             driverStandingsRepository.deleteAll();
-             driverStandingsRepository.saveAll(driverStandings);
-             driverStandingsByRoundRepository.saveAll(driverStandingsByRound.values());
-             updateExposureDriverList(driverStandings);
-             return bool;
+        Map<String, DriverStandingByRound> driverStandingsByRound = new HashMap<>();
+        ErgastResponse response = ergastService.getDriverStandings();
+        if (response.getMrData().getStandingsTable().getStandingsLists().get(0).getRound() != CURRENT_ROUND) {
+            CURRENT_ROUND = response.getMrData().getStandingsTable().getStandingsLists().get(0).getRound();
+            propertiesRepository.updateProperty("round", CURRENT_ROUND.toString());
+            Logger.log("initializeStandings - changes detected");
+            bool = true;
+        } else {
+            Logger.log("initializeStandings - no changes detected");
+        }
+        response.getMrData().getStandingsTable().getStandingsLists().get(0).getDriverStandings()
+                .forEach(ergastStanding -> {
+                    driverStandings.add(new DriverStanding(ergastStanding));
+                    driverStandingsByRound.put(ergastStanding.getDriver().getDriverId(), new DriverStandingByRound(ergastStanding, properties.getCurrentYear(), CURRENT_ROUND));
+                });
+        response = ergastService.getResultsByRound(properties.getCurrentYear(), CURRENT_ROUND);
+        response.getMrData().getRaceTable().getRaces().get(0).getResults()
+                .forEach(ergastStanding -> {
+                    driverStandingsByRound.get(ergastStanding.getDriver().getDriverId()).incrementPointsThisRound(ergastStanding.getPoints());
+                });
+        driverStandingsRepository.deleteAll();
+        driverStandingsRepository.saveAll(driverStandings);
+        enrichSingleRoundStandingsWithRoundPoints(driverStandingsByRound, null);
+        driverStandingsByRoundRepository.saveAll(driverStandingsByRound.values());
+        updateExposureDriverList(driverStandings);
+        return bool;
     }
 
 
     private void updateExposureDriverList(List<DriverStanding> driverStandings) {
         //poveznica između exposure liste i standings liste
         List<ExposureDriver> drivers = driverRepository.findAll();
-        exposureService.setNextRoundOfExposure(driverStandings, CURRENT_ROUND+1);
+        exposureService.setNextRoundOfExposure(driverStandings, CURRENT_ROUND + 1);
         for (DriverStanding driverStanding : driverStandings) {
             Optional<ExposureDriver> foundDriver = drivers.stream().filter(x -> driverStanding.getName().equals(x.getFullName()))
                     .findFirst();
@@ -270,22 +287,23 @@ public class AdminServiceImpl implements AdminService {
         }
     }
 
-    private void initializeConstructorStandings(){
+    private void initializeConstructorStandings() {
         List<ConstructorStanding> constructorStandings = new ArrayList<>();
         Map<String, ConstructorStandingByRound> constructorStandingsByRound = new HashMap<>();
         ErgastResponse response = ergastService.getConstructorStandings();
         response.getMrData().getStandingsTable().getStandingsLists().get(0).getConstructorStandings()
-                    .forEach(ergastStanding -> {
-                        constructorStandings.add(new ConstructorStanding(ergastStanding));
-                        constructorStandingsByRound.put(ergastStanding.getConstructor().getConstructorId(), new ConstructorStandingByRound(ergastStanding, properties.getCurrentYear(), CURRENT_ROUND));
-                    });
-        response = ergastService.getResultsByRound(properties.getCurrentYear(),CURRENT_ROUND);
+                .forEach(ergastStanding -> {
+                    constructorStandings.add(new ConstructorStanding(ergastStanding));
+                    constructorStandingsByRound.put(ergastStanding.getConstructor().getConstructorId(), new ConstructorStandingByRound(ergastStanding, properties.getCurrentYear(), CURRENT_ROUND));
+                });
+        response = ergastService.getResultsByRound(properties.getCurrentYear(), CURRENT_ROUND);
         response.getMrData().getRaceTable().getRaces().get(0).getResults()
                 .forEach(ergastStanding -> {
                     constructorStandingsByRound.get(ergastStanding.getConstructor().getConstructorId()).incrementPointsThisRound(ergastStanding.getPoints());
                 });
         constructorStandingsRepository.deleteAll();
         constructorStandingsRepository.saveAll(constructorStandings);
+        enrichSingleRoundStandingsWithRoundPoints(null, constructorStandingsByRound);
         constructorStandingsByRoundRepository.saveAll(constructorStandingsByRound.values());
     }
 
@@ -338,7 +356,7 @@ public class AdminServiceImpl implements AdminService {
 
     @Override
     public Integer deleteComment(Integer mode, Integer id) {
-        switch(mode) {
+        switch (mode) {
             case 1:
                 return f1CommentRepository.updateStatus(id, 2);
             case 2:
@@ -358,7 +376,7 @@ public class AdminServiceImpl implements AdminService {
         response.add(CURRENT_ROUND);
         refreshDriverStandingsFromErgast();
         response.add(CURRENT_ROUND);
-        if(increaseOnly){
+        if (increaseOnly) {
             exposureService.setCurrentExposureRound(CURRENT_ROUND);
         }
         return response;
@@ -382,24 +400,29 @@ public class AdminServiceImpl implements AdminService {
 
     @Override
     public Integer getNextRefreshTick(Integer seconds) {
-        CalendarData calendarData = clientService.getCountdownData(0);
-        if(calendarData.getCountdownData().get("raceDays")>2){
+        try {
+            CalendarData calendarData = clientService.getCountdownData(0);
+            if (calendarData.getCountdownData().get("raceDays") > 2) {
+                return null;
+            }
+            if (calendarData.getCountdownData().get("FP1Seconds") > seconds) {
+                return calendarData.getCountdownData().get("FP1Seconds") - seconds;
+            }
+            if (calendarData.getCountdownData().get("FP2Seconds") > seconds) {
+                return calendarData.getCountdownData().get("FP2Seconds") - seconds;
+            }
+            if (calendarData.getCountdownData().get("FP3Seconds") > seconds) {
+                return calendarData.getCountdownData().get("FP3Seconds") - seconds;
+            }
+            if (calendarData.getCountdownData().get("qualifyingSeconds") > seconds) {
+                return calendarData.getCountdownData().get("qualifyingSeconds") - seconds;
+            }
+            if (calendarData.getCountdownData().get("raceSeconds") > seconds) {
+                return calendarData.getCountdownData().get("raceSeconds") - seconds;
+            }
+        } catch (Exception e) {
+            Logger.log("getNextRefreshTick", e.getMessage());
             return null;
-        }
-        if(calendarData.getCountdownData().get("FP1Seconds")>seconds){
-            return calendarData.getCountdownData().get("FP1Seconds")-seconds;
-        }
-        if(calendarData.getCountdownData().get("FP2Seconds")>seconds){
-            return calendarData.getCountdownData().get("FP2Seconds")-seconds;
-        }
-        if(calendarData.getCountdownData().get("FP3Seconds")>seconds){
-            return calendarData.getCountdownData().get("FP3Seconds")-seconds;
-        }
-        if(calendarData.getCountdownData().get("qualifyingSeconds")>seconds){
-            return calendarData.getCountdownData().get("qualifyingSeconds")-seconds;
-        }
-        if(calendarData.getCountdownData().get("raceSeconds")>seconds){
-            return calendarData.getCountdownData().get("raceSeconds")-seconds;
         }
         return null;
     }

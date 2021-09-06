@@ -45,7 +45,6 @@ public class LiveTimingServiceImpl implements LiveTimingService {
     private static final String wikipediaImagesUrl2 = "https://en.wikipedia.org/w/api.php?action=query&prop=pageimages&piprop=thumbnail&pithumbsize=2000&format=json&redirects&titles={title}";
 
 
-
     private final ObjectMapper mapper = new ObjectMapper();
 
     @Override
@@ -84,10 +83,10 @@ public class LiveTimingServiceImpl implements LiveTimingService {
     }
 
     private String getWikipediaOriginalImageUrl(String url, String circuitName, Boolean thumbnail) {
-        String title= url.substring(url.lastIndexOf("/")+1);
+        String title = url.substring(url.lastIndexOf("/") + 1);
         String apiUrl;
         String image;
-        if(thumbnail){
+        if (thumbnail) {
             apiUrl = wikipediaImagesUrl2;
             image = "thumbnail";
         } else {
@@ -98,14 +97,15 @@ public class LiveTimingServiceImpl implements LiveTimingService {
         try {
             String response = restTemplate
                     .getForObject(apiUrl, String.class, title);
-            TypeReference<HashMap<String, Object>> typeRef = new TypeReference<>() {};
+            TypeReference<HashMap<String, Object>> typeRef = new TypeReference<>() {
+            };
             Map<String, Object> mapping = mapper.readValue(response, typeRef);
-            LinkedHashMap<String, Object>  query = (LinkedHashMap<String, Object>) mapping.get("query");
+            LinkedHashMap<String, Object> query = (LinkedHashMap<String, Object>) mapping.get("query");
             LinkedHashMap<String, Object> pages = (LinkedHashMap<String, Object>) query.get("pages");
             LinkedHashMap<String, Object> page = (LinkedHashMap<String, Object>) pages.values().stream().findFirst().get();
             LinkedHashMap<String, Object> original = (LinkedHashMap<String, Object>) page.get(image);
             Integer width = (Integer) original.get("width");
-            if(width<=2000 || thumbnail){
+            if (width <= 2000 || thumbnail) {
                 return (String) original.get("source");
             } else {
                 log.info("retrieving thumbnail");
@@ -114,20 +114,21 @@ public class LiveTimingServiceImpl implements LiveTimingService {
         } catch (Exception e) {
             log.error("this error is mostly likely cause by bad url received from ergast", e.getMessage());
             log.warn(title + " WORKAROUND:");
-            title= circuitName.replaceAll(" ", "_");
+            title = circuitName.replaceAll(" ", "_");
             String response = restTemplate
                     .getForObject(apiUrl, String.class, title);
-            TypeReference<HashMap<String, Object>> typeRef = new TypeReference<>() {};
+            TypeReference<HashMap<String, Object>> typeRef = new TypeReference<>() {
+            };
             Map<String, Object> mapping = null;
             try {
                 mapping = new ObjectMapper().readValue(response, typeRef);
 
-            LinkedHashMap<String, Object>  query = (LinkedHashMap<String, Object>) mapping.get("query");
-            LinkedHashMap<String, Object> pages = (LinkedHashMap<String, Object>) query.get("pages");
-            LinkedHashMap<String, Object> page = (LinkedHashMap<String, Object>) pages.values().stream().findFirst().get();
-            LinkedHashMap<String, Object> original = (LinkedHashMap<String, Object>) page.get(image);
+                LinkedHashMap<String, Object> query = (LinkedHashMap<String, Object>) mapping.get("query");
+                LinkedHashMap<String, Object> pages = (LinkedHashMap<String, Object>) query.get("pages");
+                LinkedHashMap<String, Object> page = (LinkedHashMap<String, Object>) pages.values().stream().findFirst().get();
+                LinkedHashMap<String, Object> original = (LinkedHashMap<String, Object>) page.get(image);
                 Integer width = (Integer) original.get("width");
-                if(width<=2000 || thumbnail){
+                if (width <= 2000 || thumbnail) {
                     return (String) original.get("source");
                 } else {
                     log.info("retrieving thumbnail");
@@ -279,7 +280,7 @@ public class LiveTimingServiceImpl implements LiveTimingService {
 
     @Override
     public UpcomingRaceAnalysis getUpcomingRaceAnalysis() {
-       return ergastService.getUpcomingRace(properties.getCurrentYear()).getUpcomingRaceAnalysis();
+        return ergastService.getUpcomingRace(properties.getCurrentYear()).getUpcomingRaceAnalysis();
     }
 
     @Override
@@ -333,7 +334,8 @@ public class LiveTimingServiceImpl implements LiveTimingService {
                 String timingAppDataResponse = getTimingAppDataResponseOfErgastRace(raceData, RoundEnum.PRACTICE_1);
                 Map<String, String> driverMap = drivers.stream()
                         .collect(Collectors.toMap(Driver::getNum, Driver::getFullName));
-                raceData.getUpcomingRaceAnalysis().setFp1Laps(createLapTimeDataList(timingAppDataResponse, driverMap));            }
+                raceData.getUpcomingRaceAnalysis().setFp1Laps(createLapTimeDataList(timingAppDataResponse, driverMap));
+            }
         }
         if (raceData.getLiveTimingFp2() == null) {
             String liveTimingResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.PRACTICE_2);
@@ -344,7 +346,8 @@ public class LiveTimingServiceImpl implements LiveTimingService {
                 String timingAppDataResponse = getTimingAppDataResponseOfErgastRace(raceData, RoundEnum.PRACTICE_2);
                 Map<String, String> driverMap = drivers.stream()
                         .collect(Collectors.toMap(Driver::getNum, Driver::getFullName));
-                raceData.getUpcomingRaceAnalysis().setFp2Laps(createLapTimeDataList(timingAppDataResponse, driverMap));              }
+                raceData.getUpcomingRaceAnalysis().setFp2Laps(createLapTimeDataList(timingAppDataResponse, driverMap));
+            }
         }
         if (raceData.getLiveTimingFp3() == null) {
             String liveTimingResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.PRACTICE_3);
@@ -355,7 +358,8 @@ public class LiveTimingServiceImpl implements LiveTimingService {
                 String timingAppDataResponse = getTimingAppDataResponseOfErgastRace(raceData, RoundEnum.PRACTICE_3);
                 Map<String, String> driverMap = drivers.stream()
                         .collect(Collectors.toMap(Driver::getNum, Driver::getFullName));
-                raceData.getUpcomingRaceAnalysis().setFp3Laps(createLapTimeDataList(timingAppDataResponse, driverMap));              }
+                raceData.getUpcomingRaceAnalysis().setFp3Laps(createLapTimeDataList(timingAppDataResponse, driverMap));
+            }
         }
         if (raceData.getLiveTimingQuali() == null) {
             String liveTimingResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.QUALIFYING);
@@ -366,18 +370,20 @@ public class LiveTimingServiceImpl implements LiveTimingService {
                 String timingAppDataResponse = getTimingAppDataResponseOfErgastRace(raceData, RoundEnum.QUALIFYING);
                 Map<String, String> driverMap = drivers.stream()
                         .collect(Collectors.toMap(Driver::getNum, Driver::getFullName));
-                raceData.getUpcomingRaceAnalysis().setQualiLaps(createLapTimeDataList(timingAppDataResponse, driverMap));              }
+                raceData.getUpcomingRaceAnalysis().setQualiLaps(createLapTimeDataList(timingAppDataResponse, driverMap));
+            }
         }
 
         ergastService.saveRace(raceData);
         return adminService.getNextRefreshTick(-1000);
     }
 
-    private List<LapTimeData> createLapTimeDataList(String timingAppData, Map<String, String> driverMap ) {
-        TypeReference<HashMap<String, Object>> typeRef = new TypeReference<>() {};
+    private List<LapTimeData> createLapTimeDataList(String timingAppData, Map<String, String> driverMap) {
+        TypeReference<HashMap<String, Object>> typeRef = new TypeReference<>() {
+        };
         List<LapTimeData> response = new ArrayList<>();
         List<String> timingAppDataLines = Arrays.asList(timingAppData.split(System.lineSeparator()));
-        timingAppDataLines.forEach(stringLine-> {
+        timingAppDataLines.forEach(stringLine -> {
             String jsonLine = stringLine.substring(stringLine.indexOf("{"));
             Map<String, Object> mapping = null;
             try {
@@ -390,7 +396,7 @@ public class LiveTimingServiceImpl implements LiveTimingService {
             lines.forEach((k, v) -> {
                 LinkedHashMap<Integer, Object> line = (LinkedHashMap<Integer, Object>) v;
                 Object stintsObject = line.get("Stints");
-                if(stintsObject!=null && stintsObject instanceof LinkedHashMap) {
+                if (stintsObject != null && stintsObject instanceof LinkedHashMap) {
                     LinkedHashMap<String, Object> stints = (LinkedHashMap<String, Object>) stintsObject;
                     stints.forEach((k2, v2) -> {
                         LinkedHashMap<String, Object> dataMap = (LinkedHashMap<String, Object>) v2;
@@ -409,8 +415,8 @@ public class LiveTimingServiceImpl implements LiveTimingService {
 
         });
         response.sort(Comparator.comparing(LapTimeData::getLapTimeMs));
-        for(int i=0; i<response.size();i++){
-            response.get(i).setPosition(i+1);
+        for (int i = 0; i < response.size(); i++) {
+            response.get(i).setPosition(i + 1);
         }
         return response;
     }
@@ -588,8 +594,8 @@ public class LiveTimingServiceImpl implements LiveTimingService {
     }
 
     @PostConstruct
-    void init(){
-    this.restTemplate.getMessageConverters()
+    void init() {
+        this.restTemplate.getMessageConverters()
                 .add(0, new StringHttpMessageConverter(StandardCharsets.UTF_8));
     }
 

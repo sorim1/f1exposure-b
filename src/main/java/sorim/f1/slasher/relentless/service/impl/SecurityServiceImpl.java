@@ -1,23 +1,17 @@
 package sorim.f1.slasher.relentless.service.impl;
 
-import com.github.instagram4j.instagram4j.exceptions.IGLoginException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import sorim.f1.slasher.relentless.configuration.MainProperties;
-import sorim.f1.slasher.relentless.entities.*;
+import sorim.f1.slasher.relentless.entities.Log;
 import sorim.f1.slasher.relentless.handling.Logger;
-import sorim.f1.slasher.relentless.model.*;
-import sorim.f1.slasher.relentless.repository.*;
-import sorim.f1.slasher.relentless.service.*;
+import sorim.f1.slasher.relentless.service.SecurityService;
 
 import javax.servlet.http.HttpServletRequest;
-import java.time.Duration;
-import java.time.LocalDateTime;
-import java.time.ZoneId;
-import java.time.ZonedDateTime;
-import java.util.*;
+import java.util.Arrays;
+import java.util.List;
 
 @Slf4j
 @Service
@@ -50,5 +44,10 @@ public class SecurityServiceImpl implements SecurityService {
     @Override
     public String validateIp(HttpServletRequest request) {
         return request.getRemoteAddr();
+    }
+
+    @Override
+    public List<Log> getLogs(Integer mode, String filter) {
+        return Logger.getLogs(mode, filter);
     }
 }

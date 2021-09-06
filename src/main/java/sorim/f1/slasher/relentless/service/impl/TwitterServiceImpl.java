@@ -7,18 +7,16 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import sorim.f1.slasher.relentless.configuration.MainProperties;
-import sorim.f1.slasher.relentless.entities.ImageRow;
-import sorim.f1.slasher.relentless.entities.InstagramPost;
 import sorim.f1.slasher.relentless.entities.TwitterPost;
-import sorim.f1.slasher.relentless.repository.ImageRepository;
-import sorim.f1.slasher.relentless.repository.InstagramRepository;
 import sorim.f1.slasher.relentless.repository.TwitterRepository;
 import sorim.f1.slasher.relentless.service.TwitterService;
-import twitter4j.*;
+import twitter4j.Status;
+import twitter4j.Twitter;
+import twitter4j.TwitterException;
+import twitter4j.TwitterFactory;
 import twitter4j.conf.ConfigurationBuilder;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @Slf4j
@@ -49,44 +47,44 @@ public class TwitterServiceImpl implements TwitterService {
             String url = null;
             String mediaUrl = null;
             int splitter = text.lastIndexOf("https://t.co");
-            if(splitter>0 && splitter>item.getText().length()-30){
+            if (splitter > 0 && splitter > item.getText().length() - 30) {
                 text = item.getText().substring(0, splitter);
                 url = item.getText().substring(splitter);
-                source=0;
+                source = 0;
             }
 
-            if(item.getMediaEntities()!=null && item.getMediaEntities().length>0){
+            if (item.getMediaEntities() != null && item.getMediaEntities().length > 0) {
                 mediaUrl = item.getMediaEntities()[0].getMediaURLHttps();
                 url = item.getMediaEntities()[0].getURL();
-                source=1;
+                source = 1;
             }
-            if(url==null && item.getURLEntities().length>0){
+            if (url == null && item.getURLEntities().length > 0) {
                 url = item.getURLEntities()[0].getURL();
-                source=2;
+                source = 2;
             }
-            if(url==null && item.getRetweetedStatus()!=null && item.getRetweetedStatus().getURLEntities().length>0){
+            if (url == null && item.getRetweetedStatus() != null && item.getRetweetedStatus().getURLEntities().length > 0) {
                 url = item.getRetweetedStatus().getURLEntities()[0].getURL();
-                source=3;
+                source = 3;
             }
-            if(url==null){
-                url = "https://twitter.com/" + item.getUser().getScreenName() + "/status/" + item.getId() ;
-                source=4;
+            if (url == null) {
+                url = "https://twitter.com/" + item.getUser().getScreenName() + "/status/" + item.getId();
+                source = 4;
             }
-            if(mediaUrl!=null){
-            //getTwitterPost(twitter, item.getId());
+            if (mediaUrl != null) {
+                //getTwitterPost(twitter, item.getId());
 
-            list.add(TwitterPost.builder()
-            .id(item.getId())
-            .text(text)
-            .favoriteCount(item.getFavoriteCount())
-            .retweetCount(item.getRetweetCount())
-            .url(url)
-            .source(source)
-            .mediaUrl(mediaUrl)
-            .userPicture(item.getUser().getProfileImageURLHttps())
-            .username(item.getUser().getName())
-            .createdAt(item.getCreatedAt())
-            .build());
+                list.add(TwitterPost.builder()
+                        .id(item.getId())
+                        .text(text)
+                        .favoriteCount(item.getFavoriteCount())
+                        .retweetCount(item.getRetweetCount())
+                        .url(url)
+                        .source(source)
+                        .mediaUrl(mediaUrl)
+                        .userPicture(item.getUser().getProfileImageURLHttps())
+                        .username(item.getUser().getName())
+                        .createdAt(item.getCreatedAt())
+                        .build());
             }
         });
         twitterRepository.saveAll(list);

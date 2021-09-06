@@ -28,7 +28,7 @@ public class ErgastServiceImpl implements ErgastService {
 
     private final ErgastRaceRepository ergastRaceRepository;
     private final DriverRepository driverRepository;
-    private RestTemplate restTemplate = new RestTemplate();
+    private final RestTemplate restTemplate = new RestTemplate();
 
 
     @Override
@@ -99,19 +99,19 @@ public class ErgastServiceImpl implements ErgastService {
     @Override
     public ErgastResponse getDriverStandingsByRound(Integer season, Integer round) {
         return restTemplate
-                .getForObject(ERGAST_URL + season+ "/" + round+ "/driverStandings.json", ErgastResponse.class);
+                .getForObject(ERGAST_URL + season + "/" + round + "/driverStandings.json", ErgastResponse.class);
     }
 
     @Override
     public ErgastResponse getConstructorStandingsByRound(Integer season, Integer round) {
         return restTemplate
-                .getForObject(ERGAST_URL + season+ "/" + round+ "/constructorStandings.json", ErgastResponse.class);
+                .getForObject(ERGAST_URL + season + "/" + round + "/constructorStandings.json", ErgastResponse.class);
     }
 
     @Override
     public ErgastResponse getResultsByRound(Integer season, Integer round) {
         return restTemplate
-                .getForObject(ERGAST_URL + season+ "/" + round+ "/results.json", ErgastResponse.class);
+                .getForObject(ERGAST_URL + season + "/" + round + "/results.json", ErgastResponse.class);
     }
 
     @Override
@@ -135,6 +135,6 @@ public class ErgastServiceImpl implements ErgastService {
     @Override
     public ErgastResponse getRaceLaps(Integer season, Integer round) {
         return restTemplate
-                .getForObject(ERGAST_URL + season+ "/" + round+ "/laps.json?limit=2000", ErgastResponse.class);
+                .getForObject(ERGAST_URL + season + "/" + round + "/laps.json?limit=2000", ErgastResponse.class);
     }
 }

@@ -35,7 +35,7 @@ spring:
   datasource:
     f1-exposure:
       driver-class-name: org.postgresql.Driver
-      jdbc-url: jdbc:postgresql://localhost:5432/postgres?currentSchema=public
+      jdbc-url: jdbc:postgresql://localhost:5432/postgres?currentSchema=f1exposure
       username: postgres
       password: postgres
       auto-commit: true

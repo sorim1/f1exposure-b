@@ -15,6 +15,7 @@ import sorim.f1.slasher.relentless.util.MainUtility;
 
 import javax.annotation.PostConstruct;
 import java.io.IOException;
+import java.util.Arrays;
 
 @Service
 @Slf4j
@@ -115,29 +116,34 @@ public class Scheduler {
     }
     @PostConstruct
     void onInit() throws IOException {
-       log.info("onInitCalled");
+       log.info("onInitScheduler Called");
         sundayJobs();
         Integer weekDay = MainUtility.getWeekDay();
-        switch (weekDay){
-            case 1:{
-                mondayJobs();
+        try {
+            switch (weekDay) {
+                case 1: {
+                    fridayJobs();
+                }
+                case 2: {
+                    mondayJobs();
+                }
+                case 3: {
+                    tuesdayJobs();
+                }
+                case 4: {
+                }
+                case 5: {
+                }
+                case 6: {
+                    fridayJobs();
+                }
+                case 7: {
+                    fridayJobs();
+                }
             }
-            case 2:{
-                tuesdayJobs();
-            }
-            case 3:{
-            }
-            case 4:{
-            }
-            case 5:{
-                fridayJobs();
-            }
-            case 6:{
-                fridayJobs();
-            }
-            case 7:{
-                fridayJobs();
-            }
+        }catch(Exception e ){
+            log.error(Arrays.toString(e.getStackTrace()));
+            Logger.logProblem("onInitScheduler - " + Arrays.toString(e.getStackTrace()));
         }
     }
 

@@ -46,12 +46,12 @@ public class InstagramServiceImpl implements InstagramService {
     @Override
     public Boolean fetchInstagramFeed() throws IGLoginException {
         List<InstagramPost> instagramPosts = new ArrayList<>();
-        if (client==null || !client.isLoggedIn()) {
+        if (client == null || !client.isLoggedIn()) {
             init();
         }
         AtomicReference<Integer> counter = new AtomicReference<>(0);
         FeedIterable<FeedTimelineRequest, FeedTimelineResponse> response = client.getActions().timeline().feed();
-          AtomicReference<Boolean> iterate = new AtomicReference<>(true);
+        AtomicReference<Boolean> iterate = new AtomicReference<>(true);
         response.stream().takeWhile(n -> iterate.get()).forEach(row -> {
             List<TimelineMedia> timelineMedias = row.getFeed_items();
             timelineMedias.forEach(post -> {
@@ -68,12 +68,12 @@ public class InstagramServiceImpl implements InstagramService {
                             if (cItem instanceof ImageCaraouselItem) {
                                 ImageCaraouselItem cItem2 = (ImageCaraouselItem) cItem;
                                 urlList.add(cItem2.getImage_versions2().getCandidates()
-                                        .get(cItem2.getImage_versions2().getCandidates().size()-1)
+                                        .get(cItem2.getImage_versions2().getCandidates().size() - 1)
                                         .getUrl());
                             } else if (cItem instanceof VideoCaraouselItem) {
                                 VideoCaraouselItem cItem2 = (VideoCaraouselItem) cItem;
                                 urlList.add(cItem2.getImage_versions2().getCandidates()
-                                        .get(cItem2.getImage_versions2().getCandidates().size()-1)
+                                        .get(cItem2.getImage_versions2().getCandidates().size() - 1)
                                         .getUrl());
                             } else {
                                 log.error("OVO NIJE ImageCaraouselItem: {}", cItem.getClass().getName());
@@ -95,7 +95,7 @@ public class InstagramServiceImpl implements InstagramService {
                     } else if (post instanceof TimelineImageMedia) {
                         TimelineImageMedia timelineImageMedia = (TimelineImageMedia) post;
                         url = timelineImageMedia.getImage_versions2().getCandidates()
-                                .get(timelineImageMedia.getImage_versions2().getCandidates().size()-1)
+                                .get(timelineImageMedia.getImage_versions2().getCandidates().size() - 1)
                                 .getUrl();
                         instagramPosts.add(InstagramPost.builder().code(timelineImageMedia.getCode())
                                 .takenAt(post.getTaken_at())
@@ -111,7 +111,7 @@ public class InstagramServiceImpl implements InstagramService {
                     } else if (post instanceof TimelineVideoMedia) {
                         TimelineVideoMedia timelineVideoMedia = (TimelineVideoMedia) post;
                         url = timelineVideoMedia.getImage_versions2().getCandidates()
-                                .get(timelineVideoMedia.getImage_versions2().getCandidates().size()-1)
+                                .get(timelineVideoMedia.getImage_versions2().getCandidates().size() - 1)
                                 .getUrl();
                         instagramPosts.add(InstagramPost.builder().code(timelineVideoMedia.getCode())
                                 .takenAt(post.getTaken_at())
@@ -127,14 +127,11 @@ public class InstagramServiceImpl implements InstagramService {
                     } else {
                         log.error("OVAJ INSTAGRAM POST JE: {}", post.getClass().getName());
                     }
-
-                } else {
-                    log.error("OVO JE REKLAMA: {}", post.getUser().getUsername());
                 }
             });
-            String code = instagramPosts.get(instagramPosts.size()-1).getCode();
+            String code = instagramPosts.get(instagramPosts.size() - 1).getCode();
             boolean exists = instagramRepository.existsByCode(timelineMedias.get(timelineMedias.size() - 1).getCode());
-            iterate.set(counter.get()<7 && (!exists));
+            iterate.set(counter.get() < 7 && (!exists));
             counter.set(counter.get() + 1);
         });
         instagramRepository.saveAll(instagramPosts);
@@ -157,9 +154,9 @@ public class InstagramServiceImpl implements InstagramService {
 //                images.add(ImageRow.builder().code(post.getCode()).image(image).build());
 //            }
 //        });
-        instagramPosts.forEach(post->{
-                byte[] image = getImageFromUrl(post.getUrl());
-                images.add(ImageRow.builder().code(post.getCode()).image(image).build());
+        instagramPosts.forEach(post -> {
+            byte[] image = getImageFromUrl(post.getUrl());
+            images.add(ImageRow.builder().code(post.getCode()).image(image).build());
         });
         imageRepository.saveAll(images);
     }
@@ -169,12 +166,13 @@ public class InstagramServiceImpl implements InstagramService {
             URL url = new URL(urlString);
             ByteArrayOutputStream output = new ByteArrayOutputStream();
 
-            try (InputStream stream = url.openStream())
-            {byte[] buffer = new byte[4096];
-                while (true)
-                {
+            try (InputStream stream = url.openStream()) {
+                byte[] buffer = new byte[4096];
+                while (true) {
                     int bytesRead = stream.read(buffer);
-                    if (bytesRead < 0) { break; }
+                    if (bytesRead < 0) {
+                        break;
+                    }
                     output.write(buffer, 0, bytesRead);
                 }
             }

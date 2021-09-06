@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name = "LOG_TABLE")
@@ -21,4 +22,5 @@ public class Log {
     private Integer id;
     private String code;
     private String message;
+    private Date created;
 }

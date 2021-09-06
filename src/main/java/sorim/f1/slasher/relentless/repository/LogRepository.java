@@ -6,10 +6,13 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import sorim.f1.slasher.relentless.entities.Log;
 
+import java.util.Date;
+import java.util.List;
+
 @Repository
 @Transactional
 @EnableJpaAuditing
 public interface LogRepository extends CrudRepository<Log, String> {
 
-
+    List<Log> findAllByCreatedBeforeOrderByIdDesc(Date created);
 }
