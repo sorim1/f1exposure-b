@@ -426,4 +426,9 @@ public class AdminServiceImpl implements AdminService {
         }
         return null;
     }
+
+    @Override
+    public List<F1Comment> getAdminMessages() {
+        return f1CommentRepository.findFirst30ByPageAndStatusOrderByTimestampDesc(47,1);
+    }
 }

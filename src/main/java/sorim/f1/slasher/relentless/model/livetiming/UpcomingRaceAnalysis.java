@@ -33,7 +33,7 @@ public class UpcomingRaceAnalysis {
 
     public UpcomingRaceAnalysis(RaceData raceData) {
         this.season = Integer.valueOf(raceData.getSeason());
-        this.title = raceData.getRaceName() + " - " + raceData.getCircuit().getCircuitName() ;
+        this.title = raceData.getRaceName() ;
         this.circuitUrl = raceData.getCircuit().getUrl();
         this.circuitName = raceData.getCircuit().getCircuitName();
         this.raceDate = raceData.getDate();

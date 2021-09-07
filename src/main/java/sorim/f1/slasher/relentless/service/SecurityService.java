@@ -14,4 +14,5 @@ public interface SecurityService {
     String validateIp(HttpServletRequest request);
 
     List<Log> getLogs(Integer mode, String filter);
+
 }

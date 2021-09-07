@@ -30,42 +30,44 @@ public class Logger {
 
     public static void raiseException(String info) throws Exception {
         log.error(info);
-        repository.save(Log.builder().code("ERROR").message(info).build());
+        repository.save(Log.builder().code("ERROR").message(info).created(new Date()).build());
         throw new Exception(info);
     }
 
     public static void raiseException(String code, String message) throws Exception {
         log.error(message);
-        repository.save(Log.builder().code(code).message(message).build());
+        repository.save(Log.builder().code(code).message(message).created(new Date()).build());
         throw new Exception(message);
     }
 
     public static void log(String code, String message) {
         log.error(message);
-        repository.save(Log.builder().code(code).message(message).build());
+        repository.save(Log.builder().code(code).message(message).created(new Date()).build());
     }
 
     public static void logProblem(String message) {
         log.error(message);
-        repository.save(Log.builder().code("ERROR").message(message).build());
+        repository.save(Log.builder().code("ERROR").message(message).created(new Date()).build());
     }
 
     public static void logAdmin(String message) {
         log.info(message);
         try {
-            repository.save(Log.builder().code("ADMIN").message(message).build());
+            repository.save(Log.builder().code("ADMIN").message(message).created(new Date()).build());
         } catch(Exception e ){
-            e.printStackTrace();
+            log.error(message);
+            log.error(e.getMessage());
         }
     }
 
     public static void log(String message) {
         log.info(message);
-        repository.save(Log.builder().code(INFO).message(message).build());
+        repository.save(Log.builder().code(INFO).message(message).created(new Date())
+                .build());
     }
 
     public static List<Log> getLogs(Integer mode, String filter) {
         Date yesterday = new Date(System.currentTimeMillis()-24*60*60*1000);
-        return repository.findAllByCreatedBeforeOrderByIdDesc(yesterday);
+        return repository.findAllByCreatedAfterOrderByIdDesc(yesterday);
     }
 }

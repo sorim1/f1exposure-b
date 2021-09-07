@@ -1,8 +1,6 @@
 package sorim.f1.slasher.relentless.service;
 
-import sorim.f1.slasher.relentless.entities.AwsContent;
-import sorim.f1.slasher.relentless.entities.DriverStanding;
-import sorim.f1.slasher.relentless.entities.F1Calendar;
+import sorim.f1.slasher.relentless.entities.*;
 import sorim.f1.slasher.relentless.model.FullExposure;
 
 import java.io.IOException;
@@ -41,4 +39,6 @@ public interface AdminService {
     FullExposure backupExposure();
 
     Integer getNextRefreshTick(Integer seconds) ;
+
+    List<F1Comment> getAdminMessages();
 }

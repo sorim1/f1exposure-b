@@ -488,7 +488,8 @@ public class LiveTimingServiceImpl implements LiveTimingService {
                             .collect(Collectors.toMap(Driver::getInitials, Function.identity(), (o1, o2) -> o1, TreeMap::new));
                     List<String> driverCodes = MainUtility.extractDriverCodes(driversResponse);
 
-                    title.set((String) response.getFree().data.getDataField("R"));
+                   // title.set((String) response.getFree().data.getDataField("R"));
+                    title.set(race.getRaceName());
 
                     enrichDriversWithScoringData(driversMap, response.getScores().getGraph());
                     enrichDriversWithFreeData(driversMap, response.getFree().data);

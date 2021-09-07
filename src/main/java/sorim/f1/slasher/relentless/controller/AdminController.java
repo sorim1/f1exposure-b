@@ -3,9 +3,7 @@ package sorim.f1.slasher.relentless.controller;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import sorim.f1.slasher.relentless.entities.AwsContent;
-import sorim.f1.slasher.relentless.entities.F1Calendar;
-import sorim.f1.slasher.relentless.entities.Log;
+import sorim.f1.slasher.relentless.entities.*;
 import sorim.f1.slasher.relentless.model.ExposureResponse;
 import sorim.f1.slasher.relentless.model.FullExposure;
 import sorim.f1.slasher.relentless.service.AdminService;
@@ -120,5 +118,11 @@ public class AdminController {
     List<Log> getLogs(@RequestHeader String client, @RequestParam(required=false) Integer mode, @RequestParam(required=false) String filter) throws Exception {
         securityService.validateAdminHeader(client);
         return securityService.getLogs(mode, filter);
+    }
+
+    @GetMapping("/getAdminMessages")
+    List<F1Comment> getAdminMessages(@RequestHeader String client) throws Exception {
+        securityService.validateAdminHeader(client);
+        return service.getAdminMessages();
     }
 }
