@@ -55,6 +55,7 @@ public class RaceData {
 
     private String liveTimingRace;
     private String liveTimingQuali;
+    private String liveTimingSprintQuali;
     private String liveTimingFp1;
     private String liveTimingFp2;
     private String liveTimingFp3;

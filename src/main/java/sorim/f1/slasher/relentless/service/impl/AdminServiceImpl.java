@@ -36,9 +36,11 @@ import java.io.InputStreamReader;
 import java.io.Reader;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 @Slf4j
@@ -97,29 +99,57 @@ public class AdminServiceImpl implements AdminService {
                 String[] idAndRound = properties.get("UID").get(0).getValue().split("@");
                 currentRaceId = Integer.parseInt(idAndRound[1]);
                 if (currentRaceId == raceId) {
-                    f1Calendar.setDateFromRoundDescription(idAndRound[0], properties.get("DTSTART").get(0).getValue());
+                    f1Calendar.setDateAndNameFromRoundDescription(idAndRound[0], properties.get("DTSTART").get(0).getValue(), properties.get("SUMMARY").get(0).getValue());
                 } else {
                     if (f1Calendar != null) {
                         f1calendarList.add(f1Calendar);
                     }
                     raceId = currentRaceId;
                     if (ergastRound == -1) {
-                        f1Calendar = new F1Calendar(properties, null);
+                        f1Calendar = new F1Calendar(properties);
                         ergastRound++;
                     } else {
                         if (ergastRound < ergastRaceData.size()) {
-                            f1Calendar = new F1Calendar(properties, ergastRaceData.get(ergastRound++));
+                            f1Calendar = new F1Calendar(properties);
                         } else {
-                            f1Calendar = new F1Calendar(properties, null);
+                            f1Calendar = new F1Calendar(properties);
                         }
-
                     }
                 }
             }
         }
+        enrichCalendarWithErgastData(f1calendarList, ergastRaceData );
         calendarRepository.saveAll(f1calendarList);
 
     }
+
+    private void enrichCalendarWithErgastData(List<F1Calendar> f1calendarList, List<RaceData> ergastRaceData) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        Integer ergastElement = 0;
+        Integer calendarElement = 0;
+        do{
+            LocalDateTime calendarDate = f1calendarList.get(calendarElement).getRace();
+            LocalDate ergastDate = LocalDate.parse(ergastRaceData.get(ergastElement).getDate(), formatter);
+            if(calendarDate!=null) {
+                if (calendarDate.getDayOfYear() == ergastDate.getDayOfYear()) {
+                    log.info("isti dan: {} - {} - {} ", ergastElement, calendarElement, ergastRaceData.get(ergastElement).getRaceName());
+                    f1calendarList.get(calendarElement).setErgastName("MAYBE: " + ergastRaceData.get(ergastElement).getRaceName());
+                    f1calendarList.get(calendarElement).setErgastDateTime(ergastRaceData.get(ergastElement).getDate() + " - " + ergastRaceData.get(ergastElement).getTime());
+                    ergastElement++;
+                    calendarElement++;
+                } else if (calendarDate.getDayOfYear() > ergastDate.getDayOfYear()) {
+                    log.info("kalendar veći: {} - {} - {} ", ergastElement, calendarElement, ergastRaceData.get(ergastElement).getRaceName());
+                    ergastElement++;
+                } else if (calendarDate.getDayOfYear() < ergastDate.getDayOfYear()) {
+                    log.info("kalendar manji: {} - {} - {} ", ergastElement, calendarElement, ergastRaceData.get(ergastElement).getRaceName());
+                    calendarElement++;
+                }
+            } else {
+                calendarElement++;
+            }
+        }while(calendarElement<f1calendarList.size()-1 || ergastElement<ergastRaceData.size()-1);
+    }
+
 
     @Override
     public void validateCalendarForNextRace() throws Exception {
