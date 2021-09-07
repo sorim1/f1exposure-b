@@ -137,4 +137,9 @@ public class ErgastServiceImpl implements ErgastService {
         return restTemplate
                 .getForObject(ERGAST_URL + season + "/" + round + "/laps.json?limit=2000", ErgastResponse.class);
     }
+
+    @Override
+    public void deleteRaces(String season) {
+        ergastRaceRepository.deleteAllBySeason(season);
+    }
 }

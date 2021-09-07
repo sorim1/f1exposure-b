@@ -48,7 +48,7 @@ public class LiveTimingServiceImpl implements LiveTimingService {
     private final ObjectMapper mapper = new ObjectMapper();
 
     @Override
-    public void getAllRaceDataFromErgastTable(String year, Boolean detailed) {
+    public void getAllRaceDataFromErgastTable(String year, Boolean detailed, Boolean deleteOld) {
         List<RaceData> raceData = ergastService.fetchSeason(year);
         raceData.forEach(race -> {
             race.setCircuitId(race.getCircuit().getCircuitId());
@@ -78,6 +78,9 @@ public class LiveTimingServiceImpl implements LiveTimingService {
 
             }
         });
+        if(deleteOld){
+            ergastService.deleteRaces(year);
+        }
         ergastService.saveRaces(raceData);
         upcomingRacesAnalysisInitialLoad(year);
     }
@@ -229,7 +232,7 @@ public class LiveTimingServiceImpl implements LiveTimingService {
         RaceData raceData = ergastService.getLatestNonAnalyzedRace(properties.getCurrentYear());
         String liveTimingResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.RACE);
         //TODO timingAppData zasad ne koristim u RaceAnalysis
-        //String timingAppDataResponse = getTimingAppDataResponseOfErgastRace(raceData, RoundEnum.RACE);
+        String timingAppDataResponse = getTimingAppDataResponseOfErgastRace(raceData, RoundEnum.RACE);
         if (liveTimingResponse != null) {
             raceData.setLiveTimingRace(liveTimingResponse.substring(liveTimingResponse.indexOf("{")));
             //raceData.setTimingAppData(timingAppDataResponse.substring(timingAppDataResponse.indexOf("00")));
@@ -256,13 +259,6 @@ public class LiveTimingServiceImpl implements LiveTimingService {
 
     @Override
     public String validateLatestRaceAnalysis() {
-        String originalInput = "7ZbBasMwDED/Ree0SJZs2b6W/cF22dihjMIGI4eut5B/X6rtsNFSgiCQgi9KsP0wlqWHB3joT8ePwxfUlwGeTm9QIWCgDeqG8iNxRarIW8mqXPIzdLDbH6fVA/A57N73fX/4tAGEih0Ei2xRoBJKB/H3K9MPjqNNXLBSkvzBxVahwfiD0hmNs7b9x9mWycmpkytOjtALkhe8dhuzQG9OKTvBEJwgz0vORbVaybGz1A0Wb3bFW3nR3SLXzikU4m3WjqnuPvE1yoTe8pUGVRRe1lcFm6+ar5qvVuarlO7PVyVpSlmX9VVMzVfNV81X6/JVIL43X8k2oCZe+Hkl2HTVdNV0tS5dEa3zefU6fgM=";
-        byte[] result = Base64.getDecoder().decode(originalInput);
-
-        byte[] result2 = DatatypeConverter.parseBase64Binary(originalInput);
-        log.info("info");
-        log.info(new String(result));
-        log.info(new String(result2));
         RaceData raceData = ergastService.getLatestAnalyzedRace();
         String response = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.RACE);
         if (response != null) {
@@ -284,8 +280,18 @@ public class LiveTimingServiceImpl implements LiveTimingService {
     }
 
     @Override
+    public List<RaceData> findRacesBySeason(String season) {
+        return ergastService.findRacesBySeason(season);
+    }
+
+    @Override
+    public Boolean deleteRacesBySeason(String season) {
+        ergastService.deleteRaces(season);
+        return true;
+    }
+
+    @Override
     public Boolean upcomingRacesAnalysisInitialLoad(String season) {
-        //TODO promijeniti u 10 na produkciji
         Integer howManySeasonsBack = properties.getHowManySeasonsBack();
         List<RaceData> races = ergastService.findRacesBySeason(season);
         Map<String, UpcomingRaceAnalysis> upcomingRaceAnalysisMapByCircuitId =
@@ -495,7 +501,7 @@ public class LiveTimingServiceImpl implements LiveTimingService {
                     onlyFirstOne.set(false);
                     drivers.set(new ArrayList<>(driversMap.values()));
                 }
-            } catch (JsonProcessingException e) {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         });

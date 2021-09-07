@@ -31,4 +31,6 @@ public interface ErgastRaceRepository extends CrudRepository<RaceData, String> {
     List<FrontendRace> findAllBySeasonOrderByRoundAsc(String season);
 
     List<RaceData> findAllBySeason(String Season);
+
+    void deleteAllBySeason(String season);
 }

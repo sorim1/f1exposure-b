@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'sorim.f1.slasher'
-version = '0.0.1-SNAPSHOT'
+version = ''
 sourceCompatibility = '11'
 
 repositories {

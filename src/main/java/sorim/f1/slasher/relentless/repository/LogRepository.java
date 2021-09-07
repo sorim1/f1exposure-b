@@ -15,4 +15,6 @@ import java.util.List;
 public interface LogRepository extends CrudRepository<Log, String> {
 
     List<Log> findAllByCreatedBeforeOrderByIdDesc(Date created);
+
+    List<Log> findAllByCreatedAfterOrderByIdDesc(Date created);
 }

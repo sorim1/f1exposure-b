@@ -44,4 +44,6 @@ public interface ErgastService {
     Map<String, String> connectDriverCodesWithErgastCodes();
 
     ErgastResponse getRaceLaps(Integer season, Integer round);
+
+    void deleteRaces(String season);
 }
