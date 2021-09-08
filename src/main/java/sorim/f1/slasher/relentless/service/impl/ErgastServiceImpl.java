@@ -65,7 +65,12 @@ public class ErgastServiceImpl implements ErgastService {
 
     @Override
     public RaceData getUpcomingRace(Integer currentYear) {
-        return ergastRaceRepository.findFirstByRaceAnalysisNullAndSeasonOrderByDateAsc(currentYear.toString());
+        RaceData response =ergastRaceRepository.findFirstByRaceAnalysisNullAndSeasonOrderByDateAsc(currentYear.toString());
+        if(response==null){
+            Integer nextYear = currentYear + 1;
+            response =ergastRaceRepository.findFirstByRaceAnalysisIsNullAndSeasonOrderByDateAsc(nextYear.toString());
+        }
+        return response;
     }
 
     @Override

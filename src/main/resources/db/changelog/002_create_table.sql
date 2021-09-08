@@ -18,7 +18,7 @@ CREATE TABLE RACE_DATA
     live_timing_fp3 text NULL,
     live_timing_fp2 text NULL,
     live_timing_fp1 text NULL,
-
+    live_timing_sprint_quali text NULL,
     CONSTRAINT RACE_DATA_pkey PRIMARY KEY (season, round)
 );
 

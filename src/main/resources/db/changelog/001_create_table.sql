@@ -68,24 +68,28 @@ CREATE TABLE CONSTRUCTORS
     CONSTRAINT CONSTRUCTORS_pkey PRIMARY KEY (name)
 );
 
-CREATE TABLE CALENDAR
-(
-    race_id             numeric,
-    practice1           TIMESTAMP,
-    practice2           TIMESTAMP,
-    practice3           TIMESTAMP,
-    qualifying          TIMESTAMP,
-    race                TIMESTAMP,
-    practice1original   TIMESTAMP,
-    practice2original   TIMESTAMP,
-    practice3original   TIMESTAMP,
-    qualifying_original TIMESTAMP,
-    race_original       TIMESTAMP,
-    ergast_date_time      text,
-    ergast_name      text,
-    location            text,
-    summary             text,
-    CONSTRAINT CALENDAR_pkey PRIMARY KEY (race_id)
+CREATE TABLE calendar (
+     race_id numeric NOT NULL,
+     practice1 timestamp NULL,
+     practice2 timestamp NULL,
+     practice3 timestamp NULL,
+     qualifying timestamp NULL,
+     race timestamp NULL,
+     practice1original timestamp NULL,
+     practice2original timestamp NULL,
+     practice3original timestamp NULL,
+     qualifying_original timestamp NULL,
+     race_original timestamp NULL,
+     ergast_date_time text NULL,
+     ergast_name text NULL,
+     "location" text NULL,
+     summary text NULL,
+     practice1name text NULL,
+     practice2name text NULL,
+     practice3name text NULL,
+     qualifying_name text NULL,
+     race_name text NULL,
+     CONSTRAINT calendar_pkey PRIMARY KEY (race_id)
 );
 
 CREATE TABLE CURRENT_DRIVER_STANDINGS
