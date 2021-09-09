@@ -4,7 +4,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import sorim.f1.slasher.relentless.entities.*;
-import sorim.f1.slasher.relentless.model.ExposureResponse;
 import sorim.f1.slasher.relentless.model.FullExposure;
 import sorim.f1.slasher.relentless.service.AdminService;
 import sorim.f1.slasher.relentless.service.SecurityService;
@@ -77,6 +76,12 @@ public class AdminController {
         service.closeExposurePoll();
     }
 
+    @GetMapping("/openExposurePoll/{minutes}")
+    void openExposurePoll(@RequestHeader String client, @PathVariable("minutes") Integer minutes) throws Exception {
+        securityService.validateAdminHeader(client);
+        service.openExposurePoll(minutes);
+    }
+
     @GetMapping("/deleteComment/{mode}/{id}")
     Integer closeExposurePoll(@RequestHeader String client, @PathVariable("mode") String mode, @PathVariable("id") String id) throws Exception {
         securityService.validateAdminHeader(client);
@@ -124,5 +129,11 @@ public class AdminController {
     List<F1Comment> getAdminMessages(@RequestHeader String client) throws Exception {
         securityService.validateAdminHeader(client);
         return service.getAdminMessages();
+    }
+
+    @GetMapping("/endRaceWeekendJobs")
+    Boolean endRaceWeekendJobs(@RequestHeader String client) throws Exception {
+        securityService.validateAdminHeader(client);
+        return service.endRaceWeekendJobs();
     }
 }

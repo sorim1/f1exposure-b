@@ -41,7 +41,7 @@ public class Logger {
     }
 
     public static void log(String code, String message) {
-        log.error(message);
+        log.info(message);
         repository.save(Log.builder().code(code).message(message).created(new Date()).build());
     }
 

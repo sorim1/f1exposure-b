@@ -15,6 +15,7 @@ import sorim.f1.slasher.relentless.handling.Logger;
 import sorim.f1.slasher.relentless.model.enums.RoundEnum;
 import sorim.f1.slasher.relentless.model.ergast.ErgastResponse;
 import sorim.f1.slasher.relentless.model.livetiming.*;
+import sorim.f1.slasher.relentless.scheduled.Scheduler;
 import sorim.f1.slasher.relentless.service.AdminService;
 import sorim.f1.slasher.relentless.service.ErgastService;
 import sorim.f1.slasher.relentless.service.LiveTimingService;
@@ -224,7 +225,7 @@ public class LiveTimingServiceImpl implements LiveTimingService {
         RaceData raceData = ergastService.getLatestNonAnalyzedRace(properties.getCurrentYear());
         String liveTimingResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.RACE, 1);
         //TODO timingAppData zasad ne koristim u RaceAnalysis
-        String timingAppDataResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.RACE, 2);
+        //String timingAppDataResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.RACE, 2);
         if (liveTimingResponse != null) {
             raceData.setLiveTimingRace(liveTimingResponse.substring(liveTimingResponse.indexOf("{")));
             //raceData.setTimingAppData(timingAppDataResponse.substring(timingAppDataResponse.indexOf("00")));
@@ -233,6 +234,7 @@ public class LiveTimingServiceImpl implements LiveTimingService {
 
             ergastService.saveRace(raceData);
             analyzeUpcomingRace();
+            Scheduler.analysisDone = true;
             return true;
         } else {
             return false;

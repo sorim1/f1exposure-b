@@ -25,6 +25,7 @@ import sorim.f1.slasher.relentless.model.FullExposure;
 import sorim.f1.slasher.relentless.model.SportSurge;
 import sorim.f1.slasher.relentless.model.ergast.ErgastResponse;
 import sorim.f1.slasher.relentless.repository.*;
+import sorim.f1.slasher.relentless.scheduled.Scheduler;
 import sorim.f1.slasher.relentless.service.AdminService;
 import sorim.f1.slasher.relentless.service.ClientService;
 import sorim.f1.slasher.relentless.service.ErgastService;
@@ -177,9 +178,12 @@ public class AdminServiceImpl implements AdminService {
     @Override
     public Boolean initializeStandings() {
         Logger.log("initializeStandings");
-        Boolean currentRound = refreshDriverStandingsFromErgast();
+        Boolean changesDetected = refreshDriverStandingsFromErgast();
+        if(changesDetected){
+            Scheduler.standingsUpdated = true;
+        }
         initializeConstructorStandings();
-        return currentRound;
+        return changesDetected;
     }
 
     @Override
@@ -372,6 +376,12 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
+    public void openExposurePoll(Integer minutes) {
+        Logger.log("openExposurePoll");
+        exposureService.openExposurePoll(minutes);
+    }
+
+    @Override
     public F1Calendar getUpcomingRace() {
         ZonedDateTime gmtZoned = ZonedDateTime.now(ZoneId.of("Europe/London"));
         LocalDateTime gmtDateTime = gmtZoned.toLocalDateTime();
@@ -460,5 +470,12 @@ public class AdminServiceImpl implements AdminService {
     @Override
     public List<F1Comment> getAdminMessages() {
         return f1CommentRepository.findFirst30ByPageAndStatusOrderByTimestampDesc(47,1);
+    }
+
+    @Override
+    public Boolean endRaceWeekendJobs() {
+        Scheduler.analysisDone = true;
+        Scheduler.standingsUpdated = true;
+        return true;
     }
 }

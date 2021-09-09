@@ -44,7 +44,7 @@ public class ExposureServiceImpl implements ExposureService {
     private static boolean exposureToday = false;
     private static boolean exposureNow = false;
     private static LocalDateTime exposureTime;
-    private static String title = "Something Went Wrong";
+    private static String title = "Strange";
     private static Integer currentExposureRound;
 
     @Override
@@ -170,10 +170,10 @@ public class ExposureServiceImpl implements ExposureService {
                         exposureToday = true;
                         title = f1calendar.getLocation();
                         updateCurrentExposureRound(1);
-                        exposureTime = LocalDateTime.now().plus(duration).plusHours(1);
-                        Logger.logAdmin("exposureToday: " + exposureToday);
-                        Logger.logAdmin("exposureToday exposureTime: " + exposureTime);
-                        Logger.logAdmin("exposureToday currentExposureRound: " + currentExposureRound);
+                        exposureTime = LocalDateTime.now().plus(duration).plusHours(1).plusMinutes(10);
+                        Logger.logAdmin("initializeExposure-exposureToday: " + exposureToday);
+                        Logger.logAdmin("initializeExposure-exposureToday exposureTime: " + exposureTime);
+                        Logger.logAdmin("initializeExposure-exposureToday currentExposureRound: " + currentExposureRound);
                     }
                 }
             }
@@ -217,6 +217,13 @@ public class ExposureServiceImpl implements ExposureService {
         exposureChampionshipStandingsRepository.saveAll(exposureStandings);
         exposureChampionshipStandingsRepository.updateChampionshipNames();
 
+        return true;
+    }
+
+    @Override
+    public boolean openExposurePoll(Integer minutes) {
+        exposureToday = true;
+        exposureTime = LocalDateTime.now().plusMinutes(minutes);
         return true;
     }
 

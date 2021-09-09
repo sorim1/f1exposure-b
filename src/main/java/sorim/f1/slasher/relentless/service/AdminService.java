@@ -24,6 +24,8 @@ public interface AdminService {
 
     void closeExposurePoll();
 
+    void openExposurePoll(Integer minutes);
+
     F1Calendar getUpcomingRace();
 
     F1Calendar updateUpcomingRace(F1Calendar entry);
@@ -41,4 +43,6 @@ public interface AdminService {
     Integer getNextRefreshTick(Integer seconds) ;
 
     List<F1Comment> getAdminMessages();
+
+    Boolean endRaceWeekendJobs();
 }

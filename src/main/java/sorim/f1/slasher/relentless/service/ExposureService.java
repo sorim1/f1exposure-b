@@ -14,6 +14,8 @@ public interface ExposureService {
 
     boolean closeExposurePoll();
 
+    boolean openExposurePoll(Integer minutes);
+
     Integer getCurrentExposureRound();
 
     void setCurrentExposureRound(Integer newCurrentRound);
