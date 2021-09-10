@@ -4504,10 +4504,10 @@
           .TgZ(0, "div");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "div", 35);
+          .TgZ(1, "div", 39);
           core
           /* ɵɵelementStart */
-          .TgZ(2, "div", 36);
+          .TgZ(2, "div", 40);
 
           core
           /* ɵɵtext */
@@ -4518,7 +4518,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(4, "div", 37);
+          .TgZ(4, "div", 41);
 
           core
           /* ɵɵtext */
@@ -4529,7 +4529,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(6, "div", 38);
+          .TgZ(6, "div", 42);
 
           core
           /* ɵɵtext */
@@ -4636,7 +4636,7 @@
         selectors: [["contact-info-cmp"]],
         decls: 131,
         vars: 5,
-        consts: [["autosize", ""], ["autosize", "", "mode", "side", "position", "end", 1, "example-sidenav", 3, "opened", "openedChange"], ["drawer", ""], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area", 3, "ngModel", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "post-comment-button", "bg-success", "text-light", 3, "click"], [4, "ngFor", "ngForOf"], [1, "fixed-button"], ["type", "fixed-plugin", "mat-button", "", 3, "click"], [1, "fa", "fa-commenting-o", "fa-2x"], [1, "div-padded-left-2", "div-padded-top-1", "col-lg-3", "col-md-6", "col-sm-6"], [1, "card", "card-stats"], [1, "card-header"], [1, "implying"], [1, "card-body"], [1, "col-md-2", "no-right-padding"], [1, "icon-big", "text-center", "icon-warning"], [1, "nc-icon", "nc-zoom-split", "text-warning"], [1, "col-7", "col-md-9"], [1, "col-lg-4", "col-md-6", "div-padded-top-1", "col-sm-6"], ["list-style-type", "circle"], [1, "nc-icon", "nc-minimal-up", "text-warning"], [1, "div-padded-right-2", "div-padded-top-1", "col-lg-5", "col-md-6", "col-sm-6"], [1, "nc-icon", "nc-money-coins", "text-warning"], [1, "nc-icon", "nc-palette", "text-warning"], [1, "col-lg-12", "col-md-6", "col-sm-6"], [1, "bg-secondary", "row"], [1, "text-white"], ["placeholder", "e-mail", "type", "text", 1, "form-control", 3, "ngModel", "ngModelChange"], [1, "form-group"], ["matInput", "", "placeholder", "type a message", 1, "form-control", "message-text-area-150", 3, "ngModel", "ngModelChange"], [1, "nc-icon", "nc-email-85", "text-warning"], ["mat-raised-button", "", 1, "bg-success", "text-white", 3, "click"], [1, "basic-comment"], [1, "one"], [1, "two"], [1, "basic-comment-body"]],
+        consts: [["autosize", ""], ["autosize", "", "mode", "side", "position", "end", 1, "example-sidenav", 3, "opened", "openedChange"], ["drawer", ""], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area", 3, "ngModel", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "post-comment-button", "bg-success", "text-light", 3, "click"], [4, "ngFor", "ngForOf"], [1, "fixed-button"], ["type", "fixed-plugin", "mat-button", "", 3, "click"], [1, "fa", "fa-commenting-o", "fa-2x"], [1, "div-padded-left-2", "div-padded-top-1", "col-lg-3", "col-md-6", "col-sm-6"], [1, "card", "card-stats"], [1, "card-header"], [1, "implying"], [1, "card-body"], [1, "col-12", "col-lg-2", "no-right-padding"], [1, "icon-big", "text-center", "icon-warning"], [1, "nc-icon", "nc-zoom-split", "text-warning"], [1, "col-12", "col-lg-10"], [1, "card-body-padded-mobile"], [1, "col-12", "col-lg-12"], [1, "col-lg-4", "col-md-6", "div-padded-top-1", "col-sm-6"], ["list-style-type", "circle"], [1, "nc-icon", "nc-minimal-up", "text-warning"], [1, "div-padded-right-2", "div-padded-top-1", "col-lg-5", "col-md-6", "col-sm-6"], [1, "nc-icon", "nc-money-coins", "text-warning"], [1, "nc-icon", "nc-palette", "text-warning"], [1, "col-lg-12", "col-md-6", "col-sm-6"], [1, "bg-secondary", "row"], [1, "col-7", "col-md-9"], [1, "text-white"], ["placeholder", "e-mail", "type", "text", 1, "form-control", 3, "ngModel", "ngModelChange"], [1, "form-group"], ["matInput", "", "placeholder", "type a message", 1, "form-control", "message-text-area-150", 3, "ngModel", "ngModelChange"], [1, "col-md-2", "no-right-padding"], [1, "nc-icon", "nc-email-85", "text-warning"], ["mat-raised-button", "", 1, "bg-success", "text-white", 3, "click"], [1, "basic-comment"], [1, "one"], [1, "two"], [1, "basic-comment-body"]],
         template: function ContactInfoComponent_Template(rf, ctx) {
           if (rf & 1) {
             var _r3 = core
@@ -4849,7 +4849,7 @@
             .TgZ(32, "div", 20);
             core
             /* ɵɵelementStart */
-            .TgZ(33, "div");
+            .TgZ(33, "div", 21);
             core
             /* ɵɵelementStart */
             .TgZ(34, "p", 16);
@@ -4920,7 +4920,7 @@
             .TgZ(44, "div", 3);
             core
             /* ɵɵelementStart */
-            .TgZ(45, "div", 20);
+            .TgZ(45, "div", 22);
             core
             /* ɵɵelementStart */
             .TgZ(46, "div");
@@ -4955,7 +4955,7 @@
             .qZA();
             core
             /* ɵɵelementStart */
-            .TgZ(49, "div", 21);
+            .TgZ(49, "div", 23);
             core
             /* ɵɵelementStart */
             .TgZ(50, "div", 13);
@@ -4989,17 +4989,17 @@
             .TgZ(56, "div", 3);
             core
             /* ɵɵelementStart */
-            .TgZ(57, "div", 20);
+            .TgZ(57, "div", 22);
             core
             /* ɵɵelementStart */
             .TgZ(58, "div");
             core
             /* ɵɵelementStart */
-            .TgZ(59, "ul", 22);
+            .TgZ(59, "ul", 24);
 
             core
             /* ɵɵtext */
-            ._uU(60, " - post it in the comments of relevant page ");
+            ._uU(60, " - post it in the comments anywhere ");
 
             core
             /* ɵɵelementEnd */
@@ -5010,7 +5010,7 @@
 
             core
             /* ɵɵtext */
-            ._uU(62, " - or in the comments of this page. ");
+            ._uU(62, " - or send private message below. ");
 
             core
             /* ɵɵelementEnd */
@@ -5021,7 +5021,7 @@
 
             core
             /* ɵɵtext */
-            ._uU(64, " - or send private message below. ");
+            ._uU(64, " - or e-mail admin@f1exposure.com ");
 
             core
             /* ɵɵelementEnd */
@@ -5081,7 +5081,7 @@
 
             core
             /* ɵɵelement */
-            ._UZ(74, "i", 23);
+            ._UZ(74, "i", 25);
 
             core
             /* ɵɵelementEnd */
@@ -5094,7 +5094,7 @@
             .TgZ(75, "div", 20);
             core
             /* ɵɵelementStart */
-            .TgZ(76, "div");
+            .TgZ(76, "div", 21);
             core
             /* ɵɵelementStart */
             .TgZ(77, "p", 16);
@@ -5126,7 +5126,7 @@
             .qZA();
             core
             /* ɵɵelementStart */
-            .TgZ(79, "div", 24);
+            .TgZ(79, "div", 26);
             core
             /* ɵɵelementStart */
             .TgZ(80, "div", 13);
@@ -5167,7 +5167,7 @@
 
             core
             /* ɵɵelement */
-            ._UZ(89, "i", 25);
+            ._UZ(89, "i", 27);
 
             core
             /* ɵɵelementEnd */
@@ -5180,7 +5180,7 @@
             .TgZ(90, "div", 20);
             core
             /* ɵɵelementStart */
-            .TgZ(91, "div");
+            .TgZ(91, "div", 21);
             core
             /* ɵɵelementStart */
             .TgZ(92, "p", 16);
@@ -5195,7 +5195,7 @@
 
             core
             /* ɵɵelement */
-            ._UZ(94, "p", 16);
+            ._UZ(94, "p");
 
             core
             /* ɵɵelementEnd */
@@ -5252,7 +5252,7 @@
 
             core
             /* ɵɵelement */
-            ._UZ(104, "i", 26);
+            ._UZ(104, "i", 28);
 
             core
             /* ɵɵelementEnd */
@@ -5265,7 +5265,7 @@
             .TgZ(105, "div", 20);
             core
             /* ɵɵelementStart */
-            .TgZ(106, "div");
+            .TgZ(106, "div", 21);
             core
             /* ɵɵelementStart */
             .TgZ(107, "p", 16);
@@ -5283,7 +5283,7 @@
 
             core
             /* ɵɵtext */
-            ._uU(110, "DISCLAIMER: F1exposure.com website is not hosted or powered by Amazon Web Services (AWS) in any way. Hosting is provided by DigitalOcean. ");
+            ._uU(110, "DISCLAIMER: F1exposure.com website is not hosted or powered by Amazon Web Services (AWS) in any way. ");
 
             core
             /* ɵɵelementEnd */
@@ -5314,7 +5314,7 @@
             .TgZ(111, "div", 3);
             core
             /* ɵɵelementStart */
-            .TgZ(112, "div", 27);
+            .TgZ(112, "div", 29);
             core
             /* ɵɵelementStart */
             .TgZ(113, "div", 13);
@@ -5323,16 +5323,16 @@
             .TgZ(114, "div", 16);
             core
             /* ɵɵelementStart */
-            .TgZ(115, "div", 28);
+            .TgZ(115, "div", 30);
             core
             /* ɵɵelementStart */
-            .TgZ(116, "div", 20);
+            .TgZ(116, "div", 31);
             core
             /* ɵɵelementStart */
             .TgZ(117, "div", 4);
             core
             /* ɵɵelementStart */
-            .TgZ(118, "label", 29);
+            .TgZ(118, "label", 32);
 
             core
             /* ɵɵtext */
@@ -5343,7 +5343,7 @@
             .qZA();
             core
             /* ɵɵelementStart */
-            .TgZ(120, "input", 30);
+            .TgZ(120, "input", 33);
             core
             /* ɵɵlistener */
             .NdJ("ngModelChange", function ContactInfoComponent_Template_input_ngModelChange_120_listener($event) {
@@ -5354,10 +5354,10 @@
             .qZA();
             core
             /* ɵɵelementStart */
-            .TgZ(121, "div", 31);
+            .TgZ(121, "div", 34);
             core
             /* ɵɵelementStart */
-            .TgZ(122, "label", 29);
+            .TgZ(122, "label", 32);
 
             core
             /* ɵɵtext */
@@ -5368,7 +5368,7 @@
             .qZA();
             core
             /* ɵɵelementStart */
-            .TgZ(124, "textarea", 32);
+            .TgZ(124, "textarea", 35);
             core
             /* ɵɵlistener */
             .NdJ("ngModelChange", function ContactInfoComponent_Template_textarea_ngModelChange_124_listener($event) {
@@ -5388,14 +5388,14 @@
             .qZA();
             core
             /* ɵɵelementStart */
-            .TgZ(125, "div", 17);
+            .TgZ(125, "div", 36);
             core
             /* ɵɵelementStart */
             .TgZ(126, "div", 18);
 
             core
             /* ɵɵelement */
-            ._UZ(127, "i", 33);
+            ._UZ(127, "i", 37);
 
             core
             /* ɵɵelementEnd */
@@ -5405,7 +5405,7 @@
             .TgZ(128, "div", 3);
             core
             /* ɵɵelementStart */
-            .TgZ(129, "button", 34);
+            .TgZ(129, "button", 38);
             core
             /* ɵɵlistener */
             .NdJ("click", function ContactInfoComponent_Template_button_click_129_listener() {
@@ -29744,7 +29744,7 @@
               console.error('There was an error!', _error10);
             }
           });
-          this.utilityService.reloadPosts(10);
+          this.utilityService.reloadPosts(9);
         }
 
         _createClass(PoweredByAwsComponent, [{
@@ -30062,18 +30062,18 @@
       });
       ; // CONCATENATED MODULE: ./src/app/pages/poweredByAws/aws.component.ts
 
-      function AwsComponent_div_6_Template(rf, ctx) {
+      function AwsComponent_div_10_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 13);
+          .TgZ(0, "div", 14);
           core
           /* ɵɵelementStart */
-          .TgZ(1, "div", 14);
+          .TgZ(1, "div", 15);
 
           core
           /* ɵɵelement */
-          ._UZ(2, "i", 15);
+          ._UZ(2, "i", 16);
 
           core
           /* ɵɵelementEnd */
@@ -30084,31 +30084,31 @@
         }
       }
 
-      function AwsComponent_div_7_Template(rf, ctx) {
+      function AwsComponent_div_11_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 13);
+          .TgZ(0, "div", 14);
           core
           /* ɵɵelementStart */
-          .TgZ(1, "a", 16);
+          .TgZ(1, "a", 17);
           core
           /* ɵɵelementStart */
-          .TgZ(2, "div", 17);
+          .TgZ(2, "div", 18);
           core
           /* ɵɵelementStart */
-          .TgZ(3, "div", 14);
+          .TgZ(3, "div", 15);
 
           core
           /* ɵɵelement */
-          ._UZ(4, "i", 18);
+          ._UZ(4, "i", 19);
 
           core
           /* ɵɵelementEnd */
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(5, "span", 7);
+          .TgZ(5, "span", 8);
 
           core
           /* ɵɵtext */
@@ -30149,7 +30149,7 @@
         }
       }
 
-      function AwsComponent_div_27_Template(rf, ctx) {
+      function AwsComponent_div_31_Template(rf, ctx) {
         if (rf & 1) {
           var _r5 = core
           /* ɵɵgetCurrentView */
@@ -30160,16 +30160,16 @@
           .TgZ(0, "div");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "div", 19);
+          .TgZ(1, "div", 20);
           core
           /* ɵɵelementStart */
           .TgZ(2, "div");
           core
           /* ɵɵelementStart */
-          .TgZ(3, "div", 20);
+          .TgZ(3, "div", 21);
           core
           /* ɵɵlistener */
-          .NdJ("click", function AwsComponent_div_27_Template_div_click_3_listener() {
+          .NdJ("click", function AwsComponent_div_31_Template_div_click_3_listener() {
             var restoredCtx = core
             /* ɵɵrestoreView */
             .CHM(_r5);
@@ -30189,10 +30189,10 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(5, "div", 21);
+          .TgZ(5, "div", 22);
           core
           /* ɵɵlistener */
-          .NdJ("click", function AwsComponent_div_27_Template_div_click_5_listener() {
+          .NdJ("click", function AwsComponent_div_31_Template_div_click_5_listener() {
             var restoredCtx = core
             /* ɵɵrestoreView */
             .CHM(_r5);
@@ -30218,7 +30218,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(8, "div", 22);
+          .TgZ(8, "div", 23);
 
           core
           /* ɵɵtext */
@@ -30443,9 +30443,9 @@
       .Xpm({
         type: AwsComponent,
         selectors: [["aws-cmp"]],
-        decls: 28,
-        vars: 6,
-        consts: [[1, "height-fill-screen"], [1, "col-lg-12", "col-md-6", "col-sm-6"], [1, "card", "card-stats"], [1, "card-body"], [1, "row"], ["class", "col-md-2  no-right-padding", 4, "ngIf"], [1, "pre-line", "col-11", "col-md-9"], [1, "teko-text-small"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area-100", 3, "ngModel", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "bg-success", "text-white", 3, "click"], [4, "ngFor", "ngForOf"], [1, "col-md-2", "no-right-padding"], [1, "icon-big", "text-center", "icon-warning"], [1, "nc-icon", "nc-align-left-2", "text-success"], ["target", "_blank", 3, "href"], [1, "text-center"], [1, "nc-icon", "nc-globe", "text-success"], [1, "basic-comment"], [1, "one-aws", 3, "click"], [1, "two-aws", 3, "click"], [1, "basic-comment-body"]],
+        decls: 32,
+        vars: 10,
+        consts: [[1, "height-fill-screen"], [1, "div-padded-left-right-1"], [1, "card", "card-stats"], [1, "card-body"], [1, "row"], [1, "col-12", "col-lg-12", "div-padded-always-left-right-1-2", "text-right"], ["class", "col-12 col-lg-2 no-right-padding", 4, "ngIf"], [1, "pre-line", "col-12", "col-lg-10", "div-padded-always-left-right-1-2"], [1, "teko-text-small"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area-100", 3, "ngModel", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "bg-success", "text-white", 3, "click"], [4, "ngFor", "ngForOf"], [1, "col-12", "col-lg-2", "no-right-padding"], [1, "icon-big", "text-center", "icon-warning"], [1, "nc-icon", "nc-align-left-2", "text-success"], ["target", "_blank", 3, "href"], [1, "text-center"], [1, "nc-icon", "nc-globe", "text-success"], [1, "basic-comment"], [1, "one-aws", 3, "click"], [1, "two-aws", 3, "click"], [1, "basic-comment-body"]],
         template: function AwsComponent_Template(rf, ctx) {
           if (rf & 1) {
             core
@@ -30467,40 +30467,60 @@
             /* ɵɵelementStart */
             .TgZ(5, "div", 4);
             core
-            /* ɵɵtemplate */
-            .YNc(6, AwsComponent_div_6_Template, 3, 0, "div", 5);
-            core
-            /* ɵɵtemplate */
-            .YNc(7, AwsComponent_div_7_Template, 7, 2, "div", 5);
-            core
             /* ɵɵelementStart */
-            .TgZ(8, "div", 6);
-            core
-            /* ɵɵelementStart */
-            .TgZ(9, "div");
+            .TgZ(6, "div", 5);
 
             core
             /* ɵɵtext */
-            ._uU(10);
+            ._uU(7);
+
+            core
+            /* ɵɵpipe */
+            .ALo(8, "date");
+            core
+            /* ɵɵelementEnd */
+            .qZA();
+            core
+            /* ɵɵelementEnd */
+            .qZA();
+            core
+            /* ɵɵelementStart */
+            .TgZ(9, "div", 4);
+            core
+            /* ɵɵtemplate */
+            .YNc(10, AwsComponent_div_10_Template, 3, 0, "div", 6);
+            core
+            /* ɵɵtemplate */
+            .YNc(11, AwsComponent_div_11_Template, 7, 2, "div", 6);
+            core
+            /* ɵɵelementStart */
+            .TgZ(12, "div", 7);
+            core
+            /* ɵɵelementStart */
+            .TgZ(13, "div");
+
+            core
+            /* ɵɵtext */
+            ._uU(14);
 
             core
             /* ɵɵelementEnd */
             .qZA();
             core
             /* ɵɵelementStart */
-            .TgZ(11, "div");
+            .TgZ(15, "div");
 
             core
             /* ɵɵelement */
-            ._UZ(12, "br");
+            ._UZ(16, "br");
 
             core
             /* ɵɵelementStart */
-            .TgZ(13, "span", 7);
+            .TgZ(17, "span", 8);
 
             core
             /* ɵɵtext */
-            ._uU(14, "Kind regards,");
+            ._uU(18, "Kind regards,");
 
             core
             /* ɵɵelementEnd */
@@ -30508,15 +30528,15 @@
 
             core
             /* ɵɵelement */
-            ._UZ(15, "br");
+            ._UZ(19, "br");
 
             core
             /* ɵɵelementStart */
-            .TgZ(16, "span", 7);
+            .TgZ(20, "span", 8);
 
             core
             /* ɵɵtext */
-            ._uU(17);
+            ._uU(21);
 
             core
             /* ɵɵelementEnd */
@@ -30541,19 +30561,19 @@
             .qZA();
             core
             /* ɵɵelementStart */
-            .TgZ(18, "div", 4);
+            .TgZ(22, "div", 4);
             core
             /* ɵɵelementStart */
-            .TgZ(19, "div", 8);
+            .TgZ(23, "div", 9);
             core
             /* ɵɵelementStart */
-            .TgZ(20, "div");
+            .TgZ(24, "div");
             core
             /* ɵɵelementStart */
-            .TgZ(21, "textarea", 9);
+            .TgZ(25, "textarea", 10);
             core
             /* ɵɵlistener */
-            .NdJ("ngModelChange", function AwsComponent_Template_textarea_ngModelChange_21_listener($event) {
+            .NdJ("ngModelChange", function AwsComponent_Template_textarea_ngModelChange_25_listener($event) {
               return ctx.commentText = $event;
             });
             core
@@ -30561,35 +30581,35 @@
             .qZA();
             core
             /* ɵɵelementStart */
-            .TgZ(22, "div", 10);
+            .TgZ(26, "div", 11);
             core
             /* ɵɵelementStart */
-            .TgZ(23, "button", 11);
+            .TgZ(27, "button", 12);
             core
             /* ɵɵlistener */
-            .NdJ("click", function AwsComponent_Template_button_click_23_listener() {
+            .NdJ("click", function AwsComponent_Template_button_click_27_listener() {
               return ctx.postAwsComment();
             });
 
             core
             /* ɵɵtext */
-            ._uU(24, "Comment");
+            ._uU(28, "Comment");
 
             core
             /* ɵɵelementEnd */
             .qZA();
             core
             /* ɵɵelementStart */
-            .TgZ(25, "button", 11);
+            .TgZ(29, "button", 12);
             core
             /* ɵɵlistener */
-            .NdJ("click", function AwsComponent_Template_button_click_25_listener() {
+            .NdJ("click", function AwsComponent_Template_button_click_29_listener() {
               return ctx.reloadAwsComments();
             });
 
             core
             /* ɵɵtext */
-            ._uU(26, "Reload");
+            ._uU(30, "Reload");
 
             core
             /* ɵɵelementEnd */
@@ -30608,7 +30628,7 @@
             .qZA();
             core
             /* ɵɵtemplate */
-            .YNc(27, AwsComponent_div_27_Template, 10, 7, "div", 12);
+            .YNc(31, AwsComponent_div_31_Template, 10, 7, "div", 13);
             core
             /* ɵɵelementEnd */
             .qZA();
@@ -30620,7 +30640,15 @@
           if (rf & 2) {
             core
             /* ɵɵadvance */
-            .xp6(6);
+            .xp6(7);
+            core
+            /* ɵɵtextInterpolate1 */
+            .hij("", core
+            /* ɵɵpipeBind2 */
+            .xi3(8, 7, ctx.post.timestampCreated, "medium"), " ");
+            core
+            /* ɵɵadvance */
+            .xp6(3);
             core
             /* ɵɵproperty */
             .Q6J("ngIf", ctx.post.url == null);
@@ -35625,7 +35653,7 @@
         },
         decls: 33,
         vars: 10,
-        consts: [["autosize", ""], ["autosize", "", "mode", "side", "position", "end", 1, "example-sidenav", 3, "opened", "openedChange"], ["drawer", ""], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area", 3, "ngModel", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "post-comment-button", "bg-success", "text-light", 3, "click"], [4, "ngFor", "ngForOf"], [1, "fixed-button"], ["type", "fixed-plugin", "mat-button", "", 3, "click"], [1, "fa", "fa-commenting-o", "fa-2x"], ["label", "Circuit"], ["matTabContent", ""], ["label", "Circuit winners", 3, "disabled"], ["label", "Practice 1", 3, "disabled"], ["label", "Practice 2", 3, "disabled", 4, "ngIf"], ["label", "Practice 3", 3, "disabled", 4, "ngIf"], ["label", "Qualifying", 3, "disabled"], ["label", "Sprint Qualifying", 3, "disabled", 4, "ngIf"], [1, "basic-comment"], [1, "one"], [1, "two"], [1, "basic-comment-body"], ["class", "div-padded-always-left-right-top-1 row", 4, "ngIf"], [1, "div-padded-always-left-right-top-1", "row"], [1, "card-body", "text-center"], [1, "image"], ["target", "_blank", 3, "href"], [3, "src"], ["class", "div-padded-1rem row", 4, "ngIf"], ["class", "div-padded-1rem div-padded-left-2 row", 4, "ngIf"], [1, "div-padded-1rem", "row"], ["class", "col-lg-6 col-12", 4, "ngFor", "ngForOf"], [1, "col-lg-6", "col-12"], [1, "card"], [1, "card-body-padded"], [1, "table", "table-striped"], ["colspan", "2", "scope", "col"], [1, "float-right"], [2, "width", "35px"], ["scope", "row"], [1, "div-padded-1rem", "div-padded-left-2", "row"], [3, "href"], [4, "ngIf"], [1, "div-padded-1rem", "div-padded-left-2", "div-padded-right-2", "row"], [1, "card", "col-lg-12", "col-12"], ["matSort", "", 1, "table", "table-striped", 3, "matSortChange"], ["colspan", "4", 1, "text-center"], ["mat-sort-header", "position", "scope", "col"], ["mat-sort-header", "name", "scope", "col"], ["mat-sort-header", "lapNumber", "scope", "col"], ["colspan", "8", 1, "text-center"], ["scope", "col"], ["scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], ["mat-sort-header", "sector1", "scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], ["mat-sort-header", "sector2", "scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], ["mat-sort-header", "sector3", "scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], [1, "d-sm-none", "d-none", "d-lg-table-cell"], ["label", "Practice 2", 3, "disabled"], ["label", "Practice 3", 3, "disabled"], ["label", "Sprint Qualifying", 3, "disabled"], [3, "series", "chart", "dataLabels", "grid", "stroke", "title", "yaxis", "xaxis"], ["mat-sort-header", "lapTime", "scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], ["scope", "col", 1, "text-center"], [1, "font-weight-bold", "text-center"]],
+        consts: [["autosize", ""], ["autosize", "", "mode", "side", "position", "end", 1, "example-sidenav", 3, "opened", "openedChange"], ["drawer", ""], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area", 3, "ngModel", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "post-comment-button", "bg-success", "text-light", 3, "click"], [4, "ngFor", "ngForOf"], [1, "fixed-button"], ["type", "fixed-plugin", "mat-button", "", 3, "click"], [1, "fa", "fa-commenting-o", "fa-2x"], ["label", "Circuit"], ["matTabContent", ""], ["label", "Circuit winners", 3, "disabled"], ["label", "Practice 1", 3, "disabled"], ["label", "Practice 2", 3, "disabled", 4, "ngIf"], ["label", "Practice 3", 3, "disabled", 4, "ngIf"], ["label", "Qualifying", 3, "disabled"], ["label", "Sprint Qualifying", 3, "disabled", 4, "ngIf"], [1, "basic-comment"], [1, "one"], [1, "two"], [1, "basic-comment-body"], ["class", "div-padded-always-left-right-1 row", 4, "ngIf"], [1, "div-padded-always-left-right-1", "row"], [1, "card-body", "text-center"], [1, "image"], ["target", "_blank", 3, "href"], [3, "src"], ["class", "div-padded-1rem row", 4, "ngIf"], ["class", "div-padded-1rem div-padded-left-2 row", 4, "ngIf"], [1, "div-padded-1rem", "row"], ["class", "col-lg-6 col-12", 4, "ngFor", "ngForOf"], [1, "col-lg-6", "col-12"], [1, "card"], [1, "card-body-padded"], [1, "table", "table-striped"], ["colspan", "2", "scope", "col"], [1, "float-right"], [2, "width", "35px"], ["scope", "row"], [1, "div-padded-1rem", "div-padded-left-2", "row"], [3, "href"], [4, "ngIf"], [1, "div-padded-1rem", "div-padded-left-2", "div-padded-right-2", "row"], [1, "card", "col-lg-12", "col-12"], ["matSort", "", 1, "table", "table-striped", 3, "matSortChange"], ["colspan", "4", 1, "text-center"], ["mat-sort-header", "position", "scope", "col"], ["mat-sort-header", "name", "scope", "col"], ["mat-sort-header", "lapNumber", "scope", "col"], ["colspan", "8", 1, "text-center"], ["scope", "col"], ["scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], ["mat-sort-header", "sector1", "scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], ["mat-sort-header", "sector2", "scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], ["mat-sort-header", "sector3", "scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], [1, "d-sm-none", "d-none", "d-lg-table-cell"], ["label", "Practice 2", 3, "disabled"], ["label", "Practice 3", 3, "disabled"], ["label", "Sprint Qualifying", 3, "disabled"], [3, "series", "chart", "dataLabels", "grid", "stroke", "title", "yaxis", "xaxis"], ["mat-sort-header", "lapTime", "scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], ["scope", "col", 1, "text-center"], [1, "font-weight-bold", "text-center"]],
         template: function UpcomingRaceAnalysisComponent_Template(rf, ctx) {
           if (rf & 1) {
             var _r84 = core

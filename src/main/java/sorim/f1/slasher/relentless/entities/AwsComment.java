@@ -1,5 +1,6 @@
 package sorim.f1.slasher.relentless.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -27,4 +28,7 @@ public class AwsComment {
     private Date timestampCreated;
     private Integer status=1;
     private String username;
+
+    @JsonIgnore
+    private String ip;
 }

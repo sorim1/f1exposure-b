@@ -71,6 +71,15 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
+    public CalendarData getCountdownDataPrevious(Integer mode) {
+        ZonedDateTime gmtZoned = ZonedDateTime.now(ZoneId.of("Europe/London"));
+        LocalDateTime gmtDateTime = gmtZoned.toLocalDateTime();
+        F1Calendar f1calendar = calendarRepository.findFirstByRaceBeforeOrderByRaceDesc(gmtDateTime);
+        Map<String, Integer> countdownData = getRemainingTime(gmtDateTime, f1calendar, mode);
+        return CalendarData.builder().f1Calendar(f1calendar).countdownData(countdownData).build();
+    }
+
+    @Override
     public List<DriverStanding> getDriverStandings() {
         return driverStandingsRepository.findAllByOrderByPositionAsc();
     }
@@ -165,21 +174,25 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
-    public List<F1Comment> postComment(F1Comment comment) {
+    public List<F1Comment> postComment(F1Comment comment, String ipAddress) {
         comment.setTimestamp(new Date());
         String username = MainUtility.handleUsername(comment.getNickname());
+        comment.setStatus(1);
         comment.setNickname(username);
         if (comment.getComment().length() > 900) {
             comment.setComment(comment.getComment().substring(0, 900));
         }
+        comment.setIp(ipAddress);
         f1CommentRepository.save(comment);
         return f1CommentRepository.findFirst30ByPageAndStatusOrderByTimestampDesc(comment.getPage(), 1);
     }
 
     @Override
-    public void sendMessage(F1Comment message) {
+    public void sendMessage(F1Comment message, String ipAddress) {
         message.setTimestamp(new Date());
         message.setPage(47);
+        message.setIp(ipAddress);
+        message.setStatus(1);
         f1CommentRepository.save(message);
     }
 
@@ -219,14 +232,16 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
-    public String postContent(AwsContent content) {
+    public String postContent(AwsContent content, String ipAddress) {
         String code = UUID.randomUUID().toString();
         content.setCode(code);
+        content.setStatus(1);
         content.setTimestampCreated(new Date());
         content.setTimestampActivity(new Date());
         content.setCommentCount(0);
         String username = MainUtility.handleUsername(content.getUsername());
         content.setUsername(username);
+        content.setIp(ipAddress);
         awsRepository.save(content);
         return code;
     }
@@ -234,12 +249,12 @@ public class ClientServiceImpl implements ClientService {
     @Override
     public List<AwsContent> getAwsContent(String page) {
         Pageable paging = PageRequest.of(Integer.parseInt(page), 20);
-        return awsRepository.findAllByOrderByTimestampActivityDesc(paging);
+        return awsRepository.findAllByStatusOrderByTimestampActivityDesc(1, paging);
     }
 
     @Override
     public AwsContent getAwsPost(String code) {
-        AwsContent response = awsRepository.findByCode(code);
+        AwsContent response = awsRepository.findByCodeAndStatus(code, 1);
         if (response != null) {
             response.setComments(awsCommentRepository.findAllByContentCodeAndStatusOrderByTimestampCreatedDesc(code, 1));
         }
@@ -247,11 +262,13 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
-    public List<AwsComment> postAwsComment(AwsComment comment) {
+    public List<AwsComment> postAwsComment(AwsComment comment, String ipAddress) {
         comment.setTimestampCreated(new Date());
         comment.setTextContent(comment.getTextContent().replaceAll("[\n\n\n]+", "\n"));
         String username = MainUtility.handleUsername(comment.getUsername());
         comment.setUsername(username);
+        comment.setStatus(1);
+        comment.setIp(ipAddress);
         awsCommentRepository.save(comment);
         awsRepository.updateActivityAndCommentCount(comment.getContentCode(), new Date());
         return awsCommentRepository.findAllByContentCodeAndStatusOrderByTimestampCreatedDesc(comment.getContentCode(), 1);

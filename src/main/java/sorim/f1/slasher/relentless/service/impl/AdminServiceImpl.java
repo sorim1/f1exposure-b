@@ -398,7 +398,7 @@ public class AdminServiceImpl implements AdminService {
     public Integer deleteComment(Integer mode, Integer id) {
         switch (mode) {
             case 1:
-                return f1CommentRepository.updateStatus(id, 2);
+                return f1CommentRepository.updateStatus(id, 1);
             case 2:
                 return awsCommentRepository.updateStatus(id, 2);
         }

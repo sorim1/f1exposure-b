@@ -1,9 +1,13 @@
 package sorim.f1.slasher.relentless.util;
 
 import lombok.extern.slf4j.Slf4j;
+import sorim.f1.slasher.relentless.handling.Logger;
 import sorim.f1.slasher.relentless.model.livetiming.Driver;
 
+import java.time.Instant;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.regex.Pattern;
@@ -137,5 +141,12 @@ public class MainUtility {
         log.info("weekDay1");
         log.info(String.valueOf(Calendar.DAY_OF_WEEK));
         return cal.get(Calendar.DAY_OF_WEEK);
+    }
+
+    public static void logTime(String code, Integer delayInMiliseconds) {
+        long nextTick = System.currentTimeMillis()+delayInMiliseconds;
+        Instant instant = Instant.ofEpochMilli(nextTick);
+        LocalDateTime date = instant.atZone(ZoneId.systemDefault()).toLocalDateTime();
+        Logger.log(code, "NEXT TICK: " + date);
     }
 }

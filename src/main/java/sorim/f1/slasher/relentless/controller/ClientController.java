@@ -28,6 +28,12 @@ public class ClientController {
         return service.getCountdownData(Integer.valueOf(mode));
     }
 
+    @GetMapping("/countdownOld")
+    CalendarData getCountdownDataPrevious(@RequestHeader String client, @RequestParam String mode) throws Exception {
+        securityService.validateHeader(client);
+        return service.getCountdownDataPrevious(Integer.valueOf(mode));
+    }
+
     @GetMapping("/getExposureDriverList")
     ExposureResponse getExposureDriverList(@RequestHeader String client) throws Exception {
         securityService.validateHeader(client);
@@ -73,15 +79,17 @@ public class ClientController {
     }
 
     @PostMapping("/postComment")
-    List<F1Comment> postComment(@RequestHeader String client, @RequestBody F1Comment comment) throws Exception {
+    List<F1Comment> postComment(@RequestHeader String client, @RequestBody F1Comment comment, HttpServletRequest request) throws Exception {
         securityService.validateHeader(client);
-        return service.postComment(comment);
+        String ipAddress = securityService.validateIp(request);
+        return service.postComment(comment, ipAddress);
     }
 
     @PostMapping("/sendMessage")
-    Boolean sendMessage(@RequestHeader String client, @RequestBody F1Comment message) throws Exception {
+    Boolean sendMessage(@RequestHeader String client, @RequestBody F1Comment message, HttpServletRequest request) throws Exception {
         securityService.validateHeader(client);
-        service.sendMessage(message);
+        String ipAddress = securityService.validateIp(request);
+        service.sendMessage(message, ipAddress);
         return true;
     }
 
@@ -131,9 +139,10 @@ public class ClientController {
     }
 
     @PostMapping("/postAwsContent")
-    String postContent(@RequestHeader String client, @RequestBody AwsContent content) throws Exception {
+    String postContent(@RequestHeader String client, @RequestBody AwsContent content, HttpServletRequest request) throws Exception {
         securityService.validateHeader(client);
-        return service.postContent(content);
+        String ipAddress = securityService.validateIp(request);
+        return service.postContent(content, ipAddress);
     }
 
     @GetMapping("/getAwsContent/{page}")
@@ -149,9 +158,10 @@ public class ClientController {
     }
 
     @PostMapping("/postAwsComment")
-    List<AwsComment> postAwsComment(@RequestHeader String client, @RequestBody AwsComment comment) throws Exception {
+    List<AwsComment> postAwsComment(@RequestHeader String client, @RequestBody AwsComment comment, HttpServletRequest request) throws Exception {
         securityService.validateHeader(client);
-        return service.postAwsComment(comment);
+        String ipAddress = securityService.validateIp(request);
+        return service.postAwsComment(comment, ipAddress);
     }
 
     @GetMapping("/getAwsComments/{code}")

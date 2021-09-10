@@ -377,7 +377,6 @@ public class LiveTimingServiceImpl implements LiveTimingService {
             String liveTimingResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.SPRINT_QUALIFYING, 1);
             if (liveTimingResponse != null) {
                 raceData.setLiveTimingSprintQuali(liveTimingResponse.substring(liveTimingResponse.indexOf("{")));
-               // List<Driver> drivers = createDriverListOfEvent(liveTimingResponse.substring(liveTimingResponse.indexOf("{")));
                 List<Driver> drivers = analyzeSprintRace(liveTimingResponse.substring(liveTimingResponse.indexOf("{")));
                 raceData.getUpcomingRaceAnalysis().setSprintQuali(drivers);
                 String timingAppDataResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.SPRINT_QUALIFYING, 2);
@@ -388,7 +387,7 @@ public class LiveTimingServiceImpl implements LiveTimingService {
         }
 
         ergastService.saveRace(raceData);
-        return adminService.getNextRefreshTick(-1000);
+        return adminService.getNextRefreshTick(-4700);
     }
 
     private List<LapTimeData> createLapTimeDataList(String timingAppData, Map<String, String> driverMap) {

@@ -15,6 +15,7 @@ import sorim.f1.slasher.relentless.util.MainUtility;
 
 import javax.annotation.PostConstruct;
 import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.Arrays;
 
 @Service
@@ -111,6 +112,8 @@ public class Scheduler {
         Integer delay = adminService.fetchSportSurgeLinks();
         Logger.log(CODE, "fetchSportSurgeLinksPeriodically called");
         if(delay!=null){
+            int delayInMiliseconds=delay*1000;
+            MainUtility.logTime("fetchSportSurgeLinksPeriodically", delayInMiliseconds);
             new java.util.Timer().schedule(
                     new java.util.TimerTask() {
                         @SneakyThrows
@@ -119,8 +122,9 @@ public class Scheduler {
                             fetchSportSurgeLinksPeriodically();
                         }
                     },
-                    delay*1000
+                    delayInMiliseconds
             );
+
         }
     }
 
@@ -128,6 +132,8 @@ public class Scheduler {
         Integer delay = liveTimingService.analyzeUpcomingRace();
         Logger.log(CODE, "analyzeUpcomingRacePeriodically called");
         if(delay!=null){
+            int delayInMiliseconds=delay*1000;
+            MainUtility.logTime("analyzeUpcomingRacePeriodically", delayInMiliseconds);
             new java.util.Timer().schedule(
                     new java.util.TimerTask() {
                         @SneakyThrows
@@ -136,7 +142,18 @@ public class Scheduler {
                             analyzeUpcomingRacePeriodically();
                         }
                     },
-                    delay*1000
+                    delayInMiliseconds
+            );
+            //also do it hour later
+            new java.util.Timer().schedule(
+                    new java.util.TimerTask() {
+                        @SneakyThrows
+                        @Override
+                        public void run() {
+                            liveTimingService.analyzeUpcomingRace();
+                        }
+                    },
+                    delayInMiliseconds+3600000
             );
         }
     }

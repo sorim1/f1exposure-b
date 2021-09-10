@@ -4,7 +4,6 @@ import com.github.instagram4j.instagram4j.exceptions.IGLoginException;
 import sorim.f1.slasher.relentless.entities.*;
 import sorim.f1.slasher.relentless.model.*;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 public interface ClientService {
@@ -13,6 +12,8 @@ public interface ClientService {
     ExposureData getExposedChartData();
 
     CalendarData getCountdownData(Integer mode);
+
+    CalendarData getCountdownDataPrevious(Integer mode);
 
     List<DriverStanding> getDriverStandings();
 
@@ -24,9 +25,9 @@ public interface ClientService {
 
     List<SportSurgeEvent> getSportSurge();
 
-    List<F1Comment> postComment(F1Comment comment);
+    List<F1Comment> postComment(F1Comment comment, String ipAddress);
 
-    void sendMessage(F1Comment message);
+    void sendMessage(F1Comment message, String ipAddress);
 
     List<F1Comment> getComments(String page);
 
@@ -42,13 +43,13 @@ public interface ClientService {
 
     byte[] getImage(String code);
 
-    String postContent(AwsContent content);
+    String postContent(AwsContent content, String ipAddress);
 
     List<AwsContent> getAwsContent(String page);
 
     AwsContent getAwsPost(String code);
 
-    List<AwsComment> postAwsComment(AwsComment comment);
+    List<AwsComment> postAwsComment(AwsComment comment, String ipAddress);
 
     List<AwsComment> getAwsComments(String code);
 

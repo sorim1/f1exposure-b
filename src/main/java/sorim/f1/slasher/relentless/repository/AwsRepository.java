@@ -16,8 +16,8 @@ import java.util.List;
 @Transactional
 @EnableJpaAuditing
 public interface AwsRepository extends CrudRepository<AwsContent, String> {
-    List<AwsContent> findAllByOrderByTimestampActivityDesc(Pageable pageable);
-    AwsContent findByCode(String code);
+    List<AwsContent> findAllByStatusOrderByTimestampActivityDesc(Integer status, Pageable pageable);
+    AwsContent findByCodeAndStatus(String code, Integer status);
 
     @Modifying
     @Query("update AwsContent set commentCount = commentCount+1 , timestampActivity = ?2 where code = ?1")

@@ -1,5 +1,6 @@
 package sorim.f1.slasher.relentless.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -29,6 +30,9 @@ public class AwsContent {
     private Integer status;
     private Integer commentCount;
     private String username;
+
+    @JsonIgnore
+    private String ip;
 
     @Transient
     private List<AwsComment> comments;
