@@ -194,5 +194,6 @@ public class Scheduler {
         log.info("bihourlyJob called");
         clientService.fetchInstagramFeed();
         clientService.fetchTwitterPosts();
+        clientService.fetchRedditPosts();
     }
 }

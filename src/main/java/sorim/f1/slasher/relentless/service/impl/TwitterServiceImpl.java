@@ -27,9 +27,6 @@ public class TwitterServiceImpl implements TwitterService {
     private final MainProperties properties;
     private final TwitterRepository twitterRepository;
 
-    @Override
-    public void getTwitterFeed() throws TwitterException {
-    }
 
     @Override
     public List<TwitterPost> getTwitterPosts(Integer page) {

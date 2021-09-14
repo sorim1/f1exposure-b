@@ -8,8 +8,6 @@ import java.util.List;
 
 public interface TwitterService {
 
-    void getTwitterFeed() throws IGLoginException, TwitterException;
-
     List<TwitterPost> getTwitterPosts(Integer page);
 
     Boolean fetchTwitterPosts() throws Exception;

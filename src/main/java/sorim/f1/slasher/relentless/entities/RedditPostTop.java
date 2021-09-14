@@ -1,0 +1,80 @@
+package sorim.f1.slasher.relentless.entities;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.Objects;
+
+@Entity
+@Table(name = "REDDIT_POSTS_TOP")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class RedditPostTop {
+
+    @Id
+    private String id;
+    private String title;
+    private String url;
+    private String imageUrl;
+    private Long created;
+    private Integer type=1;
+
+    @Transient
+    @JsonIgnore
+    private String mediaUrl2;
+    @Transient
+    @JsonIgnore
+    private String t;
+    @Transient
+    @JsonIgnore
+    private Boolean valid =false;
+
+    public RedditPostTop(LinkedHashMap<String, Object> data) {
+        this.id = (String) data.get("id");
+        this.title = (String) data.get("title");
+        ArrayList<LinkedHashMap<String, Object>> link_flair_richtext = (ArrayList<LinkedHashMap<String, Object>>) data.get("link_flair_richtext");
+        if(link_flair_richtext.size()>0 && link_flair_richtext.get(0).get("t")!=null){
+            this.t = link_flair_richtext.get(0).get("t").toString();
+        }
+        this.url = "https://reddit.com" + (String) data.get("permalink");
+        this.imageUrl = (String) data.get("url");
+        this.valid = isItPhoto();
+        Double createdDouble = (Double) data.get("created");
+        this.created = createdDouble.longValue() ;
+    }
+
+    public Boolean isItPhoto() {
+        if(this.imageUrl.startsWith("https://imgur.com/a/")){
+            //TODO ALBUM NECE RADIT https://imgur.com/a/ZBzAKwz
+            type=2;
+            return false;
+        }
+        if(Objects.equals(this.t, "Photo")){
+            return true;
+        }
+        if(this.imageUrl.startsWith("https://i.redd")){
+            return true;
+        }
+        if(this.imageUrl.startsWith("https://i.imgur.")){
+            return true;
+        }
+
+//        if(this.imageUrl.startsWith("https://streamable.com")){
+//            //TODO https://streamable.com NECE RADIT
+//            type=3;
+//            return false;
+//        }
+        return false;
+    }
+}

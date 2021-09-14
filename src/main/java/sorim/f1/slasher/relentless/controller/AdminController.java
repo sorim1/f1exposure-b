@@ -119,6 +119,12 @@ public class AdminController {
         return service.backupExposure();
     }
 
+    @PostMapping("/restoreExposureFromBackup")
+    Boolean restoreExposureFromBackup(@RequestHeader String client, @RequestBody FullExposure body) throws Exception {
+        securityService.validateAdminHeader(client);
+        return service.restoreExposureFromBackup(body);
+    }
+
     @GetMapping("/getLogs")
     List<Log> getLogs(@RequestHeader String client, @RequestParam(required=false) Integer mode, @RequestParam(required=false) String filter) throws Exception {
         securityService.validateAdminHeader(client);

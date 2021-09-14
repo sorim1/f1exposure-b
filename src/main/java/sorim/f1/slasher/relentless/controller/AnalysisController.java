@@ -92,4 +92,11 @@ public class AnalysisController {
         return service.deleteRacesBySeason(year);
     }
 
+
+    @PatchMapping("/updateCircuitImage/{season}/{round}")
+    public String updateCircuitImage(@RequestHeader String client, @PathVariable("season") String season, @PathVariable("round") Integer round, @RequestBody String newImageUrl) throws Exception {
+        securityService.validateAdminHeader(client);
+        return service.updateCircuitImage(season, round, newImageUrl);
+    }
+
 }

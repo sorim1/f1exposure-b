@@ -32,4 +32,6 @@ public interface LiveTimingService {
     List<RaceData> findRacesBySeason(String season);
 
     Boolean deleteRacesBySeason(String season);
+
+    String updateCircuitImage(String season, Integer round, String newImageUrl);
 }

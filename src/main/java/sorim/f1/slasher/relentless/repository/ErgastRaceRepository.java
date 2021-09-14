@@ -24,6 +24,8 @@ public interface ErgastRaceRepository extends CrudRepository<RaceData, String> {
 
     RaceData findFirstByRaceAnalysisIsNullAndSeasonOrderByDateAsc(String year);
 
+    RaceData findFirstByRaceAnalysisIsNotNullAndLiveTimingRaceIsNullAndSeasonOrderByDateAsc(String year);
+
     List<RaceData> findByCircuitIdOrderBySeasonDesc(String circuitId);
 
     List<FrontendRace> findAllBySeasonAndRoundLessThanEqualOrderByRoundAsc(String season, Integer round);
@@ -31,6 +33,8 @@ public interface ErgastRaceRepository extends CrudRepository<RaceData, String> {
     List<FrontendRace> findAllBySeasonOrderByRoundAsc(String season);
 
     List<RaceData> findAllBySeason(String Season);
+
+    RaceData findAllBySeasonAndRound(String Season, Integer round);
 
     void deleteAllBySeason(String season);
 }

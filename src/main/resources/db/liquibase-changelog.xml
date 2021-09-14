@@ -14,4 +14,10 @@
     <changeSet author="mcom_mdragicevic" id="003_prod_update.sql">
         <sqlFile path="changelog/003_prod_update.sql" endDelimiter="/" relativeToChangelogFile="true"/>
     </changeSet>
+    <changeSet author="mcom_mdragicevic" id="004_marketing.sql">
+        <sqlFile path="changelog/004_marketing.sql" endDelimiter="/" relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet author="mcom_mdragicevic" id="005_reddit.sql">
+        <sqlFile path="changelog/005_reddit.sql" endDelimiter="/" relativeToChangelogFile="true"/>
+    </changeSet>
 </databaseChangeLog>

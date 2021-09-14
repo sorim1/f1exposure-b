@@ -23,6 +23,7 @@ public interface ErgastService {
 
     RaceData getLatestNonAnalyzedRace(Integer currentYear);
 
+    RaceData findRaceBySeasonAndRound(String season, Integer round);
 
     List<RaceData> findByCircuitIdOrderBySeasonDesc(String circuitId);
 

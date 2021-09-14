@@ -45,4 +45,6 @@ public interface AdminService {
     List<F1Comment> getAdminMessages();
 
     Boolean endRaceWeekendJobs();
+
+    Boolean restoreExposureFromBackup(FullExposure fullExposure);
 }

@@ -31,6 +31,7 @@ import java.util.*;
 public class ExposureServiceImpl implements ExposureService {
 
     private final ExposedVoteRepository exposedVoteRepository;
+    private final ExposedVoteTotalsRepository exposedVoteTotalsRepository;
     private final ExposedRepository exposedRepository;
     private final ExposureChampionshipRepository exposureChampionshipRepository;
     private final ExposureChampionshipStandingsRepository exposureChampionshipStandingsRepository;
@@ -319,10 +320,26 @@ public class ExposureServiceImpl implements ExposureService {
     public FullExposure backupExposure() {
         return FullExposure.builder()
                 .exposedVote((List<ExposedVote>) exposedVoteRepository.findAll())
+                .exposedVoteTotals((List<ExposedVoteTotals>) exposedVoteTotalsRepository.findAll())
                 .exposed((List<Exposed>) exposedRepository.findAll())
                 .exposureChampionship((List<ExposureChampionship>) exposureChampionshipRepository.findAll())
                 .exposureChampionshipStandings((List<ExposureChampionshipStanding>) exposureChampionshipStandingsRepository.findAll())
                 .build();
+    }
+
+    @Override
+    public Boolean restoreExposureFromBackup(FullExposure fullExposure) {
+        exposedVoteRepository.deleteAll();
+        exposedVoteRepository.saveAll(fullExposure.getExposedVote());
+        exposedRepository.deleteAll();
+        exposedRepository.saveAll(fullExposure.getExposed());
+        exposureChampionshipRepository.deleteAll();
+        exposureChampionshipRepository.saveAll(fullExposure.getExposureChampionship());
+        exposureChampionshipStandingsRepository.deleteAll();
+        exposureChampionshipStandingsRepository.saveAll(fullExposure.getExposureChampionshipStandings());
+        exposedVoteTotalsRepository.deleteAll();
+        exposedVoteTotalsRepository.saveAll(fullExposure.getExposedVoteTotals());
+        return true;
     }
 
 }

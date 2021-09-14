@@ -97,6 +97,10 @@ public class InstagramServiceImpl implements InstagramService {
                         url = timelineImageMedia.getImage_versions2().getCandidates()
                                 .get(timelineImageMedia.getImage_versions2().getCandidates().size() - 1)
                                 .getUrl();
+                        String caption = "";
+                        if(post.getCaption()!=null){
+                            caption = post.getCaption().getText();
+                        }
                         instagramPosts.add(InstagramPost.builder().code(timelineImageMedia.getCode())
                                 .takenAt(post.getTaken_at())
                                 .comments(timelineImageMedia.getComment_count())
@@ -104,7 +108,7 @@ public class InstagramServiceImpl implements InstagramService {
                                 .postType(InstagramPostType.TimelineImageMedia.getValue())
                                 .url(url)
                                 .location(location)
-                                .caption(post.getCaption().getText())
+                                .caption(caption)
                                 .username(post.getUser().getFull_name())
                                 .userpic(post.getUser().getProfile_pic_url())
                                 .build());

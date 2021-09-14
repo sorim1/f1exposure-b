@@ -478,4 +478,9 @@ public class AdminServiceImpl implements AdminService {
         Scheduler.standingsUpdated = true;
         return true;
     }
+
+    @Override
+    public Boolean restoreExposureFromBackup(FullExposure fullExposure) {
+        return exposureService.restoreExposureFromBackup(fullExposure);
+    }
 }

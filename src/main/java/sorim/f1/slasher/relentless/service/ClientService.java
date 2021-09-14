@@ -33,11 +33,19 @@ public interface ClientService {
 
     Boolean fetchInstagramFeed() throws IGLoginException;
 
-    TripleInstagramFeed getInstagramFeed() throws IGLoginException;
-
     TripleInstagramFeed getInstagramFeedPage(Integer page) throws IGLoginException;
 
     DoubleTwitterFeed getTwitterPosts(Integer page);
+
+    DoubleRedditNewFeed getRedditNewPosts(Integer page);
+
+    DoubleRedditTopFeed getRedditTopPosts(Integer page);
+
+    Double4chanFeed get4chanPosts(Integer page);
+
+    void fetchRedditPosts();
+
+    List<ForchanPost> fetch4chanPosts();
 
     Boolean fetchTwitterPosts() throws Exception;
 

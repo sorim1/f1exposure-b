@@ -112,12 +112,6 @@ public class ClientController {
         return service.fetchTwitterPosts();
     }
 
-    @GetMapping("/getInstagramFeed")
-    TripleInstagramFeed getInstagramFeed(@RequestHeader String client) throws Exception {
-        securityService.validateHeader(client);
-        return service.getInstagramFeed();
-    }
-
     @GetMapping("/getInstagramPosts/{page}")
     TripleInstagramFeed getInstagramFeedPage(@RequestHeader String client, @PathVariable("page") String page) throws Exception {
         securityService.validateHeader(client);
@@ -136,6 +130,37 @@ public class ClientController {
     DoubleTwitterFeed getTwitterPosts(@RequestHeader String client, @PathVariable("page") String page) throws Exception {
         securityService.validateHeader(client);
         return service.getTwitterPosts(Integer.valueOf(page));
+    }
+
+    @GetMapping("/getNewRedditPosts/{page}")
+    DoubleRedditNewFeed getNewRedditPosts(@RequestHeader String client, @PathVariable("page") Integer page) throws Exception {
+        securityService.validateHeader(client);
+        return service.getRedditNewPosts(page);
+    }
+
+    @GetMapping("/getTopRedditPosts/{page}")
+    DoubleRedditTopFeed getRedditTopPosts(@RequestHeader String client, @PathVariable("page") Integer page) throws Exception {
+        securityService.validateHeader(client);
+        return service.getRedditTopPosts(page);
+    }
+
+    @GetMapping("/get4chanPosts/{page}")
+    Double4chanFeed get4chanPosts(@RequestHeader String client, @PathVariable("page") String page) throws Exception {
+        securityService.validateHeader(client);
+        return service.get4chanPosts(Integer.valueOf(page));
+    }
+
+    @GetMapping("/fetchRedditPosts")
+    Boolean fetchRedditPosts(@RequestHeader String client) throws Exception {
+        securityService.validateAdminHeader(client);
+        service.fetchRedditPosts();
+        return true;
+    }
+
+    @GetMapping("/fetch4chanPosts")
+    List<ForchanPost> fetch4chanPosts(@RequestHeader String client) throws Exception {
+        securityService.validateAdminHeader(client);
+        return service.fetch4chanPosts();
     }
 
     @PostMapping("/postAwsContent")

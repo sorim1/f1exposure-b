@@ -38,6 +38,8 @@ public class ClientServiceImpl implements ClientService {
     private final AwsCommentRepository awsCommentRepository;
     private final InstagramService instagramService;
     private final TwitterService twitterService;
+    private final RedditService redditService;
+    private final ForchanService forchanService;
     private final ExposureService exposureService;
     private final ErgastService ergastService;
     private final MainProperties properties;
@@ -207,11 +209,6 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
-    public TripleInstagramFeed getInstagramFeed() throws IGLoginException {
-        return instagramService.getInstagramFeed();
-    }
-
-    @Override
     public TripleInstagramFeed getInstagramFeedPage(Integer page) throws IGLoginException {
         return instagramService.getInstagramFeedPage(page);
     }
@@ -219,6 +216,31 @@ public class ClientServiceImpl implements ClientService {
     @Override
     public DoubleTwitterFeed getTwitterPosts(Integer page) {
         return new DoubleTwitterFeed(twitterService.getTwitterPosts(page));
+    }
+
+    @Override
+    public DoubleRedditNewFeed getRedditNewPosts(Integer page) {
+        return new DoubleRedditNewFeed(redditService.getRedditNewPosts(page));
+    }
+
+    @Override
+    public DoubleRedditTopFeed getRedditTopPosts(Integer page) {
+        return new DoubleRedditTopFeed(redditService.getRedditTopPosts(page));
+    }
+
+    @Override
+    public Double4chanFeed get4chanPosts(Integer page) {
+        return new Double4chanFeed(forchanService.get4chanPosts(page));
+    }
+
+    @Override
+    public void fetchRedditPosts() {
+        redditService.fetchRedditPosts();
+    }
+
+    @Override
+    public List<ForchanPost> fetch4chanPosts() {
+        return forchanService.fetch4chanPosts();
     }
 
     @Override

@@ -4,10 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import sorim.f1.slasher.relentless.entities.Exposed;
-import sorim.f1.slasher.relentless.entities.ExposedVote;
-import sorim.f1.slasher.relentless.entities.ExposureChampionship;
-import sorim.f1.slasher.relentless.entities.ExposureChampionshipStanding;
+import sorim.f1.slasher.relentless.entities.*;
 
 import java.util.List;
 
@@ -21,5 +18,5 @@ public class FullExposure {
     private List<Exposed> exposed;
     private List<ExposureChampionship> exposureChampionship;
     private List<ExposureChampionshipStanding> exposureChampionshipStandings;
-
+    private List<ExposedVoteTotals> exposedVoteTotals;
 }

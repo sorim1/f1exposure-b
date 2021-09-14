@@ -32,7 +32,9 @@ public interface ExposureService {
 
     String getTitle();
 
+    void initializeExposure();
+
     FullExposure backupExposure();
 
-    void initializeExposure();
+    Boolean restoreExposureFromBackup(FullExposure fullExposure);
 }

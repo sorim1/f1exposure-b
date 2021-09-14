@@ -14,6 +14,7 @@ import java.util.List;
 public class RaceAnalysis {
     Integer year;
     String title;
+    Integer status;
     List<FrontendGraphWeatherData> weatherChartData;
     List<Driver> driverData;
 }

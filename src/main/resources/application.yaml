@@ -22,6 +22,9 @@ f1:
         - 36aed15c-f2ca-40a0-ae6d-96d82091df99
         - 7c36a15a-019a-4c36-944d-c63423480ca5
 server:
+  error:
+    whitelabel:
+      enabled: false
   port: 443
   ssl:
     key-store: classpath:keystore.p12

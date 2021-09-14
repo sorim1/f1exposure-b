@@ -230,9 +230,7 @@ public class LiveTimingServiceImpl implements LiveTimingService {
             raceData.setLiveTimingRace(liveTimingResponse.substring(liveTimingResponse.indexOf("{")));
             //raceData.setTimingAppData(timingAppDataResponse.substring(timingAppDataResponse.indexOf("00")));
             ergastService.saveRace(raceData);
-            raceData.setRaceAnalysis(fetchNewRaceAnalysis(raceData.getCircuit().getCircuitId()));
-
-            ergastService.saveRace(raceData);
+            fetchNewRaceAnalysis(raceData.getCircuit().getCircuitId());
             analyzeUpcomingRace();
             Scheduler.analysisDone = true;
             return true;
@@ -282,6 +280,15 @@ public class LiveTimingServiceImpl implements LiveTimingService {
     public Boolean deleteRacesBySeason(String season) {
         ergastService.deleteRaces(season);
         return true;
+    }
+
+    @Override
+    public String updateCircuitImage(String season, Integer round, String newImageUrl) {
+        RaceData raceData = ergastService.findRaceBySeasonAndRound(season, round);
+        String response = raceData.getUpcomingRaceAnalysis().getImageUrl() + " -> " + newImageUrl;
+        raceData.getUpcomingRaceAnalysis().setImageUrl(newImageUrl);
+        ergastService.saveRace(raceData);
+        return response;
     }
 
     @Override
@@ -474,10 +481,11 @@ public class LiveTimingServiceImpl implements LiveTimingService {
     }
 
 
-    public RaceAnalysis fetchNewRaceAnalysis(String circuitId) {
+    public Boolean fetchNewRaceAnalysis(String circuitId) {
         List<RaceData> raceData = ergastService.findByCircuitIdOrderBySeasonDesc(circuitId);
         List<FrontendGraphWeatherData> weatherChartData = new ArrayList<>();
         AtomicReference<Boolean> onlyFirstOne = new AtomicReference<>(true);
+        AtomicReference<Boolean> ergastDataAvailable = new AtomicReference<>(false);
         AtomicReference<List<Driver>> drivers = new AtomicReference<>();
         AtomicReference<String> title = new AtomicReference<>();
         raceData.forEach(race -> {
@@ -503,8 +511,8 @@ public class LiveTimingServiceImpl implements LiveTimingService {
                     enrichDriversWithLapByLapData(driversMap, response.getLapPos().getGraph(), response.getXtra().data, driverCodes);
 
                     Map<String, String> ergastCodes = ergastService.connectDriverCodesWithErgastCodes();
-                    enrichDriversWithErgastLapTimes(driversMap, ergastCodes, race.getSeason(), race.getRound());
-
+                    Boolean bool = enrichDriversWithErgastLapTimes(driversMap, ergastCodes, race.getSeason(), race.getRound());
+                    ergastDataAvailable.set(bool);
                     onlyFirstOne.set(false);
                     drivers.set(new ArrayList<>(driversMap.values()));
                 }
@@ -512,11 +520,22 @@ public class LiveTimingServiceImpl implements LiveTimingService {
                 e.printStackTrace();
             }
         });
-        return RaceAnalysis.builder()
+
+        RaceAnalysis analysis = RaceAnalysis.builder()
                 .weatherChartData(weatherChartData)
                 .driverData(drivers.get())
                 .year(properties.getCurrentYear())
+                .status(1)
                 .title(title.get()).build();
+        RaceData latestRace = raceData.get(0);
+        latestRace.setRaceAnalysis(analysis);
+        if(!ergastDataAvailable.get()){
+            latestRace.setLiveTimingRace(null);
+            analysis.setStatus(2);
+        }
+        latestRace.setRaceAnalysis(analysis);
+        ergastService.saveRace(latestRace);
+        return true;
     }
 
     public List<Driver> analyzeSprintRace(String liveTimingDataResponse) {
@@ -551,13 +570,18 @@ public class LiveTimingServiceImpl implements LiveTimingService {
         return drivers;
     }
 
-    private void enrichDriversWithErgastLapTimes(Map<String, Driver> driversMap, Map<String, String> ergastCodes, String season, Integer round) throws JsonProcessingException {
+    private Boolean enrichDriversWithErgastLapTimes(Map<String, Driver> driversMap, Map<String, String> ergastCodes, String season, Integer round) throws JsonProcessingException {
         ErgastResponse response = ergastService.getRaceLaps(Integer.valueOf(season), round);
-        response.getMrData().getRaceTable().getRaces().get(0).getLaps().forEach(lap -> {
-            lap.getTimings().forEach(timing -> {
-                driversMap.get(ergastCodes.get(timing.getDriverId())).getLapByLapData().addLapTime(lap.getNumber(), timing);
+        if(response.getMrData().getRaceTable().getRaces().size()>0) {
+            response.getMrData().getRaceTable().getRaces().get(0).getLaps().forEach(lap -> {
+                lap.getTimings().forEach(timing -> {
+                    driversMap.get(ergastCodes.get(timing.getDriverId())).getLapByLapData().addLapTime(lap.getNumber(), timing);
+                });
             });
-        });
+            return true;
+        } else {
+            return false;
+        }
     }
 
     private void enrichDriversWithLapByLapData(Map<String, Driver> driversMap, LapPosGraph lapPos, RawData xtraData, List<String> driverCodes) {
