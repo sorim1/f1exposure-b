@@ -61,7 +61,7 @@ public class RedditServiceImpl implements RedditService {
     @Override
     public void fetchRedditPosts() {
         getRedditNew();
-        getRedditTop();
+       // getRedditTop();
     }
 
     private void getRedditNew() {

@@ -42,7 +42,7 @@ public class Scheduler {
         }
     }
 
-    @Scheduled(cron = "0 0 20 * * TUE")
+    @Scheduled(cron = "0 0 18 * * TUE")
     public void tuesdayJobs() throws IOException {
         log.info("tuesdayJobs called");
         Logger.log(CODE, "tuesdayJobs called");
@@ -53,14 +53,14 @@ public class Scheduler {
         }
     }
 
-    @Scheduled(cron = "0 0 5 * * FRI")
+    @Scheduled(cron = "0 0 4 * * FRI")
     private void weekendJobsContinuous() throws IOException {
         log.info("fridayJobs called");
         fetchSportSurgeLinksPeriodically();
         analyzeUpcomingRacePeriodically();
     }
 
-    @Scheduled(cron = "0 0 5 * * SUN")
+    @Scheduled(cron = "0 0 4 * * SUN")
     public void sundayExposureJobs(){
         log.info("sundayJobs called");
         exposureService.initializeExposure();
@@ -87,7 +87,7 @@ public class Scheduler {
         }
     }
 
-    @Scheduled(cron = "0 0 15 * * SUN")
+    @Scheduled(cron = "0 0 13 * * SUN")
     private void sundayAnalysisJob(){
         int delay = 1800000;
         Logger.log(CODE, "sundayAnalysisJob called");
@@ -190,7 +190,7 @@ public class Scheduler {
     }
 
     @Scheduled(cron = "0 0 8,10,12,14,16,18,20,22 * * *")
-    void bihourlyJob() throws Exception {
+    void imageFeedJob() throws Exception {
         log.info("bihourlyJob called");
         clientService.fetchInstagramFeed();
         clientService.fetchTwitterPosts();

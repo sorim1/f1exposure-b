@@ -16,6 +16,7 @@ import org.springframework.stereotype.Service;
 import sorim.f1.slasher.relentless.configuration.MainProperties;
 import sorim.f1.slasher.relentless.entities.ImageRow;
 import sorim.f1.slasher.relentless.entities.InstagramPost;
+import sorim.f1.slasher.relentless.handling.Logger;
 import sorim.f1.slasher.relentless.model.TripleInstagramFeed;
 import sorim.f1.slasher.relentless.model.enums.InstagramPostType;
 import sorim.f1.slasher.relentless.repository.ImageRepository;
@@ -133,31 +134,18 @@ public class InstagramServiceImpl implements InstagramService {
                     }
                 }
             });
-            String code = instagramPosts.get(instagramPosts.size() - 1).getCode();
             boolean exists = instagramRepository.existsByCode(timelineMedias.get(timelineMedias.size() - 1).getCode());
             iterate.set(counter.get() < 7 && (!exists));
             counter.set(counter.get() + 1);
         });
         instagramRepository.saveAll(instagramPosts);
         fetchImages(instagramPosts);
+        Logger.log("INSTAGRAM_FETCH_DONE - counter(max7) : ", String.valueOf(counter.get()));
         return true;
     }
 
     private void fetchImages(List<InstagramPost> instagramPosts) {
         List<ImageRow> images = new ArrayList<>();
-//        instagramPosts.forEach(post->{
-//            if(post.getPostType().equals(InstagramPostType.TimelineCarouselMedia.getValue())){
-//                List<String> urlList = Stream.of(post.getUrl().split(",", -1))
-//                        .collect(Collectors.toList());
-//                for(int i=0; i<urlList.size(); i++){
-//                    byte[] image = getImageFromUrl(urlList.get(i));
-//                    images.add(ImageRow.builder().code(post.getCode()+"-"+i).image(image).build());
-//                }
-//            } else {
-//                byte[] image = getImageFromUrl(post.getUrl());
-//                images.add(ImageRow.builder().code(post.getCode()).image(image).build());
-//            }
-//        });
         instagramPosts.forEach(post -> {
             byte[] image = getImageFromUrl(post.getUrl());
             images.add(ImageRow.builder().code(post.getCode()).image(image).build());
