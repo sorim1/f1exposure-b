@@ -35,6 +35,10 @@ server:
 spring:
   application:
     name: f1-exposure-rest-api
+  servlet:
+    multipart:
+      max-file-size: 400KB
+      max-request-size: 4700KB
   datasource:
     f1-exposure:
       driver-class-name: org.postgresql.Driver
@@ -55,7 +59,7 @@ spring:
   liquibase:
     datasource:
       f1-exposure:
-        enabled: true
+        enabled: false
         change-log: classpath:/db/liquibase-changelog.xml
         drop-first: false
         user: postgres
@@ -68,3 +72,7 @@ logging:
       max-file-size: 20MB
   file:
     name: /home/sorim/exposure_log/exposure.log
+upload:
+  path: /uploads-deleteme
+
+

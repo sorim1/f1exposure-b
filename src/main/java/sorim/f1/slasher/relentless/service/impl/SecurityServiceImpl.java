@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import sorim.f1.slasher.relentless.configuration.MainProperties;
 import sorim.f1.slasher.relentless.entities.Log;
 import sorim.f1.slasher.relentless.handling.Logger;
+import sorim.f1.slasher.relentless.repository.BanlistRepository;
 import sorim.f1.slasher.relentless.service.SecurityService;
 
 import javax.servlet.http.HttpServletRequest;
@@ -22,6 +23,7 @@ public class SecurityServiceImpl implements SecurityService {
     private final static String AUTHORIZATION_CLIENT_FAILURE = "AUTHORIZATION_CLIENT_FAILURE";
     private final static String AUTHORIZATION_ADMIN_FAILURE = "AUTHORIZATION_ADMIN_FAILURE";
     private final static String AUTHORIZATION_ADMIN_OK = "AUTHORIZATION_ADMIN_OK";
+    private final BanlistRepository banlistRepository;
 
     @Override
     public void validateHeader(String authorization) throws Exception {
@@ -43,7 +45,19 @@ public class SecurityServiceImpl implements SecurityService {
 
     @Override
     public String validateIp(HttpServletRequest request) {
-        return request.getRemoteAddr();
+        String ipAddress = request.getRemoteAddr();
+        return ipAddress;
+//        Boolean banned = checkBanStatus(ipAddress);
+//        if(banned) {
+//            return null;
+//        } else {
+//            return ipAddress;
+//        }
+
+    }
+
+    private Boolean checkBanStatus(String ipAddress) {
+        return banlistRepository.existsBanByIp(ipAddress);
     }
 
     @Override

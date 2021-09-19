@@ -149,4 +149,12 @@ public class MainUtility {
         LocalDateTime date = instant.atZone(ZoneId.systemDefault()).toLocalDateTime();
         Logger.log(code, "NEXT TICK: " + date);
     }
+
+    public static String generateCodeFromTitle(String title) {
+       String tempo =  UUID.randomUUID().toString();
+        String code = title.replaceAll(
+                "[^a-zA-Z0-9]", "-");
+        code = code.substring(0, Math.min(20, code.length()))+"-"+tempo.substring(0,5);
+        return code;
+    }
 }

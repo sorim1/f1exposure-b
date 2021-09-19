@@ -76,6 +76,7 @@ CREATE TABLE aws
     timestamp_created  timestamp NULL DEFAULT NOW(),
     timestamp_activity timestamp NULL DEFAULT NOW(),
     username           text NULL,
+    ip                text NULL,
     status             numeric,
     CONSTRAINT aws_pkey PRIMARY KEY (code)
 );
@@ -87,5 +88,46 @@ CREATE TABLE AWS_COMMENT
     content_code      text NULL,
     timestamp_created timestamp NULL DEFAULT NOW(),
     username          text NULL,
+    ip                text NULL,
     status            numeric
+);
+
+CREATE TABLE MARKETING
+(
+    id        SERIAL PRIMARY KEY,
+    url      text,
+    image_url  text,
+    description   text
+);
+
+CREATE TABLE REDDIT_POSTS_TOP
+(
+    id       text,
+    url      text,
+    image_url  text,
+    title   text,
+    created numeric,
+    type numeric,
+    CONSTRAINT REDDIT_POSTS_TOP_pkey PRIMARY KEY (id)
+);
+
+CREATE TABLE REDDIT_POSTS_NEW
+(
+    id       text,
+    url      text,
+    image_url  text,
+    title   text,
+    created numeric,
+    type numeric,
+    CONSTRAINT REDDIT_POSTS_NEW_pkey PRIMARY KEY (id)
+);
+
+CREATE TABLE BANLIST
+(
+    id       text,
+    ip      text,
+    username      text,
+    timestamp_created timestamp NULL DEFAULT NOW(),
+    status numeric,
+    CONSTRAINT BANLIST_pkey PRIMARY KEY (id)
 );

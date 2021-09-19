@@ -176,6 +176,7 @@ CREATE TABLE COMMENTS
     page      numeric,
     nickname  text,
     comment   text,
+    ip        text,
     status    numeric,
     timestamp TIMESTAMP
 );

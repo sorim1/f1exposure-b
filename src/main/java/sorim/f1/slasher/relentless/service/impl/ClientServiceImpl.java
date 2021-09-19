@@ -255,9 +255,12 @@ public class ClientServiceImpl implements ClientService {
 
     @Override
     public String postContent(AwsContent content, String ipAddress) {
-        String code = UUID.randomUUID().toString();
+        //String code = UUID.randomUUID().toString();
+        String code = MainUtility.generateCodeFromTitle(content.getTextContent());
         content.setCode(code);
-        content.setStatus(1);
+        if(content.getStatus()==null) {
+            content.setStatus(1);
+        }
         content.setTimestampCreated(new Date());
         content.setTimestampActivity(new Date());
         content.setCommentCount(0);
@@ -271,12 +274,12 @@ public class ClientServiceImpl implements ClientService {
     @Override
     public List<AwsContent> getAwsContent(String page) {
         Pageable paging = PageRequest.of(Integer.parseInt(page), 20);
-        return awsRepository.findAllByStatusOrderByTimestampActivityDesc(1, paging);
+        return awsRepository.findAllByStatusLessThanEqualOrderByTimestampActivityDesc(2, paging);
     }
 
     @Override
     public AwsContent getAwsPost(String code) {
-        AwsContent response = awsRepository.findByCodeAndStatus(code, 1);
+        AwsContent response = awsRepository.findByCodeAndStatusLessThanEqual(code, 2);
         if (response != null) {
             response.setComments(awsCommentRepository.findAllByContentCodeAndStatusOrderByTimestampCreatedDesc(code, 1));
         }
