@@ -256,7 +256,7 @@ public class ClientServiceImpl implements ClientService {
     @Override
     public String postContent(AwsContent content, String ipAddress) {
         //String code = UUID.randomUUID().toString();
-        String code = MainUtility.generateCodeFromTitle(content.getTextContent());
+        String code = MainUtility.generateCodeFromTitle(content.getTitle());
         content.setCode(code);
         if(content.getStatus()==null) {
             content.setStatus(1);

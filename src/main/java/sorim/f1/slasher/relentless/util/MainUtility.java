@@ -153,8 +153,8 @@ public class MainUtility {
     public static String generateCodeFromTitle(String title) {
        String tempo =  UUID.randomUUID().toString();
         String code = title.replaceAll(
-                "[^a-zA-Z0-9]", "-");
-        code = code.substring(0, Math.min(20, code.length()))+"-"+tempo.substring(0,5);
+                "[^a-zA-Z0-9 ]", "").replaceAll(" ", "-");
+        code = code.substring(0, Math.min(40, code.length()))+"-"+tempo.substring(0,5);
         return code;
     }
 }

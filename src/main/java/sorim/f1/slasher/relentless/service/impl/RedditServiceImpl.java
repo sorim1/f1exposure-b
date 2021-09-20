@@ -31,11 +31,12 @@ public class RedditServiceImpl implements RedditService {
     private final RedditNewRepository redditNewRepository;
     private final RedditTopRepository redditTopRepository;
 
-    private static final String redditNew200Posts = "https://reddit.com/r/formula1/new/.json?limit=200";
-    private static final String redditTop200Posts = "https://reddit.com/r/formula1/top/.json?limit=200";
-    private static final String imgurAlbumUrl = "https://api.imgur.com/3/album/{code}";
+    private static final String redditNewPosts = "https://reddit.com/r/formula1/new/.json?limit=200";
+    private static final String redditTopPosts = "https://reddit.com/r/formula1/top/.json?limit=200";
+    private static final String redditNewF1PornPosts = "https://reddit.com/r/f1porn/hot/.json?limit=100";
     private static final String imgurAlbumUrl2 = "https://api.imgur.com/3/album/";
     private static String lastNewPost = "";
+    private static String lastNewF1PornPost = "";
     private static final String lastTopPost = "";
 
     RestTemplate restTemplate = new RestTemplate();
@@ -60,15 +61,16 @@ public class RedditServiceImpl implements RedditService {
 
     @Override
     public void fetchRedditPosts() {
-        getRedditNew();
+        getRFormula1New();
+        getRF1PornHot();
        // getRedditTop();
     }
 
-    private void getRedditNew() {
+    private void getRFormula1New() {
         AtomicReference<Boolean> iterate = new AtomicReference<>(true);
         HttpEntity entity = new HttpEntity(headers);
         ResponseEntity<String> response = restTemplate.exchange(
-                redditNew200Posts, HttpMethod.GET, entity, String.class);
+                redditNewPosts, HttpMethod.GET, entity, String.class);
         List<RedditPostNew> list = new ArrayList<>();
         try {
             Map<String, Object> mapping = mapper.readValue(response.getBody(), typeRef);
@@ -93,10 +95,39 @@ public class RedditServiceImpl implements RedditService {
         }
     }
 
+    private void getRF1PornHot() {
+        AtomicReference<Boolean> iterate = new AtomicReference<>(true);
+        HttpEntity entity = new HttpEntity(headers);
+        ResponseEntity<String> response = restTemplate.exchange(
+                redditNewF1PornPosts, HttpMethod.GET, entity, String.class);
+        List<RedditPostNew> list = new ArrayList<>();
+        try {
+            Map<String, Object> mapping = mapper.readValue(response.getBody(), typeRef);
+            LinkedHashMap<String, Object> root = (LinkedHashMap<String, Object>) mapping.get("data");
+            List<LinkedHashMap<String, Object>> children = (ArrayList<LinkedHashMap<String, Object>>) root.get("children");
+            children.forEach(child -> {
+                if(iterate.get()) {
+                    LinkedHashMap<String, Object> data = (LinkedHashMap<String, Object>) child.get("data");
+                    RedditPostNew post = new RedditPostNew(data);
+                    if (post.getId().equals(lastNewF1PornPost)) {
+                        iterate.set(false);
+                    }
+                    if (post.getValid()) {
+                        list.add(post);
+                    }
+                }
+            });
+            lastNewF1PornPost = list.get(0).getId();
+            redditNewRepository.saveAll(list);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+    }
+
     private void getRedditTop() {
         HttpEntity entity = new HttpEntity(headers);
         ResponseEntity<String> response = restTemplate.exchange(
-                redditTop200Posts, HttpMethod.GET, entity, String.class);
+                redditTopPosts, HttpMethod.GET, entity, String.class);
         List<RedditPostTop> list = new ArrayList<>();
         try {
             Map<String, Object> mapping = mapper.readValue(response.getBody(), typeRef);
