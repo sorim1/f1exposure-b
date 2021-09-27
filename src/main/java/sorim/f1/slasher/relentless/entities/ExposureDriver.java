@@ -1,5 +1,6 @@
 package sorim.f1.slasher.relentless.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -19,6 +20,8 @@ public class ExposureDriver {
     private String code;
     private String ergastCode;
     private String fullName;
+    private Integer status;
+
     @Transient
     private boolean exposure;
 }

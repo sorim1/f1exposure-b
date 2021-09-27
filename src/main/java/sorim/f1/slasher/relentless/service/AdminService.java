@@ -47,4 +47,8 @@ public interface AdminService {
     Boolean endRaceWeekendJobs();
 
     Boolean restoreExposureFromBackup(FullExposure fullExposure);
+
+    List<ExposureDriver> getExposureDrivers();
+
+    List<ExposureDriver> updateExposureDrivers(List<ExposureDriver> list);
 }

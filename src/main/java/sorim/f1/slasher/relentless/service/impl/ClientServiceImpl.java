@@ -210,6 +210,9 @@ public class ClientServiceImpl implements ClientService {
 
     @Override
     public TripleInstagramFeed getInstagramFeedPage(Integer page) throws IGLoginException {
+        if(page>40){
+            return new TripleInstagramFeed();
+        }
         return instagramService.getInstagramFeedPage(page);
     }
 

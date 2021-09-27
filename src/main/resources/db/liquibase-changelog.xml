@@ -11,4 +11,8 @@
     <changeSet author="mcom_mdragicevic" id="002_inserts.sql">
         <sqlFile path="changelog/002_inserts.sql" endDelimiter="/" relativeToChangelogFile="true"/>
     </changeSet>
+    <changeSet author="mcom_mdragicevic" id="003_alter_exposure_drivers">
+        <validCheckSum>ANY</validCheckSum>
+        <sqlFile path="changelog/003_alter_exposure_drivers.sql" endDelimiter="/" relativeToChangelogFile="true"/>
+    </changeSet>
 </databaseChangeLog>

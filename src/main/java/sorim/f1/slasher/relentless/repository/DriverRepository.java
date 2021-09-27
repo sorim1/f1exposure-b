@@ -14,5 +14,5 @@ import java.util.List;
 public interface DriverRepository extends CrudRepository<ExposureDriver, String> {
 
     List<ExposureDriver> findAll();
-
+    List<ExposureDriver> findAllByStatus(Integer status);
 }

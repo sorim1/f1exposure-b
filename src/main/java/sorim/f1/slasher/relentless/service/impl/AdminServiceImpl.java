@@ -315,6 +315,7 @@ public class AdminServiceImpl implements AdminService {
                         .fullName(driverStanding.getName())
                         .code(driverStanding.getCode())
                         .ergastCode(driverStanding.getErgastCode())
+                        .status(1)
                         .build();
                 driverRepository.save(newDriver);
             }
@@ -329,11 +330,6 @@ public class AdminServiceImpl implements AdminService {
                 .forEach(ergastStanding -> {
                     constructorStandings.add(new ConstructorStanding(ergastStanding));
                     constructorStandingsByRound.put(ergastStanding.getConstructor().getConstructorId(), new ConstructorStandingByRound(ergastStanding, properties.getCurrentYear(), CURRENT_ROUND));
-                });
-        response = ergastService.getResultsByRound(properties.getCurrentYear(), CURRENT_ROUND);
-        response.getMrData().getRaceTable().getRaces().get(0).getResults()
-                .forEach(ergastStanding -> {
-                    constructorStandingsByRound.get(ergastStanding.getConstructor().getConstructorId()).incrementPointsThisRound(ergastStanding.getPoints());
                 });
         constructorStandingsRepository.deleteAll();
         constructorStandingsRepository.saveAll(constructorStandings);
@@ -482,5 +478,16 @@ public class AdminServiceImpl implements AdminService {
     @Override
     public Boolean restoreExposureFromBackup(FullExposure fullExposure) {
         return exposureService.restoreExposureFromBackup(fullExposure);
+    }
+
+    @Override
+    public List<ExposureDriver> getExposureDrivers() {
+        return driverRepository.findAll();
+    }
+
+    @Override
+    public List<ExposureDriver> updateExposureDrivers(List<ExposureDriver> list) {
+        driverRepository.saveAll(list);
+        return driverRepository.findAll();
     }
 }

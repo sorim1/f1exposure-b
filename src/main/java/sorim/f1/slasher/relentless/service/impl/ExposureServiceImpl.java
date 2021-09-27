@@ -117,7 +117,7 @@ public class ExposureServiceImpl implements ExposureService {
                 .build();
         if (exposureOn()) {
             // if(true) {
-            List<ExposureDriver> drivers = driverRepository.findAll();
+            List<ExposureDriver> drivers = driverRepository.findAllByStatus(1);
             response.setDrivers(drivers);
             response.setStatus(ExposureStatusEnum.ACTIVE);
         } else {

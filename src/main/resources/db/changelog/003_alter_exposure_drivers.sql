@@ -1,0 +1,3 @@
+ALTER TABLE DRIVERS ADD status numeric NULL;
+UPDATE DRIVERS SET status=1;
+

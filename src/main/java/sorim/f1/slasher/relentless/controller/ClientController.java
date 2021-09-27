@@ -100,7 +100,7 @@ public class ClientController {
         return service.getComments(page);
     }
 
-    @GetMapping("/fetchInstagramFeed")
+    @GetMapping("/fetchInstagramPosts")
     Boolean fetchInstagramFeed(@RequestHeader String client) throws Exception {
         securityService.validateAdminHeader(client);
         return service.fetchInstagramFeed();

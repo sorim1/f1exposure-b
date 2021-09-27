@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import sorim.f1.slasher.relentless.entities.*;
 import sorim.f1.slasher.relentless.model.FullExposure;
+import sorim.f1.slasher.relentless.model.livetiming.Driver;
 import sorim.f1.slasher.relentless.service.AdminService;
 import sorim.f1.slasher.relentless.service.SecurityService;
 
@@ -141,5 +142,17 @@ public class AdminController {
     Boolean endRaceWeekendJobs(@RequestHeader String client) throws Exception {
         securityService.validateAdminHeader(client);
         return service.endRaceWeekendJobs();
+    }
+
+    @GetMapping("/exposureDrivers")
+    List<ExposureDriver> getExposureDrivers(@RequestHeader String client) throws Exception {
+        securityService.validateAdminHeader(client);
+        return service.getExposureDrivers();
+    }
+
+    @PostMapping("/exposureDrivers")
+    List<ExposureDriver> updateExposureDrivers(@RequestHeader String client, @RequestBody List<ExposureDriver> list) throws Exception {
+        securityService.validateAdminHeader(client);
+        return service.updateExposureDrivers(list);
     }
 }
