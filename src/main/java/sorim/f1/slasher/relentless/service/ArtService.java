@@ -4,6 +4,7 @@ import java.io.IOException;
 
 public interface ArtService {
 
-    byte[] generateImage() throws IOException;
+    Boolean executeArt() throws IOException;
 
+    byte[] generateImage(Integer xDrag, Integer yDrag, Integer maxIteration, Integer diameter) throws IOException;
 }

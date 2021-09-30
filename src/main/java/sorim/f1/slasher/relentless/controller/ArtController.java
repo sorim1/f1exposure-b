@@ -32,11 +32,17 @@ public class ArtController {
     private final SecurityService securityService;
     private final ArtService artService;
 
+
     @GetMapping(
             value = "/generateImage",
             produces = MediaType.IMAGE_PNG_VALUE
     )
-    byte[] generateImage() throws IOException {
-        return artService.generateImage();
+    byte[] generateImage(@RequestParam Integer xDrag, @RequestParam Integer yDrag, @RequestParam Integer maxIteration, @RequestParam Integer diameter) throws IOException {
+        return artService.generateImage(xDrag, yDrag, maxIteration, diameter);
+    }
+
+    @GetMapping("/executeArt")
+    Boolean executeArt() throws IOException {
+        return artService.executeArt();
     }
 }
