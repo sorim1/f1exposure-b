@@ -26,6 +26,8 @@ public class LapByLapData {
     public List<Integer> lapTimesX = new ArrayList<>();
     public List<String> lapTimesY = new ArrayList<>();
     public List<Integer> lapTimesYms = new ArrayList<>();
+    public List<Integer> totalTimeByLapMs = new ArrayList<>();
+    public Integer totalTimeMs = 0;
 
     public void addLapTime(Integer lapNumber, Timing timing) {
         String[] lapTime = timing.getTime().split(":");
@@ -36,6 +38,8 @@ public class LapByLapData {
         lapTimesYms.add(miliseconds);
         lapTimesX.add(lapNumber);
         lapTimesY.add(timing.getTime());
+        totalTimeMs = totalTimeMs + miliseconds;
+        totalTimeByLapMs.add(totalTimeMs);
     }
 
 }
