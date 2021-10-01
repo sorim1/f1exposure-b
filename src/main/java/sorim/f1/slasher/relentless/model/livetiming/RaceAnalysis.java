@@ -17,4 +17,5 @@ public class RaceAnalysis {
     Integer status;
     List<FrontendGraphWeatherData> weatherChartData;
     List<Driver> driverData;
+    String art;
 }

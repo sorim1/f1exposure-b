@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.method.annotation.MvcUriComponentsBuilder;
+import sorim.f1.slasher.relentless.entities.ArtImageRow;
 import sorim.f1.slasher.relentless.entities.F1Calendar;
 import sorim.f1.slasher.relentless.model.FileData;
 import sorim.f1.slasher.relentless.model.UploadResponseMessage;
@@ -21,6 +22,7 @@ import sorim.f1.slasher.relentless.service.SecurityService;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.List;
 
 
 @RestController
@@ -44,5 +46,21 @@ public class ArtController {
     @GetMapping("/executeArt")
     Boolean executeArt() throws IOException {
         return artService.executeArt();
+    }
+
+    @GetMapping("/generateLatestArt")
+    Boolean generateLatestArt() throws IOException {
+        return artService.generateLatestArt();
+    }
+
+    @PostMapping("/updateArt/{code}")
+    Boolean updateLatestArt(@RequestParam("image") MultipartFile image,  @PathVariable("code") String code) throws IOException {
+        byte[] bytes = image.getBytes();
+        return artService.updateArt(code, bytes);
+    }
+
+    @GetMapping("/getAllArt")
+    List<ArtImageRow> getAllArt() {
+        return artService.getAllArt();
     }
 }

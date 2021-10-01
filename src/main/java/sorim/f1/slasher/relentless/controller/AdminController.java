@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import sorim.f1.slasher.relentless.entities.*;
+import sorim.f1.slasher.relentless.model.Aws;
 import sorim.f1.slasher.relentless.model.FullExposure;
 import sorim.f1.slasher.relentless.model.livetiming.Driver;
 import sorim.f1.slasher.relentless.service.AdminService;
@@ -124,6 +125,18 @@ public class AdminController {
     Boolean restoreExposureFromBackup(@RequestHeader String client, @RequestBody FullExposure body) throws Exception {
         securityService.validateAdminHeader(client);
         return service.restoreExposureFromBackup(body);
+    }
+
+    @GetMapping("/backupPosts")
+    Aws backupPosts(@RequestHeader String client) throws Exception {
+        securityService.validateAdminHeader(client);
+        return service.backupPosts();
+    }
+
+    @PostMapping("/restorePosts")
+    Boolean restorePosts(@RequestHeader String client, @RequestBody Aws body) throws Exception {
+        securityService.validateAdminHeader(client);
+        return service.restorePosts(body);
     }
 
     @GetMapping("/getLogs")

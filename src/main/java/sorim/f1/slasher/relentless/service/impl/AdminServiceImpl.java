@@ -20,6 +20,7 @@ import sorim.f1.slasher.relentless.configuration.MainProperties;
 import sorim.f1.slasher.relentless.entities.*;
 import sorim.f1.slasher.relentless.entities.ergast.RaceData;
 import sorim.f1.slasher.relentless.handling.Logger;
+import sorim.f1.slasher.relentless.model.Aws;
 import sorim.f1.slasher.relentless.model.CalendarData;
 import sorim.f1.slasher.relentless.model.FullExposure;
 import sorim.f1.slasher.relentless.model.SportSurge;
@@ -489,5 +490,20 @@ public class AdminServiceImpl implements AdminService {
     public List<ExposureDriver> updateExposureDrivers(List<ExposureDriver> list) {
         driverRepository.saveAll(list);
         return driverRepository.findAll();
+    }
+
+    @Override
+    public Aws backupPosts() {
+        return Aws.builder()
+                .awsContents(awsRepository.findAll())
+                .awsComments(awsCommentRepository.findAll())
+                .build();
+    }
+
+    @Override
+    public Boolean restorePosts(Aws body) {
+        awsRepository.saveAll(body.getAwsContents());
+        awsCommentRepository.saveAll(body.getAwsComments());
+        return true;
     }
 }

@@ -1,6 +1,7 @@
 package sorim.f1.slasher.relentless.service;
 
 import sorim.f1.slasher.relentless.entities.*;
+import sorim.f1.slasher.relentless.model.Aws;
 import sorim.f1.slasher.relentless.model.FullExposure;
 
 import java.io.IOException;
@@ -51,4 +52,8 @@ public interface AdminService {
     List<ExposureDriver> getExposureDrivers();
 
     List<ExposureDriver> updateExposureDrivers(List<ExposureDriver> list);
+
+    Aws backupPosts();
+
+    Boolean restorePosts(Aws body);
 }

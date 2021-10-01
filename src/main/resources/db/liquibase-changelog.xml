@@ -15,4 +15,8 @@
         <validCheckSum>ANY</validCheckSum>
         <sqlFile path="changelog/003_alter_exposure_drivers.sql" endDelimiter="/" relativeToChangelogFile="true"/>
     </changeSet>
+    <changeSet author="mdragicevic" id="004_art">
+        <validCheckSum>ANY</validCheckSum>
+        <sqlFile path="changelog/004_art.sql" endDelimiter="/" relativeToChangelogFile="true"/>
+    </changeSet>
 </databaseChangeLog>

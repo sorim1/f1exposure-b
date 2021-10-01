@@ -51,6 +51,8 @@ public interface ClientService {
 
     byte[] getImage(String code);
 
+    byte[] getArt(String code);
+
     String postContent(AwsContent content, String ipAddress);
 
     List<AwsContent> getAwsContent(String page);

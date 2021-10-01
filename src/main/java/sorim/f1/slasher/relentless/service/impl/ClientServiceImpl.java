@@ -43,6 +43,7 @@ public class ClientServiceImpl implements ClientService {
     private final ExposureService exposureService;
     private final ErgastService ergastService;
     private final MainProperties properties;
+    private final ArtImageRepository artImageRepository;
     private static final String SYSTEM_MESSAGE = "### SYSTEM MESSAGE ###";
 
 
@@ -254,6 +255,11 @@ public class ClientServiceImpl implements ClientService {
     @Override
     public byte[] getImage(String code) {
         return instagramService.getImage(code);
+    }
+
+    @Override
+    public byte[] getArt(String code) {
+        return artImageRepository.findFirstByCode(code).getImage();
     }
 
     @Override

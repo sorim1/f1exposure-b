@@ -8,6 +8,7 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import sorim.f1.slasher.relentless.entities.AwsContent;
+import sorim.f1.slasher.relentless.entities.ExposureDriver;
 
 import java.util.Date;
 import java.util.List;
@@ -16,6 +17,8 @@ import java.util.List;
 @Transactional
 @EnableJpaAuditing
 public interface AwsRepository extends CrudRepository<AwsContent, String> {
+
+    List<AwsContent> findAll();
     List<AwsContent> findAllByStatusLessThanEqualOrderByTimestampActivityDesc(Integer status, Pageable pageable);
     AwsContent findByCodeAndStatusLessThanEqual(String code, Integer status);
 

@@ -37,7 +37,7 @@ spring:
     name: f1-exposure-rest-api
   servlet:
     multipart:
-      max-file-size: 400KB
+      max-file-size: 4000KB
       max-request-size: 4700KB
   datasource:
     f1-exposure:

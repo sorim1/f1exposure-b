@@ -5,6 +5,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -21,12 +23,8 @@ public class ArtDriver {
     private Integer y;
     private Integer lapTime;
     private LapByLapData lapByLapData = new LapByLapData();
-    private Integer conflictUp;
-    private Integer upX;
-    private Integer upY;
-    private Integer conflictDown;
-    private Integer downX;
-    private Integer downY;
+    public List<Integer> conflictX = new ArrayList<>();
+    public List<Integer> conflictY = new ArrayList<>();
     private Integer diameter;
 
     public ArtDriver(Driver driver, int x, int y) {

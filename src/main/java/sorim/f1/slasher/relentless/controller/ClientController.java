@@ -126,6 +126,14 @@ public class ClientController {
         return service.getImage(code);
     }
 
+    @GetMapping(
+            value = "/getArt/{code}",
+            produces = MediaType.IMAGE_PNG_VALUE
+    )
+    byte[] getArt(@PathVariable("code") String code) {
+        return service.getArt(code);
+    }
+
     @GetMapping("/getTwitterPosts/{page}")
     DoubleTwitterFeed getTwitterPosts(@RequestHeader String client, @PathVariable("page") String page) throws Exception {
         securityService.validateHeader(client);
