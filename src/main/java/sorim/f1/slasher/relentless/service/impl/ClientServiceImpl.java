@@ -6,6 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import sorim.f1.slasher.relentless.configuration.MainProperties;
 import sorim.f1.slasher.relentless.entities.*;
@@ -39,7 +40,7 @@ public class ClientServiceImpl implements ClientService {
     private final InstagramService instagramService;
     private final TwitterService twitterService;
     private final RedditService redditService;
-    private final ForchanService forchanService;
+    private final FourchanService forchanService;
     private final ExposureService exposureService;
     private final ErgastService ergastService;
     private final MainProperties properties;
@@ -233,13 +234,13 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
-    public Double4chanFeed get4chanPosts(Integer page) {
-        return new Double4chanFeed(forchanService.get4chanPosts(page));
+    public void fetchRedditPosts() {
+        redditService.fetchRedditPosts();
     }
 
     @Override
-    public void fetchRedditPosts() {
-        redditService.fetchRedditPosts();
+    public Double4chanFeed get4chanPosts(Integer page) {
+        return new Double4chanFeed(forchanService.get4chanPosts(page));
     }
 
     @Override
@@ -270,6 +271,9 @@ public class ClientServiceImpl implements ClientService {
         if(content.getStatus()==null) {
             content.setStatus(1);
         }
+        if(content.getUrl()==null) {
+            content.setIconUrl("./assets/img/favicon.png");
+        }
         content.setTimestampCreated(new Date());
         content.setTimestampActivity(new Date());
         content.setCommentCount(0);
@@ -277,18 +281,33 @@ public class ClientServiceImpl implements ClientService {
         content.setUsername(username);
         content.setIp(ipAddress);
         awsRepository.save(content);
+        log.info("PRIJE ASYNC1");
+        if(content.getUrl()!=null) {
+            updatePostImagesAsync(content);
+        }
+        log.info("POSLIJE ASYNC1");
         return code;
     }
 
+    @Async
+    void updatePostImagesAsync(AwsContent content) {
+        new Thread(() -> {
+            log.info("UNUTAR2a ASYNC1");
+            redditService.updatePostImages(content);
+            awsRepository.save(content);
+            log.info("UNUTAR2 ASYNC1");
+        }).start();
+    }
+
     @Override
-    public List<AwsContent> getAwsContent(String page) {
-        Pageable paging = PageRequest.of(Integer.parseInt(page), 20);
-        return awsRepository.findAllByStatusLessThanEqualOrderByTimestampActivityDesc(2, paging);
+    public List<AwsContent> getAwsContent(Integer page) {
+        Pageable paging = PageRequest.of(page, 15);
+        return awsRepository.findAllByStatusLessThanEqualOrderByTimestampActivityDesc(3, paging);
     }
 
     @Override
     public AwsContent getAwsPost(String code) {
-        AwsContent response = awsRepository.findByCodeAndStatusLessThanEqual(code, 2);
+        AwsContent response = awsRepository.findByCodeAndStatusLessThanEqual(code, 3);
         if (response != null) {
             response.setComments(awsCommentRepository.findAllByContentCodeAndStatusOrderByTimestampCreatedDesc(code, 1));
         }

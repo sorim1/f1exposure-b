@@ -21,6 +21,7 @@ public interface AwsRepository extends CrudRepository<AwsContent, String> {
     List<AwsContent> findAll();
     List<AwsContent> findAllByStatusLessThanEqualOrderByTimestampActivityDesc(Integer status, Pageable pageable);
     AwsContent findByCodeAndStatusLessThanEqual(String code, Integer status);
+    AwsContent findByCode(String code);
 
     @Modifying
     @Query("update AwsContent set commentCount = commentCount+1 , timestampActivity = ?2 where code = ?1")

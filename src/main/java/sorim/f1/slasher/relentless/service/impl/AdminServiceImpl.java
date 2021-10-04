@@ -20,17 +20,11 @@ import sorim.f1.slasher.relentless.configuration.MainProperties;
 import sorim.f1.slasher.relentless.entities.*;
 import sorim.f1.slasher.relentless.entities.ergast.RaceData;
 import sorim.f1.slasher.relentless.handling.Logger;
-import sorim.f1.slasher.relentless.model.Aws;
-import sorim.f1.slasher.relentless.model.CalendarData;
-import sorim.f1.slasher.relentless.model.FullExposure;
-import sorim.f1.slasher.relentless.model.SportSurge;
+import sorim.f1.slasher.relentless.model.*;
 import sorim.f1.slasher.relentless.model.ergast.ErgastResponse;
 import sorim.f1.slasher.relentless.repository.*;
 import sorim.f1.slasher.relentless.scheduled.Scheduler;
-import sorim.f1.slasher.relentless.service.AdminService;
-import sorim.f1.slasher.relentless.service.ClientService;
-import sorim.f1.slasher.relentless.service.ErgastService;
-import sorim.f1.slasher.relentless.service.ExposureService;
+import sorim.f1.slasher.relentless.service.*;
 
 import javax.annotation.PostConstruct;
 import java.io.IOException;
@@ -69,6 +63,8 @@ public class AdminServiceImpl implements AdminService {
     private final MainProperties properties;
     private final ClientService clientService;
     private final ExposureService exposureService;
+    private final MarketingService marketingService;
+    private final ArtService artService;
     private final RestTemplate restTemplate = new RestTemplate();
 
     @PostConstruct
@@ -504,6 +500,24 @@ public class AdminServiceImpl implements AdminService {
     public Boolean restorePosts(Aws body) {
         awsRepository.saveAll(body.getAwsContents());
         awsCommentRepository.saveAll(body.getAwsComments());
+        return true;
+    }
+
+    @Override
+    public FullBackup fullBackup() {
+        return FullBackup.builder()
+                .artBackup(artService.getAllArt())
+                .awsBackup(backupPosts())
+                .exposureBackup(backupExposure())
+                .marketingBackup(marketingService.backupMarketing()).build();
+    }
+
+    @Override
+    public Boolean restoreFromFullBackup(FullBackup body) {
+        artService.restoreAllArt(body.getArtBackup());
+        restorePosts(body.getAwsBackup());
+        restoreExposureFromBackup(body.getExposureBackup());
+        marketingService.restoreMarketing(body.getMarketingBackup());
         return true;
     }
 }

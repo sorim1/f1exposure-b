@@ -89,6 +89,35 @@ public class ArtServiceImpl implements ArtService {
     }
 
     @Override
+    public Boolean generateLatestArtForced() throws IOException {
+
+        int drag=2;
+        int diameter=1;
+        int iterations = 12000;
+        RaceData raceData = ergastService.getLatestAnalyzedRace();
+        RaceAnalysis analysis = raceData.getRaceAnalysis();
+        if(analysis.getArt()!=null){
+            artImageRepository.deleteByCode(analysis.getArt());
+        }
+        BufferedImage bi = generateBufferedImage(analysis, drag, drag, iterations, diameter, true);
+        BufferedImage bi2 = resize(bi, 1000, 1000);
+        byte[] image = toByteArray(bi2);
+        String code = UUID.randomUUID().toString();
+        ArtImageRow imageRow = ArtImageRow.builder()
+                .code(code)
+                .image(image)
+                .season(analysis.getYear())
+                .round(raceData.getRound())
+                .title(raceData.getCircuit().getCircuitName() + " " + analysis.getYear())
+                .build();
+        artImageRepository.save(imageRow);
+        analysis.setArt(code);
+        raceData.setRaceAnalysis(analysis);
+        ergastService.saveRace(raceData);
+        return true;
+    }
+
+    @Override
     public byte[] generateImage(Integer xDrag, Integer yDrag, Integer maxIteration, Integer diameter) throws IOException {
         RaceAnalysis analysis = ergastService.getLatestAnalyzedRace().getRaceAnalysis();
         BufferedImage bi = generateBufferedImage(analysis, xDrag, yDrag, maxIteration, diameter, true);
@@ -391,5 +420,23 @@ public class ArtServiceImpl implements ArtService {
     @Override
     public List<ArtImageRow> getAllArt() {
         return artImageRepository.findAllByOrderBySeasonDescRoundDesc();
+    }
+
+    @Override
+    public ArtImageRow postArt(ArtImageRow body) {
+        ArtImageRow row = artImageRepository.findFirstByCode(body.getCode());
+        if(row==null){
+            artImageRepository.save(body);
+            return body;
+        } else {
+            row.update(body);
+            artImageRepository.save(row);
+            return row;
+        }
+    }
+
+    @Override
+    public void restoreAllArt(List<ArtImageRow> artBackup) {
+        artImageRepository.saveAll(artBackup);
     }
 }

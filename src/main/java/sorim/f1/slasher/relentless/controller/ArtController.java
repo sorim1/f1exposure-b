@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.method.annotation.MvcUriComponentsBuilder;
 import sorim.f1.slasher.relentless.entities.ArtImageRow;
+import sorim.f1.slasher.relentless.entities.ExposureDriver;
 import sorim.f1.slasher.relentless.entities.F1Calendar;
 import sorim.f1.slasher.relentless.model.FileData;
 import sorim.f1.slasher.relentless.model.UploadResponseMessage;
@@ -49,18 +50,33 @@ public class ArtController {
     }
 
     @GetMapping("/generateLatestArt")
-    Boolean generateLatestArt() throws IOException {
+    Boolean generateLatestArt(@RequestHeader String client) throws Exception {
+        securityService.validateAdminHeader(client);
         return artService.generateLatestArt();
     }
 
+    @GetMapping("/generateLatestArtForced")
+    Boolean generateLatestArtForced(@RequestHeader String client) throws Exception {
+        securityService.validateAdminHeader(client);
+        return artService.generateLatestArtForced();
+    }
+
     @PostMapping("/updateArt/{code}")
-    Boolean updateLatestArt(@RequestParam("image") MultipartFile image,  @PathVariable("code") String code) throws IOException {
+    Boolean updateLatestArt(@RequestHeader String client, @RequestParam("image") MultipartFile image,  @PathVariable("code") String code) throws Exception {
+        securityService.validateAdminHeader(client);
         byte[] bytes = image.getBytes();
         return artService.updateArt(code, bytes);
     }
 
     @GetMapping("/getAllArt")
-    List<ArtImageRow> getAllArt() {
+    List<ArtImageRow> getAllArt(@RequestHeader String client) throws Exception {
+        securityService.validateHeader(client);
         return artService.getAllArt();
+    }
+
+    @PostMapping("/postArt")
+    ArtImageRow postArt(@RequestHeader String client, @RequestBody ArtImageRow body) throws Exception {
+        securityService.validateAdminHeader(client);
+        return artService.postArt(body);
     }
 }

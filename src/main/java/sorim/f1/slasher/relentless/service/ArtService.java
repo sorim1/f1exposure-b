@@ -11,9 +11,15 @@ public interface ArtService {
 
     Boolean generateLatestArt() throws IOException;
 
+    Boolean generateLatestArtForced() throws IOException;
+
     byte[] generateImage(Integer xDrag, Integer yDrag, Integer maxIteration, Integer diameter) throws IOException;
 
     Boolean updateArt(String code, byte[] image);
 
     List<ArtImageRow> getAllArt();
+
+    ArtImageRow postArt(ArtImageRow body);
+
+    void restoreAllArt(List<ArtImageRow> artBackup);
 }

@@ -151,10 +151,35 @@ public class MainUtility {
     }
 
     public static String generateCodeFromTitle(String title) {
-       String tempo =  UUID.randomUUID().toString();
+       String uuid =  UUID.randomUUID().toString();
         String code = title.replaceAll(
                 "[^a-zA-Z0-9 ]", "").replaceAll(" ", "-");
-        code = code.substring(0, Math.min(40, code.length()))+"-"+tempo.substring(0,5);
+        code = code.substring(0, Math.min(40, code.length()))+"-"+uuid.substring(0,5);
         return code;
     }
+
+    public static String generateCodeFromTitleAndId(String title, String id) {
+        String hashId =  String.valueOf(id.hashCode()).substring(0,5);
+        String code = title.replaceAll(
+                "[^a-zA-Z0-9 ]", "").replaceAll(" ", "-");
+        code = code.substring(0, Math.min(40, code.length()))+hashId;
+        return code;
+    }
+
+    public static String getDomain(String fullUrl) {
+        int start = 0;
+        String domainUrl = "";
+        if(fullUrl.indexOf("//")>0){
+            start =fullUrl.indexOf("//")+2;
+        }
+        String prefix = fullUrl.substring(0, start);
+        domainUrl = fullUrl.substring(start);
+        if(domainUrl.indexOf("/")>0){
+            domainUrl = domainUrl.substring(0, domainUrl.indexOf("/"));
+        }
+        domainUrl = prefix + domainUrl;
+        log.info("domainUrl: "+ domainUrl);
+        return domainUrl;
+    }
+
 }

@@ -55,7 +55,7 @@ public interface ClientService {
 
     String postContent(AwsContent content, String ipAddress);
 
-    List<AwsContent> getAwsContent(String page);
+    List<AwsContent> getAwsContent(Integer page);
 
     AwsContent getAwsPost(String code);
 

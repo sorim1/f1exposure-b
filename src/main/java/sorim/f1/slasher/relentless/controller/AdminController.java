@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import sorim.f1.slasher.relentless.entities.*;
 import sorim.f1.slasher.relentless.model.Aws;
+import sorim.f1.slasher.relentless.model.FullBackup;
 import sorim.f1.slasher.relentless.model.FullExposure;
 import sorim.f1.slasher.relentless.model.livetiming.Driver;
 import sorim.f1.slasher.relentless.service.AdminService;
@@ -126,6 +127,19 @@ public class AdminController {
         securityService.validateAdminHeader(client);
         return service.restoreExposureFromBackup(body);
     }
+
+    @GetMapping("/fullBackup")
+    FullBackup fullBackup(@RequestHeader String client) throws Exception {
+        securityService.validateAdminHeader(client);
+        return service.fullBackup();
+    }
+
+    @PostMapping("/fullBackup")
+    Boolean fullBackup(@RequestHeader String client, @RequestBody FullBackup body) throws Exception {
+        securityService.validateAdminHeader(client);
+        return service.restoreFromFullBackup(body);
+    }
+
 
     @GetMapping("/backupPosts")
     Aws backupPosts(@RequestHeader String client) throws Exception {

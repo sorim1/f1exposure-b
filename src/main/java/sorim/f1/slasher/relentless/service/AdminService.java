@@ -2,6 +2,7 @@ package sorim.f1.slasher.relentless.service;
 
 import sorim.f1.slasher.relentless.entities.*;
 import sorim.f1.slasher.relentless.model.Aws;
+import sorim.f1.slasher.relentless.model.FullBackup;
 import sorim.f1.slasher.relentless.model.FullExposure;
 
 import java.io.IOException;
@@ -56,4 +57,8 @@ public interface AdminService {
     Aws backupPosts();
 
     Boolean restorePosts(Aws body);
+
+    FullBackup fullBackup();
+
+    Boolean restoreFromFullBackup(FullBackup body);
 }

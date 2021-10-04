@@ -17,5 +17,7 @@ public interface ArtImageRepository extends PagingAndSortingRepository<ArtImageR
 
     ArtImageRow findFirstByCode(String Code);
 
+    Integer deleteByCode(String code);
+
     List<ArtImageRow> findAllByOrderBySeasonDescRoundDesc();
 }

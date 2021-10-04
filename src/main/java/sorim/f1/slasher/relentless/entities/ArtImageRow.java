@@ -25,4 +25,12 @@ public class ArtImageRow {
     private Integer season;
     private Integer round;
     private String title;
+    private Integer status;
+
+    public void update(ArtImageRow newData) {
+        this.season = newData.getSeason();
+        this.round = newData.getRound();
+        this.status = newData.getStatus();
+        this.title = newData.getTitle();
+    }
 }

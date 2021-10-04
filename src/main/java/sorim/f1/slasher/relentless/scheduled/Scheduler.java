@@ -7,10 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import sorim.f1.slasher.relentless.handling.Logger;
-import sorim.f1.slasher.relentless.service.AdminService;
-import sorim.f1.slasher.relentless.service.ClientService;
-import sorim.f1.slasher.relentless.service.ExposureService;
-import sorim.f1.slasher.relentless.service.LiveTimingService;
+import sorim.f1.slasher.relentless.service.*;
 import sorim.f1.slasher.relentless.util.MainUtility;
 
 import javax.annotation.PostConstruct;
@@ -26,6 +23,7 @@ public class Scheduler {
     private final ExposureService exposureService;
     private final AdminService adminService;
     private final ClientService clientService;
+    private final ArtService artService;
     private final LiveTimingService liveTimingService;
     private final static String CODE="SCHEDULER";
     public static Boolean standingsUpdated=false;
@@ -40,6 +38,9 @@ public class Scheduler {
         if(!standingsUpdated) {
             standingsUpdated = adminService.initializeStandings();
         }
+        Boolean artGenerated = artService.generateLatestArt();
+        Logger.log(CODE, "artGenerated: " + artGenerated);
+
     }
 
     @Scheduled(cron = "0 0 18 * * TUE")

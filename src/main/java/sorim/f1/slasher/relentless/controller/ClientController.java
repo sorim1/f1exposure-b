@@ -179,7 +179,7 @@ public class ClientController {
     }
 
     @GetMapping("/getAwsContent/{page}")
-    List<AwsContent> getAwsContent(@RequestHeader String client, @PathVariable("page") String page) throws Exception {
+    List<AwsContent> getAwsContent(@RequestHeader String client, @PathVariable("page") Integer page) throws Exception {
         securityService.validateHeader(client);
         return service.getAwsContent(page);
     }
