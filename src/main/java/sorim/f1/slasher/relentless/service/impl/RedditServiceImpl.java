@@ -13,7 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.*;
-import org.springframework.scheduling.annotation.Async;
+import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import sorim.f1.slasher.relentless.configuration.MainProperties;
@@ -27,6 +27,7 @@ import sorim.f1.slasher.relentless.service.RedditService;
 import sorim.f1.slasher.relentless.util.MainUtility;
 
 import javax.annotation.PostConstruct;
+import java.nio.charset.Charset;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -47,7 +48,8 @@ public class RedditServiceImpl implements RedditService {
     private static String lastNewF1PornPost = "";
     private static final String FAVICON = "/favicon.ico";
     private static final String redditDailyNews = "https://reddit.com/r/formula1/search.json?q=flair:news&sort=comments&restrict_sr=on&t=day";
-
+    private static final String iReddit = "i.redd.it";
+    private static final String REDDIT_FAVICON = "https://reddit.com/favicon.ico";
     RestTemplate restTemplate = new RestTemplate();
     HttpHeaders headers = new HttpHeaders();
     HttpHeaders htmlHeaders = new HttpHeaders();
@@ -71,10 +73,9 @@ public class RedditServiceImpl implements RedditService {
 
     @Override
     public void fetchRedditPosts() {
-      //  getRFormula1New();
-      //  getRF1PornHot();
+        getRFormula1New();
+        getRF1PornHot();
         getNews();
-       // getNews2();
     }
 
     private void getNews() {
@@ -83,15 +84,17 @@ public class RedditServiceImpl implements RedditService {
             ResponseEntity<String> response = restTemplate.exchange(
                     redditDailyNews, HttpMethod.GET, entity, String.class);
             List<AwsContent> list = new ArrayList<>();
+            long currentTime = System.currentTimeMillis();
             try {
                 Map<String, Object> mapping = mapper.readValue(response.getBody(), typeRef);
                 LinkedHashMap<String, Object> root = (LinkedHashMap<String, Object>) mapping.get("data");
                 List<LinkedHashMap<String, Object>> children = (ArrayList<LinkedHashMap<String, Object>>) root.get("children");
+                AtomicReference<Integer> counter = new AtomicReference<>(1000);
                 children.forEach(child -> {
                         LinkedHashMap<String, Object> data = (LinkedHashMap<String, Object>) child.get("data");
-                    AwsContent post = new AwsContent(data);
-
+                    AwsContent post = new AwsContent(data, currentTime- counter.get());
                             list.add(post);
+                    counter.set(counter.get() + 1000);
                 });
             saveAwsList(list);
             } catch (JsonProcessingException e) {
@@ -171,7 +174,11 @@ public class RedditServiceImpl implements RedditService {
         HttpEntity entity = new HttpEntity(htmlHeaders);
         boolean iconUrlSet = false;
         String domainUrl = MainUtility.getDomain(post.getUrl());
-        if(check200Status(domainUrl + FAVICON)){
+        if(domainUrl.contains(iReddit)){
+            post.setIconUrl(REDDIT_FAVICON);
+            iconUrlSet=true;
+        }
+        if(!iconUrlSet || check200Status(domainUrl + FAVICON)){
             post.setIconUrl(domainUrl + FAVICON);
             iconUrlSet=true;
         }
@@ -304,7 +311,8 @@ public class RedditServiceImpl implements RedditService {
         headers.setContentType(MediaType.APPLICATION_JSON);
         headers.add("user-agent", "Mozilla/4.8 Firefox/21.0");
         HttpEntity<String> entity = new HttpEntity<String>("parameters", headers);
-
+        restTemplate.getMessageConverters()
+                .add(0, new StringHttpMessageConverter(Charset.forName("UTF-8")));
     }
 
 }

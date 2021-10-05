@@ -22,6 +22,8 @@ public interface AdminService {
 
     Integer fetchSportSurgeLinks() throws IOException;
 
+    Boolean fetchReplayLinks();
+
     void deleteSportSurgeLinks();
 
     void closeExposurePoll();
@@ -61,4 +63,6 @@ public interface AdminService {
     FullBackup fullBackup();
 
     Boolean restoreFromFullBackup(FullBackup body);
+
+    Integer deleteAwsContent(String username);
 }

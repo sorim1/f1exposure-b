@@ -31,9 +31,9 @@ public class Scheduler {
 
     @Scheduled(cron = "0 0 1 * * MON")
     public void mondayJobs() throws IOException {
-        log.info("mondayJobs called");
         Logger.log(CODE, "mondayJobs called");
         adminService.deleteSportSurgeLinks();
+        adminService.fetchReplayLinks();
         analysisDone=true;
         if(!standingsUpdated) {
             standingsUpdated = adminService.initializeStandings();
@@ -45,8 +45,8 @@ public class Scheduler {
 
     @Scheduled(cron = "0 0 18 * * TUE")
     public void tuesdayJobs() throws IOException {
-        log.info("tuesdayJobs called");
         Logger.log(CODE, "tuesdayJobs called");
+        adminService.fetchReplayLinks();
         exposureService.closeExposurePoll();
         if(!standingsUpdated) {
             adminService.initializeStandings();

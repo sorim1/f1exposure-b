@@ -42,16 +42,17 @@ public class AwsContent {
     @Transient
     private List<AwsComment> comments;
 
-    public AwsContent(LinkedHashMap<String, Object> data) {
+    public AwsContent(LinkedHashMap<String, Object> data, long time) {
         this.code = MainUtility.generateCodeFromTitleAndId((String) data.get("title"), (String) data.get("id"));
         this.title = (String) data.get("title");
         this.url = (String) data.get("url_overridden_by_dest");
         Double createdDouble = (Double) data.get("created");
         this.timestampCreated = new Date(createdDouble.longValue()) ;
         this.setStatus(3);
-        this.setTimestampCreated(new Date(System.currentTimeMillis()));
-        this.setTimestampActivity(new Date(System.currentTimeMillis()-24*60*60*1000));
+        this.setTimestampCreated(new Date(time));
+        this.setTimestampActivity(new Date(time-24*60*60*1000));
         this.setCommentCount(0);
-        this.setUsername("F1ExposureBot");
     }
+
+
 }

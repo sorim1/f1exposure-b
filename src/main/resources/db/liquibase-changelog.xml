@@ -19,4 +19,7 @@
         <validCheckSum>ANY</validCheckSum>
         <sqlFile path="changelog/004_art.sql" endDelimiter="/" relativeToChangelogFile="true"/>
     </changeSet>
+    <changeSet author="mdragicevic" id="005_aws_posts">
+        <sqlFile path="changelog/005_aws_posts.sql" endDelimiter="/" relativeToChangelogFile="true"/>
+    </changeSet>
 </databaseChangeLog>

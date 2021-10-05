@@ -73,6 +73,13 @@ public class AdminController {
         service.fetchSportSurgeLinks();
     }
 
+    @GetMapping("/fetchReplayLinks")
+    void fetchReplayLinks(@RequestHeader String client) throws Exception {
+        securityService.validateAdminHeader(client);
+        service.fetchReplayLinks();
+    }
+
+
     @GetMapping("/closeExposurePoll")
     void closeExposurePoll(@RequestHeader String client) throws Exception {
         securityService.validateAdminHeader(client);
@@ -181,5 +188,11 @@ public class AdminController {
     List<ExposureDriver> updateExposureDrivers(@RequestHeader String client, @RequestBody List<ExposureDriver> list) throws Exception {
         securityService.validateAdminHeader(client);
         return service.updateExposureDrivers(list);
+    }
+
+    @GetMapping("/deleteAwsContent")
+    Integer deleteAwsContent(@RequestHeader String client, @RequestParam(required=false) String username) throws Exception {
+        securityService.validateAdminHeader(client);
+        return service.deleteAwsContent(username);
     }
 }

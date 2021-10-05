@@ -1,6 +1,7 @@
 package sorim.f1.slasher.relentless.service;
 
 import com.github.instagram4j.instagram4j.exceptions.IGLoginException;
+import org.apache.regexp.RE;
 import sorim.f1.slasher.relentless.entities.*;
 import sorim.f1.slasher.relentless.model.*;
 
@@ -64,4 +65,6 @@ public interface ClientService {
     List<AwsComment> getAwsComments(String code);
 
     BasicResponse moderateComment(CommentModeration moderation);
+
+    List<Replay> getReplays(Integer page);
 }

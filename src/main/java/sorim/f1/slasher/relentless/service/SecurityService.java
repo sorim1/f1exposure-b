@@ -15,4 +15,5 @@ public interface SecurityService {
 
     List<Log> getLogs(Integer mode, String filter);
 
+    String validateCode(String code) throws Exception;
 }

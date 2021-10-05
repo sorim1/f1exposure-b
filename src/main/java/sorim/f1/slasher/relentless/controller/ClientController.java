@@ -130,8 +130,9 @@ public class ClientController {
             value = "/getArt/{code}",
             produces = MediaType.IMAGE_PNG_VALUE
     )
-    byte[] getArt(@PathVariable("code") String code) {
-        return service.getArt(code);
+    byte[] getArt(@PathVariable("code") String code) throws Exception {
+        String cleanedCode = securityService.validateCode(code);
+        return service.getArt(cleanedCode);
     }
 
     @GetMapping("/getTwitterPosts/{page}")
@@ -209,4 +210,9 @@ public class ClientController {
         return service.moderateComment(moderation);
     }
 
+    @GetMapping("/getReplays/{page}")
+    List<Replay> getReplays(@RequestHeader String client, @PathVariable("page") Integer page) throws Exception {
+        securityService.validateHeader(client);
+        return service.getReplays(page);
+    }
 }

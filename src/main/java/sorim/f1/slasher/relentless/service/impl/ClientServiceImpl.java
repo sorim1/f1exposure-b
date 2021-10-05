@@ -27,6 +27,7 @@ import java.util.*;
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class ClientServiceImpl implements ClientService {
 
+    private final MainProperties properties;
     private final CalendarRepository calendarRepository;
     private final DriverStandingsRepository driverStandingsRepository;
     private final ConstructorStandingsRepository constructorStandingsRepository;
@@ -43,7 +44,8 @@ public class ClientServiceImpl implements ClientService {
     private final FourchanService forchanService;
     private final ExposureService exposureService;
     private final ErgastService ergastService;
-    private final MainProperties properties;
+    private final RacingfkService racingfkService;
+
     private final ArtImageRepository artImageRepository;
     private static final String SYSTEM_MESSAGE = "### SYSTEM MESSAGE ###";
 
@@ -281,21 +283,17 @@ public class ClientServiceImpl implements ClientService {
         content.setUsername(username);
         content.setIp(ipAddress);
         awsRepository.save(content);
-        log.info("PRIJE ASYNC1");
         if(content.getUrl()!=null) {
             updatePostImagesAsync(content);
         }
-        log.info("POSLIJE ASYNC1");
         return code;
     }
 
     @Async
     void updatePostImagesAsync(AwsContent content) {
         new Thread(() -> {
-            log.info("UNUTAR2a ASYNC1");
             redditService.updatePostImages(content);
             awsRepository.save(content);
-            log.info("UNUTAR2 ASYNC1");
         }).start();
     }
 
@@ -376,6 +374,11 @@ public class ClientServiceImpl implements ClientService {
 
         }
         return BasicResponse.builder().state(state).message(message).build();
+    }
+
+    @Override
+    public List<Replay> getReplays(Integer page) {
+        return racingfkService.getReplays(page);
     }
 
     private Map<String, Integer> getRemainingTime(LocalDateTime gmtDateTime, F1Calendar f1calendar, Integer mode) {

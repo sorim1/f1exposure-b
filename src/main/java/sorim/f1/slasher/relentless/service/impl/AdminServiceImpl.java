@@ -65,6 +65,7 @@ public class AdminServiceImpl implements AdminService {
     private final ExposureService exposureService;
     private final MarketingService marketingService;
     private final ArtService artService;
+    private final RacingfkService racingfkService;
     private final RestTemplate restTemplate = new RestTemplate();
 
     @PostConstruct
@@ -356,6 +357,11 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
+    public Boolean fetchReplayLinks() {
+        return racingfkService.fetchReplayLinks();
+    }
+
+    @Override
     public void deleteSportSurgeLinks() {
         Logger.log("deleteSportSurgeLinks");
         sportSurgeStreamRepository.deleteAll();
@@ -519,5 +525,10 @@ public class AdminServiceImpl implements AdminService {
         restoreExposureFromBackup(body.getExposureBackup());
         marketingService.restoreMarketing(body.getMarketingBackup());
         return true;
+    }
+
+    @Override
+    public Integer deleteAwsContent(String username) {
+        return awsRepository.deleteAllByUsername(username);
     }
 }

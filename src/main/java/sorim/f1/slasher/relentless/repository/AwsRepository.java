@@ -23,6 +23,8 @@ public interface AwsRepository extends CrudRepository<AwsContent, String> {
     AwsContent findByCodeAndStatusLessThanEqual(String code, Integer status);
     AwsContent findByCode(String code);
 
+    Integer deleteAllByUsername(String username);
+
     @Modifying
     @Query("update AwsContent set commentCount = commentCount+1 , timestampActivity = ?2 where code = ?1")
     void updateActivityAndCommentCount(String code, Date date);
