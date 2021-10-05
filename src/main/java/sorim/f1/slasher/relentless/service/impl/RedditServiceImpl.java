@@ -207,7 +207,7 @@ public class RedditServiceImpl implements RedditService {
                 post.setImageUrl(content);
             }
             Elements titleTags = doc.getElementsByTag("title");
-            if(titleTags.size()>0){
+            if(titleTags.size()>0 && !domainUrl.contains("instagram")){
                 post.setTitle(titleTags.get(0).wholeText());
             }
         }catch(Exception ex){
