@@ -32617,16 +32617,33 @@
         }
       }
 
+      function PoweredByAwsComponent_tr_29_a_3_img_1_Template(rf, ctx) {
+        if (rf & 1) {
+          core
+          /* ɵɵelement */
+          ._UZ(0, "img", 35);
+        }
+
+        if (rf & 2) {
+          var post_r4 = core
+          /* ɵɵnextContext */
+          .oxw(2).$implicit;
+          core
+          /* ɵɵproperty */
+          .Q6J("src", post_r4.iconUrl, core
+          /* ɵɵsanitizeUrl */
+          .LSH);
+        }
+      }
+
       function PoweredByAwsComponent_tr_29_a_3_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵelementStart */
           .TgZ(0, "a", 33);
-
           core
-          /* ɵɵelement */
-          ._UZ(1, "img", 34);
-
+          /* ɵɵtemplate */
+          .YNc(1, PoweredByAwsComponent_tr_29_a_3_img_1_Template, 1, 1, "img", 34);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -32646,6 +32663,23 @@
           .xp6(1);
           core
           /* ɵɵproperty */
+          .Q6J("ngIf", post_r4.iconUrl != null);
+        }
+      }
+
+      function PoweredByAwsComponent_tr_29_a_4_img_1_Template(rf, ctx) {
+        if (rf & 1) {
+          core
+          /* ɵɵelement */
+          ._UZ(0, "img", 35);
+        }
+
+        if (rf & 2) {
+          var post_r4 = core
+          /* ɵɵnextContext */
+          .oxw(2).$implicit;
+          core
+          /* ɵɵproperty */
           .Q6J("src", post_r4.iconUrl, core
           /* ɵɵsanitizeUrl */
           .LSH);
@@ -32656,12 +32690,10 @@
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "a", 35);
-
+          .TgZ(0, "a", 36);
           core
-          /* ɵɵelement */
-          ._UZ(1, "img", 34);
-
+          /* ɵɵtemplate */
+          .YNc(1, PoweredByAwsComponent_tr_29_a_4_img_1_Template, 1, 1, "img", 34);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -32681,9 +32713,7 @@
           .xp6(1);
           core
           /* ɵɵproperty */
-          .Q6J("src", post_r4.iconUrl, core
-          /* ɵɵsanitizeUrl */
-          .LSH);
+          .Q6J("ngIf", post_r4.iconUrl != null);
         }
       }
 
@@ -32724,7 +32754,7 @@
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "a", 35);
+          .TgZ(0, "a", 36);
 
           core
           /* ɵɵtext */
@@ -33012,10 +33042,10 @@
         selectors: [["powered-by-aws-cmp"]],
         decls: 39,
         vars: 6,
-        consts: [["autosize", ""], ["autosize", "", "mode", "side", "position", "end", 1, "example-sidenav", 3, "opened", "openedChange"], ["drawer", ""], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area", 3, "ngModel", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "post-comment-button", 3, "click"], [4, "ngFor", "ngForOf"], [1, "fixed-button"], ["type", "fixed-plugin", "mat-button", "", 3, "click"], [1, "fa", "fa-commenting-o", "fa-2x"], [1, "height-fill-screen"], [1, "col-lg-12", "col-md-6", "col-sm-6"], [1, "card", "card-stats"], [1, "post-comment", "align-middle"], [1, "table", "table-striped"], ["class", "hover-effects-bold-row", 4, "ngFor", "ngForOf"], [1, "basic-left", "icon-big", "text-center"], ["color", "primary", "mat-flat-button", "", "aria-label", "Example icon button with a home icon", 1, "big-button", 3, "disabled", "click"], [1, "basic-right", "icon-big", "text-center"], [1, "basic-comment"], [1, "one"], [1, "two"], [1, "basic-comment-body"], [1, "hover-effects-bold-row"], [1, "width-10"], [1, "d-sm-none", "d-none", "d-lg-table-cell"], ["class", "postLinks", "target", "_blank", 3, "href", 4, "ngIf"], ["class", "postLinks", 3, "href", 4, "ngIf"], [1, "pr-2", "max-width-10rem"], [1, "simpleLink", 3, "href"], [1, "btn", "btn-sm", "btn-round", "btn-icon", 3, "ngClass"], ["target", "_blank", 1, "postLinks", 3, "href"], [1, "w-70px", 3, "src"], [1, "postLinks", 3, "href"]],
+        consts: [["autosize", ""], ["autosize", "", "mode", "side", "position", "end", 1, "example-sidenav", 3, "opened", "openedChange"], ["drawer", ""], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area", 3, "ngModel", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "post-comment-button", 3, "click"], [4, "ngFor", "ngForOf"], [1, "fixed-button"], ["type", "fixed-plugin", "mat-button", "", 3, "click"], [1, "fa", "fa-commenting-o", "fa-2x"], [1, "height-fill-screen"], [1, "col-lg-12", "col-md-6", "col-sm-6"], [1, "card", "card-stats"], [1, "post-comment", "align-middle"], [1, "table", "table-striped"], ["class", "hover-effects-bold-row", 4, "ngFor", "ngForOf"], [1, "basic-left", "icon-big", "text-center"], ["color", "primary", "mat-flat-button", "", "aria-label", "Example icon button with a home icon", 1, "big-button", 3, "disabled", "click"], [1, "basic-right", "icon-big", "text-center"], [1, "basic-comment"], [1, "one"], [1, "two"], [1, "basic-comment-body"], [1, "hover-effects-bold-row"], [1, "width-10"], [1, "d-sm-none", "d-none", "d-lg-table-cell"], ["class", "postLinks", "target", "_blank", 3, "href", 4, "ngIf"], ["class", "postLinks", 3, "href", 4, "ngIf"], [1, "pr-2", "max-width-10rem"], [1, "simpleLink", 3, "href"], [1, "btn", "btn-sm", "btn-round", "btn-icon", 3, "ngClass"], ["target", "_blank", 1, "postLinks", 3, "href"], ["class", "w-42px", 3, "src", 4, "ngIf"], [1, "w-42px", 3, "src"], [1, "postLinks", 3, "href"]],
         template: function PoweredByAwsComponent_Template(rf, ctx) {
           if (rf & 1) {
-            var _r14 = core
+            var _r18 = core
             /* ɵɵgetCurrentView */
             .EpF();
 
@@ -33114,7 +33144,7 @@
             .NdJ("click", function PoweredByAwsComponent_Template_button_click_15_listener() {
               core
               /* ɵɵrestoreView */
-              .CHM(_r14);
+              .CHM(_r18);
 
               var _r0 = core
               /* ɵɵreference */
@@ -33147,7 +33177,7 @@
             .NdJ("click", function PoweredByAwsComponent_Template_button_click_18_listener() {
               core
               /* ɵɵrestoreView */
-              .CHM(_r14);
+              .CHM(_r18);
 
               var _r0 = core
               /* ɵɵreference */

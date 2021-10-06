@@ -14233,25 +14233,37 @@ function PoweredByAwsComponent_div_13_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵadvance */.xp6(2);
     core/* ɵɵtextInterpolate */.Oqu(comment_r3.comment);
 } }
+function PoweredByAwsComponent_tr_29_a_3_img_1_Template(rf, ctx) { if (rf & 1) {
+    core/* ɵɵelement */._UZ(0, "img", 35);
+} if (rf & 2) {
+    const post_r4 = core/* ɵɵnextContext */.oxw(2).$implicit;
+    core/* ɵɵproperty */.Q6J("src", post_r4.iconUrl, core/* ɵɵsanitizeUrl */.LSH);
+} }
 function PoweredByAwsComponent_tr_29_a_3_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "a", 33);
-    core/* ɵɵelement */._UZ(1, "img", 34);
+    core/* ɵɵtemplate */.YNc(1, PoweredByAwsComponent_tr_29_a_3_img_1_Template, 1, 1, "img", 34);
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
     const post_r4 = core/* ɵɵnextContext */.oxw().$implicit;
     core/* ɵɵproperty */.Q6J("href", post_r4.url, core/* ɵɵsanitizeUrl */.LSH);
     core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵproperty */.Q6J("ngIf", post_r4.iconUrl != null);
+} }
+function PoweredByAwsComponent_tr_29_a_4_img_1_Template(rf, ctx) { if (rf & 1) {
+    core/* ɵɵelement */._UZ(0, "img", 35);
+} if (rf & 2) {
+    const post_r4 = core/* ɵɵnextContext */.oxw(2).$implicit;
     core/* ɵɵproperty */.Q6J("src", post_r4.iconUrl, core/* ɵɵsanitizeUrl */.LSH);
 } }
 function PoweredByAwsComponent_tr_29_a_4_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "a", 35);
-    core/* ɵɵelement */._UZ(1, "img", 34);
+    core/* ɵɵelementStart */.TgZ(0, "a", 36);
+    core/* ɵɵtemplate */.YNc(1, PoweredByAwsComponent_tr_29_a_4_img_1_Template, 1, 1, "img", 34);
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
     const post_r4 = core/* ɵɵnextContext */.oxw().$implicit;
     core/* ɵɵproperty */.Q6J("href", "#/posts/post?code=" + post_r4.code, core/* ɵɵsanitizeUrl */.LSH);
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("src", post_r4.iconUrl, core/* ɵɵsanitizeUrl */.LSH);
+    core/* ɵɵproperty */.Q6J("ngIf", post_r4.iconUrl != null);
 } }
 function PoweredByAwsComponent_tr_29_a_6_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "a", 33);
@@ -14264,7 +14276,7 @@ function PoweredByAwsComponent_tr_29_a_6_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵtextInterpolate1 */.hij(" ", post_r4.title, " ");
 } }
 function PoweredByAwsComponent_tr_29_a_7_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "a", 35);
+    core/* ɵɵelementStart */.TgZ(0, "a", 36);
     core/* ɵɵtext */._uU(1);
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
@@ -14373,8 +14385,8 @@ class PoweredByAwsComponent {
     }
 }
 PoweredByAwsComponent.ɵfac = function PoweredByAwsComponent_Factory(t) { return new (t || PoweredByAwsComponent)(core/* ɵɵdirectiveInject */.Y36(rest_service/* RestService */.v), core/* ɵɵdirectiveInject */.Y36(utility_service/* UtilityService */.t), core/* ɵɵdirectiveInject */.Y36(router/* Router */.F0), core/* ɵɵdirectiveInject */.Y36(MatDialog)); };
-PoweredByAwsComponent.ɵcmp = /*@__PURE__*/ core/* ɵɵdefineComponent */.Xpm({ type: PoweredByAwsComponent, selectors: [["powered-by-aws-cmp"]], decls: 39, vars: 6, consts: [["autosize", ""], ["autosize", "", "mode", "side", "position", "end", 1, "example-sidenav", 3, "opened", "openedChange"], ["drawer", ""], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area", 3, "ngModel", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "post-comment-button", 3, "click"], [4, "ngFor", "ngForOf"], [1, "fixed-button"], ["type", "fixed-plugin", "mat-button", "", 3, "click"], [1, "fa", "fa-commenting-o", "fa-2x"], [1, "height-fill-screen"], [1, "col-lg-12", "col-md-6", "col-sm-6"], [1, "card", "card-stats"], [1, "post-comment", "align-middle"], [1, "table", "table-striped"], ["class", "hover-effects-bold-row", 4, "ngFor", "ngForOf"], [1, "basic-left", "icon-big", "text-center"], ["color", "primary", "mat-flat-button", "", "aria-label", "Example icon button with a home icon", 1, "big-button", 3, "disabled", "click"], [1, "basic-right", "icon-big", "text-center"], [1, "basic-comment"], [1, "one"], [1, "two"], [1, "basic-comment-body"], [1, "hover-effects-bold-row"], [1, "width-10"], [1, "d-sm-none", "d-none", "d-lg-table-cell"], ["class", "postLinks", "target", "_blank", 3, "href", 4, "ngIf"], ["class", "postLinks", 3, "href", 4, "ngIf"], [1, "pr-2", "max-width-10rem"], [1, "simpleLink", 3, "href"], [1, "btn", "btn-sm", "btn-round", "btn-icon", 3, "ngClass"], ["target", "_blank", 1, "postLinks", 3, "href"], [1, "w-70px", 3, "src"], [1, "postLinks", 3, "href"]], template: function PoweredByAwsComponent_Template(rf, ctx) { if (rf & 1) {
-        const _r14 = core/* ɵɵgetCurrentView */.EpF();
+PoweredByAwsComponent.ɵcmp = /*@__PURE__*/ core/* ɵɵdefineComponent */.Xpm({ type: PoweredByAwsComponent, selectors: [["powered-by-aws-cmp"]], decls: 39, vars: 6, consts: [["autosize", ""], ["autosize", "", "mode", "side", "position", "end", 1, "example-sidenav", 3, "opened", "openedChange"], ["drawer", ""], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area", 3, "ngModel", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "post-comment-button", 3, "click"], [4, "ngFor", "ngForOf"], [1, "fixed-button"], ["type", "fixed-plugin", "mat-button", "", 3, "click"], [1, "fa", "fa-commenting-o", "fa-2x"], [1, "height-fill-screen"], [1, "col-lg-12", "col-md-6", "col-sm-6"], [1, "card", "card-stats"], [1, "post-comment", "align-middle"], [1, "table", "table-striped"], ["class", "hover-effects-bold-row", 4, "ngFor", "ngForOf"], [1, "basic-left", "icon-big", "text-center"], ["color", "primary", "mat-flat-button", "", "aria-label", "Example icon button with a home icon", 1, "big-button", 3, "disabled", "click"], [1, "basic-right", "icon-big", "text-center"], [1, "basic-comment"], [1, "one"], [1, "two"], [1, "basic-comment-body"], [1, "hover-effects-bold-row"], [1, "width-10"], [1, "d-sm-none", "d-none", "d-lg-table-cell"], ["class", "postLinks", "target", "_blank", 3, "href", 4, "ngIf"], ["class", "postLinks", 3, "href", 4, "ngIf"], [1, "pr-2", "max-width-10rem"], [1, "simpleLink", 3, "href"], [1, "btn", "btn-sm", "btn-round", "btn-icon", 3, "ngClass"], ["target", "_blank", 1, "postLinks", 3, "href"], ["class", "w-42px", 3, "src", 4, "ngIf"], [1, "w-42px", 3, "src"], [1, "postLinks", 3, "href"]], template: function PoweredByAwsComponent_Template(rf, ctx) { if (rf & 1) {
+        const _r18 = core/* ɵɵgetCurrentView */.EpF();
         core/* ɵɵelementStart */.TgZ(0, "div");
         core/* ɵɵelementStart */.TgZ(1, "mat-drawer-container", 0);
         core/* ɵɵelementStart */.TgZ(2, "mat-drawer", 1, 2);
@@ -14401,14 +14413,14 @@ PoweredByAwsComponent.ɵcmp = /*@__PURE__*/ core/* ɵɵdefineComponent */.Xpm({ 
         core/* ɵɵtemplate */.YNc(13, PoweredByAwsComponent_div_13_Template, 8, 3, "div", 8);
         core/* ɵɵelementStart */.TgZ(14, "div", 9);
         core/* ɵɵelementStart */.TgZ(15, "button", 10);
-        core/* ɵɵlistener */.NdJ("click", function PoweredByAwsComponent_Template_button_click_15_listener() { core/* ɵɵrestoreView */.CHM(_r14); const _r0 = core/* ɵɵreference */.MAs(3); return _r0.toggle(); });
+        core/* ɵɵlistener */.NdJ("click", function PoweredByAwsComponent_Template_button_click_15_listener() { core/* ɵɵrestoreView */.CHM(_r18); const _r0 = core/* ɵɵreference */.MAs(3); return _r0.toggle(); });
         core/* ɵɵelement */._UZ(16, "i", 11);
         core/* ɵɵelementEnd */.qZA();
         core/* ɵɵelementEnd */.qZA();
         core/* ɵɵelementEnd */.qZA();
         core/* ɵɵelementStart */.TgZ(17, "div", 9);
         core/* ɵɵelementStart */.TgZ(18, "button", 10);
-        core/* ɵɵlistener */.NdJ("click", function PoweredByAwsComponent_Template_button_click_18_listener() { core/* ɵɵrestoreView */.CHM(_r14); const _r0 = core/* ɵɵreference */.MAs(3); return _r0.toggle(); });
+        core/* ɵɵlistener */.NdJ("click", function PoweredByAwsComponent_Template_button_click_18_listener() { core/* ɵɵrestoreView */.CHM(_r18); const _r0 = core/* ɵɵreference */.MAs(3); return _r0.toggle(); });
         core/* ɵɵelement */._UZ(19, "i", 11);
         core/* ɵɵelementEnd */.qZA();
         core/* ɵɵelementEnd */.qZA();

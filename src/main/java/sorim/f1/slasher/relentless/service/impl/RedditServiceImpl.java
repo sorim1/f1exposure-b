@@ -79,7 +79,6 @@ public class RedditServiceImpl implements RedditService {
     }
 
     private void getNews() {
-        log.info("getNews");
             HttpEntity entity = new HttpEntity(headers);
             ResponseEntity<String> response = restTemplate.exchange(
                     redditDailyNews, HttpMethod.GET, entity, String.class);
@@ -124,10 +123,6 @@ public class RedditServiceImpl implements RedditService {
         HttpEntity entity = new HttpEntity(htmlHeaders);
         boolean iconUrlSet = false;
         String domainUrl = MainUtility.getDomain(post.getUrl());
-        if(check200Status(domainUrl + FAVICON)){
-            post.setIconUrl(domainUrl + FAVICON);
-            iconUrlSet=true;
-        }
         try {
             ResponseEntity<String> response = restTemplate.exchange(
                     post.getUrl(), HttpMethod.GET, entity, String.class);
@@ -152,9 +147,14 @@ public class RedditServiceImpl implements RedditService {
                         String href = relTag.get().attr("href");
                         if(check200Status(domainUrl + href)){
                             post.setIconUrl(domainUrl + href);
+                            iconUrlSet=true;
                         }
                     }
                 }
+            }
+            if(check200Status(domainUrl + FAVICON)){
+                post.setIconUrl(domainUrl + FAVICON);
+                iconUrlSet=true;
             }
             Elements metaTags = doc.getElementsByTag("meta");
             Optional<Element> imageTag = metaTags.stream().filter(tag -> "og:image".equals(tag.attr("property"))).findAny();
@@ -178,10 +178,6 @@ public class RedditServiceImpl implements RedditService {
             post.setIconUrl(REDDIT_FAVICON);
             iconUrlSet=true;
         }
-        if(!iconUrlSet || check200Status(domainUrl + FAVICON)){
-            post.setIconUrl(domainUrl + FAVICON);
-            iconUrlSet=true;
-        }
         try {
         ResponseEntity<String> response = restTemplate.exchange(
                 post.getUrl(), HttpMethod.GET, entity, String.class);
@@ -192,14 +188,33 @@ public class RedditServiceImpl implements RedditService {
 
         if(!iconUrlSet) {
             Elements linkTags = doc.getElementsByTag("link");
-            Optional<Element> relTag = linkTags.stream().filter(tag -> "icon".equals(tag.attr("rel"))).findAny();
-            if (relTag.isPresent()) {
-                String href = relTag.get().attr("href");
-                if(check200Status(domainUrl + href)){
-                    post.setIconUrl(domainUrl + href);
+
+            Optional<Element> relTag1 = linkTags.stream().filter(tag -> "shortcut icon".equals(tag.attr("rel"))).findAny();
+            if (relTag1.isPresent()) {
+                String href = relTag1.get().attr("href");
+                String absoluteUrl = relativeToAbsoluteUrl(domainUrl,href);
+                if(check200Status(absoluteUrl)){
+                    post.setIconUrl(absoluteUrl);
+                    iconUrlSet=true;
+                }
+            }
+            if(!iconUrlSet) {
+                Optional<Element> relTag = linkTags.stream().filter(tag -> "icon".equals(tag.attr("rel"))).findAny();
+                if (relTag.isPresent()) {
+                    String href = relTag.get().attr("href");
+                    String absoluteUrl = relativeToAbsoluteUrl(domainUrl, href);
+                    if (check200Status(absoluteUrl)) {
+                        post.setIconUrl(absoluteUrl);
+                        iconUrlSet = true;
+                    }
                 }
             }
         }
+
+            if(!iconUrlSet && check200Status(domainUrl + FAVICON)){
+                post.setIconUrl(domainUrl + FAVICON);
+            }
+
         Elements metaTags = doc.getElementsByTag("meta");
             Optional<Element> imageTag = metaTags.stream().filter(tag -> "og:image".equals(tag.attr("property"))).findAny();
             if (imageTag.isPresent()) {
@@ -216,14 +231,28 @@ public class RedditServiceImpl implements RedditService {
         }
     }
 
+    private String relativeToAbsoluteUrl(String domainUrl, String href) {
+        if(href.startsWith("//")){
+            return "https:" + href;
+        }
+        if(href.contains(domainUrl)){
+            return href;
+        } else {
+            return domainUrl+href;
+        }
+    }
+
     private Boolean check200Status(String url) {
         HttpEntity entity = new HttpEntity(htmlHeaders);
         try {
             ResponseEntity<byte[]> faviconResponse = restTemplate.exchange(
                     url, HttpMethod.GET, entity, byte[].class);
-            return faviconResponse.getStatusCode().is2xxSuccessful();
+
+            Boolean response=
+                    faviconResponse.getHeaders().getContentType().getType().contains("image")
+                            && faviconResponse.getStatusCode().is2xxSuccessful();
+         return response;
         }catch(Exception e){
-            log.info("nije: check200Status");
             log.info(e.getMessage());
             return false;
         }
@@ -297,7 +326,6 @@ public class RedditServiceImpl implements RedditService {
                 imgurAlbumUrl2+code, HttpMethod.GET, entity, String.class);
         try {
             List<Object> root = mapper.readValue(response2.getBody(), typeRefList);
-            log.info(String.valueOf(root));
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }
