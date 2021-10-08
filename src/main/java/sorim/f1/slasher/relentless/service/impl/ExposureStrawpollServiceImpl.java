@@ -1,0 +1,482 @@
+package sorim.f1.slasher.relentless.service.impl;
+
+import lombok.RequiredArgsConstructor;
+import lombok.SneakyThrows;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+import sorim.f1.slasher.relentless.configuration.MainProperties;
+import sorim.f1.slasher.relentless.entities.*;
+import sorim.f1.slasher.relentless.handling.Logger;
+import sorim.f1.slasher.relentless.model.*;
+import sorim.f1.slasher.relentless.model.enums.ExposureStatusEnum;
+import sorim.f1.slasher.relentless.repository.*;
+import sorim.f1.slasher.relentless.service.ErgastService;
+import sorim.f1.slasher.relentless.service.ExposureStrawpollService;
+import sorim.f1.slasher.relentless.service.FourchanService;
+
+import javax.annotation.PostConstruct;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.time.Duration;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.util.*;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+
+@Slf4j
+@Service
+@RequiredArgsConstructor(onConstructor = @__(@Autowired))
+public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
+
+    private final ExposedVoteRepository exposedVoteRepository;
+    private final ExposedVoteTotalsRepository exposedVoteTotalsRepository;
+    private final ExposedRepository exposedRepository;
+    private final ExposureChampionshipRepository exposureChampionshipRepository;
+    private final ExposureChampionshipStandingsRepository exposureChampionshipStandingsRepository;
+    private final DriverStandingsByRoundRepository driverStandingsByRoundRepository;
+    private final DriverRepository driverRepository;
+    private final CalendarRepository calendarRepository;
+    private final MainProperties properties;
+    private final PropertiesRepository propertiesRepository;
+    private final ErgastService ergastService;
+    private final FourchanService fourchanService;
+
+    private static boolean exposureToday = false;
+    private static boolean exposureNow = false;
+    private static LocalDateTime exposureTime;
+    private static String title = "Strange";
+    private static Integer currentExposureRound;
+
+    private static String strawpollUrl="https://strawpoll.com/api/poll/sdvbveh8b";
+    private static String strawpollUrlBase="https://strawpoll.com/";
+    private static String apiBase="api/poll/";
+    private static String strawpollId;
+
+    private static Integer reloadDelay=0;
+    private static Integer latestVoteCount=0;
+    private static Map<String, ExposureDriver> driversMap = new HashMap<>();
+    private static Map<String, String> colorMap = new HashMap<>();
+    private final RestTemplate restTemplate = new RestTemplate();
+
+
+    @PostConstruct
+    private void init(){
+        initializeExposureFrontendVariables(null);
+    }
+
+    @Override
+    public void initializeExposureFrontendVariables(String id) {
+        strawpollId = id;
+        Logger.logAdmin("initializeExposureFrontendVariablesNew called");
+        ZonedDateTime gmtZoned = ZonedDateTime.now(ZoneId.of("Europe/London"));
+        LocalDateTime gmtDateTime = gmtZoned.toLocalDateTime();
+        F1Calendar f1calendar = calendarRepository.findFirstByRaceBeforeOrderByRaceDesc(gmtDateTime);
+        setDriverNameMap();
+        if (f1calendar != null) {
+            title = f1calendar.getLocation();
+            Duration howMuchTimeSincePreviousRace = Duration.between(f1calendar.getRace(), gmtDateTime);
+            if (howMuchTimeSincePreviousRace.toDays() <1) {
+                if(strawpollId==null) {
+                    String newId = getExposureStrawpoll();
+                    if (newId != null) {
+                        strawpollId = newId;
+                        strawpollUrl = strawpollUrlBase + strawpollId;
+                        startPolling();
+                    }
+                }
+                exposureNow = true;
+                exposureToday = true;
+            } else {
+                f1calendar = calendarRepository.findFirstByRaceAfterOrderByRace(gmtDateTime);
+                if (f1calendar != null) {
+                    Duration duration = Duration.between(gmtDateTime, f1calendar.getRace());
+                    if (duration.toDays() > 0) {
+                        updateCurrentExposureRound(0);
+                        exposureToday = false;
+                        Logger.logAdmin("exposureToday: " + exposureToday);
+
+                    } else {
+                        exposureToday = true;
+                        title = f1calendar.getLocation();
+                        updateCurrentExposureRound(1);
+                        resetStrawpoll();
+                        exposureTime = LocalDateTime.now().plus(duration).plusHours(1).plusMinutes(10);
+                        Logger.logAdmin("initializeExposure-exposureToday: " + exposureToday);
+                        Logger.logAdmin("initializeExposure-exposureToday exposureTime: " + exposureTime);
+                        Logger.logAdmin("initializeExposure-exposureToday currentExposureRound: " + currentExposureRound);
+                    }
+                }
+            }
+        }
+    }
+
+    @Override
+    public void startPolling() {
+        StrawpollModel newStrawpoll = fetchStrawpollResults();
+        if(newStrawpoll!=null && exposureOn()){
+            log.info("strawpoll jest");
+            updateExposureDataFromStrawpoll(newStrawpoll);
+            new java.util.Timer().schedule(
+                    new java.util.TimerTask() {
+                        @SneakyThrows
+                        @Override
+                        public void run() {
+                            startPolling();
+                        }
+                    },
+                    reloadDelay
+            );
+        } else {
+            log.info("strawpoll nije");
+        }
+    }
+
+    private void resetStrawpoll() {
+        strawpollId=null;
+        strawpollUrl=null;
+        latestVoteCount = 0;
+        reloadDelay = 0;
+    }
+
+    private void updateCurrentExposureRound(Integer increment) {
+        Integer round;
+        try {
+            round = ergastService.getDriverStandings().getMrData().getStandingsTable().getStandingsLists().get(0).getRound();
+            currentExposureRound = round + increment;
+            propertiesRepository.updateProperty("round", currentExposureRound.toString());
+        } catch (Exception e) {
+            log.error("updateCurrentExposureRound error", e);
+            Logger.log("updateCurrentExposureRound error", e.getMessage());
+            currentExposureRound = Integer.parseInt(propertiesRepository.findDistinctFirstByName("round").getValue()) + 1;
+            propertiesRepository.updateProperty("round", currentExposureRound.toString());
+        }
+    }
+
+    @Override
+    public StrawpollModel fetchStrawpollResults() {
+        log.info("fetchStrawpollResults: " + strawpollUrl + " - " + currentExposureRound);
+        try {
+            StrawpollModel strawPoll = restTemplate
+                    .getForObject(strawpollUrlBase + apiBase + strawpollId, StrawpollModel.class);
+            return strawPoll;
+        }catch(Exception e){
+            log.error("fetchStrawpollResults", e);
+            return null;
+        }
+    }
+
+    @Override
+    public Boolean initializeStrawpoll(String id) {
+        reloadDelay = 5000;
+        strawpollUrl = strawpollUrlBase+id;
+        strawpollId = id;
+        StrawpollModel newStrawpoll = fetchStrawpollResults();
+        if(newStrawpoll!=null){
+            log.info("strawpoll jest");
+            initializeExposureFrontendVariables(id);
+            updateExposureDataFromStrawpoll(newStrawpoll);
+            return true;
+        } else {
+            log.info("strawpoll nije");
+            return false;
+        }
+    }
+
+    @Override
+    public ExposureData getExposedChartData() {
+        return ExposureData.builder()
+                .title(title)
+                .delay(reloadDelay)
+                .activeExposureChart(getActiveExposureChart())
+                .exposureChampionshipData(getExposureChampionshipData())
+                .standings(getExposureStandings())
+                .voters(getExposureVoters())
+                .exposureRaces(ergastService.getRacesSoFar(String.valueOf(properties.getCurrentYear()), currentExposureRound))
+                .build();
+    }
+
+    @Override
+    public void closeExposurePoll() {
+        exposureToday = false;
+        exposureNow = false;
+        exposureChampionshipRepository.closeAllPolls();
+        List<ExposureChampionshipData> exposureChampionshipData = getExposureChampionshipData();
+        List<ExposureChampionshipStanding> exposureStandings = new ArrayList<>();
+        exposureChampionshipData.forEach((v) -> {
+            ExposureChampionshipStandingId id = ExposureChampionshipStandingId.builder()
+                    .season(properties.getCurrentYear())
+                    .driver(v.getCode())
+                    .build();
+            exposureStandings.add(ExposureChampionshipStanding.builder().id(id).exposure(v.getScore()).build());
+        });
+        exposureChampionshipStandingsRepository.saveAll(exposureStandings);
+        exposureChampionshipStandingsRepository.updateChampionshipNames();
+    }
+
+    private List<ExposureChampionshipStanding> getExposureStandings() {
+        return exposureChampionshipStandingsRepository.findAllByIdSeasonOrderByExposureDesc(properties.getCurrentYear());
+    }
+
+    private List<Integer> getExposureVoters() {
+        return exposedRepository.getVoterCountOfSeason(properties.getCurrentYear());
+    }
+
+    @Override
+    public ActiveExposureChart getActiveExposureChart() {
+        List<String> drivers = new ArrayList<>();
+        List<String> driverNames = new ArrayList<>();
+        List<Integer> results = new ArrayList<>();
+        List<BigDecimal> exposureList = new ArrayList<>();
+        List<ExposureChampionship> list = exposureChampionshipRepository.findAllByIdSeasonAndIdRoundOrderByVotesDesc(properties.getCurrentYear(), currentExposureRound);
+
+        ExposedVoteTotals total = exposedRepository.findExposedTotalBySeasonAndRound(properties.getCurrentYear(), currentExposureRound);
+        if (total == null) {
+            total = new ExposedVoteTotals();
+        }
+        list.forEach((row) -> {
+            drivers.add(row.getId().getDriver());
+            driverNames.add(row.getName());
+            results.add(row.getVotes());
+            exposureList.add(row.getExposure());
+        });
+        return ActiveExposureChart.builder()
+                .drivers(drivers.toArray(new String[drivers.size()]))
+                .driverNames(driverNames.toArray(new String[driverNames.size()]))
+                .results(results.toArray(new Integer[results.size()]))
+                .exposure(exposureList.toArray(new BigDecimal[results.size()]))
+                .round(currentExposureRound)
+                .season(properties.getCurrentYear())
+                .votes(total.getVotes())
+                .voters(total.getVoters())
+                .strawpoll(total.getStrawpoll())
+                .delay(getReloadDelay())
+                .build();
+    }
+
+    private Integer getReloadDelay() {
+        if(exposureOn()){
+            return reloadDelay;
+        }
+        return 0;
+    }
+
+    private List<ExposureChampionshipData> getExposureChampionshipData() {
+        List<ExposureChampionship> rawData = exposureChampionshipRepository.findAllByIdSeasonAndStatusOrderByIdRound(properties.getCurrentYear(), 3);
+        Map<String, ExposureChampionshipData> map = new TreeMap<>();
+        rawData.forEach(row -> {
+            if (map.containsKey(row.getId().getDriver())) {
+                ExposureChampionshipData data = map.get(row.getId().getDriver());
+                List<BigDecimal> newResult = new ArrayList<>();
+                newResult.add(BigDecimal.valueOf(row.getId().getRound()));
+                newResult.add(row.getExposure());
+                BigDecimal newScore = data.getScore().add(row.getExposure());
+                List<BigDecimal> newStanding = new ArrayList<>();
+                newStanding.add(BigDecimal.valueOf(row.getId().getRound()));
+                newStanding.add(newScore);
+                data.getScoresByRound().add(newResult);
+                data.getScoresThroughRounds().add(newStanding);
+                data.updateMaxExposure(row.getId().getRound(), row.getExposure());
+                data.setScore(newScore);
+
+            } else {
+                ExposureChampionshipData data = new ExposureChampionshipData();
+                data.setCode(row.getId().getDriver());
+                data.setColor(row.getColor());
+                List<BigDecimal> newResult = new ArrayList<>();
+                newResult.add(BigDecimal.valueOf(row.getId().getRound()));
+                newResult.add(row.getExposure());
+                data.getScoresByRound().add(newResult);
+                data.getScoresThroughRounds().add(newResult);
+                data.setScore(row.getExposure());
+                data.setMaxExposure(row.getExposure());
+                data.setMaxExposureRound(row.getId().getRound());
+                map.put(row.getId().getDriver(), data);
+            }
+        });
+        return new ArrayList<>(map.values());
+    }
+
+    private void updateExposureDataFromStrawpoll(StrawpollModel strawpoll) {
+        List<ExposureChampionship> list = new ArrayList<>();
+        Integer voters = strawpoll.getContent().getPoll().getTotal_voters();
+
+        Integer totalVotes = strawpoll.getContent().getPoll().getTotal_votes();
+        if(totalVotes> latestVoteCount){
+            reloadDelay=10000;
+        } else {
+            reloadDelay=reloadDelay*2;
+            latestVoteCount=totalVotes;
+        }
+        strawpoll.getContent().getPoll().getPoll_answers().forEach(pollAnswer->{
+            String code = getDriverCodeFromName(pollAnswer.getAnswer());
+            SeasonRoundDriverId exposedId = SeasonRoundDriverId.builder()
+                    .season(properties.getCurrentYear())
+                    .round(currentExposureRound)
+                    .driver(code).build();
+
+            BigDecimal exposure = new BigDecimal(pollAnswer.getVotes() * 100).divide(new BigDecimal(voters), 2, RoundingMode.HALF_UP);
+            ExposureChampionship newRow = ExposureChampionship.builder().id(exposedId)
+                    .exposure(exposure)
+                    .color(getColorFromDriverCode(code))
+                    .status(2)
+                    .name(pollAnswer.getAnswer())
+                    .votes(pollAnswer.getVotes()).build();
+            list.add(newRow);
+        });
+        exposureChampionshipRepository.saveAll(list);
+        ExposedTotalsId totalsId = ExposedTotalsId.builder().season(properties.getCurrentYear())
+                .round(currentExposureRound).build();
+        ExposedVoteTotals totals = ExposedVoteTotals.builder().id(totalsId).voters(voters).votes(totalVotes)
+                .strawpoll(strawpollId)
+                .build();
+        exposedVoteTotalsRepository.save(totals);
+    }
+
+
+    private String getColorFromDriverCode(String code) {
+        if(colorMap.containsKey(code)){
+            return colorMap.get(code);
+        } else{
+            DriverStandingByRound dsbr = driverStandingsByRoundRepository.findFirstByCode(code);
+            String color = null;
+            if (dsbr != null) {
+                color = dsbr.getColor();
+                colorMap.put(code, color);
+                return color;
+            }
+
+        }
+        return null;
+    }
+
+    private String getDriverCodeFromName(String name) {
+        if(driversMap.containsKey(name)){
+            return driversMap.get(name).getCode();
+        } else {
+            ExposureDriver newDriver = ExposureDriver.builder().status(1).fullName(name)
+                    .code(name.substring(0,3).toUpperCase()).build();
+            driverRepository.save(newDriver);
+            driversMap.put(name, newDriver);
+            return newDriver.getCode();
+        }
+    }
+
+    private void setDriverNameMap() {
+      List<ExposureDriver> list = driverRepository.findAll();
+      driversMap = list.stream()
+              .collect(Collectors.toMap(ExposureDriver::getFullName, Function.identity()));
+    }
+
+    @Override
+    public ExposureResponse getExposureDriverList() {
+        ExposureResponse response = ExposureResponse.builder()
+                .title(title)
+                .year(properties.getCurrentYear())
+                .exposureTime(exposureTime)
+                .exposureNow(exposureNow)
+                .exposureToday(exposureToday)
+                .currentRound(currentExposureRound)
+                .build();
+        if (exposureOn()) {
+            // if(true) {
+            List<ExposureDriver> drivers = driverRepository.findAllByStatus(1);
+            response.setDrivers(drivers);
+            response.setStatus(ExposureStatusEnum.ACTIVE);
+        } else {
+            if (exposureToday) {
+                response.setStatus(ExposureStatusEnum.SOON);
+            } else {
+                response.setStatus(ExposureStatusEnum.OVER);
+            }
+
+        }
+        return response;
+    }
+
+    @Override
+    public boolean exposureOn() {
+        if (exposureNow) {
+            return true;
+        }
+        if (!exposureToday) {
+            return false;
+        }
+        if (LocalDateTime.now().isAfter(exposureTime)) {
+            exposureNow = true;
+            return true;
+        }
+
+        return false;
+    }
+
+    public void setCurrentExposureRound(Integer newCurrentRound) {
+        currentExposureRound = newCurrentRound;
+        propertiesRepository.updateProperty("round", currentExposureRound.toString());
+    }
+
+    @Override
+    public FullExposure backupExposure() {
+        return FullExposure.builder()
+                .exposedVote((List<ExposedVote>) exposedVoteRepository.findAll())
+                .exposedVoteTotals((List<ExposedVoteTotals>) exposedVoteTotalsRepository.findAll())
+                .exposed((List<Exposed>) exposedRepository.findAll())
+                .exposureChampionship((List<ExposureChampionship>) exposureChampionshipRepository.findAll())
+                .exposureChampionshipStandings((List<ExposureChampionshipStanding>) exposureChampionshipStandingsRepository.findAll())
+                .build();
+    }
+
+    @Override
+    public Boolean restoreExposureFromBackup(FullExposure fullExposure) {
+        exposedVoteRepository.deleteAll();
+        exposedVoteRepository.saveAll(fullExposure.getExposedVote());
+        exposedRepository.deleteAll();
+        exposedRepository.saveAll(fullExposure.getExposed());
+        exposureChampionshipRepository.deleteAll();
+        exposureChampionshipRepository.saveAll(fullExposure.getExposureChampionship());
+        exposureChampionshipStandingsRepository.deleteAll();
+        exposureChampionshipStandingsRepository.saveAll(fullExposure.getExposureChampionshipStandings());
+        exposedVoteTotalsRepository.deleteAll();
+        exposedVoteTotalsRepository.saveAll(fullExposure.getExposedVoteTotals());
+        return true;
+    }
+
+    @Override
+    public void openExposurePoll(Integer minutes) {
+        exposureToday = true;
+        exposureTime = LocalDateTime.now().plusMinutes(minutes);
+    }
+
+    @Override
+    public List<Integer> updateCurrentRound() {
+        List<Integer> response = new ArrayList<>();
+        response.add(currentExposureRound);
+        currentExposureRound++;
+        response.add(currentExposureRound);
+        propertiesRepository.updateProperty("round", currentExposureRound.toString());
+        return response;
+    }
+
+    @Override
+    public List<Integer> setCurrentRound(Integer newRound) {
+        List<Integer> response = new ArrayList<>();
+        response.add(currentExposureRound);
+        currentExposureRound = newRound;
+        response.add(currentExposureRound);
+        propertiesRepository.updateProperty("round", currentExposureRound.toString());
+        return response;
+    }
+
+    @Override
+    public Integer getCurrentRoundUp() {
+        return currentExposureRound;
+    }
+
+    @Override
+    public String getExposureStrawpoll() {
+        return fourchanService.getExposureStrawpoll();
+    }
+}

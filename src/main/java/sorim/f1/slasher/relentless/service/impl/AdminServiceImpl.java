@@ -62,7 +62,7 @@ public class AdminServiceImpl implements AdminService {
     private final ErgastService ergastService;
     private final MainProperties properties;
     private final ClientService clientService;
-    private final ExposureService exposureService;
+    private final ExposureStrawpollService exposureService;
     private final MarketingService marketingService;
     private final ArtService artService;
     private final RacingfkService racingfkService;
@@ -295,29 +295,8 @@ public class AdminServiceImpl implements AdminService {
         driverStandingsRepository.saveAll(driverStandings);
         enrichSingleRoundStandingsWithRoundPoints(driverStandingsByRound, null);
         driverStandingsByRoundRepository.saveAll(driverStandingsByRound.values());
-        updateExposureDriverList(driverStandings);
+       // updateExposureDriverList(driverStandings);
         return bool;
-    }
-
-
-    private void updateExposureDriverList(List<DriverStanding> driverStandings) {
-        //poveznica između exposure liste i standings liste
-        List<ExposureDriver> drivers = driverRepository.findAll();
-        exposureService.setNextRoundOfExposure(driverStandings, CURRENT_ROUND + 1);
-        for (DriverStanding driverStanding : driverStandings) {
-            Optional<ExposureDriver> foundDriver = drivers.stream().filter(x -> driverStanding.getName().equals(x.getFullName()))
-                    .findFirst();
-            if (foundDriver.isPresent()) {
-            } else {
-                ExposureDriver newDriver = ExposureDriver.builder()
-                        .fullName(driverStanding.getName())
-                        .code(driverStanding.getCode())
-                        .ergastCode(driverStanding.getErgastCode())
-                        .status(1)
-                        .build();
-                driverRepository.save(newDriver);
-            }
-        }
     }
 
     private void initializeConstructorStandings() {
@@ -366,18 +345,6 @@ public class AdminServiceImpl implements AdminService {
         Logger.log("deleteSportSurgeLinks");
         sportSurgeStreamRepository.deleteAll();
         sportSurgeEventRepository.deleteAll();
-    }
-
-    @Override
-    public void closeExposurePoll() {
-        Logger.log("closeExposurePoll");
-        exposureService.closeExposurePoll();
-    }
-
-    @Override
-    public void openExposurePoll(Integer minutes) {
-        Logger.log("openExposurePoll");
-        exposureService.openExposurePoll(minutes);
     }
 
     @Override
@@ -531,4 +498,5 @@ public class AdminServiceImpl implements AdminService {
     public Integer deleteAwsContent(String username) {
         return awsRepository.deleteAllByUsername(username);
     }
+
 }

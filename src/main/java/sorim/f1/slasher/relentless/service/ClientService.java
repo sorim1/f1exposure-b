@@ -10,7 +10,6 @@ import java.util.List;
 public interface ClientService {
     Boolean exposeDrivers(String[] exposedList, String ipAddress) throws Exception;
 
-    ExposureData getExposedChartData();
 
     CalendarData getCountdownData(Integer mode);
 
@@ -46,7 +45,7 @@ public interface ClientService {
 
     void fetchRedditPosts();
 
-    List<ForchanPost> fetch4chanPosts();
+    List<FourchanCatalog> fetch4chanPosts();
 
     Boolean fetchTwitterPosts() throws Exception;
 

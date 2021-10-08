@@ -47,13 +47,6 @@ public class ClientController {
         return service.exposeDrivers(exposedList, ipAddress);
     }
 
-    @GetMapping("/getExposureResults")
-    ExposureData getExposedChartData(@RequestHeader String client) throws Exception {
-        securityService.validateHeader(client);
-        return service.getExposedChartData();
-    }
-
-
     @GetMapping("/getDriverStandings")
     List<DriverStanding> getDriverStandings(@RequestHeader String client) throws Exception {
         securityService.validateHeader(client);
@@ -167,7 +160,7 @@ public class ClientController {
     }
 
     @GetMapping("/fetch4chanPosts")
-    List<ForchanPost> fetch4chanPosts(@RequestHeader String client) throws Exception {
+    List<FourchanCatalog> fetch4chanPosts(@RequestHeader String client) throws Exception {
         securityService.validateAdminHeader(client);
         return service.fetch4chanPosts();
     }

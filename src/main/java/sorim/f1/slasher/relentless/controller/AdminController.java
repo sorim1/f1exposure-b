@@ -79,21 +79,8 @@ public class AdminController {
         service.fetchReplayLinks();
     }
 
-
-    @GetMapping("/closeExposurePoll")
-    void closeExposurePoll(@RequestHeader String client) throws Exception {
-        securityService.validateAdminHeader(client);
-        service.closeExposurePoll();
-    }
-
-    @GetMapping("/openExposurePoll/{minutes}")
-    void openExposurePoll(@RequestHeader String client, @PathVariable("minutes") Integer minutes) throws Exception {
-        securityService.validateAdminHeader(client);
-        service.openExposurePoll(minutes);
-    }
-
     @GetMapping("/deleteComment/{mode}/{id}")
-    Integer closeExposurePoll(@RequestHeader String client, @PathVariable("mode") String mode, @PathVariable("id") String id) throws Exception {
+    Integer deleteComment(@RequestHeader String client, @PathVariable("mode") String mode, @PathVariable("id") String id) throws Exception {
         securityService.validateAdminHeader(client);
         return service.deleteComment(Integer.valueOf(mode),Integer.valueOf(id));
     }

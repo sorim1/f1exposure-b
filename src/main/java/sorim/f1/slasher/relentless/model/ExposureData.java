@@ -14,6 +14,7 @@ import java.util.List;
 @Builder
 public class ExposureData {
     private String title;
+    private Integer delay;
     private ActiveExposureChart activeExposureChart;
     private List<ExposureChampionshipData> exposureChampionshipData;
     private List<ExposureChampionshipStanding> standings;

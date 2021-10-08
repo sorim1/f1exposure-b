@@ -6,35 +6,37 @@ import sorim.f1.slasher.relentless.model.*;
 import java.util.List;
 
 public interface ExposureService {
-    Boolean exposeDrivers(String[] exposedList, String ipAddress) throws Exception;
+   // Boolean exposeDrivers(String[] exposedList, String ipAddress) throws Exception;
 
-    ActiveExposureChart getExposedChartData();
+    //ActiveExposureChart getExposedChartData();
 
-    ExposureResponse getExposureDriverList();
+  //  ExposureResponse getExposureDriverList();
 
-    boolean closeExposurePoll();
+  //  boolean exposureOn();
+  //  boolean closeExposurePoll();
 
-    boolean openExposurePoll(Integer minutes);
+  //  boolean openExposurePoll(Integer minutes);
 
-    Integer getCurrentExposureRound();
+//    Integer getCurrentExposureRound();
 
-    void setCurrentExposureRound(Integer newCurrentRound);
+  //  void setCurrentExposureRound(Integer newCurrentRound);
 
-    boolean exposureOn();
 
-    void setNextRoundOfExposure(List<DriverStanding> driverStandings, int round);
+  //  void setNextRoundOfExposure(List<DriverStanding> driverStandings, int round);
 
-    List<ExposureChampionshipData>  getExposureChampionshipData();
-
-    List<ExposureChampionshipStanding> getExposureStandings();
-
-    List<Integer> getExposureVoters();
-
-    String getTitle();
-
-    void initializeExposure();
-
-    FullExposure backupExposure();
-
-    Boolean restoreExposureFromBackup(FullExposure fullExposure);
+//    List<ExposureChampionshipData>  getExposureChampionshipData();
+//
+//    List<ExposureChampionshipStanding> getExposureStandings();
+//
+//    List<Integer> getExposureVoters();
+//
+//    String getTitle();
+//
+//    void initializeExposure();
+//
+//    FullExposure backupExposure();
+//
+//    Boolean restoreExposureFromBackup(FullExposure fullExposure);
+//
+//    Boolean fetchStrawpollResults();
 }

@@ -26,10 +26,6 @@ public interface AdminService {
 
     void deleteSportSurgeLinks();
 
-    void closeExposurePoll();
-
-    void openExposurePoll(Integer minutes);
-
     F1Calendar getUpcomingRace();
 
     F1Calendar updateUpcomingRace(F1Calendar entry);
@@ -65,4 +61,5 @@ public interface AdminService {
     Boolean restoreFromFullBackup(FullBackup body);
 
     Integer deleteAwsContent(String username);
+
 }

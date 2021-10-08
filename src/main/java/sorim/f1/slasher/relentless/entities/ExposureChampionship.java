@@ -22,4 +22,7 @@ public class ExposureChampionship {
     private SeasonRoundDriverId id;
     private BigDecimal exposure;
     private String color;
+    private String name;
+    private Integer status;
+    private Integer votes;
 }

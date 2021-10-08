@@ -20,7 +20,7 @@ import java.util.Arrays;
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class Scheduler {
 
-    private final ExposureService exposureService;
+    private final ExposureStrawpollService exposureService;
     private final AdminService adminService;
     private final ClientService clientService;
     private final ArtService artService;
@@ -34,6 +34,7 @@ public class Scheduler {
         Logger.log(CODE, "mondayJobs called");
         adminService.deleteSportSurgeLinks();
         adminService.fetchReplayLinks();
+        exposureService.closeExposurePoll();
         analysisDone=true;
         if(!standingsUpdated) {
             standingsUpdated = adminService.initializeStandings();
@@ -47,7 +48,6 @@ public class Scheduler {
     public void tuesdayJobs() throws IOException {
         Logger.log(CODE, "tuesdayJobs called");
         adminService.fetchReplayLinks();
-        exposureService.closeExposurePoll();
         if(!standingsUpdated) {
             adminService.initializeStandings();
             standingsUpdated=true;
@@ -64,7 +64,7 @@ public class Scheduler {
     @Scheduled(cron = "0 0 4 * * SUN")
     public void sundayExposureJobs(){
         log.info("sundayJobs called");
-        exposureService.initializeExposure();
+        exposureService.initializeExposureFrontendVariables(null);
 
     }
 
@@ -158,7 +158,7 @@ public class Scheduler {
             );
         }
     }
-    @PostConstruct
+   // @PostConstruct
     void onInit(){
        log.info("onInitScheduler Called");
         sundayExposureJobs();
@@ -190,7 +190,7 @@ public class Scheduler {
         }
     }
 
-    @Scheduled(cron = "0 0 8,10,12,14,16,18,20,22 * * *")
+    //@Scheduled(cron = "0 0 6,8,10,12,14,16,18,20,22 * * *")
     void imageFeedJob() throws Exception {
         log.info("bihourlyJob called");
         clientService.fetchInstagramFeed();

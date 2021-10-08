@@ -44,13 +44,13 @@ public class ArtServiceImpl implements ArtService {
         int drag=2;
         int diameter=1;
         RaceAnalysis analysis = ergastService.getLatestAnalyzedRace().getRaceAnalysis();
-        for(int i =9000;i<15000;i=i+1000){
+        for(int i =3000;i<15000;i=i+1000){
             BufferedImage bi = generateBufferedImage(analysis, drag, drag, i, diameter, true);
             BufferedImage bi2 = resize(bi, 1000, 1000);
             byte[] byteArray = toByteArray(bi2);
             FileUtils.writeByteArrayToFile(new File("E:\\temp\\art\\conflict-" + i +".png"), byteArray);
         }
-        for(int i =9000;i<15000;i=i+1000){
+        for(int i =3000;i<15000;i=i+1000){
             BufferedImage bi = generateBufferedImage(analysis, drag, drag, i, diameter, false);
             BufferedImage bi2 = resize(bi, 1000, 1000);
             byte[] byteArray = toByteArray(bi2);

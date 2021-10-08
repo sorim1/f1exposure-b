@@ -19,6 +19,6 @@ public class ExposedVoteTotals {
     private ExposedTotalsId id;
     private Integer voters;
     private Integer votes;
-
+    private String strawpoll;
 
 }

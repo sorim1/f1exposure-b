@@ -22,4 +22,7 @@
     <changeSet author="mdragicevic" id="005_aws_posts">
         <sqlFile path="changelog/005_aws_posts.sql" endDelimiter="/" relativeToChangelogFile="true"/>
     </changeSet>
+    <changeSet author="mdragicevic" id="006_strawpoll">
+        <sqlFile path="changelog/006_strawpoll.sql" endDelimiter="/" relativeToChangelogFile="true"/>
+    </changeSet>
 </databaseChangeLog>

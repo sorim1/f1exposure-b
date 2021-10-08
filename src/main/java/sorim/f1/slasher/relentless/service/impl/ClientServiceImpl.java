@@ -42,7 +42,7 @@ public class ClientServiceImpl implements ClientService {
     private final TwitterService twitterService;
     private final RedditService redditService;
     private final FourchanService forchanService;
-    private final ExposureService exposureService;
+    private final ExposureStrawpollService exposureService;
     private final ErgastService ergastService;
     private final RacingfkService racingfkService;
 
@@ -52,19 +52,8 @@ public class ClientServiceImpl implements ClientService {
 
     @Override
     public Boolean exposeDrivers(String[] exposedList, String ipAddress) throws Exception {
-        return exposureService.exposeDrivers(exposedList, ipAddress);
-    }
-
-    @Override
-    public ExposureData getExposedChartData() {
-        return ExposureData.builder()
-                .title(exposureService.getTitle())
-                .activeExposureChart(exposureService.getExposedChartData())
-                .exposureChampionshipData(exposureService.getExposureChampionshipData())
-                .standings(exposureService.getExposureStandings())
-                .voters(exposureService.getExposureVoters())
-                .exposureRaces(ergastService.getRacesSoFar(String.valueOf(properties.getCurrentYear()), exposureService.getCurrentExposureRound()))
-                .build();
+       // return exposureService.exposeDrivers(exposedList, ipAddress);
+        return true;
     }
 
     @Override
@@ -246,7 +235,7 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
-    public List<ForchanPost> fetch4chanPosts() {
+    public List<FourchanCatalog> fetch4chanPosts() {
         return forchanService.fetch4chanPosts();
     }
 

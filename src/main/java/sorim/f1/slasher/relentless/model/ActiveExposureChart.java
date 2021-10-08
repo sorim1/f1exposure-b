@@ -21,4 +21,6 @@ public class ActiveExposureChart {
     private Integer votes;
     private Integer season;
     private Integer round;
+    private String strawpoll;
+    private Integer delay;
 }
