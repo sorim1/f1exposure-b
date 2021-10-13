@@ -139,7 +139,7 @@ public class ExposureServiceImpl implements ExposureService {
 //        } catch (Exception e) {
 //            log.error("updateCurrentExposureRound error", e);
 //            Logger.log("updateCurrentExposureRound error", e.getMessage());
-//            currentExposureRound = Integer.parseInt(propertiesRepository.findDistinctFirstByName("round").getValue()) + 1;
+//            currentExposureRound = Integer.parseInt(propertiesRepository.findDistinctFirstByName("exposureRound").getValue()) + 1;
 //            propertiesRepository.updateProperty("round", currentExposureRound.toString());
 //        }
 //    }

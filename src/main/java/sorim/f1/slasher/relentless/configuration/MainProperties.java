@@ -26,8 +26,12 @@ public class MainProperties {
     private String[] admins;
     private String calendarUrl;
     private String sportSurgeRoot;
-    private String sportSurgeStreams;
+
     private Integer howManySeasonsBack;
+    private String sportSurgeStreams;
+    private String replaysUrl;
+
+
 
     @PostConstruct
     public void setProperty() {

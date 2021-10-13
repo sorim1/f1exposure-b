@@ -39,7 +39,7 @@ public class RacingfkServiceImpl implements RacingfkService {
 
     private final MainProperties properties;
     private final ReplayRepository replayRepository;
-    private static final String replaysUrl = "https://racingfk.com/category/f1/page/";
+    private static String replaysUrl = "https://f1hd.net/category/f1/page/";
 
     RestTemplate restTemplate = new RestTemplate();
     HttpHeaders headers = new HttpHeaders();
@@ -53,6 +53,7 @@ public class RacingfkServiceImpl implements RacingfkService {
 
     @PostConstruct
     void init() {
+        replaysUrl = properties.getReplaysUrl();
         headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
         headers.setContentType(MediaType.APPLICATION_JSON);
         headers.add("user-agent", "Mozilla/4.8 Firefox/21.0");

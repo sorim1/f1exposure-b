@@ -274,13 +274,13 @@ public class AdminServiceImpl implements AdminService {
         Map<String, DriverStandingByRound> driverStandingsByRound = new HashMap<>();
         ErgastResponse response = ergastService.getDriverStandings();
         if (response.getMrData().getStandingsTable().getStandingsLists().get(0).getRound() != CURRENT_ROUND) {
-            CURRENT_ROUND = response.getMrData().getStandingsTable().getStandingsLists().get(0).getRound();
-            propertiesRepository.updateProperty("round", CURRENT_ROUND.toString());
             Logger.log("initializeStandings - changes detected");
             bool = true;
         } else {
             Logger.log("initializeStandings - no changes detected");
         }
+        CURRENT_ROUND = response.getMrData().getStandingsTable().getStandingsLists().get(0).getRound();
+        propertiesRepository.updateProperty("round", CURRENT_ROUND.toString());
         response.getMrData().getStandingsTable().getStandingsLists().get(0).getDriverStandings()
                 .forEach(ergastStanding -> {
                     driverStandings.add(new DriverStanding(ergastStanding));

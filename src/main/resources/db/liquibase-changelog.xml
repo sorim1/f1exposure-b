@@ -25,4 +25,7 @@
     <changeSet author="mdragicevic" id="006_strawpoll">
         <sqlFile path="changelog/006_strawpoll.sql" endDelimiter="/" relativeToChangelogFile="true"/>
     </changeSet>
+    <changeSet author="mdragicevic" id="007_opensea">
+        <sqlFile path="changelog/007_opensea.sql" endDelimiter="/" relativeToChangelogFile="true"/>
+    </changeSet>
 </databaseChangeLog>

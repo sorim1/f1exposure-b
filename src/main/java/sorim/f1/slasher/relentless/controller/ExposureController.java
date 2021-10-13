@@ -22,11 +22,17 @@ public class ExposureController {
     private final SecurityService securityService;
 
     @GetMapping("/initializeStrawpoll/{id}")
-    boolean refreshCalendar(@RequestHeader String client, @PathVariable("id") String id) throws Exception {
+    boolean initializeStrawpoll(@RequestHeader String client, @PathVariable("id") String id) throws Exception {
         securityService.validateAdminHeader(client);
         boolean response = service.initializeStrawpoll(id);
         log.info("initializeStrawpoll called:" + response);
         return response;
+    }
+
+    @GetMapping("/resetLatestPoll")
+    Integer resetLatestPoll(@RequestHeader String client) throws Exception {
+        securityService.validateAdminHeader(client);
+        return service.resetLatestPoll();
     }
 
     @GetMapping("/getExposureResults")

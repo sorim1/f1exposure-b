@@ -26,11 +26,15 @@ public class ArtImageRow {
     private Integer round;
     private String title;
     private Integer status;
+    private String contractAddress;
+    private String tokenId;
 
     public void update(ArtImageRow newData) {
         this.season = newData.getSeason();
         this.round = newData.getRound();
         this.status = newData.getStatus();
         this.title = newData.getTitle();
+        this.contractAddress = newData.getContractAddress();
+        this.tokenId = newData.getTokenId();
     }
 }

@@ -51,7 +51,8 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
     private static String title = "Strange";
     private static Integer currentExposureRound;
 
-    private static String strawpollUrl="https://strawpoll.com/api/poll/sdvbveh8b";
+    //private static String strawpollUrl="https://strawpoll.com/api/poll/sdvbveh8b";
+    private static String strawpollUrl= null;
     private static String strawpollUrlBase="https://strawpoll.com/";
     private static String apiBase="api/poll/";
     private static String strawpollId;
@@ -147,12 +148,12 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
         try {
             round = ergastService.getDriverStandings().getMrData().getStandingsTable().getStandingsLists().get(0).getRound();
             currentExposureRound = round + increment;
-            propertiesRepository.updateProperty("round", currentExposureRound.toString());
+            propertiesRepository.updateProperty("exposureRound", currentExposureRound.toString());
         } catch (Exception e) {
             log.error("updateCurrentExposureRound error", e);
             Logger.log("updateCurrentExposureRound error", e.getMessage());
-            currentExposureRound = Integer.parseInt(propertiesRepository.findDistinctFirstByName("round").getValue()) + 1;
-            propertiesRepository.updateProperty("round", currentExposureRound.toString());
+            currentExposureRound = Integer.parseInt(propertiesRepository.findDistinctFirstByName("exposureRound").getValue()) + 1;
+            propertiesRepository.updateProperty("exposureRound", currentExposureRound.toString());
         }
     }
 
@@ -309,8 +310,8 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
             reloadDelay=10000;
         } else {
             reloadDelay=reloadDelay*2;
-            latestVoteCount=totalVotes;
         }
+        latestVoteCount=totalVotes;
         strawpoll.getContent().getPoll().getPoll_answers().forEach(pollAnswer->{
             String code = getDriverCodeFromName(pollAnswer.getAnswer());
             SeasonRoundDriverId exposedId = SeasonRoundDriverId.builder()
@@ -415,7 +416,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
 
     public void setCurrentExposureRound(Integer newCurrentRound) {
         currentExposureRound = newCurrentRound;
-        propertiesRepository.updateProperty("round", currentExposureRound.toString());
+        propertiesRepository.updateProperty("exposureRound", currentExposureRound.toString());
     }
 
     @Override
@@ -456,7 +457,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
         response.add(currentExposureRound);
         currentExposureRound++;
         response.add(currentExposureRound);
-        propertiesRepository.updateProperty("round", currentExposureRound.toString());
+        propertiesRepository.updateProperty("exposureRound", currentExposureRound.toString());
         return response;
     }
 
@@ -466,7 +467,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
         response.add(currentExposureRound);
         currentExposureRound = newRound;
         response.add(currentExposureRound);
-        propertiesRepository.updateProperty("round", currentExposureRound.toString());
+        propertiesRepository.updateProperty("exposureRound", currentExposureRound.toString());
         return response;
     }
 
@@ -478,5 +479,10 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
     @Override
     public String getExposureStrawpoll() {
         return fourchanService.getExposureStrawpoll();
+    }
+
+    @Override
+    public Integer resetLatestPoll() {
+        return exposureChampionshipRepository.deleteByIdSeasonAndIdRoundOrderByVotesDesc(properties.getCurrentYear(), currentExposureRound);
     }
 }
