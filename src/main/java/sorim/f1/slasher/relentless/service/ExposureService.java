@@ -1,28 +1,23 @@
 package sorim.f1.slasher.relentless.service;
 
-import sorim.f1.slasher.relentless.entities.*;
-import sorim.f1.slasher.relentless.model.*;
-
-import java.util.List;
-
 public interface ExposureService {
-   // Boolean exposeDrivers(String[] exposedList, String ipAddress) throws Exception;
+    // Boolean exposeDrivers(String[] exposedList, String ipAddress) throws Exception;
 
     //ActiveExposureChart getExposedChartData();
 
-  //  ExposureResponse getExposureDriverList();
+    //  ExposureResponse getExposureDriverList();
 
-  //  boolean exposureOn();
-  //  boolean closeExposurePoll();
+    //  boolean exposureOn();
+    //  boolean closeExposurePoll();
 
-  //  boolean openExposurePoll(Integer minutes);
+    //  boolean openExposurePoll(Integer minutes);
 
 //    Integer getCurrentExposureRound();
 
-  //  void setCurrentExposureRound(Integer newCurrentRound);
+    //  void setCurrentExposureRound(Integer newCurrentRound);
 
 
-  //  void setNextRoundOfExposure(List<DriverStanding> driverStandings, int round);
+    //  void setNextRoundOfExposure(List<DriverStanding> driverStandings, int round);
 
 //    List<ExposureChampionshipData>  getExposureChampionshipData();
 //

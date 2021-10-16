@@ -4,9 +4,11 @@ import sorim.f1.slasher.relentless.entities.*;
 import sorim.f1.slasher.relentless.model.Aws;
 import sorim.f1.slasher.relentless.model.FullBackup;
 import sorim.f1.slasher.relentless.model.FullExposure;
+import sorim.f1.slasher.relentless.model.livetiming.Driver;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
 public interface AdminService {
     void initialize() throws Exception;
@@ -17,6 +19,8 @@ public interface AdminService {
 
 
     Boolean initializeStandings() throws IOException;
+
+    Boolean initializeStandingsFromLivetiming(Map<String, DriverStanding> standingsMap, Map<String, Driver> driversMap, Integer newRound);
 
     Boolean initializeFullStandingsThroughRounds() throws IOException;
 
@@ -40,7 +44,7 @@ public interface AdminService {
 
     FullExposure backupExposure();
 
-    Integer getNextRefreshTick(Integer seconds) ;
+    Integer getNextRefreshTick(Integer seconds);
 
     List<F1Comment> getAdminMessages();
 

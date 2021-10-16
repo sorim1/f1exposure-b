@@ -99,7 +99,7 @@ public class InstagramServiceImpl implements InstagramService {
                                 .get(timelineImageMedia.getImage_versions2().getCandidates().size() - 1)
                                 .getUrl();
                         String caption = "";
-                        if(post.getCaption()!=null){
+                        if (post.getCaption() != null) {
                             caption = post.getCaption().getText();
                         }
                         instagramPosts.add(InstagramPost.builder().code(timelineImageMedia.getCode())

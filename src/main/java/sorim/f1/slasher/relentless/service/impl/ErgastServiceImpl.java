@@ -65,10 +65,10 @@ public class ErgastServiceImpl implements ErgastService {
 
     @Override
     public RaceData getUpcomingRace(Integer currentYear) {
-        RaceData response =ergastRaceRepository.findFirstByRaceAnalysisNullAndSeasonOrderByDateAsc(currentYear.toString());
-        if(response==null){
+        RaceData response = ergastRaceRepository.findFirstByRaceAnalysisNullAndSeasonOrderByDateAsc(currentYear.toString());
+        if (response == null) {
             Integer nextYear = currentYear + 1;
-            response =ergastRaceRepository.findFirstByRaceAnalysisIsNullAndSeasonOrderByDateAsc(nextYear.toString());
+            response = ergastRaceRepository.findFirstByRaceAnalysisIsNullAndSeasonOrderByDateAsc(nextYear.toString());
         }
         return response;
     }
@@ -76,7 +76,7 @@ public class ErgastServiceImpl implements ErgastService {
     @Override
     public RaceData getLatestNonAnalyzedRace(Integer currentYear) {
         RaceData response = ergastRaceRepository.findFirstByRaceAnalysisIsNotNullAndLiveTimingRaceIsNullAndSeasonOrderByDateAsc(String.valueOf(currentYear));
-        if(response!=null){
+        if (response != null) {
             return response;
         }
         return ergastRaceRepository.findFirstByRaceAnalysisIsNullAndSeasonOrderByDateAsc(String.valueOf(currentYear));

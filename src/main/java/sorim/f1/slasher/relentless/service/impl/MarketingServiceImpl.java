@@ -4,7 +4,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import sorim.f1.slasher.relentless.entities.ImageRow;
 import sorim.f1.slasher.relentless.entities.Marketing;
 import sorim.f1.slasher.relentless.repository.ImageRepository;
@@ -32,9 +31,9 @@ public class MarketingServiceImpl implements MarketingService {
     public Marketing getRandomMarketing() {
         Marketing response;
         response = marketingRepository.findById(sequence++);
-        if(response==null){
-            sequence=1;
-         response = marketingRepository.findById(sequence++);
+        if (response == null) {
+            sequence = 1;
+            response = marketingRepository.findById(sequence++);
         }
         return response;
     }
@@ -45,7 +44,7 @@ public class MarketingServiceImpl implements MarketingService {
     }
 
     @Override
-    public void deleteMarketing(Integer id)    {
+    public void deleteMarketing(Integer id) {
         marketingRepository.deleteById(id);
     }
 

@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
@@ -45,8 +47,12 @@ public class Driver {
     private String fastestLapSector3;
     private Integer fastestLapPositionSector3;
 
-
     private Integer position;
     private Integer startingPosition;
+
+    private Integer points;
+    private BigDecimal standingsNewAveragePoints;
+    private BigDecimal standingsAverageDifference;
+
     private LapByLapData lapByLapData = new LapByLapData();
 }

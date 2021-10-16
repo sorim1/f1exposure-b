@@ -22,6 +22,7 @@ import sorim.f1.slasher.relentless.entities.ergast.RaceData;
 import sorim.f1.slasher.relentless.handling.Logger;
 import sorim.f1.slasher.relentless.model.*;
 import sorim.f1.slasher.relentless.model.ergast.ErgastResponse;
+import sorim.f1.slasher.relentless.model.livetiming.Driver;
 import sorim.f1.slasher.relentless.repository.*;
 import sorim.f1.slasher.relentless.scheduled.Scheduler;
 import sorim.f1.slasher.relentless.service.*;
@@ -30,6 +31,7 @@ import javax.annotation.PostConstruct;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Reader;
+import java.math.BigDecimal;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.time.LocalDate;
@@ -37,7 +39,12 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 @Slf4j
 @Service
@@ -117,7 +124,7 @@ public class AdminServiceImpl implements AdminService {
                 }
             }
         }
-        enrichCalendarWithErgastData(f1calendarList, ergastRaceData );
+        enrichCalendarWithErgastData(f1calendarList, ergastRaceData);
         calendarRepository.saveAll(f1calendarList);
 
     }
@@ -126,10 +133,10 @@ public class AdminServiceImpl implements AdminService {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         Integer ergastElement = 0;
         Integer calendarElement = 0;
-        do{
+        do {
             LocalDateTime calendarDate = f1calendarList.get(calendarElement).getRace();
             LocalDate ergastDate = LocalDate.parse(ergastRaceData.get(ergastElement).getDate(), formatter);
-            if(calendarDate!=null) {
+            if (calendarDate != null) {
                 if (calendarDate.getDayOfYear() == ergastDate.getDayOfYear()) {
                     log.info("isti dan: {} - {} - {} ", ergastElement, calendarElement, ergastRaceData.get(ergastElement).getRaceName());
                     f1calendarList.get(calendarElement).setErgastName("MAYBE: " + ergastRaceData.get(ergastElement).getRaceName());
@@ -146,7 +153,7 @@ public class AdminServiceImpl implements AdminService {
             } else {
                 calendarElement++;
             }
-        }while(calendarElement<f1calendarList.size()-1 || ergastElement<ergastRaceData.size()-1);
+        } while (calendarElement < f1calendarList.size() - 1 || ergastElement < ergastRaceData.size() - 1);
     }
 
 
@@ -177,10 +184,25 @@ public class AdminServiceImpl implements AdminService {
     public Boolean initializeStandings() {
         Logger.log("initializeStandings");
         Boolean changesDetected = refreshDriverStandingsFromErgast();
-        if(changesDetected){
+        if (changesDetected) {
             Scheduler.standingsUpdated = true;
         }
         initializeConstructorStandings();
+        return changesDetected;
+    }
+
+    @Override
+    public Boolean initializeStandingsFromLivetiming(Map<String, DriverStanding> standingsMap, Map<String, Driver> driversMap, Integer newRound) {
+        Logger.log("initializeStandingsFromLivetiming");
+        //TODO ukloniti try-catch ako radi ok?
+        Boolean changesDetected = false;
+        try {
+            changesDetected = refreshStandingsFromLivetiming(standingsMap, driversMap, newRound);
+        } catch (Exception e) {
+            Logger.log("ERROR", e.getMessage());
+            e.printStackTrace();
+            return false;
+        }
         return changesDetected;
     }
 
@@ -295,7 +317,32 @@ public class AdminServiceImpl implements AdminService {
         driverStandingsRepository.saveAll(driverStandings);
         enrichSingleRoundStandingsWithRoundPoints(driverStandingsByRound, null);
         driverStandingsByRoundRepository.saveAll(driverStandingsByRound.values());
-       // updateExposureDriverList(driverStandings);
+        // updateExposureDriverList(driverStandings);
+        return bool;
+    }
+
+    private Boolean refreshStandingsFromLivetiming(Map<String, DriverStanding> standingsMap, Map<String, Driver> driversMap, Integer newRound) {
+        Boolean bool = false;
+        if (newRound == CURRENT_ROUND + 1) {
+            Logger.log("refreshDriverStandingsFromLiveTiming - newRound == CURRENT_ROUND+1");
+            bool = true;
+            Map<String, ConstructorStanding> constructorStandingsMap = clientService.getConstructorStandings().stream()
+                    .collect(Collectors.toMap(key -> key.getName().substring(5), Function.identity()));
+            driversMap.forEach((key, driver) -> {
+                if (standingsMap.containsKey(driver.getInitials())) {
+                    standingsMap.get(driver.getInitials()).setPoints(standingsMap.get(driver.getInitials()).getPoints().add(new BigDecimal(driver.getPoints())));
+                    constructorStandingsMap.get(driver.getName().substring(5)).setPoints(constructorStandingsMap.get(driver.getName().substring(5)).getPoints().add(new BigDecimal(driver.getPoints())));
+                }
+            });
+            List<DriverStanding> driverStandings = standingsMap.values().stream()
+                    .collect(Collectors.toList());
+            List<ConstructorStanding> constructorStandings = constructorStandingsMap.values().stream()
+                    .collect(Collectors.toList());
+            driverStandingsRepository.deleteAll();
+            driverStandingsRepository.saveAll(driverStandings);
+            constructorStandingsRepository.deleteAll();
+            constructorStandingsRepository.saveAll(constructorStandings);
+        }
         return bool;
     }
 
@@ -435,7 +482,7 @@ public class AdminServiceImpl implements AdminService {
 
     @Override
     public List<F1Comment> getAdminMessages() {
-        return f1CommentRepository.findFirst30ByPageAndStatusOrderByTimestampDesc(47,1);
+        return f1CommentRepository.findFirst30ByPageAndStatusOrderByTimestampDesc(47, 1);
     }
 
     @Override

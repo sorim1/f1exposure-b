@@ -40,6 +40,7 @@ public interface ErgastService {
     ErgastResponse getResultsByRound(Integer season, Integer round);
 
     List<FrontendRace> getRacesSoFar(String season, Integer round);
+
     List<FrontendRace> getRacesOfSeason(String season);
 
     Map<String, String> connectDriverCodesWithErgastCodes();

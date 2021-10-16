@@ -68,7 +68,7 @@ public class SecurityServiceImpl implements SecurityService {
 
     @Override
     public String validateCode(String code) throws Exception {
-        String imageCode = code.replaceFirst("f1exposure.com_", "").replaceFirst(".png","");
+        String imageCode = code.replaceFirst("f1exposure.com_", "").replaceFirst(".png", "");
         if (code.equals(imageCode)) {
             Logger.raiseException(AUTHORIZATION_CLIENT_FAILURE, code);
         }

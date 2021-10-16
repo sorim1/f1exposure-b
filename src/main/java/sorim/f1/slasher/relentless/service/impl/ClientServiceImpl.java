@@ -52,7 +52,7 @@ public class ClientServiceImpl implements ClientService {
 
     @Override
     public Boolean exposeDrivers(String[] exposedList, String ipAddress) throws Exception {
-       // return exposureService.exposeDrivers(exposedList, ipAddress);
+        // return exposureService.exposeDrivers(exposedList, ipAddress);
         return true;
     }
 
@@ -203,7 +203,7 @@ public class ClientServiceImpl implements ClientService {
 
     @Override
     public TripleInstagramFeed getInstagramFeedPage(Integer page) throws IGLoginException {
-        if(page>40){
+        if (page > 40) {
             return new TripleInstagramFeed();
         }
         return instagramService.getInstagramFeedPage(page);
@@ -259,10 +259,10 @@ public class ClientServiceImpl implements ClientService {
         //String code = UUID.randomUUID().toString();
         String code = MainUtility.generateCodeFromTitle(content.getTitle());
         content.setCode(code);
-        if(content.getStatus()==null) {
+        if (content.getStatus() == null) {
             content.setStatus(1);
         }
-        if(content.getUrl()==null) {
+        if (content.getUrl() == null) {
             content.setIconUrl("./assets/img/favicon.png");
         }
         content.setTimestampCreated(new Date());
@@ -272,7 +272,7 @@ public class ClientServiceImpl implements ClientService {
         content.setUsername(username);
         content.setIp(ipAddress);
         awsRepository.save(content);
-        if(content.getUrl()!=null) {
+        if (content.getUrl() != null) {
             updatePostImagesAsync(content);
         }
         return code;

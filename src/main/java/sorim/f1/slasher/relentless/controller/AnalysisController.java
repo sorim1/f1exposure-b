@@ -99,4 +99,9 @@ public class AnalysisController {
         return service.updateCircuitImage(season, round, newImageUrl);
     }
 
+    @GetMapping("/setLatestTreeMap")
+    public Boolean setLatestTreeMap(@RequestHeader String client, @RequestParam(value = "ergastStandingsUpdated", required=false) Boolean ergastStandingsUpdated) throws Exception {
+        return service.setLatestTreeMap(ergastStandingsUpdated);
+    }
+
 }

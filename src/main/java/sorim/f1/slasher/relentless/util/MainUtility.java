@@ -4,6 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import sorim.f1.slasher.relentless.handling.Logger;
 import sorim.f1.slasher.relentless.model.livetiming.Driver;
 
+import java.math.BigDecimal;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -28,6 +29,33 @@ public class MainUtility {
         put("red_bull", "#0600EF");
         put("alpine", "#0090FF");
     }};
+
+    private static final Map<Integer, Integer> positionToPointsMap = new HashMap<>() {{
+        put(1, 25);
+        put(2, 18);
+        put(3, 15);
+        put(4, 12);
+        put(5, 10);
+        put(6, 8);
+        put(7, 6);
+        put(8, 4);
+        put(9, 2);
+        put(10, 1);
+        put(11, 0);
+        put(12, 0);
+        put(13, 0);
+        put(14, 0);
+        put(15, 0);
+        put(16, 0);
+        put(17, 0);
+        put(18, 0);
+        put(19, 0);;
+        put(20, 0);
+        put(21, 0);
+        put(22, 0);
+
+    }};
+
 
     public static List<String> extractDriverCodes(Set<String> keySet) {
         List<String> response = new ArrayList<>();
@@ -182,4 +210,12 @@ public class MainUtility {
         return domainUrl;
     }
 
+    public static BigDecimal getStandingsAverageDifference(BigDecimal averagePoints, Integer position) {
+        Integer positionPoints = positionToPointsMap.get(position);
+        return new BigDecimal(positionPoints).subtract(averagePoints);
+    }
+
+    public static Integer getPointsFromPosition(Integer position) {
+        return positionToPointsMap.get(position);
+    }
 }

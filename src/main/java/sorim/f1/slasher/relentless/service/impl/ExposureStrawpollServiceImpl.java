@@ -52,20 +52,20 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
     private static Integer currentExposureRound;
 
     //private static String strawpollUrl="https://strawpoll.com/api/poll/sdvbveh8b";
-    private static String strawpollUrl= null;
-    private static String strawpollUrlBase="https://strawpoll.com/";
-    private static String apiBase="api/poll/";
+    private static String strawpollUrl = null;
+    private static final String strawpollUrlBase = "https://strawpoll.com/";
+    private static final String apiBase = "api/poll/";
     private static String strawpollId;
 
-    private static Integer reloadDelay=0;
-    private static Integer latestVoteCount=0;
+    private static Integer reloadDelay = 0;
+    private static Integer latestVoteCount = 0;
     private static Map<String, ExposureDriver> driversMap = new HashMap<>();
-    private static Map<String, String> colorMap = new HashMap<>();
+    private static final Map<String, String> colorMap = new HashMap<>();
     private final RestTemplate restTemplate = new RestTemplate();
 
 
     @PostConstruct
-    private void init(){
+    private void init() {
         initializeExposureFrontendVariables(null);
     }
 
@@ -80,8 +80,8 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
         if (f1calendar != null) {
             title = f1calendar.getLocation();
             Duration howMuchTimeSincePreviousRace = Duration.between(f1calendar.getRace(), gmtDateTime);
-            if (howMuchTimeSincePreviousRace.toDays() <1) {
-                if(strawpollId==null) {
+            if (howMuchTimeSincePreviousRace.toDays() < 1) {
+                if (strawpollId == null) {
                     String newId = getExposureStrawpoll();
                     if (newId != null) {
                         strawpollId = newId;
@@ -118,7 +118,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
     @Override
     public void startPolling() {
         StrawpollModel newStrawpoll = fetchStrawpollResults();
-        if(newStrawpoll!=null && exposureOn()){
+        if (newStrawpoll != null && exposureOn()) {
             log.info("strawpoll jest");
             updateExposureDataFromStrawpoll(newStrawpoll);
             new java.util.Timer().schedule(
@@ -137,8 +137,8 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
     }
 
     private void resetStrawpoll() {
-        strawpollId=null;
-        strawpollUrl=null;
+        strawpollId = null;
+        strawpollUrl = null;
         latestVoteCount = 0;
         reloadDelay = 0;
     }
@@ -164,7 +164,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
             StrawpollModel strawPoll = restTemplate
                     .getForObject(strawpollUrlBase + apiBase + strawpollId, StrawpollModel.class);
             return strawPoll;
-        }catch(Exception e){
+        } catch (Exception e) {
             log.error("fetchStrawpollResults", e);
             return null;
         }
@@ -173,10 +173,10 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
     @Override
     public Boolean initializeStrawpoll(String id) {
         reloadDelay = 5000;
-        strawpollUrl = strawpollUrlBase+id;
+        strawpollUrl = strawpollUrlBase + id;
         strawpollId = id;
         StrawpollModel newStrawpoll = fetchStrawpollResults();
-        if(newStrawpoll!=null){
+        if (newStrawpoll != null) {
             log.info("strawpoll jest");
             initializeExposureFrontendVariables(id);
             updateExposureDataFromStrawpoll(newStrawpoll);
@@ -259,7 +259,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
     }
 
     private Integer getReloadDelay() {
-        if(exposureOn()){
+        if (exposureOn()) {
             return reloadDelay;
         }
         return 0;
@@ -306,13 +306,13 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
         Integer voters = strawpoll.getContent().getPoll().getTotal_voters();
 
         Integer totalVotes = strawpoll.getContent().getPoll().getTotal_votes();
-        if(totalVotes> latestVoteCount){
-            reloadDelay=10000;
+        if (totalVotes > latestVoteCount) {
+            reloadDelay = 10000;
         } else {
-            reloadDelay=reloadDelay*2;
+            reloadDelay = reloadDelay * 2;
         }
-        latestVoteCount=totalVotes;
-        strawpoll.getContent().getPoll().getPoll_answers().forEach(pollAnswer->{
+        latestVoteCount = totalVotes;
+        strawpoll.getContent().getPoll().getPoll_answers().forEach(pollAnswer -> {
             String code = getDriverCodeFromName(pollAnswer.getAnswer());
             SeasonRoundDriverId exposedId = SeasonRoundDriverId.builder()
                     .season(properties.getCurrentYear())
@@ -339,9 +339,9 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
 
 
     private String getColorFromDriverCode(String code) {
-        if(colorMap.containsKey(code)){
+        if (colorMap.containsKey(code)) {
             return colorMap.get(code);
-        } else{
+        } else {
             DriverStandingByRound dsbr = driverStandingsByRoundRepository.findFirstByCode(code);
             String color = null;
             if (dsbr != null) {
@@ -355,11 +355,11 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
     }
 
     private String getDriverCodeFromName(String name) {
-        if(driversMap.containsKey(name)){
+        if (driversMap.containsKey(name)) {
             return driversMap.get(name).getCode();
         } else {
             ExposureDriver newDriver = ExposureDriver.builder().status(1).fullName(name)
-                    .code(name.substring(0,3).toUpperCase()).build();
+                    .code(name.substring(0, 3).toUpperCase()).build();
             driverRepository.save(newDriver);
             driversMap.put(name, newDriver);
             return newDriver.getCode();
@@ -367,9 +367,9 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
     }
 
     private void setDriverNameMap() {
-      List<ExposureDriver> list = driverRepository.findAll();
-      driversMap = list.stream()
-              .collect(Collectors.toMap(ExposureDriver::getFullName, Function.identity()));
+        List<ExposureDriver> list = driverRepository.findAll();
+        driversMap = list.stream()
+                .collect(Collectors.toMap(ExposureDriver::getFullName, Function.identity()));
     }
 
     @Override

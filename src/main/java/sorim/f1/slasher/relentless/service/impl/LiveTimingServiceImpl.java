@@ -10,6 +10,7 @@ import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import sorim.f1.slasher.relentless.configuration.MainProperties;
+import sorim.f1.slasher.relentless.entities.DriverStanding;
 import sorim.f1.slasher.relentless.entities.ergast.RaceData;
 import sorim.f1.slasher.relentless.handling.Logger;
 import sorim.f1.slasher.relentless.model.enums.RoundEnum;
@@ -17,12 +18,14 @@ import sorim.f1.slasher.relentless.model.ergast.ErgastResponse;
 import sorim.f1.slasher.relentless.model.livetiming.*;
 import sorim.f1.slasher.relentless.scheduled.Scheduler;
 import sorim.f1.slasher.relentless.service.AdminService;
+import sorim.f1.slasher.relentless.service.ClientService;
 import sorim.f1.slasher.relentless.service.ErgastService;
 import sorim.f1.slasher.relentless.service.LiveTimingService;
 import sorim.f1.slasher.relentless.util.MainUtility;
 
 import javax.annotation.PostConstruct;
-import javax.xml.bind.DatatypeConverter;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -37,6 +40,7 @@ public class LiveTimingServiceImpl implements LiveTimingService {
 
     private final ErgastService ergastService;
     private final AdminService adminService;
+    private final ClientService clientService;
     private final MainProperties properties;
     RestTemplate restTemplate = new RestTemplate();
 
@@ -79,7 +83,7 @@ public class LiveTimingServiceImpl implements LiveTimingService {
 
             }
         });
-        if(deleteOld){
+        if (deleteOld) {
             ergastService.deleteRaces(year);
         }
         ergastService.saveRaces(raceData);
@@ -195,10 +199,10 @@ public class LiveTimingServiceImpl implements LiveTimingService {
                     .getForObject(url, String.class, raceData.getSeason(), grandPrix, raceName);
         } catch (Exception e) {
             Logger.log("getLiveTimingResponseOfErgastRace1 " + grandPrix, e.getMessage());
-            if(round.equals(RoundEnum.PRACTICE_2)){
+            if (round.equals(RoundEnum.PRACTICE_2)) {
                 date = MainUtility.subtractDays(raceDate, 1);
                 raceName = date + "_Practice_2";
-            } else if(round.equals(RoundEnum.QUALIFYING)){
+            } else if (round.equals(RoundEnum.QUALIFYING)) {
                 date = MainUtility.subtractDays(raceDate, 2);
                 raceName = date + "_Qualifying";
             } else {
@@ -289,6 +293,32 @@ public class LiveTimingServiceImpl implements LiveTimingService {
         raceData.getUpcomingRaceAnalysis().setImageUrl(newImageUrl);
         ergastService.saveRace(raceData);
         return response;
+    }
+
+    @Override
+    public Boolean setLatestTreeMap(Boolean ergastStandingsUpdated) {
+        Map<String, DriverStanding> standingsMap = clientService.getDriverStandings().stream()
+                .collect(Collectors.toMap(DriverStanding::getCode, Function.identity()));
+        RaceData raceData = ergastService.getLatestAnalyzedRace();
+        RaceAnalysis analysis = raceData.getRaceAnalysis();
+        Integer round = raceData.getRound();
+        analysis.getDriverData().forEach(driver -> {
+            if (standingsMap.containsKey(driver.getInitials())) {
+                BigDecimal averagePoints = standingsMap.get(driver.getInitials()).getPoints().divide(new BigDecimal(round));
+                averagePoints = averagePoints.setScale(2, RoundingMode.HALF_UP);
+                driver.setStandingsNewAveragePoints(averagePoints);
+                Integer positionPoints = MainUtility.getPointsFromPosition(driver.getPosition());
+                if (driver.getFastestLapPosition() == 1) {
+                    positionPoints++;
+                }
+                driver.setPoints(positionPoints);
+                BigDecimal standingsAverageDifference = new BigDecimal(positionPoints).subtract(averagePoints);
+                driver.setStandingsAverageDifference(standingsAverageDifference);
+            }
+        });
+        raceData.setRaceAnalysis(analysis);
+        ergastService.saveRace(raceData);
+        return true;
     }
 
     @Override
@@ -502,13 +532,14 @@ public class LiveTimingServiceImpl implements LiveTimingService {
                             .collect(Collectors.toMap(Driver::getInitials, Function.identity(), (o1, o2) -> o1, TreeMap::new));
                     List<String> driverCodes = MainUtility.extractDriverCodes(driversResponse);
 
-                   // title.set((String) response.getFree().data.getDataField("R"));
+                    // title.set((String) response.getFree().data.getDataField("R"));
                     title.set(race.getRaceName());
 
                     enrichDriversWithScoringData(driversMap, response.getScores().getGraph());
                     enrichDriversWithFreeData(driversMap, response.getFree().data);
                     enrichDriversWithBestData(driversMap, response.getBest().data, driverCodes);
                     enrichDriversWithLapByLapData(driversMap, response.getLapPos().getGraph(), response.getXtra().data, driverCodes);
+                    updateStandingsAndEnrichTreeMapData(driversMap, race.getRound());
 
                     Map<String, String> ergastCodes = ergastService.connectDriverCodesWithErgastCodes();
                     Boolean bool = enrichDriversWithErgastLapTimes(driversMap, ergastCodes, race.getSeason(), race.getRound());
@@ -529,7 +560,7 @@ public class LiveTimingServiceImpl implements LiveTimingService {
                 .title(title.get()).build();
         RaceData latestRace = raceData.get(0);
         latestRace.setRaceAnalysis(analysis);
-        if(!ergastDataAvailable.get()){
+        if (!ergastDataAvailable.get()) {
             latestRace.setLiveTimingRace(null);
             analysis.setStatus(2);
         }
@@ -538,41 +569,63 @@ public class LiveTimingServiceImpl implements LiveTimingService {
         return true;
     }
 
+    private void updateStandingsAndEnrichTreeMapData(Map<String, Driver> driversMap, Integer newRound) {
+
+        List<DriverStanding> standings = clientService.getDriverStandings();
+        Map<String, DriverStanding> standingsMap = standings.stream()
+                .collect(Collectors.toMap(DriverStanding::getCode, Function.identity()));
+        Integer oldRound = newRound - 1;
+        driversMap.forEach((key, driver) -> {
+            if (standingsMap.containsKey(driver.getInitials())) {
+                BigDecimal oldAveragePoints = standingsMap.get(driver.getInitials()).getPoints().divide(new BigDecimal(oldRound));
+                oldAveragePoints = oldAveragePoints.setScale(2, RoundingMode.HALF_UP);
+                Integer positionPoints = MainUtility.getPointsFromPosition(driver.getPosition());
+                if (driver.getFastestLapPosition() == 1) {
+                    positionPoints++;
+                }
+                BigDecimal standingsAverageDifference = new BigDecimal(positionPoints).subtract(oldAveragePoints);
+                driver.setStandingsNewAveragePoints(oldAveragePoints.add(standingsAverageDifference));
+                driver.setStandingsAverageDifference(standingsAverageDifference);
+            }
+        });
+        adminService.initializeStandingsFromLivetiming(standingsMap, driversMap, newRound);
+    }
+
     public List<Driver> analyzeSprintRace(String liveTimingDataResponse) {
         List<Driver> drivers = new ArrayList<>();
         String title;
-            try {
-                LiveTimingData response = mapper.readValue(liveTimingDataResponse, LiveTimingData.class);
-                    List<Driver> driversResponse = response.getInit().getData().getDrivers();
-                    for (int i = 0; i < driversResponse.size(); i++) {
-                        driversResponse.get(i).setStartingPosition(i + 1);
-                    }
-                    Map<String, Driver> driversMap = driversResponse.stream()
-                            .collect(Collectors.toMap(Driver::getInitials, Function.identity(), (o1, o2) -> o1, TreeMap::new));
-                    List<String> driverCodes = MainUtility.extractDriverCodes(driversResponse);
-
-                    // title.set((String) response.getFree().data.getDataField("R"));
-
-                    enrichDriversWithScoringData(driversMap, response.getScores().getGraph());
-                    enrichDriversWithFreeData(driversMap, response.getFree().data);
-                    enrichDriversWithBestData(driversMap, response.getBest().data, driverCodes);
-                    enrichDriversWithLapByLapData(driversMap, response.getLapPos().getGraph(), response.getXtra().data, driverCodes);
-
-
-                    //TODO ERGAST SPRINT LAP TIMES URL?
-              //  Map<String, String> ergastCodes = ergastService.connectDriverCodesWithErgastCodes();
-                //enrichDriversWithErgastLapTimes(driversMap, ergastCodes, race.getSeason(), race.getRound());
-                   drivers = new ArrayList<>(driversMap.values());
-            } catch (Exception e) {
-                e.printStackTrace();
+        try {
+            LiveTimingData response = mapper.readValue(liveTimingDataResponse, LiveTimingData.class);
+            List<Driver> driversResponse = response.getInit().getData().getDrivers();
+            for (int i = 0; i < driversResponse.size(); i++) {
+                driversResponse.get(i).setStartingPosition(i + 1);
             }
+            Map<String, Driver> driversMap = driversResponse.stream()
+                    .collect(Collectors.toMap(Driver::getInitials, Function.identity(), (o1, o2) -> o1, TreeMap::new));
+            List<String> driverCodes = MainUtility.extractDriverCodes(driversResponse);
+
+            // title.set((String) response.getFree().data.getDataField("R"));
+
+            enrichDriversWithScoringData(driversMap, response.getScores().getGraph());
+            enrichDriversWithFreeData(driversMap, response.getFree().data);
+            enrichDriversWithBestData(driversMap, response.getBest().data, driverCodes);
+            enrichDriversWithLapByLapData(driversMap, response.getLapPos().getGraph(), response.getXtra().data, driverCodes);
+
+
+            //TODO ERGAST SPRINT LAP TIMES URL?
+            //  Map<String, String> ergastCodes = ergastService.connectDriverCodesWithErgastCodes();
+            //enrichDriversWithErgastLapTimes(driversMap, ergastCodes, race.getSeason(), race.getRound());
+            drivers = new ArrayList<>(driversMap.values());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         drivers.sort(Comparator.comparing(Driver::getPosition));
         return drivers;
     }
 
     private Boolean enrichDriversWithErgastLapTimes(Map<String, Driver> driversMap, Map<String, String> ergastCodes, String season, Integer round) throws JsonProcessingException {
         ErgastResponse response = ergastService.getRaceLaps(Integer.valueOf(season), round);
-        if(response.getMrData().getRaceTable().getRaces().size()>0) {
+        if (response.getMrData().getRaceTable().getRaces().size() > 0) {
             response.getMrData().getRaceTable().getRaces().get(0).getLaps().forEach(lap -> {
                 lap.getTimings().forEach(timing -> {
                     driversMap.get(ergastCodes.get(timing.getDriverId())).getLapByLapData().addLapTime(lap.getNumber(), timing);

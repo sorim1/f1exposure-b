@@ -11,6 +11,7 @@ public interface RedditService {
     List<RedditPostNew> getRedditNewPosts(Integer page);
 
     List<RedditPostTop> getRedditTopPosts(Integer page);
+
     void updatePostImages(AwsContent post);
 
     void fetchRedditPosts();

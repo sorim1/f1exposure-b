@@ -1,6 +1,5 @@
 package sorim.f1.slasher.relentless.service.impl;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
@@ -16,21 +15,15 @@ import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import sorim.f1.slasher.relentless.configuration.MainProperties;
-import sorim.f1.slasher.relentless.entities.AwsContent;
-import sorim.f1.slasher.relentless.entities.RedditPostNew;
-import sorim.f1.slasher.relentless.entities.RedditPostTop;
 import sorim.f1.slasher.relentless.entities.Replay;
-import sorim.f1.slasher.relentless.repository.AwsRepository;
-import sorim.f1.slasher.relentless.repository.RedditNewRepository;
-import sorim.f1.slasher.relentless.repository.RedditTopRepository;
 import sorim.f1.slasher.relentless.repository.ReplayRepository;
 import sorim.f1.slasher.relentless.service.RacingfkService;
-import sorim.f1.slasher.relentless.service.RedditService;
-import sorim.f1.slasher.relentless.util.MainUtility;
 
 import javax.annotation.PostConstruct;
-import java.util.*;
-import java.util.concurrent.atomic.AtomicReference;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
 
 @Slf4j
 @Service
@@ -50,7 +43,6 @@ public class RacingfkServiceImpl implements RacingfkService {
     private final ObjectMapper mapper = new ObjectMapper();
 
 
-
     @PostConstruct
     void init() {
         replaysUrl = properties.getReplaysUrl();
@@ -68,7 +60,7 @@ public class RacingfkServiceImpl implements RacingfkService {
         List<Replay> list = new ArrayList<>();
         String latestReplayTitle = null;
         Replay latestReplay = replayRepository.findFirstByOrderByIdDesc();
-        if(latestReplay!=null){
+        if (latestReplay != null) {
             latestReplayTitle = latestReplay.getTitle();
         }
         log.info("latestReplayTitle");
@@ -78,8 +70,8 @@ public class RacingfkServiceImpl implements RacingfkService {
             Document doc = Jsoup.parse(rawHtml);
 
             Elements h2Elements = doc.getElementsByTag("h2");
-            if(h2Elements.size()!=10){
-                iterate=false;
+            if (h2Elements.size() != 10) {
+                iterate = false;
             } else {
                 log.error("NIJE KRAJ LISTE");
             }
@@ -89,21 +81,21 @@ public class RacingfkServiceImpl implements RacingfkService {
                 Element aElement = aElements.get(0);
                 if (aElement.wholeText().equals(latestReplayTitle)) {
                     i = h2Elements.size();
-                    iterate=false;
+                    iterate = false;
                 } else {
                     Replay entry = Replay.builder().title(aElement.wholeText())
-                            .url(aElement.attr("href")) .build();
+                            .url(aElement.attr("href")).build();
                     list.add(entry);
                 }
             }
             page++;
-            if(page>10){
-                iterate=false;
+            if (page > 10) {
+                iterate = false;
             }
-        }while(iterate);
-      //  Collections.reverse(list);
+        } while (iterate);
+        //  Collections.reverse(list);
 
-        for(int i=list.size()-1; i>=0;i--){
+        for (int i = list.size() - 1; i >= 0; i--) {
             replayRepository.save(list.get(i));
         }
         return true;
@@ -115,10 +107,10 @@ public class RacingfkServiceImpl implements RacingfkService {
         return replayRepository.findAllByOrderByIdDesc(paging);
     }
 
-    private String getHtmlResponse(Integer page){
+    private String getHtmlResponse(Integer page) {
         HttpEntity entity = new HttpEntity(headers);
         ResponseEntity<String> response = restTemplate.exchange(
-                replaysUrl+page, HttpMethod.GET, entity, String.class);
+                replaysUrl + page, HttpMethod.GET, entity, String.class);
         String rawHtml = response.getBody();
         return rawHtml;
     }

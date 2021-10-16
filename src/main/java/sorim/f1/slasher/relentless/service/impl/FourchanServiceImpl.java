@@ -59,21 +59,21 @@ public class FourchanServiceImpl implements FourchanService {
             log.info(String.valueOf(listOfPosts.get(0).get("sub")));
 
             listOfPosts.stream().filter(post -> post.containsKey("sub") && post.get("sub").toString().toUpperCase().contains("/F1/"))
-                    .forEach(f1Thread ->{
+                    .forEach(f1Thread -> {
                         f1ThreadNumbers.add((Integer) f1Thread.get("no"));
                     });
-            if(f1ThreadNumbers.size()>0){
+            if (f1ThreadNumbers.size() > 0) {
 
                 Integer i = 0;
-                do{
+                do {
                     strawpoll = search4ChanThread(f1ThreadNumbers.get(i));
-                    log.info("i - {} - strawpoll - {} - thread - {}",i,strawpoll, f1ThreadNumbers.get(i));
-                    if(strawpoll==null){
+                    log.info("i - {} - strawpoll - {} - thread - {}", i, strawpoll, f1ThreadNumbers.get(i));
+                    if (strawpoll == null) {
                         i++;
                     } else {
-                        i=10;
+                        i = 10;
                     }
-                } while(i<f1ThreadNumbers.size()-1);
+                } while (i < f1ThreadNumbers.size() - 1);
             }
 
         } catch (Exception e) {
@@ -90,29 +90,27 @@ public class FourchanServiceImpl implements FourchanService {
         FourchanThread response = restTemplate
                 .getForObject(threadUrl, FourchanThread.class, uriVariables);
 
-        response.getPosts().stream().filter(post -> post.getCom()!=null && post.getCom().toUpperCase().contains("STRAWPOLL.COM/"))
-                .forEach(strawPollPost ->{
+        response.getPosts().stream().filter(post -> post.getCom() != null && post.getCom().toUpperCase().contains("STRAWPOLL.COM/"))
+                .forEach(strawPollPost -> {
                     int counter = 0;
-                    if(strawPollPost.getCom().contains("VERY IMPORTANT POLL")){
-                        counter+=2;
+                    if (strawPollPost.getCom().contains("VERY IMPORTANT POLL")) {
+                        counter += 2;
                     }
-                    if(strawPollPost.getCom().contains("EXPOSURE POLL")){
+                    if (strawPollPost.getCom().contains("EXPOSURE POLL")) {
                         counter++;
                     }
-                    if(strawPollPost.getCom().contains("EXPOSED POLL")){
+                    if (strawPollPost.getCom().contains("EXPOSED POLL")) {
                         counter++;
                     }
-                    if(counter>=2){
+                    if (counter >= 2) {
                         log.info("FOUND STRAWPOLL POST");
                         log.info(strawPollPost.getCom());
-                        Integer index = strawPollPost.getCom().indexOf("STRAWPOLL.COM/")+14;
+                        Integer index = strawPollPost.getCom().indexOf("STRAWPOLL.COM/") + 14;
                         strawpollId.set(strawPollPost.getCom().substring(index, index + 9));
                     }
                 });
         return strawpollId.get();
     }
-
-
 
 
 }

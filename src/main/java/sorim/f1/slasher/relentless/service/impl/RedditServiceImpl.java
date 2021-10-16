@@ -28,6 +28,7 @@ import sorim.f1.slasher.relentless.util.MainUtility;
 
 import javax.annotation.PostConstruct;
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -62,7 +63,7 @@ public class RedditServiceImpl implements RedditService {
     @Override
     public List<RedditPostNew> getRedditNewPosts(Integer page) {
         Pageable paging = PageRequest.of(page, 21);
-         return redditNewRepository.findAllByOrderByCreatedDesc(paging);
+        return redditNewRepository.findAllByOrderByCreatedDesc(paging);
     }
 
     @Override
@@ -79,37 +80,37 @@ public class RedditServiceImpl implements RedditService {
     }
 
     private void getNews() {
-            HttpEntity entity = new HttpEntity(headers);
-            ResponseEntity<String> response = restTemplate.exchange(
-                    redditDailyNews, HttpMethod.GET, entity, String.class);
-            List<AwsContent> list = new ArrayList<>();
-            long currentTime = System.currentTimeMillis();
-            try {
-                Map<String, Object> mapping = mapper.readValue(response.getBody(), typeRef);
-                LinkedHashMap<String, Object> root = (LinkedHashMap<String, Object>) mapping.get("data");
-                List<LinkedHashMap<String, Object>> children = (ArrayList<LinkedHashMap<String, Object>>) root.get("children");
-                AtomicReference<Integer> counter = new AtomicReference<>(1000);
-                children.forEach(child -> {
-                        LinkedHashMap<String, Object> data = (LinkedHashMap<String, Object>) child.get("data");
-                    AwsContent post = new AwsContent(data, currentTime- counter.get());
-                            list.add(post);
-                    counter.set(counter.get() + 1000);
-                });
+        HttpEntity entity = new HttpEntity(headers);
+        ResponseEntity<String> response = restTemplate.exchange(
+                redditDailyNews, HttpMethod.GET, entity, String.class);
+        List<AwsContent> list = new ArrayList<>();
+        long currentTime = System.currentTimeMillis();
+        try {
+            Map<String, Object> mapping = mapper.readValue(response.getBody(), typeRef);
+            LinkedHashMap<String, Object> root = (LinkedHashMap<String, Object>) mapping.get("data");
+            List<LinkedHashMap<String, Object>> children = (ArrayList<LinkedHashMap<String, Object>>) root.get("children");
+            AtomicReference<Integer> counter = new AtomicReference<>(1000);
+            children.forEach(child -> {
+                LinkedHashMap<String, Object> data = (LinkedHashMap<String, Object>) child.get("data");
+                AwsContent post = new AwsContent(data, currentTime - counter.get());
+                list.add(post);
+                counter.set(counter.get() + 1000);
+            });
             saveAwsList(list);
-            } catch (JsonProcessingException e) {
-                e.printStackTrace();
-            }
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
         }
+    }
 
     private void saveAwsList(List<AwsContent> list) {
         List<AwsContent> saveToDatabaseList = new ArrayList<>();
-        for(AwsContent post: list){
+        for (AwsContent post : list) {
             AwsContent fromDb = awsRepository.findByCode(post.getCode());
-            if(fromDb==null){
+            if (fromDb == null) {
                 getImagesForPost(post);
                 saveToDatabaseList.add(post);
             } else {
-                if(fromDb.getTimestampActivity().before(post.getTimestampActivity())){
+                if (fromDb.getTimestampActivity().before(post.getTimestampActivity())) {
                     fromDb.setTimestampActivity(post.getTimestampActivity());
                     saveToDatabaseList.add(fromDb);
                 }
@@ -131,41 +132,41 @@ public class RedditServiceImpl implements RedditService {
             assert rawHtml != null;
             Document doc = Jsoup.parse(rawHtml);
 
-            if(!iconUrlSet) {
+            if (!iconUrlSet) {
                 Elements linkTags = doc.getElementsByTag("link");
                 Optional<Element> relTag = linkTags.stream().filter(tag -> "icon".equals(tag.attr("rel"))).findAny();
                 if (relTag.isPresent()) {
                     String href = relTag.get().attr("href");
-                    if(check200Status(domainUrl + href)){
+                    if (check200Status(domainUrl + href)) {
                         post.setIconUrl(domainUrl + href);
-                        iconUrlSet=true;
+                        iconUrlSet = true;
                     }
                 }
-                if(!iconUrlSet) {
+                if (!iconUrlSet) {
                     relTag = linkTags.stream().filter(tag -> "shortcut icon".equals(tag.attr("rel"))).findAny();
                     if (relTag.isPresent()) {
                         String href = relTag.get().attr("href");
-                        if(check200Status(domainUrl + href)){
+                        if (check200Status(domainUrl + href)) {
                             post.setIconUrl(domainUrl + href);
-                            iconUrlSet=true;
+                            iconUrlSet = true;
                         }
                     }
                 }
             }
-            if(check200Status(domainUrl + FAVICON)){
+            if (check200Status(domainUrl + FAVICON)) {
                 post.setIconUrl(domainUrl + FAVICON);
-                iconUrlSet=true;
+                iconUrlSet = true;
             }
             Elements metaTags = doc.getElementsByTag("meta");
             Optional<Element> imageTag = metaTags.stream().filter(tag -> "og:image".equals(tag.attr("property"))).findAny();
             if (imageTag.isPresent()) {
                 String imageUrl = imageTag.get().attr("content");
-                if(imageUrl!=null && imageUrl.startsWith("/")){
+                if (imageUrl != null && imageUrl.startsWith("/")) {
                     imageUrl = domainUrl + imageUrl;
                 }
                 post.setImageUrl(imageUrl);
             }
-        }catch(Exception ex){
+        } catch (Exception ex) {
             log.info(ex.getMessage());
         }
     }
@@ -174,75 +175,76 @@ public class RedditServiceImpl implements RedditService {
         HttpEntity entity = new HttpEntity(htmlHeaders);
         boolean iconUrlSet = false;
         String domainUrl = MainUtility.getDomain(post.getUrl());
-        if(domainUrl.contains(iReddit)){
+        if (domainUrl.contains(iReddit)) {
             post.setIconUrl(REDDIT_FAVICON);
-            iconUrlSet=true;
+            iconUrlSet = true;
         }
         try {
-        ResponseEntity<String> response = restTemplate.exchange(
-                post.getUrl(), HttpMethod.GET, entity, String.class);
+            ResponseEntity<String> response = restTemplate.exchange(
+                    post.getUrl(), HttpMethod.GET, entity, String.class);
 
-        String rawHtml = response.getBody();
+            String rawHtml = response.getBody();
             assert rawHtml != null;
             Document doc = Jsoup.parse(rawHtml);
 
-        if(!iconUrlSet) {
-            Elements linkTags = doc.getElementsByTag("link");
+            if (!iconUrlSet) {
+                Elements linkTags = doc.getElementsByTag("link");
 
-            Optional<Element> relTag1 = linkTags.stream().filter(tag -> "shortcut icon".equals(tag.attr("rel"))).findAny();
-            if (relTag1.isPresent()) {
-                String href = relTag1.get().attr("href");
-                String absoluteUrl = relativeToAbsoluteUrl(domainUrl,href);
-                if(check200Status(absoluteUrl)){
-                    post.setIconUrl(absoluteUrl);
-                    iconUrlSet=true;
-                }
-            }
-            if(!iconUrlSet) {
-                Optional<Element> relTag = linkTags.stream().filter(tag -> "icon".equals(tag.attr("rel"))).findAny();
-                if (relTag.isPresent()) {
-                    String href = relTag.get().attr("href");
+                Optional<Element> relTag1 = linkTags.stream().filter(tag -> "shortcut icon".equals(tag.attr("rel"))).findAny();
+                if (relTag1.isPresent()) {
+                    String href = relTag1.get().attr("href");
                     String absoluteUrl = relativeToAbsoluteUrl(domainUrl, href);
                     if (check200Status(absoluteUrl)) {
                         post.setIconUrl(absoluteUrl);
                         iconUrlSet = true;
                     }
                 }
+                if (!iconUrlSet) {
+                    Optional<Element> relTag = linkTags.stream().filter(tag -> "icon".equals(tag.attr("rel"))).findAny();
+                    if (relTag.isPresent()) {
+                        String href = relTag.get().attr("href");
+                        String absoluteUrl = relativeToAbsoluteUrl(domainUrl, href);
+                        if (check200Status(absoluteUrl)) {
+                            post.setIconUrl(absoluteUrl);
+                            iconUrlSet = true;
+                        }
+                    }
+                }
             }
-        }
 
-            if(!iconUrlSet && check200Status(domainUrl + FAVICON)){
+            if (!iconUrlSet && check200Status(domainUrl + FAVICON)) {
                 post.setIconUrl(domainUrl + FAVICON);
             }
 
-        Elements metaTags = doc.getElementsByTag("meta");
+            Elements metaTags = doc.getElementsByTag("meta");
             Optional<Element> imageTag = metaTags.stream().filter(tag -> "og:image".equals(tag.attr("property"))).findAny();
             if (imageTag.isPresent()) {
                 String content = imageTag.get().attr("content");
                 post.setImageUrl(content);
             }
             Elements titleTags = doc.getElementsByTag("title");
-            if(titleTags.size()>0 && !domainUrl.contains("instagram")){
+            if (titleTags.size() > 0 && !domainUrl.contains("instagram")) {
                 post.setTitle(titleTags.get(0).wholeText());
             }
-        }catch(Exception ex){
+        } catch (Exception ex) {
             log.info("ex2 ");
             log.info(ex.getMessage());
         }
     }
 
     private String relativeToAbsoluteUrl(String domainUrl, String href) {
-        if(href.startsWith("//")){
+        if (href.startsWith("//")) {
             log.info("starts with //: " + href);
 
             return "https:" + href;
         }
-        if(href.contains("googleapis.com")){
+        if (href.contains("googleapis.com")) {
             return href;
-        } else  if(href.contains(domainUrl)){
+        } else if (href.contains(domainUrl)) {
             return href;
-        } {
-            return domainUrl+href;
+        }
+        {
+            return domainUrl + href;
         }
     }
 
@@ -252,11 +254,11 @@ public class RedditServiceImpl implements RedditService {
             ResponseEntity<byte[]> faviconResponse = restTemplate.exchange(
                     url, HttpMethod.GET, entity, byte[].class);
 
-            Boolean response=
+            Boolean response =
                     faviconResponse.getHeaders().getContentType().getType().contains("image")
                             && faviconResponse.getStatusCode().is2xxSuccessful();
-         return response;
-        }catch(Exception e){
+            return response;
+        } catch (Exception e) {
             log.info(e.getMessage());
             return false;
         }
@@ -273,7 +275,7 @@ public class RedditServiceImpl implements RedditService {
             LinkedHashMap<String, Object> root = (LinkedHashMap<String, Object>) mapping.get("data");
             List<LinkedHashMap<String, Object>> children = (ArrayList<LinkedHashMap<String, Object>>) root.get("children");
             children.forEach(child -> {
-                if(iterate.get()) {
+                if (iterate.get()) {
                     LinkedHashMap<String, Object> data = (LinkedHashMap<String, Object>) child.get("data");
                     RedditPostNew post = new RedditPostNew(data);
                     if (post.getId().equals(lastNewPost)) {
@@ -302,7 +304,7 @@ public class RedditServiceImpl implements RedditService {
             LinkedHashMap<String, Object> root = (LinkedHashMap<String, Object>) mapping.get("data");
             List<LinkedHashMap<String, Object>> children = (ArrayList<LinkedHashMap<String, Object>>) root.get("children");
             children.forEach(child -> {
-                if(iterate.get()) {
+                if (iterate.get()) {
                     LinkedHashMap<String, Object> data = (LinkedHashMap<String, Object>) child.get("data");
                     RedditPostNew post = new RedditPostNew(data);
                     if (post.getId().equals(lastNewF1PornPost)) {
@@ -327,7 +329,7 @@ public class RedditServiceImpl implements RedditService {
 //        String response = restTemplate
 //                .getForObject(imgurAlbumUrl, String.class, code);
         ResponseEntity<String> response2 = restTemplate.exchange(
-                imgurAlbumUrl2+code, HttpMethod.GET, entity, String.class);
+                imgurAlbumUrl2 + code, HttpMethod.GET, entity, String.class);
         try {
             List<Object> root = mapper.readValue(response2.getBody(), typeRefList);
         } catch (JsonProcessingException e) {
@@ -344,7 +346,7 @@ public class RedditServiceImpl implements RedditService {
         headers.add("user-agent", "Mozilla/4.8 Firefox/21.0");
         HttpEntity<String> entity = new HttpEntity<String>("parameters", headers);
         restTemplate.getMessageConverters()
-                .add(0, new StringHttpMessageConverter(Charset.forName("UTF-8")));
+                .add(0, new StringHttpMessageConverter(StandardCharsets.UTF_8));
     }
 
 }

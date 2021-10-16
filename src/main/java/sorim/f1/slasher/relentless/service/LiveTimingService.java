@@ -1,11 +1,8 @@
 package sorim.f1.slasher.relentless.service;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import sorim.f1.slasher.relentless.entities.ergast.RaceData;
-import sorim.f1.slasher.relentless.model.livetiming.LiveTimingData;
 import sorim.f1.slasher.relentless.model.livetiming.RaceAnalysis;
 import sorim.f1.slasher.relentless.model.livetiming.UpcomingRaceAnalysis;
-import sorim.f1.slasher.relentless.model.livetiming.WeatherData;
 
 import java.util.List;
 
@@ -34,4 +31,6 @@ public interface LiveTimingService {
     Boolean deleteRacesBySeason(String season);
 
     String updateCircuitImage(String season, Integer round, String newImageUrl);
+
+    Boolean setLatestTreeMap(Boolean ergastStandingsUpdated);
 }
