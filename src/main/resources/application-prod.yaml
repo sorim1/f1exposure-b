@@ -14,7 +14,8 @@ f1:
       sportSurgeRoot: https://api.sportsurge.net/events/list?group=13
       sportSurgeStreams: https://api.sportsurge.net/streams/list?event=
       formula1RacingUrl: https://www.formula1.com/en/racing/
-      howManySeasonsBack: 4
+      replaysUrl: https://f1hd.net/category/f1/page/
+      howManySeasonsBack: 10
       admins:
         - fb26e2db-da1b-462e-aeea-fec3955b3e40
         - sorimsquare33
@@ -22,16 +23,24 @@ f1:
         - 36aed15c-f2ca-40a0-ae6d-96d82091df99
         - 7c36a15a-019a-4c36-944d-c63423480ca5
 server:
+  error:
+    whitelabel:
+      enabled: false
   port: 443
-#  ssl:
-#    key-store: classpath:keystore.p12
-#    key-store-password: password
-#    key-store-type: pkcs12
-#    key-alias: springboot
-#    key-password: password
+  http-port-to-redirect: 80
+  ssl:
+    key-store: classpath:keystore.p12
+    key-store-password: password
+    key-store-type: pkcs12
+    key-alias: f1exposure
+    key-password: password
 spring:
   application:
     name: f1-exposure-rest-api
+  servlet:
+    multipart:
+      max-file-size: 4000KB
+      max-request-size: 4700KB
   datasource:
     f1-exposure:
       driver-class-name: org.postgresql.Driver
@@ -54,13 +63,18 @@ spring:
       f1-exposure:
         enabled: false
         change-log: classpath:/db/liquibase-changelog.xml
-        drop-first: true
+        drop-first: false
         user: postgres
         password: postgres
+security:
+  require-ssl: true
 logging:
   logback:
     rollingpolicy:
       max-file-size: 20MB
   file:
-    name: E:\temp\exposure.log
-    name2: /home/sorim/exposure_log/exposure.log
+    name: /home/sorim/exposure_log/exposure.log
+upload:
+  path: /uploads-deleteme
+
+

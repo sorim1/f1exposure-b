@@ -575,20 +575,22 @@ public class LiveTimingServiceImpl implements LiveTimingService {
         Map<String, DriverStanding> standingsMap = standings.stream()
                 .collect(Collectors.toMap(DriverStanding::getCode, Function.identity()));
         Integer oldRound = newRound - 1;
-        driversMap.forEach((key, driver) -> {
-            if (standingsMap.containsKey(driver.getInitials())) {
-                BigDecimal oldAveragePoints = standingsMap.get(driver.getInitials()).getPoints().divide(new BigDecimal(oldRound));
-                oldAveragePoints = oldAveragePoints.setScale(2, RoundingMode.HALF_UP);
-                Integer positionPoints = MainUtility.getPointsFromPosition(driver.getPosition());
-                if (driver.getFastestLapPosition() == 1) {
-                    positionPoints++;
+        if(oldRound!=0) {
+            driversMap.forEach((key, driver) -> {
+                if (standingsMap.containsKey(driver.getInitials())) {
+                    BigDecimal oldAveragePoints = standingsMap.get(driver.getInitials()).getPoints().divide(new BigDecimal(oldRound), 2, RoundingMode.HALF_UP);
+                    oldAveragePoints = oldAveragePoints.setScale(2, RoundingMode.HALF_UP);
+                    Integer positionPoints = MainUtility.getPointsFromPosition(driver.getPosition());
+                    if (driver.getFastestLapPosition() != null && driver.getFastestLapPosition() == 1) {
+                        positionPoints++;
+                    }
+                    BigDecimal standingsAverageDifference = new BigDecimal(positionPoints).subtract(oldAveragePoints);
+                    driver.setStandingsNewAveragePoints(oldAveragePoints.add(standingsAverageDifference));
+                    driver.setStandingsAverageDifference(standingsAverageDifference);
                 }
-                BigDecimal standingsAverageDifference = new BigDecimal(positionPoints).subtract(oldAveragePoints);
-                driver.setStandingsNewAveragePoints(oldAveragePoints.add(standingsAverageDifference));
-                driver.setStandingsAverageDifference(standingsAverageDifference);
-            }
-        });
-        adminService.initializeStandingsFromLivetiming(standingsMap, driversMap, newRound);
+            });
+            adminService.initializeStandingsFromLivetiming(standingsMap, driversMap, newRound);
+        }
     }
 
     public List<Driver> analyzeSprintRace(String liveTimingDataResponse) {
@@ -628,7 +630,11 @@ public class LiveTimingServiceImpl implements LiveTimingService {
         if (response.getMrData().getRaceTable().getRaces().size() > 0) {
             response.getMrData().getRaceTable().getRaces().get(0).getLaps().forEach(lap -> {
                 lap.getTimings().forEach(timing -> {
-                    driversMap.get(ergastCodes.get(timing.getDriverId())).getLapByLapData().addLapTime(lap.getNumber(), timing);
+                    if(ergastCodes.containsKey(timing.getDriverId())) {
+                        driversMap.get(ergastCodes.get(timing.getDriverId())).getLapByLapData().addLapTime(lap.getNumber(), timing);
+                    } else {
+                        log.error("KEY NOT FOUND: {}", timing.getDriverId());
+                    }
                 });
             });
             return true;

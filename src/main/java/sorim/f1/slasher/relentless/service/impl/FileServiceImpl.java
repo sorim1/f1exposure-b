@@ -29,7 +29,7 @@ public class FileServiceImpl implements FileService {
     @Value("${upload.path}")
     private String uploadPath;
 
-    @PostConstruct
+    //@PostConstruct
     public void init() {
         try {
             Files.createDirectories(Paths.get(uploadPath));

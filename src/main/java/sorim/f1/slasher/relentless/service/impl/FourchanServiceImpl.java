@@ -50,9 +50,10 @@ public class FourchanServiceImpl implements FourchanService {
     public String getExposureStrawpoll() {
         List<Integer> f1ThreadNumbers = new ArrayList();
         String strawpoll = null;
+        try {
         List<LinkedHashMap<String, Object>> response = restTemplate
                 .getForObject(catalogUrl, ArrayList.class);
-        try {
+
             log.info("---");
             List<LinkedHashMap<String, Object>> listOfPosts = (List<LinkedHashMap<String, Object>>) response.get(0).get("threads");
             log.info(String.valueOf(listOfPosts.get(0).get("no")));
