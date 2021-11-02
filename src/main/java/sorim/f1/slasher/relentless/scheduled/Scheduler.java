@@ -186,8 +186,7 @@ public class Scheduler {
             }
         }catch(Exception e ){
             log.error(Arrays.toString(e.getStackTrace()));
-            Logger.logProblem("onInitScheduler - " + Arrays.toString(e.getStackTrace()));
-        }
+            }
     }
 
     @Scheduled(cron = "0 0 1,6,8,10,12,14,16,18,20,22 * * *")
