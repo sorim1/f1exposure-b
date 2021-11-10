@@ -68,6 +68,12 @@ public class ArtController {
         return artService.updateArt(code, bytes);
     }
 
+    @GetMapping("/setLatestArt/{code}")
+    Boolean setLatestArt(@RequestHeader String client, @PathVariable("code") String code) throws Exception {
+        securityService.validateAdminHeader(client);
+        return artService.setLatestArt(code);
+    }
+
     @GetMapping("/getAllArt")
     List<ArtImageRow> getAllArt(@RequestHeader String client) throws Exception {
         securityService.validateHeader(client);
