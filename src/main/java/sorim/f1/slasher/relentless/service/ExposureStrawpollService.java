@@ -8,7 +8,7 @@ public interface ExposureStrawpollService {
 
     StrawpollModel fetchStrawpollResults();
 
-    Boolean initializeStrawpoll(String id);
+    String initializeStrawpoll(String id);
 
     ExposureData getExposedChartData();
 
@@ -18,7 +18,7 @@ public interface ExposureStrawpollService {
 
     ExposureResponse getExposureDriverList();
 
-    void initializeExposureFrontendVariables(String id);
+    Boolean initializeExposureFrontendVariables(String id);
 
     void startPolling();
 

@@ -308,7 +308,7 @@ public class LiveTimingServiceImpl implements LiveTimingService {
                 averagePoints = averagePoints.setScale(2, RoundingMode.HALF_UP);
                 driver.setStandingsNewAveragePoints(averagePoints);
                 Integer positionPoints = MainUtility.getPointsFromPosition(driver.getPosition());
-                if (driver.getFastestLapPosition() == 1) {
+                if (driver.getFastestLapPosition() == 1 && driver.getPosition()<11) {
                     positionPoints++;
                 }
                 driver.setPoints(positionPoints);
@@ -581,7 +581,7 @@ public class LiveTimingServiceImpl implements LiveTimingService {
                     BigDecimal oldAveragePoints = standingsMap.get(driver.getInitials()).getPoints().divide(new BigDecimal(oldRound), 2, RoundingMode.HALF_UP);
                     oldAveragePoints = oldAveragePoints.setScale(2, RoundingMode.HALF_UP);
                     Integer positionPoints = MainUtility.getPointsFromPosition(driver.getPosition());
-                    if (driver.getFastestLapPosition() != null && driver.getFastestLapPosition() == 1) {
+                    if (driver.getFastestLapPosition() != null && driver.getFastestLapPosition() == 1&& driver.getPosition() < 11) {
                         positionPoints++;
                     }
                     BigDecimal standingsAverageDifference = new BigDecimal(positionPoints).subtract(oldAveragePoints);

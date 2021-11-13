@@ -28,6 +28,7 @@ public class Scheduler {
     private final static String CODE="SCHEDULER";
     public static Boolean standingsUpdated=false;
     public static Boolean analysisDone=false;
+    public static Boolean strawpollFound=false;
 
     @Scheduled(cron = "0 0 1 * * MON")
     public void mondayJobs() throws IOException {
@@ -36,6 +37,7 @@ public class Scheduler {
         adminService.fetchReplayLinks();
         exposureService.closeExposurePoll();
         analysisDone=true;
+        strawpollFound=false;
         if(!standingsUpdated) {
             standingsUpdated = adminService.initializeStandings();
         }
@@ -88,11 +90,14 @@ public class Scheduler {
         }
     }
 
-    @Scheduled(cron = "0 0 13 * * SUN")
+    @Scheduled(cron = "0 0 8 * * SUN")
     private void sundayAnalysisJob(){
         int delay = 1800000;
         Logger.log(CODE, "sundayAnalysisJob called");
         liveTimingService.analyzeLatestRace();
+        if(!strawpollFound) {
+            strawpollFound = exposureService.initializeExposureFrontendVariables(null);
+        }
         if(!analysisDone){
             Logger.log(CODE, "sundayAnalysisJob delayed");
             new java.util.Timer().schedule(

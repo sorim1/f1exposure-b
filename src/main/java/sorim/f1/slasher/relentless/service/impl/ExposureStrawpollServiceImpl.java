@@ -70,7 +70,8 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
     }
 
     @Override
-    public void initializeExposureFrontendVariables(String id) {
+    public Boolean initializeExposureFrontendVariables(String id) {
+        Boolean response = false;
         strawpollId = id;
         Logger.logAdmin("initializeExposureFrontendVariablesNew called");
         ZonedDateTime gmtZoned = ZonedDateTime.now(ZoneId.of("Europe/London"));
@@ -87,6 +88,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
                         strawpollId = newId;
                         strawpollUrl = strawpollUrlBase + strawpollId;
                         startPolling();
+                        response=true;
                     }
                 }
                 exposureNow = true;
@@ -113,6 +115,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
                 }
             }
         }
+        return response;
     }
 
     @Override
@@ -171,20 +174,27 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
     }
 
     @Override
-    public Boolean initializeStrawpoll(String id) {
+    public String initializeStrawpoll(String id) {
         reloadDelay = 5000;
         strawpollUrl = strawpollUrlBase + id;
         strawpollId = id;
-        StrawpollModel newStrawpoll = fetchStrawpollResults();
-        if (newStrawpoll != null) {
-            log.info("strawpoll jest");
-            initializeExposureFrontendVariables(id);
-            updateExposureDataFromStrawpoll(newStrawpoll);
-            return true;
+        if(id!=null){
+            initializeExposureFrontendVariables(null);
         } else {
-            log.info("strawpoll nije");
-            return false;
+            StrawpollModel newStrawpoll = fetchStrawpollResults();
+            if (newStrawpoll != null) {
+                log.info("strawpoll found: {} ", newStrawpoll);
+                initializeExposureFrontendVariables(id);
+                updateExposureDataFromStrawpoll(newStrawpoll);
+            } else {
+                log.info("strawpoll not found");
+                return "STRAWPOLL NOT FOUND";
+            }
         }
+        if(strawpollId!=null){
+            startPolling();
+        }
+        return strawpollId;
     }
 
     @Override

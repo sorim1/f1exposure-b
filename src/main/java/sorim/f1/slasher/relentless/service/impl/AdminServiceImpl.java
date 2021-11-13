@@ -100,7 +100,7 @@ public class AdminServiceImpl implements AdminService {
         F1Calendar f1Calendar = null;
         List<RaceData> ergastRaceData = ergastService.fetchSeason(String.valueOf(properties.getCurrentYear()));
         for (CalendarComponent component : calendar.getComponents().getAll()) {
-            if (component.getName().equals("VEVENT")) {
+            if (component.getName().equals("VEVENT") && component.getProperties().get("STATUS").get(0).getValue().equals("CONFIRMED")) {
                 PropertyList properties = component.getProperties();
                 String[] idAndRound = properties.get("UID").get(0).getValue().split("@");
                 currentRaceId = Integer.parseInt(idAndRound[1]);
@@ -124,7 +124,9 @@ public class AdminServiceImpl implements AdminService {
                 }
             }
         }
+        f1calendarList.add(f1Calendar);
         enrichCalendarWithErgastData(f1calendarList, ergastRaceData);
+        calendarRepository.deleteAll();
         calendarRepository.saveAll(f1calendarList);
 
     }
@@ -371,6 +373,7 @@ public class AdminServiceImpl implements AdminService {
         List<SportSurgeEvent> events = sportSurge.getEvents();
         List<SportSurgeStream> streams = new ArrayList<>();
         for (SportSurgeEvent event : events) {
+            log.info("link: " + properties.getSportSurgeStreams() + event.getId());
             page = client.getPage(properties.getSportSurgeStreams() + event.getId());
             response = page.getWebResponse();
             sportSurge = new ObjectMapper().readValue(response.getContentAsString(), SportSurge.class);
