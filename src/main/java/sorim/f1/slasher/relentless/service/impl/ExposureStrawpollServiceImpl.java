@@ -198,6 +198,17 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
     }
 
     @Override
+    public String setStrawpoll(String id) {
+        reloadDelay = 5000;
+        strawpollUrl = strawpollUrlBase + id;
+        strawpollId = id;
+        if(strawpollId!=null){
+            startPolling();
+        }
+        return strawpollId;
+    }
+
+    @Override
     public ExposureData getExposedChartData() {
         return ExposureData.builder()
                 .title(title)

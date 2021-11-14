@@ -20,6 +20,8 @@ public interface LiveTimingService {
 
     UpcomingRaceAnalysis getUpcomingRaceAnalysis();
 
+    RaceData getUpcomingRace();
+
     Boolean upcomingRacesAnalysisInitialLoad(String season);
 
     Integer analyzeUpcomingRace();
@@ -33,4 +35,8 @@ public interface LiveTimingService {
     String updateCircuitImage(String season, Integer round, String newImageUrl);
 
     Boolean setLatestTreeMap(Boolean ergastStandingsUpdated);
+
+    RaceData backupRaceData(Integer id);
+
+    RaceData restoreRaceData(Integer id, RaceData body);
 }

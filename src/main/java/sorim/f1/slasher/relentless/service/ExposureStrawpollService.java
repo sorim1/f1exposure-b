@@ -41,4 +41,6 @@ public interface ExposureStrawpollService {
     String getExposureStrawpoll();
 
     Integer resetLatestPoll();
+
+    String setStrawpoll(String id);
 }

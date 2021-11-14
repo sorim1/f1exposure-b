@@ -15555,7 +15555,7 @@ function UpcomingRaceAnalysisComponent_div_0_ng_template_26_div_0_Template(rf, c
     core/* ɵɵelementStart */.TgZ(2, "thead");
     core/* ɵɵelementStart */.TgZ(3, "tr");
     core/* ɵɵelementStart */.TgZ(4, "th", 52);
-    core/* ɵɵtext */._uU(5, "Results<");
+    core/* ɵɵtext */._uU(5, "Results");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(6, "tr");

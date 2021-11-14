@@ -276,6 +276,11 @@ public class LiveTimingServiceImpl implements LiveTimingService {
     }
 
     @Override
+    public RaceData getUpcomingRace() {
+        return ergastService.getUpcomingRace(properties.getCurrentYear());
+    }
+
+    @Override
     public List<RaceData> findRacesBySeason(String season) {
         return ergastService.findRacesBySeason(season);
     }
@@ -319,6 +324,18 @@ public class LiveTimingServiceImpl implements LiveTimingService {
         raceData.setRaceAnalysis(analysis);
         ergastService.saveRace(raceData);
         return true;
+    }
+
+    @Override
+    public RaceData backupRaceData(Integer id) {
+        return ergastService.findById(id);
+    }
+
+    @Override
+    public RaceData restoreRaceData(Integer id, RaceData body) {
+        body.setId(id);
+        ergastService.saveRace(body);
+        return body;
     }
 
     @Override

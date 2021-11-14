@@ -36306,7 +36306,7 @@
 
           core
           /* ɵɵtext */
-          ._uU(5, "Results<");
+          ._uU(5, "Results");
 
           core
           /* ɵɵelementEnd */

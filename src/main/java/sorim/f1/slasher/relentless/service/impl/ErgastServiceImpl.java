@@ -97,6 +97,10 @@ public class ErgastServiceImpl implements ErgastService {
         return ergastRaceRepository.findAllBySeasonAndRound(season, round);
     }
 
+    @Override
+    public RaceData findById(Integer id) {
+        return ergastRaceRepository.findAllById(id);
+    }
 
     @Override
     public ErgastResponse getDriverStandings() {

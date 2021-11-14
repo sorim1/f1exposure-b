@@ -36,5 +36,7 @@ public interface ErgastRaceRepository extends CrudRepository<RaceData, String> {
 
     RaceData findAllBySeasonAndRound(String Season, Integer round);
 
+    RaceData findAllById(Integer id);
+
     void deleteAllBySeason(String season);
 }

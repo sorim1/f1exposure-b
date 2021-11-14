@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import sorim.f1.slasher.relentless.entities.ergast.RaceData;
+import sorim.f1.slasher.relentless.model.FullExposure;
 import sorim.f1.slasher.relentless.model.livetiming.RaceAnalysis;
 import sorim.f1.slasher.relentless.model.livetiming.UpcomingRaceAnalysis;
 import sorim.f1.slasher.relentless.service.LiveTimingService;
@@ -39,6 +40,12 @@ public class AnalysisController {
     public UpcomingRaceAnalysis getUpcomingRaceAnalysis(@RequestHeader String client) throws Exception {
         securityService.validateHeader(client);
         return service.getUpcomingRaceAnalysis();
+    }
+
+    @GetMapping("/getUpcomingRace")
+    public RaceData getUpcomingRace(@RequestHeader String client) throws Exception {
+        securityService.validateHeader(client);
+        return service.getUpcomingRace();
     }
 
     @GetMapping("/analyzeLatestRace")
@@ -102,6 +109,18 @@ public class AnalysisController {
     @GetMapping("/setLatestTreeMap")
     public Boolean setLatestTreeMap(@RequestHeader String client, @RequestParam(value = "ergastStandingsUpdated", required=false) Boolean ergastStandingsUpdated) throws Exception {
         return service.setLatestTreeMap(ergastStandingsUpdated);
+    }
+
+    @GetMapping("/backupRaceData/{id}")
+    public RaceData backupRaceData(@RequestHeader String client, @PathVariable("id") Integer id) throws Exception {
+        securityService.validateHeader(client);
+        return service.backupRaceData(id);
+    }
+
+    @PostMapping("/restoreRaceData/{id}")
+    public RaceData restoreRaceData(@RequestHeader String client, @PathVariable("id") Integer id, @RequestBody RaceData body) throws Exception {
+        securityService.validateHeader(client);
+        return service.restoreRaceData(id, body);
     }
 
 }
