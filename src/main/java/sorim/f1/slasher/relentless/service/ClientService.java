@@ -12,8 +12,6 @@ public interface ClientService {
 
     CalendarData getCountdownData(Integer mode);
 
-    CalendarData getCountdownDataPrevious(Integer mode);
-
     List<DriverStanding> getDriverStandings();
 
     List<ConstructorStanding> getConstructorStandings();

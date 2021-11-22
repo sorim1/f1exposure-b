@@ -21,6 +21,8 @@ public class ArtDriver {
     private Integer currentPosition;
     private Integer x;
     private Integer y;
+    private Integer x1;
+    private Integer y1;
     private Integer lapTime;
     private LapByLapData lapByLapData = new LapByLapData();
     public List<Integer> conflictX = new ArrayList<>();
@@ -37,5 +39,7 @@ public class ArtDriver {
         this.currentPosition = 20;
         this.x = x;
         this.y = y;
+        this.x1 = x;
+        this.y1 = y;
     }
 }

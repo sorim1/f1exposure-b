@@ -61,15 +61,9 @@ public class ClientServiceImpl implements ClientService {
         ZonedDateTime gmtZoned = ZonedDateTime.now(ZoneId.of("Europe/London"));
         LocalDateTime gmtDateTime = gmtZoned.toLocalDateTime();
         F1Calendar f1calendar = calendarRepository.findFirstByRaceAfterOrderByRace(gmtDateTime);
-        Map<String, Integer> countdownData = getRemainingTime(gmtDateTime, f1calendar, mode);
-        return CalendarData.builder().f1Calendar(f1calendar).countdownData(countdownData).build();
-    }
-
-    @Override
-    public CalendarData getCountdownDataPrevious(Integer mode) {
-        ZonedDateTime gmtZoned = ZonedDateTime.now(ZoneId.of("Europe/London"));
-        LocalDateTime gmtDateTime = gmtZoned.toLocalDateTime();
-        F1Calendar f1calendar = calendarRepository.findFirstByRaceBeforeOrderByRaceDesc(gmtDateTime);
+        if(f1calendar==null){
+            return null;
+        }
         Map<String, Integer> countdownData = getRemainingTime(gmtDateTime, f1calendar, mode);
         return CalendarData.builder().f1Calendar(f1calendar).countdownData(countdownData).build();
     }

@@ -13616,10 +13616,10 @@
           .TgZ(0, "div");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "div", 13);
+          .TgZ(1, "div", 14);
           core
           /* ɵɵelementStart */
-          .TgZ(2, "div", 14);
+          .TgZ(2, "div", 15);
 
           core
           /* ɵɵtext */
@@ -13630,7 +13630,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(4, "div", 15);
+          .TgZ(4, "div", 16);
 
           core
           /* ɵɵtext */
@@ -13641,7 +13641,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(6, "div", 16);
+          .TgZ(6, "div", 17);
 
           core
           /* ɵɵtext */
@@ -13659,25 +13659,25 @@
         }
 
         if (rf & 2) {
-          var comment_r3 = ctx.$implicit;
+          var comment_r4 = ctx.$implicit;
           core
           /* ɵɵadvance */
           .xp6(3);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(comment_r3.nickname);
+          .Oqu(comment_r4.nickname);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(comment_r3.id);
+          .Oqu(comment_r4.id);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(comment_r3.comment);
+          .Oqu(comment_r4.comment);
         }
       }
 
@@ -13691,7 +13691,7 @@
           .TgZ(1, "h1");
           core
           /* ɵɵelementStart */
-          .TgZ(2, "span", 26);
+          .TgZ(2, "span", 27);
 
           core
           /* ɵɵtext */
@@ -13709,7 +13709,7 @@
         }
 
         if (rf & 2) {
-          var ctx_r9 = core
+          var ctx_r10 = core
           /* ɵɵnextContext */
           .oxw(3);
           core
@@ -13717,7 +13717,7 @@
           .xp6(3);
           core
           /* ɵɵtextInterpolate1 */
-          .hij("", ctx_r9.FP1Days, " days");
+          .hij("", ctx_r10.FP1Days, " days");
         }
       }
 
@@ -13729,30 +13729,30 @@
 
       function F1CountdownComponent_div_21_ng_template_3_Template(rf, ctx) {
         if (rf & 1) {
-          var _r12 = core
+          var _r13 = core
           /* ɵɵgetCurrentView */
           .EpF();
 
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 21);
+          .TgZ(0, "div", 22);
           core
           /* ɵɵlistener */
           .NdJ("click", function F1CountdownComponent_div_21_ng_template_3_Template_div_click_0_listener() {
             core
             /* ɵɵrestoreView */
-            .CHM(_r12);
-            var ctx_r11 = core
+            .CHM(_r13);
+            var ctx_r12 = core
             /* ɵɵnextContext */
             .oxw(2);
-            return ctx_r11.countdownWasClicked(1);
+            return ctx_r12.countdownWasClicked(1);
           });
           core
           /* ɵɵelementStart */
           .TgZ(1, "h1");
           core
           /* ɵɵelementStart */
-          .TgZ(2, "span", 22);
+          .TgZ(2, "span", 23);
 
           core
           /* ɵɵtext */
@@ -13766,7 +13766,7 @@
           .qZA();
           core
           /* ɵɵtemplate */
-          .YNc(4, F1CountdownComponent_div_21_ng_template_3_div_4_Template, 4, 1, "div", 23);
+          .YNc(4, F1CountdownComponent_div_21_ng_template_3_div_4_Template, 4, 1, "div", 24);
           core
           /* ɵɵelementStart */
           .TgZ(5, "h1");
@@ -13776,164 +13776,7 @@
 
           core
           /* ɵɵelement */
-          ._UZ(7, "countdown", 24, 25);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-
-          core
-          /* ɵɵelement */
-          ._UZ(9, "br");
-
-          core
-          /* ɵɵelement */
-          ._UZ(10, "br");
-
-          core
-          /* ɵɵelement */
-          ._UZ(11, "br");
-
-          core
-          /* ɵɵelement */
-          ._UZ(12, "br");
-
-          core
-          /* ɵɵelement */
-          ._UZ(13, "br");
-
-          core
-          /* ɵɵelement */
-          ._UZ(14, "br");
-
-          core
-          /* ɵɵelement */
-          ._UZ(15, "br");
-        }
-
-        if (rf & 2) {
-          var ctx_r4 = core
-          /* ɵɵnextContext */
-          .oxw(2);
-          core
-          /* ɵɵadvance */
-          .xp6(3);
-          core
-          /* ɵɵtextInterpolate1 */
-          .hij(" ", ctx_r4.calendarData.f1Calendar.practice1Name, " in: ");
-          core
-          /* ɵɵadvance */
-          .xp6(1);
-          core
-          /* ɵɵproperty */
-          .Q6J("ngIf", ctx_r4.FP1Days > 0);
-          core
-          /* ɵɵadvance */
-          .xp6(3);
-          core
-          /* ɵɵproperty */
-          .Q6J("config", core
-          /* ɵɵpureFunction1 */
-          .VKq(3, f1_countdown_component_c1, ctx_r4.FP1Seconds));
-        }
-      }
-
-      function F1CountdownComponent_div_21_ng_template_5_div_4_Template(rf, ctx) {
-        if (rf & 1) {
-          core
-          /* ɵɵelementStart */
-          .TgZ(0, "div");
-          core
-          /* ɵɵelementStart */
-          .TgZ(1, "h1");
-          core
-          /* ɵɵelementStart */
-          .TgZ(2, "span", 26);
-
-          core
-          /* ɵɵtext */
-          ._uU(3);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-        }
-
-        if (rf & 2) {
-          var ctx_r13 = core
-          /* ɵɵnextContext */
-          .oxw(3);
-          core
-          /* ɵɵadvance */
-          .xp6(3);
-          core
-          /* ɵɵtextInterpolate1 */
-          .hij("", ctx_r13.FP2Days, " days");
-        }
-      }
-
-      function F1CountdownComponent_div_21_ng_template_5_Template(rf, ctx) {
-        if (rf & 1) {
-          var _r16 = core
-          /* ɵɵgetCurrentView */
-          .EpF();
-
-          core
-          /* ɵɵelementStart */
-          .TgZ(0, "div", 21);
-          core
-          /* ɵɵlistener */
-          .NdJ("click", function F1CountdownComponent_div_21_ng_template_5_Template_div_click_0_listener() {
-            core
-            /* ɵɵrestoreView */
-            .CHM(_r16);
-            var ctx_r15 = core
-            /* ɵɵnextContext */
-            .oxw(2);
-            return ctx_r15.countdownWasClicked(2);
-          });
-          core
-          /* ɵɵelementStart */
-          .TgZ(1, "h1");
-          core
-          /* ɵɵelementStart */
-          .TgZ(2, "span", 22);
-
-          core
-          /* ɵɵtext */
-          ._uU(3);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵtemplate */
-          .YNc(4, F1CountdownComponent_div_21_ng_template_5_div_4_Template, 4, 1, "div", 23);
-          core
-          /* ɵɵelementStart */
-          .TgZ(5, "h1");
-          core
-          /* ɵɵelementStart */
-          .TgZ(6, "span");
-
-          core
-          /* ɵɵelement */
-          ._UZ(7, "countdown", 24, 25);
+          ._UZ(7, "countdown", 25, 26);
 
           core
           /* ɵɵelementEnd */
@@ -13983,13 +13826,13 @@
           .xp6(3);
           core
           /* ɵɵtextInterpolate1 */
-          .hij(" ", ctx_r5.calendarData.f1Calendar.practice2Name, " in: ");
+          .hij(" ", ctx_r5.calendarData.f1Calendar.practice1Name, " in: ");
           core
           /* ɵɵadvance */
           .xp6(1);
           core
           /* ɵɵproperty */
-          .Q6J("ngIf", ctx_r5.FP2Days > 0);
+          .Q6J("ngIf", ctx_r5.FP1Days > 0);
           core
           /* ɵɵadvance */
           .xp6(3);
@@ -13997,11 +13840,11 @@
           /* ɵɵproperty */
           .Q6J("config", core
           /* ɵɵpureFunction1 */
-          .VKq(3, f1_countdown_component_c1, ctx_r5.FP2Seconds));
+          .VKq(3, f1_countdown_component_c1, ctx_r5.FP1Seconds));
         }
       }
 
-      function F1CountdownComponent_div_21_ng_template_7_div_4_Template(rf, ctx) {
+      function F1CountdownComponent_div_21_ng_template_5_div_4_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵelementStart */
@@ -14011,7 +13854,7 @@
           .TgZ(1, "h1");
           core
           /* ɵɵelementStart */
-          .TgZ(2, "span", 26);
+          .TgZ(2, "span", 27);
 
           core
           /* ɵɵtext */
@@ -14029,7 +13872,7 @@
         }
 
         if (rf & 2) {
-          var ctx_r17 = core
+          var ctx_r14 = core
           /* ɵɵnextContext */
           .oxw(3);
           core
@@ -14037,36 +13880,36 @@
           .xp6(3);
           core
           /* ɵɵtextInterpolate1 */
-          .hij("", ctx_r17.FP3Days, " days");
+          .hij("", ctx_r14.FP2Days, " days");
         }
       }
 
-      function F1CountdownComponent_div_21_ng_template_7_Template(rf, ctx) {
+      function F1CountdownComponent_div_21_ng_template_5_Template(rf, ctx) {
         if (rf & 1) {
-          var _r20 = core
+          var _r17 = core
           /* ɵɵgetCurrentView */
           .EpF();
 
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 21);
+          .TgZ(0, "div", 22);
           core
           /* ɵɵlistener */
-          .NdJ("click", function F1CountdownComponent_div_21_ng_template_7_Template_div_click_0_listener() {
+          .NdJ("click", function F1CountdownComponent_div_21_ng_template_5_Template_div_click_0_listener() {
             core
             /* ɵɵrestoreView */
-            .CHM(_r20);
-            var ctx_r19 = core
+            .CHM(_r17);
+            var ctx_r16 = core
             /* ɵɵnextContext */
             .oxw(2);
-            return ctx_r19.countdownWasClicked(3);
+            return ctx_r16.countdownWasClicked(2);
           });
           core
           /* ɵɵelementStart */
           .TgZ(1, "h1");
           core
           /* ɵɵelementStart */
-          .TgZ(2, "span", 22);
+          .TgZ(2, "span", 23);
 
           core
           /* ɵɵtext */
@@ -14080,7 +13923,7 @@
           .qZA();
           core
           /* ɵɵtemplate */
-          .YNc(4, F1CountdownComponent_div_21_ng_template_7_div_4_Template, 4, 1, "div", 23);
+          .YNc(4, F1CountdownComponent_div_21_ng_template_5_div_4_Template, 4, 1, "div", 24);
           core
           /* ɵɵelementStart */
           .TgZ(5, "h1");
@@ -14090,7 +13933,7 @@
 
           core
           /* ɵɵelement */
-          ._UZ(7, "countdown", 24, 25);
+          ._UZ(7, "countdown", 25, 26);
 
           core
           /* ɵɵelementEnd */
@@ -14140,13 +13983,13 @@
           .xp6(3);
           core
           /* ɵɵtextInterpolate1 */
-          .hij(" ", ctx_r6.calendarData.f1Calendar.practice3Name, " in: ");
+          .hij(" ", ctx_r6.calendarData.f1Calendar.practice2Name, " in: ");
           core
           /* ɵɵadvance */
           .xp6(1);
           core
           /* ɵɵproperty */
-          .Q6J("ngIf", ctx_r6.FP3Days > 0);
+          .Q6J("ngIf", ctx_r6.FP2Days > 0);
           core
           /* ɵɵadvance */
           .xp6(3);
@@ -14154,11 +13997,11 @@
           /* ɵɵproperty */
           .Q6J("config", core
           /* ɵɵpureFunction1 */
-          .VKq(3, f1_countdown_component_c1, ctx_r6.FP3Seconds));
+          .VKq(3, f1_countdown_component_c1, ctx_r6.FP2Seconds));
         }
       }
 
-      function F1CountdownComponent_div_21_ng_template_9_div_4_Template(rf, ctx) {
+      function F1CountdownComponent_div_21_ng_template_7_div_4_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵelementStart */
@@ -14168,7 +14011,7 @@
           .TgZ(1, "h1");
           core
           /* ɵɵelementStart */
-          .TgZ(2, "span", 26);
+          .TgZ(2, "span", 27);
 
           core
           /* ɵɵtext */
@@ -14186,7 +14029,7 @@
         }
 
         if (rf & 2) {
-          var ctx_r21 = core
+          var ctx_r18 = core
           /* ɵɵnextContext */
           .oxw(3);
           core
@@ -14194,36 +14037,36 @@
           .xp6(3);
           core
           /* ɵɵtextInterpolate1 */
-          .hij("", ctx_r21.qualifyingDays, " days");
+          .hij("", ctx_r18.FP3Days, " days");
         }
       }
 
-      function F1CountdownComponent_div_21_ng_template_9_Template(rf, ctx) {
+      function F1CountdownComponent_div_21_ng_template_7_Template(rf, ctx) {
         if (rf & 1) {
-          var _r24 = core
+          var _r21 = core
           /* ɵɵgetCurrentView */
           .EpF();
 
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 21);
+          .TgZ(0, "div", 22);
           core
           /* ɵɵlistener */
-          .NdJ("click", function F1CountdownComponent_div_21_ng_template_9_Template_div_click_0_listener() {
+          .NdJ("click", function F1CountdownComponent_div_21_ng_template_7_Template_div_click_0_listener() {
             core
             /* ɵɵrestoreView */
-            .CHM(_r24);
-            var ctx_r23 = core
+            .CHM(_r21);
+            var ctx_r20 = core
             /* ɵɵnextContext */
             .oxw(2);
-            return ctx_r23.countdownWasClicked(4);
+            return ctx_r20.countdownWasClicked(3);
           });
           core
           /* ɵɵelementStart */
           .TgZ(1, "h1");
           core
           /* ɵɵelementStart */
-          .TgZ(2, "span", 22);
+          .TgZ(2, "span", 23);
 
           core
           /* ɵɵtext */
@@ -14237,7 +14080,7 @@
           .qZA();
           core
           /* ɵɵtemplate */
-          .YNc(4, F1CountdownComponent_div_21_ng_template_9_div_4_Template, 4, 1, "div", 23);
+          .YNc(4, F1CountdownComponent_div_21_ng_template_7_div_4_Template, 4, 1, "div", 24);
           core
           /* ɵɵelementStart */
           .TgZ(5, "h1");
@@ -14247,7 +14090,7 @@
 
           core
           /* ɵɵelement */
-          ._UZ(7, "countdown", 24, 25);
+          ._UZ(7, "countdown", 25, 26);
 
           core
           /* ɵɵelementEnd */
@@ -14297,13 +14140,13 @@
           .xp6(3);
           core
           /* ɵɵtextInterpolate1 */
-          .hij(" ", ctx_r7.calendarData.f1Calendar.qualifyingName, " in: ");
+          .hij(" ", ctx_r7.calendarData.f1Calendar.practice3Name, " in: ");
           core
           /* ɵɵadvance */
           .xp6(1);
           core
           /* ɵɵproperty */
-          .Q6J("ngIf", ctx_r7.qualifyingDays > 0);
+          .Q6J("ngIf", ctx_r7.FP3Days > 0);
           core
           /* ɵɵadvance */
           .xp6(3);
@@ -14311,11 +14154,11 @@
           /* ɵɵproperty */
           .Q6J("config", core
           /* ɵɵpureFunction1 */
-          .VKq(3, f1_countdown_component_c1, ctx_r7.qualifyingSeconds));
+          .VKq(3, f1_countdown_component_c1, ctx_r7.FP3Seconds));
         }
       }
 
-      function F1CountdownComponent_div_21_ng_template_11_div_0_div_4_Template(rf, ctx) {
+      function F1CountdownComponent_div_21_ng_template_9_div_4_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵelementStart */
@@ -14325,7 +14168,7 @@
           .TgZ(1, "h1");
           core
           /* ɵɵelementStart */
-          .TgZ(2, "span", 26);
+          .TgZ(2, "span", 27);
 
           core
           /* ɵɵtext */
@@ -14343,7 +14186,164 @@
         }
 
         if (rf & 2) {
-          var ctx_r26 = core
+          var ctx_r22 = core
+          /* ɵɵnextContext */
+          .oxw(3);
+          core
+          /* ɵɵadvance */
+          .xp6(3);
+          core
+          /* ɵɵtextInterpolate1 */
+          .hij("", ctx_r22.qualifyingDays, " days");
+        }
+      }
+
+      function F1CountdownComponent_div_21_ng_template_9_Template(rf, ctx) {
+        if (rf & 1) {
+          var _r25 = core
+          /* ɵɵgetCurrentView */
+          .EpF();
+
+          core
+          /* ɵɵelementStart */
+          .TgZ(0, "div", 22);
+          core
+          /* ɵɵlistener */
+          .NdJ("click", function F1CountdownComponent_div_21_ng_template_9_Template_div_click_0_listener() {
+            core
+            /* ɵɵrestoreView */
+            .CHM(_r25);
+            var ctx_r24 = core
+            /* ɵɵnextContext */
+            .oxw(2);
+            return ctx_r24.countdownWasClicked(4);
+          });
+          core
+          /* ɵɵelementStart */
+          .TgZ(1, "h1");
+          core
+          /* ɵɵelementStart */
+          .TgZ(2, "span", 23);
+
+          core
+          /* ɵɵtext */
+          ._uU(3);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵtemplate */
+          .YNc(4, F1CountdownComponent_div_21_ng_template_9_div_4_Template, 4, 1, "div", 24);
+          core
+          /* ɵɵelementStart */
+          .TgZ(5, "h1");
+          core
+          /* ɵɵelementStart */
+          .TgZ(6, "span");
+
+          core
+          /* ɵɵelement */
+          ._UZ(7, "countdown", 25, 26);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+
+          core
+          /* ɵɵelement */
+          ._UZ(9, "br");
+
+          core
+          /* ɵɵelement */
+          ._UZ(10, "br");
+
+          core
+          /* ɵɵelement */
+          ._UZ(11, "br");
+
+          core
+          /* ɵɵelement */
+          ._UZ(12, "br");
+
+          core
+          /* ɵɵelement */
+          ._UZ(13, "br");
+
+          core
+          /* ɵɵelement */
+          ._UZ(14, "br");
+
+          core
+          /* ɵɵelement */
+          ._UZ(15, "br");
+        }
+
+        if (rf & 2) {
+          var ctx_r8 = core
+          /* ɵɵnextContext */
+          .oxw(2);
+          core
+          /* ɵɵadvance */
+          .xp6(3);
+          core
+          /* ɵɵtextInterpolate1 */
+          .hij(" ", ctx_r8.calendarData.f1Calendar.qualifyingName, " in: ");
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵproperty */
+          .Q6J("ngIf", ctx_r8.qualifyingDays > 0);
+          core
+          /* ɵɵadvance */
+          .xp6(3);
+          core
+          /* ɵɵproperty */
+          .Q6J("config", core
+          /* ɵɵpureFunction1 */
+          .VKq(3, f1_countdown_component_c1, ctx_r8.qualifyingSeconds));
+        }
+      }
+
+      function F1CountdownComponent_div_21_ng_template_11_div_0_div_4_Template(rf, ctx) {
+        if (rf & 1) {
+          core
+          /* ɵɵelementStart */
+          .TgZ(0, "div");
+          core
+          /* ɵɵelementStart */
+          .TgZ(1, "h1");
+          core
+          /* ɵɵelementStart */
+          .TgZ(2, "span", 27);
+
+          core
+          /* ɵɵtext */
+          ._uU(3);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+        }
+
+        if (rf & 2) {
+          var ctx_r27 = core
           /* ɵɵnextContext */
           .oxw(4);
           core
@@ -14351,7 +14351,7 @@
           .xp6(3);
           core
           /* ɵɵtextInterpolate1 */
-          .hij("", ctx_r26.raceDays, " days");
+          .hij("", ctx_r27.raceDays, " days");
         }
       }
 
@@ -14365,7 +14365,7 @@
           .TgZ(1, "h1");
           core
           /* ɵɵelementStart */
-          .TgZ(2, "span", 26);
+          .TgZ(2, "span", 27);
 
           core
           /* ɵɵtext */
@@ -14385,30 +14385,30 @@
 
       function F1CountdownComponent_div_21_ng_template_11_div_0_Template(rf, ctx) {
         if (rf & 1) {
-          var _r30 = core
+          var _r31 = core
           /* ɵɵgetCurrentView */
           .EpF();
 
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 21);
+          .TgZ(0, "div", 22);
           core
           /* ɵɵlistener */
           .NdJ("click", function F1CountdownComponent_div_21_ng_template_11_div_0_Template_div_click_0_listener() {
             core
             /* ɵɵrestoreView */
-            .CHM(_r30);
-            var ctx_r29 = core
+            .CHM(_r31);
+            var ctx_r30 = core
             /* ɵɵnextContext */
             .oxw(3);
-            return ctx_r29.countdownWasClicked(5);
+            return ctx_r30.countdownWasClicked(5);
           });
           core
           /* ɵɵelementStart */
           .TgZ(1, "h1");
           core
           /* ɵɵelementStart */
-          .TgZ(2, "span", 22);
+          .TgZ(2, "span", 23);
 
           core
           /* ɵɵtext */
@@ -14422,10 +14422,10 @@
           .qZA();
           core
           /* ɵɵtemplate */
-          .YNc(4, F1CountdownComponent_div_21_ng_template_11_div_0_div_4_Template, 4, 1, "div", 23);
+          .YNc(4, F1CountdownComponent_div_21_ng_template_11_div_0_div_4_Template, 4, 1, "div", 24);
           core
           /* ɵɵtemplate */
-          .YNc(5, F1CountdownComponent_div_21_ng_template_11_div_0_div_5_Template, 4, 0, "div", 23);
+          .YNc(5, F1CountdownComponent_div_21_ng_template_11_div_0_div_5_Template, 4, 0, "div", 24);
           core
           /* ɵɵelementStart */
           .TgZ(6, "h1");
@@ -14434,17 +14434,17 @@
           .TgZ(7, "span");
           core
           /* ɵɵelementStart */
-          .TgZ(8, "countdown", 28, 25);
+          .TgZ(8, "countdown", 29, 26);
           core
           /* ɵɵlistener */
           .NdJ("event", function F1CountdownComponent_div_21_ng_template_11_div_0_Template_countdown_event_8_listener($event) {
             core
             /* ɵɵrestoreView */
-            .CHM(_r30);
-            var ctx_r31 = core
+            .CHM(_r31);
+            var ctx_r32 = core
             /* ɵɵnextContext */
             .oxw(3);
-            return ctx_r31.itsRaceTime($event);
+            return ctx_r32.itsRaceTime($event);
           });
           core
           /* ɵɵelementEnd */
@@ -14461,7 +14461,7 @@
         }
 
         if (rf & 2) {
-          var ctx_r25 = core
+          var ctx_r26 = core
           /* ɵɵnextContext */
           .oxw(3);
           core
@@ -14469,19 +14469,19 @@
           .xp6(3);
           core
           /* ɵɵtextInterpolate1 */
-          .hij(" ", ctx_r25.calendarData.f1Calendar.raceName, " in: ");
+          .hij(" ", ctx_r26.calendarData.f1Calendar.raceName, " in: ");
           core
           /* ɵɵadvance */
           .xp6(1);
           core
           /* ɵɵproperty */
-          .Q6J("ngIf", ctx_r25.raceDays > 1);
+          .Q6J("ngIf", ctx_r26.raceDays > 1);
           core
           /* ɵɵadvance */
           .xp6(1);
           core
           /* ɵɵproperty */
-          .Q6J("ngIf", ctx_r25.raceDays == 1);
+          .Q6J("ngIf", ctx_r26.raceDays == 1);
           core
           /* ɵɵadvance */
           .xp6(3);
@@ -14489,7 +14489,7 @@
           /* ɵɵproperty */
           .Q6J("config", core
           /* ɵɵpureFunction1 */
-          .VKq(4, f1_countdown_component_c1, ctx_r25.raceSeconds));
+          .VKq(4, f1_countdown_component_c1, ctx_r26.raceSeconds));
         }
       }
 
@@ -14497,7 +14497,7 @@
         if (rf & 1) {
           core
           /* ɵɵtemplate */
-          .YNc(0, F1CountdownComponent_div_21_ng_template_11_div_0_Template, 10, 6, "div", 27);
+          .YNc(0, F1CountdownComponent_div_21_ng_template_11_div_0_Template, 10, 6, "div", 28);
 
           core
           /* ɵɵelement */
@@ -14529,107 +14529,107 @@
         }
 
         if (rf & 2) {
-          var ctx_r8 = core
+          var ctx_r9 = core
           /* ɵɵnextContext */
           .oxw(2);
           core
           /* ɵɵproperty */
-          .Q6J("ngIf", ctx_r8.calendarData != null);
+          .Q6J("ngIf", ctx_r9.calendarData != null);
         }
       }
 
       function F1CountdownComponent_div_21_Template(rf, ctx) {
         if (rf & 1) {
-          var _r33 = core
+          var _r34 = core
           /* ɵɵgetCurrentView */
           .EpF();
 
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 17);
+          .TgZ(0, "div", 18);
           core
           /* ɵɵlistener */
           .NdJ("touchstart", function F1CountdownComponent_div_21_Template_div_touchstart_0_listener($event) {
             core
             /* ɵɵrestoreView */
-            .CHM(_r33);
-            var ctx_r32 = core
+            .CHM(_r34);
+            var ctx_r33 = core
             /* ɵɵnextContext */
             .oxw();
-            return ctx_r32.touchstart($event);
+            return ctx_r33.touchstart($event);
           })("touchend", function F1CountdownComponent_div_21_Template_div_touchend_0_listener($event) {
             core
             /* ɵɵrestoreView */
-            .CHM(_r33);
-            var ctx_r34 = core
+            .CHM(_r34);
+            var ctx_r35 = core
             /* ɵɵnextContext */
             .oxw();
-            return ctx_r34.touchend($event);
+            return ctx_r35.touchend($event);
           });
           core
           /* ɵɵelementStart */
-          .TgZ(1, "mat-tab-group", 18);
+          .TgZ(1, "mat-tab-group", 19);
           core
           /* ɵɵlistener */
           .NdJ("selectedIndexChange", function F1CountdownComponent_div_21_Template_mat_tab_group_selectedIndexChange_1_listener($event) {
             core
             /* ɵɵrestoreView */
-            .CHM(_r33);
-            var ctx_r35 = core
-            /* ɵɵnextContext */
-            .oxw();
-            return ctx_r35.selectedTab = $event;
-          })("selectedTabChange", function F1CountdownComponent_div_21_Template_mat_tab_group_selectedTabChange_1_listener($event) {
-            core
-            /* ɵɵrestoreView */
-            .CHM(_r33);
+            .CHM(_r34);
             var ctx_r36 = core
             /* ɵɵnextContext */
             .oxw();
-            return ctx_r36.tabChanged($event);
+            return ctx_r36.selectedTab = $event;
+          })("selectedTabChange", function F1CountdownComponent_div_21_Template_mat_tab_group_selectedTabChange_1_listener($event) {
+            core
+            /* ɵɵrestoreView */
+            .CHM(_r34);
+            var ctx_r37 = core
+            /* ɵɵnextContext */
+            .oxw();
+            return ctx_r37.tabChanged($event);
           });
           core
           /* ɵɵelementStart */
-          .TgZ(2, "mat-tab", 19);
+          .TgZ(2, "mat-tab", 20);
           core
           /* ɵɵtemplate */
-          .YNc(3, F1CountdownComponent_div_21_ng_template_3_Template, 16, 5, "ng-template", 20);
+          .YNc(3, F1CountdownComponent_div_21_ng_template_3_Template, 16, 5, "ng-template", 21);
           core
           /* ɵɵelementEnd */
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(4, "mat-tab", 19);
+          .TgZ(4, "mat-tab", 20);
           core
           /* ɵɵtemplate */
-          .YNc(5, F1CountdownComponent_div_21_ng_template_5_Template, 16, 5, "ng-template", 20);
+          .YNc(5, F1CountdownComponent_div_21_ng_template_5_Template, 16, 5, "ng-template", 21);
           core
           /* ɵɵelementEnd */
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(6, "mat-tab", 19);
+          .TgZ(6, "mat-tab", 20);
           core
           /* ɵɵtemplate */
-          .YNc(7, F1CountdownComponent_div_21_ng_template_7_Template, 16, 5, "ng-template", 20);
+          .YNc(7, F1CountdownComponent_div_21_ng_template_7_Template, 16, 5, "ng-template", 21);
           core
           /* ɵɵelementEnd */
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(8, "mat-tab", 19);
+          .TgZ(8, "mat-tab", 20);
           core
           /* ɵɵtemplate */
-          .YNc(9, F1CountdownComponent_div_21_ng_template_9_Template, 16, 5, "ng-template", 20);
+          .YNc(9, F1CountdownComponent_div_21_ng_template_9_Template, 16, 5, "ng-template", 21);
           core
           /* ɵɵelementEnd */
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(10, "mat-tab", 19);
+          .TgZ(10, "mat-tab", 20);
           core
           /* ɵɵtemplate */
-          .YNc(11, F1CountdownComponent_div_21_ng_template_11_Template, 8, 1, "ng-template", 20);
+          .YNc(11, F1CountdownComponent_div_21_ng_template_11_Template, 8, 1, "ng-template", 21);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -14684,6 +14684,78 @@
         }
       }
 
+      function F1CountdownComponent_div_22_Template(rf, ctx) {
+        if (rf & 1) {
+          var _r39 = core
+          /* ɵɵgetCurrentView */
+          .EpF();
+
+          core
+          /* ɵɵelementStart */
+          .TgZ(0, "div", 30);
+          core
+          /* ɵɵelementStart */
+          .TgZ(1, "div", 22);
+          core
+          /* ɵɵlistener */
+          .NdJ("click", function F1CountdownComponent_div_22_Template_div_click_1_listener() {
+            core
+            /* ɵɵrestoreView */
+            .CHM(_r39);
+            var ctx_r38 = core
+            /* ɵɵnextContext */
+            .oxw();
+            return ctx_r38.countdownWasClicked(1);
+          });
+          core
+          /* ɵɵelementStart */
+          .TgZ(2, "h1");
+          core
+          /* ɵɵelementStart */
+          .TgZ(3, "span", 23);
+
+          core
+          /* ɵɵtext */
+          ._uU(4, " Race in: ");
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(5, "div");
+          core
+          /* ɵɵelementStart */
+          .TgZ(6, "h1");
+          core
+          /* ɵɵelementStart */
+          .TgZ(7, "span", 27);
+
+          core
+          /* ɵɵtext */
+          ._uU(8, "?");
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+        }
+      }
+
       var F1CountdownComponent = /*#__PURE__*/function () {
         function F1CountdownComponent(restService, utilityService, toastr) {
           _classCallCheck(this, F1CountdownComponent);
@@ -14702,9 +14774,11 @@
           this.FP1Days = 0;
           this.FP1Seconds = 0;
           this.selectedTab = 4;
+          this.isNotPlaying = true;
           this.getCountdownData(0);
           this.utilityService.reloadPosts(1);
           this.selectedTab = 4;
+          this.isNotPlaying = true;
         }
 
         _createClass(F1CountdownComponent, [{
@@ -14717,33 +14791,36 @@
               next: function next(data) {
                 _this22.calendarData = data;
 
-                if (mode == 0 || mode == 1) {
-                  _this22.FP1Days = _this22.calendarData.countdownData.FP1Days;
-                  _this22.FP1Seconds = _this22.calendarData.countdownData.FP1Seconds;
-                }
+                if (_this22.calendarData == null) {// this.countdown.pause();
+                } else {
+                  if (mode == 0 || mode == 1) {
+                    _this22.FP1Days = _this22.calendarData.countdownData.FP1Days;
+                    _this22.FP1Seconds = _this22.calendarData.countdownData.FP1Seconds;
+                  }
 
-                if (mode == 0 || mode == 2) {
-                  _this22.FP2Days = _this22.calendarData.countdownData.FP2Days;
-                  _this22.FP2Seconds = _this22.calendarData.countdownData.FP2Seconds;
-                }
+                  if (mode == 0 || mode == 2) {
+                    _this22.FP2Days = _this22.calendarData.countdownData.FP2Days;
+                    _this22.FP2Seconds = _this22.calendarData.countdownData.FP2Seconds;
+                  }
 
-                if (mode == 0 || mode == 3) {
-                  _this22.FP3Days = _this22.calendarData.countdownData.FP3Days;
-                  _this22.FP3Seconds = _this22.calendarData.countdownData.FP3Seconds;
-                }
+                  if (mode == 0 || mode == 3) {
+                    _this22.FP3Days = _this22.calendarData.countdownData.FP3Days;
+                    _this22.FP3Seconds = _this22.calendarData.countdownData.FP3Seconds;
+                  }
 
-                if (mode == 0 || mode == 4) {
-                  _this22.qualifyingDays = _this22.calendarData.countdownData.qualifyingDays;
-                  _this22.qualifyingSeconds = _this22.calendarData.countdownData.qualifyingSeconds;
-                }
+                  if (mode == 0 || mode == 4) {
+                    _this22.qualifyingDays = _this22.calendarData.countdownData.qualifyingDays;
+                    _this22.qualifyingSeconds = _this22.calendarData.countdownData.qualifyingSeconds;
+                  }
 
-                if (mode == 0 || mode == 5) {
-                  _this22.raceDays = _this22.calendarData.countdownData.raceDays;
-                  _this22.raceSeconds = _this22.calendarData.countdownData.raceSeconds;
-                }
+                  if (mode == 0 || mode == 5) {
+                    _this22.raceDays = _this22.calendarData.countdownData.raceDays;
+                    _this22.raceSeconds = _this22.calendarData.countdownData.raceSeconds;
+                  }
 
-                if (mode == 0) {
-                  _this22.utilityService.setTitleDefaultPage(_this22.calendarData.f1Calendar.summary);
+                  if (mode == 0) {
+                    _this22.utilityService.setTitleDefaultPage(_this22.calendarData.f1Calendar.summary);
+                  }
                 }
 
                 return data;
@@ -14838,6 +14915,21 @@
             }
           }
         }, {
+          key: "startMusic",
+          value: function startMusic(raceDays, raceSeconds) {
+            if (this.isNotPlaying && raceDays == 0 && this.raceSeconds < 3600) {
+              this.isNotPlaying = false; // var iframe1 = document.getElementById('hidden_iframe');
+              //  var iframe2 = document.getElementById('hidden_iframe2');
+
+              var iframe = document.createElement('iframe'); // iframe.style.display = "none";
+
+              iframe.src = 'https://www.youtube.com/embed/jKlL6wvGrbc?autoplay=1';
+              iframe.allow = 'autoplay; encrypted-media';
+              iframe.id = 'hidden_iframe';
+              document.body.appendChild(iframe);
+            }
+          }
+        }, {
           key: "touchstart",
           value: function touchstart(e) {
             var coord = [e.changedTouches[0].clientX, e.changedTouches[0].clientY];
@@ -14917,12 +15009,12 @@
             .CRH()) && (ctx.countdown = _t.first);
           }
         },
-        decls: 22,
-        vars: 4,
-        consts: [["mode", "side", "position", "end", 1, "example-sidenav", 3, "opened", "openedChange"], ["drawer", ""], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area", 3, "ngModel", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "post-comment-button", 3, "click"], [4, "ngFor", "ngForOf"], [1, "fixed-button"], ["type", "fixed-plugin", "mat-button", "", 3, "click"], [1, "fa", "fa-commenting-o", "fa-2x"], [1, "bg-white", "height-fill-screen"], ["class", "\u201Dmat-content\u201D", 3, "touchstart", "touchend", 4, "ngIf"], [1, "basic-comment"], [1, "one"], [1, "two"], [1, "basic-comment-body"], [1, "\u201Dmat-content\u201D", 3, "touchstart", "touchend"], [3, "selectedIndex", "selectedIndexChange", "selectedTabChange"], [3, "label"], ["matTabContent", ""], [3, "click"], [1, "countdown-desc"], [4, "ngIf"], [3, "config"], ["cd", ""], [1, "count-down"], [3, "click", 4, "ngIf"], [3, "config", "event"]],
+        decls: 23,
+        vars: 5,
+        consts: [["mode", "side", "position", "end", 1, "example-sidenav", 3, "opened", "openedChange"], ["drawer", ""], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area", 3, "ngModel", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "post-comment-button", 3, "click"], [4, "ngFor", "ngForOf"], [1, "fixed-button"], ["type", "fixed-plugin", "mat-button", "", 3, "click"], [1, "fa", "fa-commenting-o", "fa-2x"], [1, "bg-white", "height-fill-screen"], ["class", "\u201Dmat-content\u201D", 3, "touchstart", "touchend", 4, "ngIf"], ["class", "\u201Dmat-content\u201D", 4, "ngIf"], [1, "basic-comment"], [1, "one"], [1, "two"], [1, "basic-comment-body"], [1, "\u201Dmat-content\u201D", 3, "touchstart", "touchend"], [3, "selectedIndex", "selectedIndexChange", "selectedTabChange"], [3, "label"], ["matTabContent", ""], [3, "click"], [1, "countdown-desc"], [4, "ngIf"], [3, "config"], ["cd", ""], [1, "count-down"], [3, "click", 4, "ngIf"], [3, "config", "event"], [1, "\u201Dmat-content\u201D"]],
         template: function F1CountdownComponent_Template(rf, ctx) {
           if (rf & 1) {
-            var _r37 = core
+            var _r40 = core
             /* ɵɵgetCurrentView */
             .EpF();
 
@@ -15021,7 +15113,7 @@
             .NdJ("click", function F1CountdownComponent_Template_button_click_15_listener() {
               core
               /* ɵɵrestoreView */
-              .CHM(_r37);
+              .CHM(_r40);
 
               var _r0 = core
               /* ɵɵreference */
@@ -15054,7 +15146,7 @@
             .NdJ("click", function F1CountdownComponent_Template_button_click_18_listener() {
               core
               /* ɵɵrestoreView */
-              .CHM(_r37);
+              .CHM(_r40);
 
               var _r0 = core
               /* ɵɵreference */
@@ -15079,6 +15171,9 @@
             core
             /* ɵɵtemplate */
             .YNc(21, F1CountdownComponent_div_21_Template, 12, 6, "div", 12);
+            core
+            /* ɵɵtemplate */
+            .YNc(22, F1CountdownComponent_div_22_Template, 9, 0, "div", 13);
             core
             /* ɵɵelementEnd */
             .qZA();
@@ -15115,6 +15210,12 @@
             core
             /* ɵɵproperty */
             .Q6J("ngIf", ctx.calendarData != undefined);
+            core
+            /* ɵɵadvance */
+            .xp6(1);
+            core
+            /* ɵɵproperty */
+            .Q6J("ngIf", ctx.calendarData == undefined);
           }
         },
         directives: [sidenav
@@ -20705,199 +20806,100 @@
         }
       }
 
-      function VideostreamsComponent_ng_template_25_div_0_div_1_tr_16_Template(rf, ctx) {
+      function VideostreamsComponent_ng_template_25_Template(rf, ctx) {
         if (rf & 1) {
-          core
-          /* ɵɵelementStart */
-          .TgZ(0, "tr", 31);
-          core
-          /* ɵɵelementStart */
-          .TgZ(1, "th", 32);
-
-          core
-          /* ɵɵtext */
-          ._uU(2);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(3, "td");
-          core
-          /* ɵɵelementStart */
-          .TgZ(4, "a", 33);
-          core
-          /* ɵɵelementStart */
-          .TgZ(5, "div");
-
-          core
-          /* ɵɵtext */
-          ._uU(6);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(7, "td");
-          core
-          /* ɵɵelementStart */
-          .TgZ(8, "a", 33);
-          core
-          /* ɵɵelementStart */
-          .TgZ(9, "div");
-
-          core
-          /* ɵɵtext */
-          ._uU(10);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-        }
-
-        if (rf & 2) {
-          var stream_r11 = ctx.$implicit;
-          var i_r12 = ctx.index;
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵtextInterpolate */
-          .Oqu(i_r12 + 1);
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵpropertyInterpolate */
-          .s9C("href", stream_r11.url, core
-          /* ɵɵsanitizeUrl */
-          .LSH);
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵtextInterpolate1 */
-          .hij(" ", stream_r11.name, " ");
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵpropertyInterpolate */
-          .s9C("href", stream_r11.url, core
-          /* ɵɵsanitizeUrl */
-          .LSH);
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵtextInterpolate1 */
-          .hij(" ", stream_r11.url, " ");
-        }
-      }
-
-      function VideostreamsComponent_ng_template_25_div_0_div_1_Template(rf, ctx) {
-        if (rf & 1) {
-          var _r14 = core
-          /* ɵɵgetCurrentView */
-          .EpF();
-
           core
           /* ɵɵelementStart */
           .TgZ(0, "div");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "table", 24);
+          .TgZ(1, "table", 23);
           core
           /* ɵɵelementStart */
           .TgZ(2, "thead");
           core
           /* ɵɵelementStart */
           .TgZ(3, "tr");
-          core
-          /* ɵɵelementStart */
-          .TgZ(4, "th", 25);
-
-          core
-          /* ɵɵtext */
-          ._uU(5);
-
-          core
-          /* ɵɵelementStart */
-          .TgZ(6, "button", 26);
-          core
-          /* ɵɵlistener */
-          .NdJ("click", function VideostreamsComponent_ng_template_25_div_0_div_1_Template_button_click_6_listener() {
-            core
-            /* ɵɵrestoreView */
-            .CHM(_r14);
-            var ctx_r13 = core
-            /* ɵɵnextContext */
-            .oxw(3);
-            return ctx_r13.openInfo();
-          });
 
           core
           /* ɵɵelement */
-          ._UZ(7, "i", 27);
+          ._UZ(4, "th");
 
           core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
           /* ɵɵelementStart */
-          .TgZ(8, "tr");
-          core
-          /* ɵɵelementStart */
-          .TgZ(9, "th", 28);
+          .TgZ(5, "th", 24);
 
           core
           /* ɵɵtext */
-          ._uU(10, "#");
+          ._uU(6, "F1Exposure does not stream races. Try these sites:");
 
           core
           /* ɵɵelementEnd */
           .qZA();
           core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
           /* ɵɵelementStart */
-          .TgZ(11, "th", 29);
+          .TgZ(7, "tbody");
+          core
+          /* ɵɵelementStart */
+          .TgZ(8, "tr", 25);
+
+          core
+          /* ɵɵelement */
+          ._UZ(9, "td");
+
+          core
+          /* ɵɵelementStart */
+          .TgZ(10, "td");
+          core
+          /* ɵɵelementStart */
+          .TgZ(11, "a", 26);
+          core
+          /* ɵɵelementStart */
+          .TgZ(12, "div");
 
           core
           /* ɵɵtext */
-          ._uU(12, "Name");
+          ._uU(13, "TWITCH.TV/mda2mjzy9y3lw ");
 
           core
           /* ɵɵelementEnd */
           .qZA();
           core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
           /* ɵɵelementStart */
-          .TgZ(13, "th", 29);
+          .TgZ(14, "tr", 25);
+
+          core
+          /* ɵɵelement */
+          ._UZ(15, "td");
+
+          core
+          /* ɵɵelementStart */
+          .TgZ(16, "td");
+          core
+          /* ɵɵelementStart */
+          .TgZ(17, "a", 27);
+          core
+          /* ɵɵelementStart */
+          .TgZ(18, "div");
 
           core
           /* ɵɵtext */
-          ._uU(14, "URL ");
+          ._uU(19, "SPORTSURGE.NET ");
 
           core
           /* ɵɵelementEnd */
@@ -20909,89 +20911,29 @@
           /* ɵɵelementEnd */
           .qZA();
           core
-          /* ɵɵelementStart */
-          .TgZ(15, "tbody");
-          core
-          /* ɵɵtemplate */
-          .YNc(16, VideostreamsComponent_ng_template_25_div_0_div_1_tr_16_Template, 11, 5, "tr", 30);
-          core
           /* ɵɵelementEnd */
           .qZA();
           core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-        }
+          /* ɵɵelementStart */
+          .TgZ(20, "tr", 25);
 
-        if (rf & 2) {
-          var event_r9 = ctx.$implicit;
           core
-          /* ɵɵadvance */
-          .xp6(5);
-          core
-          /* ɵɵtextInterpolate1 */
-          .hij("", event_r9.name, " ");
-          core
-          /* ɵɵadvance */
-          .xp6(11);
-          core
-          /* ɵɵproperty */
-          .Q6J("ngForOf", event_r9.streams);
-        }
-      }
+          /* ɵɵelement */
+          ._UZ(21, "td");
 
-      function VideostreamsComponent_ng_template_25_div_0_Template(rf, ctx) {
-        if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div");
-          core
-          /* ɵɵtemplate */
-          .YNc(1, VideostreamsComponent_ng_template_25_div_0_div_1_Template, 17, 2, "div", 8);
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-        }
-
-        if (rf & 2) {
-          var ctx_r6 = core
-          /* ɵɵnextContext */
-          .oxw(2);
-          core
-          /* ɵɵadvance */
-          .xp6(1);
-          core
-          /* ɵɵproperty */
-          .Q6J("ngForOf", ctx_r6.events);
-        }
-      }
-
-      function VideostreamsComponent_ng_template_25_div_1_Template(rf, ctx) {
-        if (rf & 1) {
+          .TgZ(22, "td");
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div");
+          .TgZ(23, "a", 28);
           core
           /* ɵɵelementStart */
-          .TgZ(1, "div", 34);
-          core
-          /* ɵɵelementStart */
-          .TgZ(2, "div", 35);
-          core
-          /* ɵɵelementStart */
-          .TgZ(3, "div", 36);
-          core
-          /* ɵɵelementStart */
-          .TgZ(4, "div", 37);
-          core
-          /* ɵɵelementStart */
-          .TgZ(5, "p", 36);
+          .TgZ(24, "div");
 
           core
           /* ɵɵtext */
-          ._uU(6, "No streams currently. ");
+          ._uU(25, "OVERTAKEFANS.COM ");
 
           core
           /* ɵɵelementEnd */
@@ -21011,32 +20953,9 @@
           core
           /* ɵɵelementEnd */
           .qZA();
-        }
-      }
-
-      function VideostreamsComponent_ng_template_25_Template(rf, ctx) {
-        if (rf & 1) {
           core
-          /* ɵɵtemplate */
-          .YNc(0, VideostreamsComponent_ng_template_25_div_0_Template, 2, 1, "div", 23);
-          core
-          /* ɵɵtemplate */
-          .YNc(1, VideostreamsComponent_ng_template_25_div_1_Template, 7, 0, "div", 23);
-        }
-
-        if (rf & 2) {
-          var ctx_r3 = core
-          /* ɵɵnextContext */
-          .oxw();
-          core
-          /* ɵɵproperty */
-          .Q6J("ngIf", ctx_r3.events !== undefined);
-          core
-          /* ɵɵadvance */
-          .xp6(1);
-          core
-          /* ɵɵproperty */
-          .Q6J("ngIf", ctx_r3.events.length == 0);
+          /* ɵɵelementEnd */
+          .qZA();
         }
       }
 
@@ -21044,21 +20963,21 @@
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "tr", 31);
+          .TgZ(0, "tr", 25);
 
           core
           /* ɵɵelement */
-          ._UZ(1, "th", 32);
+          ._UZ(1, "th", 37);
 
           core
           /* ɵɵelementStart */
-          .TgZ(2, "td", 42);
+          .TgZ(2, "td", 38);
           core
           /* ɵɵelementStart */
-          .TgZ(3, "a", 33);
+          .TgZ(3, "a", 39);
           core
           /* ɵɵelementStart */
-          .TgZ(4, "div", 43);
+          .TgZ(4, "div", 40);
 
           core
           /* ɵɵtext */
@@ -21079,13 +20998,13 @@
         }
 
         if (rf & 2) {
-          var replay_r17 = ctx.$implicit;
+          var replay_r8 = ctx.$implicit;
           core
           /* ɵɵadvance */
           .xp6(3);
           core
           /* ɵɵpropertyInterpolate */
-          .s9C("href", replay_r17.url, core
+          .s9C("href", replay_r8.url, core
           /* ɵɵsanitizeUrl */
           .LSH);
           core
@@ -21093,13 +21012,13 @@
           .xp6(2);
           core
           /* ɵɵtextInterpolate1 */
-          .hij(" ", replay_r17.title, " ");
+          .hij(" ", replay_r8.title, " ");
         }
       }
 
       function VideostreamsComponent_ng_template_27_div_0_Template(rf, ctx) {
         if (rf & 1) {
-          var _r19 = core
+          var _r10 = core
           /* ɵɵgetCurrentView */
           .EpF();
 
@@ -21111,7 +21030,7 @@
           .TgZ(1, "div");
           core
           /* ɵɵelementStart */
-          .TgZ(2, "table", 24);
+          .TgZ(2, "table", 23);
           core
           /* ɵɵelementStart */
           .TgZ(3, "thead");
@@ -21120,7 +21039,7 @@
           .TgZ(4, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(5, "th", 25);
+          .TgZ(5, "th", 30);
 
           core
           /* ɵɵtext */
@@ -21128,11 +21047,11 @@
 
           core
           /* ɵɵelementStart */
-          .TgZ(7, "button", 38);
+          .TgZ(7, "button", 31);
 
           core
           /* ɵɵelement */
-          ._UZ(8, "i", 27);
+          ._UZ(8, "i", 32);
 
           core
           /* ɵɵelementEnd */
@@ -21151,7 +21070,7 @@
           .TgZ(9, "tbody");
           core
           /* ɵɵtemplate */
-          .YNc(10, VideostreamsComponent_ng_template_27_div_0_tr_10_Template, 6, 2, "tr", 30);
+          .YNc(10, VideostreamsComponent_ng_template_27_div_0_tr_10_Template, 6, 2, "tr", 33);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -21163,20 +21082,20 @@
           .TgZ(11, "div");
           core
           /* ɵɵelementStart */
-          .TgZ(12, "div", 39);
+          .TgZ(12, "div", 34);
           core
           /* ɵɵelementStart */
-          .TgZ(13, "button", 40);
+          .TgZ(13, "button", 35);
           core
           /* ɵɵlistener */
           .NdJ("click", function VideostreamsComponent_ng_template_27_div_0_Template_button_click_13_listener() {
             core
             /* ɵɵrestoreView */
-            .CHM(_r19);
-            var ctx_r18 = core
+            .CHM(_r10);
+            var ctx_r9 = core
             /* ɵɵnextContext */
             .oxw(2);
-            return ctx_r18.updatePosts(-1);
+            return ctx_r9.updatePosts(-1);
           });
           core
           /* ɵɵelementStart */
@@ -21197,20 +21116,20 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(16, "div", 41);
+          .TgZ(16, "div", 36);
           core
           /* ɵɵelementStart */
-          .TgZ(17, "button", 40);
+          .TgZ(17, "button", 35);
           core
           /* ɵɵlistener */
           .NdJ("click", function VideostreamsComponent_ng_template_27_div_0_Template_button_click_17_listener() {
             core
             /* ɵɵrestoreView */
-            .CHM(_r19);
-            var ctx_r20 = core
+            .CHM(_r10);
+            var ctx_r11 = core
             /* ɵɵnextContext */
             .oxw(2);
-            return ctx_r20.updatePosts(1);
+            return ctx_r11.updatePosts(1);
           });
           core
           /* ɵɵelementStart */
@@ -21241,7 +21160,7 @@
         }
 
         if (rf & 2) {
-          var ctx_r15 = core
+          var ctx_r6 = core
           /* ɵɵnextContext */
           .oxw(2);
           core
@@ -21249,19 +21168,19 @@
           .xp6(10);
           core
           /* ɵɵproperty */
-          .Q6J("ngForOf", ctx_r15.replays);
+          .Q6J("ngForOf", ctx_r6.replays);
           core
           /* ɵɵadvance */
           .xp6(3);
           core
           /* ɵɵproperty */
-          .Q6J("disabled", ctx_r15.disabledPaging(1));
+          .Q6J("disabled", ctx_r6.disabledPaging(1));
           core
           /* ɵɵadvance */
           .xp6(4);
           core
           /* ɵɵproperty */
-          .Q6J("disabled", ctx_r15.disabledPaging(2));
+          .Q6J("disabled", ctx_r6.disabledPaging(2));
         }
       }
 
@@ -21269,7 +21188,7 @@
         if (rf & 1) {
           core
           /* ɵɵtemplate */
-          .YNc(0, VideostreamsComponent_ng_template_27_div_0_Template, 20, 3, "div", 23);
+          .YNc(0, VideostreamsComponent_ng_template_27_div_0_Template, 20, 3, "div", 29);
         }
 
         if (rf & 2) {
@@ -21366,10 +21285,10 @@
         selectors: [["videostreams-cmp"]],
         decls: 28,
         vars: 3,
-        consts: [["autosize", ""], ["autosize", "", "mode", "side", "position", "end", 1, "example-sidenav", 3, "opened", "openedChange"], ["drawer", ""], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area", 3, "ngModel", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "post-comment-button", 3, "click"], [4, "ngFor", "ngForOf"], [1, "fixed-button"], ["type", "fixed-plugin", "mat-button", "", 3, "click"], [1, "fa", "fa-commenting-o", "fa-2x"], [1, "height-fill-screen"], ["label", "F1TV"], ["matTabContent", ""], ["label", "Live - SportSurge"], ["label", "Replays - Racingfk"], [1, "basic-comment"], [1, "one"], [1, "two"], [1, "basic-comment-body"], ["href", "https://f1tv.formula1.com", "target", "_blank", 2, "color", "black"], ["alt", "f1tv", "src", "https://ott-img.formula1.com/subscription/ProImagesNoBG/live-nocut.png"], [4, "ngIf"], [1, "table", "table-striped"], ["colspan", "4", 2, "background-color", "#cdcdcd", "text-align", "center"], [1, "btn", "btn-outline-info", "btn-round", "btn-icon", "right-header-button", 3, "click"], [1, "fa", "fa-info"], ["scope", "col"], ["scope", "col", 2, "text-align", "center"], ["class", "hover-effects-bold-row", 4, "ngFor", "ngForOf"], [1, "hover-effects-bold-row"], ["scope", "row"], ["target", "_blank", 2, "color", "black", 3, "href"], [1, "div-padded-right-2", "div-padded-top-1", "col-lg-5", "col-md-6", "col-sm-6"], [1, "card", "card-stats"], [1, "card-body"], [1, "m-3", "col-7", "col-md-9"], ["matTooltip", "F1Exposure.com and Racingfk.com are not affiliated in any way.", 1, "btn", "btn-outline-info", "btn-round", "btn-icon", "right-header-button"], [1, "basic-left", "icon-big", "text-center"], ["color", "primary", "mat-flat-button", "", 1, "width-100", 3, "disabled", "click"], [1, "basic-right", "icon-big", "text-center"], [1, "p-1"], [1, "link-container"]],
+        consts: [["autosize", ""], ["autosize", "", "mode", "side", "position", "end", 1, "example-sidenav", 3, "opened", "openedChange"], ["drawer", ""], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area", 3, "ngModel", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "post-comment-button", 3, "click"], [4, "ngFor", "ngForOf"], [1, "fixed-button"], ["type", "fixed-plugin", "mat-button", "", 3, "click"], [1, "fa", "fa-commenting-o", "fa-2x"], [1, "height-fill-screen"], ["label", "F1TV"], ["matTabContent", ""], ["label", "Free livestreams"], ["label", "Replays"], [1, "basic-comment"], [1, "one"], [1, "two"], [1, "basic-comment-body"], ["href", "https://f1tv.formula1.com", "target", "_blank", 2, "color", "black"], ["alt", "f1tv", "src", "https://ott-img.formula1.com/subscription/ProImagesNoBG/live-nocut.png"], [1, "table", "table-striped"], ["scope", "col", 2, "text-align", "center"], [1, "hover-effects-bold-row"], ["href", "https://www.twitch.tv/mda2mjzy9y3lw", "target", "_blank", 2, "color", "black"], ["href", "https://v2.sportsurge.net/list-formula-1", "target", "_blank", 2, "color", "black"], ["href", "https://overtakefans.com/", "target", "_blank", 2, "color", "black"], [4, "ngIf"], ["colspan", "4", 2, "background-color", "#cdcdcd", "text-align", "center"], ["matTooltip", "F1Exposure.com and Racingfk.com are not affiliated in any way.", 1, "btn", "btn-outline-info", "btn-round", "btn-icon", "right-header-button"], [1, "fa", "fa-info"], ["class", "hover-effects-bold-row", 4, "ngFor", "ngForOf"], [1, "basic-left", "icon-big", "text-center"], ["color", "primary", "mat-flat-button", "", 1, "width-100", 3, "disabled", "click"], [1, "basic-right", "icon-big", "text-center"], ["scope", "row"], [1, "p-1"], ["target", "_blank", 2, "color", "black", 3, "href"], [1, "link-container"]],
         template: function VideostreamsComponent_Template(rf, ctx) {
           if (rf & 1) {
-            var _r21 = core
+            var _r12 = core
             /* ɵɵgetCurrentView */
             .EpF();
 
@@ -21468,7 +21387,7 @@
             .NdJ("click", function VideostreamsComponent_Template_button_click_15_listener() {
               core
               /* ɵɵrestoreView */
-              .CHM(_r21);
+              .CHM(_r12);
 
               var _r0 = core
               /* ɵɵreference */
@@ -21501,7 +21420,7 @@
             .NdJ("click", function VideostreamsComponent_Template_button_click_18_listener() {
               core
               /* ɵɵrestoreView */
-              .CHM(_r21);
+              .CHM(_r12);
 
               var _r0 = core
               /* ɵɵreference */
@@ -21540,7 +21459,7 @@
             .TgZ(24, "mat-tab", 15);
             core
             /* ɵɵtemplate */
-            .YNc(25, VideostreamsComponent_ng_template_25_Template, 2, 2, "ng-template", 14);
+            .YNc(25, VideostreamsComponent_ng_template_25_Template, 26, 0, "ng-template", 14);
             core
             /* ɵɵelementEnd */
             .qZA();
@@ -33217,10 +33136,10 @@
           .TgZ(11, "td", 27);
           core
           /* ɵɵelementStart */
-          .TgZ(12, "button", 34);
+          .TgZ(12, "a", 33);
           core
           /* ɵɵelementStart */
-          .TgZ(13, "a", 33);
+          .TgZ(13, "button", 34);
 
           core
           /* ɵɵtext */
@@ -33293,15 +33212,15 @@
           .xp6(2);
           core
           /* ɵɵproperty */
-          .Q6J("ngClass", post_r5.url == null ? "btn-outline-info" : "btn-outline-danger");
+          .Q6J("href", "#/news/post?code=" + post_r5.code, core
+          /* ɵɵsanitizeUrl */
+          .LSH);
           core
           /* ɵɵadvance */
           .xp6(1);
           core
           /* ɵɵproperty */
-          .Q6J("href", "#/news/post?code=" + post_r5.code, core
-          /* ɵɵsanitizeUrl */
-          .LSH);
+          .Q6J("ngClass", post_r5.url == null ? "btn-outline-info" : "btn-outline-danger");
           core
           /* ɵɵadvance */
           .xp6(1);
@@ -35639,10 +35558,10 @@
           .TgZ(0, "div");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "div", 22);
+          .TgZ(1, "div", 13);
           core
           /* ɵɵelementStart */
-          .TgZ(2, "div", 23);
+          .TgZ(2, "div", 14);
 
           core
           /* ɵɵtext */
@@ -35653,7 +35572,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(4, "div", 24);
+          .TgZ(4, "div", 15);
 
           core
           /* ɵɵtext */
@@ -35664,7 +35583,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(6, "div", 25);
+          .TgZ(6, "div", 16);
 
           core
           /* ɵɵtext */
@@ -35682,29 +35601,29 @@
         }
 
         if (rf & 2) {
-          var comment_r11 = ctx.$implicit;
+          var comment_r4 = ctx.$implicit;
           core
           /* ɵɵadvance */
           .xp6(3);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(comment_r11.nickname);
+          .Oqu(comment_r4.nickname);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(comment_r11.id);
+          .Oqu(comment_r4.id);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(comment_r11.comment);
+          .Oqu(comment_r4.comment);
         }
       }
 
-      function UpcomingRaceAnalysisComponent_div_0_ng_template_22_div_0_Template(rf, ctx) {
+      function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_3_div_0_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵelementStart */
@@ -35755,21 +35674,21 @@
         }
 
         if (rf & 2) {
-          var ctx_r12 = core
+          var ctx_r13 = core
           /* ɵɵnextContext */
-          .oxw(3);
+          .oxw(4);
           core
           /* ɵɵadvance */
           .xp6(4);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(ctx_r12.upcomingRaceAnalysis.circuitName);
+          .Oqu(ctx_r13.upcomingRaceAnalysis.circuitName);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵpropertyInterpolate */
-          .s9C("href", ctx_r12.upcomingRaceAnalysis.circuitUrl, core
+          .s9C("href", ctx_r13.upcomingRaceAnalysis.circuitUrl, core
           /* ɵɵsanitizeUrl */
           .LSH);
           core
@@ -35777,30 +35696,30 @@
           .xp6(1);
           core
           /* ɵɵpropertyInterpolate */
-          .s9C("src", ctx_r12.upcomingRaceAnalysis.imageUrl, core
+          .s9C("src", ctx_r13.upcomingRaceAnalysis.imageUrl, core
           /* ɵɵsanitizeUrl */
           .LSH);
         }
       }
 
-      function UpcomingRaceAnalysisComponent_div_0_ng_template_22_Template(rf, ctx) {
+      function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_3_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵtemplate */
-          .YNc(0, UpcomingRaceAnalysisComponent_div_0_ng_template_22_div_0_Template, 8, 3, "div", 26);
+          .YNc(0, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_3_div_0_Template, 8, 3, "div", 26);
         }
 
         if (rf & 2) {
-          var ctx_r3 = core
+          var ctx_r5 = core
           /* ɵɵnextContext */
-          .oxw(2);
+          .oxw(3);
           core
           /* ɵɵproperty */
-          .Q6J("ngIf", ctx_r3.upcomingRaceAnalysis !== undefined);
+          .Q6J("ngIf", ctx_r5.upcomingRaceAnalysis !== undefined);
         }
       }
 
-      function UpcomingRaceAnalysisComponent_div_0_ng_template_24_div_0_div_1_tr_19_Template(rf, ctx) {
+      function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_5_div_0_div_1_tr_19_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵelementStart */
@@ -35844,29 +35763,29 @@
         }
 
         if (rf & 2) {
-          var standing_r18 = ctx.$implicit;
+          var standing_r19 = ctx.$implicit;
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r18.position);
+          .Oqu(standing_r19.position);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r18.driver);
+          .Oqu(standing_r19.driver);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r18.constructorName);
+          .Oqu(standing_r19.constructorName);
         }
       }
 
-      function UpcomingRaceAnalysisComponent_div_0_ng_template_24_div_0_div_1_Template(rf, ctx) {
+      function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_5_div_0_div_1_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵelementStart */
@@ -35961,7 +35880,7 @@
           .TgZ(18, "tbody");
           core
           /* ɵɵtemplate */
-          .YNc(19, UpcomingRaceAnalysisComponent_div_0_ng_template_24_div_0_div_1_tr_19_Template, 7, 3, "tr", 9);
+          .YNc(19, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_5_div_0_div_1_tr_19_Template, 7, 3, "tr", 9);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -35980,13 +35899,13 @@
         }
 
         if (rf & 2) {
-          var race_r16 = ctx.$implicit;
+          var race_r17 = ctx.$implicit;
           core
           /* ɵɵadvance */
           .xp6(7);
           core
           /* ɵɵtextInterpolate2 */
-          .AsE("", race_r16.season, " - round ", race_r16.round, "");
+          .AsE("", race_r17.season, " - round ", race_r17.round, "");
           core
           /* ɵɵadvance */
           .xp6(2);
@@ -35994,43 +35913,43 @@
           /* ɵɵtextInterpolate */
           .Oqu(core
           /* ɵɵpipeBind1 */
-          .lcZ(10, 4, race_r16.date));
+          .lcZ(10, 4, race_r17.date));
           core
           /* ɵɵadvance */
           .xp6(10);
           core
           /* ɵɵproperty */
-          .Q6J("ngForOf", race_r16.basicResultList);
+          .Q6J("ngForOf", race_r17.basicResultList);
         }
       }
 
-      function UpcomingRaceAnalysisComponent_div_0_ng_template_24_div_0_Template(rf, ctx) {
+      function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_5_div_0_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵelementStart */
           .TgZ(0, "div", 34);
           core
           /* ɵɵtemplate */
-          .YNc(1, UpcomingRaceAnalysisComponent_div_0_ng_template_24_div_0_div_1_Template, 20, 6, "div", 35);
+          .YNc(1, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_5_div_0_div_1_Template, 20, 6, "div", 35);
           core
           /* ɵɵelementEnd */
           .qZA();
         }
 
         if (rf & 2) {
-          var ctx_r13 = core
+          var ctx_r14 = core
           /* ɵɵnextContext */
-          .oxw(3);
+          .oxw(4);
           core
           /* ɵɵadvance */
           .xp6(1);
           core
           /* ɵɵproperty */
-          .Q6J("ngForOf", ctx_r13.upcomingRaceAnalysis.basicRaces);
+          .Q6J("ngForOf", ctx_r14.upcomingRaceAnalysis.basicRaces);
         }
       }
 
-      function UpcomingRaceAnalysisComponent_div_0_ng_template_24_div_1_Template(rf, ctx) {
+      function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_5_div_1_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵelementStart */
@@ -36074,15 +35993,15 @@
         }
 
         if (rf & 2) {
-          var ctx_r14 = core
+          var ctx_r15 = core
           /* ɵɵnextContext */
-          .oxw(3);
+          .oxw(4);
           core
           /* ɵɵadvance */
           .xp6(4);
           core
           /* ɵɵpropertyInterpolate */
-          .s9C("href", ctx_r14.upcomingRaceAnalysis.circuitUrl, core
+          .s9C("href", ctx_r15.upcomingRaceAnalysis.circuitUrl, core
           /* ɵɵsanitizeUrl */
           .LSH);
           core
@@ -36090,37 +36009,37 @@
           .xp6(1);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(ctx_r14.upcomingRaceAnalysis.circuitName);
+          .Oqu(ctx_r15.upcomingRaceAnalysis.circuitName);
         }
       }
 
-      function UpcomingRaceAnalysisComponent_div_0_ng_template_24_Template(rf, ctx) {
+      function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_5_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵtemplate */
-          .YNc(0, UpcomingRaceAnalysisComponent_div_0_ng_template_24_div_0_Template, 2, 1, "div", 32);
+          .YNc(0, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_5_div_0_Template, 2, 1, "div", 32);
           core
           /* ɵɵtemplate */
-          .YNc(1, UpcomingRaceAnalysisComponent_div_0_ng_template_24_div_1_Template, 7, 2, "div", 33);
+          .YNc(1, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_5_div_1_Template, 7, 2, "div", 33);
         }
 
         if (rf & 2) {
-          var ctx_r4 = core
+          var ctx_r6 = core
           /* ɵɵnextContext */
-          .oxw(2);
+          .oxw(3);
           core
           /* ɵɵproperty */
-          .Q6J("ngIf", ctx_r4.upcomingRaceAnalysis.basicRaces.length > 0);
+          .Q6J("ngIf", ctx_r6.upcomingRaceAnalysis.basicRaces.length > 0);
           core
           /* ɵɵadvance */
           .xp6(1);
           core
           /* ɵɵproperty */
-          .Q6J("ngIf", ctx_r4.upcomingRaceAnalysis.basicRaces.length == 0);
+          .Q6J("ngIf", ctx_r6.upcomingRaceAnalysis.basicRaces.length == 0);
         }
       }
 
-      function UpcomingRaceAnalysisComponent_div_0_ng_template_26_div_0_tr_24_Template(rf, ctx) {
+      function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_7_div_0_tr_24_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵelementStart */
@@ -36219,61 +36138,61 @@
         }
 
         if (rf & 2) {
-          var standing_r23 = ctx.$implicit;
+          var standing_r24 = ctx.$implicit;
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r23.position);
+          .Oqu(standing_r24.position);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r23.FullName);
+          .Oqu(standing_r24.FullName);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r23.Team);
+          .Oqu(standing_r24.Team);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r23.finalGap);
+          .Oqu(standing_r24.finalGap);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r23.fastestLap);
+          .Oqu(standing_r24.fastestLap);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r23.fastestLapSector1);
+          .Oqu(standing_r24.fastestLapSector1);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r23.fastestLapSector2);
+          .Oqu(standing_r24.fastestLapSector2);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r23.fastestLapSector3);
+          .Oqu(standing_r24.fastestLapSector3);
         }
       }
 
-      function UpcomingRaceAnalysisComponent_div_0_ng_template_26_div_0_Template(rf, ctx) {
+      function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_7_div_0_Template(rf, ctx) {
         if (rf & 1) {
-          var _r26 = core
+          var _r27 = core
           /* ɵɵgetCurrentView */
           .EpF();
 
@@ -36285,14 +36204,14 @@
           .TgZ(1, "table", 47);
           core
           /* ɵɵlistener */
-          .NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_ng_template_26_div_0_Template_table_matSortChange_1_listener($event) {
+          .NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_7_div_0_Template_table_matSortChange_1_listener($event) {
             core
             /* ɵɵrestoreView */
-            .CHM(_r26);
-            var ctx_r25 = core
+            .CHM(_r27);
+            var ctx_r26 = core
             /* ɵɵnextContext */
-            .oxw(3);
-            return ctx_r25.sortMainResultData($event, 1);
+            .oxw(4);
+            return ctx_r26.sortMainResultData($event, 1);
           });
           core
           /* ɵɵelementStart */
@@ -36416,7 +36335,7 @@
           .TgZ(23, "tbody");
           core
           /* ɵɵtemplate */
-          .YNc(24, UpcomingRaceAnalysisComponent_div_0_ng_template_26_div_0_tr_24_Template, 17, 8, "tr", 9);
+          .YNc(24, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_7_div_0_tr_24_Template, 17, 8, "tr", 9);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -36429,19 +36348,19 @@
         }
 
         if (rf & 2) {
-          var ctx_r20 = core
+          var ctx_r21 = core
           /* ɵɵnextContext */
-          .oxw(3);
+          .oxw(4);
           core
           /* ɵɵadvance */
           .xp6(24);
           core
           /* ɵɵproperty */
-          .Q6J("ngForOf", ctx_r20.upcomingRaceAnalysis.fp1);
+          .Q6J("ngForOf", ctx_r21.upcomingRaceAnalysis.fp1);
         }
       }
 
-      function UpcomingRaceAnalysisComponent_div_0_ng_template_26_tr_19_Template(rf, ctx) {
+      function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_7_tr_19_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵelementStart */
@@ -36496,43 +36415,43 @@
         }
 
         if (rf & 2) {
-          var lap_r27 = ctx.$implicit;
+          var lap_r28 = ctx.$implicit;
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(lap_r27.position);
+          .Oqu(lap_r28.position);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(lap_r27.driverName);
+          .Oqu(lap_r28.driverName);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(lap_r27.lapTime);
+          .Oqu(lap_r28.lapTime);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(lap_r27.lapNumber);
+          .Oqu(lap_r28.lapNumber);
         }
       }
 
-      function UpcomingRaceAnalysisComponent_div_0_ng_template_26_Template(rf, ctx) {
+      function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_7_Template(rf, ctx) {
         if (rf & 1) {
-          var _r30 = core
+          var _r31 = core
           /* ɵɵgetCurrentView */
           .EpF();
 
           core
           /* ɵɵtemplate */
-          .YNc(0, UpcomingRaceAnalysisComponent_div_0_ng_template_26_div_0_Template, 25, 1, "div", 0);
+          .YNc(0, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_7_div_0_Template, 25, 1, "div", 0);
           core
           /* ɵɵelementStart */
           .TgZ(1, "div", 45);
@@ -36547,14 +36466,14 @@
           .TgZ(4, "table", 47);
           core
           /* ɵɵlistener */
-          .NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_ng_template_26_Template_table_matSortChange_4_listener($event) {
+          .NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_7_Template_table_matSortChange_4_listener($event) {
             core
             /* ɵɵrestoreView */
-            .CHM(_r30);
-            var ctx_r29 = core
+            .CHM(_r31);
+            var ctx_r30 = core
             /* ɵɵnextContext */
-            .oxw(2);
-            return ctx_r29.sortResultData($event, 1);
+            .oxw(3);
+            return ctx_r30.sortResultData($event, 1);
           });
           core
           /* ɵɵelementStart */
@@ -36634,7 +36553,7 @@
           .TgZ(18, "tbody");
           core
           /* ɵɵtemplate */
-          .YNc(19, UpcomingRaceAnalysisComponent_div_0_ng_template_26_tr_19_Template, 9, 4, "tr", 9);
+          .YNc(19, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_7_tr_19_Template, 9, 4, "tr", 9);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -36653,22 +36572,22 @@
         }
 
         if (rf & 2) {
-          var ctx_r5 = core
+          var ctx_r7 = core
           /* ɵɵnextContext */
-          .oxw(2);
+          .oxw(3);
           core
           /* ɵɵproperty */
-          .Q6J("ngIf", ctx_r5.upcomingRaceAnalysis.fp1 !== null);
+          .Q6J("ngIf", ctx_r7.upcomingRaceAnalysis.fp1 !== null);
           core
           /* ɵɵadvance */
           .xp6(19);
           core
           /* ɵɵproperty */
-          .Q6J("ngForOf", ctx_r5.upcomingRaceAnalysis.fp1Laps);
+          .Q6J("ngForOf", ctx_r7.upcomingRaceAnalysis.fp1Laps);
         }
       }
 
-      function UpcomingRaceAnalysisComponent_div_0_mat_tab_27_ng_template_1_div_0_tr_24_Template(rf, ctx) {
+      function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_8_ng_template_1_div_0_tr_24_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵelementStart */
@@ -36767,61 +36686,61 @@
         }
 
         if (rf & 2) {
-          var standing_r35 = ctx.$implicit;
+          var standing_r36 = ctx.$implicit;
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r35.position);
+          .Oqu(standing_r36.position);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r35.FullName);
+          .Oqu(standing_r36.FullName);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r35.Team);
+          .Oqu(standing_r36.Team);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r35.finalGap);
+          .Oqu(standing_r36.finalGap);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r35.fastestLap);
+          .Oqu(standing_r36.fastestLap);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r35.fastestLapSector1);
+          .Oqu(standing_r36.fastestLapSector1);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r35.fastestLapSector2);
+          .Oqu(standing_r36.fastestLapSector2);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r35.fastestLapSector3);
+          .Oqu(standing_r36.fastestLapSector3);
         }
       }
 
-      function UpcomingRaceAnalysisComponent_div_0_mat_tab_27_ng_template_1_div_0_Template(rf, ctx) {
+      function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_8_ng_template_1_div_0_Template(rf, ctx) {
         if (rf & 1) {
-          var _r38 = core
+          var _r39 = core
           /* ɵɵgetCurrentView */
           .EpF();
 
@@ -36833,14 +36752,14 @@
           .TgZ(1, "table", 47);
           core
           /* ɵɵlistener */
-          .NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_mat_tab_27_ng_template_1_div_0_Template_table_matSortChange_1_listener($event) {
+          .NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_8_ng_template_1_div_0_Template_table_matSortChange_1_listener($event) {
             core
             /* ɵɵrestoreView */
-            .CHM(_r38);
-            var ctx_r37 = core
+            .CHM(_r39);
+            var ctx_r38 = core
             /* ɵɵnextContext */
-            .oxw(4);
-            return ctx_r37.sortMainResultData($event, 2);
+            .oxw(5);
+            return ctx_r38.sortMainResultData($event, 2);
           });
           core
           /* ɵɵelementStart */
@@ -36964,7 +36883,231 @@
           .TgZ(23, "tbody");
           core
           /* ɵɵtemplate */
-          .YNc(24, UpcomingRaceAnalysisComponent_div_0_mat_tab_27_ng_template_1_div_0_tr_24_Template, 17, 8, "tr", 9);
+          .YNc(24, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_8_ng_template_1_div_0_tr_24_Template, 17, 8, "tr", 9);
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+        }
+
+        if (rf & 2) {
+          var ctx_r33 = core
+          /* ɵɵnextContext */
+          .oxw(5);
+          core
+          /* ɵɵadvance */
+          .xp6(24);
+          core
+          /* ɵɵproperty */
+          .Q6J("ngForOf", ctx_r33.upcomingRaceAnalysis.fp2);
+        }
+      }
+
+      function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_8_ng_template_1_tr_19_Template(rf, ctx) {
+        if (rf & 1) {
+          core
+          /* ɵɵelementStart */
+          .TgZ(0, "tr");
+          core
+          /* ɵɵelementStart */
+          .TgZ(1, "th", 42);
+
+          core
+          /* ɵɵtext */
+          ._uU(2);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(3, "td");
+
+          core
+          /* ɵɵtext */
+          ._uU(4);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(5, "td");
+
+          core
+          /* ɵɵtext */
+          ._uU(6);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(7, "td");
+
+          core
+          /* ɵɵtext */
+          ._uU(8);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+        }
+
+        if (rf & 2) {
+          var lap_r40 = ctx.$implicit;
+          core
+          /* ɵɵadvance */
+          .xp6(2);
+          core
+          /* ɵɵtextInterpolate */
+          .Oqu(lap_r40.position);
+          core
+          /* ɵɵadvance */
+          .xp6(2);
+          core
+          /* ɵɵtextInterpolate */
+          .Oqu(lap_r40.driverName);
+          core
+          /* ɵɵadvance */
+          .xp6(2);
+          core
+          /* ɵɵtextInterpolate */
+          .Oqu(lap_r40.lapTime);
+          core
+          /* ɵɵadvance */
+          .xp6(2);
+          core
+          /* ɵɵtextInterpolate */
+          .Oqu(lap_r40.lapNumber);
+        }
+      }
+
+      function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_8_ng_template_1_Template(rf, ctx) {
+        if (rf & 1) {
+          var _r43 = core
+          /* ɵɵgetCurrentView */
+          .EpF();
+
+          core
+          /* ɵɵtemplate */
+          .YNc(0, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_8_ng_template_1_div_0_Template, 25, 1, "div", 0);
+          core
+          /* ɵɵelementStart */
+          .TgZ(1, "div", 45);
+          core
+          /* ɵɵelementStart */
+          .TgZ(2, "div", 46);
+          core
+          /* ɵɵelementStart */
+          .TgZ(3, "div", 38);
+          core
+          /* ɵɵelementStart */
+          .TgZ(4, "table", 47);
+          core
+          /* ɵɵlistener */
+          .NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_8_ng_template_1_Template_table_matSortChange_4_listener($event) {
+            core
+            /* ɵɵrestoreView */
+            .CHM(_r43);
+            var ctx_r42 = core
+            /* ɵɵnextContext */
+            .oxw(4);
+            return ctx_r42.sortResultData($event, 2);
+          });
+          core
+          /* ɵɵelementStart */
+          .TgZ(5, "thead");
+          core
+          /* ɵɵelementStart */
+          .TgZ(6, "tr");
+          core
+          /* ɵɵelementStart */
+          .TgZ(7, "th", 48);
+
+          core
+          /* ɵɵtext */
+          ._uU(8, "Recorded laps");
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(9, "tr");
+          core
+          /* ɵɵelementStart */
+          .TgZ(10, "th", 49);
+
+          core
+          /* ɵɵtext */
+          ._uU(11, "#");
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(12, "th", 50);
+
+          core
+          /* ɵɵtext */
+          ._uU(13, "Name");
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(14, "th", 49);
+
+          core
+          /* ɵɵtext */
+          ._uU(15, "Lap Time");
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(16, "th", 51);
+
+          core
+          /* ɵɵtext */
+          ._uU(17, "Lap Number");
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(18, "tbody");
+          core
+          /* ɵɵtemplate */
+          .YNc(19, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_8_ng_template_1_tr_19_Template, 9, 4, "tr", 9);
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -36981,265 +37124,41 @@
           /* ɵɵnextContext */
           .oxw(4);
           core
-          /* ɵɵadvance */
-          .xp6(24);
-          core
           /* ɵɵproperty */
-          .Q6J("ngForOf", ctx_r32.upcomingRaceAnalysis.fp2);
-        }
-      }
-
-      function UpcomingRaceAnalysisComponent_div_0_mat_tab_27_ng_template_1_tr_19_Template(rf, ctx) {
-        if (rf & 1) {
-          core
-          /* ɵɵelementStart */
-          .TgZ(0, "tr");
-          core
-          /* ɵɵelementStart */
-          .TgZ(1, "th", 42);
-
-          core
-          /* ɵɵtext */
-          ._uU(2);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(3, "td");
-
-          core
-          /* ɵɵtext */
-          ._uU(4);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(5, "td");
-
-          core
-          /* ɵɵtext */
-          ._uU(6);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(7, "td");
-
-          core
-          /* ɵɵtext */
-          ._uU(8);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-        }
-
-        if (rf & 2) {
-          var lap_r39 = ctx.$implicit;
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵtextInterpolate */
-          .Oqu(lap_r39.position);
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵtextInterpolate */
-          .Oqu(lap_r39.driverName);
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵtextInterpolate */
-          .Oqu(lap_r39.lapTime);
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵtextInterpolate */
-          .Oqu(lap_r39.lapNumber);
-        }
-      }
-
-      function UpcomingRaceAnalysisComponent_div_0_mat_tab_27_ng_template_1_Template(rf, ctx) {
-        if (rf & 1) {
-          var _r42 = core
-          /* ɵɵgetCurrentView */
-          .EpF();
-
-          core
-          /* ɵɵtemplate */
-          .YNc(0, UpcomingRaceAnalysisComponent_div_0_mat_tab_27_ng_template_1_div_0_Template, 25, 1, "div", 0);
-          core
-          /* ɵɵelementStart */
-          .TgZ(1, "div", 45);
-          core
-          /* ɵɵelementStart */
-          .TgZ(2, "div", 46);
-          core
-          /* ɵɵelementStart */
-          .TgZ(3, "div", 38);
-          core
-          /* ɵɵelementStart */
-          .TgZ(4, "table", 47);
-          core
-          /* ɵɵlistener */
-          .NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_mat_tab_27_ng_template_1_Template_table_matSortChange_4_listener($event) {
-            core
-            /* ɵɵrestoreView */
-            .CHM(_r42);
-            var ctx_r41 = core
-            /* ɵɵnextContext */
-            .oxw(3);
-            return ctx_r41.sortResultData($event, 2);
-          });
-          core
-          /* ɵɵelementStart */
-          .TgZ(5, "thead");
-          core
-          /* ɵɵelementStart */
-          .TgZ(6, "tr");
-          core
-          /* ɵɵelementStart */
-          .TgZ(7, "th", 48);
-
-          core
-          /* ɵɵtext */
-          ._uU(8, "Recorded laps");
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(9, "tr");
-          core
-          /* ɵɵelementStart */
-          .TgZ(10, "th", 49);
-
-          core
-          /* ɵɵtext */
-          ._uU(11, "#");
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(12, "th", 50);
-
-          core
-          /* ɵɵtext */
-          ._uU(13, "Name");
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(14, "th", 49);
-
-          core
-          /* ɵɵtext */
-          ._uU(15, "Lap Time");
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(16, "th", 51);
-
-          core
-          /* ɵɵtext */
-          ._uU(17, "Lap Number");
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(18, "tbody");
-          core
-          /* ɵɵtemplate */
-          .YNc(19, UpcomingRaceAnalysisComponent_div_0_mat_tab_27_ng_template_1_tr_19_Template, 9, 4, "tr", 9);
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-        }
-
-        if (rf & 2) {
-          var ctx_r31 = core
-          /* ɵɵnextContext */
-          .oxw(3);
-          core
-          /* ɵɵproperty */
-          .Q6J("ngIf", ctx_r31.upcomingRaceAnalysis.fp2 !== null);
+          .Q6J("ngIf", ctx_r32.upcomingRaceAnalysis.fp2 !== null);
           core
           /* ɵɵadvance */
           .xp6(19);
           core
           /* ɵɵproperty */
-          .Q6J("ngForOf", ctx_r31.upcomingRaceAnalysis.fp2Laps);
+          .Q6J("ngForOf", ctx_r32.upcomingRaceAnalysis.fp2Laps);
         }
       }
 
-      function UpcomingRaceAnalysisComponent_div_0_mat_tab_27_Template(rf, ctx) {
+      function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_8_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵelementStart */
           .TgZ(0, "mat-tab", 59);
           core
           /* ɵɵtemplate */
-          .YNc(1, UpcomingRaceAnalysisComponent_div_0_mat_tab_27_ng_template_1_Template, 20, 2, "ng-template", 15);
+          .YNc(1, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_8_ng_template_1_Template, 20, 2, "ng-template", 19);
           core
           /* ɵɵelementEnd */
           .qZA();
         }
 
         if (rf & 2) {
-          var ctx_r6 = core
+          var ctx_r8 = core
           /* ɵɵnextContext */
-          .oxw(2);
+          .oxw(3);
           core
           /* ɵɵproperty */
-          .Q6J("disabled", ctx_r6.upcomingRaceAnalysis.fp2 == null);
+          .Q6J("disabled", ctx_r8.upcomingRaceAnalysis.fp2 == null);
         }
       }
 
-      function UpcomingRaceAnalysisComponent_div_0_mat_tab_28_ng_template_1_div_0_tr_24_Template(rf, ctx) {
+      function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_9_ng_template_1_div_0_tr_24_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵelementStart */
@@ -37338,61 +37257,61 @@
         }
 
         if (rf & 2) {
-          var standing_r47 = ctx.$implicit;
+          var standing_r48 = ctx.$implicit;
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r47.position);
+          .Oqu(standing_r48.position);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r47.FullName);
+          .Oqu(standing_r48.FullName);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r47.Team);
+          .Oqu(standing_r48.Team);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r47.finalGap);
+          .Oqu(standing_r48.finalGap);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r47.fastestLap);
+          .Oqu(standing_r48.fastestLap);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r47.fastestLapSector1);
+          .Oqu(standing_r48.fastestLapSector1);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r47.fastestLapSector2);
+          .Oqu(standing_r48.fastestLapSector2);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r47.fastestLapSector3);
+          .Oqu(standing_r48.fastestLapSector3);
         }
       }
 
-      function UpcomingRaceAnalysisComponent_div_0_mat_tab_28_ng_template_1_div_0_Template(rf, ctx) {
+      function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_9_ng_template_1_div_0_Template(rf, ctx) {
         if (rf & 1) {
-          var _r50 = core
+          var _r51 = core
           /* ɵɵgetCurrentView */
           .EpF();
 
@@ -37404,14 +37323,14 @@
           .TgZ(1, "table", 47);
           core
           /* ɵɵlistener */
-          .NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_mat_tab_28_ng_template_1_div_0_Template_table_matSortChange_1_listener($event) {
+          .NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_9_ng_template_1_div_0_Template_table_matSortChange_1_listener($event) {
             core
             /* ɵɵrestoreView */
-            .CHM(_r50);
-            var ctx_r49 = core
+            .CHM(_r51);
+            var ctx_r50 = core
             /* ɵɵnextContext */
-            .oxw(4);
-            return ctx_r49.sortMainResultData($event, 3);
+            .oxw(5);
+            return ctx_r50.sortMainResultData($event, 3);
           });
           core
           /* ɵɵelementStart */
@@ -37535,7 +37454,231 @@
           .TgZ(23, "tbody");
           core
           /* ɵɵtemplate */
-          .YNc(24, UpcomingRaceAnalysisComponent_div_0_mat_tab_28_ng_template_1_div_0_tr_24_Template, 17, 8, "tr", 9);
+          .YNc(24, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_9_ng_template_1_div_0_tr_24_Template, 17, 8, "tr", 9);
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+        }
+
+        if (rf & 2) {
+          var ctx_r45 = core
+          /* ɵɵnextContext */
+          .oxw(5);
+          core
+          /* ɵɵadvance */
+          .xp6(24);
+          core
+          /* ɵɵproperty */
+          .Q6J("ngForOf", ctx_r45.upcomingRaceAnalysis.fp3);
+        }
+      }
+
+      function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_9_ng_template_1_tr_19_Template(rf, ctx) {
+        if (rf & 1) {
+          core
+          /* ɵɵelementStart */
+          .TgZ(0, "tr");
+          core
+          /* ɵɵelementStart */
+          .TgZ(1, "th", 42);
+
+          core
+          /* ɵɵtext */
+          ._uU(2);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(3, "td");
+
+          core
+          /* ɵɵtext */
+          ._uU(4);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(5, "td");
+
+          core
+          /* ɵɵtext */
+          ._uU(6);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(7, "td");
+
+          core
+          /* ɵɵtext */
+          ._uU(8);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+        }
+
+        if (rf & 2) {
+          var lap_r52 = ctx.$implicit;
+          core
+          /* ɵɵadvance */
+          .xp6(2);
+          core
+          /* ɵɵtextInterpolate */
+          .Oqu(lap_r52.position);
+          core
+          /* ɵɵadvance */
+          .xp6(2);
+          core
+          /* ɵɵtextInterpolate */
+          .Oqu(lap_r52.driverName);
+          core
+          /* ɵɵadvance */
+          .xp6(2);
+          core
+          /* ɵɵtextInterpolate */
+          .Oqu(lap_r52.lapTime);
+          core
+          /* ɵɵadvance */
+          .xp6(2);
+          core
+          /* ɵɵtextInterpolate */
+          .Oqu(lap_r52.lapNumber);
+        }
+      }
+
+      function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_9_ng_template_1_Template(rf, ctx) {
+        if (rf & 1) {
+          var _r55 = core
+          /* ɵɵgetCurrentView */
+          .EpF();
+
+          core
+          /* ɵɵtemplate */
+          .YNc(0, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_9_ng_template_1_div_0_Template, 25, 1, "div", 0);
+          core
+          /* ɵɵelementStart */
+          .TgZ(1, "div", 45);
+          core
+          /* ɵɵelementStart */
+          .TgZ(2, "div", 46);
+          core
+          /* ɵɵelementStart */
+          .TgZ(3, "div", 38);
+          core
+          /* ɵɵelementStart */
+          .TgZ(4, "table", 47);
+          core
+          /* ɵɵlistener */
+          .NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_9_ng_template_1_Template_table_matSortChange_4_listener($event) {
+            core
+            /* ɵɵrestoreView */
+            .CHM(_r55);
+            var ctx_r54 = core
+            /* ɵɵnextContext */
+            .oxw(4);
+            return ctx_r54.sortResultData($event, 3);
+          });
+          core
+          /* ɵɵelementStart */
+          .TgZ(5, "thead");
+          core
+          /* ɵɵelementStart */
+          .TgZ(6, "tr");
+          core
+          /* ɵɵelementStart */
+          .TgZ(7, "th", 48);
+
+          core
+          /* ɵɵtext */
+          ._uU(8, "Recorded laps");
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(9, "tr");
+          core
+          /* ɵɵelementStart */
+          .TgZ(10, "th", 49);
+
+          core
+          /* ɵɵtext */
+          ._uU(11, "#");
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(12, "th", 50);
+
+          core
+          /* ɵɵtext */
+          ._uU(13, "Name");
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(14, "th", 49);
+
+          core
+          /* ɵɵtext */
+          ._uU(15, "Lap Time");
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(16, "th", 51);
+
+          core
+          /* ɵɵtext */
+          ._uU(17, "Lap Number");
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(18, "tbody");
+          core
+          /* ɵɵtemplate */
+          .YNc(19, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_9_ng_template_1_tr_19_Template, 9, 4, "tr", 9);
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -37552,265 +37695,41 @@
           /* ɵɵnextContext */
           .oxw(4);
           core
-          /* ɵɵadvance */
-          .xp6(24);
-          core
           /* ɵɵproperty */
-          .Q6J("ngForOf", ctx_r44.upcomingRaceAnalysis.fp3);
-        }
-      }
-
-      function UpcomingRaceAnalysisComponent_div_0_mat_tab_28_ng_template_1_tr_19_Template(rf, ctx) {
-        if (rf & 1) {
-          core
-          /* ɵɵelementStart */
-          .TgZ(0, "tr");
-          core
-          /* ɵɵelementStart */
-          .TgZ(1, "th", 42);
-
-          core
-          /* ɵɵtext */
-          ._uU(2);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(3, "td");
-
-          core
-          /* ɵɵtext */
-          ._uU(4);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(5, "td");
-
-          core
-          /* ɵɵtext */
-          ._uU(6);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(7, "td");
-
-          core
-          /* ɵɵtext */
-          ._uU(8);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-        }
-
-        if (rf & 2) {
-          var lap_r51 = ctx.$implicit;
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵtextInterpolate */
-          .Oqu(lap_r51.position);
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵtextInterpolate */
-          .Oqu(lap_r51.driverName);
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵtextInterpolate */
-          .Oqu(lap_r51.lapTime);
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵtextInterpolate */
-          .Oqu(lap_r51.lapNumber);
-        }
-      }
-
-      function UpcomingRaceAnalysisComponent_div_0_mat_tab_28_ng_template_1_Template(rf, ctx) {
-        if (rf & 1) {
-          var _r54 = core
-          /* ɵɵgetCurrentView */
-          .EpF();
-
-          core
-          /* ɵɵtemplate */
-          .YNc(0, UpcomingRaceAnalysisComponent_div_0_mat_tab_28_ng_template_1_div_0_Template, 25, 1, "div", 0);
-          core
-          /* ɵɵelementStart */
-          .TgZ(1, "div", 45);
-          core
-          /* ɵɵelementStart */
-          .TgZ(2, "div", 46);
-          core
-          /* ɵɵelementStart */
-          .TgZ(3, "div", 38);
-          core
-          /* ɵɵelementStart */
-          .TgZ(4, "table", 47);
-          core
-          /* ɵɵlistener */
-          .NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_mat_tab_28_ng_template_1_Template_table_matSortChange_4_listener($event) {
-            core
-            /* ɵɵrestoreView */
-            .CHM(_r54);
-            var ctx_r53 = core
-            /* ɵɵnextContext */
-            .oxw(3);
-            return ctx_r53.sortResultData($event, 3);
-          });
-          core
-          /* ɵɵelementStart */
-          .TgZ(5, "thead");
-          core
-          /* ɵɵelementStart */
-          .TgZ(6, "tr");
-          core
-          /* ɵɵelementStart */
-          .TgZ(7, "th", 48);
-
-          core
-          /* ɵɵtext */
-          ._uU(8, "Recorded laps");
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(9, "tr");
-          core
-          /* ɵɵelementStart */
-          .TgZ(10, "th", 49);
-
-          core
-          /* ɵɵtext */
-          ._uU(11, "#");
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(12, "th", 50);
-
-          core
-          /* ɵɵtext */
-          ._uU(13, "Name");
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(14, "th", 49);
-
-          core
-          /* ɵɵtext */
-          ._uU(15, "Lap Time");
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(16, "th", 51);
-
-          core
-          /* ɵɵtext */
-          ._uU(17, "Lap Number");
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(18, "tbody");
-          core
-          /* ɵɵtemplate */
-          .YNc(19, UpcomingRaceAnalysisComponent_div_0_mat_tab_28_ng_template_1_tr_19_Template, 9, 4, "tr", 9);
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-        }
-
-        if (rf & 2) {
-          var ctx_r43 = core
-          /* ɵɵnextContext */
-          .oxw(3);
-          core
-          /* ɵɵproperty */
-          .Q6J("ngIf", ctx_r43.upcomingRaceAnalysis.fp3 !== null);
+          .Q6J("ngIf", ctx_r44.upcomingRaceAnalysis.fp3 !== null);
           core
           /* ɵɵadvance */
           .xp6(19);
           core
           /* ɵɵproperty */
-          .Q6J("ngForOf", ctx_r43.upcomingRaceAnalysis.fp3Laps);
+          .Q6J("ngForOf", ctx_r44.upcomingRaceAnalysis.fp3Laps);
         }
       }
 
-      function UpcomingRaceAnalysisComponent_div_0_mat_tab_28_Template(rf, ctx) {
+      function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_9_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵelementStart */
           .TgZ(0, "mat-tab", 60);
           core
           /* ɵɵtemplate */
-          .YNc(1, UpcomingRaceAnalysisComponent_div_0_mat_tab_28_ng_template_1_Template, 20, 2, "ng-template", 15);
+          .YNc(1, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_9_ng_template_1_Template, 20, 2, "ng-template", 19);
           core
           /* ɵɵelementEnd */
           .qZA();
         }
 
         if (rf & 2) {
-          var ctx_r7 = core
+          var ctx_r9 = core
           /* ɵɵnextContext */
-          .oxw(2);
+          .oxw(3);
           core
           /* ɵɵproperty */
-          .Q6J("disabled", ctx_r7.upcomingRaceAnalysis.fp3 == null);
+          .Q6J("disabled", ctx_r9.upcomingRaceAnalysis.fp3 == null);
         }
       }
 
-      function UpcomingRaceAnalysisComponent_div_0_ng_template_30_div_0_tr_24_Template(rf, ctx) {
+      function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_div_0_tr_24_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵelementStart */
@@ -37909,61 +37828,61 @@
         }
 
         if (rf & 2) {
-          var standing_r58 = ctx.$implicit;
+          var standing_r59 = ctx.$implicit;
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r58.position);
+          .Oqu(standing_r59.position);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r58.FullName);
+          .Oqu(standing_r59.FullName);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r58.Team);
+          .Oqu(standing_r59.Team);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r58.finalGap);
+          .Oqu(standing_r59.finalGap);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r58.fastestLap);
+          .Oqu(standing_r59.fastestLap);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r58.fastestLapSector1);
+          .Oqu(standing_r59.fastestLapSector1);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r58.fastestLapSector2);
+          .Oqu(standing_r59.fastestLapSector2);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r58.fastestLapSector3);
+          .Oqu(standing_r59.fastestLapSector3);
         }
       }
 
-      function UpcomingRaceAnalysisComponent_div_0_ng_template_30_div_0_Template(rf, ctx) {
+      function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_div_0_Template(rf, ctx) {
         if (rf & 1) {
-          var _r61 = core
+          var _r62 = core
           /* ɵɵgetCurrentView */
           .EpF();
 
@@ -37975,14 +37894,14 @@
           .TgZ(1, "table", 47);
           core
           /* ɵɵlistener */
-          .NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_ng_template_30_div_0_Template_table_matSortChange_1_listener($event) {
+          .NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_div_0_Template_table_matSortChange_1_listener($event) {
             core
             /* ɵɵrestoreView */
-            .CHM(_r61);
-            var ctx_r60 = core
+            .CHM(_r62);
+            var ctx_r61 = core
             /* ɵɵnextContext */
-            .oxw(3);
-            return ctx_r60.sortMainResultData($event, 4);
+            .oxw(4);
+            return ctx_r61.sortMainResultData($event, 4);
           });
           core
           /* ɵɵelementStart */
@@ -38106,7 +38025,7 @@
           .TgZ(23, "tbody");
           core
           /* ɵɵtemplate */
-          .YNc(24, UpcomingRaceAnalysisComponent_div_0_ng_template_30_div_0_tr_24_Template, 17, 8, "tr", 9);
+          .YNc(24, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_div_0_tr_24_Template, 17, 8, "tr", 9);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -38119,19 +38038,19 @@
         }
 
         if (rf & 2) {
-          var ctx_r55 = core
+          var ctx_r56 = core
           /* ɵɵnextContext */
-          .oxw(3);
+          .oxw(4);
           core
           /* ɵɵadvance */
           .xp6(24);
           core
           /* ɵɵproperty */
-          .Q6J("ngForOf", ctx_r55.upcomingRaceAnalysis.quali);
+          .Q6J("ngForOf", ctx_r56.upcomingRaceAnalysis.quali);
         }
       }
 
-      function UpcomingRaceAnalysisComponent_div_0_ng_template_30_tr_19_Template(rf, ctx) {
+      function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_tr_19_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵelementStart */
@@ -38186,43 +38105,43 @@
         }
 
         if (rf & 2) {
-          var lap_r62 = ctx.$implicit;
+          var lap_r63 = ctx.$implicit;
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(lap_r62.position);
+          .Oqu(lap_r63.position);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(lap_r62.driverName);
+          .Oqu(lap_r63.driverName);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(lap_r62.lapTime);
+          .Oqu(lap_r63.lapTime);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(lap_r62.lapNumber);
+          .Oqu(lap_r63.lapNumber);
         }
       }
 
-      function UpcomingRaceAnalysisComponent_div_0_ng_template_30_Template(rf, ctx) {
+      function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_Template(rf, ctx) {
         if (rf & 1) {
-          var _r65 = core
+          var _r66 = core
           /* ɵɵgetCurrentView */
           .EpF();
 
           core
           /* ɵɵtemplate */
-          .YNc(0, UpcomingRaceAnalysisComponent_div_0_ng_template_30_div_0_Template, 25, 1, "div", 0);
+          .YNc(0, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_div_0_Template, 25, 1, "div", 0);
           core
           /* ɵɵelementStart */
           .TgZ(1, "div", 45);
@@ -38237,14 +38156,14 @@
           .TgZ(4, "table", 47);
           core
           /* ɵɵlistener */
-          .NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_ng_template_30_Template_table_matSortChange_4_listener($event) {
+          .NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_Template_table_matSortChange_4_listener($event) {
             core
             /* ɵɵrestoreView */
-            .CHM(_r65);
-            var ctx_r64 = core
+            .CHM(_r66);
+            var ctx_r65 = core
             /* ɵɵnextContext */
-            .oxw(2);
-            return ctx_r64.sortResultData($event, 4);
+            .oxw(3);
+            return ctx_r65.sortResultData($event, 4);
           });
           core
           /* ɵɵelementStart */
@@ -38324,7 +38243,7 @@
           .TgZ(18, "tbody");
           core
           /* ɵɵtemplate */
-          .YNc(19, UpcomingRaceAnalysisComponent_div_0_ng_template_30_tr_19_Template, 9, 4, "tr", 9);
+          .YNc(19, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_tr_19_Template, 9, 4, "tr", 9);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -38343,22 +38262,22 @@
         }
 
         if (rf & 2) {
-          var ctx_r8 = core
+          var ctx_r10 = core
           /* ɵɵnextContext */
-          .oxw(2);
+          .oxw(3);
           core
           /* ɵɵproperty */
-          .Q6J("ngIf", ctx_r8.upcomingRaceAnalysis.quali !== null);
+          .Q6J("ngIf", ctx_r10.upcomingRaceAnalysis.quali !== null);
           core
           /* ɵɵadvance */
           .xp6(19);
           core
           /* ɵɵproperty */
-          .Q6J("ngForOf", ctx_r8.upcomingRaceAnalysis.qualiLaps);
+          .Q6J("ngForOf", ctx_r10.upcomingRaceAnalysis.qualiLaps);
         }
       }
 
-      function UpcomingRaceAnalysisComponent_div_0_mat_tab_31_ng_template_1_div_0_tr_24_Template(rf, ctx) {
+      function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_div_0_tr_24_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵelementStart */
@@ -38457,61 +38376,61 @@
         }
 
         if (rf & 2) {
-          var standing_r70 = ctx.$implicit;
+          var standing_r71 = ctx.$implicit;
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r70.position);
+          .Oqu(standing_r71.position);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r70.FullName);
+          .Oqu(standing_r71.FullName);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r70.Team);
+          .Oqu(standing_r71.Team);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r70.finalGap);
+          .Oqu(standing_r71.finalGap);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r70.fastestLap);
+          .Oqu(standing_r71.fastestLap);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r70.fastestLapSector1);
+          .Oqu(standing_r71.fastestLapSector1);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r70.fastestLapSector2);
+          .Oqu(standing_r71.fastestLapSector2);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r70.fastestLapSector3);
+          .Oqu(standing_r71.fastestLapSector3);
         }
       }
 
-      function UpcomingRaceAnalysisComponent_div_0_mat_tab_31_ng_template_1_div_0_Template(rf, ctx) {
+      function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_div_0_Template(rf, ctx) {
         if (rf & 1) {
-          var _r73 = core
+          var _r74 = core
           /* ɵɵgetCurrentView */
           .EpF();
 
@@ -38523,14 +38442,14 @@
           .TgZ(1, "table", 47);
           core
           /* ɵɵlistener */
-          .NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_mat_tab_31_ng_template_1_div_0_Template_table_matSortChange_1_listener($event) {
+          .NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_div_0_Template_table_matSortChange_1_listener($event) {
             core
             /* ɵɵrestoreView */
-            .CHM(_r73);
-            var ctx_r72 = core
+            .CHM(_r74);
+            var ctx_r73 = core
             /* ɵɵnextContext */
-            .oxw(4);
-            return ctx_r72.sortMainResultData($event, 2);
+            .oxw(5);
+            return ctx_r73.sortMainResultData($event, 2);
           });
           core
           /* ɵɵelementStart */
@@ -38654,7 +38573,231 @@
           .TgZ(23, "tbody");
           core
           /* ɵɵtemplate */
-          .YNc(24, UpcomingRaceAnalysisComponent_div_0_mat_tab_31_ng_template_1_div_0_tr_24_Template, 17, 8, "tr", 9);
+          .YNc(24, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_div_0_tr_24_Template, 17, 8, "tr", 9);
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+        }
+
+        if (rf & 2) {
+          var ctx_r68 = core
+          /* ɵɵnextContext */
+          .oxw(5);
+          core
+          /* ɵɵadvance */
+          .xp6(24);
+          core
+          /* ɵɵproperty */
+          .Q6J("ngForOf", ctx_r68.upcomingRaceAnalysis.fp2);
+        }
+      }
+
+      function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_tr_19_Template(rf, ctx) {
+        if (rf & 1) {
+          core
+          /* ɵɵelementStart */
+          .TgZ(0, "tr");
+          core
+          /* ɵɵelementStart */
+          .TgZ(1, "th", 42);
+
+          core
+          /* ɵɵtext */
+          ._uU(2);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(3, "td");
+
+          core
+          /* ɵɵtext */
+          ._uU(4);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(5, "td");
+
+          core
+          /* ɵɵtext */
+          ._uU(6);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(7, "td");
+
+          core
+          /* ɵɵtext */
+          ._uU(8);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+        }
+
+        if (rf & 2) {
+          var lap_r75 = ctx.$implicit;
+          core
+          /* ɵɵadvance */
+          .xp6(2);
+          core
+          /* ɵɵtextInterpolate */
+          .Oqu(lap_r75.position);
+          core
+          /* ɵɵadvance */
+          .xp6(2);
+          core
+          /* ɵɵtextInterpolate */
+          .Oqu(lap_r75.driverName);
+          core
+          /* ɵɵadvance */
+          .xp6(2);
+          core
+          /* ɵɵtextInterpolate */
+          .Oqu(lap_r75.lapTime);
+          core
+          /* ɵɵadvance */
+          .xp6(2);
+          core
+          /* ɵɵtextInterpolate */
+          .Oqu(lap_r75.lapNumber);
+        }
+      }
+
+      function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_Template(rf, ctx) {
+        if (rf & 1) {
+          var _r78 = core
+          /* ɵɵgetCurrentView */
+          .EpF();
+
+          core
+          /* ɵɵtemplate */
+          .YNc(0, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_div_0_Template, 25, 1, "div", 0);
+          core
+          /* ɵɵelementStart */
+          .TgZ(1, "div", 45);
+          core
+          /* ɵɵelementStart */
+          .TgZ(2, "div", 46);
+          core
+          /* ɵɵelementStart */
+          .TgZ(3, "div", 38);
+          core
+          /* ɵɵelementStart */
+          .TgZ(4, "table", 47);
+          core
+          /* ɵɵlistener */
+          .NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_Template_table_matSortChange_4_listener($event) {
+            core
+            /* ɵɵrestoreView */
+            .CHM(_r78);
+            var ctx_r77 = core
+            /* ɵɵnextContext */
+            .oxw(4);
+            return ctx_r77.sortResultData($event, 2);
+          });
+          core
+          /* ɵɵelementStart */
+          .TgZ(5, "thead");
+          core
+          /* ɵɵelementStart */
+          .TgZ(6, "tr");
+          core
+          /* ɵɵelementStart */
+          .TgZ(7, "th", 48);
+
+          core
+          /* ɵɵtext */
+          ._uU(8, "Recorded laps");
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(9, "tr");
+          core
+          /* ɵɵelementStart */
+          .TgZ(10, "th", 49);
+
+          core
+          /* ɵɵtext */
+          ._uU(11, "#");
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(12, "th", 50);
+
+          core
+          /* ɵɵtext */
+          ._uU(13, "Name");
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(14, "th", 49);
+
+          core
+          /* ɵɵtext */
+          ._uU(15, "Lap Time");
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(16, "th", 51);
+
+          core
+          /* ɵɵtext */
+          ._uU(17, "Lap Number");
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(18, "tbody");
+          core
+          /* ɵɵtemplate */
+          .YNc(19, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_tr_19_Template, 9, 4, "tr", 9);
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -38671,265 +38814,41 @@
           /* ɵɵnextContext */
           .oxw(4);
           core
-          /* ɵɵadvance */
-          .xp6(24);
-          core
           /* ɵɵproperty */
-          .Q6J("ngForOf", ctx_r67.upcomingRaceAnalysis.fp2);
-        }
-      }
-
-      function UpcomingRaceAnalysisComponent_div_0_mat_tab_31_ng_template_1_tr_19_Template(rf, ctx) {
-        if (rf & 1) {
-          core
-          /* ɵɵelementStart */
-          .TgZ(0, "tr");
-          core
-          /* ɵɵelementStart */
-          .TgZ(1, "th", 42);
-
-          core
-          /* ɵɵtext */
-          ._uU(2);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(3, "td");
-
-          core
-          /* ɵɵtext */
-          ._uU(4);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(5, "td");
-
-          core
-          /* ɵɵtext */
-          ._uU(6);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(7, "td");
-
-          core
-          /* ɵɵtext */
-          ._uU(8);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-        }
-
-        if (rf & 2) {
-          var lap_r74 = ctx.$implicit;
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵtextInterpolate */
-          .Oqu(lap_r74.position);
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵtextInterpolate */
-          .Oqu(lap_r74.driverName);
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵtextInterpolate */
-          .Oqu(lap_r74.lapTime);
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵtextInterpolate */
-          .Oqu(lap_r74.lapNumber);
-        }
-      }
-
-      function UpcomingRaceAnalysisComponent_div_0_mat_tab_31_ng_template_1_Template(rf, ctx) {
-        if (rf & 1) {
-          var _r77 = core
-          /* ɵɵgetCurrentView */
-          .EpF();
-
-          core
-          /* ɵɵtemplate */
-          .YNc(0, UpcomingRaceAnalysisComponent_div_0_mat_tab_31_ng_template_1_div_0_Template, 25, 1, "div", 0);
-          core
-          /* ɵɵelementStart */
-          .TgZ(1, "div", 45);
-          core
-          /* ɵɵelementStart */
-          .TgZ(2, "div", 46);
-          core
-          /* ɵɵelementStart */
-          .TgZ(3, "div", 38);
-          core
-          /* ɵɵelementStart */
-          .TgZ(4, "table", 47);
-          core
-          /* ɵɵlistener */
-          .NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_mat_tab_31_ng_template_1_Template_table_matSortChange_4_listener($event) {
-            core
-            /* ɵɵrestoreView */
-            .CHM(_r77);
-            var ctx_r76 = core
-            /* ɵɵnextContext */
-            .oxw(3);
-            return ctx_r76.sortResultData($event, 2);
-          });
-          core
-          /* ɵɵelementStart */
-          .TgZ(5, "thead");
-          core
-          /* ɵɵelementStart */
-          .TgZ(6, "tr");
-          core
-          /* ɵɵelementStart */
-          .TgZ(7, "th", 48);
-
-          core
-          /* ɵɵtext */
-          ._uU(8, "Recorded laps");
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(9, "tr");
-          core
-          /* ɵɵelementStart */
-          .TgZ(10, "th", 49);
-
-          core
-          /* ɵɵtext */
-          ._uU(11, "#");
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(12, "th", 50);
-
-          core
-          /* ɵɵtext */
-          ._uU(13, "Name");
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(14, "th", 49);
-
-          core
-          /* ɵɵtext */
-          ._uU(15, "Lap Time");
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(16, "th", 51);
-
-          core
-          /* ɵɵtext */
-          ._uU(17, "Lap Number");
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(18, "tbody");
-          core
-          /* ɵɵtemplate */
-          .YNc(19, UpcomingRaceAnalysisComponent_div_0_mat_tab_31_ng_template_1_tr_19_Template, 9, 4, "tr", 9);
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-        }
-
-        if (rf & 2) {
-          var ctx_r66 = core
-          /* ɵɵnextContext */
-          .oxw(3);
-          core
-          /* ɵɵproperty */
-          .Q6J("ngIf", ctx_r66.upcomingRaceAnalysis.fp2 !== null);
+          .Q6J("ngIf", ctx_r67.upcomingRaceAnalysis.fp2 !== null);
           core
           /* ɵɵadvance */
           .xp6(19);
           core
           /* ɵɵproperty */
-          .Q6J("ngForOf", ctx_r66.upcomingRaceAnalysis.fp2Laps);
+          .Q6J("ngForOf", ctx_r67.upcomingRaceAnalysis.fp2Laps);
         }
       }
 
-      function UpcomingRaceAnalysisComponent_div_0_mat_tab_31_Template(rf, ctx) {
+      function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵelementStart */
           .TgZ(0, "mat-tab", 59);
           core
           /* ɵɵtemplate */
-          .YNc(1, UpcomingRaceAnalysisComponent_div_0_mat_tab_31_ng_template_1_Template, 20, 2, "ng-template", 15);
+          .YNc(1, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_Template, 20, 2, "ng-template", 19);
           core
           /* ɵɵelementEnd */
           .qZA();
         }
 
         if (rf & 2) {
-          var ctx_r9 = core
+          var ctx_r11 = core
           /* ɵɵnextContext */
-          .oxw(2);
+          .oxw(3);
           core
           /* ɵɵproperty */
-          .Q6J("disabled", ctx_r9.upcomingRaceAnalysis.fp2 == null);
+          .Q6J("disabled", ctx_r11.upcomingRaceAnalysis.fp2 == null);
         }
       }
 
-      function UpcomingRaceAnalysisComponent_div_0_mat_tab_32_ng_template_1_div_0_tr_20_Template(rf, ctx) {
+      function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_13_ng_template_1_div_0_tr_20_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵelementStart */
@@ -39006,58 +38925,58 @@
         }
 
         if (rf & 2) {
-          var standing_r81 = ctx.$implicit;
-          var ctx_r80 = core
+          var standing_r82 = ctx.$implicit;
+          var ctx_r81 = core
           /* ɵɵnextContext */
-          .oxw(5);
+          .oxw(6);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r81.position);
+          .Oqu(standing_r82.position);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r81.FullName);
+          .Oqu(standing_r82.FullName);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r81.Team);
+          .Oqu(standing_r82.Team);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r81.finalGap);
+          .Oqu(standing_r82.finalGap);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r81.fastestLap);
+          .Oqu(standing_r82.fastestLap);
           core
           /* ɵɵadvance */
           .xp6(1);
           core
           /* ɵɵstyleProp */
-          .Udp("color", ctx_r80.getTyresClass(standing_r81.lapByLapData.tyres));
+          .Udp("color", ctx_r81.getTyresClass(standing_r82.lapByLapData.tyres));
           core
           /* ɵɵadvance */
           .xp6(1);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(ctx_r80.getTyresString(standing_r81.lapByLapData.tyres));
+          .Oqu(ctx_r81.getTyresString(standing_r82.lapByLapData.tyres));
         }
       }
 
-      function UpcomingRaceAnalysisComponent_div_0_mat_tab_32_ng_template_1_div_0_Template(rf, ctx) {
+      function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_13_ng_template_1_div_0_Template(rf, ctx) {
         if (rf & 1) {
-          var _r84 = core
+          var _r85 = core
           /* ɵɵgetCurrentView */
           .EpF();
 
@@ -39069,14 +38988,14 @@
           .TgZ(1, "table", 47);
           core
           /* ɵɵlistener */
-          .NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_mat_tab_32_ng_template_1_div_0_Template_table_matSortChange_1_listener($event) {
+          .NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_13_ng_template_1_div_0_Template_table_matSortChange_1_listener($event) {
             core
             /* ɵɵrestoreView */
-            .CHM(_r84);
-            var ctx_r83 = core
+            .CHM(_r85);
+            var ctx_r84 = core
             /* ɵɵnextContext */
-            .oxw(4);
-            return ctx_r83.sortMainResultData($event, 5);
+            .oxw(5);
+            return ctx_r84.sortMainResultData($event, 5);
           });
           core
           /* ɵɵelementStart */
@@ -39178,7 +39097,7 @@
           .TgZ(19, "tbody");
           core
           /* ɵɵtemplate */
-          .YNc(20, UpcomingRaceAnalysisComponent_div_0_mat_tab_32_ng_template_1_div_0_tr_20_Template, 13, 8, "tr", 9);
+          .YNc(20, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_13_ng_template_1_div_0_tr_20_Template, 13, 8, "tr", 9);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -39191,23 +39110,23 @@
         }
 
         if (rf & 2) {
-          var ctx_r79 = core
+          var ctx_r80 = core
           /* ɵɵnextContext */
-          .oxw(4);
+          .oxw(5);
           core
           /* ɵɵadvance */
           .xp6(20);
           core
           /* ɵɵproperty */
-          .Q6J("ngForOf", ctx_r79.upcomingRaceAnalysis.sprintQuali);
+          .Q6J("ngForOf", ctx_r80.upcomingRaceAnalysis.sprintQuali);
         }
       }
 
-      function UpcomingRaceAnalysisComponent_div_0_mat_tab_32_ng_template_1_Template(rf, ctx) {
+      function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_13_ng_template_1_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵtemplate */
-          .YNc(0, UpcomingRaceAnalysisComponent_div_0_mat_tab_32_ng_template_1_div_0_Template, 21, 1, "div", 0);
+          .YNc(0, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_13_ng_template_1_div_0_Template, 21, 1, "div", 0);
           core
           /* ɵɵelementStart */
           .TgZ(1, "div", 4);
@@ -39252,47 +39171,181 @@
         }
 
         if (rf & 2) {
-          var ctx_r78 = core
+          var ctx_r79 = core
           /* ɵɵnextContext */
-          .oxw(3);
+          .oxw(4);
           core
           /* ɵɵproperty */
-          .Q6J("ngIf", ctx_r78.upcomingRaceAnalysis.sprintQuali != null);
+          .Q6J("ngIf", ctx_r79.upcomingRaceAnalysis.sprintQuali != null);
           core
           /* ɵɵadvance */
           .xp6(5);
           core
           /* ɵɵproperty */
-          .Q6J("series", ctx_r78.lapPosChart.series)("chart", ctx_r78.defChart)("dataLabels", ctx_r78.defDataLabels)("grid", ctx_r78.defGrid)("stroke", ctx_r78.defStroke)("title", ctx_r78.lapPosChart.title)("yaxis", ctx_r78.reverseYAxis)("xaxis", ctx_r78.lapXaxis);
+          .Q6J("series", ctx_r79.lapPosChart.series)("chart", ctx_r79.defChart)("dataLabels", ctx_r79.defDataLabels)("grid", ctx_r79.defGrid)("stroke", ctx_r79.defStroke)("title", ctx_r79.lapPosChart.title)("yaxis", ctx_r79.reverseYAxis)("xaxis", ctx_r79.lapXaxis);
         }
       }
 
-      function UpcomingRaceAnalysisComponent_div_0_mat_tab_32_Template(rf, ctx) {
+      function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_13_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵelementStart */
           .TgZ(0, "mat-tab", 61);
           core
           /* ɵɵtemplate */
-          .YNc(1, UpcomingRaceAnalysisComponent_div_0_mat_tab_32_ng_template_1_Template, 9, 9, "ng-template", 15);
+          .YNc(1, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_13_ng_template_1_Template, 9, 9, "ng-template", 19);
           core
           /* ɵɵelementEnd */
           .qZA();
         }
 
         if (rf & 2) {
-          var ctx_r10 = core
+          var ctx_r12 = core
+          /* ɵɵnextContext */
+          .oxw(3);
+          core
+          /* ɵɵproperty */
+          .Q6J("disabled", ctx_r12.upcomingRaceAnalysis.sprintQuali == null);
+        }
+      }
+
+      function UpcomingRaceAnalysisComponent_div_0_div_20_Template(rf, ctx) {
+        if (rf & 1) {
+          var _r87 = core
+          /* ɵɵgetCurrentView */
+          .EpF();
+
+          core
+          /* ɵɵelementStart */
+          .TgZ(0, "div");
+          core
+          /* ɵɵelementStart */
+          .TgZ(1, "mat-tab-group", 17);
+          core
+          /* ɵɵlistener */
+          .NdJ("selectedIndexChange", function UpcomingRaceAnalysisComponent_div_0_div_20_Template_mat_tab_group_selectedIndexChange_1_listener($event) {
+            core
+            /* ɵɵrestoreView */
+            .CHM(_r87);
+            var ctx_r86 = core
+            /* ɵɵnextContext */
+            .oxw(2);
+            return ctx_r86.selectedTab = $event;
+          });
+          core
+          /* ɵɵelementStart */
+          .TgZ(2, "mat-tab", 18);
+          core
+          /* ɵɵtemplate */
+          .YNc(3, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_3_Template, 1, 1, "ng-template", 19);
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(4, "mat-tab", 20);
+          core
+          /* ɵɵtemplate */
+          .YNc(5, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_5_Template, 2, 2, "ng-template", 19);
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(6, "mat-tab", 21);
+          core
+          /* ɵɵtemplate */
+          .YNc(7, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_7_Template, 20, 2, "ng-template", 19);
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵtemplate */
+          .YNc(8, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_8_Template, 2, 1, "mat-tab", 22);
+          core
+          /* ɵɵtemplate */
+          .YNc(9, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_9_Template, 2, 1, "mat-tab", 23);
+          core
+          /* ɵɵelementStart */
+          .TgZ(10, "mat-tab", 24);
+          core
+          /* ɵɵtemplate */
+          .YNc(11, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_Template, 20, 2, "ng-template", 19);
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵtemplate */
+          .YNc(12, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_Template, 2, 1, "mat-tab", 22);
+          core
+          /* ɵɵtemplate */
+          .YNc(13, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_13_Template, 2, 1, "mat-tab", 25);
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+        }
+
+        if (rf & 2) {
+          var ctx_r3 = core
           /* ɵɵnextContext */
           .oxw(2);
           core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
           /* ɵɵproperty */
-          .Q6J("disabled", ctx_r10.upcomingRaceAnalysis.sprintQuali == null);
+          .Q6J("selectedIndex", ctx_r3.selectedTab);
+          core
+          /* ɵɵadvance */
+          .xp6(3);
+          core
+          /* ɵɵproperty */
+          .Q6J("disabled", ctx_r3.upcomingRaceAnalysis.basicRaces.length == 0);
+          core
+          /* ɵɵadvance */
+          .xp6(2);
+          core
+          /* ɵɵproperty */
+          .Q6J("disabled", ctx_r3.upcomingRaceAnalysis.fp1 == null);
+          core
+          /* ɵɵadvance */
+          .xp6(2);
+          core
+          /* ɵɵproperty */
+          .Q6J("ngIf", !ctx_r3.sprintMode);
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵproperty */
+          .Q6J("ngIf", !ctx_r3.sprintMode);
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵproperty */
+          .Q6J("disabled", ctx_r3.upcomingRaceAnalysis.quali == null);
+          core
+          /* ɵɵadvance */
+          .xp6(2);
+          core
+          /* ɵɵproperty */
+          .Q6J("ngIf", ctx_r3.sprintMode);
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵproperty */
+          .Q6J("ngIf", ctx_r3.sprintMode);
         }
       }
 
       function UpcomingRaceAnalysisComponent_div_0_Template(rf, ctx) {
         if (rf & 1) {
-          var _r86 = core
+          var _r89 = core
           /* ɵɵgetCurrentView */
           .EpF();
 
@@ -39310,11 +39363,11 @@
           .NdJ("openedChange", function UpcomingRaceAnalysisComponent_div_0_Template_mat_drawer_openedChange_2_listener($event) {
             core
             /* ɵɵrestoreView */
-            .CHM(_r86);
-            var ctx_r85 = core
+            .CHM(_r89);
+            var ctx_r88 = core
             /* ɵɵnextContext */
             .oxw();
-            return ctx_r85.utilityService.setSidebarStatus($event);
+            return ctx_r88.utilityService.setSidebarStatus($event);
           });
           core
           /* ɵɵelementStart */
@@ -39333,11 +39386,11 @@
           .NdJ("ngModelChange", function UpcomingRaceAnalysisComponent_div_0_Template_textarea_ngModelChange_7_listener($event) {
             core
             /* ɵɵrestoreView */
-            .CHM(_r86);
-            var ctx_r87 = core
+            .CHM(_r89);
+            var ctx_r90 = core
             /* ɵɵnextContext */
             .oxw();
-            return ctx_r87.utilityService.postText = $event;
+            return ctx_r90.utilityService.postText = $event;
           });
           core
           /* ɵɵelementEnd */
@@ -39353,11 +39406,11 @@
           .NdJ("click", function UpcomingRaceAnalysisComponent_div_0_Template_button_click_9_listener() {
             core
             /* ɵɵrestoreView */
-            .CHM(_r86);
-            var ctx_r88 = core
+            .CHM(_r89);
+            var ctx_r91 = core
             /* ɵɵnextContext */
             .oxw();
-            return ctx_r88.utilityService.postComment(11);
+            return ctx_r91.utilityService.postComment(11);
           });
 
           core
@@ -39375,11 +39428,11 @@
           .NdJ("click", function UpcomingRaceAnalysisComponent_div_0_Template_button_click_11_listener() {
             core
             /* ɵɵrestoreView */
-            .CHM(_r86);
-            var ctx_r89 = core
+            .CHM(_r89);
+            var ctx_r92 = core
             /* ɵɵnextContext */
             .oxw();
-            return ctx_r89.utilityService.reloadPosts(11);
+            return ctx_r92.utilityService.reloadPosts(11);
           });
 
           core
@@ -39415,7 +39468,7 @@
           .NdJ("click", function UpcomingRaceAnalysisComponent_div_0_Template_button_click_15_listener() {
             core
             /* ɵɵrestoreView */
-            .CHM(_r86);
+            .CHM(_r89);
 
             var _r1 = core
             /* ɵɵreference */
@@ -39448,7 +39501,7 @@
           .NdJ("click", function UpcomingRaceAnalysisComponent_div_0_Template_button_click_18_listener() {
             core
             /* ɵɵrestoreView */
-            .CHM(_r86);
+            .CHM(_r89);
 
             var _r1 = core
             /* ɵɵreference */
@@ -39468,70 +39521,8 @@
           /* ɵɵelementEnd */
           .qZA();
           core
-          /* ɵɵelementStart */
-          .TgZ(20, "mat-tab-group", 13);
-          core
-          /* ɵɵlistener */
-          .NdJ("selectedIndexChange", function UpcomingRaceAnalysisComponent_div_0_Template_mat_tab_group_selectedIndexChange_20_listener($event) {
-            core
-            /* ɵɵrestoreView */
-            .CHM(_r86);
-            var ctx_r92 = core
-            /* ɵɵnextContext */
-            .oxw();
-            return ctx_r92.selectedTab = $event;
-          });
-          core
-          /* ɵɵelementStart */
-          .TgZ(21, "mat-tab", 14);
-          core
           /* ɵɵtemplate */
-          .YNc(22, UpcomingRaceAnalysisComponent_div_0_ng_template_22_Template, 1, 1, "ng-template", 15);
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(23, "mat-tab", 16);
-          core
-          /* ɵɵtemplate */
-          .YNc(24, UpcomingRaceAnalysisComponent_div_0_ng_template_24_Template, 2, 2, "ng-template", 15);
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(25, "mat-tab", 17);
-          core
-          /* ɵɵtemplate */
-          .YNc(26, UpcomingRaceAnalysisComponent_div_0_ng_template_26_Template, 20, 2, "ng-template", 15);
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵtemplate */
-          .YNc(27, UpcomingRaceAnalysisComponent_div_0_mat_tab_27_Template, 2, 1, "mat-tab", 18);
-          core
-          /* ɵɵtemplate */
-          .YNc(28, UpcomingRaceAnalysisComponent_div_0_mat_tab_28_Template, 2, 1, "mat-tab", 19);
-          core
-          /* ɵɵelementStart */
-          .TgZ(29, "mat-tab", 20);
-          core
-          /* ɵɵtemplate */
-          .YNc(30, UpcomingRaceAnalysisComponent_div_0_ng_template_30_Template, 20, 2, "ng-template", 15);
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵtemplate */
-          .YNc(31, UpcomingRaceAnalysisComponent_div_0_mat_tab_31_Template, 2, 1, "mat-tab", 18);
-          core
-          /* ɵɵtemplate */
-          .YNc(32, UpcomingRaceAnalysisComponent_div_0_mat_tab_32_Template, 2, 1, "mat-tab", 21);
-          core
-          /* ɵɵelementEnd */
-          .qZA();
+          .YNc(20, UpcomingRaceAnalysisComponent_div_0_div_20_Template, 14, 8, "div", 0);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -39567,49 +39558,7 @@
           .xp6(7);
           core
           /* ɵɵproperty */
-          .Q6J("selectedIndex", ctx_r0.selectedTab);
-          core
-          /* ɵɵadvance */
-          .xp6(3);
-          core
-          /* ɵɵproperty */
-          .Q6J("disabled", ctx_r0.upcomingRaceAnalysis.basicRaces.length == 0);
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵproperty */
-          .Q6J("disabled", ctx_r0.upcomingRaceAnalysis.fp1 == null);
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵproperty */
-          .Q6J("ngIf", !ctx_r0.sprintMode);
-          core
-          /* ɵɵadvance */
-          .xp6(1);
-          core
-          /* ɵɵproperty */
-          .Q6J("ngIf", !ctx_r0.sprintMode);
-          core
-          /* ɵɵadvance */
-          .xp6(1);
-          core
-          /* ɵɵproperty */
-          .Q6J("disabled", ctx_r0.upcomingRaceAnalysis.quali == null);
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵproperty */
-          .Q6J("ngIf", ctx_r0.sprintMode);
-          core
-          /* ɵɵadvance */
-          .xp6(1);
-          core
-          /* ɵɵproperty */
-          .Q6J("ngIf", ctx_r0.sprintMode);
+          .Q6J("ngIf", ctx_r0.upcomingRaceAnalysis != undefined);
         }
       }
 
@@ -39677,11 +39626,15 @@
             next: function next(data) {
               _this79.upcomingRaceAnalysis = data;
 
-              _this79.utilityService.setTitle(_this79.upcomingRaceAnalysis.title);
+              if (_this79.upcomingRaceAnalysis != null) {
+                _this79.utilityService.setTitle(_this79.upcomingRaceAnalysis.title);
 
-              _this79.setCharts();
+                _this79.setCharts();
 
-              _this79.checkIfSprintMode();
+                _this79.checkIfSprintMode();
+              } else {
+                _this79.utilityService.setTitle("Upcoming race - unknown");
+              }
 
               return data;
             }
@@ -40025,12 +39978,12 @@
         },
         decls: 1,
         vars: 1,
-        consts: [[4, "ngIf"], ["autosize", ""], ["autosize", "", "mode", "side", "position", "end", 1, "example-sidenav", 3, "opened", "openedChange"], ["drawer", ""], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area", 3, "ngModel", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "post-comment-button", 3, "click"], [4, "ngFor", "ngForOf"], [1, "fixed-button"], ["type", "fixed-plugin", "mat-button", "", 3, "click"], [1, "fa", "fa-commenting-o", "fa-2x"], [3, "selectedIndex", "selectedIndexChange"], ["label", "Circuit"], ["matTabContent", ""], ["label", "Circuit winners", 3, "disabled"], ["label", "Practice 1", 3, "disabled"], ["label", "Practice 2", 3, "disabled", 4, "ngIf"], ["label", "Practice 3", 3, "disabled", 4, "ngIf"], ["label", "Qualifying", 3, "disabled"], ["label", "Sprint Qualifying", 3, "disabled", 4, "ngIf"], [1, "basic-comment"], [1, "one"], [1, "two"], [1, "basic-comment-body"], ["class", "div-padded-always-left-right-1 row", 4, "ngIf"], [1, "div-padded-always-left-right-1", "row"], [1, "card-body", "text-center"], [1, "image"], ["target", "_blank", 3, "href"], [3, "src"], ["class", "div-padded-1rem row", 4, "ngIf"], ["class", "div-padded-1rem div-padded-left-2 row", 4, "ngIf"], [1, "div-padded-1rem", "row"], ["class", "col-lg-6 col-12", 4, "ngFor", "ngForOf"], [1, "col-lg-6", "col-12"], [1, "card"], [1, "card-body-padded"], [1, "table", "table-striped"], ["colspan", "2", "scope", "col"], [2, "width", "35px"], ["scope", "row"], [1, "div-padded-1rem", "div-padded-left-2", "row"], [3, "href"], [1, "div-padded-1rem", "div-padded-left-2", "div-padded-right-2", "row"], [1, "card", "col-lg-12", "col-12"], ["matSort", "", 1, "table", "table-striped", 3, "matSortChange"], ["colspan", "4", 1, "text-center"], ["mat-sort-header", "position", "scope", "col"], ["mat-sort-header", "name", "scope", "col"], ["mat-sort-header", "lapNumber", "scope", "col"], ["colspan", "8", 1, "text-center"], ["scope", "col"], ["scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], ["mat-sort-header", "sector1", "scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], ["mat-sort-header", "sector2", "scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], ["mat-sort-header", "sector3", "scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], [1, "d-sm-none", "d-none", "d-lg-table-cell"], ["label", "Practice 2", 3, "disabled"], ["label", "Practice 3", 3, "disabled"], ["label", "Sprint Qualifying", 3, "disabled"], [3, "series", "chart", "dataLabels", "grid", "stroke", "title", "yaxis", "xaxis"], ["mat-sort-header", "lapTime", "scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], ["scope", "col", 1, "text-center"], [1, "font-weight-bold", "text-center"]],
+        consts: [[4, "ngIf"], ["autosize", ""], ["autosize", "", "mode", "side", "position", "end", 1, "example-sidenav", 3, "opened", "openedChange"], ["drawer", ""], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area", 3, "ngModel", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "post-comment-button", 3, "click"], [4, "ngFor", "ngForOf"], [1, "fixed-button"], ["type", "fixed-plugin", "mat-button", "", 3, "click"], [1, "fa", "fa-commenting-o", "fa-2x"], [1, "basic-comment"], [1, "one"], [1, "two"], [1, "basic-comment-body"], [3, "selectedIndex", "selectedIndexChange"], ["label", "Circuit"], ["matTabContent", ""], ["label", "Circuit winners", 3, "disabled"], ["label", "Practice 1", 3, "disabled"], ["label", "Practice 2", 3, "disabled", 4, "ngIf"], ["label", "Practice 3", 3, "disabled", 4, "ngIf"], ["label", "Qualifying", 3, "disabled"], ["label", "Sprint Qualifying", 3, "disabled", 4, "ngIf"], ["class", "div-padded-always-left-right-1 row", 4, "ngIf"], [1, "div-padded-always-left-right-1", "row"], [1, "card-body", "text-center"], [1, "image"], ["target", "_blank", 3, "href"], [3, "src"], ["class", "div-padded-1rem row", 4, "ngIf"], ["class", "div-padded-1rem div-padded-left-2 row", 4, "ngIf"], [1, "div-padded-1rem", "row"], ["class", "col-lg-6 col-12", 4, "ngFor", "ngForOf"], [1, "col-lg-6", "col-12"], [1, "card"], [1, "card-body-padded"], [1, "table", "table-striped"], ["colspan", "2", "scope", "col"], [2, "width", "35px"], ["scope", "row"], [1, "div-padded-1rem", "div-padded-left-2", "row"], [3, "href"], [1, "div-padded-1rem", "div-padded-left-2", "div-padded-right-2", "row"], [1, "card", "col-lg-12", "col-12"], ["matSort", "", 1, "table", "table-striped", 3, "matSortChange"], ["colspan", "4", 1, "text-center"], ["mat-sort-header", "position", "scope", "col"], ["mat-sort-header", "name", "scope", "col"], ["mat-sort-header", "lapNumber", "scope", "col"], ["colspan", "8", 1, "text-center"], ["scope", "col"], ["scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], ["mat-sort-header", "sector1", "scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], ["mat-sort-header", "sector2", "scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], ["mat-sort-header", "sector3", "scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], [1, "d-sm-none", "d-none", "d-lg-table-cell"], ["label", "Practice 2", 3, "disabled"], ["label", "Practice 3", 3, "disabled"], ["label", "Sprint Qualifying", 3, "disabled"], [3, "series", "chart", "dataLabels", "grid", "stroke", "title", "yaxis", "xaxis"], ["mat-sort-header", "lapTime", "scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], ["scope", "col", 1, "text-center"], [1, "font-weight-bold", "text-center"]],
         template: function UpcomingRaceAnalysisComponent_Template(rf, ctx) {
           if (rf & 1) {
             core
             /* ɵɵtemplate */
-            .YNc(0, UpcomingRaceAnalysisComponent_div_0_Template, 33, 11, "div", 0);
+            .YNc(0, UpcomingRaceAnalysisComponent_div_0_Template, 21, 4, "div", 0);
           }
 
           if (rf & 2) {

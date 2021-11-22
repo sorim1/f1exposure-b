@@ -162,13 +162,16 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
 
     @Override
     public StrawpollModel fetchStrawpollResults() {
-        log.info("fetchStrawpollResults: " + strawpollUrl + " - " + currentExposureRound);
+        log.info("fetchStrawpollResults1: " + strawpollUrl + " - " + currentExposureRound);
+        log.info("fetchStrawpollResults2: " + strawpollUrlBase + apiBase + strawpollId + " - " + currentExposureRound);
         try {
             StrawpollModel strawPoll = restTemplate
                     .getForObject(strawpollUrlBase + apiBase + strawpollId, StrawpollModel.class);
             return strawPoll;
         } catch (Exception e) {
-            log.error("fetchStrawpollResults", e);
+            log.error("fetchStrawpollResults error", e);
+            strawpollId = null;
+            strawpollUrl =null;
             return null;
         }
     }

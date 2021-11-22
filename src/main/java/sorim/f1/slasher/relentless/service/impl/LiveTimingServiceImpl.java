@@ -16,6 +16,7 @@ import sorim.f1.slasher.relentless.handling.Logger;
 import sorim.f1.slasher.relentless.model.enums.RoundEnum;
 import sorim.f1.slasher.relentless.model.ergast.ErgastResponse;
 import sorim.f1.slasher.relentless.model.livetiming.*;
+import sorim.f1.slasher.relentless.repository.ArtImageRepository;
 import sorim.f1.slasher.relentless.scheduled.Scheduler;
 import sorim.f1.slasher.relentless.service.AdminService;
 import sorim.f1.slasher.relentless.service.ClientService;
@@ -42,6 +43,7 @@ public class LiveTimingServiceImpl implements LiveTimingService {
     private final AdminService adminService;
     private final ClientService clientService;
     private final MainProperties properties;
+    private final ArtImageRepository artImageRepository;
     RestTemplate restTemplate = new RestTemplate();
 
     private static final String liveTimingUrl = "https://livetiming.formula1.com/static/{year}/{grandPrix}/{race}/SPFeed.json";
@@ -246,6 +248,10 @@ public class LiveTimingServiceImpl implements LiveTimingService {
     @Override
     public Boolean resetLatestRaceAnalysis() {
         RaceData raceData = ergastService.getLatestAnalyzedRace();
+        ergastService.getLatestAnalyzedRace().getRaceAnalysis();
+        if(raceData.getRaceAnalysis().getArt()!=null){
+         artImageRepository.deleteByCode(raceData.getRaceAnalysis().getArt());
+        }
         raceData.setRaceAnalysis(null);
         raceData.setLiveTimingRace(null);
         raceData.setTimingAppData(null);
@@ -272,6 +278,10 @@ public class LiveTimingServiceImpl implements LiveTimingService {
 
     @Override
     public UpcomingRaceAnalysis getUpcomingRaceAnalysis() {
+        RaceData raceData = ergastService.getUpcomingRace(properties.getCurrentYear());
+        if(raceData==null){
+            return null;
+        }
         return ergastService.getUpcomingRace(properties.getCurrentYear()).getUpcomingRaceAnalysis();
     }
 

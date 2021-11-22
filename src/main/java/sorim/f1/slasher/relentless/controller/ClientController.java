@@ -28,12 +28,6 @@ public class ClientController {
         return service.getCountdownData(Integer.valueOf(mode));
     }
 
-    @GetMapping("/countdownOld")
-    CalendarData getCountdownDataPrevious(@RequestHeader String client, @RequestParam String mode) throws Exception {
-        securityService.validateHeader(client);
-        return service.getCountdownDataPrevious(Integer.valueOf(mode));
-    }
-
     @GetMapping("/getExposureDriverList")
     ExposureResponse getExposureDriverList(@RequestHeader String client) throws Exception {
         securityService.validateHeader(client);

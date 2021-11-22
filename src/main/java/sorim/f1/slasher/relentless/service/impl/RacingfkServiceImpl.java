@@ -32,8 +32,8 @@ public class RacingfkServiceImpl implements RacingfkService {
 
     private final MainProperties properties;
     private final ReplayRepository replayRepository;
-    private static String replaysUrl = "https://f1hd.net/category/f1/page/";
-
+    private static String replaysUrlOld = "https://f1hd.net/category/f1/page/";
+    private static String replaysUrl = "https://f1hd.net/";
     RestTemplate restTemplate = new RestTemplate();
     HttpHeaders headers = new HttpHeaders();
     TypeReference<HashMap<String, Object>> typeRef = new TypeReference<>() {
@@ -65,8 +65,8 @@ public class RacingfkServiceImpl implements RacingfkService {
         }
         log.info("latestReplayTitle");
         log.info(latestReplayTitle);
-        do {
-            String rawHtml = getHtmlResponse(page);
+       // do {
+            String rawHtml = getHtmlResponse();
             Document doc = Jsoup.parse(rawHtml);
 
             Elements h2Elements = doc.getElementsByTag("h2");
@@ -88,11 +88,11 @@ public class RacingfkServiceImpl implements RacingfkService {
                     list.add(entry);
                 }
             }
-            page++;
-            if (page > 10) {
-                iterate = false;
-            }
-        } while (iterate);
+//            page++;
+//            if (page > 10) {
+//                iterate = false;
+//            }
+     //   } while (iterate);
         //  Collections.reverse(list);
 
         for (int i = list.size() - 1; i >= 0; i--) {
@@ -107,7 +107,15 @@ public class RacingfkServiceImpl implements RacingfkService {
         return replayRepository.findAllByOrderByIdDesc(paging);
     }
 
-    private String getHtmlResponse(Integer page) {
+    private String getHtmlResponse() {
+        HttpEntity entity = new HttpEntity(headers);
+        ResponseEntity<String> response = restTemplate.exchange(
+                replaysUrl, HttpMethod.GET, entity, String.class);
+        String rawHtml = response.getBody();
+        return rawHtml;
+    }
+
+    private String getHtmlResponseOld(Integer page) {
         HttpEntity entity = new HttpEntity(headers);
         ResponseEntity<String> response = restTemplate.exchange(
                 replaysUrl + page, HttpMethod.GET, entity, String.class);

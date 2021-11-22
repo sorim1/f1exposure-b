@@ -110,6 +110,26 @@ public class Scheduler {
                     },
                     delay
             );
+            new java.util.Timer().schedule(
+                    new java.util.TimerTask() {
+                        @SneakyThrows
+                        @Override
+                        public void run() {
+                            sundayAnalysisJob();
+                        }
+                    },
+                    delay+3600000
+            );
+            new java.util.Timer().schedule(
+                    new java.util.TimerTask() {
+                        @SneakyThrows
+                        @Override
+                        public void run() {
+                            sundayAnalysisJob();
+                        }
+                    },
+                    delay+7200000
+            );
         }
     }
 
@@ -150,7 +170,16 @@ public class Scheduler {
                     },
                     delayInMiliseconds
             );
-            //also do it hour later
+            new java.util.Timer().schedule(
+                    new java.util.TimerTask() {
+                        @SneakyThrows
+                        @Override
+                        public void run() {
+                            liveTimingService.analyzeUpcomingRace();
+                        }
+                    },
+                    delayInMiliseconds+1500000
+            );
             new java.util.Timer().schedule(
                     new java.util.TimerTask() {
                         @SneakyThrows
