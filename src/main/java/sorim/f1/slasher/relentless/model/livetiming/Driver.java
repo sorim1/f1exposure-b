@@ -6,6 +6,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -53,6 +55,6 @@ public class Driver {
     private Integer points;
     private BigDecimal standingsNewAveragePoints;
     private BigDecimal standingsAverageDifference;
-
+    private List<Integer> pitstops = new ArrayList<>();
     private LapByLapData lapByLapData = new LapByLapData();
 }

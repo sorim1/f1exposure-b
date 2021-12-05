@@ -49,5 +49,7 @@ public interface ErgastService {
 
     ErgastResponse getRaceLaps(Integer season, Integer round);
 
+    ErgastResponse getRacePitStops(Integer season, Integer round);
+
     void deleteRaces(String season);
 }

@@ -49,7 +49,7 @@ public class AnalysisController {
     }
 
     @GetMapping("/analyzeLatestRace")
-    public Boolean analyzeLatestRace(@RequestHeader String client) throws Exception {
+    public Integer analyzeLatestRace(@RequestHeader String client) throws Exception {
         securityService.validateAdminHeader(client);
         return service.analyzeLatestRace();
     }

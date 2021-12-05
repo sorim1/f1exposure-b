@@ -43,18 +43,18 @@ public class ArtServiceImpl implements ArtService {
         int diameter = 1;
         RaceAnalysis analysis = ergastService.getLatestAnalyzedRace().getRaceAnalysis();
 
-        for (int i = 3000; i < 11000; i = i + 1000) {
-            BufferedImage bi = generateBufferedImage(analysis, drag, drag, i, diameter, 2);
-            BufferedImage bi2 = resize(bi, 1000, 1000);
-            byte[] byteArray = toByteArray(bi2);
-            FileUtils.writeByteArrayToFile(new File("/home/sorim/Pictures/f1exposure-art/m2-" + i + ".png"), byteArray);
-        }
-
         for (int i = 500; i < 2100; i = i + 200) {
             BufferedImage bi = generateBufferedImage(analysis, drag, drag, i, diameter, 1);
             BufferedImage bi2 = resize(bi, 1000, 1000);
             byte[] byteArray = toByteArray(bi2);
             FileUtils.writeByteArrayToFile(new File("/home/sorim/Pictures/f1exposure-art/m1-" + i + ".png"), byteArray);
+        }
+
+        for (int i = 3000; i < 9000; i = i + 1000) {
+            BufferedImage bi = generateBufferedImage(analysis, drag, drag, i, diameter, 2);
+            BufferedImage bi2 = resize(bi, 1000, 1000);
+            byte[] byteArray = toByteArray(bi2);
+            FileUtils.writeByteArrayToFile(new File("/home/sorim/Pictures/f1exposure-art/m2-" + i + ".png"), byteArray);
         }
         return true;
     }
@@ -64,13 +64,13 @@ public class ArtServiceImpl implements ArtService {
 
         int drag = 2;
         int diameter = 1;
-        int iterations = 7000;
+        int iterations = 1700;
         RaceData raceData = ergastService.getLatestAnalyzedRace();
         RaceAnalysis analysis = raceData.getRaceAnalysis();
         if (analysis.getArt() != null) {
             return false;
         }
-        BufferedImage bi = generateBufferedImage(analysis, drag, drag, iterations, diameter, 2);
+        BufferedImage bi = generateBufferedImage(analysis, drag, drag, iterations, diameter, 1);
         BufferedImage bi2 = resize(bi, 1000, 1000);
         byte[] image = toByteArray(bi2);
         String code = UUID.randomUUID().toString();

@@ -158,6 +158,12 @@ public class ErgastServiceImpl implements ErgastService {
     }
 
     @Override
+    public ErgastResponse getRacePitStops(Integer season, Integer round) {
+        return restTemplate
+                .getForObject(ERGAST_URL + season + "/" + round + "/pitstops.json", ErgastResponse.class);
+    }
+
+    @Override
     public void deleteRaces(String season) {
         ergastRaceRepository.deleteAllBySeason(season);
     }

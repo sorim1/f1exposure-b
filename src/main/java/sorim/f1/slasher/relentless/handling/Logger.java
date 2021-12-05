@@ -41,13 +41,8 @@ public class Logger {
     }
 
     public static void log(String code, String message) {
-        log.info(message);
-        repository.save(Log.builder().code(code).message(message).created(new Date()).build());
-    }
-
-    public static void logProblem(String message) {
-        log.error(message);
-        repository.save(Log.builder().code("ERROR").message(message).created(new Date()).build());
+        log.info(code + " - " + message);
+       // repository.save(Log.builder().code(code).message(message).created(new Date()).build());
     }
 
     public static void logAdmin(String message) {
@@ -62,8 +57,8 @@ public class Logger {
 
     public static void log(String message) {
         log.info(message);
-        repository.save(Log.builder().code(INFO).message(message).created(new Date())
-                .build());
+//        repository.save(Log.builder().code(INFO).message(message).created(new Date())
+//                .build());
     }
 
     public static List<Log> getLogs(Integer mode, String filter) {

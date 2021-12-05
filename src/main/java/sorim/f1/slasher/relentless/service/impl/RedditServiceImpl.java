@@ -234,8 +234,6 @@ public class RedditServiceImpl implements RedditService {
 
     private String relativeToAbsoluteUrl(String domainUrl, String href) {
         if (href.startsWith("//")) {
-            log.info("starts with //: " + href);
-
             return "https:" + href;
         }
         if (href.contains("googleapis.com")) {

@@ -227,7 +227,7 @@ public class LiveTimingServiceImpl implements LiveTimingService {
     }
 
     @Override
-    public Boolean analyzeLatestRace() {
+    public Integer analyzeLatestRace() {
         RaceData raceData = ergastService.getLatestNonAnalyzedRace(properties.getCurrentYear());
         String liveTimingResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.RACE, 1);
         //TODO timingAppData zasad ne koristim u RaceAnalysis
@@ -239,9 +239,9 @@ public class LiveTimingServiceImpl implements LiveTimingService {
             fetchNewRaceAnalysis(raceData.getCircuit().getCircuitId());
             analyzeUpcomingRace();
             Scheduler.analysisDone = true;
-            return true;
+            return adminService.getNextRefreshTick(-6000);
         } else {
-            return false;
+            return adminService.getNextRefreshTick(-6000);
         }
     }
 
@@ -249,12 +249,17 @@ public class LiveTimingServiceImpl implements LiveTimingService {
     public Boolean resetLatestRaceAnalysis() {
         RaceData raceData = ergastService.getLatestAnalyzedRace();
         ergastService.getLatestAnalyzedRace().getRaceAnalysis();
-        if(raceData.getRaceAnalysis().getArt()!=null){
-         artImageRepository.deleteByCode(raceData.getRaceAnalysis().getArt());
-        }
+//        if(raceData.getRaceAnalysis().getArt()!=null){
+//         artImageRepository.deleteByCode(raceData.getRaceAnalysis().getArt());
+//        }
+        String art = raceData.getRaceAnalysis().getArt();
         raceData.setRaceAnalysis(null);
         raceData.setLiveTimingRace(null);
         raceData.setTimingAppData(null);
+        ergastService.saveRace(raceData);
+        analyzeLatestRace();
+        raceData = ergastService.getLatestAnalyzedRace();
+        raceData.getRaceAnalysis().setArt(art);
         ergastService.saveRace(raceData);
         return true;
     }
@@ -451,7 +456,7 @@ public class LiveTimingServiceImpl implements LiveTimingService {
         }
 
         ergastService.saveRace(raceData);
-        return adminService.getNextRefreshTick(-4700);
+        return adminService.getNextRefreshTick(-6000);
     }
 
     private List<LapTimeData> createLapTimeDataList(String timingAppData, Map<String, String> driverMap) {
@@ -569,7 +574,7 @@ public class LiveTimingServiceImpl implements LiveTimingService {
                     updateStandingsAndEnrichTreeMapData(driversMap, race.getRound());
 
                     Map<String, String> ergastCodes = ergastService.connectDriverCodesWithErgastCodes();
-                    Boolean bool = enrichDriversWithErgastLapTimes(driversMap, ergastCodes, race.getSeason(), race.getRound());
+                    Boolean bool = enrichDriversWithErgast(driversMap, ergastCodes, race.getSeason(), race.getRound());
                     ergastDataAvailable.set(bool);
                     onlyFirstOne.set(false);
                     drivers.set(new ArrayList<>(driversMap.values()));
@@ -652,7 +657,7 @@ public class LiveTimingServiceImpl implements LiveTimingService {
         return drivers;
     }
 
-    private Boolean enrichDriversWithErgastLapTimes(Map<String, Driver> driversMap, Map<String, String> ergastCodes, String season, Integer round) throws JsonProcessingException {
+    private Boolean enrichDriversWithErgast(Map<String, Driver> driversMap, Map<String, String> ergastCodes, String season, Integer round) throws JsonProcessingException {
         ErgastResponse response = ergastService.getRaceLaps(Integer.valueOf(season), round);
         if (response.getMrData().getRaceTable().getRaces().size() > 0) {
             response.getMrData().getRaceTable().getRaces().get(0).getLaps().forEach(lap -> {
@@ -664,6 +669,17 @@ public class LiveTimingServiceImpl implements LiveTimingService {
                     }
                 });
             });
+            //pitstopi
+            ErgastResponse pitstopResponse = ergastService.getRacePitStops(Integer.valueOf(season), round);
+            if (pitstopResponse.getMrData().getRaceTable().getRaces().size() > 0) {
+                pitstopResponse.getMrData().getRaceTable().getRaces().get(0).getPitStops().forEach(pitstop -> {
+                        if(ergastCodes.containsKey(pitstop.getDriverId())) {
+                            driversMap.get(ergastCodes.get(pitstop.getDriverId())).getPitstops().add(pitstop.getLap());
+                        } else {
+                            log.error("KEY NOT FOUND: {}", pitstop.getDriverId());
+                        }
+                    });
+            }
             return true;
         } else {
             return false;

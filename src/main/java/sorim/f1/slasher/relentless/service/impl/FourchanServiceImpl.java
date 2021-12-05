@@ -54,11 +54,7 @@ public class FourchanServiceImpl implements FourchanService {
         List<LinkedHashMap<String, Object>> response = restTemplate
                 .getForObject(catalogUrl, ArrayList.class);
 
-            log.info("---");
             List<LinkedHashMap<String, Object>> listOfPosts = (List<LinkedHashMap<String, Object>>) response.get(0).get("threads");
-            log.info(String.valueOf(listOfPosts.get(0).get("no")));
-            log.info(String.valueOf(listOfPosts.get(0).get("sub")));
-
             listOfPosts.stream().filter(post -> post.containsKey("sub") && post.get("sub").toString().toUpperCase().contains("/F1/"))
                     .forEach(f1Thread -> {
                         f1ThreadNumbers.add((Integer) f1Thread.get("no"));
@@ -107,7 +103,9 @@ public class FourchanServiceImpl implements FourchanService {
                         log.info("FOUND STRAWPOLL POST");
                         log.info(strawPollPost.getCom());
                         Integer index = strawPollPost.getCom().indexOf("STRAWPOLL.COM/") + 14;
-                        strawpollId.set(strawPollPost.getCom().substring(index, index + 9));
+                        String strawpollString = strawPollPost.getCom().substring(index, index + 9);
+                        log.info("strawpollString: {}", strawpollString);
+                        strawpollId.set(strawpollString);
                     }
                 });
         return strawpollId.get();

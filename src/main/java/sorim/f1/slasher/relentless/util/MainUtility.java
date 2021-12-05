@@ -206,7 +206,6 @@ public class MainUtility {
             domainUrl = domainUrl.substring(0, domainUrl.indexOf("/"));
         }
         domainUrl = prefix + domainUrl;
-        log.info("domainUrl: "+ domainUrl);
         return domainUrl;
     }
 

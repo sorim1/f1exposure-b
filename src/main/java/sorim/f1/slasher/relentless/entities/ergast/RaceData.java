@@ -66,4 +66,8 @@ public class RaceData {
     private List<ErgastStanding> results;
 
     private String imageUrl;
+
+    @Transient
+    @JsonProperty("PitStops")
+    private List<Pitstop> pitStops;
 }
