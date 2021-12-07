@@ -60,6 +60,12 @@ public class AnalysisController {
         return service.resetLatestRaceAnalysis();
     }
 
+    @GetMapping("/deleteLatestRaceAnalysis")
+    public Boolean deleteLatestRaceAnalysis(@RequestHeader String client) throws Exception {
+        securityService.validateAdminHeader(client);
+        return service.deleteLatestRaceAnalysis();
+    }
+
     @GetMapping("/validateLatestRaceAnalysis")
     public String validateLatestRaceAnalysis(@RequestHeader String client) throws Exception {
         securityService.validateAdminHeader(client);

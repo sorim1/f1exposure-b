@@ -181,7 +181,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
         reloadDelay = 5000;
         strawpollUrl = strawpollUrlBase + id;
         strawpollId = id;
-        if(id!=null){
+        if(id==null){
             initializeExposureFrontendVariables(null);
         } else {
             StrawpollModel newStrawpoll = fetchStrawpollResults();

@@ -16,6 +16,8 @@ public interface LiveTimingService {
 
     Boolean resetLatestRaceAnalysis();
 
+    Boolean deleteLatestRaceAnalysis();
+
     String validateLatestRaceAnalysis();
 
     UpcomingRaceAnalysis getUpcomingRaceAnalysis();

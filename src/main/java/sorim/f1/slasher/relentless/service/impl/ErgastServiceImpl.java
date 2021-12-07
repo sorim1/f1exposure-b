@@ -160,7 +160,7 @@ public class ErgastServiceImpl implements ErgastService {
     @Override
     public ErgastResponse getRacePitStops(Integer season, Integer round) {
         return restTemplate
-                .getForObject(ERGAST_URL + season + "/" + round + "/pitstops.json", ErgastResponse.class);
+                .getForObject(ERGAST_URL + season + "/" + round + "/pitstops.json?limit=1000", ErgastResponse.class);
     }
 
     @Override

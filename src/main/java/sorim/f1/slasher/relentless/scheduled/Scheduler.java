@@ -69,7 +69,11 @@ public class Scheduler {
 
     private void isItRaceWeek() {
         CalendarData calendarData = clientService.getCountdownData(5);
-        isRaceWeek = calendarData.getCountdownData().get("raceDays") < 5;
+        if(calendarData!=null) {
+            isRaceWeek = calendarData.getCountdownData().get("raceDays") < 5;
+        } else {
+            isRaceWeek = false;
+        }
     }
 
     @Scheduled(cron = "0 0 4 * * SUN")
@@ -96,6 +100,8 @@ public class Scheduler {
                     },
                     delay
             );
+        }else {
+            Logger.log(CODE, "sundayStandingsJobs UPDATED");
         }
     }
 
@@ -107,10 +113,11 @@ public class Scheduler {
             if (!analysisDone) {
                 delay = liveTimingService.analyzeLatestRace();
                 if (delay != null) {
+                    int delayInMiliseconds = delay * 1000;
                     if (!strawpollFound) {
                         strawpollFound = exposureService.initializeExposureFrontendVariables(null);
                     }
-                    Logger.log(CODE, "sundayAnalysisJob delayed");
+                    Logger.log(CODE, "sundayAnalysisJob delayed: " + delayInMiliseconds);
                     new java.util.Timer().schedule(
                             new java.util.TimerTask() {
                                 @SneakyThrows
@@ -119,7 +126,7 @@ public class Scheduler {
                                     sundayAnalysisJob();
                                 }
                             },
-                            delay
+                            delayInMiliseconds
                     );
                 }
             }
@@ -184,9 +191,14 @@ public class Scheduler {
         int weekDay = MainUtility.getWeekDay();
         try {
             switch (weekDay) {
-                case 1:
+                case 1:{
+                    weekendJobsContinuous();
+                    sundayAnalysisJob();
+                    sundayStandingsJobs();
+                    break;
+                }
                 case 6:
-                case 7: {
+                case 7:{
                     weekendJobsContinuous();
                     break;
                 }

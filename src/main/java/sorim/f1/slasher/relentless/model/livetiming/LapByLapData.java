@@ -5,13 +5,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.time.DurationFormatUtils;
 import sorim.f1.slasher.relentless.entities.ergast.Timing;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.regex.Pattern;
 
@@ -26,10 +22,11 @@ public class LapByLapData {
     public List<Integer> lapTimesX = new ArrayList<>();
     public List<String> lapTimesY = new ArrayList<>();
     public List<Integer> lapTimesYms = new ArrayList<>();
+    public List<Integer> lapTimePositions = new ArrayList<>();
     public List<Integer> totalTimeByLapMs = new ArrayList<>();
     public Integer totalTimeMs = 0;
 
-    public void addLapTime(Integer lapNumber, Timing timing) {
+    public Integer addLapTime(Integer lapNumber, Timing timing) {
         String[] lapTime = timing.getTime().split(":");
         int miliseconds = Integer.parseInt(lapTime[0])*60000;
         String[] lapTime2 = lapTime[1].split(Pattern.quote("."));
@@ -40,6 +37,27 @@ public class LapByLapData {
         lapTimesY.add(timing.getTime());
         totalTimeMs = totalTimeMs + miliseconds;
         totalTimeByLapMs.add(totalTimeMs);
+
+        positions.add(timing.getPosition());
+
+        return miliseconds;
+    }
+
+    public void addLapTimePosition(String code, Integer lapNumber, Integer lapTimePosition) {
+        if(lapNumber==lapTimePositions.size()+1){
+            lapTimePositions.add(lapTimePosition);
+        } else if(lapNumber>lapTimePositions.size()+1){
+            log.error("VECI PROBLEM1: {} vs {}", lapNumber, lapTimePositions.size()+1 );
+            for(int i=0; i<lapNumber-lapTimePositions.size()+1;i++){
+                lapTimePositions.add(null);
+            }
+        } else if(lapNumber<lapTimePositions.size()+1){
+            log.error("MANJI PROBLEM1: {} vs {}", lapNumber, lapTimePositions.size()+1 );
+            lapTimePositions.set(lapNumber-1, lapTimePosition);
+        } else {
+            log.error("NEMOGUCE1" );
+        }
+
     }
 
 }
