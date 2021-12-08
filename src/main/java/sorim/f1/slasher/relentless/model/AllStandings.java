@@ -24,4 +24,5 @@ public class AllStandings {
     List<ChartSeries> driverResultByRound;
     List<ChartSeries> constructorResultByRound;
     List<FrontendRace> races;
+    Integer currentYear;
 }
