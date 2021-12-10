@@ -265,7 +265,13 @@ public class AdminServiceImpl implements AdminService {
                 response.getMrData().getRaceTable().getRaces().get(0).getResults()
                         .forEach(ergastStanding -> {
                             driverStandingsByRound.get(ergastStanding.getDriver().getDriverId() + finalRound).setPointsThisRound(ergastStanding.getPoints());
-                            driverStandingsByRound.get(ergastStanding.getDriver().getDriverId() + finalRound).setResultThisRound(ergastStanding.getPosition());
+
+                            if("Finished".equals(ergastStanding.getStatus())|| ergastStanding.getStatus().contains("Lap")){
+                                driverStandingsByRound.get(ergastStanding.getDriver().getDriverId() + finalRound).setResultThisRound(ergastStanding.getPosition());
+                            } else {
+                                driverStandingsByRound.get(ergastStanding.getDriver().getDriverId() + finalRound).setResultThisRound(21);
+                            }
+
                             constructorStandingByRound.get(ergastStanding.getConstructor().getConstructorId() + finalRound).incrementPointsThisRound(ergastStanding.getPoints());
                         });
                 round++;
@@ -283,7 +289,12 @@ public class AdminServiceImpl implements AdminService {
                     .forEach(ergastStanding -> {
                         if (driverStandingsByRound != null) {
                             driverStandingsByRound.get(ergastStanding.getDriver().getDriverId()).setPointsThisRound(ergastStanding.getPoints());
-                            driverStandingsByRound.get(ergastStanding.getDriver().getDriverId()).setResultThisRound(ergastStanding.getPosition());
+                            if("Finished".equals(ergastStanding.getStatus())|| ergastStanding.getStatus().contains("Lap")){
+                                driverStandingsByRound.get(ergastStanding.getDriver().getDriverId()).setResultThisRound(ergastStanding.getPosition());
+                            } else {
+                                driverStandingsByRound.get(ergastStanding.getDriver().getDriverId()).setResultThisRound(21);
+                            }
+
                         }
                         if (constructorStandingByRound != null) {
                             constructorStandingByRound.get(ergastStanding.getConstructor().getConstructorId()).incrementPointsThisRound(ergastStanding.getPoints());
@@ -547,6 +558,11 @@ public class AdminServiceImpl implements AdminService {
     @Override
     public Integer deleteAwsContent(String username) {
         return awsRepository.deleteAllByUsername(username);
+    }
+
+    @Override
+    public String setCountdownMode(String mode) {
+        return clientService.setCountdownMode(mode);
     }
 
 }

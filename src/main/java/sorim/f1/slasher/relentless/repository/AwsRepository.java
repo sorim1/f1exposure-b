@@ -22,6 +22,7 @@ public interface AwsRepository extends CrudRepository<AwsContent, String> {
     List<AwsContent> findAllByStatusLessThanEqualOrderByTimestampActivityDesc(Integer status, Pageable pageable);
     AwsContent findByCodeAndStatusLessThanEqual(String code, Integer status);
     AwsContent findByCode(String code);
+    AwsContent findFirstByStatusLessThanEqualOrderByTimestampActivityDesc(Integer status);
 
     Integer deleteAllByUsername(String username);
 

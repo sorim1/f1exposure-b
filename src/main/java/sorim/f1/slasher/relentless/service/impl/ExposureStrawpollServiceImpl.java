@@ -155,7 +155,12 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
         } catch (Exception e) {
             log.error("updateCurrentExposureRound error", e);
             Logger.log("updateCurrentExposureRound error", e.getMessage());
-            currentExposureRound = Integer.parseInt(propertiesRepository.findDistinctFirstByName("exposureRound").getValue()) + 1;
+            AppProperty app = propertiesRepository.findDistinctFirstByName("exposureRound");
+            if(app!=null) {
+                currentExposureRound = Integer.parseInt(propertiesRepository.findDistinctFirstByName("exposureRound").getValue()) + 1;
+            } else {
+                currentExposureRound=1;
+            }
             propertiesRepository.updateProperty("exposureRound", currentExposureRound.toString());
         }
     }

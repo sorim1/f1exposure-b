@@ -63,4 +63,8 @@ public interface ClientService {
     BasicResponse moderateComment(CommentModeration moderation);
 
     List<Replay> getReplays(Integer page);
+
+    String setCountdownMode(String mode);
+
+    AwsContent getTopNews();
 }

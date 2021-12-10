@@ -66,4 +66,5 @@ public interface AdminService {
 
     Integer deleteAwsContent(String username);
 
+    String setCountdownMode(String mode);
 }

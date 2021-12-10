@@ -27,6 +27,12 @@ public class AdminController {
         return true;
     }
 
+    @GetMapping("/setCountdownMode/{mode}")
+    String setCountdownMode(@RequestHeader String client,@PathVariable("mode") String mode) throws Exception {
+        securityService.validateAdminHeader(client);
+        return service.setCountdownMode(mode);
+    }
+
     @GetMapping("/upcomingRaceCalendar")
     F1Calendar getUpcomingRace(@RequestHeader String client) throws Exception {
         securityService.validateAdminHeader(client);

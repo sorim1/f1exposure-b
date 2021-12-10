@@ -172,6 +172,12 @@ public class ClientController {
         return service.getAwsContent(page);
     }
 
+    @GetMapping("/getTopNews")
+    AwsContent getTopNews(@RequestHeader String client) throws Exception {
+        securityService.validateHeader(client);
+        return service.getTopNews();
+    }
+
     @GetMapping("/getAwsPost/{code}")
     AwsContent getAwsPost(@RequestHeader String client, @PathVariable("code") String code) throws Exception {
         securityService.validateHeader(client);

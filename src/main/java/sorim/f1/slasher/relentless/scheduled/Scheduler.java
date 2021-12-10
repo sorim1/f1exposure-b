@@ -69,7 +69,7 @@ public class Scheduler {
 
     private void isItRaceWeek() {
         CalendarData calendarData = clientService.getCountdownData(5);
-        if(calendarData!=null) {
+        if(calendarData.getF1Calendar()!=null) {
             isRaceWeek = calendarData.getCountdownData().get("raceDays") < 5;
         } else {
             isRaceWeek = false;

@@ -14,5 +14,5 @@ public interface RedditService {
 
     void updatePostImages(AwsContent post);
 
-    void fetchRedditPosts();
+    AwsContent fetchRedditPosts();
 }

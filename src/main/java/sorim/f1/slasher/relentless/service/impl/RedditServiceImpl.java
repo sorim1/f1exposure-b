@@ -73,13 +73,13 @@ public class RedditServiceImpl implements RedditService {
     }
 
     @Override
-    public void fetchRedditPosts() {
+    public AwsContent fetchRedditPosts() {
         getRFormula1New();
         getRF1PornHot();
-        getNews();
+        return getNews();
     }
 
-    private void getNews() {
+    private AwsContent getNews() {
         HttpEntity entity = new HttpEntity(headers);
         ResponseEntity<String> response = restTemplate.exchange(
                 redditDailyNews, HttpMethod.GET, entity, String.class);
@@ -97,9 +97,11 @@ public class RedditServiceImpl implements RedditService {
                 counter.set(counter.get() + 1000);
             });
             saveAwsList(list);
+            return list.get(0);
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }
+        return null;
     }
 
     private void saveAwsList(List<AwsContent> list) {

@@ -15,6 +15,7 @@ import sorim.f1.slasher.relentless.repository.*;
 import sorim.f1.slasher.relentless.service.*;
 import sorim.f1.slasher.relentless.util.MainUtility;
 
+import javax.annotation.PostConstruct;
 import java.math.BigDecimal;
 import java.time.Duration;
 import java.time.LocalDateTime;
@@ -46,8 +47,11 @@ public class ClientServiceImpl implements ClientService {
     private final ErgastService ergastService;
     private final RacingfkService racingfkService;
 
+    private final PropertiesRepository propertiesRepository;
     private final ArtImageRepository artImageRepository;
     private static final String SYSTEM_MESSAGE = "### SYSTEM MESSAGE ###";
+    public static Integer countdownMode;
+    private static AwsContent topNews = new AwsContent();
 
 
     @Override
@@ -62,10 +66,14 @@ public class ClientServiceImpl implements ClientService {
         LocalDateTime gmtDateTime = gmtZoned.toLocalDateTime();
         F1Calendar f1calendar = calendarRepository.findFirstByRaceAfterOrderByRace(gmtDateTime);
         if(f1calendar==null){
-            return null;
+            return CalendarData.builder()
+                    .mode(countdownMode)
+                    .build();
         }
         Map<String, Integer> countdownData = getRemainingTime(gmtDateTime, f1calendar, mode);
-        return CalendarData.builder().f1Calendar(f1calendar).countdownData(countdownData).build();
+        return CalendarData.builder().f1Calendar(f1calendar).countdownData(countdownData)
+                .mode(countdownMode)
+                .build();
     }
 
     @Override
@@ -132,6 +140,16 @@ public class ClientServiceImpl implements ClientService {
         List<List<ChartSeries>> output = new ArrayList<>();
         output.add(new ArrayList<>(totalPoints.values()));
         output.add(new ArrayList<>(roundPoints.values()));
+//
+//        List<ChartSeries> sortingArray = new ArrayList<>(roundPoints.values());
+//        sortingArray.sort((o1, o2) ->{
+//            if(o1.getSeries().get(o1.getSeries().size() - 1).get(1).intValue() > o2.getSeries().get(o2.getSeries().size() - 1).get(1).intValue()){
+//                return 1;
+//            } else {
+//                return -1;
+//            }
+//        });
+//        output.add(sortingArray);
         return output;
     }
 
@@ -154,6 +172,7 @@ public class ClientServiceImpl implements ClientService {
                 .constructorStandingByRound(constructorSeries.get(0))
                 .constructorPointsByRound(constructorSeries.get(1))
                 .races(ergastService.getRacesOfSeason(String.valueOf(properties.getCurrentYear())))
+                .currentYear(properties.getCurrentYear())
                 .build();
     }
 
@@ -220,7 +239,10 @@ public class ClientServiceImpl implements ClientService {
 
     @Override
     public void fetchRedditPosts() {
-        redditService.fetchRedditPosts();
+        AwsContent latestNews = redditService.fetchRedditPosts();
+        if(latestNews!=null){
+            topNews = latestNews;
+        }
     }
 
     @Override
@@ -362,6 +384,33 @@ public class ClientServiceImpl implements ClientService {
     @Override
     public List<Replay> getReplays(Integer page) {
         return racingfkService.getReplays(page);
+    }
+
+    @Override
+    public String setCountdownMode(String mode) {
+        AppProperty ap = AppProperty.builder().name("COUNTDOWN_MODE").value(mode).build();
+        propertiesRepository.save(ap);
+        String response = countdownMode + " -> ";
+        countdownMode = Integer.valueOf(mode);
+        response = response + countdownMode;
+        return response;
+    }
+
+    @Override
+    public AwsContent getTopNews() {
+        return topNews;
+    }
+
+    @PostConstruct
+    public void init() {
+        AppProperty ap = propertiesRepository.findDistinctFirstByName("COUNTDOWN_MODE");
+        if(ap==null){
+            ap = AppProperty.builder().name("COUNTDOWN_MODE").value("1").build();
+            propertiesRepository.save(ap);
+        }
+        countdownMode = Integer.valueOf(ap.getValue());
+        topNews = awsRepository.findFirstByStatusLessThanEqualOrderByTimestampActivityDesc(3);
+        log.info("clientServiceInit: {}", countdownMode);
     }
 
     private Map<String, Integer> getRemainingTime(LocalDateTime gmtDateTime, F1Calendar f1calendar, Integer mode) {
