@@ -34,6 +34,7 @@ public class ClientServiceImpl implements ClientService {
     private final ConstructorStandingsRepository constructorStandingsRepository;
     private final DriverStandingsByRoundRepository driverStandingsByRoundRepository;
     private final ConstructorStandingsByRoundRepository constructorStandingsByRoundRepository;
+    private final JsonRepository jsonRepository;
 
     private final SportSurgeEventRepository sportSurgeEventRepository;
     private final F1CommentRepository f1CommentRepository;
@@ -86,94 +87,31 @@ public class ClientServiceImpl implements ClientService {
         return constructorStandingsRepository.findAllByOrderByPositionAsc();
     }
 
-    private List<List<ChartSeries>> getDriverStandingsByRound() {
-        List<DriverStandingByRound> standingsBySeason = driverStandingsByRoundRepository.findAllByIdSeasonOrderByIdRoundAscNameAsc(properties.getCurrentYear());
-        Map<String, ChartSeries> totalPoints = new TreeMap<>();
-        Map<String, ChartSeries> roundPoints = new TreeMap<>();
-        Map<String, ChartSeries> roundResults = new TreeMap<>();
-        standingsBySeason.forEach(standing -> {
-            if (!totalPoints.containsKey(standing.getCode())) {
-                totalPoints.put(standing.getCode(), ChartSeries.builder()
-                        .name(standing.getCode())
-                        .color(standing.getColor())
-                        .series(new ArrayList<>()).build());
-                roundPoints.put(standing.getCode(), ChartSeries.builder()
-                        .name(standing.getCode())
-                        .color(standing.getColor())
-                        .series(new ArrayList<>()).build());
-                roundResults.put(standing.getCode(), ChartSeries.builder()
-                        .name(standing.getCode())
-                        .color(standing.getColor())
-                        .series(new ArrayList<>()).build());
-            }
-            totalPoints.get(standing.getCode()).add(standing.getId().getRound(), standing.getPoints());
-            roundPoints.get(standing.getCode()).add(standing.getId().getRound(), standing.getPointsThisRound());
-            if (standing.getResultThisRound() != null) {
-                roundResults.get(standing.getCode()).add(standing.getId().getRound(), new BigDecimal(standing.getResultThisRound()));
-            }
-        });
-        List<List<ChartSeries>> output = new ArrayList<>();
-        output.add(new ArrayList<>(totalPoints.values()));
-        output.add(new ArrayList<>(roundPoints.values()));
-        output.add(new ArrayList<>(roundResults.values()));
-        return output;
-    }
-
-    public List<List<ChartSeries>> getConstructorStandingsByRound() {
-        List<ConstructorStandingByRound> standingsBySeason = constructorStandingsByRoundRepository.findAllByIdSeasonOrderByIdRoundAscNameAsc(properties.getCurrentYear());
-        Map<String, ChartSeries> totalPoints = new TreeMap<>();
-        Map<String, ChartSeries> roundPoints = new TreeMap<>();
-        standingsBySeason.forEach(standing -> {
-            if (!totalPoints.containsKey(standing.getId().getId())) {
-                totalPoints.put(standing.getId().getId(), ChartSeries.builder()
-                        .name(standing.getName())
-                        .color(standing.getColor())
-                        .series(new ArrayList<>()).build());
-                roundPoints.put(standing.getId().getId(), ChartSeries.builder()
-                        .name(standing.getName())
-                        .color(standing.getColor())
-                        .series(new ArrayList<>()).build());
-            }
-            roundPoints.get(standing.getId().getId()).add(standing.getId().getRound(), standing.getPointsThisRound());
-            totalPoints.get(standing.getId().getId()).add(standing.getId().getRound(), standing.getPoints());
-        });
-        List<List<ChartSeries>> output = new ArrayList<>();
-        output.add(new ArrayList<>(totalPoints.values()));
-        output.add(new ArrayList<>(roundPoints.values()));
-//
-//        List<ChartSeries> sortingArray = new ArrayList<>(roundPoints.values());
-//        sortingArray.sort((o1, o2) ->{
-//            if(o1.getSeries().get(o1.getSeries().size() - 1).get(1).intValue() > o2.getSeries().get(o2.getSeries().size() - 1).get(1).intValue()){
-//                return 1;
-//            } else {
-//                return -1;
-//            }
-//        });
-//        output.add(sortingArray);
-        return output;
-    }
-
     @Override
     public ExposureResponse getExposureDriverList() {
         return exposureService.getExposureDriverList();
     }
 
-
     @Override
     public AllStandings getStandings() {
-        List<List<ChartSeries>> driverSeries = getDriverStandingsByRound();
-        List<List<ChartSeries>> constructorSeries = getConstructorStandingsByRound();
         return AllStandings.builder()
                 .driverStandings(getDriverStandings())
                 .constructorStandings(getConstructorStandings())
-                .driverStandingByRound(driverSeries.get(0))
-                .driverPointsByRound(driverSeries.get(1))
-                .driverResultByRound(driverSeries.get(2))
-                .constructorStandingByRound(constructorSeries.get(0))
-                .constructorPointsByRound(constructorSeries.get(1))
+                .driverStandingByRound(getJsonCharts("DRIVERS_TOTAL_POINTS"))
+                .driverPointsByRound(getJsonCharts("DRIVERS_ROUND_POINTS"))
+                .driverResultByRound(getJsonCharts("DRIVERS_ROUND_RESULTS"))
+                .constructorStandingByRound(getJsonCharts("CONSTRUCTOR_TOTAL_POINTS"))
+                .constructorPointsByRound(getJsonCharts("CONSTRUCTOR_ROUND_POINTS"))
+                .gridToResultChartWithDnf(getJsonCharts("GRID_TO_RESULT_WITH_DNF"))
+                .gridToResultChartWithoutDnf(getJsonCharts("GRID_TO_RESULT_WITHOUT_DNF"))
                 .races(ergastService.getRacesOfSeason(String.valueOf(properties.getCurrentYear())))
                 .currentYear(properties.getCurrentYear())
                 .build();
+    }
+
+    private List<ChartSeries> getJsonCharts(String jsonId) {
+        Object response = jsonRepository.findAllById(jsonId).getJson();
+        return (List<ChartSeries>) response;
     }
 
     @Override

@@ -17,6 +17,7 @@ public class ArtDriver {
 
     public String colorCode;
     public Color color;
+    public Color teamColor;
     private Integer finalPosition;
     private Integer currentPosition;
     private Integer x;
@@ -34,6 +35,7 @@ public class ArtDriver {
         this.initials = driver.getInitials();
         this.colorCode = driver.getColor();
         this.color = Color.decode("#" + driver.getColor());
+        this.teamColor = Color.decode("#" + driver.getColor());
         this.finalPosition = driver.getPosition();
         this.lapByLapData = driver.getLapByLapData() ;
         this.currentPosition = 20;

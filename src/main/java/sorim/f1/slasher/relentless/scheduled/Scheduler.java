@@ -155,7 +155,7 @@ public class Scheduler {
     }
 
     private void analyzeUpcomingRacePeriodically() {
-        Integer delay = liveTimingService.analyzeUpcomingRace();
+        Integer delay = liveTimingService.analyzeUpcomingRace(false);
         Logger.log(CODE, "analyzeUpcomingRacePeriodically called");
         if (delay != null) {
             int delayInMiliseconds = delay * 1000;
@@ -175,7 +175,7 @@ public class Scheduler {
                         @SneakyThrows
                         @Override
                         public void run() {
-                            liveTimingService.analyzeUpcomingRace();
+                            liveTimingService.analyzeUpcomingRace(false);
                         }
                     },
                     delayInMiliseconds + 1500000

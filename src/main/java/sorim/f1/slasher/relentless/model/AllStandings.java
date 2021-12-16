@@ -22,7 +22,8 @@ public class AllStandings {
     List<ChartSeries> driverPointsByRound;
     List<ChartSeries> constructorPointsByRound;
     List<ChartSeries> driverResultByRound;
-    List<ChartSeries> constructorResultByRound;
+    List<ChartSeries> gridToResultChartWithoutDnf;
+    List<ChartSeries> gridToResultChartWithDnf;
     List<FrontendRace> races;
     Integer currentYear;
 }

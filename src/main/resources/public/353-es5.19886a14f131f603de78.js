@@ -14649,10 +14649,10 @@
           .TgZ(0, "div");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "div", 14);
+          .TgZ(1, "div", 15);
           core
           /* ɵɵelementStart */
-          .TgZ(2, "div", 15);
+          .TgZ(2, "div", 16);
 
           core
           /* ɵɵtext */
@@ -14663,7 +14663,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(4, "div", 16);
+          .TgZ(4, "div", 17);
 
           core
           /* ɵɵtext */
@@ -14674,7 +14674,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(6, "div", 17);
+          .TgZ(6, "div", 18);
 
           core
           /* ɵɵtext */
@@ -14724,7 +14724,7 @@
           .TgZ(1, "h1");
           core
           /* ɵɵelementStart */
-          .TgZ(2, "span", 28);
+          .TgZ(2, "span", 29);
 
           core
           /* ɵɵtext */
@@ -14764,7 +14764,7 @@
           .TgZ(1, "h1");
           core
           /* ɵɵelementStart */
-          .TgZ(2, "span", 28);
+          .TgZ(2, "span", 29);
 
           core
           /* ɵɵtext */
@@ -14796,7 +14796,7 @@
 
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 23);
+          .TgZ(0, "div", 24);
           core
           /* ɵɵlistener */
           .NdJ("click", function F1CountdownComponent_div_21_ng_template_3_Template_div_click_0_listener() {
@@ -14813,7 +14813,7 @@
           .TgZ(1, "h1");
           core
           /* ɵɵelementStart */
-          .TgZ(2, "span", 24);
+          .TgZ(2, "span", 25);
 
           core
           /* ɵɵtext */
@@ -14827,10 +14827,10 @@
           .qZA();
           core
           /* ɵɵtemplate */
-          .YNc(4, F1CountdownComponent_div_21_ng_template_3_div_4_Template, 4, 1, "div", 25);
+          .YNc(4, F1CountdownComponent_div_21_ng_template_3_div_4_Template, 4, 1, "div", 26);
           core
           /* ɵɵtemplate */
-          .YNc(5, F1CountdownComponent_div_21_ng_template_3_div_5_Template, 4, 0, "div", 25);
+          .YNc(5, F1CountdownComponent_div_21_ng_template_3_div_5_Template, 4, 0, "div", 26);
           core
           /* ɵɵelementStart */
           .TgZ(6, "h1");
@@ -14840,7 +14840,7 @@
 
           core
           /* ɵɵelement */
-          ._UZ(8, "countdown", 26, 27);
+          ._UZ(8, "countdown", 27, 28);
 
           core
           /* ɵɵelementEnd */
@@ -14916,7 +14916,7 @@
           .TgZ(1, "h1");
           core
           /* ɵɵelementStart */
-          .TgZ(2, "span", 28);
+          .TgZ(2, "span", 29);
 
           core
           /* ɵɵtext */
@@ -14956,7 +14956,7 @@
           .TgZ(1, "h1");
           core
           /* ɵɵelementStart */
-          .TgZ(2, "span", 28);
+          .TgZ(2, "span", 29);
 
           core
           /* ɵɵtext */
@@ -14982,7 +14982,7 @@
 
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 23);
+          .TgZ(0, "div", 24);
           core
           /* ɵɵlistener */
           .NdJ("click", function F1CountdownComponent_div_21_ng_template_5_Template_div_click_0_listener() {
@@ -14999,7 +14999,7 @@
           .TgZ(1, "h1");
           core
           /* ɵɵelementStart */
-          .TgZ(2, "span", 24);
+          .TgZ(2, "span", 25);
 
           core
           /* ɵɵtext */
@@ -15013,10 +15013,10 @@
           .qZA();
           core
           /* ɵɵtemplate */
-          .YNc(4, F1CountdownComponent_div_21_ng_template_5_div_4_Template, 4, 1, "div", 25);
+          .YNc(4, F1CountdownComponent_div_21_ng_template_5_div_4_Template, 4, 1, "div", 26);
           core
           /* ɵɵtemplate */
-          .YNc(5, F1CountdownComponent_div_21_ng_template_5_div_5_Template, 4, 0, "div", 25);
+          .YNc(5, F1CountdownComponent_div_21_ng_template_5_div_5_Template, 4, 0, "div", 26);
           core
           /* ɵɵelementStart */
           .TgZ(6, "h1");
@@ -15026,7 +15026,7 @@
 
           core
           /* ɵɵelement */
-          ._UZ(8, "countdown", 26, 27);
+          ._UZ(8, "countdown", 27, 28);
 
           core
           /* ɵɵelementEnd */
@@ -15102,7 +15102,7 @@
           .TgZ(1, "h1");
           core
           /* ɵɵelementStart */
-          .TgZ(2, "span", 28);
+          .TgZ(2, "span", 29);
 
           core
           /* ɵɵtext */
@@ -15142,7 +15142,7 @@
           .TgZ(1, "h1");
           core
           /* ɵɵelementStart */
-          .TgZ(2, "span", 28);
+          .TgZ(2, "span", 29);
 
           core
           /* ɵɵtext */
@@ -15168,7 +15168,7 @@
 
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 23);
+          .TgZ(0, "div", 24);
           core
           /* ɵɵlistener */
           .NdJ("click", function F1CountdownComponent_div_21_ng_template_7_Template_div_click_0_listener() {
@@ -15185,7 +15185,7 @@
           .TgZ(1, "h1");
           core
           /* ɵɵelementStart */
-          .TgZ(2, "span", 24);
+          .TgZ(2, "span", 25);
 
           core
           /* ɵɵtext */
@@ -15199,10 +15199,10 @@
           .qZA();
           core
           /* ɵɵtemplate */
-          .YNc(4, F1CountdownComponent_div_21_ng_template_7_div_4_Template, 4, 1, "div", 25);
+          .YNc(4, F1CountdownComponent_div_21_ng_template_7_div_4_Template, 4, 1, "div", 26);
           core
           /* ɵɵtemplate */
-          .YNc(5, F1CountdownComponent_div_21_ng_template_7_div_5_Template, 4, 0, "div", 25);
+          .YNc(5, F1CountdownComponent_div_21_ng_template_7_div_5_Template, 4, 0, "div", 26);
           core
           /* ɵɵelementStart */
           .TgZ(6, "h1");
@@ -15212,7 +15212,7 @@
 
           core
           /* ɵɵelement */
-          ._UZ(8, "countdown", 26, 27);
+          ._UZ(8, "countdown", 27, 28);
 
           core
           /* ɵɵelementEnd */
@@ -15288,7 +15288,7 @@
           .TgZ(1, "h1");
           core
           /* ɵɵelementStart */
-          .TgZ(2, "span", 28);
+          .TgZ(2, "span", 29);
 
           core
           /* ɵɵtext */
@@ -15328,7 +15328,7 @@
           .TgZ(1, "h1");
           core
           /* ɵɵelementStart */
-          .TgZ(2, "span", 28);
+          .TgZ(2, "span", 29);
 
           core
           /* ɵɵtext */
@@ -15354,7 +15354,7 @@
 
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 23);
+          .TgZ(0, "div", 24);
           core
           /* ɵɵlistener */
           .NdJ("click", function F1CountdownComponent_div_21_ng_template_9_Template_div_click_0_listener() {
@@ -15371,7 +15371,7 @@
           .TgZ(1, "h1");
           core
           /* ɵɵelementStart */
-          .TgZ(2, "span", 24);
+          .TgZ(2, "span", 25);
 
           core
           /* ɵɵtext */
@@ -15385,10 +15385,10 @@
           .qZA();
           core
           /* ɵɵtemplate */
-          .YNc(4, F1CountdownComponent_div_21_ng_template_9_div_4_Template, 4, 1, "div", 25);
+          .YNc(4, F1CountdownComponent_div_21_ng_template_9_div_4_Template, 4, 1, "div", 26);
           core
           /* ɵɵtemplate */
-          .YNc(5, F1CountdownComponent_div_21_ng_template_9_div_5_Template, 4, 0, "div", 25);
+          .YNc(5, F1CountdownComponent_div_21_ng_template_9_div_5_Template, 4, 0, "div", 26);
           core
           /* ɵɵelementStart */
           .TgZ(6, "h1");
@@ -15398,7 +15398,7 @@
 
           core
           /* ɵɵelement */
-          ._UZ(8, "countdown", 26, 27);
+          ._UZ(8, "countdown", 27, 28);
 
           core
           /* ɵɵelementEnd */
@@ -15464,7 +15464,55 @@
         }
       }
 
-      function F1CountdownComponent_div_21_ng_template_11_div_0_div_4_Template(rf, ctx) {
+      function F1CountdownComponent_div_21_ng_template_11_mat_slide_toggle_0_Template(rf, ctx) {
+        if (rf & 1) {
+          var _r34 = core
+          /* ɵɵgetCurrentView */
+          .EpF();
+
+          core
+          /* ɵɵelementStart */
+          .TgZ(0, "mat-slide-toggle", 32);
+          core
+          /* ɵɵlistener */
+          .NdJ("change", function F1CountdownComponent_div_21_ng_template_11_mat_slide_toggle_0_Template_mat_slide_toggle_change_0_listener($event) {
+            core
+            /* ɵɵrestoreView */
+            .CHM(_r34);
+            var ctx_r33 = core
+            /* ɵɵnextContext */
+            .oxw(3);
+            return ctx_r33.toggleMusic($event);
+          })("ngModelChange", function F1CountdownComponent_div_21_ng_template_11_mat_slide_toggle_0_Template_mat_slide_toggle_ngModelChange_0_listener($event) {
+            core
+            /* ɵɵrestoreView */
+            .CHM(_r34);
+            var ctx_r35 = core
+            /* ɵɵnextContext */
+            .oxw(3);
+            return ctx_r35.isPlayingMusic = $event;
+          });
+
+          core
+          /* ɵɵelement */
+          ._UZ(1, "i", 33);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+        }
+
+        if (rf & 2) {
+          var ctx_r31 = core
+          /* ɵɵnextContext */
+          .oxw(3);
+          core
+          /* ɵɵproperty */
+          .Q6J("ngModel", ctx_r31.isPlayingMusic);
+        }
+      }
+
+      function F1CountdownComponent_div_21_ng_template_11_div_1_div_4_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵelementStart */
@@ -15474,7 +15522,7 @@
           .TgZ(1, "h1");
           core
           /* ɵɵelementStart */
-          .TgZ(2, "span", 28);
+          .TgZ(2, "span", 29);
 
           core
           /* ɵɵtext */
@@ -15492,7 +15540,7 @@
         }
 
         if (rf & 2) {
-          var ctx_r32 = core
+          var ctx_r36 = core
           /* ɵɵnextContext */
           .oxw(4);
           core
@@ -15500,11 +15548,11 @@
           .xp6(3);
           core
           /* ɵɵtextInterpolate1 */
-          .hij("", ctx_r32.raceDays, " days");
+          .hij("", ctx_r36.raceDays, " days");
         }
       }
 
-      function F1CountdownComponent_div_21_ng_template_11_div_0_div_5_Template(rf, ctx) {
+      function F1CountdownComponent_div_21_ng_template_11_div_1_div_5_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵelementStart */
@@ -15514,7 +15562,7 @@
           .TgZ(1, "h1");
           core
           /* ɵɵelementStart */
-          .TgZ(2, "span", 28);
+          .TgZ(2, "span", 29);
 
           core
           /* ɵɵtext */
@@ -15532,32 +15580,32 @@
         }
       }
 
-      function F1CountdownComponent_div_21_ng_template_11_div_0_Template(rf, ctx) {
+      function F1CountdownComponent_div_21_ng_template_11_div_1_Template(rf, ctx) {
         if (rf & 1) {
-          var _r36 = core
+          var _r40 = core
           /* ɵɵgetCurrentView */
           .EpF();
 
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 23);
+          .TgZ(0, "div", 24);
           core
           /* ɵɵlistener */
-          .NdJ("click", function F1CountdownComponent_div_21_ng_template_11_div_0_Template_div_click_0_listener() {
+          .NdJ("click", function F1CountdownComponent_div_21_ng_template_11_div_1_Template_div_click_0_listener() {
             core
             /* ɵɵrestoreView */
-            .CHM(_r36);
-            var ctx_r35 = core
+            .CHM(_r40);
+            var ctx_r39 = core
             /* ɵɵnextContext */
             .oxw(3);
-            return ctx_r35.countdownWasClicked(5);
+            return ctx_r39.countdownWasClicked(5);
           });
           core
           /* ɵɵelementStart */
           .TgZ(1, "h1");
           core
           /* ɵɵelementStart */
-          .TgZ(2, "span", 24);
+          .TgZ(2, "span", 25);
 
           core
           /* ɵɵtext */
@@ -15571,33 +15619,21 @@
           .qZA();
           core
           /* ɵɵtemplate */
-          .YNc(4, F1CountdownComponent_div_21_ng_template_11_div_0_div_4_Template, 4, 1, "div", 25);
+          .YNc(4, F1CountdownComponent_div_21_ng_template_11_div_1_div_4_Template, 4, 1, "div", 26);
           core
           /* ɵɵtemplate */
-          .YNc(5, F1CountdownComponent_div_21_ng_template_11_div_0_div_5_Template, 4, 0, "div", 25);
+          .YNc(5, F1CountdownComponent_div_21_ng_template_11_div_1_div_5_Template, 4, 0, "div", 26);
           core
           /* ɵɵelementStart */
           .TgZ(6, "h1");
           core
           /* ɵɵelementStart */
           .TgZ(7, "span");
+
           core
-          /* ɵɵelementStart */
-          .TgZ(8, "countdown", 30, 27);
-          core
-          /* ɵɵlistener */
-          .NdJ("event", function F1CountdownComponent_div_21_ng_template_11_div_0_Template_countdown_event_8_listener($event) {
-            core
-            /* ɵɵrestoreView */
-            .CHM(_r36);
-            var ctx_r37 = core
-            /* ɵɵnextContext */
-            .oxw(3);
-            return ctx_r37.itsRaceTime($event);
-          });
-          core
-          /* ɵɵelementEnd */
-          .qZA();
+          /* ɵɵelement */
+          ._UZ(8, "countdown", 27, 28);
+
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -15610,7 +15646,7 @@
         }
 
         if (rf & 2) {
-          var ctx_r31 = core
+          var ctx_r32 = core
           /* ɵɵnextContext */
           .oxw(3);
           core
@@ -15618,19 +15654,19 @@
           .xp6(3);
           core
           /* ɵɵtextInterpolate1 */
-          .hij(" ", ctx_r31.calendarData.f1Calendar.raceName, " in: ");
+          .hij(" ", ctx_r32.calendarData.f1Calendar.raceName, " in: ");
           core
           /* ɵɵadvance */
           .xp6(1);
           core
           /* ɵɵproperty */
-          .Q6J("ngIf", ctx_r31.raceDays > 1);
+          .Q6J("ngIf", ctx_r32.raceDays > 1);
           core
           /* ɵɵadvance */
           .xp6(1);
           core
           /* ɵɵproperty */
-          .Q6J("ngIf", ctx_r31.raceDays == 1);
+          .Q6J("ngIf", ctx_r32.raceDays == 1);
           core
           /* ɵɵadvance */
           .xp6(3);
@@ -15638,7 +15674,7 @@
           /* ɵɵproperty */
           .Q6J("config", core
           /* ɵɵpureFunction1 */
-          .VKq(4, f1_countdown_component_c1, ctx_r31.raceSeconds));
+          .VKq(4, f1_countdown_component_c1, ctx_r32.raceSeconds));
         }
       }
 
@@ -15646,11 +15682,10 @@
         if (rf & 1) {
           core
           /* ɵɵtemplate */
-          .YNc(0, F1CountdownComponent_div_21_ng_template_11_div_0_Template, 10, 6, "div", 29);
-
+          .YNc(0, F1CountdownComponent_div_21_ng_template_11_mat_slide_toggle_0_Template, 2, 1, "mat-slide-toggle", 30);
           core
-          /* ɵɵelement */
-          ._UZ(1, "br");
+          /* ɵɵtemplate */
+          .YNc(1, F1CountdownComponent_div_21_ng_template_11_div_1_Template, 10, 6, "div", 31);
 
           core
           /* ɵɵelement */
@@ -15667,6 +15702,10 @@
           core
           /* ɵɵelement */
           ._UZ(5, "br");
+
+          core
+          /* ɵɵelement */
+          ._UZ(6, "br");
         }
 
         if (rf & 2) {
@@ -15675,13 +15714,19 @@
           .oxw(2);
           core
           /* ɵɵproperty */
+          .Q6J("ngIf", ctx_r9.itsTime);
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵproperty */
           .Q6J("ngIf", ctx_r9.calendarData != null);
         }
       }
 
       function F1CountdownComponent_div_21_ng_template_13_div_0_Template(rf, ctx) {
         if (rf & 1) {
-          var _r40 = core
+          var _r43 = core
           /* ɵɵgetCurrentView */
           .EpF();
 
@@ -15690,7 +15735,7 @@
           .TgZ(0, "div");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "div", 31);
+          .TgZ(1, "div", 34);
           core
           /* ɵɵelementStart */
           .TgZ(2, "span");
@@ -15704,17 +15749,17 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(4, "mat-slide-toggle", 32);
+          .TgZ(4, "mat-slide-toggle", 35);
           core
           /* ɵɵlistener */
           .NdJ("ngModelChange", function F1CountdownComponent_div_21_ng_template_13_div_0_Template_mat_slide_toggle_ngModelChange_4_listener($event) {
             core
             /* ɵɵrestoreView */
-            .CHM(_r40);
-            var ctx_r39 = core
+            .CHM(_r43);
+            var ctx_r42 = core
             /* ɵɵnextContext */
             .oxw(3);
-            return ctx_r39.isGmt = $event;
+            return ctx_r42.isGmt = $event;
           });
           core
           /* ɵɵelementEnd */
@@ -15741,7 +15786,7 @@
           .TgZ(8, "h1");
           core
           /* ɵɵelementStart */
-          .TgZ(9, "span", 33);
+          .TgZ(9, "span", 36);
 
           core
           /* ɵɵtext */
@@ -15755,7 +15800,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(12, "span", 33);
+          .TgZ(12, "span", 36);
 
           core
           /* ɵɵtext */
@@ -15769,7 +15814,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(15, "span", 33);
+          .TgZ(15, "span", 36);
 
           core
           /* ɵɵtext */
@@ -15783,7 +15828,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(18, "span", 33);
+          .TgZ(18, "span", 36);
 
           core
           /* ɵɵtext */
@@ -15797,7 +15842,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(21, "span", 33);
+          .TgZ(21, "span", 36);
 
           core
           /* ɵɵtext */
@@ -15821,7 +15866,7 @@
         }
 
         if (rf & 2) {
-          var ctx_r38 = core
+          var ctx_r41 = core
           /* ɵɵnextContext */
           .oxw(3);
           core
@@ -15829,47 +15874,47 @@
           .xp6(4);
           core
           /* ɵɵproperty */
-          .Q6J("ngModel", ctx_r38.isGmt);
+          .Q6J("ngModel", ctx_r41.isGmt);
           core
           /* ɵɵadvance */
           .xp6(6);
           core
           /* ɵɵtextInterpolate2 */
-          .AsE(" ", ctx_r38.calendarData.f1Calendar.practice1Name, " : ", core
+          .AsE(" ", ctx_r41.calendarData.f1Calendar.practice1Name, " : ", core
           /* ɵɵpipeBind2 */
-          .xi3(11, 11, ctx_r38.checkTime(ctx_r38.calendarData.f1Calendar.practice1), "EEEE, HH:mm"), "");
+          .xi3(11, 11, ctx_r41.checkTime(ctx_r41.calendarData.f1Calendar.practice1), "EEEE, HH:mm"), "");
           core
           /* ɵɵadvance */
           .xp6(3);
           core
           /* ɵɵtextInterpolate2 */
-          .AsE(" ", ctx_r38.calendarData.f1Calendar.practice2Name, " : ", core
+          .AsE(" ", ctx_r41.calendarData.f1Calendar.practice2Name, " : ", core
           /* ɵɵpipeBind2 */
-          .xi3(14, 14, ctx_r38.checkTime(ctx_r38.calendarData.f1Calendar.practice2), "EEEE, HH:mm"), "");
+          .xi3(14, 14, ctx_r41.checkTime(ctx_r41.calendarData.f1Calendar.practice2), "EEEE, HH:mm"), "");
           core
           /* ɵɵadvance */
           .xp6(3);
           core
           /* ɵɵtextInterpolate2 */
-          .AsE(" ", ctx_r38.calendarData.f1Calendar.practice3Name, " : ", core
+          .AsE(" ", ctx_r41.calendarData.f1Calendar.practice3Name, " : ", core
           /* ɵɵpipeBind2 */
-          .xi3(17, 17, ctx_r38.checkTime(ctx_r38.calendarData.f1Calendar.practice3), "EEEE, HH:mm"), "");
+          .xi3(17, 17, ctx_r41.checkTime(ctx_r41.calendarData.f1Calendar.practice3), "EEEE, HH:mm"), "");
           core
           /* ɵɵadvance */
           .xp6(3);
           core
           /* ɵɵtextInterpolate2 */
-          .AsE(" ", ctx_r38.calendarData.f1Calendar.qualifyingName, " : ", core
+          .AsE(" ", ctx_r41.calendarData.f1Calendar.qualifyingName, " : ", core
           /* ɵɵpipeBind2 */
-          .xi3(20, 20, ctx_r38.checkTime(ctx_r38.calendarData.f1Calendar.qualifying), "EEEE, H:mm"), "");
+          .xi3(20, 20, ctx_r41.checkTime(ctx_r41.calendarData.f1Calendar.qualifying), "EEEE, H:mm"), "");
           core
           /* ɵɵadvance */
           .xp6(3);
           core
           /* ɵɵtextInterpolate2 */
-          .AsE(" ", ctx_r38.calendarData.f1Calendar.raceName, " : ", core
+          .AsE(" ", ctx_r41.calendarData.f1Calendar.raceName, " : ", core
           /* ɵɵpipeBind2 */
-          .xi3(23, 23, ctx_r38.checkTime(ctx_r38.calendarData.f1Calendar.race), "EEEE, H:mm"), "");
+          .xi3(23, 23, ctx_r41.checkTime(ctx_r41.calendarData.f1Calendar.race), "EEEE, H:mm"), "");
         }
       }
 
@@ -15877,7 +15922,7 @@
         if (rf & 1) {
           core
           /* ɵɵtemplate */
-          .YNc(0, F1CountdownComponent_div_21_ng_template_13_div_0_Template, 24, 26, "div", 25);
+          .YNc(0, F1CountdownComponent_div_21_ng_template_13_div_0_Template, 24, 26, "div", 26);
 
           core
           /* ɵɵelement */
@@ -15904,105 +15949,105 @@
 
       function F1CountdownComponent_div_21_Template(rf, ctx) {
         if (rf & 1) {
-          var _r42 = core
+          var _r45 = core
           /* ɵɵgetCurrentView */
           .EpF();
 
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 18);
+          .TgZ(0, "div", 19);
           core
           /* ɵɵlistener */
           .NdJ("touchstart", function F1CountdownComponent_div_21_Template_div_touchstart_0_listener($event) {
             core
             /* ɵɵrestoreView */
-            .CHM(_r42);
-            var ctx_r41 = core
+            .CHM(_r45);
+            var ctx_r44 = core
             /* ɵɵnextContext */
             .oxw();
-            return ctx_r41.touchstart($event);
+            return ctx_r44.touchstart($event);
           })("touchend", function F1CountdownComponent_div_21_Template_div_touchend_0_listener($event) {
             core
             /* ɵɵrestoreView */
-            .CHM(_r42);
-            var ctx_r43 = core
+            .CHM(_r45);
+            var ctx_r46 = core
             /* ɵɵnextContext */
             .oxw();
-            return ctx_r43.touchend($event);
+            return ctx_r46.touchend($event);
           });
           core
           /* ɵɵelementStart */
-          .TgZ(1, "mat-tab-group", 19);
+          .TgZ(1, "mat-tab-group", 20);
           core
           /* ɵɵlistener */
           .NdJ("selectedIndexChange", function F1CountdownComponent_div_21_Template_mat_tab_group_selectedIndexChange_1_listener($event) {
             core
             /* ɵɵrestoreView */
-            .CHM(_r42);
-            var ctx_r44 = core
+            .CHM(_r45);
+            var ctx_r47 = core
             /* ɵɵnextContext */
             .oxw();
-            return ctx_r44.selectedTab = $event;
+            return ctx_r47.selectedTab = $event;
           })("selectedTabChange", function F1CountdownComponent_div_21_Template_mat_tab_group_selectedTabChange_1_listener($event) {
             core
             /* ɵɵrestoreView */
-            .CHM(_r42);
-            var ctx_r45 = core
+            .CHM(_r45);
+            var ctx_r48 = core
             /* ɵɵnextContext */
             .oxw();
-            return ctx_r45.tabChanged($event);
+            return ctx_r48.tabChanged($event);
           });
           core
           /* ɵɵelementStart */
-          .TgZ(2, "mat-tab", 20);
+          .TgZ(2, "mat-tab", 21);
           core
           /* ɵɵtemplate */
-          .YNc(3, F1CountdownComponent_div_21_ng_template_3_Template, 15, 6, "ng-template", 21);
+          .YNc(3, F1CountdownComponent_div_21_ng_template_3_Template, 15, 6, "ng-template", 22);
           core
           /* ɵɵelementEnd */
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(4, "mat-tab", 20);
+          .TgZ(4, "mat-tab", 21);
           core
           /* ɵɵtemplate */
-          .YNc(5, F1CountdownComponent_div_21_ng_template_5_Template, 15, 6, "ng-template", 21);
+          .YNc(5, F1CountdownComponent_div_21_ng_template_5_Template, 15, 6, "ng-template", 22);
           core
           /* ɵɵelementEnd */
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(6, "mat-tab", 20);
+          .TgZ(6, "mat-tab", 21);
           core
           /* ɵɵtemplate */
-          .YNc(7, F1CountdownComponent_div_21_ng_template_7_Template, 15, 6, "ng-template", 21);
+          .YNc(7, F1CountdownComponent_div_21_ng_template_7_Template, 15, 6, "ng-template", 22);
           core
           /* ɵɵelementEnd */
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(8, "mat-tab", 20);
+          .TgZ(8, "mat-tab", 21);
           core
           /* ɵɵtemplate */
-          .YNc(9, F1CountdownComponent_div_21_ng_template_9_Template, 15, 6, "ng-template", 21);
+          .YNc(9, F1CountdownComponent_div_21_ng_template_9_Template, 15, 6, "ng-template", 22);
           core
           /* ɵɵelementEnd */
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(10, "mat-tab", 20);
+          .TgZ(10, "mat-tab", 21);
           core
           /* ɵɵtemplate */
-          .YNc(11, F1CountdownComponent_div_21_ng_template_11_Template, 6, 1, "ng-template", 21);
+          .YNc(11, F1CountdownComponent_div_21_ng_template_11_Template, 7, 2, "ng-template", 22);
           core
           /* ɵɵelementEnd */
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(12, "mat-tab", 22);
+          .TgZ(12, "mat-tab", 23);
           core
           /* ɵɵtemplate */
-          .YNc(13, F1CountdownComponent_div_21_ng_template_13_Template, 4, 1, "ng-template", 21);
+          .YNc(13, F1CountdownComponent_div_21_ng_template_13_Template, 4, 1, "ng-template", 22);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -16057,7 +16102,55 @@
         }
       }
 
-      function F1CountdownComponent_div_22_div_1_Template(rf, ctx) {
+      function F1CountdownComponent_div_22_mat_slide_toggle_2_Template(rf, ctx) {
+        if (rf & 1) {
+          var _r53 = core
+          /* ɵɵgetCurrentView */
+          .EpF();
+
+          core
+          /* ɵɵelementStart */
+          .TgZ(0, "mat-slide-toggle", 32);
+          core
+          /* ɵɵlistener */
+          .NdJ("change", function F1CountdownComponent_div_22_mat_slide_toggle_2_Template_mat_slide_toggle_change_0_listener($event) {
+            core
+            /* ɵɵrestoreView */
+            .CHM(_r53);
+            var ctx_r52 = core
+            /* ɵɵnextContext */
+            .oxw(2);
+            return ctx_r52.toggleMusic($event);
+          })("ngModelChange", function F1CountdownComponent_div_22_mat_slide_toggle_2_Template_mat_slide_toggle_ngModelChange_0_listener($event) {
+            core
+            /* ɵɵrestoreView */
+            .CHM(_r53);
+            var ctx_r54 = core
+            /* ɵɵnextContext */
+            .oxw(2);
+            return ctx_r54.isPlayingMusic = $event;
+          });
+
+          core
+          /* ɵɵelement */
+          ._UZ(1, "i", 33);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+        }
+
+        if (rf & 2) {
+          var ctx_r49 = core
+          /* ɵɵnextContext */
+          .oxw(2);
+          core
+          /* ɵɵproperty */
+          .Q6J("ngModel", ctx_r49.isPlayingMusic);
+        }
+      }
+
+      function F1CountdownComponent_div_22_div_3_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵelementStart */
@@ -16067,11 +16160,11 @@
           .TgZ(1, "h1");
           core
           /* ɵɵelementStart */
-          .TgZ(2, "span", 24);
+          .TgZ(2, "span", 25);
 
           core
           /* ɵɵtext */
-          ._uU(3, " Next spring... ");
+          ._uU(3, " Farewell Gimi ");
 
           core
           /* ɵɵelementEnd */
@@ -16081,11 +16174,11 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(4, "div", 35);
+          .TgZ(4, "div", 39);
 
           core
           /* ɵɵelement */
-          ._UZ(5, "img", 36);
+          ._UZ(5, "img", 40);
 
           core
           /* ɵɵelementEnd */
@@ -16096,35 +16189,18 @@
         }
       }
 
-      function F1CountdownComponent_div_22_div_2_Template(rf, ctx) {
+      function F1CountdownComponent_div_22_div_4_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵelementStart */
           .TgZ(0, "div");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "h1");
-          core
-          /* ɵɵelementStart */
-          .TgZ(2, "span", 24);
-
-          core
-          /* ɵɵtext */
-          ._uU(3, " The Champion ");
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(4, "div", 35);
+          .TgZ(1, "div", 41);
 
           core
           /* ɵɵelement */
-          ._UZ(5, "img", 37);
+          ._UZ(2, "iframe", 42);
 
           core
           /* ɵɵelementEnd */
@@ -16139,13 +16215,22 @@
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 34);
+          .TgZ(0, "div", 37);
+          core
+          /* ɵɵelementStart */
+          .TgZ(1, "div", 38);
           core
           /* ɵɵtemplate */
-          .YNc(1, F1CountdownComponent_div_22_div_1_Template, 6, 0, "div", 25);
+          .YNc(2, F1CountdownComponent_div_22_mat_slide_toggle_2_Template, 2, 1, "mat-slide-toggle", 30);
+          core
+          /* ɵɵelementEnd */
+          .qZA();
           core
           /* ɵɵtemplate */
-          .YNc(2, F1CountdownComponent_div_22_div_2_Template, 6, 0, "div", 25);
+          .YNc(3, F1CountdownComponent_div_22_div_3_Template, 6, 0, "div", 26);
+          core
+          /* ɵɵtemplate */
+          .YNc(4, F1CountdownComponent_div_22_div_4_Template, 3, 0, "div", 26);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -16155,6 +16240,12 @@
           var ctx_r3 = core
           /* ɵɵnextContext */
           .oxw();
+          core
+          /* ɵɵadvance */
+          .xp6(2);
+          core
+          /* ɵɵproperty */
+          .Q6J("ngIf", ctx_r3.itsTime);
           core
           /* ɵɵadvance */
           .xp6(1);
@@ -16171,12 +16262,14 @@
       }
 
       var F1CountdownComponent = /*#__PURE__*/function () {
-        function F1CountdownComponent(restService, utilityService, toastr) {
+        function F1CountdownComponent(restService, utilityService, toastr, router, route) {
           _classCallCheck(this, F1CountdownComponent);
 
           this.restService = restService;
           this.utilityService = utilityService;
           this.toastr = toastr;
+          this.router = router;
+          this.route = route;
           this.raceDays = 0;
           this.raceSeconds = 0;
           this.qualifyingDays = 0;
@@ -16188,16 +16281,16 @@
           this.FP1Days = 0;
           this.FP1Seconds = 0;
           this.selectedTab = 4;
-          this.isNotPlaying = true;
           this.unknown = false;
           this.isGmt = false;
+          this.isPlayingMusic = false;
+          this.itsTime = false;
           this.timezoneOffset = 0;
-          this.utilityService.setTitleDefaultPage("Season is over");
+          this.utilityService.setTitleDefaultPage("Season is over. Next race - March 20th 2022");
           this.getCountdownData(0);
           this.setTimezoneOffset();
           this.utilityService.reloadPosts(1);
-          this.selectedTab = 4;
-          this.isNotPlaying = true;
+          this.selectedTab = this.getSelectedTab(); //this.runVerstappenMusicOnStart();
         }
 
         _createClass(F1CountdownComponent, [{
@@ -16322,29 +16415,7 @@
           key: "tabChanged",
           value: function tabChanged(tabChangeEvent) {
             this.getCountdownData(tabChangeEvent.index + 1);
-          }
-        }, {
-          key: "itsRaceTime",
-          value: function itsRaceTime(cevent) {
-            if (cevent.action == 'done' && this.raceSeconds > 0) {
-              var iframe = document.createElement('iframe');
-              iframe.style.display = "none";
-              iframe.src = 'https://www.youtube.com/embed/jKlL6wvGrbc?autoplay=1';
-              iframe.allow = 'autoplay; encrypted-media';
-              document.body.appendChild(iframe);
-            }
-          }
-        }, {
-          key: "startMusic",
-          value: function startMusic(raceDays, raceSeconds) {
-            if (this.isNotPlaying && raceDays == 0 && this.raceSeconds < 3600) {
-              this.isNotPlaying = false;
-              var iframe = document.createElement('iframe');
-              iframe.src = 'https://www.youtube.com/embed/jKlL6wvGrbc?autoplay=1';
-              iframe.allow = 'autoplay; encrypted-media';
-              iframe.id = 'hidden_iframe';
-              document.body.appendChild(iframe);
-            }
+            this.updateUrl();
           }
         }, {
           key: "touchstart",
@@ -16398,6 +16469,93 @@
               return myDate;
             }
           }
+        }, {
+          key: "updateUrl",
+          value: function updateUrl() {
+            var queryParams = {
+              tab: this.selectedTab + 1
+            };
+            this.router.navigate([], {
+              relativeTo: this.route,
+              queryParams: queryParams
+            });
+          }
+        }, {
+          key: "getSelectedTab",
+          value: function getSelectedTab() {
+            var tab = this.route.snapshot.queryParamMap.get('tab');
+
+            if (tab == undefined) {
+              return 4;
+            } else {
+              return Number(tab) - 1;
+            }
+          }
+        }, {
+          key: "toggleMusic",
+          value: function toggleMusic(event) {
+            localStorage.setItem('f1-play-music', String(event.checked));
+            this.runMusic(event.checked);
+          }
+        }, {
+          key: "runMusicOnStart",
+          value: function runMusicOnStart() {
+            if (this.raceSeconds < 3600) {
+              this.itsTime = true;
+
+              if (localStorage.getItem('f1-play-music') == undefined) {
+                localStorage.setItem('f1-play-music', String(false));
+                this.isPlayingMusic = false;
+              } else {
+                this.isPlayingMusic = localStorage.getItem('f1-play-music') === 'true';
+              }
+
+              this.runMusic(this.isPlayingMusic);
+            } else {
+              this.itsTime = false;
+              this.isPlayingMusic = false;
+            }
+          }
+        }, {
+          key: "runVerstappenMusicOnStart",
+          value: function runVerstappenMusicOnStart() {
+            this.itsTime = true;
+
+            if (localStorage.getItem('f1-play-music') == undefined) {
+              localStorage.setItem('f1-play-music', String(true));
+              this.isPlayingMusic = true;
+            } else {
+              this.isPlayingMusic = localStorage.getItem('f1-play-music') === 'true';
+            }
+
+            this.runMusic(this.isPlayingMusic);
+          }
+        }, {
+          key: "runMusic",
+          value: function runMusic(bool) {
+            if (bool) {
+              var element = document.getElementById("youtube1");
+
+              if (element == null) {
+                var iframe = document.createElement('iframe');
+                iframe.style.display = "none";
+                iframe.id = 'youtube1'; //buildUp
+                // iframe.src = 'https://www.youtube.com/embed/jKlL6wvGrbc?autoplay=1';
+                //superMax
+
+                iframe.src = 'https://www.youtube.com/embed/ZBJCgrrQhx4?start=10&autoplay=1';
+                iframe.allow = 'autoplay; encrypted-media';
+                document.body.appendChild(iframe);
+              }
+            } else {
+              var element = document.getElementById("youtube1");
+
+              if (element != null) {
+                var frame = document.getElementById("youtube1");
+                frame.parentNode.removeChild(frame);
+              }
+            }
+          }
         }]);
 
         return F1CountdownComponent;
@@ -16416,7 +16574,15 @@
         /* ɵɵdirectiveInject */
         .Y36(ngx_toastr
         /* ToastrService */
-        ._W));
+        ._W), core
+        /* ɵɵdirectiveInject */
+        .Y36(router
+        /* Router */
+        .F0), core
+        /* ɵɵdirectiveInject */
+        .Y36(router
+        /* ActivatedRoute */
+        .gz));
       };
 
       F1CountdownComponent.ɵcmp = /*@__PURE__*/core
@@ -16443,10 +16609,10 @@
         },
         decls: 23,
         vars: 5,
-        consts: [["mode", "side", "position", "end", 1, "example-sidenav", 3, "opened", "openedChange"], ["drawer", ""], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area", 3, "ngModel", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "post-comment-button", 3, "click"], [4, "ngFor", "ngForOf"], [1, "fixed-button"], ["type", "fixed-plugin", "mat-button", "", 3, "click"], [1, "fa", "fa-commenting-o", "fa-2x"], [1, "bg-white", "height-fill-screen"], ["class", "\u201Dmat-content\u201D", 3, "touchstart", "touchend", 4, "ngIf"], ["class", "\u201Dmat-content\u201D", 4, "ngIf"], [1, "basic-comment"], [1, "one"], [1, "two"], [1, "basic-comment-body"], [1, "\u201Dmat-content\u201D", 3, "touchstart", "touchend"], [3, "selectedIndex", "selectedIndexChange", "selectedTabChange"], [3, "label"], ["matTabContent", ""], ["label", "Start times"], [3, "click"], [1, "countdown-desc", "f1-glow"], [4, "ngIf"], [3, "config"], ["cd", ""], [1, "count-down"], [3, "click", 4, "ngIf"], [3, "config", "event"], [1, "div-padded-always-1rem"], [3, "ngModel", "ngModelChange"], [1, "countdown-desc-2"], [1, "\u201Dmat-content\u201D"], [1, "icon-big", "text-center", "icon-warning"], ["src", "assets/img/feel.jpg", 1, "div-height-70vh"], ["src", "assets/img/max-super.gif", 1, "div-height-70vh"]],
+        consts: [[1, "mat-drawer-no-overflow"], ["mode", "side", "position", "end", 1, "example-sidenav", 3, "opened", "openedChange"], ["drawer", ""], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area", 3, "ngModel", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "post-comment-button", 3, "click"], [4, "ngFor", "ngForOf"], [1, "fixed-button"], ["type", "fixed-plugin", "mat-button", "", 3, "click"], [1, "fa", "fa-commenting-o", "fa-2x"], [1, "bg-white", "height-fill-screen"], ["class", "mat-content", 3, "touchstart", "touchend", 4, "ngIf"], ["class", "\u201Dmat-content\u201D", 4, "ngIf"], [1, "basic-comment"], [1, "one"], [1, "two"], [1, "basic-comment-body"], [1, "mat-content", 3, "touchstart", "touchend"], [3, "selectedIndex", "selectedIndexChange", "selectedTabChange"], [3, "label"], ["matTabContent", ""], ["label", "Start times"], [3, "click"], [1, "countdown-desc", "f1-glow"], [4, "ngIf"], [3, "config"], ["cd", ""], [1, "count-down"], [3, "ngModel", "change", "ngModelChange", 4, "ngIf"], [3, "click", 4, "ngIf"], [3, "ngModel", "change", "ngModelChange"], [1, "nc-icon", "nc-note-03"], [1, "div-padded-always-1rem"], [3, "ngModel", "ngModelChange"], [1, "countdown-desc-2"], [1, "\u201Dmat-content\u201D"], [1, "display-on-desktop-only"], [1, "icon-big", "text-center", "icon-warning"], ["src", "assets/img/kimi-raikkonen-smile.gif", 1, "div-height-70vh"], [1, "text-center"], ["frameborder", "0", "scrolling", "yes", "seamless", "seamless", "src", "https://dl.dropboxusercontent.com/s/szbju9wkkmwzlgu/Amd%20Amx-1.m4v", 1, "custom-iframe-fullscreen"]],
         template: function F1CountdownComponent_Template(rf, ctx) {
           if (rf & 1) {
-            var _r48 = core
+            var _r55 = core
             /* ɵɵgetCurrentView */
             .EpF();
 
@@ -16455,10 +16621,10 @@
             .TgZ(0, "div");
             core
             /* ɵɵelementStart */
-            .TgZ(1, "mat-drawer-container");
+            .TgZ(1, "mat-drawer-container", 0);
             core
             /* ɵɵelementStart */
-            .TgZ(2, "mat-drawer", 0, 1);
+            .TgZ(2, "mat-drawer", 1, 2);
             core
             /* ɵɵlistener */
             .NdJ("openedChange", function F1CountdownComponent_Template_mat_drawer_openedChange_2_listener($event) {
@@ -16466,16 +16632,16 @@
             });
             core
             /* ɵɵelementStart */
-            .TgZ(4, "div", 2);
+            .TgZ(4, "div", 3);
             core
             /* ɵɵelementStart */
-            .TgZ(5, "div", 3);
+            .TgZ(5, "div", 4);
             core
             /* ɵɵelementStart */
             .TgZ(6, "div");
             core
             /* ɵɵelementStart */
-            .TgZ(7, "textarea", 4);
+            .TgZ(7, "textarea", 5);
             core
             /* ɵɵlistener */
             .NdJ("ngModelChange", function F1CountdownComponent_Template_textarea_ngModelChange_7_listener($event) {
@@ -16486,10 +16652,10 @@
             .qZA();
             core
             /* ɵɵelementStart */
-            .TgZ(8, "div", 5);
+            .TgZ(8, "div", 6);
             core
             /* ɵɵelementStart */
-            .TgZ(9, "button", 6);
+            .TgZ(9, "button", 7);
             core
             /* ɵɵlistener */
             .NdJ("click", function F1CountdownComponent_Template_button_click_9_listener() {
@@ -16505,7 +16671,7 @@
             .qZA();
             core
             /* ɵɵelementStart */
-            .TgZ(11, "button", 6);
+            .TgZ(11, "button", 7);
             core
             /* ɵɵlistener */
             .NdJ("click", function F1CountdownComponent_Template_button_click_11_listener() {
@@ -16533,19 +16699,19 @@
             .qZA();
             core
             /* ɵɵtemplate */
-            .YNc(13, F1CountdownComponent_div_13_Template, 8, 3, "div", 7);
+            .YNc(13, F1CountdownComponent_div_13_Template, 8, 3, "div", 8);
             core
             /* ɵɵelementStart */
-            .TgZ(14, "div", 8);
+            .TgZ(14, "div", 9);
             core
             /* ɵɵelementStart */
-            .TgZ(15, "button", 9);
+            .TgZ(15, "button", 10);
             core
             /* ɵɵlistener */
             .NdJ("click", function F1CountdownComponent_Template_button_click_15_listener() {
               core
               /* ɵɵrestoreView */
-              .CHM(_r48);
+              .CHM(_r55);
 
               var _r0 = core
               /* ɵɵreference */
@@ -16556,7 +16722,7 @@
 
             core
             /* ɵɵelement */
-            ._UZ(16, "i", 10);
+            ._UZ(16, "i", 11);
 
             core
             /* ɵɵelementEnd */
@@ -16569,16 +16735,16 @@
             .qZA();
             core
             /* ɵɵelementStart */
-            .TgZ(17, "div", 8);
+            .TgZ(17, "div", 9);
             core
             /* ɵɵelementStart */
-            .TgZ(18, "button", 9);
+            .TgZ(18, "button", 10);
             core
             /* ɵɵlistener */
             .NdJ("click", function F1CountdownComponent_Template_button_click_18_listener() {
               core
               /* ɵɵrestoreView */
-              .CHM(_r48);
+              .CHM(_r55);
 
               var _r0 = core
               /* ɵɵreference */
@@ -16589,7 +16755,7 @@
 
             core
             /* ɵɵelement */
-            ._UZ(19, "i", 10);
+            ._UZ(19, "i", 11);
 
             core
             /* ɵɵelementEnd */
@@ -16599,13 +16765,13 @@
             .qZA();
             core
             /* ɵɵelementStart */
-            .TgZ(20, "div", 11);
+            .TgZ(20, "div", 12);
             core
             /* ɵɵtemplate */
-            .YNc(21, F1CountdownComponent_div_21_Template, 14, 6, "div", 12);
+            .YNc(21, F1CountdownComponent_div_21_Template, 14, 6, "div", 13);
             core
             /* ɵɵtemplate */
-            .YNc(22, F1CountdownComponent_div_22_Template, 3, 2, "div", 13);
+            .YNc(22, F1CountdownComponent_div_22_Template, 5, 3, "div", 14);
             core
             /* ɵɵelementEnd */
             .qZA();
@@ -21656,7 +21822,7 @@
 
           core
           /* ɵɵelement */
-          ._UZ(4, "apx-chart", 53);
+          ._UZ(4, "apx-chart", 54);
 
           core
           /* ɵɵelementEnd */
@@ -21752,7 +21918,7 @@
           .TgZ(0, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "th", 63);
+          .TgZ(1, "th", 64);
 
           core
           /* ɵɵtext */
@@ -21763,7 +21929,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(3, "td", 64);
+          .TgZ(3, "td", 65);
 
           core
           /* ɵɵtext */
@@ -21774,7 +21940,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(5, "td", 65);
+          .TgZ(5, "td", 66);
 
           core
           /* ɵɵtext */
@@ -21785,7 +21951,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(7, "td", 66);
+          .TgZ(7, "td", 67);
 
           core
           /* ɵɵtext */
@@ -21852,10 +22018,10 @@
           .TgZ(2, "div", 27);
           core
           /* ɵɵelementStart */
-          .TgZ(3, "div", 54);
+          .TgZ(3, "div", 55);
           core
           /* ɵɵelementStart */
-          .TgZ(4, "table", 55);
+          .TgZ(4, "table", 56);
           core
           /* ɵɵelementStart */
           .TgZ(5, "thead");
@@ -21865,14 +22031,14 @@
 
           core
           /* ɵɵelement */
-          ._UZ(7, "th", 56);
+          ._UZ(7, "th", 57);
 
           core
           /* ɵɵelementStart */
-          .TgZ(8, "th", 57);
+          .TgZ(8, "th", 58);
           core
           /* ɵɵelementStart */
-          .TgZ(9, "mat-select", 58);
+          .TgZ(9, "mat-select", 59);
           core
           /* ɵɵlistener */
           .NdJ("selectionChange", function RaceAnalysisComponent_div_20_ng_template_7_div_14_Template_mat_select_selectionChange_9_listener() {
@@ -21894,7 +22060,7 @@
           });
           core
           /* ɵɵtemplate */
-          .YNc(10, RaceAnalysisComponent_div_20_ng_template_7_div_14_mat_option_10_Template, 2, 2, "mat-option", 59);
+          .YNc(10, RaceAnalysisComponent_div_20_ng_template_7_div_14_mat_option_10_Template, 2, 2, "mat-option", 60);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -21903,7 +22069,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(11, "th", 60);
+          .TgZ(11, "th", 61);
 
           core
           /* ɵɵtext */
@@ -21914,10 +22080,10 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(13, "th", 57);
+          .TgZ(13, "th", 58);
           core
           /* ɵɵelementStart */
-          .TgZ(14, "mat-select", 58);
+          .TgZ(14, "mat-select", 59);
           core
           /* ɵɵlistener */
           .NdJ("selectionChange", function RaceAnalysisComponent_div_20_ng_template_7_div_14_Template_mat_select_selectionChange_14_listener() {
@@ -21939,7 +22105,7 @@
           });
           core
           /* ɵɵtemplate */
-          .YNc(15, RaceAnalysisComponent_div_20_ng_template_7_div_14_mat_option_15_Template, 2, 2, "mat-option", 59);
+          .YNc(15, RaceAnalysisComponent_div_20_ng_template_7_div_14_mat_option_15_Template, 2, 2, "mat-option", 60);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -21954,7 +22120,7 @@
           .TgZ(16, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(17, "th", 56);
+          .TgZ(17, "th", 57);
 
           core
           /* ɵɵtext */
@@ -21965,7 +22131,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(19, "th", 61);
+          .TgZ(19, "th", 62);
 
           core
           /* ɵɵtext */
@@ -21976,7 +22142,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(21, "th", 60);
+          .TgZ(21, "th", 61);
 
           core
           /* ɵɵtext */
@@ -21987,7 +22153,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(23, "th", 62);
+          .TgZ(23, "th", 63);
 
           core
           /* ɵɵtext */
@@ -22078,7 +22244,7 @@
           .TgZ(2, "div", 27);
           core
           /* ɵɵelementStart */
-          .TgZ(3, "div", 67);
+          .TgZ(3, "div", 68);
           core
           /* ɵɵelementStart */
           .TgZ(4, "h2");
@@ -22159,11 +22325,11 @@
           .TgZ(10, "div", 27);
           core
           /* ɵɵelementStart */
-          .TgZ(11, "div", 49);
+          .TgZ(11, "div", 51);
 
           core
           /* ɵɵelement */
-          ._UZ(12, "apx-chart", 51);
+          ._UZ(12, "apx-chart", 52);
 
           core
           /* ɵɵelementEnd */
@@ -22179,13 +22345,13 @@
           .qZA();
           core
           /* ɵɵtemplate */
-          .YNc(13, RaceAnalysisComponent_div_20_ng_template_7_div_13_Template, 5, 9, "div", 52);
+          .YNc(13, RaceAnalysisComponent_div_20_ng_template_7_div_13_Template, 5, 9, "div", 53);
           core
           /* ɵɵtemplate */
-          .YNc(14, RaceAnalysisComponent_div_20_ng_template_7_div_14_Template, 27, 5, "div", 52);
+          .YNc(14, RaceAnalysisComponent_div_20_ng_template_7_div_14_Template, 27, 5, "div", 53);
           core
           /* ɵɵtemplate */
-          .YNc(15, RaceAnalysisComponent_div_20_ng_template_7_div_15_Template, 6, 0, "div", 52);
+          .YNc(15, RaceAnalysisComponent_div_20_ng_template_7_div_15_Template, 6, 0, "div", 53);
         }
 
         if (rf & 2) {
@@ -22238,11 +22404,11 @@
           .TgZ(2, "div", 27);
           core
           /* ɵɵelementStart */
-          .TgZ(3, "div", 71);
+          .TgZ(3, "div", 72);
 
           core
           /* ɵɵelement */
-          ._UZ(4, "apx-chart", 72);
+          ._UZ(4, "apx-chart", 73);
 
           core
           /* ɵɵelementEnd */
@@ -22305,7 +22471,7 @@
           });
           core
           /* ɵɵelementStart */
-          .TgZ(5, "mat-radio-button", 68);
+          .TgZ(5, "mat-radio-button", 69);
           core
           /* ɵɵlistener */
           .NdJ("change", function RaceAnalysisComponent_div_20_ng_template_9_Template_mat_radio_button_change_5_listener($event) {
@@ -22327,7 +22493,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(7, "mat-radio-button", 69);
+          .TgZ(7, "mat-radio-button", 70);
           core
           /* ɵɵlistener */
           .NdJ("change", function RaceAnalysisComponent_div_20_ng_template_9_Template_mat_radio_button_change_7_listener($event) {
@@ -22354,7 +22520,7 @@
 
           core
           /* ɵɵelementStart */
-          .TgZ(10, "mat-radio-button", 70);
+          .TgZ(10, "mat-radio-button", 71);
           core
           /* ɵɵlistener */
           .NdJ("change", function RaceAnalysisComponent_div_20_ng_template_9_Template_mat_radio_button_change_10_listener($event) {
@@ -22391,7 +22557,7 @@
           .qZA();
           core
           /* ɵɵtemplate */
-          .YNc(12, RaceAnalysisComponent_div_20_ng_template_9_div_12_Template, 5, 6, "div", 52);
+          .YNc(12, RaceAnalysisComponent_div_20_ng_template_9_div_12_Template, 5, 6, "div", 53);
         }
 
         if (rf & 2) {
@@ -22420,17 +22586,17 @@
           .TgZ(0, "div", 3);
           core
           /* ɵɵelementStart */
-          .TgZ(1, "div", 73);
+          .TgZ(1, "div", 74);
           core
           /* ɵɵelementStart */
           .TgZ(2, "div", 27);
           core
           /* ɵɵelementStart */
-          .TgZ(3, "div", 49);
+          .TgZ(3, "div", 51);
 
           core
           /* ɵɵelement */
-          ._UZ(4, "apx-chart", 74);
+          ._UZ(4, "apx-chart", 75);
 
           core
           /* ɵɵelementEnd */
@@ -22443,17 +22609,17 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(5, "div", 73);
+          .TgZ(5, "div", 74);
           core
           /* ɵɵelementStart */
           .TgZ(6, "div", 27);
           core
           /* ɵɵelementStart */
-          .TgZ(7, "div", 49);
+          .TgZ(7, "div", 51);
 
           core
           /* ɵɵelement */
-          ._UZ(8, "apx-chart", 75);
+          ._UZ(8, "apx-chart", 76);
 
           core
           /* ɵɵelementEnd */
@@ -22466,17 +22632,17 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(9, "div", 73);
+          .TgZ(9, "div", 74);
           core
           /* ɵɵelementStart */
           .TgZ(10, "div", 27);
           core
           /* ɵɵelementStart */
-          .TgZ(11, "div", 49);
+          .TgZ(11, "div", 51);
 
           core
           /* ɵɵelement */
-          ._UZ(12, "apx-chart", 74);
+          ._UZ(12, "apx-chart", 75);
 
           core
           /* ɵɵelementEnd */
@@ -22489,17 +22655,17 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(13, "div", 73);
+          .TgZ(13, "div", 74);
           core
           /* ɵɵelementStart */
           .TgZ(14, "div", 27);
           core
           /* ɵɵelementStart */
-          .TgZ(15, "div", 49);
+          .TgZ(15, "div", 51);
 
           core
           /* ɵɵelement */
-          ._UZ(16, "apx-chart", 74);
+          ._UZ(16, "apx-chart", 75);
 
           core
           /* ɵɵelementEnd */
@@ -22512,17 +22678,17 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(17, "div", 73);
+          .TgZ(17, "div", 74);
           core
           /* ɵɵelementStart */
           .TgZ(18, "div", 27);
           core
           /* ɵɵelementStart */
-          .TgZ(19, "div", 49);
+          .TgZ(19, "div", 51);
 
           core
           /* ɵɵelement */
-          ._UZ(20, "apx-chart", 74);
+          ._UZ(20, "apx-chart", 75);
 
           core
           /* ɵɵelementEnd */
@@ -22535,17 +22701,17 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(21, "div", 73);
+          .TgZ(21, "div", 74);
           core
           /* ɵɵelementStart */
           .TgZ(22, "div", 27);
           core
           /* ɵɵelementStart */
-          .TgZ(23, "div", 49);
+          .TgZ(23, "div", 51);
 
           core
           /* ɵɵelement */
-          ._UZ(24, "apx-chart", 74);
+          ._UZ(24, "apx-chart", 75);
 
           core
           /* ɵɵelementEnd */
@@ -22617,11 +22783,11 @@
           .TgZ(2, "div", 27);
           core
           /* ɵɵelementStart */
-          .TgZ(3, "div", 49);
+          .TgZ(3, "div", 51);
 
           core
           /* ɵɵelement */
-          ._UZ(4, "apx-chart", 76);
+          ._UZ(4, "apx-chart", 77);
 
           core
           /* ɵɵelementEnd */
@@ -22646,11 +22812,11 @@
           .TgZ(7, "div", 27);
           core
           /* ɵɵelementStart */
-          .TgZ(8, "div", 49);
+          .TgZ(8, "div", 51);
 
           core
           /* ɵɵelement */
-          ._UZ(9, "apx-chart", 76);
+          ._UZ(9, "apx-chart", 77);
 
           core
           /* ɵɵelementEnd */
@@ -22675,11 +22841,11 @@
           .TgZ(12, "div", 27);
           core
           /* ɵɵelementStart */
-          .TgZ(13, "div", 49);
+          .TgZ(13, "div", 51);
 
           core
           /* ɵɵelement */
-          ._UZ(14, "apx-chart", 76);
+          ._UZ(14, "apx-chart", 77);
 
           core
           /* ɵɵelementEnd */
@@ -22704,11 +22870,11 @@
           .TgZ(17, "div", 27);
           core
           /* ɵɵelementStart */
-          .TgZ(18, "div", 49);
+          .TgZ(18, "div", 51);
 
           core
           /* ɵɵelement */
-          ._UZ(19, "apx-chart", 76);
+          ._UZ(19, "apx-chart", 77);
 
           core
           /* ɵɵelementEnd */
@@ -22733,11 +22899,11 @@
           .TgZ(22, "div", 27);
           core
           /* ɵɵelementStart */
-          .TgZ(23, "div", 49);
+          .TgZ(23, "div", 51);
 
           core
           /* ɵɵelement */
-          ._UZ(24, "apx-chart", 76);
+          ._UZ(24, "apx-chart", 77);
 
           core
           /* ɵɵelementEnd */
@@ -22762,11 +22928,11 @@
           .TgZ(27, "div", 27);
           core
           /* ɵɵelementStart */
-          .TgZ(28, "div", 49);
+          .TgZ(28, "div", 51);
 
           core
           /* ɵɵelement */
-          ._UZ(29, "apx-chart", 76);
+          ._UZ(29, "apx-chart", 77);
 
           core
           /* ɵɵelementEnd */
@@ -22791,11 +22957,11 @@
           .TgZ(32, "div", 27);
           core
           /* ɵɵelementStart */
-          .TgZ(33, "div", 49);
+          .TgZ(33, "div", 51);
 
           core
           /* ɵɵelement */
-          ._UZ(34, "apx-chart", 76);
+          ._UZ(34, "apx-chart", 77);
 
           core
           /* ɵɵelementEnd */
@@ -22864,18 +23030,18 @@
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 77);
+          .TgZ(0, "div", 78);
 
           core
           /* ɵɵelement */
-          ._UZ(1, "apx-chart", 78);
+          ._UZ(1, "apx-chart", 79);
 
           core
           /* ɵɵelementStart */
           .TgZ(2, "mat-accordion");
           core
           /* ɵɵelementStart */
-          .TgZ(3, "mat-expansion-panel", 79);
+          .TgZ(3, "mat-expansion-panel", 80);
           core
           /* ɵɵelementStart */
           .TgZ(4, "mat-expansion-panel-header");
@@ -23019,6 +23185,14 @@
             /* ɵɵnextContext */
             .oxw();
             return ctx_r50.selectedTab = $event;
+          })("selectedTabChange", function RaceAnalysisComponent_div_20_Template_mat_tab_group_selectedTabChange_1_listener($event) {
+            core
+            /* ɵɵrestoreView */
+            .CHM(_r48);
+            var ctx_r51 = core
+            /* ɵɵnextContext */
+            .oxw();
+            return ctx_r51.tabChanged($event);
           });
           core
           /* ɵɵelementStart */
@@ -23111,14 +23285,15 @@
       }
 
       var RaceAnalysisComponent = /*#__PURE__*/function () {
-        function RaceAnalysisComponent(restService, utilityService, toastr) {
+        function RaceAnalysisComponent(restService, utilityService, router, route) {
           var _this42 = this;
 
           _classCallCheck(this, RaceAnalysisComponent);
 
           this.restService = restService;
           this.utilityService = utilityService;
-          this.toastr = toastr;
+          this.router = router;
+          this.route = route;
           this.steering = [];
           this.gforceLat = [];
           this.gforceLong = [];
@@ -23298,6 +23473,7 @@
             }
           });
           this.utilityService.reloadPosts(6);
+          this.selectedTab = this.getSelectedTab();
         }
 
         _createClass(RaceAnalysisComponent, [{
@@ -23972,7 +24148,6 @@
               fastestLaps.push(_fastestLap);
             }
 
-            console.log("slowestLap1: " + this.slowestLap);
             return fastestLaps;
           }
         }, {
@@ -24003,26 +24178,22 @@
             var time = new Date().getTime();
             var direction = [coord[0] - this.swipeCoord[0], coord[1] - this.swipeCoord[1]];
             var duration = time - this.swipeTime;
-
-            if (duration < 1000 && Math.abs(direction[0]) > 30 // Long enough
-            && Math.abs(direction[0]) > Math.abs(direction[1] * 3)) {
-              // Horizontal enough
-              var swipe = direction[0] < 0 ? 'next' : 'previous';
-
-              if (swipe === 'next') {
-                var isFirst = this.selectedTab === 0;
-
-                if (this.selectedTab <= 5) {
-                  this.selectedTab = isFirst ? 1 : this.selectedTab + 1;
-                }
-              } else if (swipe === 'previous') {
-                var isLast = this.selectedTab === 6;
-
-                if (this.selectedTab >= 1) {
-                  this.selectedTab = this.selectedTab - 1;
-                }
-              }
-            }
+            console.log("clientY: " + coord[1] + " - " + this.swipeCoord[1]); // if (duration < 1000
+            //   && Math.abs(direction[0]) > 30 // Long enough
+            //   && Math.abs(direction[0]) > Math.abs(direction[1] * 3)) { // Horizontal enough
+            //   const swipe = direction[0] < 0 ? 'next' : 'previous';
+            //   if(swipe === 'next'){
+            //     const isFirst = this.selectedTab === 0;
+            //     if(this.selectedTab <= 5){
+            //       this.selectedTab = isFirst ? 1 : this.selectedTab + 1;
+            //     }
+            //   } else if(swipe === 'previous'){
+            //     const isLast = this.selectedTab === 6;
+            //     if(this.selectedTab >= 1){
+            //       this.selectedTab = this.selectedTab - 1;
+            //     }
+            //   }
+            // }
           }
         }, {
           key: "getUrl",
@@ -24331,6 +24502,33 @@
               }
             };
           }
+        }, {
+          key: "tabChanged",
+          value: function tabChanged(tabChangeEvent) {
+            this.updateUrl();
+          }
+        }, {
+          key: "updateUrl",
+          value: function updateUrl() {
+            var queryParams = {
+              tab: this.selectedTab + 1
+            };
+            this.router.navigate([], {
+              relativeTo: this.route,
+              queryParams: queryParams
+            });
+          }
+        }, {
+          key: "getSelectedTab",
+          value: function getSelectedTab() {
+            var tab = this.route.snapshot.queryParamMap.get('tab');
+
+            if (tab == undefined) {
+              return 0;
+            } else {
+              return Number(tab) - 1;
+            }
+          }
         }], [{
           key: "getColor",
           value: function getColor(type) {
@@ -24371,9 +24569,13 @@
         /* UtilityService */
         .t), core
         /* ɵɵdirectiveInject */
-        .Y36(ngx_toastr
-        /* ToastrService */
-        ._W));
+        .Y36(router
+        /* Router */
+        .F0), core
+        /* ɵɵdirectiveInject */
+        .Y36(router
+        /* ActivatedRoute */
+        .gz));
       };
 
       RaceAnalysisComponent.ɵcmp = /*@__PURE__*/core
@@ -24400,10 +24602,10 @@
         },
         decls: 21,
         vars: 4,
-        consts: [["autosize", ""], ["autosize", "", "mode", "side", "position", "end", 1, "example-sidenav", 3, "opened", "openedChange"], ["drawer", ""], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area", 3, "ngModel", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "post-comment-button", 3, "click"], [4, "ngFor", "ngForOf"], [1, "fixed-button"], ["type", "fixed-plugin", "mat-button", "", 3, "click"], [1, "fa", "fa-commenting-o", "fa-2x"], ["class", "\u201Dmat-content\u201D", 3, "touchstart", "touchend", 4, "ngIf"], [1, "basic-comment"], [1, "one"], [1, "two"], [1, "basic-comment-body"], [1, "\u201Dmat-content\u201D", 3, "touchstart", "touchend"], [3, "selectedIndex", "selectedIndexChange"], ["label", "Drivers"], ["matTabContent", ""], ["label", "Final result"], ["label", "Lap-by-Lap"], ["label", "Laps heatmap", 3, "disabled"], ["label", "Scores"], ["label", "Weather"], ["label", "Points Map"], [1, "card"], ["aria-label", "Select an option", 3, "ngModel", "ngModelChange"], ["checked", "", "value", "position", 1, "div-padded-always-0-3rem", 3, "change"], ["value", "startingPosition", 1, "div-padded-always-0-3rem", 3, "change"], ["value", "fastestLap", 1, "div-padded-always-0-3rem", 3, "change"], [1, "row", "col-padding-1"], ["class", "col-lg-2 col-6", 4, "ngFor", "ngForOf"], [1, "col-lg-2", "col-6"], [3, "value"], [1, "card-body"], [1, "driver-text-smaller"], ["onerror", "this.src='assets/img/drivers/default.png'", "alt", "", 3, "src"], [1, "card-footer"], [1, "driver-text-def"], [4, "ngIf"], ["matSort", "", 1, "table", "table-striped", 3, "matSortChange"], ["mat-sort-header", "position", "scope", "col"], ["scope", "col"], ["scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], ["mat-sort-header", "fastestLap", "scope", "col"], ["scope", "row"], [1, "d-sm-none", "d-none", "d-lg-table-cell"], [1, "card-body-padded"], [3, "series", "chart", "dataLabels", "grid", "stroke", "title", "yaxis", "xaxis"], [3, "title", "series", "chart", "fill", "legend", "plotOptions", "xaxis", "tooltip"], ["class", "row", 4, "ngIf"], [3, "series", "chart", "dataLabels", "grid", "stroke", "title", "yaxis", "xaxis", "tooltip"], [1, "card-body-padded", "table-responsive"], [1, "table", "table-striped"], ["colspan", "1", "scope", "col", 2, "width", "35px"], ["colspan", "1", "scope", "col", 1, "custom-mat-select"], [3, "value", "selectionChange", "valueChange"], [3, "value", 4, "ngFor", "ngForOf"], ["colspan", "1", "scope", "col", 1, "text-center", 2, "width", "35px"], ["colspan", "1", "scope", "col", 1, "text-right"], ["colspan", "1", "scope", "col"], ["colspan", "1", "scope", "row"], ["colspan", "1", 1, "text-right"], ["colspan", "1", 1, "width-7rem", "text-right", 3, "ngClass"], ["colspan", "1"], [1, "card-body-padded", "text-center"], ["checked", "", "value", "1", 1, "div-padded-always-0-3rem", 3, "change"], ["value", "2", 1, "div-padded-always-0-3rem", 3, "change"], ["value", "3", 1, "div-padded-always-0-3rem", 3, "change"], [1, "width-3600", "pr-1"], [3, "series", "chart", "dataLabels", "plotOptions", "colors", "tooltip"], [1, "col-md-12", "col-lg-6"], [3, "legend", "series", "chart", "xaxis", "dataLabels", "grid", "stroke", "title", "plotOptions"], [3, "legend", "series", "chart", "xaxis", "dataLabels", "grid", "title", "plotOptions"], [3, "legend", "series", "chart", "xaxis", "dataLabels", "grid", "stroke", "title"], [1, "hide-title", "pr-1"], [3, "series", "chart", "dataLabels", "plotOptions", "colors"], ["hideToggle", ""]],
+        consts: [["autosize", ""], ["autosize", "", "mode", "side", "position", "end", 1, "example-sidenav", 3, "opened", "openedChange"], ["drawer", ""], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area", 3, "ngModel", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "post-comment-button", 3, "click"], [4, "ngFor", "ngForOf"], [1, "fixed-button"], ["type", "fixed-plugin", "mat-button", "", 3, "click"], [1, "fa", "fa-commenting-o", "fa-2x"], ["class", "\u201Dmat-content\u201D", 3, "touchstart", "touchend", 4, "ngIf"], [1, "basic-comment"], [1, "one"], [1, "two"], [1, "basic-comment-body"], [1, "\u201Dmat-content\u201D", 3, "touchstart", "touchend"], [3, "selectedIndex", "selectedIndexChange", "selectedTabChange"], ["label", "Drivers"], ["matTabContent", ""], ["label", "Final result"], ["label", "Lap-by-Lap"], ["label", "Laps heatmap", 3, "disabled"], ["label", "Scores"], ["label", "Weather"], ["label", "Points Map"], [1, "card"], ["aria-label", "Select an option", 3, "ngModel", "ngModelChange"], ["checked", "", "value", "position", 1, "div-padded-always-0-3rem", 3, "change"], ["value", "startingPosition", 1, "div-padded-always-0-3rem", 3, "change"], ["value", "fastestLap", 1, "div-padded-always-0-3rem", 3, "change"], [1, "row", "col-padding-1"], ["class", "col-lg-2 col-6", 4, "ngFor", "ngForOf"], [1, "col-lg-2", "col-6"], [3, "value"], [1, "card-body"], [1, "driver-text-smaller"], ["onerror", "this.src='assets/img/drivers/default.png'", "alt", "", 3, "src"], [1, "card-footer"], [1, "driver-text-def"], [4, "ngIf"], ["matSort", "", 1, "table", "table-striped", 3, "matSortChange"], ["mat-sort-header", "position", "scope", "col"], ["scope", "col"], ["scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], ["mat-sort-header", "fastestLap", "scope", "col"], ["scope", "row"], [1, "d-sm-none", "d-none", "d-lg-table-cell"], [1, "card-body-padded", "div-min-width-1000"], [3, "series", "chart", "dataLabels", "grid", "stroke", "title", "yaxis", "xaxis"], [1, "card-body-padded"], [3, "title", "series", "chart", "fill", "legend", "plotOptions", "xaxis", "tooltip"], ["class", "row", 4, "ngIf"], [3, "series", "chart", "dataLabels", "grid", "stroke", "title", "yaxis", "xaxis", "tooltip"], [1, "card-body-padded", "table-responsive"], [1, "table", "table-striped"], ["colspan", "1", "scope", "col", 2, "width", "35px"], ["colspan", "1", "scope", "col", 1, "custom-mat-select"], [3, "value", "selectionChange", "valueChange"], [3, "value", 4, "ngFor", "ngForOf"], ["colspan", "1", "scope", "col", 1, "text-center", 2, "width", "35px"], ["colspan", "1", "scope", "col", 1, "text-right"], ["colspan", "1", "scope", "col"], ["colspan", "1", "scope", "row"], ["colspan", "1", 1, "text-right"], ["colspan", "1", 1, "width-7rem", "text-right", 3, "ngClass"], ["colspan", "1"], [1, "card-body-padded", "text-center"], ["checked", "", "value", "1", 1, "div-padded-always-0-3rem", 3, "change"], ["value", "2", 1, "div-padded-always-0-3rem", 3, "change"], ["value", "3", 1, "div-padded-always-0-3rem", 3, "change"], [1, "width-3600", "pr-1"], [3, "series", "chart", "dataLabels", "plotOptions", "colors", "tooltip"], [1, "col-md-12", "col-lg-6"], [3, "legend", "series", "chart", "xaxis", "dataLabels", "grid", "stroke", "title", "plotOptions"], [3, "legend", "series", "chart", "xaxis", "dataLabels", "grid", "title", "plotOptions"], [3, "legend", "series", "chart", "xaxis", "dataLabels", "grid", "stroke", "title"], [1, "hide-title", "pr-1"], [3, "series", "chart", "dataLabels", "plotOptions", "colors"], ["hideToggle", ""]],
         template: function RaceAnalysisComponent_Template(rf, ctx) {
           if (rf & 1) {
-            var _r51 = core
+            var _r52 = core
             /* ɵɵgetCurrentView */
             .EpF();
 
@@ -24502,7 +24704,7 @@
             .NdJ("click", function RaceAnalysisComponent_Template_button_click_15_listener() {
               core
               /* ɵɵrestoreView */
-              .CHM(_r51);
+              .CHM(_r52);
 
               var _r0 = core
               /* ɵɵreference */
@@ -24535,7 +24737,7 @@
             .NdJ("click", function RaceAnalysisComponent_Template_button_click_18_listener() {
               core
               /* ɵɵrestoreView */
-              .CHM(_r51);
+              .CHM(_r52);
 
               var _r0 = core
               /* ɵɵreference */
@@ -24718,7 +24920,7 @@
           .TgZ(0, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "th", 28);
+          .TgZ(1, "th", 29);
 
           core
           /* ɵɵtext */
@@ -24729,10 +24931,10 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(3, "td", 29);
+          .TgZ(3, "td", 30);
           core
           /* ɵɵelementStart */
-          .TgZ(4, "a", 30);
+          .TgZ(4, "a", 31);
           core
           /* ɵɵelementStart */
           .TgZ(5, "div");
@@ -24752,7 +24954,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(7, "td", 31);
+          .TgZ(7, "td", 32);
 
           core
           /* ɵɵtext */
@@ -24763,7 +24965,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(9, "td", 31);
+          .TgZ(9, "td", 32);
 
           core
           /* ɵɵtext */
@@ -24774,10 +24976,10 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(11, "td", 32);
+          .TgZ(11, "td", 33);
           core
           /* ɵɵelementStart */
-          .TgZ(12, "a", 30);
+          .TgZ(12, "a", 31);
           core
           /* ɵɵelementStart */
           .TgZ(13, "div");
@@ -24880,21 +25082,21 @@
           .TgZ(0, "div");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "table", 24);
+          .TgZ(1, "table", 25);
           core
           /* ɵɵelementStart */
           .TgZ(2, "thead");
           core
           /* ɵɵelementStart */
-          .TgZ(3, "tr", 25);
+          .TgZ(3, "tr", 26);
 
           core
           /* ɵɵelement */
-          ._UZ(4, "th", 26);
+          ._UZ(4, "th", 27);
 
           core
           /* ɵɵelementStart */
-          .TgZ(5, "th", 26);
+          .TgZ(5, "th", 27);
 
           core
           /* ɵɵtext */
@@ -24905,7 +25107,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(7, "th", 27);
+          .TgZ(7, "th", 28);
 
           core
           /* ɵɵtext */
@@ -24916,7 +25118,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(9, "th", 27);
+          .TgZ(9, "th", 28);
 
           core
           /* ɵɵtext */
@@ -24927,7 +25129,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(11, "th", 27);
+          .TgZ(11, "th", 28);
 
           core
           /* ɵɵtext */
@@ -24938,7 +25140,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(13, "th", 26);
+          .TgZ(13, "th", 27);
 
           core
           /* ɵɵtext */
@@ -24990,7 +25192,7 @@
           .TgZ(0, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "th", 28);
+          .TgZ(1, "th", 29);
 
           core
           /* ɵɵtext */
@@ -25001,10 +25203,10 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(3, "td", 29);
+          .TgZ(3, "td", 30);
           core
           /* ɵɵelementStart */
-          .TgZ(4, "a", 30);
+          .TgZ(4, "a", 31);
           core
           /* ɵɵelementStart */
           .TgZ(5, "div");
@@ -25081,21 +25283,21 @@
           .TgZ(0, "div");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "table", 24);
+          .TgZ(1, "table", 25);
           core
           /* ɵɵelementStart */
           .TgZ(2, "thead");
           core
           /* ɵɵelementStart */
-          .TgZ(3, "tr", 25);
+          .TgZ(3, "tr", 26);
 
           core
           /* ɵɵelement */
-          ._UZ(4, "th", 26);
+          ._UZ(4, "th", 27);
 
           core
           /* ɵɵelementStart */
-          .TgZ(5, "th", 26);
+          .TgZ(5, "th", 27);
 
           core
           /* ɵɵtext */
@@ -25106,7 +25308,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(7, "th", 26);
+          .TgZ(7, "th", 27);
 
           core
           /* ɵɵtext */
@@ -25155,7 +25357,7 @@
         if (rf & 1) {
           core
           /* ɵɵtemplate */
-          .YNc(0, StandingsComponent_div_20_ng_template_5_div_0_Template, 11, 1, "div", 33);
+          .YNc(0, StandingsComponent_div_20_ng_template_5_div_0_Template, 11, 1, "div", 34);
         }
 
         if (rf & 2) {
@@ -25168,35 +25370,98 @@
         }
       }
 
+      var standings_component_c0 = function standings_component_c0(a0) {
+        return {
+          "div-min-width-700": a0
+        };
+      };
+
       function StandingsComponent_div_20_ng_template_7_div_0_Template(rf, ctx) {
         if (rf & 1) {
-          core
-          /* ɵɵelementStart */
-          .TgZ(0, "div", 35);
-
-          core
-          /* ɵɵelement */
-          ._UZ(1, "apx-chart", 36);
+          var _r18 = core
+          /* ɵɵgetCurrentView */
+          .EpF();
 
           core
           /* ɵɵelementStart */
-          .TgZ(2, "div", 37);
+          .TgZ(0, "div", 36);
 
           core
           /* ɵɵelement */
-          ._UZ(3, "apx-chart", 38);
+          ._UZ(1, "apx-chart", 37);
 
+          core
+          /* ɵɵelementStart */
+          .TgZ(2, "div", 38);
+
+          core
+          /* ɵɵelement */
+          ._UZ(3, "apx-chart", 39);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(4, "div", 40);
+          core
+          /* ɵɵelementStart */
+          .TgZ(5, "span");
+
+          core
+          /* ɵɵtext */
+          ._uU(6, "Exclude DNF results ");
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(7, "mat-slide-toggle", 41);
+          core
+          /* ɵɵlistener */
+          .NdJ("ngModelChange", function StandingsComponent_div_20_ng_template_7_div_0_Template_mat_slide_toggle_ngModelChange_7_listener($event) {
+            core
+            /* ɵɵrestoreView */
+            .CHM(_r18);
+            var ctx_r17 = core
+            /* ɵɵnextContext */
+            .oxw(3);
+            return ctx_r17.showDnf = $event;
+          })("change", function StandingsComponent_div_20_ng_template_7_div_0_Template_mat_slide_toggle_change_7_listener($event) {
+            core
+            /* ɵɵrestoreView */
+            .CHM(_r18);
+            var ctx_r19 = core
+            /* ɵɵnextContext */
+            .oxw(3);
+            return ctx_r19.includeDnf($event);
+          });
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(8, "span");
+
+          core
+          /* ɵɵtext */
+          ._uU(9, " Include DNF results");
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
           core
           /* ɵɵelementEnd */
           .qZA();
 
           core
           /* ɵɵelement */
-          ._UZ(4, "apx-chart", 36);
+          ._UZ(10, "apx-chart", 42);
 
           core
           /* ɵɵelement */
-          ._UZ(5, "apx-chart", 36);
+          ._UZ(11, "apx-chart", 37);
 
           core
           /* ɵɵelementEnd */
@@ -25208,6 +25473,11 @@
           /* ɵɵnextContext */
           .oxw(3);
           core
+          /* ɵɵproperty */
+          .Q6J("ngClass", core
+          /* ɵɵpureFunction1 */
+          .VKq(28, standings_component_c0, ctx_r16.raceCount > 12));
+          core
           /* ɵɵadvance */
           .xp6(1);
           core
@@ -25218,19 +25488,25 @@
           .xp6(2);
           core
           /* ɵɵproperty */
-          .Q6J("title", ctx_r16.titleResults)("series", ctx_r16.driversHeatMapChartOptions.series)("chart", ctx_r16.driversHeatMapChartOptions.chart)("dataLabels", ctx_r16.driversHeatMapChartOptions.dataLabels)("plotOptions", ctx_r16.driversHeatMapChartOptions.plotOptions)("colors", ctx_r16.driversHeatMapChartOptions.colors)("tooltip", ctx_r16.driversHeatMapChartOptions.tooltip);
+          .Q6J("title", ctx_r16.titleResultsHeatmap)("series", ctx_r16.driversHeatMapChartOptions.series)("chart", ctx_r16.driversHeatMapChartOptions.chart)("dataLabels", ctx_r16.driversHeatMapChartOptions.dataLabels)("plotOptions", ctx_r16.driversHeatMapChartOptions.plotOptions)("colors", ctx_r16.driversHeatMapChartOptions.colors)("tooltip", ctx_r16.driversHeatMapChartOptions.tooltip);
+          core
+          /* ɵɵadvance */
+          .xp6(4);
+          core
+          /* ɵɵproperty */
+          .Q6J("ngModel", ctx_r16.showDnf);
+          core
+          /* ɵɵadvance */
+          .xp6(3);
+          core
+          /* ɵɵproperty */
+          .Q6J("series", ctx_r16.gridToResultSeries)("yaxis", ctx_r16.yAxis19)("xaxis", ctx_r16.xaxis19)("title", ctx_r16.titleResultToGrid)("chart", ctx_r16.scatterChart)("stroke", ctx_r16.defStroke)("tooltip", ctx_r16.resultToGridTooltip);
           core
           /* ɵɵadvance */
           .xp6(1);
           core
           /* ɵɵproperty */
-          .Q6J("series", ctx_r16.driverResultByRoundSeries)("yaxis", ctx_r16.reverseYAxisWithDNF)("title", ctx_r16.titleResults)("chart", ctx_r16.lineChart)("stroke", ctx_r16.defStroke)("tooltip", ctx_r16.defTooltip);
-          core
-          /* ɵɵadvance */
-          .xp6(1);
-          core
-          /* ɵɵproperty */
-          .Q6J("series", ctx_r16.driverPointsByRoundSeries)("yaxis", ctx_r16.defYaxis)("title", ctx_r16.titleByRound)("chart", ctx_r16.lineChart)("stroke", ctx_r16.defStroke)("tooltip", ctx_r16.defTooltip);
+          .Q6J("series", ctx_r16.driverPointsByRoundSeries)("yaxis", ctx_r16.defYaxis)("title", ctx_r16.titleByRound)("chart", ctx_r16.lineChartWithoutAnimation)("stroke", ctx_r16.defStroke)("tooltip", ctx_r16.defTooltip);
         }
       }
 
@@ -25238,7 +25514,7 @@
         if (rf & 1) {
           core
           /* ɵɵtemplate */
-          .YNc(0, StandingsComponent_div_20_ng_template_7_div_0_Template, 6, 25, "div", 34);
+          .YNc(0, StandingsComponent_div_20_ng_template_7_div_0_Template, 12, 30, "div", 35);
         }
 
         if (rf & 2) {
@@ -25255,19 +25531,19 @@
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 35);
+          .TgZ(0, "div", 36);
 
           core
           /* ɵɵelement */
-          ._UZ(1, "apx-chart", 36);
+          ._UZ(1, "apx-chart", 37);
 
           core
           /* ɵɵelementStart */
-          .TgZ(2, "div", 37);
+          .TgZ(2, "div", 38);
 
           core
           /* ɵɵelement */
-          ._UZ(3, "apx-chart", 38);
+          ._UZ(3, "apx-chart", 39);
 
           core
           /* ɵɵelementEnd */
@@ -25275,7 +25551,7 @@
 
           core
           /* ɵɵelement */
-          ._UZ(4, "apx-chart", 36);
+          ._UZ(4, "apx-chart", 37);
 
           core
           /* ɵɵelementEnd */
@@ -25283,27 +25559,32 @@
         }
 
         if (rf & 2) {
-          var ctx_r17 = core
+          var ctx_r20 = core
           /* ɵɵnextContext */
           .oxw(3);
+          core
+          /* ɵɵproperty */
+          .Q6J("ngClass", core
+          /* ɵɵpureFunction1 */
+          .VKq(20, standings_component_c0, ctx_r20.raceCount > 12));
           core
           /* ɵɵadvance */
           .xp6(1);
           core
           /* ɵɵproperty */
-          .Q6J("series", ctx_r17.constructorStandingsSeries)("yaxis", ctx_r17.defYaxis)("title", ctx_r17.titleStandings)("chart", ctx_r17.lineChart)("stroke", ctx_r17.defStroke)("tooltip", ctx_r17.defTooltip);
+          .Q6J("series", ctx_r20.constructorStandingsSeries)("yaxis", ctx_r20.defYaxis)("title", ctx_r20.titleStandings)("chart", ctx_r20.lineChart)("stroke", ctx_r20.defStroke)("tooltip", ctx_r20.defTooltip);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵproperty */
-          .Q6J("title", ctx_r17.titleByRound)("series", ctx_r17.constructorHeatMapChartOptions.series)("chart", ctx_r17.constructorHeatMapChartOptions.chart)("dataLabels", ctx_r17.constructorHeatMapChartOptions.dataLabels)("plotOptions", ctx_r17.constructorHeatMapChartOptions.plotOptions)("colors", ctx_r17.constructorHeatMapChartOptions.colors)("tooltip", ctx_r17.constructorHeatMapChartOptions.tooltip);
+          .Q6J("title", ctx_r20.titleByRound)("series", ctx_r20.constructorHeatMapChartOptions.series)("chart", ctx_r20.constructorHeatMapChartOptions.chart)("dataLabels", ctx_r20.constructorHeatMapChartOptions.dataLabels)("plotOptions", ctx_r20.constructorHeatMapChartOptions.plotOptions)("colors", ctx_r20.constructorHeatMapChartOptions.colors)("tooltip", ctx_r20.constructorHeatMapChartOptions.tooltip);
           core
           /* ɵɵadvance */
           .xp6(1);
           core
           /* ɵɵproperty */
-          .Q6J("series", ctx_r17.constructorRoundsSeries)("yaxis", ctx_r17.defYaxis)("title", ctx_r17.titleByRound)("chart", ctx_r17.lineChart)("stroke", ctx_r17.defStroke)("tooltip", ctx_r17.defTooltip);
+          .Q6J("series", ctx_r20.constructorRoundsSeries)("yaxis", ctx_r20.defYaxis)("title", ctx_r20.titleByRound)("chart", ctx_r20.lineChartWithoutAnimation)("stroke", ctx_r20.defStroke)("tooltip", ctx_r20.defTooltip);
         }
       }
 
@@ -25311,7 +25592,7 @@
         if (rf & 1) {
           core
           /* ɵɵtemplate */
-          .YNc(0, StandingsComponent_div_20_ng_template_9_div_0_Template, 5, 19, "div", 34);
+          .YNc(0, StandingsComponent_div_20_ng_template_9_div_0_Template, 5, 22, "div", 35);
         }
 
         if (rf & 2) {
@@ -25328,17 +25609,17 @@
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 44);
+          .TgZ(0, "div", 48);
           core
           /* ɵɵelementStart */
-          .TgZ(1, "div", 45);
+          .TgZ(1, "div", 49);
           core
           /* ɵɵelementStart */
-          .TgZ(2, "div", 46);
+          .TgZ(2, "div", 50);
 
           core
           /* ɵɵelement */
-          ._UZ(3, "img", 47);
+          ._UZ(3, "img", 51);
 
           core
           /* ɵɵelementEnd */
@@ -25348,31 +25629,31 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(4, "div", 48);
+          .TgZ(4, "div", 52);
           core
           /* ɵɵelementStart */
-          .TgZ(5, "div", 46);
-
-          core
-          /* ɵɵelement */
-          ._UZ(6, "img", 49);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(7, "div", 50);
-          core
-          /* ɵɵelementStart */
-          .TgZ(8, "div", 46);
+          .TgZ(5, "div", 50);
 
           core
           /* ɵɵelement */
-          ._UZ(9, "img", 51);
+          ._UZ(6, "img", 53);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(7, "div", 54);
+          core
+          /* ɵɵelementStart */
+          .TgZ(8, "div", 50);
+
+          core
+          /* ɵɵelement */
+          ._UZ(9, "img", 55);
 
           core
           /* ɵɵelementEnd */
@@ -25386,10 +25667,10 @@
         }
 
         if (rf & 2) {
-          var i_r21 = core
+          var i_r24 = core
           /* ɵɵnextContext */
           .oxw().index;
-          var ctx_r22 = core
+          var ctx_r25 = core
           /* ɵɵnextContext */
           .oxw(4);
           core
@@ -25397,7 +25678,7 @@
           .xp6(3);
           core
           /* ɵɵpropertyInterpolate */
-          .s9C("src", "assets/img/drivers/" + ctx_r22.standings.currentYear + "/" + ctx_r22.podiums[i_r21 + 1][2].name + ".png", core
+          .s9C("src", "assets/img/drivers/" + ctx_r25.standings.currentYear + "/" + ctx_r25.podiums[i_r24 + 1][2].name + ".png", core
           /* ɵɵsanitizeUrl */
           .LSH);
           core
@@ -25405,7 +25686,7 @@
           .xp6(3);
           core
           /* ɵɵpropertyInterpolate */
-          .s9C("src", "assets/img/drivers/" + ctx_r22.standings.currentYear + "/" + ctx_r22.podiums[i_r21 + 1][1].name + ".png", core
+          .s9C("src", "assets/img/drivers/" + ctx_r25.standings.currentYear + "/" + ctx_r25.podiums[i_r24 + 1][1].name + ".png", core
           /* ɵɵsanitizeUrl */
           .LSH);
           core
@@ -25413,7 +25694,7 @@
           .xp6(3);
           core
           /* ɵɵpropertyInterpolate */
-          .s9C("src", "assets/img/drivers/" + ctx_r22.standings.currentYear + "/" + ctx_r22.podiums[i_r21 + 1][3].name + ".png", core
+          .s9C("src", "assets/img/drivers/" + ctx_r25.standings.currentYear + "/" + ctx_r25.podiums[i_r24 + 1][3].name + ".png", core
           /* ɵɵsanitizeUrl */
           .LSH);
         }
@@ -25426,7 +25707,7 @@
           .TgZ(0, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "th", 41);
+          .TgZ(1, "th", 45);
 
           core
           /* ɵɵtext */
@@ -25437,10 +25718,10 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(3, "td", 29);
+          .TgZ(3, "td", 30);
           core
           /* ɵɵelementStart */
-          .TgZ(4, "a", 30);
+          .TgZ(4, "a", 31);
           core
           /* ɵɵelementStart */
           .TgZ(5, "div");
@@ -25474,10 +25755,10 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(10, "td", 29);
+          .TgZ(10, "td", 30);
           core
           /* ɵɵelementStart */
-          .TgZ(11, "a", 30);
+          .TgZ(11, "a", 31);
           core
           /* ɵɵelementStart */
           .TgZ(12, "div");
@@ -25497,10 +25778,10 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(14, "td", 42);
+          .TgZ(14, "td", 46);
           core
           /* ɵɵtemplate */
-          .YNc(15, StandingsComponent_div_20_ng_template_11_div_0_tr_15_div_15_Template, 10, 3, "div", 43);
+          .YNc(15, StandingsComponent_div_20_ng_template_11_div_0_tr_15_div_15_Template, 10, 3, "div", 47);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -25510,9 +25791,9 @@
         }
 
         if (rf & 2) {
-          var race_r20 = ctx.$implicit;
-          var i_r21 = ctx.index;
-          var ctx_r19 = core
+          var race_r23 = ctx.$implicit;
+          var i_r24 = ctx.index;
+          var ctx_r22 = core
           /* ɵɵnextContext */
           .oxw(4);
           core
@@ -25520,13 +25801,13 @@
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(race_r20.round);
+          .Oqu(race_r23.round);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵpropertyInterpolate */
-          .s9C("href", race_r20.url, core
+          .s9C("href", race_r23.url, core
           /* ɵɵsanitizeUrl */
           .LSH);
           core
@@ -25534,7 +25815,7 @@
           .xp6(2);
           core
           /* ɵɵtextInterpolate1 */
-          .hij(" ", race_r20.raceName, " ");
+          .hij(" ", race_r23.raceName, " ");
           core
           /* ɵɵadvance */
           .xp6(2);
@@ -25542,13 +25823,13 @@
           /* ɵɵtextInterpolate */
           .Oqu(core
           /* ɵɵpipeBind2 */
-          .xi3(9, 7, race_r20.date, "MMMM d"));
+          .xi3(9, 7, race_r23.date, "MMMM d"));
           core
           /* ɵɵadvance */
           .xp6(3);
           core
           /* ɵɵpropertyInterpolate */
-          .s9C("href", "https://www.google.com/maps?q=" + race_r20.x + "," + race_r20.y, core
+          .s9C("href", "https://www.google.com/maps?q=" + race_r23.x + "," + race_r23.y, core
           /* ɵɵsanitizeUrl */
           .LSH);
           core
@@ -25556,13 +25837,13 @@
           .xp6(2);
           core
           /* ɵɵtextInterpolate1 */
-          .hij(" ", race_r20.circuitName, " ");
+          .hij(" ", race_r23.circuitName, " ");
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵproperty */
-          .Q6J("ngIf", ctx_r19.podiums[i_r21 + 1].length > 0);
+          .Q6J("ngIf", ctx_r22.podiums[i_r24 + 1].length > 0);
         }
       }
 
@@ -25573,16 +25854,16 @@
           .TgZ(0, "div");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "table", 24);
+          .TgZ(1, "table", 25);
           core
           /* ɵɵelementStart */
           .TgZ(2, "thead");
           core
           /* ɵɵelementStart */
-          .TgZ(3, "tr", 25);
+          .TgZ(3, "tr", 26);
           core
           /* ɵɵelementStart */
-          .TgZ(4, "th", 39);
+          .TgZ(4, "th", 43);
 
           core
           /* ɵɵtext */
@@ -25593,7 +25874,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(6, "th", 26);
+          .TgZ(6, "th", 27);
 
           core
           /* ɵɵtext */
@@ -25604,7 +25885,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(8, "th", 40);
+          .TgZ(8, "th", 44);
 
           core
           /* ɵɵtext */
@@ -25615,7 +25896,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(10, "th", 26);
+          .TgZ(10, "th", 27);
 
           core
           /* ɵɵtext */
@@ -25626,7 +25907,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(12, "th", 26);
+          .TgZ(12, "th", 27);
 
           core
           /* ɵɵtext */
@@ -25659,7 +25940,7 @@
         }
 
         if (rf & 2) {
-          var ctx_r18 = core
+          var ctx_r21 = core
           /* ɵɵnextContext */
           .oxw(3);
           core
@@ -25667,7 +25948,7 @@
           .xp6(15);
           core
           /* ɵɵproperty */
-          .Q6J("ngForOf", ctx_r18.standings.races);
+          .Q6J("ngForOf", ctx_r21.standings.races);
         }
       }
 
@@ -25675,7 +25956,7 @@
         if (rf & 1) {
           core
           /* ɵɵtemplate */
-          .YNc(0, StandingsComponent_div_20_ng_template_11_div_0_Template, 16, 1, "div", 33);
+          .YNc(0, StandingsComponent_div_20_ng_template_11_div_0_Template, 16, 1, "div", 34);
         }
 
         if (rf & 2) {
@@ -25690,7 +25971,7 @@
 
       function StandingsComponent_div_20_Template(rf, ctx) {
         if (rf & 1) {
-          var _r25 = core
+          var _r28 = core
           /* ɵɵgetCurrentView */
           .EpF();
 
@@ -25702,65 +25983,84 @@
           .NdJ("touchstart", function StandingsComponent_div_20_Template_div_touchstart_0_listener($event) {
             core
             /* ɵɵrestoreView */
-            .CHM(_r25);
-            var ctx_r24 = core
+            .CHM(_r28);
+            var ctx_r27 = core
             /* ɵɵnextContext */
             .oxw();
-            return ctx_r24.touchstart($event);
+            return ctx_r27.touchstart($event);
           })("touchend", function StandingsComponent_div_20_Template_div_touchend_0_listener($event) {
             core
             /* ɵɵrestoreView */
-            .CHM(_r25);
-            var ctx_r26 = core
+            .CHM(_r28);
+            var ctx_r29 = core
             /* ɵɵnextContext */
             .oxw();
-            return ctx_r26.touchend($event);
+            return ctx_r29.touchend($event);
           });
           core
           /* ɵɵelementStart */
-          .TgZ(1, "mat-tab-group");
+          .TgZ(1, "mat-tab-group", 18);
+          core
+          /* ɵɵlistener */
+          .NdJ("selectedIndexChange", function StandingsComponent_div_20_Template_mat_tab_group_selectedIndexChange_1_listener($event) {
+            core
+            /* ɵɵrestoreView */
+            .CHM(_r28);
+            var ctx_r30 = core
+            /* ɵɵnextContext */
+            .oxw();
+            return ctx_r30.selectedTab = $event;
+          })("selectedTabChange", function StandingsComponent_div_20_Template_mat_tab_group_selectedTabChange_1_listener($event) {
+            core
+            /* ɵɵrestoreView */
+            .CHM(_r28);
+            var ctx_r31 = core
+            /* ɵɵnextContext */
+            .oxw();
+            return ctx_r31.tabChanged($event);
+          });
           core
           /* ɵɵelementStart */
-          .TgZ(2, "mat-tab", 18);
+          .TgZ(2, "mat-tab", 19);
           core
           /* ɵɵtemplate */
-          .YNc(3, StandingsComponent_div_20_ng_template_3_Template, 17, 1, "ng-template", 19);
+          .YNc(3, StandingsComponent_div_20_ng_template_3_Template, 17, 1, "ng-template", 20);
           core
           /* ɵɵelementEnd */
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(4, "mat-tab", 20);
+          .TgZ(4, "mat-tab", 21);
           core
           /* ɵɵtemplate */
-          .YNc(5, StandingsComponent_div_20_ng_template_5_Template, 1, 1, "ng-template", 19);
+          .YNc(5, StandingsComponent_div_20_ng_template_5_Template, 1, 1, "ng-template", 20);
           core
           /* ɵɵelementEnd */
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(6, "mat-tab", 21);
+          .TgZ(6, "mat-tab", 22);
           core
           /* ɵɵtemplate */
-          .YNc(7, StandingsComponent_div_20_ng_template_7_Template, 1, 1, "ng-template", 19);
+          .YNc(7, StandingsComponent_div_20_ng_template_7_Template, 1, 1, "ng-template", 20);
           core
           /* ɵɵelementEnd */
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(8, "mat-tab", 22);
+          .TgZ(8, "mat-tab", 23);
           core
           /* ɵɵtemplate */
-          .YNc(9, StandingsComponent_div_20_ng_template_9_Template, 1, 1, "ng-template", 19);
+          .YNc(9, StandingsComponent_div_20_ng_template_9_Template, 1, 1, "ng-template", 20);
           core
           /* ɵɵelementEnd */
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(10, "mat-tab", 23);
+          .TgZ(10, "mat-tab", 24);
           core
           /* ɵɵtemplate */
-          .YNc(11, StandingsComponent_div_20_ng_template_11_Template, 1, 1, "ng-template", 19);
+          .YNc(11, StandingsComponent_div_20_ng_template_11_Template, 1, 1, "ng-template", 20);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -25771,18 +26071,32 @@
           /* ɵɵelementEnd */
           .qZA();
         }
+
+        if (rf & 2) {
+          var ctx_r2 = core
+          /* ɵɵnextContext */
+          .oxw();
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵproperty */
+          .Q6J("selectedIndex", ctx_r2.selectedTab);
+        }
       }
 
       var StandingsComponent = /*#__PURE__*/function () {
-        function StandingsComponent(restService, utilityService) {
+        function StandingsComponent(restService, utilityService, router, route) {
           var _this46 = this;
 
           _classCallCheck(this, StandingsComponent);
 
           this.restService = restService;
           this.utilityService = utilityService;
+          this.router = router;
+          this.route = route;
           this.driverStandingsSeries = [];
-          this.driverResultByRoundSeries = [];
+          this.gridToResultSeries = [];
           this.driverPointsByRoundSeries = [];
           this.constructorStandingsSeries = [];
           this.constructorRoundsSeries = [];
@@ -25802,36 +26116,58 @@
             },
             toolbar: ChartUtility.defaultToolbar
           };
-          this.numericXaxis = {
+          this.lineChartWithoutAnimation = {
+            height: 500,
+            type: "line",
+            zoom: {
+              enabled: false
+            },
+            animations: {
+              enabled: false
+            },
+            toolbar: ChartUtility.defaultToolbar
+          };
+          this.scatterChart = {
+            height: 500,
+            type: "scatter",
+            zoom: {
+              enabled: false
+            },
+            toolbar: ChartUtility.defaultToolbar
+          };
+          this.xaxis19 = {
             type: 'numeric',
+            tickAmount: 18,
+            min: 1,
+            max: 19,
             decimalsInFloat: 0,
-            // min: 1,
-            // max: 22,
-            tickAmount: this.raceCount
+            title: {
+              text: 'Average grid position'
+            }
           };
           this.defYaxis = {
             decimalsInFloat: 0
           };
-          this.reverseYAxisWithDNF = {
-            tickAmount: 22,
+          this.yAxis19 = {
+            tickAmount: 18,
+            min: 1,
+            max: 19,
             decimalsInFloat: 0,
             reversed: true,
-            labels: {
-              formatter: function formatter(val, opts) {
-                if (val > 20) {
-                  return 'DNF';
-                }
-
-                return val + "";
-              }
+            title: {
+              text: 'Average result'
             }
           };
           this.titleStandings = {
             text: 'Points through season',
             align: 'center'
           };
-          this.titleResults = {
+          this.titleResultsHeatmap = {
             text: 'Results by race',
+            align: 'center'
+          };
+          this.titleResultToGrid = {
+            text: 'Average result and grid position',
             align: 'center'
           };
           this.titleByRound = {
@@ -25844,6 +26180,25 @@
           this.defTooltip = {
             shared: false
           };
+          this.resultToGridTooltip = {
+            // this.standings.races[opts.dataPointIndex].raceName;
+            y: {
+              formatter: function formatter(val, opts) {
+                return 'Average race result: ' + val;
+              },
+              title: {
+                formatter: function formatter(seriesName) {
+                  return seriesName;
+                }
+              }
+            },
+            x: {
+              formatter: function formatter(val, opts) {
+                return 'Average grid position: ' + val;
+              }
+            }
+          };
+          this.showDnf = false;
           var observableStandings = this.restService.getStandings();
           observableStandings.subscribe({
             next: function next(data) {
@@ -25852,6 +26207,19 @@
               _this46.mapPositions();
 
               _this46.standings.driverStandingByRound.forEach(function (standing) {
+                //  let series2: [number, number][]  = [];
+                //  if(standing.name=='KUB'){
+                //    console.log("no kub allowed")
+                //  } else {
+                //    series2.push(standing.series[0]);
+                //    series2.push(standing.series[1]);
+                //    this.driverStandingsSeries.push({
+                //      name: standing.name,
+                //      data: series2,
+                //      color: standing.color
+                //    });
+                //  }
+                // });
                 _this46.driverStandingsSeries.push({
                   name: standing.name,
                   data: standing.series,
@@ -25868,12 +26236,11 @@
               });
 
               _this46.standings.driverResultByRound.forEach(function (standing) {
-                _this46.driverResultByRoundSeries.push({
-                  name: standing.name,
-                  data: standing.series,
-                  color: standing.color
-                });
-
+                // this.driverResultByRoundSeries.push({
+                //   name:  standing.name,
+                //   data:  standing.series,
+                //   color: standing.color
+                // });
                 _this46.setPodiums(standing);
 
                 var copy = JSON.parse(JSON.stringify(standing.series));
@@ -25914,6 +26281,14 @@
                 };
               });
 
+              _this46.standings.gridToResultChartWithoutDnf.forEach(function (standing) {
+                _this46.gridToResultSeries.push({
+                  name: standing.name,
+                  data: standing.series,
+                  color: standing.color
+                });
+              });
+
               _this46.standings.constructorStandingByRound.forEach(function (standing) {
                 _this46.constructorStandingsSeries.push({
                   name: standing.name,
@@ -25942,6 +26317,7 @@
               return data;
             }
           });
+          this.selectedTab = this.getSelectedTab();
           this.utilityService.setTitle('Championship');
           this.utilityService.reloadPosts(4);
         }
@@ -25963,8 +26339,7 @@
                   _this47.raceCount = item[0];
                 }
               }
-            });
-            this.numericXaxis.tickAmount = this.raceCount;
+            }); // this.reverseXaxis.tickAmount = this.raceCount;
           }
         }, {
           key: "setDriversHeatMapChart",
@@ -26081,26 +26456,22 @@
             var time = new Date().getTime();
             var direction = [coord[0] - this.swipeCoord[0], coord[1] - this.swipeCoord[1]];
             var duration = time - this.swipeTime;
-
-            if (duration < 1000 && Math.abs(direction[0]) > 30 // Long enough
-            && Math.abs(direction[0]) > Math.abs(direction[1] * 3)) {
-              // Horizontal enough
-              var swipe = direction[0] < 0 ? 'next' : 'previous';
-
-              if (swipe === 'next') {
-                var isFirst = this.selectedTab === 0;
-
-                if (this.selectedTab <= 3) {
-                  this.selectedTab = isFirst ? 1 : this.selectedTab + 1;
-                }
-              } else if (swipe === 'previous') {
-                var isLast = this.selectedTab === 4;
-
-                if (this.selectedTab >= 1) {
-                  this.selectedTab = this.selectedTab - 1;
-                }
-              }
-            }
+            console.log("clientYb: " + coord[1] + " - " + this.swipeCoord[1]); // if (duration < 1000
+            //   && Math.abs(direction[0]) > 30 // Long enough
+            //   && Math.abs(direction[0]) > Math.abs(direction[1] * 3)) { // Horizontal enough
+            //   const swipe = direction[0] < 0 ? 'next' : 'previous';
+            //   if(swipe === 'next'){
+            //     const isFirst = this.selectedTab === 0;
+            //     if(this.selectedTab <= 3){
+            //       this.selectedTab = isFirst ? 1 : this.selectedTab + 1;
+            //     }
+            //   } else if(swipe === 'previous'){
+            //     const isLast = this.selectedTab === 4;
+            //     if(this.selectedTab >= 1){
+            //       this.selectedTab = this.selectedTab - 1;
+            //     }
+            //   }
+            // }
           }
         }, {
           key: "mapPositions",
@@ -26136,6 +26507,58 @@
             this.driverCount = this.driverPositionMap.size;
             this.constructorCount = this.standings.constructorStandings.length;
           }
+        }, {
+          key: "includeDnf",
+          value: function includeDnf(event) {
+            var _this50 = this;
+
+            this.gridToResultSeries = [];
+
+            if (event.checked) {
+              this.standings.gridToResultChartWithDnf.forEach(function (standing) {
+                _this50.gridToResultSeries.push({
+                  name: standing.name,
+                  data: standing.series,
+                  color: standing.color
+                });
+              });
+            } else {
+              this.standings.gridToResultChartWithoutDnf.forEach(function (standing) {
+                _this50.gridToResultSeries.push({
+                  name: standing.name,
+                  data: standing.series,
+                  color: standing.color
+                });
+              });
+            }
+          }
+        }, {
+          key: "tabChanged",
+          value: function tabChanged(tabChangeEvent) {
+            this.updateUrl();
+          }
+        }, {
+          key: "updateUrl",
+          value: function updateUrl() {
+            var queryParams = {
+              tab: this.selectedTab + 1
+            };
+            this.router.navigate([], {
+              relativeTo: this.route,
+              queryParams: queryParams
+            });
+          }
+        }, {
+          key: "getSelectedTab",
+          value: function getSelectedTab() {
+            var tab = this.route.snapshot.queryParamMap.get('tab');
+
+            if (tab == undefined) {
+              return 0;
+            } else {
+              return Number(tab) - 1;
+            }
+          }
         }], [{
           key: "initializeMultidimensionalArray",
           value: function initializeMultidimensionalArray() {
@@ -26161,7 +26584,15 @@
         /* ɵɵdirectiveInject */
         .Y36(utility_service
         /* UtilityService */
-        .t));
+        .t), core
+        /* ɵɵdirectiveInject */
+        .Y36(router
+        /* Router */
+        .F0), core
+        /* ɵɵdirectiveInject */
+        .Y36(router
+        /* ActivatedRoute */
+        .gz));
       };
 
       StandingsComponent.ɵcmp = /*@__PURE__*/core
@@ -26190,10 +26621,10 @@
         },
         decls: 21,
         vars: 4,
-        consts: [["autosize", ""], ["autosize", "", "mode", "side", "position", "end", 1, "example-sidenav", 3, "opened", "openedChange"], ["drawer", ""], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area", 3, "ngModel", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "post-comment-button", 3, "click"], [4, "ngFor", "ngForOf"], [1, "fixed-button"], ["type", "fixed-plugin", "mat-button", "", 3, "click"], [1, "fa", "fa-commenting-o", "fa-2x"], ["class", "\u201Dmat-content\u201D", 3, "touchstart", "touchend", 4, "ngIf"], [1, "basic-comment"], [1, "one"], [1, "two"], [1, "basic-comment-body"], [1, "\u201Dmat-content\u201D", 3, "touchstart", "touchend"], ["label", "Drivers"], ["matTabContent", ""], ["label", "Constructors"], ["label", "Driver charts"], ["label", "Constructor charts"], ["label", "Races"], [1, "table", "table-striped"], [1, "text-center", "bg-primary", "text-white"], ["scope", "col"], ["scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], ["scope", "row"], [1, "hover-effects-row"], ["target", "_blank", 2, "color", "black", 3, "href"], [1, "d-sm-none", "d-none", "d-lg-table-cell", "text-center"], [1, "d-sm-none", "d-none", "d-lg-table-cell", "hover-effects-row"], [4, "ngIf"], ["class", "div-padded-2rem", 4, "ngIf"], [1, "div-padded-2rem"], [3, "series", "yaxis", "title", "chart", "stroke", "tooltip"], [1, "pr-1"], [3, "title", "series", "chart", "dataLabels", "plotOptions", "colors", "tooltip"], ["scope", "col", 1, "width-10", "text-left"], ["scope", "col", 1, "text-left"], ["scope", "width-10 row"], [1, "div-width-300", "no-padding-no-margin-2"], ["class", "event-result", 4, "ngIf"], [1, "event-result"], [1, "display-on-desktop-only", "result-card", "position-1"], [1, "race-card-image-wrapper"], ["mat-card-image", "", "onerror", "this.src='assets/img/drivers/default.png'", "alt", "", 1, "div-height-80", 3, "src"], [1, "result-card", "position-2-on-desktop"], ["mat-card-image", "", "onerror", "this.src='assets/img/drivers/default.png'", "alt", "", 1, "div-height-100", 3, "src"], [1, "display-on-desktop-only", "result-card", "position-3"], ["mat-card-image", "", "onerror", "this.src='assets/img/drivers/default.png'", "alt", "", 1, "div-height-70", 3, "src"]],
+        consts: [["autosize", ""], ["autosize", "", "mode", "side", "position", "end", 1, "example-sidenav", 3, "opened", "openedChange"], ["drawer", ""], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area", 3, "ngModel", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "post-comment-button", 3, "click"], [4, "ngFor", "ngForOf"], [1, "fixed-button"], ["type", "fixed-plugin", "mat-button", "", 3, "click"], [1, "fa", "fa-commenting-o", "fa-2x"], ["class", "\u201Dmat-content\u201D", 3, "touchstart", "touchend", 4, "ngIf"], [1, "basic-comment"], [1, "one"], [1, "two"], [1, "basic-comment-body"], [1, "\u201Dmat-content\u201D", 3, "touchstart", "touchend"], [3, "selectedIndex", "selectedIndexChange", "selectedTabChange"], ["label", "Drivers"], ["matTabContent", ""], ["label", "Constructors"], ["label", "Driver charts"], ["label", "Constructor charts"], ["label", "Races"], [1, "table", "table-striped"], [1, "text-center", "bg-primary", "text-white"], ["scope", "col"], ["scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], ["scope", "row"], [1, "hover-effects-row"], ["target", "_blank", 2, "color", "black", 3, "href"], [1, "d-sm-none", "d-none", "d-lg-table-cell", "text-center"], [1, "d-sm-none", "d-none", "d-lg-table-cell", "hover-effects-row"], [4, "ngIf"], ["class", "div-padded-2rem", 3, "ngClass", 4, "ngIf"], [1, "div-padded-2rem", 3, "ngClass"], [3, "series", "yaxis", "title", "chart", "stroke", "tooltip"], [1, "pr-1"], [3, "title", "series", "chart", "dataLabels", "plotOptions", "colors", "tooltip"], [1, "div-padded-always-top-right-2rem"], [3, "ngModel", "ngModelChange", "change"], [3, "series", "yaxis", "xaxis", "title", "chart", "stroke", "tooltip"], ["scope", "col", 1, "width-10", "text-left"], ["scope", "col", 1, "text-left"], ["scope", "width-10 row"], [1, "div-width-300", "no-padding-no-margin-2"], ["class", "event-result", 4, "ngIf"], [1, "event-result"], [1, "display-on-desktop-only", "result-card", "position-1"], [1, "race-card-image-wrapper"], ["mat-card-image", "", "onerror", "this.src='assets/img/drivers/default.png'", "alt", "", 1, "div-height-80", 3, "src"], [1, "result-card", "position-2-on-desktop"], ["mat-card-image", "", "onerror", "this.src='assets/img/drivers/default.png'", "alt", "", 1, "div-height-100", 3, "src"], [1, "display-on-desktop-only", "result-card", "position-3"], ["mat-card-image", "", "onerror", "this.src='assets/img/drivers/default.png'", "alt", "", 1, "div-height-70", 3, "src"]],
         template: function StandingsComponent_Template(rf, ctx) {
           if (rf & 1) {
-            var _r27 = core
+            var _r32 = core
             /* ɵɵgetCurrentView */
             .EpF();
 
@@ -26292,7 +26723,7 @@
             .NdJ("click", function StandingsComponent_Template_button_click_15_listener() {
               core
               /* ɵɵrestoreView */
-              .CHM(_r27);
+              .CHM(_r32);
 
               var _r0 = core
               /* ɵɵreference */
@@ -26325,7 +26756,7 @@
             .NdJ("click", function StandingsComponent_Template_button_click_18_listener() {
               core
               /* ɵɵrestoreView */
-              .CHM(_r27);
+              .CHM(_r32);
 
               var _r0 = core
               /* ɵɵreference */
@@ -26346,7 +26777,7 @@
             .qZA();
             core
             /* ɵɵtemplate */
-            .YNc(20, StandingsComponent_div_20_Template, 12, 0, "div", 12);
+            .YNc(20, StandingsComponent_div_20_Template, 12, 1, "div", 12);
             core
             /* ɵɵelementEnd */
             .qZA();
@@ -26404,9 +26835,11 @@
         /* MatTab */
         .uX, tabs
         /* MatTabContent */
-        .Vc, ng_apexcharts
+        .Vc, common
+        /* NgClass */
+        .mk, ng_apexcharts
         /* ChartComponent */
-        .x, MatCardImage],
+        .x, MatSlideToggle, MatCardImage],
         pipes: [common
         /* DecimalPipe */
         .JJ, common
@@ -26575,31 +27008,31 @@
         function _MatDialogContainerBase(_elementRef, _focusTrapFactory, _changeDetectorRef, _document,
         /** The dialog configuration. */
         _config, _focusMonitor) {
-          var _this50;
+          var _this51;
 
           _classCallCheck(this, _MatDialogContainerBase);
 
-          _this50 = _super11.call(this);
-          _this50._elementRef = _elementRef;
-          _this50._focusTrapFactory = _focusTrapFactory;
-          _this50._changeDetectorRef = _changeDetectorRef;
-          _this50._config = _config;
-          _this50._focusMonitor = _focusMonitor;
+          _this51 = _super11.call(this);
+          _this51._elementRef = _elementRef;
+          _this51._focusTrapFactory = _focusTrapFactory;
+          _this51._changeDetectorRef = _changeDetectorRef;
+          _this51._config = _config;
+          _this51._focusMonitor = _focusMonitor;
           /** Emits when an animation state changes. */
 
-          _this50._animationStateChanged = new core
+          _this51._animationStateChanged = new core
           /* EventEmitter */
           .vpe();
           /** Element that was focused before the dialog was opened. Save this to restore upon close. */
 
-          _this50._elementFocusedBeforeDialogWasOpened = null;
+          _this51._elementFocusedBeforeDialogWasOpened = null;
           /**
            * Type of interaction that led to the dialog being closed. This is used to determine
            * whether the focus style will be applied when returning focus to its original location
            * after the dialog is closed.
            */
 
-          _this50._closeInteractionType = null;
+          _this51._closeInteractionType = null;
           /**
            * Attaches a DOM portal to the dialog container.
            * @param portal Portal to be attached.
@@ -26607,17 +27040,17 @@
            * @breaking-change 10.0.0
            */
 
-          _this50.attachDomPortal = function (portal) {
-            if (_this50._portalOutlet.hasAttached() && (typeof ngDevMode === 'undefined' || ngDevMode)) {
+          _this51.attachDomPortal = function (portal) {
+            if (_this51._portalOutlet.hasAttached() && (typeof ngDevMode === 'undefined' || ngDevMode)) {
               throwMatDialogContentAlreadyAttachedError();
             }
 
-            return _this50._portalOutlet.attachDomPortal(portal);
+            return _this51._portalOutlet.attachDomPortal(portal);
           };
 
-          _this50._ariaLabelledBy = _config.ariaLabelledBy || null;
-          _this50._document = _document;
-          return _this50;
+          _this51._ariaLabelledBy = _config.ariaLabelledBy || null;
+          _this51._document = _document;
+          return _this51;
         }
         /** Initializes the dialog container with the attached content. */
 
@@ -26942,15 +27375,15 @@
         var _super12 = _createSuper(MatDialogContainer);
 
         function MatDialogContainer() {
-          var _this51;
+          var _this52;
 
           _classCallCheck(this, MatDialogContainer);
 
-          _this51 = _super12.apply(this, arguments);
+          _this52 = _super12.apply(this, arguments);
           /** State of the dialog animation. */
 
-          _this51._state = 'enter';
-          return _this51;
+          _this52._state = 'enter';
+          return _this52;
         }
         /** Callback, invoked whenever an animation on the host completes. */
 
@@ -27128,7 +27561,7 @@
 
       var MatDialogRef = /*#__PURE__*/function () {
         function MatDialogRef(_overlayRef, _containerInstance) {
-          var _this52 = this;
+          var _this53 = this;
 
           var id = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : "mat-dialog-".concat(uniqueId++);
 
@@ -27170,9 +27603,9 @@
           }), (0, take
           /* take */
           .q)(1)).subscribe(function () {
-            _this52._afterOpened.next();
+            _this53._afterOpened.next();
 
-            _this52._afterOpened.complete();
+            _this53._afterOpened.complete();
           }); // Dispose overlay when closing animation is complete
 
 
@@ -27183,23 +27616,23 @@
           }), (0, take
           /* take */
           .q)(1)).subscribe(function () {
-            clearTimeout(_this52._closeFallbackTimeout);
+            clearTimeout(_this53._closeFallbackTimeout);
 
-            _this52._finishDialogClose();
+            _this53._finishDialogClose();
           });
 
           _overlayRef.detachments().subscribe(function () {
-            _this52._beforeClosed.next(_this52._result);
+            _this53._beforeClosed.next(_this53._result);
 
-            _this52._beforeClosed.complete();
+            _this53._beforeClosed.complete();
 
-            _this52._afterClosed.next(_this52._result);
+            _this53._afterClosed.next(_this53._result);
 
-            _this52._afterClosed.complete();
+            _this53._afterClosed.complete();
 
-            _this52.componentInstance = null;
+            _this53.componentInstance = null;
 
-            _this52._overlayRef.dispose();
+            _this53._overlayRef.dispose();
           });
 
           _overlayRef.keydownEvents().pipe((0, filter
@@ -27207,20 +27640,20 @@
           .h)(function (event) {
             return event.keyCode === keycodes
             /* ESCAPE */
-            .hY && !_this52.disableClose && !(0, keycodes
+            .hY && !_this53.disableClose && !(0, keycodes
             /* hasModifierKey */
             .Vb)(event);
           })).subscribe(function (event) {
             event.preventDefault();
 
-            _closeDialogVia(_this52, 'keyboard');
+            _closeDialogVia(_this53, 'keyboard');
           });
 
           _overlayRef.backdropClick().subscribe(function () {
-            if (_this52.disableClose) {
-              _this52._containerInstance._recaptureFocus();
+            if (_this53.disableClose) {
+              _this53._containerInstance._recaptureFocus();
             } else {
-              _closeDialogVia(_this52, 'mouse');
+              _closeDialogVia(_this53, 'mouse');
             }
           });
         }
@@ -27233,7 +27666,7 @@
         _createClass(MatDialogRef, [{
           key: "close",
           value: function close(dialogResult) {
-            var _this53 = this;
+            var _this54 = this;
 
             this._result = dialogResult; // Transition the backdrop in parallel to the dialog.
 
@@ -27244,19 +27677,19 @@
             }), (0, take
             /* take */
             .q)(1)).subscribe(function (event) {
-              _this53._beforeClosed.next(dialogResult);
+              _this54._beforeClosed.next(dialogResult);
 
-              _this53._beforeClosed.complete();
+              _this54._beforeClosed.complete();
 
-              _this53._overlayRef.detachBackdrop(); // The logic that disposes of the overlay depends on the exit animation completing, however
+              _this54._overlayRef.detachBackdrop(); // The logic that disposes of the overlay depends on the exit animation completing, however
               // it isn't guaranteed if the parent view is destroyed while it's running. Add a fallback
               // timeout which will clean everything up if the animation hasn't fired within the specified
               // amount of time plus 100ms. We don't need to run this outside the NgZone, because for the
               // vast majority of cases the timeout will have been cleared before it has the chance to fire.
 
 
-              _this53._closeFallbackTimeout = setTimeout(function () {
-                return _this53._finishDialogClose();
+              _this54._closeFallbackTimeout = setTimeout(function () {
+                return _this54._finishDialogClose();
               }, event.totalTime + 100);
             });
 
@@ -27481,7 +27914,7 @@
 
       var _MatDialogBase = /*#__PURE__*/function () {
         function _MatDialogBase(_overlay, _injector, _defaultOptions, _parentDialog, _overlayContainer, scrollStrategy, _dialogRefConstructor, _dialogContainerType, _dialogDataToken) {
-          var _this54 = this;
+          var _this55 = this;
 
           _classCallCheck(this, _MatDialogBase);
 
@@ -27510,7 +27943,7 @@
           this.afterAllClosed = (0, defer
           /* defer */
           .P)(function () {
-            return _this54.openDialogs.length ? _this54._getAfterAllClosed() : _this54._getAfterAllClosed().pipe((0, startWith
+            return _this55.openDialogs.length ? _this55._getAfterAllClosed() : _this55._getAfterAllClosed().pipe((0, startWith
             /* startWith */
             .O)(undefined));
           });
@@ -27540,7 +27973,7 @@
         }, {
           key: "open",
           value: function open(componentOrTemplateRef, config) {
-            var _this55 = this;
+            var _this56 = this;
 
             config = _applyConfigDefaults(config, this._defaultOptions || new MatDialogConfig());
 
@@ -27561,7 +27994,7 @@
 
             this.openDialogs.push(dialogRef);
             dialogRef.afterClosed().subscribe(function () {
-              return _this55._removeOpenDialog(dialogRef);
+              return _this56._removeOpenDialog(dialogRef);
             });
             this.afterOpened.next(dialogRef); // Notify the dialog container that the content has been attached.
 
@@ -28372,7 +28805,7 @@
         _createClass(MatDialogTitle, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this56 = this;
+            var _this57 = this;
 
             if (!this._dialogRef) {
               this._dialogRef = getClosestDialog(this._elementRef, this._dialog.openDialogs);
@@ -28380,10 +28813,10 @@
 
             if (this._dialogRef) {
               Promise.resolve().then(function () {
-                var container = _this56._dialogRef._containerInstance;
+                var container = _this57._dialogRef._containerInstance;
 
                 if (container && !container._ariaLabelledBy) {
-                  container._ariaLabelledBy = _this56.id;
+                  container._ariaLabelledBy = _this57.id;
                 }
               });
             }
@@ -28882,7 +29315,7 @@
 
       var _MatTooltipBase = /*#__PURE__*/function () {
         function _MatTooltipBase(_overlay, _elementRef, _scrollDispatcher, _viewContainerRef, _ngZone, _platform, _ariaDescriber, _focusMonitor, scrollStrategy, _dir, _defaultOptions, _document) {
-          var _this57 = this;
+          var _this58 = this;
 
           _classCallCheck(this, _MatTooltipBase);
 
@@ -28939,7 +29372,7 @@
            */
 
           this._handleKeydown = function (event) {
-            if (_this57._isTooltipVisible() && event.keyCode === keycodes
+            if (_this58._isTooltipVisible() && event.keyCode === keycodes
             /* ESCAPE */
             .hY && !(0, keycodes
             /* hasModifierKey */
@@ -28947,8 +29380,8 @@
               event.preventDefault();
               event.stopPropagation();
 
-              _this57._ngZone.run(function () {
-                return _this57.hide(0);
+              _this58._ngZone.run(function () {
+                return _this58.hide(0);
               });
             }
           };
@@ -28969,13 +29402,13 @@
           _dir.change.pipe((0, takeUntil
           /* takeUntil */
           .R)(this._destroyed)).subscribe(function () {
-            if (_this57._overlayRef) {
-              _this57._updatePosition(_this57._overlayRef);
+            if (_this58._overlayRef) {
+              _this58._updatePosition(_this58._overlayRef);
             }
           });
 
           _ngZone.runOutsideAngular(function () {
-            _elementRef.nativeElement.addEventListener('keydown', _this57._handleKeydown);
+            _elementRef.nativeElement.addEventListener('keydown', _this58._handleKeydown);
           });
         }
         /** Allows the user to define the position of the tooltip relative to the parent element */
@@ -29027,7 +29460,7 @@
             return this._message;
           },
           set: function set(value) {
-            var _this58 = this;
+            var _this59 = this;
 
             this._ariaDescriber.removeDescription(this._elementRef.nativeElement, this._message, 'tooltip'); // If the message is not a string (e.g. number), convert it to a string and trim it.
             // Must convert with `String(value)`, not `${value}`, otherwise Closure Compiler optimises
@@ -29049,7 +29482,7 @@
                 // has a data-bound `aria-label` or when it'll be set for the first time. We can avoid the
                 // issue by deferring the description by a tick so Angular has time to set the `aria-label`.
                 Promise.resolve().then(function () {
-                  _this58._ariaDescriber.describe(_this58._elementRef.nativeElement, _this58.message, 'tooltip');
+                  _this59._ariaDescriber.describe(_this59._elementRef.nativeElement, _this59.message, 'tooltip');
                 });
               });
             }
@@ -29071,7 +29504,7 @@
         }, {
           key: "ngAfterViewInit",
           value: function ngAfterViewInit() {
-            var _this59 = this;
+            var _this60 = this;
 
             // This needs to happen after view init so the initial values for all inputs have been set.
             this._viewInitialized = true;
@@ -29083,12 +29516,12 @@
             .R)(this._destroyed)).subscribe(function (origin) {
               // Note that the focus monitor runs outside the Angular zone.
               if (!origin) {
-                _this59._ngZone.run(function () {
-                  return _this59.hide(0);
+                _this60._ngZone.run(function () {
+                  return _this60.hide(0);
                 });
               } else if (origin === 'keyboard') {
-                _this59._ngZone.run(function () {
-                  return _this59.show();
+                _this60._ngZone.run(function () {
+                  return _this60.show();
                 });
               }
             });
@@ -29135,7 +29568,7 @@
         }, {
           key: "show",
           value: function show() {
-            var _this60 = this;
+            var _this61 = this;
 
             var delay = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : this.showDelay;
 
@@ -29155,7 +29588,7 @@
             this._tooltipInstance.afterHidden().pipe((0, takeUntil
             /* takeUntil */
             .R)(this._destroyed)).subscribe(function () {
-              return _this60._detach();
+              return _this61._detach();
             });
 
             this._setTooltipClass(this._tooltipClass);
@@ -29194,7 +29627,7 @@
         }, {
           key: "_createOverlay",
           value: function _createOverlay() {
-            var _this61 = this;
+            var _this62 = this;
 
             if (this._overlayRef) {
               return this._overlayRef;
@@ -29208,14 +29641,14 @@
             strategy.positionChanges.pipe((0, takeUntil
             /* takeUntil */
             .R)(this._destroyed)).subscribe(function (change) {
-              _this61._updateCurrentPositionClass(change.connectionPair);
+              _this62._updateCurrentPositionClass(change.connectionPair);
 
-              if (_this61._tooltipInstance) {
-                if (change.scrollableViewProperties.isOverlayClipped && _this61._tooltipInstance.isVisible()) {
+              if (_this62._tooltipInstance) {
+                if (change.scrollableViewProperties.isOverlayClipped && _this62._tooltipInstance.isVisible()) {
                   // After position changes occur and the overlay is clipped by
                   // a parent scrollable then close the tooltip.
-                  _this61._ngZone.run(function () {
-                    return _this61.hide(0);
+                  _this62._ngZone.run(function () {
+                    return _this62.hide(0);
                   });
                 }
               }
@@ -29232,7 +29665,7 @@
             this._overlayRef.detachments().pipe((0, takeUntil
             /* takeUntil */
             .R)(this._destroyed)).subscribe(function () {
-              return _this61._detach();
+              return _this62._detach();
             });
 
             this._overlayRef.outsidePointerEvents().pipe((0, takeUntil
@@ -29240,7 +29673,7 @@
             .R)(this._destroyed)).subscribe(function () {
               var _a;
 
-              return (_a = _this61._tooltipInstance) === null || _a === void 0 ? void 0 : _a._handleBodyInteraction();
+              return (_a = _this62._tooltipInstance) === null || _a === void 0 ? void 0 : _a._handleBodyInteraction();
             });
 
             return this._overlayRef;
@@ -29369,7 +29802,7 @@
         }, {
           key: "_updateTooltipMessage",
           value: function _updateTooltipMessage() {
-            var _this62 = this;
+            var _this63 = this;
 
             // Must wait for the message to be painted to the tooltip so that the overlay can properly
             // calculate the correct positioning based on the size of the text.
@@ -29383,8 +29816,8 @@
               .q)(1), (0, takeUntil
               /* takeUntil */
               .R)(this._destroyed)).subscribe(function () {
-                if (_this62._tooltipInstance) {
-                  _this62._overlayRef.updatePosition();
+                if (_this63._tooltipInstance) {
+                  _this63._overlayRef.updatePosition();
                 }
               });
             }
@@ -29465,7 +29898,7 @@
         }, {
           key: "_setupPointerEnterEventsIfNeeded",
           value: function _setupPointerEnterEventsIfNeeded() {
-            var _this63 = this;
+            var _this64 = this;
 
             // Optimization: Defer hooking up events if there's no message or the tooltip is disabled.
             if (this._disabled || !this.message || !this._viewInitialized || this._passiveListeners.length) {
@@ -29476,9 +29909,9 @@
 
             if (this._platformSupportsMouseEvents()) {
               this._passiveListeners.push(['mouseenter', function () {
-                _this63._setupPointerExitEventsIfNeeded();
+                _this64._setupPointerExitEventsIfNeeded();
 
-                _this63.show();
+                _this64.show();
               }]);
             } else if (this.touchGestures !== 'off') {
               this._disableNativeGesturesIfNecessary();
@@ -29486,11 +29919,11 @@
               this._passiveListeners.push(['touchstart', function () {
                 // Note that it's important that we don't `preventDefault` here,
                 // because it can prevent click events from firing on the element.
-                _this63._setupPointerExitEventsIfNeeded();
+                _this64._setupPointerExitEventsIfNeeded();
 
-                clearTimeout(_this63._touchstartTimeout);
-                _this63._touchstartTimeout = setTimeout(function () {
-                  return _this63.show();
+                clearTimeout(_this64._touchstartTimeout);
+                _this64._touchstartTimeout = setTimeout(function () {
+                  return _this64.show();
                 }, LONGPRESS_DELAY);
               }]);
             }
@@ -29500,7 +29933,7 @@
         }, {
           key: "_setupPointerExitEventsIfNeeded",
           value: function _setupPointerExitEventsIfNeeded() {
-            var _this64 = this,
+            var _this65 = this,
                 _this$_passiveListene;
 
             if (this._pointerExitEventsInitialized) {
@@ -29512,17 +29945,17 @@
 
             if (this._platformSupportsMouseEvents()) {
               exitListeners.push(['mouseleave', function () {
-                return _this64.hide();
+                return _this65.hide();
               }], ['wheel', function (event) {
-                return _this64._wheelListener(event);
+                return _this65._wheelListener(event);
               }]);
             } else if (this.touchGestures !== 'off') {
               this._disableNativeGesturesIfNecessary();
 
               var touchendListener = function touchendListener() {
-                clearTimeout(_this64._touchstartTimeout);
+                clearTimeout(_this65._touchstartTimeout);
 
-                _this64.hide(_this64._defaultOptions.touchendHideDelay);
+                _this65.hide(_this65._defaultOptions.touchendHideDelay);
               };
 
               exitListeners.push(['touchend', touchendListener], ['touchcancel', touchendListener]);
@@ -29535,14 +29968,14 @@
         }, {
           key: "_addListeners",
           value: function _addListeners(listeners) {
-            var _this65 = this;
+            var _this66 = this;
 
             listeners.forEach(function (_ref5) {
               var _ref6 = _slicedToArray(_ref5, 2),
                   event = _ref6[0],
                   listener = _ref6[1];
 
-              _this65._elementRef.nativeElement.addEventListener(event, listener, passiveListenerOptions);
+              _this66._elementRef.nativeElement.addEventListener(event, listener, passiveListenerOptions);
             });
           }
         }, {
@@ -29879,13 +30312,13 @@
         var _super14 = _createSuper(MatTooltip);
 
         function MatTooltip(overlay, elementRef, scrollDispatcher, viewContainerRef, ngZone, platform, ariaDescriber, focusMonitor, scrollStrategy, dir, defaultOptions, _document) {
-          var _this66;
+          var _this67;
 
           _classCallCheck(this, MatTooltip);
 
-          _this66 = _super14.call(this, overlay, elementRef, scrollDispatcher, viewContainerRef, ngZone, platform, ariaDescriber, focusMonitor, scrollStrategy, dir, defaultOptions, _document);
-          _this66._tooltipComponent = TooltipComponent;
-          return _this66;
+          _this67 = _super14.call(this, overlay, elementRef, scrollDispatcher, viewContainerRef, ngZone, platform, ariaDescriber, focusMonitor, scrollStrategy, dir, defaultOptions, _document);
+          _this67._tooltipComponent = TooltipComponent;
+          return _this67;
         }
 
         return MatTooltip;
@@ -30142,21 +30575,21 @@
         _createClass(_TooltipComponentBase, [{
           key: "show",
           value: function show(delay) {
-            var _this67 = this;
+            var _this68 = this;
 
             // Cancel the delayed hide if it is scheduled
             clearTimeout(this._hideTimeoutId); // Body interactions should cancel the tooltip if there is a delay in showing.
 
             this._closeOnInteraction = true;
             this._showTimeoutId = setTimeout(function () {
-              _this67._visibility = 'visible';
-              _this67._showTimeoutId = undefined;
+              _this68._visibility = 'visible';
+              _this68._showTimeoutId = undefined;
 
-              _this67._onShow(); // Mark for check so if any parent component has set the
+              _this68._onShow(); // Mark for check so if any parent component has set the
               // ChangeDetectionStrategy to OnPush it will be checked anyways
 
 
-              _this67._markForCheck();
+              _this68._markForCheck();
             }, delay);
           }
           /**
@@ -30167,16 +30600,16 @@
         }, {
           key: "hide",
           value: function hide(delay) {
-            var _this68 = this;
+            var _this69 = this;
 
             // Cancel the delayed show if it is scheduled
             clearTimeout(this._showTimeoutId);
             this._hideTimeoutId = setTimeout(function () {
-              _this68._visibility = 'hidden';
-              _this68._hideTimeoutId = undefined; // Mark for check so if any parent component has set the
+              _this69._visibility = 'hidden';
+              _this69._hideTimeoutId = undefined; // Mark for check so if any parent component has set the
               // ChangeDetectionStrategy to OnPush it will be checked anyways
 
-              _this68._markForCheck();
+              _this69._markForCheck();
             }, delay);
           }
           /** Returns an observable that notifies when the tooltip has been hidden from view. */
@@ -30306,18 +30739,18 @@
         var _super15 = _createSuper(TooltipComponent);
 
         function TooltipComponent(changeDetectorRef, _breakpointObserver) {
-          var _this69;
+          var _this70;
 
           _classCallCheck(this, TooltipComponent);
 
-          _this69 = _super15.call(this, changeDetectorRef);
-          _this69._breakpointObserver = _breakpointObserver;
+          _this70 = _super15.call(this, changeDetectorRef);
+          _this70._breakpointObserver = _breakpointObserver;
           /** Stream that emits whether the user has a handset-sized display.  */
 
-          _this69._isHandset = _this69._breakpointObserver.observe(layout
+          _this70._isHandset = _this70._breakpointObserver.observe(layout
           /* Breakpoints.Handset */
           .u3.Handset);
-          return _this69;
+          return _this70;
         }
 
         return TooltipComponent;
@@ -30581,10 +31014,10 @@
           .TgZ(0, "div");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "div", 17);
+          .TgZ(1, "div", 18);
           core
           /* ɵɵelementStart */
-          .TgZ(2, "div", 18);
+          .TgZ(2, "div", 19);
 
           core
           /* ɵɵtext */
@@ -30595,7 +31028,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(4, "div", 19);
+          .TgZ(4, "div", 20);
 
           core
           /* ɵɵtext */
@@ -30606,7 +31039,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(6, "div", 20);
+          .TgZ(6, "div", 21);
 
           core
           /* ɵɵtext */
@@ -30653,11 +31086,11 @@
           .TgZ(0, "div");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "a", 21);
+          .TgZ(1, "a", 22);
 
           core
           /* ɵɵelement */
-          ._UZ(2, "img", 22);
+          ._UZ(2, "img", 23);
 
           core
           /* ɵɵelementEnd */
@@ -30675,7 +31108,7 @@
           .TgZ(0, "div");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "table", 23);
+          .TgZ(1, "table", 24);
           core
           /* ɵɵelementStart */
           .TgZ(2, "thead");
@@ -30689,7 +31122,7 @@
 
           core
           /* ɵɵelementStart */
-          .TgZ(5, "th", 24);
+          .TgZ(5, "th", 25);
 
           core
           /* ɵɵtext */
@@ -30709,7 +31142,7 @@
           .TgZ(7, "tbody");
           core
           /* ɵɵelementStart */
-          .TgZ(8, "tr", 25);
+          .TgZ(8, "tr", 26);
 
           core
           /* ɵɵelement */
@@ -30720,7 +31153,7 @@
           .TgZ(10, "td");
           core
           /* ɵɵelementStart */
-          .TgZ(11, "a", 26);
+          .TgZ(11, "a", 27);
           core
           /* ɵɵelementStart */
           .TgZ(12, "div");
@@ -30743,7 +31176,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(14, "tr", 25);
+          .TgZ(14, "tr", 26);
 
           core
           /* ɵɵelement */
@@ -30754,7 +31187,7 @@
           .TgZ(16, "td");
           core
           /* ɵɵelementStart */
-          .TgZ(17, "a", 27);
+          .TgZ(17, "a", 28);
           core
           /* ɵɵelementStart */
           .TgZ(18, "div");
@@ -30777,7 +31210,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(20, "tr", 25);
+          .TgZ(20, "tr", 26);
 
           core
           /* ɵɵelement */
@@ -30788,7 +31221,7 @@
           .TgZ(22, "td");
           core
           /* ɵɵelementStart */
-          .TgZ(23, "a", 28);
+          .TgZ(23, "a", 29);
           core
           /* ɵɵelementStart */
           .TgZ(24, "div");
@@ -30825,21 +31258,21 @@
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "tr", 25);
+          .TgZ(0, "tr", 26);
 
           core
           /* ɵɵelement */
-          ._UZ(1, "th", 37);
+          ._UZ(1, "th", 38);
 
           core
           /* ɵɵelementStart */
-          .TgZ(2, "td", 38);
+          .TgZ(2, "td", 39);
           core
           /* ɵɵelementStart */
-          .TgZ(3, "a", 39);
+          .TgZ(3, "a", 40);
           core
           /* ɵɵelementStart */
-          .TgZ(4, "div", 40);
+          .TgZ(4, "div", 41);
 
           core
           /* ɵɵtext */
@@ -30892,7 +31325,7 @@
           .TgZ(1, "div");
           core
           /* ɵɵelementStart */
-          .TgZ(2, "table", 23);
+          .TgZ(2, "table", 24);
           core
           /* ɵɵelementStart */
           .TgZ(3, "thead");
@@ -30901,7 +31334,7 @@
           .TgZ(4, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(5, "th", 30);
+          .TgZ(5, "th", 31);
 
           core
           /* ɵɵtext */
@@ -30909,11 +31342,11 @@
 
           core
           /* ɵɵelementStart */
-          .TgZ(7, "button", 31);
+          .TgZ(7, "button", 32);
 
           core
           /* ɵɵelement */
-          ._UZ(8, "i", 32);
+          ._UZ(8, "i", 33);
 
           core
           /* ɵɵelementEnd */
@@ -30932,7 +31365,7 @@
           .TgZ(9, "tbody");
           core
           /* ɵɵtemplate */
-          .YNc(10, VideostreamsComponent_ng_template_27_div_0_tr_10_Template, 6, 2, "tr", 33);
+          .YNc(10, VideostreamsComponent_ng_template_27_div_0_tr_10_Template, 6, 2, "tr", 34);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -30944,10 +31377,10 @@
           .TgZ(11, "div");
           core
           /* ɵɵelementStart */
-          .TgZ(12, "div", 34);
+          .TgZ(12, "div", 35);
           core
           /* ɵɵelementStart */
-          .TgZ(13, "button", 35);
+          .TgZ(13, "button", 36);
           core
           /* ɵɵlistener */
           .NdJ("click", function VideostreamsComponent_ng_template_27_div_0_Template_button_click_13_listener() {
@@ -30978,10 +31411,10 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(16, "div", 36);
+          .TgZ(16, "div", 37);
           core
           /* ɵɵelementStart */
-          .TgZ(17, "button", 35);
+          .TgZ(17, "button", 36);
           core
           /* ɵɵlistener */
           .NdJ("click", function VideostreamsComponent_ng_template_27_div_0_Template_button_click_17_listener() {
@@ -31050,7 +31483,7 @@
         if (rf & 1) {
           core
           /* ɵɵtemplate */
-          .YNc(0, VideostreamsComponent_ng_template_27_div_0_Template, 20, 3, "div", 29);
+          .YNc(0, VideostreamsComponent_ng_template_27_div_0_Template, 20, 3, "div", 30);
         }
 
         if (rf & 2) {
@@ -31064,20 +31497,23 @@
       }
 
       var VideostreamsComponent = /*#__PURE__*/function () {
-        function VideostreamsComponent(restService, utilityService, dialog) {
-          var _this70 = this;
+        function VideostreamsComponent(restService, utilityService, dialog, router, route) {
+          var _this71 = this;
 
           _classCallCheck(this, VideostreamsComponent);
 
           this.restService = restService;
           this.utilityService = utilityService;
           this.dialog = dialog;
+          this.router = router;
+          this.route = route;
           this.page = 0;
+          this.selectedTab = 0;
           this.utilityService.setTitle("Videostreams");
           var observableEvents = this.restService.getSportSurge();
           observableEvents.subscribe({
             next: function next(data) {
-              _this70.events = data;
+              _this71.events = data;
               return data;
             }
           });
@@ -31094,12 +31530,12 @@
         }, {
           key: "getReplays",
           value: function getReplays() {
-            var _this71 = this;
+            var _this72 = this;
 
             var observableEvents = this.restService.getReplays(this.page);
             observableEvents.subscribe({
               next: function next(data) {
-                _this71.replays = data;
+                _this72.replays = data;
                 return data;
               }
             });
@@ -31121,6 +31557,33 @@
               return this.replays.length < 15;
             }
           }
+        }, {
+          key: "tabChanged",
+          value: function tabChanged(tabChangeEvent) {
+            this.updateUrl();
+          }
+        }, {
+          key: "updateUrl",
+          value: function updateUrl() {
+            var queryParams = {
+              tab: this.selectedTab + 1
+            };
+            this.router.navigate([], {
+              relativeTo: this.route,
+              queryParams: queryParams
+            });
+          }
+        }, {
+          key: "getSelectedTab",
+          value: function getSelectedTab() {
+            var tab = this.route.snapshot.queryParamMap.get('tab');
+
+            if (tab == undefined) {
+              return 0;
+            } else {
+              return Number(tab) - 1;
+            }
+          }
         }]);
 
         return VideostreamsComponent;
@@ -31137,7 +31600,15 @@
         /* UtilityService */
         .t), core
         /* ɵɵdirectiveInject */
-        .Y36(MatDialog));
+        .Y36(MatDialog), core
+        /* ɵɵdirectiveInject */
+        .Y36(router
+        /* Router */
+        .F0), core
+        /* ɵɵdirectiveInject */
+        .Y36(router
+        /* ActivatedRoute */
+        .gz));
       };
 
       VideostreamsComponent.ɵcmp = /*@__PURE__*/core
@@ -31146,8 +31617,8 @@
         type: VideostreamsComponent,
         selectors: [["videostreams-cmp"]],
         decls: 28,
-        vars: 3,
-        consts: [["autosize", ""], ["autosize", "", "mode", "side", "position", "end", 1, "example-sidenav", 3, "opened", "openedChange"], ["drawer", ""], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area", 3, "ngModel", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "post-comment-button", 3, "click"], [4, "ngFor", "ngForOf"], [1, "fixed-button"], ["type", "fixed-plugin", "mat-button", "", 3, "click"], [1, "fa", "fa-commenting-o", "fa-2x"], [1, "height-fill-screen"], ["label", "F1TV"], ["matTabContent", ""], ["label", "Free livestreams"], ["label", "Replays"], [1, "basic-comment"], [1, "one"], [1, "two"], [1, "basic-comment-body"], ["href", "https://f1tv.formula1.com", "target", "_blank", 2, "color", "black"], ["alt", "f1tv", "src", "https://ott-img.formula1.com/subscription/ProImagesNoBG/live-nocut.png"], [1, "table", "table-striped"], ["scope", "col", 2, "text-align", "center"], [1, "hover-effects-bold-row"], ["href", "https://www.twitch.tv/mda2mjzy9y3lw", "target", "_blank", 2, "color", "black"], ["href", "https://v2.sportsurge.net/list-formula-1", "target", "_blank", 2, "color", "black"], ["href", "https://overtakefans.com/", "target", "_blank", 2, "color", "black"], [4, "ngIf"], ["colspan", "4", 2, "background-color", "#cdcdcd", "text-align", "center"], ["matTooltip", "F1Exposure.com and Racingfk.com are not affiliated in any way.", 1, "btn", "btn-outline-info", "btn-round", "btn-icon", "right-header-button"], [1, "fa", "fa-info"], ["class", "hover-effects-bold-row", 4, "ngFor", "ngForOf"], [1, "basic-left", "icon-big", "text-center"], ["color", "primary", "mat-flat-button", "", 1, "width-100", 3, "disabled", "click"], [1, "basic-right", "icon-big", "text-center"], ["scope", "row"], [1, "p-1"], ["target", "_blank", 2, "color", "black", 3, "href"], [1, "link-container"]],
+        vars: 4,
+        consts: [["autosize", ""], ["autosize", "", "mode", "side", "position", "end", 1, "example-sidenav", 3, "opened", "openedChange"], ["drawer", ""], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area", 3, "ngModel", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "post-comment-button", 3, "click"], [4, "ngFor", "ngForOf"], [1, "fixed-button"], ["type", "fixed-plugin", "mat-button", "", 3, "click"], [1, "fa", "fa-commenting-o", "fa-2x"], [1, "height-fill-screen"], [3, "selectedIndex", "selectedIndexChange", "selectedTabChange"], ["label", "F1TV"], ["matTabContent", ""], ["label", "Free livestreams"], ["label", "Replays"], [1, "basic-comment"], [1, "one"], [1, "two"], [1, "basic-comment-body"], ["href", "https://f1tv.formula1.com", "target", "_blank", 2, "color", "black"], ["alt", "f1tv", "src", "https://ott-img.formula1.com/subscription/ProImagesNoBG/live-nocut.png"], [1, "table", "table-striped"], ["scope", "col", 2, "text-align", "center"], [1, "hover-effects-bold-row"], ["href", "https://www.twitch.tv/mda2mjzy9y3lw", "target", "_blank", 2, "color", "black"], ["href", "https://v2.sportsurge.net/list-formula-1", "target", "_blank", 2, "color", "black"], ["href", "https://overtakefans.com/", "target", "_blank", 2, "color", "black"], [4, "ngIf"], ["colspan", "4", 2, "background-color", "#cdcdcd", "text-align", "center"], ["matTooltip", "F1Exposure.com and Racingfk.com are not affiliated in any way.", 1, "btn", "btn-outline-info", "btn-round", "btn-icon", "right-header-button"], [1, "fa", "fa-info"], ["class", "hover-effects-bold-row", 4, "ngFor", "ngForOf"], [1, "basic-left", "icon-big", "text-center"], ["color", "primary", "mat-flat-button", "", 1, "width-100", 3, "disabled", "click"], [1, "basic-right", "icon-big", "text-center"], ["scope", "row"], [1, "p-1"], ["target", "_blank", 2, "color", "black", 3, "href"], [1, "link-container"]],
         template: function VideostreamsComponent_Template(rf, ctx) {
           if (rf & 1) {
             var _r12 = core
@@ -31306,31 +31777,38 @@
             .TgZ(20, "div", 12);
             core
             /* ɵɵelementStart */
-            .TgZ(21, "mat-tab-group");
+            .TgZ(21, "mat-tab-group", 13);
+            core
+            /* ɵɵlistener */
+            .NdJ("selectedIndexChange", function VideostreamsComponent_Template_mat_tab_group_selectedIndexChange_21_listener($event) {
+              return ctx.selectedTab = $event;
+            })("selectedTabChange", function VideostreamsComponent_Template_mat_tab_group_selectedTabChange_21_listener($event) {
+              return ctx.tabChanged($event);
+            });
             core
             /* ɵɵelementStart */
-            .TgZ(22, "mat-tab", 13);
+            .TgZ(22, "mat-tab", 14);
             core
             /* ɵɵtemplate */
-            .YNc(23, VideostreamsComponent_ng_template_23_Template, 3, 0, "ng-template", 14);
+            .YNc(23, VideostreamsComponent_ng_template_23_Template, 3, 0, "ng-template", 15);
             core
             /* ɵɵelementEnd */
             .qZA();
             core
             /* ɵɵelementStart */
-            .TgZ(24, "mat-tab", 15);
+            .TgZ(24, "mat-tab", 16);
             core
             /* ɵɵtemplate */
-            .YNc(25, VideostreamsComponent_ng_template_25_Template, 26, 0, "ng-template", 14);
+            .YNc(25, VideostreamsComponent_ng_template_25_Template, 26, 0, "ng-template", 15);
             core
             /* ɵɵelementEnd */
             .qZA();
             core
             /* ɵɵelementStart */
-            .TgZ(26, "mat-tab", 16);
+            .TgZ(26, "mat-tab", 17);
             core
             /* ɵɵtemplate */
-            .YNc(27, VideostreamsComponent_ng_template_27_Template, 1, 1, "ng-template", 14);
+            .YNc(27, VideostreamsComponent_ng_template_27_Template, 1, 1, "ng-template", 15);
             core
             /* ɵɵelementEnd */
             .qZA();
@@ -31367,6 +31845,12 @@
             core
             /* ɵɵproperty */
             .Q6J("ngForOf", ctx.utilityService.comments);
+            core
+            /* ɵɵadvance */
+            .xp6(8);
+            core
+            /* ɵɵproperty */
+            .Q6J("selectedIndex", ctx.selectedTab);
           }
         },
         directives: [sidenav
@@ -31450,17 +31934,17 @@
         var _super16 = _createSuper(ThrottleSubscriber);
 
         function ThrottleSubscriber(destination, durationSelector, _leading, _trailing) {
-          var _this72;
+          var _this73;
 
           _classCallCheck(this, ThrottleSubscriber);
 
-          _this72 = _super16.call(this, destination);
-          _this72.destination = destination;
-          _this72.durationSelector = durationSelector;
-          _this72._leading = _leading;
-          _this72._trailing = _trailing;
-          _this72._hasValue = false;
-          return _this72;
+          _this73 = _super16.call(this, destination);
+          _this73.destination = destination;
+          _this73.durationSelector = durationSelector;
+          _this73._leading = _leading;
+          _this73._trailing = _trailing;
+          _this73._hasValue = false;
+          return _this73;
         }
 
         _createClass(ThrottleSubscriber, [{
@@ -31582,18 +32066,18 @@
         var _super17 = _createSuper(ThrottleTimeSubscriber);
 
         function ThrottleTimeSubscriber(destination, duration, scheduler, leading, trailing) {
-          var _this73;
+          var _this74;
 
           _classCallCheck(this, ThrottleTimeSubscriber);
 
-          _this73 = _super17.call(this, destination);
-          _this73.duration = duration;
-          _this73.scheduler = scheduler;
-          _this73.leading = leading;
-          _this73.trailing = trailing;
-          _this73._hasTrailingValue = false;
-          _this73._trailingValue = null;
-          return _this73;
+          _this74 = _super17.call(this, destination);
+          _this74.duration = duration;
+          _this74.scheduler = scheduler;
+          _this74.leading = leading;
+          _this74.trailing = trailing;
+          _this74._hasTrailingValue = false;
+          _this74._trailingValue = null;
+          return _this74;
         }
 
         _createClass(ThrottleTimeSubscriber, [{
@@ -32540,7 +33024,7 @@
         }, {
           key: "setup",
           value: function setup() {
-            var _this74 = this;
+            var _this75 = this;
 
             if (hasWindowDefined()) {
               this.zone.runOutsideAngular(
@@ -32548,29 +33032,29 @@
               * @return {?}
               */
               function () {
-                _this74.disposeScroller = createScroller({
-                  fromRoot: _this74.fromRoot,
-                  alwaysCallback: _this74.alwaysCallback,
-                  disable: _this74.infiniteScrollDisabled,
-                  downDistance: _this74.infiniteScrollDistance,
-                  element: _this74.element,
-                  horizontal: _this74.horizontal,
-                  scrollContainer: _this74.infiniteScrollContainer,
-                  scrollWindow: _this74.scrollWindow,
-                  throttle: _this74.infiniteScrollThrottle,
-                  upDistance: _this74.infiniteScrollUpDistance
+                _this75.disposeScroller = createScroller({
+                  fromRoot: _this75.fromRoot,
+                  alwaysCallback: _this75.alwaysCallback,
+                  disable: _this75.infiniteScrollDisabled,
+                  downDistance: _this75.infiniteScrollDistance,
+                  element: _this75.element,
+                  horizontal: _this75.horizontal,
+                  scrollContainer: _this75.infiniteScrollContainer,
+                  scrollWindow: _this75.scrollWindow,
+                  throttle: _this75.infiniteScrollThrottle,
+                  upDistance: _this75.infiniteScrollUpDistance
                 }).subscribe(
                 /**
                 * @param {?} payload
                 * @return {?}
                 */
                 function (payload) {
-                  return _this74.zone.run(
+                  return _this75.zone.run(
                   /**
                   * @return {?}
                   */
                   function () {
-                    return _this74.handleOnScroll(payload);
+                    return _this75.handleOnScroll(payload);
                   });
                 });
               });
@@ -34128,14 +34612,22 @@
           .TgZ(0, "mat-tab-group", 18);
           core
           /* ɵɵlistener */
-          .NdJ("selectedTabChange", function InstagramFeedComponent_mat_tab_group_20_Template_mat_tab_group_selectedTabChange_0_listener($event) {
+          .NdJ("selectedIndexChange", function InstagramFeedComponent_mat_tab_group_20_Template_mat_tab_group_selectedIndexChange_0_listener($event) {
             core
             /* ɵɵrestoreView */
             .CHM(_r35);
             var ctx_r34 = core
             /* ɵɵnextContext */
             .oxw();
-            return ctx_r34.tabChanged($event);
+            return ctx_r34.selectedTab = $event;
+          })("selectedTabChange", function InstagramFeedComponent_mat_tab_group_20_Template_mat_tab_group_selectedTabChange_0_listener($event) {
+            core
+            /* ɵɵrestoreView */
+            .CHM(_r35);
+            var ctx_r36 = core
+            /* ɵɵnextContext */
+            .oxw();
+            return ctx_r36.tabChanged($event);
           });
           core
           /* ɵɵelementStart */
@@ -34177,22 +34669,34 @@
           /* ɵɵelementEnd */
           .qZA();
         }
+
+        if (rf & 2) {
+          var ctx_r2 = core
+          /* ɵɵnextContext */
+          .oxw();
+          core
+          /* ɵɵproperty */
+          .Q6J("selectedIndex", ctx_r2.selectedTab);
+        }
       }
 
       var InstagramFeedComponent = /*#__PURE__*/function () {
-        function InstagramFeedComponent(restService, utilityService, sanitizer) {
+        function InstagramFeedComponent(restService, utilityService, sanitizer, router, route) {
           _classCallCheck(this, InstagramFeedComponent);
 
           this.restService = restService;
           this.utilityService = utilityService;
           this.sanitizer = sanitizer;
+          this.router = router;
+          this.route = route;
           this.instaPageNum = 0;
           this.twitterpageNum = 0;
           this.redditpageNum = 0;
-          this.tabIndex = 0;
+          this.selectedTab = 0;
           this.utilityService.setTitle("Image feed");
           this.getFeed();
           this.utilityService.reloadPosts(7);
+          this.selectedTab = this.getSelectedTab();
         }
 
         _createClass(InstagramFeedComponent, [{
@@ -34204,22 +34708,17 @@
         }, {
           key: "onScrollDown",
           value: function onScrollDown() {
-            if (this.tabIndex == 0) {
+            if (this.selectedTab == 0) {
               this.onInstagramScrollDown();
             }
 
-            if (this.tabIndex == 1) {
+            if (this.selectedTab == 1) {
               this.onTwitterScrollDown();
             }
 
-            if (this.tabIndex == 2) {
+            if (this.selectedTab == 2) {
               this.onRedditScrollDown();
             }
-          }
-        }, {
-          key: "tabChanged",
-          value: function tabChanged(tabChangeEvent) {
-            this.tabIndex = tabChangeEvent.index;
           }
         }, {
           key: "onInstagramScrollDown",
@@ -34242,26 +34741,26 @@
         }, {
           key: "getFeed",
           value: function getFeed() {
-            var _this75 = this;
+            var _this76 = this;
 
             var observableEvents = this.restService.getInstagramPostsPaged(this.instaPageNum);
             observableEvents.subscribe({
               next: function next(data) {
-                _this75.instaPosts = data;
+                _this76.instaPosts = data;
                 return data;
               }
             });
             var observableTweets = this.restService.getTwitterPostsPaged(this.twitterpageNum);
             observableTweets.subscribe({
               next: function next(data) {
-                _this75.twitterPosts = data;
+                _this76.twitterPosts = data;
                 return data;
               }
             });
             var observableReddits = this.restService.getRedditPostsPaged(this.redditpageNum);
             observableReddits.subscribe({
               next: function next(data) {
-                _this75.redditPosts = data;
+                _this76.redditPosts = data;
                 return data;
               }
             });
@@ -34269,15 +34768,15 @@
         }, {
           key: "updateInstagramFeed",
           value: function updateInstagramFeed() {
-            var _this76 = this;
+            var _this77 = this;
 
             var observableEvents = this.restService.getInstagramPostsPaged(this.instaPageNum);
             observableEvents.subscribe({
               next: function next(data) {
                 var posts2 = data;
-                _this76.instaPosts.first = _this76.instaPosts.first.concat(posts2.first);
-                _this76.instaPosts.second = _this76.instaPosts.second.concat(posts2.second);
-                _this76.instaPosts.third = _this76.instaPosts.third.concat(posts2.third);
+                _this77.instaPosts.first = _this77.instaPosts.first.concat(posts2.first);
+                _this77.instaPosts.second = _this77.instaPosts.second.concat(posts2.second);
+                _this77.instaPosts.third = _this77.instaPosts.third.concat(posts2.third);
                 return data;
               }
             });
@@ -34285,14 +34784,14 @@
         }, {
           key: "updateTwitterFeed",
           value: function updateTwitterFeed() {
-            var _this77 = this;
+            var _this78 = this;
 
             var observableTweets = this.restService.getTwitterPostsPaged(this.twitterpageNum);
             observableTweets.subscribe({
               next: function next(data) {
                 var posts2 = data;
-                _this77.twitterPosts.first = _this77.twitterPosts.first.concat(posts2.first);
-                _this77.twitterPosts.second = _this77.twitterPosts.second.concat(posts2.second);
+                _this78.twitterPosts.first = _this78.twitterPosts.first.concat(posts2.first);
+                _this78.twitterPosts.second = _this78.twitterPosts.second.concat(posts2.second);
                 return data;
               }
             });
@@ -34300,14 +34799,14 @@
         }, {
           key: "updateRedditFeed",
           value: function updateRedditFeed() {
-            var _this78 = this;
+            var _this79 = this;
 
             var observableReddits = this.restService.getRedditPostsPaged(this.redditpageNum);
             observableReddits.subscribe({
               next: function next(data) {
                 var posts2 = data;
-                _this78.redditPosts.first = _this78.redditPosts.first.concat(posts2.first);
-                _this78.redditPosts.second = _this78.redditPosts.second.concat(posts2.second);
+                _this79.redditPosts.first = _this79.redditPosts.first.concat(posts2.first);
+                _this79.redditPosts.second = _this79.redditPosts.second.concat(posts2.second);
                 return data;
               }
             });
@@ -34329,6 +34828,33 @@
           value: function safeStreamableSource(url) {
             return this.sanitizer.bypassSecurityTrustResourceUrl(url);
           }
+        }, {
+          key: "tabChanged",
+          value: function tabChanged(tabChangeEvent) {
+            this.updateUrl();
+          }
+        }, {
+          key: "updateUrl",
+          value: function updateUrl() {
+            var queryParams = {
+              tab: this.selectedTab + 1
+            };
+            this.router.navigate([], {
+              relativeTo: this.route,
+              queryParams: queryParams
+            });
+          }
+        }, {
+          key: "getSelectedTab",
+          value: function getSelectedTab() {
+            var tab = this.route.snapshot.queryParamMap.get('tab');
+
+            if (tab == undefined) {
+              return 0;
+            } else {
+              return Number(tab) - 1;
+            }
+          }
         }]);
 
         return InstagramFeedComponent;
@@ -34347,7 +34873,15 @@
         /* ɵɵdirectiveInject */
         .Y36(platform_browser
         /* DomSanitizer */
-        .H7));
+        .H7), core
+        /* ɵɵdirectiveInject */
+        .Y36(router
+        /* Router */
+        .F0), core
+        /* ɵɵdirectiveInject */
+        .Y36(router
+        /* ActivatedRoute */
+        .gz));
       };
 
       InstagramFeedComponent.ɵcmp = /*@__PURE__*/core
@@ -34357,10 +34891,10 @@
         selectors: [["instagram-feed-cmp"]],
         decls: 21,
         vars: 5,
-        consts: [["infinite-scroll", "", 3, "infiniteScrollDistance", "scrolled"], ["autosize", ""], ["autosize", "", "mode", "side", "position", "end", 1, "example-sidenav", 3, "opened", "openedChange"], ["drawer", ""], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area", 3, "ngModel", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "post-comment-button", 3, "click"], [4, "ngFor", "ngForOf"], [1, "fixed-button"], ["type", "fixed-plugin", "mat-button", "", 3, "click"], [1, "fa", "fa-commenting-o", "fa-2x"], [3, "selectedTabChange", 4, "ngIf"], [1, "basic-comment"], [1, "one"], [1, "two"], [1, "basic-comment-body"], [3, "selectedTabChange"], ["label", "Instagram"], ["mat-tab-label", ""], ["matTabContent", ""], ["label", "Twitter"], ["label", "Reddit"], ["src", "assets/img/instagram-icon.ico"], [1, "col-lg-4", "col-12", "no-right-padding"], ["class", "instagram-post-margin", 4, "ngFor", "ngForOf"], [1, "col-lg-4", "col-12", "no-padding"], [1, "instagram-post-margin"], [1, "container-fluid"], [1, "col-lg-4", "col-4", "instagram-post-info", "single-line"], [1, "col-lg-4", "col-4", "instagram-post-info"], ["target", "_blank", 3, "href"], [1, "w-100", 3, "src"], [1, "instagram-post-info"], ["src", "assets/img/twitter-icon.png"], [1, "row", "container-fluid", "no-padding-no-margin"], [1, "col-lg-6", "col-12", "no-padding-always"], [1, "div-half", "twitter-post-info"], [1, "div-quarter", "twitter-post-info"], [1, "div-quarter", "twitter-post-info", "single-line"], ["class", "text-center", 4, "ngIf"], ["class", "div-left-header bg-dark-blue", 4, "ngIf"], [1, "text-center"], [3, "src"], [1, "div-left-header", "bg-dark-blue"], [1, "aaa"], [1, "bg-dark-blue", "tweet-without-image"], ["target", "_blank", 3, "href", 4, "ngIf"], ["src", "assets/img/reddit-icon.png"], [1, "reddit-post-info"]],
+        consts: [["infinite-scroll", "", 3, "infiniteScrollDistance", "scrolled"], ["autosize", ""], ["autosize", "", "mode", "side", "position", "end", 1, "example-sidenav", 3, "opened", "openedChange"], ["drawer", ""], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area", 3, "ngModel", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "post-comment-button", 3, "click"], [4, "ngFor", "ngForOf"], [1, "fixed-button"], ["type", "fixed-plugin", "mat-button", "", 3, "click"], [1, "fa", "fa-commenting-o", "fa-2x"], [3, "selectedIndex", "selectedIndexChange", "selectedTabChange", 4, "ngIf"], [1, "basic-comment"], [1, "one"], [1, "two"], [1, "basic-comment-body"], [3, "selectedIndex", "selectedIndexChange", "selectedTabChange"], ["label", "Instagram"], ["mat-tab-label", ""], ["matTabContent", ""], ["label", "Twitter"], ["label", "Reddit"], ["src", "assets/img/instagram-icon.ico"], [1, "col-lg-4", "col-12", "no-right-padding"], ["class", "instagram-post-margin", 4, "ngFor", "ngForOf"], [1, "col-lg-4", "col-12", "no-padding"], [1, "instagram-post-margin"], [1, "container-fluid"], [1, "col-lg-4", "col-4", "instagram-post-info", "single-line"], [1, "col-lg-4", "col-4", "instagram-post-info"], ["target", "_blank", 3, "href"], [1, "w-100", 3, "src"], [1, "instagram-post-info"], ["src", "assets/img/twitter-icon.png"], [1, "row", "container-fluid", "no-padding-no-margin"], [1, "col-lg-6", "col-12", "no-padding-always"], [1, "div-half", "twitter-post-info"], [1, "div-quarter", "twitter-post-info"], [1, "div-quarter", "twitter-post-info", "single-line"], ["class", "text-center", 4, "ngIf"], ["class", "div-left-header bg-dark-blue", 4, "ngIf"], [1, "text-center"], [3, "src"], [1, "div-left-header", "bg-dark-blue"], [1, "aaa"], [1, "bg-dark-blue", "tweet-without-image"], ["target", "_blank", 3, "href", 4, "ngIf"], ["src", "assets/img/reddit-icon.png"], [1, "reddit-post-info"]],
         template: function InstagramFeedComponent_Template(rf, ctx) {
           if (rf & 1) {
-            var _r36 = core
+            var _r37 = core
             /* ɵɵgetCurrentView */
             .EpF();
 
@@ -34464,7 +34998,7 @@
             .NdJ("click", function InstagramFeedComponent_Template_button_click_15_listener() {
               core
               /* ɵɵrestoreView */
-              .CHM(_r36);
+              .CHM(_r37);
 
               var _r0 = core
               /* ɵɵreference */
@@ -34497,7 +35031,7 @@
             .NdJ("click", function InstagramFeedComponent_Template_button_click_18_listener() {
               core
               /* ɵɵrestoreView */
-              .CHM(_r36);
+              .CHM(_r37);
 
               var _r0 = core
               /* ɵɵreference */
@@ -34518,7 +35052,7 @@
             .qZA();
             core
             /* ɵɵtemplate */
-            .YNc(20, InstagramFeedComponent_mat_tab_group_20_Template, 10, 0, "mat-tab-group", 13);
+            .YNc(20, InstagramFeedComponent_mat_tab_group_20_Template, 10, 1, "mat-tab-group", 13);
             core
             /* ɵɵelementEnd */
             .qZA();
@@ -34888,20 +35422,20 @@
         _createClass(SubmitContentDialog, [{
           key: "sendMessage",
           value: function sendMessage() {
-            var _this79 = this;
+            var _this80 = this;
 
             this.newContent.username = localStorage.getItem('f1-chosen-nickname');
             this.newContent.status = +this.status;
             var observableStandings = this.restService.postContent(this.newContent);
             observableStandings.subscribe({
               next: function next(data) {
-                _this79.newContent = new AwsContent();
+                _this80.newContent = new AwsContent();
 
-                _this79.utilityService.pushToastrMessage("Posted.");
+                _this80.utilityService.pushToastrMessage("Posted.");
 
-                _this79.dialogRef.close();
+                _this80.dialogRef.close();
 
-                _this79.router.navigate(['news/post'], {
+                _this80.router.navigate(['news/post'], {
                   queryParams: {
                     code: data
                   }
@@ -34910,7 +35444,7 @@
                 return data;
               },
               error: function error(_error3) {
-                _this79.utilityService.pushToastrMessage("Error occured.");
+                _this80.utilityService.pushToastrMessage("Error occured.");
 
                 console.error('There was an error!', _error3);
               }
@@ -35799,12 +36333,12 @@
         }, {
           key: "getPosts",
           value: function getPosts() {
-            var _this80 = this;
+            var _this81 = this;
 
             var observableEvents = this.restService.getAwsContent(this.page);
             observableEvents.subscribe({
               next: function next(data) {
-                _this80.posts = data;
+                _this81.posts = data;
                 return data;
               }
             });
@@ -36643,22 +37177,22 @@
         _createClass(AwsComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this81 = this;
+            var _this82 = this;
 
             this.utilityService.disablePeriodicFetchOfComments();
             this.route.queryParams.subscribe(function (params) {
               var selectedCode = params['code'];
 
-              var observableEvents = _this81.restService.getAwsPost(selectedCode);
+              var observableEvents = _this82.restService.getAwsPost(selectedCode);
 
               observableEvents.subscribe({
                 next: function next(data) {
-                  _this81.post = data;
+                  _this82.post = data;
 
-                  if (_this81.post == null) {
-                    _this81.goToAwsList();
+                  if (_this82.post == null) {
+                    _this82.goToAwsList();
                   } else {
-                    _this81.utilityService.setTitle(_this81.post.title);
+                    _this82.utilityService.setTitle(_this82.post.title);
                   }
                 },
                 error: function error(_error4) {
@@ -36667,7 +37201,7 @@
               });
             });
             this.commentsReloader = setInterval(function () {
-              _this81.getAwsCommentsPeriodically();
+              _this82.getAwsCommentsPeriodically();
             }, 20000);
             this.minimumReloadCounterValue = 0;
             this.currentReloadCounter = 1;
@@ -36692,7 +37226,7 @@
         }, {
           key: "postAwsComment",
           value: function postAwsComment() {
-            var _this82 = this;
+            var _this83 = this;
 
             var awsComment = new AwsComment();
 
@@ -36703,13 +37237,13 @@
               var observable = this.restService.postAwsComment(awsComment);
               observable.subscribe({
                 next: function next(data) {
-                  _this82.post.comments = data;
-                  _this82.commentText = '';
+                  _this83.post.comments = data;
+                  _this83.commentText = '';
                 },
                 error: function error(_error5) {
                   console.error('There was an error!', _error5);
 
-                  _this82.utilityService.pushToastrErrorMessage("ERROR OCCURED. Comment not posted.");
+                  _this83.utilityService.pushToastrErrorMessage("ERROR OCCURED. Comment not posted.");
                 }
               });
               this.minimumReloadCounterValue = 0;
@@ -36737,12 +37271,12 @@
         }, {
           key: "getAwsComments",
           value: function getAwsComments() {
-            var _this83 = this;
+            var _this84 = this;
 
             var observable = this.restService.getAwsComments(this.post.code);
             observable.subscribe({
               next: function next(data) {
-                _this83.post.comments = data;
+                _this84.post.comments = data;
               },
               error: function error(_error6) {
                 console.error('There was an error!', _error6);
@@ -36905,7 +37439,7 @@
 
             core
             /* ɵɵtext */
-            ._uU(16, "Back to News");
+            ._uU(16, "Back");
 
             core
             /* ɵɵelementEnd */
@@ -37762,7 +38296,7 @@
         }, {
           key: "executeModeratorAction",
           value: function executeModeratorAction() {
-            var _this84 = this;
+            var _this85 = this;
 
             if (isNaN(this.moderation.commentId)) {
               this.moderation.commentId = null;
@@ -37780,12 +38314,12 @@
               var observableEvent = this.restService.moderateComment(this.moderation);
               observableEvent.subscribe({
                 next: function next(data) {
-                  _this84.response = data;
+                  _this85.response = data;
 
-                  if (_this84.response.state > 0) {
-                    _this84.moderation = new CommentModeration();
+                  if (_this85.response.state > 0) {
+                    _this85.moderation = new CommentModeration();
 
-                    _this84.toastr.success(_this84.response.message, '', {
+                    _this85.toastr.success(_this85.response.message, '', {
                       timeOut: 4000,
                       closeButton: false,
                       enableHtml: false,
@@ -37794,8 +38328,8 @@
                     });
                   }
 
-                  if (_this84.response.state <= 0) {
-                    _this84.toastr.error("Unable to find comment no." + _this84.moderation.commentId, '', {
+                  if (_this85.response.state <= 0) {
+                    _this85.toastr.error("Unable to find comment no." + _this85.moderation.commentId, '', {
                       timeOut: 4000,
                       closeButton: false,
                       enableHtml: false,
@@ -38081,13 +38615,13 @@
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 27);
+          .TgZ(0, "div", 28);
           core
           /* ɵɵelementStart */
           .TgZ(1, "div");
           core
           /* ɵɵelementStart */
-          .TgZ(2, "div", 28);
+          .TgZ(2, "div", 29);
           core
           /* ɵɵelementStart */
           .TgZ(3, "h2");
@@ -38104,14 +38638,14 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(5, "div", 29);
+          .TgZ(5, "div", 30);
           core
           /* ɵɵelementStart */
-          .TgZ(6, "a", 30);
+          .TgZ(6, "a", 31);
 
           core
           /* ɵɵelement */
-          ._UZ(7, "img", 31);
+          ._UZ(7, "img", 32);
 
           core
           /* ɵɵelementEnd */
@@ -38128,7 +38662,7 @@
         }
 
         if (rf & 2) {
-          var ctx_r14 = core
+          var ctx_r15 = core
           /* ɵɵnextContext */
           .oxw(4);
           core
@@ -38136,13 +38670,13 @@
           .xp6(4);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(ctx_r14.upcomingRaceAnalysis.circuitName);
+          .Oqu(ctx_r15.upcomingRaceAnalysis.circuitName);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵpropertyInterpolate */
-          .s9C("href", ctx_r14.upcomingRaceAnalysis.circuitUrl, core
+          .s9C("href", ctx_r15.upcomingRaceAnalysis.circuitUrl, core
           /* ɵɵsanitizeUrl */
           .LSH);
           core
@@ -38150,7 +38684,7 @@
           .xp6(1);
           core
           /* ɵɵpropertyInterpolate */
-          .s9C("src", ctx_r14.upcomingRaceAnalysis.imageUrl, core
+          .s9C("src", ctx_r15.upcomingRaceAnalysis.imageUrl, core
           /* ɵɵsanitizeUrl */
           .LSH);
         }
@@ -38160,7 +38694,7 @@
         if (rf & 1) {
           core
           /* ɵɵtemplate */
-          .YNc(0, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_3_div_0_Template, 8, 3, "div", 26);
+          .YNc(0, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_3_div_0_Template, 8, 3, "div", 27);
         }
 
         if (rf & 2) {
@@ -38180,7 +38714,7 @@
           .TgZ(0, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "th", 42);
+          .TgZ(1, "th", 43);
 
           core
           /* ɵɵtext */
@@ -38217,25 +38751,25 @@
         }
 
         if (rf & 2) {
-          var standing_r20 = ctx.$implicit;
+          var standing_r21 = ctx.$implicit;
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r20.position);
+          .Oqu(standing_r21.position);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r20.driver);
+          .Oqu(standing_r21.driver);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r20.constructorName);
+          .Oqu(standing_r21.constructorName);
         }
       }
 
@@ -38243,16 +38777,16 @@
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 36);
+          .TgZ(0, "div", 37);
           core
           /* ɵɵelementStart */
-          .TgZ(1, "div", 37);
+          .TgZ(1, "div", 38);
           core
           /* ɵɵelementStart */
-          .TgZ(2, "div", 38);
+          .TgZ(2, "div", 39);
           core
           /* ɵɵelementStart */
-          .TgZ(3, "table", 39);
+          .TgZ(3, "table", 40);
           core
           /* ɵɵelementStart */
           .TgZ(4, "thead");
@@ -38261,7 +38795,7 @@
           .TgZ(5, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(6, "th", 40);
+          .TgZ(6, "th", 41);
 
           core
           /* ɵɵtext */
@@ -38292,7 +38826,7 @@
           .TgZ(11, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(12, "th", 41);
+          .TgZ(12, "th", 42);
 
           core
           /* ɵɵtext */
@@ -38353,13 +38887,13 @@
         }
 
         if (rf & 2) {
-          var race_r18 = ctx.$implicit;
+          var race_r19 = ctx.$implicit;
           core
           /* ɵɵadvance */
           .xp6(7);
           core
           /* ɵɵtextInterpolate2 */
-          .AsE("", race_r18.season, " - round ", race_r18.round, "");
+          .AsE("", race_r19.season, " - round ", race_r19.round, "");
           core
           /* ɵɵadvance */
           .xp6(2);
@@ -38367,13 +38901,13 @@
           /* ɵɵtextInterpolate */
           .Oqu(core
           /* ɵɵpipeBind1 */
-          .lcZ(10, 4, race_r18.date));
+          .lcZ(10, 4, race_r19.date));
           core
           /* ɵɵadvance */
           .xp6(10);
           core
           /* ɵɵproperty */
-          .Q6J("ngForOf", race_r18.basicResultList);
+          .Q6J("ngForOf", race_r19.basicResultList);
         }
       }
 
@@ -38381,17 +38915,17 @@
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 34);
+          .TgZ(0, "div", 35);
           core
           /* ɵɵtemplate */
-          .YNc(1, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_5_div_0_div_1_Template, 20, 6, "div", 35);
+          .YNc(1, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_5_div_0_div_1_Template, 20, 6, "div", 36);
           core
           /* ɵɵelementEnd */
           .qZA();
         }
 
         if (rf & 2) {
-          var ctx_r15 = core
+          var ctx_r16 = core
           /* ɵɵnextContext */
           .oxw(4);
           core
@@ -38399,7 +38933,7 @@
           .xp6(1);
           core
           /* ɵɵproperty */
-          .Q6J("ngForOf", ctx_r15.upcomingRaceAnalysis.basicRaces);
+          .Q6J("ngForOf", ctx_r16.upcomingRaceAnalysis.basicRaces);
         }
       }
 
@@ -38407,13 +38941,13 @@
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 43);
+          .TgZ(0, "div", 44);
           core
           /* ɵɵelementStart */
-          .TgZ(1, "div", 37);
+          .TgZ(1, "div", 38);
           core
           /* ɵɵelementStart */
-          .TgZ(2, "div", 38);
+          .TgZ(2, "div", 39);
 
           core
           /* ɵɵtext */
@@ -38421,7 +38955,7 @@
 
           core
           /* ɵɵelementStart */
-          .TgZ(4, "a", 44);
+          .TgZ(4, "a", 45);
 
           core
           /* ɵɵtext */
@@ -38447,7 +38981,7 @@
         }
 
         if (rf & 2) {
-          var ctx_r16 = core
+          var ctx_r17 = core
           /* ɵɵnextContext */
           .oxw(4);
           core
@@ -38455,7 +38989,7 @@
           .xp6(4);
           core
           /* ɵɵpropertyInterpolate */
-          .s9C("href", ctx_r16.upcomingRaceAnalysis.circuitUrl, core
+          .s9C("href", ctx_r17.upcomingRaceAnalysis.circuitUrl, core
           /* ɵɵsanitizeUrl */
           .LSH);
           core
@@ -38463,7 +38997,7 @@
           .xp6(1);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(ctx_r16.upcomingRaceAnalysis.circuitName);
+          .Oqu(ctx_r17.upcomingRaceAnalysis.circuitName);
         }
       }
 
@@ -38471,10 +39005,10 @@
         if (rf & 1) {
           core
           /* ɵɵtemplate */
-          .YNc(0, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_5_div_0_Template, 2, 1, "div", 32);
+          .YNc(0, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_5_div_0_Template, 2, 1, "div", 33);
           core
           /* ɵɵtemplate */
-          .YNc(1, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_5_div_1_Template, 7, 2, "div", 33);
+          .YNc(1, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_5_div_1_Template, 7, 2, "div", 34);
         }
 
         if (rf & 2) {
@@ -38493,6 +39027,12 @@
         }
       }
 
+      var upcoming_race_analysis_component_c1 = function upcoming_race_analysis_component_c1(a0) {
+        return {
+          "purple-bg": a0
+        };
+      };
+
       function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_7_div_0_tr_24_Template(rf, ctx) {
         if (rf & 1) {
           core
@@ -38500,7 +39040,7 @@
           .TgZ(0, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "th", 42);
+          .TgZ(1, "th", 59);
 
           core
           /* ɵɵtext */
@@ -38511,7 +39051,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(3, "td");
+          .TgZ(3, "td", 60);
 
           core
           /* ɵɵtext */
@@ -38522,7 +39062,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(5, "td", 58);
+          .TgZ(5, "td", 61);
 
           core
           /* ɵɵtext */
@@ -38533,7 +39073,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(7, "td");
+          .TgZ(7, "td", 60);
 
           core
           /* ɵɵtext */
@@ -38544,7 +39084,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(9, "td");
+          .TgZ(9, "td", 60);
 
           core
           /* ɵɵtext */
@@ -38555,7 +39095,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(11, "td", 58);
+          .TgZ(11, "td", 61);
 
           core
           /* ɵɵtext */
@@ -38566,7 +39106,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(13, "td", 58);
+          .TgZ(13, "td", 61);
 
           core
           /* ɵɵtext */
@@ -38577,7 +39117,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(15, "td", 58);
+          .TgZ(15, "td", 61);
 
           core
           /* ɵɵtext */
@@ -38592,61 +39132,125 @@
         }
 
         if (rf & 2) {
-          var standing_r25 = ctx.$implicit;
+          var standing_r26 = ctx.$implicit;
           core
           /* ɵɵadvance */
-          .xp6(2);
+          .xp6(1);
           core
-          /* ɵɵtextInterpolate */
-          .Oqu(standing_r25.position);
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵtextInterpolate */
-          .Oqu(standing_r25.FullName);
+          /* ɵɵproperty */
+          .Q6J("ngClass", core
+          /* ɵɵpureFunction1 */
+          .VKq(16, upcoming_race_analysis_component_c1, standing_r26.position === 1));
           core
           /* ɵɵadvance */
-          .xp6(2);
+          .xp6(1);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r25.Team);
+          .Oqu(standing_r26.position);
           core
           /* ɵɵadvance */
-          .xp6(2);
+          .xp6(1);
           core
-          /* ɵɵtextInterpolate */
-          .Oqu(standing_r25.finalGap);
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵtextInterpolate */
-          .Oqu(standing_r25.fastestLap);
+          /* ɵɵproperty */
+          .Q6J("ngClass", core
+          /* ɵɵpureFunction1 */
+          .VKq(18, upcoming_race_analysis_component_c1, standing_r26.position === 1));
           core
           /* ɵɵadvance */
-          .xp6(2);
+          .xp6(1);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r25.fastestLapSector1);
+          .Oqu(standing_r26.FullName);
           core
           /* ɵɵadvance */
-          .xp6(2);
+          .xp6(1);
           core
-          /* ɵɵtextInterpolate */
-          .Oqu(standing_r25.fastestLapSector2);
+          /* ɵɵproperty */
+          .Q6J("ngClass", core
+          /* ɵɵpureFunction1 */
+          .VKq(20, upcoming_race_analysis_component_c1, standing_r26.position === 1));
           core
           /* ɵɵadvance */
-          .xp6(2);
+          .xp6(1);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r25.fastestLapSector3);
+          .Oqu(standing_r26.Team);
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵproperty */
+          .Q6J("ngClass", core
+          /* ɵɵpureFunction1 */
+          .VKq(22, upcoming_race_analysis_component_c1, standing_r26.position === 1));
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵtextInterpolate */
+          .Oqu(standing_r26.finalGap);
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵproperty */
+          .Q6J("ngClass", core
+          /* ɵɵpureFunction1 */
+          .VKq(24, upcoming_race_analysis_component_c1, standing_r26.position === 1));
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵtextInterpolate */
+          .Oqu(standing_r26.fastestLap);
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵproperty */
+          .Q6J("ngClass", core
+          /* ɵɵpureFunction1 */
+          .VKq(26, upcoming_race_analysis_component_c1, standing_r26.fastestLapPositionSector1 === 1));
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵtextInterpolate */
+          .Oqu(standing_r26.fastestLapSector1);
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵproperty */
+          .Q6J("ngClass", core
+          /* ɵɵpureFunction1 */
+          .VKq(28, upcoming_race_analysis_component_c1, standing_r26.fastestLapPositionSector2 === 1));
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵtextInterpolate */
+          .Oqu(standing_r26.fastestLapSector2);
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵproperty */
+          .Q6J("ngClass", core
+          /* ɵɵpureFunction1 */
+          .VKq(30, upcoming_race_analysis_component_c1, standing_r26.fastestLapPositionSector3 === 1));
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵtextInterpolate */
+          .Oqu(standing_r26.fastestLapSector3);
         }
       }
 
       function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_7_div_0_Template(rf, ctx) {
         if (rf & 1) {
-          var _r28 = core
+          var _r29 = core
           /* ɵɵgetCurrentView */
           .EpF();
 
@@ -38655,17 +39259,17 @@
           .TgZ(0, "div");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "table", 47);
+          .TgZ(1, "table", 48);
           core
           /* ɵɵlistener */
           .NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_7_div_0_Template_table_matSortChange_1_listener($event) {
             core
             /* ɵɵrestoreView */
-            .CHM(_r28);
-            var ctx_r27 = core
+            .CHM(_r29);
+            var ctx_r28 = core
             /* ɵɵnextContext */
             .oxw(4);
-            return ctx_r27.sortMainResultData($event, 1);
+            return ctx_r28.sortMainResultData($event, 1);
           });
           core
           /* ɵɵelementStart */
@@ -38675,7 +39279,7 @@
           .TgZ(3, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(4, "th", 52);
+          .TgZ(4, "th", 53);
 
           core
           /* ɵɵtext */
@@ -38692,7 +39296,7 @@
           .TgZ(6, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(7, "th", 49);
+          .TgZ(7, "th", 50);
 
           core
           /* ɵɵtext */
@@ -38703,7 +39307,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(9, "th", 53);
+          .TgZ(9, "th", 54);
 
           core
           /* ɵɵtext */
@@ -38714,7 +39318,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(11, "th", 54);
+          .TgZ(11, "th", 55);
 
           core
           /* ɵɵtext */
@@ -38725,7 +39329,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(13, "th", 53);
+          .TgZ(13, "th", 54);
 
           core
           /* ɵɵtext */
@@ -38736,7 +39340,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(15, "th", 49);
+          .TgZ(15, "th", 50);
 
           core
           /* ɵɵtext */
@@ -38747,7 +39351,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(17, "th", 55);
+          .TgZ(17, "th", 56);
 
           core
           /* ɵɵtext */
@@ -38758,7 +39362,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(19, "th", 56);
+          .TgZ(19, "th", 57);
 
           core
           /* ɵɵtext */
@@ -38769,7 +39373,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(21, "th", 57);
+          .TgZ(21, "th", 58);
 
           core
           /* ɵɵtext */
@@ -38789,7 +39393,7 @@
           .TgZ(23, "tbody");
           core
           /* ɵɵtemplate */
-          .YNc(24, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_7_div_0_tr_24_Template, 17, 8, "tr", 9);
+          .YNc(24, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_7_div_0_tr_24_Template, 17, 32, "tr", 9);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -38802,7 +39406,7 @@
         }
 
         if (rf & 2) {
-          var ctx_r22 = core
+          var ctx_r23 = core
           /* ɵɵnextContext */
           .oxw(4);
           core
@@ -38810,7 +39414,7 @@
           .xp6(24);
           core
           /* ɵɵproperty */
-          .Q6J("ngForOf", ctx_r22.upcomingRaceAnalysis.fp1);
+          .Q6J("ngForOf", ctx_r23.upcomingRaceAnalysis.fp1);
         }
       }
 
@@ -38821,7 +39425,7 @@
           .TgZ(0, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "th", 42);
+          .TgZ(1, "th", 43);
 
           core
           /* ɵɵtext */
@@ -38869,37 +39473,37 @@
         }
 
         if (rf & 2) {
-          var lap_r29 = ctx.$implicit;
+          var lap_r30 = ctx.$implicit;
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(lap_r29.position);
+          .Oqu(lap_r30.position);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(lap_r29.driverName);
+          .Oqu(lap_r30.driverName);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(lap_r29.lapTime);
+          .Oqu(lap_r30.lapTime);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(lap_r29.lapNumber);
+          .Oqu(lap_r30.lapNumber);
         }
       }
 
       function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_7_Template(rf, ctx) {
         if (rf & 1) {
-          var _r32 = core
+          var _r33 = core
           /* ɵɵgetCurrentView */
           .EpF();
 
@@ -38908,26 +39512,26 @@
           .YNc(0, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_7_div_0_Template, 25, 1, "div", 0);
           core
           /* ɵɵelementStart */
-          .TgZ(1, "div", 45);
+          .TgZ(1, "div", 46);
           core
           /* ɵɵelementStart */
-          .TgZ(2, "div", 46);
+          .TgZ(2, "div", 47);
           core
           /* ɵɵelementStart */
-          .TgZ(3, "div", 38);
+          .TgZ(3, "div", 39);
           core
           /* ɵɵelementStart */
-          .TgZ(4, "table", 47);
+          .TgZ(4, "table", 48);
           core
           /* ɵɵlistener */
           .NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_7_Template_table_matSortChange_4_listener($event) {
             core
             /* ɵɵrestoreView */
-            .CHM(_r32);
-            var ctx_r31 = core
+            .CHM(_r33);
+            var ctx_r32 = core
             /* ɵɵnextContext */
             .oxw(3);
-            return ctx_r31.sortResultData($event, 1);
+            return ctx_r32.sortResultData($event, 1);
           });
           core
           /* ɵɵelementStart */
@@ -38937,7 +39541,7 @@
           .TgZ(6, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(7, "th", 48);
+          .TgZ(7, "th", 49);
 
           core
           /* ɵɵtext */
@@ -38954,7 +39558,7 @@
           .TgZ(9, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(10, "th", 49);
+          .TgZ(10, "th", 50);
 
           core
           /* ɵɵtext */
@@ -38965,7 +39569,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(12, "th", 50);
+          .TgZ(12, "th", 51);
 
           core
           /* ɵɵtext */
@@ -38976,7 +39580,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(14, "th", 49);
+          .TgZ(14, "th", 50);
 
           core
           /* ɵɵtext */
@@ -38987,7 +39591,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(16, "th", 51);
+          .TgZ(16, "th", 52);
 
           core
           /* ɵɵtext */
@@ -39048,7 +39652,7 @@
           .TgZ(0, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "th", 42);
+          .TgZ(1, "th", 59);
 
           core
           /* ɵɵtext */
@@ -39059,7 +39663,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(3, "td");
+          .TgZ(3, "td", 60);
 
           core
           /* ɵɵtext */
@@ -39070,7 +39674,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(5, "td", 58);
+          .TgZ(5, "td", 61);
 
           core
           /* ɵɵtext */
@@ -39081,7 +39685,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(7, "td");
+          .TgZ(7, "td", 60);
 
           core
           /* ɵɵtext */
@@ -39092,7 +39696,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(9, "td");
+          .TgZ(9, "td", 60);
 
           core
           /* ɵɵtext */
@@ -39103,7 +39707,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(11, "td", 58);
+          .TgZ(11, "td", 61);
 
           core
           /* ɵɵtext */
@@ -39114,7 +39718,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(13, "td", 58);
+          .TgZ(13, "td", 61);
 
           core
           /* ɵɵtext */
@@ -39125,7 +39729,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(15, "td", 58);
+          .TgZ(15, "td", 61);
 
           core
           /* ɵɵtext */
@@ -39140,61 +39744,125 @@
         }
 
         if (rf & 2) {
-          var standing_r37 = ctx.$implicit;
+          var standing_r38 = ctx.$implicit;
           core
           /* ɵɵadvance */
-          .xp6(2);
+          .xp6(1);
           core
-          /* ɵɵtextInterpolate */
-          .Oqu(standing_r37.position);
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵtextInterpolate */
-          .Oqu(standing_r37.FullName);
+          /* ɵɵproperty */
+          .Q6J("ngClass", core
+          /* ɵɵpureFunction1 */
+          .VKq(16, upcoming_race_analysis_component_c1, standing_r38.position === 1));
           core
           /* ɵɵadvance */
-          .xp6(2);
+          .xp6(1);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r37.Team);
+          .Oqu(standing_r38.position);
           core
           /* ɵɵadvance */
-          .xp6(2);
+          .xp6(1);
           core
-          /* ɵɵtextInterpolate */
-          .Oqu(standing_r37.finalGap);
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵtextInterpolate */
-          .Oqu(standing_r37.fastestLap);
+          /* ɵɵproperty */
+          .Q6J("ngClass", core
+          /* ɵɵpureFunction1 */
+          .VKq(18, upcoming_race_analysis_component_c1, standing_r38.position === 1));
           core
           /* ɵɵadvance */
-          .xp6(2);
+          .xp6(1);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r37.fastestLapSector1);
+          .Oqu(standing_r38.FullName);
           core
           /* ɵɵadvance */
-          .xp6(2);
+          .xp6(1);
           core
-          /* ɵɵtextInterpolate */
-          .Oqu(standing_r37.fastestLapSector2);
+          /* ɵɵproperty */
+          .Q6J("ngClass", core
+          /* ɵɵpureFunction1 */
+          .VKq(20, upcoming_race_analysis_component_c1, standing_r38.position === 1));
           core
           /* ɵɵadvance */
-          .xp6(2);
+          .xp6(1);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r37.fastestLapSector3);
+          .Oqu(standing_r38.Team);
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵproperty */
+          .Q6J("ngClass", core
+          /* ɵɵpureFunction1 */
+          .VKq(22, upcoming_race_analysis_component_c1, standing_r38.position === 1));
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵtextInterpolate */
+          .Oqu(standing_r38.finalGap);
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵproperty */
+          .Q6J("ngClass", core
+          /* ɵɵpureFunction1 */
+          .VKq(24, upcoming_race_analysis_component_c1, standing_r38.position === 1));
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵtextInterpolate */
+          .Oqu(standing_r38.fastestLap);
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵproperty */
+          .Q6J("ngClass", core
+          /* ɵɵpureFunction1 */
+          .VKq(26, upcoming_race_analysis_component_c1, standing_r38.fastestLapPositionSector1 === 1));
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵtextInterpolate */
+          .Oqu(standing_r38.fastestLapSector1);
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵproperty */
+          .Q6J("ngClass", core
+          /* ɵɵpureFunction1 */
+          .VKq(28, upcoming_race_analysis_component_c1, standing_r38.fastestLapPositionSector2 === 1));
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵtextInterpolate */
+          .Oqu(standing_r38.fastestLapSector2);
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵproperty */
+          .Q6J("ngClass", core
+          /* ɵɵpureFunction1 */
+          .VKq(30, upcoming_race_analysis_component_c1, standing_r38.fastestLapPositionSector3 === 1));
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵtextInterpolate */
+          .Oqu(standing_r38.fastestLapSector3);
         }
       }
 
       function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_8_ng_template_1_div_0_Template(rf, ctx) {
         if (rf & 1) {
-          var _r40 = core
+          var _r41 = core
           /* ɵɵgetCurrentView */
           .EpF();
 
@@ -39203,17 +39871,17 @@
           .TgZ(0, "div");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "table", 47);
+          .TgZ(1, "table", 48);
           core
           /* ɵɵlistener */
           .NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_8_ng_template_1_div_0_Template_table_matSortChange_1_listener($event) {
             core
             /* ɵɵrestoreView */
-            .CHM(_r40);
-            var ctx_r39 = core
+            .CHM(_r41);
+            var ctx_r40 = core
             /* ɵɵnextContext */
             .oxw(5);
-            return ctx_r39.sortMainResultData($event, 2);
+            return ctx_r40.sortMainResultData($event, 2);
           });
           core
           /* ɵɵelementStart */
@@ -39223,7 +39891,7 @@
           .TgZ(3, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(4, "th", 52);
+          .TgZ(4, "th", 53);
 
           core
           /* ɵɵtext */
@@ -39240,7 +39908,7 @@
           .TgZ(6, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(7, "th", 49);
+          .TgZ(7, "th", 50);
 
           core
           /* ɵɵtext */
@@ -39251,7 +39919,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(9, "th", 53);
+          .TgZ(9, "th", 54);
 
           core
           /* ɵɵtext */
@@ -39262,7 +39930,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(11, "th", 54);
+          .TgZ(11, "th", 55);
 
           core
           /* ɵɵtext */
@@ -39273,7 +39941,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(13, "th", 53);
+          .TgZ(13, "th", 54);
 
           core
           /* ɵɵtext */
@@ -39284,7 +39952,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(15, "th", 49);
+          .TgZ(15, "th", 50);
 
           core
           /* ɵɵtext */
@@ -39295,7 +39963,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(17, "th", 55);
+          .TgZ(17, "th", 56);
 
           core
           /* ɵɵtext */
@@ -39306,7 +39974,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(19, "th", 56);
+          .TgZ(19, "th", 57);
 
           core
           /* ɵɵtext */
@@ -39317,7 +39985,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(21, "th", 57);
+          .TgZ(21, "th", 58);
 
           core
           /* ɵɵtext */
@@ -39337,7 +40005,7 @@
           .TgZ(23, "tbody");
           core
           /* ɵɵtemplate */
-          .YNc(24, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_8_ng_template_1_div_0_tr_24_Template, 17, 8, "tr", 9);
+          .YNc(24, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_8_ng_template_1_div_0_tr_24_Template, 17, 32, "tr", 9);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -39350,7 +40018,7 @@
         }
 
         if (rf & 2) {
-          var ctx_r34 = core
+          var ctx_r35 = core
           /* ɵɵnextContext */
           .oxw(5);
           core
@@ -39358,7 +40026,7 @@
           .xp6(24);
           core
           /* ɵɵproperty */
-          .Q6J("ngForOf", ctx_r34.upcomingRaceAnalysis.fp2);
+          .Q6J("ngForOf", ctx_r35.upcomingRaceAnalysis.fp2);
         }
       }
 
@@ -39369,7 +40037,7 @@
           .TgZ(0, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "th", 42);
+          .TgZ(1, "th", 43);
 
           core
           /* ɵɵtext */
@@ -39417,37 +40085,37 @@
         }
 
         if (rf & 2) {
-          var lap_r41 = ctx.$implicit;
+          var lap_r42 = ctx.$implicit;
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(lap_r41.position);
+          .Oqu(lap_r42.position);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(lap_r41.driverName);
+          .Oqu(lap_r42.driverName);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(lap_r41.lapTime);
+          .Oqu(lap_r42.lapTime);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(lap_r41.lapNumber);
+          .Oqu(lap_r42.lapNumber);
         }
       }
 
       function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_8_ng_template_1_Template(rf, ctx) {
         if (rf & 1) {
-          var _r44 = core
+          var _r45 = core
           /* ɵɵgetCurrentView */
           .EpF();
 
@@ -39456,26 +40124,26 @@
           .YNc(0, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_8_ng_template_1_div_0_Template, 25, 1, "div", 0);
           core
           /* ɵɵelementStart */
-          .TgZ(1, "div", 45);
+          .TgZ(1, "div", 46);
           core
           /* ɵɵelementStart */
-          .TgZ(2, "div", 46);
+          .TgZ(2, "div", 47);
           core
           /* ɵɵelementStart */
-          .TgZ(3, "div", 38);
+          .TgZ(3, "div", 39);
           core
           /* ɵɵelementStart */
-          .TgZ(4, "table", 47);
+          .TgZ(4, "table", 48);
           core
           /* ɵɵlistener */
           .NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_8_ng_template_1_Template_table_matSortChange_4_listener($event) {
             core
             /* ɵɵrestoreView */
-            .CHM(_r44);
-            var ctx_r43 = core
+            .CHM(_r45);
+            var ctx_r44 = core
             /* ɵɵnextContext */
             .oxw(4);
-            return ctx_r43.sortResultData($event, 2);
+            return ctx_r44.sortResultData($event, 2);
           });
           core
           /* ɵɵelementStart */
@@ -39485,7 +40153,7 @@
           .TgZ(6, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(7, "th", 48);
+          .TgZ(7, "th", 49);
 
           core
           /* ɵɵtext */
@@ -39502,7 +40170,7 @@
           .TgZ(9, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(10, "th", 49);
+          .TgZ(10, "th", 50);
 
           core
           /* ɵɵtext */
@@ -39513,7 +40181,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(12, "th", 50);
+          .TgZ(12, "th", 51);
 
           core
           /* ɵɵtext */
@@ -39524,7 +40192,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(14, "th", 49);
+          .TgZ(14, "th", 50);
 
           core
           /* ɵɵtext */
@@ -39535,7 +40203,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(16, "th", 51);
+          .TgZ(16, "th", 52);
 
           core
           /* ɵɵtext */
@@ -39574,18 +40242,18 @@
         }
 
         if (rf & 2) {
-          var ctx_r33 = core
+          var ctx_r34 = core
           /* ɵɵnextContext */
           .oxw(4);
           core
           /* ɵɵproperty */
-          .Q6J("ngIf", ctx_r33.upcomingRaceAnalysis.fp2 !== null);
+          .Q6J("ngIf", ctx_r34.upcomingRaceAnalysis.fp2 !== null);
           core
           /* ɵɵadvance */
           .xp6(19);
           core
           /* ɵɵproperty */
-          .Q6J("ngForOf", ctx_r33.upcomingRaceAnalysis.fp2Laps);
+          .Q6J("ngForOf", ctx_r34.upcomingRaceAnalysis.fp2Laps);
         }
       }
 
@@ -39593,7 +40261,7 @@
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "mat-tab", 59);
+          .TgZ(0, "mat-tab", 62);
           core
           /* ɵɵtemplate */
           .YNc(1, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_8_ng_template_1_Template, 20, 2, "ng-template", 19);
@@ -39619,7 +40287,7 @@
           .TgZ(0, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "th", 42);
+          .TgZ(1, "th", 59);
 
           core
           /* ɵɵtext */
@@ -39630,7 +40298,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(3, "td");
+          .TgZ(3, "td", 60);
 
           core
           /* ɵɵtext */
@@ -39641,7 +40309,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(5, "td", 58);
+          .TgZ(5, "td", 61);
 
           core
           /* ɵɵtext */
@@ -39652,7 +40320,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(7, "td");
+          .TgZ(7, "td", 60);
 
           core
           /* ɵɵtext */
@@ -39663,7 +40331,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(9, "td");
+          .TgZ(9, "td", 60);
 
           core
           /* ɵɵtext */
@@ -39674,7 +40342,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(11, "td", 58);
+          .TgZ(11, "td", 61);
 
           core
           /* ɵɵtext */
@@ -39685,7 +40353,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(13, "td", 58);
+          .TgZ(13, "td", 61);
 
           core
           /* ɵɵtext */
@@ -39696,7 +40364,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(15, "td", 58);
+          .TgZ(15, "td", 61);
 
           core
           /* ɵɵtext */
@@ -39711,61 +40379,125 @@
         }
 
         if (rf & 2) {
-          var standing_r49 = ctx.$implicit;
+          var standing_r50 = ctx.$implicit;
           core
           /* ɵɵadvance */
-          .xp6(2);
+          .xp6(1);
           core
-          /* ɵɵtextInterpolate */
-          .Oqu(standing_r49.position);
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵtextInterpolate */
-          .Oqu(standing_r49.FullName);
+          /* ɵɵproperty */
+          .Q6J("ngClass", core
+          /* ɵɵpureFunction1 */
+          .VKq(16, upcoming_race_analysis_component_c1, standing_r50.position === 1));
           core
           /* ɵɵadvance */
-          .xp6(2);
+          .xp6(1);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r49.Team);
+          .Oqu(standing_r50.position);
           core
           /* ɵɵadvance */
-          .xp6(2);
+          .xp6(1);
           core
-          /* ɵɵtextInterpolate */
-          .Oqu(standing_r49.finalGap);
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵtextInterpolate */
-          .Oqu(standing_r49.fastestLap);
+          /* ɵɵproperty */
+          .Q6J("ngClass", core
+          /* ɵɵpureFunction1 */
+          .VKq(18, upcoming_race_analysis_component_c1, standing_r50.position === 1));
           core
           /* ɵɵadvance */
-          .xp6(2);
+          .xp6(1);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r49.fastestLapSector1);
+          .Oqu(standing_r50.FullName);
           core
           /* ɵɵadvance */
-          .xp6(2);
+          .xp6(1);
           core
-          /* ɵɵtextInterpolate */
-          .Oqu(standing_r49.fastestLapSector2);
+          /* ɵɵproperty */
+          .Q6J("ngClass", core
+          /* ɵɵpureFunction1 */
+          .VKq(20, upcoming_race_analysis_component_c1, standing_r50.position === 1));
           core
           /* ɵɵadvance */
-          .xp6(2);
+          .xp6(1);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r49.fastestLapSector3);
+          .Oqu(standing_r50.Team);
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵproperty */
+          .Q6J("ngClass", core
+          /* ɵɵpureFunction1 */
+          .VKq(22, upcoming_race_analysis_component_c1, standing_r50.position === 1));
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵtextInterpolate */
+          .Oqu(standing_r50.finalGap);
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵproperty */
+          .Q6J("ngClass", core
+          /* ɵɵpureFunction1 */
+          .VKq(24, upcoming_race_analysis_component_c1, standing_r50.position === 1));
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵtextInterpolate */
+          .Oqu(standing_r50.fastestLap);
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵproperty */
+          .Q6J("ngClass", core
+          /* ɵɵpureFunction1 */
+          .VKq(26, upcoming_race_analysis_component_c1, standing_r50.fastestLapPositionSector1 === 1));
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵtextInterpolate */
+          .Oqu(standing_r50.fastestLapSector1);
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵproperty */
+          .Q6J("ngClass", core
+          /* ɵɵpureFunction1 */
+          .VKq(28, upcoming_race_analysis_component_c1, standing_r50.fastestLapPositionSector2 === 1));
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵtextInterpolate */
+          .Oqu(standing_r50.fastestLapSector2);
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵproperty */
+          .Q6J("ngClass", core
+          /* ɵɵpureFunction1 */
+          .VKq(30, upcoming_race_analysis_component_c1, standing_r50.fastestLapPositionSector3 === 1));
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵtextInterpolate */
+          .Oqu(standing_r50.fastestLapSector3);
         }
       }
 
       function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_9_ng_template_1_div_0_Template(rf, ctx) {
         if (rf & 1) {
-          var _r52 = core
+          var _r53 = core
           /* ɵɵgetCurrentView */
           .EpF();
 
@@ -39774,17 +40506,17 @@
           .TgZ(0, "div");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "table", 47);
+          .TgZ(1, "table", 48);
           core
           /* ɵɵlistener */
           .NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_9_ng_template_1_div_0_Template_table_matSortChange_1_listener($event) {
             core
             /* ɵɵrestoreView */
-            .CHM(_r52);
-            var ctx_r51 = core
+            .CHM(_r53);
+            var ctx_r52 = core
             /* ɵɵnextContext */
             .oxw(5);
-            return ctx_r51.sortMainResultData($event, 3);
+            return ctx_r52.sortMainResultData($event, 3);
           });
           core
           /* ɵɵelementStart */
@@ -39794,7 +40526,7 @@
           .TgZ(3, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(4, "th", 52);
+          .TgZ(4, "th", 53);
 
           core
           /* ɵɵtext */
@@ -39811,7 +40543,7 @@
           .TgZ(6, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(7, "th", 49);
+          .TgZ(7, "th", 50);
 
           core
           /* ɵɵtext */
@@ -39822,7 +40554,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(9, "th", 53);
+          .TgZ(9, "th", 54);
 
           core
           /* ɵɵtext */
@@ -39833,7 +40565,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(11, "th", 54);
+          .TgZ(11, "th", 55);
 
           core
           /* ɵɵtext */
@@ -39844,7 +40576,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(13, "th", 53);
+          .TgZ(13, "th", 54);
 
           core
           /* ɵɵtext */
@@ -39855,7 +40587,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(15, "th", 49);
+          .TgZ(15, "th", 50);
 
           core
           /* ɵɵtext */
@@ -39866,7 +40598,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(17, "th", 55);
+          .TgZ(17, "th", 56);
 
           core
           /* ɵɵtext */
@@ -39877,7 +40609,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(19, "th", 56);
+          .TgZ(19, "th", 57);
 
           core
           /* ɵɵtext */
@@ -39888,7 +40620,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(21, "th", 57);
+          .TgZ(21, "th", 58);
 
           core
           /* ɵɵtext */
@@ -39908,7 +40640,7 @@
           .TgZ(23, "tbody");
           core
           /* ɵɵtemplate */
-          .YNc(24, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_9_ng_template_1_div_0_tr_24_Template, 17, 8, "tr", 9);
+          .YNc(24, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_9_ng_template_1_div_0_tr_24_Template, 17, 32, "tr", 9);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -39921,7 +40653,7 @@
         }
 
         if (rf & 2) {
-          var ctx_r46 = core
+          var ctx_r47 = core
           /* ɵɵnextContext */
           .oxw(5);
           core
@@ -39929,7 +40661,7 @@
           .xp6(24);
           core
           /* ɵɵproperty */
-          .Q6J("ngForOf", ctx_r46.upcomingRaceAnalysis.fp3);
+          .Q6J("ngForOf", ctx_r47.upcomingRaceAnalysis.fp3);
         }
       }
 
@@ -39940,7 +40672,7 @@
           .TgZ(0, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "th", 42);
+          .TgZ(1, "th", 43);
 
           core
           /* ɵɵtext */
@@ -39988,37 +40720,37 @@
         }
 
         if (rf & 2) {
-          var lap_r53 = ctx.$implicit;
+          var lap_r54 = ctx.$implicit;
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(lap_r53.position);
+          .Oqu(lap_r54.position);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(lap_r53.driverName);
+          .Oqu(lap_r54.driverName);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(lap_r53.lapTime);
+          .Oqu(lap_r54.lapTime);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(lap_r53.lapNumber);
+          .Oqu(lap_r54.lapNumber);
         }
       }
 
       function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_9_ng_template_1_Template(rf, ctx) {
         if (rf & 1) {
-          var _r56 = core
+          var _r57 = core
           /* ɵɵgetCurrentView */
           .EpF();
 
@@ -40027,26 +40759,26 @@
           .YNc(0, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_9_ng_template_1_div_0_Template, 25, 1, "div", 0);
           core
           /* ɵɵelementStart */
-          .TgZ(1, "div", 45);
+          .TgZ(1, "div", 46);
           core
           /* ɵɵelementStart */
-          .TgZ(2, "div", 46);
+          .TgZ(2, "div", 47);
           core
           /* ɵɵelementStart */
-          .TgZ(3, "div", 38);
+          .TgZ(3, "div", 39);
           core
           /* ɵɵelementStart */
-          .TgZ(4, "table", 47);
+          .TgZ(4, "table", 48);
           core
           /* ɵɵlistener */
           .NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_9_ng_template_1_Template_table_matSortChange_4_listener($event) {
             core
             /* ɵɵrestoreView */
-            .CHM(_r56);
-            var ctx_r55 = core
+            .CHM(_r57);
+            var ctx_r56 = core
             /* ɵɵnextContext */
             .oxw(4);
-            return ctx_r55.sortResultData($event, 3);
+            return ctx_r56.sortResultData($event, 3);
           });
           core
           /* ɵɵelementStart */
@@ -40056,7 +40788,7 @@
           .TgZ(6, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(7, "th", 48);
+          .TgZ(7, "th", 49);
 
           core
           /* ɵɵtext */
@@ -40073,7 +40805,7 @@
           .TgZ(9, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(10, "th", 49);
+          .TgZ(10, "th", 50);
 
           core
           /* ɵɵtext */
@@ -40084,7 +40816,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(12, "th", 50);
+          .TgZ(12, "th", 51);
 
           core
           /* ɵɵtext */
@@ -40095,7 +40827,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(14, "th", 49);
+          .TgZ(14, "th", 50);
 
           core
           /* ɵɵtext */
@@ -40106,7 +40838,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(16, "th", 51);
+          .TgZ(16, "th", 52);
 
           core
           /* ɵɵtext */
@@ -40145,18 +40877,18 @@
         }
 
         if (rf & 2) {
-          var ctx_r45 = core
+          var ctx_r46 = core
           /* ɵɵnextContext */
           .oxw(4);
           core
           /* ɵɵproperty */
-          .Q6J("ngIf", ctx_r45.upcomingRaceAnalysis.fp3 !== null);
+          .Q6J("ngIf", ctx_r46.upcomingRaceAnalysis.fp3 !== null);
           core
           /* ɵɵadvance */
           .xp6(19);
           core
           /* ɵɵproperty */
-          .Q6J("ngForOf", ctx_r45.upcomingRaceAnalysis.fp3Laps);
+          .Q6J("ngForOf", ctx_r46.upcomingRaceAnalysis.fp3Laps);
         }
       }
 
@@ -40164,7 +40896,7 @@
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "mat-tab", 60);
+          .TgZ(0, "mat-tab", 63);
           core
           /* ɵɵtemplate */
           .YNc(1, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_9_ng_template_1_Template, 20, 2, "ng-template", 19);
@@ -40190,7 +40922,7 @@
           .TgZ(0, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "th", 42);
+          .TgZ(1, "th", 59);
 
           core
           /* ɵɵtext */
@@ -40201,7 +40933,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(3, "td");
+          .TgZ(3, "td", 60);
 
           core
           /* ɵɵtext */
@@ -40212,7 +40944,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(5, "td", 58);
+          .TgZ(5, "td", 61);
 
           core
           /* ɵɵtext */
@@ -40223,7 +40955,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(7, "td");
+          .TgZ(7, "td", 60);
 
           core
           /* ɵɵtext */
@@ -40234,7 +40966,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(9, "td");
+          .TgZ(9, "td", 60);
 
           core
           /* ɵɵtext */
@@ -40245,7 +40977,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(11, "td", 58);
+          .TgZ(11, "td", 61);
 
           core
           /* ɵɵtext */
@@ -40256,7 +40988,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(13, "td", 58);
+          .TgZ(13, "td", 61);
 
           core
           /* ɵɵtext */
@@ -40267,7 +40999,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(15, "td", 58);
+          .TgZ(15, "td", 61);
 
           core
           /* ɵɵtext */
@@ -40282,61 +41014,125 @@
         }
 
         if (rf & 2) {
-          var standing_r60 = ctx.$implicit;
+          var standing_r61 = ctx.$implicit;
           core
           /* ɵɵadvance */
-          .xp6(2);
+          .xp6(1);
           core
-          /* ɵɵtextInterpolate */
-          .Oqu(standing_r60.position);
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵtextInterpolate */
-          .Oqu(standing_r60.FullName);
+          /* ɵɵproperty */
+          .Q6J("ngClass", core
+          /* ɵɵpureFunction1 */
+          .VKq(16, upcoming_race_analysis_component_c1, standing_r61.position === 1));
           core
           /* ɵɵadvance */
-          .xp6(2);
+          .xp6(1);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r60.Team);
+          .Oqu(standing_r61.position);
           core
           /* ɵɵadvance */
-          .xp6(2);
+          .xp6(1);
           core
-          /* ɵɵtextInterpolate */
-          .Oqu(standing_r60.finalGap);
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵtextInterpolate */
-          .Oqu(standing_r60.fastestLap);
+          /* ɵɵproperty */
+          .Q6J("ngClass", core
+          /* ɵɵpureFunction1 */
+          .VKq(18, upcoming_race_analysis_component_c1, standing_r61.position === 1));
           core
           /* ɵɵadvance */
-          .xp6(2);
+          .xp6(1);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r60.fastestLapSector1);
+          .Oqu(standing_r61.FullName);
           core
           /* ɵɵadvance */
-          .xp6(2);
+          .xp6(1);
           core
-          /* ɵɵtextInterpolate */
-          .Oqu(standing_r60.fastestLapSector2);
+          /* ɵɵproperty */
+          .Q6J("ngClass", core
+          /* ɵɵpureFunction1 */
+          .VKq(20, upcoming_race_analysis_component_c1, standing_r61.position === 1));
           core
           /* ɵɵadvance */
-          .xp6(2);
+          .xp6(1);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r60.fastestLapSector3);
+          .Oqu(standing_r61.Team);
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵproperty */
+          .Q6J("ngClass", core
+          /* ɵɵpureFunction1 */
+          .VKq(22, upcoming_race_analysis_component_c1, standing_r61.position === 1));
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵtextInterpolate */
+          .Oqu(standing_r61.finalGap);
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵproperty */
+          .Q6J("ngClass", core
+          /* ɵɵpureFunction1 */
+          .VKq(24, upcoming_race_analysis_component_c1, standing_r61.position === 1));
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵtextInterpolate */
+          .Oqu(standing_r61.fastestLap);
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵproperty */
+          .Q6J("ngClass", core
+          /* ɵɵpureFunction1 */
+          .VKq(26, upcoming_race_analysis_component_c1, standing_r61.fastestLapPositionSector1 === 1));
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵtextInterpolate */
+          .Oqu(standing_r61.fastestLapSector1);
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵproperty */
+          .Q6J("ngClass", core
+          /* ɵɵpureFunction1 */
+          .VKq(28, upcoming_race_analysis_component_c1, standing_r61.fastestLapPositionSector2 === 1));
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵtextInterpolate */
+          .Oqu(standing_r61.fastestLapSector2);
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵproperty */
+          .Q6J("ngClass", core
+          /* ɵɵpureFunction1 */
+          .VKq(30, upcoming_race_analysis_component_c1, standing_r61.fastestLapPositionSector3 === 1));
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵtextInterpolate */
+          .Oqu(standing_r61.fastestLapSector3);
         }
       }
 
       function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_div_0_Template(rf, ctx) {
         if (rf & 1) {
-          var _r63 = core
+          var _r64 = core
           /* ɵɵgetCurrentView */
           .EpF();
 
@@ -40345,17 +41141,17 @@
           .TgZ(0, "div");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "table", 47);
+          .TgZ(1, "table", 48);
           core
           /* ɵɵlistener */
           .NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_div_0_Template_table_matSortChange_1_listener($event) {
             core
             /* ɵɵrestoreView */
-            .CHM(_r63);
-            var ctx_r62 = core
+            .CHM(_r64);
+            var ctx_r63 = core
             /* ɵɵnextContext */
             .oxw(4);
-            return ctx_r62.sortMainResultData($event, 4);
+            return ctx_r63.sortMainResultData($event, 4);
           });
           core
           /* ɵɵelementStart */
@@ -40365,7 +41161,7 @@
           .TgZ(3, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(4, "th", 52);
+          .TgZ(4, "th", 53);
 
           core
           /* ɵɵtext */
@@ -40382,7 +41178,7 @@
           .TgZ(6, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(7, "th", 49);
+          .TgZ(7, "th", 50);
 
           core
           /* ɵɵtext */
@@ -40393,7 +41189,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(9, "th", 53);
+          .TgZ(9, "th", 54);
 
           core
           /* ɵɵtext */
@@ -40404,7 +41200,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(11, "th", 54);
+          .TgZ(11, "th", 55);
 
           core
           /* ɵɵtext */
@@ -40415,7 +41211,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(13, "th", 53);
+          .TgZ(13, "th", 54);
 
           core
           /* ɵɵtext */
@@ -40426,7 +41222,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(15, "th", 49);
+          .TgZ(15, "th", 50);
 
           core
           /* ɵɵtext */
@@ -40437,7 +41233,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(17, "th", 55);
+          .TgZ(17, "th", 56);
 
           core
           /* ɵɵtext */
@@ -40448,7 +41244,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(19, "th", 56);
+          .TgZ(19, "th", 57);
 
           core
           /* ɵɵtext */
@@ -40459,7 +41255,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(21, "th", 57);
+          .TgZ(21, "th", 58);
 
           core
           /* ɵɵtext */
@@ -40479,7 +41275,7 @@
           .TgZ(23, "tbody");
           core
           /* ɵɵtemplate */
-          .YNc(24, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_div_0_tr_24_Template, 17, 8, "tr", 9);
+          .YNc(24, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_div_0_tr_24_Template, 17, 32, "tr", 9);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -40492,7 +41288,7 @@
         }
 
         if (rf & 2) {
-          var ctx_r57 = core
+          var ctx_r58 = core
           /* ɵɵnextContext */
           .oxw(4);
           core
@@ -40500,7 +41296,7 @@
           .xp6(24);
           core
           /* ɵɵproperty */
-          .Q6J("ngForOf", ctx_r57.upcomingRaceAnalysis.quali);
+          .Q6J("ngForOf", ctx_r58.upcomingRaceAnalysis.quali);
         }
       }
 
@@ -40511,7 +41307,7 @@
           .TgZ(0, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "th", 42);
+          .TgZ(1, "th", 43);
 
           core
           /* ɵɵtext */
@@ -40559,37 +41355,37 @@
         }
 
         if (rf & 2) {
-          var lap_r64 = ctx.$implicit;
+          var lap_r65 = ctx.$implicit;
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(lap_r64.position);
+          .Oqu(lap_r65.position);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(lap_r64.driverName);
+          .Oqu(lap_r65.driverName);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(lap_r64.lapTime);
+          .Oqu(lap_r65.lapTime);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(lap_r64.lapNumber);
+          .Oqu(lap_r65.lapNumber);
         }
       }
 
       function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_Template(rf, ctx) {
         if (rf & 1) {
-          var _r67 = core
+          var _r68 = core
           /* ɵɵgetCurrentView */
           .EpF();
 
@@ -40598,26 +41394,26 @@
           .YNc(0, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_div_0_Template, 25, 1, "div", 0);
           core
           /* ɵɵelementStart */
-          .TgZ(1, "div", 45);
+          .TgZ(1, "div", 46);
           core
           /* ɵɵelementStart */
-          .TgZ(2, "div", 46);
+          .TgZ(2, "div", 47);
           core
           /* ɵɵelementStart */
-          .TgZ(3, "div", 38);
+          .TgZ(3, "div", 39);
           core
           /* ɵɵelementStart */
-          .TgZ(4, "table", 47);
+          .TgZ(4, "table", 48);
           core
           /* ɵɵlistener */
           .NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_Template_table_matSortChange_4_listener($event) {
             core
             /* ɵɵrestoreView */
-            .CHM(_r67);
-            var ctx_r66 = core
+            .CHM(_r68);
+            var ctx_r67 = core
             /* ɵɵnextContext */
             .oxw(3);
-            return ctx_r66.sortResultData($event, 4);
+            return ctx_r67.sortResultData($event, 4);
           });
           core
           /* ɵɵelementStart */
@@ -40627,7 +41423,7 @@
           .TgZ(6, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(7, "th", 48);
+          .TgZ(7, "th", 49);
 
           core
           /* ɵɵtext */
@@ -40644,7 +41440,7 @@
           .TgZ(9, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(10, "th", 49);
+          .TgZ(10, "th", 50);
 
           core
           /* ɵɵtext */
@@ -40655,7 +41451,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(12, "th", 50);
+          .TgZ(12, "th", 51);
 
           core
           /* ɵɵtext */
@@ -40666,7 +41462,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(14, "th", 49);
+          .TgZ(14, "th", 50);
 
           core
           /* ɵɵtext */
@@ -40677,7 +41473,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(16, "th", 51);
+          .TgZ(16, "th", 52);
 
           core
           /* ɵɵtext */
@@ -40738,7 +41534,7 @@
           .TgZ(0, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "th", 42);
+          .TgZ(1, "th", 59);
 
           core
           /* ɵɵtext */
@@ -40749,7 +41545,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(3, "td");
+          .TgZ(3, "td", 60);
 
           core
           /* ɵɵtext */
@@ -40760,7 +41556,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(5, "td", 58);
+          .TgZ(5, "td", 61);
 
           core
           /* ɵɵtext */
@@ -40771,7 +41567,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(7, "td");
+          .TgZ(7, "td", 60);
 
           core
           /* ɵɵtext */
@@ -40782,7 +41578,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(9, "td");
+          .TgZ(9, "td", 60);
 
           core
           /* ɵɵtext */
@@ -40793,7 +41589,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(11, "td", 58);
+          .TgZ(11, "td", 61);
 
           core
           /* ɵɵtext */
@@ -40804,7 +41600,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(13, "td", 58);
+          .TgZ(13, "td", 61);
 
           core
           /* ɵɵtext */
@@ -40815,7 +41611,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(15, "td", 58);
+          .TgZ(15, "td", 61);
 
           core
           /* ɵɵtext */
@@ -40830,61 +41626,125 @@
         }
 
         if (rf & 2) {
-          var standing_r72 = ctx.$implicit;
+          var standing_r73 = ctx.$implicit;
           core
           /* ɵɵadvance */
-          .xp6(2);
+          .xp6(1);
           core
-          /* ɵɵtextInterpolate */
-          .Oqu(standing_r72.position);
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵtextInterpolate */
-          .Oqu(standing_r72.FullName);
+          /* ɵɵproperty */
+          .Q6J("ngClass", core
+          /* ɵɵpureFunction1 */
+          .VKq(16, upcoming_race_analysis_component_c1, standing_r73.position === 1));
           core
           /* ɵɵadvance */
-          .xp6(2);
+          .xp6(1);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r72.Team);
+          .Oqu(standing_r73.position);
           core
           /* ɵɵadvance */
-          .xp6(2);
+          .xp6(1);
           core
-          /* ɵɵtextInterpolate */
-          .Oqu(standing_r72.finalGap);
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵtextInterpolate */
-          .Oqu(standing_r72.fastestLap);
+          /* ɵɵproperty */
+          .Q6J("ngClass", core
+          /* ɵɵpureFunction1 */
+          .VKq(18, upcoming_race_analysis_component_c1, standing_r73.position === 1));
           core
           /* ɵɵadvance */
-          .xp6(2);
+          .xp6(1);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r72.fastestLapSector1);
+          .Oqu(standing_r73.FullName);
           core
           /* ɵɵadvance */
-          .xp6(2);
+          .xp6(1);
           core
-          /* ɵɵtextInterpolate */
-          .Oqu(standing_r72.fastestLapSector2);
+          /* ɵɵproperty */
+          .Q6J("ngClass", core
+          /* ɵɵpureFunction1 */
+          .VKq(20, upcoming_race_analysis_component_c1, standing_r73.position === 1));
           core
           /* ɵɵadvance */
-          .xp6(2);
+          .xp6(1);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r72.fastestLapSector3);
+          .Oqu(standing_r73.Team);
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵproperty */
+          .Q6J("ngClass", core
+          /* ɵɵpureFunction1 */
+          .VKq(22, upcoming_race_analysis_component_c1, standing_r73.position === 1));
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵtextInterpolate */
+          .Oqu(standing_r73.finalGap);
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵproperty */
+          .Q6J("ngClass", core
+          /* ɵɵpureFunction1 */
+          .VKq(24, upcoming_race_analysis_component_c1, standing_r73.position === 1));
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵtextInterpolate */
+          .Oqu(standing_r73.fastestLap);
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵproperty */
+          .Q6J("ngClass", core
+          /* ɵɵpureFunction1 */
+          .VKq(26, upcoming_race_analysis_component_c1, standing_r73.fastestLapPositionSector1 === 1));
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵtextInterpolate */
+          .Oqu(standing_r73.fastestLapSector1);
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵproperty */
+          .Q6J("ngClass", core
+          /* ɵɵpureFunction1 */
+          .VKq(28, upcoming_race_analysis_component_c1, standing_r73.fastestLapPositionSector2 === 1));
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵtextInterpolate */
+          .Oqu(standing_r73.fastestLapSector2);
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵproperty */
+          .Q6J("ngClass", core
+          /* ɵɵpureFunction1 */
+          .VKq(30, upcoming_race_analysis_component_c1, standing_r73.fastestLapPositionSector3 === 1));
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵtextInterpolate */
+          .Oqu(standing_r73.fastestLapSector3);
         }
       }
 
       function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_div_0_Template(rf, ctx) {
         if (rf & 1) {
-          var _r75 = core
+          var _r76 = core
           /* ɵɵgetCurrentView */
           .EpF();
 
@@ -40893,17 +41753,17 @@
           .TgZ(0, "div");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "table", 47);
+          .TgZ(1, "table", 48);
           core
           /* ɵɵlistener */
           .NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_div_0_Template_table_matSortChange_1_listener($event) {
             core
             /* ɵɵrestoreView */
-            .CHM(_r75);
-            var ctx_r74 = core
+            .CHM(_r76);
+            var ctx_r75 = core
             /* ɵɵnextContext */
             .oxw(5);
-            return ctx_r74.sortMainResultData($event, 2);
+            return ctx_r75.sortMainResultData($event, 2);
           });
           core
           /* ɵɵelementStart */
@@ -40913,7 +41773,7 @@
           .TgZ(3, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(4, "th", 52);
+          .TgZ(4, "th", 53);
 
           core
           /* ɵɵtext */
@@ -40930,7 +41790,7 @@
           .TgZ(6, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(7, "th", 49);
+          .TgZ(7, "th", 50);
 
           core
           /* ɵɵtext */
@@ -40941,7 +41801,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(9, "th", 53);
+          .TgZ(9, "th", 54);
 
           core
           /* ɵɵtext */
@@ -40952,7 +41812,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(11, "th", 54);
+          .TgZ(11, "th", 55);
 
           core
           /* ɵɵtext */
@@ -40963,7 +41823,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(13, "th", 53);
+          .TgZ(13, "th", 54);
 
           core
           /* ɵɵtext */
@@ -40974,7 +41834,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(15, "th", 49);
+          .TgZ(15, "th", 50);
 
           core
           /* ɵɵtext */
@@ -40985,7 +41845,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(17, "th", 55);
+          .TgZ(17, "th", 56);
 
           core
           /* ɵɵtext */
@@ -40996,7 +41856,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(19, "th", 56);
+          .TgZ(19, "th", 57);
 
           core
           /* ɵɵtext */
@@ -41007,7 +41867,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(21, "th", 57);
+          .TgZ(21, "th", 58);
 
           core
           /* ɵɵtext */
@@ -41027,7 +41887,7 @@
           .TgZ(23, "tbody");
           core
           /* ɵɵtemplate */
-          .YNc(24, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_div_0_tr_24_Template, 17, 8, "tr", 9);
+          .YNc(24, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_div_0_tr_24_Template, 17, 32, "tr", 9);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -41040,7 +41900,7 @@
         }
 
         if (rf & 2) {
-          var ctx_r69 = core
+          var ctx_r70 = core
           /* ɵɵnextContext */
           .oxw(5);
           core
@@ -41048,7 +41908,7 @@
           .xp6(24);
           core
           /* ɵɵproperty */
-          .Q6J("ngForOf", ctx_r69.upcomingRaceAnalysis.fp2);
+          .Q6J("ngForOf", ctx_r70.upcomingRaceAnalysis.fp2);
         }
       }
 
@@ -41059,7 +41919,7 @@
           .TgZ(0, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "th", 42);
+          .TgZ(1, "th", 43);
 
           core
           /* ɵɵtext */
@@ -41107,37 +41967,37 @@
         }
 
         if (rf & 2) {
-          var lap_r76 = ctx.$implicit;
+          var lap_r77 = ctx.$implicit;
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(lap_r76.position);
+          .Oqu(lap_r77.position);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(lap_r76.driverName);
+          .Oqu(lap_r77.driverName);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(lap_r76.lapTime);
+          .Oqu(lap_r77.lapTime);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(lap_r76.lapNumber);
+          .Oqu(lap_r77.lapNumber);
         }
       }
 
       function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_Template(rf, ctx) {
         if (rf & 1) {
-          var _r79 = core
+          var _r80 = core
           /* ɵɵgetCurrentView */
           .EpF();
 
@@ -41146,26 +42006,26 @@
           .YNc(0, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_div_0_Template, 25, 1, "div", 0);
           core
           /* ɵɵelementStart */
-          .TgZ(1, "div", 45);
+          .TgZ(1, "div", 46);
           core
           /* ɵɵelementStart */
-          .TgZ(2, "div", 46);
+          .TgZ(2, "div", 47);
           core
           /* ɵɵelementStart */
-          .TgZ(3, "div", 38);
+          .TgZ(3, "div", 39);
           core
           /* ɵɵelementStart */
-          .TgZ(4, "table", 47);
+          .TgZ(4, "table", 48);
           core
           /* ɵɵlistener */
           .NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_Template_table_matSortChange_4_listener($event) {
             core
             /* ɵɵrestoreView */
-            .CHM(_r79);
-            var ctx_r78 = core
+            .CHM(_r80);
+            var ctx_r79 = core
             /* ɵɵnextContext */
             .oxw(4);
-            return ctx_r78.sortResultData($event, 2);
+            return ctx_r79.sortResultData($event, 2);
           });
           core
           /* ɵɵelementStart */
@@ -41175,7 +42035,7 @@
           .TgZ(6, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(7, "th", 48);
+          .TgZ(7, "th", 49);
 
           core
           /* ɵɵtext */
@@ -41192,7 +42052,7 @@
           .TgZ(9, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(10, "th", 49);
+          .TgZ(10, "th", 50);
 
           core
           /* ɵɵtext */
@@ -41203,7 +42063,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(12, "th", 50);
+          .TgZ(12, "th", 51);
 
           core
           /* ɵɵtext */
@@ -41214,7 +42074,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(14, "th", 49);
+          .TgZ(14, "th", 50);
 
           core
           /* ɵɵtext */
@@ -41225,7 +42085,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(16, "th", 51);
+          .TgZ(16, "th", 52);
 
           core
           /* ɵɵtext */
@@ -41264,18 +42124,18 @@
         }
 
         if (rf & 2) {
-          var ctx_r68 = core
+          var ctx_r69 = core
           /* ɵɵnextContext */
           .oxw(4);
           core
           /* ɵɵproperty */
-          .Q6J("ngIf", ctx_r68.upcomingRaceAnalysis.fp2 !== null);
+          .Q6J("ngIf", ctx_r69.upcomingRaceAnalysis.fp2 !== null);
           core
           /* ɵɵadvance */
           .xp6(19);
           core
           /* ɵɵproperty */
-          .Q6J("ngForOf", ctx_r68.upcomingRaceAnalysis.fp2Laps);
+          .Q6J("ngForOf", ctx_r69.upcomingRaceAnalysis.fp2Laps);
         }
       }
 
@@ -41283,7 +42143,7 @@
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "mat-tab", 59);
+          .TgZ(0, "mat-tab", 62);
           core
           /* ɵɵtemplate */
           .YNc(1, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_Template, 20, 2, "ng-template", 19);
@@ -41309,7 +42169,7 @@
           .TgZ(0, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "th", 42);
+          .TgZ(1, "th", 43);
 
           core
           /* ɵɵtext */
@@ -41331,7 +42191,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(5, "td", 58);
+          .TgZ(5, "td", 68);
 
           core
           /* ɵɵtext */
@@ -41353,7 +42213,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(9, "td", 58);
+          .TgZ(9, "td", 68);
 
           core
           /* ɵɵtext */
@@ -41364,7 +42224,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(11, "td", 65);
+          .TgZ(11, "td", 69);
 
           core
           /* ɵɵtext */
@@ -41379,8 +42239,8 @@
         }
 
         if (rf & 2) {
-          var standing_r83 = ctx.$implicit;
-          var ctx_r82 = core
+          var standing_r84 = ctx.$implicit;
+          var ctx_r83 = core
           /* ɵɵnextContext */
           .oxw(6);
           core
@@ -41388,49 +42248,49 @@
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r83.position);
+          .Oqu(standing_r84.position);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r83.FullName);
+          .Oqu(standing_r84.FullName);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r83.Team);
+          .Oqu(standing_r84.Team);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r83.finalGap);
+          .Oqu(standing_r84.finalGap);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r83.fastestLap);
+          .Oqu(standing_r84.fastestLap);
           core
           /* ɵɵadvance */
           .xp6(1);
           core
           /* ɵɵstyleProp */
-          .Udp("color", ctx_r82.getTyresClass(standing_r83.lapByLapData.tyres));
+          .Udp("color", ctx_r83.getTyresClass(standing_r84.lapByLapData.tyres));
           core
           /* ɵɵadvance */
           .xp6(1);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(ctx_r82.getTyresString(standing_r83.lapByLapData.tyres));
+          .Oqu(ctx_r83.getTyresString(standing_r84.lapByLapData.tyres));
         }
       }
 
       function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_13_ng_template_1_div_0_Template(rf, ctx) {
         if (rf & 1) {
-          var _r86 = core
+          var _r87 = core
           /* ɵɵgetCurrentView */
           .EpF();
 
@@ -41439,17 +42299,17 @@
           .TgZ(0, "div");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "table", 47);
+          .TgZ(1, "table", 48);
           core
           /* ɵɵlistener */
           .NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_13_ng_template_1_div_0_Template_table_matSortChange_1_listener($event) {
             core
             /* ɵɵrestoreView */
-            .CHM(_r86);
-            var ctx_r85 = core
+            .CHM(_r87);
+            var ctx_r86 = core
             /* ɵɵnextContext */
             .oxw(5);
-            return ctx_r85.sortMainResultData($event, 5);
+            return ctx_r86.sortMainResultData($event, 5);
           });
           core
           /* ɵɵelementStart */
@@ -41459,7 +42319,7 @@
           .TgZ(3, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(4, "th", 52);
+          .TgZ(4, "th", 53);
 
           core
           /* ɵɵtext */
@@ -41476,7 +42336,7 @@
           .TgZ(6, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(7, "th", 49);
+          .TgZ(7, "th", 50);
 
           core
           /* ɵɵtext */
@@ -41487,7 +42347,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(9, "th", 53);
+          .TgZ(9, "th", 54);
 
           core
           /* ɵɵtext */
@@ -41498,7 +42358,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(11, "th", 54);
+          .TgZ(11, "th", 55);
 
           core
           /* ɵɵtext */
@@ -41509,7 +42369,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(13, "th", 53);
+          .TgZ(13, "th", 54);
 
           core
           /* ɵɵtext */
@@ -41520,7 +42380,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(15, "th", 63);
+          .TgZ(15, "th", 66);
 
           core
           /* ɵɵtext */
@@ -41531,7 +42391,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(17, "th", 64);
+          .TgZ(17, "th", 67);
 
           core
           /* ɵɵtext */
@@ -41564,7 +42424,7 @@
         }
 
         if (rf & 2) {
-          var ctx_r81 = core
+          var ctx_r82 = core
           /* ɵɵnextContext */
           .oxw(5);
           core
@@ -41572,7 +42432,7 @@
           .xp6(20);
           core
           /* ɵɵproperty */
-          .Q6J("ngForOf", ctx_r81.upcomingRaceAnalysis.sprintQuali);
+          .Q6J("ngForOf", ctx_r82.upcomingRaceAnalysis.sprintQuali);
         }
       }
 
@@ -41589,14 +42449,14 @@
           .TgZ(2, "div", 5);
           core
           /* ɵɵelementStart */
-          .TgZ(3, "div", 37);
+          .TgZ(3, "div", 38);
           core
           /* ɵɵelementStart */
-          .TgZ(4, "div", 38);
+          .TgZ(4, "div", 39);
 
           core
           /* ɵɵelement */
-          ._UZ(5, "apx-chart", 62);
+          ._UZ(5, "apx-chart", 65);
 
           core
           /* ɵɵelement */
@@ -41625,18 +42485,18 @@
         }
 
         if (rf & 2) {
-          var ctx_r80 = core
+          var ctx_r81 = core
           /* ɵɵnextContext */
           .oxw(4);
           core
           /* ɵɵproperty */
-          .Q6J("ngIf", ctx_r80.upcomingRaceAnalysis.sprintQuali != null);
+          .Q6J("ngIf", ctx_r81.upcomingRaceAnalysis.sprintQuali != null);
           core
           /* ɵɵadvance */
           .xp6(5);
           core
           /* ɵɵproperty */
-          .Q6J("series", ctx_r80.lapPosChart.series)("chart", ctx_r80.defChart)("dataLabels", ctx_r80.defDataLabels)("grid", ctx_r80.defGrid)("stroke", ctx_r80.defStroke)("title", ctx_r80.lapPosChart.title)("yaxis", ctx_r80.reverseYAxis)("xaxis", ctx_r80.lapXaxis);
+          .Q6J("series", ctx_r81.lapPosChart.series)("chart", ctx_r81.defChart)("dataLabels", ctx_r81.defDataLabels)("grid", ctx_r81.defGrid)("stroke", ctx_r81.defStroke)("title", ctx_r81.lapPosChart.title)("yaxis", ctx_r81.reverseYAxis)("xaxis", ctx_r81.lapXaxis);
         }
       }
 
@@ -41644,7 +42504,7 @@
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "mat-tab", 61);
+          .TgZ(0, "mat-tab", 64);
           core
           /* ɵɵtemplate */
           .YNc(1, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_13_ng_template_1_Template, 9, 9, "ng-template", 19);
@@ -41663,9 +42523,258 @@
         }
       }
 
+      function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_15_tr_20_Template(rf, ctx) {
+        if (rf & 1) {
+          core
+          /* ɵɵelementStart */
+          .TgZ(0, "tr");
+          core
+          /* ɵɵelementStart */
+          .TgZ(1, "th", 43);
+
+          core
+          /* ɵɵtext */
+          ._uU(2);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(3, "td");
+
+          core
+          /* ɵɵtext */
+          ._uU(4);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(5, "td");
+
+          core
+          /* ɵɵtext */
+          ._uU(6);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(7, "td");
+
+          core
+          /* ɵɵtext */
+          ._uU(8);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(9, "td");
+
+          core
+          /* ɵɵtext */
+          ._uU(10);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+        }
+
+        if (rf & 2) {
+          var lap_r89 = ctx.$implicit;
+          core
+          /* ɵɵadvance */
+          .xp6(2);
+          core
+          /* ɵɵtextInterpolate */
+          .Oqu(lap_r89.position);
+          core
+          /* ɵɵadvance */
+          .xp6(2);
+          core
+          /* ɵɵtextInterpolate */
+          .Oqu(lap_r89.driverName);
+          core
+          /* ɵɵadvance */
+          .xp6(2);
+          core
+          /* ɵɵtextInterpolate */
+          .Oqu(lap_r89.lapTime);
+          core
+          /* ɵɵadvance */
+          .xp6(2);
+          core
+          /* ɵɵtextInterpolate */
+          .Oqu(lap_r89.lapNumber);
+          core
+          /* ɵɵadvance */
+          .xp6(2);
+          core
+          /* ɵɵtextInterpolate */
+          .Oqu(lap_r89.sessionName);
+        }
+      }
+
+      function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_15_Template(rf, ctx) {
+        if (rf & 1) {
+          var _r92 = core
+          /* ɵɵgetCurrentView */
+          .EpF();
+
+          core
+          /* ɵɵelementStart */
+          .TgZ(0, "div", 46);
+          core
+          /* ɵɵelementStart */
+          .TgZ(1, "div", 47);
+          core
+          /* ɵɵelementStart */
+          .TgZ(2, "div", 39);
+          core
+          /* ɵɵelementStart */
+          .TgZ(3, "table", 48);
+          core
+          /* ɵɵlistener */
+          .NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_15_Template_table_matSortChange_3_listener($event) {
+            core
+            /* ɵɵrestoreView */
+            .CHM(_r92);
+            var ctx_r91 = core
+            /* ɵɵnextContext */
+            .oxw(3);
+            return ctx_r91.sortResultData($event, 6);
+          });
+          core
+          /* ɵɵelementStart */
+          .TgZ(4, "thead");
+          core
+          /* ɵɵelementStart */
+          .TgZ(5, "tr");
+          core
+          /* ɵɵelementStart */
+          .TgZ(6, "th", 49);
+
+          core
+          /* ɵɵtext */
+          ._uU(7, "Recorded laps");
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(8, "tr");
+          core
+          /* ɵɵelementStart */
+          .TgZ(9, "th", 50);
+
+          core
+          /* ɵɵtext */
+          ._uU(10, "#");
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(11, "th", 51);
+
+          core
+          /* ɵɵtext */
+          ._uU(12, "Name");
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(13, "th", 50);
+
+          core
+          /* ɵɵtext */
+          ._uU(14, "Lap Time");
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(15, "th", 52);
+
+          core
+          /* ɵɵtext */
+          ._uU(16, "Lap Number");
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(17, "th", 52);
+
+          core
+          /* ɵɵtext */
+          ._uU(18, "Session");
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(19, "tbody");
+          core
+          /* ɵɵtemplate */
+          .YNc(20, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_15_tr_20_Template, 11, 5, "tr", 9);
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+        }
+
+        if (rf & 2) {
+          var ctx_r14 = core
+          /* ɵɵnextContext */
+          .oxw(3);
+          core
+          /* ɵɵadvance */
+          .xp6(20);
+          core
+          /* ɵɵproperty */
+          .Q6J("ngForOf", ctx_r14.allLaps);
+        }
+      }
+
       function UpcomingRaceAnalysisComponent_div_0_div_20_Template(rf, ctx) {
         if (rf & 1) {
-          var _r88 = core
+          var _r94 = core
           /* ɵɵgetCurrentView */
           .EpF();
 
@@ -41680,11 +42789,19 @@
           .NdJ("selectedIndexChange", function UpcomingRaceAnalysisComponent_div_0_div_20_Template_mat_tab_group_selectedIndexChange_1_listener($event) {
             core
             /* ɵɵrestoreView */
-            .CHM(_r88);
-            var ctx_r87 = core
+            .CHM(_r94);
+            var ctx_r93 = core
             /* ɵɵnextContext */
             .oxw(2);
-            return ctx_r87.selectedTab = $event;
+            return ctx_r93.selectedTab = $event;
+          })("selectedTabChange", function UpcomingRaceAnalysisComponent_div_0_div_20_Template_mat_tab_group_selectedTabChange_1_listener($event) {
+            core
+            /* ɵɵrestoreView */
+            .CHM(_r94);
+            var ctx_r95 = core
+            /* ɵɵnextContext */
+            .oxw(2);
+            return ctx_r95.tabChanged($event);
           });
           core
           /* ɵɵelementStart */
@@ -41734,6 +42851,15 @@
           core
           /* ɵɵtemplate */
           .YNc(13, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_13_Template, 2, 1, "mat-tab", 25);
+          core
+          /* ɵɵelementStart */
+          .TgZ(14, "mat-tab", 26);
+          core
+          /* ɵɵtemplate */
+          .YNc(15, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_15_Template, 21, 1, "ng-template", 19);
+          core
+          /* ɵɵelementEnd */
+          .qZA();
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -41794,6 +42920,12 @@
           core
           /* ɵɵproperty */
           .Q6J("ngIf", ctx_r3.sprintMode);
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵproperty */
+          .Q6J("disabled", ctx_r3.allLaps.length == 0);
         }
       }
 
@@ -41804,11 +42936,11 @@
           .TgZ(0, "div");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "div", 66);
+          .TgZ(1, "div", 70);
 
           core
           /* ɵɵelement */
-          ._UZ(2, "img", 67);
+          ._UZ(2, "img", 71);
 
           core
           /* ɵɵelementEnd */
@@ -41821,7 +42953,7 @@
 
       function UpcomingRaceAnalysisComponent_div_0_Template(rf, ctx) {
         if (rf & 1) {
-          var _r90 = core
+          var _r97 = core
           /* ɵɵgetCurrentView */
           .EpF();
 
@@ -41839,11 +42971,11 @@
           .NdJ("openedChange", function UpcomingRaceAnalysisComponent_div_0_Template_mat_drawer_openedChange_2_listener($event) {
             core
             /* ɵɵrestoreView */
-            .CHM(_r90);
-            var ctx_r89 = core
+            .CHM(_r97);
+            var ctx_r96 = core
             /* ɵɵnextContext */
             .oxw();
-            return ctx_r89.utilityService.setSidebarStatus($event);
+            return ctx_r96.utilityService.setSidebarStatus($event);
           });
           core
           /* ɵɵelementStart */
@@ -41862,11 +42994,11 @@
           .NdJ("ngModelChange", function UpcomingRaceAnalysisComponent_div_0_Template_textarea_ngModelChange_7_listener($event) {
             core
             /* ɵɵrestoreView */
-            .CHM(_r90);
-            var ctx_r91 = core
+            .CHM(_r97);
+            var ctx_r98 = core
             /* ɵɵnextContext */
             .oxw();
-            return ctx_r91.utilityService.postText = $event;
+            return ctx_r98.utilityService.postText = $event;
           });
           core
           /* ɵɵelementEnd */
@@ -41882,11 +43014,11 @@
           .NdJ("click", function UpcomingRaceAnalysisComponent_div_0_Template_button_click_9_listener() {
             core
             /* ɵɵrestoreView */
-            .CHM(_r90);
-            var ctx_r92 = core
+            .CHM(_r97);
+            var ctx_r99 = core
             /* ɵɵnextContext */
             .oxw();
-            return ctx_r92.utilityService.postComment(11);
+            return ctx_r99.utilityService.postComment(11);
           });
 
           core
@@ -41904,11 +43036,11 @@
           .NdJ("click", function UpcomingRaceAnalysisComponent_div_0_Template_button_click_11_listener() {
             core
             /* ɵɵrestoreView */
-            .CHM(_r90);
-            var ctx_r93 = core
+            .CHM(_r97);
+            var ctx_r100 = core
             /* ɵɵnextContext */
             .oxw();
-            return ctx_r93.utilityService.reloadPosts(11);
+            return ctx_r100.utilityService.reloadPosts(11);
           });
 
           core
@@ -41944,7 +43076,7 @@
           .NdJ("click", function UpcomingRaceAnalysisComponent_div_0_Template_button_click_15_listener() {
             core
             /* ɵɵrestoreView */
-            .CHM(_r90);
+            .CHM(_r97);
 
             var _r1 = core
             /* ɵɵreference */
@@ -41977,7 +43109,7 @@
           .NdJ("click", function UpcomingRaceAnalysisComponent_div_0_Template_button_click_18_listener() {
             core
             /* ɵɵrestoreView */
-            .CHM(_r90);
+            .CHM(_r97);
 
             var _r1 = core
             /* ɵɵreference */
@@ -41998,7 +43130,7 @@
           .qZA();
           core
           /* ɵɵtemplate */
-          .YNc(20, UpcomingRaceAnalysisComponent_div_0_div_20_Template, 14, 8, "div", 0);
+          .YNc(20, UpcomingRaceAnalysisComponent_div_0_div_20_Template, 16, 9, "div", 0);
           core
           /* ɵɵtemplate */
           .YNc(21, UpcomingRaceAnalysisComponent_div_0_div_21_Template, 3, 0, "div", 0);
@@ -42048,14 +43180,15 @@
       }
 
       var UpcomingRaceAnalysisComponent = /*#__PURE__*/function () {
-        function UpcomingRaceAnalysisComponent(restService, utilityService, ref) {
-          var _this85 = this;
+        function UpcomingRaceAnalysisComponent(restService, utilityService, router, route) {
+          var _this86 = this;
 
           _classCallCheck(this, UpcomingRaceAnalysisComponent);
 
           this.restService = restService;
           this.utilityService = utilityService;
-          this.ref = ref;
+          this.router = router;
+          this.route = route;
           this.sprintMode = true;
           this.selectedTab = 0;
           this.defChart = {
@@ -42109,21 +43242,24 @@
           var observable = restService.getUpcomingRaceAnalysis();
           observable.subscribe({
             next: function next(data) {
-              _this85.upcomingRaceAnalysis = data;
+              _this86.upcomingRaceAnalysis = data;
 
-              if (_this85.upcomingRaceAnalysis != null) {
-                _this85.utilityService.setTitle(_this85.upcomingRaceAnalysis.title);
+              if (_this86.upcomingRaceAnalysis != null) {
+                _this86.setAllLaps();
 
-                _this85.setCharts();
+                _this86.utilityService.setTitle(_this86.upcomingRaceAnalysis.title);
 
-                _this85.checkIfSprintMode();
+                _this86.setCharts();
+
+                _this86.checkIfSprintMode();
               } else {
-                _this85.utilityService.setTitle("Upcoming race - no gimi found");
+                _this86.utilityService.setTitle("2021 season is finished");
               }
 
               return data;
             }
           });
+          this.selectedTab = this.getSelectedTab();
           this.utilityService.reloadPosts(11);
         }
 
@@ -42174,6 +43310,10 @@
 
               case 5:
                 this.upcomingRaceAnalysis.sprintQualiLaps = this.sortLaps(this.upcomingRaceAnalysis.sprintQualiLaps, sort.active, sort.direction);
+                break;
+
+              case 6:
+                this.allLaps = this.sortLaps(this.allLaps, sort.active, sort.direction);
                 break;
             }
           }
@@ -42418,6 +43558,62 @@
               }
             }
           }
+        }, {
+          key: "tabChanged",
+          value: function tabChanged(tabChangeEvent) {
+            this.updateUrl();
+          }
+        }, {
+          key: "updateUrl",
+          value: function updateUrl() {
+            var queryParams = {
+              tab: this.selectedTab + 1
+            };
+            this.router.navigate([], {
+              relativeTo: this.route,
+              queryParams: queryParams
+            });
+          }
+        }, {
+          key: "getSelectedTab",
+          value: function getSelectedTab() {
+            var tab = this.route.snapshot.queryParamMap.get('tab');
+
+            if (tab == undefined) {
+              return 0;
+            } else {
+              return Number(tab) - 1;
+            }
+          }
+        }, {
+          key: "setAllLaps",
+          value: function setAllLaps() {
+            var laps = [];
+
+            if (this.upcomingRaceAnalysis.fp1Laps != null) {
+              laps = laps.concat(this.upcomingRaceAnalysis.fp1Laps);
+            }
+
+            if (this.upcomingRaceAnalysis.fp2Laps != null) {
+              laps = laps.concat(this.upcomingRaceAnalysis.fp2Laps);
+            }
+
+            if (this.upcomingRaceAnalysis.fp3Laps != null) {
+              laps = laps.concat(this.upcomingRaceAnalysis.fp3Laps);
+            }
+
+            if (this.upcomingRaceAnalysis.qualiLaps != null) {
+              laps = laps.concat(this.upcomingRaceAnalysis.qualiLaps);
+            }
+
+            var counter = 1;
+            laps = this.sortLaps(laps, 'position', 'asc');
+            laps.forEach(function (lap) {
+              lap.position = counter;
+              counter++;
+            });
+            this.allLaps = laps;
+          }
         }]);
 
         return UpcomingRaceAnalysisComponent;
@@ -42434,9 +43630,13 @@
         /* UtilityService */
         .t), core
         /* ɵɵdirectiveInject */
-        .Y36(core
-        /* ChangeDetectorRef */
-        .sBO));
+        .Y36(router
+        /* Router */
+        .F0), core
+        /* ɵɵdirectiveInject */
+        .Y36(router
+        /* ActivatedRoute */
+        .gz));
       };
 
       UpcomingRaceAnalysisComponent.ɵcmp = /*@__PURE__*/core
@@ -42463,7 +43663,7 @@
         },
         decls: 1,
         vars: 1,
-        consts: [[4, "ngIf"], ["autosize", ""], ["autosize", "", "mode", "side", "position", "end", 1, "example-sidenav", 3, "opened", "openedChange"], ["drawer", ""], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area", 3, "ngModel", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "post-comment-button", 3, "click"], [4, "ngFor", "ngForOf"], [1, "fixed-button"], ["type", "fixed-plugin", "mat-button", "", 3, "click"], [1, "fa", "fa-commenting-o", "fa-2x"], [1, "basic-comment"], [1, "one"], [1, "two"], [1, "basic-comment-body"], [3, "selectedIndex", "selectedIndexChange"], ["label", "Circuit"], ["matTabContent", ""], ["label", "Circuit winners", 3, "disabled"], ["label", "Practice 1", 3, "disabled"], ["label", "Practice 2", 3, "disabled", 4, "ngIf"], ["label", "Practice 3", 3, "disabled", 4, "ngIf"], ["label", "Qualifying", 3, "disabled"], ["label", "Sprint Qualifying", 3, "disabled", 4, "ngIf"], ["class", "div-padded-always-left-right-1 row", 4, "ngIf"], [1, "div-padded-always-left-right-1", "row"], [1, "card-body", "text-center"], [1, "image"], ["target", "_blank", 3, "href"], [3, "src"], ["class", "div-padded-1rem row", 4, "ngIf"], ["class", "div-padded-1rem div-padded-left-2 row", 4, "ngIf"], [1, "div-padded-1rem", "row"], ["class", "col-lg-6 col-12", 4, "ngFor", "ngForOf"], [1, "col-lg-6", "col-12"], [1, "card"], [1, "card-body-padded"], [1, "table", "table-striped"], ["colspan", "2", "scope", "col"], [2, "width", "35px"], ["scope", "row"], [1, "div-padded-1rem", "div-padded-left-2", "row"], [3, "href"], [1, "div-padded-1rem", "div-padded-left-2", "div-padded-right-2", "row"], [1, "card", "col-lg-12", "col-12"], ["matSort", "", 1, "table", "table-striped", 3, "matSortChange"], ["colspan", "4", 1, "text-center"], ["mat-sort-header", "position", "scope", "col"], ["mat-sort-header", "name", "scope", "col"], ["mat-sort-header", "lapNumber", "scope", "col"], ["colspan", "8", 1, "text-center"], ["scope", "col"], ["scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], ["mat-sort-header", "sector1", "scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], ["mat-sort-header", "sector2", "scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], ["mat-sort-header", "sector3", "scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], [1, "d-sm-none", "d-none", "d-lg-table-cell"], ["label", "Practice 2", 3, "disabled"], ["label", "Practice 3", 3, "disabled"], ["label", "Sprint Qualifying", 3, "disabled"], [3, "series", "chart", "dataLabels", "grid", "stroke", "title", "yaxis", "xaxis"], ["mat-sort-header", "lapTime", "scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], ["scope", "col", 1, "text-center"], [1, "font-weight-bold", "text-center"], [1, "icon-big", "text-center", "width-100", "icon-warning"], ["src", "assets/img/gimi2.jpg"]],
+        consts: [[4, "ngIf"], ["autosize", ""], ["autosize", "", "mode", "side", "position", "end", 1, "example-sidenav", 3, "opened", "openedChange"], ["drawer", ""], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area", 3, "ngModel", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "post-comment-button", 3, "click"], [4, "ngFor", "ngForOf"], [1, "fixed-button"], ["type", "fixed-plugin", "mat-button", "", 3, "click"], [1, "fa", "fa-commenting-o", "fa-2x"], [1, "basic-comment"], [1, "one"], [1, "two"], [1, "basic-comment-body"], [3, "selectedIndex", "selectedIndexChange", "selectedTabChange"], ["label", "Circuit"], ["matTabContent", ""], ["label", "Circuit winners", 3, "disabled"], ["label", "Practice 1", 3, "disabled"], ["label", "Practice 2", 3, "disabled", 4, "ngIf"], ["label", "Practice 3", 3, "disabled", 4, "ngIf"], ["label", "Qualifying", 3, "disabled"], ["label", "Sprint Qualifying", 3, "disabled", 4, "ngIf"], ["label", "All laps", 3, "disabled"], ["class", "div-padded-always-left-right-1 row", 4, "ngIf"], [1, "div-padded-always-left-right-1", "row"], [1, "card-body", "text-center"], [1, "image"], ["target", "_blank", 3, "href"], [3, "src"], ["class", "div-padded-1rem row", 4, "ngIf"], ["class", "div-padded-1rem div-padded-left-2 row", 4, "ngIf"], [1, "div-padded-1rem", "row"], ["class", "col-lg-6 col-12", 4, "ngFor", "ngForOf"], [1, "col-lg-6", "col-12"], [1, "card"], [1, "card-body-padded"], [1, "table", "table-striped"], ["colspan", "2", "scope", "col"], [2, "width", "35px"], ["scope", "row"], [1, "div-padded-1rem", "div-padded-left-2", "row"], [3, "href"], [1, "div-padded-1rem", "div-padded-left-2", "div-padded-right-2", "row"], [1, "card", "col-lg-12", "col-12"], ["matSort", "", 1, "table", "table-striped", 3, "matSortChange"], ["colspan", "4", 1, "text-center"], ["mat-sort-header", "position", "scope", "col"], ["mat-sort-header", "name", "scope", "col"], ["mat-sort-header", "lapNumber", "scope", "col"], ["colspan", "8", 1, "text-center"], ["scope", "col"], ["scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], ["mat-sort-header", "sector1", "scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], ["mat-sort-header", "sector2", "scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], ["mat-sort-header", "sector3", "scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], ["scope", "row", 3, "ngClass"], [3, "ngClass"], [1, "d-sm-none", "d-none", "d-lg-table-cell", 3, "ngClass"], ["label", "Practice 2", 3, "disabled"], ["label", "Practice 3", 3, "disabled"], ["label", "Sprint Qualifying", 3, "disabled"], [3, "series", "chart", "dataLabels", "grid", "stroke", "title", "yaxis", "xaxis"], ["mat-sort-header", "lapTime", "scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], ["scope", "col", 1, "text-center"], [1, "d-sm-none", "d-none", "d-lg-table-cell"], [1, "font-weight-bold", "text-center"], [1, "icon-big", "text-center", "icon-warning"], ["src", "assets/img/kimi-raikkonen-smile.gif", 1, "div-height-70vh"]],
         template: function UpcomingRaceAnalysisComponent_Template(rf, ctx) {
           if (rf & 1) {
             core
@@ -42499,7 +43699,9 @@
         /* MatTab */
         .uX, tabs
         /* MatTabContent */
-        .Vc, MatSort, MatSortHeader, ng_apexcharts
+        .Vc, MatSort, MatSortHeader, common
+        /* NgClass */
+        .mk, ng_apexcharts
         /* ChartComponent */
         .x],
         pipes: [common
@@ -42979,22 +44181,22 @@
         _createClass(AwsDemoComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this86 = this;
+            var _this87 = this;
 
             this.utilityService.disablePeriodicFetchOfComments();
             this.route.queryParams.subscribe(function (params) {
               var selectedCode = params['code'];
 
-              var observableEvents = _this86.restService.getAwsPost(selectedCode);
+              var observableEvents = _this87.restService.getAwsPost(selectedCode);
 
               observableEvents.subscribe({
                 next: function next(data) {
-                  _this86.post = data;
+                  _this87.post = data;
 
-                  if (_this86.post == null) {
-                    _this86.goToAwsList();
+                  if (_this87.post == null) {
+                    _this87.goToAwsList();
                   } else {
-                    _this86.utilityService.setTitle(_this86.post.title);
+                    _this87.utilityService.setTitle(_this87.post.title);
                   }
                 },
                 error: function error(_error7) {
@@ -43003,16 +44205,16 @@
               });
             });
             this.commentsReloader = setInterval(function () {
-              _this86.getAwsCommentsPeriodically();
+              _this87.getAwsCommentsPeriodically();
             }, 20000);
             this.minimumReloadCounterValue = 0;
             this.currentReloadCounter = 1;
             var rawHtml = this.restService.readFile("assets/html/demo.html");
             rawHtml.subscribe({
               next: function next(data) {
-                _this86.postText = data;
+                _this87.postText = data;
                 console.info('this.postText');
-                console.info(_this86.postText);
+                console.info(_this87.postText);
               },
               error: function error(_error8) {
                 console.error('There was an error!', _error8);
@@ -43042,7 +44244,7 @@
         }, {
           key: "postAwsComment",
           value: function postAwsComment() {
-            var _this87 = this;
+            var _this88 = this;
 
             var awsComment = new AwsComment();
 
@@ -43053,13 +44255,13 @@
               var observable = this.restService.postAwsComment(awsComment);
               observable.subscribe({
                 next: function next(data) {
-                  _this87.post.comments = data;
-                  _this87.commentText = '';
+                  _this88.post.comments = data;
+                  _this88.commentText = '';
                 },
                 error: function error(_error9) {
                   console.error('There was an error!', _error9);
 
-                  _this87.utilityService.pushToastrErrorMessage("ERROR OCCURED. Comment not posted.");
+                  _this88.utilityService.pushToastrErrorMessage("ERROR OCCURED. Comment not posted.");
                 }
               });
               this.minimumReloadCounterValue = 0;
@@ -43087,12 +44289,12 @@
         }, {
           key: "getAwsComments",
           value: function getAwsComments() {
-            var _this88 = this;
+            var _this89 = this;
 
             var observable = this.restService.getAwsComments(this.post.code);
             observable.subscribe({
               next: function next(data) {
-                _this88.post.comments = data;
+                _this89.post.comments = data;
               },
               error: function error(_error10) {
                 console.error('There was an error!', _error10);
@@ -43422,14 +44624,14 @@
         _createClass(ImagePopupDialog, [{
           key: "getData",
           value: function getData() {
-            var _this89 = this;
+            var _this90 = this;
 
             console.log("getData: " + this.tokenId);
             var observable;
             observable = this.restService.getOpenSeaAsset(this.contractAddress, this.tokenId);
             observable.subscribe({
               next: function next(data) {
-                _this89.asset = data;
+                _this90.asset = data;
               }
             });
           }
@@ -43568,7 +44770,7 @@
 
       var ArtCarousel = /*#__PURE__*/function () {
         function ArtCarousel(restService, utilityService, config, dialog) {
-          var _this90 = this;
+          var _this91 = this;
 
           _classCallCheck(this, ArtCarousel);
 
@@ -43584,9 +44786,9 @@
           observable = this.restService.getAllArt();
           observable.subscribe({
             next: function next(data) {
-              _this90.images = data;
+              _this91.images = data;
 
-              _this90.setTitle();
+              _this91.setTitle();
             }
           });
         }
@@ -43840,14 +45042,14 @@
         }, {
           key: "update",
           value: function update(numColumns, tiles) {
-            var _this91 = this;
+            var _this92 = this;
 
             this.columnIndex = 0;
             this.rowIndex = 0;
             this.tracker = new Array(numColumns);
             this.tracker.fill(0, 0, this.tracker.length);
             this.positions = tiles.map(function (tile) {
-              return _this91._trackTile(tile);
+              return _this92._trackTile(tile);
             });
           }
           /** Calculates the row and col position of a tile. */
@@ -44604,13 +45806,13 @@
         var _super18 = _createSuper(FixedTileStyler);
 
         function FixedTileStyler(fixedRowHeight) {
-          var _this92;
+          var _this93;
 
           _classCallCheck(this, FixedTileStyler);
 
-          _this92 = _super18.call(this);
-          _this92.fixedRowHeight = fixedRowHeight;
-          return _this92;
+          _this93 = _super18.call(this);
+          _this93.fixedRowHeight = fixedRowHeight;
+          return _this93;
         }
 
         _createClass(FixedTileStyler, [{
@@ -44666,15 +45868,15 @@
         var _super19 = _createSuper(RatioTileStyler);
 
         function RatioTileStyler(value) {
-          var _this93;
+          var _this94;
 
           _classCallCheck(this, RatioTileStyler);
 
-          _this93 = _super19.call(this);
+          _this94 = _super19.call(this);
 
-          _this93._parseRatio(value);
+          _this94._parseRatio(value);
 
-          return _this93;
+          return _this94;
         }
 
         _createClass(RatioTileStyler, [{
@@ -44901,7 +46103,7 @@
         }, {
           key: "_layoutTiles",
           value: function _layoutTiles() {
-            var _this94 = this;
+            var _this95 = this;
 
             if (!this._tileCoordinator) {
               this._tileCoordinator = new TileCoordinator();
@@ -44910,7 +46112,7 @@
             var tracker = this._tileCoordinator;
 
             var tiles = this._tiles.filter(function (tile) {
-              return !tile._gridList || tile._gridList === _this94;
+              return !tile._gridList || tile._gridList === _this95;
             });
 
             var direction = this._dir ? this._dir.value : 'ltr';
@@ -44922,7 +46124,7 @@
             tiles.forEach(function (tile, index) {
               var pos = tracker.positions[index];
 
-              _this94._tileStyler.setStyle(tile, pos.row, pos.col);
+              _this95._tileStyler.setStyle(tile, pos.row, pos.col);
             });
 
             this._setListStyle(this._tileStyler.getComputedHeight());
@@ -46066,7 +47268,7 @@
         }, {
           key: "ngAfterContentInit",
           value: function ngAfterContentInit() {
-            var _this95 = this;
+            var _this96 = this;
 
             this.listKeyManager = new a11y
             /* ListKeyManager */
@@ -46079,7 +47281,7 @@
             * @return {?}
             */
             function () {
-              return _this95.playAnimation();
+              return _this96.playAnimation();
             });
           }
           /**
@@ -46089,7 +47291,7 @@
         }, {
           key: "ngAfterViewInit",
           value: function ngAfterViewInit() {
-            var _this96 = this;
+            var _this97 = this;
 
             this.autoplay$.pipe((0, takeUntil
             /* takeUntil */
@@ -46099,9 +47301,9 @@
             * @return {?}
             */
             function (value) {
-              _this96.stopTimer();
+              _this97.stopTimer();
 
-              _this96.startTimer(value);
+              _this97.startTimer(value);
             });
             this.interval$.pipe((0, takeUntil
             /* takeUntil */
@@ -46111,11 +47313,11 @@
             * @return {?}
             */
             function (value) {
-              _this96.stopTimer();
+              _this97.stopTimer();
 
-              _this96.resetTimer(value);
+              _this97.resetTimer(value);
 
-              _this96.startTimer(_this96._autoplay);
+              _this97.startTimer(_this97._autoplay);
             });
             this.maxWidth$.pipe((0, takeUntil
             /* takeUntil */
@@ -46124,7 +47326,7 @@
             * @return {?}
             */
             function () {
-              return _this96.slideTo(0);
+              return _this97.slideTo(0);
             });
             this.loop$.pipe((0, takeUntil
             /* takeUntil */
@@ -46134,7 +47336,7 @@
             * @return {?}
             */
             function (value) {
-              return _this96.listKeyManager.withWrap(value);
+              return _this97.listKeyManager.withWrap(value);
             });
             this.orientation$.pipe((0, takeUntil
             /* takeUntil */
@@ -46144,7 +47346,7 @@
             * @return {?}
             */
             function (value) {
-              return _this96.listKeyManager.withHorizontalOrientation(value);
+              return _this97.listKeyManager.withHorizontalOrientation(value);
             });
             this.slides$.pipe((0, takeUntil
             /* takeUntil */
@@ -46156,14 +47358,14 @@
             * @return {?}
             */
             function (value) {
-              return value && value < _this96.slidesList.length;
+              return value && value < _this97.slidesList.length;
             })).subscribe(
             /**
             * @param {?} value
             * @return {?}
             */
             function (value) {
-              return _this96.resetSlides(value);
+              return _this97.resetSlides(value);
             });
           }
           /**
@@ -46443,7 +47645,7 @@
         }, {
           key: "playAnimation",
           value: function playAnimation() {
-            var _this97 = this;
+            var _this98 = this;
 
             /** @type {?} */
             var translation = this.getTranslation(this.getOffset());
@@ -46464,18 +47666,18 @@
             * @return {?}
             */
             function () {
-              return _this97.playing = true;
+              return _this98.playing = true;
             });
             animation.onDone(
             /**
             * @return {?}
             */
             function () {
-              _this97.change.emit(_this97.currentIndex);
+              _this98.change.emit(_this98.currentIndex);
 
-              _this97.playing = false;
+              _this98.playing = false;
 
-              _this97.renderer.setStyle(_this97.carouselList.nativeElement, 'transform', translation);
+              _this98.renderer.setStyle(_this98.carouselList.nativeElement, 'transform', translation);
 
               animation.destroy();
             });
@@ -46512,7 +47714,7 @@
         }, {
           key: "startTimer",
           value: function startTimer(autoplay) {
-            var _this98 = this;
+            var _this99 = this;
 
             if (!autoplay) {
               return;
@@ -46529,15 +47731,15 @@
             * @return {?}
             */
             function () {
-              return _this98.isVisible();
+              return _this99.isVisible();
             })).subscribe(
             /**
             * @return {?}
             */
             function () {
-              _this98.listKeyManager.withWrap(true).setNextItemActive();
+              _this99.listKeyManager.withWrap(true).setNextItemActive();
 
-              _this98.listKeyManager.withWrap(_this98.loop);
+              _this99.listKeyManager.withWrap(_this99.loop);
             });
           }
           /**
@@ -47105,12 +48307,12 @@
         var _super21 = _createSuper(MatCarouselHammerConfig);
 
         function MatCarouselHammerConfig() {
-          var _this99;
+          var _this100;
 
           _classCallCheck(this, MatCarouselHammerConfig);
 
-          _this99 = _super21.apply(this, arguments);
-          _this99.overrides = {
+          _this100 = _super21.apply(this, arguments);
+          _this100.overrides = {
             pinch: {
               enable: false
             },
@@ -47118,7 +48320,7 @@
               enable: false
             }
           };
-          return _this99;
+          return _this100;
         }
 
         return MatCarouselHammerConfig;

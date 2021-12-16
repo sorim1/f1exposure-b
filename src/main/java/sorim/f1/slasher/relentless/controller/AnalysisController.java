@@ -80,9 +80,9 @@ public class AnalysisController {
     }
 
     @GetMapping("/analyzeUpcomingRace")
-    public Integer analyzeUpcomingRace(@RequestHeader String client) throws Exception {
+    public Integer analyzeUpcomingRace(@RequestHeader String client, @RequestParam(value = "redo", required=false) Boolean redo) throws Exception {
         securityService.validateAdminHeader(client);
-        return service.analyzeUpcomingRace();
+        return service.analyzeUpcomingRace(redo);
     }
 
     @GetMapping("/updateAllImageUrlsDev")

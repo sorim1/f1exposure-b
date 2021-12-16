@@ -39,10 +39,7 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -65,6 +62,7 @@ public class AdminServiceImpl implements AdminService {
     private final AwsRepository awsRepository;
     private final AwsCommentRepository awsCommentRepository;
     private final F1CommentRepository f1CommentRepository;
+    private final JsonRepository jsonRepository;
 
     private final ErgastService ergastService;
     private final MainProperties properties;
@@ -186,10 +184,11 @@ public class AdminServiceImpl implements AdminService {
     public Boolean initializeStandings() {
         Logger.log("initializeStandings");
         Boolean changesDetected = refreshDriverStandingsFromErgast();
+        initializeConstructorStandings();
         if (changesDetected) {
+            generateChart();
             Scheduler.standingsUpdated = true;
         }
-        initializeConstructorStandings();
         return changesDetected;
     }
 
@@ -252,6 +251,7 @@ public class AdminServiceImpl implements AdminService {
         driverStandingsByRoundRepository.saveAll(driverStandingsByRound.values());
         constructorStandingsByRoundRepository.deleteAll();
         constructorStandingsByRoundRepository.saveAll(constructorStandingByRound.values());
+        generateChart();
         return true;
     }
 
@@ -262,16 +262,10 @@ public class AdminServiceImpl implements AdminService {
             ErgastResponse response = ergastService.getResultsByRound(properties.getCurrentYear(), round);
             if (response.getMrData().getTotal() > 0) {
                 Integer finalRound = round;
+                Integer maxPosition = response.getMrData().getRaceTable().getRaces().get(0).getResults().size();
                 response.getMrData().getRaceTable().getRaces().get(0).getResults()
                         .forEach(ergastStanding -> {
-                            driverStandingsByRound.get(ergastStanding.getDriver().getDriverId() + finalRound).setPointsThisRound(ergastStanding.getPoints());
-
-                            if("Finished".equals(ergastStanding.getStatus())|| ergastStanding.getStatus().contains("Lap")){
-                                driverStandingsByRound.get(ergastStanding.getDriver().getDriverId() + finalRound).setResultThisRound(ergastStanding.getPosition());
-                            } else {
-                                driverStandingsByRound.get(ergastStanding.getDriver().getDriverId() + finalRound).setResultThisRound(21);
-                            }
-
+                            driverStandingsByRound.get(ergastStanding.getDriver().getDriverId() + finalRound).setDataFromARound(ergastStanding, maxPosition);
                             constructorStandingByRound.get(ergastStanding.getConstructor().getConstructorId() + finalRound).incrementPointsThisRound(ergastStanding.getPoints());
                         });
                 round++;
@@ -285,16 +279,11 @@ public class AdminServiceImpl implements AdminService {
     private void enrichSingleRoundStandingsWithRoundPoints(Map<String, DriverStandingByRound> driverStandingsByRound, Map<String, ConstructorStandingByRound> constructorStandingByRound) {
         ErgastResponse response = ergastService.getResultsByRound(properties.getCurrentYear(), CURRENT_ROUND);
         if (response.getMrData().getTotal() > 0) {
+            Integer maxPosition = response.getMrData().getRaceTable().getRaces().get(0).getResults().size();
             response.getMrData().getRaceTable().getRaces().get(0).getResults()
                     .forEach(ergastStanding -> {
                         if (driverStandingsByRound != null) {
-                            driverStandingsByRound.get(ergastStanding.getDriver().getDriverId()).setPointsThisRound(ergastStanding.getPoints());
-                            if("Finished".equals(ergastStanding.getStatus())|| ergastStanding.getStatus().contains("Lap")){
-                                driverStandingsByRound.get(ergastStanding.getDriver().getDriverId()).setResultThisRound(ergastStanding.getPosition());
-                            } else {
-                                driverStandingsByRound.get(ergastStanding.getDriver().getDriverId()).setResultThisRound(21);
-                            }
-
+                            driverStandingsByRound.get(ergastStanding.getDriver().getDriverId()).setDataFromARound(ergastStanding, maxPosition);
                         }
                         if (constructorStandingByRound != null) {
                             constructorStandingByRound.get(ergastStanding.getConstructor().getConstructorId()).incrementPointsThisRound(ergastStanding.getPoints());
@@ -563,6 +552,115 @@ public class AdminServiceImpl implements AdminService {
     @Override
     public String setCountdownMode(String mode) {
         return clientService.setCountdownMode(mode);
+    }
+
+    @Override
+    public Boolean generateChart() {
+        generateChartsDriverStandingsByRound();
+        generateChartsConstructorStandingsByRound();
+        return true;
+    }
+
+    private void generateChartsDriverStandingsByRound() {
+        List<DriverStandingByRound> standingsBySeason = driverStandingsByRoundRepository.findAllByIdSeasonOrderByIdRoundAscNameAsc(properties.getCurrentYear());
+        Map<String, ChartSeries> totalPoints = new TreeMap<>();
+        Map<String, ChartSeries> roundPoints = new TreeMap<>();
+        Map<String, ChartSeries> roundResults = new TreeMap<>();
+        Map<String, ChartSeries> gridToResultChartIncludingDnf = new TreeMap<>();
+        Map<String, ChartSeries> gridToResultChartWithoutDnf = new TreeMap<>();
+        standingsBySeason.forEach(standing -> {
+            if (!totalPoints.containsKey(standing.getCode())) {
+                totalPoints.put(standing.getCode(), ChartSeries.builder()
+                        .name(standing.getCode())
+                        .color(standing.getColor())
+                        .series(new ArrayList<>()).build());
+                roundPoints.put(standing.getCode(), ChartSeries.builder()
+                        .name(standing.getCode())
+                        .color(standing.getColor())
+                        .series(new ArrayList<>()).build());
+                roundResults.put(standing.getCode(), ChartSeries.builder()
+                        .name(standing.getCode())
+                        .color(standing.getColor())
+                        .series(new ArrayList<>()).build());
+                gridToResultChartIncludingDnf.put(standing.getCode(), ChartSeries.builder()
+                        .name(standing.getCode())
+                        .color(standing.getColor())
+                        .series(new ArrayList<>())
+                        .series2(new ArrayList<>()).build());
+                gridToResultChartWithoutDnf.put(standing.getCode(), ChartSeries.builder()
+                        .name(standing.getCode())
+                        .color(standing.getColor())
+                        .series(new ArrayList<>())
+                        .series2(new ArrayList<>()).build());
+            }
+            totalPoints.get(standing.getCode()).add(standing.getId().getRound(), standing.getPoints());
+            roundPoints.get(standing.getCode()).add(standing.getId().getRound(), standing.getPointsThisRound());
+            if (standing.getResultThisRound() != null) {
+                roundResults.get(standing.getCode()).add(standing.getId().getRound(), new BigDecimal(standing.getResultThisRound()));
+            }
+
+            if (standing.getResultThisRound() != null) {
+                gridToResultChartIncludingDnf.get(standing.getCode()).add2(standing.getGrid(), standing.getResultThisRoundDnf());
+                if (standing.getResultThisRound() < 21) {
+                    gridToResultChartWithoutDnf.get(standing.getCode()).add2(standing.getGrid(), standing.getResultThisRoundDnf());
+                }
+            }
+        });
+        List<ChartSeries> gridToResultChartIncludingDnfList = new ArrayList<>(gridToResultChartIncludingDnf.values());
+        List<ChartSeries> gridToResultChartWithoutDnfList = new ArrayList<>(gridToResultChartWithoutDnf.values());
+        for (ChartSeries serie : gridToResultChartIncludingDnfList) {
+            serie.calcSeries2Averages();
+        }
+        for (ChartSeries serie : gridToResultChartWithoutDnfList) {
+            serie.calcSeries2Averages();
+        }
+
+        List<JsonRepositoryModel> output = new ArrayList<>();
+        JsonRepositoryModel data1 = JsonRepositoryModel.builder().id("DRIVERS_TOTAL_POINTS")
+                .json(new ArrayList<>(totalPoints.values())).build();
+        JsonRepositoryModel data2 = JsonRepositoryModel.builder().id("DRIVERS_ROUND_POINTS")
+                .json(new ArrayList<>(roundPoints.values())).build();
+        JsonRepositoryModel data3 = JsonRepositoryModel.builder().id("DRIVERS_ROUND_RESULTS")
+                .json(new ArrayList<>(roundResults.values())).build();
+        JsonRepositoryModel data4 = JsonRepositoryModel.builder().id("GRID_TO_RESULT_WITH_DNF")
+                .json(gridToResultChartIncludingDnfList).build();
+        JsonRepositoryModel data5 = JsonRepositoryModel.builder().id("GRID_TO_RESULT_WITHOUT_DNF")
+                .json(gridToResultChartWithoutDnfList).build();
+        output.add(data1);
+        output.add(data2);
+        output.add(data3);
+        output.add(data4);
+        output.add(data5);
+        jsonRepository.saveAll(output);
+    }
+
+    private void generateChartsConstructorStandingsByRound() {
+        List<ConstructorStandingByRound> standingsBySeason = constructorStandingsByRoundRepository.findAllByIdSeasonOrderByIdRoundAscNameAsc(properties.getCurrentYear());
+        Map<String, ChartSeries> totalPoints = new TreeMap<>();
+        Map<String, ChartSeries> roundPoints = new TreeMap<>();
+        standingsBySeason.forEach(standing -> {
+            if (!totalPoints.containsKey(standing.getId().getId())) {
+                totalPoints.put(standing.getId().getId(), ChartSeries.builder()
+                        .name(standing.getName())
+                        .color(standing.getColor())
+                        .series(new ArrayList<>()).build());
+                roundPoints.put(standing.getId().getId(), ChartSeries.builder()
+                        .name(standing.getName())
+                        .color(standing.getColor())
+                        .series(new ArrayList<>()).build());
+            }
+            roundPoints.get(standing.getId().getId()).add(standing.getId().getRound(), standing.getPointsThisRound());
+            totalPoints.get(standing.getId().getId()).add(standing.getId().getRound(), standing.getPoints());
+        });
+
+        List<JsonRepositoryModel> output = new ArrayList<>();
+        JsonRepositoryModel data1 = JsonRepositoryModel.builder().id("CONSTRUCTOR_TOTAL_POINTS")
+                .json(new ArrayList<>(totalPoints.values())).build();
+        JsonRepositoryModel data2 = JsonRepositoryModel.builder().id("CONSTRUCTOR_ROUND_POINTS")
+                .json(new ArrayList<>(roundPoints.values())).build();
+        output.add(data1);
+        output.add(data2);
+        jsonRepository.saveAll(output);
     }
 
 }

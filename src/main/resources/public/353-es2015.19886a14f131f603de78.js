@@ -5955,17 +5955,19 @@ MatSlideToggleModule.ɵinj = /*@__PURE__*/ core/* ɵɵdefineInjector */.cJS({ im
 
 
 
+
+
 const f1_countdown_component_c0 = ["countdown"];
 function F1CountdownComponent_div_13_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div");
-    core/* ɵɵelementStart */.TgZ(1, "div", 14);
-    core/* ɵɵelementStart */.TgZ(2, "div", 15);
+    core/* ɵɵelementStart */.TgZ(1, "div", 15);
+    core/* ɵɵelementStart */.TgZ(2, "div", 16);
     core/* ɵɵtext */._uU(3);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(4, "div", 16);
+    core/* ɵɵelementStart */.TgZ(4, "div", 17);
     core/* ɵɵtext */._uU(5);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(6, "div", 17);
+    core/* ɵɵelementStart */.TgZ(6, "div", 18);
     core/* ɵɵtext */._uU(7);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -5982,7 +5984,7 @@ function F1CountdownComponent_div_13_Template(rf, ctx) { if (rf & 1) {
 function F1CountdownComponent_div_21_ng_template_3_div_4_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div");
     core/* ɵɵelementStart */.TgZ(1, "h1");
-    core/* ɵɵelementStart */.TgZ(2, "span", 28);
+    core/* ɵɵelementStart */.TgZ(2, "span", 29);
     core/* ɵɵtext */._uU(3);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -5995,7 +5997,7 @@ function F1CountdownComponent_div_21_ng_template_3_div_4_Template(rf, ctx) { if 
 function F1CountdownComponent_div_21_ng_template_3_div_5_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div");
     core/* ɵɵelementStart */.TgZ(1, "h1");
-    core/* ɵɵelementStart */.TgZ(2, "span", 28);
+    core/* ɵɵelementStart */.TgZ(2, "span", 29);
     core/* ɵɵtext */._uU(3, "1 day");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -6004,18 +6006,18 @@ function F1CountdownComponent_div_21_ng_template_3_div_5_Template(rf, ctx) { if 
 const f1_countdown_component_c1 = function (a0) { return { leftTime: a0 }; };
 function F1CountdownComponent_div_21_ng_template_3_Template(rf, ctx) { if (rf & 1) {
     const _r15 = core/* ɵɵgetCurrentView */.EpF();
-    core/* ɵɵelementStart */.TgZ(0, "div", 23);
+    core/* ɵɵelementStart */.TgZ(0, "div", 24);
     core/* ɵɵlistener */.NdJ("click", function F1CountdownComponent_div_21_ng_template_3_Template_div_click_0_listener() { core/* ɵɵrestoreView */.CHM(_r15); const ctx_r14 = core/* ɵɵnextContext */.oxw(2); return ctx_r14.countdownWasClicked(1); });
     core/* ɵɵelementStart */.TgZ(1, "h1");
-    core/* ɵɵelementStart */.TgZ(2, "span", 24);
+    core/* ɵɵelementStart */.TgZ(2, "span", 25);
     core/* ɵɵtext */._uU(3);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵtemplate */.YNc(4, F1CountdownComponent_div_21_ng_template_3_div_4_Template, 4, 1, "div", 25);
-    core/* ɵɵtemplate */.YNc(5, F1CountdownComponent_div_21_ng_template_3_div_5_Template, 4, 0, "div", 25);
+    core/* ɵɵtemplate */.YNc(4, F1CountdownComponent_div_21_ng_template_3_div_4_Template, 4, 1, "div", 26);
+    core/* ɵɵtemplate */.YNc(5, F1CountdownComponent_div_21_ng_template_3_div_5_Template, 4, 0, "div", 26);
     core/* ɵɵelementStart */.TgZ(6, "h1");
     core/* ɵɵelementStart */.TgZ(7, "span");
-    core/* ɵɵelement */._UZ(8, "countdown", 26, 27);
+    core/* ɵɵelement */._UZ(8, "countdown", 27, 28);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -6038,7 +6040,7 @@ function F1CountdownComponent_div_21_ng_template_3_Template(rf, ctx) { if (rf & 
 function F1CountdownComponent_div_21_ng_template_5_div_4_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div");
     core/* ɵɵelementStart */.TgZ(1, "h1");
-    core/* ɵɵelementStart */.TgZ(2, "span", 28);
+    core/* ɵɵelementStart */.TgZ(2, "span", 29);
     core/* ɵɵtext */._uU(3);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -6051,7 +6053,7 @@ function F1CountdownComponent_div_21_ng_template_5_div_4_Template(rf, ctx) { if 
 function F1CountdownComponent_div_21_ng_template_5_div_5_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div");
     core/* ɵɵelementStart */.TgZ(1, "h1");
-    core/* ɵɵelementStart */.TgZ(2, "span", 28);
+    core/* ɵɵelementStart */.TgZ(2, "span", 29);
     core/* ɵɵtext */._uU(3, "1 day");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -6059,18 +6061,18 @@ function F1CountdownComponent_div_21_ng_template_5_div_5_Template(rf, ctx) { if 
 } }
 function F1CountdownComponent_div_21_ng_template_5_Template(rf, ctx) { if (rf & 1) {
     const _r20 = core/* ɵɵgetCurrentView */.EpF();
-    core/* ɵɵelementStart */.TgZ(0, "div", 23);
+    core/* ɵɵelementStart */.TgZ(0, "div", 24);
     core/* ɵɵlistener */.NdJ("click", function F1CountdownComponent_div_21_ng_template_5_Template_div_click_0_listener() { core/* ɵɵrestoreView */.CHM(_r20); const ctx_r19 = core/* ɵɵnextContext */.oxw(2); return ctx_r19.countdownWasClicked(2); });
     core/* ɵɵelementStart */.TgZ(1, "h1");
-    core/* ɵɵelementStart */.TgZ(2, "span", 24);
+    core/* ɵɵelementStart */.TgZ(2, "span", 25);
     core/* ɵɵtext */._uU(3);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵtemplate */.YNc(4, F1CountdownComponent_div_21_ng_template_5_div_4_Template, 4, 1, "div", 25);
-    core/* ɵɵtemplate */.YNc(5, F1CountdownComponent_div_21_ng_template_5_div_5_Template, 4, 0, "div", 25);
+    core/* ɵɵtemplate */.YNc(4, F1CountdownComponent_div_21_ng_template_5_div_4_Template, 4, 1, "div", 26);
+    core/* ɵɵtemplate */.YNc(5, F1CountdownComponent_div_21_ng_template_5_div_5_Template, 4, 0, "div", 26);
     core/* ɵɵelementStart */.TgZ(6, "h1");
     core/* ɵɵelementStart */.TgZ(7, "span");
-    core/* ɵɵelement */._UZ(8, "countdown", 26, 27);
+    core/* ɵɵelement */._UZ(8, "countdown", 27, 28);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -6093,7 +6095,7 @@ function F1CountdownComponent_div_21_ng_template_5_Template(rf, ctx) { if (rf & 
 function F1CountdownComponent_div_21_ng_template_7_div_4_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div");
     core/* ɵɵelementStart */.TgZ(1, "h1");
-    core/* ɵɵelementStart */.TgZ(2, "span", 28);
+    core/* ɵɵelementStart */.TgZ(2, "span", 29);
     core/* ɵɵtext */._uU(3);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -6106,7 +6108,7 @@ function F1CountdownComponent_div_21_ng_template_7_div_4_Template(rf, ctx) { if 
 function F1CountdownComponent_div_21_ng_template_7_div_5_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div");
     core/* ɵɵelementStart */.TgZ(1, "h1");
-    core/* ɵɵelementStart */.TgZ(2, "span", 28);
+    core/* ɵɵelementStart */.TgZ(2, "span", 29);
     core/* ɵɵtext */._uU(3, "1 day");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -6114,18 +6116,18 @@ function F1CountdownComponent_div_21_ng_template_7_div_5_Template(rf, ctx) { if 
 } }
 function F1CountdownComponent_div_21_ng_template_7_Template(rf, ctx) { if (rf & 1) {
     const _r25 = core/* ɵɵgetCurrentView */.EpF();
-    core/* ɵɵelementStart */.TgZ(0, "div", 23);
+    core/* ɵɵelementStart */.TgZ(0, "div", 24);
     core/* ɵɵlistener */.NdJ("click", function F1CountdownComponent_div_21_ng_template_7_Template_div_click_0_listener() { core/* ɵɵrestoreView */.CHM(_r25); const ctx_r24 = core/* ɵɵnextContext */.oxw(2); return ctx_r24.countdownWasClicked(3); });
     core/* ɵɵelementStart */.TgZ(1, "h1");
-    core/* ɵɵelementStart */.TgZ(2, "span", 24);
+    core/* ɵɵelementStart */.TgZ(2, "span", 25);
     core/* ɵɵtext */._uU(3);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵtemplate */.YNc(4, F1CountdownComponent_div_21_ng_template_7_div_4_Template, 4, 1, "div", 25);
-    core/* ɵɵtemplate */.YNc(5, F1CountdownComponent_div_21_ng_template_7_div_5_Template, 4, 0, "div", 25);
+    core/* ɵɵtemplate */.YNc(4, F1CountdownComponent_div_21_ng_template_7_div_4_Template, 4, 1, "div", 26);
+    core/* ɵɵtemplate */.YNc(5, F1CountdownComponent_div_21_ng_template_7_div_5_Template, 4, 0, "div", 26);
     core/* ɵɵelementStart */.TgZ(6, "h1");
     core/* ɵɵelementStart */.TgZ(7, "span");
-    core/* ɵɵelement */._UZ(8, "countdown", 26, 27);
+    core/* ɵɵelement */._UZ(8, "countdown", 27, 28);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -6148,7 +6150,7 @@ function F1CountdownComponent_div_21_ng_template_7_Template(rf, ctx) { if (rf & 
 function F1CountdownComponent_div_21_ng_template_9_div_4_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div");
     core/* ɵɵelementStart */.TgZ(1, "h1");
-    core/* ɵɵelementStart */.TgZ(2, "span", 28);
+    core/* ɵɵelementStart */.TgZ(2, "span", 29);
     core/* ɵɵtext */._uU(3);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -6161,7 +6163,7 @@ function F1CountdownComponent_div_21_ng_template_9_div_4_Template(rf, ctx) { if 
 function F1CountdownComponent_div_21_ng_template_9_div_5_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div");
     core/* ɵɵelementStart */.TgZ(1, "h1");
-    core/* ɵɵelementStart */.TgZ(2, "span", 28);
+    core/* ɵɵelementStart */.TgZ(2, "span", 29);
     core/* ɵɵtext */._uU(3, "1 day");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -6169,18 +6171,18 @@ function F1CountdownComponent_div_21_ng_template_9_div_5_Template(rf, ctx) { if 
 } }
 function F1CountdownComponent_div_21_ng_template_9_Template(rf, ctx) { if (rf & 1) {
     const _r30 = core/* ɵɵgetCurrentView */.EpF();
-    core/* ɵɵelementStart */.TgZ(0, "div", 23);
+    core/* ɵɵelementStart */.TgZ(0, "div", 24);
     core/* ɵɵlistener */.NdJ("click", function F1CountdownComponent_div_21_ng_template_9_Template_div_click_0_listener() { core/* ɵɵrestoreView */.CHM(_r30); const ctx_r29 = core/* ɵɵnextContext */.oxw(2); return ctx_r29.countdownWasClicked(4); });
     core/* ɵɵelementStart */.TgZ(1, "h1");
-    core/* ɵɵelementStart */.TgZ(2, "span", 24);
+    core/* ɵɵelementStart */.TgZ(2, "span", 25);
     core/* ɵɵtext */._uU(3);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵtemplate */.YNc(4, F1CountdownComponent_div_21_ng_template_9_div_4_Template, 4, 1, "div", 25);
-    core/* ɵɵtemplate */.YNc(5, F1CountdownComponent_div_21_ng_template_9_div_5_Template, 4, 0, "div", 25);
+    core/* ɵɵtemplate */.YNc(4, F1CountdownComponent_div_21_ng_template_9_div_4_Template, 4, 1, "div", 26);
+    core/* ɵɵtemplate */.YNc(5, F1CountdownComponent_div_21_ng_template_9_div_5_Template, 4, 0, "div", 26);
     core/* ɵɵelementStart */.TgZ(6, "h1");
     core/* ɵɵelementStart */.TgZ(7, "span");
-    core/* ɵɵelement */._UZ(8, "countdown", 26, 27);
+    core/* ɵɵelement */._UZ(8, "countdown", 27, 28);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -6200,78 +6202,89 @@ function F1CountdownComponent_div_21_ng_template_9_Template(rf, ctx) { if (rf & 
     core/* ɵɵadvance */.xp6(3);
     core/* ɵɵproperty */.Q6J("config", core/* ɵɵpureFunction1 */.VKq(4, f1_countdown_component_c1, ctx_r8.qualifyingSeconds));
 } }
-function F1CountdownComponent_div_21_ng_template_11_div_0_div_4_Template(rf, ctx) { if (rf & 1) {
+function F1CountdownComponent_div_21_ng_template_11_mat_slide_toggle_0_Template(rf, ctx) { if (rf & 1) {
+    const _r34 = core/* ɵɵgetCurrentView */.EpF();
+    core/* ɵɵelementStart */.TgZ(0, "mat-slide-toggle", 32);
+    core/* ɵɵlistener */.NdJ("change", function F1CountdownComponent_div_21_ng_template_11_mat_slide_toggle_0_Template_mat_slide_toggle_change_0_listener($event) { core/* ɵɵrestoreView */.CHM(_r34); const ctx_r33 = core/* ɵɵnextContext */.oxw(3); return ctx_r33.toggleMusic($event); })("ngModelChange", function F1CountdownComponent_div_21_ng_template_11_mat_slide_toggle_0_Template_mat_slide_toggle_ngModelChange_0_listener($event) { core/* ɵɵrestoreView */.CHM(_r34); const ctx_r35 = core/* ɵɵnextContext */.oxw(3); return ctx_r35.isPlayingMusic = $event; });
+    core/* ɵɵelement */._UZ(1, "i", 33);
+    core/* ɵɵelementEnd */.qZA();
+} if (rf & 2) {
+    const ctx_r31 = core/* ɵɵnextContext */.oxw(3);
+    core/* ɵɵproperty */.Q6J("ngModel", ctx_r31.isPlayingMusic);
+} }
+function F1CountdownComponent_div_21_ng_template_11_div_1_div_4_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div");
     core/* ɵɵelementStart */.TgZ(1, "h1");
-    core/* ɵɵelementStart */.TgZ(2, "span", 28);
+    core/* ɵɵelementStart */.TgZ(2, "span", 29);
     core/* ɵɵtext */._uU(3);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const ctx_r32 = core/* ɵɵnextContext */.oxw(4);
+    const ctx_r36 = core/* ɵɵnextContext */.oxw(4);
     core/* ɵɵadvance */.xp6(3);
-    core/* ɵɵtextInterpolate1 */.hij("", ctx_r32.raceDays, " days");
+    core/* ɵɵtextInterpolate1 */.hij("", ctx_r36.raceDays, " days");
 } }
-function F1CountdownComponent_div_21_ng_template_11_div_0_div_5_Template(rf, ctx) { if (rf & 1) {
+function F1CountdownComponent_div_21_ng_template_11_div_1_div_5_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div");
     core/* ɵɵelementStart */.TgZ(1, "h1");
-    core/* ɵɵelementStart */.TgZ(2, "span", 28);
+    core/* ɵɵelementStart */.TgZ(2, "span", 29);
     core/* ɵɵtext */._uU(3, "1 day");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } }
-function F1CountdownComponent_div_21_ng_template_11_div_0_Template(rf, ctx) { if (rf & 1) {
-    const _r36 = core/* ɵɵgetCurrentView */.EpF();
-    core/* ɵɵelementStart */.TgZ(0, "div", 23);
-    core/* ɵɵlistener */.NdJ("click", function F1CountdownComponent_div_21_ng_template_11_div_0_Template_div_click_0_listener() { core/* ɵɵrestoreView */.CHM(_r36); const ctx_r35 = core/* ɵɵnextContext */.oxw(3); return ctx_r35.countdownWasClicked(5); });
+function F1CountdownComponent_div_21_ng_template_11_div_1_Template(rf, ctx) { if (rf & 1) {
+    const _r40 = core/* ɵɵgetCurrentView */.EpF();
+    core/* ɵɵelementStart */.TgZ(0, "div", 24);
+    core/* ɵɵlistener */.NdJ("click", function F1CountdownComponent_div_21_ng_template_11_div_1_Template_div_click_0_listener() { core/* ɵɵrestoreView */.CHM(_r40); const ctx_r39 = core/* ɵɵnextContext */.oxw(3); return ctx_r39.countdownWasClicked(5); });
     core/* ɵɵelementStart */.TgZ(1, "h1");
-    core/* ɵɵelementStart */.TgZ(2, "span", 24);
+    core/* ɵɵelementStart */.TgZ(2, "span", 25);
     core/* ɵɵtext */._uU(3);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵtemplate */.YNc(4, F1CountdownComponent_div_21_ng_template_11_div_0_div_4_Template, 4, 1, "div", 25);
-    core/* ɵɵtemplate */.YNc(5, F1CountdownComponent_div_21_ng_template_11_div_0_div_5_Template, 4, 0, "div", 25);
+    core/* ɵɵtemplate */.YNc(4, F1CountdownComponent_div_21_ng_template_11_div_1_div_4_Template, 4, 1, "div", 26);
+    core/* ɵɵtemplate */.YNc(5, F1CountdownComponent_div_21_ng_template_11_div_1_div_5_Template, 4, 0, "div", 26);
     core/* ɵɵelementStart */.TgZ(6, "h1");
     core/* ɵɵelementStart */.TgZ(7, "span");
-    core/* ɵɵelementStart */.TgZ(8, "countdown", 30, 27);
-    core/* ɵɵlistener */.NdJ("event", function F1CountdownComponent_div_21_ng_template_11_div_0_Template_countdown_event_8_listener($event) { core/* ɵɵrestoreView */.CHM(_r36); const ctx_r37 = core/* ɵɵnextContext */.oxw(3); return ctx_r37.itsRaceTime($event); });
-    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelement */._UZ(8, "countdown", 27, 28);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const ctx_r31 = core/* ɵɵnextContext */.oxw(3);
+    const ctx_r32 = core/* ɵɵnextContext */.oxw(3);
     core/* ɵɵadvance */.xp6(3);
-    core/* ɵɵtextInterpolate1 */.hij(" ", ctx_r31.calendarData.f1Calendar.raceName, " in: ");
+    core/* ɵɵtextInterpolate1 */.hij(" ", ctx_r32.calendarData.f1Calendar.raceName, " in: ");
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r31.raceDays > 1);
+    core/* ɵɵproperty */.Q6J("ngIf", ctx_r32.raceDays > 1);
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r31.raceDays == 1);
+    core/* ɵɵproperty */.Q6J("ngIf", ctx_r32.raceDays == 1);
     core/* ɵɵadvance */.xp6(3);
-    core/* ɵɵproperty */.Q6J("config", core/* ɵɵpureFunction1 */.VKq(4, f1_countdown_component_c1, ctx_r31.raceSeconds));
+    core/* ɵɵproperty */.Q6J("config", core/* ɵɵpureFunction1 */.VKq(4, f1_countdown_component_c1, ctx_r32.raceSeconds));
 } }
 function F1CountdownComponent_div_21_ng_template_11_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵtemplate */.YNc(0, F1CountdownComponent_div_21_ng_template_11_div_0_Template, 10, 6, "div", 29);
-    core/* ɵɵelement */._UZ(1, "br");
+    core/* ɵɵtemplate */.YNc(0, F1CountdownComponent_div_21_ng_template_11_mat_slide_toggle_0_Template, 2, 1, "mat-slide-toggle", 30);
+    core/* ɵɵtemplate */.YNc(1, F1CountdownComponent_div_21_ng_template_11_div_1_Template, 10, 6, "div", 31);
     core/* ɵɵelement */._UZ(2, "br");
     core/* ɵɵelement */._UZ(3, "br");
     core/* ɵɵelement */._UZ(4, "br");
     core/* ɵɵelement */._UZ(5, "br");
+    core/* ɵɵelement */._UZ(6, "br");
 } if (rf & 2) {
     const ctx_r9 = core/* ɵɵnextContext */.oxw(2);
+    core/* ɵɵproperty */.Q6J("ngIf", ctx_r9.itsTime);
+    core/* ɵɵadvance */.xp6(1);
     core/* ɵɵproperty */.Q6J("ngIf", ctx_r9.calendarData != null);
 } }
 function F1CountdownComponent_div_21_ng_template_13_div_0_Template(rf, ctx) { if (rf & 1) {
-    const _r40 = core/* ɵɵgetCurrentView */.EpF();
+    const _r43 = core/* ɵɵgetCurrentView */.EpF();
     core/* ɵɵelementStart */.TgZ(0, "div");
-    core/* ɵɵelementStart */.TgZ(1, "div", 31);
+    core/* ɵɵelementStart */.TgZ(1, "div", 34);
     core/* ɵɵelementStart */.TgZ(2, "span");
     core/* ɵɵtext */._uU(3, "My time ");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(4, "mat-slide-toggle", 32);
-    core/* ɵɵlistener */.NdJ("ngModelChange", function F1CountdownComponent_div_21_ng_template_13_div_0_Template_mat_slide_toggle_ngModelChange_4_listener($event) { core/* ɵɵrestoreView */.CHM(_r40); const ctx_r39 = core/* ɵɵnextContext */.oxw(3); return ctx_r39.isGmt = $event; });
+    core/* ɵɵelementStart */.TgZ(4, "mat-slide-toggle", 35);
+    core/* ɵɵlistener */.NdJ("ngModelChange", function F1CountdownComponent_div_21_ng_template_13_div_0_Template_mat_slide_toggle_ngModelChange_4_listener($event) { core/* ɵɵrestoreView */.CHM(_r43); const ctx_r42 = core/* ɵɵnextContext */.oxw(3); return ctx_r42.isGmt = $event; });
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(5, "span");
     core/* ɵɵtext */._uU(6, " GMT time");
@@ -6279,23 +6292,23 @@ function F1CountdownComponent_div_21_ng_template_13_div_0_Template(rf, ctx) { if
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(7, "div");
     core/* ɵɵelementStart */.TgZ(8, "h1");
-    core/* ɵɵelementStart */.TgZ(9, "span", 33);
+    core/* ɵɵelementStart */.TgZ(9, "span", 36);
     core/* ɵɵtext */._uU(10);
     core/* ɵɵpipe */.ALo(11, "date");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(12, "span", 33);
+    core/* ɵɵelementStart */.TgZ(12, "span", 36);
     core/* ɵɵtext */._uU(13);
     core/* ɵɵpipe */.ALo(14, "date");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(15, "span", 33);
+    core/* ɵɵelementStart */.TgZ(15, "span", 36);
     core/* ɵɵtext */._uU(16);
     core/* ɵɵpipe */.ALo(17, "date");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(18, "span", 33);
+    core/* ɵɵelementStart */.TgZ(18, "span", 36);
     core/* ɵɵtext */._uU(19);
     core/* ɵɵpipe */.ALo(20, "date");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(21, "span", 33);
+    core/* ɵɵelementStart */.TgZ(21, "span", 36);
     core/* ɵɵtext */._uU(22);
     core/* ɵɵpipe */.ALo(23, "date");
     core/* ɵɵelementEnd */.qZA();
@@ -6303,22 +6316,22 @@ function F1CountdownComponent_div_21_ng_template_13_div_0_Template(rf, ctx) { if
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const ctx_r38 = core/* ɵɵnextContext */.oxw(3);
+    const ctx_r41 = core/* ɵɵnextContext */.oxw(3);
     core/* ɵɵadvance */.xp6(4);
-    core/* ɵɵproperty */.Q6J("ngModel", ctx_r38.isGmt);
+    core/* ɵɵproperty */.Q6J("ngModel", ctx_r41.isGmt);
     core/* ɵɵadvance */.xp6(6);
-    core/* ɵɵtextInterpolate2 */.AsE(" ", ctx_r38.calendarData.f1Calendar.practice1Name, " : ", core/* ɵɵpipeBind2 */.xi3(11, 11, ctx_r38.checkTime(ctx_r38.calendarData.f1Calendar.practice1), "EEEE, HH:mm"), "");
+    core/* ɵɵtextInterpolate2 */.AsE(" ", ctx_r41.calendarData.f1Calendar.practice1Name, " : ", core/* ɵɵpipeBind2 */.xi3(11, 11, ctx_r41.checkTime(ctx_r41.calendarData.f1Calendar.practice1), "EEEE, HH:mm"), "");
     core/* ɵɵadvance */.xp6(3);
-    core/* ɵɵtextInterpolate2 */.AsE(" ", ctx_r38.calendarData.f1Calendar.practice2Name, " : ", core/* ɵɵpipeBind2 */.xi3(14, 14, ctx_r38.checkTime(ctx_r38.calendarData.f1Calendar.practice2), "EEEE, HH:mm"), "");
+    core/* ɵɵtextInterpolate2 */.AsE(" ", ctx_r41.calendarData.f1Calendar.practice2Name, " : ", core/* ɵɵpipeBind2 */.xi3(14, 14, ctx_r41.checkTime(ctx_r41.calendarData.f1Calendar.practice2), "EEEE, HH:mm"), "");
     core/* ɵɵadvance */.xp6(3);
-    core/* ɵɵtextInterpolate2 */.AsE(" ", ctx_r38.calendarData.f1Calendar.practice3Name, " : ", core/* ɵɵpipeBind2 */.xi3(17, 17, ctx_r38.checkTime(ctx_r38.calendarData.f1Calendar.practice3), "EEEE, HH:mm"), "");
+    core/* ɵɵtextInterpolate2 */.AsE(" ", ctx_r41.calendarData.f1Calendar.practice3Name, " : ", core/* ɵɵpipeBind2 */.xi3(17, 17, ctx_r41.checkTime(ctx_r41.calendarData.f1Calendar.practice3), "EEEE, HH:mm"), "");
     core/* ɵɵadvance */.xp6(3);
-    core/* ɵɵtextInterpolate2 */.AsE(" ", ctx_r38.calendarData.f1Calendar.qualifyingName, " : ", core/* ɵɵpipeBind2 */.xi3(20, 20, ctx_r38.checkTime(ctx_r38.calendarData.f1Calendar.qualifying), "EEEE, H:mm"), "");
+    core/* ɵɵtextInterpolate2 */.AsE(" ", ctx_r41.calendarData.f1Calendar.qualifyingName, " : ", core/* ɵɵpipeBind2 */.xi3(20, 20, ctx_r41.checkTime(ctx_r41.calendarData.f1Calendar.qualifying), "EEEE, H:mm"), "");
     core/* ɵɵadvance */.xp6(3);
-    core/* ɵɵtextInterpolate2 */.AsE(" ", ctx_r38.calendarData.f1Calendar.raceName, " : ", core/* ɵɵpipeBind2 */.xi3(23, 23, ctx_r38.checkTime(ctx_r38.calendarData.f1Calendar.race), "EEEE, H:mm"), "");
+    core/* ɵɵtextInterpolate2 */.AsE(" ", ctx_r41.calendarData.f1Calendar.raceName, " : ", core/* ɵɵpipeBind2 */.xi3(23, 23, ctx_r41.checkTime(ctx_r41.calendarData.f1Calendar.race), "EEEE, H:mm"), "");
 } }
 function F1CountdownComponent_div_21_ng_template_13_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵtemplate */.YNc(0, F1CountdownComponent_div_21_ng_template_13_div_0_Template, 24, 26, "div", 25);
+    core/* ɵɵtemplate */.YNc(0, F1CountdownComponent_div_21_ng_template_13_div_0_Template, 24, 26, "div", 26);
     core/* ɵɵelement */._UZ(1, "br");
     core/* ɵɵelement */._UZ(2, "br");
     core/* ɵɵelement */._UZ(3, "br");
@@ -6327,28 +6340,28 @@ function F1CountdownComponent_div_21_ng_template_13_Template(rf, ctx) { if (rf &
     core/* ɵɵproperty */.Q6J("ngIf", ctx_r10.calendarData != null);
 } }
 function F1CountdownComponent_div_21_Template(rf, ctx) { if (rf & 1) {
-    const _r42 = core/* ɵɵgetCurrentView */.EpF();
-    core/* ɵɵelementStart */.TgZ(0, "div", 18);
-    core/* ɵɵlistener */.NdJ("touchstart", function F1CountdownComponent_div_21_Template_div_touchstart_0_listener($event) { core/* ɵɵrestoreView */.CHM(_r42); const ctx_r41 = core/* ɵɵnextContext */.oxw(); return ctx_r41.touchstart($event); })("touchend", function F1CountdownComponent_div_21_Template_div_touchend_0_listener($event) { core/* ɵɵrestoreView */.CHM(_r42); const ctx_r43 = core/* ɵɵnextContext */.oxw(); return ctx_r43.touchend($event); });
-    core/* ɵɵelementStart */.TgZ(1, "mat-tab-group", 19);
-    core/* ɵɵlistener */.NdJ("selectedIndexChange", function F1CountdownComponent_div_21_Template_mat_tab_group_selectedIndexChange_1_listener($event) { core/* ɵɵrestoreView */.CHM(_r42); const ctx_r44 = core/* ɵɵnextContext */.oxw(); return ctx_r44.selectedTab = $event; })("selectedTabChange", function F1CountdownComponent_div_21_Template_mat_tab_group_selectedTabChange_1_listener($event) { core/* ɵɵrestoreView */.CHM(_r42); const ctx_r45 = core/* ɵɵnextContext */.oxw(); return ctx_r45.tabChanged($event); });
-    core/* ɵɵelementStart */.TgZ(2, "mat-tab", 20);
-    core/* ɵɵtemplate */.YNc(3, F1CountdownComponent_div_21_ng_template_3_Template, 15, 6, "ng-template", 21);
+    const _r45 = core/* ɵɵgetCurrentView */.EpF();
+    core/* ɵɵelementStart */.TgZ(0, "div", 19);
+    core/* ɵɵlistener */.NdJ("touchstart", function F1CountdownComponent_div_21_Template_div_touchstart_0_listener($event) { core/* ɵɵrestoreView */.CHM(_r45); const ctx_r44 = core/* ɵɵnextContext */.oxw(); return ctx_r44.touchstart($event); })("touchend", function F1CountdownComponent_div_21_Template_div_touchend_0_listener($event) { core/* ɵɵrestoreView */.CHM(_r45); const ctx_r46 = core/* ɵɵnextContext */.oxw(); return ctx_r46.touchend($event); });
+    core/* ɵɵelementStart */.TgZ(1, "mat-tab-group", 20);
+    core/* ɵɵlistener */.NdJ("selectedIndexChange", function F1CountdownComponent_div_21_Template_mat_tab_group_selectedIndexChange_1_listener($event) { core/* ɵɵrestoreView */.CHM(_r45); const ctx_r47 = core/* ɵɵnextContext */.oxw(); return ctx_r47.selectedTab = $event; })("selectedTabChange", function F1CountdownComponent_div_21_Template_mat_tab_group_selectedTabChange_1_listener($event) { core/* ɵɵrestoreView */.CHM(_r45); const ctx_r48 = core/* ɵɵnextContext */.oxw(); return ctx_r48.tabChanged($event); });
+    core/* ɵɵelementStart */.TgZ(2, "mat-tab", 21);
+    core/* ɵɵtemplate */.YNc(3, F1CountdownComponent_div_21_ng_template_3_Template, 15, 6, "ng-template", 22);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(4, "mat-tab", 20);
-    core/* ɵɵtemplate */.YNc(5, F1CountdownComponent_div_21_ng_template_5_Template, 15, 6, "ng-template", 21);
+    core/* ɵɵelementStart */.TgZ(4, "mat-tab", 21);
+    core/* ɵɵtemplate */.YNc(5, F1CountdownComponent_div_21_ng_template_5_Template, 15, 6, "ng-template", 22);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(6, "mat-tab", 20);
-    core/* ɵɵtemplate */.YNc(7, F1CountdownComponent_div_21_ng_template_7_Template, 15, 6, "ng-template", 21);
+    core/* ɵɵelementStart */.TgZ(6, "mat-tab", 21);
+    core/* ɵɵtemplate */.YNc(7, F1CountdownComponent_div_21_ng_template_7_Template, 15, 6, "ng-template", 22);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(8, "mat-tab", 20);
-    core/* ɵɵtemplate */.YNc(9, F1CountdownComponent_div_21_ng_template_9_Template, 15, 6, "ng-template", 21);
+    core/* ɵɵelementStart */.TgZ(8, "mat-tab", 21);
+    core/* ɵɵtemplate */.YNc(9, F1CountdownComponent_div_21_ng_template_9_Template, 15, 6, "ng-template", 22);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(10, "mat-tab", 20);
-    core/* ɵɵtemplate */.YNc(11, F1CountdownComponent_div_21_ng_template_11_Template, 6, 1, "ng-template", 21);
+    core/* ɵɵelementStart */.TgZ(10, "mat-tab", 21);
+    core/* ɵɵtemplate */.YNc(11, F1CountdownComponent_div_21_ng_template_11_Template, 7, 2, "ng-template", 22);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(12, "mat-tab", 22);
-    core/* ɵɵtemplate */.YNc(13, F1CountdownComponent_div_21_ng_template_13_Template, 4, 1, "ng-template", 21);
+    core/* ɵɵelementStart */.TgZ(12, "mat-tab", 23);
+    core/* ɵɵtemplate */.YNc(13, F1CountdownComponent_div_21_ng_template_13_Template, 4, 1, "ng-template", 22);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -6367,47 +6380,59 @@ function F1CountdownComponent_div_21_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵadvance */.xp6(2);
     core/* ɵɵpropertyInterpolate */.s9C("label", ctx_r2.calendarData.f1Calendar.raceName);
 } }
-function F1CountdownComponent_div_22_div_1_Template(rf, ctx) { if (rf & 1) {
+function F1CountdownComponent_div_22_mat_slide_toggle_2_Template(rf, ctx) { if (rf & 1) {
+    const _r53 = core/* ɵɵgetCurrentView */.EpF();
+    core/* ɵɵelementStart */.TgZ(0, "mat-slide-toggle", 32);
+    core/* ɵɵlistener */.NdJ("change", function F1CountdownComponent_div_22_mat_slide_toggle_2_Template_mat_slide_toggle_change_0_listener($event) { core/* ɵɵrestoreView */.CHM(_r53); const ctx_r52 = core/* ɵɵnextContext */.oxw(2); return ctx_r52.toggleMusic($event); })("ngModelChange", function F1CountdownComponent_div_22_mat_slide_toggle_2_Template_mat_slide_toggle_ngModelChange_0_listener($event) { core/* ɵɵrestoreView */.CHM(_r53); const ctx_r54 = core/* ɵɵnextContext */.oxw(2); return ctx_r54.isPlayingMusic = $event; });
+    core/* ɵɵelement */._UZ(1, "i", 33);
+    core/* ɵɵelementEnd */.qZA();
+} if (rf & 2) {
+    const ctx_r49 = core/* ɵɵnextContext */.oxw(2);
+    core/* ɵɵproperty */.Q6J("ngModel", ctx_r49.isPlayingMusic);
+} }
+function F1CountdownComponent_div_22_div_3_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div");
     core/* ɵɵelementStart */.TgZ(1, "h1");
-    core/* ɵɵelementStart */.TgZ(2, "span", 24);
-    core/* ɵɵtext */._uU(3, " Next spring... ");
+    core/* ɵɵelementStart */.TgZ(2, "span", 25);
+    core/* ɵɵtext */._uU(3, " Farewell Gimi ");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(4, "div", 35);
-    core/* ɵɵelement */._UZ(5, "img", 36);
+    core/* ɵɵelementStart */.TgZ(4, "div", 39);
+    core/* ɵɵelement */._UZ(5, "img", 40);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } }
-function F1CountdownComponent_div_22_div_2_Template(rf, ctx) { if (rf & 1) {
+function F1CountdownComponent_div_22_div_4_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div");
-    core/* ɵɵelementStart */.TgZ(1, "h1");
-    core/* ɵɵelementStart */.TgZ(2, "span", 24);
-    core/* ɵɵtext */._uU(3, " The Champion ");
-    core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(4, "div", 35);
-    core/* ɵɵelement */._UZ(5, "img", 37);
+    core/* ɵɵelementStart */.TgZ(1, "div", 41);
+    core/* ɵɵelement */._UZ(2, "iframe", 42);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } }
 function F1CountdownComponent_div_22_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "div", 34);
-    core/* ɵɵtemplate */.YNc(1, F1CountdownComponent_div_22_div_1_Template, 6, 0, "div", 25);
-    core/* ɵɵtemplate */.YNc(2, F1CountdownComponent_div_22_div_2_Template, 6, 0, "div", 25);
+    core/* ɵɵelementStart */.TgZ(0, "div", 37);
+    core/* ɵɵelementStart */.TgZ(1, "div", 38);
+    core/* ɵɵtemplate */.YNc(2, F1CountdownComponent_div_22_mat_slide_toggle_2_Template, 2, 1, "mat-slide-toggle", 30);
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵtemplate */.YNc(3, F1CountdownComponent_div_22_div_3_Template, 6, 0, "div", 26);
+    core/* ɵɵtemplate */.YNc(4, F1CountdownComponent_div_22_div_4_Template, 3, 0, "div", 26);
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
     const ctx_r3 = core/* ɵɵnextContext */.oxw();
+    core/* ɵɵadvance */.xp6(2);
+    core/* ɵɵproperty */.Q6J("ngIf", ctx_r3.itsTime);
     core/* ɵɵadvance */.xp6(1);
     core/* ɵɵproperty */.Q6J("ngIf", ctx_r3.calendarData.mode == 1);
     core/* ɵɵadvance */.xp6(1);
     core/* ɵɵproperty */.Q6J("ngIf", ctx_r3.calendarData.mode == 2);
 } }
 class F1CountdownComponent {
-    constructor(restService, utilityService, toastr) {
+    constructor(restService, utilityService, toastr, router, route) {
         this.restService = restService;
         this.utilityService = utilityService;
         this.toastr = toastr;
+        this.router = router;
+        this.route = route;
         this.raceDays = 0;
         this.raceSeconds = 0;
         this.qualifyingDays = 0;
@@ -6419,16 +6444,17 @@ class F1CountdownComponent {
         this.FP1Days = 0;
         this.FP1Seconds = 0;
         this.selectedTab = 4;
-        this.isNotPlaying = true;
         this.unknown = false;
         this.isGmt = false;
+        this.isPlayingMusic = false;
+        this.itsTime = false;
         this.timezoneOffset = 0;
-        this.utilityService.setTitleDefaultPage("Season is over");
+        this.utilityService.setTitleDefaultPage("Season is over. Next race - March 20th 2022");
         this.getCountdownData(0);
         this.setTimezoneOffset();
         this.utilityService.reloadPosts(1);
-        this.selectedTab = 4;
-        this.isNotPlaying = true;
+        this.selectedTab = this.getSelectedTab();
+        //this.runVerstappenMusicOnStart();
     }
     getCountdownData(mode) {
         this.observable = this.restService.getCountdownData(mode);
@@ -6528,25 +6554,7 @@ class F1CountdownComponent {
     }
     tabChanged(tabChangeEvent) {
         this.getCountdownData(tabChangeEvent.index + 1);
-    }
-    itsRaceTime(cevent) {
-        if (cevent.action == 'done' && this.raceSeconds > 0) {
-            var iframe = document.createElement('iframe');
-            iframe.style.display = "none";
-            iframe.src = 'https://www.youtube.com/embed/jKlL6wvGrbc?autoplay=1';
-            iframe.allow = 'autoplay; encrypted-media';
-            document.body.appendChild(iframe);
-        }
-    }
-    startMusic(raceDays, raceSeconds) {
-        if (this.isNotPlaying && raceDays == 0 && this.raceSeconds < 3600) {
-            this.isNotPlaying = false;
-            var iframe = document.createElement('iframe');
-            iframe.src = 'https://www.youtube.com/embed/jKlL6wvGrbc?autoplay=1';
-            iframe.allow = 'autoplay; encrypted-media';
-            iframe.id = 'hidden_iframe';
-            document.body.appendChild(iframe);
-        }
+        this.updateUrl();
     }
     touchstart(e) {
         const coord = [e.changedTouches[0].clientX, e.changedTouches[0].clientY];
@@ -6590,31 +6598,102 @@ class F1CountdownComponent {
             return myDate;
         }
     }
+    updateUrl() {
+        const queryParams = { tab: this.selectedTab + 1 };
+        this.router.navigate([], {
+            relativeTo: this.route,
+            queryParams: queryParams
+        });
+    }
+    getSelectedTab() {
+        let tab = this.route.snapshot.queryParamMap.get('tab');
+        if (tab == undefined) {
+            return 4;
+        }
+        else {
+            return Number(tab) - 1;
+        }
+    }
+    toggleMusic(event) {
+        localStorage.setItem('f1-play-music', String(event.checked));
+        this.runMusic(event.checked);
+    }
+    runMusicOnStart() {
+        if (this.raceSeconds < 3600) {
+            this.itsTime = true;
+            if (localStorage.getItem('f1-play-music') == undefined) {
+                localStorage.setItem('f1-play-music', String(false));
+                this.isPlayingMusic = false;
+            }
+            else {
+                this.isPlayingMusic = localStorage.getItem('f1-play-music') === 'true';
+            }
+            this.runMusic(this.isPlayingMusic);
+        }
+        else {
+            this.itsTime = false;
+            this.isPlayingMusic = false;
+        }
+    }
+    runVerstappenMusicOnStart() {
+        this.itsTime = true;
+        if (localStorage.getItem('f1-play-music') == undefined) {
+            localStorage.setItem('f1-play-music', String(true));
+            this.isPlayingMusic = true;
+        }
+        else {
+            this.isPlayingMusic = localStorage.getItem('f1-play-music') === 'true';
+        }
+        this.runMusic(this.isPlayingMusic);
+    }
+    runMusic(bool) {
+        if (bool) {
+            var element = document.getElementById("youtube1");
+            if (element == null) {
+                var iframe = document.createElement('iframe');
+                iframe.style.display = "none";
+                iframe.id = 'youtube1';
+                //buildUp
+                // iframe.src = 'https://www.youtube.com/embed/jKlL6wvGrbc?autoplay=1';
+                //superMax
+                iframe.src = 'https://www.youtube.com/embed/ZBJCgrrQhx4?start=10&autoplay=1';
+                iframe.allow = 'autoplay; encrypted-media';
+                document.body.appendChild(iframe);
+            }
+        }
+        else {
+            var element = document.getElementById("youtube1");
+            if (element != null) {
+                var frame = document.getElementById("youtube1");
+                frame.parentNode.removeChild(frame);
+            }
+        }
+    }
 }
-F1CountdownComponent.ɵfac = function F1CountdownComponent_Factory(t) { return new (t || F1CountdownComponent)(core/* ɵɵdirectiveInject */.Y36(rest_service/* RestService */.v), core/* ɵɵdirectiveInject */.Y36(utility_service/* UtilityService */.t), core/* ɵɵdirectiveInject */.Y36(ngx_toastr/* ToastrService */._W)); };
+F1CountdownComponent.ɵfac = function F1CountdownComponent_Factory(t) { return new (t || F1CountdownComponent)(core/* ɵɵdirectiveInject */.Y36(rest_service/* RestService */.v), core/* ɵɵdirectiveInject */.Y36(utility_service/* UtilityService */.t), core/* ɵɵdirectiveInject */.Y36(ngx_toastr/* ToastrService */._W), core/* ɵɵdirectiveInject */.Y36(router/* Router */.F0), core/* ɵɵdirectiveInject */.Y36(router/* ActivatedRoute */.gz)); };
 F1CountdownComponent.ɵcmp = /*@__PURE__*/ core/* ɵɵdefineComponent */.Xpm({ type: F1CountdownComponent, selectors: [["f1-countdown-cmp"]], viewQuery: function F1CountdownComponent_Query(rf, ctx) { if (rf & 1) {
         core/* ɵɵviewQuery */.Gf(f1_countdown_component_c0, 5);
     } if (rf & 2) {
         let _t;
         core/* ɵɵqueryRefresh */.iGM(_t = core/* ɵɵloadQuery */.CRH()) && (ctx.countdown = _t.first);
-    } }, decls: 23, vars: 5, consts: [["mode", "side", "position", "end", 1, "example-sidenav", 3, "opened", "openedChange"], ["drawer", ""], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area", 3, "ngModel", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "post-comment-button", 3, "click"], [4, "ngFor", "ngForOf"], [1, "fixed-button"], ["type", "fixed-plugin", "mat-button", "", 3, "click"], [1, "fa", "fa-commenting-o", "fa-2x"], [1, "bg-white", "height-fill-screen"], ["class", "\u201Dmat-content\u201D", 3, "touchstart", "touchend", 4, "ngIf"], ["class", "\u201Dmat-content\u201D", 4, "ngIf"], [1, "basic-comment"], [1, "one"], [1, "two"], [1, "basic-comment-body"], [1, "\u201Dmat-content\u201D", 3, "touchstart", "touchend"], [3, "selectedIndex", "selectedIndexChange", "selectedTabChange"], [3, "label"], ["matTabContent", ""], ["label", "Start times"], [3, "click"], [1, "countdown-desc", "f1-glow"], [4, "ngIf"], [3, "config"], ["cd", ""], [1, "count-down"], [3, "click", 4, "ngIf"], [3, "config", "event"], [1, "div-padded-always-1rem"], [3, "ngModel", "ngModelChange"], [1, "countdown-desc-2"], [1, "\u201Dmat-content\u201D"], [1, "icon-big", "text-center", "icon-warning"], ["src", "assets/img/feel.jpg", 1, "div-height-70vh"], ["src", "assets/img/max-super.gif", 1, "div-height-70vh"]], template: function F1CountdownComponent_Template(rf, ctx) { if (rf & 1) {
-        const _r48 = core/* ɵɵgetCurrentView */.EpF();
+    } }, decls: 23, vars: 5, consts: [[1, "mat-drawer-no-overflow"], ["mode", "side", "position", "end", 1, "example-sidenav", 3, "opened", "openedChange"], ["drawer", ""], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area", 3, "ngModel", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "post-comment-button", 3, "click"], [4, "ngFor", "ngForOf"], [1, "fixed-button"], ["type", "fixed-plugin", "mat-button", "", 3, "click"], [1, "fa", "fa-commenting-o", "fa-2x"], [1, "bg-white", "height-fill-screen"], ["class", "mat-content", 3, "touchstart", "touchend", 4, "ngIf"], ["class", "\u201Dmat-content\u201D", 4, "ngIf"], [1, "basic-comment"], [1, "one"], [1, "two"], [1, "basic-comment-body"], [1, "mat-content", 3, "touchstart", "touchend"], [3, "selectedIndex", "selectedIndexChange", "selectedTabChange"], [3, "label"], ["matTabContent", ""], ["label", "Start times"], [3, "click"], [1, "countdown-desc", "f1-glow"], [4, "ngIf"], [3, "config"], ["cd", ""], [1, "count-down"], [3, "ngModel", "change", "ngModelChange", 4, "ngIf"], [3, "click", 4, "ngIf"], [3, "ngModel", "change", "ngModelChange"], [1, "nc-icon", "nc-note-03"], [1, "div-padded-always-1rem"], [3, "ngModel", "ngModelChange"], [1, "countdown-desc-2"], [1, "\u201Dmat-content\u201D"], [1, "display-on-desktop-only"], [1, "icon-big", "text-center", "icon-warning"], ["src", "assets/img/kimi-raikkonen-smile.gif", 1, "div-height-70vh"], [1, "text-center"], ["frameborder", "0", "scrolling", "yes", "seamless", "seamless", "src", "https://dl.dropboxusercontent.com/s/szbju9wkkmwzlgu/Amd%20Amx-1.m4v", 1, "custom-iframe-fullscreen"]], template: function F1CountdownComponent_Template(rf, ctx) { if (rf & 1) {
+        const _r55 = core/* ɵɵgetCurrentView */.EpF();
         core/* ɵɵelementStart */.TgZ(0, "div");
-        core/* ɵɵelementStart */.TgZ(1, "mat-drawer-container");
-        core/* ɵɵelementStart */.TgZ(2, "mat-drawer", 0, 1);
+        core/* ɵɵelementStart */.TgZ(1, "mat-drawer-container", 0);
+        core/* ɵɵelementStart */.TgZ(2, "mat-drawer", 1, 2);
         core/* ɵɵlistener */.NdJ("openedChange", function F1CountdownComponent_Template_mat_drawer_openedChange_2_listener($event) { return ctx.utilityService.setSidebarStatus($event); });
-        core/* ɵɵelementStart */.TgZ(4, "div", 2);
-        core/* ɵɵelementStart */.TgZ(5, "div", 3);
+        core/* ɵɵelementStart */.TgZ(4, "div", 3);
+        core/* ɵɵelementStart */.TgZ(5, "div", 4);
         core/* ɵɵelementStart */.TgZ(6, "div");
-        core/* ɵɵelementStart */.TgZ(7, "textarea", 4);
+        core/* ɵɵelementStart */.TgZ(7, "textarea", 5);
         core/* ɵɵlistener */.NdJ("ngModelChange", function F1CountdownComponent_Template_textarea_ngModelChange_7_listener($event) { return ctx.utilityService.postText = $event; });
         core/* ɵɵelementEnd */.qZA();
-        core/* ɵɵelementStart */.TgZ(8, "div", 5);
-        core/* ɵɵelementStart */.TgZ(9, "button", 6);
+        core/* ɵɵelementStart */.TgZ(8, "div", 6);
+        core/* ɵɵelementStart */.TgZ(9, "button", 7);
         core/* ɵɵlistener */.NdJ("click", function F1CountdownComponent_Template_button_click_9_listener() { return ctx.utilityService.postComment(1); });
         core/* ɵɵtext */._uU(10, "Post ");
         core/* ɵɵelementEnd */.qZA();
-        core/* ɵɵelementStart */.TgZ(11, "button", 6);
+        core/* ɵɵelementStart */.TgZ(11, "button", 7);
         core/* ɵɵlistener */.NdJ("click", function F1CountdownComponent_Template_button_click_11_listener() { return ctx.utilityService.reloadPosts(1); });
         core/* ɵɵtext */._uU(12, "Reload ");
         core/* ɵɵelementEnd */.qZA();
@@ -6622,23 +6701,23 @@ F1CountdownComponent.ɵcmp = /*@__PURE__*/ core/* ɵɵdefineComponent */.Xpm({ t
         core/* ɵɵelementEnd */.qZA();
         core/* ɵɵelementEnd */.qZA();
         core/* ɵɵelementEnd */.qZA();
-        core/* ɵɵtemplate */.YNc(13, F1CountdownComponent_div_13_Template, 8, 3, "div", 7);
-        core/* ɵɵelementStart */.TgZ(14, "div", 8);
-        core/* ɵɵelementStart */.TgZ(15, "button", 9);
-        core/* ɵɵlistener */.NdJ("click", function F1CountdownComponent_Template_button_click_15_listener() { core/* ɵɵrestoreView */.CHM(_r48); const _r0 = core/* ɵɵreference */.MAs(3); return _r0.toggle(); });
-        core/* ɵɵelement */._UZ(16, "i", 10);
+        core/* ɵɵtemplate */.YNc(13, F1CountdownComponent_div_13_Template, 8, 3, "div", 8);
+        core/* ɵɵelementStart */.TgZ(14, "div", 9);
+        core/* ɵɵelementStart */.TgZ(15, "button", 10);
+        core/* ɵɵlistener */.NdJ("click", function F1CountdownComponent_Template_button_click_15_listener() { core/* ɵɵrestoreView */.CHM(_r55); const _r0 = core/* ɵɵreference */.MAs(3); return _r0.toggle(); });
+        core/* ɵɵelement */._UZ(16, "i", 11);
         core/* ɵɵelementEnd */.qZA();
         core/* ɵɵelementEnd */.qZA();
         core/* ɵɵelementEnd */.qZA();
-        core/* ɵɵelementStart */.TgZ(17, "div", 8);
-        core/* ɵɵelementStart */.TgZ(18, "button", 9);
-        core/* ɵɵlistener */.NdJ("click", function F1CountdownComponent_Template_button_click_18_listener() { core/* ɵɵrestoreView */.CHM(_r48); const _r0 = core/* ɵɵreference */.MAs(3); return _r0.toggle(); });
-        core/* ɵɵelement */._UZ(19, "i", 10);
+        core/* ɵɵelementStart */.TgZ(17, "div", 9);
+        core/* ɵɵelementStart */.TgZ(18, "button", 10);
+        core/* ɵɵlistener */.NdJ("click", function F1CountdownComponent_Template_button_click_18_listener() { core/* ɵɵrestoreView */.CHM(_r55); const _r0 = core/* ɵɵreference */.MAs(3); return _r0.toggle(); });
+        core/* ɵɵelement */._UZ(19, "i", 11);
         core/* ɵɵelementEnd */.qZA();
         core/* ɵɵelementEnd */.qZA();
-        core/* ɵɵelementStart */.TgZ(20, "div", 11);
-        core/* ɵɵtemplate */.YNc(21, F1CountdownComponent_div_21_Template, 14, 6, "div", 12);
-        core/* ɵɵtemplate */.YNc(22, F1CountdownComponent_div_22_Template, 3, 2, "div", 13);
+        core/* ɵɵelementStart */.TgZ(20, "div", 12);
+        core/* ɵɵtemplate */.YNc(21, F1CountdownComponent_div_21_Template, 14, 6, "div", 13);
+        core/* ɵɵtemplate */.YNc(22, F1CountdownComponent_div_22_Template, 5, 3, "div", 14);
         core/* ɵɵelementEnd */.qZA();
         core/* ɵɵelementEnd */.qZA();
         core/* ɵɵelementEnd */.qZA();
@@ -9082,7 +9161,7 @@ function RaceAnalysisComponent_div_20_ng_template_7_div_13_Template(rf, ctx) { i
     core/* ɵɵelementStart */.TgZ(1, "div", 4);
     core/* ɵɵelementStart */.TgZ(2, "div", 27);
     core/* ɵɵelementStart */.TgZ(3, "div", 49);
-    core/* ɵɵelement */._UZ(4, "apx-chart", 53);
+    core/* ɵɵelement */._UZ(4, "apx-chart", 54);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -9116,16 +9195,16 @@ function RaceAnalysisComponent_div_20_ng_template_7_div_14_mat_option_15_Templat
 } }
 function RaceAnalysisComponent_div_20_ng_template_7_div_14_tr_26_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "tr");
-    core/* ɵɵelementStart */.TgZ(1, "th", 63);
+    core/* ɵɵelementStart */.TgZ(1, "th", 64);
     core/* ɵɵtext */._uU(2);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(3, "td", 64);
+    core/* ɵɵelementStart */.TgZ(3, "td", 65);
     core/* ɵɵtext */._uU(4);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(5, "td", 65);
+    core/* ɵɵelementStart */.TgZ(5, "td", 66);
     core/* ɵɵtext */._uU(6);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(7, "td", 66);
+    core/* ɵɵelementStart */.TgZ(7, "td", 67);
     core/* ɵɵtext */._uU(8);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -9148,38 +9227,38 @@ function RaceAnalysisComponent_div_20_ng_template_7_div_14_Template(rf, ctx) { i
     core/* ɵɵelementStart */.TgZ(0, "div", 3);
     core/* ɵɵelementStart */.TgZ(1, "div", 4);
     core/* ɵɵelementStart */.TgZ(2, "div", 27);
-    core/* ɵɵelementStart */.TgZ(3, "div", 54);
-    core/* ɵɵelementStart */.TgZ(4, "table", 55);
+    core/* ɵɵelementStart */.TgZ(3, "div", 55);
+    core/* ɵɵelementStart */.TgZ(4, "table", 56);
     core/* ɵɵelementStart */.TgZ(5, "thead");
     core/* ɵɵelementStart */.TgZ(6, "tr");
-    core/* ɵɵelement */._UZ(7, "th", 56);
-    core/* ɵɵelementStart */.TgZ(8, "th", 57);
-    core/* ɵɵelementStart */.TgZ(9, "mat-select", 58);
+    core/* ɵɵelement */._UZ(7, "th", 57);
+    core/* ɵɵelementStart */.TgZ(8, "th", 58);
+    core/* ɵɵelementStart */.TgZ(9, "mat-select", 59);
     core/* ɵɵlistener */.NdJ("selectionChange", function RaceAnalysisComponent_div_20_ng_template_7_div_14_Template_mat_select_selectionChange_9_listener() { core/* ɵɵrestoreView */.CHM(_r37); const ctx_r36 = core/* ɵɵnextContext */.oxw(3); return ctx_r36.updateComparisonTable(); })("valueChange", function RaceAnalysisComponent_div_20_ng_template_7_div_14_Template_mat_select_valueChange_9_listener($event) { core/* ɵɵrestoreView */.CHM(_r37); const ctx_r38 = core/* ɵɵnextContext */.oxw(3); return ctx_r38.selectedDriver1 = $event; });
-    core/* ɵɵtemplate */.YNc(10, RaceAnalysisComponent_div_20_ng_template_7_div_14_mat_option_10_Template, 2, 2, "mat-option", 59);
+    core/* ɵɵtemplate */.YNc(10, RaceAnalysisComponent_div_20_ng_template_7_div_14_mat_option_10_Template, 2, 2, "mat-option", 60);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(11, "th", 60);
+    core/* ɵɵelementStart */.TgZ(11, "th", 61);
     core/* ɵɵtext */._uU(12, "vs");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(13, "th", 57);
-    core/* ɵɵelementStart */.TgZ(14, "mat-select", 58);
+    core/* ɵɵelementStart */.TgZ(13, "th", 58);
+    core/* ɵɵelementStart */.TgZ(14, "mat-select", 59);
     core/* ɵɵlistener */.NdJ("selectionChange", function RaceAnalysisComponent_div_20_ng_template_7_div_14_Template_mat_select_selectionChange_14_listener() { core/* ɵɵrestoreView */.CHM(_r37); const ctx_r39 = core/* ɵɵnextContext */.oxw(3); return ctx_r39.updateComparisonTable(); })("valueChange", function RaceAnalysisComponent_div_20_ng_template_7_div_14_Template_mat_select_valueChange_14_listener($event) { core/* ɵɵrestoreView */.CHM(_r37); const ctx_r40 = core/* ɵɵnextContext */.oxw(3); return ctx_r40.selectedDriver2 = $event; });
-    core/* ɵɵtemplate */.YNc(15, RaceAnalysisComponent_div_20_ng_template_7_div_14_mat_option_15_Template, 2, 2, "mat-option", 59);
+    core/* ɵɵtemplate */.YNc(15, RaceAnalysisComponent_div_20_ng_template_7_div_14_mat_option_15_Template, 2, 2, "mat-option", 60);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(16, "tr");
-    core/* ɵɵelementStart */.TgZ(17, "th", 56);
+    core/* ɵɵelementStart */.TgZ(17, "th", 57);
     core/* ɵɵtext */._uU(18, "Lap");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(19, "th", 61);
+    core/* ɵɵelementStart */.TgZ(19, "th", 62);
     core/* ɵɵtext */._uU(20, "Lap Time");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(21, "th", 60);
+    core/* ɵɵelementStart */.TgZ(21, "th", 61);
     core/* ɵɵtext */._uU(22, "Diff");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(23, "th", 62);
+    core/* ɵɵelementStart */.TgZ(23, "th", 63);
     core/* ɵɵtext */._uU(24, "Lap Time");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -9209,7 +9288,7 @@ function RaceAnalysisComponent_div_20_ng_template_7_div_15_Template(rf, ctx) { i
     core/* ɵɵelementStart */.TgZ(0, "div", 3);
     core/* ɵɵelementStart */.TgZ(1, "div", 4);
     core/* ɵɵelementStart */.TgZ(2, "div", 27);
-    core/* ɵɵelementStart */.TgZ(3, "div", 67);
+    core/* ɵɵelementStart */.TgZ(3, "div", 68);
     core/* ɵɵelementStart */.TgZ(4, "h2");
     core/* ɵɵtext */._uU(5, "Lap times will be available here soon...");
     core/* ɵɵelementEnd */.qZA();
@@ -9234,15 +9313,15 @@ function RaceAnalysisComponent_div_20_ng_template_7_Template(rf, ctx) { if (rf &
     core/* ɵɵelementStart */.TgZ(8, "div", 3);
     core/* ɵɵelementStart */.TgZ(9, "div", 4);
     core/* ɵɵelementStart */.TgZ(10, "div", 27);
-    core/* ɵɵelementStart */.TgZ(11, "div", 49);
-    core/* ɵɵelement */._UZ(12, "apx-chart", 51);
+    core/* ɵɵelementStart */.TgZ(11, "div", 51);
+    core/* ɵɵelement */._UZ(12, "apx-chart", 52);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵtemplate */.YNc(13, RaceAnalysisComponent_div_20_ng_template_7_div_13_Template, 5, 9, "div", 52);
-    core/* ɵɵtemplate */.YNc(14, RaceAnalysisComponent_div_20_ng_template_7_div_14_Template, 27, 5, "div", 52);
-    core/* ɵɵtemplate */.YNc(15, RaceAnalysisComponent_div_20_ng_template_7_div_15_Template, 6, 0, "div", 52);
+    core/* ɵɵtemplate */.YNc(13, RaceAnalysisComponent_div_20_ng_template_7_div_13_Template, 5, 9, "div", 53);
+    core/* ɵɵtemplate */.YNc(14, RaceAnalysisComponent_div_20_ng_template_7_div_14_Template, 27, 5, "div", 53);
+    core/* ɵɵtemplate */.YNc(15, RaceAnalysisComponent_div_20_ng_template_7_div_15_Template, 6, 0, "div", 53);
 } if (rf & 2) {
     const ctx_r6 = core/* ɵɵnextContext */.oxw(2);
     core/* ɵɵadvance */.xp6(4);
@@ -9260,8 +9339,8 @@ function RaceAnalysisComponent_div_20_ng_template_9_div_12_Template(rf, ctx) { i
     core/* ɵɵelementStart */.TgZ(0, "div", 3);
     core/* ɵɵelementStart */.TgZ(1, "div", 4);
     core/* ɵɵelementStart */.TgZ(2, "div", 27);
-    core/* ɵɵelementStart */.TgZ(3, "div", 71);
-    core/* ɵɵelement */._UZ(4, "apx-chart", 72);
+    core/* ɵɵelementStart */.TgZ(3, "div", 72);
+    core/* ɵɵelement */._UZ(4, "apx-chart", 73);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -9279,16 +9358,16 @@ function RaceAnalysisComponent_div_20_ng_template_9_Template(rf, ctx) { if (rf &
     core/* ɵɵelementStart */.TgZ(3, "div");
     core/* ɵɵelementStart */.TgZ(4, "mat-radio-group", 28);
     core/* ɵɵlistener */.NdJ("ngModelChange", function RaceAnalysisComponent_div_20_ng_template_9_Template_mat_radio_group_ngModelChange_4_listener($event) { core/* ɵɵrestoreView */.CHM(_r43); const ctx_r42 = core/* ɵɵnextContext */.oxw(2); return ctx_r42.selectedHeatmapRadio = $event; });
-    core/* ɵɵelementStart */.TgZ(5, "mat-radio-button", 68);
+    core/* ɵɵelementStart */.TgZ(5, "mat-radio-button", 69);
     core/* ɵɵlistener */.NdJ("change", function RaceAnalysisComponent_div_20_ng_template_9_Template_mat_radio_button_change_5_listener($event) { core/* ɵɵrestoreView */.CHM(_r43); const ctx_r44 = core/* ɵɵnextContext */.oxw(2); return ctx_r44.heatRadioChange($event); });
     core/* ɵɵtext */._uU(6, "Lap times ");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(7, "mat-radio-button", 69);
+    core/* ɵɵelementStart */.TgZ(7, "mat-radio-button", 70);
     core/* ɵɵlistener */.NdJ("change", function RaceAnalysisComponent_div_20_ng_template_9_Template_mat_radio_button_change_7_listener($event) { core/* ɵɵrestoreView */.CHM(_r43); const ctx_r45 = core/* ɵɵnextContext */.oxw(2); return ctx_r45.heatRadioChange($event); });
     core/* ɵɵtext */._uU(8, "Lap time positions ");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelement */._UZ(9, "span");
-    core/* ɵɵelementStart */.TgZ(10, "mat-radio-button", 70);
+    core/* ɵɵelementStart */.TgZ(10, "mat-radio-button", 71);
     core/* ɵɵlistener */.NdJ("change", function RaceAnalysisComponent_div_20_ng_template_9_Template_mat_radio_button_change_10_listener($event) { core/* ɵɵrestoreView */.CHM(_r43); const ctx_r46 = core/* ɵɵnextContext */.oxw(2); return ctx_r46.heatRadioChange($event); });
     core/* ɵɵtext */._uU(11, "Driver positions ");
     core/* ɵɵelementEnd */.qZA();
@@ -9297,7 +9376,7 @@ function RaceAnalysisComponent_div_20_ng_template_9_Template(rf, ctx) { if (rf &
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵtemplate */.YNc(12, RaceAnalysisComponent_div_20_ng_template_9_div_12_Template, 5, 6, "div", 52);
+    core/* ɵɵtemplate */.YNc(12, RaceAnalysisComponent_div_20_ng_template_9_div_12_Template, 5, 6, "div", 53);
 } if (rf & 2) {
     const ctx_r7 = core/* ɵɵnextContext */.oxw(2);
     core/* ɵɵadvance */.xp6(4);
@@ -9307,45 +9386,45 @@ function RaceAnalysisComponent_div_20_ng_template_9_Template(rf, ctx) { if (rf &
 } }
 function RaceAnalysisComponent_div_20_ng_template_11_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div", 3);
-    core/* ɵɵelementStart */.TgZ(1, "div", 73);
+    core/* ɵɵelementStart */.TgZ(1, "div", 74);
     core/* ɵɵelementStart */.TgZ(2, "div", 27);
-    core/* ɵɵelementStart */.TgZ(3, "div", 49);
-    core/* ɵɵelement */._UZ(4, "apx-chart", 74);
+    core/* ɵɵelementStart */.TgZ(3, "div", 51);
+    core/* ɵɵelement */._UZ(4, "apx-chart", 75);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(5, "div", 73);
+    core/* ɵɵelementStart */.TgZ(5, "div", 74);
     core/* ɵɵelementStart */.TgZ(6, "div", 27);
-    core/* ɵɵelementStart */.TgZ(7, "div", 49);
-    core/* ɵɵelement */._UZ(8, "apx-chart", 75);
+    core/* ɵɵelementStart */.TgZ(7, "div", 51);
+    core/* ɵɵelement */._UZ(8, "apx-chart", 76);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(9, "div", 73);
+    core/* ɵɵelementStart */.TgZ(9, "div", 74);
     core/* ɵɵelementStart */.TgZ(10, "div", 27);
-    core/* ɵɵelementStart */.TgZ(11, "div", 49);
-    core/* ɵɵelement */._UZ(12, "apx-chart", 74);
+    core/* ɵɵelementStart */.TgZ(11, "div", 51);
+    core/* ɵɵelement */._UZ(12, "apx-chart", 75);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(13, "div", 73);
+    core/* ɵɵelementStart */.TgZ(13, "div", 74);
     core/* ɵɵelementStart */.TgZ(14, "div", 27);
-    core/* ɵɵelementStart */.TgZ(15, "div", 49);
-    core/* ɵɵelement */._UZ(16, "apx-chart", 74);
+    core/* ɵɵelementStart */.TgZ(15, "div", 51);
+    core/* ɵɵelement */._UZ(16, "apx-chart", 75);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(17, "div", 73);
+    core/* ɵɵelementStart */.TgZ(17, "div", 74);
     core/* ɵɵelementStart */.TgZ(18, "div", 27);
-    core/* ɵɵelementStart */.TgZ(19, "div", 49);
-    core/* ɵɵelement */._UZ(20, "apx-chart", 74);
+    core/* ɵɵelementStart */.TgZ(19, "div", 51);
+    core/* ɵɵelement */._UZ(20, "apx-chart", 75);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(21, "div", 73);
+    core/* ɵɵelementStart */.TgZ(21, "div", 74);
     core/* ɵɵelementStart */.TgZ(22, "div", 27);
-    core/* ɵɵelementStart */.TgZ(23, "div", 49);
-    core/* ɵɵelement */._UZ(24, "apx-chart", 74);
+    core/* ɵɵelementStart */.TgZ(23, "div", 51);
+    core/* ɵɵelement */._UZ(24, "apx-chart", 75);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -9369,8 +9448,8 @@ function RaceAnalysisComponent_div_20_ng_template_13_Template(rf, ctx) { if (rf 
     core/* ɵɵelementStart */.TgZ(0, "div", 3);
     core/* ɵɵelementStart */.TgZ(1, "div", 4);
     core/* ɵɵelementStart */.TgZ(2, "div", 27);
-    core/* ɵɵelementStart */.TgZ(3, "div", 49);
-    core/* ɵɵelement */._UZ(4, "apx-chart", 76);
+    core/* ɵɵelementStart */.TgZ(3, "div", 51);
+    core/* ɵɵelement */._UZ(4, "apx-chart", 77);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -9378,8 +9457,8 @@ function RaceAnalysisComponent_div_20_ng_template_13_Template(rf, ctx) { if (rf 
     core/* ɵɵelementStart */.TgZ(5, "div", 3);
     core/* ɵɵelementStart */.TgZ(6, "div", 4);
     core/* ɵɵelementStart */.TgZ(7, "div", 27);
-    core/* ɵɵelementStart */.TgZ(8, "div", 49);
-    core/* ɵɵelement */._UZ(9, "apx-chart", 76);
+    core/* ɵɵelementStart */.TgZ(8, "div", 51);
+    core/* ɵɵelement */._UZ(9, "apx-chart", 77);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -9387,8 +9466,8 @@ function RaceAnalysisComponent_div_20_ng_template_13_Template(rf, ctx) { if (rf 
     core/* ɵɵelementStart */.TgZ(10, "div", 3);
     core/* ɵɵelementStart */.TgZ(11, "div", 4);
     core/* ɵɵelementStart */.TgZ(12, "div", 27);
-    core/* ɵɵelementStart */.TgZ(13, "div", 49);
-    core/* ɵɵelement */._UZ(14, "apx-chart", 76);
+    core/* ɵɵelementStart */.TgZ(13, "div", 51);
+    core/* ɵɵelement */._UZ(14, "apx-chart", 77);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -9396,8 +9475,8 @@ function RaceAnalysisComponent_div_20_ng_template_13_Template(rf, ctx) { if (rf 
     core/* ɵɵelementStart */.TgZ(15, "div", 3);
     core/* ɵɵelementStart */.TgZ(16, "div", 4);
     core/* ɵɵelementStart */.TgZ(17, "div", 27);
-    core/* ɵɵelementStart */.TgZ(18, "div", 49);
-    core/* ɵɵelement */._UZ(19, "apx-chart", 76);
+    core/* ɵɵelementStart */.TgZ(18, "div", 51);
+    core/* ɵɵelement */._UZ(19, "apx-chart", 77);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -9405,8 +9484,8 @@ function RaceAnalysisComponent_div_20_ng_template_13_Template(rf, ctx) { if (rf 
     core/* ɵɵelementStart */.TgZ(20, "div", 3);
     core/* ɵɵelementStart */.TgZ(21, "div", 4);
     core/* ɵɵelementStart */.TgZ(22, "div", 27);
-    core/* ɵɵelementStart */.TgZ(23, "div", 49);
-    core/* ɵɵelement */._UZ(24, "apx-chart", 76);
+    core/* ɵɵelementStart */.TgZ(23, "div", 51);
+    core/* ɵɵelement */._UZ(24, "apx-chart", 77);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -9414,8 +9493,8 @@ function RaceAnalysisComponent_div_20_ng_template_13_Template(rf, ctx) { if (rf 
     core/* ɵɵelementStart */.TgZ(25, "div", 3);
     core/* ɵɵelementStart */.TgZ(26, "div", 4);
     core/* ɵɵelementStart */.TgZ(27, "div", 27);
-    core/* ɵɵelementStart */.TgZ(28, "div", 49);
-    core/* ɵɵelement */._UZ(29, "apx-chart", 76);
+    core/* ɵɵelementStart */.TgZ(28, "div", 51);
+    core/* ɵɵelement */._UZ(29, "apx-chart", 77);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -9423,8 +9502,8 @@ function RaceAnalysisComponent_div_20_ng_template_13_Template(rf, ctx) { if (rf 
     core/* ɵɵelementStart */.TgZ(30, "div", 3);
     core/* ɵɵelementStart */.TgZ(31, "div", 4);
     core/* ɵɵelementStart */.TgZ(32, "div", 27);
-    core/* ɵɵelementStart */.TgZ(33, "div", 49);
-    core/* ɵɵelement */._UZ(34, "apx-chart", 76);
+    core/* ɵɵelementStart */.TgZ(33, "div", 51);
+    core/* ɵɵelement */._UZ(34, "apx-chart", 77);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -9447,10 +9526,10 @@ function RaceAnalysisComponent_div_20_ng_template_13_Template(rf, ctx) { if (rf 
     core/* ɵɵproperty */.Q6J("legend", ctx_r9.defLegend)("series", ctx_r9.windDirChart.series)("chart", ctx_r9.radarChart)("xaxis", ctx_r9.radarXaxis)("dataLabels", ctx_r9.defDataLabels)("grid", ctx_r9.defGrid)("stroke", ctx_r9.defStroke)("title", ctx_r9.windDirChart.title);
 } }
 function RaceAnalysisComponent_div_20_ng_template_15_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "div", 77);
-    core/* ɵɵelement */._UZ(1, "apx-chart", 78);
+    core/* ɵɵelementStart */.TgZ(0, "div", 78);
+    core/* ɵɵelement */._UZ(1, "apx-chart", 79);
     core/* ɵɵelementStart */.TgZ(2, "mat-accordion");
-    core/* ɵɵelementStart */.TgZ(3, "mat-expansion-panel", 79);
+    core/* ɵɵelementStart */.TgZ(3, "mat-expansion-panel", 80);
     core/* ɵɵelementStart */.TgZ(4, "mat-expansion-panel-header");
     core/* ɵɵelementStart */.TgZ(5, "mat-panel-title");
     core/* ɵɵelementStart */.TgZ(6, "div");
@@ -9486,7 +9565,7 @@ function RaceAnalysisComponent_div_20_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div", 17);
     core/* ɵɵlistener */.NdJ("touchstart", function RaceAnalysisComponent_div_20_Template_div_touchstart_0_listener($event) { core/* ɵɵrestoreView */.CHM(_r48); const ctx_r47 = core/* ɵɵnextContext */.oxw(); return ctx_r47.touchstart($event); })("touchend", function RaceAnalysisComponent_div_20_Template_div_touchend_0_listener($event) { core/* ɵɵrestoreView */.CHM(_r48); const ctx_r49 = core/* ɵɵnextContext */.oxw(); return ctx_r49.touchend($event); });
     core/* ɵɵelementStart */.TgZ(1, "mat-tab-group", 18);
-    core/* ɵɵlistener */.NdJ("selectedIndexChange", function RaceAnalysisComponent_div_20_Template_mat_tab_group_selectedIndexChange_1_listener($event) { core/* ɵɵrestoreView */.CHM(_r48); const ctx_r50 = core/* ɵɵnextContext */.oxw(); return ctx_r50.selectedTab = $event; });
+    core/* ɵɵlistener */.NdJ("selectedIndexChange", function RaceAnalysisComponent_div_20_Template_mat_tab_group_selectedIndexChange_1_listener($event) { core/* ɵɵrestoreView */.CHM(_r48); const ctx_r50 = core/* ɵɵnextContext */.oxw(); return ctx_r50.selectedTab = $event; })("selectedTabChange", function RaceAnalysisComponent_div_20_Template_mat_tab_group_selectedTabChange_1_listener($event) { core/* ɵɵrestoreView */.CHM(_r48); const ctx_r51 = core/* ɵɵnextContext */.oxw(); return ctx_r51.tabChanged($event); });
     core/* ɵɵelementStart */.TgZ(2, "mat-tab", 19);
     core/* ɵɵtemplate */.YNc(3, RaceAnalysisComponent_div_20_ng_template_3_Template, 14, 2, "ng-template", 20);
     core/* ɵɵelementEnd */.qZA();
@@ -9518,10 +9597,11 @@ function RaceAnalysisComponent_div_20_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵproperty */.Q6J("disabled", ctx_r2.status == 2);
 } }
 class RaceAnalysisComponent {
-    constructor(restService, utilityService, toastr) {
+    constructor(restService, utilityService, router, route) {
         this.restService = restService;
         this.utilityService = utilityService;
-        this.toastr = toastr;
+        this.router = router;
+        this.route = route;
         this.steering = [];
         this.gforceLat = [];
         this.gforceLong = [];
@@ -9678,6 +9758,7 @@ class RaceAnalysisComponent {
             }
         });
         this.utilityService.reloadPosts(6);
+        this.selectedTab = this.getSelectedTab();
     }
     sortDrivers(drivers, number, direction) {
         let sorted = [];
@@ -10246,7 +10327,6 @@ class RaceAnalysisComponent {
             }
             fastestLaps.push(fastestLap);
         }
-        console.log("slowestLap1: " + this.slowestLap);
         return fastestLaps;
     }
     updateComparisonTable() {
@@ -10270,23 +10350,23 @@ class RaceAnalysisComponent {
         const time = new Date().getTime();
         const direction = [coord[0] - this.swipeCoord[0], coord[1] - this.swipeCoord[1]];
         const duration = time - this.swipeTime;
-        if (duration < 1000
-            && Math.abs(direction[0]) > 30 // Long enough
-            && Math.abs(direction[0]) > Math.abs(direction[1] * 3)) { // Horizontal enough
-            const swipe = direction[0] < 0 ? 'next' : 'previous';
-            if (swipe === 'next') {
-                const isFirst = this.selectedTab === 0;
-                if (this.selectedTab <= 5) {
-                    this.selectedTab = isFirst ? 1 : this.selectedTab + 1;
-                }
-            }
-            else if (swipe === 'previous') {
-                const isLast = this.selectedTab === 6;
-                if (this.selectedTab >= 1) {
-                    this.selectedTab = this.selectedTab - 1;
-                }
-            }
-        }
+        console.log("clientY: " + coord[1] + " - " + this.swipeCoord[1]);
+        // if (duration < 1000
+        //   && Math.abs(direction[0]) > 30 // Long enough
+        //   && Math.abs(direction[0]) > Math.abs(direction[1] * 3)) { // Horizontal enough
+        //   const swipe = direction[0] < 0 ? 'next' : 'previous';
+        //   if(swipe === 'next'){
+        //     const isFirst = this.selectedTab === 0;
+        //     if(this.selectedTab <= 5){
+        //       this.selectedTab = isFirst ? 1 : this.selectedTab + 1;
+        //     }
+        //   } else if(swipe === 'previous'){
+        //     const isLast = this.selectedTab === 6;
+        //     if(this.selectedTab >= 1){
+        //       this.selectedTab = this.selectedTab - 1;
+        //     }
+        //   }
+        // }
     }
     getUrl(code) {
         return environment/* environment.f1exposureUrl */.N.f1exposureUrl + 'getArt/f1exposure.com_' + code + ".png";
@@ -10526,15 +10606,34 @@ class RaceAnalysisComponent {
             }
         };
     }
+    tabChanged(tabChangeEvent) {
+        this.updateUrl();
+    }
+    updateUrl() {
+        const queryParams = { tab: this.selectedTab + 1 };
+        this.router.navigate([], {
+            relativeTo: this.route,
+            queryParams: queryParams
+        });
+    }
+    getSelectedTab() {
+        let tab = this.route.snapshot.queryParamMap.get('tab');
+        if (tab == undefined) {
+            return 0;
+        }
+        else {
+            return Number(tab) - 1;
+        }
+    }
 }
-RaceAnalysisComponent.ɵfac = function RaceAnalysisComponent_Factory(t) { return new (t || RaceAnalysisComponent)(core/* ɵɵdirectiveInject */.Y36(rest_service/* RestService */.v), core/* ɵɵdirectiveInject */.Y36(utility_service/* UtilityService */.t), core/* ɵɵdirectiveInject */.Y36(ngx_toastr/* ToastrService */._W)); };
+RaceAnalysisComponent.ɵfac = function RaceAnalysisComponent_Factory(t) { return new (t || RaceAnalysisComponent)(core/* ɵɵdirectiveInject */.Y36(rest_service/* RestService */.v), core/* ɵɵdirectiveInject */.Y36(utility_service/* UtilityService */.t), core/* ɵɵdirectiveInject */.Y36(router/* Router */.F0), core/* ɵɵdirectiveInject */.Y36(router/* ActivatedRoute */.gz)); };
 RaceAnalysisComponent.ɵcmp = /*@__PURE__*/ core/* ɵɵdefineComponent */.Xpm({ type: RaceAnalysisComponent, selectors: [["race-analysis-cmp"]], viewQuery: function RaceAnalysisComponent_Query(rf, ctx) { if (rf & 1) {
         core/* ɵɵviewQuery */.Gf(race_analysis_component_c0, 5);
     } if (rf & 2) {
         let _t;
         core/* ɵɵqueryRefresh */.iGM(_t = core/* ɵɵloadQuery */.CRH()) && (ctx.chart = _t.first);
-    } }, decls: 21, vars: 4, consts: [["autosize", ""], ["autosize", "", "mode", "side", "position", "end", 1, "example-sidenav", 3, "opened", "openedChange"], ["drawer", ""], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area", 3, "ngModel", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "post-comment-button", 3, "click"], [4, "ngFor", "ngForOf"], [1, "fixed-button"], ["type", "fixed-plugin", "mat-button", "", 3, "click"], [1, "fa", "fa-commenting-o", "fa-2x"], ["class", "\u201Dmat-content\u201D", 3, "touchstart", "touchend", 4, "ngIf"], [1, "basic-comment"], [1, "one"], [1, "two"], [1, "basic-comment-body"], [1, "\u201Dmat-content\u201D", 3, "touchstart", "touchend"], [3, "selectedIndex", "selectedIndexChange"], ["label", "Drivers"], ["matTabContent", ""], ["label", "Final result"], ["label", "Lap-by-Lap"], ["label", "Laps heatmap", 3, "disabled"], ["label", "Scores"], ["label", "Weather"], ["label", "Points Map"], [1, "card"], ["aria-label", "Select an option", 3, "ngModel", "ngModelChange"], ["checked", "", "value", "position", 1, "div-padded-always-0-3rem", 3, "change"], ["value", "startingPosition", 1, "div-padded-always-0-3rem", 3, "change"], ["value", "fastestLap", 1, "div-padded-always-0-3rem", 3, "change"], [1, "row", "col-padding-1"], ["class", "col-lg-2 col-6", 4, "ngFor", "ngForOf"], [1, "col-lg-2", "col-6"], [3, "value"], [1, "card-body"], [1, "driver-text-smaller"], ["onerror", "this.src='assets/img/drivers/default.png'", "alt", "", 3, "src"], [1, "card-footer"], [1, "driver-text-def"], [4, "ngIf"], ["matSort", "", 1, "table", "table-striped", 3, "matSortChange"], ["mat-sort-header", "position", "scope", "col"], ["scope", "col"], ["scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], ["mat-sort-header", "fastestLap", "scope", "col"], ["scope", "row"], [1, "d-sm-none", "d-none", "d-lg-table-cell"], [1, "card-body-padded"], [3, "series", "chart", "dataLabels", "grid", "stroke", "title", "yaxis", "xaxis"], [3, "title", "series", "chart", "fill", "legend", "plotOptions", "xaxis", "tooltip"], ["class", "row", 4, "ngIf"], [3, "series", "chart", "dataLabels", "grid", "stroke", "title", "yaxis", "xaxis", "tooltip"], [1, "card-body-padded", "table-responsive"], [1, "table", "table-striped"], ["colspan", "1", "scope", "col", 2, "width", "35px"], ["colspan", "1", "scope", "col", 1, "custom-mat-select"], [3, "value", "selectionChange", "valueChange"], [3, "value", 4, "ngFor", "ngForOf"], ["colspan", "1", "scope", "col", 1, "text-center", 2, "width", "35px"], ["colspan", "1", "scope", "col", 1, "text-right"], ["colspan", "1", "scope", "col"], ["colspan", "1", "scope", "row"], ["colspan", "1", 1, "text-right"], ["colspan", "1", 1, "width-7rem", "text-right", 3, "ngClass"], ["colspan", "1"], [1, "card-body-padded", "text-center"], ["checked", "", "value", "1", 1, "div-padded-always-0-3rem", 3, "change"], ["value", "2", 1, "div-padded-always-0-3rem", 3, "change"], ["value", "3", 1, "div-padded-always-0-3rem", 3, "change"], [1, "width-3600", "pr-1"], [3, "series", "chart", "dataLabels", "plotOptions", "colors", "tooltip"], [1, "col-md-12", "col-lg-6"], [3, "legend", "series", "chart", "xaxis", "dataLabels", "grid", "stroke", "title", "plotOptions"], [3, "legend", "series", "chart", "xaxis", "dataLabels", "grid", "title", "plotOptions"], [3, "legend", "series", "chart", "xaxis", "dataLabels", "grid", "stroke", "title"], [1, "hide-title", "pr-1"], [3, "series", "chart", "dataLabels", "plotOptions", "colors"], ["hideToggle", ""]], template: function RaceAnalysisComponent_Template(rf, ctx) { if (rf & 1) {
-        const _r51 = core/* ɵɵgetCurrentView */.EpF();
+    } }, decls: 21, vars: 4, consts: [["autosize", ""], ["autosize", "", "mode", "side", "position", "end", 1, "example-sidenav", 3, "opened", "openedChange"], ["drawer", ""], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area", 3, "ngModel", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "post-comment-button", 3, "click"], [4, "ngFor", "ngForOf"], [1, "fixed-button"], ["type", "fixed-plugin", "mat-button", "", 3, "click"], [1, "fa", "fa-commenting-o", "fa-2x"], ["class", "\u201Dmat-content\u201D", 3, "touchstart", "touchend", 4, "ngIf"], [1, "basic-comment"], [1, "one"], [1, "two"], [1, "basic-comment-body"], [1, "\u201Dmat-content\u201D", 3, "touchstart", "touchend"], [3, "selectedIndex", "selectedIndexChange", "selectedTabChange"], ["label", "Drivers"], ["matTabContent", ""], ["label", "Final result"], ["label", "Lap-by-Lap"], ["label", "Laps heatmap", 3, "disabled"], ["label", "Scores"], ["label", "Weather"], ["label", "Points Map"], [1, "card"], ["aria-label", "Select an option", 3, "ngModel", "ngModelChange"], ["checked", "", "value", "position", 1, "div-padded-always-0-3rem", 3, "change"], ["value", "startingPosition", 1, "div-padded-always-0-3rem", 3, "change"], ["value", "fastestLap", 1, "div-padded-always-0-3rem", 3, "change"], [1, "row", "col-padding-1"], ["class", "col-lg-2 col-6", 4, "ngFor", "ngForOf"], [1, "col-lg-2", "col-6"], [3, "value"], [1, "card-body"], [1, "driver-text-smaller"], ["onerror", "this.src='assets/img/drivers/default.png'", "alt", "", 3, "src"], [1, "card-footer"], [1, "driver-text-def"], [4, "ngIf"], ["matSort", "", 1, "table", "table-striped", 3, "matSortChange"], ["mat-sort-header", "position", "scope", "col"], ["scope", "col"], ["scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], ["mat-sort-header", "fastestLap", "scope", "col"], ["scope", "row"], [1, "d-sm-none", "d-none", "d-lg-table-cell"], [1, "card-body-padded", "div-min-width-1000"], [3, "series", "chart", "dataLabels", "grid", "stroke", "title", "yaxis", "xaxis"], [1, "card-body-padded"], [3, "title", "series", "chart", "fill", "legend", "plotOptions", "xaxis", "tooltip"], ["class", "row", 4, "ngIf"], [3, "series", "chart", "dataLabels", "grid", "stroke", "title", "yaxis", "xaxis", "tooltip"], [1, "card-body-padded", "table-responsive"], [1, "table", "table-striped"], ["colspan", "1", "scope", "col", 2, "width", "35px"], ["colspan", "1", "scope", "col", 1, "custom-mat-select"], [3, "value", "selectionChange", "valueChange"], [3, "value", 4, "ngFor", "ngForOf"], ["colspan", "1", "scope", "col", 1, "text-center", 2, "width", "35px"], ["colspan", "1", "scope", "col", 1, "text-right"], ["colspan", "1", "scope", "col"], ["colspan", "1", "scope", "row"], ["colspan", "1", 1, "text-right"], ["colspan", "1", 1, "width-7rem", "text-right", 3, "ngClass"], ["colspan", "1"], [1, "card-body-padded", "text-center"], ["checked", "", "value", "1", 1, "div-padded-always-0-3rem", 3, "change"], ["value", "2", 1, "div-padded-always-0-3rem", 3, "change"], ["value", "3", 1, "div-padded-always-0-3rem", 3, "change"], [1, "width-3600", "pr-1"], [3, "series", "chart", "dataLabels", "plotOptions", "colors", "tooltip"], [1, "col-md-12", "col-lg-6"], [3, "legend", "series", "chart", "xaxis", "dataLabels", "grid", "stroke", "title", "plotOptions"], [3, "legend", "series", "chart", "xaxis", "dataLabels", "grid", "title", "plotOptions"], [3, "legend", "series", "chart", "xaxis", "dataLabels", "grid", "stroke", "title"], [1, "hide-title", "pr-1"], [3, "series", "chart", "dataLabels", "plotOptions", "colors"], ["hideToggle", ""]], template: function RaceAnalysisComponent_Template(rf, ctx) { if (rf & 1) {
+        const _r52 = core/* ɵɵgetCurrentView */.EpF();
         core/* ɵɵelementStart */.TgZ(0, "div");
         core/* ɵɵelementStart */.TgZ(1, "mat-drawer-container", 0);
         core/* ɵɵelementStart */.TgZ(2, "mat-drawer", 1, 2);
@@ -10561,14 +10660,14 @@ RaceAnalysisComponent.ɵcmp = /*@__PURE__*/ core/* ɵɵdefineComponent */.Xpm({ 
         core/* ɵɵtemplate */.YNc(13, RaceAnalysisComponent_div_13_Template, 8, 3, "div", 8);
         core/* ɵɵelementStart */.TgZ(14, "div", 9);
         core/* ɵɵelementStart */.TgZ(15, "button", 10);
-        core/* ɵɵlistener */.NdJ("click", function RaceAnalysisComponent_Template_button_click_15_listener() { core/* ɵɵrestoreView */.CHM(_r51); const _r0 = core/* ɵɵreference */.MAs(3); return _r0.toggle(); });
+        core/* ɵɵlistener */.NdJ("click", function RaceAnalysisComponent_Template_button_click_15_listener() { core/* ɵɵrestoreView */.CHM(_r52); const _r0 = core/* ɵɵreference */.MAs(3); return _r0.toggle(); });
         core/* ɵɵelement */._UZ(16, "i", 11);
         core/* ɵɵelementEnd */.qZA();
         core/* ɵɵelementEnd */.qZA();
         core/* ɵɵelementEnd */.qZA();
         core/* ɵɵelementStart */.TgZ(17, "div", 9);
         core/* ɵɵelementStart */.TgZ(18, "button", 10);
-        core/* ɵɵlistener */.NdJ("click", function RaceAnalysisComponent_Template_button_click_18_listener() { core/* ɵɵrestoreView */.CHM(_r51); const _r0 = core/* ɵɵreference */.MAs(3); return _r0.toggle(); });
+        core/* ɵɵlistener */.NdJ("click", function RaceAnalysisComponent_Template_button_click_18_listener() { core/* ɵɵrestoreView */.CHM(_r52); const _r0 = core/* ɵɵreference */.MAs(3); return _r0.toggle(); });
         core/* ɵɵelement */._UZ(19, "i", 11);
         core/* ɵɵelementEnd */.qZA();
         core/* ɵɵelementEnd */.qZA();
@@ -10587,6 +10686,9 @@ RaceAnalysisComponent.ɵcmp = /*@__PURE__*/ core/* ɵɵdefineComponent */.Xpm({ 
     } }, directives: [sidenav/* MatDrawerContainer */.kh, sidenav/* MatDrawer */.jA, MatInput, fesm2015_forms/* DefaultValueAccessor */.Fj, fesm2015_forms/* NgControlStatus */.JJ, fesm2015_forms/* NgModel */.On, fesm2015_button/* MatButton */.lW, common/* NgForOf */.sg, common/* NgIf */.O5, tabs/* MatTabGroup */.SP, tabs/* MatTab */.uX, tabs/* MatTabContent */.Vc, fesm2015_radio/* MatRadioGroup */.VQ, fesm2015_radio/* MatRadioButton */.U0, MatButtonToggle, MatSort, MatSortHeader, ng_apexcharts/* ChartComponent */.x, MatSelect, fesm2015_core/* MatOption */.ey, common/* NgClass */.mk, expansion/* MatAccordion */.pp, expansion/* MatExpansionPanel */.ib, expansion/* MatExpansionPanelHeader */.yz, expansion/* MatExpansionPanelTitle */.yK, icon/* MatIcon */.Hw], encapsulation: 2 });
 
 ;// CONCATENATED MODULE: ./src/app/pages/standings/standings.component.ts
+
+
+
 
 
 
@@ -10629,24 +10731,24 @@ function StandingsComponent_div_13_Template(rf, ctx) { if (rf & 1) {
 } }
 function StandingsComponent_div_20_ng_template_3_tr_16_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "tr");
-    core/* ɵɵelementStart */.TgZ(1, "th", 28);
+    core/* ɵɵelementStart */.TgZ(1, "th", 29);
     core/* ɵɵtext */._uU(2);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(3, "td", 29);
-    core/* ɵɵelementStart */.TgZ(4, "a", 30);
+    core/* ɵɵelementStart */.TgZ(3, "td", 30);
+    core/* ɵɵelementStart */.TgZ(4, "a", 31);
     core/* ɵɵelementStart */.TgZ(5, "div");
     core/* ɵɵtext */._uU(6);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(7, "td", 31);
+    core/* ɵɵelementStart */.TgZ(7, "td", 32);
     core/* ɵɵtext */._uU(8);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(9, "td", 31);
+    core/* ɵɵelementStart */.TgZ(9, "td", 32);
     core/* ɵɵtext */._uU(10);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(11, "td", 32);
-    core/* ɵɵelementStart */.TgZ(12, "a", 30);
+    core/* ɵɵelementStart */.TgZ(11, "td", 33);
+    core/* ɵɵelementStart */.TgZ(12, "a", 31);
     core/* ɵɵelementStart */.TgZ(13, "div");
     core/* ɵɵtext */._uU(14);
     core/* ɵɵelementEnd */.qZA();
@@ -10678,23 +10780,23 @@ function StandingsComponent_div_20_ng_template_3_tr_16_Template(rf, ctx) { if (r
 } }
 function StandingsComponent_div_20_ng_template_3_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div");
-    core/* ɵɵelementStart */.TgZ(1, "table", 24);
+    core/* ɵɵelementStart */.TgZ(1, "table", 25);
     core/* ɵɵelementStart */.TgZ(2, "thead");
-    core/* ɵɵelementStart */.TgZ(3, "tr", 25);
-    core/* ɵɵelement */._UZ(4, "th", 26);
-    core/* ɵɵelementStart */.TgZ(5, "th", 26);
+    core/* ɵɵelementStart */.TgZ(3, "tr", 26);
+    core/* ɵɵelement */._UZ(4, "th", 27);
+    core/* ɵɵelementStart */.TgZ(5, "th", 27);
     core/* ɵɵtext */._uU(6, "Name");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(7, "th", 27);
+    core/* ɵɵelementStart */.TgZ(7, "th", 28);
     core/* ɵɵtext */._uU(8, "Code");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(9, "th", 27);
+    core/* ɵɵelementStart */.TgZ(9, "th", 28);
     core/* ɵɵtext */._uU(10, "Nationality");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(11, "th", 27);
+    core/* ɵɵelementStart */.TgZ(11, "th", 28);
     core/* ɵɵtext */._uU(12, "Car");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(13, "th", 26);
+    core/* ɵɵelementStart */.TgZ(13, "th", 27);
     core/* ɵɵtext */._uU(14, "Points");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -10711,11 +10813,11 @@ function StandingsComponent_div_20_ng_template_3_Template(rf, ctx) { if (rf & 1)
 } }
 function StandingsComponent_div_20_ng_template_5_div_0_tr_10_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "tr");
-    core/* ɵɵelementStart */.TgZ(1, "th", 28);
+    core/* ɵɵelementStart */.TgZ(1, "th", 29);
     core/* ɵɵtext */._uU(2);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(3, "td", 29);
-    core/* ɵɵelementStart */.TgZ(4, "a", 30);
+    core/* ɵɵelementStart */.TgZ(3, "td", 30);
+    core/* ɵɵelementStart */.TgZ(4, "a", 31);
     core/* ɵɵelementStart */.TgZ(5, "div");
     core/* ɵɵtext */._uU(6);
     core/* ɵɵelementEnd */.qZA();
@@ -10739,14 +10841,14 @@ function StandingsComponent_div_20_ng_template_5_div_0_tr_10_Template(rf, ctx) {
 } }
 function StandingsComponent_div_20_ng_template_5_div_0_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div");
-    core/* ɵɵelementStart */.TgZ(1, "table", 24);
+    core/* ɵɵelementStart */.TgZ(1, "table", 25);
     core/* ɵɵelementStart */.TgZ(2, "thead");
-    core/* ɵɵelementStart */.TgZ(3, "tr", 25);
-    core/* ɵɵelement */._UZ(4, "th", 26);
-    core/* ɵɵelementStart */.TgZ(5, "th", 26);
+    core/* ɵɵelementStart */.TgZ(3, "tr", 26);
+    core/* ɵɵelement */._UZ(4, "th", 27);
+    core/* ɵɵelementStart */.TgZ(5, "th", 27);
     core/* ɵɵtext */._uU(6, "Name");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(7, "th", 26);
+    core/* ɵɵelementStart */.TgZ(7, "th", 27);
     core/* ɵɵtext */._uU(8, "Points");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -10762,95 +10864,112 @@ function StandingsComponent_div_20_ng_template_5_div_0_Template(rf, ctx) { if (r
     core/* ɵɵproperty */.Q6J("ngForOf", ctx_r12.standings.constructorStandings);
 } }
 function StandingsComponent_div_20_ng_template_5_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵtemplate */.YNc(0, StandingsComponent_div_20_ng_template_5_div_0_Template, 11, 1, "div", 33);
+    core/* ɵɵtemplate */.YNc(0, StandingsComponent_div_20_ng_template_5_div_0_Template, 11, 1, "div", 34);
 } if (rf & 2) {
     const ctx_r5 = core/* ɵɵnextContext */.oxw(2);
     core/* ɵɵproperty */.Q6J("ngIf", ctx_r5.standings !== undefined);
 } }
+const standings_component_c0 = function (a0) { return { "div-min-width-700": a0 }; };
 function StandingsComponent_div_20_ng_template_7_div_0_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "div", 35);
-    core/* ɵɵelement */._UZ(1, "apx-chart", 36);
-    core/* ɵɵelementStart */.TgZ(2, "div", 37);
-    core/* ɵɵelement */._UZ(3, "apx-chart", 38);
+    const _r18 = core/* ɵɵgetCurrentView */.EpF();
+    core/* ɵɵelementStart */.TgZ(0, "div", 36);
+    core/* ɵɵelement */._UZ(1, "apx-chart", 37);
+    core/* ɵɵelementStart */.TgZ(2, "div", 38);
+    core/* ɵɵelement */._UZ(3, "apx-chart", 39);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelement */._UZ(4, "apx-chart", 36);
-    core/* ɵɵelement */._UZ(5, "apx-chart", 36);
+    core/* ɵɵelementStart */.TgZ(4, "div", 40);
+    core/* ɵɵelementStart */.TgZ(5, "span");
+    core/* ɵɵtext */._uU(6, "Exclude DNF results ");
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(7, "mat-slide-toggle", 41);
+    core/* ɵɵlistener */.NdJ("ngModelChange", function StandingsComponent_div_20_ng_template_7_div_0_Template_mat_slide_toggle_ngModelChange_7_listener($event) { core/* ɵɵrestoreView */.CHM(_r18); const ctx_r17 = core/* ɵɵnextContext */.oxw(3); return ctx_r17.showDnf = $event; })("change", function StandingsComponent_div_20_ng_template_7_div_0_Template_mat_slide_toggle_change_7_listener($event) { core/* ɵɵrestoreView */.CHM(_r18); const ctx_r19 = core/* ɵɵnextContext */.oxw(3); return ctx_r19.includeDnf($event); });
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(8, "span");
+    core/* ɵɵtext */._uU(9, " Include DNF results");
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelement */._UZ(10, "apx-chart", 42);
+    core/* ɵɵelement */._UZ(11, "apx-chart", 37);
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
     const ctx_r16 = core/* ɵɵnextContext */.oxw(3);
+    core/* ɵɵproperty */.Q6J("ngClass", core/* ɵɵpureFunction1 */.VKq(28, standings_component_c0, ctx_r16.raceCount > 12));
     core/* ɵɵadvance */.xp6(1);
     core/* ɵɵproperty */.Q6J("series", ctx_r16.driverStandingsSeries)("yaxis", ctx_r16.defYaxis)("title", ctx_r16.titleStandings)("chart", ctx_r16.lineChart)("stroke", ctx_r16.defStroke)("tooltip", ctx_r16.defTooltip);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵproperty */.Q6J("title", ctx_r16.titleResults)("series", ctx_r16.driversHeatMapChartOptions.series)("chart", ctx_r16.driversHeatMapChartOptions.chart)("dataLabels", ctx_r16.driversHeatMapChartOptions.dataLabels)("plotOptions", ctx_r16.driversHeatMapChartOptions.plotOptions)("colors", ctx_r16.driversHeatMapChartOptions.colors)("tooltip", ctx_r16.driversHeatMapChartOptions.tooltip);
+    core/* ɵɵproperty */.Q6J("title", ctx_r16.titleResultsHeatmap)("series", ctx_r16.driversHeatMapChartOptions.series)("chart", ctx_r16.driversHeatMapChartOptions.chart)("dataLabels", ctx_r16.driversHeatMapChartOptions.dataLabels)("plotOptions", ctx_r16.driversHeatMapChartOptions.plotOptions)("colors", ctx_r16.driversHeatMapChartOptions.colors)("tooltip", ctx_r16.driversHeatMapChartOptions.tooltip);
+    core/* ɵɵadvance */.xp6(4);
+    core/* ɵɵproperty */.Q6J("ngModel", ctx_r16.showDnf);
+    core/* ɵɵadvance */.xp6(3);
+    core/* ɵɵproperty */.Q6J("series", ctx_r16.gridToResultSeries)("yaxis", ctx_r16.yAxis19)("xaxis", ctx_r16.xaxis19)("title", ctx_r16.titleResultToGrid)("chart", ctx_r16.scatterChart)("stroke", ctx_r16.defStroke)("tooltip", ctx_r16.resultToGridTooltip);
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("series", ctx_r16.driverResultByRoundSeries)("yaxis", ctx_r16.reverseYAxisWithDNF)("title", ctx_r16.titleResults)("chart", ctx_r16.lineChart)("stroke", ctx_r16.defStroke)("tooltip", ctx_r16.defTooltip);
-    core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("series", ctx_r16.driverPointsByRoundSeries)("yaxis", ctx_r16.defYaxis)("title", ctx_r16.titleByRound)("chart", ctx_r16.lineChart)("stroke", ctx_r16.defStroke)("tooltip", ctx_r16.defTooltip);
+    core/* ɵɵproperty */.Q6J("series", ctx_r16.driverPointsByRoundSeries)("yaxis", ctx_r16.defYaxis)("title", ctx_r16.titleByRound)("chart", ctx_r16.lineChartWithoutAnimation)("stroke", ctx_r16.defStroke)("tooltip", ctx_r16.defTooltip);
 } }
 function StandingsComponent_div_20_ng_template_7_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵtemplate */.YNc(0, StandingsComponent_div_20_ng_template_7_div_0_Template, 6, 25, "div", 34);
+    core/* ɵɵtemplate */.YNc(0, StandingsComponent_div_20_ng_template_7_div_0_Template, 12, 30, "div", 35);
 } if (rf & 2) {
     const ctx_r6 = core/* ɵɵnextContext */.oxw(2);
     core/* ɵɵproperty */.Q6J("ngIf", ctx_r6.standings != undefined);
 } }
 function StandingsComponent_div_20_ng_template_9_div_0_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "div", 35);
-    core/* ɵɵelement */._UZ(1, "apx-chart", 36);
-    core/* ɵɵelementStart */.TgZ(2, "div", 37);
-    core/* ɵɵelement */._UZ(3, "apx-chart", 38);
+    core/* ɵɵelementStart */.TgZ(0, "div", 36);
+    core/* ɵɵelement */._UZ(1, "apx-chart", 37);
+    core/* ɵɵelementStart */.TgZ(2, "div", 38);
+    core/* ɵɵelement */._UZ(3, "apx-chart", 39);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelement */._UZ(4, "apx-chart", 36);
+    core/* ɵɵelement */._UZ(4, "apx-chart", 37);
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const ctx_r17 = core/* ɵɵnextContext */.oxw(3);
+    const ctx_r20 = core/* ɵɵnextContext */.oxw(3);
+    core/* ɵɵproperty */.Q6J("ngClass", core/* ɵɵpureFunction1 */.VKq(20, standings_component_c0, ctx_r20.raceCount > 12));
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("series", ctx_r17.constructorStandingsSeries)("yaxis", ctx_r17.defYaxis)("title", ctx_r17.titleStandings)("chart", ctx_r17.lineChart)("stroke", ctx_r17.defStroke)("tooltip", ctx_r17.defTooltip);
+    core/* ɵɵproperty */.Q6J("series", ctx_r20.constructorStandingsSeries)("yaxis", ctx_r20.defYaxis)("title", ctx_r20.titleStandings)("chart", ctx_r20.lineChart)("stroke", ctx_r20.defStroke)("tooltip", ctx_r20.defTooltip);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵproperty */.Q6J("title", ctx_r17.titleByRound)("series", ctx_r17.constructorHeatMapChartOptions.series)("chart", ctx_r17.constructorHeatMapChartOptions.chart)("dataLabels", ctx_r17.constructorHeatMapChartOptions.dataLabels)("plotOptions", ctx_r17.constructorHeatMapChartOptions.plotOptions)("colors", ctx_r17.constructorHeatMapChartOptions.colors)("tooltip", ctx_r17.constructorHeatMapChartOptions.tooltip);
+    core/* ɵɵproperty */.Q6J("title", ctx_r20.titleByRound)("series", ctx_r20.constructorHeatMapChartOptions.series)("chart", ctx_r20.constructorHeatMapChartOptions.chart)("dataLabels", ctx_r20.constructorHeatMapChartOptions.dataLabels)("plotOptions", ctx_r20.constructorHeatMapChartOptions.plotOptions)("colors", ctx_r20.constructorHeatMapChartOptions.colors)("tooltip", ctx_r20.constructorHeatMapChartOptions.tooltip);
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("series", ctx_r17.constructorRoundsSeries)("yaxis", ctx_r17.defYaxis)("title", ctx_r17.titleByRound)("chart", ctx_r17.lineChart)("stroke", ctx_r17.defStroke)("tooltip", ctx_r17.defTooltip);
+    core/* ɵɵproperty */.Q6J("series", ctx_r20.constructorRoundsSeries)("yaxis", ctx_r20.defYaxis)("title", ctx_r20.titleByRound)("chart", ctx_r20.lineChartWithoutAnimation)("stroke", ctx_r20.defStroke)("tooltip", ctx_r20.defTooltip);
 } }
 function StandingsComponent_div_20_ng_template_9_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵtemplate */.YNc(0, StandingsComponent_div_20_ng_template_9_div_0_Template, 5, 19, "div", 34);
+    core/* ɵɵtemplate */.YNc(0, StandingsComponent_div_20_ng_template_9_div_0_Template, 5, 22, "div", 35);
 } if (rf & 2) {
     const ctx_r7 = core/* ɵɵnextContext */.oxw(2);
     core/* ɵɵproperty */.Q6J("ngIf", ctx_r7.standings.constructorStandingByRound != undefined);
 } }
 function StandingsComponent_div_20_ng_template_11_div_0_tr_15_div_15_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "div", 44);
-    core/* ɵɵelementStart */.TgZ(1, "div", 45);
-    core/* ɵɵelementStart */.TgZ(2, "div", 46);
-    core/* ɵɵelement */._UZ(3, "img", 47);
+    core/* ɵɵelementStart */.TgZ(0, "div", 48);
+    core/* ɵɵelementStart */.TgZ(1, "div", 49);
+    core/* ɵɵelementStart */.TgZ(2, "div", 50);
+    core/* ɵɵelement */._UZ(3, "img", 51);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(4, "div", 48);
-    core/* ɵɵelementStart */.TgZ(5, "div", 46);
-    core/* ɵɵelement */._UZ(6, "img", 49);
+    core/* ɵɵelementStart */.TgZ(4, "div", 52);
+    core/* ɵɵelementStart */.TgZ(5, "div", 50);
+    core/* ɵɵelement */._UZ(6, "img", 53);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(7, "div", 50);
-    core/* ɵɵelementStart */.TgZ(8, "div", 46);
-    core/* ɵɵelement */._UZ(9, "img", 51);
+    core/* ɵɵelementStart */.TgZ(7, "div", 54);
+    core/* ɵɵelementStart */.TgZ(8, "div", 50);
+    core/* ɵɵelement */._UZ(9, "img", 55);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const i_r21 = core/* ɵɵnextContext */.oxw().index;
-    const ctx_r22 = core/* ɵɵnextContext */.oxw(4);
+    const i_r24 = core/* ɵɵnextContext */.oxw().index;
+    const ctx_r25 = core/* ɵɵnextContext */.oxw(4);
     core/* ɵɵadvance */.xp6(3);
-    core/* ɵɵpropertyInterpolate */.s9C("src", "assets/img/drivers/" + ctx_r22.standings.currentYear + "/" + ctx_r22.podiums[i_r21 + 1][2].name + ".png", core/* ɵɵsanitizeUrl */.LSH);
+    core/* ɵɵpropertyInterpolate */.s9C("src", "assets/img/drivers/" + ctx_r25.standings.currentYear + "/" + ctx_r25.podiums[i_r24 + 1][2].name + ".png", core/* ɵɵsanitizeUrl */.LSH);
     core/* ɵɵadvance */.xp6(3);
-    core/* ɵɵpropertyInterpolate */.s9C("src", "assets/img/drivers/" + ctx_r22.standings.currentYear + "/" + ctx_r22.podiums[i_r21 + 1][1].name + ".png", core/* ɵɵsanitizeUrl */.LSH);
+    core/* ɵɵpropertyInterpolate */.s9C("src", "assets/img/drivers/" + ctx_r25.standings.currentYear + "/" + ctx_r25.podiums[i_r24 + 1][1].name + ".png", core/* ɵɵsanitizeUrl */.LSH);
     core/* ɵɵadvance */.xp6(3);
-    core/* ɵɵpropertyInterpolate */.s9C("src", "assets/img/drivers/" + ctx_r22.standings.currentYear + "/" + ctx_r22.podiums[i_r21 + 1][3].name + ".png", core/* ɵɵsanitizeUrl */.LSH);
+    core/* ɵɵpropertyInterpolate */.s9C("src", "assets/img/drivers/" + ctx_r25.standings.currentYear + "/" + ctx_r25.podiums[i_r24 + 1][3].name + ".png", core/* ɵɵsanitizeUrl */.LSH);
 } }
 function StandingsComponent_div_20_ng_template_11_div_0_tr_15_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "tr");
-    core/* ɵɵelementStart */.TgZ(1, "th", 41);
+    core/* ɵɵelementStart */.TgZ(1, "th", 45);
     core/* ɵɵtext */._uU(2);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(3, "td", 29);
-    core/* ɵɵelementStart */.TgZ(4, "a", 30);
+    core/* ɵɵelementStart */.TgZ(3, "td", 30);
+    core/* ɵɵelementStart */.TgZ(4, "a", 31);
     core/* ɵɵelementStart */.TgZ(5, "div");
     core/* ɵɵtext */._uU(6);
     core/* ɵɵelementEnd */.qZA();
@@ -10860,54 +10979,54 @@ function StandingsComponent_div_20_ng_template_11_div_0_tr_15_Template(rf, ctx) 
     core/* ɵɵtext */._uU(8);
     core/* ɵɵpipe */.ALo(9, "date");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(10, "td", 29);
-    core/* ɵɵelementStart */.TgZ(11, "a", 30);
+    core/* ɵɵelementStart */.TgZ(10, "td", 30);
+    core/* ɵɵelementStart */.TgZ(11, "a", 31);
     core/* ɵɵelementStart */.TgZ(12, "div");
     core/* ɵɵtext */._uU(13);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(14, "td", 42);
-    core/* ɵɵtemplate */.YNc(15, StandingsComponent_div_20_ng_template_11_div_0_tr_15_div_15_Template, 10, 3, "div", 43);
+    core/* ɵɵelementStart */.TgZ(14, "td", 46);
+    core/* ɵɵtemplate */.YNc(15, StandingsComponent_div_20_ng_template_11_div_0_tr_15_div_15_Template, 10, 3, "div", 47);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const race_r20 = ctx.$implicit;
-    const i_r21 = ctx.index;
-    const ctx_r19 = core/* ɵɵnextContext */.oxw(4);
+    const race_r23 = ctx.$implicit;
+    const i_r24 = ctx.index;
+    const ctx_r22 = core/* ɵɵnextContext */.oxw(4);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(race_r20.round);
+    core/* ɵɵtextInterpolate */.Oqu(race_r23.round);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵpropertyInterpolate */.s9C("href", race_r20.url, core/* ɵɵsanitizeUrl */.LSH);
+    core/* ɵɵpropertyInterpolate */.s9C("href", race_r23.url, core/* ɵɵsanitizeUrl */.LSH);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate1 */.hij(" ", race_r20.raceName, " ");
+    core/* ɵɵtextInterpolate1 */.hij(" ", race_r23.raceName, " ");
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(core/* ɵɵpipeBind2 */.xi3(9, 7, race_r20.date, "MMMM d"));
+    core/* ɵɵtextInterpolate */.Oqu(core/* ɵɵpipeBind2 */.xi3(9, 7, race_r23.date, "MMMM d"));
     core/* ɵɵadvance */.xp6(3);
-    core/* ɵɵpropertyInterpolate */.s9C("href", "https://www.google.com/maps?q=" + race_r20.x + "," + race_r20.y, core/* ɵɵsanitizeUrl */.LSH);
+    core/* ɵɵpropertyInterpolate */.s9C("href", "https://www.google.com/maps?q=" + race_r23.x + "," + race_r23.y, core/* ɵɵsanitizeUrl */.LSH);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate1 */.hij(" ", race_r20.circuitName, " ");
+    core/* ɵɵtextInterpolate1 */.hij(" ", race_r23.circuitName, " ");
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r19.podiums[i_r21 + 1].length > 0);
+    core/* ɵɵproperty */.Q6J("ngIf", ctx_r22.podiums[i_r24 + 1].length > 0);
 } }
 function StandingsComponent_div_20_ng_template_11_div_0_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div");
-    core/* ɵɵelementStart */.TgZ(1, "table", 24);
+    core/* ɵɵelementStart */.TgZ(1, "table", 25);
     core/* ɵɵelementStart */.TgZ(2, "thead");
-    core/* ɵɵelementStart */.TgZ(3, "tr", 25);
-    core/* ɵɵelementStart */.TgZ(4, "th", 39);
+    core/* ɵɵelementStart */.TgZ(3, "tr", 26);
+    core/* ɵɵelementStart */.TgZ(4, "th", 43);
     core/* ɵɵtext */._uU(5, "#");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(6, "th", 26);
+    core/* ɵɵelementStart */.TgZ(6, "th", 27);
     core/* ɵɵtext */._uU(7, "Race");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(8, "th", 40);
+    core/* ɵɵelementStart */.TgZ(8, "th", 44);
     core/* ɵɵtext */._uU(9, "Date");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(10, "th", 26);
+    core/* ɵɵelementStart */.TgZ(10, "th", 27);
     core/* ɵɵtext */._uU(11, "Circuit");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(12, "th", 26);
+    core/* ɵɵelementStart */.TgZ(12, "th", 27);
     core/* ɵɵtext */._uU(13, "Winner");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -10918,45 +11037,52 @@ function StandingsComponent_div_20_ng_template_11_div_0_Template(rf, ctx) { if (
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const ctx_r18 = core/* ɵɵnextContext */.oxw(3);
+    const ctx_r21 = core/* ɵɵnextContext */.oxw(3);
     core/* ɵɵadvance */.xp6(15);
-    core/* ɵɵproperty */.Q6J("ngForOf", ctx_r18.standings.races);
+    core/* ɵɵproperty */.Q6J("ngForOf", ctx_r21.standings.races);
 } }
 function StandingsComponent_div_20_ng_template_11_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵtemplate */.YNc(0, StandingsComponent_div_20_ng_template_11_div_0_Template, 16, 1, "div", 33);
+    core/* ɵɵtemplate */.YNc(0, StandingsComponent_div_20_ng_template_11_div_0_Template, 16, 1, "div", 34);
 } if (rf & 2) {
     const ctx_r8 = core/* ɵɵnextContext */.oxw(2);
     core/* ɵɵproperty */.Q6J("ngIf", ctx_r8.standings !== undefined);
 } }
 function StandingsComponent_div_20_Template(rf, ctx) { if (rf & 1) {
-    const _r25 = core/* ɵɵgetCurrentView */.EpF();
+    const _r28 = core/* ɵɵgetCurrentView */.EpF();
     core/* ɵɵelementStart */.TgZ(0, "div", 17);
-    core/* ɵɵlistener */.NdJ("touchstart", function StandingsComponent_div_20_Template_div_touchstart_0_listener($event) { core/* ɵɵrestoreView */.CHM(_r25); const ctx_r24 = core/* ɵɵnextContext */.oxw(); return ctx_r24.touchstart($event); })("touchend", function StandingsComponent_div_20_Template_div_touchend_0_listener($event) { core/* ɵɵrestoreView */.CHM(_r25); const ctx_r26 = core/* ɵɵnextContext */.oxw(); return ctx_r26.touchend($event); });
-    core/* ɵɵelementStart */.TgZ(1, "mat-tab-group");
-    core/* ɵɵelementStart */.TgZ(2, "mat-tab", 18);
-    core/* ɵɵtemplate */.YNc(3, StandingsComponent_div_20_ng_template_3_Template, 17, 1, "ng-template", 19);
+    core/* ɵɵlistener */.NdJ("touchstart", function StandingsComponent_div_20_Template_div_touchstart_0_listener($event) { core/* ɵɵrestoreView */.CHM(_r28); const ctx_r27 = core/* ɵɵnextContext */.oxw(); return ctx_r27.touchstart($event); })("touchend", function StandingsComponent_div_20_Template_div_touchend_0_listener($event) { core/* ɵɵrestoreView */.CHM(_r28); const ctx_r29 = core/* ɵɵnextContext */.oxw(); return ctx_r29.touchend($event); });
+    core/* ɵɵelementStart */.TgZ(1, "mat-tab-group", 18);
+    core/* ɵɵlistener */.NdJ("selectedIndexChange", function StandingsComponent_div_20_Template_mat_tab_group_selectedIndexChange_1_listener($event) { core/* ɵɵrestoreView */.CHM(_r28); const ctx_r30 = core/* ɵɵnextContext */.oxw(); return ctx_r30.selectedTab = $event; })("selectedTabChange", function StandingsComponent_div_20_Template_mat_tab_group_selectedTabChange_1_listener($event) { core/* ɵɵrestoreView */.CHM(_r28); const ctx_r31 = core/* ɵɵnextContext */.oxw(); return ctx_r31.tabChanged($event); });
+    core/* ɵɵelementStart */.TgZ(2, "mat-tab", 19);
+    core/* ɵɵtemplate */.YNc(3, StandingsComponent_div_20_ng_template_3_Template, 17, 1, "ng-template", 20);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(4, "mat-tab", 20);
-    core/* ɵɵtemplate */.YNc(5, StandingsComponent_div_20_ng_template_5_Template, 1, 1, "ng-template", 19);
+    core/* ɵɵelementStart */.TgZ(4, "mat-tab", 21);
+    core/* ɵɵtemplate */.YNc(5, StandingsComponent_div_20_ng_template_5_Template, 1, 1, "ng-template", 20);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(6, "mat-tab", 21);
-    core/* ɵɵtemplate */.YNc(7, StandingsComponent_div_20_ng_template_7_Template, 1, 1, "ng-template", 19);
+    core/* ɵɵelementStart */.TgZ(6, "mat-tab", 22);
+    core/* ɵɵtemplate */.YNc(7, StandingsComponent_div_20_ng_template_7_Template, 1, 1, "ng-template", 20);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(8, "mat-tab", 22);
-    core/* ɵɵtemplate */.YNc(9, StandingsComponent_div_20_ng_template_9_Template, 1, 1, "ng-template", 19);
+    core/* ɵɵelementStart */.TgZ(8, "mat-tab", 23);
+    core/* ɵɵtemplate */.YNc(9, StandingsComponent_div_20_ng_template_9_Template, 1, 1, "ng-template", 20);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(10, "mat-tab", 23);
-    core/* ɵɵtemplate */.YNc(11, StandingsComponent_div_20_ng_template_11_Template, 1, 1, "ng-template", 19);
+    core/* ɵɵelementStart */.TgZ(10, "mat-tab", 24);
+    core/* ɵɵtemplate */.YNc(11, StandingsComponent_div_20_ng_template_11_Template, 1, 1, "ng-template", 20);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
+} if (rf & 2) {
+    const ctx_r2 = core/* ɵɵnextContext */.oxw();
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵproperty */.Q6J("selectedIndex", ctx_r2.selectedTab);
 } }
 class StandingsComponent {
-    constructor(restService, utilityService) {
+    constructor(restService, utilityService, router, route) {
         this.restService = restService;
         this.utilityService = utilityService;
+        this.router = router;
+        this.route = route;
         this.driverStandingsSeries = [];
-        this.driverResultByRoundSeries = [];
+        this.gridToResultSeries = [];
         this.driverPointsByRoundSeries = [];
         this.constructorStandingsSeries = [];
         this.constructorRoundsSeries = [];
@@ -10976,35 +11102,58 @@ class StandingsComponent {
             },
             toolbar: ChartUtility.defaultToolbar
         };
-        this.numericXaxis = {
+        this.lineChartWithoutAnimation = {
+            height: 500,
+            type: "line",
+            zoom: {
+                enabled: false
+            },
+            animations: {
+                enabled: false
+            },
+            toolbar: ChartUtility.defaultToolbar
+        };
+        this.scatterChart = {
+            height: 500,
+            type: "scatter",
+            zoom: {
+                enabled: false
+            },
+            toolbar: ChartUtility.defaultToolbar
+        };
+        this.xaxis19 = {
             type: 'numeric',
+            tickAmount: 18,
+            min: 1,
+            max: 19,
             decimalsInFloat: 0,
-            // min: 1,
-            // max: 22,
-            tickAmount: this.raceCount
+            title: {
+                text: 'Average grid position',
+            }
         };
         this.defYaxis = {
             decimalsInFloat: 0
         };
-        this.reverseYAxisWithDNF = {
-            tickAmount: 22,
+        this.yAxis19 = {
+            tickAmount: 18,
+            min: 1,
+            max: 19,
             decimalsInFloat: 0,
             reversed: true,
-            labels: {
-                formatter: (val, opts) => {
-                    if (val > 20) {
-                        return 'DNF';
-                    }
-                    return val + "";
-                }
+            title: {
+                text: 'Average result',
             }
         };
         this.titleStandings = {
             text: 'Points through season',
             align: 'center'
         };
-        this.titleResults = {
+        this.titleResultsHeatmap = {
             text: 'Results by race',
+            align: 'center'
+        };
+        this.titleResultToGrid = {
+            text: 'Average result and grid position',
             align: 'center'
         };
         this.titleByRound = {
@@ -11017,12 +11166,38 @@ class StandingsComponent {
         this.defTooltip = {
             shared: false,
         };
+        this.resultToGridTooltip = {
+            // this.standings.races[opts.dataPointIndex].raceName;
+            y: {
+                formatter: (val, opts) => 'Average race result: ' + val,
+                title: {
+                    formatter: (seriesName) => seriesName,
+                },
+            },
+            x: {
+                formatter: (val, opts) => 'Average grid position: ' + val,
+            }
+        };
+        this.showDnf = false;
         let observableStandings = this.restService.getStandings();
         observableStandings.subscribe({
             next: data => {
                 this.standings = data;
                 this.mapPositions();
                 this.standings.driverStandingByRound.forEach((standing) => {
+                    //  let series2: [number, number][]  = [];
+                    //  if(standing.name=='KUB'){
+                    //    console.log("no kub allowed")
+                    //  } else {
+                    //    series2.push(standing.series[0]);
+                    //    series2.push(standing.series[1]);
+                    //    this.driverStandingsSeries.push({
+                    //      name: standing.name,
+                    //      data: series2,
+                    //      color: standing.color
+                    //    });
+                    //  }
+                    // });
                     this.driverStandingsSeries.push({
                         name: standing.name,
                         data: standing.series,
@@ -11037,11 +11212,11 @@ class StandingsComponent {
                     });
                 });
                 this.standings.driverResultByRound.forEach((standing) => {
-                    this.driverResultByRoundSeries.push({
-                        name: standing.name,
-                        data: standing.series,
-                        color: standing.color
-                    });
+                    // this.driverResultByRoundSeries.push({
+                    //   name:  standing.name,
+                    //   data:  standing.series,
+                    //   color: standing.color
+                    // });
                     this.setPodiums(standing);
                     let copy = JSON.parse(JSON.stringify(standing.series));
                     if (copy.length < this.raceCount) {
@@ -11074,6 +11249,13 @@ class StandingsComponent {
                         data: copy
                     };
                 });
+                this.standings.gridToResultChartWithoutDnf.forEach((standing) => {
+                    this.gridToResultSeries.push({
+                        name: standing.name,
+                        data: standing.series,
+                        color: standing.color
+                    });
+                });
                 this.standings.constructorStandingByRound.forEach((standing) => {
                     this.constructorStandingsSeries.push({
                         name: standing.name,
@@ -11097,6 +11279,7 @@ class StandingsComponent {
                 return data;
             }
         });
+        this.selectedTab = this.getSelectedTab();
         this.utilityService.setTitle('Championship');
         this.utilityService.reloadPosts(4);
     }
@@ -11113,7 +11296,7 @@ class StandingsComponent {
                 }
             }
         });
-        this.numericXaxis.tickAmount = this.raceCount;
+        // this.reverseXaxis.tickAmount = this.raceCount;
     }
     static initializeMultidimensionalArray() {
         let podiums = [];
@@ -11223,23 +11406,23 @@ class StandingsComponent {
         const time = new Date().getTime();
         const direction = [coord[0] - this.swipeCoord[0], coord[1] - this.swipeCoord[1]];
         const duration = time - this.swipeTime;
-        if (duration < 1000
-            && Math.abs(direction[0]) > 30 // Long enough
-            && Math.abs(direction[0]) > Math.abs(direction[1] * 3)) { // Horizontal enough
-            const swipe = direction[0] < 0 ? 'next' : 'previous';
-            if (swipe === 'next') {
-                const isFirst = this.selectedTab === 0;
-                if (this.selectedTab <= 3) {
-                    this.selectedTab = isFirst ? 1 : this.selectedTab + 1;
-                }
-            }
-            else if (swipe === 'previous') {
-                const isLast = this.selectedTab === 4;
-                if (this.selectedTab >= 1) {
-                    this.selectedTab = this.selectedTab - 1;
-                }
-            }
-        }
+        console.log("clientYb: " + coord[1] + " - " + this.swipeCoord[1]);
+        // if (duration < 1000
+        //   && Math.abs(direction[0]) > 30 // Long enough
+        //   && Math.abs(direction[0]) > Math.abs(direction[1] * 3)) { // Horizontal enough
+        //   const swipe = direction[0] < 0 ? 'next' : 'previous';
+        //   if(swipe === 'next'){
+        //     const isFirst = this.selectedTab === 0;
+        //     if(this.selectedTab <= 3){
+        //       this.selectedTab = isFirst ? 1 : this.selectedTab + 1;
+        //     }
+        //   } else if(swipe === 'previous'){
+        //     const isLast = this.selectedTab === 4;
+        //     if(this.selectedTab >= 1){
+        //       this.selectedTab = this.selectedTab - 1;
+        //     }
+        //   }
+        // }
     }
     mapPositions() {
         for (let standing of this.standings.driverStandings) {
@@ -11251,15 +11434,55 @@ class StandingsComponent {
         this.driverCount = this.driverPositionMap.size;
         this.constructorCount = this.standings.constructorStandings.length;
     }
+    includeDnf(event) {
+        this.gridToResultSeries = [];
+        if (event.checked) {
+            this.standings.gridToResultChartWithDnf.forEach((standing) => {
+                this.gridToResultSeries.push({
+                    name: standing.name,
+                    data: standing.series,
+                    color: standing.color
+                });
+            });
+        }
+        else {
+            this.standings.gridToResultChartWithoutDnf.forEach((standing) => {
+                this.gridToResultSeries.push({
+                    name: standing.name,
+                    data: standing.series,
+                    color: standing.color
+                });
+            });
+        }
+    }
+    tabChanged(tabChangeEvent) {
+        this.updateUrl();
+    }
+    updateUrl() {
+        const queryParams = { tab: this.selectedTab + 1 };
+        this.router.navigate([], {
+            relativeTo: this.route,
+            queryParams: queryParams
+        });
+    }
+    getSelectedTab() {
+        let tab = this.route.snapshot.queryParamMap.get('tab');
+        if (tab == undefined) {
+            return 0;
+        }
+        else {
+            return Number(tab) - 1;
+        }
+    }
 }
-StandingsComponent.ɵfac = function StandingsComponent_Factory(t) { return new (t || StandingsComponent)(core/* ɵɵdirectiveInject */.Y36(rest_service/* RestService */.v), core/* ɵɵdirectiveInject */.Y36(utility_service/* UtilityService */.t)); };
+StandingsComponent.ɵfac = function StandingsComponent_Factory(t) { return new (t || StandingsComponent)(core/* ɵɵdirectiveInject */.Y36(rest_service/* RestService */.v), core/* ɵɵdirectiveInject */.Y36(utility_service/* UtilityService */.t), core/* ɵɵdirectiveInject */.Y36(router/* Router */.F0), core/* ɵɵdirectiveInject */.Y36(router/* ActivatedRoute */.gz)); };
 StandingsComponent.ɵcmp = /*@__PURE__*/ core/* ɵɵdefineComponent */.Xpm({ type: StandingsComponent, selectors: [["standings-cmp"]], viewQuery: function StandingsComponent_Query(rf, ctx) { if (rf & 1) {
         core/* ɵɵviewQuery */.Gf(table/* MatTable */.BZ, 5);
     } if (rf & 2) {
         let _t;
         core/* ɵɵqueryRefresh */.iGM(_t = core/* ɵɵloadQuery */.CRH()) && (ctx.driverTable = _t.first);
-    } }, decls: 21, vars: 4, consts: [["autosize", ""], ["autosize", "", "mode", "side", "position", "end", 1, "example-sidenav", 3, "opened", "openedChange"], ["drawer", ""], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area", 3, "ngModel", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "post-comment-button", 3, "click"], [4, "ngFor", "ngForOf"], [1, "fixed-button"], ["type", "fixed-plugin", "mat-button", "", 3, "click"], [1, "fa", "fa-commenting-o", "fa-2x"], ["class", "\u201Dmat-content\u201D", 3, "touchstart", "touchend", 4, "ngIf"], [1, "basic-comment"], [1, "one"], [1, "two"], [1, "basic-comment-body"], [1, "\u201Dmat-content\u201D", 3, "touchstart", "touchend"], ["label", "Drivers"], ["matTabContent", ""], ["label", "Constructors"], ["label", "Driver charts"], ["label", "Constructor charts"], ["label", "Races"], [1, "table", "table-striped"], [1, "text-center", "bg-primary", "text-white"], ["scope", "col"], ["scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], ["scope", "row"], [1, "hover-effects-row"], ["target", "_blank", 2, "color", "black", 3, "href"], [1, "d-sm-none", "d-none", "d-lg-table-cell", "text-center"], [1, "d-sm-none", "d-none", "d-lg-table-cell", "hover-effects-row"], [4, "ngIf"], ["class", "div-padded-2rem", 4, "ngIf"], [1, "div-padded-2rem"], [3, "series", "yaxis", "title", "chart", "stroke", "tooltip"], [1, "pr-1"], [3, "title", "series", "chart", "dataLabels", "plotOptions", "colors", "tooltip"], ["scope", "col", 1, "width-10", "text-left"], ["scope", "col", 1, "text-left"], ["scope", "width-10 row"], [1, "div-width-300", "no-padding-no-margin-2"], ["class", "event-result", 4, "ngIf"], [1, "event-result"], [1, "display-on-desktop-only", "result-card", "position-1"], [1, "race-card-image-wrapper"], ["mat-card-image", "", "onerror", "this.src='assets/img/drivers/default.png'", "alt", "", 1, "div-height-80", 3, "src"], [1, "result-card", "position-2-on-desktop"], ["mat-card-image", "", "onerror", "this.src='assets/img/drivers/default.png'", "alt", "", 1, "div-height-100", 3, "src"], [1, "display-on-desktop-only", "result-card", "position-3"], ["mat-card-image", "", "onerror", "this.src='assets/img/drivers/default.png'", "alt", "", 1, "div-height-70", 3, "src"]], template: function StandingsComponent_Template(rf, ctx) { if (rf & 1) {
-        const _r27 = core/* ɵɵgetCurrentView */.EpF();
+    } }, decls: 21, vars: 4, consts: [["autosize", ""], ["autosize", "", "mode", "side", "position", "end", 1, "example-sidenav", 3, "opened", "openedChange"], ["drawer", ""], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area", 3, "ngModel", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "post-comment-button", 3, "click"], [4, "ngFor", "ngForOf"], [1, "fixed-button"], ["type", "fixed-plugin", "mat-button", "", 3, "click"], [1, "fa", "fa-commenting-o", "fa-2x"], ["class", "\u201Dmat-content\u201D", 3, "touchstart", "touchend", 4, "ngIf"], [1, "basic-comment"], [1, "one"], [1, "two"], [1, "basic-comment-body"], [1, "\u201Dmat-content\u201D", 3, "touchstart", "touchend"], [3, "selectedIndex", "selectedIndexChange", "selectedTabChange"], ["label", "Drivers"], ["matTabContent", ""], ["label", "Constructors"], ["label", "Driver charts"], ["label", "Constructor charts"], ["label", "Races"], [1, "table", "table-striped"], [1, "text-center", "bg-primary", "text-white"], ["scope", "col"], ["scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], ["scope", "row"], [1, "hover-effects-row"], ["target", "_blank", 2, "color", "black", 3, "href"], [1, "d-sm-none", "d-none", "d-lg-table-cell", "text-center"], [1, "d-sm-none", "d-none", "d-lg-table-cell", "hover-effects-row"], [4, "ngIf"], ["class", "div-padded-2rem", 3, "ngClass", 4, "ngIf"], [1, "div-padded-2rem", 3, "ngClass"], [3, "series", "yaxis", "title", "chart", "stroke", "tooltip"], [1, "pr-1"], [3, "title", "series", "chart", "dataLabels", "plotOptions", "colors", "tooltip"], [1, "div-padded-always-top-right-2rem"], [3, "ngModel", "ngModelChange", "change"], [3, "series", "yaxis", "xaxis", "title", "chart", "stroke", "tooltip"], ["scope", "col", 1, "width-10", "text-left"], ["scope", "col", 1, "text-left"], ["scope", "width-10 row"], [1, "div-width-300", "no-padding-no-margin-2"], ["class", "event-result", 4, "ngIf"], [1, "event-result"], [1, "display-on-desktop-only", "result-card", "position-1"], [1, "race-card-image-wrapper"], ["mat-card-image", "", "onerror", "this.src='assets/img/drivers/default.png'", "alt", "", 1, "div-height-80", 3, "src"], [1, "result-card", "position-2-on-desktop"], ["mat-card-image", "", "onerror", "this.src='assets/img/drivers/default.png'", "alt", "", 1, "div-height-100", 3, "src"], [1, "display-on-desktop-only", "result-card", "position-3"], ["mat-card-image", "", "onerror", "this.src='assets/img/drivers/default.png'", "alt", "", 1, "div-height-70", 3, "src"]], template: function StandingsComponent_Template(rf, ctx) { if (rf & 1) {
+        const _r32 = core/* ɵɵgetCurrentView */.EpF();
         core/* ɵɵelementStart */.TgZ(0, "div");
         core/* ɵɵelementStart */.TgZ(1, "mat-drawer-container", 0);
         core/* ɵɵelementStart */.TgZ(2, "mat-drawer", 1, 2);
@@ -11286,18 +11509,18 @@ StandingsComponent.ɵcmp = /*@__PURE__*/ core/* ɵɵdefineComponent */.Xpm({ typ
         core/* ɵɵtemplate */.YNc(13, StandingsComponent_div_13_Template, 8, 3, "div", 8);
         core/* ɵɵelementStart */.TgZ(14, "div", 9);
         core/* ɵɵelementStart */.TgZ(15, "button", 10);
-        core/* ɵɵlistener */.NdJ("click", function StandingsComponent_Template_button_click_15_listener() { core/* ɵɵrestoreView */.CHM(_r27); const _r0 = core/* ɵɵreference */.MAs(3); return _r0.toggle(); });
+        core/* ɵɵlistener */.NdJ("click", function StandingsComponent_Template_button_click_15_listener() { core/* ɵɵrestoreView */.CHM(_r32); const _r0 = core/* ɵɵreference */.MAs(3); return _r0.toggle(); });
         core/* ɵɵelement */._UZ(16, "i", 11);
         core/* ɵɵelementEnd */.qZA();
         core/* ɵɵelementEnd */.qZA();
         core/* ɵɵelementEnd */.qZA();
         core/* ɵɵelementStart */.TgZ(17, "div", 9);
         core/* ɵɵelementStart */.TgZ(18, "button", 10);
-        core/* ɵɵlistener */.NdJ("click", function StandingsComponent_Template_button_click_18_listener() { core/* ɵɵrestoreView */.CHM(_r27); const _r0 = core/* ɵɵreference */.MAs(3); return _r0.toggle(); });
+        core/* ɵɵlistener */.NdJ("click", function StandingsComponent_Template_button_click_18_listener() { core/* ɵɵrestoreView */.CHM(_r32); const _r0 = core/* ɵɵreference */.MAs(3); return _r0.toggle(); });
         core/* ɵɵelement */._UZ(19, "i", 11);
         core/* ɵɵelementEnd */.qZA();
         core/* ɵɵelementEnd */.qZA();
-        core/* ɵɵtemplate */.YNc(20, StandingsComponent_div_20_Template, 12, 0, "div", 12);
+        core/* ɵɵtemplate */.YNc(20, StandingsComponent_div_20_Template, 12, 1, "div", 12);
         core/* ɵɵelementEnd */.qZA();
         core/* ɵɵelementEnd */.qZA();
     } if (rf & 2) {
@@ -11309,7 +11532,7 @@ StandingsComponent.ɵcmp = /*@__PURE__*/ core/* ɵɵdefineComponent */.Xpm({ typ
         core/* ɵɵproperty */.Q6J("ngForOf", ctx.utilityService.comments);
         core/* ɵɵadvance */.xp6(7);
         core/* ɵɵproperty */.Q6J("ngIf", ctx.standings !== undefined);
-    } }, directives: [sidenav/* MatDrawerContainer */.kh, sidenav/* MatDrawer */.jA, MatInput, fesm2015_forms/* DefaultValueAccessor */.Fj, fesm2015_forms/* NgControlStatus */.JJ, fesm2015_forms/* NgModel */.On, fesm2015_button/* MatButton */.lW, common/* NgForOf */.sg, common/* NgIf */.O5, tabs/* MatTabGroup */.SP, tabs/* MatTab */.uX, tabs/* MatTabContent */.Vc, ng_apexcharts/* ChartComponent */.x, MatCardImage], pipes: [common/* DecimalPipe */.JJ, common/* DatePipe */.uU], styles: [""] });
+    } }, directives: [sidenav/* MatDrawerContainer */.kh, sidenav/* MatDrawer */.jA, MatInput, fesm2015_forms/* DefaultValueAccessor */.Fj, fesm2015_forms/* NgControlStatus */.JJ, fesm2015_forms/* NgModel */.On, fesm2015_button/* MatButton */.lW, common/* NgForOf */.sg, common/* NgIf */.O5, tabs/* MatTabGroup */.SP, tabs/* MatTab */.uX, tabs/* MatTabContent */.Vc, common/* NgClass */.mk, ng_apexcharts/* ChartComponent */.x, MatSlideToggle, MatCardImage], pipes: [common/* DecimalPipe */.JJ, common/* DatePipe */.uU], styles: [""] });
 
 // EXTERNAL MODULE: ./node_modules/@angular/cdk/__ivy_ngcc__/fesm2015/portal.js
 var portal = __webpack_require__(7636);
@@ -13386,16 +13609,18 @@ MatTooltipModule.ɵinj = /*@__PURE__*/ core/* ɵɵdefineInjector */.cJS({ provid
 
 
 
+
+
 function VideostreamsComponent_div_13_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div");
-    core/* ɵɵelementStart */.TgZ(1, "div", 17);
-    core/* ɵɵelementStart */.TgZ(2, "div", 18);
+    core/* ɵɵelementStart */.TgZ(1, "div", 18);
+    core/* ɵɵelementStart */.TgZ(2, "div", 19);
     core/* ɵɵtext */._uU(3);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(4, "div", 19);
+    core/* ɵɵelementStart */.TgZ(4, "div", 20);
     core/* ɵɵtext */._uU(5);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(6, "div", 20);
+    core/* ɵɵelementStart */.TgZ(6, "div", 21);
     core/* ɵɵtext */._uU(7);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -13411,47 +13636,47 @@ function VideostreamsComponent_div_13_Template(rf, ctx) { if (rf & 1) {
 } }
 function VideostreamsComponent_ng_template_23_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div");
-    core/* ɵɵelementStart */.TgZ(1, "a", 21);
-    core/* ɵɵelement */._UZ(2, "img", 22);
+    core/* ɵɵelementStart */.TgZ(1, "a", 22);
+    core/* ɵɵelement */._UZ(2, "img", 23);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } }
 function VideostreamsComponent_ng_template_25_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div");
-    core/* ɵɵelementStart */.TgZ(1, "table", 23);
+    core/* ɵɵelementStart */.TgZ(1, "table", 24);
     core/* ɵɵelementStart */.TgZ(2, "thead");
     core/* ɵɵelementStart */.TgZ(3, "tr");
     core/* ɵɵelement */._UZ(4, "th");
-    core/* ɵɵelementStart */.TgZ(5, "th", 24);
+    core/* ɵɵelementStart */.TgZ(5, "th", 25);
     core/* ɵɵtext */._uU(6, "F1Exposure does not stream races. Try these sites:");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(7, "tbody");
-    core/* ɵɵelementStart */.TgZ(8, "tr", 25);
+    core/* ɵɵelementStart */.TgZ(8, "tr", 26);
     core/* ɵɵelement */._UZ(9, "td");
     core/* ɵɵelementStart */.TgZ(10, "td");
-    core/* ɵɵelementStart */.TgZ(11, "a", 26);
+    core/* ɵɵelementStart */.TgZ(11, "a", 27);
     core/* ɵɵelementStart */.TgZ(12, "div");
     core/* ɵɵtext */._uU(13, "TWITCH.TV/mda2mjzy9y3lw ");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(14, "tr", 25);
+    core/* ɵɵelementStart */.TgZ(14, "tr", 26);
     core/* ɵɵelement */._UZ(15, "td");
     core/* ɵɵelementStart */.TgZ(16, "td");
-    core/* ɵɵelementStart */.TgZ(17, "a", 27);
+    core/* ɵɵelementStart */.TgZ(17, "a", 28);
     core/* ɵɵelementStart */.TgZ(18, "div");
     core/* ɵɵtext */._uU(19, "SPORTSURGE.NET ");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(20, "tr", 25);
+    core/* ɵɵelementStart */.TgZ(20, "tr", 26);
     core/* ɵɵelement */._UZ(21, "td");
     core/* ɵɵelementStart */.TgZ(22, "td");
-    core/* ɵɵelementStart */.TgZ(23, "a", 28);
+    core/* ɵɵelementStart */.TgZ(23, "a", 29);
     core/* ɵɵelementStart */.TgZ(24, "div");
     core/* ɵɵtext */._uU(25, "OVERTAKEFANS.COM ");
     core/* ɵɵelementEnd */.qZA();
@@ -13463,11 +13688,11 @@ function VideostreamsComponent_ng_template_25_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementEnd */.qZA();
 } }
 function VideostreamsComponent_ng_template_27_div_0_tr_10_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "tr", 25);
-    core/* ɵɵelement */._UZ(1, "th", 37);
-    core/* ɵɵelementStart */.TgZ(2, "td", 38);
-    core/* ɵɵelementStart */.TgZ(3, "a", 39);
-    core/* ɵɵelementStart */.TgZ(4, "div", 40);
+    core/* ɵɵelementStart */.TgZ(0, "tr", 26);
+    core/* ɵɵelement */._UZ(1, "th", 38);
+    core/* ɵɵelementStart */.TgZ(2, "td", 39);
+    core/* ɵɵelementStart */.TgZ(3, "a", 40);
+    core/* ɵɵelementStart */.TgZ(4, "div", 41);
     core/* ɵɵtext */._uU(5);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -13484,32 +13709,32 @@ function VideostreamsComponent_ng_template_27_div_0_Template(rf, ctx) { if (rf &
     const _r10 = core/* ɵɵgetCurrentView */.EpF();
     core/* ɵɵelementStart */.TgZ(0, "div");
     core/* ɵɵelementStart */.TgZ(1, "div");
-    core/* ɵɵelementStart */.TgZ(2, "table", 23);
+    core/* ɵɵelementStart */.TgZ(2, "table", 24);
     core/* ɵɵelementStart */.TgZ(3, "thead");
     core/* ɵɵelementStart */.TgZ(4, "tr");
-    core/* ɵɵelementStart */.TgZ(5, "th", 30);
+    core/* ɵɵelementStart */.TgZ(5, "th", 31);
     core/* ɵɵtext */._uU(6, "Racingfk.com replays ");
-    core/* ɵɵelementStart */.TgZ(7, "button", 31);
-    core/* ɵɵelement */._UZ(8, "i", 32);
+    core/* ɵɵelementStart */.TgZ(7, "button", 32);
+    core/* ɵɵelement */._UZ(8, "i", 33);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(9, "tbody");
-    core/* ɵɵtemplate */.YNc(10, VideostreamsComponent_ng_template_27_div_0_tr_10_Template, 6, 2, "tr", 33);
+    core/* ɵɵtemplate */.YNc(10, VideostreamsComponent_ng_template_27_div_0_tr_10_Template, 6, 2, "tr", 34);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(11, "div");
-    core/* ɵɵelementStart */.TgZ(12, "div", 34);
-    core/* ɵɵelementStart */.TgZ(13, "button", 35);
+    core/* ɵɵelementStart */.TgZ(12, "div", 35);
+    core/* ɵɵelementStart */.TgZ(13, "button", 36);
     core/* ɵɵlistener */.NdJ("click", function VideostreamsComponent_ng_template_27_div_0_Template_button_click_13_listener() { core/* ɵɵrestoreView */.CHM(_r10); const ctx_r9 = core/* ɵɵnextContext */.oxw(2); return ctx_r9.updatePosts(-1); });
     core/* ɵɵelementStart */.TgZ(14, "mat-icon");
     core/* ɵɵtext */._uU(15, "keyboard_arrow_left");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(16, "div", 36);
-    core/* ɵɵelementStart */.TgZ(17, "button", 35);
+    core/* ɵɵelementStart */.TgZ(16, "div", 37);
+    core/* ɵɵelementStart */.TgZ(17, "button", 36);
     core/* ɵɵlistener */.NdJ("click", function VideostreamsComponent_ng_template_27_div_0_Template_button_click_17_listener() { core/* ɵɵrestoreView */.CHM(_r10); const ctx_r11 = core/* ɵɵnextContext */.oxw(2); return ctx_r11.updatePosts(1); });
     core/* ɵɵelementStart */.TgZ(18, "mat-icon");
     core/* ɵɵtext */._uU(19, "keyboard_arrow_right");
@@ -13529,17 +13754,20 @@ function VideostreamsComponent_ng_template_27_div_0_Template(rf, ctx) { if (rf &
     core/* ɵɵproperty */.Q6J("disabled", ctx_r6.disabledPaging(2));
 } }
 function VideostreamsComponent_ng_template_27_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵtemplate */.YNc(0, VideostreamsComponent_ng_template_27_div_0_Template, 20, 3, "div", 29);
+    core/* ɵɵtemplate */.YNc(0, VideostreamsComponent_ng_template_27_div_0_Template, 20, 3, "div", 30);
 } if (rf & 2) {
     const ctx_r4 = core/* ɵɵnextContext */.oxw();
     core/* ɵɵproperty */.Q6J("ngIf", ctx_r4.replays !== undefined);
 } }
 class VideostreamsComponent {
-    constructor(restService, utilityService, dialog) {
+    constructor(restService, utilityService, dialog, router, route) {
         this.restService = restService;
         this.utilityService = utilityService;
         this.dialog = dialog;
+        this.router = router;
+        this.route = route;
         this.page = 0;
+        this.selectedTab = 0;
         this.utilityService.setTitle("Videostreams");
         let observableEvents = this.restService.getSportSurge();
         observableEvents.subscribe({
@@ -13576,9 +13804,28 @@ class VideostreamsComponent {
             return this.replays.length < 15;
         }
     }
+    tabChanged(tabChangeEvent) {
+        this.updateUrl();
+    }
+    updateUrl() {
+        const queryParams = { tab: this.selectedTab + 1 };
+        this.router.navigate([], {
+            relativeTo: this.route,
+            queryParams: queryParams
+        });
+    }
+    getSelectedTab() {
+        let tab = this.route.snapshot.queryParamMap.get('tab');
+        if (tab == undefined) {
+            return 0;
+        }
+        else {
+            return Number(tab) - 1;
+        }
+    }
 }
-VideostreamsComponent.ɵfac = function VideostreamsComponent_Factory(t) { return new (t || VideostreamsComponent)(core/* ɵɵdirectiveInject */.Y36(rest_service/* RestService */.v), core/* ɵɵdirectiveInject */.Y36(utility_service/* UtilityService */.t), core/* ɵɵdirectiveInject */.Y36(MatDialog)); };
-VideostreamsComponent.ɵcmp = /*@__PURE__*/ core/* ɵɵdefineComponent */.Xpm({ type: VideostreamsComponent, selectors: [["videostreams-cmp"]], decls: 28, vars: 3, consts: [["autosize", ""], ["autosize", "", "mode", "side", "position", "end", 1, "example-sidenav", 3, "opened", "openedChange"], ["drawer", ""], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area", 3, "ngModel", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "post-comment-button", 3, "click"], [4, "ngFor", "ngForOf"], [1, "fixed-button"], ["type", "fixed-plugin", "mat-button", "", 3, "click"], [1, "fa", "fa-commenting-o", "fa-2x"], [1, "height-fill-screen"], ["label", "F1TV"], ["matTabContent", ""], ["label", "Free livestreams"], ["label", "Replays"], [1, "basic-comment"], [1, "one"], [1, "two"], [1, "basic-comment-body"], ["href", "https://f1tv.formula1.com", "target", "_blank", 2, "color", "black"], ["alt", "f1tv", "src", "https://ott-img.formula1.com/subscription/ProImagesNoBG/live-nocut.png"], [1, "table", "table-striped"], ["scope", "col", 2, "text-align", "center"], [1, "hover-effects-bold-row"], ["href", "https://www.twitch.tv/mda2mjzy9y3lw", "target", "_blank", 2, "color", "black"], ["href", "https://v2.sportsurge.net/list-formula-1", "target", "_blank", 2, "color", "black"], ["href", "https://overtakefans.com/", "target", "_blank", 2, "color", "black"], [4, "ngIf"], ["colspan", "4", 2, "background-color", "#cdcdcd", "text-align", "center"], ["matTooltip", "F1Exposure.com and Racingfk.com are not affiliated in any way.", 1, "btn", "btn-outline-info", "btn-round", "btn-icon", "right-header-button"], [1, "fa", "fa-info"], ["class", "hover-effects-bold-row", 4, "ngFor", "ngForOf"], [1, "basic-left", "icon-big", "text-center"], ["color", "primary", "mat-flat-button", "", 1, "width-100", 3, "disabled", "click"], [1, "basic-right", "icon-big", "text-center"], ["scope", "row"], [1, "p-1"], ["target", "_blank", 2, "color", "black", 3, "href"], [1, "link-container"]], template: function VideostreamsComponent_Template(rf, ctx) { if (rf & 1) {
+VideostreamsComponent.ɵfac = function VideostreamsComponent_Factory(t) { return new (t || VideostreamsComponent)(core/* ɵɵdirectiveInject */.Y36(rest_service/* RestService */.v), core/* ɵɵdirectiveInject */.Y36(utility_service/* UtilityService */.t), core/* ɵɵdirectiveInject */.Y36(MatDialog), core/* ɵɵdirectiveInject */.Y36(router/* Router */.F0), core/* ɵɵdirectiveInject */.Y36(router/* ActivatedRoute */.gz)); };
+VideostreamsComponent.ɵcmp = /*@__PURE__*/ core/* ɵɵdefineComponent */.Xpm({ type: VideostreamsComponent, selectors: [["videostreams-cmp"]], decls: 28, vars: 4, consts: [["autosize", ""], ["autosize", "", "mode", "side", "position", "end", 1, "example-sidenav", 3, "opened", "openedChange"], ["drawer", ""], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area", 3, "ngModel", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "post-comment-button", 3, "click"], [4, "ngFor", "ngForOf"], [1, "fixed-button"], ["type", "fixed-plugin", "mat-button", "", 3, "click"], [1, "fa", "fa-commenting-o", "fa-2x"], [1, "height-fill-screen"], [3, "selectedIndex", "selectedIndexChange", "selectedTabChange"], ["label", "F1TV"], ["matTabContent", ""], ["label", "Free livestreams"], ["label", "Replays"], [1, "basic-comment"], [1, "one"], [1, "two"], [1, "basic-comment-body"], ["href", "https://f1tv.formula1.com", "target", "_blank", 2, "color", "black"], ["alt", "f1tv", "src", "https://ott-img.formula1.com/subscription/ProImagesNoBG/live-nocut.png"], [1, "table", "table-striped"], ["scope", "col", 2, "text-align", "center"], [1, "hover-effects-bold-row"], ["href", "https://www.twitch.tv/mda2mjzy9y3lw", "target", "_blank", 2, "color", "black"], ["href", "https://v2.sportsurge.net/list-formula-1", "target", "_blank", 2, "color", "black"], ["href", "https://overtakefans.com/", "target", "_blank", 2, "color", "black"], [4, "ngIf"], ["colspan", "4", 2, "background-color", "#cdcdcd", "text-align", "center"], ["matTooltip", "F1Exposure.com and Racingfk.com are not affiliated in any way.", 1, "btn", "btn-outline-info", "btn-round", "btn-icon", "right-header-button"], [1, "fa", "fa-info"], ["class", "hover-effects-bold-row", 4, "ngFor", "ngForOf"], [1, "basic-left", "icon-big", "text-center"], ["color", "primary", "mat-flat-button", "", 1, "width-100", 3, "disabled", "click"], [1, "basic-right", "icon-big", "text-center"], ["scope", "row"], [1, "p-1"], ["target", "_blank", 2, "color", "black", 3, "href"], [1, "link-container"]], template: function VideostreamsComponent_Template(rf, ctx) { if (rf & 1) {
         const _r12 = core/* ɵɵgetCurrentView */.EpF();
         core/* ɵɵelementStart */.TgZ(0, "div");
         core/* ɵɵelementStart */.TgZ(1, "mat-drawer-container", 0);
@@ -13618,15 +13865,16 @@ VideostreamsComponent.ɵcmp = /*@__PURE__*/ core/* ɵɵdefineComponent */.Xpm({ 
         core/* ɵɵelementEnd */.qZA();
         core/* ɵɵelementEnd */.qZA();
         core/* ɵɵelementStart */.TgZ(20, "div", 12);
-        core/* ɵɵelementStart */.TgZ(21, "mat-tab-group");
-        core/* ɵɵelementStart */.TgZ(22, "mat-tab", 13);
-        core/* ɵɵtemplate */.YNc(23, VideostreamsComponent_ng_template_23_Template, 3, 0, "ng-template", 14);
+        core/* ɵɵelementStart */.TgZ(21, "mat-tab-group", 13);
+        core/* ɵɵlistener */.NdJ("selectedIndexChange", function VideostreamsComponent_Template_mat_tab_group_selectedIndexChange_21_listener($event) { return ctx.selectedTab = $event; })("selectedTabChange", function VideostreamsComponent_Template_mat_tab_group_selectedTabChange_21_listener($event) { return ctx.tabChanged($event); });
+        core/* ɵɵelementStart */.TgZ(22, "mat-tab", 14);
+        core/* ɵɵtemplate */.YNc(23, VideostreamsComponent_ng_template_23_Template, 3, 0, "ng-template", 15);
         core/* ɵɵelementEnd */.qZA();
-        core/* ɵɵelementStart */.TgZ(24, "mat-tab", 15);
-        core/* ɵɵtemplate */.YNc(25, VideostreamsComponent_ng_template_25_Template, 26, 0, "ng-template", 14);
+        core/* ɵɵelementStart */.TgZ(24, "mat-tab", 16);
+        core/* ɵɵtemplate */.YNc(25, VideostreamsComponent_ng_template_25_Template, 26, 0, "ng-template", 15);
         core/* ɵɵelementEnd */.qZA();
-        core/* ɵɵelementStart */.TgZ(26, "mat-tab", 16);
-        core/* ɵɵtemplate */.YNc(27, VideostreamsComponent_ng_template_27_Template, 1, 1, "ng-template", 14);
+        core/* ɵɵelementStart */.TgZ(26, "mat-tab", 17);
+        core/* ɵɵtemplate */.YNc(27, VideostreamsComponent_ng_template_27_Template, 1, 1, "ng-template", 15);
         core/* ɵɵelementEnd */.qZA();
         core/* ɵɵelementEnd */.qZA();
         core/* ɵɵelementEnd */.qZA();
@@ -13639,6 +13887,8 @@ VideostreamsComponent.ɵcmp = /*@__PURE__*/ core/* ɵɵdefineComponent */.Xpm({ 
         core/* ɵɵproperty */.Q6J("ngModel", ctx.utilityService.postText);
         core/* ɵɵadvance */.xp6(6);
         core/* ɵɵproperty */.Q6J("ngForOf", ctx.utilityService.comments);
+        core/* ɵɵadvance */.xp6(8);
+        core/* ɵɵproperty */.Q6J("selectedIndex", ctx.selectedTab);
     } }, directives: [sidenav/* MatDrawerContainer */.kh, sidenav/* MatDrawer */.jA, MatInput, fesm2015_forms/* DefaultValueAccessor */.Fj, fesm2015_forms/* NgControlStatus */.JJ, fesm2015_forms/* NgModel */.On, fesm2015_button/* MatButton */.lW, common/* NgForOf */.sg, tabs/* MatTabGroup */.SP, tabs/* MatTab */.uX, tabs/* MatTabContent */.Vc, common/* NgIf */.O5, MatTooltip, icon/* MatIcon */.Hw], encapsulation: 2 });
 
 // EXTERNAL MODULE: ./node_modules/@angular/platform-browser/__ivy_ngcc__/fesm2015/platform-browser.js
@@ -14657,6 +14907,8 @@ InfiniteScrollModule.ɵinj = /*@__PURE__*/ core/* ɵɵdefineInjector */.cJS({ pr
 
 
 
+
+
 function InstagramFeedComponent_div_13_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div");
     core/* ɵɵelementStart */.TgZ(1, "div", 14);
@@ -15037,7 +15289,7 @@ function InstagramFeedComponent_mat_tab_group_20_ng_template_9_Template(rf, ctx)
 function InstagramFeedComponent_mat_tab_group_20_Template(rf, ctx) { if (rf & 1) {
     const _r35 = core/* ɵɵgetCurrentView */.EpF();
     core/* ɵɵelementStart */.TgZ(0, "mat-tab-group", 18);
-    core/* ɵɵlistener */.NdJ("selectedTabChange", function InstagramFeedComponent_mat_tab_group_20_Template_mat_tab_group_selectedTabChange_0_listener($event) { core/* ɵɵrestoreView */.CHM(_r35); const ctx_r34 = core/* ɵɵnextContext */.oxw(); return ctx_r34.tabChanged($event); });
+    core/* ɵɵlistener */.NdJ("selectedIndexChange", function InstagramFeedComponent_mat_tab_group_20_Template_mat_tab_group_selectedIndexChange_0_listener($event) { core/* ɵɵrestoreView */.CHM(_r35); const ctx_r34 = core/* ɵɵnextContext */.oxw(); return ctx_r34.selectedTab = $event; })("selectedTabChange", function InstagramFeedComponent_mat_tab_group_20_Template_mat_tab_group_selectedTabChange_0_listener($event) { core/* ɵɵrestoreView */.CHM(_r35); const ctx_r36 = core/* ɵɵnextContext */.oxw(); return ctx_r36.tabChanged($event); });
     core/* ɵɵelementStart */.TgZ(1, "mat-tab", 19);
     core/* ɵɵtemplate */.YNc(2, InstagramFeedComponent_mat_tab_group_20_ng_template_2_Template, 1, 0, "ng-template", 20);
     core/* ɵɵtemplate */.YNc(3, InstagramFeedComponent_mat_tab_group_20_ng_template_3_Template, 7, 3, "ng-template", 21);
@@ -15051,37 +15303,40 @@ function InstagramFeedComponent_mat_tab_group_20_Template(rf, ctx) { if (rf & 1)
     core/* ɵɵtemplate */.YNc(9, InstagramFeedComponent_mat_tab_group_20_ng_template_9_Template, 5, 2, "ng-template", 21);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
+} if (rf & 2) {
+    const ctx_r2 = core/* ɵɵnextContext */.oxw();
+    core/* ɵɵproperty */.Q6J("selectedIndex", ctx_r2.selectedTab);
 } }
 class InstagramFeedComponent {
-    constructor(restService, utilityService, sanitizer) {
+    constructor(restService, utilityService, sanitizer, router, route) {
         this.restService = restService;
         this.utilityService = utilityService;
         this.sanitizer = sanitizer;
+        this.router = router;
+        this.route = route;
         this.instaPageNum = 0;
         this.twitterpageNum = 0;
         this.redditpageNum = 0;
-        this.tabIndex = 0;
+        this.selectedTab = 0;
         this.utilityService.setTitle("Image feed");
         this.getFeed();
         this.utilityService.reloadPosts(7);
+        this.selectedTab = this.getSelectedTab();
     }
     safe(post) {
         const url = 'https://www.instagram.com/p/' + post.code + '/embed';
         return this.sanitizer.bypassSecurityTrustResourceUrl(url);
     }
     onScrollDown() {
-        if (this.tabIndex == 0) {
+        if (this.selectedTab == 0) {
             this.onInstagramScrollDown();
         }
-        if (this.tabIndex == 1) {
+        if (this.selectedTab == 1) {
             this.onTwitterScrollDown();
         }
-        if (this.tabIndex == 2) {
+        if (this.selectedTab == 2) {
             this.onRedditScrollDown();
         }
-    }
-    tabChanged(tabChangeEvent) {
-        this.tabIndex = tabChangeEvent.index;
     }
     onInstagramScrollDown() {
         this.instaPageNum++;
@@ -15161,10 +15416,29 @@ class InstagramFeedComponent {
     safeStreamableSource(url) {
         return this.sanitizer.bypassSecurityTrustResourceUrl(url);
     }
+    tabChanged(tabChangeEvent) {
+        this.updateUrl();
+    }
+    updateUrl() {
+        const queryParams = { tab: this.selectedTab + 1 };
+        this.router.navigate([], {
+            relativeTo: this.route,
+            queryParams: queryParams
+        });
+    }
+    getSelectedTab() {
+        let tab = this.route.snapshot.queryParamMap.get('tab');
+        if (tab == undefined) {
+            return 0;
+        }
+        else {
+            return Number(tab) - 1;
+        }
+    }
 }
-InstagramFeedComponent.ɵfac = function InstagramFeedComponent_Factory(t) { return new (t || InstagramFeedComponent)(core/* ɵɵdirectiveInject */.Y36(rest_service/* RestService */.v), core/* ɵɵdirectiveInject */.Y36(utility_service/* UtilityService */.t), core/* ɵɵdirectiveInject */.Y36(platform_browser/* DomSanitizer */.H7)); };
-InstagramFeedComponent.ɵcmp = /*@__PURE__*/ core/* ɵɵdefineComponent */.Xpm({ type: InstagramFeedComponent, selectors: [["instagram-feed-cmp"]], decls: 21, vars: 5, consts: [["infinite-scroll", "", 3, "infiniteScrollDistance", "scrolled"], ["autosize", ""], ["autosize", "", "mode", "side", "position", "end", 1, "example-sidenav", 3, "opened", "openedChange"], ["drawer", ""], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area", 3, "ngModel", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "post-comment-button", 3, "click"], [4, "ngFor", "ngForOf"], [1, "fixed-button"], ["type", "fixed-plugin", "mat-button", "", 3, "click"], [1, "fa", "fa-commenting-o", "fa-2x"], [3, "selectedTabChange", 4, "ngIf"], [1, "basic-comment"], [1, "one"], [1, "two"], [1, "basic-comment-body"], [3, "selectedTabChange"], ["label", "Instagram"], ["mat-tab-label", ""], ["matTabContent", ""], ["label", "Twitter"], ["label", "Reddit"], ["src", "assets/img/instagram-icon.ico"], [1, "col-lg-4", "col-12", "no-right-padding"], ["class", "instagram-post-margin", 4, "ngFor", "ngForOf"], [1, "col-lg-4", "col-12", "no-padding"], [1, "instagram-post-margin"], [1, "container-fluid"], [1, "col-lg-4", "col-4", "instagram-post-info", "single-line"], [1, "col-lg-4", "col-4", "instagram-post-info"], ["target", "_blank", 3, "href"], [1, "w-100", 3, "src"], [1, "instagram-post-info"], ["src", "assets/img/twitter-icon.png"], [1, "row", "container-fluid", "no-padding-no-margin"], [1, "col-lg-6", "col-12", "no-padding-always"], [1, "div-half", "twitter-post-info"], [1, "div-quarter", "twitter-post-info"], [1, "div-quarter", "twitter-post-info", "single-line"], ["class", "text-center", 4, "ngIf"], ["class", "div-left-header bg-dark-blue", 4, "ngIf"], [1, "text-center"], [3, "src"], [1, "div-left-header", "bg-dark-blue"], [1, "aaa"], [1, "bg-dark-blue", "tweet-without-image"], ["target", "_blank", 3, "href", 4, "ngIf"], ["src", "assets/img/reddit-icon.png"], [1, "reddit-post-info"]], template: function InstagramFeedComponent_Template(rf, ctx) { if (rf & 1) {
-        const _r36 = core/* ɵɵgetCurrentView */.EpF();
+InstagramFeedComponent.ɵfac = function InstagramFeedComponent_Factory(t) { return new (t || InstagramFeedComponent)(core/* ɵɵdirectiveInject */.Y36(rest_service/* RestService */.v), core/* ɵɵdirectiveInject */.Y36(utility_service/* UtilityService */.t), core/* ɵɵdirectiveInject */.Y36(platform_browser/* DomSanitizer */.H7), core/* ɵɵdirectiveInject */.Y36(router/* Router */.F0), core/* ɵɵdirectiveInject */.Y36(router/* ActivatedRoute */.gz)); };
+InstagramFeedComponent.ɵcmp = /*@__PURE__*/ core/* ɵɵdefineComponent */.Xpm({ type: InstagramFeedComponent, selectors: [["instagram-feed-cmp"]], decls: 21, vars: 5, consts: [["infinite-scroll", "", 3, "infiniteScrollDistance", "scrolled"], ["autosize", ""], ["autosize", "", "mode", "side", "position", "end", 1, "example-sidenav", 3, "opened", "openedChange"], ["drawer", ""], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area", 3, "ngModel", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "post-comment-button", 3, "click"], [4, "ngFor", "ngForOf"], [1, "fixed-button"], ["type", "fixed-plugin", "mat-button", "", 3, "click"], [1, "fa", "fa-commenting-o", "fa-2x"], [3, "selectedIndex", "selectedIndexChange", "selectedTabChange", 4, "ngIf"], [1, "basic-comment"], [1, "one"], [1, "two"], [1, "basic-comment-body"], [3, "selectedIndex", "selectedIndexChange", "selectedTabChange"], ["label", "Instagram"], ["mat-tab-label", ""], ["matTabContent", ""], ["label", "Twitter"], ["label", "Reddit"], ["src", "assets/img/instagram-icon.ico"], [1, "col-lg-4", "col-12", "no-right-padding"], ["class", "instagram-post-margin", 4, "ngFor", "ngForOf"], [1, "col-lg-4", "col-12", "no-padding"], [1, "instagram-post-margin"], [1, "container-fluid"], [1, "col-lg-4", "col-4", "instagram-post-info", "single-line"], [1, "col-lg-4", "col-4", "instagram-post-info"], ["target", "_blank", 3, "href"], [1, "w-100", 3, "src"], [1, "instagram-post-info"], ["src", "assets/img/twitter-icon.png"], [1, "row", "container-fluid", "no-padding-no-margin"], [1, "col-lg-6", "col-12", "no-padding-always"], [1, "div-half", "twitter-post-info"], [1, "div-quarter", "twitter-post-info"], [1, "div-quarter", "twitter-post-info", "single-line"], ["class", "text-center", 4, "ngIf"], ["class", "div-left-header bg-dark-blue", 4, "ngIf"], [1, "text-center"], [3, "src"], [1, "div-left-header", "bg-dark-blue"], [1, "aaa"], [1, "bg-dark-blue", "tweet-without-image"], ["target", "_blank", 3, "href", 4, "ngIf"], ["src", "assets/img/reddit-icon.png"], [1, "reddit-post-info"]], template: function InstagramFeedComponent_Template(rf, ctx) { if (rf & 1) {
+        const _r37 = core/* ɵɵgetCurrentView */.EpF();
         core/* ɵɵelementStart */.TgZ(0, "div", 0);
         core/* ɵɵlistener */.NdJ("scrolled", function InstagramFeedComponent_Template_div_scrolled_0_listener() { return ctx.onScrollDown(); });
         core/* ɵɵelementStart */.TgZ(1, "mat-drawer-container", 1);
@@ -15192,18 +15466,18 @@ InstagramFeedComponent.ɵcmp = /*@__PURE__*/ core/* ɵɵdefineComponent */.Xpm({
         core/* ɵɵtemplate */.YNc(13, InstagramFeedComponent_div_13_Template, 8, 3, "div", 9);
         core/* ɵɵelementStart */.TgZ(14, "div", 10);
         core/* ɵɵelementStart */.TgZ(15, "button", 11);
-        core/* ɵɵlistener */.NdJ("click", function InstagramFeedComponent_Template_button_click_15_listener() { core/* ɵɵrestoreView */.CHM(_r36); const _r0 = core/* ɵɵreference */.MAs(3); return _r0.toggle(); });
+        core/* ɵɵlistener */.NdJ("click", function InstagramFeedComponent_Template_button_click_15_listener() { core/* ɵɵrestoreView */.CHM(_r37); const _r0 = core/* ɵɵreference */.MAs(3); return _r0.toggle(); });
         core/* ɵɵelement */._UZ(16, "i", 12);
         core/* ɵɵelementEnd */.qZA();
         core/* ɵɵelementEnd */.qZA();
         core/* ɵɵelementEnd */.qZA();
         core/* ɵɵelementStart */.TgZ(17, "div", 10);
         core/* ɵɵelementStart */.TgZ(18, "button", 11);
-        core/* ɵɵlistener */.NdJ("click", function InstagramFeedComponent_Template_button_click_18_listener() { core/* ɵɵrestoreView */.CHM(_r36); const _r0 = core/* ɵɵreference */.MAs(3); return _r0.toggle(); });
+        core/* ɵɵlistener */.NdJ("click", function InstagramFeedComponent_Template_button_click_18_listener() { core/* ɵɵrestoreView */.CHM(_r37); const _r0 = core/* ɵɵreference */.MAs(3); return _r0.toggle(); });
         core/* ɵɵelement */._UZ(19, "i", 12);
         core/* ɵɵelementEnd */.qZA();
         core/* ɵɵelementEnd */.qZA();
-        core/* ɵɵtemplate */.YNc(20, InstagramFeedComponent_mat_tab_group_20_Template, 10, 0, "mat-tab-group", 13);
+        core/* ɵɵtemplate */.YNc(20, InstagramFeedComponent_mat_tab_group_20_Template, 10, 1, "mat-tab-group", 13);
         core/* ɵɵelementEnd */.qZA();
         core/* ɵɵelementEnd */.qZA();
     } if (rf & 2) {
@@ -16041,7 +16315,7 @@ AwsComponent.ɵcmp = /*@__PURE__*/ core/* ɵɵdefineComponent */.Xpm({ type: Aws
         core/* ɵɵelementStart */.TgZ(14, "a", 9);
         core/* ɵɵelementStart */.TgZ(15, "button", 8);
         core/* ɵɵlistener */.NdJ("click", function AwsComponent_Template_button_click_15_listener() { return ctx.reloadAwsComments(); });
-        core/* ɵɵtext */._uU(16, "Back to News");
+        core/* ɵɵtext */._uU(16, "Back");
         core/* ɵɵelementEnd */.qZA();
         core/* ɵɵelementEnd */.qZA();
         core/* ɵɵelementEnd */.qZA();
@@ -16420,6 +16694,7 @@ ModeratorComponent.ɵcmp = /*@__PURE__*/ core/* ɵɵdefineComponent */.Xpm({ typ
 
 
 
+
 const upcoming_race_analysis_component_c0 = ["chart"];
 function UpcomingRaceAnalysisComponent_div_0_div_13_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div");
@@ -16445,38 +16720,38 @@ function UpcomingRaceAnalysisComponent_div_0_div_13_Template(rf, ctx) { if (rf &
     core/* ɵɵtextInterpolate */.Oqu(comment_r5.comment);
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_3_div_0_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "div", 27);
+    core/* ɵɵelementStart */.TgZ(0, "div", 28);
     core/* ɵɵelementStart */.TgZ(1, "div");
-    core/* ɵɵelementStart */.TgZ(2, "div", 28);
+    core/* ɵɵelementStart */.TgZ(2, "div", 29);
     core/* ɵɵelementStart */.TgZ(3, "h2");
     core/* ɵɵtext */._uU(4);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(5, "div", 29);
-    core/* ɵɵelementStart */.TgZ(6, "a", 30);
-    core/* ɵɵelement */._UZ(7, "img", 31);
+    core/* ɵɵelementStart */.TgZ(5, "div", 30);
+    core/* ɵɵelementStart */.TgZ(6, "a", 31);
+    core/* ɵɵelement */._UZ(7, "img", 32);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const ctx_r14 = core/* ɵɵnextContext */.oxw(4);
+    const ctx_r15 = core/* ɵɵnextContext */.oxw(4);
     core/* ɵɵadvance */.xp6(4);
-    core/* ɵɵtextInterpolate */.Oqu(ctx_r14.upcomingRaceAnalysis.circuitName);
+    core/* ɵɵtextInterpolate */.Oqu(ctx_r15.upcomingRaceAnalysis.circuitName);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵpropertyInterpolate */.s9C("href", ctx_r14.upcomingRaceAnalysis.circuitUrl, core/* ɵɵsanitizeUrl */.LSH);
+    core/* ɵɵpropertyInterpolate */.s9C("href", ctx_r15.upcomingRaceAnalysis.circuitUrl, core/* ɵɵsanitizeUrl */.LSH);
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵpropertyInterpolate */.s9C("src", ctx_r14.upcomingRaceAnalysis.imageUrl, core/* ɵɵsanitizeUrl */.LSH);
+    core/* ɵɵpropertyInterpolate */.s9C("src", ctx_r15.upcomingRaceAnalysis.imageUrl, core/* ɵɵsanitizeUrl */.LSH);
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_3_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵtemplate */.YNc(0, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_3_div_0_Template, 8, 3, "div", 26);
+    core/* ɵɵtemplate */.YNc(0, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_3_div_0_Template, 8, 3, "div", 27);
 } if (rf & 2) {
     const ctx_r6 = core/* ɵɵnextContext */.oxw(3);
     core/* ɵɵproperty */.Q6J("ngIf", ctx_r6.upcomingRaceAnalysis !== undefined);
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_5_div_0_div_1_tr_19_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "tr");
-    core/* ɵɵelementStart */.TgZ(1, "th", 42);
+    core/* ɵɵelementStart */.TgZ(1, "th", 43);
     core/* ɵɵtext */._uU(2);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(3, "td");
@@ -16487,22 +16762,22 @@ function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_5_div_0_div_1_tr
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const standing_r20 = ctx.$implicit;
+    const standing_r21 = ctx.$implicit;
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r20.position);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r21.position);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r20.driver);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r21.driver);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r20.constructorName);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r21.constructorName);
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_5_div_0_div_1_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "div", 36);
-    core/* ɵɵelementStart */.TgZ(1, "div", 37);
-    core/* ɵɵelementStart */.TgZ(2, "div", 38);
-    core/* ɵɵelementStart */.TgZ(3, "table", 39);
+    core/* ɵɵelementStart */.TgZ(0, "div", 37);
+    core/* ɵɵelementStart */.TgZ(1, "div", 38);
+    core/* ɵɵelementStart */.TgZ(2, "div", 39);
+    core/* ɵɵelementStart */.TgZ(3, "table", 40);
     core/* ɵɵelementStart */.TgZ(4, "thead");
     core/* ɵɵelementStart */.TgZ(5, "tr");
-    core/* ɵɵelementStart */.TgZ(6, "th", 40);
+    core/* ɵɵelementStart */.TgZ(6, "th", 41);
     core/* ɵɵtext */._uU(7);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(8, "th");
@@ -16511,7 +16786,7 @@ function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_5_div_0_div_1_Te
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(11, "tr");
-    core/* ɵɵelementStart */.TgZ(12, "th", 41);
+    core/* ɵɵelementStart */.TgZ(12, "th", 42);
     core/* ɵɵtext */._uU(13, "#");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(14, "th");
@@ -16530,29 +16805,29 @@ function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_5_div_0_div_1_Te
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const race_r18 = ctx.$implicit;
+    const race_r19 = ctx.$implicit;
     core/* ɵɵadvance */.xp6(7);
-    core/* ɵɵtextInterpolate2 */.AsE("", race_r18.season, " - round ", race_r18.round, "");
+    core/* ɵɵtextInterpolate2 */.AsE("", race_r19.season, " - round ", race_r19.round, "");
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(core/* ɵɵpipeBind1 */.lcZ(10, 4, race_r18.date));
+    core/* ɵɵtextInterpolate */.Oqu(core/* ɵɵpipeBind1 */.lcZ(10, 4, race_r19.date));
     core/* ɵɵadvance */.xp6(10);
-    core/* ɵɵproperty */.Q6J("ngForOf", race_r18.basicResultList);
+    core/* ɵɵproperty */.Q6J("ngForOf", race_r19.basicResultList);
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_5_div_0_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "div", 34);
-    core/* ɵɵtemplate */.YNc(1, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_5_div_0_div_1_Template, 20, 6, "div", 35);
+    core/* ɵɵelementStart */.TgZ(0, "div", 35);
+    core/* ɵɵtemplate */.YNc(1, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_5_div_0_div_1_Template, 20, 6, "div", 36);
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const ctx_r15 = core/* ɵɵnextContext */.oxw(4);
+    const ctx_r16 = core/* ɵɵnextContext */.oxw(4);
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("ngForOf", ctx_r15.upcomingRaceAnalysis.basicRaces);
+    core/* ɵɵproperty */.Q6J("ngForOf", ctx_r16.upcomingRaceAnalysis.basicRaces);
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_5_div_1_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "div", 43);
-    core/* ɵɵelementStart */.TgZ(1, "div", 37);
-    core/* ɵɵelementStart */.TgZ(2, "div", 38);
+    core/* ɵɵelementStart */.TgZ(0, "div", 44);
+    core/* ɵɵelementStart */.TgZ(1, "div", 38);
+    core/* ɵɵelementStart */.TgZ(2, "div", 39);
     core/* ɵɵtext */._uU(3, " No F1 races on ");
-    core/* ɵɵelementStart */.TgZ(4, "a", 44);
+    core/* ɵɵelementStart */.TgZ(4, "a", 45);
     core/* ɵɵtext */._uU(5);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵtext */._uU(6, " in the last 10 years. ");
@@ -16560,118 +16835,135 @@ function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_5_div_1_Template
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const ctx_r16 = core/* ɵɵnextContext */.oxw(4);
+    const ctx_r17 = core/* ɵɵnextContext */.oxw(4);
     core/* ɵɵadvance */.xp6(4);
-    core/* ɵɵpropertyInterpolate */.s9C("href", ctx_r16.upcomingRaceAnalysis.circuitUrl, core/* ɵɵsanitizeUrl */.LSH);
+    core/* ɵɵpropertyInterpolate */.s9C("href", ctx_r17.upcomingRaceAnalysis.circuitUrl, core/* ɵɵsanitizeUrl */.LSH);
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵtextInterpolate */.Oqu(ctx_r16.upcomingRaceAnalysis.circuitName);
+    core/* ɵɵtextInterpolate */.Oqu(ctx_r17.upcomingRaceAnalysis.circuitName);
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_5_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵtemplate */.YNc(0, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_5_div_0_Template, 2, 1, "div", 32);
-    core/* ɵɵtemplate */.YNc(1, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_5_div_1_Template, 7, 2, "div", 33);
+    core/* ɵɵtemplate */.YNc(0, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_5_div_0_Template, 2, 1, "div", 33);
+    core/* ɵɵtemplate */.YNc(1, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_5_div_1_Template, 7, 2, "div", 34);
 } if (rf & 2) {
     const ctx_r7 = core/* ɵɵnextContext */.oxw(3);
     core/* ɵɵproperty */.Q6J("ngIf", ctx_r7.upcomingRaceAnalysis.basicRaces.length > 0);
     core/* ɵɵadvance */.xp6(1);
     core/* ɵɵproperty */.Q6J("ngIf", ctx_r7.upcomingRaceAnalysis.basicRaces.length == 0);
 } }
+const upcoming_race_analysis_component_c1 = function (a0) { return { "purple-bg": a0 }; };
 function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_7_div_0_tr_24_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "tr");
-    core/* ɵɵelementStart */.TgZ(1, "th", 42);
+    core/* ɵɵelementStart */.TgZ(1, "th", 59);
     core/* ɵɵtext */._uU(2);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(3, "td");
+    core/* ɵɵelementStart */.TgZ(3, "td", 60);
     core/* ɵɵtext */._uU(4);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(5, "td", 58);
+    core/* ɵɵelementStart */.TgZ(5, "td", 61);
     core/* ɵɵtext */._uU(6);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(7, "td");
+    core/* ɵɵelementStart */.TgZ(7, "td", 60);
     core/* ɵɵtext */._uU(8);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(9, "td");
+    core/* ɵɵelementStart */.TgZ(9, "td", 60);
     core/* ɵɵtext */._uU(10);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(11, "td", 58);
+    core/* ɵɵelementStart */.TgZ(11, "td", 61);
     core/* ɵɵtext */._uU(12);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(13, "td", 58);
+    core/* ɵɵelementStart */.TgZ(13, "td", 61);
     core/* ɵɵtext */._uU(14);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(15, "td", 58);
+    core/* ɵɵelementStart */.TgZ(15, "td", 61);
     core/* ɵɵtext */._uU(16);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const standing_r25 = ctx.$implicit;
-    core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r25.position);
-    core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r25.FullName);
-    core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r25.Team);
-    core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r25.finalGap);
-    core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r25.fastestLap);
-    core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r25.fastestLapSector1);
-    core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r25.fastestLapSector2);
-    core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r25.fastestLapSector3);
+    const standing_r26 = ctx.$implicit;
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵproperty */.Q6J("ngClass", core/* ɵɵpureFunction1 */.VKq(16, upcoming_race_analysis_component_c1, standing_r26.position === 1));
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r26.position);
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵproperty */.Q6J("ngClass", core/* ɵɵpureFunction1 */.VKq(18, upcoming_race_analysis_component_c1, standing_r26.position === 1));
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r26.FullName);
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵproperty */.Q6J("ngClass", core/* ɵɵpureFunction1 */.VKq(20, upcoming_race_analysis_component_c1, standing_r26.position === 1));
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r26.Team);
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵproperty */.Q6J("ngClass", core/* ɵɵpureFunction1 */.VKq(22, upcoming_race_analysis_component_c1, standing_r26.position === 1));
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r26.finalGap);
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵproperty */.Q6J("ngClass", core/* ɵɵpureFunction1 */.VKq(24, upcoming_race_analysis_component_c1, standing_r26.position === 1));
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r26.fastestLap);
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵproperty */.Q6J("ngClass", core/* ɵɵpureFunction1 */.VKq(26, upcoming_race_analysis_component_c1, standing_r26.fastestLapPositionSector1 === 1));
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r26.fastestLapSector1);
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵproperty */.Q6J("ngClass", core/* ɵɵpureFunction1 */.VKq(28, upcoming_race_analysis_component_c1, standing_r26.fastestLapPositionSector2 === 1));
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r26.fastestLapSector2);
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵproperty */.Q6J("ngClass", core/* ɵɵpureFunction1 */.VKq(30, upcoming_race_analysis_component_c1, standing_r26.fastestLapPositionSector3 === 1));
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r26.fastestLapSector3);
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_7_div_0_Template(rf, ctx) { if (rf & 1) {
-    const _r28 = core/* ɵɵgetCurrentView */.EpF();
+    const _r29 = core/* ɵɵgetCurrentView */.EpF();
     core/* ɵɵelementStart */.TgZ(0, "div");
-    core/* ɵɵelementStart */.TgZ(1, "table", 47);
-    core/* ɵɵlistener */.NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_7_div_0_Template_table_matSortChange_1_listener($event) { core/* ɵɵrestoreView */.CHM(_r28); const ctx_r27 = core/* ɵɵnextContext */.oxw(4); return ctx_r27.sortMainResultData($event, 1); });
+    core/* ɵɵelementStart */.TgZ(1, "table", 48);
+    core/* ɵɵlistener */.NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_7_div_0_Template_table_matSortChange_1_listener($event) { core/* ɵɵrestoreView */.CHM(_r29); const ctx_r28 = core/* ɵɵnextContext */.oxw(4); return ctx_r28.sortMainResultData($event, 1); });
     core/* ɵɵelementStart */.TgZ(2, "thead");
     core/* ɵɵelementStart */.TgZ(3, "tr");
-    core/* ɵɵelementStart */.TgZ(4, "th", 52);
+    core/* ɵɵelementStart */.TgZ(4, "th", 53);
     core/* ɵɵtext */._uU(5, "Results");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(6, "tr");
-    core/* ɵɵelementStart */.TgZ(7, "th", 49);
+    core/* ɵɵelementStart */.TgZ(7, "th", 50);
     core/* ɵɵtext */._uU(8, "#");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(9, "th", 53);
+    core/* ɵɵelementStart */.TgZ(9, "th", 54);
     core/* ɵɵtext */._uU(10, "Name");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(11, "th", 54);
+    core/* ɵɵelementStart */.TgZ(11, "th", 55);
     core/* ɵɵtext */._uU(12, "Team");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(13, "th", 53);
+    core/* ɵɵelementStart */.TgZ(13, "th", 54);
     core/* ɵɵtext */._uU(14, "Gap");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(15, "th", 49);
+    core/* ɵɵelementStart */.TgZ(15, "th", 50);
     core/* ɵɵtext */._uU(16, "Lap time");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(17, "th", 55);
+    core/* ɵɵelementStart */.TgZ(17, "th", 56);
     core/* ɵɵtext */._uU(18, "Sector 1");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(19, "th", 56);
+    core/* ɵɵelementStart */.TgZ(19, "th", 57);
     core/* ɵɵtext */._uU(20, "Sector 2");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(21, "th", 57);
+    core/* ɵɵelementStart */.TgZ(21, "th", 58);
     core/* ɵɵtext */._uU(22, "Sector 3");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(23, "tbody");
-    core/* ɵɵtemplate */.YNc(24, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_7_div_0_tr_24_Template, 17, 8, "tr", 9);
+    core/* ɵɵtemplate */.YNc(24, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_7_div_0_tr_24_Template, 17, 32, "tr", 9);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const ctx_r22 = core/* ɵɵnextContext */.oxw(4);
+    const ctx_r23 = core/* ɵɵnextContext */.oxw(4);
     core/* ɵɵadvance */.xp6(24);
-    core/* ɵɵproperty */.Q6J("ngForOf", ctx_r22.upcomingRaceAnalysis.fp1);
+    core/* ɵɵproperty */.Q6J("ngForOf", ctx_r23.upcomingRaceAnalysis.fp1);
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_7_tr_19_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "tr");
-    core/* ɵɵelementStart */.TgZ(1, "th", 42);
+    core/* ɵɵelementStart */.TgZ(1, "th", 43);
     core/* ɵɵtext */._uU(2);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(3, "td");
@@ -16685,41 +16977,41 @@ function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_7_tr_19_Template
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const lap_r29 = ctx.$implicit;
+    const lap_r30 = ctx.$implicit;
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(lap_r29.position);
+    core/* ɵɵtextInterpolate */.Oqu(lap_r30.position);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(lap_r29.driverName);
+    core/* ɵɵtextInterpolate */.Oqu(lap_r30.driverName);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(lap_r29.lapTime);
+    core/* ɵɵtextInterpolate */.Oqu(lap_r30.lapTime);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(lap_r29.lapNumber);
+    core/* ɵɵtextInterpolate */.Oqu(lap_r30.lapNumber);
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_7_Template(rf, ctx) { if (rf & 1) {
-    const _r32 = core/* ɵɵgetCurrentView */.EpF();
+    const _r33 = core/* ɵɵgetCurrentView */.EpF();
     core/* ɵɵtemplate */.YNc(0, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_7_div_0_Template, 25, 1, "div", 0);
-    core/* ɵɵelementStart */.TgZ(1, "div", 45);
-    core/* ɵɵelementStart */.TgZ(2, "div", 46);
-    core/* ɵɵelementStart */.TgZ(3, "div", 38);
-    core/* ɵɵelementStart */.TgZ(4, "table", 47);
-    core/* ɵɵlistener */.NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_7_Template_table_matSortChange_4_listener($event) { core/* ɵɵrestoreView */.CHM(_r32); const ctx_r31 = core/* ɵɵnextContext */.oxw(3); return ctx_r31.sortResultData($event, 1); });
+    core/* ɵɵelementStart */.TgZ(1, "div", 46);
+    core/* ɵɵelementStart */.TgZ(2, "div", 47);
+    core/* ɵɵelementStart */.TgZ(3, "div", 39);
+    core/* ɵɵelementStart */.TgZ(4, "table", 48);
+    core/* ɵɵlistener */.NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_7_Template_table_matSortChange_4_listener($event) { core/* ɵɵrestoreView */.CHM(_r33); const ctx_r32 = core/* ɵɵnextContext */.oxw(3); return ctx_r32.sortResultData($event, 1); });
     core/* ɵɵelementStart */.TgZ(5, "thead");
     core/* ɵɵelementStart */.TgZ(6, "tr");
-    core/* ɵɵelementStart */.TgZ(7, "th", 48);
+    core/* ɵɵelementStart */.TgZ(7, "th", 49);
     core/* ɵɵtext */._uU(8, "Recorded laps");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(9, "tr");
-    core/* ɵɵelementStart */.TgZ(10, "th", 49);
+    core/* ɵɵelementStart */.TgZ(10, "th", 50);
     core/* ɵɵtext */._uU(11, "#");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(12, "th", 50);
+    core/* ɵɵelementStart */.TgZ(12, "th", 51);
     core/* ɵɵtext */._uU(13, "Name");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(14, "th", 49);
+    core/* ɵɵelementStart */.TgZ(14, "th", 50);
     core/* ɵɵtext */._uU(15, "Lap Time");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(16, "th", 51);
+    core/* ɵɵelementStart */.TgZ(16, "th", 52);
     core/* ɵɵtext */._uU(17, "Lap Number");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -16739,101 +17031,117 @@ function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_7_Template(rf, c
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_8_ng_template_1_div_0_tr_24_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "tr");
-    core/* ɵɵelementStart */.TgZ(1, "th", 42);
+    core/* ɵɵelementStart */.TgZ(1, "th", 59);
     core/* ɵɵtext */._uU(2);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(3, "td");
+    core/* ɵɵelementStart */.TgZ(3, "td", 60);
     core/* ɵɵtext */._uU(4);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(5, "td", 58);
+    core/* ɵɵelementStart */.TgZ(5, "td", 61);
     core/* ɵɵtext */._uU(6);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(7, "td");
+    core/* ɵɵelementStart */.TgZ(7, "td", 60);
     core/* ɵɵtext */._uU(8);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(9, "td");
+    core/* ɵɵelementStart */.TgZ(9, "td", 60);
     core/* ɵɵtext */._uU(10);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(11, "td", 58);
+    core/* ɵɵelementStart */.TgZ(11, "td", 61);
     core/* ɵɵtext */._uU(12);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(13, "td", 58);
+    core/* ɵɵelementStart */.TgZ(13, "td", 61);
     core/* ɵɵtext */._uU(14);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(15, "td", 58);
+    core/* ɵɵelementStart */.TgZ(15, "td", 61);
     core/* ɵɵtext */._uU(16);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const standing_r37 = ctx.$implicit;
-    core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r37.position);
-    core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r37.FullName);
-    core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r37.Team);
-    core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r37.finalGap);
-    core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r37.fastestLap);
-    core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r37.fastestLapSector1);
-    core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r37.fastestLapSector2);
-    core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r37.fastestLapSector3);
+    const standing_r38 = ctx.$implicit;
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵproperty */.Q6J("ngClass", core/* ɵɵpureFunction1 */.VKq(16, upcoming_race_analysis_component_c1, standing_r38.position === 1));
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r38.position);
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵproperty */.Q6J("ngClass", core/* ɵɵpureFunction1 */.VKq(18, upcoming_race_analysis_component_c1, standing_r38.position === 1));
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r38.FullName);
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵproperty */.Q6J("ngClass", core/* ɵɵpureFunction1 */.VKq(20, upcoming_race_analysis_component_c1, standing_r38.position === 1));
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r38.Team);
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵproperty */.Q6J("ngClass", core/* ɵɵpureFunction1 */.VKq(22, upcoming_race_analysis_component_c1, standing_r38.position === 1));
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r38.finalGap);
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵproperty */.Q6J("ngClass", core/* ɵɵpureFunction1 */.VKq(24, upcoming_race_analysis_component_c1, standing_r38.position === 1));
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r38.fastestLap);
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵproperty */.Q6J("ngClass", core/* ɵɵpureFunction1 */.VKq(26, upcoming_race_analysis_component_c1, standing_r38.fastestLapPositionSector1 === 1));
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r38.fastestLapSector1);
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵproperty */.Q6J("ngClass", core/* ɵɵpureFunction1 */.VKq(28, upcoming_race_analysis_component_c1, standing_r38.fastestLapPositionSector2 === 1));
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r38.fastestLapSector2);
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵproperty */.Q6J("ngClass", core/* ɵɵpureFunction1 */.VKq(30, upcoming_race_analysis_component_c1, standing_r38.fastestLapPositionSector3 === 1));
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r38.fastestLapSector3);
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_8_ng_template_1_div_0_Template(rf, ctx) { if (rf & 1) {
-    const _r40 = core/* ɵɵgetCurrentView */.EpF();
+    const _r41 = core/* ɵɵgetCurrentView */.EpF();
     core/* ɵɵelementStart */.TgZ(0, "div");
-    core/* ɵɵelementStart */.TgZ(1, "table", 47);
-    core/* ɵɵlistener */.NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_8_ng_template_1_div_0_Template_table_matSortChange_1_listener($event) { core/* ɵɵrestoreView */.CHM(_r40); const ctx_r39 = core/* ɵɵnextContext */.oxw(5); return ctx_r39.sortMainResultData($event, 2); });
+    core/* ɵɵelementStart */.TgZ(1, "table", 48);
+    core/* ɵɵlistener */.NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_8_ng_template_1_div_0_Template_table_matSortChange_1_listener($event) { core/* ɵɵrestoreView */.CHM(_r41); const ctx_r40 = core/* ɵɵnextContext */.oxw(5); return ctx_r40.sortMainResultData($event, 2); });
     core/* ɵɵelementStart */.TgZ(2, "thead");
     core/* ɵɵelementStart */.TgZ(3, "tr");
-    core/* ɵɵelementStart */.TgZ(4, "th", 52);
+    core/* ɵɵelementStart */.TgZ(4, "th", 53);
     core/* ɵɵtext */._uU(5, "Results");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(6, "tr");
-    core/* ɵɵelementStart */.TgZ(7, "th", 49);
+    core/* ɵɵelementStart */.TgZ(7, "th", 50);
     core/* ɵɵtext */._uU(8, "#");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(9, "th", 53);
+    core/* ɵɵelementStart */.TgZ(9, "th", 54);
     core/* ɵɵtext */._uU(10, "Name");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(11, "th", 54);
+    core/* ɵɵelementStart */.TgZ(11, "th", 55);
     core/* ɵɵtext */._uU(12, "Team");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(13, "th", 53);
+    core/* ɵɵelementStart */.TgZ(13, "th", 54);
     core/* ɵɵtext */._uU(14, "Gap");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(15, "th", 49);
+    core/* ɵɵelementStart */.TgZ(15, "th", 50);
     core/* ɵɵtext */._uU(16, "Lap time");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(17, "th", 55);
+    core/* ɵɵelementStart */.TgZ(17, "th", 56);
     core/* ɵɵtext */._uU(18, "Sector 1");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(19, "th", 56);
+    core/* ɵɵelementStart */.TgZ(19, "th", 57);
     core/* ɵɵtext */._uU(20, "Sector 2");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(21, "th", 57);
+    core/* ɵɵelementStart */.TgZ(21, "th", 58);
     core/* ɵɵtext */._uU(22, "Sector 3");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(23, "tbody");
-    core/* ɵɵtemplate */.YNc(24, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_8_ng_template_1_div_0_tr_24_Template, 17, 8, "tr", 9);
+    core/* ɵɵtemplate */.YNc(24, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_8_ng_template_1_div_0_tr_24_Template, 17, 32, "tr", 9);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const ctx_r34 = core/* ɵɵnextContext */.oxw(5);
+    const ctx_r35 = core/* ɵɵnextContext */.oxw(5);
     core/* ɵɵadvance */.xp6(24);
-    core/* ɵɵproperty */.Q6J("ngForOf", ctx_r34.upcomingRaceAnalysis.fp2);
+    core/* ɵɵproperty */.Q6J("ngForOf", ctx_r35.upcomingRaceAnalysis.fp2);
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_8_ng_template_1_tr_19_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "tr");
-    core/* ɵɵelementStart */.TgZ(1, "th", 42);
+    core/* ɵɵelementStart */.TgZ(1, "th", 43);
     core/* ɵɵtext */._uU(2);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(3, "td");
@@ -16847,41 +17155,41 @@ function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_8_ng_template_1_tr_1
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const lap_r41 = ctx.$implicit;
+    const lap_r42 = ctx.$implicit;
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(lap_r41.position);
+    core/* ɵɵtextInterpolate */.Oqu(lap_r42.position);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(lap_r41.driverName);
+    core/* ɵɵtextInterpolate */.Oqu(lap_r42.driverName);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(lap_r41.lapTime);
+    core/* ɵɵtextInterpolate */.Oqu(lap_r42.lapTime);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(lap_r41.lapNumber);
+    core/* ɵɵtextInterpolate */.Oqu(lap_r42.lapNumber);
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_8_ng_template_1_Template(rf, ctx) { if (rf & 1) {
-    const _r44 = core/* ɵɵgetCurrentView */.EpF();
+    const _r45 = core/* ɵɵgetCurrentView */.EpF();
     core/* ɵɵtemplate */.YNc(0, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_8_ng_template_1_div_0_Template, 25, 1, "div", 0);
-    core/* ɵɵelementStart */.TgZ(1, "div", 45);
-    core/* ɵɵelementStart */.TgZ(2, "div", 46);
-    core/* ɵɵelementStart */.TgZ(3, "div", 38);
-    core/* ɵɵelementStart */.TgZ(4, "table", 47);
-    core/* ɵɵlistener */.NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_8_ng_template_1_Template_table_matSortChange_4_listener($event) { core/* ɵɵrestoreView */.CHM(_r44); const ctx_r43 = core/* ɵɵnextContext */.oxw(4); return ctx_r43.sortResultData($event, 2); });
+    core/* ɵɵelementStart */.TgZ(1, "div", 46);
+    core/* ɵɵelementStart */.TgZ(2, "div", 47);
+    core/* ɵɵelementStart */.TgZ(3, "div", 39);
+    core/* ɵɵelementStart */.TgZ(4, "table", 48);
+    core/* ɵɵlistener */.NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_8_ng_template_1_Template_table_matSortChange_4_listener($event) { core/* ɵɵrestoreView */.CHM(_r45); const ctx_r44 = core/* ɵɵnextContext */.oxw(4); return ctx_r44.sortResultData($event, 2); });
     core/* ɵɵelementStart */.TgZ(5, "thead");
     core/* ɵɵelementStart */.TgZ(6, "tr");
-    core/* ɵɵelementStart */.TgZ(7, "th", 48);
+    core/* ɵɵelementStart */.TgZ(7, "th", 49);
     core/* ɵɵtext */._uU(8, "Recorded laps");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(9, "tr");
-    core/* ɵɵelementStart */.TgZ(10, "th", 49);
+    core/* ɵɵelementStart */.TgZ(10, "th", 50);
     core/* ɵɵtext */._uU(11, "#");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(12, "th", 50);
+    core/* ɵɵelementStart */.TgZ(12, "th", 51);
     core/* ɵɵtext */._uU(13, "Name");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(14, "th", 49);
+    core/* ɵɵelementStart */.TgZ(14, "th", 50);
     core/* ɵɵtext */._uU(15, "Lap Time");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(16, "th", 51);
+    core/* ɵɵelementStart */.TgZ(16, "th", 52);
     core/* ɵɵtext */._uU(17, "Lap Number");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -16894,13 +17202,13 @@ function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_8_ng_template_1_Temp
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const ctx_r33 = core/* ɵɵnextContext */.oxw(4);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r33.upcomingRaceAnalysis.fp2 !== null);
+    const ctx_r34 = core/* ɵɵnextContext */.oxw(4);
+    core/* ɵɵproperty */.Q6J("ngIf", ctx_r34.upcomingRaceAnalysis.fp2 !== null);
     core/* ɵɵadvance */.xp6(19);
-    core/* ɵɵproperty */.Q6J("ngForOf", ctx_r33.upcomingRaceAnalysis.fp2Laps);
+    core/* ɵɵproperty */.Q6J("ngForOf", ctx_r34.upcomingRaceAnalysis.fp2Laps);
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_8_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "mat-tab", 59);
+    core/* ɵɵelementStart */.TgZ(0, "mat-tab", 62);
     core/* ɵɵtemplate */.YNc(1, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_8_ng_template_1_Template, 20, 2, "ng-template", 19);
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
@@ -16909,101 +17217,117 @@ function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_8_Template(rf, ctx) 
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_9_ng_template_1_div_0_tr_24_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "tr");
-    core/* ɵɵelementStart */.TgZ(1, "th", 42);
+    core/* ɵɵelementStart */.TgZ(1, "th", 59);
     core/* ɵɵtext */._uU(2);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(3, "td");
+    core/* ɵɵelementStart */.TgZ(3, "td", 60);
     core/* ɵɵtext */._uU(4);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(5, "td", 58);
+    core/* ɵɵelementStart */.TgZ(5, "td", 61);
     core/* ɵɵtext */._uU(6);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(7, "td");
+    core/* ɵɵelementStart */.TgZ(7, "td", 60);
     core/* ɵɵtext */._uU(8);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(9, "td");
+    core/* ɵɵelementStart */.TgZ(9, "td", 60);
     core/* ɵɵtext */._uU(10);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(11, "td", 58);
+    core/* ɵɵelementStart */.TgZ(11, "td", 61);
     core/* ɵɵtext */._uU(12);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(13, "td", 58);
+    core/* ɵɵelementStart */.TgZ(13, "td", 61);
     core/* ɵɵtext */._uU(14);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(15, "td", 58);
+    core/* ɵɵelementStart */.TgZ(15, "td", 61);
     core/* ɵɵtext */._uU(16);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const standing_r49 = ctx.$implicit;
-    core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r49.position);
-    core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r49.FullName);
-    core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r49.Team);
-    core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r49.finalGap);
-    core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r49.fastestLap);
-    core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r49.fastestLapSector1);
-    core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r49.fastestLapSector2);
-    core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r49.fastestLapSector3);
+    const standing_r50 = ctx.$implicit;
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵproperty */.Q6J("ngClass", core/* ɵɵpureFunction1 */.VKq(16, upcoming_race_analysis_component_c1, standing_r50.position === 1));
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r50.position);
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵproperty */.Q6J("ngClass", core/* ɵɵpureFunction1 */.VKq(18, upcoming_race_analysis_component_c1, standing_r50.position === 1));
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r50.FullName);
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵproperty */.Q6J("ngClass", core/* ɵɵpureFunction1 */.VKq(20, upcoming_race_analysis_component_c1, standing_r50.position === 1));
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r50.Team);
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵproperty */.Q6J("ngClass", core/* ɵɵpureFunction1 */.VKq(22, upcoming_race_analysis_component_c1, standing_r50.position === 1));
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r50.finalGap);
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵproperty */.Q6J("ngClass", core/* ɵɵpureFunction1 */.VKq(24, upcoming_race_analysis_component_c1, standing_r50.position === 1));
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r50.fastestLap);
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵproperty */.Q6J("ngClass", core/* ɵɵpureFunction1 */.VKq(26, upcoming_race_analysis_component_c1, standing_r50.fastestLapPositionSector1 === 1));
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r50.fastestLapSector1);
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵproperty */.Q6J("ngClass", core/* ɵɵpureFunction1 */.VKq(28, upcoming_race_analysis_component_c1, standing_r50.fastestLapPositionSector2 === 1));
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r50.fastestLapSector2);
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵproperty */.Q6J("ngClass", core/* ɵɵpureFunction1 */.VKq(30, upcoming_race_analysis_component_c1, standing_r50.fastestLapPositionSector3 === 1));
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r50.fastestLapSector3);
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_9_ng_template_1_div_0_Template(rf, ctx) { if (rf & 1) {
-    const _r52 = core/* ɵɵgetCurrentView */.EpF();
+    const _r53 = core/* ɵɵgetCurrentView */.EpF();
     core/* ɵɵelementStart */.TgZ(0, "div");
-    core/* ɵɵelementStart */.TgZ(1, "table", 47);
-    core/* ɵɵlistener */.NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_9_ng_template_1_div_0_Template_table_matSortChange_1_listener($event) { core/* ɵɵrestoreView */.CHM(_r52); const ctx_r51 = core/* ɵɵnextContext */.oxw(5); return ctx_r51.sortMainResultData($event, 3); });
+    core/* ɵɵelementStart */.TgZ(1, "table", 48);
+    core/* ɵɵlistener */.NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_9_ng_template_1_div_0_Template_table_matSortChange_1_listener($event) { core/* ɵɵrestoreView */.CHM(_r53); const ctx_r52 = core/* ɵɵnextContext */.oxw(5); return ctx_r52.sortMainResultData($event, 3); });
     core/* ɵɵelementStart */.TgZ(2, "thead");
     core/* ɵɵelementStart */.TgZ(3, "tr");
-    core/* ɵɵelementStart */.TgZ(4, "th", 52);
+    core/* ɵɵelementStart */.TgZ(4, "th", 53);
     core/* ɵɵtext */._uU(5, "Results");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(6, "tr");
-    core/* ɵɵelementStart */.TgZ(7, "th", 49);
+    core/* ɵɵelementStart */.TgZ(7, "th", 50);
     core/* ɵɵtext */._uU(8, "#");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(9, "th", 53);
+    core/* ɵɵelementStart */.TgZ(9, "th", 54);
     core/* ɵɵtext */._uU(10, "Name");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(11, "th", 54);
+    core/* ɵɵelementStart */.TgZ(11, "th", 55);
     core/* ɵɵtext */._uU(12, "Team");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(13, "th", 53);
+    core/* ɵɵelementStart */.TgZ(13, "th", 54);
     core/* ɵɵtext */._uU(14, "Gap");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(15, "th", 49);
+    core/* ɵɵelementStart */.TgZ(15, "th", 50);
     core/* ɵɵtext */._uU(16, "Lap time");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(17, "th", 55);
+    core/* ɵɵelementStart */.TgZ(17, "th", 56);
     core/* ɵɵtext */._uU(18, "Sector 1");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(19, "th", 56);
+    core/* ɵɵelementStart */.TgZ(19, "th", 57);
     core/* ɵɵtext */._uU(20, "Sector 2");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(21, "th", 57);
+    core/* ɵɵelementStart */.TgZ(21, "th", 58);
     core/* ɵɵtext */._uU(22, "Sector 3");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(23, "tbody");
-    core/* ɵɵtemplate */.YNc(24, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_9_ng_template_1_div_0_tr_24_Template, 17, 8, "tr", 9);
+    core/* ɵɵtemplate */.YNc(24, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_9_ng_template_1_div_0_tr_24_Template, 17, 32, "tr", 9);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const ctx_r46 = core/* ɵɵnextContext */.oxw(5);
+    const ctx_r47 = core/* ɵɵnextContext */.oxw(5);
     core/* ɵɵadvance */.xp6(24);
-    core/* ɵɵproperty */.Q6J("ngForOf", ctx_r46.upcomingRaceAnalysis.fp3);
+    core/* ɵɵproperty */.Q6J("ngForOf", ctx_r47.upcomingRaceAnalysis.fp3);
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_9_ng_template_1_tr_19_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "tr");
-    core/* ɵɵelementStart */.TgZ(1, "th", 42);
+    core/* ɵɵelementStart */.TgZ(1, "th", 43);
     core/* ɵɵtext */._uU(2);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(3, "td");
@@ -17017,41 +17341,41 @@ function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_9_ng_template_1_tr_1
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const lap_r53 = ctx.$implicit;
+    const lap_r54 = ctx.$implicit;
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(lap_r53.position);
+    core/* ɵɵtextInterpolate */.Oqu(lap_r54.position);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(lap_r53.driverName);
+    core/* ɵɵtextInterpolate */.Oqu(lap_r54.driverName);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(lap_r53.lapTime);
+    core/* ɵɵtextInterpolate */.Oqu(lap_r54.lapTime);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(lap_r53.lapNumber);
+    core/* ɵɵtextInterpolate */.Oqu(lap_r54.lapNumber);
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_9_ng_template_1_Template(rf, ctx) { if (rf & 1) {
-    const _r56 = core/* ɵɵgetCurrentView */.EpF();
+    const _r57 = core/* ɵɵgetCurrentView */.EpF();
     core/* ɵɵtemplate */.YNc(0, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_9_ng_template_1_div_0_Template, 25, 1, "div", 0);
-    core/* ɵɵelementStart */.TgZ(1, "div", 45);
-    core/* ɵɵelementStart */.TgZ(2, "div", 46);
-    core/* ɵɵelementStart */.TgZ(3, "div", 38);
-    core/* ɵɵelementStart */.TgZ(4, "table", 47);
-    core/* ɵɵlistener */.NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_9_ng_template_1_Template_table_matSortChange_4_listener($event) { core/* ɵɵrestoreView */.CHM(_r56); const ctx_r55 = core/* ɵɵnextContext */.oxw(4); return ctx_r55.sortResultData($event, 3); });
+    core/* ɵɵelementStart */.TgZ(1, "div", 46);
+    core/* ɵɵelementStart */.TgZ(2, "div", 47);
+    core/* ɵɵelementStart */.TgZ(3, "div", 39);
+    core/* ɵɵelementStart */.TgZ(4, "table", 48);
+    core/* ɵɵlistener */.NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_9_ng_template_1_Template_table_matSortChange_4_listener($event) { core/* ɵɵrestoreView */.CHM(_r57); const ctx_r56 = core/* ɵɵnextContext */.oxw(4); return ctx_r56.sortResultData($event, 3); });
     core/* ɵɵelementStart */.TgZ(5, "thead");
     core/* ɵɵelementStart */.TgZ(6, "tr");
-    core/* ɵɵelementStart */.TgZ(7, "th", 48);
+    core/* ɵɵelementStart */.TgZ(7, "th", 49);
     core/* ɵɵtext */._uU(8, "Recorded laps");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(9, "tr");
-    core/* ɵɵelementStart */.TgZ(10, "th", 49);
+    core/* ɵɵelementStart */.TgZ(10, "th", 50);
     core/* ɵɵtext */._uU(11, "#");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(12, "th", 50);
+    core/* ɵɵelementStart */.TgZ(12, "th", 51);
     core/* ɵɵtext */._uU(13, "Name");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(14, "th", 49);
+    core/* ɵɵelementStart */.TgZ(14, "th", 50);
     core/* ɵɵtext */._uU(15, "Lap Time");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(16, "th", 51);
+    core/* ɵɵelementStart */.TgZ(16, "th", 52);
     core/* ɵɵtext */._uU(17, "Lap Number");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -17064,13 +17388,13 @@ function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_9_ng_template_1_Temp
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const ctx_r45 = core/* ɵɵnextContext */.oxw(4);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r45.upcomingRaceAnalysis.fp3 !== null);
+    const ctx_r46 = core/* ɵɵnextContext */.oxw(4);
+    core/* ɵɵproperty */.Q6J("ngIf", ctx_r46.upcomingRaceAnalysis.fp3 !== null);
     core/* ɵɵadvance */.xp6(19);
-    core/* ɵɵproperty */.Q6J("ngForOf", ctx_r45.upcomingRaceAnalysis.fp3Laps);
+    core/* ɵɵproperty */.Q6J("ngForOf", ctx_r46.upcomingRaceAnalysis.fp3Laps);
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_9_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "mat-tab", 60);
+    core/* ɵɵelementStart */.TgZ(0, "mat-tab", 63);
     core/* ɵɵtemplate */.YNc(1, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_9_ng_template_1_Template, 20, 2, "ng-template", 19);
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
@@ -17079,101 +17403,117 @@ function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_9_Template(rf, ctx) 
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_div_0_tr_24_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "tr");
-    core/* ɵɵelementStart */.TgZ(1, "th", 42);
+    core/* ɵɵelementStart */.TgZ(1, "th", 59);
     core/* ɵɵtext */._uU(2);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(3, "td");
+    core/* ɵɵelementStart */.TgZ(3, "td", 60);
     core/* ɵɵtext */._uU(4);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(5, "td", 58);
+    core/* ɵɵelementStart */.TgZ(5, "td", 61);
     core/* ɵɵtext */._uU(6);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(7, "td");
+    core/* ɵɵelementStart */.TgZ(7, "td", 60);
     core/* ɵɵtext */._uU(8);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(9, "td");
+    core/* ɵɵelementStart */.TgZ(9, "td", 60);
     core/* ɵɵtext */._uU(10);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(11, "td", 58);
+    core/* ɵɵelementStart */.TgZ(11, "td", 61);
     core/* ɵɵtext */._uU(12);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(13, "td", 58);
+    core/* ɵɵelementStart */.TgZ(13, "td", 61);
     core/* ɵɵtext */._uU(14);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(15, "td", 58);
+    core/* ɵɵelementStart */.TgZ(15, "td", 61);
     core/* ɵɵtext */._uU(16);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const standing_r60 = ctx.$implicit;
-    core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r60.position);
-    core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r60.FullName);
-    core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r60.Team);
-    core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r60.finalGap);
-    core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r60.fastestLap);
-    core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r60.fastestLapSector1);
-    core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r60.fastestLapSector2);
-    core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r60.fastestLapSector3);
+    const standing_r61 = ctx.$implicit;
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵproperty */.Q6J("ngClass", core/* ɵɵpureFunction1 */.VKq(16, upcoming_race_analysis_component_c1, standing_r61.position === 1));
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r61.position);
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵproperty */.Q6J("ngClass", core/* ɵɵpureFunction1 */.VKq(18, upcoming_race_analysis_component_c1, standing_r61.position === 1));
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r61.FullName);
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵproperty */.Q6J("ngClass", core/* ɵɵpureFunction1 */.VKq(20, upcoming_race_analysis_component_c1, standing_r61.position === 1));
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r61.Team);
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵproperty */.Q6J("ngClass", core/* ɵɵpureFunction1 */.VKq(22, upcoming_race_analysis_component_c1, standing_r61.position === 1));
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r61.finalGap);
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵproperty */.Q6J("ngClass", core/* ɵɵpureFunction1 */.VKq(24, upcoming_race_analysis_component_c1, standing_r61.position === 1));
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r61.fastestLap);
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵproperty */.Q6J("ngClass", core/* ɵɵpureFunction1 */.VKq(26, upcoming_race_analysis_component_c1, standing_r61.fastestLapPositionSector1 === 1));
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r61.fastestLapSector1);
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵproperty */.Q6J("ngClass", core/* ɵɵpureFunction1 */.VKq(28, upcoming_race_analysis_component_c1, standing_r61.fastestLapPositionSector2 === 1));
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r61.fastestLapSector2);
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵproperty */.Q6J("ngClass", core/* ɵɵpureFunction1 */.VKq(30, upcoming_race_analysis_component_c1, standing_r61.fastestLapPositionSector3 === 1));
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r61.fastestLapSector3);
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_div_0_Template(rf, ctx) { if (rf & 1) {
-    const _r63 = core/* ɵɵgetCurrentView */.EpF();
+    const _r64 = core/* ɵɵgetCurrentView */.EpF();
     core/* ɵɵelementStart */.TgZ(0, "div");
-    core/* ɵɵelementStart */.TgZ(1, "table", 47);
-    core/* ɵɵlistener */.NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_div_0_Template_table_matSortChange_1_listener($event) { core/* ɵɵrestoreView */.CHM(_r63); const ctx_r62 = core/* ɵɵnextContext */.oxw(4); return ctx_r62.sortMainResultData($event, 4); });
+    core/* ɵɵelementStart */.TgZ(1, "table", 48);
+    core/* ɵɵlistener */.NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_div_0_Template_table_matSortChange_1_listener($event) { core/* ɵɵrestoreView */.CHM(_r64); const ctx_r63 = core/* ɵɵnextContext */.oxw(4); return ctx_r63.sortMainResultData($event, 4); });
     core/* ɵɵelementStart */.TgZ(2, "thead");
     core/* ɵɵelementStart */.TgZ(3, "tr");
-    core/* ɵɵelementStart */.TgZ(4, "th", 52);
+    core/* ɵɵelementStart */.TgZ(4, "th", 53);
     core/* ɵɵtext */._uU(5, "Results");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(6, "tr");
-    core/* ɵɵelementStart */.TgZ(7, "th", 49);
+    core/* ɵɵelementStart */.TgZ(7, "th", 50);
     core/* ɵɵtext */._uU(8, "#");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(9, "th", 53);
+    core/* ɵɵelementStart */.TgZ(9, "th", 54);
     core/* ɵɵtext */._uU(10, "Name");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(11, "th", 54);
+    core/* ɵɵelementStart */.TgZ(11, "th", 55);
     core/* ɵɵtext */._uU(12, "Team");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(13, "th", 53);
+    core/* ɵɵelementStart */.TgZ(13, "th", 54);
     core/* ɵɵtext */._uU(14, "Gap");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(15, "th", 49);
+    core/* ɵɵelementStart */.TgZ(15, "th", 50);
     core/* ɵɵtext */._uU(16, "Lap time");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(17, "th", 55);
+    core/* ɵɵelementStart */.TgZ(17, "th", 56);
     core/* ɵɵtext */._uU(18, "Sector 1");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(19, "th", 56);
+    core/* ɵɵelementStart */.TgZ(19, "th", 57);
     core/* ɵɵtext */._uU(20, "Sector 2");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(21, "th", 57);
+    core/* ɵɵelementStart */.TgZ(21, "th", 58);
     core/* ɵɵtext */._uU(22, "Sector 3");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(23, "tbody");
-    core/* ɵɵtemplate */.YNc(24, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_div_0_tr_24_Template, 17, 8, "tr", 9);
+    core/* ɵɵtemplate */.YNc(24, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_div_0_tr_24_Template, 17, 32, "tr", 9);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const ctx_r57 = core/* ɵɵnextContext */.oxw(4);
+    const ctx_r58 = core/* ɵɵnextContext */.oxw(4);
     core/* ɵɵadvance */.xp6(24);
-    core/* ɵɵproperty */.Q6J("ngForOf", ctx_r57.upcomingRaceAnalysis.quali);
+    core/* ɵɵproperty */.Q6J("ngForOf", ctx_r58.upcomingRaceAnalysis.quali);
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_tr_19_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "tr");
-    core/* ɵɵelementStart */.TgZ(1, "th", 42);
+    core/* ɵɵelementStart */.TgZ(1, "th", 43);
     core/* ɵɵtext */._uU(2);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(3, "td");
@@ -17187,41 +17527,41 @@ function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_tr_19_Templat
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const lap_r64 = ctx.$implicit;
+    const lap_r65 = ctx.$implicit;
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(lap_r64.position);
+    core/* ɵɵtextInterpolate */.Oqu(lap_r65.position);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(lap_r64.driverName);
+    core/* ɵɵtextInterpolate */.Oqu(lap_r65.driverName);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(lap_r64.lapTime);
+    core/* ɵɵtextInterpolate */.Oqu(lap_r65.lapTime);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(lap_r64.lapNumber);
+    core/* ɵɵtextInterpolate */.Oqu(lap_r65.lapNumber);
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_Template(rf, ctx) { if (rf & 1) {
-    const _r67 = core/* ɵɵgetCurrentView */.EpF();
+    const _r68 = core/* ɵɵgetCurrentView */.EpF();
     core/* ɵɵtemplate */.YNc(0, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_div_0_Template, 25, 1, "div", 0);
-    core/* ɵɵelementStart */.TgZ(1, "div", 45);
-    core/* ɵɵelementStart */.TgZ(2, "div", 46);
-    core/* ɵɵelementStart */.TgZ(3, "div", 38);
-    core/* ɵɵelementStart */.TgZ(4, "table", 47);
-    core/* ɵɵlistener */.NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_Template_table_matSortChange_4_listener($event) { core/* ɵɵrestoreView */.CHM(_r67); const ctx_r66 = core/* ɵɵnextContext */.oxw(3); return ctx_r66.sortResultData($event, 4); });
+    core/* ɵɵelementStart */.TgZ(1, "div", 46);
+    core/* ɵɵelementStart */.TgZ(2, "div", 47);
+    core/* ɵɵelementStart */.TgZ(3, "div", 39);
+    core/* ɵɵelementStart */.TgZ(4, "table", 48);
+    core/* ɵɵlistener */.NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_Template_table_matSortChange_4_listener($event) { core/* ɵɵrestoreView */.CHM(_r68); const ctx_r67 = core/* ɵɵnextContext */.oxw(3); return ctx_r67.sortResultData($event, 4); });
     core/* ɵɵelementStart */.TgZ(5, "thead");
     core/* ɵɵelementStart */.TgZ(6, "tr");
-    core/* ɵɵelementStart */.TgZ(7, "th", 48);
+    core/* ɵɵelementStart */.TgZ(7, "th", 49);
     core/* ɵɵtext */._uU(8, "Recorded laps");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(9, "tr");
-    core/* ɵɵelementStart */.TgZ(10, "th", 49);
+    core/* ɵɵelementStart */.TgZ(10, "th", 50);
     core/* ɵɵtext */._uU(11, "#");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(12, "th", 50);
+    core/* ɵɵelementStart */.TgZ(12, "th", 51);
     core/* ɵɵtext */._uU(13, "Name");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(14, "th", 49);
+    core/* ɵɵelementStart */.TgZ(14, "th", 50);
     core/* ɵɵtext */._uU(15, "Lap Time");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(16, "th", 51);
+    core/* ɵɵelementStart */.TgZ(16, "th", 52);
     core/* ɵɵtext */._uU(17, "Lap Number");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -17241,101 +17581,117 @@ function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_Template(rf, 
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_div_0_tr_24_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "tr");
-    core/* ɵɵelementStart */.TgZ(1, "th", 42);
+    core/* ɵɵelementStart */.TgZ(1, "th", 59);
     core/* ɵɵtext */._uU(2);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(3, "td");
+    core/* ɵɵelementStart */.TgZ(3, "td", 60);
     core/* ɵɵtext */._uU(4);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(5, "td", 58);
+    core/* ɵɵelementStart */.TgZ(5, "td", 61);
     core/* ɵɵtext */._uU(6);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(7, "td");
+    core/* ɵɵelementStart */.TgZ(7, "td", 60);
     core/* ɵɵtext */._uU(8);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(9, "td");
+    core/* ɵɵelementStart */.TgZ(9, "td", 60);
     core/* ɵɵtext */._uU(10);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(11, "td", 58);
+    core/* ɵɵelementStart */.TgZ(11, "td", 61);
     core/* ɵɵtext */._uU(12);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(13, "td", 58);
+    core/* ɵɵelementStart */.TgZ(13, "td", 61);
     core/* ɵɵtext */._uU(14);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(15, "td", 58);
+    core/* ɵɵelementStart */.TgZ(15, "td", 61);
     core/* ɵɵtext */._uU(16);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const standing_r72 = ctx.$implicit;
-    core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r72.position);
-    core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r72.FullName);
-    core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r72.Team);
-    core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r72.finalGap);
-    core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r72.fastestLap);
-    core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r72.fastestLapSector1);
-    core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r72.fastestLapSector2);
-    core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r72.fastestLapSector3);
+    const standing_r73 = ctx.$implicit;
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵproperty */.Q6J("ngClass", core/* ɵɵpureFunction1 */.VKq(16, upcoming_race_analysis_component_c1, standing_r73.position === 1));
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r73.position);
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵproperty */.Q6J("ngClass", core/* ɵɵpureFunction1 */.VKq(18, upcoming_race_analysis_component_c1, standing_r73.position === 1));
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r73.FullName);
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵproperty */.Q6J("ngClass", core/* ɵɵpureFunction1 */.VKq(20, upcoming_race_analysis_component_c1, standing_r73.position === 1));
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r73.Team);
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵproperty */.Q6J("ngClass", core/* ɵɵpureFunction1 */.VKq(22, upcoming_race_analysis_component_c1, standing_r73.position === 1));
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r73.finalGap);
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵproperty */.Q6J("ngClass", core/* ɵɵpureFunction1 */.VKq(24, upcoming_race_analysis_component_c1, standing_r73.position === 1));
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r73.fastestLap);
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵproperty */.Q6J("ngClass", core/* ɵɵpureFunction1 */.VKq(26, upcoming_race_analysis_component_c1, standing_r73.fastestLapPositionSector1 === 1));
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r73.fastestLapSector1);
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵproperty */.Q6J("ngClass", core/* ɵɵpureFunction1 */.VKq(28, upcoming_race_analysis_component_c1, standing_r73.fastestLapPositionSector2 === 1));
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r73.fastestLapSector2);
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵproperty */.Q6J("ngClass", core/* ɵɵpureFunction1 */.VKq(30, upcoming_race_analysis_component_c1, standing_r73.fastestLapPositionSector3 === 1));
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r73.fastestLapSector3);
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_div_0_Template(rf, ctx) { if (rf & 1) {
-    const _r75 = core/* ɵɵgetCurrentView */.EpF();
+    const _r76 = core/* ɵɵgetCurrentView */.EpF();
     core/* ɵɵelementStart */.TgZ(0, "div");
-    core/* ɵɵelementStart */.TgZ(1, "table", 47);
-    core/* ɵɵlistener */.NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_div_0_Template_table_matSortChange_1_listener($event) { core/* ɵɵrestoreView */.CHM(_r75); const ctx_r74 = core/* ɵɵnextContext */.oxw(5); return ctx_r74.sortMainResultData($event, 2); });
+    core/* ɵɵelementStart */.TgZ(1, "table", 48);
+    core/* ɵɵlistener */.NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_div_0_Template_table_matSortChange_1_listener($event) { core/* ɵɵrestoreView */.CHM(_r76); const ctx_r75 = core/* ɵɵnextContext */.oxw(5); return ctx_r75.sortMainResultData($event, 2); });
     core/* ɵɵelementStart */.TgZ(2, "thead");
     core/* ɵɵelementStart */.TgZ(3, "tr");
-    core/* ɵɵelementStart */.TgZ(4, "th", 52);
+    core/* ɵɵelementStart */.TgZ(4, "th", 53);
     core/* ɵɵtext */._uU(5, "Results");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(6, "tr");
-    core/* ɵɵelementStart */.TgZ(7, "th", 49);
+    core/* ɵɵelementStart */.TgZ(7, "th", 50);
     core/* ɵɵtext */._uU(8, "#");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(9, "th", 53);
+    core/* ɵɵelementStart */.TgZ(9, "th", 54);
     core/* ɵɵtext */._uU(10, "Name");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(11, "th", 54);
+    core/* ɵɵelementStart */.TgZ(11, "th", 55);
     core/* ɵɵtext */._uU(12, "Team");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(13, "th", 53);
+    core/* ɵɵelementStart */.TgZ(13, "th", 54);
     core/* ɵɵtext */._uU(14, "Gap");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(15, "th", 49);
+    core/* ɵɵelementStart */.TgZ(15, "th", 50);
     core/* ɵɵtext */._uU(16, "Lap time");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(17, "th", 55);
+    core/* ɵɵelementStart */.TgZ(17, "th", 56);
     core/* ɵɵtext */._uU(18, "Sector 1");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(19, "th", 56);
+    core/* ɵɵelementStart */.TgZ(19, "th", 57);
     core/* ɵɵtext */._uU(20, "Sector 2");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(21, "th", 57);
+    core/* ɵɵelementStart */.TgZ(21, "th", 58);
     core/* ɵɵtext */._uU(22, "Sector 3");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(23, "tbody");
-    core/* ɵɵtemplate */.YNc(24, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_div_0_tr_24_Template, 17, 8, "tr", 9);
+    core/* ɵɵtemplate */.YNc(24, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_div_0_tr_24_Template, 17, 32, "tr", 9);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const ctx_r69 = core/* ɵɵnextContext */.oxw(5);
+    const ctx_r70 = core/* ɵɵnextContext */.oxw(5);
     core/* ɵɵadvance */.xp6(24);
-    core/* ɵɵproperty */.Q6J("ngForOf", ctx_r69.upcomingRaceAnalysis.fp2);
+    core/* ɵɵproperty */.Q6J("ngForOf", ctx_r70.upcomingRaceAnalysis.fp2);
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_tr_19_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "tr");
-    core/* ɵɵelementStart */.TgZ(1, "th", 42);
+    core/* ɵɵelementStart */.TgZ(1, "th", 43);
     core/* ɵɵtext */._uU(2);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(3, "td");
@@ -17349,41 +17705,41 @@ function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_tr_
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const lap_r76 = ctx.$implicit;
+    const lap_r77 = ctx.$implicit;
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(lap_r76.position);
+    core/* ɵɵtextInterpolate */.Oqu(lap_r77.position);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(lap_r76.driverName);
+    core/* ɵɵtextInterpolate */.Oqu(lap_r77.driverName);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(lap_r76.lapTime);
+    core/* ɵɵtextInterpolate */.Oqu(lap_r77.lapTime);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(lap_r76.lapNumber);
+    core/* ɵɵtextInterpolate */.Oqu(lap_r77.lapNumber);
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_Template(rf, ctx) { if (rf & 1) {
-    const _r79 = core/* ɵɵgetCurrentView */.EpF();
+    const _r80 = core/* ɵɵgetCurrentView */.EpF();
     core/* ɵɵtemplate */.YNc(0, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_div_0_Template, 25, 1, "div", 0);
-    core/* ɵɵelementStart */.TgZ(1, "div", 45);
-    core/* ɵɵelementStart */.TgZ(2, "div", 46);
-    core/* ɵɵelementStart */.TgZ(3, "div", 38);
-    core/* ɵɵelementStart */.TgZ(4, "table", 47);
-    core/* ɵɵlistener */.NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_Template_table_matSortChange_4_listener($event) { core/* ɵɵrestoreView */.CHM(_r79); const ctx_r78 = core/* ɵɵnextContext */.oxw(4); return ctx_r78.sortResultData($event, 2); });
+    core/* ɵɵelementStart */.TgZ(1, "div", 46);
+    core/* ɵɵelementStart */.TgZ(2, "div", 47);
+    core/* ɵɵelementStart */.TgZ(3, "div", 39);
+    core/* ɵɵelementStart */.TgZ(4, "table", 48);
+    core/* ɵɵlistener */.NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_Template_table_matSortChange_4_listener($event) { core/* ɵɵrestoreView */.CHM(_r80); const ctx_r79 = core/* ɵɵnextContext */.oxw(4); return ctx_r79.sortResultData($event, 2); });
     core/* ɵɵelementStart */.TgZ(5, "thead");
     core/* ɵɵelementStart */.TgZ(6, "tr");
-    core/* ɵɵelementStart */.TgZ(7, "th", 48);
+    core/* ɵɵelementStart */.TgZ(7, "th", 49);
     core/* ɵɵtext */._uU(8, "Recorded laps");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(9, "tr");
-    core/* ɵɵelementStart */.TgZ(10, "th", 49);
+    core/* ɵɵelementStart */.TgZ(10, "th", 50);
     core/* ɵɵtext */._uU(11, "#");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(12, "th", 50);
+    core/* ɵɵelementStart */.TgZ(12, "th", 51);
     core/* ɵɵtext */._uU(13, "Name");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(14, "th", 49);
+    core/* ɵɵelementStart */.TgZ(14, "th", 50);
     core/* ɵɵtext */._uU(15, "Lap Time");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(16, "th", 51);
+    core/* ɵɵelementStart */.TgZ(16, "th", 52);
     core/* ɵɵtext */._uU(17, "Lap Number");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -17396,13 +17752,13 @@ function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_Tem
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const ctx_r68 = core/* ɵɵnextContext */.oxw(4);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r68.upcomingRaceAnalysis.fp2 !== null);
+    const ctx_r69 = core/* ɵɵnextContext */.oxw(4);
+    core/* ɵɵproperty */.Q6J("ngIf", ctx_r69.upcomingRaceAnalysis.fp2 !== null);
     core/* ɵɵadvance */.xp6(19);
-    core/* ɵɵproperty */.Q6J("ngForOf", ctx_r68.upcomingRaceAnalysis.fp2Laps);
+    core/* ɵɵproperty */.Q6J("ngForOf", ctx_r69.upcomingRaceAnalysis.fp2Laps);
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "mat-tab", 59);
+    core/* ɵɵelementStart */.TgZ(0, "mat-tab", 62);
     core/* ɵɵtemplate */.YNc(1, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_Template, 20, 2, "ng-template", 19);
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
@@ -17411,71 +17767,71 @@ function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_Template(rf, ctx)
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_13_ng_template_1_div_0_tr_20_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "tr");
-    core/* ɵɵelementStart */.TgZ(1, "th", 42);
+    core/* ɵɵelementStart */.TgZ(1, "th", 43);
     core/* ɵɵtext */._uU(2);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(3, "td");
     core/* ɵɵtext */._uU(4);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(5, "td", 58);
+    core/* ɵɵelementStart */.TgZ(5, "td", 68);
     core/* ɵɵtext */._uU(6);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(7, "td");
     core/* ɵɵtext */._uU(8);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(9, "td", 58);
+    core/* ɵɵelementStart */.TgZ(9, "td", 68);
     core/* ɵɵtext */._uU(10);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(11, "td", 65);
+    core/* ɵɵelementStart */.TgZ(11, "td", 69);
     core/* ɵɵtext */._uU(12);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const standing_r83 = ctx.$implicit;
-    const ctx_r82 = core/* ɵɵnextContext */.oxw(6);
+    const standing_r84 = ctx.$implicit;
+    const ctx_r83 = core/* ɵɵnextContext */.oxw(6);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r83.position);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r84.position);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r83.FullName);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r84.FullName);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r83.Team);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r84.Team);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r83.finalGap);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r84.finalGap);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r83.fastestLap);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r84.fastestLap);
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵstyleProp */.Udp("color", ctx_r82.getTyresClass(standing_r83.lapByLapData.tyres));
+    core/* ɵɵstyleProp */.Udp("color", ctx_r83.getTyresClass(standing_r84.lapByLapData.tyres));
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵtextInterpolate */.Oqu(ctx_r82.getTyresString(standing_r83.lapByLapData.tyres));
+    core/* ɵɵtextInterpolate */.Oqu(ctx_r83.getTyresString(standing_r84.lapByLapData.tyres));
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_13_ng_template_1_div_0_Template(rf, ctx) { if (rf & 1) {
-    const _r86 = core/* ɵɵgetCurrentView */.EpF();
+    const _r87 = core/* ɵɵgetCurrentView */.EpF();
     core/* ɵɵelementStart */.TgZ(0, "div");
-    core/* ɵɵelementStart */.TgZ(1, "table", 47);
-    core/* ɵɵlistener */.NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_13_ng_template_1_div_0_Template_table_matSortChange_1_listener($event) { core/* ɵɵrestoreView */.CHM(_r86); const ctx_r85 = core/* ɵɵnextContext */.oxw(5); return ctx_r85.sortMainResultData($event, 5); });
+    core/* ɵɵelementStart */.TgZ(1, "table", 48);
+    core/* ɵɵlistener */.NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_13_ng_template_1_div_0_Template_table_matSortChange_1_listener($event) { core/* ɵɵrestoreView */.CHM(_r87); const ctx_r86 = core/* ɵɵnextContext */.oxw(5); return ctx_r86.sortMainResultData($event, 5); });
     core/* ɵɵelementStart */.TgZ(2, "thead");
     core/* ɵɵelementStart */.TgZ(3, "tr");
-    core/* ɵɵelementStart */.TgZ(4, "th", 52);
+    core/* ɵɵelementStart */.TgZ(4, "th", 53);
     core/* ɵɵtext */._uU(5, "Results");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(6, "tr");
-    core/* ɵɵelementStart */.TgZ(7, "th", 49);
+    core/* ɵɵelementStart */.TgZ(7, "th", 50);
     core/* ɵɵtext */._uU(8, "#");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(9, "th", 53);
+    core/* ɵɵelementStart */.TgZ(9, "th", 54);
     core/* ɵɵtext */._uU(10, "Name");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(11, "th", 54);
+    core/* ɵɵelementStart */.TgZ(11, "th", 55);
     core/* ɵɵtext */._uU(12, "Team");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(13, "th", 53);
+    core/* ɵɵelementStart */.TgZ(13, "th", 54);
     core/* ɵɵtext */._uU(14, "Gap");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(15, "th", 63);
+    core/* ɵɵelementStart */.TgZ(15, "th", 66);
     core/* ɵɵtext */._uU(16, "Lap time");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(17, "th", 64);
+    core/* ɵɵelementStart */.TgZ(17, "th", 67);
     core/* ɵɵtext */._uU(18, "Tyre");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -17486,17 +17842,17 @@ function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_13_ng_template_1_div
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const ctx_r81 = core/* ɵɵnextContext */.oxw(5);
+    const ctx_r82 = core/* ɵɵnextContext */.oxw(5);
     core/* ɵɵadvance */.xp6(20);
-    core/* ɵɵproperty */.Q6J("ngForOf", ctx_r81.upcomingRaceAnalysis.sprintQuali);
+    core/* ɵɵproperty */.Q6J("ngForOf", ctx_r82.upcomingRaceAnalysis.sprintQuali);
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_13_ng_template_1_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵtemplate */.YNc(0, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_13_ng_template_1_div_0_Template, 21, 1, "div", 0);
     core/* ɵɵelementStart */.TgZ(1, "div", 4);
     core/* ɵɵelementStart */.TgZ(2, "div", 5);
-    core/* ɵɵelementStart */.TgZ(3, "div", 37);
-    core/* ɵɵelementStart */.TgZ(4, "div", 38);
-    core/* ɵɵelement */._UZ(5, "apx-chart", 62);
+    core/* ɵɵelementStart */.TgZ(3, "div", 38);
+    core/* ɵɵelementStart */.TgZ(4, "div", 39);
+    core/* ɵɵelement */._UZ(5, "apx-chart", 65);
     core/* ɵɵelement */._UZ(6, "br");
     core/* ɵɵelement */._UZ(7, "br");
     core/* ɵɵelement */._UZ(8, "br");
@@ -17505,24 +17861,98 @@ function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_13_ng_template_1_Tem
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const ctx_r80 = core/* ɵɵnextContext */.oxw(4);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r80.upcomingRaceAnalysis.sprintQuali != null);
+    const ctx_r81 = core/* ɵɵnextContext */.oxw(4);
+    core/* ɵɵproperty */.Q6J("ngIf", ctx_r81.upcomingRaceAnalysis.sprintQuali != null);
     core/* ɵɵadvance */.xp6(5);
-    core/* ɵɵproperty */.Q6J("series", ctx_r80.lapPosChart.series)("chart", ctx_r80.defChart)("dataLabels", ctx_r80.defDataLabels)("grid", ctx_r80.defGrid)("stroke", ctx_r80.defStroke)("title", ctx_r80.lapPosChart.title)("yaxis", ctx_r80.reverseYAxis)("xaxis", ctx_r80.lapXaxis);
+    core/* ɵɵproperty */.Q6J("series", ctx_r81.lapPosChart.series)("chart", ctx_r81.defChart)("dataLabels", ctx_r81.defDataLabels)("grid", ctx_r81.defGrid)("stroke", ctx_r81.defStroke)("title", ctx_r81.lapPosChart.title)("yaxis", ctx_r81.reverseYAxis)("xaxis", ctx_r81.lapXaxis);
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_13_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "mat-tab", 61);
+    core/* ɵɵelementStart */.TgZ(0, "mat-tab", 64);
     core/* ɵɵtemplate */.YNc(1, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_13_ng_template_1_Template, 9, 9, "ng-template", 19);
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
     const ctx_r13 = core/* ɵɵnextContext */.oxw(3);
     core/* ɵɵproperty */.Q6J("disabled", ctx_r13.upcomingRaceAnalysis.sprintQuali == null);
 } }
+function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_15_tr_20_Template(rf, ctx) { if (rf & 1) {
+    core/* ɵɵelementStart */.TgZ(0, "tr");
+    core/* ɵɵelementStart */.TgZ(1, "th", 43);
+    core/* ɵɵtext */._uU(2);
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(3, "td");
+    core/* ɵɵtext */._uU(4);
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(5, "td");
+    core/* ɵɵtext */._uU(6);
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(7, "td");
+    core/* ɵɵtext */._uU(8);
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(9, "td");
+    core/* ɵɵtext */._uU(10);
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+} if (rf & 2) {
+    const lap_r89 = ctx.$implicit;
+    core/* ɵɵadvance */.xp6(2);
+    core/* ɵɵtextInterpolate */.Oqu(lap_r89.position);
+    core/* ɵɵadvance */.xp6(2);
+    core/* ɵɵtextInterpolate */.Oqu(lap_r89.driverName);
+    core/* ɵɵadvance */.xp6(2);
+    core/* ɵɵtextInterpolate */.Oqu(lap_r89.lapTime);
+    core/* ɵɵadvance */.xp6(2);
+    core/* ɵɵtextInterpolate */.Oqu(lap_r89.lapNumber);
+    core/* ɵɵadvance */.xp6(2);
+    core/* ɵɵtextInterpolate */.Oqu(lap_r89.sessionName);
+} }
+function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_15_Template(rf, ctx) { if (rf & 1) {
+    const _r92 = core/* ɵɵgetCurrentView */.EpF();
+    core/* ɵɵelementStart */.TgZ(0, "div", 46);
+    core/* ɵɵelementStart */.TgZ(1, "div", 47);
+    core/* ɵɵelementStart */.TgZ(2, "div", 39);
+    core/* ɵɵelementStart */.TgZ(3, "table", 48);
+    core/* ɵɵlistener */.NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_15_Template_table_matSortChange_3_listener($event) { core/* ɵɵrestoreView */.CHM(_r92); const ctx_r91 = core/* ɵɵnextContext */.oxw(3); return ctx_r91.sortResultData($event, 6); });
+    core/* ɵɵelementStart */.TgZ(4, "thead");
+    core/* ɵɵelementStart */.TgZ(5, "tr");
+    core/* ɵɵelementStart */.TgZ(6, "th", 49);
+    core/* ɵɵtext */._uU(7, "Recorded laps");
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(8, "tr");
+    core/* ɵɵelementStart */.TgZ(9, "th", 50);
+    core/* ɵɵtext */._uU(10, "#");
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(11, "th", 51);
+    core/* ɵɵtext */._uU(12, "Name");
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(13, "th", 50);
+    core/* ɵɵtext */._uU(14, "Lap Time");
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(15, "th", 52);
+    core/* ɵɵtext */._uU(16, "Lap Number");
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(17, "th", 52);
+    core/* ɵɵtext */._uU(18, "Session");
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(19, "tbody");
+    core/* ɵɵtemplate */.YNc(20, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_15_tr_20_Template, 11, 5, "tr", 9);
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+} if (rf & 2) {
+    const ctx_r14 = core/* ɵɵnextContext */.oxw(3);
+    core/* ɵɵadvance */.xp6(20);
+    core/* ɵɵproperty */.Q6J("ngForOf", ctx_r14.allLaps);
+} }
 function UpcomingRaceAnalysisComponent_div_0_div_20_Template(rf, ctx) { if (rf & 1) {
-    const _r88 = core/* ɵɵgetCurrentView */.EpF();
+    const _r94 = core/* ɵɵgetCurrentView */.EpF();
     core/* ɵɵelementStart */.TgZ(0, "div");
     core/* ɵɵelementStart */.TgZ(1, "mat-tab-group", 17);
-    core/* ɵɵlistener */.NdJ("selectedIndexChange", function UpcomingRaceAnalysisComponent_div_0_div_20_Template_mat_tab_group_selectedIndexChange_1_listener($event) { core/* ɵɵrestoreView */.CHM(_r88); const ctx_r87 = core/* ɵɵnextContext */.oxw(2); return ctx_r87.selectedTab = $event; });
+    core/* ɵɵlistener */.NdJ("selectedIndexChange", function UpcomingRaceAnalysisComponent_div_0_div_20_Template_mat_tab_group_selectedIndexChange_1_listener($event) { core/* ɵɵrestoreView */.CHM(_r94); const ctx_r93 = core/* ɵɵnextContext */.oxw(2); return ctx_r93.selectedTab = $event; })("selectedTabChange", function UpcomingRaceAnalysisComponent_div_0_div_20_Template_mat_tab_group_selectedTabChange_1_listener($event) { core/* ɵɵrestoreView */.CHM(_r94); const ctx_r95 = core/* ɵɵnextContext */.oxw(2); return ctx_r95.tabChanged($event); });
     core/* ɵɵelementStart */.TgZ(2, "mat-tab", 18);
     core/* ɵɵtemplate */.YNc(3, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_3_Template, 1, 1, "ng-template", 19);
     core/* ɵɵelementEnd */.qZA();
@@ -17539,6 +17969,9 @@ function UpcomingRaceAnalysisComponent_div_0_div_20_Template(rf, ctx) { if (rf &
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵtemplate */.YNc(12, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_Template, 2, 1, "mat-tab", 22);
     core/* ɵɵtemplate */.YNc(13, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_13_Template, 2, 1, "mat-tab", 25);
+    core/* ɵɵelementStart */.TgZ(14, "mat-tab", 26);
+    core/* ɵɵtemplate */.YNc(15, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_15_Template, 21, 1, "ng-template", 19);
+    core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
@@ -17559,33 +17992,35 @@ function UpcomingRaceAnalysisComponent_div_0_div_20_Template(rf, ctx) { if (rf &
     core/* ɵɵproperty */.Q6J("ngIf", ctx_r3.sprintMode);
     core/* ɵɵadvance */.xp6(1);
     core/* ɵɵproperty */.Q6J("ngIf", ctx_r3.sprintMode);
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵproperty */.Q6J("disabled", ctx_r3.allLaps.length == 0);
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_21_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div");
-    core/* ɵɵelementStart */.TgZ(1, "div", 66);
-    core/* ɵɵelement */._UZ(2, "img", 67);
+    core/* ɵɵelementStart */.TgZ(1, "div", 70);
+    core/* ɵɵelement */._UZ(2, "img", 71);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } }
 function UpcomingRaceAnalysisComponent_div_0_Template(rf, ctx) { if (rf & 1) {
-    const _r90 = core/* ɵɵgetCurrentView */.EpF();
+    const _r97 = core/* ɵɵgetCurrentView */.EpF();
     core/* ɵɵelementStart */.TgZ(0, "div");
     core/* ɵɵelementStart */.TgZ(1, "mat-drawer-container", 1);
     core/* ɵɵelementStart */.TgZ(2, "mat-drawer", 2, 3);
-    core/* ɵɵlistener */.NdJ("openedChange", function UpcomingRaceAnalysisComponent_div_0_Template_mat_drawer_openedChange_2_listener($event) { core/* ɵɵrestoreView */.CHM(_r90); const ctx_r89 = core/* ɵɵnextContext */.oxw(); return ctx_r89.utilityService.setSidebarStatus($event); });
+    core/* ɵɵlistener */.NdJ("openedChange", function UpcomingRaceAnalysisComponent_div_0_Template_mat_drawer_openedChange_2_listener($event) { core/* ɵɵrestoreView */.CHM(_r97); const ctx_r96 = core/* ɵɵnextContext */.oxw(); return ctx_r96.utilityService.setSidebarStatus($event); });
     core/* ɵɵelementStart */.TgZ(4, "div", 4);
     core/* ɵɵelementStart */.TgZ(5, "div", 5);
     core/* ɵɵelementStart */.TgZ(6, "div");
     core/* ɵɵelementStart */.TgZ(7, "textarea", 6);
-    core/* ɵɵlistener */.NdJ("ngModelChange", function UpcomingRaceAnalysisComponent_div_0_Template_textarea_ngModelChange_7_listener($event) { core/* ɵɵrestoreView */.CHM(_r90); const ctx_r91 = core/* ɵɵnextContext */.oxw(); return ctx_r91.utilityService.postText = $event; });
+    core/* ɵɵlistener */.NdJ("ngModelChange", function UpcomingRaceAnalysisComponent_div_0_Template_textarea_ngModelChange_7_listener($event) { core/* ɵɵrestoreView */.CHM(_r97); const ctx_r98 = core/* ɵɵnextContext */.oxw(); return ctx_r98.utilityService.postText = $event; });
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(8, "div", 7);
     core/* ɵɵelementStart */.TgZ(9, "button", 8);
-    core/* ɵɵlistener */.NdJ("click", function UpcomingRaceAnalysisComponent_div_0_Template_button_click_9_listener() { core/* ɵɵrestoreView */.CHM(_r90); const ctx_r92 = core/* ɵɵnextContext */.oxw(); return ctx_r92.utilityService.postComment(11); });
+    core/* ɵɵlistener */.NdJ("click", function UpcomingRaceAnalysisComponent_div_0_Template_button_click_9_listener() { core/* ɵɵrestoreView */.CHM(_r97); const ctx_r99 = core/* ɵɵnextContext */.oxw(); return ctx_r99.utilityService.postComment(11); });
     core/* ɵɵtext */._uU(10, "Post ");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(11, "button", 8);
-    core/* ɵɵlistener */.NdJ("click", function UpcomingRaceAnalysisComponent_div_0_Template_button_click_11_listener() { core/* ɵɵrestoreView */.CHM(_r90); const ctx_r93 = core/* ɵɵnextContext */.oxw(); return ctx_r93.utilityService.reloadPosts(11); });
+    core/* ɵɵlistener */.NdJ("click", function UpcomingRaceAnalysisComponent_div_0_Template_button_click_11_listener() { core/* ɵɵrestoreView */.CHM(_r97); const ctx_r100 = core/* ɵɵnextContext */.oxw(); return ctx_r100.utilityService.reloadPosts(11); });
     core/* ɵɵtext */._uU(12, "Reload ");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -17595,18 +18030,18 @@ function UpcomingRaceAnalysisComponent_div_0_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵtemplate */.YNc(13, UpcomingRaceAnalysisComponent_div_0_div_13_Template, 8, 3, "div", 9);
     core/* ɵɵelementStart */.TgZ(14, "div", 10);
     core/* ɵɵelementStart */.TgZ(15, "button", 11);
-    core/* ɵɵlistener */.NdJ("click", function UpcomingRaceAnalysisComponent_div_0_Template_button_click_15_listener() { core/* ɵɵrestoreView */.CHM(_r90); const _r1 = core/* ɵɵreference */.MAs(3); return _r1.toggle(); });
+    core/* ɵɵlistener */.NdJ("click", function UpcomingRaceAnalysisComponent_div_0_Template_button_click_15_listener() { core/* ɵɵrestoreView */.CHM(_r97); const _r1 = core/* ɵɵreference */.MAs(3); return _r1.toggle(); });
     core/* ɵɵelement */._UZ(16, "i", 12);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(17, "div", 10);
     core/* ɵɵelementStart */.TgZ(18, "button", 11);
-    core/* ɵɵlistener */.NdJ("click", function UpcomingRaceAnalysisComponent_div_0_Template_button_click_18_listener() { core/* ɵɵrestoreView */.CHM(_r90); const _r1 = core/* ɵɵreference */.MAs(3); return _r1.toggle(); });
+    core/* ɵɵlistener */.NdJ("click", function UpcomingRaceAnalysisComponent_div_0_Template_button_click_18_listener() { core/* ɵɵrestoreView */.CHM(_r97); const _r1 = core/* ɵɵreference */.MAs(3); return _r1.toggle(); });
     core/* ɵɵelement */._UZ(19, "i", 12);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵtemplate */.YNc(20, UpcomingRaceAnalysisComponent_div_0_div_20_Template, 14, 8, "div", 0);
+    core/* ɵɵtemplate */.YNc(20, UpcomingRaceAnalysisComponent_div_0_div_20_Template, 16, 9, "div", 0);
     core/* ɵɵtemplate */.YNc(21, UpcomingRaceAnalysisComponent_div_0_div_21_Template, 3, 0, "div", 0);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -17624,10 +18059,11 @@ function UpcomingRaceAnalysisComponent_div_0_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵproperty */.Q6J("ngIf", ctx_r0.upcomingRaceAnalysis == undefined);
 } }
 class UpcomingRaceAnalysisComponent {
-    constructor(restService, utilityService, ref) {
+    constructor(restService, utilityService, router, route) {
         this.restService = restService;
         this.utilityService = utilityService;
-        this.ref = ref;
+        this.router = router;
+        this.route = route;
         this.sprintMode = true;
         this.selectedTab = 0;
         this.defChart = {
@@ -17683,16 +18119,18 @@ class UpcomingRaceAnalysisComponent {
             next: data => {
                 this.upcomingRaceAnalysis = data;
                 if (this.upcomingRaceAnalysis != null) {
+                    this.setAllLaps();
                     this.utilityService.setTitle(this.upcomingRaceAnalysis.title);
                     this.setCharts();
                     this.checkIfSprintMode();
                 }
                 else {
-                    this.utilityService.setTitle("Upcoming race - no gimi found");
+                    this.utilityService.setTitle("2021 season is finished");
                 }
                 return data;
             }
         });
+        this.selectedTab = this.getSelectedTab();
         this.utilityService.reloadPosts(11);
     }
     sortMainResultData(sort, eventNumber) {
@@ -17730,6 +18168,9 @@ class UpcomingRaceAnalysisComponent {
                 break;
             case 5:
                 this.upcomingRaceAnalysis.sprintQualiLaps = this.sortLaps(this.upcomingRaceAnalysis.sprintQualiLaps, sort.active, sort.direction);
+                break;
+            case 6:
+                this.allLaps = this.sortLaps(this.allLaps, sort.active, sort.direction);
                 break;
         }
     }
@@ -17887,18 +18328,59 @@ class UpcomingRaceAnalysisComponent {
             }
         }
     }
+    tabChanged(tabChangeEvent) {
+        this.updateUrl();
+    }
+    updateUrl() {
+        const queryParams = { tab: this.selectedTab + 1 };
+        this.router.navigate([], {
+            relativeTo: this.route,
+            queryParams: queryParams
+        });
+    }
+    getSelectedTab() {
+        let tab = this.route.snapshot.queryParamMap.get('tab');
+        if (tab == undefined) {
+            return 0;
+        }
+        else {
+            return Number(tab) - 1;
+        }
+    }
+    setAllLaps() {
+        let laps = [];
+        if (this.upcomingRaceAnalysis.fp1Laps != null) {
+            laps = laps.concat(this.upcomingRaceAnalysis.fp1Laps);
+        }
+        if (this.upcomingRaceAnalysis.fp2Laps != null) {
+            laps = laps.concat(this.upcomingRaceAnalysis.fp2Laps);
+        }
+        if (this.upcomingRaceAnalysis.fp3Laps != null) {
+            laps = laps.concat(this.upcomingRaceAnalysis.fp3Laps);
+        }
+        if (this.upcomingRaceAnalysis.qualiLaps != null) {
+            laps = laps.concat(this.upcomingRaceAnalysis.qualiLaps);
+        }
+        let counter = 1;
+        laps = this.sortLaps(laps, 'position', 'asc');
+        laps.forEach((lap) => {
+            lap.position = counter;
+            counter++;
+        });
+        this.allLaps = laps;
+    }
 }
-UpcomingRaceAnalysisComponent.ɵfac = function UpcomingRaceAnalysisComponent_Factory(t) { return new (t || UpcomingRaceAnalysisComponent)(core/* ɵɵdirectiveInject */.Y36(rest_service/* RestService */.v), core/* ɵɵdirectiveInject */.Y36(utility_service/* UtilityService */.t), core/* ɵɵdirectiveInject */.Y36(core/* ChangeDetectorRef */.sBO)); };
+UpcomingRaceAnalysisComponent.ɵfac = function UpcomingRaceAnalysisComponent_Factory(t) { return new (t || UpcomingRaceAnalysisComponent)(core/* ɵɵdirectiveInject */.Y36(rest_service/* RestService */.v), core/* ɵɵdirectiveInject */.Y36(utility_service/* UtilityService */.t), core/* ɵɵdirectiveInject */.Y36(router/* Router */.F0), core/* ɵɵdirectiveInject */.Y36(router/* ActivatedRoute */.gz)); };
 UpcomingRaceAnalysisComponent.ɵcmp = /*@__PURE__*/ core/* ɵɵdefineComponent */.Xpm({ type: UpcomingRaceAnalysisComponent, selectors: [["upcoming-race-analysis-cmp"]], viewQuery: function UpcomingRaceAnalysisComponent_Query(rf, ctx) { if (rf & 1) {
         core/* ɵɵviewQuery */.Gf(upcoming_race_analysis_component_c0, 5);
     } if (rf & 2) {
         let _t;
         core/* ɵɵqueryRefresh */.iGM(_t = core/* ɵɵloadQuery */.CRH()) && (ctx.chart = _t.first);
-    } }, decls: 1, vars: 1, consts: [[4, "ngIf"], ["autosize", ""], ["autosize", "", "mode", "side", "position", "end", 1, "example-sidenav", 3, "opened", "openedChange"], ["drawer", ""], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area", 3, "ngModel", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "post-comment-button", 3, "click"], [4, "ngFor", "ngForOf"], [1, "fixed-button"], ["type", "fixed-plugin", "mat-button", "", 3, "click"], [1, "fa", "fa-commenting-o", "fa-2x"], [1, "basic-comment"], [1, "one"], [1, "two"], [1, "basic-comment-body"], [3, "selectedIndex", "selectedIndexChange"], ["label", "Circuit"], ["matTabContent", ""], ["label", "Circuit winners", 3, "disabled"], ["label", "Practice 1", 3, "disabled"], ["label", "Practice 2", 3, "disabled", 4, "ngIf"], ["label", "Practice 3", 3, "disabled", 4, "ngIf"], ["label", "Qualifying", 3, "disabled"], ["label", "Sprint Qualifying", 3, "disabled", 4, "ngIf"], ["class", "div-padded-always-left-right-1 row", 4, "ngIf"], [1, "div-padded-always-left-right-1", "row"], [1, "card-body", "text-center"], [1, "image"], ["target", "_blank", 3, "href"], [3, "src"], ["class", "div-padded-1rem row", 4, "ngIf"], ["class", "div-padded-1rem div-padded-left-2 row", 4, "ngIf"], [1, "div-padded-1rem", "row"], ["class", "col-lg-6 col-12", 4, "ngFor", "ngForOf"], [1, "col-lg-6", "col-12"], [1, "card"], [1, "card-body-padded"], [1, "table", "table-striped"], ["colspan", "2", "scope", "col"], [2, "width", "35px"], ["scope", "row"], [1, "div-padded-1rem", "div-padded-left-2", "row"], [3, "href"], [1, "div-padded-1rem", "div-padded-left-2", "div-padded-right-2", "row"], [1, "card", "col-lg-12", "col-12"], ["matSort", "", 1, "table", "table-striped", 3, "matSortChange"], ["colspan", "4", 1, "text-center"], ["mat-sort-header", "position", "scope", "col"], ["mat-sort-header", "name", "scope", "col"], ["mat-sort-header", "lapNumber", "scope", "col"], ["colspan", "8", 1, "text-center"], ["scope", "col"], ["scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], ["mat-sort-header", "sector1", "scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], ["mat-sort-header", "sector2", "scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], ["mat-sort-header", "sector3", "scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], [1, "d-sm-none", "d-none", "d-lg-table-cell"], ["label", "Practice 2", 3, "disabled"], ["label", "Practice 3", 3, "disabled"], ["label", "Sprint Qualifying", 3, "disabled"], [3, "series", "chart", "dataLabels", "grid", "stroke", "title", "yaxis", "xaxis"], ["mat-sort-header", "lapTime", "scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], ["scope", "col", 1, "text-center"], [1, "font-weight-bold", "text-center"], [1, "icon-big", "text-center", "width-100", "icon-warning"], ["src", "assets/img/gimi2.jpg"]], template: function UpcomingRaceAnalysisComponent_Template(rf, ctx) { if (rf & 1) {
+    } }, decls: 1, vars: 1, consts: [[4, "ngIf"], ["autosize", ""], ["autosize", "", "mode", "side", "position", "end", 1, "example-sidenav", 3, "opened", "openedChange"], ["drawer", ""], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area", 3, "ngModel", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "post-comment-button", 3, "click"], [4, "ngFor", "ngForOf"], [1, "fixed-button"], ["type", "fixed-plugin", "mat-button", "", 3, "click"], [1, "fa", "fa-commenting-o", "fa-2x"], [1, "basic-comment"], [1, "one"], [1, "two"], [1, "basic-comment-body"], [3, "selectedIndex", "selectedIndexChange", "selectedTabChange"], ["label", "Circuit"], ["matTabContent", ""], ["label", "Circuit winners", 3, "disabled"], ["label", "Practice 1", 3, "disabled"], ["label", "Practice 2", 3, "disabled", 4, "ngIf"], ["label", "Practice 3", 3, "disabled", 4, "ngIf"], ["label", "Qualifying", 3, "disabled"], ["label", "Sprint Qualifying", 3, "disabled", 4, "ngIf"], ["label", "All laps", 3, "disabled"], ["class", "div-padded-always-left-right-1 row", 4, "ngIf"], [1, "div-padded-always-left-right-1", "row"], [1, "card-body", "text-center"], [1, "image"], ["target", "_blank", 3, "href"], [3, "src"], ["class", "div-padded-1rem row", 4, "ngIf"], ["class", "div-padded-1rem div-padded-left-2 row", 4, "ngIf"], [1, "div-padded-1rem", "row"], ["class", "col-lg-6 col-12", 4, "ngFor", "ngForOf"], [1, "col-lg-6", "col-12"], [1, "card"], [1, "card-body-padded"], [1, "table", "table-striped"], ["colspan", "2", "scope", "col"], [2, "width", "35px"], ["scope", "row"], [1, "div-padded-1rem", "div-padded-left-2", "row"], [3, "href"], [1, "div-padded-1rem", "div-padded-left-2", "div-padded-right-2", "row"], [1, "card", "col-lg-12", "col-12"], ["matSort", "", 1, "table", "table-striped", 3, "matSortChange"], ["colspan", "4", 1, "text-center"], ["mat-sort-header", "position", "scope", "col"], ["mat-sort-header", "name", "scope", "col"], ["mat-sort-header", "lapNumber", "scope", "col"], ["colspan", "8", 1, "text-center"], ["scope", "col"], ["scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], ["mat-sort-header", "sector1", "scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], ["mat-sort-header", "sector2", "scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], ["mat-sort-header", "sector3", "scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], ["scope", "row", 3, "ngClass"], [3, "ngClass"], [1, "d-sm-none", "d-none", "d-lg-table-cell", 3, "ngClass"], ["label", "Practice 2", 3, "disabled"], ["label", "Practice 3", 3, "disabled"], ["label", "Sprint Qualifying", 3, "disabled"], [3, "series", "chart", "dataLabels", "grid", "stroke", "title", "yaxis", "xaxis"], ["mat-sort-header", "lapTime", "scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], ["scope", "col", 1, "text-center"], [1, "d-sm-none", "d-none", "d-lg-table-cell"], [1, "font-weight-bold", "text-center"], [1, "icon-big", "text-center", "icon-warning"], ["src", "assets/img/kimi-raikkonen-smile.gif", 1, "div-height-70vh"]], template: function UpcomingRaceAnalysisComponent_Template(rf, ctx) { if (rf & 1) {
         core/* ɵɵtemplate */.YNc(0, UpcomingRaceAnalysisComponent_div_0_Template, 22, 5, "div", 0);
     } if (rf & 2) {
         core/* ɵɵproperty */.Q6J("ngIf", ctx.upcomingRaceAnalysis !== undefined);
-    } }, directives: [common/* NgIf */.O5, sidenav/* MatDrawerContainer */.kh, sidenav/* MatDrawer */.jA, MatInput, fesm2015_forms/* DefaultValueAccessor */.Fj, fesm2015_forms/* NgControlStatus */.JJ, fesm2015_forms/* NgModel */.On, fesm2015_button/* MatButton */.lW, common/* NgForOf */.sg, tabs/* MatTabGroup */.SP, tabs/* MatTab */.uX, tabs/* MatTabContent */.Vc, MatSort, MatSortHeader, ng_apexcharts/* ChartComponent */.x], pipes: [common/* DatePipe */.uU], encapsulation: 2 });
+    } }, directives: [common/* NgIf */.O5, sidenav/* MatDrawerContainer */.kh, sidenav/* MatDrawer */.jA, MatInput, fesm2015_forms/* DefaultValueAccessor */.Fj, fesm2015_forms/* NgControlStatus */.JJ, fesm2015_forms/* NgModel */.On, fesm2015_button/* MatButton */.lW, common/* NgForOf */.sg, tabs/* MatTabGroup */.SP, tabs/* MatTab */.uX, tabs/* MatTabContent */.Vc, MatSort, MatSortHeader, common/* NgClass */.mk, ng_apexcharts/* ChartComponent */.x], pipes: [common/* DatePipe */.uU], encapsulation: 2 });
 
 ;// CONCATENATED MODULE: ./src/app/pages/poweredByAws/aws-demo.component.ts
 

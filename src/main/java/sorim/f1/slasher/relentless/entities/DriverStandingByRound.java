@@ -28,6 +28,7 @@ public class DriverStandingByRound {
     private BigDecimal points;
     private BigDecimal pointsThisRound = new BigDecimal(0);
     private Integer resultThisRound;
+    private Integer resultThisRoundDnf;
     private Integer wins;
     private Integer permanentNumber;
     private String color;
@@ -35,6 +36,10 @@ public class DriverStandingByRound {
     private String firstName;
     @Transient
     private String lastName;
+
+    private Integer grid;
+    private String status;
+    private String resultThisRoundText;
 
     public DriverStandingByRound(ErgastStanding ergastStanding, Integer season, Integer round) {
         this.id = new EmbeddedStandingId();
@@ -50,9 +55,23 @@ public class DriverStandingByRound {
         this.wins = ergastStanding.getWins();
         this.permanentNumber = ergastStanding.getDriver().getPermanentNumber();
         this.color = MainUtility.getTeamColor(ergastStanding.getConstructors().get(0).getConstructorId());
+
     }
 
     public void incrementPointsThisRound(BigDecimal value){
         this.pointsThisRound= this.pointsThisRound.add(value);
+    }
+
+    public void setDataFromARound(ErgastStanding ergastStanding, Integer maxPosition) {
+        this.pointsThisRound = ergastStanding.getPoints();
+        this.resultThisRoundDnf = ergastStanding.getPosition();
+        if("Finished".equals(ergastStanding.getStatus())|| ergastStanding.getStatus().contains("Lap")){
+            this.resultThisRound = ergastStanding.getPosition();
+        } else {
+            this.resultThisRound = maxPosition+1;
+        }
+        this.grid = ergastStanding.getGrid();
+        this.status = ergastStanding.getStatus();
+        this.resultThisRoundText = ergastStanding.getPositionText();
     }
 }

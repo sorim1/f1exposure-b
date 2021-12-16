@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import sorim.f1.slasher.relentless.entities.ergast.RaceData;
+import sorim.f1.slasher.relentless.model.ergast.ErgastDriver;
 
 @Data
 @NoArgsConstructor
@@ -19,6 +20,7 @@ public class FrontendRace {
     private String circuitName;
     private String x;
     private String y;
+    private ErgastDriver driver;
 
     public FrontendRace(RaceData raceData) {
         this.round= raceData.getRound();
@@ -28,5 +30,8 @@ public class FrontendRace {
         this.circuitName = raceData.getCircuit().getCircuitName();
         this.x = raceData.getCircuit().getLocation().getLat();
         this.y = raceData.getCircuit().getLocation().getLongitude();
+        if(raceData.getResults()!=null){
+        this.driver = raceData.getResults().get(0).getDriver();
+        }
     }
 }

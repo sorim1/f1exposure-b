@@ -28,4 +28,8 @@
     <changeSet author="mdragicevic" id="007_opensea">
         <sqlFile path="changelog/007_opensea.sql" endDelimiter="/" relativeToChangelogFile="true"/>
     </changeSet>
+    <changeSet author="mdragicevic" id="008_json_repository">
+        <validCheckSum>ANY</validCheckSum>
+        <sqlFile path="changelog/008_json_repository.sql" endDelimiter="/" relativeToChangelogFile="true"/>
+    </changeSet>
 </databaseChangeLog>

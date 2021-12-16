@@ -164,6 +164,12 @@ public class AdminController {
         return service.getAdminMessages();
     }
 
+    @GetMapping("/generateChart")
+    Boolean generateChart(@RequestHeader String client) throws Exception {
+        securityService.validateAdminHeader(client);
+        return service.generateChart();
+    }
+
     @GetMapping("/endRaceWeekendJobs")
     Boolean endRaceWeekendJobs(@RequestHeader String client) throws Exception {
         securityService.validateAdminHeader(client);

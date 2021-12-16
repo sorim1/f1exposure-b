@@ -18,6 +18,7 @@ public class LapTimeData {
     Integer driverNumber;
     String driverName;
     Integer lapNumber;
+    String sessionName;
 
     public LapTimeData(Integer driverNumber) {
         this.driverNumber=driverNumber;

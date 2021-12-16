@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import sorim.f1.slasher.relentless.entities.ergast.RaceData;
+import sorim.f1.slasher.relentless.model.AllStandings;
 import sorim.f1.slasher.relentless.service.ErgastService;
 import sorim.f1.slasher.relentless.service.SecurityService;
 
@@ -30,5 +31,19 @@ public class ErgastController {
         securityService.validateAdminHeader(client);
         log.info("year: {}", year);
         return service.fetchSeason(year);
+    }
+
+    @GetMapping("/fetchHistoricSeason/{year}")
+    AllStandings fetchHistoricSeason(@RequestHeader String client, @PathVariable Integer year) throws Exception {
+       // securityService.validateAdminHeader(client);
+        log.info("fetchHistoricSeason: {}", year);
+        return service.fetchHistoricSeason(year);
+    }
+
+    @GetMapping("/getHistoricSeason/{year}")
+    Object getHistoricSeason(@RequestHeader String client, @PathVariable Integer year) throws Exception {
+        // securityService.validateAdminHeader(client);
+        log.info("getHistoricSeason: {}", year);
+        return service.getHistoricSeason(year);
     }
 }

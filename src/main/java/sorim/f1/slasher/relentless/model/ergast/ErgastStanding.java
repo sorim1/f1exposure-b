@@ -19,6 +19,8 @@ public class ErgastStanding {
     private BigDecimal points;
     private Integer wins;
     private String status;
+    private Integer grid;
+    private String positionText;
 
     @JsonProperty("Driver")
     private ErgastDriver driver;

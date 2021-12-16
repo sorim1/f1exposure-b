@@ -1,6 +1,7 @@
 package sorim.f1.slasher.relentless.service;
 
 import sorim.f1.slasher.relentless.entities.ergast.RaceData;
+import sorim.f1.slasher.relentless.model.AllStandings;
 import sorim.f1.slasher.relentless.model.FrontendRace;
 import sorim.f1.slasher.relentless.model.ergast.ErgastResponse;
 
@@ -52,4 +53,8 @@ public interface ErgastService {
     ErgastResponse getRacePitStops(Integer season, Integer round);
 
     void deleteRaces(String season);
+
+    AllStandings fetchHistoricSeason(Integer season);
+
+    Object getHistoricSeason(Integer season);
 }
