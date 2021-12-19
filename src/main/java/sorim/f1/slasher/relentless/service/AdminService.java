@@ -1,5 +1,6 @@
 package sorim.f1.slasher.relentless.service;
 
+import com.github.instagram4j.instagram4j.exceptions.IGLoginException;
 import sorim.f1.slasher.relentless.entities.*;
 import sorim.f1.slasher.relentless.model.Aws;
 import sorim.f1.slasher.relentless.model.FullBackup;
@@ -69,4 +70,6 @@ public interface AdminService {
     String setCountdownMode(String mode);
 
     Boolean generateChart();
+
+    Boolean instagramCleanup() throws IGLoginException;
 }

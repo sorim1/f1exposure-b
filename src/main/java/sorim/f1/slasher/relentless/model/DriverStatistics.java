@@ -1,0 +1,80 @@
+package sorim.f1.slasher.relentless.model;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import sorim.f1.slasher.relentless.model.ergast.ErgastConstructor;
+import sorim.f1.slasher.relentless.model.ergast.ErgastDriver;
+import sorim.f1.slasher.relentless.model.ergast.ErgastStanding;
+
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class DriverStatistics {
+
+    private String driverId;
+    private Integer permanentNumber;
+    private String code;
+    private String url;
+    private String givenName;
+    private String familyName;
+    private String dateOfBirth;
+    private String nationality;
+    private Integer raceCount = 0;
+    private Integer winCount = 0;
+    private Integer podiumCount = 0;
+    private Integer wdcCount = 0;
+    private ErgastConstructor currentConstructor;
+    private List<SeasonStanding> standingsBySeason = new ArrayList<>();
+    private List<ChartSeries> pointsThroughSeasons = new ArrayList<>();
+
+    private String wikiSummary;
+    private String wikiImage;
+
+    public DriverStatistics(ErgastDriver ergastDriver) {
+        this.driverId = ergastDriver.getDriverId();
+        this.permanentNumber = ergastDriver.getPermanentNumber();
+        this.code = ergastDriver.getCode();
+        this.url = ergastDriver.getUrl();
+        this.givenName = ergastDriver.getGivenName();
+        this.familyName = ergastDriver.getFamilyName();
+        this.dateOfBirth = ergastDriver.getDateOfBirth();
+        this.nationality = ergastDriver.getNationality();
+    }
+
+    public void pushSeasonStanding(Integer season, ErgastStanding es) {
+        if(Integer.parseInt(es.getPositionText())==1){
+            this.wdcCount++;
+        }
+        standingsBySeason.add(new SeasonStanding(season, es));
+    }
+
+    public void incrementRaceCount(Integer position) {
+        this.raceCount++;
+        if(position<3){
+            this.podiumCount++;
+            if(position==1){
+                this.winCount++;
+            }
+        }
+    }
+    public void addPointThroughSeason(Integer season, Integer round, ErgastStanding es) {
+        Optional<ChartSeries> cs = pointsThroughSeasons.stream().filter(x -> season.toString().equals(x.getName()))
+                .findFirst();
+        if (cs.isPresent()){
+            List<BigDecimal> newPoint = new ArrayList<>();
+            newPoint.add(new BigDecimal(round));
+            newPoint.add(es.getPoints());
+            cs.get().getSeries().add(newPoint);
+        } else {
+            pointsThroughSeasons.add(new ChartSeries(season.toString()));
+        }
+    }
+}

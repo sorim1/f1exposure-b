@@ -20,6 +20,10 @@ public class ChartSeries {
     private List<List<BigDecimal>> series = new ArrayList<>();
     private List<List<Integer>> series2 = new ArrayList<>();
 
+    public ChartSeries(String name) {
+        this.name=name;
+    }
+
     public void add(Integer round, BigDecimal point){
         List<BigDecimal> newPoint = new ArrayList<>();
         newPoint.add(new BigDecimal(round));
@@ -43,8 +47,12 @@ public class ChartSeries {
         }
         BigDecimal sumOfX = new BigDecimal(intSumOfX);
         BigDecimal sumOfY = new BigDecimal(intSumOfY);
-        BigDecimal x = sumOfX.divide(new BigDecimal(series2.size()),2, RoundingMode.HALF_UP);
-        BigDecimal y = sumOfY.divide(new BigDecimal(series2.size()),2, RoundingMode.HALF_UP);
+        BigDecimal x = BigDecimal.ZERO;
+        BigDecimal y = BigDecimal.ZERO;
+        if(series2.size()>0){
+            x = sumOfX.divide(new BigDecimal(series2.size()),2, RoundingMode.HALF_UP);
+            y = sumOfY.divide(new BigDecimal(series2.size()),2, RoundingMode.HALF_UP);
+        }
         List<BigDecimal> newPoint = new ArrayList<>();
         newPoint.add(x);
         newPoint.add(y);

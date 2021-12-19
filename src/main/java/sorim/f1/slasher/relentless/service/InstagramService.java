@@ -14,4 +14,6 @@ public interface InstagramService {
     void getMyFollows() throws IGLoginException;
 
     byte[] getImage(String code);
+
+    Boolean cleanup() throws IGLoginException;
 }

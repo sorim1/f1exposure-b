@@ -193,4 +193,11 @@ public class AdminController {
         securityService.validateAdminHeader(client);
         return service.deleteAwsContent(username);
     }
+
+    @GetMapping("/instagramCleanup")
+    Boolean instagramCleanup(@RequestHeader String client) throws Exception {
+        securityService.validateAdminHeader(client);
+        return service.instagramCleanup();
+    }
+
 }

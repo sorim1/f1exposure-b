@@ -149,7 +149,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
     private void updateCurrentExposureRound(Integer increment) {
         Integer round;
         try {
-            round = ergastService.getDriverStandings().getMrData().getStandingsTable().getStandingsLists().get(0).getRound();
+            round = ergastService.getCurrentDriverStandings().getMrData().getStandingsTable().getStandingsLists().get(0).getRound();
             currentExposureRound = round + increment;
             propertiesRepository.updateProperty("exposureRound", currentExposureRound.toString());
         } catch (Exception e) {

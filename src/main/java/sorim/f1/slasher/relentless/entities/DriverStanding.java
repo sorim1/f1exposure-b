@@ -42,7 +42,11 @@ public class DriverStanding {
         this.id = ergastStanding.getDriver().getDriverId();
         this.position = ergastStanding.getPosition();
         this.name = ergastStanding.getDriver().getGivenName() + " " + ergastStanding.getDriver().getFamilyName();
-        this.code = ergastStanding.getDriver().getCode();
+        if(ergastStanding.getDriver().getCode()!=null) {
+            this.code = ergastStanding.getDriver().getCode();
+        } else {
+            this.code = ergastStanding.getDriver().getDriverId();
+        }
         this.ergastCode = ergastStanding.getDriver().getDriverId();
         this.driverUrl = ergastStanding.getDriver().getUrl();
         this.nationality = ergastStanding.getDriver().getNationality();

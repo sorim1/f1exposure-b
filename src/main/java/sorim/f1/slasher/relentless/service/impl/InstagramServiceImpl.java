@@ -135,7 +135,7 @@ public class InstagramServiceImpl implements InstagramService {
                 }
             });
             boolean exists = instagramRepository.existsByCode(timelineMedias.get(timelineMedias.size() - 1).getCode());
-            iterate.set(counter.get() < 7 && (!exists));
+            iterate.set(counter.get() < 10 && (!exists));
             counter.set(counter.get() + 1);
         });
         instagramRepository.saveAll(instagramPosts);
@@ -199,14 +199,20 @@ public class InstagramServiceImpl implements InstagramService {
         result.forEach(profile -> {
             follows.add(profile.getUsername());
         });
-        log.info(String.valueOf(follows));
-        log.info(String.valueOf(follows.size()));
     }
 
     @Override
     public byte[] getImage(String code) {
         ImageRow result = imageRepository.findFirstByCode(code);
         return result.getImage();
+    }
+
+    @Override
+    public Boolean cleanup() throws IGLoginException {
+        instagramRepository.deleteAll();
+        imageRepository.deleteEverythingExceptMarketing();
+        fetchInstagramFeed();
+        return true;
     }
 
     void init() throws IGLoginException {

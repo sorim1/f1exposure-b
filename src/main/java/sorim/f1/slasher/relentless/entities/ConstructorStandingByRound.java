@@ -27,22 +27,38 @@ public class ConstructorStandingByRound {
     private Integer position;
     private BigDecimal points;
     private Integer wins;
-    private BigDecimal pointsThisRound = new BigDecimal(0);
+    private BigDecimal pointsThisRound;
     private String color;
 
     public ConstructorStandingByRound(ErgastStanding ergastStanding, Integer season, Integer round) {
+        this.setBaseData(ergastStanding, season, round);
+        this.position = ergastStanding.getPosition();
+        this.points = ergastStanding.getPoints();
+    }
+
+    public ConstructorStandingByRound(ErgastStanding ergastStanding, Integer season, Integer round, Boolean containsStanding) {
+        this.setBaseData(ergastStanding, season, round);
+        if(containsStanding) {
+            this.position = ergastStanding.getPosition();
+            this.points = ergastStanding.getPoints();
+        }
+    }
+
+    private void setBaseData(ErgastStanding ergastStanding, Integer season, Integer round) {
         this.id = new EmbeddedStandingId();
         this.id.setSeason(season);
         this.id.setRound(round);
         this.id.setId(ergastStanding.getConstructor().getConstructorId());
-        this.position = ergastStanding.getPosition();
         this.name = ergastStanding.getConstructor().getName();
-        this.points = ergastStanding.getPoints();
         this.wins = ergastStanding.getWins();
         this.color = MainUtility.getTeamColor(ergastStanding.getConstructor().getConstructorId());
     }
 
     public void incrementPointsThisRound(BigDecimal value){
-        this.pointsThisRound= this.pointsThisRound.add(value);
+        if(this.pointsThisRound==null){
+            this.pointsThisRound=value;
+        } else {
+            this.pointsThisRound = this.pointsThisRound.add(value);
+        }
     }
 }

@@ -2,7 +2,9 @@ package sorim.f1.slasher.relentless.service;
 
 import sorim.f1.slasher.relentless.entities.ergast.RaceData;
 import sorim.f1.slasher.relentless.model.AllStandings;
+import sorim.f1.slasher.relentless.model.DriverStatistics;
 import sorim.f1.slasher.relentless.model.FrontendRace;
+import sorim.f1.slasher.relentless.model.ergast.ErgastDriver;
 import sorim.f1.slasher.relentless.model.ergast.ErgastResponse;
 
 import java.util.List;
@@ -32,7 +34,7 @@ public interface ErgastService {
 
     List<RaceData> findRacesBySeason(String season);
 
-    ErgastResponse getDriverStandings();
+    ErgastResponse getCurrentDriverStandings();
 
     ErgastResponse getConstructorStandings();
 
@@ -57,4 +59,14 @@ public interface ErgastService {
     AllStandings fetchHistoricSeason(Integer season);
 
     Object getHistoricSeason(Integer season);
+
+    Boolean fetchHistoricSeasonFull() throws InterruptedException;
+
+    Boolean fetchDriverStatistics();
+
+    Object getErgastDrivers();
+
+    Object getDriverStatistics(String driverId);
+
+    List<ErgastDriver> generateAllErgastDrivers();
 }

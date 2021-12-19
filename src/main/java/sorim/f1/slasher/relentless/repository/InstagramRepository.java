@@ -16,7 +16,6 @@ public interface InstagramRepository extends PagingAndSortingRepository<Instagra
 
     //@Query("SELECT TOP 500 a FROM InstagramPost a ORDER BY a.deviceTimestamp DESC")
     List<InstagramPost> findFirst10ByOrderByLikesDesc();
-    List<InstagramPost> findAllByOrderByLikesDesc(Pageable pageable);
     List<InstagramPost> findAllByOrderByTakenAtDesc(Pageable pageable);
 
     boolean existsByCode(String code);

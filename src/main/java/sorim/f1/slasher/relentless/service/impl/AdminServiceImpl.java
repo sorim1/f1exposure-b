@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.gargoylesoftware.htmlunit.Page;
 import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.WebResponse;
+import com.github.instagram4j.instagram4j.exceptions.IGLoginException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import net.fortuna.ical4j.data.CalendarBuilder;
@@ -63,6 +64,7 @@ public class AdminServiceImpl implements AdminService {
     private final AwsCommentRepository awsCommentRepository;
     private final F1CommentRepository f1CommentRepository;
     private final JsonRepository jsonRepository;
+    private final InstagramService instagramService;
 
     private final ErgastService ergastService;
     private final MainProperties properties;
@@ -296,7 +298,7 @@ public class AdminServiceImpl implements AdminService {
         Boolean bool = false;
         List<DriverStanding> driverStandings = new ArrayList<>();
         Map<String, DriverStandingByRound> driverStandingsByRound = new HashMap<>();
-        ErgastResponse response = ergastService.getDriverStandings();
+        ErgastResponse response = ergastService.getCurrentDriverStandings();
         if (response.getMrData().getStandingsTable().getStandingsLists().get(0).getRound() != CURRENT_ROUND) {
             Logger.log("initializeStandings - changes detected");
             bool = true;
@@ -559,6 +561,11 @@ public class AdminServiceImpl implements AdminService {
         generateChartsDriverStandingsByRound();
         generateChartsConstructorStandingsByRound();
         return true;
+    }
+
+    @Override
+    public Boolean instagramCleanup() throws IGLoginException {
+        return instagramService.cleanup();
     }
 
     private void generateChartsDriverStandingsByRound() {

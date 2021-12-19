@@ -26,7 +26,7 @@ public class DriverStandingByRound {
     private String nationality;
     private String car;
     private BigDecimal points;
-    private BigDecimal pointsThisRound = new BigDecimal(0);
+    private BigDecimal pointsThisRound;
     private Integer resultThisRound;
     private Integer resultThisRoundDnf;
     private Integer wins;
@@ -42,24 +42,47 @@ public class DriverStandingByRound {
     private String resultThisRoundText;
 
     public DriverStandingByRound(ErgastStanding ergastStanding, Integer season, Integer round) {
+        this.basicData(ergastStanding, season, round);
+        this.position = ergastStanding.getPosition();
+    }
+
+    public DriverStandingByRound(ErgastStanding ergastStanding, Integer season, Integer round, Boolean positionBool) {
+        this.basicData(ergastStanding, season, round);
+        if(positionBool){
+            this.position = ergastStanding.getPosition();
+        }
+    }
+
+    public void incrementPointsThisRound(BigDecimal value){
+        if(this.pointsThisRound==null){
+            this.pointsThisRound=value;
+        } else {
+            this.pointsThisRound = this.pointsThisRound.add(value);
+        }
+    }
+
+    private void basicData(ErgastStanding ergastStanding, Integer season, Integer round) {
         this.id = new EmbeddedStandingId();
         this.id.setSeason(season);
         this.id.setRound(round);
         this.id.setId(ergastStanding.getDriver().getDriverId());
-        this.position = ergastStanding.getPosition();
         this.name = ergastStanding.getDriver().getGivenName() + " " + ergastStanding.getDriver().getFamilyName();
-        this.code = ergastStanding.getDriver().getCode();
+        if(ergastStanding.getDriver().getCode()!=null) {
+            this.code = ergastStanding.getDriver().getCode();
+        } else {
+            this.code = ergastStanding.getDriver().getDriverId();
+        }
         this.nationality = ergastStanding.getDriver().getNationality();
-        this.car = ergastStanding.getConstructors().get(0).getName();
+        if(ergastStanding.getConstructors()!=null) {
+            this.car = ergastStanding.getConstructors().get(0).getName();
+            this.color = MainUtility.getTeamColor(ergastStanding.getConstructors().get(0).getConstructorId());;
+        } else {
+            System.out.println("no constructor for " + this.id.getId());
+        }
         this.points = ergastStanding.getPoints();
         this.wins = ergastStanding.getWins();
         this.permanentNumber = ergastStanding.getDriver().getPermanentNumber();
-        this.color = MainUtility.getTeamColor(ergastStanding.getConstructors().get(0).getConstructorId());
 
-    }
-
-    public void incrementPointsThisRound(BigDecimal value){
-        this.pointsThisRound= this.pointsThisRound.add(value);
     }
 
     public void setDataFromARound(ErgastStanding ergastStanding, Integer maxPosition) {
@@ -74,4 +97,5 @@ public class DriverStandingByRound {
         this.status = ergastStanding.getStatus();
         this.resultThisRoundText = ergastStanding.getPositionText();
     }
+
 }

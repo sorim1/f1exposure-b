@@ -42,7 +42,7 @@ public class Logger {
 
     public static void log(String code, String message) {
         log.info(code + " - " + message);
-       // repository.save(Log.builder().code(code).message(message).created(new Date()).build());
+        repository.save(Log.builder().code(code).message(message).created(new Date()).build());
     }
 
     public static void logAdmin(String message) {

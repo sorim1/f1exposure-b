@@ -25,4 +25,7 @@ public class MRData {
     @JsonProperty("StandingsTable")
     private StandingsTable standingsTable;
 
+    @JsonProperty("DriverTable")
+    private DriverTable driverTable;
+
 }
