@@ -234,7 +234,7 @@ public class ErgastServiceImpl implements ErgastService {
 
     @Override
     public Boolean fetchHistoricSeasonFull() throws InterruptedException {
-        for(int i=1978;i<=2021;i++){
+        for(int i=1950;i<=properties.getCurrentYear();i++){
             log.info("fetch year: {}", i );
             fetchHistoricSeason(i);
             Thread.sleep(1000);
@@ -267,9 +267,11 @@ public class ErgastServiceImpl implements ErgastService {
                 .getDriverStandings().forEach(es->{
                     driversMap.get(es.getDriver().getDriverId()).setCurrentConstructor(es.getConstructors().get(0));
                 });
+        Map<String, CircuitStatistics> circuitsMap = generateAllCircuits();
 
+        List<RaceData> races = new ArrayList<>();
         for(int season = firstSeason; season<=properties.getCurrentYear(); season++){
-            updateDriverWithRaceByRaceData(season, driversMap);
+            updateDriverWithRaceByRaceData(season, driversMap, circuitsMap, races);
             try {
                 Thread.sleep(2000);
                 log.info("seasonB over: {}", season);
@@ -277,7 +279,7 @@ public class ErgastServiceImpl implements ErgastService {
                 e.printStackTrace();
             }
         }
-
+        saveCircuitsAndRace(circuitsMap, races);
         driversMap.forEach((k,v)->{
             generateWikiProperties(v);
             JsonRepositoryModel saveData = JsonRepositoryModel.builder().id("DRIVER_"+k)
@@ -322,9 +324,7 @@ public class ErgastServiceImpl implements ErgastService {
             return true;
     }
 
-    private void updateDriverWithRaceByRaceData(int season, Map<String, DriverStatistics> driversMap) {
-        Map<String, CircuitStatistics> circuitsMap = generateAllCircuits();
-        List<RaceData> races = new ArrayList<>();
+    private void updateDriverWithRaceByRaceData(int season, Map<String, DriverStatistics> driversMap, Map<String, CircuitStatistics> circuitsMap, List<RaceData> races) {
         boolean iterate;
         Integer round = 1;
         do {
@@ -358,7 +358,6 @@ public class ErgastServiceImpl implements ErgastService {
                 iterate = false;
             }
         } while (iterate);
-        saveCircuitsAndRace(circuitsMap, races);
     }
 
     private void saveCircuitsAndRace(Map<String, CircuitStatistics> circuitsMap, List<RaceData> races) {
