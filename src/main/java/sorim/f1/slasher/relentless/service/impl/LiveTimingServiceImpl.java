@@ -379,7 +379,7 @@ public class LiveTimingServiceImpl implements LiveTimingService {
                                 }
                         ));
         ErgastResponse response;
-        for (int i = 1; i <= howManySeasonsBack; i++) {
+        for (int i = 0; i <= howManySeasonsBack; i++) {
             Integer round = 1;
             do {
                 response = ergastService.getResultsByRound(properties.getCurrentYear() - i, round);
