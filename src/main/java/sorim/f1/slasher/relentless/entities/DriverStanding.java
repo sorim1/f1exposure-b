@@ -26,7 +26,7 @@ public class DriverStanding {
     private String code;
     private String ergastCode;
     private String nationality;
-    private String car;
+    private String car = "";
     private BigDecimal points;
     private Integer wins;
     private Integer permanentNumber;
@@ -50,7 +50,14 @@ public class DriverStanding {
         this.ergastCode = ergastStanding.getDriver().getDriverId();
         this.driverUrl = ergastStanding.getDriver().getUrl();
         this.nationality = ergastStanding.getDriver().getNationality();
-        this.car = ergastStanding.getConstructors().get(0).getName();
+
+        ergastStanding.getConstructors().forEach(constructor->{
+            this.car = this.car + constructor.getName() + " / ";
+        });
+        if(this.car.length()>0){
+            this.car = this.car.substring(0, this.car.length()-3);
+        }
+
         this.constructorUrl = ergastStanding.getConstructors().get(0).getUrl();
         this.points = ergastStanding.getPoints();
         this.wins = ergastStanding.getWins();

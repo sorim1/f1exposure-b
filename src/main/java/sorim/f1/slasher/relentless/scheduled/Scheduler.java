@@ -184,7 +184,7 @@ public class Scheduler {
     }
 
 
-    @PostConstruct
+    //@PostConstruct
     void onInit() {
         log.info("onInitScheduler Called");
         //sundayExposureJobs();
@@ -221,7 +221,7 @@ public class Scheduler {
         }
     }
 
-    @Scheduled(cron = "0 0 1,6,8,10,12,14,16,18,20,22 * * *")
+    //@Scheduled(cron = "0 0 1,6,8,10,12,14,16,18,20,22 * * *")
     void imageFeedJob() throws Exception {
         log.info("bihourlyJob called");
         clientService.fetchInstagramFeed();

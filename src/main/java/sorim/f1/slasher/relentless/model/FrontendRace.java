@@ -12,7 +12,6 @@ import sorim.f1.slasher.relentless.model.ergast.ErgastDriver;
 @AllArgsConstructor
 @Builder
 public class FrontendRace {
-
     private Integer round;
     private String raceName;
     private String url;

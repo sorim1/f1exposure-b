@@ -1,5 +1,7 @@
 package sorim.f1.slasher.relentless.service.impl;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,10 +11,8 @@ import sorim.f1.slasher.relentless.configuration.MainProperties;
 import sorim.f1.slasher.relentless.entities.*;
 import sorim.f1.slasher.relentless.entities.ergast.RaceData;
 import sorim.f1.slasher.relentless.handling.Logger;
-import sorim.f1.slasher.relentless.model.AllStandings;
-import sorim.f1.slasher.relentless.model.ChartSeries;
-import sorim.f1.slasher.relentless.model.FrontendRace;
-import sorim.f1.slasher.relentless.model.DriverStatistics;
+import sorim.f1.slasher.relentless.model.*;
+import sorim.f1.slasher.relentless.model.ergast.Circuit;
 import sorim.f1.slasher.relentless.model.ergast.ErgastDriver;
 import sorim.f1.slasher.relentless.model.ergast.ErgastResponse;
 import sorim.f1.slasher.relentless.model.ergast.ErgastStanding;
@@ -32,13 +32,14 @@ public class ErgastServiceImpl implements ErgastService {
     private final static String CURRENT_SEASON = "http://ergast.com/api/f1/current.json";
     private final static String GET_SEASON = "https://ergast.com/api/f1/{year}.json";
     private final static String ERGAST_URL = "https://ergast.com/api/f1/";
-
+    private final static String WIKIPEDIA_URL = "https://en.wikipedia.org/api/rest_v1/page/summary/";
     private final MainProperties properties;
     private final ErgastRaceRepository ergastRaceRepository;
     private final DriverRepository driverRepository;
     private final JsonRepository jsonRepository;
     private final RestTemplate restTemplate = new RestTemplate();
     private static Map<Integer, Integer> roundDriverCount = new HashMap<>();
+    private final ObjectMapper mapper = new ObjectMapper();
 
     @Override
     public List<RaceData> fetchSeason(String year) {
@@ -147,6 +148,12 @@ public class ErgastServiceImpl implements ErgastService {
         return response.getMrData().getDriverTable().getDrivers();
     }
 
+    private List<Circuit> getAllErgastCircuits() {
+        ErgastResponse response = restTemplate
+                .getForObject(ERGAST_URL + "circuits.json?limit=500", ErgastResponse.class);
+        return response.getMrData().getCircuitTable().getCircuits();
+    }
+
     @Override
     public List<FrontendRace> getRacesSoFar(String season, Integer round) {
         return ergastRaceRepository.findAllBySeasonAndRoundLessThanEqualOrderByRoundAsc(season, round);
@@ -238,12 +245,11 @@ public class ErgastServiceImpl implements ErgastService {
 
     @Override
     public Boolean fetchDriverStatistics() {
-        int firstSeason = 2000;
+        int firstSeason = 2005;
         List<ErgastDriver> allDrivers = generateAllErgastDrivers();
         Map<String, DriverStatistics> driversMap = new HashMap<>();
         allDrivers.forEach(ergastDriver -> driversMap.put(ergastDriver.getDriverId(), new DriverStatistics(ergastDriver)));
-        //TODO remove +1
-        for(int season = firstSeason; season<properties.getCurrentYear()+1; season++){
+        for(int season = firstSeason; season<=properties.getCurrentYear()+1; season++){
            List<ErgastStanding> list = getErgastStandingsByYear(season);
             int finalSeason = season;
             list.forEach(es->{
@@ -262,7 +268,7 @@ public class ErgastServiceImpl implements ErgastService {
                     driversMap.get(es.getDriver().getDriverId()).setCurrentConstructor(es.getConstructors().get(0));
                 });
 
-        for(int season = firstSeason; season<properties.getCurrentYear()+1; season++){
+        for(int season = firstSeason; season<=properties.getCurrentYear(); season++){
             updateDriverWithRaceByRaceData(season, driversMap);
             try {
                 Thread.sleep(2000);
@@ -273,6 +279,7 @@ public class ErgastServiceImpl implements ErgastService {
         }
 
         driversMap.forEach((k,v)->{
+            generateWikiProperties(v);
             JsonRepositoryModel saveData = JsonRepositoryModel.builder().id("DRIVER_"+k)
                     .json(v).build();
             jsonRepository.save(saveData);
@@ -281,10 +288,45 @@ public class ErgastServiceImpl implements ErgastService {
         return true;
     }
 
+    private Boolean generateWikiProperties(DriverStatistics driver) {
+            String driverId = driver.getUrl().substring(driver.getUrl().lastIndexOf("/")+1) ;
+        Map<String, Object> mapping;
+            try {
+                String response =  restTemplate
+                        .getForObject(WIKIPEDIA_URL +driverId, String.class);
+                TypeReference<HashMap<String, Object>> typeRef = new TypeReference<>() {
+            };
+            mapping = mapper.readValue(response, typeRef);
+            } catch (Exception e) {
+                try {
+                    String driverId2 = driver.getGivenName() + "_" + driver.getFamilyName() ;
+                    String response =  restTemplate
+                            .getForObject(WIKIPEDIA_URL +driverId2, String.class);
+                    TypeReference<HashMap<String, Object>> typeRef = new TypeReference<>() {
+                    };
+                    mapping = mapper.readValue(response, typeRef);
+                } catch (Exception e3) {
+                    log.error("ERROR3: {}", driverId);
+                    e3.printStackTrace();
+                    return false;
+                }
+            }
+            LinkedHashMap<String, Object> query = (LinkedHashMap<String, Object>) mapping.get("thumbnail");
+                if(query!=null) {
+                    String thumbnail = (String) query.get("source");
+                    driver.setWikiImage(thumbnail);
+                }
+                String summary = (String) mapping.get("extract");
+                driver.setWikiSummary(summary);
+
+            return true;
+    }
+
     private void updateDriverWithRaceByRaceData(int season, Map<String, DriverStatistics> driversMap) {
+        Map<String, CircuitStatistics> circuitsMap = generateAllCircuits();
+        List<RaceData> races = new ArrayList<>();
         boolean iterate;
         Integer round = 1;
-        Integer maxPosition;
         do {
             ErgastResponse response = getDriverStandingsByRound(season, round);
             if (response.getMrData().getTotal() > 0) {
@@ -305,14 +347,42 @@ public class ErgastServiceImpl implements ErgastService {
             if (response.getMrData().getTotal() > 0) {
                 response.getMrData().getRaceTable().getRaces().get(0).getResults()
                         .forEach(es -> {
-                            driversMap.get(es.getDriver().getDriverId()).incrementRaceCount(es.getPosition());
+                            driversMap.get(es.getDriver().getDriverId()).incrementRaceCounts(es);
                         });
+                RaceData race = response.getMrData().getRaceTable().getRaces().get(0);
+                races.add(race);
+                circuitsMap.get(race.getCircuit().getCircuitId()).addRace(race);
                 round++;
                 iterate = true;
             } else {
                 iterate = false;
             }
         } while (iterate);
+        saveCircuitsAndRace(circuitsMap, races);
+    }
+
+    private void saveCircuitsAndRace(Map<String, CircuitStatistics> circuitsMap, List<RaceData> races) {
+        List<JsonRepositoryModel> saveList = new ArrayList<>();
+        circuitsMap.forEach((id,circuit) ->{
+            JsonRepositoryModel entry = JsonRepositoryModel.builder().id("CIRCUIT_"+id)
+                    .json(circuit).build();
+            saveList.add(entry);
+        });
+        races.forEach((race) ->{
+            JsonRepositoryModel entry = JsonRepositoryModel.builder().id("RACE_"+race.getSeason()+"_"+race.getRound())
+                    .json(race).build();
+            saveList.add(entry);
+        });
+        jsonRepository.saveAll(saveList);
+    }
+
+    private Map<String, CircuitStatistics> generateAllCircuits() {
+        Map<String, CircuitStatistics> circuitsMap = new HashMap<>();
+        List<Circuit> circuits = getAllErgastCircuits();
+        circuits.forEach(circuit ->{
+            circuitsMap.put(circuit.getCircuitId(), new CircuitStatistics(circuit));
+        });
+        return circuitsMap;
     }
 
     @Override

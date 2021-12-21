@@ -32,7 +32,16 @@ public class SeasonStanding {
         this.positionText = ds.getPositionText();
         this.points = ds.getPoints();
         this.wins = ds.getWins();
-        this.constructorId = ds.getConstructors().get(0).getConstructorId();
-        this.constructorName = ds.getConstructors().get(0).getName();
+        if(ds.getConstructors().size()>0) {
+            this.constructorId = ds.getConstructors().get(0).getConstructorId();
+            this.constructorName = ds.getConstructors().get(0).getName();
+            if(ds.getConstructors().size()>1) {
+                this.constructorName = "";
+                ds.getConstructors().forEach(constructor->{
+                    this.constructorName = this.constructorName + constructor.getName() + " / ";
+                });
+                this.constructorName = this.constructorName.substring(0, this.constructorName.length()-3);
+            }
+        }
     }
 }

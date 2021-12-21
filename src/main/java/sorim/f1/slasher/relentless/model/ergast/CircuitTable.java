@@ -5,18 +5,17 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import sorim.f1.slasher.relentless.entities.ergast.RaceData;
 
-import javax.persistence.Id;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Location {
-    @Id
-    private String locality;
-    private String lat;
-    @JsonProperty("long")
-    private String longitude;
-    private String country;
+public class CircuitTable {
+
+    @JsonProperty("Circuits")
+    private List<Circuit> circuits;
+
 }

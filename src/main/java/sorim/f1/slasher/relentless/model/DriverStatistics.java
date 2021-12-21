@@ -29,11 +29,14 @@ public class DriverStatistics {
     private String nationality;
     private Integer raceCount = 0;
     private Integer winCount = 0;
+    private Integer poleCount = 0;
+    private Integer lapCount = 0;
     private Integer podiumCount = 0;
     private Integer wdcCount = 0;
     private ErgastConstructor currentConstructor;
     private List<SeasonStanding> standingsBySeason = new ArrayList<>();
     private List<ChartSeries> pointsThroughSeasons = new ArrayList<>();
+    private List<List<String>> constructorHistory = new ArrayList<>();
 
     private String wikiSummary;
     private String wikiImage;
@@ -50,17 +53,29 @@ public class DriverStatistics {
     }
 
     public void pushSeasonStanding(Integer season, ErgastStanding es) {
-        if(Integer.parseInt(es.getPositionText())==1){
+        if(es.getPosition()==1){
             this.wdcCount++;
         }
         standingsBySeason.add(new SeasonStanding(season, es));
+
+        es.getConstructors().forEach(team->{
+            List<String> newConstructorEntry = new ArrayList<>();
+            newConstructorEntry.add(String.valueOf(season));
+            newConstructorEntry.add(team.getConstructorId());
+            newConstructorEntry.add(team.getName());
+            constructorHistory.add(newConstructorEntry);
+        });
     }
 
-    public void incrementRaceCount(Integer position) {
+    public void incrementRaceCounts(ErgastStanding es) {
         this.raceCount++;
-        if(position<3){
+        this.lapCount =  this.lapCount+es.getLaps();
+        if(es.getGrid()==1){
+            this.poleCount++;
+        }
+        if(es.getPosition()<3){
             this.podiumCount++;
-            if(position==1){
+            if(es.getPosition()==1){
                 this.winCount++;
             }
         }
@@ -77,4 +92,5 @@ public class DriverStatistics {
             pointsThroughSeasons.add(new ChartSeries(season.toString()));
         }
     }
+
 }

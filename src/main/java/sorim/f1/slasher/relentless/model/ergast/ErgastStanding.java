@@ -21,6 +21,7 @@ public class ErgastStanding {
     private String status;
     private Integer grid;
     private String positionText;
+    private Integer laps;
 
     @JsonProperty("Driver")
     private ErgastDriver driver;

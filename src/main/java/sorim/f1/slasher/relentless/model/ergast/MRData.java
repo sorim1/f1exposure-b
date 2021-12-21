@@ -28,4 +28,7 @@ public class MRData {
     @JsonProperty("DriverTable")
     private DriverTable driverTable;
 
+    @JsonProperty("CircuitTable")
+    private CircuitTable circuitTable;
+
 }
