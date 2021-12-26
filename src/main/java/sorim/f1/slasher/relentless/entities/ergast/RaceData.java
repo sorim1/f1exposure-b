@@ -70,4 +70,9 @@ public class RaceData {
     @Transient
     @JsonProperty("PitStops")
     private List<Pitstop> pitStops;
+
+    @Transient
+    private String wikiSummary;
+    @Transient
+    private String wikiImage;
 }

@@ -1,8 +1,7 @@
 package sorim.f1.slasher.relentless.service;
 
+import sorim.f1.slasher.relentless.entities.JsonRepositoryModel;
 import sorim.f1.slasher.relentless.entities.ergast.RaceData;
-import sorim.f1.slasher.relentless.model.AllStandings;
-import sorim.f1.slasher.relentless.model.DriverStatistics;
 import sorim.f1.slasher.relentless.model.FrontendRace;
 import sorim.f1.slasher.relentless.model.ergast.ErgastDriver;
 import sorim.f1.slasher.relentless.model.ergast.ErgastResponse;
@@ -56,17 +55,27 @@ public interface ErgastService {
 
     void deleteRaces(String season);
 
-    AllStandings fetchHistoricSeason(Integer season);
-
-    Object getHistoricSeason(Integer season);
+    JsonRepositoryModel fetchHistoricSeason(Integer season);
 
     Boolean fetchHistoricSeasonFull() throws InterruptedException;
 
-    Boolean fetchDriverStatistics();
+    Boolean fetchStatistics();
 
     Object getErgastDrivers();
+
+    Object getHistoricSeason(Integer season);
 
     Object getDriverStatistics(String driverId);
 
     List<ErgastDriver> generateAllErgastDrivers();
+
+    Object getCircuitStatistics(String circuitId);
+
+    Object getErgastRace(Integer season, Integer round);
+
+    Object getAllCircuits();
+
+    Object getErgastConstructors();
+
+    Object getConstructorStatistics(String constructorId);
 }

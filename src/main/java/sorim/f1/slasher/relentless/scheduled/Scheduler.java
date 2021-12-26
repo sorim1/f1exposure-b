@@ -187,7 +187,6 @@ public class Scheduler {
     //@PostConstruct
     void onInit() {
         log.info("onInitScheduler Called");
-        //sundayExposureJobs();
         isItRaceWeek();
         int weekDay = MainUtility.getWeekDay();
         try {

@@ -76,8 +76,6 @@ public class DriverStandingByRound {
         if(ergastStanding.getConstructors()!=null) {
             this.car = ergastStanding.getConstructors().get(0).getName();
             this.color = MainUtility.getTeamColor(ergastStanding.getConstructors().get(0).getConstructorId());;
-        } else {
-            System.out.println("no constructor for " + this.id.getId());
         }
         this.points = ergastStanding.getPoints();
         this.wins = ergastStanding.getWins();

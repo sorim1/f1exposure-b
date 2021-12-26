@@ -5,7 +5,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import sorim.f1.slasher.relentless.entities.ergast.RaceData;
-import sorim.f1.slasher.relentless.model.AllStandings;
 import sorim.f1.slasher.relentless.model.ergast.ErgastDriver;
 import sorim.f1.slasher.relentless.service.ErgastService;
 import sorim.f1.slasher.relentless.service.SecurityService;
@@ -22,54 +21,41 @@ public class ErgastController {
     private final SecurityService securityService;
 
     @GetMapping("/fetchCurrentSeason")
-    List<RaceData> fetchCurrentSeason(@RequestHeader String client) throws Exception {
+    public List<RaceData> fetchCurrentSeason(@RequestHeader String client) throws Exception {
         securityService.validateAdminHeader(client);
         return service.fetchCurrentSeason();
     }
 
     @GetMapping("/fetchSeason/{year}")
-    List<RaceData> fetchSeason(@RequestHeader String client, @PathVariable String year) throws Exception {
+    public List<RaceData> fetchSeason(@RequestHeader String client, @PathVariable String year) throws Exception {
         securityService.validateAdminHeader(client);
         log.info("year: {}", year);
         return service.fetchSeason(year);
     }
 
-    @GetMapping("/fetchHistoricSeason/{year}")
-    AllStandings fetchHistoricSeason(@RequestHeader String client, @PathVariable Integer year) throws Exception {
-       // securityService.validateAdminHeader(client);
-        log.info("fetchHistoricSeason: {}", year);
-        return service.fetchHistoricSeason(year);
-    }
-
     @GetMapping("/fetchHistoricSeasonFull")
-    Boolean fetchHistoricSeasonFull(@RequestHeader String client) throws Exception {
+    public Boolean fetchHistoricSeasonFull(@RequestHeader String client) throws Exception {
          securityService.validateAdminHeader(client);
         log.info("fetchHistoricSeasonFull");
         return service.fetchHistoricSeasonFull();
     }
 
-    @GetMapping("/getHistoricSeason/{year}")
-    Object getHistoricSeason(@RequestHeader String client, @PathVariable Integer year) throws Exception {
-         securityService.validateHeader(client);
-        return service.getHistoricSeason(year);
-    }
-
-    @GetMapping("/fetchDriverStatistics")
-    Boolean fetchDriverStatistics(@RequestHeader String client) throws Exception {
+    @GetMapping("/fetchStatistics")
+    public Boolean fetchStatistics(@RequestHeader String client) throws Exception {
         securityService.validateAdminHeader(client);
-        log.info("fetchDriverStatistics");
-        return service.fetchDriverStatistics();
+        log.info("fetchStatistics");
+        return service.fetchStatistics();
     }
 
     @GetMapping("/generateAllErgastDrivers")
-    List<ErgastDriver> generateAllErgastDrivers(@RequestHeader String client) throws Exception {
+    public List<ErgastDriver> generateAllErgastDrivers(@RequestHeader String client) throws Exception {
         securityService.validateAdminHeader(client);
         log.info("fetchDriverStatistics");
         return service.generateAllErgastDrivers();
     }
 
     @GetMapping("/getErgastDrivers")
-    Object getErgastDrivers(@RequestHeader String client) throws Exception {
+    public Object getErgastDrivers(@RequestHeader String client) throws Exception {
         securityService.validateHeader(client);
         return service.getErgastDrivers();
     }
@@ -78,5 +64,44 @@ public class ErgastController {
     Object getDriverStatistics(@RequestHeader String client, @PathVariable String driverId) throws Exception {
         securityService.validateHeader(client);
         return service.getDriverStatistics(driverId);
+    }
+
+    @GetMapping("/getErgastConstructors")
+    public Object getErgastConstructors(@RequestHeader String client) throws Exception {
+        securityService.validateHeader(client);
+        return service.getErgastConstructors();
+    }
+
+    @GetMapping("/getConstructorStatistics/{constructorId}")
+    public Object getConstructorStatistics(@RequestHeader String client, @PathVariable String constructorId) throws Exception {
+        securityService.validateHeader(client);
+        return service.getConstructorStatistics(constructorId);
+    }
+
+    @GetMapping("/getHistoricSeason/{season}")
+    public Object getDriverStatistics(@RequestHeader String client, @PathVariable Integer season) throws Exception {
+        securityService.validateHeader(client);
+        return service.getHistoricSeason(season);
+    }
+
+
+
+    @GetMapping("/getCircuitStatistics/{circuitId}")
+    public Object getCircuitStatistics(@RequestHeader String client, @PathVariable String circuitId) throws Exception {
+        securityService.validateHeader(client);
+        return service.getCircuitStatistics(circuitId);
+    }
+
+    @GetMapping("/getAllCircuits")
+    public Object getAllCircuits(@RequestHeader String client) throws Exception {
+        securityService.validateHeader(client);
+        return service.getAllCircuits();
+    }
+
+
+    @GetMapping("/getErgastRace/{season}/{round}")
+    public Object getErgastRace(@RequestHeader String client, @PathVariable Integer season, @PathVariable Integer round) throws Exception {
+        securityService.validateHeader(client);
+        return service.getErgastRace(season, round);
     }
 }

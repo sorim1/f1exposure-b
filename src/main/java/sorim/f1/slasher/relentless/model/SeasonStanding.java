@@ -32,7 +32,7 @@ public class SeasonStanding {
         this.positionText = ds.getPositionText();
         this.points = ds.getPoints();
         this.wins = ds.getWins();
-        if(ds.getConstructors().size()>0) {
+        if(ds.getConstructors()!=null && !ds.getConstructors().isEmpty()) {
             this.constructorId = ds.getConstructors().get(0).getConstructorId();
             this.constructorName = ds.getConstructors().get(0).getName();
             if(ds.getConstructors().size()>1) {

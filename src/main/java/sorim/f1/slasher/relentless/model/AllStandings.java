@@ -26,4 +26,6 @@ public class AllStandings {
     List<ChartSeries> gridToResultChartWithDnf;
     List<FrontendRace> races;
     Integer currentYear;
+    private String wikiSummary;
+    private String wikiImage;
 }

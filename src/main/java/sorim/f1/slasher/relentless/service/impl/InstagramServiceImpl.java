@@ -135,7 +135,7 @@ public class InstagramServiceImpl implements InstagramService {
                 }
             });
             boolean exists = instagramRepository.existsByCode(timelineMedias.get(timelineMedias.size() - 1).getCode());
-            iterate.set(counter.get() < 10 && (!exists));
+            iterate.set(counter.get() < 7 && (!exists));
             counter.set(counter.get() + 1);
         });
         instagramRepository.saveAll(instagramPosts);

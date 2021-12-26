@@ -65,7 +65,10 @@ public class ClientServiceImpl implements ClientService {
     public CalendarData getCountdownData(Integer mode) {
         ZonedDateTime gmtZoned = ZonedDateTime.now(ZoneId.of("Europe/London"));
         LocalDateTime gmtDateTime = gmtZoned.toLocalDateTime();
-        F1Calendar f1calendar = calendarRepository.findFirstByRaceAfterOrderByRace(gmtDateTime);
+       // LocalDateTime tempo =gmtDateTime.minusMonths(6);
+        F1Calendar f1calendar = calendarRepository.findFirstByRaceAfterOrPractice3AfterOrderByPractice1(gmtDateTime, gmtDateTime);
+       // F1Calendar f1calendar = calendarRepository.findFirstByOrderByPractice1();
+
         if(f1calendar==null){
             return CalendarData.builder()
                     .mode(countdownMode)
@@ -365,19 +368,25 @@ public class ClientServiceImpl implements ClientService {
             output.put("FP2Seconds", (int) duration.toSeconds());
         }
         if (mode == 0 || mode == 3) {
-            duration = Duration.between(gmtDateTime, f1calendar.getPractice3());
-            output.put("FP3Days", (int) duration.toDays());
-            output.put("FP3Seconds", (int) duration.toSeconds());
+            if(f1calendar.getPractice3()!=null) {
+                duration = Duration.between(gmtDateTime, f1calendar.getPractice3());
+                output.put("FP3Days", (int) duration.toDays());
+                output.put("FP3Seconds", (int) duration.toSeconds());
+            }
         }
         if (mode == 0 || mode == 4) {
-            duration = Duration.between(gmtDateTime, f1calendar.getQualifying());
-            output.put("qualifyingDays", (int) duration.toDays());
-            output.put("qualifyingSeconds", (int) duration.toSeconds());
+            if(f1calendar.getQualifying()!=null){
+                duration = Duration.between(gmtDateTime, f1calendar.getQualifying());
+                output.put("qualifyingDays", (int) duration.toDays());
+                output.put("qualifyingSeconds", (int) duration.toSeconds());
+            }
         }
         if (mode == 0 || mode == 5) {
-            duration = Duration.between(gmtDateTime, f1calendar.getRace());
-            output.put("raceDays", (int) duration.toDays());
-            output.put("raceSeconds", (int) duration.toSeconds());
+            if(f1calendar.getRace()!=null) {
+                duration = Duration.between(gmtDateTime, f1calendar.getRace());
+                output.put("raceDays", (int) duration.toDays());
+                output.put("raceSeconds", (int) duration.toSeconds());
+            }
         }
         return output;
     }

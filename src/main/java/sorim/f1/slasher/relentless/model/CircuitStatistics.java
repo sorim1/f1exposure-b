@@ -17,6 +17,8 @@ import java.util.List;
 public class CircuitStatistics {
     private Circuit ergastCircuit;
     private List<StatisticsRace> races = new ArrayList<>();
+    private String wikiSummary;
+    private String wikiImage;
 
     public CircuitStatistics(Circuit circuit) {
         this.ergastCircuit = circuit;
