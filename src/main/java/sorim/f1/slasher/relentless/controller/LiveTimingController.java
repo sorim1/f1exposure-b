@@ -17,7 +17,7 @@ import java.util.List;
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 @Slf4j
 @RequestMapping("liveTiming")
-public class AnalysisController {
+public class LiveTimingController {
 
     private final LiveTimingService service;
     private final SecurityService securityService;
