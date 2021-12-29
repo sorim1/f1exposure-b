@@ -73,7 +73,7 @@ public class DriverStatistics {
         if(es.getGrid()==1){
             this.poleCount++;
         }
-        if(es.getPosition()<3){
+        if(es.getPosition()<4){
             this.podiumCount++;
             if(es.getPosition()==1){
                 this.winCount++;

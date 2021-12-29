@@ -17,6 +17,7 @@ public class FrontendRace {
     private String url;
     private String date;
     private String circuitName;
+    private String circuitId;
     private String x;
     private String y;
     private ErgastDriver driver;
@@ -27,6 +28,7 @@ public class FrontendRace {
         this.url = raceData.getUrl();
         this.date = raceData.getDate();
         this.circuitName = raceData.getCircuit().getCircuitName();
+        this.circuitId = raceData.getCircuit().getCircuitId();
         this.x = raceData.getCircuit().getLocation().getLat();
         this.y = raceData.getCircuit().getLocation().getLongitude();
         if(raceData.getResults()!=null){

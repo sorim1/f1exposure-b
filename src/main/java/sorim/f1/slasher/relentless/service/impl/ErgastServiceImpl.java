@@ -267,6 +267,7 @@ public class ErgastServiceImpl implements ErgastService {
             list.forEach(es->{
                 driversMap.get(es.getDriver().getDriverId()).pushSeasonStanding(finalSeason, es);
             });
+            constructorsMap.get( list.get(0).getConstructors().get(list.get(0).getConstructors().size()-1).getConstructorId()).addWdc();
             List<ErgastStanding> list2 = getErgastConstructorStandingsByYear(season);
             list2.forEach(es->{
                 constructorsMap.get(es.getConstructor().getConstructorId()).pushSeasonStanding(finalSeason, es);

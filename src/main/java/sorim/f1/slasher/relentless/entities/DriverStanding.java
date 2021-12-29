@@ -33,11 +33,6 @@ public class DriverStanding {
     private String driverUrl;
     private String constructorUrl;
 
-    @Transient
-    private String firstName;
-    @Transient
-    private String lastName;
-
     public DriverStanding(ErgastStanding ergastStanding) {
         this.id = ergastStanding.getDriver().getDriverId();
         this.position = ergastStanding.getPosition();
@@ -47,7 +42,7 @@ public class DriverStanding {
         } else {
             this.code = ergastStanding.getDriver().getDriverId();
         }
-        this.ergastCode = ergastStanding.getDriver().getDriverId();
+        this.ergastCode = ergastStanding.getConstructors().get(ergastStanding.getConstructors().size()-1).getConstructorId();
         this.driverUrl = ergastStanding.getDriver().getUrl();
         this.nationality = ergastStanding.getDriver().getNationality();
 
@@ -58,7 +53,7 @@ public class DriverStanding {
             this.car = this.car.substring(0, this.car.length()-3);
         }
 
-        this.constructorUrl = ergastStanding.getConstructors().get(0).getUrl();
+        this.constructorUrl = ergastStanding.getConstructors().get(ergastStanding.getConstructors().size()-1).getUrl();
         this.points = ergastStanding.getPoints();
         this.wins = ergastStanding.getWins();
         this.permanentNumber = ergastStanding.getDriver().getPermanentNumber();

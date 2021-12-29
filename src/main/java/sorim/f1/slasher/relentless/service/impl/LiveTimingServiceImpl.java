@@ -590,6 +590,7 @@ public class LiveTimingServiceImpl implements LiveTimingService {
                     updateStandingsAndEnrichTreeMapData(driversMap, race.getRound());
 
                     Map<String, String> ergastCodes = ergastService.connectDriverCodesWithErgastCodes();
+                    addErgastCodesToDrivers(driversMap, ergastCodes);
                     Boolean bool = enrichDriversWithErgast(driversMap, ergastCodes, race.getSeason(), race.getRound());
                     if(bool){
                         adminService.initializeStandings();
@@ -618,6 +619,14 @@ public class LiveTimingServiceImpl implements LiveTimingService {
         latestRace.setRaceAnalysis(analysis);
         ergastService.saveRace(latestRace);
         return true;
+    }
+
+    private void addErgastCodesToDrivers(Map<String, Driver> driversMap, Map<String, String> ergastCodes) {
+        ergastCodes.forEach((k,v)->{
+           if(driversMap.containsKey(v)){
+               driversMap.get(v).setErgastCode(k);
+           }
+        });
     }
 
     private void updateStandingsAndEnrichTreeMapData(Map<String, Driver> driversMap, Integer newRound) {
@@ -689,15 +698,15 @@ public class LiveTimingServiceImpl implements LiveTimingService {
                 List<Integer> listOfTimes = new ArrayList<>();
                 lap.getTimings().forEach(timing -> {
                     if(ergastCodes.containsKey(timing.getDriverId())) {
-                        String ergastCode = ergastCodes.get(timing.getDriverId());
-                        Integer msTime = driversMap.get(ergastCode).getLapByLapData().addLapTime(lap.getNumber(), timing);
+                        String liveTimingCode = ergastCodes.get(timing.getDriverId());
+                        Integer msTime = driversMap.get(liveTimingCode).getLapByLapData().addLapTime(lap.getNumber(), timing);
                         if(!sortingMap.containsKey(msTime)) {
                             List<String> codes = new ArrayList<>();
-                            codes.add(ergastCode);
+                            codes.add(liveTimingCode);
                             sortingMap.put(msTime, codes);
                             listOfTimes.add(msTime);
                         } else {
-                            sortingMap.get(msTime).add(ergastCode);
+                            sortingMap.get(msTime).add(liveTimingCode);
                         }
                     } else {
                         log.error("KEY NOT FOUND: {}", timing.getDriverId());
