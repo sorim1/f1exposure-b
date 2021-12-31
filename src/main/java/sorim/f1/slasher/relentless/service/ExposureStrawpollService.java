@@ -32,7 +32,7 @@ public interface ExposureStrawpollService {
 
     void openExposurePoll(Integer minutes);
 
-    List<Integer> updateCurrentRound();
+    List<Integer> incrementExposureRound();
 
     List<Integer> setCurrentRound(Integer newRound);
 

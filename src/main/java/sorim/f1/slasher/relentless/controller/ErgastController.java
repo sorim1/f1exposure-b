@@ -50,7 +50,7 @@ public class ErgastController {
     @GetMapping("/generateAllErgastDrivers")
     public List<ErgastDriver> generateAllErgastDrivers(@RequestHeader String client) throws Exception {
         securityService.validateAdminHeader(client);
-        log.info("fetchDriverStatistics");
+        log.info("generateAllErgastDrivers");
         return service.generateAllErgastDrivers();
     }
 

@@ -4,9 +4,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import sorim.f1.slasher.relentless.entities.*;
 import sorim.f1.slasher.relentless.model.*;
-import sorim.f1.slasher.relentless.service.AdminService;
 import sorim.f1.slasher.relentless.service.ExposureStrawpollService;
 import sorim.f1.slasher.relentless.service.SecurityService;
 
@@ -82,10 +80,10 @@ public class ExposureController {
         service.openExposurePoll(minutes);
     }
 
-    @GetMapping("/updateCurrentRound")
-    List<Integer> updateCurrentRound(@RequestHeader String client) throws Exception {
+    @GetMapping("/incrementExposureRound")
+    List<Integer> incrementExposureRound(@RequestHeader String client) throws Exception {
         securityService.validateAdminHeader(client);
-        return service.updateCurrentRound();
+        return service.incrementExposureRound();
     }
 
     @GetMapping("/updateCurrentRound/{round}")

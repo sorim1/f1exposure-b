@@ -1,5 +1,6 @@
 package sorim.f1.slasher.relentless.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -32,6 +33,8 @@ public class ConstructorStatistics {
     private List<ChartSeries> pointsThroughSeasons = new ArrayList<>();
     private String wikiSummary;
     private String wikiImage;
+    @JsonIgnore
+    private String roundIdentifier="";
 
     public ConstructorStatistics(ErgastConstructor ergastConstructor) {
         this.ergastConstructor = ergastConstructor;
@@ -61,8 +64,11 @@ public class ConstructorStatistics {
         }
     }
 
-    public void incrementRaceCounts(ErgastStanding es) {
-        this.raceCount++;
+    public void incrementRaceCounts(ErgastStanding es, String identifier) {
+        if(!roundIdentifier.equals(identifier)){
+            this.raceCount++;
+            this.roundIdentifier=identifier;
+        }
         this.lapCount =  this.lapCount+es.getLaps();
         if(es.getGrid()==1){
             this.poleCount++;

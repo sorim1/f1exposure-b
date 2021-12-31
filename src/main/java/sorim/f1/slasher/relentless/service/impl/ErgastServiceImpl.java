@@ -327,10 +327,11 @@ public class ErgastServiceImpl implements ErgastService {
         do {
             ErgastResponse response = getResultsByRound(season, round);
             if (response.getMrData().getTotal() > 0) {
+                Integer finalRound1 = round;
                 response.getMrData().getRaceTable().getRaces().get(0).getResults()
                         .forEach(es -> {
                             driversMap.get(es.getDriver().getDriverId()).incrementRaceCounts(es);
-                            constructorsMap.get(es.getConstructor().getConstructorId()).incrementRaceCounts(es);
+                            constructorsMap.get(es.getConstructor().getConstructorId()).incrementRaceCounts(es, season+"-"+ finalRound1);
                         });
                 RaceData race = response.getMrData().getRaceTable().getRaces().get(0);
                 races.add(race);
@@ -484,7 +485,8 @@ public class ErgastServiceImpl implements ErgastService {
     @Override
     public List<ErgastDriver> generateAllErgastDrivers() {
         List<ErgastDriver> allDrivers = getAllErgastDrivers();
-        allDrivers.sort((o1, o2) -> String.CASE_INSENSITIVE_ORDER.compare(o1.getFamilyName(), o2.getFamilyName()));
+
+        allDrivers.sort((o1, o2) -> String.CASE_INSENSITIVE_ORDER.compare(o2.getDateOfBirth(), o1.getDateOfBirth()));
         JsonRepositoryModel saveData = JsonRepositoryModel.builder().id("ALL_ERGAST_DRIVERS")
                 .json(allDrivers).build();
         jsonRepository.save(saveData);

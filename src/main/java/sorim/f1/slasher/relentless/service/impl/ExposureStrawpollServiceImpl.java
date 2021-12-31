@@ -66,6 +66,8 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
 
     @PostConstruct
     private void init() {
+        AppProperty app = propertiesRepository.findDistinctFirstByName("exposureRound");
+        currentExposureRound = Integer.parseInt(app.getValue());
         initializeExposureFrontendVariables(null);
     }
 
@@ -151,17 +153,19 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
         try {
             round = ergastService.getCurrentDriverStandings().getMrData().getStandingsTable().getStandingsLists().get(0).getRound();
             currentExposureRound = round + increment;
-            propertiesRepository.updateProperty("exposureRound", currentExposureRound.toString());
+            AppProperty exposureProperty = AppProperty.builder().name("exposureRound").value(currentExposureRound.toString()).build();
+            propertiesRepository.save(exposureProperty);
         } catch (Exception e) {
             log.error("updateCurrentExposureRound error", e);
             Logger.log("updateCurrentExposureRound error", e.getMessage());
             AppProperty app = propertiesRepository.findDistinctFirstByName("exposureRound");
             if(app!=null) {
-                currentExposureRound = Integer.parseInt(propertiesRepository.findDistinctFirstByName("exposureRound").getValue()) + 1;
+                currentExposureRound = Integer.parseInt(app.getValue()) + 1;
             } else {
                 currentExposureRound=1;
             }
-            propertiesRepository.updateProperty("exposureRound", currentExposureRound.toString());
+            AppProperty exposureProperty = AppProperty.builder().name("exposureRound").value(currentExposureRound.toString()).build();
+            propertiesRepository.save(exposureProperty);
         }
     }
 
@@ -445,7 +449,8 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
 
     public void setCurrentExposureRound(Integer newCurrentRound) {
         currentExposureRound = newCurrentRound;
-        propertiesRepository.updateProperty("exposureRound", currentExposureRound.toString());
+        AppProperty exposureProperty = AppProperty.builder().name("exposureRound").value(currentExposureRound.toString()).build();
+        propertiesRepository.save(exposureProperty);
     }
 
     @Override
@@ -481,12 +486,13 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
     }
 
     @Override
-    public List<Integer> updateCurrentRound() {
+    public List<Integer> incrementExposureRound() {
         List<Integer> response = new ArrayList<>();
         response.add(currentExposureRound);
         currentExposureRound++;
         response.add(currentExposureRound);
-        propertiesRepository.updateProperty("exposureRound", currentExposureRound.toString());
+        AppProperty exposureProperty = AppProperty.builder().name("exposureRound").value(currentExposureRound.toString()).build();
+        propertiesRepository.save(exposureProperty);
         return response;
     }
 
@@ -496,7 +502,8 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
         response.add(currentExposureRound);
         currentExposureRound = newRound;
         response.add(currentExposureRound);
-        propertiesRepository.updateProperty("exposureRound", currentExposureRound.toString());
+        AppProperty exposureProperty = AppProperty.builder().name("exposureRound").value(currentExposureRound.toString()).build();
+        propertiesRepository.save(exposureProperty);
         return response;
     }
 
