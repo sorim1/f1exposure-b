@@ -41,6 +41,12 @@ public class ClientController {
         return service.exposeDrivers(exposedList, ipAddress);
     }
 
+    @GetMapping("/getStandings")
+    AllStandings getStandings(@RequestHeader String client) throws Exception {
+        securityService.validateHeader(client);
+        return service.getStandings();
+    }
+
     @GetMapping("/getDriverStandings")
     List<DriverStanding> getDriverStandings(@RequestHeader String client) throws Exception {
         securityService.validateHeader(client);
@@ -51,12 +57,6 @@ public class ClientController {
     List<ConstructorStanding> getConstructorStandings(@RequestHeader String client) throws Exception {
         securityService.validateHeader(client);
         return service.getConstructorStandings();
-    }
-
-    @GetMapping("/getStandings")
-    AllStandings getStandings(@RequestHeader String client) throws Exception {
-        securityService.validateHeader(client);
-        return service.getStandings();
     }
 
     @GetMapping("/getSportSurge")

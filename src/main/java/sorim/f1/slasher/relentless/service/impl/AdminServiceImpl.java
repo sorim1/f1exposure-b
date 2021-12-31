@@ -94,11 +94,9 @@ public class AdminServiceImpl implements AdminService {
         CalendarBuilder builder = new CalendarBuilder();
         Calendar calendar = builder.build(r);
         int raceId = 0;
-        int ergastRound = -1;
         int currentRaceId;
         List<F1Calendar> f1calendarList = new ArrayList<>();
         F1Calendar f1Calendar = null;
-        List<RaceData> ergastRaceData = ergastService.fetchSeason(String.valueOf(properties.getCurrentYear()));
         for (CalendarComponent component : calendar.getComponents().getAll()) {
             if (component.getName().equals("VEVENT") && component.getProperties().get("STATUS").get(0).getValue().equals("CONFIRMED")) {
                 PropertyList properties = component.getProperties();
@@ -111,20 +109,12 @@ public class AdminServiceImpl implements AdminService {
                         f1calendarList.add(f1Calendar);
                     }
                     raceId = currentRaceId;
-                    if (ergastRound == -1) {
-                        f1Calendar = new F1Calendar(properties);
-                        ergastRound++;
-                    } else {
-                        if (ergastRound < ergastRaceData.size()) {
-                            f1Calendar = new F1Calendar(properties);
-                        } else {
-                            f1Calendar = new F1Calendar(properties);
-                        }
-                    }
+                    f1Calendar = new F1Calendar(properties);
                 }
             }
         }
         f1calendarList.add(f1Calendar);
+        List<RaceData> ergastRaceData = ergastService.fetchSeason(String.valueOf(f1Calendar.getRace().getYear()));
         enrichCalendarWithErgastData(f1calendarList, ergastRaceData);
         calendarRepository.deleteAll();
         calendarRepository.saveAll(f1calendarList);
@@ -164,7 +154,7 @@ public class AdminServiceImpl implements AdminService {
         ZonedDateTime gmtZoned = ZonedDateTime.now(ZoneId.of("Europe/London"));
         LocalDateTime gmtDateTime = gmtZoned.toLocalDateTime();
         F1Calendar f1calendar = calendarRepository.findFirstByRaceAfterOrderByRace(gmtDateTime);
-        String url = properties.getFormula1RacingUrl() + properties.getCurrentYear() + ".html";
+        String url = properties.getFormula1RacingUrl() + properties.getCurrentSeasonPast() + ".html";
         String rawHtml = restTemplate
                 .getForObject(url, String.class);
         //todo TBC
@@ -217,12 +207,12 @@ public class AdminServiceImpl implements AdminService {
         Map<String, DriverStandingByRound> driverStandingsByRound = new HashMap<>();
         do {
 
-            ErgastResponse response = ergastService.getDriverStandingsByRound(properties.getCurrentYear(), round);
+            ErgastResponse response = ergastService.getDriverStandingsByRound(properties.getCurrentSeasonPast(), round);
             if (response.getMrData().getTotal() > 0) {
                 Integer finalRound = round;
                 response.getMrData().getStandingsTable().getStandingsLists().get(0).getDriverStandings()
                         .forEach(ergastStanding -> {
-                            driverStandingsByRound.put(ergastStanding.getDriver().getDriverId() + finalRound, new DriverStandingByRound(ergastStanding, properties.getCurrentYear(), finalRound));
+                            driverStandingsByRound.put(ergastStanding.getDriver().getDriverId() + finalRound, new DriverStandingByRound(ergastStanding, properties.getCurrentSeasonPast(), finalRound));
                         });
                 round++;
                 iterate = true;
@@ -234,12 +224,12 @@ public class AdminServiceImpl implements AdminService {
 
         Map<String, ConstructorStandingByRound> constructorStandingByRound = new HashMap<>();
         do {
-            ErgastResponse response = ergastService.getConstructorStandingsByRound(properties.getCurrentYear(), round);
+            ErgastResponse response = ergastService.getConstructorStandingsByRound(properties.getCurrentSeasonPast(), round);
             if (response.getMrData().getTotal() > 0) {
                 Integer finalRound = round;
                 response.getMrData().getStandingsTable().getStandingsLists().get(0).getConstructorStandings()
                         .forEach(ergastStanding -> {
-                            constructorStandingByRound.put(ergastStanding.getConstructor().getConstructorId() + finalRound, new ConstructorStandingByRound(ergastStanding, properties.getCurrentYear(), finalRound));
+                            constructorStandingByRound.put(ergastStanding.getConstructor().getConstructorId() + finalRound, new ConstructorStandingByRound(ergastStanding, properties.getCurrentSeasonPast(), finalRound));
 
                         });
                 round++;
@@ -261,7 +251,7 @@ public class AdminServiceImpl implements AdminService {
         boolean iterate;
         Integer round = 1;
         do {
-            ErgastResponse response = ergastService.getResultsByRound(properties.getCurrentYear(), round);
+            ErgastResponse response = ergastService.getResultsByRound(properties.getCurrentSeasonPast(), round);
             if (response.getMrData().getTotal() > 0) {
                 Integer finalRound = round;
                 Integer maxPosition = response.getMrData().getRaceTable().getRaces().get(0).getResults().size();
@@ -279,7 +269,7 @@ public class AdminServiceImpl implements AdminService {
     }
 
     private void enrichSingleRoundStandingsWithRoundPoints(Map<String, DriverStandingByRound> driverStandingsByRound, Map<String, ConstructorStandingByRound> constructorStandingByRound) {
-        ErgastResponse response = ergastService.getResultsByRound(properties.getCurrentYear(), CURRENT_ROUND);
+        ErgastResponse response = ergastService.getResultsByRound(properties.getCurrentSeasonPast(), CURRENT_ROUND);
         if (response.getMrData().getTotal() > 0) {
             Integer maxPosition = response.getMrData().getRaceTable().getRaces().get(0).getResults().size();
             response.getMrData().getRaceTable().getRaces().get(0).getResults()
@@ -299,20 +289,15 @@ public class AdminServiceImpl implements AdminService {
         List<DriverStanding> driverStandings = new ArrayList<>();
         Map<String, DriverStandingByRound> driverStandingsByRound = new HashMap<>();
         ErgastResponse response = ergastService.getCurrentDriverStandings();
-        if (response.getMrData().getStandingsTable().getStandingsLists().get(0).getRound() != CURRENT_ROUND) {
-            Logger.log("initializeStandings - changes detected");
-            bool = true;
-        } else {
-            Logger.log("initializeStandings - no changes detected");
-        }
-        CURRENT_ROUND = response.getMrData().getStandingsTable().getStandingsLists().get(0).getRound();
-        propertiesRepository.updateProperty("round", CURRENT_ROUND.toString());
+        bool = checkSeasonAndRound(response.getMrData().getStandingsTable().getStandingsLists().get(0).getRound(),
+                response.getMrData().getStandingsTable().getStandingsLists().get(0).getSeason());
+
         response.getMrData().getStandingsTable().getStandingsLists().get(0).getDriverStandings()
                 .forEach(ergastStanding -> {
                     driverStandings.add(new DriverStanding(ergastStanding));
-                    driverStandingsByRound.put(ergastStanding.getDriver().getDriverId(), new DriverStandingByRound(ergastStanding, properties.getCurrentYear(), CURRENT_ROUND));
+                    driverStandingsByRound.put(ergastStanding.getDriver().getDriverId(), new DriverStandingByRound(ergastStanding, properties.getCurrentSeasonPast(), CURRENT_ROUND));
                 });
-        response = ergastService.getResultsByRound(properties.getCurrentYear(), CURRENT_ROUND);
+        response = ergastService.getResultsByRound(properties.getCurrentSeasonPast(), CURRENT_ROUND);
         response.getMrData().getRaceTable().getRaces().get(0).getResults()
                 .forEach(ergastStanding -> {
                     driverStandingsByRound.get(ergastStanding.getDriver().getDriverId()).incrementPointsThisRound(ergastStanding.getPoints());
@@ -323,6 +308,20 @@ public class AdminServiceImpl implements AdminService {
         driverStandingsByRoundRepository.saveAll(driverStandingsByRound.values());
         // updateExposureDriverList(driverStandings);
         return bool;
+    }
+
+    private Boolean checkSeasonAndRound(Integer round, Integer season) {
+        Boolean response = false;
+        if(CURRENT_ROUND!=round) {
+            CURRENT_ROUND = round;
+            propertiesRepository.updateProperty("round", CURRENT_ROUND.toString());
+        }
+        if(!season.equals(properties.getCurrentSeasonPast())) {
+            log.warn("UPDATED SEASON: {} - {} ", season, properties.getCurrentSeasonPast());
+            properties.updateCurrentSeasonPast(season);
+        }
+        log.info("checkSeasonAndRound: {}", response);
+        return response;
     }
 
     private Boolean refreshStandingsFromLivetiming(Map<String, DriverStanding> standingsMap, Map<String, Driver> driversMap, Integer newRound) {
@@ -357,7 +356,7 @@ public class AdminServiceImpl implements AdminService {
         response.getMrData().getStandingsTable().getStandingsLists().get(0).getConstructorStandings()
                 .forEach(ergastStanding -> {
                     constructorStandings.add(new ConstructorStanding(ergastStanding));
-                    constructorStandingsByRound.put(ergastStanding.getConstructor().getConstructorId(), new ConstructorStandingByRound(ergastStanding, properties.getCurrentYear(), CURRENT_ROUND));
+                    constructorStandingsByRound.put(ergastStanding.getConstructor().getConstructorId(), new ConstructorStandingByRound(ergastStanding, properties.getCurrentSeasonPast(), CURRENT_ROUND));
                 });
         constructorStandingsRepository.deleteAll();
         constructorStandingsRepository.saveAll(constructorStandings);
@@ -569,7 +568,7 @@ public class AdminServiceImpl implements AdminService {
     }
 
     private void generateChartsDriverStandingsByRound() {
-        List<DriverStandingByRound> standingsBySeason = driverStandingsByRoundRepository.findAllByIdSeasonOrderByIdRoundAscNameAsc(properties.getCurrentYear());
+        List<DriverStandingByRound> standingsBySeason = driverStandingsByRoundRepository.findAllByIdSeasonOrderByIdRoundAscNameAsc(properties.getCurrentSeasonPast());
         Map<String, ChartSeries> totalPoints = new TreeMap<>();
         Map<String, ChartSeries> roundPoints = new TreeMap<>();
         Map<String, ChartSeries> roundResults = new TreeMap<>();
@@ -642,7 +641,7 @@ public class AdminServiceImpl implements AdminService {
     }
 
     private void generateChartsConstructorStandingsByRound() {
-        List<ConstructorStandingByRound> standingsBySeason = constructorStandingsByRoundRepository.findAllByIdSeasonOrderByIdRoundAscNameAsc(properties.getCurrentYear());
+        List<ConstructorStandingByRound> standingsBySeason = constructorStandingsByRoundRepository.findAllByIdSeasonOrderByIdRoundAscNameAsc(properties.getCurrentSeasonPast());
         Map<String, ChartSeries> totalPoints = new TreeMap<>();
         Map<String, ChartSeries> roundPoints = new TreeMap<>();
         standingsBySeason.forEach(standing -> {

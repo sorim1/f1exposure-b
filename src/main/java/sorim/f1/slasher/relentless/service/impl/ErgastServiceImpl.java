@@ -240,7 +240,7 @@ public class ErgastServiceImpl implements ErgastService {
     @Override
     public Boolean fetchHistoricSeasonFull() throws InterruptedException {
         List<JsonRepositoryModel> saveData = new ArrayList<>();
-        for(int i=1950;i<=properties.getCurrentYear();i++){
+        for(int i = 1950; i<=properties.getCurrentSeasonPast(); i++){
             log.info("fetch year: {}", i );
             JsonRepositoryModel season = fetchHistoricSeason(i);
             saveData.add(season);
@@ -261,7 +261,7 @@ public class ErgastServiceImpl implements ErgastService {
         Map<String, ConstructorStatistics> constructorsMap = new HashMap<>();
         allConstructors.forEach(ergastConstructor -> constructorsMap.put(ergastConstructor.getConstructorId(), new ConstructorStatistics(ergastConstructor)));
 
-        for(int season = firstSeason; season<=properties.getCurrentYear(); season++){
+        for(int season = firstSeason; season<=properties.getCurrentSeasonPast(); season++){
            List<ErgastStanding> list = getErgastStandingsByYear(season);
             int finalSeason = season;
             list.forEach(es->{
@@ -284,7 +284,7 @@ public class ErgastServiceImpl implements ErgastService {
         Map<String, CircuitStatistics> circuitsMap = generateAllCircuits();
 
         List<RaceData> races = new ArrayList<>();
-        for(int season = firstSeason; season<=properties.getCurrentYear(); season++){
+        for(int season = firstSeason; season<=properties.getCurrentSeasonPast(); season++){
             updateDriverWithRaceByRaceData(season, driversMap, constructorsMap, circuitsMap, races);
             try {
                 Thread.sleep(1000);

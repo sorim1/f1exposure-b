@@ -16,7 +16,6 @@ import sorim.f1.slasher.relentless.service.*;
 import sorim.f1.slasher.relentless.util.MainUtility;
 
 import javax.annotation.PostConstruct;
-import java.math.BigDecimal;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
@@ -107,8 +106,8 @@ public class ClientServiceImpl implements ClientService {
                 .constructorPointsByRound(getJsonCharts("CONSTRUCTOR_ROUND_POINTS"))
                 .gridToResultChartWithDnf(getJsonCharts("GRID_TO_RESULT_WITH_DNF"))
                 .gridToResultChartWithoutDnf(getJsonCharts("GRID_TO_RESULT_WITHOUT_DNF"))
-                .races(ergastService.getRacesOfSeason(String.valueOf(properties.getCurrentYear())))
-                .currentYear(properties.getCurrentYear())
+                .races(ergastService.getRacesOfSeason(String.valueOf(properties.getCurrentSeasonPast())))
+                .currentYear(properties.getCurrentSeasonPast())
                 .build();
     }
 

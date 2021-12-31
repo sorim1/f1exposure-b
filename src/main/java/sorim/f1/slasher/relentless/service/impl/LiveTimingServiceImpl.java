@@ -228,7 +228,7 @@ public class LiveTimingServiceImpl implements LiveTimingService {
 
     @Override
     public Integer analyzeLatestRace() {
-        RaceData raceData = ergastService.getLatestNonAnalyzedRace(properties.getCurrentYear());
+        RaceData raceData = ergastService.getLatestNonAnalyzedRace(properties.getCurrentSeasonFuture());
         if(raceData!=null) {
             String liveTimingResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.RACE, 1);
             //TODO timingAppData zasad ne koristim u RaceAnalysis
@@ -294,7 +294,7 @@ public class LiveTimingServiceImpl implements LiveTimingService {
 
     @Override
     public UpcomingRaceAnalysis getUpcomingRaceAnalysis() {
-        RaceData raceData = ergastService.getUpcomingRace(properties.getCurrentYear());
+        RaceData raceData = ergastService.getUpcomingRace(properties.getCurrentSeasonFuture());
         if(raceData==null){
             return null;
         }
@@ -303,7 +303,7 @@ public class LiveTimingServiceImpl implements LiveTimingService {
 
     @Override
     public RaceData getUpcomingRace() {
-        return ergastService.getUpcomingRace(properties.getCurrentYear());
+        return ergastService.getUpcomingRace(properties.getCurrentSeasonFuture());
     }
 
     @Override
@@ -382,7 +382,7 @@ public class LiveTimingServiceImpl implements LiveTimingService {
         for (int i = 0; i <= howManySeasonsBack; i++) {
             Integer round = 1;
             do {
-                response = ergastService.getResultsByRound(properties.getCurrentYear() - i, round);
+                response = ergastService.getResultsByRound(properties.getCurrentSeasonPast() - i, round);
 
                 if ((!response.getMrData().getRaceTable().getRaces().isEmpty())) {
                     String circuitId = response.getMrData().getRaceTable().getRaces().get(0).getCircuit().getCircuitId();
@@ -406,7 +406,7 @@ public class LiveTimingServiceImpl implements LiveTimingService {
         if(redo==null){
             redo = false;
         }
-        RaceData raceData = ergastService.getLatestNonAnalyzedRace(properties.getCurrentYear());
+        RaceData raceData = ergastService.getLatestNonAnalyzedRace(properties.getCurrentSeasonFuture());
         if(raceData!=null) {
             if (raceData.getLiveTimingFp1() == null || redo) {
                 String liveTimingResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.PRACTICE_1, 1);
@@ -470,6 +470,8 @@ public class LiveTimingServiceImpl implements LiveTimingService {
             }
 
             ergastService.saveRace(raceData);
+        } else {
+            properties.checkCurrentSeasonFuture();
         }
         return adminService.getNextRefreshTick(-6000);
     }
@@ -520,12 +522,12 @@ public class LiveTimingServiceImpl implements LiveTimingService {
 
     @Override
     public Boolean updateAllImageUrlsDev() {
-        List<RaceData> races = ergastService.findRacesBySeason(String.valueOf(properties.getCurrentYear()));
+        List<RaceData> races = ergastService.findRacesBySeason(String.valueOf(properties.getCurrentSeasonPast()));
         races.forEach(race -> {
             race.setImageUrl(getWikipediaOriginalImageUrl(race.getCircuit().getUrl(), race.getCircuit().getCircuitName(), false));
         });
         ergastService.saveRaces(races);
-        return null;
+        return true;
     }
 
     private List<Driver> createDriverListOfEvent(String liveTimingResponse) {
@@ -607,7 +609,7 @@ public class LiveTimingServiceImpl implements LiveTimingService {
         RaceAnalysis analysis = RaceAnalysis.builder()
                 .weatherChartData(weatherChartData)
                 .driverData(drivers.get())
-                .year(properties.getCurrentYear())
+                .year(properties.getCurrentSeasonFuture())
                 .status(1)
                 .title(title.get()).build();
         RaceData latestRace = raceData.get(0);

@@ -152,7 +152,13 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
         Integer round;
         try {
             round = ergastService.getCurrentDriverStandings().getMrData().getStandingsTable().getStandingsLists().get(0).getRound();
-            currentExposureRound = round + increment;
+            if(currentExposureRound<=round){
+                currentExposureRound = round + increment;
+            } else{
+                //nova sezona
+                currentExposureRound = round;
+                properties.checkCurrentSeasonFuture();
+            }
             AppProperty exposureProperty = AppProperty.builder().name("exposureRound").value(currentExposureRound.toString()).build();
             propertiesRepository.save(exposureProperty);
         } catch (Exception e) {
@@ -160,12 +166,8 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
             Logger.log("updateCurrentExposureRound error", e.getMessage());
             AppProperty app = propertiesRepository.findDistinctFirstByName("exposureRound");
             if(app!=null) {
-                currentExposureRound = Integer.parseInt(app.getValue()) + 1;
-            } else {
-                currentExposureRound=1;
+               currentExposureRound = Integer.parseInt(app.getValue()) + increment;
             }
-            AppProperty exposureProperty = AppProperty.builder().name("exposureRound").value(currentExposureRound.toString()).build();
-            propertiesRepository.save(exposureProperty);
         }
     }
 
@@ -229,7 +231,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
                 .exposureChampionshipData(getExposureChampionshipData())
                 .standings(getExposureStandings())
                 .voters(getExposureVoters())
-                .exposureRaces(ergastService.getRacesSoFar(String.valueOf(properties.getCurrentYear()), currentExposureRound))
+                .exposureRaces(ergastService.getRacesSoFar(String.valueOf(properties.getCurrentSeasonPast()), currentExposureRound))
                 .build();
     }
 
@@ -242,7 +244,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
         List<ExposureChampionshipStanding> exposureStandings = new ArrayList<>();
         exposureChampionshipData.forEach((v) -> {
             ExposureChampionshipStandingId id = ExposureChampionshipStandingId.builder()
-                    .season(properties.getCurrentYear())
+                    .season(properties.getCurrentSeasonFuture())
                     .driver(v.getCode())
                     .build();
             exposureStandings.add(ExposureChampionshipStanding.builder().id(id).exposure(v.getScore()).build());
@@ -252,11 +254,11 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
     }
 
     private List<ExposureChampionshipStanding> getExposureStandings() {
-        return exposureChampionshipStandingsRepository.findAllByIdSeasonOrderByExposureDesc(properties.getCurrentYear());
+        return exposureChampionshipStandingsRepository.findAllByIdSeasonOrderByExposureDesc(properties.getCurrentSeasonPast());
     }
 
     private List<Integer> getExposureVoters() {
-        return exposedRepository.getVoterCountOfSeason(properties.getCurrentYear());
+        return exposedRepository.getVoterCountOfSeason(properties.getCurrentSeasonPast());
     }
 
     @Override
@@ -265,9 +267,9 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
         List<String> driverNames = new ArrayList<>();
         List<Integer> results = new ArrayList<>();
         List<BigDecimal> exposureList = new ArrayList<>();
-        List<ExposureChampionship> list = exposureChampionshipRepository.findAllByIdSeasonAndIdRoundOrderByVotesDesc(properties.getCurrentYear(), currentExposureRound);
+        List<ExposureChampionship> list = exposureChampionshipRepository.findAllByIdSeasonAndIdRoundOrderByVotesDesc(properties.getCurrentSeasonPast(), currentExposureRound);
 
-        ExposedVoteTotals total = exposedRepository.findExposedTotalBySeasonAndRound(properties.getCurrentYear(), currentExposureRound);
+        ExposedVoteTotals total = exposedRepository.findExposedTotalBySeasonAndRound(properties.getCurrentSeasonPast(), currentExposureRound);
         if (total == null) {
             total = new ExposedVoteTotals();
         }
@@ -283,7 +285,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
                 .results(results.toArray(new Integer[results.size()]))
                 .exposure(exposureList.toArray(new BigDecimal[results.size()]))
                 .round(currentExposureRound)
-                .season(properties.getCurrentYear())
+                .season(properties.getCurrentSeasonPast())
                 .votes(total.getVotes())
                 .voters(total.getVoters())
                 .strawpoll(total.getStrawpoll())
@@ -299,7 +301,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
     }
 
     private List<ExposureChampionshipData> getExposureChampionshipData() {
-        List<ExposureChampionship> rawData = exposureChampionshipRepository.findAllByIdSeasonAndStatusOrderByIdRound(properties.getCurrentYear(), 3);
+        List<ExposureChampionship> rawData = exposureChampionshipRepository.findAllByIdSeasonAndStatusOrderByIdRound(properties.getCurrentSeasonPast(), 3);
         Map<String, ExposureChampionshipData> map = new TreeMap<>();
         rawData.forEach(row -> {
             if (map.containsKey(row.getId().getDriver())) {
@@ -348,7 +350,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
         strawpoll.getContent().getPoll().getPoll_answers().forEach(pollAnswer -> {
             String code = getDriverCodeFromName(pollAnswer.getAnswer());
             SeasonRoundDriverId exposedId = SeasonRoundDriverId.builder()
-                    .season(properties.getCurrentYear())
+                    .season(properties.getCurrentSeasonFuture())
                     .round(currentExposureRound)
                     .driver(code).build();
 
@@ -362,7 +364,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
             list.add(newRow);
         });
         exposureChampionshipRepository.saveAll(list);
-        ExposedTotalsId totalsId = ExposedTotalsId.builder().season(properties.getCurrentYear())
+        ExposedTotalsId totalsId = ExposedTotalsId.builder().season(properties.getCurrentSeasonFuture())
                 .round(currentExposureRound).build();
         ExposedVoteTotals totals = ExposedVoteTotals.builder().id(totalsId).voters(voters).votes(totalVotes)
                 .strawpoll(strawpollId)
@@ -409,7 +411,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
     public ExposureResponse getExposureDriverList() {
         ExposureResponse response = ExposureResponse.builder()
                 .title(title)
-                .year(properties.getCurrentYear())
+                .year(properties.getCurrentSeasonPast())
                 .exposureTime(exposureTime)
                 .exposureNow(exposureNow)
                 .exposureToday(exposureToday)
@@ -519,6 +521,6 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
 
     @Override
     public Integer resetLatestPoll() {
-        return exposureChampionshipRepository.deleteByIdSeasonAndIdRoundOrderByVotesDesc(properties.getCurrentYear(), currentExposureRound);
+        return exposureChampionshipRepository.deleteByIdSeasonAndIdRoundOrderByVotesDesc(properties.getCurrentSeasonFuture(), currentExposureRound);
     }
 }
