@@ -33,7 +33,7 @@ public class Scheduler {
 
     @Scheduled(cron = "0 0 1 * * MON")
     public void mondayJobs() throws IOException {
-        Logger.log(CODE, "mondayJobs called");
+        log.info(CODE, "mondayJobs called");
         adminService.deleteSportSurgeLinks();
         adminService.fetchReplayLinks();
         exposureService.closeExposurePoll();
@@ -44,13 +44,13 @@ public class Scheduler {
             standingsUpdated = true;
         }
         Boolean artGenerated = artService.generateLatestArt();
-        Logger.log(CODE, "artGenerated: " + artGenerated);
+        log.info(CODE, "artGenerated: " + artGenerated);
         isItRaceWeek();
     }
 
     @Scheduled(cron = "0 0 18 * * TUE")
     public void tuesdayJobs() throws IOException {
-        Logger.log(CODE, "tuesdayJobs called");
+        log.info(CODE, "tuesdayJobs called");
         adminService.fetchReplayLinks();
         if (!standingsUpdated) {
             adminService.initializeStandings();
@@ -86,10 +86,10 @@ public class Scheduler {
     @Scheduled(cron = "0 0 15 * * SUN")
     private void sundayStandingsJobs() throws IOException {
         int delay = 1800000;
-        Logger.log(CODE, "sundayStandingsJobs called");
+        log.info(CODE, "sundayStandingsJobs called");
         adminService.initializeStandings();
         if (!standingsUpdated) {
-            Logger.log(CODE, "sundayStandingsJobs delayed");
+            log.info(CODE, "sundayStandingsJobs delayed");
             new java.util.Timer().schedule(
                     new java.util.TimerTask() {
                         @SneakyThrows
@@ -101,7 +101,7 @@ public class Scheduler {
                     delay
             );
         }else {
-            Logger.log(CODE, "sundayStandingsJobs UPDATED");
+            log.info(CODE, "sundayStandingsJobs UPDATED");
         }
     }
 
@@ -109,7 +109,7 @@ public class Scheduler {
     private void sundayAnalysisJob() {
         if (isRaceWeek) {
             Integer delay;
-            Logger.log(CODE, "sundayAnalysisJob called");
+            log.info(CODE, "sundayAnalysisJob called");
             if (!analysisDone) {
                 delay = liveTimingService.analyzeLatestRace();
                 if (delay != null) {
@@ -117,7 +117,7 @@ public class Scheduler {
                     if (!strawpollFound) {
                         strawpollFound = exposureService.initializeExposureFrontendVariables(null);
                     }
-                    Logger.log(CODE, "sundayAnalysisJob delayed: " + delayInMiliseconds);
+                    log.info(CODE, "sundayAnalysisJob delayed: " + delayInMiliseconds);
                     new java.util.Timer().schedule(
                             new java.util.TimerTask() {
                                 @SneakyThrows
@@ -136,7 +136,7 @@ public class Scheduler {
 
     private void fetchSportSurgeLinksPeriodically() throws IOException {
         Integer delay = adminService.fetchSportSurgeLinks();
-        Logger.log(CODE, "fetchSportSurgeLinksPeriodically called");
+        log.info(CODE, "fetchSportSurgeLinksPeriodically called");
         if (delay != null) {
             int delayInMiliseconds = delay * 1000;
             MainUtility.logTime("fetchSportSurgeLinksPeriodically", delayInMiliseconds);
@@ -156,7 +156,7 @@ public class Scheduler {
 
     private void analyzeUpcomingRacePeriodically() {
         Integer delay = liveTimingService.analyzeUpcomingRace(false);
-        Logger.log(CODE, "analyzeUpcomingRacePeriodically called");
+        log.info(CODE, "analyzeUpcomingRacePeriodically called");
         if (delay != null) {
             int delayInMiliseconds = delay * 1000;
             MainUtility.logTime("analyzeUpcomingRacePeriodically", delayInMiliseconds);
@@ -184,7 +184,7 @@ public class Scheduler {
     }
 
 
-   // @PostConstruct
+    @PostConstruct
     void onInit() {
         log.info("onInitScheduler Called");
         isItRaceWeek();
@@ -220,7 +220,7 @@ public class Scheduler {
         }
     }
 
-    //@Scheduled(cron = "0 0 1,6,8,10,12,14,16,18,20,22 * * *")
+    @Scheduled(cron = "0 0 1,6,8,10,12,14,16,18,20,22 * * *")
     void imageFeedJob() throws Exception {
         log.info("bihourlyJob called");
         clientService.fetchInstagramFeed();
