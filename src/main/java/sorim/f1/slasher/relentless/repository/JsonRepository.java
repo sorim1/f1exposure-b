@@ -8,6 +8,7 @@ import sorim.f1.slasher.relentless.entities.F1Calendar;
 import sorim.f1.slasher.relentless.entities.JsonRepositoryModel;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Repository
 @Transactional
@@ -15,4 +16,5 @@ import java.time.LocalDateTime;
 public interface JsonRepository extends CrudRepository<JsonRepositoryModel, String> {
 
     JsonRepositoryModel findAllById(String id);
+    List<JsonRepositoryModel> findAllByIdStartsWith(String prefix);
 }

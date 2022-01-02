@@ -24,6 +24,8 @@ public class DriverStanding {
     private Integer position;
     private String name;
     private String code;
+
+    //rename to teamCode (and liquibase)
     private String ergastCode;
     private String nationality;
     private String car = "";

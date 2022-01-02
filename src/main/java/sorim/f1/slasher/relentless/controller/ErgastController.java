@@ -4,7 +4,10 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import sorim.f1.slasher.relentless.entities.AwsContent;
 import sorim.f1.slasher.relentless.entities.ergast.RaceData;
+import sorim.f1.slasher.relentless.model.DriverComparator;
+import sorim.f1.slasher.relentless.model.DriverCompared;
 import sorim.f1.slasher.relentless.model.ergast.ErgastDriver;
 import sorim.f1.slasher.relentless.service.ErgastService;
 import sorim.f1.slasher.relentless.service.SecurityService;
@@ -44,7 +47,21 @@ public class ErgastController {
     public Boolean fetchStatistics(@RequestHeader String client) throws Exception {
         securityService.validateAdminHeader(client);
         log.info("fetchStatistics");
-        return service.fetchStatistics();
+        return service.fetchStatistics(false);
+    }
+
+    @GetMapping("/fetchStatisticsPartial")
+    public Boolean fetchStatisticsPartial(@RequestHeader String client) throws Exception {
+        securityService.validateAdminHeader(client);
+        log.info("fetchStatisticsPartial");
+        return service.fetchStatistics(true);
+    }
+
+    @GetMapping("/fetchStatisticsFullFromPartial")
+    public Boolean fetchStatisticsFullFromPartial(@RequestHeader String client) throws Exception {
+        securityService.validateAdminHeader(client);
+        log.info("fetchStatisticsFullFromPartial");
+        return service.fetchStatisticsFullFromPartial();
     }
 
     @GetMapping("/generateAllErgastDrivers")
@@ -96,6 +113,20 @@ public class ErgastController {
     public Object getAllCircuits(@RequestHeader String client) throws Exception {
         securityService.validateHeader(client);
         return service.getAllCircuits();
+    }
+
+    @PostMapping("/compareDrivers")
+    public DriverComparator compareDrivers(@RequestHeader String client, @RequestBody DriverComparator body) throws Exception {
+        securityService.validateHeader(client);
+        log.info("compareDrivers");
+        return service.compareDrivers(body);
+    }
+
+    @GetMapping("/compareDriversDropdown/{season}")
+    public List<DriverCompared> getCompareDriversDropdown(@RequestHeader String client, @PathVariable Integer season) throws Exception {
+        securityService.validateHeader(client);
+        log.info("compareDrivers");
+        return service.getCompareDriversDropdown(season);
     }
 
 
