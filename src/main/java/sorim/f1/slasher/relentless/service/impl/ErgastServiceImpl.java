@@ -26,10 +26,10 @@ import java.util.stream.Collectors;
 @Service
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class ErgastServiceImpl implements ErgastService {
-    private final static String CURRENT_SEASON = "http://ergast.com/api/f1/current.json";
-    private final static String GET_SEASON = "https://ergast.com/api/f1/{year}.json";
-    private final static String ERGAST_URL = "https://ergast.com/api/f1/";
-    private final static String WIKIPEDIA_URL = "https://en.wikipedia.org/api/rest_v1/page/summary/";
+    private static final String CURRENT_SEASON = "http://ergast.com/api/f1/current.json";
+    private static final String GET_SEASON = "https://ergast.com/api/f1/{year}.json";
+    private static final String ERGAST_URL = "https://ergast.com/api/f1/";
+    private static final String WIKIPEDIA_URL = "https://en.wikipedia.org/api/rest_v1/page/summary/";
     private final MainProperties properties;
     private final ErgastRaceRepository ergastRaceRepository;
     private final DriverRepository driverRepository;
@@ -37,6 +37,7 @@ public class ErgastServiceImpl implements ErgastService {
     private final RestTemplate restTemplate = new RestTemplate();
     private static Map<Integer, Integer> roundDriverCount = new HashMap<>();
     private final ObjectMapper mapper = new ObjectMapper();
+    private static final String championshipPrefix_ = "CHAMPIONSHIP_";
 
     @Override
     public List<RaceData> fetchSeason(String year) {
@@ -74,8 +75,8 @@ public class ErgastServiceImpl implements ErgastService {
     public RaceData getUpcomingRace(Integer currentYear) {
         RaceData response = ergastRaceRepository.findFirstByRaceAnalysisNullAndSeasonOrderByDateAsc(currentYear.toString());
         if (response == null) {
-            Integer nextYear = currentYear + 1;
-            response = ergastRaceRepository.findFirstByRaceAnalysisIsNullAndSeasonOrderByDateAsc(nextYear.toString());
+            int nextYear = currentYear + 1;
+            response = ergastRaceRepository.findFirstByRaceAnalysisIsNullAndSeasonOrderByDateAsc(Integer.toString(nextYear));
         }
         return response;
     }
@@ -170,9 +171,8 @@ public class ErgastServiceImpl implements ErgastService {
     @Override
     public Map<String, String> connectDriverCodesWithErgastCodes() {
         List<ExposureDriver> drivers = driverRepository.findAll();
-        Map<String, String> map = drivers.stream()
+        return drivers.stream()
                 .collect(Collectors.toMap(ExposureDriver::getErgastCode, ExposureDriver::getCode));
-        return map;
     }
 
     @Override
@@ -233,7 +233,7 @@ public class ErgastServiceImpl implements ErgastService {
             championship.setWikiImage(list.get(1));
         }
 
-        return JsonRepositoryModel.builder().id("CHAMPIONSHIP_" + season)
+        return JsonRepositoryModel.builder().id(championshipPrefix_ + season)
                 .json(championship).build();
     }
 
@@ -282,7 +282,7 @@ public class ErgastServiceImpl implements ErgastService {
             list.forEach(es->{
                 driversMap.get(es.getDriver().getDriverId()).pushSeasonStanding(finalSeason, es);
             });
-            constructorsMap.get( list.get(0).getConstructors().get(list.get(0).getConstructors().size()-1).getConstructorId()).addWdc();
+            constructorsMap.get( list.get(0).getConstructors().get(list.get(0).getConstructors().size()-1).getConstructorId()).addWdc(season, list.get(0).getDriver().getGivenName() +  " " + list.get(0).getDriver().getFamilyName());
             List<ErgastStanding> list2 = getErgastConstructorStandingsByYear(season);
             list2.forEach(es->{
                 constructorsMap.get(es.getConstructor().getConstructorId()).pushSeasonStanding(finalSeason, es);
@@ -344,9 +344,7 @@ public class ErgastServiceImpl implements ErgastService {
             if (response.getMrData().getTotal() > 0) {
                 Integer finalRound = round;
                 response.getMrData().getStandingsTable().getStandingsLists().get(0).getDriverStandings()
-                        .forEach(es -> {
-                            driversMap.get(es.getDriver().getDriverId()).addPointThroughSeason(season, finalRound, es);
-                        });
+                        .forEach(es -> driversMap.get(es.getDriver().getDriverId()).addPointThroughSeason(season, finalRound, es));
                 response = getConstructorStandingsByRound(season, round);
                 if (response.getMrData().getTotal() > 0) {
                     response.getMrData().getStandingsTable().getStandingsLists().get(0).getConstructorStandings()
@@ -369,7 +367,7 @@ public class ErgastServiceImpl implements ErgastService {
                 response.getMrData().getRaceTable().getRaces().get(0).getResults()
                         .forEach(es -> {
                             driversMap.get(es.getDriver().getDriverId()).incrementRaceCounts(es);
-                            constructorsMap.get(es.getConstructor().getConstructorId()).incrementRaceCounts(es, season+"-"+ finalRound1);
+                            constructorsMap.get(es.getConstructor().getConstructorId()).incrementRaceCounts(es, season, finalRound1);
                         });
                 RaceData race = response.getMrData().getRaceTable().getRaces().get(0);
                 races.add(race);
@@ -400,7 +398,6 @@ public class ErgastServiceImpl implements ErgastService {
             saveList.add(driverJrm);
         });
 
-        String finalPrefixForPartial1 = prefixForPartial;
         constructorsMap.forEach((k, v)->{
             String name1 =   v.getErgastConstructor().getUrl().substring( v.getErgastConstructor().getUrl().lastIndexOf("/")+1) ;
             String name2 =  v.getErgastConstructor().getName().replace(" ", "_") ;
@@ -411,12 +408,11 @@ public class ErgastServiceImpl implements ErgastService {
             if(list.size()>1){
                 v.setWikiImage(list.get(1));
             }
-            JsonRepositoryModel driverJrm = JsonRepositoryModel.builder().id(finalPrefixForPartial1 +"CONSTRUCTOR_"+k)
+            JsonRepositoryModel driverJrm = JsonRepositoryModel.builder().id(prefixForPartial +"CONSTRUCTOR_"+k)
                     .json(v).build();
             saveList.add(driverJrm);
         });
 
-        String finalPrefixForPartial2 = prefixForPartial;
         circuitsMap.forEach((id, circuit) ->{
             String name1 = circuit.getErgastCircuit().getUrl().substring(circuit.getErgastCircuit().getUrl().lastIndexOf("/")+1) ;
             String name2 = circuit.getErgastCircuit().getCircuitName().replace(" ", "_") ;
@@ -427,11 +423,11 @@ public class ErgastServiceImpl implements ErgastService {
             if(list.size()>1){
                 circuit.setWikiImage(list.get(1));
             }
-            JsonRepositoryModel entry = JsonRepositoryModel.builder().id(finalPrefixForPartial2 +"CIRCUIT_"+id)
+            JsonRepositoryModel entry = JsonRepositoryModel.builder().id(prefixForPartial +"CIRCUIT_"+id)
                     .json(circuit).build();
             saveList.add(entry);
         });
-        races.forEach((race) ->{
+        races.forEach(race ->{
             String name1 = race.getUrl().substring(race.getUrl().lastIndexOf("/")+1) ;
             String name2 = race.getRaceName().replace(" ", "_") ;
             List<String> list = generateWikiProperties(name1, name2);
@@ -507,7 +503,7 @@ public class ErgastServiceImpl implements ErgastService {
 
     @Override
     public Object getHistoricSeason(Integer season) {
-        JsonRepositoryModel jrm = jsonRepository.findAllById("CHAMPIONSHIP_"+season);
+        JsonRepositoryModel jrm = jsonRepository.findAllById(championshipPrefix_+season);
         return jrm.getJson();
     }
 
@@ -535,7 +531,7 @@ public class ErgastServiceImpl implements ErgastService {
         } else {
             response.setYear(request.getYear());
         }
-        JsonRepositoryModel jrmC = jsonRepository.findAllById("CHAMPIONSHIP_"+response.getYear());
+        JsonRepositoryModel jrmC = jsonRepository.findAllById(championshipPrefix_+response.getYear());
         JsonRepositoryModel jrmD1 = jsonRepository.findAllById("DRIVER_"+request.getDriver1().getDriverId());
         JsonRepositoryModel jrmD2 = jsonRepository.findAllById("DRIVER_"+request.getDriver2().getDriverId());
         List<JsonRepositoryModel> jrmR = jsonRepository.findAllByIdStartsWith("RACE_"+response.getYear());
@@ -560,7 +556,7 @@ public class ErgastServiceImpl implements ErgastService {
     @Override
     public List<DriverCompared> getCompareDriversDropdown(Integer season) {
         List<DriverCompared> response = new ArrayList<>();
-        JsonRepositoryModel jrm = jsonRepository.findAllById("CHAMPIONSHIP_"+season);
+        JsonRepositoryModel jrm = jsonRepository.findAllById(championshipPrefix_+season);
         AllStandings championship = mapper.convertValue(jrm.getJson(), AllStandings.class);
         championship.getDriverStandings().forEach(driver->{
             response.add(new DriverCompared(driver));
@@ -569,7 +565,7 @@ public class ErgastServiceImpl implements ErgastService {
     }
 
     private DriverCompared calculateTeammate(Integer season, DriverCompared driverId) {
-        JsonRepositoryModel jrm = jsonRepository.findAllById("CHAMPIONSHIP_"+season);
+        JsonRepositoryModel jrm = jsonRepository.findAllById(championshipPrefix_+season);
         AllStandings championship = mapper.convertValue(jrm.getJson(), AllStandings.class);
 //        championship.getDriverStandings().stream().filter(post -> post.containsKey("sub") && post.get("sub").toString().toUpperCase().contains("/F1/"))
 //                .forEach(f1Thread -> {

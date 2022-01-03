@@ -28,6 +28,7 @@ public class ConstructorStatistics {
     private Integer podiumCount = 0;
     private Integer wccCount = 0;
     private Integer wdcCount = 0;
+    private List<String> wdcList = new ArrayList<>();
     private List<ErgastDriver> currentDrivers;
     private List<SeasonStanding> standingsBySeason = new ArrayList<>();
     private List<ChartSeries> pointsThroughSeasons = new ArrayList<>();
@@ -47,8 +48,9 @@ public class ConstructorStatistics {
         standingsBySeason.add(new SeasonStanding(season, es));
     }
 
-    public void addWdc() {
-            this.wdcCount++;
+    public void addWdc(int season, String driver) {
+        this.wdcCount++;
+        this.wdcList.add(season + " - " + driver);
     }
 
     public void addPointThroughSeason(Integer season, Integer round, ErgastStanding es) {
@@ -64,7 +66,8 @@ public class ConstructorStatistics {
         }
     }
 
-    public void incrementRaceCounts(ErgastStanding es, String identifier) {
+    public void incrementRaceCounts(ErgastStanding es, Integer season, Integer round) {
+        String identifier = season+"-"+ round;
         if(!roundIdentifier.equals(identifier)){
             this.raceCount++;
             this.roundIdentifier=identifier;
