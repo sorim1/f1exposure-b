@@ -72,4 +72,6 @@ public interface AdminService {
     Boolean generateChart();
 
     Boolean instagramCleanup() throws IGLoginException;
+
+    Boolean checkCurrentStream() throws IOException;
 }

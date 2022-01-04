@@ -12,6 +12,7 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.concurrent.atomic.AtomicReference;
 
 @Data
 @NoArgsConstructor
@@ -33,6 +34,7 @@ public class DriverStatistics {
     private Integer lapCount = 0;
     private Integer podiumCount = 0;
     private Integer wdcCount = 0;
+    private List<String> wdcList = new ArrayList<>();
     private ErgastConstructor currentConstructor;
     private List<SeasonStanding> standingsBySeason = new ArrayList<>();
     private List<ChartSeries> pointsThroughSeasons = new ArrayList<>();
@@ -55,6 +57,7 @@ public class DriverStatistics {
     public void pushSeasonStanding(Integer season, ErgastStanding es) {
         if(es.getPosition()==1){
             this.wdcCount++;
+            this.wdcList.add(season + " - " + extractConstructor(es.getConstructors()));
         }
         standingsBySeason.add(new SeasonStanding(season, es));
 
@@ -65,6 +68,19 @@ public class DriverStatistics {
             newConstructorEntry.add(team.getName());
             constructorHistory.add(newConstructorEntry);
         });
+    }
+
+    private String extractConstructor(List<ErgastConstructor> constructors) {
+        if(constructors.size()==1){
+            return constructors.get(0).getName();
+        } else if(constructors.size()>1){
+            AtomicReference<String> ar = new AtomicReference<>("");
+            constructors.forEach(cs->{
+                ar.set(ar.get() + cs.getName() + " / ");
+            });
+            return ar.get().substring(0, ar.get().length()-3);
+        }
+        return null;
     }
 
     public void incrementRaceCounts(ErgastStanding es) {

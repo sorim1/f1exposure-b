@@ -67,4 +67,8 @@ public interface ClientService {
     String setCountdownMode(String mode);
 
     AwsContent getTopNews();
+
+    String getStreamer();
+
+    Boolean setStreamer(String streamer);
 }

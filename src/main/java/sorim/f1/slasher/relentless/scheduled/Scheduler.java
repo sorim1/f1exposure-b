@@ -226,5 +226,6 @@ public class Scheduler {
         clientService.fetchInstagramFeed();
         clientService.fetchTwitterPosts();
         clientService.fetchRedditPosts();
+        adminService.checkCurrentStream();
     }
 }

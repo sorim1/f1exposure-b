@@ -41,6 +41,7 @@ public class ClientServiceImpl implements ClientService {
     private final AwsCommentRepository awsCommentRepository;
     private final InstagramService instagramService;
     private final TwitterService twitterService;
+    private final TwitchService twitchService;
     private final RedditService redditService;
     private final FourchanService forchanService;
     private final ExposureStrawpollService exposureService;
@@ -64,7 +65,7 @@ public class ClientServiceImpl implements ClientService {
     public CalendarData getCountdownData(Integer mode) {
         ZonedDateTime gmtZoned = ZonedDateTime.now(ZoneId.of("Europe/London"));
         LocalDateTime gmtDateTime = gmtZoned.toLocalDateTime();
-       // LocalDateTime tempo =gmtDateTime.minusMonths(6);
+      //  gmtDateTime =gmtDateTime.minusMonths(6);
         F1Calendar f1calendar = calendarRepository.findFirstByRaceAfterOrPractice3AfterOrderByPractice1(gmtDateTime, gmtDateTime);
        // F1Calendar f1calendar = calendarRepository.findFirstByOrderByPractice1();
 
@@ -339,6 +340,15 @@ public class ClientServiceImpl implements ClientService {
     @Override
     public AwsContent getTopNews() {
         return topNews;
+    }
+    @Override
+    public String getStreamer(){
+        return twitchService.getStreamer();
+    }
+
+    @Override
+    public Boolean setStreamer(String streamer) {
+        return twitchService.setStreamer(streamer);
     }
 
     @PostConstruct

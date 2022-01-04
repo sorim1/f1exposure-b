@@ -208,4 +208,16 @@ public class ClientController {
         securityService.validateHeader(client);
         return service.getReplays(page);
     }
+
+    @GetMapping("/getStreamer")
+    BasicResponse getStreamer(@RequestHeader String client) throws Exception {
+        securityService.validateHeader(client);
+        return BasicResponse.builder().message(service.getStreamer()).build();
+    }
+
+    @GetMapping("/updateStreamer/{streamer}")
+    Boolean getStreamer(@RequestHeader String client, @PathVariable("streamer") String streamer) throws Exception {
+        securityService.validateHeader(client);
+        return service.setStreamer(streamer);
+    }
 }

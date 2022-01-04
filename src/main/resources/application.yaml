@@ -25,8 +25,8 @@ server:
   error:
     whitelabel:
       enabled: false
-  port: 1443
-  http-port-to-redirect: 8080
+  port: 443
+  http-port-to-redirect: 80
   ssl:
     key-store: classpath:keystore.p12
     key-store-password: password

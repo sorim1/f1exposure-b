@@ -10,7 +10,6 @@ import org.springframework.web.client.RestTemplate;
 import sorim.f1.slasher.relentless.configuration.MainProperties;
 import sorim.f1.slasher.relentless.entities.*;
 import sorim.f1.slasher.relentless.entities.ergast.RaceData;
-import sorim.f1.slasher.relentless.handling.Logger;
 import sorim.f1.slasher.relentless.model.*;
 import sorim.f1.slasher.relentless.model.ergast.*;
 import sorim.f1.slasher.relentless.repository.DriverRepository;
@@ -734,7 +733,7 @@ public class ErgastServiceImpl implements ErgastService {
 
     private void generateDriverStandingByRound(Integer season, Map<String, DriverStandingByRound> driverStandingsByRound,
                                                Map<String, ConstructorStandingByRound> constructorStandingByRound, List<FrontendRace> races) {
-        Logger.log("generateDriverStandingByRound");
+        log.info("generateDriverStandingByRound");
         boolean iterate;
         Integer round = 1;
         Integer maxPosition;
@@ -786,7 +785,7 @@ public class ErgastServiceImpl implements ErgastService {
                             driverStandingsByRound.get(ergastStanding.getDriver().getDriverId() + finalRound).setDataFromARound(ergastStanding, finalMaxPosition);
                             if(constructorStandingByRound.size()>0) {
                                 if(!constructorStandingByRound.containsKey(ergastStanding.getConstructor().getConstructorId() + finalRound)){
-                                    Logger.log("CONSTRUCTOR NE POSTOJI", ergastStanding.getConstructor().getConstructorId() + finalRound);
+                                    log.info("CONSTRUCTOR NE POSTOJI", ergastStanding.getConstructor().getConstructorId() + finalRound);
                                     constructorStandingByRound.put(ergastStanding.getConstructor().getConstructorId() + finalRound, new ConstructorStandingByRound(ergastStanding, season, finalRound, false));
                                 }
                                 constructorStandingByRound.get(ergastStanding.getConstructor().getConstructorId() + finalRound).incrementPointsThisRound(ergastStanding.getPoints());

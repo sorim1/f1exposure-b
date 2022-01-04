@@ -10,6 +10,7 @@ import sorim.f1.slasher.relentless.model.FullExposure;
 import sorim.f1.slasher.relentless.service.AdminService;
 import sorim.f1.slasher.relentless.service.SecurityService;
 
+import java.io.IOException;
 import java.util.List;
 
 @RestController
@@ -199,5 +200,8 @@ public class AdminController {
         securityService.validateAdminHeader(client);
         return service.instagramCleanup();
     }
-
+    @GetMapping("/checkCurrentStream")
+    Boolean checkCurrentStream() throws IOException {
+        return service.checkCurrentStream();
+    }
 }

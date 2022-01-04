@@ -65,6 +65,7 @@ public class AdminServiceImpl implements AdminService {
     private final F1CommentRepository f1CommentRepository;
     private final JsonRepository jsonRepository;
     private final InstagramService instagramService;
+    private final TwitchService twitchService;
 
     private final ErgastService ergastService;
     private final MainProperties properties;
@@ -566,6 +567,12 @@ public class AdminServiceImpl implements AdminService {
     public Boolean instagramCleanup() throws IGLoginException {
         return instagramService.cleanup();
     }
+
+    @Override
+    public Boolean checkCurrentStream() throws IOException {
+        return twitchService.checkCurrentStream();
+    }
+
 
     private void generateChartsDriverStandingsByRound() {
         List<DriverStandingByRound> standingsBySeason = driverStandingsByRoundRepository.findAllByIdSeasonOrderByIdRoundAscNameAsc(properties.getCurrentSeasonPast());
