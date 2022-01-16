@@ -156,7 +156,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
         Integer round;
         try {
             round = ergastService.getCurrentDriverStandings().getMrData().getStandingsTable().getStandingsLists().get(0).getRound();
-            if(currentExposureRound<=round){
+            if(currentExposureRound==null || currentExposureRound<=round){
                 currentExposureRound = round + increment;
             } else{
                 //nova sezona

@@ -34,9 +34,12 @@ public class ErgastServiceImpl implements ErgastService {
     private final DriverRepository driverRepository;
     private final JsonRepository jsonRepository;
     private final RestTemplate restTemplate = new RestTemplate();
-    private static Map<Integer, Integer> roundDriverCount = new HashMap<>();
+    private static final Map<Integer, Integer> roundDriverCount = new HashMap<>();
     private final ObjectMapper mapper = new ObjectMapper();
-    private static final String championshipPrefix_ = "CHAMPIONSHIP_";
+    private static final String CHAMPIONSHIP_PREFIX = "CHAMPIONSHIP_";
+    private static final String DRIVER_STANDINGS = "/driverStandings.json?limit=100";
+    private static final String CONSTRUCTOR_STANDINGS = "/constructorStandings.json?limit=100";
+
 
     @Override
     public List<RaceData> fetchSeason(String year) {
@@ -112,7 +115,7 @@ public class ErgastServiceImpl implements ErgastService {
     @Override
     public ErgastResponse getCurrentDriverStandings() {
         return restTemplate
-                .getForObject(ERGAST_URL + "current/driverStandings.json?limit=100", ErgastResponse.class);
+                .getForObject(ERGAST_URL + "current" + DRIVER_STANDINGS, ErgastResponse.class);
     }
 
     @Override
@@ -124,13 +127,13 @@ public class ErgastServiceImpl implements ErgastService {
     @Override
     public ErgastResponse getDriverStandingsByRound(Integer season, Integer round) {
         return restTemplate
-                .getForObject(ERGAST_URL + season + "/" + round + "/driverStandings.json?limit=100", ErgastResponse.class);
+                .getForObject(ERGAST_URL + season + "/" + round + DRIVER_STANDINGS, ErgastResponse.class);
     }
 
     @Override
     public ErgastResponse getConstructorStandingsByRound(Integer season, Integer round) {
         return restTemplate
-                .getForObject(ERGAST_URL + season + "/" + round + "/constructorStandings.json?limit=100", ErgastResponse.class);
+                .getForObject(ERGAST_URL + season + "/" + round + CONSTRUCTOR_STANDINGS, ErgastResponse.class);
     }
 
     @Override
@@ -232,7 +235,7 @@ public class ErgastServiceImpl implements ErgastService {
             championship.setWikiImage(list.get(1));
         }
 
-        return JsonRepositoryModel.builder().id(championshipPrefix_ + season)
+        return JsonRepositoryModel.builder().id(CHAMPIONSHIP_PREFIX + season)
                 .json(championship).build();
     }
 
@@ -273,7 +276,7 @@ public class ErgastServiceImpl implements ErgastService {
         return true;
     }
 
-    public Boolean fetchStatisticsCore(Map<String, DriverStatistics> driversMap, Map<String, ConstructorStatistics> constructorsMap, Map<String, CircuitStatistics> circuitsMap,
+    public void fetchStatisticsCore(Map<String, DriverStatistics> driversMap, Map<String, ConstructorStatistics> constructorsMap, Map<String, CircuitStatistics> circuitsMap,
                                        Integer firstSeason, Integer seasonLimit, String savePrefix ) {
         for(int season = firstSeason; season<=seasonLimit; season++){
             List<ErgastStanding> list = getErgastStandingsByYear(season);
@@ -301,12 +304,11 @@ public class ErgastServiceImpl implements ErgastService {
             try {
                 Thread.sleep(1000);
                 log.info("season_B: {}", season);
-            } catch (InterruptedException e) {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }
         saveAll(driversMap, constructorsMap, circuitsMap, races, savePrefix);
-        return true;
     }
 
     @Override
@@ -381,7 +383,6 @@ public class ErgastServiceImpl implements ErgastService {
 
     private void saveAll(Map<String, DriverStatistics> driversMap, Map<String, ConstructorStatistics> constructorsMap, Map<String, CircuitStatistics> circuitsMap, List<RaceData> races, String prefixForPartial) {
         List<JsonRepositoryModel> saveList = new ArrayList<>();
-        String finalPrefixForPartial = prefixForPartial;
         driversMap.forEach((k, v)->{
             String driverId = v.getUrl().substring(v.getUrl().lastIndexOf("/")+1) ;
             String driverId2 = v.getGivenName() + "_" + v.getFamilyName() ;
@@ -392,7 +393,7 @@ public class ErgastServiceImpl implements ErgastService {
             if(list.size()>1){
                 v.setWikiImage(list.get(1));
             }
-            JsonRepositoryModel driverJrm = JsonRepositoryModel.builder().id(finalPrefixForPartial +"DRIVER_"+k)
+            JsonRepositoryModel driverJrm = JsonRepositoryModel.builder().id(prefixForPartial +"DRIVER_"+k)
                     .json(v).build();
             saveList.add(driverJrm);
         });
@@ -502,7 +503,7 @@ public class ErgastServiceImpl implements ErgastService {
 
     @Override
     public Object getHistoricSeason(Integer season) {
-        JsonRepositoryModel jrm = jsonRepository.findAllById(championshipPrefix_+season);
+        JsonRepositoryModel jrm = jsonRepository.findAllById(CHAMPIONSHIP_PREFIX +season);
         return jrm.getJson();
     }
 
@@ -530,7 +531,7 @@ public class ErgastServiceImpl implements ErgastService {
         } else {
             response.setYear(request.getYear());
         }
-        JsonRepositoryModel jrmC = jsonRepository.findAllById(championshipPrefix_+response.getYear());
+        JsonRepositoryModel jrmC = jsonRepository.findAllById(CHAMPIONSHIP_PREFIX +response.getYear());
         JsonRepositoryModel jrmD1 = jsonRepository.findAllById("DRIVER_"+request.getDriver1().getDriverId());
         JsonRepositoryModel jrmD2 = jsonRepository.findAllById("DRIVER_"+request.getDriver2().getDriverId());
         List<JsonRepositoryModel> jrmR = jsonRepository.findAllByIdStartsWith("RACE_"+response.getYear());
@@ -555,22 +556,12 @@ public class ErgastServiceImpl implements ErgastService {
     @Override
     public List<DriverCompared> getCompareDriversDropdown(Integer season) {
         List<DriverCompared> response = new ArrayList<>();
-        JsonRepositoryModel jrm = jsonRepository.findAllById(championshipPrefix_+season);
+        JsonRepositoryModel jrm = jsonRepository.findAllById(CHAMPIONSHIP_PREFIX +season);
         AllStandings championship = mapper.convertValue(jrm.getJson(), AllStandings.class);
         championship.getDriverStandings().forEach(driver->{
             response.add(new DriverCompared(driver));
         });
         return response;
-    }
-
-    private DriverCompared calculateTeammate(Integer season, DriverCompared driverId) {
-        JsonRepositoryModel jrm = jsonRepository.findAllById(championshipPrefix_+season);
-        AllStandings championship = mapper.convertValue(jrm.getJson(), AllStandings.class);
-//        championship.getDriverStandings().stream().filter(post -> post.containsKey("sub") && post.get("sub").toString().toUpperCase().contains("/F1/"))
-//                .forEach(f1Thread -> {
-//                    f1ThreadNumbers.add((Integer) f1Thread.get("no"));
-//                });
-        return null;
     }
 
     @Override
@@ -656,7 +647,7 @@ public class ErgastServiceImpl implements ErgastService {
 
             if (standing.getResultThisRound() != null) {
                 gridToResultChartIncludingDnf.get(standing.getId().getId()).add2(standing.getGrid(), standing.getResultThisRoundDnf());
-                if (standing.getResultThisRound() < this.roundDriverCount.get(standing.getId().getRound())) {
+                if (standing.getResultThisRound() < roundDriverCount.get(standing.getId().getRound())) {
                     gridToResultChartWithoutDnf.get(standing.getId().getId()).add2(standing.getGrid(), standing.getResultThisRoundDnf());
                 }
             }
@@ -774,7 +765,7 @@ public class ErgastServiceImpl implements ErgastService {
             if (response.getMrData().getTotal() > 0) {
                 Integer finalRound = round;
                 maxPosition = response.getMrData().getRaceTable().getRaces().get(0).getResults().size();
-                this.roundDriverCount.put(round, maxPosition+1);
+                roundDriverCount.put(round, maxPosition+1);
                 Integer finalMaxPosition = maxPosition;
                 races.add(new FrontendRace(response.getMrData().getRaceTable().getRaces().get(0)));
                 response.getMrData().getRaceTable().getRaces().get(0).getResults()
@@ -785,7 +776,7 @@ public class ErgastServiceImpl implements ErgastService {
                             driverStandingsByRound.get(ergastStanding.getDriver().getDriverId() + finalRound).setDataFromARound(ergastStanding, finalMaxPosition);
                             if(constructorStandingByRound.size()>0) {
                                 if(!constructorStandingByRound.containsKey(ergastStanding.getConstructor().getConstructorId() + finalRound)){
-                                    log.info("CONSTRUCTOR NE POSTOJI", ergastStanding.getConstructor().getConstructorId() + finalRound);
+                                    log.info("CONSTRUCTOR NE POSTOJI: {}", ergastStanding.getConstructor().getConstructorId() + finalRound);
                                     constructorStandingByRound.put(ergastStanding.getConstructor().getConstructorId() + finalRound, new ConstructorStandingByRound(ergastStanding, season, finalRound, false));
                                 }
                                 constructorStandingByRound.get(ergastStanding.getConstructor().getConstructorId() + finalRound).incrementPointsThisRound(ergastStanding.getPoints());
@@ -802,8 +793,8 @@ public class ErgastServiceImpl implements ErgastService {
     private List<ConstructorStanding> getConstructorStandingsByYear(Integer season) {
         List<ConstructorStanding> constructorStandings = new ArrayList<>();
         ErgastResponse response =  restTemplate
-                .getForObject(ERGAST_URL + season + "/constructorStandings.json?limit=100", ErgastResponse.class);
-        if(response.getMrData().getStandingsTable().getStandingsLists().size()>0) {
+                .getForObject(ERGAST_URL + season + CONSTRUCTOR_STANDINGS, ErgastResponse.class);
+        if(!response.getMrData().getStandingsTable().getStandingsLists().isEmpty()) {
             response.getMrData().getStandingsTable().getStandingsLists().get(0).getConstructorStandings()
                     .forEach(ergastStanding -> constructorStandings.add(new ConstructorStanding(ergastStanding)));
         }
@@ -813,24 +804,22 @@ public class ErgastServiceImpl implements ErgastService {
     private List<DriverStanding> getDriverStandingsByYear(Integer season) {
         List<DriverStanding> driverStandings = new ArrayList<>();
         ErgastResponse response = restTemplate
-                .getForObject(ERGAST_URL + season + "/driverStandings.json?limit=100", ErgastResponse.class);
+                .getForObject(ERGAST_URL + season + DRIVER_STANDINGS, ErgastResponse.class);
         response.getMrData().getStandingsTable().getStandingsLists().get(0).getDriverStandings()
-                .forEach(ergastStanding -> {
-                    driverStandings.add(new DriverStanding(ergastStanding));
-                     });
+                .forEach(ergastStanding -> driverStandings.add(new DriverStanding(ergastStanding)));
         return driverStandings;
     }
 
     private List<ErgastStanding> getErgastStandingsByYear(Integer season) {
          ErgastResponse response = restTemplate
-                .getForObject(ERGAST_URL + season + "/driverStandings.json?limit=100", ErgastResponse.class);
+                .getForObject(ERGAST_URL + season + DRIVER_STANDINGS, ErgastResponse.class);
         return response.getMrData().getStandingsTable().getStandingsLists().get(0)
                 .getDriverStandings();
     }
 
     private List<ErgastStanding> getErgastConstructorStandingsByYear(Integer season) {
         ErgastResponse response =  restTemplate
-                .getForObject(ERGAST_URL + season + "/constructorStandings.json?limit=100", ErgastResponse.class);
+                .getForObject(ERGAST_URL + season + CONSTRUCTOR_STANDINGS, ErgastResponse.class);
         if(!response.getMrData().getStandingsTable().getStandingsLists().isEmpty()) {
             return response.getMrData().getStandingsTable().getStandingsLists().get(0)
                     .getConstructorStandings();

@@ -195,7 +195,7 @@ public class LiveTimingServiceImpl implements LiveTimingService {
                 raceName = date + "_Sprint_Qualifying";
                 break;
         }
-        System.out.println("https://livetiming.formula1.com/static/" + raceData.getSeason() + "/" + grandPrix + "/" + raceName + "/SPFeed.json");
+        log.info("https://livetiming.formula1.com/static/" + raceData.getSeason() + "/" + grandPrix + "/" + raceName + "/SPFeed.json");
         try {
             return restTemplate
                     .getForObject(url, String.class, raceData.getSeason(), grandPrix, raceName);
@@ -229,6 +229,19 @@ public class LiveTimingServiceImpl implements LiveTimingService {
     @Override
     public Integer analyzeLatestRace() {
         RaceData raceData = ergastService.getLatestNonAnalyzedRace(properties.getCurrentSeasonFuture());
+        analyzeRaceData(raceData);
+        return adminService.getNextRefreshTick(-6000);
+    }
+
+    @Override
+    public Integer analyzeRace(Integer season, Integer round) {
+        RaceData raceData = ergastService.findRaceBySeasonAndRound(String.valueOf(season), round);
+        analyzeRaceData(raceData);
+        return adminService.getNextRefreshTick(-6000);
+    }
+
+
+    private void analyzeRaceData(RaceData raceData) {
         if(raceData!=null) {
             String liveTimingResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.RACE, 1);
             //TODO timingAppData zasad ne koristim u RaceAnalysis
@@ -242,7 +255,6 @@ public class LiveTimingServiceImpl implements LiveTimingService {
                 Scheduler.analysisDone = true;
             }
         }
-        return adminService.getNextRefreshTick(-6000);
     }
 
     @Override

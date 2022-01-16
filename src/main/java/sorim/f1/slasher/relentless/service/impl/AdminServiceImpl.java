@@ -85,7 +85,6 @@ public class AdminServiceImpl implements AdminService {
     public void initialize() throws Exception {
         refreshCalendarOfCurrentSeason();
         initializeStandings();
-        fetchSportSurgeLinks();
     }
 
     @Override

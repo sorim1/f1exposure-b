@@ -54,6 +54,12 @@ public class LiveTimingController {
         return service.analyzeLatestRace();
     }
 
+    @GetMapping("/analyzeRace")
+    public Integer analyzeLatestRace(@RequestHeader String client, @RequestParam Integer season, @RequestParam Integer round) throws Exception {
+        securityService.validateAdminHeader(client);
+        return service.analyzeRace(season, round);
+    }
+
     @GetMapping("/resetLatestRaceAnalysis")
     public Boolean resetLatestRaceAnalysis(@RequestHeader String client) throws Exception {
         securityService.validateAdminHeader(client);

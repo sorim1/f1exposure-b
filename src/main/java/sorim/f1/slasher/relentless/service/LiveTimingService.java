@@ -14,6 +14,8 @@ public interface LiveTimingService {
 
     Integer analyzeLatestRace();
 
+    Integer analyzeRace(Integer season, Integer round);
+
     Boolean resetLatestRaceAnalysis();
 
     Boolean deleteLatestRaceAnalysis();
