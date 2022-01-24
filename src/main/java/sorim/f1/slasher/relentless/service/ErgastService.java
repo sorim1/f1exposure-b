@@ -86,4 +86,6 @@ public interface ErgastService {
     DriverComparator compareDrivers(DriverComparator body);
 
     List<DriverCompared> getCompareDriversDropdown(Integer season);
+
+    void fetchCurrentDrivers();
 }

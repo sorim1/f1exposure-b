@@ -8,7 +8,6 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import sorim.f1.slasher.relentless.entities.AwsContent;
-import sorim.f1.slasher.relentless.entities.ExposureDriver;
 
 import java.util.Date;
 import java.util.List;

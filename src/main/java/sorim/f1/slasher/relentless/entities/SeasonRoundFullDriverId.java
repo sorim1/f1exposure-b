@@ -21,5 +21,5 @@ public class SeasonRoundFullDriverId implements Serializable {
     private Integer round;
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "driver", referencedColumnName = "code")
-    private ExposureDriver driver;
+    private Driver driver;
 }

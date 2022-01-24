@@ -4,15 +4,15 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
-import sorim.f1.slasher.relentless.entities.ExposureDriver;
+import sorim.f1.slasher.relentless.entities.Driver;
 
 import java.util.List;
 
 @Repository
 @Transactional
 @EnableJpaAuditing
-public interface DriverRepository extends CrudRepository<ExposureDriver, String> {
+public interface DriverRepository extends CrudRepository<Driver, String> {
 
-    List<ExposureDriver> findAll();
-    List<ExposureDriver> findAllByStatus(Integer status);
+    List<Driver> findAll();
+    List<Driver> findAllByStatus(Integer status);
 }

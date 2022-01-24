@@ -178,13 +178,13 @@ public class AdminController {
     }
 
     @GetMapping("/exposureDrivers")
-    List<ExposureDriver> getExposureDrivers(@RequestHeader String client) throws Exception {
+    List<Driver> getExposureDrivers(@RequestHeader String client) throws Exception {
         securityService.validateAdminHeader(client);
         return service.getExposureDrivers();
     }
 
     @PostMapping("/exposureDrivers")
-    List<ExposureDriver> updateExposureDrivers(@RequestHeader String client, @RequestBody List<ExposureDriver> list) throws Exception {
+    List<Driver> updateExposureDrivers(@RequestHeader String client, @RequestBody List<Driver> list) throws Exception {
         securityService.validateAdminHeader(client);
         return service.updateExposureDrivers(list);
     }

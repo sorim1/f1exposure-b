@@ -20,7 +20,7 @@ public class Exposed {
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "driver", referencedColumnName = "code", insertable = false, updatable = false)
-    private ExposureDriver relatedDriver;
+    private Driver relatedDriver;
 
     private Integer counter;
 

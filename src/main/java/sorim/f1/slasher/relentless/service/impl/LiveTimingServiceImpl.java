@@ -603,8 +603,7 @@ public class LiveTimingServiceImpl implements LiveTimingService {
                     enrichDriversWithLapByLapData(driversMap, response.getLapPos().getGraph(), response.getXtra().data, driverCodes);
                     updateStandingsAndEnrichTreeMapData(driversMap, race.getRound());
 
-                    Map<String, String> ergastCodes = ergastService.connectDriverCodesWithErgastCodes();
-                    addErgastCodesToDrivers(driversMap, ergastCodes);
+                    Map<String, String> ergastCodes = mapErgastWithLiveTiming(driversMap);
                     Boolean bool = enrichDriversWithErgast(driversMap, ergastCodes, race.getSeason(), race.getRound());
                     if(bool){
                         adminService.initializeStandings();
@@ -635,12 +634,35 @@ public class LiveTimingServiceImpl implements LiveTimingService {
         return true;
     }
 
-    private void addErgastCodesToDrivers(Map<String, Driver> driversMap, Map<String, String> ergastCodes) {
-        ergastCodes.forEach((k,v)->{
-           if(driversMap.containsKey(v)){
-               driversMap.get(v).setErgastCode(k);
-           }
+    private Map<String, String> mapErgastWithLiveTiming(Map<String, Driver> driversMap) {
+        Map<String, String> ergastCodes = ergastService.connectDriverCodesWithErgastCodes();
+        Boolean missingDriver = addErgastCodesToDrivers(driversMap, ergastCodes);
+        if(missingDriver){
+            ergastService.fetchCurrentDrivers();
+            ergastCodes = ergastService.connectDriverCodesWithErgastCodes();
+            addErgastCodesToDrivers(driversMap, ergastCodes);
+        }
+        return ergastCodes;
+    }
+
+    private Boolean addErgastCodesToDrivers(Map<String, Driver> driversMap, Map<String, String> ergastCodes) {
+//        ergastCodes.forEach((k,v)->{
+//           if(driversMap.containsKey(v)){
+//               driversMap.get(v).setErgastCode(k);
+//           }
+//        });
+        AtomicReference<Boolean> driverMissing= new AtomicReference<>(false);
+        driversMap.forEach((k,v)->{
+            Optional<Map.Entry<String, String>> driverEntry = ergastCodes.entrySet()
+                    .stream()
+                    .filter(entry -> entry.getValue().equals(k)).findFirst();
+            if(driverEntry.isPresent()){
+                v.setErgastCode(driverEntry.get().getKey());
+            } else {
+                driverMissing.set(true);
+            }
         });
+        return driverMissing.get();
     }
 
     private void updateStandingsAndEnrichTreeMapData(Map<String, Driver> driversMap, Integer newRound) {

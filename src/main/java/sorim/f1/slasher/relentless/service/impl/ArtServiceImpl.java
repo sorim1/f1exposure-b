@@ -43,26 +43,19 @@ public class ArtServiceImpl implements ArtService {
         int diameter = 1;
         RaceAnalysis analysis = ergastService.getLatestAnalyzedRace().getRaceAnalysis();
 
-        for (int i = 1300; i < 1900; i = i + 100) {
+        for (int i = 1400; i < 2000; i = i + 100) {
             BufferedImage bi = generateBufferedImage(analysis, drag, drag, i, diameter, 1);
             BufferedImage bi2 = resize(bi, 1000, 1000);
             byte[] byteArray = toByteArray(bi2);
-            FileUtils.writeByteArrayToFile(new File("/home/sorim/Pictures/f1exposure-art/dm1-" + i + ".png"), byteArray);
+            FileUtils.writeByteArrayToFile(new File("C:\\Users\\sorim\\Pictures\\f1-exposure\\cdm1-" + i + ".png"), byteArray);
         }
 
-        for (int i = 1300; i < 1900; i = i + 100) {
+        for (int i = 1400; i < 2000; i = i + 100) {
             BufferedImage bi = generateBufferedImage(analysis, drag, drag, i, diameter, 2);
             BufferedImage bi2 = resize(bi, 1000, 1000);
             byte[] byteArray = toByteArray(bi2);
-            FileUtils.writeByteArrayToFile(new File("/home/sorim/Pictures/f1exposure-art/dm2-" + i + ".png"), byteArray);
+            FileUtils.writeByteArrayToFile(new File("C:\\Users\\sorim\\Pictures\\f1-exposure\\cdm2-" + i + ".png"), byteArray);
         }
-
-//        for (int i = 900; i < 2300; i = i + 150) {
-//            BufferedImage bi = generateBufferedImage(analysis, drag, drag, i, diameter, 2);
-//            BufferedImage bi2 = resize(bi, 1000, 1000);
-//            byte[] byteArray = toByteArray(bi2);
-//            FileUtils.writeByteArrayToFile(new File("/home/sorim/Pictures/f1exposure-art/cm2-" + i + ".png"), byteArray);
-//        }
 
         return true;
     }
@@ -78,7 +71,7 @@ public class ArtServiceImpl implements ArtService {
         if (analysis.getArt() != null) {
             return false;
         }
-        BufferedImage bi = generateBufferedImage(analysis, drag, drag, iterations, diameter, 1);
+        BufferedImage bi = generateBufferedImage(analysis, drag, drag, iterations, diameter, 2);
         BufferedImage bi2 = resize(bi, 1000, 1000);
         byte[] image = toByteArray(bi2);
         String code = UUID.randomUUID().toString();
@@ -111,13 +104,13 @@ public class ArtServiceImpl implements ArtService {
 
         int drag = 2;
         int diameter = 1;
-        int iterations = 10000;
+        int iterations = 4000;
         RaceData raceData = ergastService.getLatestAnalyzedRace();
         RaceAnalysis analysis = raceData.getRaceAnalysis();
         if (analysis.getArt() != null) {
             artImageRepository.deleteByCode(analysis.getArt());
         }
-        BufferedImage bi = generateBufferedImage(analysis, drag, drag, iterations, diameter, 1);
+        BufferedImage bi = generateBufferedImage(analysis, drag, drag, iterations, diameter, 3);
         BufferedImage bi2 = resize(bi, 1000, 1000);
         byte[] image = toByteArray(bi2);
         String code = UUID.randomUUID().toString();
@@ -154,7 +147,8 @@ public class ArtServiceImpl implements ArtService {
         return dimg;
     }
 
-    BufferedImage generateBufferedImage(RaceAnalysis analysis, Integer xDrag, Integer yDrag, Integer maxIteration, Integer diameter, Integer mode) {
+    BufferedImage generateBufferedImage(RaceAnalysis analysis, Integer xDrag, Integer yDrag, Integer maxIteration,
+                                        Integer diameter, Integer mode) {
         int width = this.width;
         int height = this.height;
         BufferedImage bufferedImage =
@@ -167,7 +161,7 @@ public class ArtServiceImpl implements ArtService {
         this.lapCount = getLapCount(analysis.getDriverData());
         List<ArtDriver> artDrivers = initializeArtDrivers(analysis.getDriverData(), mode);
             setBackgroundColor(bufferedImage, artDrivers.get(4).getColor());
-            generateArtDriversByDriverModeOne(artDrivers, bufferedImage, xDrag, yDrag, maxIteration, diameter);
+            generateArtDriversByDriverModeOne(artDrivers, bufferedImage, xDrag, yDrag, maxIteration, mode);
     }
 
     private List<Driver> sortDriverList(List<Driver> driverData) {
@@ -188,8 +182,9 @@ public class ArtServiceImpl implements ArtService {
     }
 
     private List<ArtDriver> sortArtDriverListByDarkness(List<ArtDriver> driverData, Integer mode) {
+        //mode = asc ili desc
         Integer mode1 = mode;
-        if(mode==2){
+        if(mode>=2){
             mode1=-1;
         }
         Integer finalMode = mode1;
@@ -235,11 +230,9 @@ public class ArtServiceImpl implements ArtService {
         }
     }
 
-    private void generateArtDriversByDriverModeOne(List<ArtDriver> artDrivers, BufferedImage bufferedImage, Integer xDrag, Integer yDrag, Integer iterationMax, Integer diameterRatio) {
+    private void generateArtDriversByDriverModeOne(List<ArtDriver> artDrivers, BufferedImage bufferedImage, Integer xDrag, Integer yDrag, Integer iterationMax, Integer mode) {
         int randomNum = ThreadLocalRandom.current().nextInt(0, 9);
-        log.info("generateArtDriversByDriver: {}", diameterRatio);
-        int lapCount = artDrivers.get(artDrivers.size()-1).getLapByLapData().getTotalTimeByLapMs().size();
-
+        log.info("generateArtDriversByDriver: {}", iterationMax);
         for (int j = 0; j < lapCount; j++) {
             for (ArtDriver artDriver : artDrivers) {
             Integer diameter = Math.min(4, lapCount-j+1);
@@ -333,10 +326,6 @@ public class ArtServiceImpl implements ArtService {
             }
             artDrivers.add(newDriver);
         }
-//        if (mode == 1) {
-//            setConflictPoints(artDrivers);
-//        }
-
             return sortArtDriverListByDarkness(artDrivers, mode);
     }
 

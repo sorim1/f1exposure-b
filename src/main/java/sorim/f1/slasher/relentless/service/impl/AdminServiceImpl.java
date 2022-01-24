@@ -22,8 +22,8 @@ import sorim.f1.slasher.relentless.entities.*;
 import sorim.f1.slasher.relentless.entities.ergast.RaceData;
 import sorim.f1.slasher.relentless.handling.Logger;
 import sorim.f1.slasher.relentless.model.*;
+import sorim.f1.slasher.relentless.model.ergast.ErgastDriver;
 import sorim.f1.slasher.relentless.model.ergast.ErgastResponse;
-import sorim.f1.slasher.relentless.model.livetiming.Driver;
 import sorim.f1.slasher.relentless.repository.*;
 import sorim.f1.slasher.relentless.scheduled.Scheduler;
 import sorim.f1.slasher.relentless.service.*;
@@ -84,6 +84,7 @@ public class AdminServiceImpl implements AdminService {
     @Override
     public void initialize() throws Exception {
         refreshCalendarOfCurrentSeason();
+        ergastService.fetchCurrentDrivers();
         initializeStandings();
     }
 
@@ -185,7 +186,7 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
-    public Boolean initializeStandingsFromLivetiming(Map<String, DriverStanding> standingsMap, Map<String, Driver> driversMap, Integer newRound) {
+    public Boolean initializeStandingsFromLivetiming(Map<String, DriverStanding> standingsMap, Map<String, sorim.f1.slasher.relentless.model.livetiming.Driver> driversMap, Integer newRound) {
         Logger.log("initializeStandingsFromLivetiming");
         //TODO ukloniti try-catch ako radi ok?
         Boolean changesDetected = false;
@@ -324,7 +325,7 @@ public class AdminServiceImpl implements AdminService {
         return response;
     }
 
-    private Boolean refreshStandingsFromLivetiming(Map<String, DriverStanding> standingsMap, Map<String, Driver> driversMap, Integer newRound) {
+    private Boolean refreshStandingsFromLivetiming(Map<String, DriverStanding> standingsMap, Map<String, sorim.f1.slasher.relentless.model.livetiming.Driver> driversMap, Integer newRound) {
         Boolean bool = false;
         if (newRound == CURRENT_ROUND + 1) {
             Logger.log("refreshDriverStandingsFromLiveTiming - newRound == CURRENT_ROUND+1");
@@ -502,12 +503,12 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
-    public List<ExposureDriver> getExposureDrivers() {
+    public List<Driver> getExposureDrivers() {
         return driverRepository.findAll();
     }
 
     @Override
-    public List<ExposureDriver> updateExposureDrivers(List<ExposureDriver> list) {
+    public List<Driver> updateExposureDrivers(List<Driver> list) {
         driverRepository.saveAll(list);
         return driverRepository.findAll();
     }

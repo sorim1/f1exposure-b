@@ -172,9 +172,9 @@ public class ErgastServiceImpl implements ErgastService {
 
     @Override
     public Map<String, String> connectDriverCodesWithErgastCodes() {
-        List<ExposureDriver> drivers = driverRepository.findAll();
+        List<Driver> drivers = driverRepository.findAll();
         return drivers.stream()
-                .collect(Collectors.toMap(ExposureDriver::getErgastCode, ExposureDriver::getCode));
+                .collect(Collectors.toMap(Driver::getErgastCode, Driver::getCode));
     }
 
     @Override
@@ -562,6 +562,17 @@ public class ErgastServiceImpl implements ErgastService {
             response.add(new DriverCompared(driver));
         });
         return response;
+    }
+
+    @Override
+    public void fetchCurrentDrivers() {
+        ErgastResponse ergastResponse = restTemplate
+                .getForObject(ERGAST_URL+"current/drivers.json", ErgastResponse.class);
+        List<Driver> drivers = new ArrayList<>();
+        ergastResponse.getMrData().getDriverTable().getDrivers().forEach(ed->{
+            drivers.add(new Driver(ed));
+        });
+        driverRepository.saveAll(drivers);
     }
 
     @Override

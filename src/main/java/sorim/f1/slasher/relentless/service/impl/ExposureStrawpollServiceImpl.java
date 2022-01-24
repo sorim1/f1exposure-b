@@ -59,7 +59,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
 
     private static Integer reloadDelay = 0;
     private static Integer latestVoteCount = 0;
-    private static Map<String, ExposureDriver> driversMap = new HashMap<>();
+    private static Map<String, Driver> driversMap = new HashMap<>();
     private static final Map<String, String> colorMap = new HashMap<>();
     private final RestTemplate restTemplate = new RestTemplate();
 
@@ -396,7 +396,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
         if (driversMap.containsKey(name)) {
             return driversMap.get(name).getCode();
         } else {
-            ExposureDriver newDriver = ExposureDriver.builder().status(1).fullName(name)
+            Driver newDriver = Driver.builder().status(1).fullName(name)
                     .code(name.substring(0, 3).toUpperCase()).build();
             driverRepository.save(newDriver);
             driversMap.put(name, newDriver);
@@ -405,9 +405,9 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
     }
 
     private void setDriverNameMap() {
-        List<ExposureDriver> list = driverRepository.findAll();
+        List<Driver> list = driverRepository.findAll();
         driversMap = list.stream()
-                .collect(Collectors.toMap(ExposureDriver::getFullName, Function.identity()));
+                .collect(Collectors.toMap(Driver::getFullName, Function.identity()));
     }
 
     @Override
@@ -422,7 +422,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
                 .build();
         if (exposureOn()) {
             // if(true) {
-            List<ExposureDriver> drivers = driverRepository.findAllByStatus(1);
+            List<Driver> drivers = driverRepository.findAllByStatus(1);
             response.setDrivers(drivers);
             response.setStatus(ExposureStatusEnum.ACTIVE);
         } else {

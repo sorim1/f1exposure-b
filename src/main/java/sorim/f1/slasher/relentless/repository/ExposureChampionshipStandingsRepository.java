@@ -18,7 +18,7 @@ public interface ExposureChampionshipStandingsRepository extends CrudRepository<
     List<ExposureChampionshipStanding> findAllByIdSeasonOrderByExposureDesc(Integer season);
 
     @Modifying
-    @Query("update ExposureChampionshipStanding e set e.fullName = (select c.fullName from ExposureDriver c where c.code=e.id.driver) where e.fullName is null")
+    @Query("update ExposureChampionshipStanding e set e.fullName = (select c.fullName from Driver c where c.code=e.id.driver) where e.fullName is null")
     Integer updateChampionshipNames();
 
 }

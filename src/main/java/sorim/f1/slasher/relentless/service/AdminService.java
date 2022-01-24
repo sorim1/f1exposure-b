@@ -5,7 +5,6 @@ import sorim.f1.slasher.relentless.entities.*;
 import sorim.f1.slasher.relentless.model.Aws;
 import sorim.f1.slasher.relentless.model.FullBackup;
 import sorim.f1.slasher.relentless.model.FullExposure;
-import sorim.f1.slasher.relentless.model.livetiming.Driver;
 
 import java.io.IOException;
 import java.util.List;
@@ -21,7 +20,7 @@ public interface AdminService {
 
     Boolean initializeStandings() throws IOException;
 
-    Boolean initializeStandingsFromLivetiming(Map<String, DriverStanding> standingsMap, Map<String, Driver> driversMap, Integer newRound);
+    Boolean initializeStandingsFromLivetiming(Map<String, DriverStanding> standingsMap, Map<String, sorim.f1.slasher.relentless.model.livetiming.Driver> driversMap, Integer newRound);
 
     Boolean initializeFullStandingsThroughRounds() throws IOException;
 
@@ -53,9 +52,9 @@ public interface AdminService {
 
     Boolean restoreExposureFromBackup(FullExposure fullExposure);
 
-    List<ExposureDriver> getExposureDrivers();
+    List<Driver> getExposureDrivers();
 
-    List<ExposureDriver> updateExposureDrivers(List<ExposureDriver> list);
+    List<Driver> updateExposureDrivers(List<Driver> list);
 
     Aws backupPosts();
 
