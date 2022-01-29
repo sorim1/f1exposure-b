@@ -1,9 +1,5 @@
 package sorim.f1.slasher.relentless.service.impl;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.gargoylesoftware.htmlunit.Page;
-import com.gargoylesoftware.htmlunit.WebClient;
-import com.gargoylesoftware.htmlunit.WebResponse;
 import com.github.instagram4j.instagram4j.exceptions.IGLoginException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -22,7 +18,6 @@ import sorim.f1.slasher.relentless.entities.*;
 import sorim.f1.slasher.relentless.entities.ergast.RaceData;
 import sorim.f1.slasher.relentless.handling.Logger;
 import sorim.f1.slasher.relentless.model.*;
-import sorim.f1.slasher.relentless.model.ergast.ErgastDriver;
 import sorim.f1.slasher.relentless.model.ergast.ErgastResponse;
 import sorim.f1.slasher.relentless.repository.*;
 import sorim.f1.slasher.relentless.scheduled.Scheduler;
@@ -57,8 +52,6 @@ public class AdminServiceImpl implements AdminService {
     private final DriverStandingsByRoundRepository driverStandingsByRoundRepository;
     private final ConstructorStandingsByRoundRepository constructorStandingsByRoundRepository;
     private final DriverRepository driverRepository;
-    private final SportSurgeStreamRepository sportSurgeStreamRepository;
-    private final SportSurgeEventRepository sportSurgeEventRepository;
     private final PropertiesRepository propertiesRepository;
     private final AwsRepository awsRepository;
     private final AwsCommentRepository awsCommentRepository;
@@ -66,7 +59,7 @@ public class AdminServiceImpl implements AdminService {
     private final JsonRepository jsonRepository;
     private final InstagramService instagramService;
     private final TwitchService twitchService;
-
+    private final FourchanService fourchanService;
     private final ErgastService ergastService;
     private final MainProperties properties;
     private final ClientService clientService;
@@ -313,11 +306,11 @@ public class AdminServiceImpl implements AdminService {
 
     private Boolean checkSeasonAndRound(Integer round, Integer season) {
         Boolean response = false;
-        if(CURRENT_ROUND!=round) {
+        if (CURRENT_ROUND != round) {
             CURRENT_ROUND = round;
             propertiesRepository.updateProperty("round", CURRENT_ROUND.toString());
         }
-        if(!season.equals(properties.getCurrentSeasonPast())) {
+        if (!season.equals(properties.getCurrentSeasonPast())) {
             log.warn("UPDATED SEASON: {} - {} ", season, properties.getCurrentSeasonPast());
             properties.updateCurrentSeasonPast(season);
         }
@@ -366,37 +359,8 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
-    public Integer fetchSportSurgeLinks() throws IOException {
-        Logger.log("fetchSportSurgeLinks");
-        WebClient client = new WebClient();
-        Page page = client.getPage(properties.getSportSurgeRoot());
-        WebResponse response = page.getWebResponse();
-        SportSurge sportSurge = new ObjectMapper().readValue(response.getContentAsString(), SportSurge.class);
-        List<SportSurgeEvent> events = sportSurge.getEvents();
-        List<SportSurgeStream> streams = new ArrayList<>();
-        for (SportSurgeEvent event : events) {
-            log.info("link: " + properties.getSportSurgeStreams() + event.getId());
-            page = client.getPage(properties.getSportSurgeStreams() + event.getId());
-            response = page.getWebResponse();
-            sportSurge = new ObjectMapper().readValue(response.getContentAsString(), SportSurge.class);
-            streams.addAll(sportSurge.getStreams());
-        }
-        deleteSportSurgeLinks();
-        sportSurgeStreamRepository.saveAll(streams);
-        sportSurgeEventRepository.saveAll(events);
-        return getNextRefreshTick(600);
-    }
-
-    @Override
     public Boolean fetchReplayLinks() {
         return racingfkService.fetchReplayLinks();
-    }
-
-    @Override
-    public void deleteSportSurgeLinks() {
-        Logger.log("deleteSportSurgeLinks");
-        sportSurgeStreamRepository.deleteAll();
-        sportSurgeEventRepository.deleteAll();
     }
 
     @Override
@@ -552,8 +516,13 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
-    public String setCountdownMode(String mode) {
+    public String setCountdownMode(Integer mode) {
         return clientService.setCountdownMode(mode);
+    }
+
+    @Override
+    public String setIframeLink(String link) {
+        return clientService.setIframeLink(link);
     }
 
     @Override
@@ -571,6 +540,17 @@ public class AdminServiceImpl implements AdminService {
     @Override
     public Boolean checkCurrentStream() throws IOException {
         return twitchService.checkCurrentStream();
+    }
+
+    @Override
+    public Boolean fetchFourChanPosts() {
+        fourchanService.fetch4chanPosts();
+        return true;
+    }
+
+    @Override
+    public Boolean deleteFourChanPost(Integer id) {
+        return fourchanService.deleteFourChanPost(id);
     }
 
 

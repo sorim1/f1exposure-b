@@ -59,12 +59,6 @@ public class ClientController {
         return service.getConstructorStandings();
     }
 
-    @GetMapping("/getSportSurge")
-    List<SportSurgeEvent> getSportSurge(@RequestHeader String client) throws Exception {
-        securityService.validateHeader(client);
-        return service.getSportSurge();
-    }
-
     @PostMapping("/postComment")
     List<F1Comment> postComment(@RequestHeader String client, @RequestBody F1Comment comment, HttpServletRequest request) throws Exception {
         securityService.validateHeader(client);
@@ -90,7 +84,7 @@ public class ClientController {
     @GetMapping("/fetchInstagramPosts")
     Boolean fetchInstagramFeed(@RequestHeader String client) throws Exception {
         securityService.validateAdminHeader(client);
-        return service.fetchInstagramFeed();
+        return service.fetchInstagramPosts();
     }
 
     @GetMapping("/fetchTwitterPosts")
@@ -154,7 +148,7 @@ public class ClientController {
     }
 
     @GetMapping("/fetch4chanPosts")
-    List<FourchanCatalog> fetch4chanPosts(@RequestHeader String client) throws Exception {
+    Boolean fetch4chanPosts(@RequestHeader String client) throws Exception {
         securityService.validateAdminHeader(client);
         return service.fetch4chanPosts();
     }

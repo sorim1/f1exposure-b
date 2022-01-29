@@ -27,7 +27,6 @@ import sorim.f1.slasher.relentless.service.RedditService;
 import sorim.f1.slasher.relentless.util.MainUtility;
 
 import javax.annotation.PostConstruct;
-import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
@@ -37,20 +36,20 @@ import java.util.concurrent.atomic.AtomicReference;
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class RedditServiceImpl implements RedditService {
 
-    private final MainProperties properties;
-    private final RedditNewRepository redditNewRepository;
-    private final RedditTopRepository redditTopRepository;
-    private final AwsRepository awsRepository;
-
     private static final String redditNewPosts = "https://reddit.com/r/formula1/new/.json?limit=100";
     private static final String redditNewF1PornPosts = "https://reddit.com/r/f1porn/hot/.json?limit=100";
     private static final String imgurAlbumUrl2 = "https://api.imgur.com/3/album/";
-    private static String lastNewPost = "";
-    private static String lastNewF1PornPost = "";
     private static final String FAVICON = "/favicon.ico";
     private static final String redditDailyNews = "https://reddit.com/r/formula1/search.json?q=flair:news&sort=comments&restrict_sr=on&t=day";
     private static final String iReddit = "i.redd.it";
     private static final String REDDIT_FAVICON = "https://reddit.com/favicon.ico";
+    private static String lastNewPost = "";
+    private static String lastNewF1PornPost = "";
+    private final MainProperties properties;
+    private final RedditNewRepository redditNewRepository;
+    private final RedditTopRepository redditTopRepository;
+    private final AwsRepository awsRepository;
+    private final ObjectMapper mapper = new ObjectMapper();
     RestTemplate restTemplate = new RestTemplate();
     HttpHeaders headers = new HttpHeaders();
     HttpHeaders htmlHeaders = new HttpHeaders();
@@ -58,7 +57,6 @@ public class RedditServiceImpl implements RedditService {
     };
     TypeReference<ArrayList<Object>> typeRefList = new TypeReference<>() {
     };
-    private final ObjectMapper mapper = new ObjectMapper();
 
     @Override
     public List<RedditPostNew> getRedditNewPosts(Integer page) {

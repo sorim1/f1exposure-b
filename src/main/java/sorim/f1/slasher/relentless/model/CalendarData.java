@@ -17,5 +17,5 @@ public class CalendarData {
     private F1Calendar f1Calendar;
     private Map<String, Integer> countdownData;
     private Integer mode;
-
+    private String iframeLink;
 }

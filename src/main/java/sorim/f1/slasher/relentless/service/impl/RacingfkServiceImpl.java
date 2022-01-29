@@ -30,18 +30,17 @@ import java.util.List;
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class RacingfkServiceImpl implements RacingfkService {
 
+    private static final String replaysUrlOld = "https://f1hd.net/category/f1/page/";
+    private static String replaysUrl = "https://f1hd.net/";
     private final MainProperties properties;
     private final ReplayRepository replayRepository;
-    private static String replaysUrlOld = "https://f1hd.net/category/f1/page/";
-    private static String replaysUrl = "https://f1hd.net/";
+    private final ObjectMapper mapper = new ObjectMapper();
     RestTemplate restTemplate = new RestTemplate();
     HttpHeaders headers = new HttpHeaders();
     TypeReference<HashMap<String, Object>> typeRef = new TypeReference<>() {
     };
     TypeReference<ArrayList<Object>> typeRefList = new TypeReference<>() {
     };
-    private final ObjectMapper mapper = new ObjectMapper();
-
 
     @PostConstruct
     void init() {
@@ -65,34 +64,34 @@ public class RacingfkServiceImpl implements RacingfkService {
         }
         log.info("latestReplayTitle");
         log.info(latestReplayTitle);
-       // do {
-            String rawHtml = getHtmlResponse();
-            Document doc = Jsoup.parse(rawHtml);
+        // do {
+        String rawHtml = getHtmlResponse();
+        Document doc = Jsoup.parse(rawHtml);
 
-            Elements h2Elements = doc.getElementsByTag("h2");
-            if (h2Elements.size() != 10) {
+        Elements h2Elements = doc.getElementsByTag("h2");
+        if (h2Elements.size() != 10) {
+            iterate = false;
+        } else {
+            log.error("NIJE KRAJ LISTE");
+        }
+        for (int i = 0; i < h2Elements.size(); i++) {
+            Element element = h2Elements.get(i);
+            Elements aElements = element.getElementsByTag("a");
+            Element aElement = aElements.get(0);
+            if (aElement.wholeText().equals(latestReplayTitle)) {
+                i = h2Elements.size();
                 iterate = false;
             } else {
-                log.error("NIJE KRAJ LISTE");
+                Replay entry = Replay.builder().title(aElement.wholeText())
+                        .url(aElement.attr("href")).build();
+                list.add(entry);
             }
-            for (int i = 0; i < h2Elements.size(); i++) {
-                Element element = h2Elements.get(i);
-                Elements aElements = element.getElementsByTag("a");
-                Element aElement = aElements.get(0);
-                if (aElement.wholeText().equals(latestReplayTitle)) {
-                    i = h2Elements.size();
-                    iterate = false;
-                } else {
-                    Replay entry = Replay.builder().title(aElement.wholeText())
-                            .url(aElement.attr("href")).build();
-                    list.add(entry);
-                }
-            }
+        }
 //            page++;
 //            if (page > 10) {
 //                iterate = false;
 //            }
-     //   } while (iterate);
+        //   } while (iterate);
         //  Collections.reverse(list);
 
         for (int i = list.size() - 1; i >= 0; i--) {

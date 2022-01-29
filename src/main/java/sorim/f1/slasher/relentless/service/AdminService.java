@@ -24,11 +24,7 @@ public interface AdminService {
 
     Boolean initializeFullStandingsThroughRounds() throws IOException;
 
-    Integer fetchSportSurgeLinks() throws IOException;
-
     Boolean fetchReplayLinks();
-
-    void deleteSportSurgeLinks();
 
     F1Calendar getUpcomingRace();
 
@@ -66,11 +62,17 @@ public interface AdminService {
 
     Integer deleteAwsContent(String username);
 
-    String setCountdownMode(String mode);
+    String setCountdownMode(Integer mode);
+
+    String setIframeLink(String link);
 
     Boolean generateChart();
 
     Boolean instagramCleanup() throws IGLoginException;
 
     Boolean checkCurrentStream() throws IOException;
+
+    Boolean fetchFourChanPosts();
+
+    Boolean deleteFourChanPost(Integer id);
 }

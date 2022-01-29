@@ -20,13 +20,20 @@ import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
-import java.util.*;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @Slf4j
 @Service
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class ClientServiceImpl implements ClientService {
 
+    private static final String SYSTEM_MESSAGE = "### SYSTEM MESSAGE ###";
+    public static Integer countdownMode;
+    public static String iframeLink;
+    private static AwsContent topNews = new AwsContent();
     private final MainProperties properties;
     private final CalendarRepository calendarRepository;
     private final DriverStandingsRepository driverStandingsRepository;
@@ -34,8 +41,6 @@ public class ClientServiceImpl implements ClientService {
     private final DriverStandingsByRoundRepository driverStandingsByRoundRepository;
     private final ConstructorStandingsByRoundRepository constructorStandingsByRoundRepository;
     private final JsonRepository jsonRepository;
-
-    private final SportSurgeEventRepository sportSurgeEventRepository;
     private final F1CommentRepository f1CommentRepository;
     private final AwsRepository awsRepository;
     private final AwsCommentRepository awsCommentRepository;
@@ -47,13 +52,8 @@ public class ClientServiceImpl implements ClientService {
     private final ExposureStrawpollService exposureService;
     private final ErgastService ergastService;
     private final RacingfkService racingfkService;
-
     private final PropertiesRepository propertiesRepository;
     private final ArtImageRepository artImageRepository;
-    private static final String SYSTEM_MESSAGE = "### SYSTEM MESSAGE ###";
-    public static Integer countdownMode;
-    private static AwsContent topNews = new AwsContent();
-
 
     @Override
     public Boolean exposeDrivers(String[] exposedList, String ipAddress) throws Exception {
@@ -65,18 +65,20 @@ public class ClientServiceImpl implements ClientService {
     public CalendarData getCountdownData(Integer mode) {
         ZonedDateTime gmtZoned = ZonedDateTime.now(ZoneId.of("Europe/London"));
         LocalDateTime gmtDateTime = gmtZoned.toLocalDateTime();
-      //  gmtDateTime =gmtDateTime.minusMonths(6);
+        //  gmtDateTime =gmtDateTime.minusMonths(6);
         F1Calendar f1calendar = calendarRepository.findFirstByRaceAfterOrPractice3AfterOrderByPractice1(gmtDateTime, gmtDateTime);
-       // F1Calendar f1calendar = calendarRepository.findFirstByOrderByPractice1();
+        // F1Calendar f1calendar = calendarRepository.findFirstByOrderByPractice1();
 
-        if(f1calendar==null){
+        if (f1calendar == null) {
             return CalendarData.builder()
                     .mode(countdownMode)
+                    .iframeLink(iframeLink)
                     .build();
         }
         Map<String, Integer> countdownData = getRemainingTime(gmtDateTime, f1calendar, mode);
         return CalendarData.builder().f1Calendar(f1calendar).countdownData(countdownData)
                 .mode(countdownMode)
+                .iframeLink(iframeLink)
                 .build();
     }
 
@@ -118,11 +120,6 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
-    public List<SportSurgeEvent> getSportSurge() {
-        return sportSurgeEventRepository.findAllByOrderByIdDesc();
-    }
-
-    @Override
     public List<F1Comment> postComment(F1Comment comment, String ipAddress) {
         comment.setTimestamp(new Date());
         String username = MainUtility.handleUsername(comment.getNickname());
@@ -151,7 +148,7 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
-    public Boolean fetchInstagramFeed() throws IGLoginException {
+    public Boolean fetchInstagramPosts() throws IGLoginException {
         return instagramService.fetchInstagramFeed();
     }
 
@@ -181,7 +178,7 @@ public class ClientServiceImpl implements ClientService {
     @Override
     public void fetchRedditPosts() {
         AwsContent latestNews = redditService.fetchRedditPosts();
-        if(latestNews!=null){
+        if (latestNews != null) {
             topNews = latestNews;
         }
     }
@@ -192,8 +189,17 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
-    public List<FourchanCatalog> fetch4chanPosts() {
+    public Boolean fetch4chanPosts() {
         return forchanService.fetch4chanPosts();
+    }
+
+    @Override
+    public Boolean fetchImageFeed() throws Exception {
+        fetchInstagramPosts();
+        fetchTwitterPosts();
+        fetchRedditPosts();
+        fetch4chanPosts();
+        return true;
     }
 
     @Override
@@ -328,12 +334,22 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
-    public String setCountdownMode(String mode) {
-        AppProperty ap = AppProperty.builder().name("COUNTDOWN_MODE").value(mode).build();
+    public String setCountdownMode(Integer mode) {
+        AppProperty ap = AppProperty.builder().name("COUNTDOWN_MODE").value(String.valueOf(mode)).build();
         propertiesRepository.save(ap);
         String response = countdownMode + " -> ";
-        countdownMode = Integer.valueOf(mode);
+        countdownMode = mode;
         response = response + countdownMode;
+        return response;
+    }
+
+    @Override
+    public String setIframeLink(String link) {
+        AppProperty ap = AppProperty.builder().name("IFRAME_LINK").value(link).build();
+        propertiesRepository.save(ap);
+        String response = iframeLink + " -> ";
+        iframeLink = link;
+        response = response + iframeLink;
         return response;
     }
 
@@ -341,8 +357,9 @@ public class ClientServiceImpl implements ClientService {
     public AwsContent getTopNews() {
         return topNews;
     }
+
     @Override
-    public String getStreamer(){
+    public String getStreamer() {
         return twitchService.getStreamer();
     }
 
@@ -353,14 +370,24 @@ public class ClientServiceImpl implements ClientService {
 
     @PostConstruct
     public void init() {
+        initCountdownMode();
+        initIframeLink();
+        topNews = awsRepository.findFirstByStatusLessThanEqualOrderByTimestampActivityDesc(3);
+        log.info("clientServiceInit: {} -{}", iframeLink, countdownMode);
+    }
+
+    private void initCountdownMode() {
         AppProperty ap = propertiesRepository.findDistinctFirstByName("COUNTDOWN_MODE");
-        if(ap==null){
-            ap = AppProperty.builder().name("COUNTDOWN_MODE").value("1").build();
+        countdownMode = Integer.valueOf(ap.getValue());
+    }
+
+    private void initIframeLink() {
+        AppProperty ap = propertiesRepository.findDistinctFirstByName("IFRAME_LINK");
+        if (ap == null) {
+            ap = AppProperty.builder().name("IFRAME_LINK").value("https://streamable.com/o/kzq7xz").build();
             propertiesRepository.save(ap);
         }
-        countdownMode = Integer.valueOf(ap.getValue());
-        topNews = awsRepository.findFirstByStatusLessThanEqualOrderByTimestampActivityDesc(3);
-        log.info("clientServiceInit: {}", countdownMode);
+        iframeLink = ap.getValue();
     }
 
     private Map<String, Integer> getRemainingTime(LocalDateTime gmtDateTime, F1Calendar f1calendar, Integer mode) {
@@ -377,21 +404,21 @@ public class ClientServiceImpl implements ClientService {
             output.put("FP2Seconds", (int) duration.toSeconds());
         }
         if (mode == 0 || mode == 3) {
-            if(f1calendar.getPractice3()!=null) {
+            if (f1calendar.getPractice3() != null) {
                 duration = Duration.between(gmtDateTime, f1calendar.getPractice3());
                 output.put("FP3Days", (int) duration.toDays());
                 output.put("FP3Seconds", (int) duration.toSeconds());
             }
         }
         if (mode == 0 || mode == 4) {
-            if(f1calendar.getQualifying()!=null){
+            if (f1calendar.getQualifying() != null) {
                 duration = Duration.between(gmtDateTime, f1calendar.getQualifying());
                 output.put("qualifyingDays", (int) duration.toDays());
                 output.put("qualifyingSeconds", (int) duration.toSeconds());
             }
         }
         if (mode == 0 || mode == 5) {
-            if(f1calendar.getRace()!=null) {
+            if (f1calendar.getRace() != null) {
                 duration = Duration.between(gmtDateTime, f1calendar.getRace());
                 output.put("raceDays", (int) duration.toDays());
                 output.put("raceSeconds", (int) duration.toSeconds());

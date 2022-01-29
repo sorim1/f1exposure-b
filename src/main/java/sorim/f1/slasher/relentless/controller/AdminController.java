@@ -29,9 +29,15 @@ public class AdminController {
     }
 
     @GetMapping("/setCountdownMode/{mode}")
-    String setCountdownMode(@RequestHeader String client,@PathVariable("mode") String mode) throws Exception {
+    String setCountdownMode(@RequestHeader String client,@PathVariable("mode") Integer mode) throws Exception {
         securityService.validateAdminHeader(client);
         return service.setCountdownMode(mode);
+    }
+
+    @PostMapping("/setIframeLink")
+    String setCountdownMode(@RequestHeader String client,@RequestBody String body) throws Exception {
+        securityService.validateAdminHeader(client);
+        return service.setIframeLink(body);
     }
 
     @GetMapping("/upcomingRaceCalendar")
@@ -73,10 +79,16 @@ public class AdminController {
         return service.initializeFullStandingsThroughRounds();
     }
 
-    @GetMapping("/fetchSportSurgeLinks")
-    void fetchSportSurgeLinks(@RequestHeader String client) throws Exception {
+    @GetMapping("/fetchFourChan")
+    Boolean fetchFourChan(@RequestHeader String client) throws Exception {
         securityService.validateAdminHeader(client);
-        service.fetchSportSurgeLinks();
+        return service.fetchFourChanPosts();
+    }
+
+    @GetMapping("/deleteFourChanPost/{id}")
+    Boolean deleteFourChanPost(@RequestHeader String client, @PathVariable("id") Integer id) throws Exception {
+        securityService.validateAdminHeader(client);
+        return service.deleteFourChanPost(id);
     }
 
     @GetMapping("/fetchReplayLinks")
@@ -84,7 +96,6 @@ public class AdminController {
         securityService.validateAdminHeader(client);
         service.fetchReplayLinks();
     }
-
     @GetMapping("/deleteComment/{mode}/{id}")
     Integer deleteComment(@RequestHeader String client, @PathVariable("mode") String mode, @PathVariable("id") String id) throws Exception {
         securityService.validateAdminHeader(client);

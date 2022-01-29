@@ -28,12 +28,14 @@ dependencies {
 	implementation group: 'org.mnode.ical4j', name: 'ical4j', version: '4.0.0-alpha9'
 	implementation group: 'org.jsoup', name: 'jsoup', version: '1.14.3'
 	implementation group: 'net.sourceforge.htmlunit', name: 'htmlunit', version: '2.50.0'
-	implementation group: 'com.github.instagram4j', name: 'instagram4j', version: '2.0.4'
+	implementation group: 'com.github.instagram4j', name: 'instagram4j', version: '2.0.7'
 	implementation group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.2'
-	implementation group: 'com.squareup.okhttp3', name: 'okhttp', version: '5.0.0-alpha.2'
-	implementation group: 'com.squareup.okhttp3', name: 'okhttp-urlconnection', version: '5.0.0-alpha.2'
+	implementation group: 'com.squareup.okhttp3', name: 'okhttp', version: '5.0.0-alpha.3'
+	implementation group: 'com.squareup.okhttp3', name: 'okhttp-urlconnection', version: '5.0.0-alpha.3'
 	implementation group: 'org.twitter4j', name: 'twitter4j-core', version: '4.0.1'
 	implementation group: 'com.github.twitch4j', name: 'twitch4j', version: '1.7.0'
+	implementation group: 'commons-codec', name: 'commons-codec', version: '1.15'
+
 }
 
 test {

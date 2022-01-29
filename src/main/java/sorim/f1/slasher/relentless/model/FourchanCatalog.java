@@ -13,7 +13,8 @@ import java.util.List;
 @Builder
 public class FourchanCatalog {
 
-    private List<FourchanThread> threads;
     private Integer page;
+    private List<FourchanThread> threads;
+
 
 }

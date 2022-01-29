@@ -1,26 +1,17 @@
 package sorim.f1.slasher.relentless.service.impl;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.gargoylesoftware.htmlunit.BrowserVersion;
 import com.gargoylesoftware.htmlunit.Page;
 import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.WebResponse;
-import com.github.twitch4j.TwitchClient;
-import com.github.twitch4j.TwitchClientBuilder;
 import com.github.twitch4j.helix.TwitchHelix;
 import com.github.twitch4j.helix.TwitchHelixBuilder;
 import com.github.twitch4j.helix.domain.StreamList;
 import com.github.twitch4j.helix.domain.UserList;
-import liquibase.pro.packaged.A;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import sorim.f1.slasher.relentless.configuration.MainProperties;
-import sorim.f1.slasher.relentless.entities.SportSurgeEvent;
-import sorim.f1.slasher.relentless.entities.SportSurgeStream;
-import sorim.f1.slasher.relentless.handling.Logger;
-import sorim.f1.slasher.relentless.model.SportSurge;
 import sorim.f1.slasher.relentless.service.TwitchService;
 
 import javax.annotation.PostConstruct;
@@ -34,13 +25,14 @@ import java.util.List;
 public class TwitchServiceImpl implements TwitchService {
 
 
-    private TwitchHelix twitchHelixclient;
-    private static List<String> currentStreamer;
     private static final List<String> defaultTwitchStreamer = List.of("644967731", "mda2mjzy9y3lw");
+    private static List<String> currentStreamer;
+    private TwitchHelix twitchHelixclient;
+
     @Override
     public Boolean setStreamer(String username) {
         String userId = getUserId(username);
-        if(userId!=null && isUserOnline(userId)){
+        if (userId != null && isUserOnline(userId)) {
             currentStreamer = new ArrayList<>();
             currentStreamer.add(userId);
             currentStreamer.add(username);
@@ -53,7 +45,7 @@ public class TwitchServiceImpl implements TwitchService {
     @Override
     public Boolean checkCurrentStream() throws IOException {
         Boolean isOnline = isUserOnline(currentStreamer.get(0));
-        if(!isOnline){
+        if (!isOnline) {
             currentStreamer = topIracingStream();
         }
         return isOnline;
@@ -66,9 +58,9 @@ public class TwitchServiceImpl implements TwitchService {
 
     private String getUserId(String username) {
         UserList userList = twitchHelixclient.getUsers(null, null, List.of(username)).execute();
-        if(userList.getUsers().size()>0){
+        if (userList.getUsers().size() > 0) {
             log.info("getUserId: " + username + " - " + userList.getUsers().get(0).getId());
-        return userList.getUsers().get(0).getId();
+            return userList.getUsers().get(0).getId();
         }
         return null;
     }
@@ -82,14 +74,14 @@ public class TwitchServiceImpl implements TwitchService {
         currentStreamer = topIracingStream();
     }
 
-    private Boolean isUserOnline(String userId){
-        StreamList streamList = twitchHelixclient.getStreams(null, null, null, 1, null,null, List.of(userId), null).execute();
-        return streamList.getStreams().size()>0;
+    private Boolean isUserOnline(String userId) {
+        StreamList streamList = twitchHelixclient.getStreams(null, null, null, 1, null, null, List.of(userId), null).execute();
+        return streamList.getStreams().size() > 0;
     }
 
-    private List<String> topIracingStream(){
+    private List<String> topIracingStream() {
         List<String> streamer = new ArrayList<>();
-        StreamList streamList = twitchHelixclient.getStreams(null, null, null, 1, List.of("19554"),null, null, null).execute();
+        StreamList streamList = twitchHelixclient.getStreams(null, null, null, 1, List.of("19554"), null, null, null).execute();
         streamer.add(streamList.getStreams().get(0).getId());
         streamer.add(streamList.getStreams().get(0).getUserName());
         return streamer;
@@ -98,7 +90,7 @@ public class TwitchServiceImpl implements TwitchService {
     public Integer checkAngelThumpStream() throws IOException {
         String url = "https://player.angelthump.com/?channel=spf1general";
         String url2 = "https://player.angelthump.com/?channel=spfal";
-        WebClient client =  new WebClient(BrowserVersion.CHROME);
+        WebClient client = new WebClient(BrowserVersion.CHROME);
         Page page = client.getPage(url);
         WebResponse response = page.getWebResponse();
         log.info("url1");

@@ -20,15 +20,13 @@ public interface ClientService {
 
     AllStandings getStandings();
 
-    List<SportSurgeEvent> getSportSurge();
-
     List<F1Comment> postComment(F1Comment comment, String ipAddress);
 
     void sendMessage(F1Comment message, String ipAddress);
 
     List<F1Comment> getComments(String page);
 
-    Boolean fetchInstagramFeed() throws IGLoginException;
+    Boolean fetchInstagramPosts() throws IGLoginException;
 
     TripleInstagramFeed getInstagramFeedPage(Integer page) throws IGLoginException;
 
@@ -42,7 +40,9 @@ public interface ClientService {
 
     void fetchRedditPosts();
 
-    List<FourchanCatalog> fetch4chanPosts();
+    Boolean fetch4chanPosts();
+
+    Boolean fetchImageFeed() throws Exception;
 
     Boolean fetchTwitterPosts() throws Exception;
 
@@ -64,7 +64,9 @@ public interface ClientService {
 
     List<Replay> getReplays(Integer page);
 
-    String setCountdownMode(String mode);
+    String setCountdownMode(Integer mode);
+
+    String setIframeLink(String link);
 
     AwsContent getTopNews();
 

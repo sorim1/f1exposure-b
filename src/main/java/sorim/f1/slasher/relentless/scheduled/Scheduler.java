@@ -6,7 +6,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
-import sorim.f1.slasher.relentless.handling.Logger;
 import sorim.f1.slasher.relentless.model.CalendarData;
 import sorim.f1.slasher.relentless.service.*;
 import sorim.f1.slasher.relentless.util.MainUtility;
@@ -34,7 +33,6 @@ public class Scheduler {
     @Scheduled(cron = "0 0 1 * * MON")
     public void mondayJobs() throws IOException {
         log.info(CODE, "mondayJobs called");
-        adminService.deleteSportSurgeLinks();
         adminService.fetchReplayLinks();
         exposureService.closeExposurePoll();
         analysisDone = true;
@@ -134,26 +132,6 @@ public class Scheduler {
     }
 
 
-    private void fetchSportSurgeLinksPeriodically() throws IOException {
-        Integer delay = adminService.fetchSportSurgeLinks();
-        log.info(CODE, "fetchSportSurgeLinksPeriodically called");
-        if (delay != null) {
-            int delayInMiliseconds = delay * 1000;
-            MainUtility.logTime("fetchSportSurgeLinksPeriodically", delayInMiliseconds);
-            new java.util.Timer().schedule(
-                    new java.util.TimerTask() {
-                        @SneakyThrows
-                        @Override
-                        public void run() {
-                            fetchSportSurgeLinksPeriodically();
-                        }
-                    },
-                    delayInMiliseconds
-            );
-
-        }
-    }
-
     private void analyzeUpcomingRacePeriodically() {
         Integer delay = liveTimingService.analyzeUpcomingRace(false);
         log.info(CODE, "analyzeUpcomingRacePeriodically called");
@@ -222,10 +200,8 @@ public class Scheduler {
 
     @Scheduled(cron = "0 0 1,6,8,10,12,14,16,18,20,22 * * *")
     void imageFeedJob() throws Exception {
-        log.info("bihourlyJob called");
-        clientService.fetchInstagramFeed();
-        clientService.fetchTwitterPosts();
-        clientService.fetchRedditPosts();
+        log.info("imageFeedJob called");
+        clientService.fetchImageFeed();
         adminService.checkCurrentStream();
     }
 }

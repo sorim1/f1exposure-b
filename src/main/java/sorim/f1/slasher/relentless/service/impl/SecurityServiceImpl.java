@@ -19,11 +19,11 @@ import java.util.List;
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class SecurityServiceImpl implements SecurityService {
 
-    private final MainProperties properties;
     private final static String AUTHORIZATION_CLIENT_FAILURE = "AUTHORIZATION_CLIENT_FAILURE";
     private final static String AUTHORIZATION_ADMIN_FAILURE = "AUTHORIZATION_ADMIN_FAILURE";
     private final static String AUTHORIZATION_ADMIN_OK = "AUTHORIZATION_ADMIN_OK";
     private final static String ART_CODE_WRONG = "ART_CODE_WRONG";
+    private final MainProperties properties;
     private final BanlistRepository banlistRepository;
 
     @Override

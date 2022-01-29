@@ -32,6 +32,20 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
 
+    private static final String strawpollUrlBase = "https://strawpoll.com/";
+    private static final String apiBase = "api/poll/";
+    private static final Map<String, String> colorMap = new HashMap<>();
+    private static boolean exposureToday = false;
+    private static boolean exposureNow = false;
+    private static LocalDateTime exposureTime;
+    private static String title = "Strange";
+    private static Integer currentExposureRound;
+    //private static String strawpollUrl="https://strawpoll.com/api/poll/sdvbveh8b";
+    private static String strawpollUrl = null;
+    private static String strawpollId;
+    private static Integer reloadDelay = 0;
+    private static Integer latestVoteCount = 0;
+    private static Map<String, Driver> driversMap = new HashMap<>();
     private final ExposedVoteRepository exposedVoteRepository;
     private final ExposedVoteTotalsRepository exposedVoteTotalsRepository;
     private final ExposedRepository exposedRepository;
@@ -44,30 +58,13 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
     private final PropertiesRepository propertiesRepository;
     private final ErgastService ergastService;
     private final FourchanService fourchanService;
-
-    private static boolean exposureToday = false;
-    private static boolean exposureNow = false;
-    private static LocalDateTime exposureTime;
-    private static String title = "Strange";
-    private static Integer currentExposureRound;
-
-    //private static String strawpollUrl="https://strawpoll.com/api/poll/sdvbveh8b";
-    private static String strawpollUrl = null;
-    private static final String strawpollUrlBase = "https://strawpoll.com/";
-    private static final String apiBase = "api/poll/";
-    private static String strawpollId;
-
-    private static Integer reloadDelay = 0;
-    private static Integer latestVoteCount = 0;
-    private static Map<String, Driver> driversMap = new HashMap<>();
-    private static final Map<String, String> colorMap = new HashMap<>();
     private final RestTemplate restTemplate = new RestTemplate();
 
 
     @PostConstruct
     private void init() {
         AppProperty app = propertiesRepository.findDistinctFirstByName("exposureRound");
-        if(app!=null) {
+        if (app != null) {
             currentExposureRound = Integer.parseInt(app.getValue());
         } else {
             updateCurrentExposureRound(0);
@@ -94,7 +91,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
                         strawpollId = newId;
                         strawpollUrl = strawpollUrlBase + strawpollId;
                         startPolling();
-                        response=true;
+                        response = true;
                     }
                 }
                 exposureNow = true;
@@ -156,9 +153,9 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
         Integer round;
         try {
             round = ergastService.getCurrentDriverStandings().getMrData().getStandingsTable().getStandingsLists().get(0).getRound();
-            if(currentExposureRound==null || currentExposureRound<=round){
+            if (currentExposureRound == null || currentExposureRound <= round) {
                 currentExposureRound = round + increment;
-            } else{
+            } else {
                 //nova sezona
                 currentExposureRound = round;
                 properties.checkCurrentSeasonFuture();
@@ -168,8 +165,8 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
         } catch (Exception e) {
             log.error("updateCurrentExposureRound error", e);
             AppProperty app = propertiesRepository.findDistinctFirstByName("exposureRound");
-            if(app!=null) {
-               currentExposureRound = Integer.parseInt(app.getValue()) + increment;
+            if (app != null) {
+                currentExposureRound = Integer.parseInt(app.getValue()) + increment;
             }
         }
     }
@@ -185,7 +182,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
         } catch (Exception e) {
             log.error("fetchStrawpollResults error", e);
             strawpollId = null;
-            strawpollUrl =null;
+            strawpollUrl = null;
             return null;
         }
     }
@@ -195,7 +192,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
         reloadDelay = 5000;
         strawpollUrl = strawpollUrlBase + id;
         strawpollId = id;
-        if(id==null){
+        if (id == null) {
             initializeExposureFrontendVariables(null);
         } else {
             StrawpollModel newStrawpoll = fetchStrawpollResults();
@@ -208,7 +205,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
                 return "STRAWPOLL NOT FOUND";
             }
         }
-        if(strawpollId!=null){
+        if (strawpollId != null) {
             startPolling();
         }
         return strawpollId;
@@ -219,7 +216,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
         reloadDelay = 5000;
         strawpollUrl = strawpollUrlBase + id;
         strawpollId = id;
-        if(strawpollId!=null){
+        if (strawpollId != null) {
             startPolling();
         }
         return strawpollId;

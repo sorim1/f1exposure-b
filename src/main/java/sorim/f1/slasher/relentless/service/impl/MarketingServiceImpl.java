@@ -21,11 +21,10 @@ import java.util.List;
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class MarketingServiceImpl implements MarketingService {
 
-    private final MarketingRepository marketingRepository;
-    private final ImageRepository imageRepository;
-
     private static final String PREFIX = "MK_AA_";
     private static Integer sequence = 1;
+    private final MarketingRepository marketingRepository;
+    private final ImageRepository imageRepository;
 
     @Override
     public Marketing getRandomMarketing() {
