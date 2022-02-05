@@ -49,12 +49,18 @@ public class FourchanServiceImpl implements FourchanService {
         return true;
     }
 
-    private Boolean fetchF1Threads(List<Integer> f1ThreadNumbers) {
+    @Override
+    public Boolean deleteFourChanPosts() {
+        fourChanPostRepository.deleteAll();
+        return true;
+    }
+
+
+    private void fetchF1Threads(List<Integer> f1ThreadNumbers) {
         f1ThreadNumbers.forEach(this::fetchSingleF1Thread);
-        if (f1ThreadNumbers.size() > 1) {
+        if (f1ThreadNumbers.size()>1) {
             setProcessedThread(f1ThreadNumbers.get(1));
         }
-        return true;
     }
 
     private void setProcessedThread(Integer threadId) {
@@ -139,6 +145,40 @@ public class FourchanServiceImpl implements FourchanService {
                 if (thread.getNo() > processedThread && thread.getSub() != null && thread.getSub().toUpperCase().contains("/F1/")) {
                     f1ThreadNumbers.add(thread.getNo());
                 }
+            }));
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+        return f1ThreadNumbers;
+    }
+
+    private List<Integer> getPreviousF1ThreadNumbers() {
+        List<Integer> f1ThreadNumbers = new ArrayList();
+        String responseString = restTemplate
+                .getForObject(catalogUrl, String.class);
+        TypeReference<List<FourchanCatalog>> typeRef = new TypeReference<>() {
+        };
+        try {
+            List<FourchanCatalog> response = mapper.readValue(responseString, typeRef);
+
+            response.forEach(page -> page.getThreads().forEach(thread -> {
+                try{
+                if (thread.getSub() != null && thread.getSub().toUpperCase().contains("/F1/")) {
+                    Integer index = thread.getCom().indexOf("Previous thread");
+                    if (index >= 0) {
+                        String tempo = thread.getCom().substring(index + 15, index + 70);
+                        index = tempo.indexOf("sp/thread/");
+                        tempo = tempo.substring(index + 10, index + 19);
+                        log.info(tempo);
+                        Integer threadNo = Integer.valueOf(tempo);
+                        if( threadNo > processedThread ){
+                            f1ThreadNumbers.add(threadNo);
+                        }
+
+                    }
+                }}catch(Exception e){
+                    e.printStackTrace();
+                    }
             }));
         } catch (JsonProcessingException e) {
             e.printStackTrace();

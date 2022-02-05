@@ -21,21 +21,32 @@ public class AdminController {
     private final AdminService service;
     private final SecurityService securityService;
 
-    @GetMapping("/refreshCalendar")
-    boolean refreshCalendar(@RequestHeader String client) throws Exception {
+    @PostMapping("/refreshCalendar")
+    boolean refreshCalendar(@RequestHeader String client, @RequestBody(required=false) String url) throws Exception {
         securityService.validateAdminHeader(client);
-        service.refreshCalendarOfCurrentSeason();
-        return true;
+        return service.refreshCalendarOfCurrentSeason(url);
     }
 
-    @GetMapping("/setCountdownMode/{mode}")
-    String setCountdownMode(@RequestHeader String client,@PathVariable("mode") Integer mode) throws Exception {
+    @PostMapping("/refreshCalendarSecondary")
+    boolean refreshCalendarSecondary(@RequestHeader String client, @RequestBody(required=false) String url) throws Exception {
         securityService.validateAdminHeader(client);
-        return service.setCountdownMode(mode);
+        return service.refreshCalendarOfCurrentSeasonSecondary(url);
+    }
+
+    @GetMapping("/deleteCalendar")
+    boolean deleteCalendar(@RequestHeader String client) throws Exception {
+        securityService.validateAdminHeader(client);
+        return service.deleteCalendar();
+    }
+
+    @PostMapping("/setOverlays")
+    String setCountdownModes(@RequestHeader String client,@RequestBody String overlays) throws Exception {
+        securityService.validateAdminHeader(client);
+        return service.setOverlays(overlays);
     }
 
     @PostMapping("/setIframeLink")
-    String setCountdownMode(@RequestHeader String client,@RequestBody String body) throws Exception {
+    String setIframeLink(@RequestHeader String client,@RequestBody String body) throws Exception {
         securityService.validateAdminHeader(client);
         return service.setIframeLink(body);
     }
@@ -83,6 +94,11 @@ public class AdminController {
     Boolean fetchFourChan(@RequestHeader String client) throws Exception {
         securityService.validateAdminHeader(client);
         return service.fetchFourChanPosts();
+    }
+    @GetMapping("/deleteFourChan")
+    Boolean deleteFourChan(@RequestHeader String client) throws Exception {
+        securityService.validateAdminHeader(client);
+        return service.deleteFourChanPosts();
     }
 
     @GetMapping("/deleteFourChanPost/{id}")

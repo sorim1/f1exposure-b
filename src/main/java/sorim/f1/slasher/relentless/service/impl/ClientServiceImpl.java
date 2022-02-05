@@ -20,10 +20,7 @@ import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Slf4j
 @Service
@@ -31,15 +28,14 @@ import java.util.Map;
 public class ClientServiceImpl implements ClientService {
 
     private static final String SYSTEM_MESSAGE = "### SYSTEM MESSAGE ###";
-    public static Integer countdownMode;
+    public static String overlays;
+    public static List<String> overlayList;
     public static String iframeLink;
     private static AwsContent topNews = new AwsContent();
     private final MainProperties properties;
     private final CalendarRepository calendarRepository;
     private final DriverStandingsRepository driverStandingsRepository;
     private final ConstructorStandingsRepository constructorStandingsRepository;
-    private final DriverStandingsByRoundRepository driverStandingsByRoundRepository;
-    private final ConstructorStandingsByRoundRepository constructorStandingsByRoundRepository;
     private final JsonRepository jsonRepository;
     private final F1CommentRepository f1CommentRepository;
     private final AwsRepository awsRepository;
@@ -65,19 +61,17 @@ public class ClientServiceImpl implements ClientService {
     public CalendarData getCountdownData(Integer mode) {
         ZonedDateTime gmtZoned = ZonedDateTime.now(ZoneId.of("Europe/London"));
         LocalDateTime gmtDateTime = gmtZoned.toLocalDateTime();
-        //  gmtDateTime =gmtDateTime.minusMonths(6);
+        //gmtDateTime =gmtDateTime.minusMonths(6);
         F1Calendar f1calendar = calendarRepository.findFirstByRaceAfterOrPractice3AfterOrderByPractice1(gmtDateTime, gmtDateTime);
-        // F1Calendar f1calendar = calendarRepository.findFirstByOrderByPractice1();
-
         if (f1calendar == null) {
             return CalendarData.builder()
-                    .mode(countdownMode)
+                    .overlays(overlayList)
                     .iframeLink(iframeLink)
                     .build();
         }
         Map<String, Integer> countdownData = getRemainingTime(gmtDateTime, f1calendar, mode);
         return CalendarData.builder().f1Calendar(f1calendar).countdownData(countdownData)
-                .mode(countdownMode)
+                .overlays(overlayList)
                 .iframeLink(iframeLink)
                 .build();
     }
@@ -250,7 +244,7 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
-    public List<AwsContent> getAwsContent(Integer page) {
+    public List<AwsContent> getNews(Integer page) {
         Pageable paging = PageRequest.of(page, 15);
         return awsRepository.findAllByStatusLessThanEqualOrderByTimestampActivityDesc(3, paging);
     }
@@ -334,13 +328,18 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
-    public String setCountdownMode(Integer mode) {
-        AppProperty ap = AppProperty.builder().name("COUNTDOWN_MODE").value(String.valueOf(mode)).build();
+    public String setOverlays(String newOverlays) {
+        AppProperty ap = AppProperty.builder().name("OVERLAYS").value(newOverlays).build();
         propertiesRepository.save(ap);
-        String response = countdownMode + " -> ";
-        countdownMode = mode;
-        response = response + countdownMode;
+        String response = overlays + " -> ";
+        overlays = newOverlays;
+        response = response + overlays;
+        overlayList = stringToList(overlays);
         return response;
+    }
+
+    private List<String> stringToList(String string) {
+        return Arrays.asList(string.split(",", -1));
     }
 
     @Override
@@ -368,17 +367,27 @@ public class ClientServiceImpl implements ClientService {
         return twitchService.setStreamer(streamer);
     }
 
-    @PostConstruct
-    public void init() {
-        initCountdownMode();
-        initIframeLink();
-        topNews = awsRepository.findFirstByStatusLessThanEqualOrderByTimestampActivityDesc(3);
-        log.info("clientServiceInit: {} -{}", iframeLink, countdownMode);
+    @Override
+    public UtilityContext getUtilityContext() {
+        return UtilityContext.builder().overlays(overlayList).build();
     }
 
-    private void initCountdownMode() {
-        AppProperty ap = propertiesRepository.findDistinctFirstByName("COUNTDOWN_MODE");
-        countdownMode = Integer.valueOf(ap.getValue());
+    @PostConstruct
+    public void init() {
+        initOverlays();
+        initIframeLink();
+        topNews = awsRepository.findFirstByStatusLessThanEqualOrderByTimestampActivityDesc(3);
+        log.info("clientServiceInit: {} -{}", iframeLink, overlays);
+    }
+
+    private void initOverlays() {
+        AppProperty ap = propertiesRepository.findDistinctFirstByName("OVERLAYS");
+        if (ap == null) {
+            ap = AppProperty.builder().name("OVERLAYS").value("0").build();
+            propertiesRepository.save(ap);
+        }
+        overlays = ap.getValue();
+        overlayList = stringToList(overlays);
     }
 
     private void initIframeLink() {

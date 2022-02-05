@@ -13,10 +13,13 @@ import java.util.Map;
 public interface AdminService {
     void initialize() throws Exception;
 
-    void refreshCalendarOfCurrentSeason() throws Exception;
+    Boolean refreshCalendarOfCurrentSeason(String urlString) throws Exception;
+
+    Boolean refreshCalendarOfCurrentSeasonSecondary(String urlString) throws Exception;
+
+    Boolean deleteCalendar() throws Exception;
 
     void validateCalendarForNextRace() throws Exception;
-
 
     Boolean initializeStandings() throws IOException;
 
@@ -62,7 +65,7 @@ public interface AdminService {
 
     Integer deleteAwsContent(String username);
 
-    String setCountdownMode(Integer mode);
+    String setOverlays(String overlays);
 
     String setIframeLink(String link);
 
@@ -73,6 +76,8 @@ public interface AdminService {
     Boolean checkCurrentStream() throws IOException;
 
     Boolean fetchFourChanPosts();
+
+    Boolean deleteFourChanPosts();
 
     Boolean deleteFourChanPost(Integer id);
 }

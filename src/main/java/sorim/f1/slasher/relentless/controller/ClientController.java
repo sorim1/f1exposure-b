@@ -160,10 +160,16 @@ public class ClientController {
         return service.postContent(content, ipAddress);
     }
 
-    @GetMapping("/getAwsContent/{page}")
-    List<AwsContent> getAwsContent(@RequestHeader String client, @PathVariable("page") Integer page) throws Exception {
+    @GetMapping("/getNews/{page}")
+    List<AwsContent> getNews(@RequestHeader String client, @PathVariable("page") Integer page) throws Exception {
         securityService.validateHeader(client);
-        return service.getAwsContent(page);
+        return service.getNews(page);
+    }
+
+    @GetMapping("/getUtilityContext")
+    UtilityContext getUtilityContext(@RequestHeader String client) throws Exception {
+        securityService.validateHeader(client);
+        return service.getUtilityContext();
     }
 
     @GetMapping("/getTopNews")

@@ -13,6 +13,8 @@ public interface FourchanService {
 
     Boolean fetch4chanPosts();
 
+    Boolean deleteFourChanPosts();
+
     String getExposureStrawpoll();
 
     Boolean deleteFourChanPost(Integer id);

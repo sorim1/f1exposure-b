@@ -76,14 +76,25 @@ public class AdminServiceImpl implements AdminService {
 
     @Override
     public void initialize() throws Exception {
-        refreshCalendarOfCurrentSeason();
+        refreshCalendarOfCurrentSeason(null);
         ergastService.fetchCurrentDrivers();
         initializeStandings();
     }
 
     @Override
-    public void refreshCalendarOfCurrentSeason() throws Exception {
-        URL url = new URL(properties.getCalendarUrl());
+    public Boolean deleteCalendar() throws Exception {
+        calendarRepository.deleteAll();
+        return true;
+    }
+    @Override
+    public Boolean refreshCalendarOfCurrentSeason(String urlString) throws Exception {
+        URL url;
+        if(urlString==null){
+            url = new URL(properties.getCalendarUrl());
+        } else{
+            log.info("custom url: " + urlString);
+            url = new URL(urlString);
+        }
         Reader r = new InputStreamReader(url.openStream(), StandardCharsets.UTF_8);
         CalendarBuilder builder = new CalendarBuilder();
         Calendar calendar = builder.build(r);
@@ -103,16 +114,57 @@ public class AdminServiceImpl implements AdminService {
                         f1calendarList.add(f1Calendar);
                     }
                     raceId = currentRaceId;
-                    f1Calendar = new F1Calendar(properties);
+                    f1Calendar = new F1Calendar(properties, true);
                 }
             }
         }
         f1calendarList.add(f1Calendar);
-        List<RaceData> ergastRaceData = ergastService.fetchSeason(String.valueOf(f1Calendar.getRace().getYear()));
-        enrichCalendarWithErgastData(f1calendarList, ergastRaceData);
-        calendarRepository.deleteAll();
+        if(f1Calendar!=null && f1Calendar.getRace()!=null) {
+            List<RaceData> ergastRaceData = ergastService.fetchSeason(String.valueOf(f1Calendar.getRace().getYear()));
+            enrichCalendarWithErgastData(f1calendarList, ergastRaceData);
+        }
         calendarRepository.saveAll(f1calendarList);
+        return true;
+    }
 
+    @Override
+    public Boolean refreshCalendarOfCurrentSeasonSecondary(String urlString) throws Exception {
+        URL url;
+        if(urlString==null){
+            url = new URL(properties.getCalendarUrl());
+        } else{
+            log.info("custom url: " + urlString);
+            url = new URL(urlString);
+        }
+        Reader r = new InputStreamReader(url.openStream(), StandardCharsets.UTF_8);
+        CalendarBuilder builder = new CalendarBuilder();
+        Calendar calendar = builder.build(r);
+        String location = "0";
+        String currentLocation;
+        List<F1Calendar> f1calendarList = new ArrayList<>();
+        F1Calendar f1Calendar = null;
+        for (CalendarComponent component : calendar.getComponents().getAll()) {
+            if (component.getName().equals("VEVENT") && !component.getProperties().get("STATUS").get(0).getValue().equals("CANCELLED")) {
+                PropertyList properties = component.getProperties();
+                currentLocation = properties.get("LOCATION").get(0).getValue();
+                if (currentLocation.equals(location)) {
+                    f1Calendar.setDateAndNameFromCategory(properties.get("CATEGORIES").get(0).getValue(), properties.get("DTSTART").get(0).getValue(), properties.get("SUMMARY").get(0).getValue());
+                } else {
+                    if (f1Calendar != null) {
+                        f1calendarList.add(f1Calendar);
+                    }
+                    location = currentLocation;
+                    f1Calendar = new F1Calendar(properties, false);
+                }
+            }
+        }
+        f1calendarList.add(f1Calendar);
+        if(f1Calendar!=null && f1Calendar.getRace()!=null) {
+            List<RaceData> ergastRaceData = ergastService.fetchSeason(String.valueOf(f1Calendar.getRace().getYear()));
+            enrichCalendarWithErgastData(f1calendarList, ergastRaceData);
+        }
+        calendarRepository.saveAll(f1calendarList);
+        return true;
     }
 
     private void enrichCalendarWithErgastData(List<F1Calendar> f1calendarList, List<RaceData> ergastRaceData) {
@@ -125,7 +177,7 @@ public class AdminServiceImpl implements AdminService {
             if (calendarDate != null) {
                 if (calendarDate.getDayOfYear() == ergastDate.getDayOfYear()) {
                     log.info("isti dan: {} - {} - {} ", ergastElement, calendarElement, ergastRaceData.get(ergastElement).getRaceName());
-                    f1calendarList.get(calendarElement).setErgastName("MAYBE: " + ergastRaceData.get(ergastElement).getRaceName());
+                    f1calendarList.get(calendarElement).setErgastName(ergastRaceData.get(ergastElement).getRaceName());
                     f1calendarList.get(calendarElement).setErgastDateTime(ergastRaceData.get(ergastElement).getDate() + " - " + ergastRaceData.get(ergastElement).getTime());
                     ergastElement++;
                     calendarElement++;
@@ -516,8 +568,8 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
-    public String setCountdownMode(Integer mode) {
-        return clientService.setCountdownMode(mode);
+    public String setOverlays(String overlays) {
+        return clientService.setOverlays(overlays);
     }
 
     @Override
@@ -545,6 +597,11 @@ public class AdminServiceImpl implements AdminService {
     @Override
     public Boolean fetchFourChanPosts() {
         fourchanService.fetch4chanPosts();
+        return true;
+    }
+    @Override
+    public Boolean deleteFourChanPosts() {
+        fourchanService.deleteFourChanPosts();
         return true;
     }
 

@@ -52,7 +52,7 @@ public interface ClientService {
 
     String postContent(AwsContent content, String ipAddress);
 
-    List<AwsContent> getAwsContent(Integer page);
+    List<AwsContent> getNews(Integer page);
 
     AwsContent getAwsPost(String code);
 
@@ -64,7 +64,7 @@ public interface ClientService {
 
     List<Replay> getReplays(Integer page);
 
-    String setCountdownMode(Integer mode);
+    String setOverlays(String modes);
 
     String setIframeLink(String link);
 
@@ -73,4 +73,6 @@ public interface ClientService {
     String getStreamer();
 
     Boolean setStreamer(String streamer);
+
+    UtilityContext getUtilityContext();
 }
