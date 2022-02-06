@@ -47,7 +47,7 @@ public class ClientServiceImpl implements ClientService {
     private final FourchanService forchanService;
     private final ExposureStrawpollService exposureService;
     private final ErgastService ergastService;
-    private final RacingfkService racingfkService;
+    private final VideoService videoService;
     private final PropertiesRepository propertiesRepository;
     private final ArtImageRepository artImageRepository;
 
@@ -180,6 +180,11 @@ public class ClientServiceImpl implements ClientService {
     @Override
     public Double4chanFeed get4chanPosts(Integer page) {
         return new Double4chanFeed(forchanService.get4chanPosts(page));
+    }
+
+    @Override
+    public List<FourChanSecondaryPostEntity> get4chanSecondaryPosts() {
+        return forchanService.get4chanSecondaryPosts();
     }
 
     @Override
@@ -324,7 +329,7 @@ public class ClientServiceImpl implements ClientService {
 
     @Override
     public List<Replay> getReplays(Integer page) {
-        return racingfkService.getReplays(page);
+        return videoService.getReplays(page);
     }
 
     @Override
@@ -370,6 +375,11 @@ public class ClientServiceImpl implements ClientService {
     @Override
     public UtilityContext getUtilityContext() {
         return UtilityContext.builder().overlays(overlayList).build();
+    }
+
+    @Override
+    public List<Replay> getVideos() {
+        return videoService.getVideos();
     }
 
     @PostConstruct

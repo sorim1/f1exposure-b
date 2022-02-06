@@ -14,5 +14,7 @@ import java.util.List;
 @EnableJpaAuditing
 public interface ReplayRepository extends CrudRepository<Replay, String> {
     List<Replay> findAllByOrderByIdDesc(Pageable pageable);
+    List<Replay> findAllByStatusGreaterThanEqual(Integer status);
+    void deleteById(Integer id);
     Replay findFirstByOrderByIdDesc();
 }

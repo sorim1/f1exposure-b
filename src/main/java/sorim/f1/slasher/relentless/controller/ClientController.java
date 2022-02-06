@@ -140,6 +140,12 @@ public class ClientController {
         return service.get4chanPosts(Integer.valueOf(page));
     }
 
+    @GetMapping("/get4chanSecondaryPosts")
+    List<FourChanSecondaryPostEntity> get4chanPosts(@RequestHeader String client) throws Exception {
+        securityService.validateHeader(client);
+        return service.get4chanSecondaryPosts();
+    }
+
     @GetMapping("/fetchRedditPosts")
     Boolean fetchRedditPosts(@RequestHeader String client) throws Exception {
         securityService.validateAdminHeader(client);
@@ -219,5 +225,11 @@ public class ClientController {
     Boolean getStreamer(@RequestHeader String client, @PathVariable("streamer") String streamer) throws Exception {
         securityService.validateHeader(client);
         return service.setStreamer(streamer);
+    }
+
+    @GetMapping("/getVideos")
+    List<Replay> getVideos(@RequestHeader String client) throws Exception {
+        securityService.validateHeader(client);
+        return service.getVideos();
     }
 }

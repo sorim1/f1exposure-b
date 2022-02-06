@@ -38,6 +38,8 @@ public interface ClientService {
 
     Double4chanFeed get4chanPosts(Integer page);
 
+    List<FourChanSecondaryPostEntity> get4chanSecondaryPosts();
+
     void fetchRedditPosts();
 
     Boolean fetch4chanPosts();
@@ -75,4 +77,6 @@ public interface ClientService {
     Boolean setStreamer(String streamer);
 
     UtilityContext getUtilityContext();
+
+    List<Replay> getVideos();
 }

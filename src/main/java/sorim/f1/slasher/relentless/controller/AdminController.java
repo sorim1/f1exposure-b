@@ -112,6 +112,18 @@ public class AdminController {
         securityService.validateAdminHeader(client);
         service.fetchReplayLinks();
     }
+
+    @GetMapping("/removeVideo/{id}")
+    Boolean removeVideo(@RequestHeader String client, @PathVariable("mode") Integer id) throws Exception {
+        securityService.validateAdminHeader(client);
+        return service.removeVideo(id);
+    }
+    @PostMapping("/saveVideos")
+    List<Replay> saveVideos(@RequestHeader String client, @RequestBody List<Replay> videos) throws Exception {
+        securityService.validateAdminHeader(client);
+        return service.saveVideos(videos);
+    }
+
     @GetMapping("/deleteComment/{mode}/{id}")
     Integer deleteComment(@RequestHeader String client, @PathVariable("mode") String mode, @PathVariable("id") String id) throws Exception {
         securityService.validateAdminHeader(client);

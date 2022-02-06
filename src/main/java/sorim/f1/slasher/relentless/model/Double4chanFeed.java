@@ -4,11 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import sorim.f1.slasher.relentless.entities.ForchanPost;
-import sorim.f1.slasher.relentless.entities.FourChanImageEntity;
 import sorim.f1.slasher.relentless.entities.FourChanPostEntity;
-import sorim.f1.slasher.relentless.entities.TwitterPost;
-
 import java.util.ArrayList;
 import java.util.List;
 

@@ -80,4 +80,8 @@ public interface AdminService {
     Boolean deleteFourChanPosts();
 
     Boolean deleteFourChanPost(Integer id);
+
+    Boolean removeVideo(Integer id);
+
+    List<Replay>  saveVideos(List<Replay>  video);
 }

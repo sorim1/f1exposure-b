@@ -12,10 +12,12 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import sorim.f1.slasher.relentless.entities.AppProperty;
 import sorim.f1.slasher.relentless.entities.FourChanPostEntity;
+import sorim.f1.slasher.relentless.entities.FourChanSecondaryPostEntity;
 import sorim.f1.slasher.relentless.model.FourchanCatalog;
 import sorim.f1.slasher.relentless.model.FourchanPost;
 import sorim.f1.slasher.relentless.model.FourchanThread;
 import sorim.f1.slasher.relentless.repository.FourChanPostRepository;
+import sorim.f1.slasher.relentless.repository.FourChanSecondaryPostRepository;
 import sorim.f1.slasher.relentless.repository.PropertiesRepository;
 import sorim.f1.slasher.relentless.service.FourchanService;
 
@@ -33,6 +35,7 @@ public class FourchanServiceImpl implements FourchanService {
     private static Integer processedThread = 0;
     private final PropertiesRepository propertiesRepository;
     private final FourChanPostRepository fourChanPostRepository;
+    private final FourChanSecondaryPostRepository fourChanSecondaryPostRepository;
     private final ObjectMapper mapper = new ObjectMapper();
     RestTemplate restTemplate = new RestTemplate();
 
@@ -40,6 +43,11 @@ public class FourchanServiceImpl implements FourchanService {
     public List<FourChanPostEntity> get4chanPosts(Integer page) {
         Pageable paging = PageRequest.of(page, 21);
         return fourChanPostRepository.findAllByOrderByIdDesc(paging);
+    }
+
+    @Override
+    public List<FourChanSecondaryPostEntity> get4chanSecondaryPosts() {
+        return fourChanSecondaryPostRepository.findAllByOrderByIdDesc();
     }
 
     @Override
@@ -52,6 +60,7 @@ public class FourchanServiceImpl implements FourchanService {
     @Override
     public Boolean deleteFourChanPosts() {
         fourChanPostRepository.deleteAll();
+        fourChanSecondaryPostRepository.deleteAll();
         return true;
     }
 
@@ -81,6 +90,7 @@ public class FourchanServiceImpl implements FourchanService {
 
     private Boolean fetchSingleF1Thread(Integer threadId) {
         List<FourChanPostEntity> images = new ArrayList<>();
+        List<FourChanSecondaryPostEntity> streamables = new ArrayList<>();
         Map<String, String> uriVariables = new HashMap<>();
         uriVariables.put("threadNumber", String.valueOf(threadId));
         FourchanThread response = restTemplate
@@ -90,9 +100,13 @@ public class FourchanServiceImpl implements FourchanService {
             if (checkFourchanImage(post)) {
                 images.add(new FourChanPostEntity(post, threadId));
             }
+            if (checkStreamable(post)) {
+                streamables.add(new FourChanSecondaryPostEntity(post, threadId));
+            }
         });
 
         fourChanPostRepository.saveAll(images);
+        fourChanSecondaryPostRepository.saveAll(streamables);
         return true;
     }
 
@@ -114,6 +128,10 @@ public class FourchanServiceImpl implements FourchanService {
             return true;
         }
         return ".webm".equals(post.getExt()) && post.getFsize() > 1700000;
+    }
+
+    private boolean checkStreamable(FourchanPost post) {
+        return post.getCom() != null && post.getCom().toUpperCase().contains("STREAMABLE.COM");
     }
 
     private void increaseReplyCounters(FourchanPost post, Map<Integer, FourchanPost> map) {

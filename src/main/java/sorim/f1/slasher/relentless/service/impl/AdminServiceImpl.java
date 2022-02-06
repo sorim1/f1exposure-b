@@ -66,7 +66,7 @@ public class AdminServiceImpl implements AdminService {
     private final ExposureStrawpollService exposureService;
     private final MarketingService marketingService;
     private final ArtService artService;
-    private final RacingfkService racingfkService;
+    private final VideoService videoService;
     private final RestTemplate restTemplate = new RestTemplate();
 
     @PostConstruct
@@ -412,7 +412,7 @@ public class AdminServiceImpl implements AdminService {
 
     @Override
     public Boolean fetchReplayLinks() {
-        return racingfkService.fetchReplayLinks();
+        return videoService.fetchReplayLinks();
     }
 
     @Override
@@ -608,6 +608,16 @@ public class AdminServiceImpl implements AdminService {
     @Override
     public Boolean deleteFourChanPost(Integer id) {
         return fourchanService.deleteFourChanPost(id);
+    }
+
+    @Override
+    public Boolean removeVideo(Integer id) {
+        return videoService.removeVideo(id);
+    }
+
+    @Override
+    public List<Replay> saveVideos(List<Replay> videos) {
+        return videoService.saveVideos(videos);
     }
 
 
