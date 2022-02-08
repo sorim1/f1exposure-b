@@ -183,22 +183,15 @@ public class InstagramServiceImpl implements InstagramService {
         } catch (IOException e) {
             log.error("fetchImages ", e);
         }
-        return null;
+        return new byte[0];
     }
 
     @Override
-    public TripleInstagramFeed getInstagramFeed() {
-        List<InstagramPost> posts = instagramRepository.findFirst10ByOrderByLikesDesc();
-
-        return new TripleInstagramFeed(posts);
-    }
-
-    @Override
-    public TripleInstagramFeed getInstagramFeedPage(Integer page) {
+    public TripleInstagramFeed getInstagramFeedPage(Integer mode, Integer page) {
         Pageable paging = PageRequest.of(page, 20);
         List<InstagramPost> posts = instagramRepository.findAllByOrderByTakenAtDesc(paging);
 
-        return new TripleInstagramFeed(posts);
+        return new TripleInstagramFeed(mode, posts);
     }
 
     @Override

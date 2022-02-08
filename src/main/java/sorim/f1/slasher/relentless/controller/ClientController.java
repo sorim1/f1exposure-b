@@ -93,10 +93,10 @@ public class ClientController {
         return service.fetchTwitterPosts();
     }
 
-    @GetMapping("/getInstagramPosts/{page}")
-    TripleInstagramFeed getInstagramFeedPage(@RequestHeader String client, @PathVariable("page") String page) throws Exception {
+    @GetMapping("/getInstagramPosts/{mode}/{page}")
+    TripleInstagramFeed getInstagramFeedPage(@RequestHeader String client, @PathVariable("mode") Integer mode, @PathVariable("page") Integer page) throws Exception {
         securityService.validateHeader(client);
-        return service.getInstagramFeedPage(Integer.valueOf(page));
+        return service.getInstagramFeedPage(mode, page);
     }
 
     @GetMapping(
@@ -116,16 +116,16 @@ public class ClientController {
         return service.getArt(cleanedCode);
     }
 
-    @GetMapping("/getTwitterPosts/{page}")
-    DoubleTwitterFeed getTwitterPosts(@RequestHeader String client, @PathVariable("page") String page) throws Exception {
+    @GetMapping("/getTwitterPosts/{mode}/{page}")
+    TrippleTwitterFeed getTwitterPosts(@RequestHeader String client, @PathVariable("mode") Integer mode, @PathVariable("page") Integer page) throws Exception {
         securityService.validateHeader(client);
-        return service.getTwitterPosts(Integer.valueOf(page));
+        return service.getTwitterPosts(mode, page);
     }
 
-    @GetMapping("/getNewRedditPosts/{page}")
-    DoubleRedditNewFeed getNewRedditPosts(@RequestHeader String client, @PathVariable("page") Integer page) throws Exception {
+    @GetMapping("/getNewRedditPosts/{mode}/{page}")
+    TrippleRedditNewFeed getNewRedditPosts(@RequestHeader String client, @PathVariable("mode") Integer mode, @PathVariable("page") Integer page) throws Exception {
         securityService.validateHeader(client);
-        return service.getRedditNewPosts(page);
+        return service.getRedditNewPosts(mode, page);
     }
 
     @GetMapping("/getTopRedditPosts/{page}")
@@ -134,10 +134,10 @@ public class ClientController {
         return service.getRedditTopPosts(page);
     }
 
-    @GetMapping("/get4chanPosts/{page}")
-    Double4chanFeed get4chanPosts(@RequestHeader String client, @PathVariable("page") String page) throws Exception {
+    @GetMapping("/get4chanPosts/{mode}/{page}")
+    Tripple4chanFeed get4chanPosts(@RequestHeader String client, @PathVariable("mode") Integer mode, @PathVariable("page") Integer page) throws Exception {
         securityService.validateHeader(client);
-        return service.get4chanPosts(Integer.valueOf(page));
+        return service.get4chanPosts(mode, page);
     }
 
     @GetMapping("/get4chanSecondaryPosts")

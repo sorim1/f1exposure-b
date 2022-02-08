@@ -7,9 +7,7 @@ public interface InstagramService {
 
     Boolean fetchInstagramFeed() throws IGLoginException;
 
-    TripleInstagramFeed getInstagramFeed() throws IGLoginException;
-
-    TripleInstagramFeed getInstagramFeedPage(Integer page);
+    TripleInstagramFeed getInstagramFeedPage(Integer mode, Integer page);
 
     void getMyFollows() throws IGLoginException;
 

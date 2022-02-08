@@ -147,21 +147,21 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
-    public TripleInstagramFeed getInstagramFeedPage(Integer page) throws IGLoginException {
+    public TripleInstagramFeed getInstagramFeedPage(Integer mode, Integer page){
         if (page > 40) {
             return new TripleInstagramFeed();
         }
-        return instagramService.getInstagramFeedPage(page);
+        return instagramService.getInstagramFeedPage(mode, page);
     }
 
     @Override
-    public DoubleTwitterFeed getTwitterPosts(Integer page) {
-        return new DoubleTwitterFeed(twitterService.getTwitterPosts(page));
+    public TrippleTwitterFeed getTwitterPosts(Integer mode, Integer page) {
+        return new TrippleTwitterFeed(mode, twitterService.getTwitterPosts(page));
     }
 
     @Override
-    public DoubleRedditNewFeed getRedditNewPosts(Integer page) {
-        return new DoubleRedditNewFeed(redditService.getRedditNewPosts(page));
+    public TrippleRedditNewFeed getRedditNewPosts(Integer mode, Integer page) {
+        return new TrippleRedditNewFeed(mode, redditService.getRedditNewPosts(page));
     }
 
     @Override
@@ -178,8 +178,8 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
-    public Double4chanFeed get4chanPosts(Integer page) {
-        return new Double4chanFeed(forchanService.get4chanPosts(page));
+    public Tripple4chanFeed get4chanPosts(Integer mode, Integer page) {
+        return new Tripple4chanFeed(mode, forchanService.get4chanPosts(page));
     }
 
     @Override
