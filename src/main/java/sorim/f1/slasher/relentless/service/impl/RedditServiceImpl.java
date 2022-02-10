@@ -16,13 +16,10 @@ import org.springframework.http.*;
 import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-import sorim.f1.slasher.relentless.configuration.MainProperties;
-import sorim.f1.slasher.relentless.entities.AwsContent;
-import sorim.f1.slasher.relentless.entities.RedditPostNew;
-import sorim.f1.slasher.relentless.entities.RedditPostTop;
-import sorim.f1.slasher.relentless.repository.AwsRepository;
-import sorim.f1.slasher.relentless.repository.RedditNewRepository;
-import sorim.f1.slasher.relentless.repository.RedditTopRepository;
+import sorim.f1.slasher.relentless.entities.NewsContent;
+import sorim.f1.slasher.relentless.entities.RedditPost;
+import sorim.f1.slasher.relentless.repository.NewsRepository;
+import sorim.f1.slasher.relentless.repository.RedditRepository;
 import sorim.f1.slasher.relentless.service.RedditService;
 import sorim.f1.slasher.relentless.util.MainUtility;
 
@@ -45,10 +42,8 @@ public class RedditServiceImpl implements RedditService {
     private static final String REDDIT_FAVICON = "https://reddit.com/favicon.ico";
     private static String lastNewPost = "";
     private static String lastNewF1PornPost = "";
-    private final MainProperties properties;
-    private final RedditNewRepository redditNewRepository;
-    private final RedditTopRepository redditTopRepository;
-    private final AwsRepository awsRepository;
+    private final RedditRepository redditRepository;
+    private final NewsRepository newsRepository;
     private final ObjectMapper mapper = new ObjectMapper();
     RestTemplate restTemplate = new RestTemplate();
     HttpHeaders headers = new HttpHeaders();
@@ -59,29 +54,23 @@ public class RedditServiceImpl implements RedditService {
     };
 
     @Override
-    public List<RedditPostNew> getRedditNewPosts(Integer page) {
+    public List<RedditPost> getRedditPosts(Integer page) {
         Pageable paging = PageRequest.of(page, 21);
-        return redditNewRepository.findAllByOrderByCreatedDesc(paging);
+        return redditRepository.findAllByOrderByCreatedDesc(paging);
     }
 
     @Override
-    public List<RedditPostTop> getRedditTopPosts(Integer page) {
-        Pageable paging = PageRequest.of(page, 21);
-        return redditTopRepository.findAllByOrderByCreatedDesc(paging);
-    }
-
-    @Override
-    public AwsContent fetchRedditPosts() {
+    public NewsContent fetchRedditPosts() {
         getRFormula1New();
         getRF1PornHot();
         return getNews();
     }
 
-    private AwsContent getNews() {
+    private NewsContent getNews() {
         HttpEntity entity = new HttpEntity(headers);
         ResponseEntity<String> response = restTemplate.exchange(
                 redditDailyNews, HttpMethod.GET, entity, String.class);
-        List<AwsContent> list = new ArrayList<>();
+        List<NewsContent> list = new ArrayList<>();
         long currentTime = System.currentTimeMillis();
         try {
             Map<String, Object> mapping = mapper.readValue(response.getBody(), typeRef);
@@ -90,11 +79,11 @@ public class RedditServiceImpl implements RedditService {
             AtomicReference<Integer> counter = new AtomicReference<>(1000);
             children.forEach(child -> {
                 LinkedHashMap<String, Object> data = (LinkedHashMap<String, Object>) child.get("data");
-                AwsContent post = new AwsContent(data, currentTime - counter.get());
+                NewsContent post = new NewsContent(data, currentTime - counter.get());
                 list.add(post);
                 counter.set(counter.get() + 1000);
             });
-            saveAwsList(list);
+            saveNewsList(list);
             return list.get(0);
         } catch (JsonProcessingException e) {
             e.printStackTrace();
@@ -102,10 +91,10 @@ public class RedditServiceImpl implements RedditService {
         return null;
     }
 
-    private void saveAwsList(List<AwsContent> list) {
-        List<AwsContent> saveToDatabaseList = new ArrayList<>();
-        for (AwsContent post : list) {
-            AwsContent fromDb = awsRepository.findByCode(post.getCode());
+    private void saveNewsList(List<NewsContent> list) {
+        List<NewsContent> saveToDatabaseList = new ArrayList<>();
+        for (NewsContent post : list) {
+            NewsContent fromDb = newsRepository.findByCode(post.getCode());
             if (fromDb == null) {
                 getImagesForPost(post);
                 saveToDatabaseList.add(post);
@@ -116,11 +105,11 @@ public class RedditServiceImpl implements RedditService {
                 }
             }
         }
-        awsRepository.saveAll(saveToDatabaseList);
+        newsRepository.saveAll(saveToDatabaseList);
     }
 
     @Override
-    public void updatePostImages(AwsContent post) {
+    public void updatePostImages(NewsContent post) {
         HttpEntity entity = new HttpEntity(htmlHeaders);
         boolean iconUrlSet = false;
         String domainUrl = MainUtility.getDomain(post.getUrl());
@@ -171,7 +160,7 @@ public class RedditServiceImpl implements RedditService {
         }
     }
 
-    private void getImagesForPost(AwsContent post) {
+    private void getImagesForPost(NewsContent post) {
         HttpEntity entity = new HttpEntity(htmlHeaders);
         boolean iconUrlSet = false;
         String domainUrl = MainUtility.getDomain(post.getUrl());
@@ -267,7 +256,7 @@ public class RedditServiceImpl implements RedditService {
         HttpEntity entity = new HttpEntity(headers);
         ResponseEntity<String> response = restTemplate.exchange(
                 redditNewPosts, HttpMethod.GET, entity, String.class);
-        List<RedditPostNew> list = new ArrayList<>();
+        List<RedditPost> list = new ArrayList<>();
         try {
             Map<String, Object> mapping = mapper.readValue(response.getBody(), typeRef);
             LinkedHashMap<String, Object> root = (LinkedHashMap<String, Object>) mapping.get("data");
@@ -275,7 +264,7 @@ public class RedditServiceImpl implements RedditService {
             children.forEach(child -> {
                 if (iterate.get()) {
                     LinkedHashMap<String, Object> data = (LinkedHashMap<String, Object>) child.get("data");
-                    RedditPostNew post = new RedditPostNew(data);
+                    RedditPost post = new RedditPost(data);
                     if (post.getId().equals(lastNewPost)) {
                         iterate.set(false);
                     }
@@ -285,7 +274,7 @@ public class RedditServiceImpl implements RedditService {
                 }
             });
             lastNewPost = list.get(0).getId();
-            redditNewRepository.saveAll(list);
+            redditRepository.saveAll(list);
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }
@@ -296,7 +285,7 @@ public class RedditServiceImpl implements RedditService {
         HttpEntity entity = new HttpEntity(headers);
         ResponseEntity<String> response = restTemplate.exchange(
                 redditNewF1PornPosts, HttpMethod.GET, entity, String.class);
-        List<RedditPostNew> list = new ArrayList<>();
+        List<RedditPost> list = new ArrayList<>();
         try {
             Map<String, Object> mapping = mapper.readValue(response.getBody(), typeRef);
             LinkedHashMap<String, Object> root = (LinkedHashMap<String, Object>) mapping.get("data");
@@ -304,7 +293,7 @@ public class RedditServiceImpl implements RedditService {
             children.forEach(child -> {
                 if (iterate.get()) {
                     LinkedHashMap<String, Object> data = (LinkedHashMap<String, Object>) child.get("data");
-                    RedditPostNew post = new RedditPostNew(data);
+                    RedditPost post = new RedditPost(data);
                     if (post.getId().equals(lastNewF1PornPost)) {
                         iterate.set(false);
                     }
@@ -314,7 +303,7 @@ public class RedditServiceImpl implements RedditService {
                 }
             });
             lastNewF1PornPost = list.get(0).getId();
-            redditNewRepository.saveAll(list);
+            redditRepository.saveAll(list);
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }

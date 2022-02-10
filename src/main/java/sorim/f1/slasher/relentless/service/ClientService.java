@@ -32,13 +32,11 @@ public interface ClientService {
 
     TrippleTwitterFeed getTwitterPosts(Integer mode, Integer page);
 
-    TrippleRedditNewFeed getRedditNewPosts(Integer mode, Integer page);
-
-    DoubleRedditTopFeed getRedditTopPosts(Integer page);
+    TrippleRedditFeed getRedditPosts(Integer mode, Integer page);
 
     Tripple4chanFeed get4chanPosts(Integer mode, Integer page);
 
-    List<FourChanSecondaryPostEntity> get4chanSecondaryPosts();
+    List<Streamable> getStreamables();
 
     void fetchRedditPosts();
 
@@ -52,15 +50,15 @@ public interface ClientService {
 
     byte[] getArt(String code);
 
-    String postContent(AwsContent content, String ipAddress);
+    String postContent(NewsContent content, String ipAddress);
 
-    List<AwsContent> getNews(Integer page);
+    List<NewsContent> getNews(Integer page);
 
-    AwsContent getAwsPost(String code);
+    NewsContent getNewsPost(String code);
 
-    List<AwsComment> postAwsComment(AwsComment comment, String ipAddress);
+    List<NewsComment> postNewsComment(NewsComment comment, String ipAddress);
 
-    List<AwsComment> getAwsComments(String code);
+    List<NewsComment> getNewsComments(String code);
 
     BasicResponse moderateComment(CommentModeration moderation);
 
@@ -70,7 +68,7 @@ public interface ClientService {
 
     String setIframeLink(String link);
 
-    AwsContent getTopNews();
+    NewsContent getTopNews();
 
     String getStreamer();
 

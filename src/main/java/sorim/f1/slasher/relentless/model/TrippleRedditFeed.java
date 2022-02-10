@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import sorim.f1.slasher.relentless.entities.RedditPostNew;
+import sorim.f1.slasher.relentless.entities.RedditPost;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,13 +13,13 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class TrippleRedditNewFeed {
+public class TrippleRedditFeed {
 
-    private List<RedditPostNew> first = new ArrayList<>();
-    private List<RedditPostNew> second = new ArrayList<>();
-    private List<RedditPostNew> third = new ArrayList<>();
+    private List<RedditPost> first = new ArrayList<>();
+    private List<RedditPost> second = new ArrayList<>();
+    private List<RedditPost> third = new ArrayList<>();
 
-    public TrippleRedditNewFeed(Integer mode, List<RedditPostNew> posts) {
+    public TrippleRedditFeed(Integer mode, List<RedditPost> posts) {
         if(mode==2){
             for(int i = 1; i<posts.size(); i+=2){
                 first.add(posts.get(i-1));

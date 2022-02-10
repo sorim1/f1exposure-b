@@ -12,7 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "SS_STREAM")
+@Table(name = "FOURCHAN_POSTS")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -22,14 +22,14 @@ public class FourChanPostEntity {
 
     @Id
     private Integer id;
-    private String name;
-    private Integer event;
+    private String text;
+    private Integer thread;
     private String url;
 
     public FourChanPostEntity(FourchanPost post, Integer threadId) {
         this.id=post.getNo();
-        this.name=post.getCom();
-        this.event=threadId;
+        this.text ="( " + post.getW() + " x " + post.getH() + " )";
+        this.thread =threadId;
         this.url = "https://i.4cdn.org/sp/" + post.getTim() + post.getExt();
     }
 }

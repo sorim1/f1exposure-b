@@ -53,8 +53,8 @@ public class AdminServiceImpl implements AdminService {
     private final ConstructorStandingsByRoundRepository constructorStandingsByRoundRepository;
     private final DriverRepository driverRepository;
     private final PropertiesRepository propertiesRepository;
-    private final AwsRepository awsRepository;
-    private final AwsCommentRepository awsCommentRepository;
+    private final NewsRepository newsRepository;
+    private final NewsCommentRepository newsCommentRepository;
     private final F1CommentRepository f1CommentRepository;
     private final JsonRepository jsonRepository;
     private final InstagramService instagramService;
@@ -434,14 +434,14 @@ public class AdminServiceImpl implements AdminService {
             case 1:
                 return f1CommentRepository.updateStatus(id, 1);
             case 2:
-                return awsCommentRepository.updateStatus(id, 2);
+                return newsCommentRepository.updateStatus(id, 2);
         }
         return -1;
     }
 
     @Override
-    public AwsContent patchAwsPost(AwsContent entry) {
-        return awsRepository.save(entry);
+    public NewsContent patchAwsPost(NewsContent entry) {
+        return newsRepository.save(entry);
     }
 
     @Override
@@ -532,15 +532,15 @@ public class AdminServiceImpl implements AdminService {
     @Override
     public Aws backupPosts() {
         return Aws.builder()
-                .awsContents(awsRepository.findAll())
-                .awsComments(awsCommentRepository.findAll())
+                .newsContents(newsRepository.findAll())
+                .newsComments(newsCommentRepository.findAll())
                 .build();
     }
 
     @Override
     public Boolean restorePosts(Aws body) {
-        awsRepository.saveAll(body.getAwsContents());
-        awsCommentRepository.saveAll(body.getAwsComments());
+        newsRepository.saveAll(body.getNewsContents());
+        newsCommentRepository.saveAll(body.getNewsComments());
         return true;
     }
 
@@ -564,7 +564,7 @@ public class AdminServiceImpl implements AdminService {
 
     @Override
     public Integer deleteAwsContent(String username) {
-        return awsRepository.deleteAllByUsername(username);
+        return newsRepository.deleteAllByUsername(username);
     }
 
     @Override

@@ -8,19 +8,20 @@ import lombok.NoArgsConstructor;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import java.util.Date;
 
-//@Entity
-//@Table(name = "FORCHAN_POSTS")
+@Entity
+@Table(name = "MERCURY_TABLE")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class ForchanPost {
+public class PlaceholderEntity {
 
     @Id
-    private Long id;
-    private String text;
-    private String url;
-    private String mediaUrl;
+    private String id;
+    private String text1;
+    private String text2;
+    private String text3;
+    private Long number1;
+    private Integer number2;
 }

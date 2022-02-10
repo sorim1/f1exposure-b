@@ -131,7 +131,7 @@ public class AdminController {
     }
 
     @PatchMapping("/updateAwsPost/")
-    AwsContent getAwsPost(@RequestHeader String client, @RequestBody AwsContent entry) throws Exception {
+    NewsContent getAwsPost(@RequestHeader String client, @RequestBody NewsContent entry) throws Exception {
         securityService.validateHeader(client);
         return service.patchAwsPost(entry);
     }

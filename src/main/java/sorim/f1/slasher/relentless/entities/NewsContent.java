@@ -9,19 +9,18 @@ import lombok.NoArgsConstructor;
 import sorim.f1.slasher.relentless.util.MainUtility;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.List;
 
 @Entity
-@Table(name = "AWS")
+@Table(name = "NEWS")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class AwsContent {
+public class NewsContent {
 
     @Id
     private String code;
@@ -40,9 +39,9 @@ public class AwsContent {
     private String ip;
 
     @Transient
-    private List<AwsComment> comments;
+    private List<NewsComment> comments;
 
-    public AwsContent(LinkedHashMap<String, Object> data, long time) {
+    public NewsContent(LinkedHashMap<String, Object> data, long time) {
         this.code = MainUtility.generateCodeFromTitleAndId((String) data.get("title"), (String) data.get("id"));
         this.title = (String) data.get("title");
         this.url = (String) data.get("url_overridden_by_dest");

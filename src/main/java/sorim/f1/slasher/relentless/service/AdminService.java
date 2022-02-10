@@ -35,7 +35,7 @@ public interface AdminService {
 
     Integer deleteComment(Integer mode, Integer id);
 
-    AwsContent patchAwsPost(AwsContent entry);
+    NewsContent patchAwsPost(NewsContent entry);
 
     List<Integer> updateCurrentRound(boolean increaseOnly);
 

@@ -31,15 +31,15 @@ public class ClientServiceImpl implements ClientService {
     public static String overlays;
     public static List<String> overlayList;
     public static String iframeLink;
-    private static AwsContent topNews = new AwsContent();
+    private static NewsContent topNews = new NewsContent();
     private final MainProperties properties;
     private final CalendarRepository calendarRepository;
     private final DriverStandingsRepository driverStandingsRepository;
     private final ConstructorStandingsRepository constructorStandingsRepository;
     private final JsonRepository jsonRepository;
     private final F1CommentRepository f1CommentRepository;
-    private final AwsRepository awsRepository;
-    private final AwsCommentRepository awsCommentRepository;
+    private final NewsRepository newsRepository;
+    private final NewsCommentRepository newsCommentRepository;
     private final InstagramService instagramService;
     private final TwitterService twitterService;
     private final TwitchService twitchService;
@@ -160,18 +160,13 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
-    public TrippleRedditNewFeed getRedditNewPosts(Integer mode, Integer page) {
-        return new TrippleRedditNewFeed(mode, redditService.getRedditNewPosts(page));
-    }
-
-    @Override
-    public DoubleRedditTopFeed getRedditTopPosts(Integer page) {
-        return new DoubleRedditTopFeed(redditService.getRedditTopPosts(page));
+    public TrippleRedditFeed getRedditPosts(Integer mode, Integer page) {
+        return new TrippleRedditFeed(mode, redditService.getRedditPosts(page));
     }
 
     @Override
     public void fetchRedditPosts() {
-        AwsContent latestNews = redditService.fetchRedditPosts();
+        NewsContent latestNews = redditService.fetchRedditPosts();
         if (latestNews != null) {
             topNews = latestNews;
         }
@@ -183,8 +178,8 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
-    public List<FourChanSecondaryPostEntity> get4chanSecondaryPosts() {
-        return forchanService.get4chanSecondaryPosts();
+    public List<Streamable> getStreamables() {
+        return forchanService.getStreamables();
     }
 
     @Override
@@ -217,7 +212,7 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
-    public String postContent(AwsContent content, String ipAddress) {
+    public String postContent(NewsContent content, String ipAddress) {
         //String code = UUID.randomUUID().toString();
         String code = MainUtility.generateCodeFromTitle(content.getTitle());
         content.setCode(code);
@@ -233,7 +228,7 @@ public class ClientServiceImpl implements ClientService {
         String username = MainUtility.handleUsername(content.getUsername());
         content.setUsername(username);
         content.setIp(ipAddress);
-        awsRepository.save(content);
+        newsRepository.save(content);
         if (content.getUrl() != null) {
             updatePostImagesAsync(content);
         }
@@ -241,44 +236,44 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Async
-    void updatePostImagesAsync(AwsContent content) {
+    void updatePostImagesAsync(NewsContent content) {
         new Thread(() -> {
             redditService.updatePostImages(content);
-            awsRepository.save(content);
+            newsRepository.save(content);
         }).start();
     }
 
     @Override
-    public List<AwsContent> getNews(Integer page) {
+    public List<NewsContent> getNews(Integer page) {
         Pageable paging = PageRequest.of(page, 15);
-        return awsRepository.findAllByStatusLessThanEqualOrderByTimestampActivityDesc(3, paging);
+        return newsRepository.findAllByStatusLessThanEqualOrderByTimestampActivityDesc(3, paging);
     }
 
     @Override
-    public AwsContent getAwsPost(String code) {
-        AwsContent response = awsRepository.findByCodeAndStatusLessThanEqual(code, 3);
+    public NewsContent getNewsPost(String code) {
+        NewsContent response = newsRepository.findByCodeAndStatusLessThanEqual(code, 3);
         if (response != null) {
-            response.setComments(awsCommentRepository.findAllByContentCodeAndStatusOrderByTimestampCreatedDesc(code, 1));
+            response.setComments(newsCommentRepository.findAllByContentCodeAndStatusOrderByTimestampCreatedDesc(code, 1));
         }
         return response;
     }
 
     @Override
-    public List<AwsComment> postAwsComment(AwsComment comment, String ipAddress) {
+    public List<NewsComment> postNewsComment(NewsComment comment, String ipAddress) {
         comment.setTimestampCreated(new Date());
         comment.setTextContent(comment.getTextContent().replaceAll("[\n\n\n]+", "\n"));
         String username = MainUtility.handleUsername(comment.getUsername());
         comment.setUsername(username);
         comment.setStatus(1);
         comment.setIp(ipAddress);
-        awsCommentRepository.save(comment);
-        awsRepository.updateActivityAndCommentCount(comment.getContentCode(), new Date());
-        return awsCommentRepository.findAllByContentCodeAndStatusOrderByTimestampCreatedDesc(comment.getContentCode(), 1);
+        newsCommentRepository.save(comment);
+        newsRepository.updateActivityAndCommentCount(comment.getContentCode(), new Date());
+        return newsCommentRepository.findAllByContentCodeAndStatusOrderByTimestampCreatedDesc(comment.getContentCode(), 1);
     }
 
     @Override
-    public List<AwsComment> getAwsComments(String code) {
-        return awsCommentRepository.findAllByContentCodeAndStatusOrderByTimestampCreatedDesc(code, 1);
+    public List<NewsComment> getNewsComments(String code) {
+        return newsCommentRepository.findAllByContentCodeAndStatusOrderByTimestampCreatedDesc(code, 1);
     }
 
     @Override
@@ -310,17 +305,17 @@ public class ClientServiceImpl implements ClientService {
             }
         }
         if (moderation.getPanel() == 2) {
-            AwsComment comment = awsCommentRepository.findAwsCommentByIdAndStatus(moderation.getCommentId(), oppositeStatus);
+            NewsComment comment = newsCommentRepository.findNewsCommentByIdAndStatus(moderation.getCommentId(), oppositeStatus);
             if (comment != null) {
-                state = awsCommentRepository.updateStatus(moderation.getCommentId(), moderation.getAction());
-                AwsComment notification = AwsComment.builder()
+                state = newsCommentRepository.updateStatus(moderation.getCommentId(), moderation.getAction());
+                NewsComment notification = NewsComment.builder()
                         .textContent(message)
                         .status(1)
                         .contentCode(comment.getContentCode())
                         .timestampCreated(new Date())
                         .username(SYSTEM_MESSAGE)
                         .build();
-                awsCommentRepository.save(notification);
+                newsCommentRepository.save(notification);
             }
 
         }
@@ -358,7 +353,7 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
-    public AwsContent getTopNews() {
+    public NewsContent getTopNews() {
         return topNews;
     }
 
@@ -386,7 +381,7 @@ public class ClientServiceImpl implements ClientService {
     public void init() {
         initOverlays();
         initIframeLink();
-        topNews = awsRepository.findFirstByStatusLessThanEqualOrderByTimestampActivityDesc(3);
+        topNews = newsRepository.findFirstByStatusLessThanEqualOrderByTimestampActivityDesc(3);
         log.info("clientServiceInit: {} -{}", iframeLink, overlays);
     }
 

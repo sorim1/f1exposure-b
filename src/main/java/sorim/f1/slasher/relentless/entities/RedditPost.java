@@ -15,12 +15,12 @@ import java.util.LinkedHashMap;
 import java.util.Objects;
 
 @Entity
-@Table(name = "REDDIT_POSTS_NEW")
+@Table(name = "REDDIT_POSTS")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class RedditPostNew {
+public class RedditPost {
 
     @Id
     private String id;
@@ -40,7 +40,7 @@ public class RedditPostNew {
     @JsonIgnore
     private Boolean valid =false;
 
-    public RedditPostNew(LinkedHashMap<String, Object> data) {
+    public RedditPost(LinkedHashMap<String, Object> data) {
         this.id = (String) data.get("id");
         this.title = (String) data.get("title");
         ArrayList<LinkedHashMap<String, Object>> link_flair_richtext = (ArrayList<LinkedHashMap<String, Object>>) data.get("link_flair_richtext");

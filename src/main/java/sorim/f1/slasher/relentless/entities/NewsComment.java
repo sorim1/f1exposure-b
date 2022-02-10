@@ -11,13 +11,13 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "AWS_COMMENT")
+@Table(name = "NEWS_COMMENT")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class AwsComment {
+public class NewsComment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

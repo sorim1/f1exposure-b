@@ -4,8 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import sorim.f1.slasher.relentless.entities.AwsComment;
-import sorim.f1.slasher.relentless.entities.AwsContent;
+import sorim.f1.slasher.relentless.entities.NewsComment;
+import sorim.f1.slasher.relentless.entities.NewsContent;
 
 import java.util.List;
 
@@ -15,7 +15,7 @@ import java.util.List;
 @Builder
 public class Aws {
 
-    private List<AwsContent> awsContents;
-    private List<AwsComment> awsComments;
+    private List<NewsContent> newsContents;
+    private List<NewsComment> newsComments;
 
 }

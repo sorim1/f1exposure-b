@@ -122,16 +122,10 @@ public class ClientController {
         return service.getTwitterPosts(mode, page);
     }
 
-    @GetMapping("/getNewRedditPosts/{mode}/{page}")
-    TrippleRedditNewFeed getNewRedditPosts(@RequestHeader String client, @PathVariable("mode") Integer mode, @PathVariable("page") Integer page) throws Exception {
+    @GetMapping("/getRedditPosts/{mode}/{page}")
+    TrippleRedditFeed getNewRedditPosts(@RequestHeader String client, @PathVariable("mode") Integer mode, @PathVariable("page") Integer page) throws Exception {
         securityService.validateHeader(client);
-        return service.getRedditNewPosts(mode, page);
-    }
-
-    @GetMapping("/getTopRedditPosts/{page}")
-    DoubleRedditTopFeed getRedditTopPosts(@RequestHeader String client, @PathVariable("page") Integer page) throws Exception {
-        securityService.validateHeader(client);
-        return service.getRedditTopPosts(page);
+        return service.getRedditPosts(mode, page);
     }
 
     @GetMapping("/get4chanPosts/{mode}/{page}")
@@ -140,10 +134,10 @@ public class ClientController {
         return service.get4chanPosts(mode, page);
     }
 
-    @GetMapping("/get4chanSecondaryPosts")
-    List<FourChanSecondaryPostEntity> get4chanPosts(@RequestHeader String client) throws Exception {
+    @GetMapping("/getStreamables")
+    List<Streamable> getStreamables(@RequestHeader String client) throws Exception {
         securityService.validateHeader(client);
-        return service.get4chanSecondaryPosts();
+        return service.getStreamables();
     }
 
     @GetMapping("/fetchRedditPosts")
@@ -159,15 +153,15 @@ public class ClientController {
         return service.fetch4chanPosts();
     }
 
-    @PostMapping("/postAwsContent")
-    String postContent(@RequestHeader String client, @RequestBody AwsContent content, HttpServletRequest request) throws Exception {
+    @PostMapping("/postNewsContent")
+    String postContent(@RequestHeader String client, @RequestBody NewsContent content, HttpServletRequest request) throws Exception {
         securityService.validateHeader(client);
         String ipAddress = securityService.validateIp(request);
         return service.postContent(content, ipAddress);
     }
 
     @GetMapping("/getNews/{page}")
-    List<AwsContent> getNews(@RequestHeader String client, @PathVariable("page") Integer page) throws Exception {
+    List<NewsContent> getNews(@RequestHeader String client, @PathVariable("page") Integer page) throws Exception {
         securityService.validateHeader(client);
         return service.getNews(page);
     }
@@ -179,28 +173,28 @@ public class ClientController {
     }
 
     @GetMapping("/getTopNews")
-    AwsContent getTopNews(@RequestHeader String client) throws Exception {
+    NewsContent getTopNews(@RequestHeader String client) throws Exception {
         securityService.validateHeader(client);
         return service.getTopNews();
     }
 
     @GetMapping("/getAwsPost/{code}")
-    AwsContent getAwsPost(@RequestHeader String client, @PathVariable("code") String code) throws Exception {
+    NewsContent getAwsPost(@RequestHeader String client, @PathVariable("code") String code) throws Exception {
         securityService.validateHeader(client);
-        return service.getAwsPost(code);
+        return service.getNewsPost(code);
     }
 
-    @PostMapping("/postAwsComment")
-    List<AwsComment> postAwsComment(@RequestHeader String client, @RequestBody AwsComment comment, HttpServletRequest request) throws Exception {
+    @PostMapping("/postNewsComment")
+    List<NewsComment> postNewsComment(@RequestHeader String client, @RequestBody NewsComment comment, HttpServletRequest request) throws Exception {
         securityService.validateHeader(client);
         String ipAddress = securityService.validateIp(request);
-        return service.postAwsComment(comment, ipAddress);
+        return service.postNewsComment(comment, ipAddress);
     }
 
-    @GetMapping("/getAwsComments/{code}")
-    List<AwsComment> getAwsComments(@RequestHeader String client, @PathVariable("code") String code) throws Exception {
+    @GetMapping("/getNewsComments/{code}")
+    List<NewsComment> getNewsComments(@RequestHeader String client, @PathVariable("code") String code) throws Exception {
         securityService.validateHeader(client);
-        return service.getAwsComments(code);
+        return service.getNewsComments(code);
     }
 
     @PostMapping("/moderateComment")

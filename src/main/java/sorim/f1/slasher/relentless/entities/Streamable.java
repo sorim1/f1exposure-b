@@ -10,25 +10,23 @@ import sorim.f1.slasher.relentless.model.FourchanPost;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "SS_EVENT")
+@Table(name = "STREAMABLE")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class FourChanSecondaryPostEntity {
+public class Streamable {
 
     @Id
     private Integer id;
-    private String name;
-
-    @Column(name = "event_group")
+    private String text;
     private Integer thread;
 
 
-    public FourChanSecondaryPostEntity(FourchanPost post, Integer threadId) {
+    public Streamable(FourchanPost post, Integer threadId) {
         this.id = post.getNo();
-        this.name = post.getCom();
+        this.text = post.getCom();
         this.thread = threadId;
     }
 }
