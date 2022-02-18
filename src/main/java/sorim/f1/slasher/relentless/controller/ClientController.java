@@ -178,7 +178,7 @@ public class ClientController {
         return service.getTopNews();
     }
 
-    @GetMapping("/getAwsPost/{code}")
+    @GetMapping("/getNewsPost/{code}")
     NewsContent getAwsPost(@RequestHeader String client, @PathVariable("code") String code) throws Exception {
         securityService.validateHeader(client);
         return service.getNewsPost(code);

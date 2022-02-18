@@ -22,13 +22,16 @@ f1:
         - 36aed15c-f2ca-40a0-ae6d-96d82091df99
         - 7c36a15a-019a-4c36-944d-c63423480ca5
 server:
+  compression:
+    enabled: true
+    mime-types: application/javascript,text/javascript
   error:
     whitelabel:
       enabled: false
   port: 443
-  http-port-to-redirect: 80
   ssl:
-    key-store: classpath:keystore.p12
+    key-store: /root/keystore.p12
+#    key-store: classpath:keystore.p12
     key-store-password: password
     key-store-type: pkcs12
     key-alias: f1exposure
@@ -72,8 +75,7 @@ logging:
     rollingpolicy:
       max-file-size: 20MB
   file:
-    name: /home/sorim/exposure_log/exposure.log
+    name: /root/exposure_log/exposure.log
 upload:
   path: /uploads-deleteme
-
 

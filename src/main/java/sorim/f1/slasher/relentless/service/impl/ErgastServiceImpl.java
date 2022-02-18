@@ -138,7 +138,7 @@ public class ErgastServiceImpl implements ErgastService {
     @Override
     public ErgastResponse getResultsByRound(Integer season, Integer round) {
         return restTemplate
-                .getForObject(ERGAST_URL + season + "/" + round + "/results.json?limit=70", ErgastResponse.class);
+                .getForObject(ERGAST_URL + season + "/" + round + "/results.json?limit=700", ErgastResponse.class);
     }
 
     private List<ErgastDriver> getAllErgastDrivers() {

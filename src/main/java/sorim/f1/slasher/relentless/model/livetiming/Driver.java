@@ -52,7 +52,7 @@ public class Driver {
     private Integer position;
     private Integer startingPosition;
     private String ergastCode;
-
+    private String finishStatus;
     private Integer points;
     private BigDecimal standingsNewAveragePoints;
     private BigDecimal standingsAverageDifference;

@@ -572,6 +572,9 @@ public class LiveTimingServiceImpl implements LiveTimingService {
 
     public Boolean fetchNewRaceAnalysis(String circuitId) {
         List<RaceData> raceData = ergastService.findByCircuitIdOrderBySeasonDesc(circuitId);
+        if(raceData.get(0).getLiveTimingRace()==null){
+            raceData.remove(0);
+        }
         List<FrontendGraphWeatherData> weatherChartData = new ArrayList<>();
         AtomicReference<Boolean> onlyFirstOne = new AtomicReference<>(true);
         AtomicReference<Boolean> ergastDataAvailable = new AtomicReference<>(false);
@@ -762,6 +765,15 @@ public class LiveTimingServiceImpl implements LiveTimingService {
                         driversMap.get(ergastCodes.get(pitstop.getDriverId())).getPitstops().add(pitstop.getLap());
                     } else {
                         log.error("KEY NOT FOUND: {}", pitstop.getDriverId());
+                    }
+                });
+            }
+            //finalResult
+            ErgastResponse resultsResponse = ergastService.getResultsByRound(Integer.valueOf(season), round);
+            if (resultsResponse.getMrData().getRaceTable().getRaces().size() > 0) {
+                resultsResponse.getMrData().getRaceTable().getRaces().get(0).getResults().forEach(result -> {
+                    if (ergastCodes.containsKey(result.getDriver().getDriverId())) {
+                        driversMap.get(ergastCodes.get(result.getDriver().getDriverId())).setFinishStatus(result.getPositionText());
                     }
                 });
             }
