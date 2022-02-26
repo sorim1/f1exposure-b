@@ -89,7 +89,7 @@ public class InstagramServiceImpl implements InstagramService {
                                     .postType(InstagramPostType.TimelineCarouselMedia.getValue())
                                     .url(url)
                                     .location(location)
-                                    .caption(post.getCaption().getText())
+                                    .caption(getPostCaption(post.getCaption()))
                                     .username(post.getUser().getFull_name())
                                     .userpic(post.getUser().getProfile_pic_url())
                                     .build());
@@ -146,6 +146,14 @@ public class InstagramServiceImpl implements InstagramService {
         fetchImages(instagramPosts);
         Logger.log("INSTAGRAM_FETCH_DONE -  : ", String.valueOf(counter.get()));
         return true;
+    }
+
+    private String getPostCaption(Comment.Caption caption) {
+        if(caption!=null){
+            return caption.getText();
+        } else {
+            return "";
+        }
     }
 
     private String getCaptionText(Comment.Caption caption) {

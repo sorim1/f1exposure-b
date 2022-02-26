@@ -52,9 +52,33 @@ public class FourchanServiceImpl implements FourchanService {
 
     @Override
     public Boolean fetch4chanPosts() {
+        Boolean includesActiveThread = false;
         List<Integer> f1ThreadNumbers = getPreviousF1ThreadNumbers();
-        fetchF1Threads(f1ThreadNumbers);
+        if(f1ThreadNumbers.size()==0){
+            log.error("FOUND NO PreviousF1ThreadNumbers");
+            f1ThreadNumbers = getF1ThreadNumbers();
+            includesActiveThread = true;
+        }
+        f1ThreadNumbers = removeProcessedThreads(f1ThreadNumbers);
+        log.info("fetch4chanPosts:" + f1ThreadNumbers);
+        if(f1ThreadNumbers.size()>0) {
+               fetchF1Threads(f1ThreadNumbers);
+            if(!includesActiveThread){
+                setProcessedThread(f1ThreadNumbers.get(f1ThreadNumbers.size() - 1));
+            }
+        }
         return true;
+    }
+
+    private List<Integer> removeProcessedThreads(List<Integer> f1ThreadNumbers) {
+        List<Integer> response = new ArrayList();
+        Collections.sort(f1ThreadNumbers);
+        f1ThreadNumbers.forEach(threadNo -> {
+            if (threadNo>processedThread) {
+                response.add(threadNo);
+            }
+        });
+        return response;
     }
 
     @Override
@@ -67,9 +91,6 @@ public class FourchanServiceImpl implements FourchanService {
 
     private void fetchF1Threads(List<Integer> f1ThreadNumbers) {
         f1ThreadNumbers.forEach(this::fetchSingleF1Thread);
-        if (f1ThreadNumbers.size()>1) {
-            setProcessedThread(f1ThreadNumbers.get(1));
-        }
     }
 
     private void setProcessedThread(Integer threadId) {
@@ -150,7 +171,7 @@ public class FourchanServiceImpl implements FourchanService {
             List<FourchanCatalog> response = mapper.readValue(responseString, typeRef);
 
             response.forEach(page -> page.getThreads().forEach(thread -> {
-                if (thread.getNo() > processedThread && thread.getSub() != null && thread.getSub().toUpperCase().contains("/F1/")) {
+                if (thread.getSub() != null && thread.getSub().toUpperCase().contains("/F1/")) {
                     f1ThreadNumbers.add(thread.getNo());
                 }
             }));
@@ -172,17 +193,11 @@ public class FourchanServiceImpl implements FourchanService {
             response.forEach(page -> page.getThreads().forEach(thread -> {
                 try{
                 if (thread.getSub() != null && thread.getSub().toUpperCase().contains("/F1/")) {
-                    Integer index = thread.getCom().indexOf("Previous thread");
+                    Integer index = thread.getCom().indexOf("/sp/thread/");
                     if (index >= 0) {
-                        String tempo = thread.getCom().substring(index + 15, index + 70);
-                        index = tempo.indexOf("sp/thread/");
-                        tempo = tempo.substring(index + 10, index + 19);
-                        log.info(tempo);
-                        Integer threadNo = Integer.valueOf(tempo);
-                        if( threadNo > processedThread ){
-                            f1ThreadNumbers.add(threadNo);
-                        }
-
+                        String threadNoString = thread.getCom().substring(index + 11, index + 20);
+                        Integer threadNo = Integer.valueOf(threadNoString);
+                        f1ThreadNumbers.add(threadNo);
                     }
                 }}catch(Exception e){
                     e.printStackTrace();

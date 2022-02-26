@@ -33,7 +33,6 @@ public class Scheduler {
     @Scheduled(cron = "0 0 1 * * MON")
     public void mondayJobs() throws IOException {
         log.info(CODE, "mondayJobs called");
-        adminService.fetchReplayLinks();
         exposureService.closeExposurePoll();
         analysisDone = true;
         strawpollFound = false;
@@ -49,7 +48,6 @@ public class Scheduler {
     @Scheduled(cron = "0 0 18 * * TUE")
     public void tuesdayJobs() throws IOException {
         log.info(CODE, "tuesdayJobs called");
-        adminService.fetchReplayLinks();
         if (!standingsUpdated) {
             adminService.initializeStandings();
             standingsUpdated = true;
@@ -86,7 +84,8 @@ public class Scheduler {
         int delay = 1800000;
         log.info(CODE, "sundayStandingsJobs called");
         adminService.initializeStandings();
-        if (!standingsUpdated) {
+        int weekDay = MainUtility.getWeekDay();
+        if (!standingsUpdated && weekDay==1) {
             log.info(CODE, "sundayStandingsJobs delayed");
             new java.util.Timer().schedule(
                     new java.util.TimerTask() {
@@ -108,7 +107,8 @@ public class Scheduler {
         if (isRaceWeek) {
             Integer delay;
             log.info(CODE, "sundayAnalysisJob called");
-            if (!analysisDone) {
+            int weekDay = MainUtility.getWeekDay();
+            if (!analysisDone && weekDay==1) {
                 delay = liveTimingService.analyzeLatestRace();
                 if (delay != null) {
                     int delayInMiliseconds = delay * 1000;
@@ -135,7 +135,8 @@ public class Scheduler {
     private void analyzeUpcomingRacePeriodically() {
         Integer delay = liveTimingService.analyzeUpcomingRace(false);
         log.info(CODE, "analyzeUpcomingRacePeriodically called");
-        if (delay != null) {
+        int weekDay = MainUtility.getWeekDay();
+        if (delay != null && weekDay>5) {
             int delayInMiliseconds = delay * 1000;
             MainUtility.logTime("analyzeUpcomingRacePeriodically", delayInMiliseconds);
             new java.util.Timer().schedule(
@@ -163,10 +164,11 @@ public class Scheduler {
 
 
     @PostConstruct
-    void onInit() {
+    void onInit() throws Exception {
         log.info("onInitScheduler Called");
         isItRaceWeek();
         int weekDay = MainUtility.getWeekDay();
+        imageFeedJob();
         try {
             switch (weekDay) {
                 case 1:{

@@ -166,7 +166,7 @@ public class MainUtility {
     public static int getWeekDay() {
         Calendar cal = Calendar.getInstance();
         cal.setTime(new Date());
-        log.info("weekDay1");
+        log.info("weekDay:");
         log.info(String.valueOf(Calendar.DAY_OF_WEEK));
         return cal.get(Calendar.DAY_OF_WEEK);
     }
