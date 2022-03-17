@@ -52471,7 +52471,7 @@ class ImageFeedComponent {
                 if (i === newPosts.first.length - 1) {
                     this.fourchanInitialized = true;
                 }
-            }, i * 500);
+            }, i * 1000);
         }
     }
     getFeedColumnPreference() {
@@ -52529,7 +52529,7 @@ ImageFeedComponent.ɵcmp = /*@__PURE__*/ core/* ɵɵdefineComponent */.Xpm({ typ
         core/* ɵɵelementEnd */.qZA();
         core/* ɵɵelementEnd */.qZA();
     } if (rf & 2) {
-        core/* ɵɵproperty */.Q6J("infiniteScrollDistance", 2);
+        core/* ɵɵproperty */.Q6J("infiniteScrollDistance", 3);
         core/* ɵɵadvance */.xp6(2);
         core/* ɵɵpropertyInterpolate */.s9C("opened", ctx.utilityService.getSidebarStatus());
         core/* ɵɵadvance */.xp6(5);

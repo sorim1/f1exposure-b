@@ -56,11 +56,14 @@ public class MainProperties {
         System.out.println("currentSeasonPast: " + this.currentSeasonPast);
     }
 
-    public void updateCurrentSeasonPast(Integer currentErgastSeason) {
-        AppProperty ap = AppProperty.builder().name("CURRENT_SEASON_PAST").value(String.valueOf(currentErgastSeason)).build();
+    public String updateCurrentSeasonPast(Integer newValue) {
+        String response = this.currentSeasonPast + " -> ";
+        AppProperty ap = AppProperty.builder().name("CURRENT_SEASON_PAST").value(String.valueOf(newValue)).build();
         propertiesRepository.save(ap);
-        this.currentSeasonPast = currentErgastSeason;
+        this.currentSeasonPast = newValue;
+        response+=this.currentSeasonPast;
         checkCurrentSeasonFuture();
+        return response;
     }
 
     public void checkCurrentSeasonFuture() {

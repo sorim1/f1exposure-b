@@ -243,4 +243,8 @@ public class AdminController {
     Boolean checkCurrentStream() throws IOException {
         return service.checkCurrentStream();
     }
+    @GetMapping("/updateCurrentSeasonPast/{season}")
+    String updateCurrentSeasonPast(@PathVariable("season") Integer season) throws IOException {
+        return service.updateCurrentSeasonPast(season);
+    }
 }

@@ -331,7 +331,7 @@ public class AdminServiceImpl implements AdminService {
     }
 
     private Boolean refreshDriverStandingsFromErgast() {
-        Boolean bool = false;
+        Boolean bool;
         List<DriverStanding> driverStandings = new ArrayList<>();
         Map<String, DriverStandingByRound> driverStandingsByRound = new HashMap<>();
         ErgastResponse response = ergastService.getCurrentDriverStandings();
@@ -432,7 +432,7 @@ public class AdminServiceImpl implements AdminService {
     public Integer deleteComment(Integer mode, Integer id) {
         switch (mode) {
             case 1:
-                return f1CommentRepository.updateStatus(id, 1);
+                return f1CommentRepository.updateStatus(id, 2);
             case 2:
                 return newsCommentRepository.updateStatus(id, 2);
         }
@@ -618,6 +618,11 @@ public class AdminServiceImpl implements AdminService {
     @Override
     public List<Replay> saveVideos(List<Replay> videos) {
         return videoService.saveVideos(videos);
+    }
+
+    @Override
+    public String updateCurrentSeasonPast(Integer season) {
+        return properties.updateCurrentSeasonPast(season);
     }
 
 

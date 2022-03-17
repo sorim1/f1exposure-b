@@ -45,13 +45,14 @@ public class RedditServiceImpl implements RedditService {
     private final RedditRepository redditRepository;
     private final NewsRepository newsRepository;
     private final ObjectMapper mapper = new ObjectMapper();
-    RestTemplate restTemplate = new RestTemplate();
     HttpHeaders headers = new HttpHeaders();
     HttpHeaders htmlHeaders = new HttpHeaders();
     TypeReference<HashMap<String, Object>> typeRef = new TypeReference<>() {
     };
     TypeReference<ArrayList<Object>> typeRefList = new TypeReference<>() {
     };
+    
+    private final RestTemplate restTemplate;
 
     @Override
     public List<RedditPost> getRedditPosts(Integer page) {
@@ -216,8 +217,8 @@ public class RedditServiceImpl implements RedditService {
                 post.setTitle(titleTags.get(0).wholeText());
             }
         } catch (Exception ex) {
-            log.info("ex2 ");
-            log.info(ex.getMessage());
+            log.info("ex2 " + post.getUrl());
+            ex.printStackTrace();
         }
     }
 

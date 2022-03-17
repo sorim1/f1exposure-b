@@ -79204,7 +79204,7 @@
                 if (i === newPosts.first.length - 1) {
                   _this80.fourchanInitialized = true;
                 }
-              }, i * 500);
+              }, i * 1000);
             };
 
             for (var i = 1; i < newPosts.first.length; i++) {
@@ -79439,7 +79439,7 @@
           if (rf & 2) {
             core
             /* ɵɵproperty */
-            .Q6J("infiniteScrollDistance", 2);
+            .Q6J("infiniteScrollDistance", 3);
             core
             /* ɵɵadvance */
             .xp6(2);

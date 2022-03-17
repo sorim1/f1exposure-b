@@ -84,4 +84,6 @@ public interface AdminService {
     Boolean removeVideo(Integer id);
 
     List<Replay>  saveVideos(List<Replay>  video);
+
+    String updateCurrentSeasonPast(Integer season);
 }
