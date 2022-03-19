@@ -24,15 +24,17 @@ public class Scheduler {
     private final ClientService clientService;
     private final ArtService artService;
     private final LiveTimingService liveTimingService;
-    private final static String CODE = "SCHEDULER";
+    private final ErgastService ergastService;
+
+    private static final String CODE = "SCHEDULER";
     public static Boolean standingsUpdated = false;
     public static Boolean analysisDone = false;
     public static Boolean strawpollFound = false;
-    public static Boolean isRaceWeek = true;
+    private static boolean isRaceWeek = true;
 
     @Scheduled(cron = "0 0 1 * * MON")
     public void mondayJobs() throws IOException {
-        log.info(CODE, "mondayJobs called");
+        log.info(CODE + " mondayJobs called");
         exposureService.closeExposurePoll();
         analysisDone = true;
         strawpollFound = false;
@@ -40,14 +42,20 @@ public class Scheduler {
             adminService.initializeStandings();
             standingsUpdated = true;
         }
-        Boolean artGenerated = artService.generateLatestArt();
-        log.info(CODE, "artGenerated: " + artGenerated);
+        artService.generateLatestArt();
+        if(isRaceWeek){
+            log.info(CODE + " - starting fetchStatisticsFullFromPartial");
+            // ergastService.fetchStatisticsFullFromPartial();
+        } else {
+            log.info(CODE + " - no fetchStatisticsFullFromPartial because it wasnt race weekend");
+        }
+
         isItRaceWeek();
     }
 
     @Scheduled(cron = "0 0 18 * * TUE")
     public void tuesdayJobs() throws IOException {
-        log.info(CODE, "tuesdayJobs called");
+        log.info(CODE + " - tuesdayJobs called");
         if (!standingsUpdated) {
             adminService.initializeStandings();
             standingsUpdated = true;
@@ -82,11 +90,11 @@ public class Scheduler {
     @Scheduled(cron = "0 0 15 * * SUN")
     private void sundayStandingsJobs() throws IOException {
         int delay = 1800000;
-        log.info(CODE, "sundayStandingsJobs called");
+        log.info(CODE + " - sundayStandingsJobs called");
         adminService.initializeStandings();
         int weekDay = MainUtility.getWeekDay();
         if (!standingsUpdated && weekDay==1) {
-            log.info(CODE, "sundayStandingsJobs delayed");
+            log.info(CODE + " - sundayStandingsJobs delayed");
             new java.util.Timer().schedule(
                     new java.util.TimerTask() {
                         @SneakyThrows
@@ -98,7 +106,7 @@ public class Scheduler {
                     delay
             );
         }else {
-            log.info(CODE, "sundayStandingsJobs UPDATED");
+            log.info(CODE + " - sundayStandingsJobs UPDATED");
         }
     }
 
@@ -106,7 +114,7 @@ public class Scheduler {
     private void sundayAnalysisJob() {
         if (isRaceWeek) {
             Integer delay;
-            log.info(CODE, "sundayAnalysisJob called");
+            log.info(CODE + " - sundayAnalysisJob called");
             int weekDay = MainUtility.getWeekDay();
             if (!analysisDone && weekDay==1) {
                 delay = liveTimingService.analyzeLatestRace();
@@ -115,7 +123,7 @@ public class Scheduler {
                     if (!strawpollFound) {
                         strawpollFound = exposureService.initializeExposureFrontendVariables(null);
                     }
-                    log.info(CODE, "sundayAnalysisJob delayed: " + delayInMiliseconds);
+                    log.info(CODE + " - sundayAnalysisJob delayed: " + delayInMiliseconds);
                     new java.util.Timer().schedule(
                             new java.util.TimerTask() {
                                 @SneakyThrows
@@ -134,7 +142,7 @@ public class Scheduler {
 
     private void analyzeUpcomingRacePeriodically() {
         Integer delay = liveTimingService.analyzeUpcomingRace(false);
-        log.info(CODE, "analyzeUpcomingRacePeriodically called");
+        log.info(CODE + " - analyzeUpcomingRacePeriodically called");
         int weekDay = MainUtility.getWeekDay();
         if (delay != null && weekDay>5) {
             int delayInMiliseconds = delay * 1000;

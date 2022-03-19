@@ -264,7 +264,7 @@ public class ErgastServiceImpl implements ErgastService {
         Integer seasonLimit;
         String prefix;
         if (partial) {
-            seasonLimit = 2020;
+            seasonLimit = 2021;
             prefix = "PARTIAL_";
         } else {
             seasonLimit = properties.getCurrentSeasonPast();
@@ -280,9 +280,7 @@ public class ErgastServiceImpl implements ErgastService {
         for (int season = firstSeason; season <= seasonLimit; season++) {
             List<ErgastStanding> list = getErgastStandingsByYear(season);
             int finalSeason = season;
-            list.forEach(es -> {
-                driversMap.get(es.getDriver().getDriverId()).pushSeasonStanding(finalSeason, es);
-            });
+            list.forEach(es -> driversMap.get(es.getDriver().getDriverId()).pushSeasonStanding(finalSeason, es));
             constructorsMap.get(list.get(0).getConstructors().get(list.get(0).getConstructors().size() - 1).getConstructorId()).addWdc(season, list.get(0).getDriver().getGivenName() + " " + list.get(0).getDriver().getFamilyName());
             List<ErgastStanding> list2 = getErgastConstructorStandingsByYear(season);
             list2.forEach(es -> {
@@ -331,7 +329,7 @@ public class ErgastServiceImpl implements ErgastService {
                 log.error("ID NOT FOUND: " + id);
             }
         });
-        fetchStatisticsCore(driversMap, constructorsMap, circuitsMap, 2021, properties.getCurrentSeasonPast(), "");
+        fetchStatisticsCore(driversMap, constructorsMap, circuitsMap, 2022, properties.getCurrentSeasonPast(), "");
         return true;
     }
 
