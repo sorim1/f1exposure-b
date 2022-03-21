@@ -224,9 +224,9 @@ public class AdminServiceImpl implements AdminService {
         Boolean changesDetected = refreshDriverStandingsFromErgast();
         initializeConstructorStandings();
         if (changesDetected) {
-            generateChart();
             Scheduler.standingsUpdated = true;
         }
+        generateChart();
         return changesDetected;
     }
 
@@ -358,13 +358,15 @@ public class AdminServiceImpl implements AdminService {
 
     private Boolean checkSeasonAndRound(Integer round, Integer season) {
         Boolean response = false;
-        if (CURRENT_ROUND != round) {
-            CURRENT_ROUND = round;
-            propertiesRepository.updateProperty("round", CURRENT_ROUND.toString());
-        }
-        if (!season.equals(properties.getCurrentSeasonPast())) {
+
+        if (season>properties.getCurrentSeasonPast()) {
             log.warn("UPDATED SEASON: {} - {} ", season, properties.getCurrentSeasonPast());
             properties.updateCurrentSeasonPast(season);
+            CURRENT_ROUND = 1;
+            propertiesRepository.updateProperty("round", CURRENT_ROUND.toString());
+        } else if (CURRENT_ROUND < round) {
+            CURRENT_ROUND = round;
+            propertiesRepository.updateProperty("round", CURRENT_ROUND.toString());
         }
         log.info("checkSeasonAndRound: {}", response);
         return response;

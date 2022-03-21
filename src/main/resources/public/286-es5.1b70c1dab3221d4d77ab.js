@@ -52867,49 +52867,40 @@
           core
           /* ɵɵelementEnd */
           .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(5, "div", 45);
 
           core
           /* ɵɵtext */
-          ._uU(6, " Exposure formula is ");
-
-          core
-          /* ɵɵelementStart */
-          .TgZ(7, "p");
-
-          core
-          /* ɵɵtext */
-          ._uU(8, "exposure = votes/total voters");
+          ._uU(5, " - and that's not me. This site finds the strawpoll and stores its results. ");
 
           core
           /* ɵɵelementEnd */
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(9, "p");
+          .TgZ(6, "div", 45);
 
           core
           /* ɵɵtext */
-          ._uU(10, " Example: There are only 2 people voting. One votes HAM and VER, the other votes HAM, BOT and GAS. That's total of 2 voters, and 5 votes. HAM's exposure is 100% ( 2/2, all voters voted for him), VER/BOT/GAS exposure is 50% ");
+          ._uU(7, " Exposure formula is ");
+
+          core
+          /* ɵɵelementStart */
+          .TgZ(8, "p");
+
+          core
+          /* ɵɵtext */
+          ._uU(9, "exposure = votes/total voters");
 
           core
           /* ɵɵelementEnd */
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(11, "p");
-          core
-          /* ɵɵelementStart */
-          .TgZ(12, "span", 46);
+          .TgZ(10, "p");
 
           core
           /* ɵɵtext */
-          ._uU(13, ">Is the 2021 data real?");
+          ._uU(11, " Example: There are only 2 people voting. One votes HAM and VER, the other votes HAM, BOT and GAS. That's total of 2 voters, and 5 votes. HAM's exposure is 100% ( 2/2, all voters voted for him), VER/BOT/GAS exposure is 50% ");
 
           core
           /* ɵɵelementEnd */
@@ -52917,33 +52908,8 @@
 
           core
           /* ɵɵelement */
-          ._UZ(14, "br");
+          ._UZ(12, "p");
 
-          core
-          /* ɵɵelementStart */
-          .TgZ(15, "b");
-
-          core
-          /* ɵɵtext */
-          ._uU(16, "NO.");
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(17, "p");
-
-          core
-          /* ɵɵtext */
-          ._uU(18, " While the latest race data should be real, all the previous data is dummy. F1exposure.com didn't exist before September 10th 2021, and it only connected to strawpoll month later. ");
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -52984,7 +52950,7 @@
           .TgZ(6, "mat-tab", 22);
           core
           /* ɵɵtemplate */
-          .YNc(7, ExposedComponent_div_20_ng_template_7_Template, 19, 0, "ng-template", 20);
+          .YNc(7, ExposedComponent_div_20_ng_template_7_Template, 13, 0, "ng-template", 20);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -53166,7 +53132,7 @@
         }, {
           key: "getStrawpollUrl",
           value: function getStrawpollUrl(code) {
-            return 'https://strawpoll.com/' + code;
+            return 'https://strawpoll.com/polls/' + code;
           }
         }, {
           key: "getExposureResults",
@@ -53326,7 +53292,7 @@
         },
         decls: 21,
         vars: 4,
-        consts: [[1, "div-padded"], ["autosize", ""], ["mode", "side", "position", "end", 1, "example-sidenav", 3, "opened", "openedChange"], ["drawer", ""], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area", 3, "ngModel", "focus", "focusout", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "active-color-button", 3, "click"], [4, "ngFor", "ngForOf"], [1, "fixed-button"], ["type", "fixed-plugin", "mat-button", "", 3, "click"], [1, "fa", "fa-commenting-o", "fa-2x"], ["class", "div-padded-right bg-white height-fill-screen", "id", "chart1", 4, "ngIf"], [1, "basic-comment"], [1, "header-left", "hover-pointer", 3, "click"], [1, "header-right", "hover-pointer", 3, "click"], [1, "basic-comment-body"], ["id", "chart1", 1, "div-padded-right", "bg-white", "height-fill-screen"], ["label", "Latest race"], ["matTabContent", ""], ["label", "World Exposure Championship"], ["label", "Info"], ["class", "div-padded-always-left-right-1 row", 4, "ngIf"], [3, "chart", "dataLabels", "plotOptions", "series", "xaxis", "title", "yaxis"], [3, "chart", "dataLabels", "plotOptions", "series", "xaxis", "title"], [1, "div-padded-always-left-right-1", "row"], ["target", "_blank", 1, "div-float-right", 3, "href"], ["color", "accent", "mat-flat-button", "", 1, "width-100"], ["class", "col-lg-4 col-md-6 col-xs-6", 4, "ngIf"], ["class", "col-lg-8 col-md-6 col-xs-6", 4, "ngIf"], [1, "col-lg-4", "col-md-6", "col-xs-6"], [1, "table", "table-striped"], ["colspan", "4", 1, "text-center", "bg-primary", "text-white"], [1, "text-center", "bg-info", "text-white"], ["scope", "col"], ["scope", "row"], [1, "text-center"], [1, "text-right"], [1, "col-lg-8", "col-md-6", "col-xs-6"], [3, "series", "xaxis", "yaxis", "title", "chart", "stroke", "tooltip"], [3, "chart", "dataLabels", "plotOptions", "series", "title", "xaxis", "yaxis", "colors", "legend"], [3, "series", "xaxis", "yaxis", "title", "chart", "stroke", "legend"], [1, "card", "div-padded-2rem", "text-justify"], ["href", "https://strawpoll.com/user/vitaly-petrov"], [1, "text-justify"], [1, "implying"]],
+        consts: [[1, "div-padded"], ["autosize", ""], ["mode", "side", "position", "end", 1, "example-sidenav", 3, "opened", "openedChange"], ["drawer", ""], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area", 3, "ngModel", "focus", "focusout", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "active-color-button", 3, "click"], [4, "ngFor", "ngForOf"], [1, "fixed-button"], ["type", "fixed-plugin", "mat-button", "", 3, "click"], [1, "fa", "fa-commenting-o", "fa-2x"], ["class", "div-padded-right bg-white height-fill-screen", "id", "chart1", 4, "ngIf"], [1, "basic-comment"], [1, "header-left", "hover-pointer", 3, "click"], [1, "header-right", "hover-pointer", 3, "click"], [1, "basic-comment-body"], ["id", "chart1", 1, "div-padded-right", "bg-white", "height-fill-screen"], ["label", "Latest race"], ["matTabContent", ""], ["label", "World Exposure Championship"], ["label", "Info"], ["class", "div-padded-always-left-right-1 row", 4, "ngIf"], [3, "chart", "dataLabels", "plotOptions", "series", "xaxis", "title", "yaxis"], [3, "chart", "dataLabels", "plotOptions", "series", "xaxis", "title"], [1, "div-padded-always-left-right-1", "row"], ["target", "_blank", 1, "div-float-right", 3, "href"], ["color", "accent", "mat-flat-button", "", 1, "width-100"], ["class", "col-lg-4 col-md-6 col-xs-6", 4, "ngIf"], ["class", "col-lg-8 col-md-6 col-xs-6", 4, "ngIf"], [1, "col-lg-4", "col-md-6", "col-xs-6"], [1, "table", "table-striped"], ["colspan", "4", 1, "text-center", "bg-primary", "text-white"], [1, "text-center", "bg-info", "text-white"], ["scope", "col"], ["scope", "row"], [1, "text-center"], [1, "text-right"], [1, "col-lg-8", "col-md-6", "col-xs-6"], [3, "series", "xaxis", "yaxis", "title", "chart", "stroke", "tooltip"], [3, "chart", "dataLabels", "plotOptions", "series", "title", "xaxis", "yaxis", "colors", "legend"], [3, "series", "xaxis", "yaxis", "title", "chart", "stroke", "legend"], [1, "card", "div-padded-2rem", "text-justify"], ["href", "https://strawpoll.com/user/vitaly-petrov"], [1, "text-justify"]],
         template: function ExposedComponent_Template(rf, ctx) {
           if (rf & 1) {
             var _r21 = core

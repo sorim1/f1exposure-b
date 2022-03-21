@@ -298,8 +298,8 @@ public class FourchanServiceImpl implements FourchanService {
                     }
                     if (counter >= 2) {
                         log.info("FOUND STRAWPOLL POST");
-                        Integer index = strawPollPost.getCom().toUpperCase().indexOf("STRAWPOLL.COM/") + 14;
-                        String strawpollString = strawPollPost.getCom().substring(index, index + 9);
+                        Integer index = strawPollPost.getCom().toUpperCase().indexOf("STRAWPOLL.COM/POLLS/") + 20;
+                        String strawpollString = strawPollPost.getCom().substring(index, index + 11);
                         log.info("strawpollString: {}", strawpollString);
                         strawpollId.set(strawpollString);
                     }

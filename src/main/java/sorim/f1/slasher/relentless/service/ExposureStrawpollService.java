@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface ExposureStrawpollService {
 
-    StrawpollModel fetchStrawpollResults();
+    StrawpollModelTwo fetchStrawpollResults();
 
     String initializeStrawpoll(String id);
 
