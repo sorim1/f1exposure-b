@@ -280,11 +280,14 @@ public class ErgastServiceImpl implements ErgastService {
         for (int season = firstSeason; season <= seasonLimit; season++) {
             List<ErgastStanding> list = getErgastStandingsByYear(season);
             int finalSeason = season;
-            list.forEach(es -> driversMap.get(es.getDriver().getDriverId()).pushSeasonStanding(finalSeason, es));
-            constructorsMap.get(list.get(0).getConstructors().get(list.get(0).getConstructors().size() - 1).getConstructorId()).addWdc(season, list.get(0).getDriver().getGivenName() + " " + list.get(0).getDriver().getFamilyName());
+            Boolean ongoingSeason = isItOngoingSeason(season);
+            list.forEach(es -> driversMap.get(es.getDriver().getDriverId()).pushSeasonStanding(finalSeason, es, ongoingSeason));
+            if(!ongoingSeason) {
+                constructorsMap.get(list.get(0).getConstructors().get(list.get(0).getConstructors().size() - 1).getConstructorId()).addWdc(season, list.get(0).getDriver().getGivenName() + " " + list.get(0).getDriver().getFamilyName());
+            }
             List<ErgastStanding> list2 = getErgastConstructorStandingsByYear(season);
             list2.forEach(es -> {
-                constructorsMap.get(es.getConstructor().getConstructorId()).pushSeasonStanding(finalSeason, es);
+                constructorsMap.get(es.getConstructor().getConstructorId()).pushSeasonStanding(finalSeason, es, ongoingSeason);
             });
 
             log.info("season_A: {}", season);
@@ -306,6 +309,10 @@ public class ErgastServiceImpl implements ErgastService {
             }
         }
         saveAll(driversMap, constructorsMap, circuitsMap, races, savePrefix);
+    }
+
+    private Boolean isItOngoingSeason(int season) {
+        return properties.getCurrentSeasonFuture()==season;
     }
 
     @Override

@@ -41,8 +41,8 @@ public class ConstructorStatistics {
         this.ergastConstructor = ergastConstructor;
     }
 
-    public void pushSeasonStanding(Integer season, ErgastStanding es) {
-        if(es.getPosition()==1){
+    public void pushSeasonStanding(Integer season, ErgastStanding es, Boolean ongoingSeason) {
+        if(!ongoingSeason && es.getPosition()==1){
             this.wccCount++;
         }
         standingsBySeason.add(new SeasonStanding(season, es));

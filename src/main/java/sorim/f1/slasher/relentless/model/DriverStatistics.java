@@ -54,8 +54,8 @@ public class DriverStatistics {
         this.nationality = ergastDriver.getNationality();
     }
 
-    public void pushSeasonStanding(Integer season, ErgastStanding es) {
-        if(es.getPosition()==1){
+    public void pushSeasonStanding(Integer season, ErgastStanding es, Boolean ongoingSeason) {
+        if(!ongoingSeason && es.getPosition()==1){
             this.wdcCount++;
             this.wdcList.add(season + " - " + extractConstructor(es.getConstructors()));
         }
