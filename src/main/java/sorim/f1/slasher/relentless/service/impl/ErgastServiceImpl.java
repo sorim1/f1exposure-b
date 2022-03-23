@@ -13,6 +13,7 @@ import sorim.f1.slasher.relentless.entities.ergast.RaceData;
 import sorim.f1.slasher.relentless.model.*;
 import sorim.f1.slasher.relentless.model.ergast.*;
 import sorim.f1.slasher.relentless.repository.DriverRepository;
+import sorim.f1.slasher.relentless.repository.DriverStandingsRepository;
 import sorim.f1.slasher.relentless.repository.ErgastRaceRepository;
 import sorim.f1.slasher.relentless.repository.JsonRepository;
 import sorim.f1.slasher.relentless.service.ErgastService;
@@ -35,6 +36,7 @@ public class ErgastServiceImpl implements ErgastService {
     private static final String CONSTRUCTOR_STANDINGS = "/constructorStandings.json?limit=100";
     private final MainProperties properties;
     private final ErgastRaceRepository ergastRaceRepository;
+    private final DriverStandingsRepository driverStandingsRepository;
     private final DriverRepository driverRepository;
     private final JsonRepository jsonRepository;
     private final RestTemplate restTemplate = new RestTemplate();
@@ -337,6 +339,8 @@ public class ErgastServiceImpl implements ErgastService {
             }
         });
         fetchStatisticsCore(driversMap, constructorsMap, circuitsMap, 2022, properties.getCurrentSeasonPast(), "");
+        JsonRepositoryModel ongoingChampionship = fetchHistoricSeason(properties.getCurrentSeasonPast());
+        jsonRepository.save(ongoingChampionship);
         return true;
     }
 
