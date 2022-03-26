@@ -117,14 +117,12 @@ public class ErgastController {
     @PostMapping("/compareDrivers")
     public DriverComparator compareDrivers(@RequestHeader String client, @RequestBody DriverComparator body) throws Exception {
         securityService.validateHeader(client);
-        log.info("compareDrivers");
         return service.compareDrivers(body);
     }
 
     @GetMapping("/compareDriversDropdown/{season}")
     public List<DriverCompared> getCompareDriversDropdown(@RequestHeader String client, @PathVariable Integer season) throws Exception {
         securityService.validateHeader(client);
-        log.info("compareDrivers");
         return service.getCompareDriversDropdown(season);
     }
 

@@ -172,10 +172,10 @@ public class ClientController {
         return service.getUtilityContext();
     }
 
-    @GetMapping("/getTopNews")
-    NewsContent getTopNews(@RequestHeader String client) throws Exception {
+    @GetMapping("/getSidebarData")
+    SidebarData getTopNews(@RequestHeader String client) throws Exception {
         securityService.validateHeader(client);
-        return service.getTopNews();
+        return service.getSidebarData();
     }
 
     @GetMapping("/getNewsPost/{code}")

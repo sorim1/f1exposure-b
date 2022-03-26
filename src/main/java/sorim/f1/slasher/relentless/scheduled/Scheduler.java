@@ -130,6 +130,7 @@ public class Scheduler {
                                 @Override
                                 public void run() {
                                     sundayAnalysisJob();
+                                    imageFeedJob();
                                 }
                             },
                             delayInMiliseconds
@@ -162,10 +163,11 @@ public class Scheduler {
                         @SneakyThrows
                         @Override
                         public void run() {
+                            imageFeedJob();
                             liveTimingService.analyzeUpcomingRace(false);
                         }
                     },
-                    delayInMiliseconds + 1500000
+                    delayInMiliseconds + 1500000L
             );
         }
     }

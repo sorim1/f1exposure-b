@@ -664,11 +664,13 @@ public class AdminServiceImpl implements AdminService {
             roundPoints.get(standing.getCode()).add(standing.getId().getRound(), standing.getPointsThisRound());
             if (standing.getResultThisRound() != null) {
                 roundResults.get(standing.getCode()).add(standing.getId().getRound(), new BigDecimal(standing.getResultThisRound()));
+            } else {
+                roundResults.get(standing.getCode()).add(standing.getId().getRound(), null);
             }
 
             if (standing.getResultThisRound() != null) {
                 gridToResultChartIncludingDnf.get(standing.getCode()).add2(standing.getGrid(), standing.getResultThisRoundDnf());
-                if (standing.getResultThisRound() < 21) {
+                if (isNumeric(standing.getResultThisRoundText())) {
                     gridToResultChartWithoutDnf.get(standing.getCode()).add2(standing.getGrid(), standing.getResultThisRoundDnf());
                 }
             }
@@ -699,6 +701,18 @@ public class AdminServiceImpl implements AdminService {
         output.add(data4);
         output.add(data5);
         jsonRepository.saveAll(output);
+    }
+
+    private static boolean isNumeric(String strNum) {
+        if (strNum == null) {
+            return false;
+        }
+        try {
+            double d = Double.parseDouble(strNum);
+        } catch (NumberFormatException nfe) {
+            return false;
+        }
+        return true;
     }
 
     private void generateChartsConstructorStandingsByRound() {

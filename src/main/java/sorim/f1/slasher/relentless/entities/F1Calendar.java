@@ -28,16 +28,19 @@ public class F1Calendar {
     private LocalDateTime practice3;
     private LocalDateTime qualifying;
     private LocalDateTime race;
+    private LocalDateTime sprint;
     private String practice1Name;
     private String practice2Name;
     private String practice3Name;
     private String qualifyingName;
     private String raceName;
+    private String sprintName;
     private LocalDateTime practice1Original;
     private LocalDateTime practice2Original;
     private LocalDateTime practice3Original;
     private LocalDateTime qualifyingOriginal;
     private LocalDateTime raceOriginal;
+    private LocalDateTime sprintOriginal;
     private String ergastDateTime;
     private String ergastName;
     private String location;
@@ -94,6 +97,11 @@ public class F1Calendar {
                 this.raceOriginal = dateTime;
                 this.raceName = fullSummary.replace(this.summary, "").substring(3);
                 break;
+            case SPRINT:
+                this.sprint = dateTime;
+                this.sprintOriginal = dateTime;
+                this.sprintName = fullSummary.replace(this.summary, "").substring(3);
+                break;
         }
     }
 
@@ -136,6 +144,11 @@ public class F1Calendar {
                 this.race = dateTime;
                 this.raceOriginal = dateTime;
                 this.raceName = summary;
+                break;
+            case "Sprint":
+                this.sprint = dateTime;
+                this.sprintOriginal = dateTime;
+                this.sprintName = summary;
                 break;
         }
     }

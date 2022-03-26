@@ -122,6 +122,11 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
     }
 
     @Override
+    public Boolean isExposureNow() {
+        return isExposureNow();
+    }
+
+    @Override
     public void startPolling() {
         StrawpollModelTwo newStrawpoll = fetchStrawpollResults();
         if (newStrawpoll != null && exposureOn()) {
