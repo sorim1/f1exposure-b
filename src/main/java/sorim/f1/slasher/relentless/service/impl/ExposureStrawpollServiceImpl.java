@@ -123,7 +123,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
 
     @Override
     public Boolean isExposureNow() {
-        return isExposureNow();
+        return exposureNow;
     }
 
     @Override
