@@ -55500,7 +55500,7 @@
             var ctx_r76 = core
             /* ɵɵnextContext */
             .oxw(4);
-            return ctx_r76.isGmt = $event;
+            return ctx_r76.isLondon = $event;
           });
           core
           /* ɵɵelementEnd */
@@ -55511,7 +55511,7 @@
 
           core
           /* ɵɵtext */
-          ._uU(6, " GMT time");
+          ._uU(6, " London time");
 
           core
           /* ɵɵelementEnd */
@@ -55606,7 +55606,7 @@
           .xp6(4);
           core
           /* ɵɵproperty */
-          .Q6J("ngModel", ctx_r66.isGmt);
+          .Q6J("ngModel", ctx_r66.isLondon);
           core
           /* ɵɵadvance */
           .xp6(5);
@@ -56093,13 +56093,13 @@
           this.sprintSeconds = 0;
           this.selectedTab = 4;
           this.unknown = false;
-          this.isGmt = false;
+          this.isLondon = false;
           this.isPlayingMusic = false;
           this.itsTime = false;
           this.timezoneOffset = 0;
+          this.relativeOffset = 0;
           this.utilityService.setTitleDefaultPage(1, 'Next race - March 20th 2022');
           this.getCountdownData(0);
-          this.setTimezoneOffset();
           this.selectedTab = this.getSelectedTab();
         }
 
@@ -56111,6 +56111,8 @@
             this.restService.getCountdownData(mode).subscribe({
               next: function next(data) {
                 _this24.calendarData = data;
+
+                _this24.setTimezoneOffset();
 
                 if (_this24.calendarData == null || _this24.calendarData.f1Calendar == null) {
                   _this24.unknown = true;
@@ -56235,8 +56237,6 @@
         }, {
           key: "tabChanged",
           value: function tabChanged(tabChangeEvent) {
-            console.log('tab');
-            console.log(tabChangeEvent);
             this.getCountdownData(0); //  this.getCountdownData(tabChangeEvent.index + 1);
 
             this.updateUrl();
@@ -56280,11 +56280,12 @@
         }, {
           key: "checkTime",
           value: function checkTime(date) {
-            if (this.isGmt) {
+            if (this.isLondon) {
               return date;
             } else {
               var date2 = new Date(date);
-              return new Date(date2.getTime() - this.timezoneOffset * 1000 * 60);
+              var relativeOffset = this.timezoneOffset + this.calendarData.londonOffset;
+              return new Date(date2.getTime() - this.relativeOffset * 1000 * 60);
             }
           }
         }, {
@@ -56380,6 +56381,7 @@
           key: "setTimezoneOffset",
           value: function setTimezoneOffset() {
             this.timezoneOffset = new Date().getTimezoneOffset();
+            this.relativeOffset = this.timezoneOffset + this.calendarData.londonOffset;
           }
         }, {
           key: "getSelectedTab",
@@ -56651,7 +56653,7 @@
             .xp6(1);
             core
             /* ɵɵproperty */
-            .Q6J("ngIf", ctx.calendarData.overlays.includes("verstappen1") && ctx.selectedTab != 5);
+            .Q6J("ngIf", ctx.calendarData != null && ctx.calendarData.overlays.includes("verstappen1") && ctx.selectedTab != 5);
           }
         },
         directives: [sidenav

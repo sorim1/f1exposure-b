@@ -86,4 +86,8 @@ public interface AdminService {
     List<Replay>  saveVideos(List<Replay>  video);
 
     String updateCurrentSeasonPast(Integer season);
+
+    F1Calendar getCalendar();
+
+    F1Calendar saveCalendar(F1Calendar body);
 }

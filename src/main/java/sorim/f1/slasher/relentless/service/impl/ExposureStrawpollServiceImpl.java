@@ -40,7 +40,6 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
     private static LocalDateTime exposureTime;
     private static String title = "Strange";
     private static Integer currentExposureRound;
-    //private static String strawpollUrl="https://strawpoll.com/api/poll/sdvbveh8b";
     private static String strawpollUrl = null;
     private static String strawpollId;
     private static Integer reloadDelay = 0;
@@ -179,8 +178,6 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
     @Override
     public StrawpollModelTwo fetchStrawpollResults() {
        // https://api.strawpoll.com/v2/polls/2ayLWLAjBZ4
-        log.info("fetchStrawpollResults1: " + strawpollUrl + " - " + currentExposureRound);
-        log.info("fetchStrawpollResults3: " + strawPollApiV2 + strawpollId + " - " + currentExposureRound);
         try {
             StrawpollModelTwo strawPoll = restTemplate
                     .getForObject(strawPollApiV2 + strawpollId, StrawpollModelTwo.class);
@@ -230,7 +227,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
 
     @Override
     public ExposureData getExposedChartData() {
-        ExposureData response = ExposureData.builder()
+        return ExposureData.builder()
                 .title(title)
                 .delay(reloadDelay)
                 .activeExposureChart(getActiveExposureChart())
@@ -239,7 +236,6 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
                 .voters(getExposureVoters())
                 .exposureRaces(ergastService.getRacesSoFar(String.valueOf(properties.getCurrentSeasonPast()), currentExposureRound))
                 .build();
-        return response;
     }
 
     @Override

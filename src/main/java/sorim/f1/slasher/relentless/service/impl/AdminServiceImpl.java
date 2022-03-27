@@ -627,6 +627,19 @@ public class AdminServiceImpl implements AdminService {
         return properties.updateCurrentSeasonPast(season);
     }
 
+    @Override
+    public F1Calendar getCalendar() {
+        ZonedDateTime gmtZoned = ZonedDateTime.now(ZoneId.of("Europe/London"));
+        LocalDateTime gmtDateTime = gmtZoned.toLocalDateTime();
+        return calendarRepository.findFirstByRaceAfterOrPractice3AfterOrderByPractice1(gmtDateTime, gmtDateTime);
+    }
+
+    @Override
+    public F1Calendar saveCalendar(F1Calendar body) {
+        calendarRepository.save(body);
+        return body;
+    }
+
 
     private void generateChartsDriverStandingsByRound() {
         List<DriverStandingByRound> standingsBySeason = driverStandingsByRoundRepository.findAllByIdSeasonOrderByIdRoundAscNameAsc(properties.getCurrentSeasonPast());

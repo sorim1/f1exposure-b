@@ -773,7 +773,9 @@ public class LiveTimingServiceImpl implements LiveTimingService {
             if (resultsResponse.getMrData().getRaceTable().getRaces().size() > 0) {
                 resultsResponse.getMrData().getRaceTable().getRaces().get(0).getResults().forEach(result -> {
                     if (ergastCodes.containsKey(result.getDriver().getDriverId())) {
-                        driversMap.get(ergastCodes.get(result.getDriver().getDriverId())).setFinishStatus(result.getPositionText());
+                        if (driversMap.containsKey(ergastCodes.get(result.getDriver().getDriverId()))) {
+                            driversMap.get(ergastCodes.get(result.getDriver().getDriverId())).setFinishStatus(result.getPositionText());
+                        }
                     }
                 });
             }
@@ -799,9 +801,11 @@ public class LiveTimingServiceImpl implements LiveTimingService {
             List<String> xData = (List<String>) row.get("X");
             List<Integer> tiData = (List<Integer>) row.get("TI");
             String tyreSequence = xData.get(9);
-            for (int i = 0; i < tiData.size(); i = i + 3) {
-                driversMap.get(driverCodes.get(driverCounter.get())).getLapByLapData().getTyres()
-                        .add(new Tyre(String.valueOf(tyreSequence.charAt(tyreSequence.length() - 1 - (i / 3))), tiData.get(i + 1)));
+            if(tiData!=null) {
+                for (int i = 0; i < tiData.size(); i = i + 3) {
+                    driversMap.get(driverCodes.get(driverCounter.get())).getLapByLapData().getTyres()
+                            .add(new Tyre(String.valueOf(tyreSequence.charAt(tyreSequence.length() - 1 - (i / 3))), tiData.get(i + 1)));
+                }
             }
             driverCounter.incrementAndGet();
         });

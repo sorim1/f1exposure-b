@@ -45,11 +45,10 @@ public class Scheduler {
         artService.generateLatestArt();
         if(isRaceWeek){
             log.info(CODE + " - starting fetchStatisticsFullFromPartial");
-            // ergastService.fetchStatisticsFullFromPartial();
         } else {
             log.info(CODE + " - no fetchStatisticsFullFromPartial because it wasnt race weekend");
         }
-
+        ergastService.fetchStatisticsFullFromPartial();
         isItRaceWeek();
     }
 

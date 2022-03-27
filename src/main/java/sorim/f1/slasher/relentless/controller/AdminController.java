@@ -27,6 +27,17 @@ public class AdminController {
         return service.refreshCalendarOfCurrentSeason(url);
     }
 
+    @GetMapping("/getCalendar")
+    F1Calendar getCalendar(@RequestHeader String client) throws Exception {
+        return service.getCalendar();
+    }
+
+    @PostMapping("/saveCalendar")
+    F1Calendar saveCalendar(@RequestHeader String client, @RequestBody F1Calendar body) throws Exception {
+        securityService.validateAdminHeader(client);
+        return service.saveCalendar(body);
+    }
+
     @PostMapping("/refreshCalendarSecondary")
     boolean refreshCalendarSecondary(@RequestHeader String client, @RequestBody(required=false) String url) throws Exception {
         securityService.validateAdminHeader(client);

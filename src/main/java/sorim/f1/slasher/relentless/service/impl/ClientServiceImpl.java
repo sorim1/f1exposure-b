@@ -61,11 +61,13 @@ public class ClientServiceImpl implements ClientService {
     @Override
     public CalendarData getCountdownData(Integer mode) {
         ZonedDateTime gmtZoned = ZonedDateTime.now(ZoneId.of("Europe/London"));
+        ZonedDateTime gmtZoned2 = ZonedDateTime.now(ZoneId.of("Europe/Zagreb"));
         LocalDateTime gmtDateTime = gmtZoned.toLocalDateTime();
-        //gmtDateTime =gmtDateTime.minusMonths(6);
+        int londonOffsetMinutes = (gmtZoned.getOffset().getTotalSeconds())/60;
         F1Calendar f1calendar = calendarRepository.findFirstByRaceAfterOrPractice3AfterOrderByPractice1(gmtDateTime, gmtDateTime);
         if (f1calendar == null) {
             return CalendarData.builder()
+                    .londonOffset(londonOffsetMinutes)
                     .overlays(overlayList)
                     .iframeLink(iframeLink)
                     .build();
@@ -74,6 +76,7 @@ public class ClientServiceImpl implements ClientService {
         return CalendarData.builder().f1Calendar(f1calendar).countdownData(countdownData)
                 .overlays(overlayList)
                 .iframeLink(iframeLink)
+                .londonOffset(londonOffsetMinutes)
                 .build();
     }
 

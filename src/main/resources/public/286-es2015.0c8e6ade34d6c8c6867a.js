@@ -41424,10 +41424,10 @@ function F1CountdownComponent_div_20_div_2_ng_template_10_div_0_Template(rf, ctx
     core/* ɵɵtext */._uU(3, "My time ");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(4, "mat-slide-toggle", 40);
-    core/* ɵɵlistener */.NdJ("ngModelChange", function F1CountdownComponent_div_20_div_2_ng_template_10_div_0_Template_mat_slide_toggle_ngModelChange_4_listener($event) { core/* ɵɵrestoreView */.CHM(_r77); const ctx_r76 = core/* ɵɵnextContext */.oxw(4); return ctx_r76.isGmt = $event; });
+    core/* ɵɵlistener */.NdJ("ngModelChange", function F1CountdownComponent_div_20_div_2_ng_template_10_div_0_Template_mat_slide_toggle_ngModelChange_4_listener($event) { core/* ɵɵrestoreView */.CHM(_r77); const ctx_r76 = core/* ɵɵnextContext */.oxw(4); return ctx_r76.isLondon = $event; });
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(5, "span");
-    core/* ɵɵtext */._uU(6, " GMT time");
+    core/* ɵɵtext */._uU(6, " London time");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(7, "div");
@@ -41455,7 +41455,7 @@ function F1CountdownComponent_div_20_div_2_ng_template_10_div_0_Template(rf, ctx
 } if (rf & 2) {
     const ctx_r66 = core/* ɵɵnextContext */.oxw(4);
     core/* ɵɵadvance */.xp6(4);
-    core/* ɵɵproperty */.Q6J("ngModel", ctx_r66.isGmt);
+    core/* ɵɵproperty */.Q6J("ngModel", ctx_r66.isLondon);
     core/* ɵɵadvance */.xp6(5);
     core/* ɵɵproperty */.Q6J("ngIf", ctx_r66.calendarData.f1Calendar.practice1Name != null);
     core/* ɵɵadvance */.xp6(2);
@@ -41613,19 +41613,20 @@ class F1CountdownComponent {
         this.sprintSeconds = 0;
         this.selectedTab = 4;
         this.unknown = false;
-        this.isGmt = false;
+        this.isLondon = false;
         this.isPlayingMusic = false;
         this.itsTime = false;
         this.timezoneOffset = 0;
+        this.relativeOffset = 0;
         this.utilityService.setTitleDefaultPage(1, 'Next race - March 20th 2022');
         this.getCountdownData(0);
-        this.setTimezoneOffset();
         this.selectedTab = this.getSelectedTab();
     }
     getCountdownData(mode) {
         this.restService.getCountdownData(mode).subscribe({
             next: data => {
                 this.calendarData = data;
+                this.setTimezoneOffset();
                 if (this.calendarData == null || this.calendarData.f1Calendar == null) {
                     this.unknown = true;
                     this.setupIframes();
@@ -41726,8 +41727,6 @@ class F1CountdownComponent {
         return response;
     }
     tabChanged(tabChangeEvent) {
-        console.log('tab');
-        console.log(tabChangeEvent);
         this.getCountdownData(0);
         //  this.getCountdownData(tabChangeEvent.index + 1);
         this.updateUrl();
@@ -41762,12 +41761,13 @@ class F1CountdownComponent {
         }
     }
     checkTime(date) {
-        if (this.isGmt) {
+        if (this.isLondon) {
             return date;
         }
         else {
             const date2 = new Date(date);
-            return new Date(date2.getTime() - (this.timezoneOffset * 1000 * 60));
+            const relativeOffset = this.timezoneOffset + this.calendarData.londonOffset;
+            return new Date(date2.getTime() - (this.relativeOffset * 1000 * 60));
         }
     }
     updateUrl() {
@@ -41842,6 +41842,7 @@ class F1CountdownComponent {
     }
     setTimezoneOffset() {
         this.timezoneOffset = new Date().getTimezoneOffset();
+        this.relativeOffset = this.timezoneOffset + this.calendarData.londonOffset;
     }
     getSelectedTab() {
         const tab = this.route.snapshot.queryParamMap.get('tab');
@@ -41912,7 +41913,7 @@ F1CountdownComponent.ɵcmp = /*@__PURE__*/ core/* ɵɵdefineComponent */.Xpm({ t
         core/* ɵɵadvance */.xp6(7);
         core/* ɵɵproperty */.Q6J("ngIf", ctx.calendarData != null);
         core/* ɵɵadvance */.xp6(1);
-        core/* ɵɵproperty */.Q6J("ngIf", ctx.calendarData.overlays.includes("verstappen1") && ctx.selectedTab != 5);
+        core/* ɵɵproperty */.Q6J("ngIf", ctx.calendarData != null && ctx.calendarData.overlays.includes("verstappen1") && ctx.selectedTab != 5);
     } }, directives: [sidenav/* MatDrawerContainer */.kh, sidenav/* MatDrawer */.jA, MatInput, fesm2015_forms/* DefaultValueAccessor */.Fj, fesm2015_forms/* NgControlStatus */.JJ, fesm2015_forms/* NgModel */.On, fesm2015_button/* MatButton */.lW, common/* NgForOf */.sg, common/* NgIf */.O5, tabs/* MatTabGroup */.SP, tabs/* MatTab */.uX, tabs/* MatTabContent */.Vc, ngx_countdown/* CountdownComponent */.MR, slide_toggle/* MatSlideToggle */.Rr], pipes: [common/* DatePipe */.uU], styles: [""] });
 
 // EXTERNAL MODULE: ./node_modules/@angular/material/__ivy_ngcc__/fesm2015/table.js + 1 modules
