@@ -60,7 +60,7 @@ public class ErgastController {
     public Boolean fetchStatisticsFullFromPartial(@RequestHeader String client) throws Exception {
         securityService.validateAdminHeader(client);
         log.info("fetchStatisticsFullFromPartial");
-        return service.fetchStatisticsFullFromPartial();
+        return service.fetchStatisticsFullFromPartial(true);
     }
 
     @GetMapping("/generateAllErgastDrivers")

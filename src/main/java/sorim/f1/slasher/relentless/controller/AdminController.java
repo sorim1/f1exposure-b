@@ -74,14 +74,6 @@ public class AdminController {
         return service.updateUpcomingRace(entry);
     }
 
-    @GetMapping("/validateCalendarForNextRace")
-    boolean validateCalendarForNextRace(@RequestHeader String client) throws Exception {
-        securityService.validateAdminHeader(client);
-        service.validateCalendarForNextRace();
-        return true;
-    }
-
-
     @GetMapping("/initialize")
     boolean initialize(@RequestHeader String client) throws Exception {
         securityService.validateAdminHeader(client);

@@ -43,12 +43,7 @@ public class Scheduler {
             standingsUpdated = true;
         }
         artService.generateLatestArt();
-        if(isRaceWeek){
-            log.info(CODE + " - starting fetchStatisticsFullFromPartial");
-        } else {
-            log.info(CODE + " - no fetchStatisticsFullFromPartial because it wasnt race weekend");
-        }
-        ergastService.fetchStatisticsFullFromPartial();
+        ergastService.fetchStatisticsFullFromPartial(false);
         isItRaceWeek();
     }
 

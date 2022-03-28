@@ -115,7 +115,6 @@ public class LiveTimingServiceImpl implements LiveTimingService {
             if (width <= 2000 || thumbnail) {
                 return (String) original.get("source");
             } else {
-                log.info("retrieving thumbnail");
                 return getWikipediaOriginalImageUrl(url, circuitName, true);
             }
         } catch (Exception e) {
@@ -138,11 +137,11 @@ public class LiveTimingServiceImpl implements LiveTimingService {
                 if (width <= 2000 || thumbnail) {
                     return (String) original.get("source");
                 } else {
-                    log.info("retrieving thumbnail");
                     return getWikipediaOriginalImageUrl(url, circuitName, true);
                 }
             } catch (Exception ex) {
                 log.error(title + " WORKAROUND FAILED");
+                log.error("getWikipediaOriginalImageUrl error", ex);
                 ex.printStackTrace();
             }
         }
@@ -241,11 +240,8 @@ public class LiveTimingServiceImpl implements LiveTimingService {
     private void analyzeRaceData(RaceData raceData) {
         if (raceData != null) {
             String liveTimingResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.RACE, 1);
-            //TODO timingAppData zasad ne koristim u RaceAnalysis
-            //String timingAppDataResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.RACE, 2);
             if (liveTimingResponse != null) {
                 raceData.setLiveTimingRace(liveTimingResponse.substring(liveTimingResponse.indexOf("{")));
-                //raceData.setTimingAppData(timingAppDataResponse.substring(timingAppDataResponse.indexOf("00")));
                 ergastService.saveRace(raceData);
                 fetchNewRaceAnalysis(raceData.getCircuit().getCircuitId());
                 analyzeUpcomingRace(false);
@@ -496,6 +492,7 @@ public class LiveTimingServiceImpl implements LiveTimingService {
             try {
                 mapping = mapper.readValue(jsonLine, typeRef);
             } catch (JsonProcessingException e) {
+                log.error("createLapTimeDataList JsonProcessingException", e);
                 e.printStackTrace();
             }
 
@@ -613,6 +610,7 @@ public class LiveTimingServiceImpl implements LiveTimingService {
                     drivers.set(new ArrayList<>(driversMap.values()));
                 }
             } catch (Exception e) {
+                log.error("fetchNewRaceAnalysis error", e);
                 e.printStackTrace();
             }
         });
@@ -631,6 +629,7 @@ public class LiveTimingServiceImpl implements LiveTimingService {
         }
         latestRace.setRaceAnalysis(analysis);
         ergastService.saveRace(latestRace);
+        log.info("raceAnalysis done" );
         return true;
     }
 
@@ -715,6 +714,7 @@ public class LiveTimingServiceImpl implements LiveTimingService {
             //enrichDriversWithErgastLapTimes(driversMap, ergastCodes, race.getSeason(), race.getRound());
             drivers = new ArrayList<>(driversMap.values());
         } catch (Exception e) {
+            log.error("analyzeSprintRace error", e);
             e.printStackTrace();
         }
         drivers.sort(Comparator.comparing(Driver::getPosition));

@@ -196,29 +196,6 @@ public class AdminServiceImpl implements AdminService {
 
 
     @Override
-    public void validateCalendarForNextRace() throws Exception {
-        ZonedDateTime gmtZoned = ZonedDateTime.now(ZoneId.of("Europe/London"));
-        LocalDateTime gmtDateTime = gmtZoned.toLocalDateTime();
-        F1Calendar f1calendar = calendarRepository.findFirstByRaceAfterOrderByRace(gmtDateTime);
-        String url = properties.getFormula1RacingUrl() + properties.getCurrentSeasonPast() + ".html";
-        String rawHtml = restTemplate
-                .getForObject(url, String.class);
-        //todo TBC
-        Document doc = Jsoup.parse(rawHtml);
-        Elements clock = doc.getAllElements();
-        log.info("clock.wholeText()");
-        //Elements tRows1 = clock.getElementsByClass("f1-color--white countdown-text");
-//        clock.forEach(row -> {
-//            log.info("row.wholeText()1");
-//            log.info(row.wholeText());
-//            row.getAllElements().forEach(row2 -> {
-//                log.info("row2.wholeText()1");
-//                log.info(row2.wholeText());
-//            });
-//        });
-    }
-
-    @Override
     public Boolean initializeStandings() {
         Logger.log("initializeStandings");
         Boolean changesDetected = refreshDriverStandingsFromErgast();
@@ -226,6 +203,7 @@ public class AdminServiceImpl implements AdminService {
         if (changesDetected) {
             Scheduler.standingsUpdated = true;
         }
+        ergastService.fetchStatisticsFullFromPartial(false);
         generateChart();
         return changesDetected;
     }

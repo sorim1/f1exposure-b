@@ -63,7 +63,7 @@ public interface ErgastService {
 
     Boolean fetchStatistics(Boolean partial);
 
-    Boolean fetchStatisticsFullFromPartial();
+    Boolean fetchStatisticsFullFromPartial(Boolean forceFetch);
 
     Object getErgastDrivers();
 

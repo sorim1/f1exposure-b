@@ -19,8 +19,6 @@ public interface AdminService {
 
     Boolean deleteCalendar() throws Exception;
 
-    void validateCalendarForNextRace() throws Exception;
-
     Boolean initializeStandings() throws IOException;
 
     Boolean initializeStandingsFromLivetiming(Map<String, DriverStanding> standingsMap, Map<String, sorim.f1.slasher.relentless.model.livetiming.Driver> driversMap, Integer newRound);
