@@ -47,12 +47,18 @@ public class Scheduler {
         isItRaceWeek();
     }
 
-    @Scheduled(cron = "0 0 18 * * TUE")
+    @Scheduled(cron = "0 0 1 * * TUE")
     public void tuesdayJobs() throws IOException {
         log.info(CODE + " - tuesdayJobs called");
         if (!standingsUpdated) {
             adminService.initializeStandings();
             standingsUpdated = true;
+        }
+        isItRaceWeek();
+        if (isRaceWeek) {
+            clientService.setOverlays("");
+        } else {
+            clientService.setOverlays("sasha-sometimes");
         }
     }
 
@@ -68,7 +74,7 @@ public class Scheduler {
     private void isItRaceWeek() {
         CalendarData calendarData = clientService.getCountdownData(5);
         if(calendarData.getF1Calendar()!=null) {
-            isRaceWeek = calendarData.getCountdownData().get("raceDays") < 5;
+            isRaceWeek = calendarData.getCountdownData().get("raceDays") < 6;
         } else {
             isRaceWeek = false;
         }
@@ -172,7 +178,7 @@ public class Scheduler {
         log.info("onInitScheduler Called");
         isItRaceWeek();
         int weekDay = MainUtility.getWeekDay();
-        imageFeedJob();
+     //   imageFeedJob();
         try {
             switch (weekDay) {
                 case 1:{

@@ -28,7 +28,7 @@ public class Driver {
     public Driver(ErgastDriver ed) {
         this.code = ed.getCode();
         this.ergastCode = ed.getDriverId();
-        this.fullName = ed.getGivenName() + " " + ed.getFamilyName();
+        this.fullName = ed.getFamilyName();
         this.status=1;
     }
 }

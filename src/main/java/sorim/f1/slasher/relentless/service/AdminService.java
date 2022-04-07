@@ -5,6 +5,7 @@ import sorim.f1.slasher.relentless.entities.*;
 import sorim.f1.slasher.relentless.model.Aws;
 import sorim.f1.slasher.relentless.model.FullBackup;
 import sorim.f1.slasher.relentless.model.FullExposure;
+import sorim.f1.slasher.relentless.model.livetiming.RaceAnalysis;
 
 import java.io.IOException;
 import java.util.List;
@@ -88,4 +89,6 @@ public interface AdminService {
     F1Calendar getCalendar();
 
     F1Calendar saveCalendar(F1Calendar body);
+
+    void updateOverlays(RaceAnalysis analysis);
 }

@@ -243,7 +243,8 @@ public class LiveTimingServiceImpl implements LiveTimingService {
             if (liveTimingResponse != null) {
                 raceData.setLiveTimingRace(liveTimingResponse.substring(liveTimingResponse.indexOf("{")));
                 ergastService.saveRace(raceData);
-                fetchNewRaceAnalysis(raceData.getCircuit().getCircuitId());
+                RaceAnalysis analysis = fetchNewRaceAnalysis(raceData.getCircuit().getCircuitId());
+                adminService.updateOverlays(analysis);
                 analyzeUpcomingRace(false);
                 Scheduler.analysisDone = true;
             }
@@ -567,7 +568,7 @@ public class LiveTimingServiceImpl implements LiveTimingService {
     }
 
 
-    public Boolean fetchNewRaceAnalysis(String circuitId) {
+    public RaceAnalysis fetchNewRaceAnalysis(String circuitId) {
         List<RaceData> raceData = ergastService.findByCircuitIdOrderBySeasonDesc(circuitId);
         if(raceData.get(0).getLiveTimingRace()==null){
             raceData.remove(0);
@@ -630,7 +631,7 @@ public class LiveTimingServiceImpl implements LiveTimingService {
         latestRace.setRaceAnalysis(analysis);
         ergastService.saveRace(latestRace);
         log.info("raceAnalysis done" );
-        return true;
+        return analysis;
     }
 
     private Map<String, String> mapErgastWithLiveTiming(Map<String, Driver> driversMap) {
@@ -645,11 +646,6 @@ public class LiveTimingServiceImpl implements LiveTimingService {
     }
 
     private Boolean addErgastCodesToDrivers(Map<String, Driver> driversMap, Map<String, String> ergastCodes) {
-//        ergastCodes.forEach((k,v)->{
-//           if(driversMap.containsKey(v)){
-//               driversMap.get(v).setErgastCode(k);
-//           }
-//        });
         AtomicReference<Boolean> driverMissing = new AtomicReference<>(false);
         driversMap.forEach((k, v) -> {
             Optional<Map.Entry<String, String>> driverEntry = ergastCodes.entrySet()

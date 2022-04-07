@@ -19,6 +19,7 @@ import sorim.f1.slasher.relentless.entities.ergast.RaceData;
 import sorim.f1.slasher.relentless.handling.Logger;
 import sorim.f1.slasher.relentless.model.*;
 import sorim.f1.slasher.relentless.model.ergast.ErgastResponse;
+import sorim.f1.slasher.relentless.model.livetiming.RaceAnalysis;
 import sorim.f1.slasher.relentless.repository.*;
 import sorim.f1.slasher.relentless.scheduled.Scheduler;
 import sorim.f1.slasher.relentless.service.*;
@@ -616,6 +617,42 @@ public class AdminServiceImpl implements AdminService {
     public F1Calendar saveCalendar(F1Calendar body) {
         calendarRepository.save(body);
         return body;
+    }
+
+    @Override
+    public void updateOverlays(RaceAnalysis analysis) {
+        log.info("updateOverlays -remove try/catch if everything ok");
+        try{
+        String newOverlays = "";
+        Optional<sorim.f1.slasher.relentless.model.livetiming.Driver> opt = analysis.getDriverData().stream().filter(driver -> driver.getPosition()==1).findFirst();
+        if(opt.isPresent()){
+            String winnersName = opt.get().getName();
+            String winnersTeamName = opt.get().getTeam();
+            if(winnersName.equals("VERSTAPPEN")){
+                newOverlays = "winner-verstappen";
+            } else if(winnersName.equals("HAMILTON")){
+                newOverlays = "winner-hamilton";
+            } else if(winnersTeamName.equals("Ferrari")){
+                newOverlays = "winner-ferrari";
+            } else if(winnersTeamName.equals("Mercedes")){
+                newOverlays = "winner-mercedes";
+            }
+        }
+        if(newOverlays.equals("")){
+            List<sorim.f1.slasher.relentless.model.livetiming.Driver> ferraris = analysis.getDriverData().stream().filter(driver -> driver.getTeam().equals("Ferrari"))
+                    .collect(Collectors.toList());
+            if(!ferraris.isEmpty()){
+               Boolean ferrariAboveP5 = ferraris.stream().anyMatch(driver -> driver.getPosition()<=5);
+               if(!ferrariAboveP5){
+                   newOverlays = "loser-ferrari";
+               }
+            }
+        }
+        log.info(newOverlays);
+        clientService.setOverlays(newOverlays);
+        }catch(Exception e ){
+            log.error("updateOverlays error", e);
+        }
     }
 
 
