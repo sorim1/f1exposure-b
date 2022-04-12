@@ -77,4 +77,8 @@ public interface ClientService {
     UtilityContext getUtilityContext();
 
     List<Replay> getVideos();
+
+    Boolean getFourchanDisabled();
+
+    Boolean setFourchanDisabled(String value);
 }

@@ -34,6 +34,16 @@ public class ClientController {
         return service.getExposureDriverList();
     }
 
+    @GetMapping("/getFourchanDisabled")
+    Boolean getFourchanDisabled() {
+        return service.getFourchanDisabled();
+    }
+
+    @GetMapping("/setFourchanDisabled/{value}")
+    Boolean setFourchanDisabled(@PathVariable("value") String value) {
+        return service.setFourchanDisabled(value);
+    }
+
     @PostMapping("/expose")
     Boolean exposeDrivers(@RequestHeader String client, @RequestBody String[] exposedList, HttpServletRequest request) throws Exception {
         securityService.validateHeader(client);

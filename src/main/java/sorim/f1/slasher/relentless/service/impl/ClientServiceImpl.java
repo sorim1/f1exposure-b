@@ -31,6 +31,7 @@ public class ClientServiceImpl implements ClientService {
     public static String overlays;
     public static List<String> overlayList;
     public static String iframeLink;
+    public static Boolean fourchanDisabled;
     private static NewsContent topNews = new NewsContent();
     private final MainProperties properties;
     private final CalendarRepository calendarRepository;
@@ -377,10 +378,24 @@ public class ClientServiceImpl implements ClientService {
         return videoService.getVideos();
     }
 
+    @Override
+    public Boolean getFourchanDisabled() {
+        return fourchanDisabled;
+    }
+
+    @Override
+    public Boolean setFourchanDisabled(String value) {
+        fourchanDisabled = Boolean.valueOf(value);
+        AppProperty ap = AppProperty.builder().name("FOURCHAN_DISABLED").value(value).build();
+        propertiesRepository.save(ap);
+        return fourchanDisabled;
+    }
+
     @PostConstruct
     public void init() {
         initOverlays();
         initIframeLink();
+        initFourchanDisabled();
         topNews = newsRepository.findFirstByStatusLessThanEqualOrderByTimestampActivityDesc(3);
         log.info("clientServiceInit: {} -{}", iframeLink, overlays);
     }
@@ -403,6 +418,15 @@ public class ClientServiceImpl implements ClientService {
         }
         iframeLink = ap.getValue();
     }
+
+    private void initFourchanDisabled() {
+        AppProperty ap = propertiesRepository.findDistinctFirstByName("FOURCHAN_DISABLED");
+        if (ap == null) {
+            ap = AppProperty.builder().name("FOURCHAN_DISABLED").value("false").build();
+            propertiesRepository.save(ap);
+        }
+        fourchanDisabled = Boolean.valueOf(ap.getValue());
+    };
 
     private Map<String, Integer> getRemainingTime(LocalDateTime gmtDateTime, F1Calendar f1calendar, Integer mode) {
         Map<String, Integer> output = new HashMap<>();
