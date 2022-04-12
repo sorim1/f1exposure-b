@@ -19,6 +19,7 @@ import sorim.f1.slasher.relentless.entities.ergast.RaceData;
 import sorim.f1.slasher.relentless.handling.Logger;
 import sorim.f1.slasher.relentless.model.*;
 import sorim.f1.slasher.relentless.model.ergast.ErgastResponse;
+import sorim.f1.slasher.relentless.model.livetiming.RaceAnalysis;
 import sorim.f1.slasher.relentless.repository.*;
 import sorim.f1.slasher.relentless.scheduled.Scheduler;
 import sorim.f1.slasher.relentless.service.*;
@@ -196,29 +197,6 @@ public class AdminServiceImpl implements AdminService {
 
 
     @Override
-    public void validateCalendarForNextRace() throws Exception {
-        ZonedDateTime gmtZoned = ZonedDateTime.now(ZoneId.of("Europe/London"));
-        LocalDateTime gmtDateTime = gmtZoned.toLocalDateTime();
-        F1Calendar f1calendar = calendarRepository.findFirstByRaceAfterOrderByRace(gmtDateTime);
-        String url = properties.getFormula1RacingUrl() + properties.getCurrentSeasonPast() + ".html";
-        String rawHtml = restTemplate
-                .getForObject(url, String.class);
-        //todo TBC
-        Document doc = Jsoup.parse(rawHtml);
-        Elements clock = doc.getAllElements();
-        log.info("clock.wholeText()");
-        //Elements tRows1 = clock.getElementsByClass("f1-color--white countdown-text");
-//        clock.forEach(row -> {
-//            log.info("row.wholeText()1");
-//            log.info(row.wholeText());
-//            row.getAllElements().forEach(row2 -> {
-//                log.info("row2.wholeText()1");
-//                log.info(row2.wholeText());
-//            });
-//        });
-    }
-
-    @Override
     public Boolean initializeStandings() {
         Logger.log("initializeStandings");
         Boolean changesDetected = refreshDriverStandingsFromErgast();
@@ -226,6 +204,7 @@ public class AdminServiceImpl implements AdminService {
         if (changesDetected) {
             Scheduler.standingsUpdated = true;
         }
+        ergastService.fetchStatisticsFullFromPartial(false);
         generateChart();
         return changesDetected;
     }
@@ -627,6 +606,55 @@ public class AdminServiceImpl implements AdminService {
         return properties.updateCurrentSeasonPast(season);
     }
 
+    @Override
+    public F1Calendar getCalendar() {
+        ZonedDateTime gmtZoned = ZonedDateTime.now(ZoneId.of("Europe/London"));
+        LocalDateTime gmtDateTime = gmtZoned.toLocalDateTime();
+        return calendarRepository.findFirstByRaceAfterOrPractice3AfterOrderByPractice1(gmtDateTime, gmtDateTime);
+    }
+
+    @Override
+    public F1Calendar saveCalendar(F1Calendar body) {
+        calendarRepository.save(body);
+        return body;
+    }
+
+    @Override
+    public void updateOverlays(RaceAnalysis analysis) {
+        log.info("updateOverlays -remove try/catch if everything ok");
+        try{
+        String newOverlays = "";
+        Optional<sorim.f1.slasher.relentless.model.livetiming.Driver> opt = analysis.getDriverData().stream().filter(driver -> driver.getPosition()==1).findFirst();
+        if(opt.isPresent()){
+            String winnersName = opt.get().getName();
+            String winnersTeamName = opt.get().getTeam();
+            if(winnersName.equals("VERSTAPPEN")){
+                newOverlays = "winner-verstappen";
+            } else if(winnersName.equals("HAMILTON")){
+                newOverlays = "winner-hamilton";
+            } else if(winnersTeamName.equals("Ferrari")){
+                newOverlays = "winner-ferrari";
+            } else if(winnersTeamName.equals("Mercedes")){
+                newOverlays = "winner-mercedes";
+            }
+        }
+        if(newOverlays.equals("")){
+            List<sorim.f1.slasher.relentless.model.livetiming.Driver> ferraris = analysis.getDriverData().stream().filter(driver -> driver.getTeam().equals("Ferrari"))
+                    .collect(Collectors.toList());
+            if(!ferraris.isEmpty()){
+               Boolean ferrariAboveP5 = ferraris.stream().anyMatch(driver -> driver.getPosition()<=5);
+               if(!ferrariAboveP5){
+                   newOverlays = "loser-ferrari";
+               }
+            }
+        }
+        log.info(newOverlays);
+        clientService.setOverlays(newOverlays);
+        }catch(Exception e ){
+            log.error("updateOverlays error", e);
+        }
+    }
+
 
     private void generateChartsDriverStandingsByRound() {
         List<DriverStandingByRound> standingsBySeason = driverStandingsByRoundRepository.findAllByIdSeasonOrderByIdRoundAscNameAsc(properties.getCurrentSeasonPast());
@@ -664,11 +692,13 @@ public class AdminServiceImpl implements AdminService {
             roundPoints.get(standing.getCode()).add(standing.getId().getRound(), standing.getPointsThisRound());
             if (standing.getResultThisRound() != null) {
                 roundResults.get(standing.getCode()).add(standing.getId().getRound(), new BigDecimal(standing.getResultThisRound()));
+            } else {
+                roundResults.get(standing.getCode()).add(standing.getId().getRound(), null);
             }
 
             if (standing.getResultThisRound() != null) {
                 gridToResultChartIncludingDnf.get(standing.getCode()).add2(standing.getGrid(), standing.getResultThisRoundDnf());
-                if (standing.getResultThisRound() < 21) {
+                if (isNumeric(standing.getResultThisRoundText())) {
                     gridToResultChartWithoutDnf.get(standing.getCode()).add2(standing.getGrid(), standing.getResultThisRoundDnf());
                 }
             }
@@ -699,6 +729,18 @@ public class AdminServiceImpl implements AdminService {
         output.add(data4);
         output.add(data5);
         jsonRepository.saveAll(output);
+    }
+
+    private static boolean isNumeric(String strNum) {
+        if (strNum == null) {
+            return false;
+        }
+        try {
+            double d = Double.parseDouble(strNum);
+        } catch (NumberFormatException nfe) {
+            return false;
+        }
+        return true;
     }
 
     private void generateChartsConstructorStandingsByRound() {

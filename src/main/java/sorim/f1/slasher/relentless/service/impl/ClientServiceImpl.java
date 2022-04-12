@@ -33,6 +33,7 @@ public class ClientServiceImpl implements ClientService {
     public static String iframeLink;
     public static Boolean fourchanDisabled;
     private static NewsContent topNews = new NewsContent();
+    private static Boolean exposureOn = false;
     private final MainProperties properties;
     private final CalendarRepository calendarRepository;
     private final DriverStandingsRepository driverStandingsRepository;
@@ -61,11 +62,13 @@ public class ClientServiceImpl implements ClientService {
     @Override
     public CalendarData getCountdownData(Integer mode) {
         ZonedDateTime gmtZoned = ZonedDateTime.now(ZoneId.of("Europe/London"));
+        ZonedDateTime gmtZoned2 = ZonedDateTime.now(ZoneId.of("Europe/Zagreb"));
         LocalDateTime gmtDateTime = gmtZoned.toLocalDateTime();
-        //gmtDateTime =gmtDateTime.minusMonths(6);
+        int londonOffsetMinutes = (gmtZoned.getOffset().getTotalSeconds())/60;
         F1Calendar f1calendar = calendarRepository.findFirstByRaceAfterOrPractice3AfterOrderByPractice1(gmtDateTime, gmtDateTime);
         if (f1calendar == null) {
             return CalendarData.builder()
+                    .londonOffset(londonOffsetMinutes)
                     .overlays(overlayList)
                     .iframeLink(iframeLink)
                     .build();
@@ -74,6 +77,7 @@ public class ClientServiceImpl implements ClientService {
         return CalendarData.builder().f1Calendar(f1calendar).countdownData(countdownData)
                 .overlays(overlayList)
                 .iframeLink(iframeLink)
+                .londonOffset(londonOffsetMinutes)
                 .build();
     }
 
@@ -354,8 +358,11 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
-    public NewsContent getTopNews() {
-        return topNews;
+    public SidebarData getSidebarData() {
+        return SidebarData.builder()
+                .topNews(topNews)
+                .exposureOn(exposureService.isExposureNow())
+                .build();
     }
 
     @Override
@@ -460,6 +467,13 @@ public class ClientServiceImpl implements ClientService {
                 duration = Duration.between(gmtDateTime, f1calendar.getRace());
                 output.put("raceDays", (int) duration.toDays());
                 output.put("raceSeconds", (int) duration.toSeconds());
+            }
+        }
+        if (mode == 0 || mode == 6) {
+            if (f1calendar.getSprint() != null) {
+                duration = Duration.between(gmtDateTime, f1calendar.getSprint());
+                output.put("sprintDays", (int) duration.toDays());
+                output.put("sprintSeconds", (int) duration.toSeconds());
             }
         }
         return output;

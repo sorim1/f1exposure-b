@@ -5,6 +5,7 @@ import sorim.f1.slasher.relentless.entities.*;
 import sorim.f1.slasher.relentless.model.Aws;
 import sorim.f1.slasher.relentless.model.FullBackup;
 import sorim.f1.slasher.relentless.model.FullExposure;
+import sorim.f1.slasher.relentless.model.livetiming.RaceAnalysis;
 
 import java.io.IOException;
 import java.util.List;
@@ -18,8 +19,6 @@ public interface AdminService {
     Boolean refreshCalendarOfCurrentSeasonSecondary(String urlString) throws Exception;
 
     Boolean deleteCalendar() throws Exception;
-
-    void validateCalendarForNextRace() throws Exception;
 
     Boolean initializeStandings() throws IOException;
 
@@ -86,4 +85,10 @@ public interface AdminService {
     List<Replay>  saveVideos(List<Replay>  video);
 
     String updateCurrentSeasonPast(Integer season);
+
+    F1Calendar getCalendar();
+
+    F1Calendar saveCalendar(F1Calendar body);
+
+    void updateOverlays(RaceAnalysis analysis);
 }

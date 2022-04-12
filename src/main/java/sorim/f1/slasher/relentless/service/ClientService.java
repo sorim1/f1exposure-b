@@ -68,7 +68,7 @@ public interface ClientService {
 
     String setIframeLink(String link);
 
-    NewsContent getTopNews();
+    SidebarData getSidebarData();
 
     String getStreamer();
 

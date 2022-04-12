@@ -69,4 +69,10 @@ public class MainProperties {
     public void checkCurrentSeasonFuture() {
         this.currentSeasonFuture = Calendar.getInstance().get(Calendar.YEAR);
     }
+
+    public void saveProperty(String name, String value) {
+        AppProperty ap = AppProperty.builder().name(name)
+                .value(value).build();
+        propertiesRepository.save(ap);
+    }
 }

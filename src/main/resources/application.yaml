@@ -29,6 +29,7 @@ server:
     whitelabel:
       enabled: false
   port: 443
+  http-port-to-redirect: 80
   ssl:
     key-store: /root/keystore.p12
 #    key-store: classpath:keystore.p12

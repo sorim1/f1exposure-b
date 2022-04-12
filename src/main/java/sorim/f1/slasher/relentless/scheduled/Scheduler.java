@@ -43,22 +43,22 @@ public class Scheduler {
             standingsUpdated = true;
         }
         artService.generateLatestArt();
-        if(isRaceWeek){
-            log.info(CODE + " - starting fetchStatisticsFullFromPartial");
-            // ergastService.fetchStatisticsFullFromPartial();
-        } else {
-            log.info(CODE + " - no fetchStatisticsFullFromPartial because it wasnt race weekend");
-        }
-
+        ergastService.fetchStatisticsFullFromPartial(false);
         isItRaceWeek();
     }
 
-    @Scheduled(cron = "0 0 18 * * TUE")
+    @Scheduled(cron = "0 0 1 * * TUE")
     public void tuesdayJobs() throws IOException {
         log.info(CODE + " - tuesdayJobs called");
         if (!standingsUpdated) {
             adminService.initializeStandings();
             standingsUpdated = true;
+        }
+        isItRaceWeek();
+        if (isRaceWeek) {
+            clientService.setOverlays("");
+        } else {
+            clientService.setOverlays("sasha-sometimes");
         }
     }
 
@@ -74,7 +74,7 @@ public class Scheduler {
     private void isItRaceWeek() {
         CalendarData calendarData = clientService.getCountdownData(5);
         if(calendarData.getF1Calendar()!=null) {
-            isRaceWeek = calendarData.getCountdownData().get("raceDays") < 5;
+            isRaceWeek = calendarData.getCountdownData().get("raceDays") < 6;
         } else {
             isRaceWeek = false;
         }
@@ -130,6 +130,7 @@ public class Scheduler {
                                 @Override
                                 public void run() {
                                     sundayAnalysisJob();
+                                    imageFeedJob();
                                 }
                             },
                             delayInMiliseconds
@@ -162,10 +163,11 @@ public class Scheduler {
                         @SneakyThrows
                         @Override
                         public void run() {
+                            imageFeedJob();
                             liveTimingService.analyzeUpcomingRace(false);
                         }
                     },
-                    delayInMiliseconds + 1500000
+                    delayInMiliseconds + 1500000L
             );
         }
     }
@@ -176,7 +178,7 @@ public class Scheduler {
         log.info("onInitScheduler Called");
         isItRaceWeek();
         int weekDay = MainUtility.getWeekDay();
-        imageFeedJob();
+     //   imageFeedJob();
         try {
             switch (weekDay) {
                 case 1:{

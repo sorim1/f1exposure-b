@@ -19,4 +19,5 @@ public class CalendarData {
     private Map<String, Integer> countdownData;
     private List<String> overlays;
     private String iframeLink;
+    private Integer londonOffset;
 }

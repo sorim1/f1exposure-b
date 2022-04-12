@@ -12,9 +12,7 @@ import sorim.f1.slasher.relentless.entities.*;
 import sorim.f1.slasher.relentless.entities.ergast.RaceData;
 import sorim.f1.slasher.relentless.model.*;
 import sorim.f1.slasher.relentless.model.ergast.*;
-import sorim.f1.slasher.relentless.repository.DriverRepository;
-import sorim.f1.slasher.relentless.repository.ErgastRaceRepository;
-import sorim.f1.slasher.relentless.repository.JsonRepository;
+import sorim.f1.slasher.relentless.repository.*;
 import sorim.f1.slasher.relentless.service.ErgastService;
 
 import java.math.BigDecimal;
@@ -35,10 +33,12 @@ public class ErgastServiceImpl implements ErgastService {
     private static final String CONSTRUCTOR_STANDINGS = "/constructorStandings.json?limit=100";
     private final MainProperties properties;
     private final ErgastRaceRepository ergastRaceRepository;
+    private final DriverStandingsRepository driverStandingsRepository;
     private final DriverRepository driverRepository;
     private final JsonRepository jsonRepository;
     private final RestTemplate restTemplate = new RestTemplate();
     private final ObjectMapper mapper = new ObjectMapper();
+    private final PropertiesRepository propertiesRepository;
 
     @Override
     public List<RaceData> fetchSeason(String year) {
@@ -316,7 +316,11 @@ public class ErgastServiceImpl implements ErgastService {
     }
 
     @Override
-    public Boolean fetchStatisticsFullFromPartial() {
+    public Boolean fetchStatisticsFullFromPartial(Boolean forceFetch) {
+       Boolean nothingNew = compareLatestErgastRaceWithLatestFetchRace();
+            if(nothingNew && !forceFetch){
+                return false;
+            }
         List<JsonRepositoryModel> list = jsonRepository.findAllByIdStartsWith("PARTIAL_");
         Map<String, DriverStatistics> driversMap = new HashMap<>();
         Map<String, ConstructorStatistics> constructorsMap = new HashMap<>();
@@ -337,6 +341,26 @@ public class ErgastServiceImpl implements ErgastService {
             }
         });
         fetchStatisticsCore(driversMap, constructorsMap, circuitsMap, 2022, properties.getCurrentSeasonPast(), "");
+        JsonRepositoryModel ongoingChampionship = fetchHistoricSeason(properties.getCurrentSeasonPast());
+        jsonRepository.save(ongoingChampionship);
+        return true;
+    }
+
+    private Boolean compareLatestErgastRaceWithLatestFetchRace() {
+        AppProperty app = propertiesRepository.findDistinctFirstByName("fetchHistoricDataRound");
+        if (app == null) {
+            properties.saveProperty("fetchHistoricDataRound", "0");
+            return false;
+        }
+        Integer round = getCurrentDriverStandings().getMrData().getStandingsTable().getStandingsLists().get(0).getRound();
+        if (Integer.parseInt(app.getValue()) < round) {
+            properties.saveProperty("fetchHistoricDataRound", round.toString());
+            return false;
+        }
+        if (Integer.parseInt(app.getValue()) > round && round==1) {
+            properties.saveProperty("fetchHistoricDataRound", round.toString());
+            return false;
+        }
         return true;
     }
 

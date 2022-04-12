@@ -115,7 +115,6 @@ public class LiveTimingServiceImpl implements LiveTimingService {
             if (width <= 2000 || thumbnail) {
                 return (String) original.get("source");
             } else {
-                log.info("retrieving thumbnail");
                 return getWikipediaOriginalImageUrl(url, circuitName, true);
             }
         } catch (Exception e) {
@@ -138,11 +137,11 @@ public class LiveTimingServiceImpl implements LiveTimingService {
                 if (width <= 2000 || thumbnail) {
                     return (String) original.get("source");
                 } else {
-                    log.info("retrieving thumbnail");
                     return getWikipediaOriginalImageUrl(url, circuitName, true);
                 }
             } catch (Exception ex) {
                 log.error(title + " WORKAROUND FAILED");
+                log.error("getWikipediaOriginalImageUrl error", ex);
                 ex.printStackTrace();
             }
         }
@@ -241,13 +240,11 @@ public class LiveTimingServiceImpl implements LiveTimingService {
     private void analyzeRaceData(RaceData raceData) {
         if (raceData != null) {
             String liveTimingResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.RACE, 1);
-            //TODO timingAppData zasad ne koristim u RaceAnalysis
-            //String timingAppDataResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.RACE, 2);
             if (liveTimingResponse != null) {
                 raceData.setLiveTimingRace(liveTimingResponse.substring(liveTimingResponse.indexOf("{")));
-                //raceData.setTimingAppData(timingAppDataResponse.substring(timingAppDataResponse.indexOf("00")));
                 ergastService.saveRace(raceData);
-                fetchNewRaceAnalysis(raceData.getCircuit().getCircuitId());
+                RaceAnalysis analysis = fetchNewRaceAnalysis(raceData.getCircuit().getCircuitId());
+                adminService.updateOverlays(analysis);
                 analyzeUpcomingRace(false);
                 Scheduler.analysisDone = true;
             }
@@ -496,6 +493,7 @@ public class LiveTimingServiceImpl implements LiveTimingService {
             try {
                 mapping = mapper.readValue(jsonLine, typeRef);
             } catch (JsonProcessingException e) {
+                log.error("createLapTimeDataList JsonProcessingException", e);
                 e.printStackTrace();
             }
 
@@ -570,7 +568,7 @@ public class LiveTimingServiceImpl implements LiveTimingService {
     }
 
 
-    public Boolean fetchNewRaceAnalysis(String circuitId) {
+    public RaceAnalysis fetchNewRaceAnalysis(String circuitId) {
         List<RaceData> raceData = ergastService.findByCircuitIdOrderBySeasonDesc(circuitId);
         if(raceData.get(0).getLiveTimingRace()==null){
             raceData.remove(0);
@@ -613,6 +611,7 @@ public class LiveTimingServiceImpl implements LiveTimingService {
                     drivers.set(new ArrayList<>(driversMap.values()));
                 }
             } catch (Exception e) {
+                log.error("fetchNewRaceAnalysis error", e);
                 e.printStackTrace();
             }
         });
@@ -631,7 +630,8 @@ public class LiveTimingServiceImpl implements LiveTimingService {
         }
         latestRace.setRaceAnalysis(analysis);
         ergastService.saveRace(latestRace);
-        return true;
+        log.info("raceAnalysis done" );
+        return analysis;
     }
 
     private Map<String, String> mapErgastWithLiveTiming(Map<String, Driver> driversMap) {
@@ -646,11 +646,6 @@ public class LiveTimingServiceImpl implements LiveTimingService {
     }
 
     private Boolean addErgastCodesToDrivers(Map<String, Driver> driversMap, Map<String, String> ergastCodes) {
-//        ergastCodes.forEach((k,v)->{
-//           if(driversMap.containsKey(v)){
-//               driversMap.get(v).setErgastCode(k);
-//           }
-//        });
         AtomicReference<Boolean> driverMissing = new AtomicReference<>(false);
         driversMap.forEach((k, v) -> {
             Optional<Map.Entry<String, String>> driverEntry = ergastCodes.entrySet()
@@ -715,6 +710,7 @@ public class LiveTimingServiceImpl implements LiveTimingService {
             //enrichDriversWithErgastLapTimes(driversMap, ergastCodes, race.getSeason(), race.getRound());
             drivers = new ArrayList<>(driversMap.values());
         } catch (Exception e) {
+            log.error("analyzeSprintRace error", e);
             e.printStackTrace();
         }
         drivers.sort(Comparator.comparing(Driver::getPosition));
@@ -773,7 +769,9 @@ public class LiveTimingServiceImpl implements LiveTimingService {
             if (resultsResponse.getMrData().getRaceTable().getRaces().size() > 0) {
                 resultsResponse.getMrData().getRaceTable().getRaces().get(0).getResults().forEach(result -> {
                     if (ergastCodes.containsKey(result.getDriver().getDriverId())) {
-                        driversMap.get(ergastCodes.get(result.getDriver().getDriverId())).setFinishStatus(result.getPositionText());
+                        if (driversMap.containsKey(ergastCodes.get(result.getDriver().getDriverId()))) {
+                            driversMap.get(ergastCodes.get(result.getDriver().getDriverId())).setFinishStatus(result.getPositionText());
+                        }
                     }
                 });
             }
@@ -799,9 +797,11 @@ public class LiveTimingServiceImpl implements LiveTimingService {
             List<String> xData = (List<String>) row.get("X");
             List<Integer> tiData = (List<Integer>) row.get("TI");
             String tyreSequence = xData.get(9);
-            for (int i = 0; i < tiData.size(); i = i + 3) {
-                driversMap.get(driverCodes.get(driverCounter.get())).getLapByLapData().getTyres()
-                        .add(new Tyre(String.valueOf(tyreSequence.charAt(tyreSequence.length() - 1 - (i / 3))), tiData.get(i + 1)));
+            if(tiData!=null) {
+                for (int i = 0; i < tiData.size(); i = i + 3) {
+                    driversMap.get(driverCodes.get(driverCounter.get())).getLapByLapData().getTyres()
+                            .add(new Tyre(String.valueOf(tyreSequence.charAt(tyreSequence.length() - 1 - (i / 3))), tiData.get(i + 1)));
+                }
             }
             driverCounter.incrementAndGet();
         });

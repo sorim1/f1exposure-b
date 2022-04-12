@@ -20,6 +20,8 @@ public interface ExposureStrawpollService {
 
     Boolean initializeExposureFrontendVariables(String id);
 
+    Boolean isExposureNow();
+
     void startPolling();
 
     boolean exposureOn();
