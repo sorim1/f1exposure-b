@@ -138,27 +138,12 @@ public class FourchanServiceImpl implements FourchanService {
         if (post.getW() + post.getH() > 2100) {
             return true;
         }
-        return ".webm".equals(post.getExt()) && post.getFsize() > 1700000;
+        //return ".webm".equals(post.getExt()) && post.getFsize() > 1700000;
+        return false;
     }
 
     private boolean checkStreamable(FourchanPost post) {
         return post.getCom() != null && post.getCom().toUpperCase().contains("STREAMABLE.COM");
-    }
-
-    private void increaseReplyCounters(FourchanPost post, Map<Integer, FourchanPost> map) {
-        String text = post.getCom();
-        if (text != null) {
-            Integer index = text.indexOf("<a href=\"#p");
-            while (index >= 0) {
-                Integer postNumber = Integer.valueOf(text.substring(index + 11, index + 20));
-                if (map.containsKey(postNumber)) {
-                    map.get(postNumber).incrementReplyCounter();
-                }
-                text = text.substring(index + 21);
-                index = text.indexOf("<a href=\"#p");
-            }
-        }
-
     }
 
     private List<Integer> getF1ThreadNumbers() {
@@ -237,43 +222,6 @@ public class FourchanServiceImpl implements FourchanService {
     public Boolean deleteFourChanPost(Integer id) {
         Integer count = fourChanPostRepository.deleteById(id);
         return count == 1;
-    }
-
-    private String getExposureStrawpoll2() {
-        List<Integer> f1ThreadNumbers = new ArrayList();
-        String strawpoll = null;
-        try {
-            List<LinkedHashMap<String, Object>> response = restTemplate
-                    .getForObject(catalogUrl, ArrayList.class);
-
-            List<LinkedHashMap<String, Object>> listOfPosts = (List<LinkedHashMap<String, Object>>) response.get(0).get("threads");
-            listOfPosts.stream().filter(post -> post.containsKey("sub") && post.get("sub").toString().toUpperCase().contains("/F1/"))
-                    .forEach(f1Thread -> {
-                        f1ThreadNumbers.add((Integer) f1Thread.get("no"));
-                    });
-            listOfPosts = (List<LinkedHashMap<String, Object>>) response.get(1).get("threads");
-            listOfPosts.stream().filter(post -> post.containsKey("sub") && post.get("sub").toString().toUpperCase().contains("/F1/"))
-                    .forEach(f1Thread -> {
-                        f1ThreadNumbers.add((Integer) f1Thread.get("no"));
-                    });
-            if (f1ThreadNumbers.size() > 0) {
-
-                Integer i = 0;
-                do {
-                    strawpoll = search4ChanThread(f1ThreadNumbers.get(i));
-                    log.info("i - {} - strawpoll - {} - thread - {}", i, strawpoll, f1ThreadNumbers.get(i));
-                    if (strawpoll == null) {
-                        i++;
-                    } else {
-                        i = 10;
-                    }
-                } while (i < f1ThreadNumbers.size() - 1);
-            }
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return strawpoll;
     }
 
     private String search4ChanThread(Integer threadId) {

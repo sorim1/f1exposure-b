@@ -135,7 +135,15 @@ public class InstagramServiceImpl implements InstagramService {
                     }
                 });
                 boolean exists = instagramRepository.existsByCode(timelineMedias.get(timelineMedias.size() - 1).getCode());
-                iterate.set(counter.get() < 7 && (!exists));
+                if (counter.get() < 2) {
+                    iterate.set(true);
+                } else if (counter.get() > 7) {
+                    iterate.set(false);
+                } else if (exists) {
+                    iterate.set(false);
+                } else {
+                    iterate.set(true);
+                }
                 counter.set(counter.get() + 1);
             });
         } catch (Exception e) {
@@ -149,7 +157,7 @@ public class InstagramServiceImpl implements InstagramService {
     }
 
     private String getPostCaption(Comment.Caption caption) {
-        if(caption!=null){
+        if (caption != null) {
             return caption.getText();
         } else {
             return "";

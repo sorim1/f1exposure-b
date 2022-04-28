@@ -691,7 +691,12 @@ public class AdminServiceImpl implements AdminService {
             totalPoints.get(standing.getCode()).add(standing.getId().getRound(), standing.getPoints());
             roundPoints.get(standing.getCode()).add(standing.getId().getRound(), standing.getPointsThisRound());
             if (standing.getResultThisRound() != null) {
-                roundResults.get(standing.getCode()).add(standing.getId().getRound(), new BigDecimal(standing.getResultThisRound()));
+                if (isNumeric(standing.getResultThisRoundText())) {
+                    roundResults.get(standing.getCode()).add(standing.getId().getRound(), new BigDecimal(standing.getResultThisRound()));
+                } else {
+                    roundResults.get(standing.getCode()).add(standing.getId().getRound(), new BigDecimal(0));
+
+                }
             } else {
                 roundResults.get(standing.getCode()).add(standing.getId().getRound(), null);
             }

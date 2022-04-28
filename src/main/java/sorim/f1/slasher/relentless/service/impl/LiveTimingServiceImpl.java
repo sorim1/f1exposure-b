@@ -190,6 +190,10 @@ public class LiveTimingServiceImpl implements LiveTimingService {
                 date = MainUtility.subtractDays(raceDate, 1);
                 raceName = date + "_Sprint_Qualifying";
                 break;
+            case SPRINT:
+                date = MainUtility.subtractDays(raceDate, 1);
+                raceName = date + "_Sprint";
+                break;
         }
         log.info("https://livetiming.formula1.com/static/" + raceData.getSeason() + "/" + grandPrix + "/" + raceName + "/SPFeed.json");
         try {
@@ -463,12 +467,12 @@ public class LiveTimingServiceImpl implements LiveTimingService {
                 }
             }
             if (raceData.getLiveTimingSprintQuali() == null || redo) {
-                String liveTimingResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.SPRINT_QUALIFYING, 1);
+                String liveTimingResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.SPRINT, 1);
                 if (liveTimingResponse != null) {
                     raceData.setLiveTimingSprintQuali(liveTimingResponse.substring(liveTimingResponse.indexOf("{")));
                     List<Driver> drivers = analyzeSprintRace(liveTimingResponse.substring(liveTimingResponse.indexOf("{")));
                     raceData.getUpcomingRaceAnalysis().setSprintQuali(drivers);
-                    String timingAppDataResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.SPRINT_QUALIFYING, 2);
+                    String timingAppDataResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.SPRINT, 2);
                     Map<String, String> driverMap = drivers.stream()
                             .collect(Collectors.toMap(Driver::getNum, Driver::getFullName));
                     raceData.getUpcomingRaceAnalysis().setSprintQualiLaps(createLapTimeDataList(timingAppDataResponse, driverMap, "Sprint"));
