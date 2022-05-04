@@ -44,6 +44,7 @@ public class NewsContent {
     public NewsContent(LinkedHashMap<String, Object> data, long time) {
         this.code = MainUtility.generateCodeFromTitleAndId((String) data.get("title"), (String) data.get("id"));
         this.title = (String) data.get("title");
+        this.title = this.title.replace("&amp;", "&");
         this.url = (String) data.get("url_overridden_by_dest");
         Double createdDouble = (Double) data.get("created");
         this.timestampCreated = new Date(createdDouble.longValue()) ;
