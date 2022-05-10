@@ -230,12 +230,13 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
 
     @Override
     public ExposureData getExposedChartData() {
+        List<ExposureChampionshipStanding> standings = getExposureStandings();
         return ExposureData.builder()
                 .title(title)
                 .delay(reloadDelay)
                 .activeExposureChart(getActiveExposureChart())
-                .exposureChampionshipData(getExposureChampionshipData())
-                .standings(getExposureStandings())
+                .exposureChampionshipData(getExposureChampionshipData(standings))
+                .standings(standings)
                 .voters(getExposureVoters())
                 .exposureRaces(ergastService.getRacesSoFar(String.valueOf(properties.getCurrentSeasonPast()), currentExposureRound))
                 .build();
@@ -246,7 +247,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
         exposureToday = false;
         exposureNow = false;
         exposureChampionshipRepository.closeAllPolls();
-        List<ExposureChampionshipData> exposureChampionshipData = getExposureChampionshipData();
+        List<ExposureChampionshipData> exposureChampionshipData = getExposureChampionshipData(null);
         List<ExposureChampionshipStanding> exposureStandings = new ArrayList<>();
         exposureChampionshipData.forEach((v) -> {
             ExposureChampionshipStandingId id = ExposureChampionshipStandingId.builder()
@@ -306,7 +307,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
         return 0;
     }
 
-    private List<ExposureChampionshipData> getExposureChampionshipData() {
+    private List<ExposureChampionshipData> getExposureChampionshipData(List<ExposureChampionshipStanding> standings ) {
         List<ExposureChampionship> rawData = exposureChampionshipRepository.findAllByIdSeasonAndStatusOrderByIdRound(properties.getCurrentSeasonPast(), 3);
         Map<String, ExposureChampionshipData> map = new TreeMap<>();
         rawData.forEach(row -> {
@@ -339,7 +340,17 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
                 map.put(row.getId().getDriver(), data);
             }
         });
-        return new ArrayList<>(map.values());
+        if(standings==null) {
+            return new ArrayList<>(map.values());
+        } else {
+            List<ExposureChampionshipData> output = new ArrayList<>();
+            standings.forEach(standing->{
+                if(map.containsKey(standing.getId().getDriver())){
+                    output.add(map.get(standing.getId().getDriver()));
+                }
+            });
+            return output;
+        }
     }
 
     private void updateExposureDataFromStrawpoll(StrawpollModelTwo strawpoll) {

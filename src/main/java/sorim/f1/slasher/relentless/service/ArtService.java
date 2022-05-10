@@ -17,6 +17,8 @@ public interface ArtService {
 
     Boolean updateArt(String code, byte[] image);
 
+    Boolean saveImage(String code, byte[] image);
+
     List<ArtImageRow> getAllArt();
 
     ArtImageRow postArt(ArtImageRow body);

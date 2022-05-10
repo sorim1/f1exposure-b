@@ -47,7 +47,6 @@ public class LiveTimingServiceImpl implements LiveTimingService {
     private final AdminService adminService;
     private final ClientService clientService;
     private final MainProperties properties;
-    private final ArtImageRepository artImageRepository;
     private final ObjectMapper mapper = new ObjectMapper();
     RestTemplate restTemplate = new RestTemplate();
 

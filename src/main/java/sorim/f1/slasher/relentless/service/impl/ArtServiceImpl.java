@@ -6,11 +6,13 @@ import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import sorim.f1.slasher.relentless.entities.ArtImageRow;
+import sorim.f1.slasher.relentless.entities.ImageRow;
 import sorim.f1.slasher.relentless.entities.ergast.RaceData;
 import sorim.f1.slasher.relentless.model.livetiming.ArtDriver;
 import sorim.f1.slasher.relentless.model.livetiming.Driver;
 import sorim.f1.slasher.relentless.model.livetiming.RaceAnalysis;
 import sorim.f1.slasher.relentless.repository.ArtImageRepository;
+import sorim.f1.slasher.relentless.repository.ImageRepository;
 import sorim.f1.slasher.relentless.service.ArtService;
 import sorim.f1.slasher.relentless.service.ErgastService;
 
@@ -32,6 +34,7 @@ public class ArtServiceImpl implements ArtService {
 
     private final ErgastService ergastService;
     private final ArtImageRepository artImageRepository;
+    private final ImageRepository imageRepository;
     private final Integer width = 2000;
     private final Integer height = 2000;
     private Integer lapCount = 0;
@@ -66,14 +69,14 @@ public class ArtServiceImpl implements ArtService {
             BufferedImage bi = generateBufferedImage(analysis, drag, drag, i, diameter, 1);
             BufferedImage bi2 = resize(bi, 1000, 1000);
             byte[] byteArray = toByteArray(bi2);
-            FileUtils.writeByteArrayToFile(new File("C:\\Users\\sorim\\Pictures\\f1-exposure\\cdm1-" + i + ".png"), byteArray);
+            FileUtils.writeByteArrayToFile(new File("C:\\Users\\sorim\\Pictures\\f1-exposure\\ddm1-" + i + ".png"), byteArray);
         }
 
         for (int i = 1400; i < 2000; i = i + 100) {
             BufferedImage bi = generateBufferedImage(analysis, drag, drag, i, diameter, 2);
             BufferedImage bi2 = resize(bi, 1000, 1000);
             byte[] byteArray = toByteArray(bi2);
-            FileUtils.writeByteArrayToFile(new File("C:\\Users\\sorim\\Pictures\\f1-exposure\\cdm2-" + i + ".png"), byteArray);
+            FileUtils.writeByteArrayToFile(new File("C:\\Users\\sorim\\Pictures\\f1-exposure\\ddm2-" + i + ".png"), byteArray);
         }
 
         return true;
@@ -349,6 +352,13 @@ public class ArtServiceImpl implements ArtService {
         ArtImageRow row = artImageRepository.findFirstByCode(code);
         row.setImage(image);
         artImageRepository.save(row);
+        return true;
+    }
+
+    @Override
+    public Boolean saveImage(String code, byte[] image) {
+        ImageRow imageRow = ImageRow.builder().code(code).image(image).build();
+        imageRepository.save(imageRow);
         return true;
     }
 

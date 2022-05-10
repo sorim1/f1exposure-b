@@ -56,6 +56,13 @@ public class ArtController {
         return artService.updateArt(code, bytes);
     }
 
+    @PostMapping("/saveImage/{code}")
+    Boolean saveImage(@RequestHeader String client, @RequestParam("image") MultipartFile image,  @PathVariable("code") String code) throws Exception {
+        securityService.validateAdminHeader(client);
+        byte[] bytes = image.getBytes();
+        return artService.saveImage(code, bytes);
+    }
+
     @GetMapping("/setLatestArt/{code}")
     Boolean setLatestArt(@RequestHeader String client, @PathVariable("code") String code) throws Exception {
         securityService.validateAdminHeader(client);

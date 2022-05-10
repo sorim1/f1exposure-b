@@ -658,8 +658,10 @@ public class AdminServiceImpl implements AdminService {
 
     private void generateChartsDriverStandingsByRound() {
         List<DriverStandingByRound> standingsBySeason = driverStandingsByRoundRepository.findAllByIdSeasonOrderByIdRoundAscNameAsc(properties.getCurrentSeasonPast());
+        List<DriverStanding> driverStandings = driverStandingsRepository.findAllByOrderByPositionAsc();
         Map<String, ChartSeries> totalPoints = new TreeMap<>();
         Map<String, ChartSeries> roundPoints = new TreeMap<>();
+        List<ChartSeries> roundPointsSorted = new ArrayList<>();
         Map<String, ChartSeries> roundResults = new TreeMap<>();
         Map<String, ChartSeries> gridToResultChartIncludingDnf = new TreeMap<>();
         Map<String, ChartSeries> gridToResultChartWithoutDnf = new TreeMap<>();
@@ -716,12 +718,18 @@ public class AdminServiceImpl implements AdminService {
         for (ChartSeries serie : gridToResultChartWithoutDnfList) {
             serie.calcSeries2Averages();
         }
-
+        driverStandings.forEach(ds->{
+            if(roundPoints.containsKey(ds.getCode())){
+                roundPointsSorted.add(roundPoints.get(ds.getCode()));
+            }
+        });
+        System.out.println(roundPoints);
+        System.out.println(roundPointsSorted);
         List<JsonRepositoryModel> output = new ArrayList<>();
         JsonRepositoryModel data1 = JsonRepositoryModel.builder().id("DRIVERS_TOTAL_POINTS")
                 .json(new ArrayList<>(totalPoints.values())).build();
         JsonRepositoryModel data2 = JsonRepositoryModel.builder().id("DRIVERS_ROUND_POINTS")
-                .json(new ArrayList<>(roundPoints.values())).build();
+                .json(new ArrayList<>(roundPointsSorted)).build();
         JsonRepositoryModel data3 = JsonRepositoryModel.builder().id("DRIVERS_ROUND_RESULTS")
                 .json(new ArrayList<>(roundResults.values())).build();
         JsonRepositoryModel data4 = JsonRepositoryModel.builder().id("GRID_TO_RESULT_WITH_DNF")
