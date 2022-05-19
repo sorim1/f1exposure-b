@@ -40243,6 +40243,7 @@ var ng_apexcharts = __webpack_require__(4256);
 
 
 
+
 const exposed_component_c0 = ["chart"];
 function ExposedComponent_div_13_Template(rf, ctx) { if (rf & 1) {
     const _r5 = core/* ɵɵgetCurrentView */.EpF();
@@ -40270,21 +40271,48 @@ function ExposedComponent_div_13_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵadvance */.xp6(2);
     core/* ɵɵtextInterpolate */.Oqu(comment_r3.comment);
 } }
+function ExposedComponent_div_20_ng_template_3_div_0_div_1_Template(rf, ctx) { if (rf & 1) {
+    core/* ɵɵelementStart */.TgZ(0, "div", 30);
+    core/* ɵɵelementStart */.TgZ(1, "div", 31);
+    core/* ɵɵelementStart */.TgZ(2, "mat-button-toggle", 32);
+    core/* ɵɵelementStart */.TgZ(3, "div", 33);
+    core/* ɵɵelementStart */.TgZ(4, "p", 34);
+    core/* ɵɵtext */._uU(5, "KWAB");
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(6, "p", 34);
+    core/* ɵɵtext */._uU(7, "OF THE DAY");
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelement */._UZ(8, "img", 35);
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(9, "div", 36);
+    core/* ɵɵelement */._UZ(10, "img", 37);
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+} if (rf & 2) {
+    const ctx_r11 = core/* ɵɵnextContext */.oxw(4);
+    core/* ɵɵadvance */.xp6(8);
+    core/* ɵɵpropertyInterpolate */.s9C("src", "assets/img/drivers/" + ctx_r11.exposureData.currentYear + "/" + ctx_r11.exposureData.activeExposureChart.drivers[0] + ".png", core/* ɵɵsanitizeUrl */.LSH);
+} }
 function ExposedComponent_div_20_ng_template_3_div_0_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div", 26);
-    core/* ɵɵelementStart */.TgZ(1, "a", 27);
-    core/* ɵɵelementStart */.TgZ(2, "button", 28);
-    core/* ɵɵtext */._uU(3, " Go to strawpoll ");
+    core/* ɵɵtemplate */.YNc(1, ExposedComponent_div_20_ng_template_3_div_0_div_1_Template, 11, 1, "div", 27);
+    core/* ɵɵelementStart */.TgZ(2, "a", 28);
+    core/* ɵɵelementStart */.TgZ(3, "button", 29);
+    core/* ɵɵtext */._uU(4, " Go to strawpoll ");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
     const ctx_r10 = core/* ɵɵnextContext */.oxw(3);
     core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵproperty */.Q6J("ngIf", ctx_r10.exposureData.showWinner);
+    core/* ɵɵadvance */.xp6(1);
     core/* ɵɵproperty */.Q6J("href", ctx_r10.getStrawpollUrl(ctx_r10.exposedChart.strawpoll), core/* ɵɵsanitizeUrl */.LSH);
 } }
 function ExposedComponent_div_20_ng_template_3_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵtemplate */.YNc(0, ExposedComponent_div_20_ng_template_3_div_0_Template, 4, 1, "div", 23);
+    core/* ɵɵtemplate */.YNc(0, ExposedComponent_div_20_ng_template_3_div_0_Template, 5, 2, "div", 23);
     core/* ɵɵelement */._UZ(1, "apx-chart", 24);
     core/* ɵɵelement */._UZ(2, "apx-chart", 25);
 } if (rf & 2) {
@@ -40297,50 +40325,50 @@ function ExposedComponent_div_20_ng_template_3_Template(rf, ctx) { if (rf & 1) {
 } }
 function ExposedComponent_div_20_ng_template_5_div_1_tr_15_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "tr");
-    core/* ɵɵelementStart */.TgZ(1, "th", 36);
+    core/* ɵɵelementStart */.TgZ(1, "th", 45);
     core/* ɵɵtext */._uU(2);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(3, "td");
     core/* ɵɵtext */._uU(4);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(5, "td", 37);
+    core/* ɵɵelementStart */.TgZ(5, "td", 46);
     core/* ɵɵtext */._uU(6);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(7, "td", 38);
+    core/* ɵɵelementStart */.TgZ(7, "td", 47);
     core/* ɵɵtext */._uU(8);
     core/* ɵɵpipe */.ALo(9, "number");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const standing_r16 = ctx.$implicit;
-    const i_r17 = ctx.index;
+    const standing_r17 = ctx.$implicit;
+    const i_r18 = ctx.index;
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(i_r17 + 1);
+    core/* ɵɵtextInterpolate */.Oqu(i_r18 + 1);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r16.fullName);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r17.fullName);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r16.id.driver);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r17.id.driver);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(core/* ɵɵpipeBind1 */.lcZ(9, 4, standing_r16.exposure));
+    core/* ɵɵtextInterpolate */.Oqu(core/* ɵɵpipeBind1 */.lcZ(9, 4, standing_r17.exposure));
 } }
 function ExposedComponent_div_20_ng_template_5_div_1_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "div", 31);
-    core/* ɵɵelementStart */.TgZ(1, "table", 32);
+    core/* ɵɵelementStart */.TgZ(0, "div", 40);
+    core/* ɵɵelementStart */.TgZ(1, "table", 41);
     core/* ɵɵelementStart */.TgZ(2, "thead");
     core/* ɵɵelementStart */.TgZ(3, "tr");
-    core/* ɵɵelementStart */.TgZ(4, "th", 33);
+    core/* ɵɵelementStart */.TgZ(4, "th", 42);
     core/* ɵɵtext */._uU(5);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(6, "tr", 34);
-    core/* ɵɵelement */._UZ(7, "th", 35);
-    core/* ɵɵelementStart */.TgZ(8, "th", 35);
+    core/* ɵɵelementStart */.TgZ(6, "tr", 43);
+    core/* ɵɵelement */._UZ(7, "th", 44);
+    core/* ɵɵelementStart */.TgZ(8, "th", 44);
     core/* ɵɵtext */._uU(9, "Driver");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(10, "th", 35);
+    core/* ɵɵelementStart */.TgZ(10, "th", 44);
     core/* ɵɵtext */._uU(11, "Code");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(12, "th", 35);
+    core/* ɵɵelementStart */.TgZ(12, "th", 44);
     core/* ɵɵtext */._uU(13, "Exposure");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -40351,61 +40379,61 @@ function ExposedComponent_div_20_ng_template_5_div_1_Template(rf, ctx) { if (rf 
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const ctx_r11 = core/* ɵɵnextContext */.oxw(3);
+    const ctx_r12 = core/* ɵɵnextContext */.oxw(3);
     core/* ɵɵadvance */.xp6(5);
-    core/* ɵɵtextInterpolate1 */.hij("", ctx_r11.exposureData.activeExposureChart.season, " Exposure Standings ");
+    core/* ɵɵtextInterpolate1 */.hij("", ctx_r12.exposureData.activeExposureChart.season, " Exposure Standings ");
     core/* ɵɵadvance */.xp6(10);
-    core/* ɵɵproperty */.Q6J("ngForOf", ctx_r11.exposureData.standings);
+    core/* ɵɵproperty */.Q6J("ngForOf", ctx_r12.exposureData.standings);
 } }
 function ExposedComponent_div_20_ng_template_5_div_2_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "div", 39);
-    core/* ɵɵelement */._UZ(1, "apx-chart", 40);
-    core/* ɵɵelement */._UZ(2, "apx-chart", 41);
+    core/* ɵɵelementStart */.TgZ(0, "div", 48);
+    core/* ɵɵelement */._UZ(1, "apx-chart", 49);
+    core/* ɵɵelement */._UZ(2, "apx-chart", 50);
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const ctx_r12 = core/* ɵɵnextContext */.oxw(3);
+    const ctx_r13 = core/* ɵɵnextContext */.oxw(3);
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("series", ctx_r12.exposureStandingsOptions.series)("xaxis", ctx_r12.numericXaxis)("yaxis", ctx_r12.defYaxis)("title", ctx_r12.exposureStandingsOptions.title)("chart", ctx_r12.lineChart)("stroke", ctx_r12.defStroke)("tooltip", ctx_r12.defTooltip);
+    core/* ɵɵproperty */.Q6J("series", ctx_r13.exposureStandingsOptions.series)("xaxis", ctx_r13.numericXaxis)("yaxis", ctx_r13.defYaxis)("title", ctx_r13.exposureStandingsOptions.title)("chart", ctx_r13.lineChart)("stroke", ctx_r13.defStroke)("tooltip", ctx_r13.defTooltip);
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("title", ctx_r12.exposureRoundByRoundOptions.title)("series", ctx_r12.exposureRoundByRoundOptions.series)("chart", ctx_r12.exposureRoundByRoundOptions.chart)("dataLabels", ctx_r12.exposureRoundByRoundOptions.dataLabels)("plotOptions", ctx_r12.exposureRoundByRoundOptions.plotOptions)("responsive", ctx_r12.exposureRoundByRoundOptions.responsive)("xaxis", ctx_r12.exposureRoundByRoundOptions.xaxis)("fill", ctx_r12.exposureRoundByRoundOptions.fill)("dataLabels", ctx_r12.exposureRoundByRoundOptions.dataLabels);
+    core/* ɵɵproperty */.Q6J("title", ctx_r13.exposureRoundByRoundOptions.title)("series", ctx_r13.exposureRoundByRoundOptions.series)("chart", ctx_r13.exposureRoundByRoundOptions.chart)("dataLabels", ctx_r13.exposureRoundByRoundOptions.dataLabels)("plotOptions", ctx_r13.exposureRoundByRoundOptions.plotOptions)("responsive", ctx_r13.exposureRoundByRoundOptions.responsive)("xaxis", ctx_r13.exposureRoundByRoundOptions.xaxis)("fill", ctx_r13.exposureRoundByRoundOptions.fill)("dataLabels", ctx_r13.exposureRoundByRoundOptions.dataLabels);
 } }
 function ExposedComponent_div_20_ng_template_5_div_4_tr_14_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "tr");
     core/* ɵɵelementStart */.TgZ(1, "td");
     core/* ɵɵtext */._uU(2);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(3, "td", 37);
+    core/* ɵɵelementStart */.TgZ(3, "td", 46);
     core/* ɵɵtext */._uU(4);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelement */._UZ(5, "td");
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const race_r19 = ctx.$implicit;
-    const ctx_r18 = core/* ɵɵnextContext */.oxw(4);
+    const race_r20 = ctx.$implicit;
+    const ctx_r19 = core/* ɵɵnextContext */.oxw(4);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(race_r19.round);
+    core/* ɵɵtextInterpolate */.Oqu(race_r20.round);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(race_r19.raceName);
+    core/* ɵɵtextInterpolate */.Oqu(race_r20.raceName);
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵstyleProp */.Udp("background-color", ctx_r18.getColor(race_r19.round));
+    core/* ɵɵstyleProp */.Udp("background-color", ctx_r19.getColor(race_r20.round));
 } }
 function ExposedComponent_div_20_ng_template_5_div_4_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "div", 31);
-    core/* ɵɵelementStart */.TgZ(1, "table", 32);
+    core/* ɵɵelementStart */.TgZ(0, "div", 40);
+    core/* ɵɵelementStart */.TgZ(1, "table", 41);
     core/* ɵɵelementStart */.TgZ(2, "thead");
     core/* ɵɵelementStart */.TgZ(3, "tr");
-    core/* ɵɵelementStart */.TgZ(4, "th", 33);
+    core/* ɵɵelementStart */.TgZ(4, "th", 42);
     core/* ɵɵtext */._uU(5);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(6, "tr", 34);
-    core/* ɵɵelementStart */.TgZ(7, "th", 35);
+    core/* ɵɵelementStart */.TgZ(6, "tr", 43);
+    core/* ɵɵelementStart */.TgZ(7, "th", 44);
     core/* ɵɵtext */._uU(8, "Round");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(9, "th", 35);
+    core/* ɵɵelementStart */.TgZ(9, "th", 44);
     core/* ɵɵtext */._uU(10, "Race");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(11, "th", 35);
+    core/* ɵɵelementStart */.TgZ(11, "th", 44);
     core/* ɵɵtext */._uU(12, "Color");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -40416,32 +40444,32 @@ function ExposedComponent_div_20_ng_template_5_div_4_Template(rf, ctx) { if (rf 
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const ctx_r13 = core/* ɵɵnextContext */.oxw(3);
+    const ctx_r14 = core/* ɵɵnextContext */.oxw(3);
     core/* ɵɵadvance */.xp6(5);
-    core/* ɵɵtextInterpolate1 */.hij("", ctx_r13.exposureData.activeExposureChart.season, " races ");
+    core/* ɵɵtextInterpolate1 */.hij("", ctx_r14.exposureData.activeExposureChart.season, " races ");
     core/* ɵɵadvance */.xp6(9);
-    core/* ɵɵproperty */.Q6J("ngForOf", ctx_r13.exposureData.exposureRaces);
+    core/* ɵɵproperty */.Q6J("ngForOf", ctx_r14.exposureData.exposureRaces);
 } }
 function ExposedComponent_div_20_ng_template_5_div_5_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "div", 39);
-    core/* ɵɵelement */._UZ(1, "apx-chart", 42);
-    core/* ɵɵelement */._UZ(2, "apx-chart", 43);
+    core/* ɵɵelementStart */.TgZ(0, "div", 48);
+    core/* ɵɵelement */._UZ(1, "apx-chart", 51);
+    core/* ɵɵelement */._UZ(2, "apx-chart", 52);
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const ctx_r14 = core/* ɵɵnextContext */.oxw(3);
+    const ctx_r15 = core/* ɵɵnextContext */.oxw(3);
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("chart", ctx_r14.defaultChartOptions.chart)("dataLabels", ctx_r14.defaultChartOptions.dataLabels)("plotOptions", ctx_r14.distributedPlotOptions)("series", ctx_r14.maxExposureOptions.series)("title", ctx_r14.maxExposureOptions.title)("xaxis", ctx_r14.maxExposureOptions.xaxis)("yaxis", ctx_r14.maxExposureOptions.yaxis)("colors", ctx_r14.maxExposureColors)("legend", ctx_r14.noLegend);
+    core/* ɵɵproperty */.Q6J("chart", ctx_r15.defaultChartOptions.chart)("dataLabels", ctx_r15.defaultChartOptions.dataLabels)("plotOptions", ctx_r15.distributedPlotOptions)("series", ctx_r15.maxExposureOptions.series)("title", ctx_r15.maxExposureOptions.title)("xaxis", ctx_r15.maxExposureOptions.xaxis)("yaxis", ctx_r15.maxExposureOptions.yaxis)("colors", ctx_r15.maxExposureColors)("legend", ctx_r15.noLegend);
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("series", ctx_r14.votersOptions.series)("xaxis", ctx_r14.numericXaxis)("yaxis", ctx_r14.defYaxis)("title", ctx_r14.votersOptions.title)("chart", ctx_r14.lineChart)("stroke", ctx_r14.defStroke)("legend", ctx_r14.raceLegend);
+    core/* ɵɵproperty */.Q6J("series", ctx_r15.votersOptions.series)("xaxis", ctx_r15.numericXaxis)("yaxis", ctx_r15.defYaxis)("title", ctx_r15.votersOptions.title)("chart", ctx_r15.lineChart)("stroke", ctx_r15.defStroke)("legend", ctx_r15.raceLegend);
 } }
 function ExposedComponent_div_20_ng_template_5_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div", 4);
-    core/* ɵɵtemplate */.YNc(1, ExposedComponent_div_20_ng_template_5_div_1_Template, 16, 2, "div", 29);
-    core/* ɵɵtemplate */.YNc(2, ExposedComponent_div_20_ng_template_5_div_2_Template, 3, 16, "div", 30);
+    core/* ɵɵtemplate */.YNc(1, ExposedComponent_div_20_ng_template_5_div_1_Template, 16, 2, "div", 38);
+    core/* ɵɵtemplate */.YNc(2, ExposedComponent_div_20_ng_template_5_div_2_Template, 3, 16, "div", 39);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(3, "div", 4);
-    core/* ɵɵtemplate */.YNc(4, ExposedComponent_div_20_ng_template_5_div_4_Template, 15, 2, "div", 29);
-    core/* ɵɵtemplate */.YNc(5, ExposedComponent_div_20_ng_template_5_div_5_Template, 3, 16, "div", 30);
+    core/* ɵɵtemplate */.YNc(4, ExposedComponent_div_20_ng_template_5_div_4_Template, 15, 2, "div", 38);
+    core/* ɵɵtemplate */.YNc(5, ExposedComponent_div_20_ng_template_5_div_5_Template, 3, 16, "div", 39);
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
     const ctx_r8 = core/* ɵɵnextContext */.oxw(2);
@@ -40455,15 +40483,15 @@ function ExposedComponent_div_20_ng_template_5_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵproperty */.Q6J("ngIf", ctx_r8.exposureData !== undefined);
 } }
 function ExposedComponent_div_20_ng_template_7_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "div", 44);
+    core/* ɵɵelementStart */.TgZ(0, "div", 53);
     core/* ɵɵelementStart */.TgZ(1, "p");
     core/* ɵɵtext */._uU(2, " The real exposure hosted on strawpoll by ");
-    core/* ɵɵelementStart */.TgZ(3, "a", 45);
+    core/* ɵɵelementStart */.TgZ(3, "a", 54);
     core/* ɵɵtext */._uU(4, "Vitaly Petrov");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵtext */._uU(5, " - and that's not me. This site finds the strawpoll and stores its results. ");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(6, "div", 46);
+    core/* ɵɵelementStart */.TgZ(6, "div", 55);
     core/* ɵɵtext */._uU(7, " Exposure formula is ");
     core/* ɵɵelementStart */.TgZ(8, "p");
     core/* ɵɵtext */._uU(9, "exposure = votes/total voters");
@@ -40532,6 +40560,13 @@ class ExposedComponent {
             }
         };
         this.lineChart = {
+            animations: {
+                enabled: true,
+                speed: 1000,
+                animateGradually: {
+                    enabled: false
+                },
+            },
             height: 500,
             type: 'line',
             zoom: {
@@ -40743,13 +40778,13 @@ class ExposedComponent {
                 };
                 this.setExposureChampionshipData();
                 if (this.exposedChart.delay > 1) {
-                    setTimeout(() => this.getExposureResultsPeriodically(this.exposedChart.delay), this.exposedChart.delay);
+                    setTimeout(() => this.getExposureResultsPeriodically(), this.exposedChart.delay);
                 }
                 return data;
             }
         });
     }
-    getExposureResultsPeriodically(delay) {
+    getExposureResultsPeriodically() {
         this.restService.getExposureResults().subscribe({
             next: data => {
                 this.exposureData = data;
@@ -40790,7 +40825,7 @@ class ExposedComponent {
                     }
                 };
                 if (this.exposedChart.delay > 1 && !this.destroyed) {
-                    setTimeout(() => this.getExposureResultsPeriodically(this.exposedChart.delay), this.exposedChart.delay);
+                    setTimeout(() => this.getExposureResultsPeriodically(), this.exposedChart.delay);
                 }
                 return data;
             }
@@ -40806,8 +40841,8 @@ ExposedComponent.ɵcmp = /*@__PURE__*/ core/* ɵɵdefineComponent */.Xpm({ type:
     } if (rf & 2) {
         let _t;
         core/* ɵɵqueryRefresh */.iGM(_t = core/* ɵɵloadQuery */.CRH()) && (ctx.chart = _t.first);
-    } }, decls: 21, vars: 4, consts: [[1, "div-padded"], ["autosize", ""], ["mode", "side", "position", "end", 1, "example-sidenav", 3, "opened", "openedChange"], ["drawer", ""], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area", 3, "ngModel", "focus", "focusout", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "active-color-button", 3, "click"], [4, "ngFor", "ngForOf"], [1, "fixed-button"], ["type", "fixed-plugin", "mat-button", "", 3, "click"], [1, "fa", "fa-commenting-o", "fa-2x"], ["class", "div-padded-right bg-white height-fill-screen", "id", "chart1", 4, "ngIf"], [1, "basic-comment"], [1, "header-left", "hover-pointer", 3, "click"], [1, "header-right", "hover-pointer", 3, "click"], [1, "basic-comment-body"], ["id", "chart1", 1, "div-padded-right", "bg-white", "height-fill-screen"], ["label", "Latest race"], ["matTabContent", ""], ["label", "World Exposure Championship"], ["label", "Info"], ["class", "div-padded-always-left-right-1 row", 4, "ngIf"], [3, "chart", "dataLabels", "plotOptions", "series", "xaxis", "title", "yaxis"], [3, "chart", "dataLabels", "plotOptions", "series", "xaxis", "title"], [1, "div-padded-always-left-right-1", "row"], ["target", "_blank", 1, "div-float-right", 3, "href"], ["color", "accent", "mat-flat-button", "", 1, "width-100"], ["class", "col-lg-4 col-md-6 col-xs-6", 4, "ngIf"], ["class", "col-lg-8 col-md-6 col-xs-6", 4, "ngIf"], [1, "col-lg-4", "col-md-6", "col-xs-6"], [1, "table", "table-striped"], ["colspan", "4", 1, "text-center", "bg-primary", "text-white"], [1, "text-center", "bg-info", "text-white"], ["scope", "col"], ["scope", "row"], [1, "text-center"], [1, "text-right"], [1, "col-lg-8", "col-md-6", "col-xs-6"], [3, "series", "xaxis", "yaxis", "title", "chart", "stroke", "tooltip"], [3, "title", "series", "chart", "dataLabels", "plotOptions", "responsive", "xaxis", "fill"], [3, "chart", "dataLabels", "plotOptions", "series", "title", "xaxis", "yaxis", "colors", "legend"], [3, "series", "xaxis", "yaxis", "title", "chart", "stroke", "legend"], [1, "card", "div-padded-2rem", "text-justify"], ["href", "https://strawpoll.com/user/vitaly-petrov"], [1, "text-justify"]], template: function ExposedComponent_Template(rf, ctx) { if (rf & 1) {
-        const _r21 = core/* ɵɵgetCurrentView */.EpF();
+    } }, decls: 21, vars: 4, consts: [[1, "div-padded"], ["autosize", ""], ["mode", "side", "position", "end", 1, "example-sidenav", 3, "opened", "openedChange"], ["drawer", ""], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area", 3, "ngModel", "focus", "focusout", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "active-color-button", 3, "click"], [4, "ngFor", "ngForOf"], [1, "fixed-button"], ["type", "fixed-plugin", "mat-button", "", 3, "click"], [1, "fa", "fa-commenting-o", "fa-2x"], ["class", "div-padded-right bg-white height-fill-screen", "id", "chart1", 4, "ngIf"], [1, "basic-comment"], [1, "header-left", "hover-pointer", 3, "click"], [1, "header-right", "hover-pointer", 3, "click"], [1, "basic-comment-body"], ["id", "chart1", 1, "div-padded-right", "bg-white", "height-fill-screen"], ["label", "Latest race"], ["matTabContent", ""], ["label", "World Exposure Championship"], ["label", "Info"], ["class", "div-padded-always-left-right-1 row", 4, "ngIf"], [3, "chart", "dataLabels", "plotOptions", "series", "xaxis", "title", "yaxis"], [3, "chart", "dataLabels", "plotOptions", "series", "xaxis", "title"], [1, "div-padded-always-left-right-1", "row"], ["class", "w-75 center-div", 4, "ngIf"], ["target", "_blank", 1, "div-float-right", 3, "href"], ["color", "accent", "mat-flat-button", "", 1, "width-100"], [1, "w-75", "center-div"], [1, "max-w-232-px", "card", "center-div"], ["value", "driver.Name", 2, "background-color", "black"], [1, "card-body"], [1, "driver-text-def", "teko-text-color-2"], ["onerror", "this.src='assets/img/drivers/default.png'", "alt", "", 3, "src"], [1, "card-footer"], ["src", "assets/img/relentless.png", "alt", "relentless", 1, "kwab-footer"], ["class", "col-lg-4 col-md-6 col-xs-6", 4, "ngIf"], ["class", "col-lg-8 col-md-6 col-xs-6", 4, "ngIf"], [1, "col-lg-4", "col-md-6", "col-xs-6"], [1, "table", "table-striped"], ["colspan", "4", 1, "text-center", "bg-primary", "text-white"], [1, "text-center", "bg-info", "text-white"], ["scope", "col"], ["scope", "row"], [1, "text-center"], [1, "text-right"], [1, "col-lg-8", "col-md-6", "col-xs-6"], [3, "series", "xaxis", "yaxis", "title", "chart", "stroke", "tooltip"], [3, "title", "series", "chart", "dataLabels", "plotOptions", "responsive", "xaxis", "fill"], [3, "chart", "dataLabels", "plotOptions", "series", "title", "xaxis", "yaxis", "colors", "legend"], [3, "series", "xaxis", "yaxis", "title", "chart", "stroke", "legend"], [1, "card", "div-padded-2rem", "text-justify"], ["href", "https://strawpoll.com/user/vitaly-petrov"], [1, "text-justify"]], template: function ExposedComponent_Template(rf, ctx) { if (rf & 1) {
+        const _r22 = core/* ɵɵgetCurrentView */.EpF();
         core/* ɵɵelementStart */.TgZ(0, "div", 0);
         core/* ɵɵelementStart */.TgZ(1, "mat-drawer-container", 1);
         core/* ɵɵelementStart */.TgZ(2, "mat-drawer", 2, 3);
@@ -40834,14 +40869,14 @@ ExposedComponent.ɵcmp = /*@__PURE__*/ core/* ɵɵdefineComponent */.Xpm({ type:
         core/* ɵɵtemplate */.YNc(13, ExposedComponent_div_13_Template, 8, 3, "div", 9);
         core/* ɵɵelementStart */.TgZ(14, "div", 10);
         core/* ɵɵelementStart */.TgZ(15, "button", 11);
-        core/* ɵɵlistener */.NdJ("click", function ExposedComponent_Template_button_click_15_listener() { core/* ɵɵrestoreView */.CHM(_r21); const _r0 = core/* ɵɵreference */.MAs(3); return _r0.toggle(); });
+        core/* ɵɵlistener */.NdJ("click", function ExposedComponent_Template_button_click_15_listener() { core/* ɵɵrestoreView */.CHM(_r22); const _r0 = core/* ɵɵreference */.MAs(3); return _r0.toggle(); });
         core/* ɵɵelement */._UZ(16, "i", 12);
         core/* ɵɵelementEnd */.qZA();
         core/* ɵɵelementEnd */.qZA();
         core/* ɵɵelementEnd */.qZA();
         core/* ɵɵelementStart */.TgZ(17, "div", 10);
         core/* ɵɵelementStart */.TgZ(18, "button", 11);
-        core/* ɵɵlistener */.NdJ("click", function ExposedComponent_Template_button_click_18_listener() { core/* ɵɵrestoreView */.CHM(_r21); const _r0 = core/* ɵɵreference */.MAs(3); return _r0.toggle(); });
+        core/* ɵɵlistener */.NdJ("click", function ExposedComponent_Template_button_click_18_listener() { core/* ɵɵrestoreView */.CHM(_r22); const _r0 = core/* ɵɵreference */.MAs(3); return _r0.toggle(); });
         core/* ɵɵelement */._UZ(19, "i", 12);
         core/* ɵɵelementEnd */.qZA();
         core/* ɵɵelementEnd */.qZA();
@@ -40857,7 +40892,7 @@ ExposedComponent.ɵcmp = /*@__PURE__*/ core/* ɵɵdefineComponent */.Xpm({ type:
         core/* ɵɵproperty */.Q6J("ngForOf", ctx.utilityService.comments);
         core/* ɵɵadvance */.xp6(7);
         core/* ɵɵproperty */.Q6J("ngIf", ctx.exposureData != null);
-    } }, directives: [sidenav/* MatDrawerContainer */.kh, sidenav/* MatDrawer */.jA, MatInput, fesm2015_forms/* DefaultValueAccessor */.Fj, fesm2015_forms/* NgControlStatus */.JJ, fesm2015_forms/* NgModel */.On, fesm2015_button/* MatButton */.lW, common/* NgForOf */.sg, common/* NgIf */.O5, tabs/* MatTabGroup */.SP, tabs/* MatTab */.uX, tabs/* MatTabContent */.Vc, ng_apexcharts/* ChartComponent */.x], pipes: [common/* DecimalPipe */.JJ], encapsulation: 2 });
+    } }, directives: [sidenav/* MatDrawerContainer */.kh, sidenav/* MatDrawer */.jA, MatInput, fesm2015_forms/* DefaultValueAccessor */.Fj, fesm2015_forms/* NgControlStatus */.JJ, fesm2015_forms/* NgModel */.On, fesm2015_button/* MatButton */.lW, common/* NgForOf */.sg, common/* NgIf */.O5, tabs/* MatTabGroup */.SP, tabs/* MatTab */.uX, tabs/* MatTabContent */.Vc, ng_apexcharts/* ChartComponent */.x, MatButtonToggle], pipes: [common/* DecimalPipe */.JJ], encapsulation: 2 });
 
 ;// CONCATENATED MODULE: ./src/app/model/calendar-data.ts
 class CalendarData {
@@ -44726,21 +44761,22 @@ function StandingsComponent_div_20_ng_template_9_div_0_Template(rf, ctx) { if (r
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(3, "div", 53);
     core/* ɵɵelement */._UZ(4, "apx-chart", 54);
+    core/* ɵɵelement */._UZ(5, "apx-chart", 55);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(5, "div", 55);
-    core/* ɵɵelementStart */.TgZ(6, "span");
-    core/* ɵɵtext */._uU(7, "Exclude DNF results ");
+    core/* ɵɵelementStart */.TgZ(6, "div", 56);
+    core/* ɵɵelementStart */.TgZ(7, "span");
+    core/* ɵɵtext */._uU(8, "Exclude DNF results ");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(8, "mat-slide-toggle", 56);
-    core/* ɵɵlistener */.NdJ("ngModelChange", function StandingsComponent_div_20_ng_template_9_div_0_Template_mat_slide_toggle_ngModelChange_8_listener($event) { core/* ɵɵrestoreView */.CHM(_r29); const ctx_r28 = core/* ɵɵnextContext */.oxw(3); return ctx_r28.showDnf = $event; })("change", function StandingsComponent_div_20_ng_template_9_div_0_Template_mat_slide_toggle_change_8_listener($event) { core/* ɵɵrestoreView */.CHM(_r29); const ctx_r30 = core/* ɵɵnextContext */.oxw(3); return ctx_r30.includeDnf($event); });
+    core/* ɵɵelementStart */.TgZ(9, "mat-slide-toggle", 57);
+    core/* ɵɵlistener */.NdJ("ngModelChange", function StandingsComponent_div_20_ng_template_9_div_0_Template_mat_slide_toggle_ngModelChange_9_listener($event) { core/* ɵɵrestoreView */.CHM(_r29); const ctx_r28 = core/* ɵɵnextContext */.oxw(3); return ctx_r28.showDnf = $event; })("change", function StandingsComponent_div_20_ng_template_9_div_0_Template_mat_slide_toggle_change_9_listener($event) { core/* ɵɵrestoreView */.CHM(_r29); const ctx_r30 = core/* ɵɵnextContext */.oxw(3); return ctx_r30.includeDnf($event); });
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(9, "span");
-    core/* ɵɵtext */._uU(10, " Include DNF results");
+    core/* ɵɵelementStart */.TgZ(10, "span");
+    core/* ɵɵtext */._uU(11, " Include DNF results");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelement */._UZ(11, "apx-chart", 57);
-    core/* ɵɵelementStart */.TgZ(12, "div", 51);
-    core/* ɵɵelement */._UZ(13, "apx-chart", 52);
+    core/* ɵɵelement */._UZ(12, "apx-chart", 58);
+    core/* ɵɵelementStart */.TgZ(13, "div", 51);
+    core/* ɵɵelement */._UZ(14, "apx-chart", 52);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
@@ -44748,6 +44784,8 @@ function StandingsComponent_div_20_ng_template_9_div_0_Template(rf, ctx) { if (r
     core/* ɵɵadvance */.xp6(2);
     core/* ɵɵproperty */.Q6J("series", ctx_r27.driverStandingsSeries)("yaxis", ctx_r27.defYaxis)("title", ctx_r27.titleStandings)("chart", ctx_r27.lineChartWithResponsiveWidth)("stroke", ctx_r27.defStroke)("tooltip", ctx_r27.defTooltip);
     core/* ɵɵadvance */.xp6(2);
+    core/* ɵɵproperty */.Q6J("title", ctx_r27.driversRoundByRoundOptions.title)("series", ctx_r27.driversRoundByRoundOptions.series)("chart", ctx_r27.driversRoundByRoundOptions.chart)("dataLabels", ctx_r27.driversRoundByRoundOptions.dataLabels)("plotOptions", ctx_r27.driversRoundByRoundOptions.plotOptions)("responsive", ctx_r27.driversRoundByRoundOptions.responsive)("xaxis", ctx_r27.driversRoundByRoundOptions.xAxis)("fill", ctx_r27.driversRoundByRoundOptions.fill)("dataLabels", ctx_r27.driversRoundByRoundOptions.dataLabels);
+    core/* ɵɵadvance */.xp6(1);
     core/* ɵɵproperty */.Q6J("title", ctx_r27.titleResultsHeatmap)("series", ctx_r27.driversHeatMapChartOptions.series)("chart", ctx_r27.driversHeatMapChartOptions.chart)("dataLabels", ctx_r27.driversHeatMapChartOptions.dataLabels)("plotOptions", ctx_r27.driversHeatMapChartOptions.plotOptions)("colors", ctx_r27.driversHeatMapChartOptions.colors)("tooltip", ctx_r27.driversHeatMapChartOptions.tooltip);
     core/* ɵɵadvance */.xp6(4);
     core/* ɵɵproperty */.Q6J("ngModel", ctx_r27.showDnf);
@@ -44757,7 +44795,7 @@ function StandingsComponent_div_20_ng_template_9_div_0_Template(rf, ctx) { if (r
     core/* ɵɵproperty */.Q6J("series", ctx_r27.driverPointsByRoundSeries)("yaxis", ctx_r27.defYaxis)("title", ctx_r27.titleByRound)("chart", ctx_r27.lineChartWithoutAnimation)("stroke", ctx_r27.defStroke)("tooltip", ctx_r27.defTooltip);
 } }
 function StandingsComponent_div_20_ng_template_9_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵtemplate */.YNc(0, StandingsComponent_div_20_ng_template_9_div_0_Template, 14, 27, "div", 49);
+    core/* ɵɵtemplate */.YNc(0, StandingsComponent_div_20_ng_template_9_div_0_Template, 15, 36, "div", 49);
 } if (rf & 2) {
     const ctx_r10 = core/* ɵɵnextContext */.oxw(2);
     core/* ɵɵproperty */.Q6J("ngIf", ctx_r10.standings != undefined);
@@ -44768,7 +44806,7 @@ function StandingsComponent_div_20_ng_template_11_div_0_Template(rf, ctx) { if (
     core/* ɵɵelement */._UZ(2, "apx-chart", 52);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(3, "div", 51);
-    core/* ɵɵelement */._UZ(4, "apx-chart", 54);
+    core/* ɵɵelement */._UZ(4, "apx-chart", 55);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(5, "div", 51);
     core/* ɵɵelement */._UZ(6, "apx-chart", 52);
@@ -44784,7 +44822,7 @@ function StandingsComponent_div_20_ng_template_11_div_0_Template(rf, ctx) { if (
     core/* ɵɵproperty */.Q6J("series", ctx_r31.constructorRoundsSeries)("yaxis", ctx_r31.defYaxis)("title", ctx_r31.titleByRound)("chart", ctx_r31.lineChartWithoutAnimation)("stroke", ctx_r31.defStroke)("tooltip", ctx_r31.defTooltip);
 } }
 function StandingsComponent_div_20_ng_template_11_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵtemplate */.YNc(0, StandingsComponent_div_20_ng_template_11_div_0_Template, 7, 19, "div", 58);
+    core/* ɵɵtemplate */.YNc(0, StandingsComponent_div_20_ng_template_11_div_0_Template, 7, 19, "div", 59);
 } if (rf & 2) {
     const ctx_r11 = core/* ɵɵnextContext */.oxw(2);
     core/* ɵɵproperty */.Q6J("ngIf", ctx_r11.standings.constructorStandingByRound != undefined);
@@ -44839,6 +44877,13 @@ class StandingsComponent {
         this.chartSeriesList = [];
         this.chartWidth = '100%';
         this.lineChartWithResponsiveWidth = {
+            animations: {
+                enabled: true,
+                speed: 1000,
+                animateGradually: {
+                    enabled: false
+                },
+            },
             height: 500,
             width: this.chartWidth,
             type: 'line',
@@ -44855,7 +44900,11 @@ class StandingsComponent {
                 enabled: false
             },
             animations: {
-                enabled: false
+                enabled: true,
+                speed: 1000,
+                animateGradually: {
+                    enabled: false
+                },
             },
             toolbar: ChartUtility.defaultToolbar
         };
@@ -44942,11 +44991,26 @@ class StandingsComponent {
                 let roundByRoundSeriesMap = new Map();
                 this.standings.driverPointsByRound.forEach((standing) => {
                     roundByRoundCategories.push(standing.name);
+                    let roundCounter = 1;
                     standing.series.forEach((scoreByRound) => {
+                        //ako vozač nema unose za ovu (prvu?) rundu
+                        do {
+                            if (roundCounter < scoreByRound[0]) {
+                                if (!roundByRoundSeriesMap.has(roundCounter)) {
+                                    roundByRoundSeriesMap.set(roundCounter, []);
+                                }
+                                roundByRoundSeriesMap.get(roundCounter).push(0);
+                                roundCounter++;
+                            }
+                        } while (roundCounter < scoreByRound[0]);
                         if (!roundByRoundSeriesMap.has(scoreByRound[0])) {
                             roundByRoundSeriesMap.set(scoreByRound[0], []);
                         }
+                        if (scoreByRound[1] == null) {
+                            scoreByRound[1] = 0;
+                        }
                         roundByRoundSeriesMap.get(scoreByRound[0]).push(scoreByRound[1]);
+                        roundCounter++;
                     });
                     //delete me?
                     this.driverPointsByRoundSeries.push({
@@ -45050,8 +45114,6 @@ class StandingsComponent {
         // this.reverseXaxis.tickAmount = this.raceCount;
     }
     setStackedChart(roundByRound, roundByRoundCategories) {
-        console.log('roundByRoundCategories');
-        console.log(roundByRoundCategories);
         this.driversRoundByRoundOptions = {
             title: {
                 text: 'Round by round',
@@ -45062,12 +45124,10 @@ class StandingsComponent {
                 type: "bar",
                 height: 500,
                 stacked: true,
-                toolbar: {
-                    show: true
-                },
                 zoom: {
                     enabled: true
-                }
+                },
+                toolbar: ChartUtility.defaultToolbar
             },
             responsive: [
                 {
@@ -45299,7 +45359,7 @@ StandingsComponent.ɵcmp = /*@__PURE__*/ core/* ɵɵdefineComponent */.Xpm({ typ
     } if (rf & 2) {
         let _t;
         core/* ɵɵqueryRefresh */.iGM(_t = core/* ɵɵloadQuery */.CRH()) && (ctx.driverTable = _t.first);
-    } }, decls: 21, vars: 4, consts: [["autosize", ""], ["autosize", "", "mode", "side", "position", "end", 1, "example-sidenav", 3, "opened", "openedChange"], ["drawer", ""], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area", 3, "ngModel", "focus", "focusout", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "active-color-button", 3, "click"], [4, "ngFor", "ngForOf"], [1, "fixed-button"], ["type", "fixed-plugin", "mat-button", "", 3, "click"], [1, "fa", "fa-commenting-o", "fa-2x"], ["class", "\u201Dmat-content\u201D", 3, "touchstart", "touchend", 4, "ngIf"], [1, "basic-comment"], [1, "header-left", "hover-pointer", 3, "click"], [1, "header-right", "hover-pointer", 3, "click"], [1, "basic-comment-body"], [1, "\u201Dmat-content\u201D", 3, "touchstart", "touchend"], [3, "selectedIndex", "selectedIndexChange", "selectedTabChange"], ["label", "Drivers"], ["matTabContent", ""], ["label", "Constructors"], ["label", "Races"], ["label", "Driver charts"], ["label", "Constructor charts"], [1, "table", "table-striped"], [1, "text-center", "bg-primary", "text-white"], ["scope", "col"], ["scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], ["scope", "row"], [1, "hover-effects-row"], [2, "color", "black", 3, "href"], [1, "d-sm-none", "d-none", "d-lg-table-cell", "text-center"], [1, "d-sm-none", "d-none", "d-lg-table-cell", "hover-effects-row"], [4, "ngIf"], ["scope", "col", 1, "width-10", "text-left"], ["scope", "col", 1, "text-left"], ["scope", "width-10 row"], [1, "hover-effects-row", 3, "click"], [1, "div-width-300", "no-padding-no-margin-2"], ["class", "event-result", 4, "ngIf"], [1, "event-result"], [1, "display-on-desktop-only", "result-card", "position-1"], [1, "race-card-image-wrapper"], ["mat-card-image", "", "onerror", "this.src='assets/img/drivers/default.png'", "alt", "", 1, "div-height-80", 3, "src"], [1, "result-card", "position-2-on-desktop"], ["mat-card-image", "", "onerror", "this.src='assets/img/drivers/default.png'", "alt", "", 1, "div-height-95px", 3, "src"], [1, "display-on-desktop-only", "result-card", "position-3"], ["mat-card-image", "", "onerror", "this.src='assets/img/drivers/default.png'", "alt", "", 1, "div-height-70", 3, "src"], ["class", " div-padded-2rem", 4, "ngIf"], [1, "div-padded-2rem"], [1, "overflowX"], [3, "series", "yaxis", "title", "chart", "stroke", "tooltip"], [1, "overflowX", "pr-1"], [3, "title", "series", "chart", "dataLabels", "plotOptions", "colors", "tooltip"], [1, "div-padded-always-top-right-2rem"], [3, "ngModel", "ngModelChange", "change"], [3, "series", "yaxis", "xaxis", "title", "chart", "stroke", "tooltip"], ["class", "div-padded-2rem", 4, "ngIf"]], template: function StandingsComponent_Template(rf, ctx) { if (rf & 1) {
+    } }, decls: 21, vars: 4, consts: [["autosize", ""], ["autosize", "", "mode", "side", "position", "end", 1, "example-sidenav", 3, "opened", "openedChange"], ["drawer", ""], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area", 3, "ngModel", "focus", "focusout", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "active-color-button", 3, "click"], [4, "ngFor", "ngForOf"], [1, "fixed-button"], ["type", "fixed-plugin", "mat-button", "", 3, "click"], [1, "fa", "fa-commenting-o", "fa-2x"], ["class", "\u201Dmat-content\u201D", 3, "touchstart", "touchend", 4, "ngIf"], [1, "basic-comment"], [1, "header-left", "hover-pointer", 3, "click"], [1, "header-right", "hover-pointer", 3, "click"], [1, "basic-comment-body"], [1, "\u201Dmat-content\u201D", 3, "touchstart", "touchend"], [3, "selectedIndex", "selectedIndexChange", "selectedTabChange"], ["label", "Drivers"], ["matTabContent", ""], ["label", "Constructors"], ["label", "Races"], ["label", "Driver charts"], ["label", "Constructor charts"], [1, "table", "table-striped"], [1, "text-center", "bg-primary", "text-white"], ["scope", "col"], ["scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], ["scope", "row"], [1, "hover-effects-row"], [2, "color", "black", 3, "href"], [1, "d-sm-none", "d-none", "d-lg-table-cell", "text-center"], [1, "d-sm-none", "d-none", "d-lg-table-cell", "hover-effects-row"], [4, "ngIf"], ["scope", "col", 1, "width-10", "text-left"], ["scope", "col", 1, "text-left"], ["scope", "width-10 row"], [1, "hover-effects-row", 3, "click"], [1, "div-width-300", "no-padding-no-margin-2"], ["class", "event-result", 4, "ngIf"], [1, "event-result"], [1, "display-on-desktop-only", "result-card", "position-1"], [1, "race-card-image-wrapper"], ["mat-card-image", "", "onerror", "this.src='assets/img/drivers/default.png'", "alt", "", 1, "div-height-80", 3, "src"], [1, "result-card", "position-2-on-desktop"], ["mat-card-image", "", "onerror", "this.src='assets/img/drivers/default.png'", "alt", "", 1, "div-height-95px", 3, "src"], [1, "display-on-desktop-only", "result-card", "position-3"], ["mat-card-image", "", "onerror", "this.src='assets/img/drivers/default.png'", "alt", "", 1, "div-height-70", 3, "src"], ["class", " div-padded-2rem", 4, "ngIf"], [1, "div-padded-2rem"], [1, "overflowX"], [3, "series", "yaxis", "title", "chart", "stroke", "tooltip"], [1, "overflowX", "pr-1"], [3, "title", "series", "chart", "dataLabels", "plotOptions", "responsive", "xaxis", "fill"], [3, "title", "series", "chart", "dataLabels", "plotOptions", "colors", "tooltip"], [1, "div-padded-always-top-right-2rem"], [3, "ngModel", "ngModelChange", "change"], [3, "series", "yaxis", "xaxis", "title", "chart", "stroke", "tooltip"], ["class", "div-padded-2rem", 4, "ngIf"]], template: function StandingsComponent_Template(rf, ctx) { if (rf & 1) {
         const _r37 = core/* ɵɵgetCurrentView */.EpF();
         core/* ɵɵelementStart */.TgZ(0, "div");
         core/* ɵɵelementStart */.TgZ(1, "mat-drawer-container", 0);
@@ -49238,6 +49298,15 @@ class RaceAnalysisComponent {
             toolbar: ChartUtility.defaultToolbar
         };
         this.defChartResponsiveWidth = {
+            animations: {
+                enabled: true,
+                easing: 'easeinout',
+                speed: 500,
+                animateGradually: {
+                    enabled: true,
+                    delay: 50
+                },
+            },
             height: 350,
             width: this.chartWidth,
             type: 'line',
@@ -57044,6 +57113,13 @@ class SeasonsComponent {
         this.chartWidth = '100%';
         this.codeToNameMap = new Map();
         this.lineChart = {
+            animations: {
+                enabled: true,
+                speed: 1000,
+                animateGradually: {
+                    enabled: false
+                },
+            },
             height: 500,
             type: 'line',
             zoom: {

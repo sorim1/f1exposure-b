@@ -120,6 +120,12 @@ public class ArtServiceImpl implements ArtService {
         ergastService.saveRace(raceData);
         return true;
     }
+    @Override
+    public Boolean deleteArt(String code) {
+        artImageRepository.deleteByCode(code);
+        return true;
+    }
+
 
     @Override
     public Boolean generateLatestArtForced() throws IOException {

@@ -14,10 +14,12 @@ import java.util.List;
 @Builder
 public class ExposureData {
     private String title;
+    private Integer currentYear;
     private Integer delay;
     private ActiveExposureChart activeExposureChart;
     private List<ExposureChampionshipData> exposureChampionshipData;
     private List<ExposureChampionshipStanding> standings;
     private List<Integer> voters;
     private List<FrontendRace> exposureRaces;
+    private Boolean showWinner;
 }

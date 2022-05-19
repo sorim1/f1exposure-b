@@ -285,11 +285,21 @@ public class AdminServiceImpl implements AdminService {
                             driverStandingsByRound.get(ergastStanding.getDriver().getDriverId() + finalRound).setDataFromARound(ergastStanding, maxPosition);
                             constructorStandingByRound.get(ergastStanding.getConstructor().getConstructorId() + finalRound).incrementPointsThisRound(ergastStanding.getPoints());
                         });
-                round++;
                 iterate = true;
             } else {
                 iterate = false;
             }
+            //dodaj bodove iz sprint utrke ako je bila
+            response = ergastService.getSprintResultsByRound(properties.getCurrentSeasonPast(), round);
+            if (response.getMrData().getTotal() > 0) {
+                Integer finalRound = round;
+                response.getMrData().getRaceTable().getRaces().get(0).getSprintResults()
+                        .forEach(ergastStanding -> {
+                            driverStandingsByRound.get(ergastStanding.getDriver().getDriverId() + finalRound).incrementPointsThisRound(ergastStanding.getPoints());
+                            constructorStandingByRound.get(ergastStanding.getConstructor().getConstructorId() + finalRound).incrementPointsThisRound(ergastStanding.getPoints());
+                        });
+            }
+            round++;
         } while (iterate);
     }
 
@@ -305,6 +315,15 @@ public class AdminServiceImpl implements AdminService {
                         if (constructorStandingByRound != null) {
                             constructorStandingByRound.get(ergastStanding.getConstructor().getConstructorId()).incrementPointsThisRound(ergastStanding.getPoints());
                         }
+                    });
+        }
+        //dodaj bodove iz sprint utrke ako je bila
+        response = ergastService.getSprintResultsByRound(properties.getCurrentSeasonPast(), CURRENT_ROUND);
+        if (response.getMrData().getTotal() > 0) {
+            response.getMrData().getRaceTable().getRaces().get(0).getSprintResults()
+                    .forEach(ergastStanding -> {
+                        driverStandingsByRound.get(ergastStanding.getDriver().getDriverId()).incrementPointsThisRound(ergastStanding.getPoints());
+                        constructorStandingByRound.get(ergastStanding.getConstructor().getConstructorId()).incrementPointsThisRound(ergastStanding.getPoints());
                     });
         }
     }

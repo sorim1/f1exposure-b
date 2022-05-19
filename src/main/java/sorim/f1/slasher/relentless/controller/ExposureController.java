@@ -65,7 +65,7 @@ public class ExposureController {
     @GetMapping("/closeExposurePoll")
     void closeExposurePoll(@RequestHeader String client) throws Exception {
         securityService.validateAdminHeader(client);
-        service.closeExposurePoll();
+        service.closeExposurePoll(true);
     }
 
     @GetMapping("/startPolling")
@@ -102,5 +102,11 @@ public class ExposureController {
     String getExposureStrawpoll(@RequestHeader String client) throws Exception {
         securityService.validateAdminHeader(client);
         return service.getExposureStrawpoll();
+    }
+
+    @GetMapping("/showWinner/{value}")
+    String showWinner(@RequestHeader String client,@PathVariable("value") Boolean value) throws Exception {
+        securityService.validateAdminHeader(client);
+        return service.changeShowWinner(value);
     }
 }

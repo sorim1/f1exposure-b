@@ -68,7 +68,11 @@ public class ArtController {
         securityService.validateAdminHeader(client);
         return artService.setLatestArt(code);
     }
-
+    @GetMapping("/deleteArt/{code}")
+    Boolean deleteArt(@RequestHeader String client, @PathVariable("code") String code) throws Exception {
+        securityService.validateAdminHeader(client);
+        return artService.deleteArt(code);
+    }
     @GetMapping("/getAllArt")
     List<ArtImageRow> getAllArt(@RequestHeader String client) throws Exception {
         securityService.validateHeader(client);

@@ -52260,21 +52260,105 @@
         }
       }
 
+      function ExposedComponent_div_20_ng_template_3_div_0_div_1_Template(rf, ctx) {
+        if (rf & 1) {
+          core
+          /* ɵɵelementStart */
+          .TgZ(0, "div", 30);
+          core
+          /* ɵɵelementStart */
+          .TgZ(1, "div", 31);
+          core
+          /* ɵɵelementStart */
+          .TgZ(2, "mat-button-toggle", 32);
+          core
+          /* ɵɵelementStart */
+          .TgZ(3, "div", 33);
+          core
+          /* ɵɵelementStart */
+          .TgZ(4, "p", 34);
+
+          core
+          /* ɵɵtext */
+          ._uU(5, "KWAB");
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(6, "p", 34);
+
+          core
+          /* ɵɵtext */
+          ._uU(7, "OF THE DAY");
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+
+          core
+          /* ɵɵelement */
+          ._UZ(8, "img", 35);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(9, "div", 36);
+
+          core
+          /* ɵɵelement */
+          ._UZ(10, "img", 37);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+        }
+
+        if (rf & 2) {
+          var ctx_r11 = core
+          /* ɵɵnextContext */
+          .oxw(4);
+          core
+          /* ɵɵadvance */
+          .xp6(8);
+          core
+          /* ɵɵpropertyInterpolate */
+          .s9C("src", "assets/img/drivers/" + ctx_r11.exposureData.currentYear + "/" + ctx_r11.exposureData.activeExposureChart.drivers[0] + ".png", core
+          /* ɵɵsanitizeUrl */
+          .LSH);
+        }
+      }
+
       function ExposedComponent_div_20_ng_template_3_div_0_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵelementStart */
           .TgZ(0, "div", 26);
           core
-          /* ɵɵelementStart */
-          .TgZ(1, "a", 27);
+          /* ɵɵtemplate */
+          .YNc(1, ExposedComponent_div_20_ng_template_3_div_0_div_1_Template, 11, 1, "div", 27);
           core
           /* ɵɵelementStart */
-          .TgZ(2, "button", 28);
+          .TgZ(2, "a", 28);
+          core
+          /* ɵɵelementStart */
+          .TgZ(3, "button", 29);
 
           core
           /* ɵɵtext */
-          ._uU(3, " Go to strawpoll ");
+          ._uU(4, " Go to strawpoll ");
 
           core
           /* ɵɵelementEnd */
@@ -52296,6 +52380,12 @@
           .xp6(1);
           core
           /* ɵɵproperty */
+          .Q6J("ngIf", ctx_r10.exposureData.showWinner);
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵproperty */
           .Q6J("href", ctx_r10.getStrawpollUrl(ctx_r10.exposedChart.strawpoll), core
           /* ɵɵsanitizeUrl */
           .LSH);
@@ -52306,7 +52396,7 @@
         if (rf & 1) {
           core
           /* ɵɵtemplate */
-          .YNc(0, ExposedComponent_div_20_ng_template_3_div_0_Template, 4, 1, "div", 23);
+          .YNc(0, ExposedComponent_div_20_ng_template_3_div_0_Template, 5, 2, "div", 23);
 
           core
           /* ɵɵelement */
@@ -52346,7 +52436,7 @@
           .TgZ(0, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "th", 36);
+          .TgZ(1, "th", 45);
 
           core
           /* ɵɵtext */
@@ -52368,7 +52458,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(5, "td", 37);
+          .TgZ(5, "td", 46);
 
           core
           /* ɵɵtext */
@@ -52379,7 +52469,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(7, "td", 38);
+          .TgZ(7, "td", 47);
 
           core
           /* ɵɵtext */
@@ -52397,26 +52487,26 @@
         }
 
         if (rf & 2) {
-          var standing_r16 = ctx.$implicit;
-          var i_r17 = ctx.index;
+          var standing_r17 = ctx.$implicit;
+          var i_r18 = ctx.index;
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(i_r17 + 1);
+          .Oqu(i_r18 + 1);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r16.fullName);
+          .Oqu(standing_r17.fullName);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r16.id.driver);
+          .Oqu(standing_r17.id.driver);
           core
           /* ɵɵadvance */
           .xp6(2);
@@ -52424,7 +52514,7 @@
           /* ɵɵtextInterpolate */
           .Oqu(core
           /* ɵɵpipeBind1 */
-          .lcZ(9, 4, standing_r16.exposure));
+          .lcZ(9, 4, standing_r17.exposure));
         }
       }
 
@@ -52432,10 +52522,10 @@
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 31);
+          .TgZ(0, "div", 40);
           core
           /* ɵɵelementStart */
-          .TgZ(1, "table", 32);
+          .TgZ(1, "table", 41);
           core
           /* ɵɵelementStart */
           .TgZ(2, "thead");
@@ -52444,7 +52534,7 @@
           .TgZ(3, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(4, "th", 33);
+          .TgZ(4, "th", 42);
 
           core
           /* ɵɵtext */
@@ -52458,15 +52548,15 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(6, "tr", 34);
+          .TgZ(6, "tr", 43);
 
           core
           /* ɵɵelement */
-          ._UZ(7, "th", 35);
+          ._UZ(7, "th", 44);
 
           core
           /* ɵɵelementStart */
-          .TgZ(8, "th", 35);
+          .TgZ(8, "th", 44);
 
           core
           /* ɵɵtext */
@@ -52477,7 +52567,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(10, "th", 35);
+          .TgZ(10, "th", 44);
 
           core
           /* ɵɵtext */
@@ -52488,7 +52578,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(12, "th", 35);
+          .TgZ(12, "th", 44);
 
           core
           /* ɵɵtext */
@@ -52521,7 +52611,7 @@
         }
 
         if (rf & 2) {
-          var ctx_r11 = core
+          var ctx_r12 = core
           /* ɵɵnextContext */
           .oxw(3);
           core
@@ -52529,13 +52619,13 @@
           .xp6(5);
           core
           /* ɵɵtextInterpolate1 */
-          .hij("", ctx_r11.exposureData.activeExposureChart.season, " Exposure Standings ");
+          .hij("", ctx_r12.exposureData.activeExposureChart.season, " Exposure Standings ");
           core
           /* ɵɵadvance */
           .xp6(10);
           core
           /* ɵɵproperty */
-          .Q6J("ngForOf", ctx_r11.exposureData.standings);
+          .Q6J("ngForOf", ctx_r12.exposureData.standings);
         }
       }
 
@@ -52543,15 +52633,15 @@
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 39);
+          .TgZ(0, "div", 48);
 
           core
           /* ɵɵelement */
-          ._UZ(1, "apx-chart", 40);
+          ._UZ(1, "apx-chart", 49);
 
           core
           /* ɵɵelement */
-          ._UZ(2, "apx-chart", 41);
+          ._UZ(2, "apx-chart", 50);
 
           core
           /* ɵɵelementEnd */
@@ -52559,7 +52649,7 @@
         }
 
         if (rf & 2) {
-          var ctx_r12 = core
+          var ctx_r13 = core
           /* ɵɵnextContext */
           .oxw(3);
           core
@@ -52567,13 +52657,13 @@
           .xp6(1);
           core
           /* ɵɵproperty */
-          .Q6J("series", ctx_r12.exposureStandingsOptions.series)("xaxis", ctx_r12.numericXaxis)("yaxis", ctx_r12.defYaxis)("title", ctx_r12.exposureStandingsOptions.title)("chart", ctx_r12.lineChart)("stroke", ctx_r12.defStroke)("tooltip", ctx_r12.defTooltip);
+          .Q6J("series", ctx_r13.exposureStandingsOptions.series)("xaxis", ctx_r13.numericXaxis)("yaxis", ctx_r13.defYaxis)("title", ctx_r13.exposureStandingsOptions.title)("chart", ctx_r13.lineChart)("stroke", ctx_r13.defStroke)("tooltip", ctx_r13.defTooltip);
           core
           /* ɵɵadvance */
           .xp6(1);
           core
           /* ɵɵproperty */
-          .Q6J("title", ctx_r12.exposureRoundByRoundOptions.title)("series", ctx_r12.exposureRoundByRoundOptions.series)("chart", ctx_r12.exposureRoundByRoundOptions.chart)("dataLabels", ctx_r12.exposureRoundByRoundOptions.dataLabels)("plotOptions", ctx_r12.exposureRoundByRoundOptions.plotOptions)("responsive", ctx_r12.exposureRoundByRoundOptions.responsive)("xaxis", ctx_r12.exposureRoundByRoundOptions.xaxis)("fill", ctx_r12.exposureRoundByRoundOptions.fill)("dataLabels", ctx_r12.exposureRoundByRoundOptions.dataLabels);
+          .Q6J("title", ctx_r13.exposureRoundByRoundOptions.title)("series", ctx_r13.exposureRoundByRoundOptions.series)("chart", ctx_r13.exposureRoundByRoundOptions.chart)("dataLabels", ctx_r13.exposureRoundByRoundOptions.dataLabels)("plotOptions", ctx_r13.exposureRoundByRoundOptions.plotOptions)("responsive", ctx_r13.exposureRoundByRoundOptions.responsive)("xaxis", ctx_r13.exposureRoundByRoundOptions.xaxis)("fill", ctx_r13.exposureRoundByRoundOptions.fill)("dataLabels", ctx_r13.exposureRoundByRoundOptions.dataLabels);
         }
       }
 
@@ -52595,7 +52685,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(3, "td", 37);
+          .TgZ(3, "td", 46);
 
           core
           /* ɵɵtext */
@@ -52615,8 +52705,8 @@
         }
 
         if (rf & 2) {
-          var race_r19 = ctx.$implicit;
-          var ctx_r18 = core
+          var race_r20 = ctx.$implicit;
+          var ctx_r19 = core
           /* ɵɵnextContext */
           .oxw(4);
           core
@@ -52624,19 +52714,19 @@
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(race_r19.round);
+          .Oqu(race_r20.round);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(race_r19.raceName);
+          .Oqu(race_r20.raceName);
           core
           /* ɵɵadvance */
           .xp6(1);
           core
           /* ɵɵstyleProp */
-          .Udp("background-color", ctx_r18.getColor(race_r19.round));
+          .Udp("background-color", ctx_r19.getColor(race_r20.round));
         }
       }
 
@@ -52644,10 +52734,10 @@
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 31);
+          .TgZ(0, "div", 40);
           core
           /* ɵɵelementStart */
-          .TgZ(1, "table", 32);
+          .TgZ(1, "table", 41);
           core
           /* ɵɵelementStart */
           .TgZ(2, "thead");
@@ -52656,7 +52746,7 @@
           .TgZ(3, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(4, "th", 33);
+          .TgZ(4, "th", 42);
 
           core
           /* ɵɵtext */
@@ -52670,10 +52760,10 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(6, "tr", 34);
+          .TgZ(6, "tr", 43);
           core
           /* ɵɵelementStart */
-          .TgZ(7, "th", 35);
+          .TgZ(7, "th", 44);
 
           core
           /* ɵɵtext */
@@ -52684,7 +52774,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(9, "th", 35);
+          .TgZ(9, "th", 44);
 
           core
           /* ɵɵtext */
@@ -52695,7 +52785,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(11, "th", 35);
+          .TgZ(11, "th", 44);
 
           core
           /* ɵɵtext */
@@ -52728,7 +52818,7 @@
         }
 
         if (rf & 2) {
-          var ctx_r13 = core
+          var ctx_r14 = core
           /* ɵɵnextContext */
           .oxw(3);
           core
@@ -52736,13 +52826,13 @@
           .xp6(5);
           core
           /* ɵɵtextInterpolate1 */
-          .hij("", ctx_r13.exposureData.activeExposureChart.season, " races ");
+          .hij("", ctx_r14.exposureData.activeExposureChart.season, " races ");
           core
           /* ɵɵadvance */
           .xp6(9);
           core
           /* ɵɵproperty */
-          .Q6J("ngForOf", ctx_r13.exposureData.exposureRaces);
+          .Q6J("ngForOf", ctx_r14.exposureData.exposureRaces);
         }
       }
 
@@ -52750,15 +52840,15 @@
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 39);
+          .TgZ(0, "div", 48);
 
           core
           /* ɵɵelement */
-          ._UZ(1, "apx-chart", 42);
+          ._UZ(1, "apx-chart", 51);
 
           core
           /* ɵɵelement */
-          ._UZ(2, "apx-chart", 43);
+          ._UZ(2, "apx-chart", 52);
 
           core
           /* ɵɵelementEnd */
@@ -52766,7 +52856,7 @@
         }
 
         if (rf & 2) {
-          var ctx_r14 = core
+          var ctx_r15 = core
           /* ɵɵnextContext */
           .oxw(3);
           core
@@ -52774,13 +52864,13 @@
           .xp6(1);
           core
           /* ɵɵproperty */
-          .Q6J("chart", ctx_r14.defaultChartOptions.chart)("dataLabels", ctx_r14.defaultChartOptions.dataLabels)("plotOptions", ctx_r14.distributedPlotOptions)("series", ctx_r14.maxExposureOptions.series)("title", ctx_r14.maxExposureOptions.title)("xaxis", ctx_r14.maxExposureOptions.xaxis)("yaxis", ctx_r14.maxExposureOptions.yaxis)("colors", ctx_r14.maxExposureColors)("legend", ctx_r14.noLegend);
+          .Q6J("chart", ctx_r15.defaultChartOptions.chart)("dataLabels", ctx_r15.defaultChartOptions.dataLabels)("plotOptions", ctx_r15.distributedPlotOptions)("series", ctx_r15.maxExposureOptions.series)("title", ctx_r15.maxExposureOptions.title)("xaxis", ctx_r15.maxExposureOptions.xaxis)("yaxis", ctx_r15.maxExposureOptions.yaxis)("colors", ctx_r15.maxExposureColors)("legend", ctx_r15.noLegend);
           core
           /* ɵɵadvance */
           .xp6(1);
           core
           /* ɵɵproperty */
-          .Q6J("series", ctx_r14.votersOptions.series)("xaxis", ctx_r14.numericXaxis)("yaxis", ctx_r14.defYaxis)("title", ctx_r14.votersOptions.title)("chart", ctx_r14.lineChart)("stroke", ctx_r14.defStroke)("legend", ctx_r14.raceLegend);
+          .Q6J("series", ctx_r15.votersOptions.series)("xaxis", ctx_r15.numericXaxis)("yaxis", ctx_r15.defYaxis)("title", ctx_r15.votersOptions.title)("chart", ctx_r15.lineChart)("stroke", ctx_r15.defStroke)("legend", ctx_r15.raceLegend);
         }
       }
 
@@ -52791,10 +52881,10 @@
           .TgZ(0, "div", 4);
           core
           /* ɵɵtemplate */
-          .YNc(1, ExposedComponent_div_20_ng_template_5_div_1_Template, 16, 2, "div", 29);
+          .YNc(1, ExposedComponent_div_20_ng_template_5_div_1_Template, 16, 2, "div", 38);
           core
           /* ɵɵtemplate */
-          .YNc(2, ExposedComponent_div_20_ng_template_5_div_2_Template, 3, 16, "div", 30);
+          .YNc(2, ExposedComponent_div_20_ng_template_5_div_2_Template, 3, 16, "div", 39);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -52803,10 +52893,10 @@
           .TgZ(3, "div", 4);
           core
           /* ɵɵtemplate */
-          .YNc(4, ExposedComponent_div_20_ng_template_5_div_4_Template, 15, 2, "div", 29);
+          .YNc(4, ExposedComponent_div_20_ng_template_5_div_4_Template, 15, 2, "div", 38);
           core
           /* ɵɵtemplate */
-          .YNc(5, ExposedComponent_div_20_ng_template_5_div_5_Template, 3, 16, "div", 30);
+          .YNc(5, ExposedComponent_div_20_ng_template_5_div_5_Template, 3, 16, "div", 39);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -52847,7 +52937,7 @@
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 44);
+          .TgZ(0, "div", 53);
           core
           /* ɵɵelementStart */
           .TgZ(1, "p");
@@ -52858,7 +52948,7 @@
 
           core
           /* ɵɵelementStart */
-          .TgZ(3, "a", 45);
+          .TgZ(3, "a", 54);
 
           core
           /* ɵɵtext */
@@ -52877,7 +52967,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(6, "div", 46);
+          .TgZ(6, "div", 55);
 
           core
           /* ɵɵtext */
@@ -53010,6 +53100,13 @@
             }
           };
           this.lineChart = {
+            animations: {
+              enabled: true,
+              speed: 1000,
+              animateGradually: {
+                enabled: false
+              }
+            },
             height: 500,
             type: 'line',
             zoom: {
@@ -53239,7 +53336,7 @@
 
                 if (_this22.exposedChart.delay > 1) {
                   setTimeout(function () {
-                    return _this22.getExposureResultsPeriodically(_this22.exposedChart.delay);
+                    return _this22.getExposureResultsPeriodically();
                   }, _this22.exposedChart.delay);
                 }
 
@@ -53249,7 +53346,7 @@
           }
         }, {
           key: "getExposureResultsPeriodically",
-          value: function getExposureResultsPeriodically(delay) {
+          value: function getExposureResultsPeriodically() {
             var _this23 = this;
 
             this.restService.getExposureResults().subscribe({
@@ -53292,7 +53389,7 @@
 
                 if (_this23.exposedChart.delay > 1 && !_this23.destroyed) {
                   setTimeout(function () {
-                    return _this23.getExposureResultsPeriodically(_this23.exposedChart.delay);
+                    return _this23.getExposureResultsPeriodically();
                   }, _this23.exposedChart.delay);
                 }
 
@@ -53346,10 +53443,10 @@
         },
         decls: 21,
         vars: 4,
-        consts: [[1, "div-padded"], ["autosize", ""], ["mode", "side", "position", "end", 1, "example-sidenav", 3, "opened", "openedChange"], ["drawer", ""], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area", 3, "ngModel", "focus", "focusout", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "active-color-button", 3, "click"], [4, "ngFor", "ngForOf"], [1, "fixed-button"], ["type", "fixed-plugin", "mat-button", "", 3, "click"], [1, "fa", "fa-commenting-o", "fa-2x"], ["class", "div-padded-right bg-white height-fill-screen", "id", "chart1", 4, "ngIf"], [1, "basic-comment"], [1, "header-left", "hover-pointer", 3, "click"], [1, "header-right", "hover-pointer", 3, "click"], [1, "basic-comment-body"], ["id", "chart1", 1, "div-padded-right", "bg-white", "height-fill-screen"], ["label", "Latest race"], ["matTabContent", ""], ["label", "World Exposure Championship"], ["label", "Info"], ["class", "div-padded-always-left-right-1 row", 4, "ngIf"], [3, "chart", "dataLabels", "plotOptions", "series", "xaxis", "title", "yaxis"], [3, "chart", "dataLabels", "plotOptions", "series", "xaxis", "title"], [1, "div-padded-always-left-right-1", "row"], ["target", "_blank", 1, "div-float-right", 3, "href"], ["color", "accent", "mat-flat-button", "", 1, "width-100"], ["class", "col-lg-4 col-md-6 col-xs-6", 4, "ngIf"], ["class", "col-lg-8 col-md-6 col-xs-6", 4, "ngIf"], [1, "col-lg-4", "col-md-6", "col-xs-6"], [1, "table", "table-striped"], ["colspan", "4", 1, "text-center", "bg-primary", "text-white"], [1, "text-center", "bg-info", "text-white"], ["scope", "col"], ["scope", "row"], [1, "text-center"], [1, "text-right"], [1, "col-lg-8", "col-md-6", "col-xs-6"], [3, "series", "xaxis", "yaxis", "title", "chart", "stroke", "tooltip"], [3, "title", "series", "chart", "dataLabels", "plotOptions", "responsive", "xaxis", "fill"], [3, "chart", "dataLabels", "plotOptions", "series", "title", "xaxis", "yaxis", "colors", "legend"], [3, "series", "xaxis", "yaxis", "title", "chart", "stroke", "legend"], [1, "card", "div-padded-2rem", "text-justify"], ["href", "https://strawpoll.com/user/vitaly-petrov"], [1, "text-justify"]],
+        consts: [[1, "div-padded"], ["autosize", ""], ["mode", "side", "position", "end", 1, "example-sidenav", 3, "opened", "openedChange"], ["drawer", ""], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area", 3, "ngModel", "focus", "focusout", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "active-color-button", 3, "click"], [4, "ngFor", "ngForOf"], [1, "fixed-button"], ["type", "fixed-plugin", "mat-button", "", 3, "click"], [1, "fa", "fa-commenting-o", "fa-2x"], ["class", "div-padded-right bg-white height-fill-screen", "id", "chart1", 4, "ngIf"], [1, "basic-comment"], [1, "header-left", "hover-pointer", 3, "click"], [1, "header-right", "hover-pointer", 3, "click"], [1, "basic-comment-body"], ["id", "chart1", 1, "div-padded-right", "bg-white", "height-fill-screen"], ["label", "Latest race"], ["matTabContent", ""], ["label", "World Exposure Championship"], ["label", "Info"], ["class", "div-padded-always-left-right-1 row", 4, "ngIf"], [3, "chart", "dataLabels", "plotOptions", "series", "xaxis", "title", "yaxis"], [3, "chart", "dataLabels", "plotOptions", "series", "xaxis", "title"], [1, "div-padded-always-left-right-1", "row"], ["class", "w-75 center-div", 4, "ngIf"], ["target", "_blank", 1, "div-float-right", 3, "href"], ["color", "accent", "mat-flat-button", "", 1, "width-100"], [1, "w-75", "center-div"], [1, "max-w-232-px", "card", "center-div"], ["value", "driver.Name", 2, "background-color", "black"], [1, "card-body"], [1, "driver-text-def", "teko-text-color-2"], ["onerror", "this.src='assets/img/drivers/default.png'", "alt", "", 3, "src"], [1, "card-footer"], ["src", "assets/img/relentless.png", "alt", "relentless", 1, "kwab-footer"], ["class", "col-lg-4 col-md-6 col-xs-6", 4, "ngIf"], ["class", "col-lg-8 col-md-6 col-xs-6", 4, "ngIf"], [1, "col-lg-4", "col-md-6", "col-xs-6"], [1, "table", "table-striped"], ["colspan", "4", 1, "text-center", "bg-primary", "text-white"], [1, "text-center", "bg-info", "text-white"], ["scope", "col"], ["scope", "row"], [1, "text-center"], [1, "text-right"], [1, "col-lg-8", "col-md-6", "col-xs-6"], [3, "series", "xaxis", "yaxis", "title", "chart", "stroke", "tooltip"], [3, "title", "series", "chart", "dataLabels", "plotOptions", "responsive", "xaxis", "fill"], [3, "chart", "dataLabels", "plotOptions", "series", "title", "xaxis", "yaxis", "colors", "legend"], [3, "series", "xaxis", "yaxis", "title", "chart", "stroke", "legend"], [1, "card", "div-padded-2rem", "text-justify"], ["href", "https://strawpoll.com/user/vitaly-petrov"], [1, "text-justify"]],
         template: function ExposedComponent_Template(rf, ctx) {
           if (rf & 1) {
-            var _r21 = core
+            var _r22 = core
             /* ɵɵgetCurrentView */
             .EpF();
 
@@ -53452,7 +53549,7 @@
             .NdJ("click", function ExposedComponent_Template_button_click_15_listener() {
               core
               /* ɵɵrestoreView */
-              .CHM(_r21);
+              .CHM(_r22);
 
               var _r0 = core
               /* ɵɵreference */
@@ -53485,7 +53582,7 @@
             .NdJ("click", function ExposedComponent_Template_button_click_18_listener() {
               core
               /* ɵɵrestoreView */
-              .CHM(_r21);
+              .CHM(_r22);
 
               var _r0 = core
               /* ɵɵreference */
@@ -53566,7 +53663,7 @@
         /* MatTabContent */
         .Vc, ng_apexcharts
         /* ChartComponent */
-        .x],
+        .x, MatButtonToggle],
         pipes: [common
         /* DecimalPipe */
         .JJ],
@@ -63217,28 +63314,32 @@
           ._UZ(4, "apx-chart", 54);
 
           core
+          /* ɵɵelement */
+          ._UZ(5, "apx-chart", 55);
+
+          core
           /* ɵɵelementEnd */
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(5, "div", 55);
+          .TgZ(6, "div", 56);
           core
           /* ɵɵelementStart */
-          .TgZ(6, "span");
+          .TgZ(7, "span");
 
           core
           /* ɵɵtext */
-          ._uU(7, "Exclude DNF results ");
+          ._uU(8, "Exclude DNF results ");
 
           core
           /* ɵɵelementEnd */
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(8, "mat-slide-toggle", 56);
+          .TgZ(9, "mat-slide-toggle", 57);
           core
           /* ɵɵlistener */
-          .NdJ("ngModelChange", function StandingsComponent_div_20_ng_template_9_div_0_Template_mat_slide_toggle_ngModelChange_8_listener($event) {
+          .NdJ("ngModelChange", function StandingsComponent_div_20_ng_template_9_div_0_Template_mat_slide_toggle_ngModelChange_9_listener($event) {
             core
             /* ɵɵrestoreView */
             .CHM(_r29);
@@ -63246,7 +63347,7 @@
             /* ɵɵnextContext */
             .oxw(3);
             return ctx_r28.showDnf = $event;
-          })("change", function StandingsComponent_div_20_ng_template_9_div_0_Template_mat_slide_toggle_change_8_listener($event) {
+          })("change", function StandingsComponent_div_20_ng_template_9_div_0_Template_mat_slide_toggle_change_9_listener($event) {
             core
             /* ɵɵrestoreView */
             .CHM(_r29);
@@ -63260,11 +63361,11 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(9, "span");
+          .TgZ(10, "span");
 
           core
           /* ɵɵtext */
-          ._uU(10, " Include DNF results");
+          ._uU(11, " Include DNF results");
 
           core
           /* ɵɵelementEnd */
@@ -63275,15 +63376,15 @@
 
           core
           /* ɵɵelement */
-          ._UZ(11, "apx-chart", 57);
+          ._UZ(12, "apx-chart", 58);
 
           core
           /* ɵɵelementStart */
-          .TgZ(12, "div", 51);
+          .TgZ(13, "div", 51);
 
           core
           /* ɵɵelement */
-          ._UZ(13, "apx-chart", 52);
+          ._UZ(14, "apx-chart", 52);
 
           core
           /* ɵɵelementEnd */
@@ -63306,6 +63407,12 @@
           core
           /* ɵɵadvance */
           .xp6(2);
+          core
+          /* ɵɵproperty */
+          .Q6J("title", ctx_r27.driversRoundByRoundOptions.title)("series", ctx_r27.driversRoundByRoundOptions.series)("chart", ctx_r27.driversRoundByRoundOptions.chart)("dataLabels", ctx_r27.driversRoundByRoundOptions.dataLabels)("plotOptions", ctx_r27.driversRoundByRoundOptions.plotOptions)("responsive", ctx_r27.driversRoundByRoundOptions.responsive)("xaxis", ctx_r27.driversRoundByRoundOptions.xAxis)("fill", ctx_r27.driversRoundByRoundOptions.fill)("dataLabels", ctx_r27.driversRoundByRoundOptions.dataLabels);
+          core
+          /* ɵɵadvance */
+          .xp6(1);
           core
           /* ɵɵproperty */
           .Q6J("title", ctx_r27.titleResultsHeatmap)("series", ctx_r27.driversHeatMapChartOptions.series)("chart", ctx_r27.driversHeatMapChartOptions.chart)("dataLabels", ctx_r27.driversHeatMapChartOptions.dataLabels)("plotOptions", ctx_r27.driversHeatMapChartOptions.plotOptions)("colors", ctx_r27.driversHeatMapChartOptions.colors)("tooltip", ctx_r27.driversHeatMapChartOptions.tooltip);
@@ -63334,7 +63441,7 @@
         if (rf & 1) {
           core
           /* ɵɵtemplate */
-          .YNc(0, StandingsComponent_div_20_ng_template_9_div_0_Template, 14, 27, "div", 49);
+          .YNc(0, StandingsComponent_div_20_ng_template_9_div_0_Template, 15, 36, "div", 49);
         }
 
         if (rf & 2) {
@@ -63369,7 +63476,7 @@
 
           core
           /* ɵɵelement */
-          ._UZ(4, "apx-chart", 54);
+          ._UZ(4, "apx-chart", 55);
 
           core
           /* ɵɵelementEnd */
@@ -63419,7 +63526,7 @@
         if (rf & 1) {
           core
           /* ɵɵtemplate */
-          .YNc(0, StandingsComponent_div_20_ng_template_11_div_0_Template, 7, 19, "div", 58);
+          .YNc(0, StandingsComponent_div_20_ng_template_11_div_0_Template, 7, 19, "div", 59);
         }
 
         if (rf & 2) {
@@ -63574,6 +63681,13 @@
           this.chartSeriesList = [];
           this.chartWidth = '100%';
           this.lineChartWithResponsiveWidth = {
+            animations: {
+              enabled: true,
+              speed: 1000,
+              animateGradually: {
+                enabled: false
+              }
+            },
             height: 500,
             width: this.chartWidth,
             type: 'line',
@@ -63590,7 +63704,11 @@
               enabled: false
             },
             animations: {
-              enabled: false
+              enabled: true,
+              speed: 1000,
+              animateGradually: {
+                enabled: false
+              }
             },
             toolbar: ChartUtility.defaultToolbar
           };
@@ -63688,12 +63806,30 @@
 
               _this40.standings.driverPointsByRound.forEach(function (standing) {
                 roundByRoundCategories.push(standing.name);
+                var roundCounter = 1;
                 standing.series.forEach(function (scoreByRound) {
+                  //ako vozač nema unose za ovu (prvu?) rundu
+                  do {
+                    if (roundCounter < scoreByRound[0]) {
+                      if (!roundByRoundSeriesMap.has(roundCounter)) {
+                        roundByRoundSeriesMap.set(roundCounter, []);
+                      }
+
+                      roundByRoundSeriesMap.get(roundCounter).push(0);
+                      roundCounter++;
+                    }
+                  } while (roundCounter < scoreByRound[0]);
+
                   if (!roundByRoundSeriesMap.has(scoreByRound[0])) {
                     roundByRoundSeriesMap.set(scoreByRound[0], []);
                   }
 
+                  if (scoreByRound[1] == null) {
+                    scoreByRound[1] = 0;
+                  }
+
                   roundByRoundSeriesMap.get(scoreByRound[0]).push(scoreByRound[1]);
+                  roundCounter++;
                 }); //delete me?
 
                 _this40.driverPointsByRoundSeries.push({
@@ -63817,8 +63953,6 @@
         }, {
           key: "setStackedChart",
           value: function setStackedChart(roundByRound, roundByRoundCategories) {
-            console.log('roundByRoundCategories');
-            console.log(roundByRoundCategories);
             this.driversRoundByRoundOptions = {
               title: {
                 text: 'Round by round',
@@ -63829,12 +63963,10 @@
                 type: "bar",
                 height: 500,
                 stacked: true,
-                toolbar: {
-                  show: true
-                },
                 zoom: {
                   enabled: true
-                }
+                },
+                toolbar: ChartUtility.defaultToolbar
               },
               responsive: [{
                 breakpoint: 480,
@@ -64179,7 +64311,7 @@
         },
         decls: 21,
         vars: 4,
-        consts: [["autosize", ""], ["autosize", "", "mode", "side", "position", "end", 1, "example-sidenav", 3, "opened", "openedChange"], ["drawer", ""], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area", 3, "ngModel", "focus", "focusout", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "active-color-button", 3, "click"], [4, "ngFor", "ngForOf"], [1, "fixed-button"], ["type", "fixed-plugin", "mat-button", "", 3, "click"], [1, "fa", "fa-commenting-o", "fa-2x"], ["class", "\u201Dmat-content\u201D", 3, "touchstart", "touchend", 4, "ngIf"], [1, "basic-comment"], [1, "header-left", "hover-pointer", 3, "click"], [1, "header-right", "hover-pointer", 3, "click"], [1, "basic-comment-body"], [1, "\u201Dmat-content\u201D", 3, "touchstart", "touchend"], [3, "selectedIndex", "selectedIndexChange", "selectedTabChange"], ["label", "Drivers"], ["matTabContent", ""], ["label", "Constructors"], ["label", "Races"], ["label", "Driver charts"], ["label", "Constructor charts"], [1, "table", "table-striped"], [1, "text-center", "bg-primary", "text-white"], ["scope", "col"], ["scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], ["scope", "row"], [1, "hover-effects-row"], [2, "color", "black", 3, "href"], [1, "d-sm-none", "d-none", "d-lg-table-cell", "text-center"], [1, "d-sm-none", "d-none", "d-lg-table-cell", "hover-effects-row"], [4, "ngIf"], ["scope", "col", 1, "width-10", "text-left"], ["scope", "col", 1, "text-left"], ["scope", "width-10 row"], [1, "hover-effects-row", 3, "click"], [1, "div-width-300", "no-padding-no-margin-2"], ["class", "event-result", 4, "ngIf"], [1, "event-result"], [1, "display-on-desktop-only", "result-card", "position-1"], [1, "race-card-image-wrapper"], ["mat-card-image", "", "onerror", "this.src='assets/img/drivers/default.png'", "alt", "", 1, "div-height-80", 3, "src"], [1, "result-card", "position-2-on-desktop"], ["mat-card-image", "", "onerror", "this.src='assets/img/drivers/default.png'", "alt", "", 1, "div-height-95px", 3, "src"], [1, "display-on-desktop-only", "result-card", "position-3"], ["mat-card-image", "", "onerror", "this.src='assets/img/drivers/default.png'", "alt", "", 1, "div-height-70", 3, "src"], ["class", " div-padded-2rem", 4, "ngIf"], [1, "div-padded-2rem"], [1, "overflowX"], [3, "series", "yaxis", "title", "chart", "stroke", "tooltip"], [1, "overflowX", "pr-1"], [3, "title", "series", "chart", "dataLabels", "plotOptions", "colors", "tooltip"], [1, "div-padded-always-top-right-2rem"], [3, "ngModel", "ngModelChange", "change"], [3, "series", "yaxis", "xaxis", "title", "chart", "stroke", "tooltip"], ["class", "div-padded-2rem", 4, "ngIf"]],
+        consts: [["autosize", ""], ["autosize", "", "mode", "side", "position", "end", 1, "example-sidenav", 3, "opened", "openedChange"], ["drawer", ""], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area", 3, "ngModel", "focus", "focusout", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "active-color-button", 3, "click"], [4, "ngFor", "ngForOf"], [1, "fixed-button"], ["type", "fixed-plugin", "mat-button", "", 3, "click"], [1, "fa", "fa-commenting-o", "fa-2x"], ["class", "\u201Dmat-content\u201D", 3, "touchstart", "touchend", 4, "ngIf"], [1, "basic-comment"], [1, "header-left", "hover-pointer", 3, "click"], [1, "header-right", "hover-pointer", 3, "click"], [1, "basic-comment-body"], [1, "\u201Dmat-content\u201D", 3, "touchstart", "touchend"], [3, "selectedIndex", "selectedIndexChange", "selectedTabChange"], ["label", "Drivers"], ["matTabContent", ""], ["label", "Constructors"], ["label", "Races"], ["label", "Driver charts"], ["label", "Constructor charts"], [1, "table", "table-striped"], [1, "text-center", "bg-primary", "text-white"], ["scope", "col"], ["scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], ["scope", "row"], [1, "hover-effects-row"], [2, "color", "black", 3, "href"], [1, "d-sm-none", "d-none", "d-lg-table-cell", "text-center"], [1, "d-sm-none", "d-none", "d-lg-table-cell", "hover-effects-row"], [4, "ngIf"], ["scope", "col", 1, "width-10", "text-left"], ["scope", "col", 1, "text-left"], ["scope", "width-10 row"], [1, "hover-effects-row", 3, "click"], [1, "div-width-300", "no-padding-no-margin-2"], ["class", "event-result", 4, "ngIf"], [1, "event-result"], [1, "display-on-desktop-only", "result-card", "position-1"], [1, "race-card-image-wrapper"], ["mat-card-image", "", "onerror", "this.src='assets/img/drivers/default.png'", "alt", "", 1, "div-height-80", 3, "src"], [1, "result-card", "position-2-on-desktop"], ["mat-card-image", "", "onerror", "this.src='assets/img/drivers/default.png'", "alt", "", 1, "div-height-95px", 3, "src"], [1, "display-on-desktop-only", "result-card", "position-3"], ["mat-card-image", "", "onerror", "this.src='assets/img/drivers/default.png'", "alt", "", 1, "div-height-70", 3, "src"], ["class", " div-padded-2rem", 4, "ngIf"], [1, "div-padded-2rem"], [1, "overflowX"], [3, "series", "yaxis", "title", "chart", "stroke", "tooltip"], [1, "overflowX", "pr-1"], [3, "title", "series", "chart", "dataLabels", "plotOptions", "responsive", "xaxis", "fill"], [3, "title", "series", "chart", "dataLabels", "plotOptions", "colors", "tooltip"], [1, "div-padded-always-top-right-2rem"], [3, "ngModel", "ngModelChange", "change"], [3, "series", "yaxis", "xaxis", "title", "chart", "stroke", "tooltip"], ["class", "div-padded-2rem", 4, "ngIf"]],
         template: function StandingsComponent_Template(rf, ctx) {
           if (rf & 1) {
             var _r37 = core
@@ -72892,6 +73024,15 @@
             toolbar: ChartUtility.defaultToolbar
           };
           this.defChartResponsiveWidth = {
+            animations: {
+              enabled: true,
+              easing: 'easeinout',
+              speed: 500,
+              animateGradually: {
+                enabled: true,
+                delay: 50
+              }
+            },
             height: 350,
             width: this.chartWidth,
             type: 'line',
@@ -92015,6 +92156,13 @@
           this.chartWidth = '100%';
           this.codeToNameMap = new Map();
           this.lineChart = {
+            animations: {
+              enabled: true,
+              speed: 1000,
+              animateGradually: {
+                enabled: false
+              }
+            },
             height: 500,
             type: 'line',
             zoom: {

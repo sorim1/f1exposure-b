@@ -65,6 +65,10 @@ public class RaceData {
     @Transient
     private List<ErgastStanding> results;
 
+    @JsonProperty("SprintResults")
+    @Transient
+    private List<ErgastStanding> sprintResults;
+
     private String imageUrl;
 
     @Transient

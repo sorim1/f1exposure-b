@@ -14,7 +14,7 @@ public interface ExposureStrawpollService {
 
     ActiveExposureChart getActiveExposureChart();
 
-    void closeExposurePoll();
+    void closeExposurePoll(Boolean showWinnerValue);
 
     ExposureResponse getExposureDriverList();
 
@@ -45,4 +45,6 @@ public interface ExposureStrawpollService {
     Integer resetLatestPoll();
 
     String setStrawpoll(String id);
+
+    String changeShowWinner(Boolean value);
 }

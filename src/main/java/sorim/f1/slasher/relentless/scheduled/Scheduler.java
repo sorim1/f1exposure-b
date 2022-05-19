@@ -32,10 +32,10 @@ public class Scheduler {
     public static Boolean strawpollFound = false;
     private static boolean isRaceWeek = true;
 
-    @Scheduled(cron = "0 0 1 * * MON")
+    @Scheduled(cron = "0 0 4 * * MON")
     public void mondayJobs() throws IOException {
         log.info(CODE + " mondayJobs called");
-        exposureService.closeExposurePoll();
+        exposureService.closeExposurePoll(false);
         analysisDone = true;
         strawpollFound = false;
         if (!standingsUpdated) {

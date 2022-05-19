@@ -86,11 +86,6 @@ public class DriverStandingByRound {
     public void setDataFromARound(ErgastStanding ergastStanding, Integer maxPosition) {
         this.pointsThisRound = ergastStanding.getPoints();
         this.resultThisRoundDnf = ergastStanding.getPosition();
-//        if("Finished".equals(ergastStanding.getStatus())|| ergastStanding.getStatus().contains("Lap")){
-//            this.resultThisRound = ergastStanding.getPosition();
-//        } else {
-//            this.resultThisRound = maxPosition+1;
-//        }
         this.resultThisRound = ergastStanding.getPosition();
         this.grid = ergastStanding.getGrid();
         this.status = ergastStanding.getStatus();

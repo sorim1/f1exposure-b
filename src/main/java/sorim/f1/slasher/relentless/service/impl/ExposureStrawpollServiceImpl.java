@@ -42,6 +42,8 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
     private static Integer currentExposureRound;
     private static String strawpollUrl = null;
     private static String strawpollId;
+
+    private static Boolean showWinner = true;
     private static Integer reloadDelay = 0;
     private static Integer latestVoteCount = 0;
     private static Map<String, Driver> driversMap = new HashMap<>();
@@ -229,10 +231,20 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
     }
 
     @Override
+    public String changeShowWinner(Boolean value) {
+        String response = showWinner + " -> ";
+        showWinner = value;
+        response += showWinner;
+        return response;
+    }
+
+    @Override
     public ExposureData getExposedChartData() {
         List<ExposureChampionshipStanding> standings = getExposureStandings();
         return ExposureData.builder()
                 .title(title)
+                .currentYear(properties.getCurrentSeasonPast())
+                .showWinner(showWinner)
                 .delay(reloadDelay)
                 .activeExposureChart(getActiveExposureChart())
                 .exposureChampionshipData(getExposureChampionshipData(standings))
@@ -243,7 +255,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
     }
 
     @Override
-    public void closeExposurePoll() {
+    public void closeExposurePoll(Boolean showWinnerValue) {
         exposureToday = false;
         exposureNow = false;
         exposureChampionshipRepository.closeAllPolls();
@@ -258,6 +270,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
         });
         exposureChampionshipStandingsRepository.saveAll(exposureStandings);
         exposureChampionshipStandingsRepository.updateChampionshipNames();
+        showWinner = showWinnerValue;
     }
 
     private List<ExposureChampionshipStanding> getExposureStandings() {

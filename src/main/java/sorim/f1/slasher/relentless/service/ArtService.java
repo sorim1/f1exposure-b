@@ -26,4 +26,6 @@ public interface ArtService {
     void restoreAllArt(List<ArtImageRow> artBackup);
 
     Boolean setLatestArt(String code);
+
+    Boolean deleteArt(String code);
 }

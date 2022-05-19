@@ -140,6 +140,11 @@ public class ErgastServiceImpl implements ErgastService {
         return restTemplate
                 .getForObject(ERGAST_URL + season + "/" + round + "/results.json?limit=700", ErgastResponse.class);
     }
+    @Override
+    public ErgastResponse getSprintResultsByRound(Integer season, Integer round) {
+        return restTemplate
+                .getForObject(ERGAST_URL + season + "/" + round + "/sprint.json?limit=700", ErgastResponse.class);
+    }
 
     private List<ErgastDriver> getAllErgastDrivers() {
         ErgastResponse response = restTemplate
@@ -821,11 +826,22 @@ public class ErgastServiceImpl implements ErgastService {
                                 constructorStandingByRound.get(ergastStanding.getConstructor().getConstructorId() + finalRound).incrementPointsThisRound(ergastStanding.getPoints());
                             }
                         });
-                round++;
+
                 iterate = true;
             } else {
                 iterate = false;
             }
+            //dodaj bodove iz sprint utrke ako je bila
+            response = getSprintResultsByRound(properties.getCurrentSeasonPast(), round);
+            if (response.getMrData().getTotal() > 0) {
+                Integer finalRound = round;
+                response.getMrData().getRaceTable().getRaces().get(0).getSprintResults()
+                        .forEach(ergastStanding -> {
+                            driverStandingsByRound.get(ergastStanding.getDriver().getDriverId() + finalRound).incrementPointsThisRound(ergastStanding.getPoints());
+                            constructorStandingByRound.get(ergastStanding.getConstructor().getConstructorId() + finalRound).incrementPointsThisRound(ergastStanding.getPoints());
+                        });
+            }
+            round++;
         } while (iterate);
     }
 
