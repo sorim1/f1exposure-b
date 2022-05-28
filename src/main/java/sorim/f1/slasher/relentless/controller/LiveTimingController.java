@@ -5,7 +5,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import sorim.f1.slasher.relentless.entities.ergast.RaceData;
-import sorim.f1.slasher.relentless.model.FullExposure;
 import sorim.f1.slasher.relentless.model.livetiming.RaceAnalysis;
 import sorim.f1.slasher.relentless.model.livetiming.UpcomingRaceAnalysis;
 import sorim.f1.slasher.relentless.service.LiveTimingService;
@@ -49,9 +48,14 @@ public class LiveTimingController {
     }
 
     @GetMapping("/analyzeLatestRace")
-    public Integer analyzeLatestRace(@RequestHeader String client) throws Exception {
+    public Integer analyzeLatestRace(@RequestHeader String client, @RequestParam(value = "iterate", required = false) Integer iterate) throws Exception {
         securityService.validateAdminHeader(client);
-        return service.analyzeLatestRace();
+        if (iterate != null) {
+            for (int i = 0; i < iterate; i++) {
+                service.analyzeLatestRace(false);
+            }
+        }
+        return service.analyzeLatestRace(true);
     }
 
     @GetMapping("/analyzeRace")
@@ -86,7 +90,7 @@ public class LiveTimingController {
     }
 
     @GetMapping("/analyzeUpcomingRace")
-    public Integer analyzeUpcomingRace(@RequestHeader String client, @RequestParam(value = "redo", required=false) Boolean redo) throws Exception {
+    public Integer analyzeUpcomingRace(@RequestHeader String client, @RequestParam(value = "redo", required = false) Boolean redo) throws Exception {
         securityService.validateAdminHeader(client);
         return service.analyzeUpcomingRace(redo);
     }
@@ -104,7 +108,6 @@ public class LiveTimingController {
     }
 
 
-
     @GetMapping("/deleteRacesBySeason/{year}")
     public Boolean deleteRacesBySeason(@RequestHeader String client, @PathVariable("year") String year) throws Exception {
         securityService.validateAdminHeader(client);
@@ -119,7 +122,7 @@ public class LiveTimingController {
     }
 
     @GetMapping("/setLatestTreeMap")
-    public Boolean setLatestTreeMap(@RequestHeader String client, @RequestParam(value = "ergastStandingsUpdated", required=false) Boolean ergastStandingsUpdated) throws Exception {
+    public Boolean setLatestTreeMap(@RequestHeader String client, @RequestParam(value = "ergastStandingsUpdated", required = false) Boolean ergastStandingsUpdated) throws Exception {
         return service.setLatestTreeMap(ergastStandingsUpdated);
     }
 
@@ -134,5 +137,4 @@ public class LiveTimingController {
         securityService.validateHeader(client);
         return service.restoreRaceData(id, body);
     }
-
 }

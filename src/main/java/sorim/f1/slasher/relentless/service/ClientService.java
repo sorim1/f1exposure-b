@@ -64,7 +64,7 @@ public interface ClientService {
 
     List<Replay> getReplays(Integer page);
 
-    String setOverlays(String modes);
+    String setOverlays(String modes, boolean keepOldOverlays);
 
     String setIframeLink(String link);
 

@@ -59,6 +59,8 @@ public class AdminServiceImpl implements AdminService {
     private final F1CommentRepository f1CommentRepository;
     private final JsonRepository jsonRepository;
     private final InstagramService instagramService;
+
+    private final TwitterService twitterService;
     private final TwitchService twitchService;
     private final FourchanService fourchanService;
     private final ErgastService ergastService;
@@ -79,7 +81,7 @@ public class AdminServiceImpl implements AdminService {
     public void initialize() throws Exception {
         refreshCalendarOfCurrentSeason(null);
         ergastService.fetchCurrentDrivers();
-        initializeStandings();
+        initializeStandings(true);
     }
 
     @Override
@@ -197,14 +199,16 @@ public class AdminServiceImpl implements AdminService {
 
 
     @Override
-    public Boolean initializeStandings() {
+    public Boolean initializeStandings(Boolean updateStatistics) {
         Logger.log("initializeStandings");
         Boolean changesDetected = refreshDriverStandingsFromErgast();
         initializeConstructorStandings();
         if (changesDetected) {
             Scheduler.standingsUpdated = true;
         }
-        ergastService.fetchStatisticsFullFromPartial(false);
+        if(updateStatistics) {
+            ergastService.fetchStatisticsFullFromPartial(false);
+        }
         generateChart();
         return changesDetected;
     }
@@ -569,7 +573,7 @@ public class AdminServiceImpl implements AdminService {
 
     @Override
     public String setOverlays(String overlays) {
-        return clientService.setOverlays(overlays);
+        return clientService.setOverlays(overlays, false);
     }
 
     @Override
@@ -588,7 +592,10 @@ public class AdminServiceImpl implements AdminService {
     public Boolean instagramCleanup() throws IGLoginException {
         return instagramService.cleanup();
     }
-
+    @Override
+    public Boolean twitterCleanup() throws Exception {
+        return twitterService.cleanup();
+    }
     @Override
     public Boolean checkCurrentStream() throws IOException {
         return twitchService.checkCurrentStream();
@@ -668,7 +675,7 @@ public class AdminServiceImpl implements AdminService {
             }
         }
         log.info(newOverlays);
-        clientService.setOverlays(newOverlays);
+        clientService.setOverlays(newOverlays, true);
         }catch(Exception e ){
             log.error("updateOverlays error", e);
         }
@@ -742,8 +749,6 @@ public class AdminServiceImpl implements AdminService {
                 roundPointsSorted.add(roundPoints.get(ds.getCode()));
             }
         });
-        System.out.println(roundPoints);
-        System.out.println(roundPointsSorted);
         List<JsonRepositoryModel> output = new ArrayList<>();
         JsonRepositoryModel data1 = JsonRepositoryModel.builder().id("DRIVERS_TOTAL_POINTS")
                 .json(new ArrayList<>(totalPoints.values())).build();

@@ -39,7 +39,7 @@ public class Scheduler {
         analysisDone = true;
         strawpollFound = false;
         if (!standingsUpdated) {
-            adminService.initializeStandings();
+            adminService.initializeStandings(true);
             standingsUpdated = true;
         }
         artService.generateLatestArt();
@@ -51,14 +51,14 @@ public class Scheduler {
     public void tuesdayJobs() throws IOException {
         log.info(CODE + " - tuesdayJobs called");
         if (!standingsUpdated) {
-            adminService.initializeStandings();
+            adminService.initializeStandings(true);
             standingsUpdated = true;
         }
         isItRaceWeek();
         if (isRaceWeek) {
-            clientService.setOverlays("");
+            clientService.setOverlays("", true);
         } else {
-            clientService.setOverlays("sasha-sometimes");
+            clientService.setOverlays("sasha-sometimes", true);
         }
     }
 
@@ -91,7 +91,7 @@ public class Scheduler {
     private void sundayStandingsJobs() throws IOException {
         int delay = 1800000;
         log.info(CODE + " - sundayStandingsJobs called");
-        adminService.initializeStandings();
+        adminService.initializeStandings(true);
         int weekDay = MainUtility.getWeekDay();
         if (!standingsUpdated && weekDay==1) {
             log.info(CODE + " - sundayStandingsJobs delayed");
@@ -100,6 +100,7 @@ public class Scheduler {
                         @SneakyThrows
                         @Override
                         public void run() {
+                            imageFeedJob();
                             sundayStandingsJobs();
                         }
                     },
@@ -117,7 +118,7 @@ public class Scheduler {
             log.info(CODE + " - sundayAnalysisJob called");
             int weekDay = MainUtility.getWeekDay();
             if (!analysisDone && weekDay==1) {
-                delay = liveTimingService.analyzeLatestRace();
+                delay = liveTimingService.analyzeLatestRace(true);
                 if (delay != null) {
                     int delayInMiliseconds = delay * 1000;
                     if (!strawpollFound) {
@@ -153,6 +154,7 @@ public class Scheduler {
                         @SneakyThrows
                         @Override
                         public void run() {
+                            imageFeedJob();
                             analyzeUpcomingRacePeriodically();
                         }
                     },

@@ -9,4 +9,6 @@ public interface TwitterService {
     List<TwitterPost> getTwitterPosts(Integer page);
 
     Boolean fetchTwitterPosts() throws Exception;
+
+    Boolean cleanup() throws Exception;
 }

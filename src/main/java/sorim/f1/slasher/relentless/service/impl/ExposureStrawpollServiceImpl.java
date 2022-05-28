@@ -43,7 +43,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
     private static String strawpollUrl = null;
     private static String strawpollId;
 
-    private static Boolean showWinner = true;
+    private static Boolean showWinner = false;
     private static Integer reloadDelay = 0;
     private static Integer latestVoteCount = 0;
     private static Map<String, Driver> driversMap = new HashMap<>();
@@ -165,8 +165,8 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
                 currentExposureRound = round + increment;
             } else {
                 //nova sezona
-                currentExposureRound = round;
-                properties.checkCurrentSeasonFuture();
+//                currentExposureRound = round;
+//                properties.checkCurrentSeasonFuture();
             }
             log.info("updateCurrentExposureRound3: " + currentExposureRound + " - " + round);
             AppProperty exposureProperty = AppProperty.builder().name("exposureRound").value(currentExposureRound.toString()).build();

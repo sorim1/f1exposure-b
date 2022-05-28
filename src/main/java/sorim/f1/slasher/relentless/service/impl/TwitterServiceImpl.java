@@ -1,5 +1,6 @@
 package sorim.f1.slasher.relentless.service.impl;
 
+import com.github.instagram4j.instagram4j.exceptions.IGLoginException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,8 @@ import twitter4j.TwitterFactory;
 import twitter4j.conf.ConfigurationBuilder;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 @Slf4j
@@ -32,6 +35,16 @@ public class TwitterServiceImpl implements TwitterService {
     public List<TwitterPost> getTwitterPosts(Integer page) {
         Pageable paging = PageRequest.of(page, 21);
         return twitterRepository.findAllByOrderByCreatedAtDesc(paging);
+    }
+
+    @Override
+    public Boolean cleanup() throws Exception {
+        Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.MONTH, -1);
+        Date lastMonth = cal.getTime();
+        twitterRepository.deleteByCreatedAtBefore(lastMonth);
+        fetchTwitterPosts();
+        return true;
     }
 
     @Override

@@ -20,7 +20,7 @@ public interface AdminService {
 
     Boolean deleteCalendar() throws Exception;
 
-    Boolean initializeStandings() throws IOException;
+    Boolean initializeStandings(Boolean updateStatistics) throws IOException;
 
     Boolean initializeStandingsFromLivetiming(Map<String, DriverStanding> standingsMap, Map<String, sorim.f1.slasher.relentless.model.livetiming.Driver> driversMap, Integer newRound);
 
@@ -71,7 +71,7 @@ public interface AdminService {
     Boolean generateChart();
 
     Boolean instagramCleanup() throws IGLoginException;
-
+    Boolean twitterCleanup() throws Exception;
     Boolean checkCurrentStream() throws IOException;
 
     Boolean fetchFourChanPosts();

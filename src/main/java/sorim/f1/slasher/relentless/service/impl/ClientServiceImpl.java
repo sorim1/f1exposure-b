@@ -64,7 +64,7 @@ public class ClientServiceImpl implements ClientService {
         ZonedDateTime gmtZoned = ZonedDateTime.now(ZoneId.of("Europe/London"));
         ZonedDateTime gmtZoned2 = ZonedDateTime.now(ZoneId.of("Europe/Zagreb"));
         LocalDateTime gmtDateTime = gmtZoned.toLocalDateTime();
-        int londonOffsetMinutes = (gmtZoned.getOffset().getTotalSeconds())/60;
+        int londonOffsetMinutes = (gmtZoned.getOffset().getTotalSeconds()) / 60;
         F1Calendar f1calendar = calendarRepository.findFirstByRaceAfterOrPractice3AfterOrderByPractice1(gmtDateTime, gmtDateTime);
         if (f1calendar == null) {
             return CalendarData.builder()
@@ -152,7 +152,7 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
-    public TripleInstagramFeed getInstagramFeedPage(Integer mode, Integer page){
+    public TripleInstagramFeed getInstagramFeedPage(Integer mode, Integer page) {
         if (page > 40) {
             return new TripleInstagramFeed();
         }
@@ -333,11 +333,18 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
-    public String setOverlays(String newOverlays) {
-        AppProperty ap = AppProperty.builder().name("OVERLAYS").value(newOverlays).build();
+    public String setOverlays(String newOverlays, boolean keepOldOverlays) {
+        String oldOverlays = "";
+        if (keepOldOverlays) {
+            if (overlays.contains("apustaja")) {
+                oldOverlays += ",apustaja";
+            }
+        }
+        String fullOverlays = newOverlays + oldOverlays;
+        AppProperty ap = AppProperty.builder().name("OVERLAYS").value(fullOverlays).build();
         propertiesRepository.save(ap);
         String response = overlays + " -> ";
-        overlays = newOverlays;
+        overlays = fullOverlays;
         response = response + overlays;
         overlayList = stringToList(overlays);
         return response;
@@ -433,7 +440,9 @@ public class ClientServiceImpl implements ClientService {
             propertiesRepository.save(ap);
         }
         fourchanDisabled = Boolean.valueOf(ap.getValue());
-    };
+    }
+
+    ;
 
     private Map<String, Integer> getRemainingTime(LocalDateTime gmtDateTime, F1Calendar f1calendar, Integer mode) {
         Map<String, Integer> output = new HashMap<>();

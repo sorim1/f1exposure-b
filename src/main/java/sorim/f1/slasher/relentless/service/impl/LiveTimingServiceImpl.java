@@ -226,27 +226,27 @@ public class LiveTimingServiceImpl implements LiveTimingService {
     }
 
     @Override
-    public Integer analyzeLatestRace() {
+    public Integer analyzeLatestRace(Boolean updateStatistics) {
         RaceData raceData = ergastService.getLatestNonAnalyzedRace(properties.getCurrentSeasonFuture());
-        analyzeRaceData(raceData);
+        analyzeRaceData(raceData, updateStatistics);
         return adminService.getNextRefreshTick(-6000);
     }
 
     @Override
     public Integer analyzeRace(Integer season, Integer round) {
         RaceData raceData = ergastService.findRaceBySeasonAndRound(String.valueOf(season), round);
-        analyzeRaceData(raceData);
+        analyzeRaceData(raceData, false);
         return adminService.getNextRefreshTick(-6000);
     }
 
 
-    private void analyzeRaceData(RaceData raceData) {
+    private void analyzeRaceData(RaceData raceData, Boolean updateStatistics) {
         if (raceData != null) {
             String liveTimingResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.RACE, 1);
             if (liveTimingResponse != null) {
                 raceData.setLiveTimingRace(liveTimingResponse.substring(liveTimingResponse.indexOf("{")));
                 ergastService.saveRace(raceData);
-                RaceAnalysis analysis = fetchNewRaceAnalysis(raceData.getCircuit().getCircuitId());
+                RaceAnalysis analysis = fetchNewRaceAnalysis(raceData.getCircuit().getCircuitId(), updateStatistics);
                 adminService.updateOverlays(analysis);
                 analyzeUpcomingRace(false);
                 Scheduler.analysisDone = true;
@@ -266,7 +266,7 @@ public class LiveTimingServiceImpl implements LiveTimingService {
         raceData.setLiveTimingRace(null);
         raceData.setTimingAppData(null);
         ergastService.saveRace(raceData);
-        analyzeLatestRace();
+        analyzeLatestRace(true);
         raceData = ergastService.getLatestAnalyzedRace();
         raceData.getRaceAnalysis().setArt(art);
         ergastService.saveRace(raceData);
@@ -571,7 +571,7 @@ public class LiveTimingServiceImpl implements LiveTimingService {
     }
 
 
-    public RaceAnalysis fetchNewRaceAnalysis(String circuitId) {
+    public RaceAnalysis fetchNewRaceAnalysis(String circuitId, Boolean updateStatistics) {
         List<RaceData> raceData = ergastService.findByCircuitIdOrderBySeasonDesc(circuitId);
         if(raceData.get(0).getLiveTimingRace()==null){
             raceData.remove(0);
@@ -607,7 +607,7 @@ public class LiveTimingServiceImpl implements LiveTimingService {
                     Map<String, String> ergastCodes = mapErgastWithLiveTiming(driversMap);
                     Boolean bool = enrichDriversWithErgast(driversMap, ergastCodes, race.getSeason(), race.getRound());
                     if (bool) {
-                        adminService.initializeStandings();
+                        adminService.initializeStandings(updateStatistics);
                     }
                     ergastDataAvailable.set(bool);
                     onlyFirstOne.set(false);

@@ -12,7 +12,7 @@ public interface LiveTimingService {
 
     RaceAnalysis getRaceAnalysis() throws Exception;
 
-    Integer analyzeLatestRace();
+    Integer analyzeLatestRace(Boolean updateStatistics);
 
     Integer analyzeRace(Integer season, Integer round);
 

@@ -84,7 +84,7 @@ public class AdminController {
     @GetMapping("/initializeStandings")
     Boolean intializeStandings(@RequestHeader String client) throws Exception {
         securityService.validateAdminHeader(client);
-        return service.initializeStandings();
+        return service.initializeStandings(true);
     }
 
     @GetMapping("/initializeFullStandingsThroughRounds")
@@ -241,6 +241,12 @@ public class AdminController {
     Boolean instagramCleanup(@RequestHeader String client) throws Exception {
         securityService.validateAdminHeader(client);
         return service.instagramCleanup();
+    }
+
+    @GetMapping("/twitterCleanup")
+    Boolean twitterCleanup(@RequestHeader String client) throws Exception {
+        securityService.validateAdminHeader(client);
+        return service.twitterCleanup();
     }
     @GetMapping("/checkCurrentStream")
     Boolean checkCurrentStream() throws IOException {
