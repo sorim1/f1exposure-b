@@ -3,16 +3,11 @@ f1:
     properties:
       tempo: tttejmpo
       twitterDebug: false
-      twitterKey1: eCF9Xm6wa5brKSAxOhFS4FpXP
-      twitterSecret1: hkjZw8YFhRDLjL3yVuUgxwF5DRKgyQ7ZuNscQMJgr8fA9ycCPI
-      twitterAccessToken1: 2307261354-VCg4IcH8xOjbv6NhlMfYtO7kA2z5tbp7Bo7xBWf
       twitterAccessTokenSecret1: I56TyVDo9GVw0s9WfyMuyZt2K9tGrb4XAVO2wax8RKFbs
       twitterKey: Oh4Fq09DPxIvy6FmVH76mcj0v
       twitterSecret: ZcpC4aVpIee4euvZF4IiAHzlYY06VpI22kKfroX6Cxe5u7uBgC
       twitterAccessToken: 1530482716990394368-E0efMcIWH4IT2lsfzTjqUCClf8rtWq
       twitterAccessTokenSecret: 41DI3NKWO4NX2FYv0S4yC9hoI9Iap8Dxn7ohRBJX8e48g
-      instagramUsername1: miroslav.dragicevic1
-      instagramPassword1: "!qwadrat1"
       instagramUsername: f1exposure
       instagramPassword: "!qwadrat1"
       calendarUrl: https://www.formula1.com/calendar/Formula_1_Official_Calendar.ics

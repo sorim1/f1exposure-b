@@ -40,7 +40,6 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
     private static LocalDateTime exposureTime;
     private static String title = "Strange";
     private static Integer currentExposureRound;
-    private static String strawpollUrl = null;
     private static String strawpollId;
 
     private static Boolean showWinner = false;
@@ -61,6 +60,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
     private final FourchanService fourchanService;
     private final RestTemplate restTemplate = new RestTemplate();
 
+    private final JsonRepository jsonRepository;
 
     @PostConstruct
     private void init() {
@@ -90,7 +90,6 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
                     String newId = getExposureStrawpoll();
                     if (newId != null) {
                         strawpollId = newId;
-                        strawpollUrl = strawpollUrlBase + strawpollId;
                         startPolling();
                         response = true;
                     }
@@ -150,7 +149,6 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
 
     private void resetStrawpoll() {
         strawpollId = null;
-        strawpollUrl = null;
         latestVoteCount = 0;
         reloadDelay = 0;
     }
@@ -190,7 +188,6 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
         } catch (Exception e) {
             log.error("fetchStrawpollResults error", e);
             strawpollId = null;
-            strawpollUrl = null;
             return null;
         }
     }
@@ -198,7 +195,6 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
     @Override
     public String initializeStrawpoll(String id) {
         reloadDelay = 5000;
-        strawpollUrl = strawpollUrlBase + id;
         strawpollId = id;
         if (id == null) {
             initializeExposureFrontendVariables(null);
@@ -222,7 +218,6 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
     @Override
     public String setStrawpoll(String id) {
         reloadDelay = 5000;
-        strawpollUrl = strawpollUrlBase + id;
         strawpollId = id;
         if (strawpollId != null) {
             startPolling();
@@ -271,6 +266,21 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
         exposureChampionshipStandingsRepository.saveAll(exposureStandings);
         exposureChampionshipStandingsRepository.updateChampionshipNames();
         showWinner = showWinnerValue;
+        backupExposureToDatabase();
+    }
+
+    private void backupExposureToDatabase() {
+        try {
+            log.info("backupExposureToDatabase start");
+            FullExposure fullExposure = backupExposure();
+            JsonRepositoryModel fullExposureJson = JsonRepositoryModel.builder()
+                    .id("EXPOSURE_" + currentExposureRound + "_" + strawpollId)
+                    .json(fullExposure).build();
+            jsonRepository.save(fullExposureJson);
+            log.info("backupExposureToDatabase end");
+        }catch(Exception e){
+            e.printStackTrace();
+        }
     }
 
     private List<ExposureChampionshipStanding> getExposureStandings() {

@@ -230,7 +230,7 @@ public class InstagramServiceImpl implements InstagramService {
     @Override
     public Boolean cleanup() throws IGLoginException {
         instagramRepository.deleteAll();
-        imageRepository.deleteEverythingExceptMarketing();
+        imageRepository.deleteEverythingExceptM();
         fetchInstagramFeed();
         return true;
     }

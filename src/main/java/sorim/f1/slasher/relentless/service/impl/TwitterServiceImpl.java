@@ -1,6 +1,5 @@
 package sorim.f1.slasher.relentless.service.impl;
 
-import com.github.instagram4j.instagram4j.exceptions.IGLoginException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,16 +10,11 @@ import sorim.f1.slasher.relentless.configuration.MainProperties;
 import sorim.f1.slasher.relentless.entities.TwitterPost;
 import sorim.f1.slasher.relentless.repository.TwitterRepository;
 import sorim.f1.slasher.relentless.service.TwitterService;
-import twitter4j.Status;
-import twitter4j.Twitter;
-import twitter4j.TwitterException;
-import twitter4j.TwitterFactory;
+import twitter4j.*;
 import twitter4j.conf.ConfigurationBuilder;
 
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
+import javax.annotation.PostConstruct;
+import java.util.*;
 
 @Slf4j
 @Service
@@ -29,7 +23,8 @@ public class TwitterServiceImpl implements TwitterService {
 
     private final MainProperties properties;
     private final TwitterRepository twitterRepository;
-
+    private static List<TwitterPost> twitterPostsList = new ArrayList<>();
+    private static Map<String, TwitterPost> twitterPostsMap = new HashMap<>();
 
     @Override
     public List<TwitterPost> getTwitterPosts(Integer page) {
@@ -49,9 +44,27 @@ public class TwitterServiceImpl implements TwitterService {
 
     @Override
     public Boolean fetchTwitterPosts() throws Exception {
-        List<TwitterPost> list = new ArrayList<>();
         Twitter twitter = getTwitterinstance();
-        twitter.getHomeTimeline().forEach(item -> {
+        ResponseList<Status> timeline = twitter.getHomeTimeline();
+        List<TwitterPost> list = getListFromResponseList(timeline);
+        twitterRepository.saveAll(list);
+        fetchTwitterFerrariPosts();
+        return true;
+    }
+
+    private List<TwitterPost> getListFromResponseList(ResponseList<Status> timeline) {
+        List<TwitterPost> list = new ArrayList<>();
+        timeline.forEach(item -> {
+            TwitterPost post = getTwitterPostFromResponseItem(item, true);
+            if(post!=null){
+                list.add(post);
+            }
+        });
+        return list;
+    }
+
+    private TwitterPost getTwitterPostFromResponseItem(Status item, Boolean mediaOnly) {
+        TwitterPost response = null;
             Integer source = 0;
             String text = item.getText();
             String url = null;
@@ -80,10 +93,8 @@ public class TwitterServiceImpl implements TwitterService {
                 url = "https://twitter.com/" + item.getUser().getScreenName() + "/status/" + item.getId();
                 source = 4;
             }
-            if (mediaUrl != null) {
-                //getTwitterPost(twitter, item.getId());
-
-                list.add(TwitterPost.builder()
+            if (mediaUrl != null || !mediaOnly) {
+                response = TwitterPost.builder()
                         .id(item.getId())
                         .text(text)
                         .favoriteCount(item.getFavoriteCount())
@@ -94,23 +105,46 @@ public class TwitterServiceImpl implements TwitterService {
                         .userPicture(item.getUser().getProfileImageURLHttps())
                         .username(item.getUser().getName())
                         .createdAt(item.getCreatedAt())
-                        .build());
+                        .build();
             }
-        });
-        twitterRepository.saveAll(list);
-        return true;
+        return response;
     }
 
-    private void getTwitterPost(Twitter twitter, long tweetID) {
-        try {
-            Status status = twitter.showStatus(tweetID);
-            log.info("getTwitterPost1");
-            log.info(status.getText());
-        } catch (TwitterException e) {
-            e.printStackTrace();
+    @PostConstruct
+    @Override
+    public List<TwitterPost> fetchTwitterFerrariPosts() throws Exception {
+        if(twitterPostsMap.size()>300){
+            twitterPostsMap.clear();
+            for(TwitterPost post : twitterPostsList){
+                twitterPostsMap.put(post.getUrl(), post);
+            }
         }
+        Twitter twitter = getTwitterinstance();
+        Query query = new Query("ScuderiaFerrari");
+
+        QueryResult result = twitter.search(query);
+        for (Status status : result.getTweets()) {
+            TwitterPost post = getTwitterPostFromResponseItem(status, true);
+            if(post!=null) {
+                twitterPostsMap.put(post.getUrl(), post);
+            }
+        }
+        List<TwitterPost> list = new ArrayList<>(twitterPostsMap.values());
+        Collections.sort(list);
+        int upperLimit;
+        if(list.size()>30){
+            upperLimit = 30;
+        } else {
+            upperLimit = list.size();
+        }
+        twitterPostsList = list.subList(0, upperLimit);
+        return twitterPostsList;
     }
 
+    @Override
+    public List<TwitterPost> getTwitterFerrariPosts(){
+        return twitterPostsList;
+    }
     private Twitter getTwitterinstance() {
         ConfigurationBuilder cb = new ConfigurationBuilder();
         cb.setDebugEnabled(properties.getTwitterDebug())

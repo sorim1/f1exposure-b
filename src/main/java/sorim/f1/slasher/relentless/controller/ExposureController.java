@@ -109,4 +109,16 @@ public class ExposureController {
         securityService.validateAdminHeader(client);
         return service.changeShowWinner(value);
     }
+
+    @GetMapping("/backupExposure")
+    FullExposure getExposureDriverList(@RequestHeader String client) throws Exception {
+        securityService.validateAdminHeader(client);
+        return service.backupExposure();
+    }
+
+    @PostMapping("/restoreExposureFromBackup")
+    Boolean restoreExposureFromBackup(@RequestHeader String client, @RequestBody FullExposure body) throws Exception {
+        securityService.validateAdminHeader(client);
+        return service.restoreExposureFromBackup(body);
+    }
 }

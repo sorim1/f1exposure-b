@@ -247,7 +247,6 @@ public class RedditServiceImpl implements RedditService {
                             && faviconResponse.getStatusCode().is2xxSuccessful();
             return response;
         } catch (Exception e) {
-            log.info(e.getMessage());
             return false;
         }
     }

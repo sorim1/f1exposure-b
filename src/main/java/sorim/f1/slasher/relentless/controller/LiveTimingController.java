@@ -54,8 +54,10 @@ public class LiveTimingController {
             for (int i = 0; i < iterate; i++) {
                 service.analyzeLatestRace(false);
             }
+            return iterate;
+        } else {
+            return service.analyzeLatestRace(true);
         }
-        return service.analyzeLatestRace(true);
     }
 
     @GetMapping("/analyzeRace")

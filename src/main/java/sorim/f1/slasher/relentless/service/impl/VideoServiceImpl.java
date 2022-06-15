@@ -115,12 +115,13 @@ public class VideoServiceImpl implements VideoService {
     @Override
     public List<Replay> saveVideos(List<Replay> videos) {
         replayRepository.saveAll(videos);
-        return replayRepository.findAllByStatusGreaterThanEqual(3);
+        return replayRepository.findAllByStatusGreaterThanEqualOrderByIdDesc(3);
     }
 
+    
     @Override
     public List<Replay> getVideos() {
-        return replayRepository.findAllByStatusGreaterThanEqual(3);
+        return replayRepository.findAllByStatusGreaterThanEqualOrderByIdDesc(3);
     }
 
     private String getHtmlResponse() {

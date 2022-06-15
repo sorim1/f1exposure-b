@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.jetbrains.annotations.NotNull;
 import twitter4j.MediaEntity;
 
 import javax.persistence.Entity;
@@ -18,7 +19,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class TwitterPost {
+public class TwitterPost implements Comparable<TwitterPost> {
 
     @Id
     private Long id;
@@ -31,4 +32,9 @@ public class TwitterPost {
     private Integer source;
     private String userPicture;
     private Date createdAt;
+
+    @Override
+    public int compareTo(@NotNull TwitterPost o) {
+        return o.getId().compareTo(getId());
+    }
 }

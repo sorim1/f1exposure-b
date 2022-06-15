@@ -180,7 +180,7 @@ public class Scheduler {
         log.info("onInitScheduler Called");
         isItRaceWeek();
         int weekDay = MainUtility.getWeekDay();
-     //   imageFeedJob();
+        imageFeedJob();
         try {
             switch (weekDay) {
                 case 1:{
