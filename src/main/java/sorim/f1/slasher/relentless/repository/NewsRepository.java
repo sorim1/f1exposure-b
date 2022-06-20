@@ -26,6 +26,8 @@ public interface NewsRepository extends CrudRepository<NewsContent, String> {
     Integer deleteAllByUsername(String username);
 
     @Modifying
+    public void deleteByTimestampCreatedBefore(Date timestampCreated);
+    @Modifying
     @Query("update NewsContent set commentCount = commentCount+1 , timestampActivity = ?2 where code = ?1")
     void updateActivityAndCommentCount(String code, Date date);
 }

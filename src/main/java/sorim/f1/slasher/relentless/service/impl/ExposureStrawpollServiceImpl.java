@@ -180,7 +180,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
 
     @Override
     public StrawpollModelTwo fetchStrawpollResults() {
-       // https://api.strawpoll.com/v2/polls/2ayLWLAjBZ4
+        // https://api.strawpoll.com/v2/polls/2ayLWLAjBZ4
         try {
             StrawpollModelTwo strawPoll = restTemplate
                     .getForObject(strawPollApiV2 + strawpollId, StrawpollModelTwo.class);
@@ -278,7 +278,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
                     .json(fullExposure).build();
             jsonRepository.save(fullExposureJson);
             log.info("backupExposureToDatabase end");
-        }catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -330,7 +330,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
         return 0;
     }
 
-    private List<ExposureChampionshipData> getExposureChampionshipData(List<ExposureChampionshipStanding> standings ) {
+    private List<ExposureChampionshipData> getExposureChampionshipData(List<ExposureChampionshipStanding> standings) {
         List<ExposureChampionship> rawData = exposureChampionshipRepository.findAllByIdSeasonAndStatusOrderByIdRound(properties.getCurrentSeasonPast(), 3);
         Map<String, ExposureChampionshipData> map = new TreeMap<>();
         rawData.forEach(row -> {
@@ -363,12 +363,12 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
                 map.put(row.getId().getDriver(), data);
             }
         });
-        if(standings==null) {
+        if (standings == null) {
             return new ArrayList<>(map.values());
         } else {
             List<ExposureChampionshipData> output = new ArrayList<>();
-            standings.forEach(standing->{
-                if(map.containsKey(standing.getId().getDriver())){
+            standings.forEach(standing -> {
+                if (map.containsKey(standing.getId().getDriver())) {
                     output.add(map.get(standing.getId().getDriver()));
                 }
             });

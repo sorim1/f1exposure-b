@@ -42,6 +42,7 @@ public class InstagramServiceImpl implements InstagramService {
     private final MainProperties properties;
     private final InstagramRepository instagramRepository;
     private final ImageRepository imageRepository;
+    private final String PREFIX = "INSTA_";
 
     @Override
     public Boolean fetchInstagramFeed() throws IGLoginException {
@@ -175,7 +176,7 @@ public class InstagramServiceImpl implements InstagramService {
         List<ImageRow> images = new ArrayList<>();
         instagramPosts.forEach(post -> {
             byte[] image = getImageFromUrl(post.getUrl());
-            images.add(ImageRow.builder().code(post.getCode()).image(image).build());
+            images.add(ImageRow.builder().code(PREFIX + post.getCode()).image(image).build());
         });
         imageRepository.saveAll(images);
     }

@@ -21,10 +21,10 @@ import java.util.*;
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class TwitterServiceImpl implements TwitterService {
 
+    private static List<TwitterPost> twitterPostsList = new ArrayList<>();
+    private static final Map<String, TwitterPost> twitterPostsMap = new HashMap<>();
     private final MainProperties properties;
     private final TwitterRepository twitterRepository;
-    private static List<TwitterPost> twitterPostsList = new ArrayList<>();
-    private static Map<String, TwitterPost> twitterPostsMap = new HashMap<>();
 
     @Override
     public List<TwitterPost> getTwitterPosts(Integer page) {
@@ -56,7 +56,7 @@ public class TwitterServiceImpl implements TwitterService {
         List<TwitterPost> list = new ArrayList<>();
         timeline.forEach(item -> {
             TwitterPost post = getTwitterPostFromResponseItem(item, true);
-            if(post!=null){
+            if (post != null) {
                 list.add(post);
             }
         });
@@ -65,57 +65,57 @@ public class TwitterServiceImpl implements TwitterService {
 
     private TwitterPost getTwitterPostFromResponseItem(Status item, Boolean mediaOnly) {
         TwitterPost response = null;
-            Integer source = 0;
-            String text = item.getText();
-            String url = null;
-            String mediaUrl = null;
-            int splitter = text.lastIndexOf("https://t.co");
-            if (splitter > 0 && splitter > item.getText().length() - 30) {
-                text = item.getText().substring(0, splitter);
-                url = item.getText().substring(splitter);
-                source = 0;
-            }
+        Integer source = 0;
+        String text = item.getText();
+        String url = null;
+        String mediaUrl = null;
+        int splitter = text.lastIndexOf("https://t.co");
+        if (splitter > 0 && splitter > item.getText().length() - 30) {
+            text = item.getText().substring(0, splitter);
+            url = item.getText().substring(splitter);
+            source = 0;
+        }
 
-            if (item.getMediaEntities() != null && item.getMediaEntities().length > 0) {
-                mediaUrl = item.getMediaEntities()[0].getMediaURLHttps();
-                url = item.getMediaEntities()[0].getURL();
-                source = 1;
-            }
-            if (url == null && item.getURLEntities().length > 0) {
-                url = item.getURLEntities()[0].getURL();
-                source = 2;
-            }
-            if (url == null && item.getRetweetedStatus() != null && item.getRetweetedStatus().getURLEntities().length > 0) {
-                url = item.getRetweetedStatus().getURLEntities()[0].getURL();
-                source = 3;
-            }
-            if (url == null) {
-                url = "https://twitter.com/" + item.getUser().getScreenName() + "/status/" + item.getId();
-                source = 4;
-            }
-            if (mediaUrl != null || !mediaOnly) {
-                response = TwitterPost.builder()
-                        .id(item.getId())
-                        .text(text)
-                        .favoriteCount(item.getFavoriteCount())
-                        .retweetCount(item.getRetweetCount())
-                        .url(url)
-                        .source(source)
-                        .mediaUrl(mediaUrl)
-                        .userPicture(item.getUser().getProfileImageURLHttps())
-                        .username(item.getUser().getName())
-                        .createdAt(item.getCreatedAt())
-                        .build();
-            }
+        if (item.getMediaEntities() != null && item.getMediaEntities().length > 0) {
+            mediaUrl = item.getMediaEntities()[0].getMediaURLHttps();
+            url = item.getMediaEntities()[0].getURL();
+            source = 1;
+        }
+        if (url == null && item.getURLEntities().length > 0) {
+            url = item.getURLEntities()[0].getURL();
+            source = 2;
+        }
+        if (url == null && item.getRetweetedStatus() != null && item.getRetweetedStatus().getURLEntities().length > 0) {
+            url = item.getRetweetedStatus().getURLEntities()[0].getURL();
+            source = 3;
+        }
+        if (url == null) {
+            url = "https://twitter.com/" + item.getUser().getScreenName() + "/status/" + item.getId();
+            source = 4;
+        }
+        if (mediaUrl != null || !mediaOnly) {
+            response = TwitterPost.builder()
+                    .id(item.getId())
+                    .text(text)
+                    .favoriteCount(item.getFavoriteCount())
+                    .retweetCount(item.getRetweetCount())
+                    .url(url)
+                    .source(source)
+                    .mediaUrl(mediaUrl)
+                    .userPicture(item.getUser().getProfileImageURLHttps())
+                    .username(item.getUser().getName())
+                    .createdAt(item.getCreatedAt())
+                    .build();
+        }
         return response;
     }
 
     @PostConstruct
     @Override
     public List<TwitterPost> fetchTwitterFerrariPosts() throws Exception {
-        if(twitterPostsMap.size()>300){
+        if (twitterPostsMap.size() > 300) {
             twitterPostsMap.clear();
-            for(TwitterPost post : twitterPostsList){
+            for (TwitterPost post : twitterPostsList) {
                 twitterPostsMap.put(post.getUrl(), post);
             }
         }
@@ -125,14 +125,14 @@ public class TwitterServiceImpl implements TwitterService {
         QueryResult result = twitter.search(query);
         for (Status status : result.getTweets()) {
             TwitterPost post = getTwitterPostFromResponseItem(status, true);
-            if(post!=null) {
+            if (post != null) {
                 twitterPostsMap.put(post.getUrl(), post);
             }
         }
         List<TwitterPost> list = new ArrayList<>(twitterPostsMap.values());
         Collections.sort(list);
         int upperLimit;
-        if(list.size()>30){
+        if (list.size() > 30) {
             upperLimit = 30;
         } else {
             upperLimit = list.size();
@@ -142,9 +142,10 @@ public class TwitterServiceImpl implements TwitterService {
     }
 
     @Override
-    public List<TwitterPost> getTwitterFerrariPosts(){
+    public List<TwitterPost> getTwitterFerrariPosts() {
         return twitterPostsList;
     }
+
     private Twitter getTwitterinstance() {
         ConfigurationBuilder cb = new ConfigurationBuilder();
         cb.setDebugEnabled(properties.getTwitterDebug())

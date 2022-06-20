@@ -118,7 +118,7 @@ public class VideoServiceImpl implements VideoService {
         return replayRepository.findAllByStatusGreaterThanEqualOrderByIdDesc(3);
     }
 
-    
+
     @Override
     public List<Replay> getVideos() {
         return replayRepository.findAllByStatusGreaterThanEqualOrderByIdDesc(3);

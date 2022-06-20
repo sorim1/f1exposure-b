@@ -33,7 +33,7 @@ public class ClientServiceImpl implements ClientService {
     public static String iframeLink;
     public static Boolean fourchanDisabled;
     private static NewsContent topNews = new NewsContent();
-    private static Boolean exposureOn = false;
+    private static final Boolean exposureOn = false;
     private final MainProperties properties;
     private final CalendarRepository calendarRepository;
     private final DriverStandingsRepository driverStandingsRepository;
@@ -197,7 +197,7 @@ public class ClientServiceImpl implements ClientService {
         fetchInstagramPosts();
         fetchTwitterPosts();
         fetchRedditPosts();
-       // fetch4chanPosts();
+        // fetch4chanPosts();
         return true;
     }
 
@@ -441,8 +441,6 @@ public class ClientServiceImpl implements ClientService {
         }
         fourchanDisabled = Boolean.valueOf(ap.getValue());
     }
-
-    ;
 
     private Map<String, Integer> getRemainingTime(LocalDateTime gmtDateTime, F1Calendar f1calendar, Integer mode) {
         Map<String, Integer> output = new HashMap<>();

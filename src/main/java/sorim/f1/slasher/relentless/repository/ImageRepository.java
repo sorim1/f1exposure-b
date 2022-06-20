@@ -19,4 +19,8 @@ public interface ImageRepository extends PagingAndSortingRepository<ImageRow, St
     @Query("delete from ImageRow i where i.code not like 'M%'")
     Integer deleteEverythingExceptM();
 
+    @Modifying
+    @Query("delete from ImageRow i where i.code like 'INSTA_%'")
+    Integer deleteEverythingInsta();
+
 }

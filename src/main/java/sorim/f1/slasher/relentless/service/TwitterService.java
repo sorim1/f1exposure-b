@@ -13,5 +13,6 @@ public interface TwitterService {
     List<TwitterPost> fetchTwitterFerrariPosts() throws Exception;
 
     List<TwitterPost> getTwitterFerrariPosts() throws Exception;
+
     Boolean cleanup() throws Exception;
 }

@@ -16,7 +16,6 @@ import sorim.f1.slasher.relentless.handling.Logger;
 import sorim.f1.slasher.relentless.model.enums.RoundEnum;
 import sorim.f1.slasher.relentless.model.ergast.ErgastResponse;
 import sorim.f1.slasher.relentless.model.livetiming.*;
-import sorim.f1.slasher.relentless.repository.ArtImageRepository;
 import sorim.f1.slasher.relentless.scheduled.Scheduler;
 import sorim.f1.slasher.relentless.service.AdminService;
 import sorim.f1.slasher.relentless.service.ClientService;
@@ -573,7 +572,7 @@ public class LiveTimingServiceImpl implements LiveTimingService {
 
     public RaceAnalysis fetchNewRaceAnalysis(String circuitId, Boolean updateStatistics) {
         List<RaceData> raceData = ergastService.findByCircuitIdOrderBySeasonDesc(circuitId);
-        if(raceData.get(0).getLiveTimingRace()==null){
+        if (raceData.get(0).getLiveTimingRace() == null) {
             raceData.remove(0);
         }
         List<FrontendGraphWeatherData> weatherChartData = new ArrayList<>();
@@ -633,7 +632,7 @@ public class LiveTimingServiceImpl implements LiveTimingService {
         }
         latestRace.setRaceAnalysis(analysis);
         ergastService.saveRace(latestRace);
-        log.info("raceAnalysis done" );
+        log.info("raceAnalysis done");
         return analysis;
     }
 
@@ -800,7 +799,7 @@ public class LiveTimingServiceImpl implements LiveTimingService {
             List<String> xData = (List<String>) row.get("X");
             List<Integer> tiData = (List<Integer>) row.get("TI");
             String tyreSequence = xData.get(9);
-            if(tiData!=null) {
+            if (tiData != null) {
                 for (int i = 0; i < tiData.size(); i = i + 3) {
                     driversMap.get(driverCodes.get(driverCounter.get())).getLapByLapData().getTyres()
                             .add(new Tyre(String.valueOf(tyreSequence.charAt(tyreSequence.length() - 1 - (i / 3))), tiData.get(i + 1)));

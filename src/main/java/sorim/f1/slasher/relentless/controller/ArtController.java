@@ -23,37 +23,11 @@ public class ArtController {
     private final SecurityService securityService;
     private final ArtService artService;
 
-
-    @GetMapping(
-            value = "/generateImage",
-            produces = MediaType.IMAGE_PNG_VALUE
-    )
-    byte[] generateImage(@RequestParam Integer xDrag, @RequestParam Integer yDrag, @RequestParam Integer maxIteration, @RequestParam Integer diameter) throws IOException {
-        return artService.generateImage(xDrag, yDrag, maxIteration, diameter);
-    }
-
-    @GetMapping("/executeArt")
-    Boolean executeArt() throws IOException {
-        return artService.executeArt();
-    }
-
-    @GetMapping("/generateLatestArt")
-    Boolean generateLatestArt(@RequestHeader String client) throws Exception {
-        securityService.validateAdminHeader(client);
-        return artService.generateLatestArt();
-    }
-
-    @GetMapping("/generateLatestArtForced")
-    Boolean generateLatestArtForced(@RequestHeader String client) throws Exception {
-        securityService.validateAdminHeader(client);
-        return artService.generateLatestArtForced();
-    }
-
-    @PostMapping("/updateArt/{code}")
-    Boolean updateLatestArt(@RequestHeader String client, @RequestParam("image") MultipartFile image,  @PathVariable("code") String code) throws Exception {
+    @PostMapping("/updateImage/{code}")
+    Boolean updateImage(@RequestHeader String client, @RequestParam("image") MultipartFile image,  @PathVariable("code") String code) throws Exception {
         securityService.validateAdminHeader(client);
         byte[] bytes = image.getBytes();
-        return artService.updateArt(code, bytes);
+        return artService.updateImage(code, bytes);
     }
 
     @PostMapping("/saveImage/{code}")
@@ -62,26 +36,26 @@ public class ArtController {
         byte[] bytes = image.getBytes();
         return artService.saveImage(code, bytes);
     }
+    @GetMapping("/deleteImage/{code}")
+    Boolean deleteImage(@RequestHeader String client, @PathVariable("code") String code) throws Exception {
+        securityService.validateAdminHeader(client);
+        return artService.deleteImage(code);
+    }
 
-    @GetMapping("/setLatestArt/{code}")
-    Boolean setLatestArt(@RequestHeader String client, @PathVariable("code") String code) throws Exception {
+    @GetMapping("/deleteImagesExceptM")
+    Boolean deleteImagesExceptM(@RequestHeader String client) throws Exception {
         securityService.validateAdminHeader(client);
-        return artService.setLatestArt(code);
+        return artService.deleteImagesExceptM();
     }
-    @GetMapping("/deleteArt/{code}")
-    Boolean deleteArt(@RequestHeader String client, @PathVariable("code") String code) throws Exception {
-        securityService.validateAdminHeader(client);
-        return artService.deleteArt(code);
-    }
-    @GetMapping("/getAllArt")
-    List<ArtImageRow> getAllArt(@RequestHeader String client) throws Exception {
+    @GetMapping("/getAllImages")
+    List<ArtImageRow> getAllImages(@RequestHeader String client) throws Exception {
         securityService.validateHeader(client);
-        return artService.getAllArt();
+        return artService.getAllImages();
     }
 
-    @PostMapping("/postArt")
-    ArtImageRow postArt(@RequestHeader String client, @RequestBody ArtImageRow body) throws Exception {
+    @PostMapping("/postImage")
+    ArtImageRow postImage(@RequestHeader String client, @RequestBody ArtImageRow body) throws Exception {
         securityService.validateAdminHeader(client);
-        return artService.postArt(body);
+        return artService.postImage(body);
     }
 }

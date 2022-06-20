@@ -45,14 +45,13 @@ public class RedditServiceImpl implements RedditService {
     private final RedditRepository redditRepository;
     private final NewsRepository newsRepository;
     private final ObjectMapper mapper = new ObjectMapper();
+    private final RestTemplate restTemplate;
     HttpHeaders headers = new HttpHeaders();
     HttpHeaders htmlHeaders = new HttpHeaders();
     TypeReference<HashMap<String, Object>> typeRef = new TypeReference<>() {
     };
     TypeReference<ArrayList<Object>> typeRefList = new TypeReference<>() {
     };
-    
-    private final RestTemplate restTemplate;
 
     @Override
     public List<RedditPost> getRedditPosts(Integer page) {

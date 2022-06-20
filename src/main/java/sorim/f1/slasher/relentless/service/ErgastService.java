@@ -44,7 +44,9 @@ public interface ErgastService {
     ErgastResponse getConstructorStandingsByRound(Integer season, Integer round);
 
     ErgastResponse getResultsByRound(Integer season, Integer round);
+
     ErgastResponse getSprintResultsByRound(Integer season, Integer round);
+
     List<FrontendRace> getRacesSoFar(String season, Integer round);
 
     List<FrontendRace> getRacesOfSeason(String season);

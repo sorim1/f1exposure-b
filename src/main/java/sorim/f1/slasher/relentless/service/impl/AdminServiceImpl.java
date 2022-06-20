@@ -7,9 +7,6 @@ import net.fortuna.ical4j.data.CalendarBuilder;
 import net.fortuna.ical4j.model.Calendar;
 import net.fortuna.ical4j.model.PropertyList;
 import net.fortuna.ical4j.model.component.CalendarComponent;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.select.Elements;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -72,6 +69,18 @@ public class AdminServiceImpl implements AdminService {
     private final VideoService videoService;
     private final RestTemplate restTemplate = new RestTemplate();
 
+    private static boolean isNumeric(String strNum) {
+        if (strNum == null) {
+            return false;
+        }
+        try {
+            double d = Double.parseDouble(strNum);
+        } catch (NumberFormatException nfe) {
+            return false;
+        }
+        return true;
+    }
+
     @PostConstruct
     public void onInit() {
         CURRENT_ROUND = Integer.valueOf(propertiesRepository.findDistinctFirstByName("round").getValue());
@@ -89,12 +98,13 @@ public class AdminServiceImpl implements AdminService {
         calendarRepository.deleteAll();
         return true;
     }
+
     @Override
     public Boolean refreshCalendarOfCurrentSeason(String urlString) throws Exception {
         URL url;
-        if(urlString==null){
+        if (urlString == null) {
             url = new URL(properties.getCalendarUrl());
-        } else{
+        } else {
             log.info("custom url: " + urlString);
             url = new URL(urlString);
         }
@@ -122,7 +132,7 @@ public class AdminServiceImpl implements AdminService {
             }
         }
         f1calendarList.add(f1Calendar);
-        if(f1Calendar!=null && f1Calendar.getRace()!=null) {
+        if (f1Calendar != null && f1Calendar.getRace() != null) {
             List<RaceData> ergastRaceData = ergastService.fetchSeason(String.valueOf(f1Calendar.getRace().getYear()));
             enrichCalendarWithErgastData(f1calendarList, ergastRaceData);
         }
@@ -133,9 +143,9 @@ public class AdminServiceImpl implements AdminService {
     @Override
     public Boolean refreshCalendarOfCurrentSeasonSecondary(String urlString) throws Exception {
         URL url;
-        if(urlString==null){
+        if (urlString == null) {
             url = new URL(properties.getCalendarUrl());
-        } else{
+        } else {
             log.info("custom url: " + urlString);
             url = new URL(urlString);
         }
@@ -162,7 +172,7 @@ public class AdminServiceImpl implements AdminService {
             }
         }
         f1calendarList.add(f1Calendar);
-        if(f1Calendar!=null && f1Calendar.getRace()!=null) {
+        if (f1Calendar != null && f1Calendar.getRace() != null) {
             List<RaceData> ergastRaceData = ergastService.fetchSeason(String.valueOf(f1Calendar.getRace().getYear()));
             enrichCalendarWithErgastData(f1calendarList, ergastRaceData);
         }
@@ -197,7 +207,6 @@ public class AdminServiceImpl implements AdminService {
         } while (calendarElement < f1calendarList.size() - 1 || ergastElement < ergastRaceData.size() - 1);
     }
 
-
     @Override
     public Boolean initializeStandings(Boolean updateStatistics) {
         Logger.log("initializeStandings");
@@ -206,7 +215,7 @@ public class AdminServiceImpl implements AdminService {
         if (changesDetected) {
             Scheduler.standingsUpdated = true;
         }
-        if(updateStatistics) {
+        if (updateStatistics) {
             ergastService.fetchStatisticsFullFromPartial(false);
         }
         generateChart();
@@ -361,7 +370,7 @@ public class AdminServiceImpl implements AdminService {
     private Boolean checkSeasonAndRound(Integer round, Integer season) {
         Boolean response = false;
 
-        if (season>properties.getCurrentSeasonPast()) {
+        if (season > properties.getCurrentSeasonPast()) {
             log.warn("UPDATED SEASON: {} - {} ", season, properties.getCurrentSeasonPast());
             properties.updateCurrentSeasonPast(season);
             CURRENT_ROUND = 1;
@@ -551,7 +560,7 @@ public class AdminServiceImpl implements AdminService {
     @Override
     public FullBackup fullBackup() {
         return FullBackup.builder()
-                .artBackup(artService.getAllArt())
+                .artBackup(artService.getAllImages())
                 .awsBackup(backupPosts())
                 .exposureBackup(backupExposure())
                 .marketingBackup(marketingService.backupMarketing()).build();
@@ -559,7 +568,7 @@ public class AdminServiceImpl implements AdminService {
 
     @Override
     public Boolean restoreFromFullBackup(FullBackup body) {
-        artService.restoreAllArt(body.getArtBackup());
+        artService.restoreAllImages(body.getArtBackup());
         restorePosts(body.getAwsBackup());
         restoreExposureFromBackup(body.getExposureBackup());
         marketingService.restoreMarketing(body.getMarketingBackup());
@@ -589,13 +598,28 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
+    public Boolean cleanup() throws Exception {
+        instagramService.cleanup();
+        twitterService.cleanup();
+
+        java.util.Calendar cal = java.util.Calendar.getInstance();
+        cal.add(java.util.Calendar.MONTH, -1);
+        Date previousMonth= cal.getTime();
+        newsRepository.deleteByTimestampCreatedBefore(previousMonth);
+
+        return true;
+    }
+
+    @Override
     public Boolean instagramCleanup() throws IGLoginException {
         return instagramService.cleanup();
     }
+
     @Override
     public Boolean twitterCleanup() throws Exception {
         return twitterService.cleanup();
     }
+
     @Override
     public Boolean checkCurrentStream() throws IOException {
         return twitchService.checkCurrentStream();
@@ -606,6 +630,7 @@ public class AdminServiceImpl implements AdminService {
         fourchanService.fetch4chanPosts();
         return true;
     }
+
     @Override
     public Boolean deleteFourChanPosts() {
         fourchanService.deleteFourChanPosts();
@@ -648,39 +673,54 @@ public class AdminServiceImpl implements AdminService {
     @Override
     public void updateOverlays(RaceAnalysis analysis) {
         log.info("updateOverlays -remove try/catch if everything ok");
-        try{
-        String newOverlays = "";
-        Optional<sorim.f1.slasher.relentless.model.livetiming.Driver> opt = analysis.getDriverData().stream().filter(driver -> driver.getPosition()==1).findFirst();
-        if(opt.isPresent()){
-            String winnersName = opt.get().getName();
-            String winnersTeamName = opt.get().getTeam();
-            if(winnersName.equals("VERSTAPPEN")){
-                newOverlays = "winner-verstappen";
-            } else if(winnersName.equals("HAMILTON")){
-                newOverlays = "winner-hamilton";
-            } else if(winnersTeamName.equals("Ferrari")){
-                newOverlays = "winner-ferrari";
-            } else if(winnersTeamName.equals("Mercedes")){
-                newOverlays = "winner-mercedes";
+        try {
+            String newOverlays = "";
+            Optional<sorim.f1.slasher.relentless.model.livetiming.Driver> opt = analysis.getDriverData().stream().filter(driver -> driver.getPosition() == 1).findFirst();
+            if (opt.isPresent()) {
+                String winnersName = opt.get().getName();
+                String winnersTeamName = opt.get().getTeam();
+                if (winnersName.equals("VERSTAPPEN")) {
+                    newOverlays = "winner-verstappen";
+                } else if (winnersName.equals("HAMILTON")) {
+                    newOverlays = "winner-hamilton";
+                } else if (winnersTeamName.equals("Ferrari")) {
+                    newOverlays = "winner-ferrari";
+                } else if (winnersTeamName.equals("Mercedes")) {
+                    newOverlays = "winner-mercedes";
+                }
             }
-        }
-        if(newOverlays.equals("")){
-            List<sorim.f1.slasher.relentless.model.livetiming.Driver> ferraris = analysis.getDriverData().stream().filter(driver -> driver.getTeam().equals("Ferrari"))
-                    .collect(Collectors.toList());
-            if(!ferraris.isEmpty()){
-               Boolean ferrariAboveP5 = ferraris.stream().anyMatch(driver -> driver.getPosition()<=5);
-               if(!ferrariAboveP5){
-                   newOverlays = "loser-ferrari";
-               }
+            if (newOverlays.equals("")) {
+                List<sorim.f1.slasher.relentless.model.livetiming.Driver> ferraris = analysis.getDriverData().stream().filter(driver -> driver.getTeam().equals("Ferrari"))
+                        .collect(Collectors.toList());
+                if (!ferraris.isEmpty()) {
+                    Boolean ferrariAboveP5 = ferraris.stream().anyMatch(driver -> driver.getPosition() <= 5);
+                    if (!ferrariAboveP5) {
+                        newOverlays = "loser-ferrari";
+                    }
+                }
             }
-        }
-        log.info(newOverlays);
-        clientService.setOverlays(newOverlays, true);
-        }catch(Exception e ){
+            log.info(newOverlays);
+            clientService.setOverlays(newOverlays, true);
+        } catch (Exception e) {
             log.error("updateOverlays error", e);
         }
     }
 
+    @Override
+    public JsonRepositoryModel updateJsonRepository(JsonRepositoryModel body) {
+        jsonRepository.save(body);
+        return jsonRepository.findAllById(body.getId());
+    }
+
+    @Override
+    public JsonRepositoryModel getJsonRepository(String id) {
+        return jsonRepository.findAllById(id);
+    }
+
+    public Boolean deleteJsonRepository(String id) {
+         jsonRepository.deleteById(id);
+        return true;
+    }
 
     private void generateChartsDriverStandingsByRound() {
         List<DriverStandingByRound> standingsBySeason = driverStandingsByRoundRepository.findAllByIdSeasonOrderByIdRoundAscNameAsc(properties.getCurrentSeasonPast());
@@ -744,8 +784,8 @@ public class AdminServiceImpl implements AdminService {
         for (ChartSeries serie : gridToResultChartWithoutDnfList) {
             serie.calcSeries2Averages();
         }
-        driverStandings.forEach(ds->{
-            if(roundPoints.containsKey(ds.getCode())){
+        driverStandings.forEach(ds -> {
+            if (roundPoints.containsKey(ds.getCode())) {
                 roundPointsSorted.add(roundPoints.get(ds.getCode()));
             }
         });
@@ -766,18 +806,6 @@ public class AdminServiceImpl implements AdminService {
         output.add(data4);
         output.add(data5);
         jsonRepository.saveAll(output);
-    }
-
-    private static boolean isNumeric(String strNum) {
-        if (strNum == null) {
-            return false;
-        }
-        try {
-            double d = Double.parseDouble(strNum);
-        } catch (NumberFormatException nfe) {
-            return false;
-        }
-        return true;
     }
 
     private void generateChartsConstructorStandingsByRound() {

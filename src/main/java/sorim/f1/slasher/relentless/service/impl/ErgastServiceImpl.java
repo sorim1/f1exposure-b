@@ -140,6 +140,7 @@ public class ErgastServiceImpl implements ErgastService {
         return restTemplate
                 .getForObject(ERGAST_URL + season + "/" + round + "/results.json?limit=700", ErgastResponse.class);
     }
+
     @Override
     public ErgastResponse getSprintResultsByRound(Integer season, Integer round) {
         return restTemplate
@@ -287,7 +288,7 @@ public class ErgastServiceImpl implements ErgastService {
             int finalSeason = season;
             Boolean ongoingSeason = isItOngoingSeason(season);
             list.forEach(es -> driversMap.get(es.getDriver().getDriverId()).pushSeasonStanding(finalSeason, es, ongoingSeason));
-            if(!ongoingSeason) {
+            if (!ongoingSeason) {
                 constructorsMap.get(list.get(0).getConstructors().get(list.get(0).getConstructors().size() - 1).getConstructorId()).addWdc(season, list.get(0).getDriver().getGivenName() + " " + list.get(0).getDriver().getFamilyName());
             }
             List<ErgastStanding> list2 = getErgastConstructorStandingsByYear(season);
@@ -317,15 +318,15 @@ public class ErgastServiceImpl implements ErgastService {
     }
 
     private Boolean isItOngoingSeason(int season) {
-        return properties.getCurrentSeasonFuture()==season;
+        return properties.getCurrentSeasonFuture() == season;
     }
 
     @Override
     public Boolean fetchStatisticsFullFromPartial(Boolean forceFetch) {
-       Boolean nothingNew = compareLatestErgastRaceWithLatestFetchRace();
-            if(nothingNew && !forceFetch){
-                return false;
-            }
+        Boolean nothingNew = compareLatestErgastRaceWithLatestFetchRace();
+        if (nothingNew && !forceFetch) {
+            return false;
+        }
         List<JsonRepositoryModel> list = jsonRepository.findAllByIdStartsWith("PARTIAL_");
         Map<String, DriverStatistics> driversMap = new HashMap<>();
         Map<String, ConstructorStatistics> constructorsMap = new HashMap<>();
@@ -362,7 +363,7 @@ public class ErgastServiceImpl implements ErgastService {
             properties.saveProperty("fetchHistoricDataRound", round.toString());
             return false;
         }
-        if (Integer.parseInt(app.getValue()) > round && round==1) {
+        if (Integer.parseInt(app.getValue()) > round && round == 1) {
             properties.saveProperty("fetchHistoricDataRound", round.toString());
             return false;
         }

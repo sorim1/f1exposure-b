@@ -70,8 +70,11 @@ public interface AdminService {
 
     Boolean generateChart();
 
+    Boolean cleanup() throws Exception;
     Boolean instagramCleanup() throws IGLoginException;
+
     Boolean twitterCleanup() throws Exception;
+
     Boolean checkCurrentStream() throws IOException;
 
     Boolean fetchFourChanPosts();
@@ -82,7 +85,7 @@ public interface AdminService {
 
     Boolean removeVideo(Integer id);
 
-    List<Replay>  saveVideos(List<Replay>  video);
+    List<Replay> saveVideos(List<Replay> video);
 
     String updateCurrentSeasonPast(Integer season);
 
@@ -91,4 +94,10 @@ public interface AdminService {
     F1Calendar saveCalendar(F1Calendar body);
 
     void updateOverlays(RaceAnalysis analysis);
+
+    JsonRepositoryModel updateJsonRepository(JsonRepositoryModel body);
+
+    JsonRepositoryModel getJsonRepository(String id);
+
+    Boolean deleteJsonRepository(String id);
 }

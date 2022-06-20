@@ -58996,14 +58996,14 @@
         }
       }
 
-      function StandingsComponent_div_20_ng_template_3_tr_16_Template(rf, ctx) {
+      function StandingsComponent_div_20_ng_template_3_tr_18_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵelementStart */
           .TgZ(0, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "th", 29);
+          .TgZ(1, "th", 30);
 
           core
           /* ɵɵtext */
@@ -59014,10 +59014,10 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(3, "td", 30);
+          .TgZ(3, "td", 31);
           core
           /* ɵɵelementStart */
-          .TgZ(4, "a", 31);
+          .TgZ(4, "a", 32);
           core
           /* ɵɵelementStart */
           .TgZ(5, "div");
@@ -59037,7 +59037,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(7, "td", 32);
+          .TgZ(7, "td", 33);
 
           core
           /* ɵɵtext */
@@ -59048,7 +59048,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(9, "td", 32);
+          .TgZ(9, "td", 33);
 
           core
           /* ɵɵtext */
@@ -59059,10 +59059,10 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(11, "td", 33);
+          .TgZ(11, "td", 34);
           core
           /* ɵɵelementStart */
-          .TgZ(12, "a", 31);
+          .TgZ(12, "a", 32);
           core
           /* ɵɵelementStart */
           .TgZ(13, "div");
@@ -59082,7 +59082,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(15, "td");
+          .TgZ(15, "td", 35);
 
           core
           /* ɵɵtext */
@@ -59091,6 +59091,17 @@
           core
           /* ɵɵpipe */
           .ALo(17, "number");
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(18, "td");
+
+          core
+          /* ɵɵtext */
+          ._uU(19);
+
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -59154,7 +59165,13 @@
           /* ɵɵtextInterpolate */
           .Oqu(core
           /* ɵɵpipeBind1 */
-          .lcZ(17, 8, standing_r13.points));
+          .lcZ(17, 9, standing_r13.points));
+          core
+          /* ɵɵadvance */
+          .xp6(3);
+          core
+          /* ɵɵtextInterpolate */
+          .Oqu(standing_r13.gap);
         }
       }
 
@@ -59233,6 +59250,17 @@
           /* ɵɵelementEnd */
           .qZA();
           core
+          /* ɵɵelementStart */
+          .TgZ(15, "th", 29);
+
+          core
+          /* ɵɵtext */
+          ._uU(16, "Gap");
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
           /* ɵɵelementEnd */
           .qZA();
           core
@@ -59240,10 +59268,10 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(15, "tbody");
+          .TgZ(17, "tbody");
           core
           /* ɵɵtemplate */
-          .YNc(16, StandingsComponent_div_20_ng_template_3_tr_16_Template, 18, 10, "tr", 8);
+          .YNc(18, StandingsComponent_div_20_ng_template_3_tr_18_Template, 20, 11, "tr", 8);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -59261,21 +59289,21 @@
           .oxw(2);
           core
           /* ɵɵadvance */
-          .xp6(16);
+          .xp6(18);
           core
           /* ɵɵproperty */
           .Q6J("ngForOf", ctx_r7.standings.driverStandings);
         }
       }
 
-      function StandingsComponent_div_20_ng_template_5_div_0_tr_10_Template(rf, ctx) {
+      function StandingsComponent_div_20_ng_template_5_div_0_tr_12_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵelementStart */
           .TgZ(0, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "th", 29);
+          .TgZ(1, "th", 30);
 
           core
           /* ɵɵtext */
@@ -59286,10 +59314,10 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(3, "td", 30);
+          .TgZ(3, "td", 31);
           core
           /* ɵɵelementStart */
-          .TgZ(4, "a", 31);
+          .TgZ(4, "a", 32);
           core
           /* ɵɵelementStart */
           .TgZ(5, "div");
@@ -59309,7 +59337,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(7, "td");
+          .TgZ(7, "td", 35);
 
           core
           /* ɵɵtext */
@@ -59318,6 +59346,17 @@
           core
           /* ɵɵpipe */
           .ALo(9, "number");
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(10, "td");
+
+          core
+          /* ɵɵtext */
+          ._uU(11);
+
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -59355,7 +59394,13 @@
           /* ɵɵtextInterpolate */
           .Oqu(core
           /* ɵɵpipeBind1 */
-          .lcZ(9, 4, standing_r17.points));
+          .lcZ(9, 5, standing_r17.points));
+          core
+          /* ɵɵadvance */
+          .xp6(3);
+          core
+          /* ɵɵtextInterpolate */
+          .Oqu(standing_r17.gap);
         }
       }
 
@@ -59401,6 +59446,17 @@
           /* ɵɵelementEnd */
           .qZA();
           core
+          /* ɵɵelementStart */
+          .TgZ(9, "th", 37);
+
+          core
+          /* ɵɵtext */
+          ._uU(10, "Gap");
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
           /* ɵɵelementEnd */
           .qZA();
           core
@@ -59408,10 +59464,10 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(9, "tbody");
+          .TgZ(11, "tbody");
           core
           /* ɵɵtemplate */
-          .YNc(10, StandingsComponent_div_20_ng_template_5_div_0_tr_10_Template, 10, 6, "tr", 8);
+          .YNc(12, StandingsComponent_div_20_ng_template_5_div_0_tr_12_Template, 12, 7, "tr", 8);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -59429,7 +59485,7 @@
           .oxw(3);
           core
           /* ɵɵadvance */
-          .xp6(10);
+          .xp6(12);
           core
           /* ɵɵproperty */
           .Q6J("ngForOf", ctx_r15.standings.constructorStandings);
@@ -59440,7 +59496,7 @@
         if (rf & 1) {
           core
           /* ɵɵtemplate */
-          .YNc(0, StandingsComponent_div_20_ng_template_5_div_0_Template, 11, 1, "div", 34);
+          .YNc(0, StandingsComponent_div_20_ng_template_5_div_0_Template, 13, 1, "div", 36);
         }
 
         if (rf & 2) {
@@ -59457,17 +59513,17 @@
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 41);
+          .TgZ(0, "div", 44);
           core
           /* ɵɵelementStart */
-          .TgZ(1, "div", 42);
+          .TgZ(1, "div", 45);
           core
           /* ɵɵelementStart */
-          .TgZ(2, "div", 43);
+          .TgZ(2, "div", 46);
 
           core
           /* ɵɵelement */
-          ._UZ(3, "img", 44);
+          ._UZ(3, "img", 47);
 
           core
           /* ɵɵelementEnd */
@@ -59477,31 +59533,31 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(4, "div", 45);
+          .TgZ(4, "div", 48);
           core
           /* ɵɵelementStart */
-          .TgZ(5, "div", 43);
-
-          core
-          /* ɵɵelement */
-          ._UZ(6, "img", 46);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(7, "div", 47);
-          core
-          /* ɵɵelementStart */
-          .TgZ(8, "div", 43);
+          .TgZ(5, "div", 46);
 
           core
           /* ɵɵelement */
-          ._UZ(9, "img", 48);
+          ._UZ(6, "img", 49);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(7, "div", 50);
+          core
+          /* ɵɵelementStart */
+          .TgZ(8, "div", 46);
+
+          core
+          /* ɵɵelement */
+          ._UZ(9, "img", 51);
 
           core
           /* ɵɵelementEnd */
@@ -59559,7 +59615,7 @@
           .TgZ(0, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "th", 37);
+          .TgZ(1, "th", 40);
 
           core
           /* ɵɵtext */
@@ -59570,7 +59626,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(3, "td", 38);
+          .TgZ(3, "td", 41);
           core
           /* ɵɵlistener */
           .NdJ("click", function StandingsComponent_div_20_ng_template_7_div_0_tr_15_Template_td_click_3_listener() {
@@ -59613,10 +59669,10 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(9, "td", 30);
+          .TgZ(9, "td", 31);
           core
           /* ɵɵelementStart */
-          .TgZ(10, "a", 31);
+          .TgZ(10, "a", 32);
           core
           /* ɵɵelementStart */
           .TgZ(11, "div");
@@ -59636,10 +59692,10 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(13, "td", 39);
+          .TgZ(13, "td", 42);
           core
           /* ɵɵtemplate */
-          .YNc(14, StandingsComponent_div_20_ng_template_7_div_0_tr_15_div_14_Template, 10, 3, "div", 40);
+          .YNc(14, StandingsComponent_div_20_ng_template_7_div_0_tr_15_div_14_Template, 10, 3, "div", 43);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -59713,7 +59769,7 @@
           .TgZ(3, "tr", 26);
           core
           /* ɵɵelementStart */
-          .TgZ(4, "th", 35);
+          .TgZ(4, "th", 38);
 
           core
           /* ɵɵtext */
@@ -59735,7 +59791,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(8, "th", 36);
+          .TgZ(8, "th", 39);
 
           core
           /* ɵɵtext */
@@ -59806,7 +59862,7 @@
         if (rf & 1) {
           core
           /* ɵɵtemplate */
-          .YNc(0, StandingsComponent_div_20_ng_template_7_div_0_Template, 16, 1, "div", 34);
+          .YNc(0, StandingsComponent_div_20_ng_template_7_div_0_Template, 16, 1, "div", 36);
         }
 
         if (rf & 2) {
@@ -59827,36 +59883,36 @@
 
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 50);
+          .TgZ(0, "div", 53);
           core
           /* ɵɵelementStart */
-          .TgZ(1, "div", 51);
+          .TgZ(1, "div", 54);
 
           core
           /* ɵɵelement */
-          ._UZ(2, "apx-chart", 52);
+          ._UZ(2, "apx-chart", 55);
 
           core
           /* ɵɵelementEnd */
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(3, "div", 53);
+          .TgZ(3, "div", 56);
 
           core
           /* ɵɵelement */
-          ._UZ(4, "apx-chart", 54);
+          ._UZ(4, "apx-chart", 57);
 
           core
           /* ɵɵelement */
-          ._UZ(5, "apx-chart", 55);
+          ._UZ(5, "apx-chart", 58);
 
           core
           /* ɵɵelementEnd */
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(6, "div", 56);
+          .TgZ(6, "div", 59);
           core
           /* ɵɵelementStart */
           .TgZ(7, "span");
@@ -59870,7 +59926,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(9, "mat-slide-toggle", 57);
+          .TgZ(9, "mat-slide-toggle", 60);
           core
           /* ɵɵlistener */
           .NdJ("ngModelChange", function StandingsComponent_div_20_ng_template_9_div_0_Template_mat_slide_toggle_ngModelChange_9_listener($event) {
@@ -59910,15 +59966,15 @@
 
           core
           /* ɵɵelement */
-          ._UZ(12, "apx-chart", 58);
+          ._UZ(12, "apx-chart", 61);
 
           core
           /* ɵɵelementStart */
-          .TgZ(13, "div", 51);
+          .TgZ(13, "div", 54);
 
           core
           /* ɵɵelement */
-          ._UZ(14, "apx-chart", 52);
+          ._UZ(14, "apx-chart", 55);
 
           core
           /* ɵɵelementEnd */
@@ -59975,7 +60031,7 @@
         if (rf & 1) {
           core
           /* ɵɵtemplate */
-          .YNc(0, StandingsComponent_div_20_ng_template_9_div_0_Template, 15, 36, "div", 49);
+          .YNc(0, StandingsComponent_div_20_ng_template_9_div_0_Template, 15, 36, "div", 52);
         }
 
         if (rf & 2) {
@@ -59992,36 +60048,36 @@
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 50);
+          .TgZ(0, "div", 53);
           core
           /* ɵɵelementStart */
-          .TgZ(1, "div", 51);
+          .TgZ(1, "div", 54);
 
           core
           /* ɵɵelement */
-          ._UZ(2, "apx-chart", 52);
+          ._UZ(2, "apx-chart", 55);
 
           core
           /* ɵɵelementEnd */
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(3, "div", 51);
+          .TgZ(3, "div", 54);
 
           core
           /* ɵɵelement */
-          ._UZ(4, "apx-chart", 55);
+          ._UZ(4, "apx-chart", 58);
 
           core
           /* ɵɵelementEnd */
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(5, "div", 51);
+          .TgZ(5, "div", 54);
 
           core
           /* ɵɵelement */
-          ._UZ(6, "apx-chart", 52);
+          ._UZ(6, "apx-chart", 55);
 
           core
           /* ɵɵelementEnd */
@@ -60060,7 +60116,7 @@
         if (rf & 1) {
           core
           /* ɵɵtemplate */
-          .YNc(0, StandingsComponent_div_20_ng_template_11_div_0_Template, 7, 19, "div", 59);
+          .YNc(0, StandingsComponent_div_20_ng_template_11_div_0_Template, 7, 19, "div", 62);
         }
 
         if (rf & 2) {
@@ -60128,7 +60184,7 @@
           .TgZ(2, "mat-tab", 19);
           core
           /* ɵɵtemplate */
-          .YNc(3, StandingsComponent_div_20_ng_template_3_Template, 17, 1, "ng-template", 20);
+          .YNc(3, StandingsComponent_div_20_ng_template_3_Template, 19, 1, "ng-template", 20);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -60323,6 +60379,8 @@
               _this39.standings = data;
 
               _this39.utilityService.setTitle(4, _this39.standings.currentYear + ' Championship');
+
+              _this39.enrichStandingsGaps();
 
               _this39.mapPositions();
 
@@ -60781,6 +60839,19 @@
             this.lineChartWithoutAnimation.width = newWidth;
             return newWidth;
           }
+        }, {
+          key: "enrichStandingsGaps",
+          value: function enrichStandingsGaps() {
+            var i;
+
+            for (i = 1; i < this.standings.driverStandings.length; i++) {
+              this.standings.driverStandings[i].gap = '+ ' + (this.standings.driverStandings[0].points - this.standings.driverStandings[i].points);
+            }
+
+            for (i = 1; i < this.standings.constructorStandings.length; i++) {
+              this.standings.constructorStandings[i].gap = '+ ' + (this.standings.constructorStandings[0].points - this.standings.constructorStandings[i].points);
+            }
+          }
         }], [{
           key: "initializeMultidimensionalArray",
           value: function initializeMultidimensionalArray() {
@@ -60845,7 +60916,7 @@
         },
         decls: 21,
         vars: 4,
-        consts: [["autosize", ""], ["autosize", "", "mode", "side", "position", "end", 1, "example-sidenav", 3, "opened", "openedChange"], ["drawer", ""], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area", 3, "ngModel", "focus", "focusout", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "active-color-button", 3, "click"], [4, "ngFor", "ngForOf"], [1, "fixed-button"], ["type", "fixed-plugin", "mat-button", "", 3, "click"], [1, "fa", "fa-commenting-o", "fa-2x"], ["class", "\u201Dmat-content\u201D", 3, "touchstart", "touchend", 4, "ngIf"], [1, "basic-comment"], [1, "header-left", "hover-pointer", 3, "click"], [1, "header-right", "hover-pointer", 3, "click"], [1, "basic-comment-body"], [1, "\u201Dmat-content\u201D", 3, "touchstart", "touchend"], [3, "selectedIndex", "selectedIndexChange", "selectedTabChange"], ["label", "Drivers"], ["matTabContent", ""], ["label", "Constructors"], ["label", "Races"], ["label", "Driver charts"], ["label", "Constructor charts"], [1, "table", "table-striped"], [1, "text-center", "bg-primary", "text-white"], ["scope", "col"], ["scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], ["scope", "row"], [1, "hover-effects-row"], [2, "color", "black", 3, "href"], [1, "d-sm-none", "d-none", "d-lg-table-cell", "text-center"], [1, "d-sm-none", "d-none", "d-lg-table-cell", "hover-effects-row"], [4, "ngIf"], ["scope", "col", 1, "width-10", "text-left"], ["scope", "col", 1, "text-left"], ["scope", "width-10 row"], [1, "hover-effects-row", 3, "click"], [1, "div-width-300", "no-padding-no-margin-2"], ["class", "event-result", 4, "ngIf"], [1, "event-result"], [1, "display-on-desktop-only", "result-card", "position-1"], [1, "race-card-image-wrapper"], ["mat-card-image", "", "onerror", "this.src='assets/img/drivers/default.png'", "alt", "", 1, "div-height-80", 3, "src"], [1, "result-card", "position-2-on-desktop"], ["mat-card-image", "", "onerror", "this.src='assets/img/drivers/default.png'", "alt", "", 1, "div-height-95px", 3, "src"], [1, "display-on-desktop-only", "result-card", "position-3"], ["mat-card-image", "", "onerror", "this.src='assets/img/drivers/default.png'", "alt", "", 1, "div-height-70", 3, "src"], ["class", " div-padded-2rem", 4, "ngIf"], [1, "div-padded-2rem"], [1, "overflowX"], [3, "series", "yaxis", "title", "chart", "stroke", "tooltip"], [1, "overflowX", "pr-1"], [3, "title", "series", "chart", "dataLabels", "plotOptions", "responsive", "xaxis", "fill"], [3, "title", "series", "chart", "dataLabels", "plotOptions", "colors", "tooltip"], [1, "div-padded-always-top-right-2rem"], [3, "ngModel", "ngModelChange", "change"], [3, "series", "yaxis", "xaxis", "title", "chart", "stroke", "tooltip"], ["class", "div-padded-2rem", 4, "ngIf"]],
+        consts: [["autosize", ""], ["autosize", "", "mode", "side", "position", "end", 1, "example-sidenav", 3, "opened", "openedChange"], ["drawer", ""], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area", 3, "ngModel", "focus", "focusout", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "active-color-button", 3, "click"], [4, "ngFor", "ngForOf"], [1, "fixed-button"], ["type", "fixed-plugin", "mat-button", "", 3, "click"], [1, "fa", "fa-commenting-o", "fa-2x"], ["class", "\u201Dmat-content\u201D", 3, "touchstart", "touchend", 4, "ngIf"], [1, "basic-comment"], [1, "header-left", "hover-pointer", 3, "click"], [1, "header-right", "hover-pointer", 3, "click"], [1, "basic-comment-body"], [1, "\u201Dmat-content\u201D", 3, "touchstart", "touchend"], [3, "selectedIndex", "selectedIndexChange", "selectedTabChange"], ["label", "Drivers"], ["matTabContent", ""], ["label", "Constructors"], ["label", "Races"], ["label", "Driver charts"], ["label", "Constructor charts"], [1, "table", "table-striped"], [1, "text-center", "bg-primary", "text-white"], ["scope", "col"], ["scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], ["scope", "col", 1, "width-50-px", "d-sm-none", "d-none", "d-lg-table-cell"], ["scope", "row"], [1, "hover-effects-row"], [2, "color", "black", 3, "href"], [1, "d-sm-none", "d-none", "d-lg-table-cell", "text-center"], [1, "d-sm-none", "d-none", "d-lg-table-cell", "hover-effects-row"], [1, "text-center"], [4, "ngIf"], [1, "width-50-px", "d-sm-none", "d-none", "d-lg-table-cell"], ["scope", "col", 1, "width-10", "text-left"], ["scope", "col", 1, "text-left"], ["scope", "width-10 row"], [1, "hover-effects-row", 3, "click"], [1, "div-width-300", "no-padding-no-margin-2"], ["class", "event-result", 4, "ngIf"], [1, "event-result"], [1, "display-on-desktop-only", "result-card", "position-1"], [1, "race-card-image-wrapper"], ["mat-card-image", "", "onerror", "this.src='assets/img/drivers/default.png'", "alt", "", 1, "div-height-80", 3, "src"], [1, "result-card", "position-2-on-desktop"], ["mat-card-image", "", "onerror", "this.src='assets/img/drivers/default.png'", "alt", "", 1, "div-height-95px", 3, "src"], [1, "display-on-desktop-only", "result-card", "position-3"], ["mat-card-image", "", "onerror", "this.src='assets/img/drivers/default.png'", "alt", "", 1, "div-height-70", 3, "src"], ["class", " div-padded-2rem", 4, "ngIf"], [1, "div-padded-2rem"], [1, "overflowX"], [3, "series", "yaxis", "title", "chart", "stroke", "tooltip"], [1, "overflowX", "pr-1"], [3, "title", "series", "chart", "dataLabels", "plotOptions", "responsive", "xaxis", "fill"], [3, "title", "series", "chart", "dataLabels", "plotOptions", "colors", "tooltip"], [1, "div-padded-always-top-right-2rem"], [3, "ngModel", "ngModelChange", "change"], [3, "series", "yaxis", "xaxis", "title", "chart", "stroke", "tooltip"], ["class", "div-padded-2rem", 4, "ngIf"]],
         template: function StandingsComponent_Template(rf, ctx) {
           if (rf & 1) {
             var _r37 = core
@@ -74126,7 +74197,7 @@
           .xp6(1);
           core
           /* ɵɵproperty */
-          .Q6J("src", ctx_r54.getUrl(post_r57.code), core
+          .Q6J("src", ctx_r54.getInstagramImageUrl(post_r57.code), core
           /* ɵɵsanitizeUrl */
           .LSH);
           core
@@ -74251,7 +74322,7 @@
           .xp6(1);
           core
           /* ɵɵproperty */
-          .Q6J("src", ctx_r55.getUrl(post_r58.code), core
+          .Q6J("src", ctx_r55.getInstagramImageUrl(post_r58.code), core
           /* ɵɵsanitizeUrl */
           .LSH);
           core
@@ -74376,7 +74447,7 @@
           .xp6(1);
           core
           /* ɵɵproperty */
-          .Q6J("src", ctx_r56.getUrl(post_r59.code), core
+          .Q6J("src", ctx_r56.getInstagramImageUrl(post_r59.code), core
           /* ɵɵsanitizeUrl */
           .LSH);
           core
@@ -74563,7 +74634,7 @@
           .xp6(1);
           core
           /* ɵɵproperty */
-          .Q6J("src", ctx_r60.getUrl(post_r62.code), core
+          .Q6J("src", ctx_r60.getInstagramImageUrl(post_r62.code), core
           /* ɵɵsanitizeUrl */
           .LSH);
           core
@@ -74688,7 +74759,7 @@
           .xp6(1);
           core
           /* ɵɵproperty */
-          .Q6J("src", ctx_r61.getUrl(post_r63.code), core
+          .Q6J("src", ctx_r61.getInstagramImageUrl(post_r63.code), core
           /* ɵɵsanitizeUrl */
           .LSH);
           core
@@ -76443,11 +76514,11 @@
             });
           }
         }, {
-          key: "getUrl",
-          value: function getUrl(code) {
+          key: "getInstagramImageUrl",
+          value: function getInstagramImageUrl(code) {
             return environment
             /* environment.f1exposureUrl */
-            .N.f1exposureUrl + 'getImage/' + code;
+            .N.f1exposureUrl + 'getImage/INSTA_' + code;
           }
         }, {
           key: "getInstagramUrl",
@@ -78764,7 +78835,7 @@
 
           core
           /* ɵɵtext */
-          ._uU(6, "Kind regards,");
+          ._uU(6, "By");
 
           core
           /* ɵɵelementEnd */
@@ -79255,12 +79326,6 @@
           key: "sanitizedHtml",
           value: function sanitizedHtml() {
             return this.sanitizer.bypassSecurityTrustHtml(this.post.textContent);
-          }
-        }, {
-          key: "updatePostIconUrl",
-          value: function updatePostIconUrl(event, news) {
-            console.log('updatePostIconUrl2');
-            console.log(event); // (error)="updatePostIconUrl($event, post)"
           }
         }]);
 
@@ -85737,7 +85802,7 @@
 
           core
           /* ɵɵtext */
-          ._uU(6, "Kind regards,");
+          ._uU(6, "By");
 
           core
           /* ɵɵelementEnd */
@@ -86407,178 +86472,6 @@
         .uU],
         encapsulation: 2
       });
-      ; // CONCATENATED MODULE: ./src/app/shared/dialog/image-popup-dialog.component.ts
-
-      function ImagePopupDialog_div_0_Template(rf, ctx) {
-        if (rf & 1) {
-          core
-          /* ɵɵelementStart */
-          .TgZ(0, "div", 1);
-          core
-          /* ɵɵelementStart */
-          .TgZ(1, "div", 2);
-          core
-          /* ɵɵelementStart */
-          .TgZ(2, "div", 3);
-          core
-          /* ɵɵelementStart */
-          .TgZ(3, "button", 4);
-
-          core
-          /* ɵɵtext */
-          ._uU(4, "Buy ");
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(5, "div");
-          core
-          /* ɵɵelementStart */
-          .TgZ(6, "h1");
-
-          core
-          /* ɵɵtext */
-          ._uU(7);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(8, "div");
-
-          core
-          /* ɵɵelement */
-          ._UZ(9, "img", 5);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(10, "div");
-          core
-          /* ɵɵelementStart */
-          .TgZ(11, "p");
-
-          core
-          /* ɵɵtext */
-          ._uU(12);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-        }
-
-        if (rf & 2) {
-          var ctx_r0 = core
-          /* ɵɵnextContext */
-          .oxw();
-          core
-          /* ɵɵadvance */
-          .xp6(7);
-          core
-          /* ɵɵtextInterpolate */
-          .Oqu(ctx_r0.asset.name);
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵpropertyInterpolate */
-          .s9C("src", ctx_r0.asset.image_preview_url, core
-          /* ɵɵsanitizeUrl */
-          .LSH);
-          core
-          /* ɵɵadvance */
-          .xp6(3);
-          core
-          /* ɵɵtextInterpolate */
-          .Oqu(ctx_r0.asset.id);
-        }
-      }
-
-      var ImagePopupDialog = /*#__PURE__*/function () {
-        function ImagePopupDialog(restService, dialogRef) {
-          _classCallCheck(this, ImagePopupDialog);
-
-          this.restService = restService;
-          this.dialogRef = dialogRef;
-          this.newContent = new NewsContent();
-        }
-
-        _createClass(ImagePopupDialog, [{
-          key: "getData",
-          value: function getData() {
-            var _this92 = this;
-
-            var observable;
-            observable = this.restService.getOpenSeaAsset(this.contractAddress, this.tokenId);
-            observable.subscribe({
-              next: function next(data) {
-                _this92.asset = data;
-              }
-            });
-          }
-        }]);
-
-        return ImagePopupDialog;
-      }();
-
-      ImagePopupDialog.ɵfac = function ImagePopupDialog_Factory(t) {
-        return new (t || ImagePopupDialog)(core
-        /* ɵɵdirectiveInject */
-        .Y36(rest_service
-        /* RestService */
-        .v), core
-        /* ɵɵdirectiveInject */
-        .Y36(MatDialogRef));
-      };
-
-      ImagePopupDialog.ɵcmp = /*@__PURE__*/core
-      /* ɵɵdefineComponent */
-      .Xpm({
-        type: ImagePopupDialog,
-        selectors: [["image-popup-dialog"]],
-        decls: 1,
-        vars: 1,
-        consts: [["mat-dialog-content", "", "class", "1image-popup 1overflow-hidden", 4, "ngIf"], ["mat-dialog-content", "", 1, "1image-popup", "1overflow-hidden"], [1, "row"], [1, "col-12", "col-lg-12"], ["mat-flat-button", "", 1, "active-color-button", "width-100"], [1, "rounded", "mx-auto", "d-block", 3, "src"]],
-        template: function ImagePopupDialog_Template(rf, ctx) {
-          if (rf & 1) {
-            core
-            /* ɵɵtemplate */
-            .YNc(0, ImagePopupDialog_div_0_Template, 13, 3, "div", 0);
-          }
-
-          if (rf & 2) {
-            core
-            /* ɵɵproperty */
-            .Q6J("ngIf", ctx.tokenId !== undefined);
-          }
-        },
-        directives: [common
-        /* NgIf */
-        .O5, MatDialogContent, fesm2015_button
-        /* MatButton */
-        .lW],
-        encapsulation: 2
-      });
       ; // CONCATENATED MODULE: ./src/app/pages/art-carousel/art-carousel.ts
 
       var art_carousel_c0 = function art_carousel_c0(a0) {
@@ -86671,7 +86564,7 @@
 
       var ArtCarousel = /*#__PURE__*/function () {
         function ArtCarousel(restService, utilityService, config, dialog) {
-          var _this93 = this;
+          var _this92 = this;
 
           _classCallCheck(this, ArtCarousel);
 
@@ -86685,9 +86578,9 @@
           this.currentImage = 0;
           this.restService.getAllArt().subscribe({
             next: function next(data) {
-              _this93.images = data;
+              _this92.images = data;
 
-              _this93.setTitle();
+              _this92.setTitle();
             }
           });
         }
@@ -86715,24 +86608,6 @@
           key: "setTitle",
           value: function setTitle() {
             this.utilityService.setTitle(20, this.images[this.currentImage].title);
-          } // (click)="openInfo(entity.contractAddress, entity.tokenId)"
-
-        }, {
-          key: "openInfo",
-          value: function openInfo(contractAddress, tokenId) {
-            // this.dialog.open(ImagePopupDialog, {
-            //   maxWidth: '90vw',
-            //   maxHeight: '90vh',
-            //   height: '45%',
-            //   width: '40%',
-            // });
-            // console.log(contractAddress + " --- " + tokenId);
-            // contractAddress="0x495f947276749ce646f68ac8c248420045cb7b5e"
-            // tokenId="85364157633350634373635596396121761067444146987595609300037458321749537980417">
-            var dialogRef = this.dialog.open(ImagePopupDialog);
-            dialogRef.componentInstance.contractAddress = '0xa5f1ea7df861952863df2e8d1312f7305dabf215';
-            dialogRef.componentInstance.tokenId = '27805';
-            dialogRef.componentInstance.getData();
           }
         }]);
 
@@ -87135,21 +87010,21 @@
         }, {
           key: "ngOnDestroy",
           value: function ngOnDestroy() {
-            var _this94 = this;
+            var _this93 = this;
 
             // Clean up chart when the component is removed
             this.browserOnly(function () {
-              if (_this94.root) {
-                _this94.root.dispose();
+              if (_this93.root) {
+                _this93.root.dispose();
               } else {
-                _this94.root.dispose();
+                _this93.root.dispose();
               }
             });
           }
         }, {
           key: "getDataFromSeries",
           value: function getDataFromSeries() {
-            var _this95 = this;
+            var _this94 = this;
 
             var dataMap = new Map();
 
@@ -87160,8 +87035,8 @@
             this.series.forEach(function (serie) {
               var name;
 
-              if (_this95.codeMapping != null) {
-                name = _this95.codeMapping.get(serie.name);
+              if (_this94.codeMapping != null) {
+                name = _this94.codeMapping.get(serie.name);
               } else {
                 name = serie.name;
               }
@@ -88811,13 +88686,13 @@
         }, {
           key: "includeDnf",
           value: function includeDnf(event) {
-            var _this96 = this;
+            var _this95 = this;
 
             this.gridToResultSeries = [];
 
             if (event.checked) {
               this.standings.gridToResultChartWithDnf.forEach(function (standing) {
-                _this96.gridToResultSeries.push({
+                _this95.gridToResultSeries.push({
                   name: standing.name,
                   data: standing.series //  color: standing.color
 
@@ -88825,7 +88700,7 @@
               });
             } else {
               this.standings.gridToResultChartWithoutDnf.forEach(function (standing) {
-                _this96.gridToResultSeries.push({
+                _this95.gridToResultSeries.push({
                   name: standing.name,
                   data: standing.series // color: standing.color
 
@@ -88866,7 +88741,7 @@
         }, {
           key: "setPodiums",
           value: function setPodiums(standing) {
-            var _this97 = this;
+            var _this96 = this;
 
             standing.series.forEach(function (item) {
               if (item[1] < 4) {
@@ -88874,10 +88749,10 @@
                 podium.name = standing.name; // podium.color = standing.color;
 
                 podium.value = item[1];
-                _this97.podiums[item[0]][item[1]] = podium;
+                _this96.podiums[item[0]][item[1]] = podium;
 
-                if (item[0] > _this97.raceCount) {
-                  _this97.raceCount = item[0];
+                if (item[0] > _this96.raceCount) {
+                  _this96.raceCount = item[0];
                 }
               }
             }); // this.reverseXaxis.tickAmount = this.raceCount;
@@ -88885,7 +88760,7 @@
         }, {
           key: "setDriversHeatMapChart",
           value: function setDriversHeatMapChart() {
-            var _this98 = this;
+            var _this97 = this;
 
             this.driversHeatMapChartOptions = {
               colors: ['#0000ff'],
@@ -88931,7 +88806,7 @@
               tooltip: {
                 y: {
                   formatter: function formatter(val, opts) {
-                    return _this98.standings.races[opts.dataPointIndex].raceName;
+                    return _this97.standings.races[opts.dataPointIndex].raceName;
                   }
                 }
               }
@@ -88940,7 +88815,7 @@
         }, {
           key: "setConstructorHeatMapChart",
           value: function setConstructorHeatMapChart() {
-            var _this99 = this;
+            var _this98 = this;
 
             this.constructorHeatMapChartOptions = {
               colors: ['#0000ff'],
@@ -88976,7 +88851,7 @@
               tooltip: {
                 y: {
                   formatter: function formatter(val, opts) {
-                    return _this99.standings.races[opts.dataPointIndex].raceName;
+                    return _this98.standings.races[opts.dataPointIndex].raceName;
                   }
                 }
               }
@@ -89047,41 +88922,41 @@
         }, {
           key: "initializeChampionshipData",
           value: function initializeChampionshipData(season) {
-            var _this100 = this;
+            var _this99 = this;
 
             this.restService.getHistoricSeason(season).subscribe({
               next: function next(data) {
-                _this100.standings = data;
+                _this99.standings = data;
 
-                _this100.mapPositionsAndCodes();
+                _this99.mapPositionsAndCodes();
 
-                _this100.driverPointsSeries = [];
+                _this99.driverPointsSeries = [];
 
-                _this100.standings.driverStandingByRound.forEach(function (standing) {
-                  _this100.driverPointsSeries.push({
+                _this99.standings.driverStandingByRound.forEach(function (standing) {
+                  _this99.driverPointsSeries.push({
                     name: standing.name,
                     data: standing.series
                   });
                 });
 
-                _this100.podiums = SeasonsComponent.initializeMultidimensionalArray();
-                _this100.driverPositionByRaceMap = new Map();
-                _this100.driversHeatMapStandingsSeries = [];
+                _this99.podiums = SeasonsComponent.initializeMultidimensionalArray();
+                _this99.driverPositionByRaceMap = new Map();
+                _this99.driversHeatMapStandingsSeries = [];
 
-                _this100.standings.driverPointsByRound.forEach(function (standing) {
-                  _this100.setPodiums(standing); // let copy = JSON.parse(JSON.stringify(standing.series));
+                _this99.standings.driverPointsByRound.forEach(function (standing) {
+                  _this99.setPodiums(standing); // let copy = JSON.parse(JSON.stringify(standing.series));
 
 
                   var copy = standing.series;
 
-                  if (copy.length < _this100.raceCount) {
+                  if (copy.length < _this99.raceCount) {
                     //popuni null utrke
                     var array = [];
                     copy.forEach(function (serie) {
                       array.push(serie[0]);
                     });
 
-                    for (var i = 1; i <= _this100.raceCount; i++) {
+                    for (var i = 1; i <= _this99.raceCount; i++) {
                       if (array.indexOf(i) < 0) {
                         copy.push([i, null]);
                       }
@@ -89103,62 +88978,62 @@
 
                   copy.forEach(function (serie) {
                     if (serie[1] != null) {
-                      _this100.driverPositionByRaceMap.set(standing.name + serie[0], serie[1]);
+                      _this99.driverPositionByRaceMap.set(standing.name + serie[0], serie[1]);
                     }
                   });
 
-                  if (_this100.driverPositionMap.get(standing.name) == undefined) {} else {
-                    var position = _this100.driverCount - _this100.driverPositionMap.get(standing.name);
+                  if (_this99.driverPositionMap.get(standing.name) == undefined) {} else {
+                    var position = _this99.driverCount - _this99.driverPositionMap.get(standing.name);
 
-                    _this100.driversHeatMapStandingsSeries[position] = {
+                    _this99.driversHeatMapStandingsSeries[position] = {
                       name: standing.name,
                       data: copy
                     };
                   }
                 });
 
-                _this100.chartWidth = _this100.calculateChartWidthForMobileDevices(_this100.raceCount);
-                _this100.gridToResultSeries = [];
+                _this99.chartWidth = _this99.calculateChartWidthForMobileDevices(_this99.raceCount);
+                _this99.gridToResultSeries = [];
 
-                _this100.standings.gridToResultChartWithoutDnf.forEach(function (standing) {
-                  _this100.gridToResultSeries.push({
+                _this99.standings.gridToResultChartWithoutDnf.forEach(function (standing) {
+                  _this99.gridToResultSeries.push({
                     name: standing.name,
                     data: standing.series // color: standing.color
 
                   });
                 });
 
-                _this100.constructorPointsSeries = [];
-                _this100.constructorsHeatMapStandingsSeries = [];
+                _this99.constructorPointsSeries = [];
+                _this99.constructorsHeatMapStandingsSeries = [];
 
-                _this100.standings.constructorStandingByRound.forEach(function (standing) {
-                  _this100.constructorPointsSeries.push({
+                _this99.standings.constructorStandingByRound.forEach(function (standing) {
+                  _this99.constructorPointsSeries.push({
                     name: standing.name,
                     data: standing.series //   color: standing.color
 
                   });
                 });
 
-                _this100.constructorRoundsSeries = [];
+                _this99.constructorRoundsSeries = [];
 
-                _this100.standings.constructorPointsByRound.forEach(function (standing) {
-                  _this100.constructorRoundsSeries.push({
+                _this99.standings.constructorPointsByRound.forEach(function (standing) {
+                  _this99.constructorRoundsSeries.push({
                     name: standing.name,
                     data: standing.series // color: standing.color
 
                   });
 
-                  _this100.constructorsHeatMapStandingsSeries[_this100.constructorCount - _this100.constructorPositionMap.get(standing.name)] = {
+                  _this99.constructorsHeatMapStandingsSeries[_this99.constructorCount - _this99.constructorPositionMap.get(standing.name)] = {
                     name: standing.name,
                     data: standing.series
                   };
                 });
 
-                _this100.setDriversHeatMapChart();
+                _this99.setDriversHeatMapChart();
 
-                _this100.setConstructorHeatMapChart();
+                _this99.setConstructorHeatMapChart();
 
-                _this100.utilityService.setTitle(71, season + ' Championship');
+                _this99.utilityService.setTitle(71, season + ' Championship');
 
                 return data;
               }
@@ -89167,11 +89042,11 @@
         }, {
           key: "openRace",
           value: function openRace(season, round) {
-            var _this101 = this;
+            var _this100 = this;
 
             this.restService.getRace(season, round).subscribe({
               next: function next(data) {
-                var dialogRef = _this101.dialog.open(RacePopupComponent, {
+                var dialogRef = _this100.dialog.open(RacePopupComponent, {
                   maxWidth: '90vw'
                 });
 
@@ -90406,28 +90281,28 @@
         }, {
           key: "callCompare",
           value: function callCompare() {
-            var _this102 = this;
+            var _this101 = this;
 
             this.restService.compareDrivers(this.requestComparator).subscribe({
               next: function next(data) {
-                _this102.displayComparator = data;
+                _this101.displayComparator = data;
 
-                _this102.updateChart();
+                _this101.updateChart();
               }
             });
           }
         }, {
           key: "getCompareDriversDropdown",
           value: function getCompareDriversDropdown() {
-            var _this103 = this;
+            var _this102 = this;
 
             this.restService.compareDriversDropdown(this.requestComparator.year).subscribe({
               next: function next(data) {
-                _this103.dropdownItems = data;
+                _this102.dropdownItems = data;
 
-                _this103.checkCurrentDriversExistInDropdown();
+                _this102.checkCurrentDriversExistInDropdown();
 
-                _this103.callCompare();
+                _this102.callCompare();
               }
             });
           }
@@ -90463,11 +90338,11 @@
         }, {
           key: "checkCurrentDriversExistInDropdown",
           value: function checkCurrentDriversExistInDropdown() {
-            var _this104 = this;
+            var _this103 = this;
 
             var positionCounter = 0;
             var found = this.dropdownItems.filter(function (item) {
-              return item.driverId == _this104.requestComparator.driver1.driverId;
+              return item.driverId == _this103.requestComparator.driver1.driverId;
             }).length;
 
             if (found == 0) {
@@ -90476,7 +90351,7 @@
             }
 
             found = this.dropdownItems.filter(function (item) {
-              return item.driverId == _this104.requestComparator.driver2.driverId;
+              return item.driverId == _this103.requestComparator.driver2.driverId;
             }).length;
 
             if (found == 0) {
@@ -91994,14 +91869,14 @@
         _createClass(DriversComponent, [{
           key: "getDriverDropdown",
           value: function getDriverDropdown() {
-            var _this105 = this;
+            var _this104 = this;
 
             this.restService.getErgastDrivers().subscribe({
               next: function next(data) {
-                _this105.dropdownDrivers = data;
-                _this105.driverId = _this105.getSelectedDriver();
+                _this104.dropdownDrivers = data;
+                _this104.driverId = _this104.getSelectedDriver();
 
-                _this105.getDriver(_this105.driverId, true);
+                _this104.getDriver(_this104.driverId, true);
               }
             });
           }
@@ -92265,17 +92140,17 @@
         }, {
           key: "openDriversPopup",
           value: function openDriversPopup() {
-            var _this106 = this;
+            var _this105 = this;
 
             var dialogRef = this.dialog.open(DriversPopupComponent);
             dialogRef.componentInstance.setDrivers(this.dropdownDrivers);
             dialogRef.afterClosed().subscribe(function (driverId) {
               if (driverId != null) {
-                _this106.driverId = driverId;
+                _this105.driverId = driverId;
 
-                _this106.getDriver(_this106.driverId, true);
+                _this105.getDriver(_this105.driverId, true);
 
-                _this106.updateUrl();
+                _this105.updateUrl();
               }
             });
           }
@@ -92294,23 +92169,23 @@
         }, {
           key: "getDriver",
           value: function getDriver(driverId, retry) {
-            var _this107 = this;
+            var _this106 = this;
 
             this.restService.getDriverStatistics(driverId).subscribe({
               next: function next(data) {
-                _this107.driver = data;
+                _this106.driver = data;
 
-                _this107.utilityService.setTitle(72, _this107.driver.givenName + ' ' + _this107.driver.familyName);
+                _this106.utilityService.setTitle(72, _this106.driver.givenName + ' ' + _this106.driver.familyName);
 
-                _this107.setCharts();
+                _this106.setCharts();
               },
               error: function error(_error11) {
-                _this107.utilityService.pushToastrMessage('Driver not found');
+                _this106.utilityService.pushToastrMessage('Driver not found');
 
-                _this107.driverId = 'max_verstappen';
+                _this106.driverId = 'max_verstappen';
 
                 if (retry) {
-                  _this107.getDriver(_this107.driverId, false);
+                  _this106.getDriver(_this106.driverId, false);
                 }
 
                 console.error('There was an error!', _error11);
@@ -93820,14 +93695,14 @@
         _createClass(ConstructorsComponent, [{
           key: "getConstructorDropdown",
           value: function getConstructorDropdown() {
-            var _this108 = this;
+            var _this107 = this;
 
             this.restService.getErgastConstructors().subscribe({
               next: function next(data) {
-                _this108.dropdownConstructors = data;
-                _this108.constructorId = _this108.getSelectedConstructor();
+                _this107.dropdownConstructors = data;
+                _this107.constructorId = _this107.getSelectedConstructor();
 
-                _this108.getConstructor(_this108.constructorId);
+                _this107.getConstructor(_this107.constructorId);
               }
             });
           }
@@ -94099,32 +93974,32 @@
         }, {
           key: "openDialog",
           value: function openDialog() {
-            var _this109 = this;
+            var _this108 = this;
 
             var dialogRef = this.dialog.open(ConstructorsPopupComponent);
             dialogRef.componentInstance.setConstructors(this.dropdownConstructors);
             dialogRef.afterClosed().subscribe(function (constructorId) {
               if (constructorId != null) {
-                _this109.constructorId = constructorId;
+                _this108.constructorId = constructorId;
 
-                _this109.getConstructor(_this109.constructorId);
+                _this108.getConstructor(_this108.constructorId);
 
-                _this109.updateUrl();
+                _this108.updateUrl();
               }
             });
           }
         }, {
           key: "getConstructor",
           value: function getConstructor(id) {
-            var _this110 = this;
+            var _this109 = this;
 
             this.restService.getConstructorStatistics(id).subscribe({
               next: function next(data) {
-                _this110.constructorStatistics = data;
+                _this109.constructorStatistics = data;
 
-                _this110.utilityService.setTitle(73, _this110.constructorStatistics.ergastConstructor.name);
+                _this109.utilityService.setTitle(73, _this109.constructorStatistics.ergastConstructor.name);
 
-                _this110.setCharts();
+                _this109.setCharts();
               }
             });
           }
@@ -94801,7 +94676,7 @@
 
       var _MatTooltipBase = /*#__PURE__*/function () {
         function _MatTooltipBase(_overlay, _elementRef, _scrollDispatcher, _viewContainerRef, _ngZone, _platform, _ariaDescriber, _focusMonitor, scrollStrategy, _dir, _defaultOptions, _document) {
-          var _this111 = this;
+          var _this110 = this;
 
           _classCallCheck(this, _MatTooltipBase);
 
@@ -94858,7 +94733,7 @@
            */
 
           this._handleKeydown = function (event) {
-            if (_this111._isTooltipVisible() && event.keyCode === keycodes
+            if (_this110._isTooltipVisible() && event.keyCode === keycodes
             /* ESCAPE */
             .hY && !(0, keycodes
             /* hasModifierKey */
@@ -94866,8 +94741,8 @@
               event.preventDefault();
               event.stopPropagation();
 
-              _this111._ngZone.run(function () {
-                return _this111.hide(0);
+              _this110._ngZone.run(function () {
+                return _this110.hide(0);
               });
             }
           };
@@ -94888,13 +94763,13 @@
           _dir.change.pipe((0, takeUntil
           /* takeUntil */
           .R)(this._destroyed)).subscribe(function () {
-            if (_this111._overlayRef) {
-              _this111._updatePosition(_this111._overlayRef);
+            if (_this110._overlayRef) {
+              _this110._updatePosition(_this110._overlayRef);
             }
           });
 
           _ngZone.runOutsideAngular(function () {
-            _elementRef.nativeElement.addEventListener('keydown', _this111._handleKeydown);
+            _elementRef.nativeElement.addEventListener('keydown', _this110._handleKeydown);
           });
         }
         /** Allows the user to define the position of the tooltip relative to the parent element */
@@ -94946,7 +94821,7 @@
             return this._message;
           },
           set: function set(value) {
-            var _this112 = this;
+            var _this111 = this;
 
             this._ariaDescriber.removeDescription(this._elementRef.nativeElement, this._message, 'tooltip'); // If the message is not a string (e.g. number), convert it to a string and trim it.
             // Must convert with `String(value)`, not `${value}`, otherwise Closure Compiler optimises
@@ -94968,7 +94843,7 @@
                 // has a data-bound `aria-label` or when it'll be set for the first time. We can avoid the
                 // issue by deferring the description by a tick so Angular has time to set the `aria-label`.
                 Promise.resolve().then(function () {
-                  _this112._ariaDescriber.describe(_this112._elementRef.nativeElement, _this112.message, 'tooltip');
+                  _this111._ariaDescriber.describe(_this111._elementRef.nativeElement, _this111.message, 'tooltip');
                 });
               });
             }
@@ -94990,7 +94865,7 @@
         }, {
           key: "ngAfterViewInit",
           value: function ngAfterViewInit() {
-            var _this113 = this;
+            var _this112 = this;
 
             // This needs to happen after view init so the initial values for all inputs have been set.
             this._viewInitialized = true;
@@ -95002,12 +94877,12 @@
             .R)(this._destroyed)).subscribe(function (origin) {
               // Note that the focus monitor runs outside the Angular zone.
               if (!origin) {
-                _this113._ngZone.run(function () {
-                  return _this113.hide(0);
+                _this112._ngZone.run(function () {
+                  return _this112.hide(0);
                 });
               } else if (origin === 'keyboard') {
-                _this113._ngZone.run(function () {
-                  return _this113.show();
+                _this112._ngZone.run(function () {
+                  return _this112.show();
                 });
               }
             });
@@ -95054,7 +94929,7 @@
         }, {
           key: "show",
           value: function show() {
-            var _this114 = this;
+            var _this113 = this;
 
             var delay = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : this.showDelay;
 
@@ -95074,7 +94949,7 @@
             this._tooltipInstance.afterHidden().pipe((0, takeUntil
             /* takeUntil */
             .R)(this._destroyed)).subscribe(function () {
-              return _this114._detach();
+              return _this113._detach();
             });
 
             this._setTooltipClass(this._tooltipClass);
@@ -95113,7 +94988,7 @@
         }, {
           key: "_createOverlay",
           value: function _createOverlay() {
-            var _this115 = this;
+            var _this114 = this;
 
             if (this._overlayRef) {
               return this._overlayRef;
@@ -95127,14 +95002,14 @@
             strategy.positionChanges.pipe((0, takeUntil
             /* takeUntil */
             .R)(this._destroyed)).subscribe(function (change) {
-              _this115._updateCurrentPositionClass(change.connectionPair);
+              _this114._updateCurrentPositionClass(change.connectionPair);
 
-              if (_this115._tooltipInstance) {
-                if (change.scrollableViewProperties.isOverlayClipped && _this115._tooltipInstance.isVisible()) {
+              if (_this114._tooltipInstance) {
+                if (change.scrollableViewProperties.isOverlayClipped && _this114._tooltipInstance.isVisible()) {
                   // After position changes occur and the overlay is clipped by
                   // a parent scrollable then close the tooltip.
-                  _this115._ngZone.run(function () {
-                    return _this115.hide(0);
+                  _this114._ngZone.run(function () {
+                    return _this114.hide(0);
                   });
                 }
               }
@@ -95151,7 +95026,7 @@
             this._overlayRef.detachments().pipe((0, takeUntil
             /* takeUntil */
             .R)(this._destroyed)).subscribe(function () {
-              return _this115._detach();
+              return _this114._detach();
             });
 
             this._overlayRef.outsidePointerEvents().pipe((0, takeUntil
@@ -95159,7 +95034,7 @@
             .R)(this._destroyed)).subscribe(function () {
               var _a;
 
-              return (_a = _this115._tooltipInstance) === null || _a === void 0 ? void 0 : _a._handleBodyInteraction();
+              return (_a = _this114._tooltipInstance) === null || _a === void 0 ? void 0 : _a._handleBodyInteraction();
             });
 
             return this._overlayRef;
@@ -95288,7 +95163,7 @@
         }, {
           key: "_updateTooltipMessage",
           value: function _updateTooltipMessage() {
-            var _this116 = this;
+            var _this115 = this;
 
             // Must wait for the message to be painted to the tooltip so that the overlay can properly
             // calculate the correct positioning based on the size of the text.
@@ -95302,8 +95177,8 @@
               .q)(1), (0, takeUntil
               /* takeUntil */
               .R)(this._destroyed)).subscribe(function () {
-                if (_this116._tooltipInstance) {
-                  _this116._overlayRef.updatePosition();
+                if (_this115._tooltipInstance) {
+                  _this115._overlayRef.updatePosition();
                 }
               });
             }
@@ -95384,7 +95259,7 @@
         }, {
           key: "_setupPointerEnterEventsIfNeeded",
           value: function _setupPointerEnterEventsIfNeeded() {
-            var _this117 = this;
+            var _this116 = this;
 
             // Optimization: Defer hooking up events if there's no message or the tooltip is disabled.
             if (this._disabled || !this.message || !this._viewInitialized || this._passiveListeners.length) {
@@ -95395,9 +95270,9 @@
 
             if (this._platformSupportsMouseEvents()) {
               this._passiveListeners.push(['mouseenter', function () {
-                _this117._setupPointerExitEventsIfNeeded();
+                _this116._setupPointerExitEventsIfNeeded();
 
-                _this117.show();
+                _this116.show();
               }]);
             } else if (this.touchGestures !== 'off') {
               this._disableNativeGesturesIfNecessary();
@@ -95405,11 +95280,11 @@
               this._passiveListeners.push(['touchstart', function () {
                 // Note that it's important that we don't `preventDefault` here,
                 // because it can prevent click events from firing on the element.
-                _this117._setupPointerExitEventsIfNeeded();
+                _this116._setupPointerExitEventsIfNeeded();
 
-                clearTimeout(_this117._touchstartTimeout);
-                _this117._touchstartTimeout = setTimeout(function () {
-                  return _this117.show();
+                clearTimeout(_this116._touchstartTimeout);
+                _this116._touchstartTimeout = setTimeout(function () {
+                  return _this116.show();
                 }, LONGPRESS_DELAY);
               }]);
             }
@@ -95419,7 +95294,7 @@
         }, {
           key: "_setupPointerExitEventsIfNeeded",
           value: function _setupPointerExitEventsIfNeeded() {
-            var _this118 = this,
+            var _this117 = this,
                 _this$_passiveListene;
 
             if (this._pointerExitEventsInitialized) {
@@ -95431,17 +95306,17 @@
 
             if (this._platformSupportsMouseEvents()) {
               exitListeners.push(['mouseleave', function () {
-                return _this118.hide();
+                return _this117.hide();
               }], ['wheel', function (event) {
-                return _this118._wheelListener(event);
+                return _this117._wheelListener(event);
               }]);
             } else if (this.touchGestures !== 'off') {
               this._disableNativeGesturesIfNecessary();
 
               var touchendListener = function touchendListener() {
-                clearTimeout(_this118._touchstartTimeout);
+                clearTimeout(_this117._touchstartTimeout);
 
-                _this118.hide(_this118._defaultOptions.touchendHideDelay);
+                _this117.hide(_this117._defaultOptions.touchendHideDelay);
               };
 
               exitListeners.push(['touchend', touchendListener], ['touchcancel', touchendListener]);
@@ -95454,14 +95329,14 @@
         }, {
           key: "_addListeners",
           value: function _addListeners(listeners) {
-            var _this119 = this;
+            var _this118 = this;
 
             listeners.forEach(function (_ref16) {
               var _ref17 = _slicedToArray2(_ref16, 2),
                   event = _ref17[0],
                   listener = _ref17[1];
 
-              _this119._elementRef.nativeElement.addEventListener(event, listener, passiveListenerOptions);
+              _this118._elementRef.nativeElement.addEventListener(event, listener, passiveListenerOptions);
             });
           }
         }, {
@@ -95798,13 +95673,13 @@
         var _super16 = _createSuper(MatTooltip);
 
         function MatTooltip(overlay, elementRef, scrollDispatcher, viewContainerRef, ngZone, platform, ariaDescriber, focusMonitor, scrollStrategy, dir, defaultOptions, _document) {
-          var _this120;
+          var _this119;
 
           _classCallCheck(this, MatTooltip);
 
-          _this120 = _super16.call(this, overlay, elementRef, scrollDispatcher, viewContainerRef, ngZone, platform, ariaDescriber, focusMonitor, scrollStrategy, dir, defaultOptions, _document);
-          _this120._tooltipComponent = TooltipComponent;
-          return _this120;
+          _this119 = _super16.call(this, overlay, elementRef, scrollDispatcher, viewContainerRef, ngZone, platform, ariaDescriber, focusMonitor, scrollStrategy, dir, defaultOptions, _document);
+          _this119._tooltipComponent = TooltipComponent;
+          return _this119;
         }
 
         return MatTooltip;
@@ -96061,21 +95936,21 @@
         _createClass(_TooltipComponentBase, [{
           key: "show",
           value: function show(delay) {
-            var _this121 = this;
+            var _this120 = this;
 
             // Cancel the delayed hide if it is scheduled
             clearTimeout(this._hideTimeoutId); // Body interactions should cancel the tooltip if there is a delay in showing.
 
             this._closeOnInteraction = true;
             this._showTimeoutId = setTimeout(function () {
-              _this121._visibility = 'visible';
-              _this121._showTimeoutId = undefined;
+              _this120._visibility = 'visible';
+              _this120._showTimeoutId = undefined;
 
-              _this121._onShow(); // Mark for check so if any parent component has set the
+              _this120._onShow(); // Mark for check so if any parent component has set the
               // ChangeDetectionStrategy to OnPush it will be checked anyways
 
 
-              _this121._markForCheck();
+              _this120._markForCheck();
             }, delay);
           }
           /**
@@ -96086,16 +95961,16 @@
         }, {
           key: "hide",
           value: function hide(delay) {
-            var _this122 = this;
+            var _this121 = this;
 
             // Cancel the delayed show if it is scheduled
             clearTimeout(this._showTimeoutId);
             this._hideTimeoutId = setTimeout(function () {
-              _this122._visibility = 'hidden';
-              _this122._hideTimeoutId = undefined; // Mark for check so if any parent component has set the
+              _this121._visibility = 'hidden';
+              _this121._hideTimeoutId = undefined; // Mark for check so if any parent component has set the
               // ChangeDetectionStrategy to OnPush it will be checked anyways
 
-              _this122._markForCheck();
+              _this121._markForCheck();
             }, delay);
           }
           /** Returns an observable that notifies when the tooltip has been hidden from view. */
@@ -96225,18 +96100,18 @@
         var _super17 = _createSuper(TooltipComponent);
 
         function TooltipComponent(changeDetectorRef, _breakpointObserver) {
-          var _this123;
+          var _this122;
 
           _classCallCheck(this, TooltipComponent);
 
-          _this123 = _super17.call(this, changeDetectorRef);
-          _this123._breakpointObserver = _breakpointObserver;
+          _this122 = _super17.call(this, changeDetectorRef);
+          _this122._breakpointObserver = _breakpointObserver;
           /** Stream that emits whether the user has a handset-sized display.  */
 
-          _this123._isHandset = _this123._breakpointObserver.observe(layout
+          _this122._isHandset = _this122._breakpointObserver.observe(layout
           /* Breakpoints.Handset */
           .u3.Handset);
-          return _this123;
+          return _this122;
         }
 
         return TooltipComponent;
@@ -96850,12 +96725,12 @@
         }, {
           key: "getTime",
           value: function getTime() {
-            var _this124 = this;
+            var _this123 = this;
 
             this.clock = "4:20";
             this.clockRefresher = setInterval(function () {
               var currentTime = new Date();
-              _this124.clock = currentTime.getHours() + ":" + _this124.padValue(currentTime.getMinutes());
+              _this123.clock = currentTime.getHours() + ":" + _this123.padValue(currentTime.getMinutes());
             }, 5000);
           }
         }, {
@@ -96871,13 +96746,13 @@
         }, {
           key: "getTwitterFeed",
           value: function getTwitterFeed() {
-            var _this125 = this;
+            var _this124 = this;
 
             console.log('getTwitterFeed');
             this.restService.getTwitterFerrariPosts().subscribe({
               next: function next(data) {
-                _this125.tweets = data;
-                console.log(_this125.tweets);
+                _this124.tweets = data;
+                console.log(_this124.tweets);
                 return data;
               }
             });
@@ -97185,7 +97060,7 @@
         .sg, common
         /* NgIf */
         .O5, MatTooltip],
-        styles: [".tifosi_container[_ngcontent-%COMP%]{margin-left:auto;margin-right:auto;display:flex;justify-content:center;align-items:center}.tifosi_left[_ngcontent-%COMP%]{width:calc((100% - 653px)/2);height:calc(100vh - 53px);overflow-y:scroll;float:left;text-align:center;display:block;min-height:680px;max-width:100%;max-height:100%}@media (max-width:1299px){.tifosi_left[_ngcontent-%COMP%]{height:calc(100vh - 73px)}}.tifosi_middle[_ngcontent-%COMP%]{position:relative;width:653px;float:left;max-width:100%;max-height:100%}.tifosi_right[_ngcontent-%COMP%]{width:calc((100% - 653px)/2);height:calc(100vh - 53px);overflow-y:scroll;float:left}@media (max-width:1299px){.tifosi_right[_ngcontent-%COMP%]{height:calc(100vh - 73px)}}"]
+        styles: [".tifosi_container[_ngcontent-%COMP%]{margin-left:auto;margin-right:auto}.tifosi_left[_ngcontent-%COMP%]{width:calc((100% - 653px)/2);height:calc(100vh - 53px);overflow-y:hidden;float:left;text-align:center;display:block;min-height:680px;max-width:100%;max-height:100%}@media (max-width:1299px){.tifosi_left[_ngcontent-%COMP%]{height:calc(100vh - 73px)}}.tifosi_middle[_ngcontent-%COMP%]{position:relative;width:653px;float:left;max-width:100%;max-height:100%}.tifosi_right[_ngcontent-%COMP%]{width:calc((100% - 653px)/2);height:calc(100vh - 53px);overflow-y:scroll;float:left}@media (max-width:1299px){.tifosi_right[_ngcontent-%COMP%]{height:calc(100vh - 73px)}}"]
       });
       ; // CONCATENATED MODULE: ./src/app/model/calendar-data.ts
 
@@ -100017,59 +99892,59 @@
         _createClass(F1CountdownComponent, [{
           key: "getCountdownData",
           value: function getCountdownData(mode) {
-            var _this126 = this;
+            var _this125 = this;
 
             this.restService.getCountdownData(mode).subscribe({
               next: function next(data) {
-                if (_this126.calendarData == null) {
-                  _this126.calendarData = data;
+                if (_this125.calendarData == null) {
+                  _this125.calendarData = data;
 
-                  _this126.setupOverlays();
+                  _this125.setupOverlays();
 
-                  _this126.setTimezoneOffset();
+                  _this125.setTimezoneOffset();
                 }
 
-                _this126.calendarData = data;
+                _this125.calendarData = data;
 
-                if (_this126.calendarData == null || _this126.calendarData.f1Calendar == null) {
-                  _this126.unknown = true;
+                if (_this125.calendarData == null || _this125.calendarData.f1Calendar == null) {
+                  _this125.unknown = true;
 
-                  _this126.setupIframes();
+                  _this125.setupIframes();
                 } else {
                   if (mode === 0 || mode === 1) {
-                    _this126.FP1Days = _this126.calendarData.countdownData.FP1Days;
-                    _this126.FP1Seconds = _this126.calendarData.countdownData.FP1Seconds;
+                    _this125.FP1Days = _this125.calendarData.countdownData.FP1Days;
+                    _this125.FP1Seconds = _this125.calendarData.countdownData.FP1Seconds;
                   }
 
                   if (mode === 0 || mode === 2) {
-                    _this126.FP2Days = _this126.calendarData.countdownData.FP2Days;
-                    _this126.FP2Seconds = _this126.calendarData.countdownData.FP2Seconds;
+                    _this125.FP2Days = _this125.calendarData.countdownData.FP2Days;
+                    _this125.FP2Seconds = _this125.calendarData.countdownData.FP2Seconds;
                   }
 
                   if (mode === 0 || mode === 3) {
-                    _this126.FP3Days = _this126.calendarData.countdownData.FP3Days;
-                    _this126.FP3Seconds = _this126.calendarData.countdownData.FP3Seconds;
+                    _this125.FP3Days = _this125.calendarData.countdownData.FP3Days;
+                    _this125.FP3Seconds = _this125.calendarData.countdownData.FP3Seconds;
                   }
 
                   if (mode === 0 || mode === 4) {
-                    _this126.qualifyingDays = _this126.calendarData.countdownData.qualifyingDays;
-                    _this126.qualifyingSeconds = _this126.calendarData.countdownData.qualifyingSeconds;
+                    _this125.qualifyingDays = _this125.calendarData.countdownData.qualifyingDays;
+                    _this125.qualifyingSeconds = _this125.calendarData.countdownData.qualifyingSeconds;
                   }
 
                   if (mode === 0 || mode === 5) {
-                    _this126.raceDays = _this126.calendarData.countdownData.raceDays;
-                    _this126.raceSeconds = _this126.calendarData.countdownData.raceSeconds;
+                    _this125.raceDays = _this125.calendarData.countdownData.raceDays;
+                    _this125.raceSeconds = _this125.calendarData.countdownData.raceSeconds;
                   }
 
                   if (mode === 0 || mode === 6) {
-                    _this126.sprintDays = _this126.calendarData.countdownData.sprintDays;
-                    _this126.sprintSeconds = _this126.calendarData.countdownData.sprintSeconds;
+                    _this125.sprintDays = _this125.calendarData.countdownData.sprintDays;
+                    _this125.sprintSeconds = _this125.calendarData.countdownData.sprintSeconds;
                   }
 
                   if (mode === 0) {
-                    _this126.getSelectedTab();
+                    _this125.getSelectedTab();
 
-                    _this126.utilityService.setTitleDefaultPage(1, _this126.calendarData.f1Calendar.summary);
+                    _this125.utilityService.setTitleDefaultPage(1, _this125.calendarData.f1Calendar.summary);
                   }
                 }
 
@@ -100077,9 +99952,9 @@
               },
               'error': function error(_error12) {
                 console.error('There was an error!', _error12);
-                _this126.calendarData = new CalendarData();
-                _this126.calendarData.countdownData.raceDays = 0;
-                _this126.calendarData.countdownData.raceSeconds = 0;
+                _this125.calendarData = new CalendarData();
+                _this125.calendarData.countdownData.raceDays = 0;
+                _this125.calendarData.countdownData.raceSeconds = 0;
               }
             });
           }
@@ -100794,14 +100669,14 @@
         }, {
           key: "update",
           value: function update(numColumns, tiles) {
-            var _this127 = this;
+            var _this126 = this;
 
             this.columnIndex = 0;
             this.rowIndex = 0;
             this.tracker = new Array(numColumns);
             this.tracker.fill(0, 0, this.tracker.length);
             this.positions = tiles.map(function (tile) {
-              return _this127._trackTile(tile);
+              return _this126._trackTile(tile);
             });
           }
           /** Calculates the row and col position of a tile. */
@@ -101558,13 +101433,13 @@
         var _super18 = _createSuper(FixedTileStyler);
 
         function FixedTileStyler(fixedRowHeight) {
-          var _this128;
+          var _this127;
 
           _classCallCheck(this, FixedTileStyler);
 
-          _this128 = _super18.call(this);
-          _this128.fixedRowHeight = fixedRowHeight;
-          return _this128;
+          _this127 = _super18.call(this);
+          _this127.fixedRowHeight = fixedRowHeight;
+          return _this127;
         }
 
         _createClass(FixedTileStyler, [{
@@ -101620,15 +101495,15 @@
         var _super19 = _createSuper(RatioTileStyler);
 
         function RatioTileStyler(value) {
-          var _this129;
+          var _this128;
 
           _classCallCheck(this, RatioTileStyler);
 
-          _this129 = _super19.call(this);
+          _this128 = _super19.call(this);
 
-          _this129._parseRatio(value);
+          _this128._parseRatio(value);
 
-          return _this129;
+          return _this128;
         }
 
         _createClass(RatioTileStyler, [{
@@ -101855,7 +101730,7 @@
         }, {
           key: "_layoutTiles",
           value: function _layoutTiles() {
-            var _this130 = this;
+            var _this129 = this;
 
             if (!this._tileCoordinator) {
               this._tileCoordinator = new TileCoordinator();
@@ -101864,7 +101739,7 @@
             var tracker = this._tileCoordinator;
 
             var tiles = this._tiles.filter(function (tile) {
-              return !tile._gridList || tile._gridList === _this130;
+              return !tile._gridList || tile._gridList === _this129;
             });
 
             var direction = this._dir ? this._dir.value : 'ltr';
@@ -101876,7 +101751,7 @@
             tiles.forEach(function (tile, index) {
               var pos = tracker.positions[index];
 
-              _this130._tileStyler.setStyle(tile, pos.row, pos.col);
+              _this129._tileStyler.setStyle(tile, pos.row, pos.col);
             });
 
             this._setListStyle(this._tileStyler.getComputedHeight());
@@ -103020,7 +102895,7 @@
         }, {
           key: "ngAfterContentInit",
           value: function ngAfterContentInit() {
-            var _this131 = this;
+            var _this130 = this;
 
             this.listKeyManager = new a11y
             /* ListKeyManager */
@@ -103033,7 +102908,7 @@
             * @return {?}
             */
             function () {
-              return _this131.playAnimation();
+              return _this130.playAnimation();
             });
           }
           /**
@@ -103043,7 +102918,7 @@
         }, {
           key: "ngAfterViewInit",
           value: function ngAfterViewInit() {
-            var _this132 = this;
+            var _this131 = this;
 
             this.autoplay$.pipe((0, takeUntil
             /* takeUntil */
@@ -103053,9 +102928,9 @@
             * @return {?}
             */
             function (value) {
-              _this132.stopTimer();
+              _this131.stopTimer();
 
-              _this132.startTimer(value);
+              _this131.startTimer(value);
             });
             this.interval$.pipe((0, takeUntil
             /* takeUntil */
@@ -103065,11 +102940,11 @@
             * @return {?}
             */
             function (value) {
-              _this132.stopTimer();
+              _this131.stopTimer();
 
-              _this132.resetTimer(value);
+              _this131.resetTimer(value);
 
-              _this132.startTimer(_this132._autoplay);
+              _this131.startTimer(_this131._autoplay);
             });
             this.maxWidth$.pipe((0, takeUntil
             /* takeUntil */
@@ -103078,7 +102953,7 @@
             * @return {?}
             */
             function () {
-              return _this132.slideTo(0);
+              return _this131.slideTo(0);
             });
             this.loop$.pipe((0, takeUntil
             /* takeUntil */
@@ -103088,7 +102963,7 @@
             * @return {?}
             */
             function (value) {
-              return _this132.listKeyManager.withWrap(value);
+              return _this131.listKeyManager.withWrap(value);
             });
             this.orientation$.pipe((0, takeUntil
             /* takeUntil */
@@ -103098,7 +102973,7 @@
             * @return {?}
             */
             function (value) {
-              return _this132.listKeyManager.withHorizontalOrientation(value);
+              return _this131.listKeyManager.withHorizontalOrientation(value);
             });
             this.slides$.pipe((0, takeUntil
             /* takeUntil */
@@ -103110,14 +102985,14 @@
             * @return {?}
             */
             function (value) {
-              return value && value < _this132.slidesList.length;
+              return value && value < _this131.slidesList.length;
             })).subscribe(
             /**
             * @param {?} value
             * @return {?}
             */
             function (value) {
-              return _this132.resetSlides(value);
+              return _this131.resetSlides(value);
             });
           }
           /**
@@ -103397,7 +103272,7 @@
         }, {
           key: "playAnimation",
           value: function playAnimation() {
-            var _this133 = this;
+            var _this132 = this;
 
             /** @type {?} */
             var translation = this.getTranslation(this.getOffset());
@@ -103418,18 +103293,18 @@
             * @return {?}
             */
             function () {
-              return _this133.playing = true;
+              return _this132.playing = true;
             });
             animation.onDone(
             /**
             * @return {?}
             */
             function () {
-              _this133.change.emit(_this133.currentIndex);
+              _this132.change.emit(_this132.currentIndex);
 
-              _this133.playing = false;
+              _this132.playing = false;
 
-              _this133.renderer.setStyle(_this133.carouselList.nativeElement, 'transform', translation);
+              _this132.renderer.setStyle(_this132.carouselList.nativeElement, 'transform', translation);
 
               animation.destroy();
             });
@@ -103466,7 +103341,7 @@
         }, {
           key: "startTimer",
           value: function startTimer(autoplay) {
-            var _this134 = this;
+            var _this133 = this;
 
             if (!autoplay) {
               return;
@@ -103483,15 +103358,15 @@
             * @return {?}
             */
             function () {
-              return _this134.isVisible();
+              return _this133.isVisible();
             })).subscribe(
             /**
             * @return {?}
             */
             function () {
-              _this134.listKeyManager.withWrap(true).setNextItemActive();
+              _this133.listKeyManager.withWrap(true).setNextItemActive();
 
-              _this134.listKeyManager.withWrap(_this134.loop);
+              _this133.listKeyManager.withWrap(_this133.loop);
             });
           }
           /**
@@ -104059,12 +103934,12 @@
         var _super21 = _createSuper(MatCarouselHammerConfig);
 
         function MatCarouselHammerConfig() {
-          var _this135;
+          var _this134;
 
           _classCallCheck(this, MatCarouselHammerConfig);
 
-          _this135 = _super21.apply(this, arguments);
-          _this135.overrides = {
+          _this134 = _super21.apply(this, arguments);
+          _this134.overrides = {
             pinch: {
               enable: false
             },
@@ -104072,7 +103947,7 @@
               enable: false
             }
           };
-          return _this135;
+          return _this134;
         }
 
         return MatCarouselHammerConfig;
@@ -104318,6 +104193,178 @@
 
       var fesm2015_checkbox = __webpack_require__(7539);
 
+      ; // CONCATENATED MODULE: ./src/app/shared/dialog/image-popup-dialog.component.ts
+
+      function ImagePopupDialog_div_0_Template(rf, ctx) {
+        if (rf & 1) {
+          core
+          /* ɵɵelementStart */
+          .TgZ(0, "div", 1);
+          core
+          /* ɵɵelementStart */
+          .TgZ(1, "div", 2);
+          core
+          /* ɵɵelementStart */
+          .TgZ(2, "div", 3);
+          core
+          /* ɵɵelementStart */
+          .TgZ(3, "button", 4);
+
+          core
+          /* ɵɵtext */
+          ._uU(4, "Buy ");
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(5, "div");
+          core
+          /* ɵɵelementStart */
+          .TgZ(6, "h1");
+
+          core
+          /* ɵɵtext */
+          ._uU(7);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(8, "div");
+
+          core
+          /* ɵɵelement */
+          ._UZ(9, "img", 5);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(10, "div");
+          core
+          /* ɵɵelementStart */
+          .TgZ(11, "p");
+
+          core
+          /* ɵɵtext */
+          ._uU(12);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+        }
+
+        if (rf & 2) {
+          var ctx_r0 = core
+          /* ɵɵnextContext */
+          .oxw();
+          core
+          /* ɵɵadvance */
+          .xp6(7);
+          core
+          /* ɵɵtextInterpolate */
+          .Oqu(ctx_r0.asset.name);
+          core
+          /* ɵɵadvance */
+          .xp6(2);
+          core
+          /* ɵɵpropertyInterpolate */
+          .s9C("src", ctx_r0.asset.image_preview_url, core
+          /* ɵɵsanitizeUrl */
+          .LSH);
+          core
+          /* ɵɵadvance */
+          .xp6(3);
+          core
+          /* ɵɵtextInterpolate */
+          .Oqu(ctx_r0.asset.id);
+        }
+      }
+
+      var ImagePopupDialog = /*#__PURE__*/function () {
+        function ImagePopupDialog(restService, dialogRef) {
+          _classCallCheck(this, ImagePopupDialog);
+
+          this.restService = restService;
+          this.dialogRef = dialogRef;
+          this.newContent = new NewsContent();
+        }
+
+        _createClass(ImagePopupDialog, [{
+          key: "getData",
+          value: function getData() {
+            var _this135 = this;
+
+            var observable;
+            observable = this.restService.getOpenSeaAsset(this.contractAddress, this.tokenId);
+            observable.subscribe({
+              next: function next(data) {
+                _this135.asset = data;
+              }
+            });
+          }
+        }]);
+
+        return ImagePopupDialog;
+      }();
+
+      ImagePopupDialog.ɵfac = function ImagePopupDialog_Factory(t) {
+        return new (t || ImagePopupDialog)(core
+        /* ɵɵdirectiveInject */
+        .Y36(rest_service
+        /* RestService */
+        .v), core
+        /* ɵɵdirectiveInject */
+        .Y36(MatDialogRef));
+      };
+
+      ImagePopupDialog.ɵcmp = /*@__PURE__*/core
+      /* ɵɵdefineComponent */
+      .Xpm({
+        type: ImagePopupDialog,
+        selectors: [["image-popup-dialog"]],
+        decls: 1,
+        vars: 1,
+        consts: [["mat-dialog-content", "", "class", "1image-popup 1overflow-hidden", 4, "ngIf"], ["mat-dialog-content", "", 1, "1image-popup", "1overflow-hidden"], [1, "row"], [1, "col-12", "col-lg-12"], ["mat-flat-button", "", 1, "active-color-button", "width-100"], [1, "rounded", "mx-auto", "d-block", 3, "src"]],
+        template: function ImagePopupDialog_Template(rf, ctx) {
+          if (rf & 1) {
+            core
+            /* ɵɵtemplate */
+            .YNc(0, ImagePopupDialog_div_0_Template, 13, 3, "div", 0);
+          }
+
+          if (rf & 2) {
+            core
+            /* ɵɵproperty */
+            .Q6J("ngIf", ctx.tokenId !== undefined);
+          }
+        },
+        directives: [common
+        /* NgIf */
+        .O5, MatDialogContent, fesm2015_button
+        /* MatButton */
+        .lW],
+        encapsulation: 2
+      });
       ; // CONCATENATED MODULE: ./src/app/shared/dialog/single-column-table-with-event-dialog.component.ts
 
       function SingleColumnTableWithEventDialogComponent_div_1_tr_7_Template(rf, ctx) {

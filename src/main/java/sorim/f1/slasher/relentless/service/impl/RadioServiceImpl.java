@@ -4,7 +4,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -25,7 +24,7 @@ public class RadioServiceImpl implements RadioService {
 
     @Override
     public ResponseEntity<byte[]> playMusic() throws IOException {
-        for(int i=0;i<5;i++){
+        for (int i = 0; i < 5; i++) {
 
         }
         File f = new File("C:\\audiotemp\\" + "3" + ".mp3");

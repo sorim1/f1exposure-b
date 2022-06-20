@@ -17,8 +17,8 @@ import sorim.f1.slasher.relentless.model.FourchanCatalog;
 import sorim.f1.slasher.relentless.model.FourchanPost;
 import sorim.f1.slasher.relentless.model.FourchanThread;
 import sorim.f1.slasher.relentless.repository.FourChanPostRepository;
-import sorim.f1.slasher.relentless.repository.StreamableRepository;
 import sorim.f1.slasher.relentless.repository.PropertiesRepository;
+import sorim.f1.slasher.relentless.repository.StreamableRepository;
 import sorim.f1.slasher.relentless.service.FourchanService;
 
 import javax.annotation.PostConstruct;
@@ -54,16 +54,16 @@ public class FourchanServiceImpl implements FourchanService {
     public Boolean fetch4chanPosts() {
         Boolean includesActiveThread = false;
         List<Integer> f1ThreadNumbers = getPreviousF1ThreadNumbers();
-        if(f1ThreadNumbers.size()==0){
+        if (f1ThreadNumbers.size() == 0) {
             log.error("FOUND NO PreviousF1ThreadNumbers");
             f1ThreadNumbers = getF1ThreadNumbers();
             includesActiveThread = true;
         }
         f1ThreadNumbers = removeProcessedThreads(f1ThreadNumbers);
         log.info("fetch4chanPosts:" + f1ThreadNumbers);
-        if(f1ThreadNumbers.size()>0) {
-               fetchF1Threads(f1ThreadNumbers);
-            if(!includesActiveThread){
+        if (f1ThreadNumbers.size() > 0) {
+            fetchF1Threads(f1ThreadNumbers);
+            if (!includesActiveThread) {
                 setProcessedThread(f1ThreadNumbers.get(f1ThreadNumbers.size() - 1));
             }
         }
@@ -74,7 +74,7 @@ public class FourchanServiceImpl implements FourchanService {
         List<Integer> response = new ArrayList();
         Collections.sort(f1ThreadNumbers);
         f1ThreadNumbers.forEach(threadNo -> {
-            if (threadNo>processedThread) {
+            if (threadNo > processedThread) {
                 response.add(threadNo);
             }
         });
@@ -135,11 +135,8 @@ public class FourchanServiceImpl implements FourchanService {
         if (post.getW() == null || post.getH() == null) {
             return false;
         }
-        if (post.getW() + post.getH() > 2100) {
-            return true;
-        }
+        return post.getW() + post.getH() > 2100;
         //return ".webm".equals(post.getExt()) && post.getFsize() > 1700000;
-        return false;
     }
 
     private boolean checkStreamable(FourchanPost post) {
@@ -176,17 +173,18 @@ public class FourchanServiceImpl implements FourchanService {
             List<FourchanCatalog> response = mapper.readValue(responseString, typeRef);
 
             response.forEach(page -> page.getThreads().forEach(thread -> {
-                try{
-                if (thread.getSub() != null && thread.getSub().toUpperCase().contains("/F1/")) {
-                    Integer index = thread.getCom().indexOf("/sp/thread/");
-                    if (index >= 0) {
-                        String threadNoString = thread.getCom().substring(index + 11, index + 20);
-                        Integer threadNo = Integer.valueOf(threadNoString);
-                        f1ThreadNumbers.add(threadNo);
+                try {
+                    if (thread.getSub() != null && thread.getSub().toUpperCase().contains("/F1/")) {
+                        Integer index = thread.getCom().indexOf("/sp/thread/");
+                        if (index >= 0) {
+                            String threadNoString = thread.getCom().substring(index + 11, index + 20);
+                            Integer threadNo = Integer.valueOf(threadNoString);
+                            f1ThreadNumbers.add(threadNo);
+                        }
                     }
-                }}catch(Exception e){
+                } catch (Exception e) {
                     e.printStackTrace();
-                    }
+                }
             }));
         } catch (JsonProcessingException e) {
             e.printStackTrace();
@@ -234,20 +232,21 @@ public class FourchanServiceImpl implements FourchanService {
 
         response.getPosts().stream().filter(post -> post.getCom() != null && post.getCom().toUpperCase().contains("STRAWPOLL.COM/"))
                 .forEach(strawPollPost -> {
-                    int counter = 0;
-                    if (strawPollPost.getCom().contains("VERY IMPORTANT POLL")) {
+                    String postText = strawPollPost.getCom().replace("<wbr>","");
+                   int counter = 0;
+                    if (postText.contains("VERY IMPORTANT POLL")) {
                         counter += 2;
                     }
-                    if (strawPollPost.getCom().contains("EXPOSURE POLL")) {
+                    if (postText.contains("EXPOSURE POLL")) {
                         counter++;
                     }
-                    if (strawPollPost.getCom().contains("EXPOSED POLL")) {
+                    if (postText.contains("EXPOSED POLL")) {
                         counter++;
                     }
                     if (counter >= 2) {
                         log.info("FOUND STRAWPOLL POST");
-                        Integer index = strawPollPost.getCom().toUpperCase().indexOf("STRAWPOLL.COM/POLLS/") + 20;
-                        String strawpollString = strawPollPost.getCom().substring(index, index + 11);
+                        Integer index = postText.toUpperCase().indexOf("STRAWPOLL.COM/POLLS/") + 20;
+                        String strawpollString = postText.substring(index, index + 11);
                         log.info("strawpollString: {}", strawpollString);
                         strawpollId.set(strawpollString);
                     }

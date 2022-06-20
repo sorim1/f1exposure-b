@@ -237,6 +237,12 @@ public class AdminController {
         return service.deleteAwsContent(username);
     }
 
+    @GetMapping("/cleanup")
+    Boolean cleanup(@RequestHeader String client) throws Exception {
+        securityService.validateAdminHeader(client);
+        return service.cleanup();
+    }
+
     @GetMapping("/instagramCleanup")
     Boolean instagramCleanup(@RequestHeader String client) throws Exception {
         securityService.validateAdminHeader(client);
@@ -253,7 +259,22 @@ public class AdminController {
         return service.checkCurrentStream();
     }
     @GetMapping("/updateCurrentSeasonPast/{season}")
-    String updateCurrentSeasonPast(@PathVariable("season") Integer season) throws IOException {
+    String updateCurrentSeasonPast(@PathVariable("season") Integer season) {
         return service.updateCurrentSeasonPast(season);
+    }
+
+    @PostMapping("/updateJsonRepository")
+    JsonRepositoryModel updateJsonRepository(@RequestBody JsonRepositoryModel body) {
+        return service.updateJsonRepository(body);
+    }
+
+    @GetMapping("/getJsonRepository/{id}")
+    JsonRepositoryModel getJsonRepository(@PathVariable("id") String id) {
+        return service.getJsonRepository(id);
+    }
+
+    @GetMapping("/deleteJsonRepository/{id}")
+    Boolean deleteJsonRepository(@PathVariable("id") String id) {
+        return service.deleteJsonRepository(id);
     }
 }

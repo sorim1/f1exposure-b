@@ -22,7 +22,6 @@ public class Scheduler {
     private final ExposureStrawpollService exposureService;
     private final AdminService adminService;
     private final ClientService clientService;
-    private final ArtService artService;
     private final LiveTimingService liveTimingService;
     private final ErgastService ergastService;
 
@@ -42,7 +41,6 @@ public class Scheduler {
             adminService.initializeStandings(true);
             standingsUpdated = true;
         }
-        artService.generateLatestArt();
         ergastService.fetchStatisticsFullFromPartial(false);
         isItRaceWeek();
     }
@@ -180,7 +178,8 @@ public class Scheduler {
         log.info("onInitScheduler Called");
         isItRaceWeek();
         int weekDay = MainUtility.getWeekDay();
-        imageFeedJob();
+     //   imageFeedJob();
+     //   adminService.cleanup();
         try {
             switch (weekDay) {
                 case 1:{
