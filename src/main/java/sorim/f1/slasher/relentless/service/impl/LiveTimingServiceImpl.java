@@ -38,10 +38,11 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class LiveTimingServiceImpl implements LiveTimingService {
 
-    private static final String liveTimingUrl = "https://livetiming.formula1.com/static/{year}/{grandPrix}/{race}/SPFeed.json";
-    private static final String timingAppDataUrl = "https://livetiming.formula1.com/static/{year}/{grandPrix}/{race}/TimingAppData.jsonStream";
-    private static final String wikipediaImagesUrl1 = "https://en.wikipedia.org/w/api.php?action=query&prop=pageimages&piprop=original&format=json&redirects&titles={title}";
-    private static final String wikipediaImagesUrl2 = "https://en.wikipedia.org/w/api.php?action=query&prop=pageimages&piprop=thumbnail&pithumbsize=2000&format=json&redirects&titles={title}";
+    private static final String LIVE_TIMING_URL = "https://livetiming.formula1.com/static/{year}/{grandPrix}/{race}/SPFeed.json";
+    private static final String TIMING_APP_DATA_URL = "https://livetiming.formula1.com/static/{year}/{grandPrix}/{race}/TimingAppData.jsonStream";
+    private static final String WIKIPEDIA_IMAGES_URL_1 = "https://en.wikipedia.org/w/api.php?action=query&prop=pageimages&piprop=original&format=json&redirects&titles={title}";
+    private static final String WIKIPEDIA_IMAGES_URL_2 = "https://en.wikipedia.org/w/api.php?action=query&prop=pageimages&piprop=thumbnail&pithumbsize=2000&format=json&redirects&titles={title}";
+    private static final String SESSION_INFO_URL = "https://livetiming.formula1.com/static/SessionInfo.json";
     private final ErgastService ergastService;
     private final AdminService adminService;
     private final ClientService clientService;
@@ -92,10 +93,10 @@ public class LiveTimingServiceImpl implements LiveTimingService {
         String apiUrl;
         String image;
         if (thumbnail) {
-            apiUrl = wikipediaImagesUrl2;
+            apiUrl = WIKIPEDIA_IMAGES_URL_2;
             image = "thumbnail";
         } else {
-            apiUrl = wikipediaImagesUrl1;
+            apiUrl = WIKIPEDIA_IMAGES_URL_1;
             image = "original";
         }
 
@@ -151,10 +152,10 @@ public class LiveTimingServiceImpl implements LiveTimingService {
         String url;
         switch (liveTimingEndpoint) {
             case 1:
-                url = liveTimingUrl;
+                url = LIVE_TIMING_URL;
                 break;
             case 2:
-                url = timingAppDataUrl;
+                url = TIMING_APP_DATA_URL;
                 break;
             default:
                 throw new IllegalStateException("Unexpected value: " + liveTimingEndpoint);
@@ -209,8 +210,7 @@ public class LiveTimingServiceImpl implements LiveTimingService {
                 return null;
             }
             try {
-                System.out.println("2: https://livetiming.formula1.com/static/" + raceData.getSeason() + "/" + grandPrix + "/" + raceName + "/SPFeed.json");
-                return restTemplate
+               return restTemplate
                         .getForObject(url, String.class, raceData.getSeason(), grandPrix, raceName);
             } catch (Exception ex) {
                 Logger.log("getLiveTimingResponseOfErgastRace2 " + grandPrix, ex.getMessage());
@@ -228,17 +228,25 @@ public class LiveTimingServiceImpl implements LiveTimingService {
     public Integer analyzeLatestRace(Boolean updateStatistics) {
         RaceData raceData = ergastService.getLatestNonAnalyzedRace(properties.getCurrentSeasonFuture());
         analyzeRaceData(raceData, updateStatistics);
-        return adminService.getNextRefreshTick(-6000);
+        return getNextRefreshTime(-6000);
     }
 
     @Override
-    public Integer analyzeRace(Integer season, Integer round) {
+    public Boolean analyzeRace(Integer season, Integer round) {
         RaceData raceData = ergastService.findRaceBySeasonAndRound(String.valueOf(season), round);
         analyzeRaceData(raceData, false);
-        return adminService.getNextRefreshTick(-6000);
+        return true;
     }
 
-
+    private Integer getNextRefreshTime(Integer seconds) {
+        Boolean isGenerating = checkIfEventIsGenerating();
+        if(isGenerating){
+            //600 sekundi = 10 minuta
+            return 600;
+        } else {
+            return adminService.getNextRefreshTimeUsingCalendar(seconds);
+        }
+    }
     private void analyzeRaceData(RaceData raceData, Boolean updateStatistics) {
         if (raceData != null) {
             String liveTimingResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.RACE, 1);
@@ -257,9 +265,6 @@ public class LiveTimingServiceImpl implements LiveTimingService {
     public Boolean resetLatestRaceAnalysis() {
         RaceData raceData = ergastService.getLatestAnalyzedRace();
         ergastService.getLatestAnalyzedRace().getRaceAnalysis();
-//        if(raceData.getRaceAnalysis().getArt()!=null){
-//         artImageRepository.deleteByCode(raceData.getRaceAnalysis().getArt());
-//        }
         String art = raceData.getRaceAnalysis().getArt();
         raceData.setRaceAnalysis(null);
         raceData.setLiveTimingRace(null);
@@ -373,6 +378,18 @@ public class LiveTimingServiceImpl implements LiveTimingService {
     }
 
     @Override
+    public boolean checkIfEventIsGenerating() {
+        SessionInfo sessionInfo = getSessionInfo();
+        log.info("checkIfEventIsGenerating: " + sessionInfo.getArchiveStatus().getStatus());
+        return sessionInfo.getArchiveStatus().getStatus().equals("Generating");
+    }
+
+    @Override
+    public SessionInfo getSessionInfo() {
+        return restTemplate.getForObject(SESSION_INFO_URL, SessionInfo.class);
+    }
+
+    @Override
     public Boolean upcomingRacesAnalysisInitialLoad(String season) {
         Integer howManySeasonsBack = properties.getHowManySeasonsBack();
         List<RaceData> races = ergastService.findRacesBySeason(season);
@@ -481,7 +498,7 @@ public class LiveTimingServiceImpl implements LiveTimingService {
         } else {
             properties.checkCurrentSeasonFuture();
         }
-        return adminService.getNextRefreshTick(-6000);
+        return getNextRefreshTime(-6000);
     }
 
     private List<LapTimeData> createLapTimeDataList(String timingAppData, Map<String, String> driverMap, String sessionName) {

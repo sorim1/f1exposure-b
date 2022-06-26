@@ -33,7 +33,6 @@ public class ClientServiceImpl implements ClientService {
     public static String iframeLink;
     public static Boolean fourchanDisabled;
     private static NewsContent topNews = new NewsContent();
-    private static final Boolean exposureOn = false;
     private final MainProperties properties;
     private final CalendarRepository calendarRepository;
     private final DriverStandingsRepository driverStandingsRepository;

@@ -66,6 +66,7 @@ public class Scheduler {
         isItRaceWeek();
         if (isRaceWeek) {
             analyzeUpcomingRacePeriodically();
+            getImagesPeriodicallyRoot();
         }
     }
 
@@ -171,7 +172,59 @@ public class Scheduler {
             );
         }
     }
-
+    private void getImagesPeriodicallyRoot() {
+        Integer delay = adminService.getNextRefreshTimeUsingCalendar(3600);
+        log.info(CODE + " - getImagesPeriodicallyRoot called");
+        if (delay != null) {
+            int delayInMiliseconds = delay * 1000;
+            MainUtility.logTime("getImagesPeriodicallyRoot", delayInMiliseconds);
+            new java.util.Timer().schedule(
+                    new java.util.TimerTask() {
+                        @SneakyThrows
+                        @Override
+                        public void run() {
+                            imageFeedJob();
+                            getImagesPeriodically(12);
+                        }
+                    },
+                    delayInMiliseconds
+            );
+        }
+    }
+    private void getImagesPeriodically(Integer countdown) {
+        log.info(CODE + " - getImagesPeriodically called");
+        int delayInMiliseconds = 600000;
+        if(countdown>0) {
+            new java.util.Timer().schedule(
+                    new java.util.TimerTask() {
+                        @SneakyThrows
+                        @Override
+                        public void run() {
+                            imageFeedJob();
+                            getImagesPeriodically(countdown - 1);
+                        }
+                    },
+                    delayInMiliseconds
+            );
+        } else {
+            boolean isGenerating = liveTimingService.checkIfEventIsGenerating();
+            if(isGenerating) {
+                new java.util.Timer().schedule(
+                        new java.util.TimerTask() {
+                            @SneakyThrows
+                            @Override
+                            public void run() {
+                                imageFeedJob();
+                                getImagesPeriodically(0);
+                            }
+                        },
+                        delayInMiliseconds
+                );
+            } else {
+                getImagesPeriodicallyRoot();
+            }
+        }
+    }
 
     @PostConstruct
     void onInit() throws Exception {
@@ -211,10 +264,13 @@ public class Scheduler {
         }
     }
 
-    @Scheduled(cron = "0 0 1,6,8,10,12,14,16,18,20,22 * * *")
     void imageFeedJob() throws Exception {
         log.info("imageFeedJob called");
         clientService.fetchImageFeed();
+    }
+    @Scheduled(cron = "0 0 1,6,8,10,12,14,16,18,20,22 * * *")
+    void bihourlyJob() throws Exception {
+        imageFeedJob();
         adminService.checkCurrentStream();
     }
 }

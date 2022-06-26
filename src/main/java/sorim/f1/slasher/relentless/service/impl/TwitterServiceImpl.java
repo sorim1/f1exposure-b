@@ -69,6 +69,9 @@ public class TwitterServiceImpl implements TwitterService {
         String text = item.getText();
         String url = null;
         String mediaUrl = null;
+        if(item.getUser()!=null && item.getUser().getScreenName().equals("F1Exposure")){
+            return null;
+        }
         int splitter = text.lastIndexOf("https://t.co");
         if (splitter > 0 && splitter > item.getText().length() - 30) {
             text = item.getText().substring(0, splitter);

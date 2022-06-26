@@ -486,7 +486,7 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
-    public Integer getNextRefreshTick(Integer seconds) {
+    public Integer getNextRefreshTimeUsingCalendar(Integer seconds) {
         try {
             CalendarData calendarData = clientService.getCountdownData(0);
             if (calendarData.getCountdownData().get("raceDays") > 2) {

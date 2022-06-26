@@ -183,7 +183,7 @@ public class ClientController {
     }
 
     @GetMapping("/getSidebarData")
-    SidebarData getTopNews(@RequestHeader String client) throws Exception {
+    SidebarData getSidebarData(@RequestHeader String client) throws Exception {
         securityService.validateHeader(client);
         return service.getSidebarData();
     }

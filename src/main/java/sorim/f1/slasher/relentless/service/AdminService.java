@@ -42,7 +42,7 @@ public interface AdminService {
 
     FullExposure backupExposure();
 
-    Integer getNextRefreshTick(Integer seconds);
+    Integer getNextRefreshTimeUsingCalendar(Integer seconds);
 
     List<F1Comment> getAdminMessages();
 

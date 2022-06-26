@@ -2,6 +2,7 @@ package sorim.f1.slasher.relentless.service;
 
 import sorim.f1.slasher.relentless.entities.ergast.RaceData;
 import sorim.f1.slasher.relentless.model.livetiming.RaceAnalysis;
+import sorim.f1.slasher.relentless.model.livetiming.SessionInfo;
 import sorim.f1.slasher.relentless.model.livetiming.UpcomingRaceAnalysis;
 
 import java.util.List;
@@ -14,7 +15,7 @@ public interface LiveTimingService {
 
     Integer analyzeLatestRace(Boolean updateStatistics);
 
-    Integer analyzeRace(Integer season, Integer round);
+    Boolean analyzeRace(Integer season, Integer round);
 
     Boolean resetLatestRaceAnalysis();
 
@@ -43,4 +44,8 @@ public interface LiveTimingService {
     RaceData backupRaceData(Integer id);
 
     RaceData restoreRaceData(Integer id, RaceData body);
+
+    boolean checkIfEventIsGenerating();
+
+    SessionInfo getSessionInfo();
 }

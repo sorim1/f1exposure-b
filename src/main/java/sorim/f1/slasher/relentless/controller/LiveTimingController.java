@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import sorim.f1.slasher.relentless.entities.ergast.RaceData;
 import sorim.f1.slasher.relentless.model.livetiming.RaceAnalysis;
+import sorim.f1.slasher.relentless.model.livetiming.SessionInfo;
 import sorim.f1.slasher.relentless.model.livetiming.UpcomingRaceAnalysis;
 import sorim.f1.slasher.relentless.service.LiveTimingService;
 import sorim.f1.slasher.relentless.service.SecurityService;
@@ -61,7 +62,7 @@ public class LiveTimingController {
     }
 
     @GetMapping("/analyzeRace")
-    public Integer analyzeLatestRace(@RequestHeader String client, @RequestParam Integer season, @RequestParam Integer round) throws Exception {
+    public Boolean analyzeLatestRace(@RequestHeader String client, @RequestParam Integer season, @RequestParam Integer round) throws Exception {
         securityService.validateAdminHeader(client);
         return service.analyzeRace(season, round);
     }
@@ -130,13 +131,19 @@ public class LiveTimingController {
 
     @GetMapping("/backupRaceData/{id}")
     public RaceData backupRaceData(@RequestHeader String client, @PathVariable("id") Integer id) throws Exception {
-        securityService.validateHeader(client);
+        securityService.validateAdminHeader(client);
         return service.backupRaceData(id);
     }
 
     @PostMapping("/restoreRaceData/{id}")
     public RaceData restoreRaceData(@RequestHeader String client, @PathVariable("id") Integer id, @RequestBody RaceData body) throws Exception {
-        securityService.validateHeader(client);
+        securityService.validateAdminHeader(client);
         return service.restoreRaceData(id, body);
+    }
+
+    @GetMapping("/getSessionInfo")
+    public SessionInfo getSessionInfo(@RequestHeader String client) throws Exception {
+        securityService.validateAdminHeader(client);
+        return service.getSessionInfo();
     }
 }
