@@ -161,63 +161,66 @@ public class RedditServiceImpl implements RedditService {
     }
 
     private void getImagesForPost(NewsContent post) {
-        HttpEntity entity = new HttpEntity(htmlHeaders);
-        boolean iconUrlSet = false;
-        String domainUrl = MainUtility.getDomain(post.getUrl());
-        if (domainUrl.contains(iReddit)) {
-            post.setIconUrl(REDDIT_FAVICON);
-            iconUrlSet = true;
-        }
-        try {
-            ResponseEntity<String> response = restTemplate.exchange(
-                    post.getUrl(), HttpMethod.GET, entity, String.class);
+        if(post !=null && post.getUrl()!=null) {
+            HttpEntity entity = new HttpEntity(htmlHeaders);
+            boolean iconUrlSet = false;
+            String domainUrl = MainUtility.getDomain(post.getUrl());
+            if (domainUrl.contains(iReddit)) {
+                post.setIconUrl(REDDIT_FAVICON);
+                iconUrlSet = true;
+            }
+            try {
+                ResponseEntity<String> response = restTemplate.exchange(
+                        post.getUrl(), HttpMethod.GET, entity, String.class);
 
-            String rawHtml = response.getBody();
-            assert rawHtml != null;
-            Document doc = Jsoup.parse(rawHtml);
+                String rawHtml = response.getBody();
+                assert rawHtml != null;
+                Document doc = Jsoup.parse(rawHtml);
 
-            if (!iconUrlSet) {
-                Elements linkTags = doc.getElementsByTag("link");
-
-                Optional<Element> relTag1 = linkTags.stream().filter(tag -> "shortcut icon".equals(tag.attr("rel"))).findAny();
-                if (relTag1.isPresent()) {
-                    String href = relTag1.get().attr("href");
-                    String absoluteUrl = relativeToAbsoluteUrl(domainUrl, href);
-                    if (check200Status(absoluteUrl)) {
-                        post.setIconUrl(absoluteUrl);
-                        iconUrlSet = true;
-                    }
-                }
                 if (!iconUrlSet) {
-                    Optional<Element> relTag = linkTags.stream().filter(tag -> "icon".equals(tag.attr("rel"))).findAny();
-                    if (relTag.isPresent()) {
-                        String href = relTag.get().attr("href");
+                    Elements linkTags = doc.getElementsByTag("link");
+
+                    Optional<Element> relTag1 = linkTags.stream().filter(tag -> "shortcut icon".equals(tag.attr("rel"))).findAny();
+                    if (relTag1.isPresent()) {
+                        String href = relTag1.get().attr("href");
                         String absoluteUrl = relativeToAbsoluteUrl(domainUrl, href);
                         if (check200Status(absoluteUrl)) {
                             post.setIconUrl(absoluteUrl);
                             iconUrlSet = true;
                         }
                     }
+                    if (!iconUrlSet) {
+                        Optional<Element> relTag = linkTags.stream().filter(tag -> "icon".equals(tag.attr("rel"))).findAny();
+                        if (relTag.isPresent()) {
+                            String href = relTag.get().attr("href");
+                            String absoluteUrl = relativeToAbsoluteUrl(domainUrl, href);
+                            if (check200Status(absoluteUrl)) {
+                                post.setIconUrl(absoluteUrl);
+                                iconUrlSet = true;
+                            }
+                        }
+                    }
+
                 }
-            }
 
-            if (!iconUrlSet && check200Status(domainUrl + FAVICON)) {
-                post.setIconUrl(domainUrl + FAVICON);
-            }
+                if (!iconUrlSet && check200Status(domainUrl + FAVICON)) {
+                    post.setIconUrl(domainUrl + FAVICON);
+                }
 
-            Elements metaTags = doc.getElementsByTag("meta");
-            Optional<Element> imageTag = metaTags.stream().filter(tag -> "og:image".equals(tag.attr("property"))).findAny();
-            if (imageTag.isPresent()) {
-                String content = imageTag.get().attr("content");
-                post.setImageUrl(content);
+                Elements metaTags = doc.getElementsByTag("meta");
+                Optional<Element> imageTag = metaTags.stream().filter(tag -> "og:image".equals(tag.attr("property"))).findAny();
+                if (imageTag.isPresent()) {
+                    String content = imageTag.get().attr("content");
+                    post.setImageUrl(content);
+                }
+                Elements titleTags = doc.getElementsByTag("title");
+                if (titleTags.size() > 0 && !domainUrl.contains("instagram")) {
+                    post.setTitle(titleTags.get(0).wholeText());
+                }
+            } catch (Exception ex) {
+                log.info("ex2 " + post.getUrl());
+                ex.printStackTrace();
             }
-            Elements titleTags = doc.getElementsByTag("title");
-            if (titleTags.size() > 0 && !domainUrl.contains("instagram")) {
-                post.setTitle(titleTags.get(0).wholeText());
-            }
-        } catch (Exception ex) {
-            log.info("ex2 " + post.getUrl());
-            ex.printStackTrace();
         }
     }
 
