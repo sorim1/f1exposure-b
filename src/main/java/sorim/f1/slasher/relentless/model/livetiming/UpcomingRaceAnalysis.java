@@ -32,6 +32,16 @@ public class UpcomingRaceAnalysis {
     List<LapTimeData> fp3Laps;
     List<LapTimeData> qualiLaps;
     List<LapTimeData> sprintQualiLaps;
+    List<RadioData> fp1Radio;
+    List<RadioData> fp2Radio;
+    List<RadioData> fp3Radio;
+    List<RadioData> qualiRadio;
+    List<RadioData> sprintQualiRadio;
+    String fp1LivetimingUrl;
+    String fp2LivetimingUrl;
+    String fp3LivetimingUrl;
+    String qualiLivetimingUrl;
+    String sprintQualiLivetimingUrl;
 
 
     public UpcomingRaceAnalysis(RaceData raceData) {

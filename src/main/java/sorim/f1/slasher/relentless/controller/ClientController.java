@@ -236,4 +236,11 @@ public class ClientController {
         securityService.validateHeader(client);
         return service.getVideos();
     }
+
+    @GetMapping("/setAllowNonRedditNewsProperty/{bool}")
+    Boolean setAllowNonRedditNewsProperty(@RequestHeader String client, @PathVariable("bool") Boolean bool) throws Exception {
+        securityService.validateAdminHeader(client);
+        service.setAllowNonRedditNewsProperty(bool);
+        return bool;
+    }
 }

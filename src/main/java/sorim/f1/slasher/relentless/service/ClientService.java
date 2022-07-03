@@ -81,4 +81,6 @@ public interface ClientService {
     Boolean getFourchanDisabled();
 
     Boolean setFourchanDisabled(String value);
+
+    void setAllowNonRedditNewsProperty(Boolean bool);
 }

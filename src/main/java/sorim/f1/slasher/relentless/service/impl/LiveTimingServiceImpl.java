@@ -17,10 +17,7 @@ import sorim.f1.slasher.relentless.model.enums.RoundEnum;
 import sorim.f1.slasher.relentless.model.ergast.ErgastResponse;
 import sorim.f1.slasher.relentless.model.livetiming.*;
 import sorim.f1.slasher.relentless.scheduled.Scheduler;
-import sorim.f1.slasher.relentless.service.AdminService;
-import sorim.f1.slasher.relentless.service.ClientService;
-import sorim.f1.slasher.relentless.service.ErgastService;
-import sorim.f1.slasher.relentless.service.LiveTimingService;
+import sorim.f1.slasher.relentless.service.*;
 import sorim.f1.slasher.relentless.util.MainUtility;
 
 import javax.annotation.PostConstruct;
@@ -38,15 +35,22 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class LiveTimingServiceImpl implements LiveTimingService {
 
-    private static final String LIVE_TIMING_URL = "https://livetiming.formula1.com/static/{year}/{grandPrix}/{race}/SPFeed.json";
-    private static final String TIMING_APP_DATA_URL = "https://livetiming.formula1.com/static/{year}/{grandPrix}/{race}/TimingAppData.jsonStream";
+    private static final String LIVE_TIMING_URL_BASE = "https://livetiming.formula1.com/static/{year}/{grandPrix}/{race}/";
+    private static final String SPFEED_JSON = "SPFeed.json";
+    private static final String TIMING_APP_DATA_STREAM = "TimingAppData.jsonStream";
+
+    private static final String TEAM_RADIO_STREAM = "TeamRadio.jsonStream";
     private static final String WIKIPEDIA_IMAGES_URL_1 = "https://en.wikipedia.org/w/api.php?action=query&prop=pageimages&piprop=original&format=json&redirects&titles={title}";
     private static final String WIKIPEDIA_IMAGES_URL_2 = "https://en.wikipedia.org/w/api.php?action=query&prop=pageimages&piprop=thumbnail&pithumbsize=2000&format=json&redirects&titles={title}";
     private static final String SESSION_INFO_URL = "https://livetiming.formula1.com/static/SessionInfo.json";
+
+    private String temporaryUrl;
     private final ErgastService ergastService;
     private final AdminService adminService;
     private final ClientService clientService;
     private final MainProperties properties;
+
+    private final LiveTimingRadioService liveTimingRadioService;
     private final ObjectMapper mapper = new ObjectMapper();
     RestTemplate restTemplate = new RestTemplate();
 
@@ -149,13 +153,17 @@ public class LiveTimingServiceImpl implements LiveTimingService {
 
 
     private String getLiveTimingResponseOfErgastRace(RaceData raceData, RoundEnum round, Integer liveTimingEndpoint) {
+        String response;
         String url;
         switch (liveTimingEndpoint) {
             case 1:
-                url = LIVE_TIMING_URL;
+                url = LIVE_TIMING_URL_BASE +  SPFEED_JSON;
                 break;
             case 2:
-                url = TIMING_APP_DATA_URL;
+                url = LIVE_TIMING_URL_BASE + TIMING_APP_DATA_STREAM;
+                break;
+            case 3:
+                url = LIVE_TIMING_URL_BASE + TEAM_RADIO_STREAM;
                 break;
             default:
                 throw new IllegalStateException("Unexpected value: " + liveTimingEndpoint);
@@ -196,8 +204,10 @@ public class LiveTimingServiceImpl implements LiveTimingService {
         }
         log.info("https://livetiming.formula1.com/static/" + raceData.getSeason() + "/" + grandPrix + "/" + raceName + "/SPFeed.json");
         try {
-            return restTemplate
+            response = restTemplate
                     .getForObject(url, String.class, raceData.getSeason(), grandPrix, raceName);
+            temporaryUrl = "https://livetiming.formula1.com/static/" + raceData.getSeason() + "/" + grandPrix + "/" + raceName + "/";
+        return response;
         } catch (Exception e) {
             Logger.log("getLiveTimingResponseOfErgastRace1 " + grandPrix, e.getMessage());
             if (round.equals(RoundEnum.PRACTICE_2)) {
@@ -210,8 +220,10 @@ public class LiveTimingServiceImpl implements LiveTimingService {
                 return null;
             }
             try {
-               return restTemplate
+                response = restTemplate
                         .getForObject(url, String.class, raceData.getSeason(), grandPrix, raceName);
+                temporaryUrl = "https://livetiming.formula1.com/static/" + raceData.getSeason() + "/" + grandPrix + "/" + raceName + "/";
+                return response;
             } catch (Exception ex) {
                 Logger.log("getLiveTimingResponseOfErgastRace2 " + grandPrix, ex.getMessage());
                 return null;
@@ -443,6 +455,10 @@ public class LiveTimingServiceImpl implements LiveTimingService {
                     Map<String, String> driverMap = drivers.stream()
                             .collect(Collectors.toMap(Driver::getNum, Driver::getFullName));
                     raceData.getUpcomingRaceAnalysis().setFp1Laps(createLapTimeDataList(timingAppDataResponse, driverMap, "Practice 1"));
+                    String radioDataResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.PRACTICE_1, 3);
+                    raceData.getUpcomingRaceAnalysis().setFp1LivetimingUrl(temporaryUrl);
+                    liveTimingRadioService.enrichUpcomingRaceAnalysisWithRadioData(raceData.getUpcomingRaceAnalysis(), radioDataResponse, RoundEnum.PRACTICE_1);
+
                 }
             }
             if (raceData.getLiveTimingFp2() == null || redo) {
@@ -455,6 +471,9 @@ public class LiveTimingServiceImpl implements LiveTimingService {
                     Map<String, String> driverMap = drivers.stream()
                             .collect(Collectors.toMap(Driver::getNum, Driver::getFullName));
                     raceData.getUpcomingRaceAnalysis().setFp2Laps(createLapTimeDataList(timingAppDataResponse, driverMap, "Practice 2"));
+                    String radioDataResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.PRACTICE_2, 3);
+                    raceData.getUpcomingRaceAnalysis().setFp2LivetimingUrl(temporaryUrl);
+                    liveTimingRadioService.enrichUpcomingRaceAnalysisWithRadioData(raceData.getUpcomingRaceAnalysis(), radioDataResponse, RoundEnum.PRACTICE_2);
                 }
             }
             if (raceData.getLiveTimingFp3() == null || redo) {
@@ -467,6 +486,10 @@ public class LiveTimingServiceImpl implements LiveTimingService {
                     Map<String, String> driverMap = drivers.stream()
                             .collect(Collectors.toMap(Driver::getNum, Driver::getFullName));
                     raceData.getUpcomingRaceAnalysis().setFp3Laps(createLapTimeDataList(timingAppDataResponse, driverMap, "Practice 3"));
+                    String radioDataResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.PRACTICE_3, 3);
+                    raceData.getUpcomingRaceAnalysis().setFp3LivetimingUrl(temporaryUrl);
+                    liveTimingRadioService.enrichUpcomingRaceAnalysisWithRadioData(raceData.getUpcomingRaceAnalysis(), radioDataResponse, RoundEnum.PRACTICE_3);
+
                 }
             }
             if (raceData.getLiveTimingQuali() == null || redo) {
@@ -479,6 +502,9 @@ public class LiveTimingServiceImpl implements LiveTimingService {
                     Map<String, String> driverMap = drivers.stream()
                             .collect(Collectors.toMap(Driver::getNum, Driver::getFullName));
                     raceData.getUpcomingRaceAnalysis().setQualiLaps(createLapTimeDataList(timingAppDataResponse, driverMap, "Qualifying"));
+                    String radioDataResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.QUALIFYING, 3);
+                    raceData.getUpcomingRaceAnalysis().setQualiLivetimingUrl(temporaryUrl);
+                    liveTimingRadioService.enrichUpcomingRaceAnalysisWithRadioData(raceData.getUpcomingRaceAnalysis(), radioDataResponse, RoundEnum.QUALIFYING);
                 }
             }
             if (raceData.getLiveTimingSprintQuali() == null || redo) {
@@ -491,6 +517,9 @@ public class LiveTimingServiceImpl implements LiveTimingService {
                     Map<String, String> driverMap = drivers.stream()
                             .collect(Collectors.toMap(Driver::getNum, Driver::getFullName));
                     raceData.getUpcomingRaceAnalysis().setSprintQualiLaps(createLapTimeDataList(timingAppDataResponse, driverMap, "Sprint"));
+                    String radioDataResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.SPRINT, 3);
+                    raceData.getUpcomingRaceAnalysis().setSprintQualiLivetimingUrl(temporaryUrl);
+                    liveTimingRadioService.enrichUpcomingRaceAnalysisWithRadioData(raceData.getUpcomingRaceAnalysis(), radioDataResponse, RoundEnum.SPRINT);
                 }
             }
 
@@ -597,6 +626,8 @@ public class LiveTimingServiceImpl implements LiveTimingService {
         AtomicReference<Boolean> ergastDataAvailable = new AtomicReference<>(false);
         AtomicReference<List<Driver>> drivers = new AtomicReference<>();
         AtomicReference<String> title = new AtomicReference<>();
+        AtomicReference<List<RadioData>> radioData = new AtomicReference<>();
+
         raceData.forEach(race -> {
             try {
                 LiveTimingData response = mapper.readValue(race.getLiveTimingRace(), LiveTimingData.class);
@@ -618,6 +649,7 @@ public class LiveTimingServiceImpl implements LiveTimingService {
                     enrichDriversWithFreeData(driversMap, response.getFree().data);
                     enrichDriversWithBestData(driversMap, response.getBest().data, driverCodes);
                     enrichDriversWithLapByLapData(driversMap, response.getLapPos().getGraph(), response.getXtra().data, driverCodes);
+
                     updateStandingsAndEnrichTreeMapData(driversMap, race.getRound());
 
                     Map<String, String> ergastCodes = mapErgastWithLiveTiming(driversMap);
@@ -628,6 +660,10 @@ public class LiveTimingServiceImpl implements LiveTimingService {
                     ergastDataAvailable.set(bool);
                     onlyFirstOne.set(false);
                     drivers.set(new ArrayList<>(driversMap.values()));
+
+                    String radioDataResponse = getLiveTimingResponseOfErgastRace(race, RoundEnum.RACE, 3);
+                    radioData.set(liveTimingRadioService.enrichRaceAnalysisWithRadioData(drivers.get(), radioDataResponse));
+
                 }
             } catch (Exception e) {
                 log.error("fetchNewRaceAnalysis error", e);
@@ -638,7 +674,9 @@ public class LiveTimingServiceImpl implements LiveTimingService {
         RaceAnalysis analysis = RaceAnalysis.builder()
                 .weatherChartData(weatherChartData)
                 .driverData(drivers.get())
+                .livetimingUrl(temporaryUrl)
                 .year(properties.getCurrentSeasonFuture())
+                .radioData(radioData.get())
                 .status(1)
                 .title(title.get()).build();
         RaceData latestRace = raceData.get(0);

@@ -58,4 +58,5 @@ public class Driver {
     private BigDecimal standingsAverageDifference;
     private List<Integer> pitstops = new ArrayList<>();
     private LapByLapData lapByLapData = new LapByLapData();
+    private List<RadioData> radioData = new ArrayList<>();
 }

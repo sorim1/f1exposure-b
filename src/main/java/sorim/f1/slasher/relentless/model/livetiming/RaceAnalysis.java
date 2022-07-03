@@ -18,4 +18,6 @@ public class RaceAnalysis {
     List<FrontendGraphWeatherData> weatherChartData;
     List<Driver> driverData;
     String art;
+    String livetimingUrl;
+    List<RadioData> radioData;
 }

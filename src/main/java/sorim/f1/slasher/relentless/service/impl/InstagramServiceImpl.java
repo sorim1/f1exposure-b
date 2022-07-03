@@ -136,9 +136,9 @@ public class InstagramServiceImpl implements InstagramService {
                     }
                 });
                 boolean exists = instagramRepository.existsByCode(timelineMedias.get(timelineMedias.size() - 1).getCode());
-                if (counter.get() < 2) {
+                if (counter.get() < 1) {
                     iterate.set(true);
-                } else if (counter.get() > 7) {
+                } else if (counter.get() > 5) {
                     iterate.set(false);
                 } else if (exists) {
                     iterate.set(false);
@@ -148,7 +148,9 @@ public class InstagramServiceImpl implements InstagramService {
                 counter.set(counter.get() + 1);
             });
         } catch (Exception e) {
-            log.error("insta error caught");
+            log.error("insta error");
+            log.error("caught2", e);
+            init();
             e.printStackTrace();
         }
         instagramRepository.saveAll(instagramPosts);

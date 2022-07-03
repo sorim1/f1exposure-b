@@ -32,6 +32,8 @@ public class ClientServiceImpl implements ClientService {
     public static List<String> overlayList;
     public static String iframeLink;
     public static Boolean fourchanDisabled;
+
+    private static Boolean allowNonRedditNews;
     private static NewsContent topNews = new NewsContent();
     private final MainProperties properties;
     private final CalendarRepository calendarRepository;
@@ -171,8 +173,10 @@ public class ClientServiceImpl implements ClientService {
     @Override
     public void fetchRedditPosts() {
         NewsContent latestNews = redditService.fetchRedditPosts();
-        if (latestNews != null) {
+        if (latestNews != null && !allowNonRedditNews) {
             topNews = latestNews;
+        } else {
+            topNews = newsRepository.findFirstByStatusLessThanEqualOrderByTimestampActivityDesc(3);
         }
     }
 
@@ -193,9 +197,9 @@ public class ClientServiceImpl implements ClientService {
 
     @Override
     public Boolean fetchImageFeed() throws Exception {
-        fetchInstagramPosts();
         fetchTwitterPosts();
         fetchRedditPosts();
+        fetchInstagramPosts();
         // fetch4chanPosts();
         return true;
     }
@@ -409,9 +413,28 @@ public class ClientServiceImpl implements ClientService {
         initOverlays();
         initIframeLink();
         initFourchanDisabled();
+        setAllowNonRedditNews();
         topNews = newsRepository.findFirstByStatusLessThanEqualOrderByTimestampActivityDesc(3);
         log.info("clientServiceInit: {} -{}", iframeLink, overlays);
     }
+
+    private void setAllowNonRedditNews() {
+        AppProperty ap = propertiesRepository.findDistinctFirstByName("ALLOW_NONREDDIT_TOP_NEWS");
+        if (ap == null) {
+            setAllowNonRedditNewsProperty(true);
+        } else {
+            allowNonRedditNews = Boolean.valueOf(ap.getValue());
+        }
+    }
+
+
+    @Override
+    public void setAllowNonRedditNewsProperty(Boolean bool) {
+        allowNonRedditNews = bool;
+        AppProperty ap = AppProperty.builder().name("ALLOW_NONREDDIT_TOP_NEWS").value(String.valueOf(bool)).build();
+        propertiesRepository.save(ap);
+    }
+
 
     private void initOverlays() {
         AppProperty ap = propertiesRepository.findDistinctFirstByName("OVERLAYS");

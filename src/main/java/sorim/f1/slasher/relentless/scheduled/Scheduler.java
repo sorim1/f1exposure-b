@@ -153,7 +153,7 @@ public class Scheduler {
                         @SneakyThrows
                         @Override
                         public void run() {
-                            imageFeedJob();
+                            imageFeedJobWithoutInstagram();
                             analyzeUpcomingRacePeriodically();
                         }
                     },
@@ -164,7 +164,7 @@ public class Scheduler {
                         @SneakyThrows
                         @Override
                         public void run() {
-                            imageFeedJob();
+                            imageFeedJobWithoutInstagram();
                             liveTimingService.analyzeUpcomingRace(false);
                         }
                     },
@@ -183,8 +183,8 @@ public class Scheduler {
                         @SneakyThrows
                         @Override
                         public void run() {
-                            imageFeedJob();
-                            getImagesPeriodically(12);
+                            imageFeedJobWithoutInstagram();
+                            getImagesPeriodically(9);
                         }
                     },
                     delayInMiliseconds
@@ -193,14 +193,14 @@ public class Scheduler {
     }
     private void getImagesPeriodically(Integer countdown) {
         log.info(CODE + " - getImagesPeriodically called");
-        int delayInMiliseconds = 600000;
+        int delayInMiliseconds = 900000;
         if(countdown>0) {
             new java.util.Timer().schedule(
                     new java.util.TimerTask() {
                         @SneakyThrows
                         @Override
                         public void run() {
-                            imageFeedJob();
+                            imageFeedJobWithoutInstagram();
                             getImagesPeriodically(countdown - 1);
                         }
                     },
@@ -214,7 +214,7 @@ public class Scheduler {
                             @SneakyThrows
                             @Override
                             public void run() {
-                                imageFeedJob();
+                                imageFeedJobWithoutInstagram();
                                 getImagesPeriodically(0);
                             }
                         },
@@ -222,6 +222,8 @@ public class Scheduler {
                 );
             } else {
                 getImagesPeriodicallyRoot();
+                liveTimingService.analyzeUpcomingRace(false);
+                liveTimingService.analyzeLatestRace(true);
             }
         }
     }
@@ -268,6 +270,12 @@ public class Scheduler {
         log.info("imageFeedJob called");
         clientService.fetchImageFeed();
     }
+    void imageFeedJobWithoutInstagram() throws Exception {
+        log.info("imageFeedJobWithoutInstgram called");
+        clientService.fetchTwitterPosts();
+        clientService.fetchRedditPosts();
+    }
+
     @Scheduled(cron = "0 0 1,6,8,10,12,14,16,18,20,22 * * *")
     void bihourlyJob() throws Exception {
         imageFeedJob();
