@@ -45902,16 +45902,16 @@ function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_Template(rf, ctx)
     const ctx_r15 = core/* ɵɵnextContext */.oxw(3);
     core/* ɵɵproperty */.Q6J("disabled", ctx_r15.upcomingRaceAnalysis.fp2 == null);
 } }
-function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_13_ng_template_1_div_0_tr_23_button_12_Template(rf, ctx) { if (rf & 1) {
+function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_13_ng_template_1_div_0_tr_21_button_12_Template(rf, ctx) { if (rf & 1) {
     const _r114 = core/* ɵɵgetCurrentView */.EpF();
     core/* ɵɵelementStart */.TgZ(0, "button", 65);
-    core/* ɵɵlistener */.NdJ("click", function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_13_ng_template_1_div_0_tr_23_button_12_Template_button_click_0_listener() { core/* ɵɵrestoreView */.CHM(_r114); const standing_r109 = core/* ɵɵnextContext */.oxw().$implicit; const ctx_r112 = core/* ɵɵnextContext */.oxw(6); return ctx_r112.openRadioDialog(standing_r109.radioData, ctx_r112.upcomingRaceAnalysis.sprintQualiLivetimingUrl); });
+    core/* ɵɵlistener */.NdJ("click", function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_13_ng_template_1_div_0_tr_21_button_12_Template_button_click_0_listener() { core/* ɵɵrestoreView */.CHM(_r114); const standing_r109 = core/* ɵɵnextContext */.oxw().$implicit; const ctx_r112 = core/* ɵɵnextContext */.oxw(6); return ctx_r112.openRadioDialog(standing_r109.radioData, ctx_r112.upcomingRaceAnalysis.sprintQualiLivetimingUrl); });
     core/* ɵɵelementStart */.TgZ(1, "mat-icon");
     core/* ɵɵtext */._uU(2, "volume_up");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } }
-function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_13_ng_template_1_div_0_tr_23_Template(rf, ctx) { if (rf & 1) {
+function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_13_ng_template_1_div_0_tr_21_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "tr");
     core/* ɵɵelementStart */.TgZ(1, "th", 41);
     core/* ɵɵtext */._uU(2);
@@ -45919,19 +45919,19 @@ function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_13_ng_template_1_div
     core/* ɵɵelementStart */.TgZ(3, "td");
     core/* ɵɵtext */._uU(4);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(5, "td", 76);
+    core/* ɵɵelementStart */.TgZ(5, "td", 77);
     core/* ɵɵtext */._uU(6);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(7, "td");
     core/* ɵɵtext */._uU(8);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(9, "td", 76);
+    core/* ɵɵelementStart */.TgZ(9, "td", 77);
     core/* ɵɵtext */._uU(10);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(11, "td", 63);
-    core/* ɵɵtemplate */.YNc(12, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_13_ng_template_1_div_0_tr_23_button_12_Template, 3, 0, "button", 64);
+    core/* ɵɵelementStart */.TgZ(11, "td", 78);
+    core/* ɵɵtemplate */.YNc(12, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_13_ng_template_1_div_0_tr_21_button_12_Template, 3, 0, "button", 64);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(13, "td", 77);
+    core/* ɵɵelementStart */.TgZ(13, "td", 79);
     core/* ɵɵtext */._uU(14);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -45948,9 +45948,7 @@ function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_13_ng_template_1_div
     core/* ɵɵtextInterpolate */.Oqu(standing_r109.finalGap);
     core/* ɵɵadvance */.xp6(2);
     core/* ɵɵtextInterpolate */.Oqu(standing_r109.fastestLap);
-    core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("ngClass", core/* ɵɵpureFunction1 */.VKq(10, upcoming_race_analysis_component_c1, standing_r109.position === 1));
-    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵadvance */.xp6(2);
     core/* ɵɵproperty */.Q6J("ngIf", standing_r109.radioData.length > 0);
     core/* ɵɵadvance */.xp6(1);
     core/* ɵɵstyleProp */.Udp("color", ctx_r108.getTyresClass(standing_r109.lapByLapData.tyres));
@@ -45964,47 +45962,44 @@ function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_13_ng_template_1_div
     core/* ɵɵlistener */.NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_13_ng_template_1_div_0_Template_table_matSortChange_1_listener($event) { core/* ɵɵrestoreView */.CHM(_r116); const ctx_r115 = core/* ɵɵnextContext */.oxw(5); return ctx_r115.sortMainResultData($event, 5); });
     core/* ɵɵelementStart */.TgZ(2, "thead");
     core/* ɵɵelementStart */.TgZ(3, "tr");
-    core/* ɵɵelementStart */.TgZ(4, "th", 52);
-    core/* ɵɵtext */._uU(5, "Fastest lap");
-    core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(6, "th", 53);
-    core/* ɵɵtext */._uU(7, "Fastest sectors");
+    core/* ɵɵelementStart */.TgZ(4, "th", 74);
+    core/* ɵɵtext */._uU(5, "Results");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(8, "tr");
-    core/* ɵɵelementStart */.TgZ(9, "th", 49);
-    core/* ɵɵtext */._uU(10, "#");
+    core/* ɵɵelementStart */.TgZ(6, "tr");
+    core/* ɵɵelementStart */.TgZ(7, "th", 49);
+    core/* ɵɵtext */._uU(8, "#");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(11, "th", 54);
-    core/* ɵɵtext */._uU(12, "Name");
+    core/* ɵɵelementStart */.TgZ(9, "th", 54);
+    core/* ɵɵtext */._uU(10, "Name");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(13, "th", 55);
-    core/* ɵɵtext */._uU(14, "Team");
+    core/* ɵɵelementStart */.TgZ(11, "th", 55);
+    core/* ɵɵtext */._uU(12, "Team");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(15, "th", 54);
-    core/* ɵɵtext */._uU(16, "Gap");
+    core/* ɵɵelementStart */.TgZ(13, "th", 54);
+    core/* ɵɵtext */._uU(14, "Gap");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(17, "th", 74);
-    core/* ɵɵtext */._uU(18, "Lap time");
+    core/* ɵɵelementStart */.TgZ(15, "th", 75);
+    core/* ɵɵtext */._uU(16, "Lap time");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelement */._UZ(19, "th", 56);
-    core/* ɵɵelementStart */.TgZ(20, "th", 75);
-    core/* ɵɵtext */._uU(21, "Tyre");
+    core/* ɵɵelement */._UZ(17, "th", 56);
+    core/* ɵɵelementStart */.TgZ(18, "th", 76);
+    core/* ɵɵtext */._uU(19, "Tyre");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(22, "tbody");
-    core/* ɵɵtemplate */.YNc(23, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_13_ng_template_1_div_0_tr_23_Template, 15, 12, "tr", 9);
+    core/* ɵɵelementStart */.TgZ(20, "tbody");
+    core/* ɵɵtemplate */.YNc(21, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_13_ng_template_1_div_0_tr_21_Template, 15, 9, "tr", 9);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
     const ctx_r107 = core/* ɵɵnextContext */.oxw(5);
-    core/* ɵɵadvance */.xp6(23);
+    core/* ɵɵadvance */.xp6(21);
     core/* ɵɵproperty */.Q6J("ngForOf", ctx_r107.upcomingRaceAnalysis.sprintQuali);
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_13_ng_template_1_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵtemplate */.YNc(0, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_13_ng_template_1_div_0_Template, 24, 1, "div", 0);
+    core/* ɵɵtemplate */.YNc(0, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_13_ng_template_1_div_0_Template, 22, 1, "div", 0);
     core/* ɵɵelementStart */.TgZ(1, "div", 4);
     core/* ɵɵelementStart */.TgZ(2, "div", 5);
     core/* ɵɵelementStart */.TgZ(3, "div", 43);
@@ -46154,8 +46149,8 @@ function UpcomingRaceAnalysisComponent_div_0_div_20_Template(rf, ctx) { if (rf &
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_21_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div");
-    core/* ɵɵelementStart */.TgZ(1, "div", 78);
-    core/* ɵɵelement */._UZ(2, "img", 79);
+    core/* ɵɵelementStart */.TgZ(1, "div", 80);
+    core/* ɵɵelement */._UZ(2, "img", 81);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } }
@@ -46576,7 +46571,7 @@ UpcomingRaceAnalysisComponent.ɵcmp = /*@__PURE__*/ core/* ɵɵdefineComponent *
     } if (rf & 2) {
         let _t;
         core/* ɵɵqueryRefresh */.iGM(_t = core/* ɵɵloadQuery */.CRH()) && (ctx.chart = _t.first);
-    } }, decls: 1, vars: 1, consts: [[4, "ngIf"], ["autosize", ""], ["autosize", "", "mode", "side", "position", "end", 1, "example-sidenav", 3, "opened", "openedChange"], ["drawer", ""], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area", 3, "ngModel", "focus", "focusout", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "active-color-button", 3, "click"], [4, "ngFor", "ngForOf"], [1, "fixed-button"], ["mat-button", "", "type", "fixed-plugin", 3, "click"], [1, "fa", "fa-commenting-o", "fa-2x"], [1, "basic-comment"], [1, "header-left", "hover-pointer", 3, "click"], [1, "header-right", "hover-pointer", 3, "click"], [1, "basic-comment-body"], [3, "selectedIndex", "selectedTabChange", "selectedIndexChange"], ["label", "Circuit"], ["matTabContent", ""], ["label", "Circuit winners", 3, "disabled"], ["label", "Practice 1", 3, "disabled"], ["label", "Practice 2", 3, "disabled", 4, "ngIf"], ["label", "Practice 3", 3, "disabled", 4, "ngIf"], ["label", "Qualifying", 3, "disabled"], ["label", "Sprint", 3, "disabled", 4, "ngIf"], ["label", "All laps", 3, "disabled"], [1, "black-footer", "text-center"], [1, "image"], ["target", "_blank", 3, "href"], [3, "src"], ["class", "div-padded-1rem row", 4, "ngIf"], ["class", "div-padded-1rem div-padded-left-2 row", 4, "ngIf"], [1, "div-padded-1rem", "row"], ["class", "col-lg-6 col-12", 4, "ngFor", "ngForOf"], [1, "col-lg-6", "col-12"], [1, "card", "hover-effects-row", 3, "click"], [1, "card-body-padded"], [1, "table", "table-striped"], ["colspan", "2", "scope", "col"], [2, "width", "35px"], ["scope", "row"], [1, "div-padded-1rem", "div-padded-left-2", "row"], [1, "card"], [3, "href"], [1, "div-padded-1rem", "div-padded-left-2", "div-padded-right-2", "row"], [1, "card", "col-lg-12", "col-12"], ["matSort", "", 1, "table", "table-striped", 3, "matSortChange"], ["colspan", "4", 1, "text-center"], ["mat-sort-header", "position", "scope", "col"], ["mat-sort-header", "name", "scope", "col"], ["mat-sort-header", "lapNumber", "scope", "col"], ["colspan", "6", 1, "text-center"], ["colspan", "3", 1, "text-center", "d-sm-none", "d-none", "d-lg-table-cell", "bg-grey"], ["scope", "col"], ["scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], ["scope", "col", 1, "w-20px"], ["mat-sort-header", "sector1", "scope", "col", 1, "text-center", "bg-grey", "d-sm-none", "d-none", "d-lg-table-cell"], ["mat-sort-header", "sector2", "scope", "col", 1, "text-center", "bg-grey", "d-sm-none", "d-none", "d-lg-table-cell"], ["mat-sort-header", "sector3", "scope", "col", 1, "text-center", "bg-grey", "d-sm-none", "d-none", "d-lg-table-cell"], ["scope", "row", 3, "ngClass"], [3, "ngClass"], [1, "d-sm-none", "d-none", "d-lg-table-cell", 3, "ngClass"], [1, "no-padding-td", 3, "ngClass"], ["color", "primary", "mat-mini-fab", "", 3, "click", 4, "ngIf"], ["color", "primary", "mat-mini-fab", "", 3, "click"], ["label", "Practice 2", 3, "disabled"], ["mat-sort-header", "sector1", "scope", "col", 1, "text-center", "bg-grey", "d-sm-none", "d-none", "d-lg-table-cell", "bg-grey"], ["mat-sort-header", "sector2", "scope", "col", 1, "text-center", "bg-grey", "d-sm-none", "d-none", "d-lg-table-cell", "bg-grey"], ["mat-sort-header", "sector3", "scope", "col", 1, "text-center", "bg-grey", "d-sm-none", "d-none", "d-lg-table-cell", "bg-grey"], ["label", "Practice 3", 3, "disabled"], ["colspan", "3", 1, "text-center", "bg-grey", "d-sm-none", "d-none", "d-lg-table-cell"], ["label", "Sprint", 3, "disabled"], [3, "chart", "dataLabels", "grid", "series", "stroke", "title", "xaxis", "yaxis"], ["mat-sort-header", "lapTime", "scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], ["scope", "col", 1, "text-center"], [1, "d-sm-none", "d-none", "d-lg-table-cell"], [1, "font-weight-bold", "text-center"], [1, "icon-big", "text-center", "icon-warning"], ["src", "assets/img/tifosi/kimi-raikkonen-smile.gif", 1, "div-height-70vh"]], template: function UpcomingRaceAnalysisComponent_Template(rf, ctx) { if (rf & 1) {
+    } }, decls: 1, vars: 1, consts: [[4, "ngIf"], ["autosize", ""], ["autosize", "", "mode", "side", "position", "end", 1, "example-sidenav", 3, "opened", "openedChange"], ["drawer", ""], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area", 3, "ngModel", "focus", "focusout", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "active-color-button", 3, "click"], [4, "ngFor", "ngForOf"], [1, "fixed-button"], ["mat-button", "", "type", "fixed-plugin", 3, "click"], [1, "fa", "fa-commenting-o", "fa-2x"], [1, "basic-comment"], [1, "header-left", "hover-pointer", 3, "click"], [1, "header-right", "hover-pointer", 3, "click"], [1, "basic-comment-body"], [3, "selectedIndex", "selectedTabChange", "selectedIndexChange"], ["label", "Circuit"], ["matTabContent", ""], ["label", "Circuit winners", 3, "disabled"], ["label", "Practice 1", 3, "disabled"], ["label", "Practice 2", 3, "disabled", 4, "ngIf"], ["label", "Practice 3", 3, "disabled", 4, "ngIf"], ["label", "Qualifying", 3, "disabled"], ["label", "Sprint", 3, "disabled", 4, "ngIf"], ["label", "All laps", 3, "disabled"], [1, "black-footer", "text-center"], [1, "image"], ["target", "_blank", 3, "href"], [3, "src"], ["class", "div-padded-1rem row", 4, "ngIf"], ["class", "div-padded-1rem div-padded-left-2 row", 4, "ngIf"], [1, "div-padded-1rem", "row"], ["class", "col-lg-6 col-12", 4, "ngFor", "ngForOf"], [1, "col-lg-6", "col-12"], [1, "card", "hover-effects-row", 3, "click"], [1, "card-body-padded"], [1, "table", "table-striped"], ["colspan", "2", "scope", "col"], [2, "width", "35px"], ["scope", "row"], [1, "div-padded-1rem", "div-padded-left-2", "row"], [1, "card"], [3, "href"], [1, "div-padded-1rem", "div-padded-left-2", "div-padded-right-2", "row"], [1, "card", "col-lg-12", "col-12"], ["matSort", "", 1, "table", "table-striped", 3, "matSortChange"], ["colspan", "4", 1, "text-center"], ["mat-sort-header", "position", "scope", "col"], ["mat-sort-header", "name", "scope", "col"], ["mat-sort-header", "lapNumber", "scope", "col"], ["colspan", "6", 1, "text-center"], ["colspan", "3", 1, "text-center", "d-sm-none", "d-none", "d-lg-table-cell", "bg-grey"], ["scope", "col"], ["scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], ["scope", "col", 1, "w-20px"], ["mat-sort-header", "sector1", "scope", "col", 1, "text-center", "bg-grey", "d-sm-none", "d-none", "d-lg-table-cell"], ["mat-sort-header", "sector2", "scope", "col", 1, "text-center", "bg-grey", "d-sm-none", "d-none", "d-lg-table-cell"], ["mat-sort-header", "sector3", "scope", "col", 1, "text-center", "bg-grey", "d-sm-none", "d-none", "d-lg-table-cell"], ["scope", "row", 3, "ngClass"], [3, "ngClass"], [1, "d-sm-none", "d-none", "d-lg-table-cell", 3, "ngClass"], [1, "no-padding-td", 3, "ngClass"], ["color", "primary", "mat-mini-fab", "", 3, "click", 4, "ngIf"], ["color", "primary", "mat-mini-fab", "", 3, "click"], ["label", "Practice 2", 3, "disabled"], ["mat-sort-header", "sector1", "scope", "col", 1, "text-center", "bg-grey", "d-sm-none", "d-none", "d-lg-table-cell", "bg-grey"], ["mat-sort-header", "sector2", "scope", "col", 1, "text-center", "bg-grey", "d-sm-none", "d-none", "d-lg-table-cell", "bg-grey"], ["mat-sort-header", "sector3", "scope", "col", 1, "text-center", "bg-grey", "d-sm-none", "d-none", "d-lg-table-cell", "bg-grey"], ["label", "Practice 3", 3, "disabled"], ["colspan", "3", 1, "text-center", "bg-grey", "d-sm-none", "d-none", "d-lg-table-cell"], ["label", "Sprint", 3, "disabled"], [3, "chart", "dataLabels", "grid", "series", "stroke", "title", "xaxis", "yaxis"], ["colspan", "9", 1, "text-center"], ["mat-sort-header", "lapTime", "scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], ["scope", "col", 1, "text-center"], [1, "d-sm-none", "d-none", "d-lg-table-cell"], [1, "no-padding-td"], [1, "font-weight-bold", "text-center"], [1, "icon-big", "text-center", "icon-warning"], ["src", "assets/img/tifosi/kimi-raikkonen-smile.gif", 1, "div-height-70vh"]], template: function UpcomingRaceAnalysisComponent_Template(rf, ctx) { if (rf & 1) {
         core/* ɵɵtemplate */.YNc(0, UpcomingRaceAnalysisComponent_div_0_Template, 22, 5, "div", 0);
     } if (rf & 2) {
         core/* ɵɵproperty */.Q6J("ngIf", ctx.upcomingRaceAnalysis !== undefined);

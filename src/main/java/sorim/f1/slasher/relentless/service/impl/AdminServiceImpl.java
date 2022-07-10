@@ -335,8 +335,12 @@ public class AdminServiceImpl implements AdminService {
         if (response.getMrData().getTotal() > 0) {
             response.getMrData().getRaceTable().getRaces().get(0).getSprintResults()
                     .forEach(ergastStanding -> {
-                        driverStandingsByRound.get(ergastStanding.getDriver().getDriverId()).incrementPointsThisRound(ergastStanding.getPoints());
-                        constructorStandingByRound.get(ergastStanding.getConstructor().getConstructorId()).incrementPointsThisRound(ergastStanding.getPoints());
+                        if (driverStandingsByRound != null) {
+                            driverStandingsByRound.get(ergastStanding.getDriver().getDriverId()).incrementPointsThisRound(ergastStanding.getPoints());
+                        }
+                        if (constructorStandingByRound != null) {
+                            constructorStandingByRound.get(ergastStanding.getConstructor().getConstructorId()).incrementPointsThisRound(ergastStanding.getPoints());
+                        }
                     });
         }
     }

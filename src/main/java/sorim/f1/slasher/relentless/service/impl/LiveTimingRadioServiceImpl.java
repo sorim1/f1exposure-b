@@ -26,9 +26,11 @@ public class LiveTimingRadioServiceImpl implements LiveTimingRadioService {
 
     @Override
     public void enrichUpcomingRaceAnalysisWithRadioData(UpcomingRaceAnalysis upcomingRaceAnalysis, String jsonStream, RoundEnum session) {
-        List<Driver> drivers = getDriverList(upcomingRaceAnalysis, session);
-        List<RadioData> radioData = getRadioData(drivers, jsonStream);
-        updateDriverList(upcomingRaceAnalysis, drivers, session, radioData);
+        if(jsonStream!=null) {
+            List<Driver> drivers = getDriverList(upcomingRaceAnalysis, session);
+            List<RadioData> radioData = getRadioData(drivers, jsonStream);
+            updateDriverList(upcomingRaceAnalysis, drivers, session, radioData);
+        }
     }
 
     @Override
@@ -75,6 +77,7 @@ public class LiveTimingRadioServiceImpl implements LiveTimingRadioService {
                 upcomingRaceAnalysis.setFp3Radio(radioData);
                 break;
             case SPRINT_QUALIFYING:
+            case SPRINT:
                 upcomingRaceAnalysis.setSprintQuali(drivers);
                 upcomingRaceAnalysis.setSprintQualiRadio(radioData);
                 break;
@@ -94,6 +97,7 @@ public class LiveTimingRadioServiceImpl implements LiveTimingRadioService {
             case PRACTICE_3:
                 return upcomingRaceAnalysis.getFp3();
             case SPRINT_QUALIFYING:
+            case SPRINT:
                 return upcomingRaceAnalysis.getSprintQuali();
             default:
                 log.error("CASE NE POSTOJI: " + session);
