@@ -33,6 +33,7 @@ public class ClientServiceImpl implements ClientService {
     public static String iframeLink;
     public static Boolean fourchanDisabled;
 
+    public static String FOURCHAN_DISABLED = "FOURCHAN_DISABLED";
     private static Boolean allowNonRedditNews;
     private static NewsContent topNews = new NewsContent();
     private final MainProperties properties;
@@ -176,7 +177,7 @@ public class ClientServiceImpl implements ClientService {
         if (latestNews != null && !allowNonRedditNews) {
             topNews = latestNews;
         } else {
-            topNews = newsRepository.findFirstByStatusLessThanEqualOrderByTimestampActivityDesc(3);
+            topNews = newsRepository.findFirstByStatusLessThanEqualOrderByTimestampActivityDesc(4);
         }
     }
 
@@ -254,34 +255,36 @@ public class ClientServiceImpl implements ClientService {
     @Override
     public List<NewsContent> getNews(Integer page) {
         Pageable paging = PageRequest.of(page, 15);
-        return newsRepository.findAllByStatusLessThanEqualOrderByTimestampActivityDesc(3, paging);
+        return newsRepository.findAllByStatusLessThanEqualOrderByTimestampActivityDesc(4, paging);
     }
 
     @Override
     public NewsContent getNewsPost(String code) {
-        NewsContent response = newsRepository.findByCodeAndStatusLessThanEqual(code, 3);
+        NewsContent response = newsRepository.findByCodeAndStatusLessThanEqual(code, 4);
         if (response != null) {
-            response.setComments(newsCommentRepository.findAllByContentCodeAndStatusOrderByTimestampCreatedDesc(code, 1));
+            response.setComments(newsCommentRepository.findAllByContentCodeAndStatusLessThanOrderByTimestampCreatedDesc(code, 3));
         }
         return response;
     }
 
     @Override
-    public List<NewsComment> postNewsComment(NewsComment comment, String ipAddress) {
+    public NewsComment postNewsComment(NewsComment comment, String ipAddress) {
         comment.setTimestampCreated(new Date());
         comment.setTextContent(comment.getTextContent().replaceAll("[\n\n\n]+", "\n"));
         String username = MainUtility.handleUsername(comment.getUsername());
         comment.setUsername(username);
-        comment.setStatus(1);
+        if(comment.getStatus()==null){
+            comment.setStatus(1);
+        }
         comment.setIp(ipAddress);
         newsCommentRepository.save(comment);
         newsRepository.updateActivityAndCommentCount(comment.getContentCode(), new Date());
-        return newsCommentRepository.findAllByContentCodeAndStatusOrderByTimestampCreatedDesc(comment.getContentCode(), 1);
+        return comment;
     }
 
     @Override
     public List<NewsComment> getNewsComments(String code) {
-        return newsCommentRepository.findAllByContentCodeAndStatusOrderByTimestampCreatedDesc(code, 1);
+        return newsCommentRepository.findAllByContentCodeAndStatusLessThanOrderByTimestampCreatedDesc(code, 3);
     }
 
     @Override
@@ -289,12 +292,15 @@ public class ClientServiceImpl implements ClientService {
         String message;
         Integer state = -1;
         Integer oppositeStatus;
+        Integer oppositeStatusNewComment;
         String executedAction = "";
         if (moderation.getAction() == 1) {
             oppositeStatus = 2;
+            oppositeStatusNewComment = 3;
             executedAction = " restored";
         } else {
             oppositeStatus = 1;
+            oppositeStatusNewComment = 1;
             executedAction = " deleted";
         }
         message = "Comment no." + moderation.getCommentId() + executedAction + " by moderator. Reason: " + moderation.getReason();
@@ -313,9 +319,9 @@ public class ClientServiceImpl implements ClientService {
             }
         }
         if (moderation.getPanel() == 2) {
-            NewsComment comment = newsCommentRepository.findNewsCommentByIdAndStatus(moderation.getCommentId(), oppositeStatus);
+            NewsComment comment = newsCommentRepository.findNewsCommentById(moderation.getCommentId());
             if (comment != null) {
-                state = newsCommentRepository.updateStatus(moderation.getCommentId(), moderation.getAction());
+                state = newsCommentRepository.updateStatus(moderation.getCommentId(), moderation.getAction()+1);
                 NewsComment notification = NewsComment.builder()
                         .textContent(message)
                         .status(1)
@@ -341,6 +347,12 @@ public class ClientServiceImpl implements ClientService {
         if (keepOldOverlays) {
             if (overlays.contains("apustaja")) {
                 oldOverlays += ",apustaja";
+            }
+            if (overlays.contains("bottom-right")) {
+                oldOverlays += ",bottom-right";
+            }
+            if (overlays.contains("bottom-left")) {
+                oldOverlays += ",bottom-left";
             }
         }
         String fullOverlays = newOverlays + oldOverlays;
@@ -403,7 +415,7 @@ public class ClientServiceImpl implements ClientService {
     @Override
     public Boolean setFourchanDisabled(String value) {
         fourchanDisabled = Boolean.valueOf(value);
-        AppProperty ap = AppProperty.builder().name("FOURCHAN_DISABLED").value(value).build();
+        AppProperty ap = AppProperty.builder().name(FOURCHAN_DISABLED).value(value).build();
         propertiesRepository.save(ap);
         return fourchanDisabled;
     }
@@ -414,7 +426,7 @@ public class ClientServiceImpl implements ClientService {
         initIframeLink();
         initFourchanDisabled();
         setAllowNonRedditNews();
-        topNews = newsRepository.findFirstByStatusLessThanEqualOrderByTimestampActivityDesc(3);
+        topNews = newsRepository.findFirstByStatusLessThanEqualOrderByTimestampActivityDesc(4);
         log.info("clientServiceInit: {} -{}", iframeLink, overlays);
     }
 
@@ -456,9 +468,9 @@ public class ClientServiceImpl implements ClientService {
     }
 
     private void initFourchanDisabled() {
-        AppProperty ap = propertiesRepository.findDistinctFirstByName("FOURCHAN_DISABLED");
+        AppProperty ap = propertiesRepository.findDistinctFirstByName(FOURCHAN_DISABLED);
         if (ap == null) {
-            ap = AppProperty.builder().name("FOURCHAN_DISABLED").value("false").build();
+            ap = AppProperty.builder().name(FOURCHAN_DISABLED).value("false").build();
             propertiesRepository.save(ap);
         }
         fourchanDisabled = Boolean.valueOf(ap.getValue());

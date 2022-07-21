@@ -451,7 +451,7 @@ public class AdminServiceImpl implements AdminService {
             case 1:
                 return f1CommentRepository.updateStatus(id, 2);
             case 2:
-                return newsCommentRepository.updateStatus(id, 2);
+                return newsCommentRepository.updateStatus(id, 3);
         }
         return -1;
     }

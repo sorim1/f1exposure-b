@@ -56,7 +56,7 @@ public interface ClientService {
 
     NewsContent getNewsPost(String code);
 
-    List<NewsComment> postNewsComment(NewsComment comment, String ipAddress);
+    NewsComment postNewsComment(NewsComment comment, String ipAddress);
 
     List<NewsComment> getNewsComments(String code);
 

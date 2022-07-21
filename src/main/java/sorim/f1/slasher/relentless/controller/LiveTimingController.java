@@ -8,6 +8,7 @@ import sorim.f1.slasher.relentless.entities.ergast.RaceData;
 import sorim.f1.slasher.relentless.model.livetiming.RaceAnalysis;
 import sorim.f1.slasher.relentless.model.livetiming.SessionInfo;
 import sorim.f1.slasher.relentless.model.livetiming.UpcomingRaceAnalysis;
+import sorim.f1.slasher.relentless.service.LiveTimingRadioService;
 import sorim.f1.slasher.relentless.service.LiveTimingService;
 import sorim.f1.slasher.relentless.service.SecurityService;
 
@@ -20,6 +21,7 @@ import java.util.List;
 public class LiveTimingController {
 
     private final LiveTimingService service;
+    private final LiveTimingRadioService liveTimingRadioService;
     private final SecurityService securityService;
 
     @GetMapping("/getAllRaceData/{year}")
@@ -145,5 +147,10 @@ public class LiveTimingController {
     public SessionInfo getSessionInfo(@RequestHeader String client) throws Exception {
         securityService.validateAdminHeader(client);
         return service.getSessionInfo();
+    }
+
+    @GetMapping("/generatePostRaceRadio")
+    public String generatePostRaceRadio() throws Exception {
+        return liveTimingRadioService.generatePostRaceRadio();
     }
 }

@@ -40,6 +40,8 @@ public class NewsContent {
 
     @Transient
     private List<NewsComment> comments;
+    @Transient
+    private Integer numCommentsR;
 
     public NewsContent(LinkedHashMap<String, Object> data, long time) {
         this.code = MainUtility.generateCodeFromTitleAndId((String) data.get("title"), (String) data.get("id"));
@@ -52,6 +54,7 @@ public class NewsContent {
         this.setTimestampCreated(new Date(time));
         this.setTimestampActivity(new Date(time-24*60*60*1000));
         this.setCommentCount(0);
+        this.numCommentsR = (Integer) data.get("num_comments");
     }
 
 

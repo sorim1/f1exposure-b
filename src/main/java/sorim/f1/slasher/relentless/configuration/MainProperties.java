@@ -16,7 +16,7 @@ import java.util.Calendar;
 public class MainProperties {
 
     public String formula1RacingUrl;
-    private String tempo;
+    private String url;
     private Integer currentSeasonPast =2024;
     private Integer currentSeasonFuture =2025;
     private Boolean twitterDebug;
@@ -34,6 +34,7 @@ public class MainProperties {
     private Integer howManySeasonsBack;
     private String sportSurgeStreams;
     private String replaysUrl;
+    private String saveRadioLocation;
     private final PropertiesRepository propertiesRepository;
 
 
@@ -52,8 +53,6 @@ public class MainProperties {
         this.currentSeasonFuture = Calendar.getInstance().get(Calendar.YEAR);
             ap = AppProperty.builder().name("CURRENT_SEASON_FUTURE").value(String.valueOf(this.currentSeasonFuture)).build();
             propertiesRepository.save(ap);
-
-        System.out.println("currentSeasonPast: " + this.currentSeasonPast);
     }
 
     public String updateCurrentSeasonPast(Integer newValue) {

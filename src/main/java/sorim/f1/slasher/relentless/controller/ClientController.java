@@ -110,7 +110,7 @@ public class ClientController {
     }
 
     @GetMapping(
-            value = "/getImage/{code}",
+            value = "/image/{code}",
             produces = MediaType.IMAGE_JPEG_VALUE
     )
     byte[] getImage(@PathVariable("code") String code) {
@@ -195,7 +195,7 @@ public class ClientController {
     }
 
     @PostMapping("/postNewsComment")
-    List<NewsComment> postNewsComment(@RequestHeader String client, @RequestBody NewsComment comment, HttpServletRequest request) throws Exception {
+    NewsComment postNewsComment(@RequestHeader String client, @RequestBody NewsComment comment, HttpServletRequest request) throws Exception {
         securityService.validateHeader(client);
         String ipAddress = securityService.validateIp(request);
         return service.postNewsComment(comment, ipAddress);

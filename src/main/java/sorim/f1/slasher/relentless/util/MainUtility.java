@@ -182,7 +182,7 @@ public class MainUtility {
        String uuid =  UUID.randomUUID().toString();
         String code = title.replaceAll(
                 "[^a-zA-Z0-9 ]", "").replaceAll(" ", "-");
-        code = code.substring(0, Math.min(40, code.length()))+"-"+uuid.substring(0,5);
+        code = code.substring(0, Math.min(30, code.length()))+"-"+uuid.substring(0,5);
         return code;
     }
 
@@ -190,7 +190,7 @@ public class MainUtility {
         String hashId =  String.valueOf(id.hashCode()).substring(0,5);
         String code = title.replaceAll(
                 "[^a-zA-Z0-9 ]", "").replaceAll(" ", "-");
-        code = code.substring(0, Math.min(40, code.length()))+hashId;
+        code = code.substring(0, Math.min(30, code.length()))+hashId;
         return code;
     }
 

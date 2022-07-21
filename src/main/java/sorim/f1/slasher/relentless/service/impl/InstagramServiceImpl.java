@@ -183,7 +183,8 @@ public class InstagramServiceImpl implements InstagramService {
         imageRepository.saveAll(images);
     }
 
-    private byte[] getImageFromUrl(String urlString) {
+    @Override
+    public byte[] getImageFromUrl(String urlString) {
         try {
             URL url = new URL(urlString);
             ByteArrayOutputStream output = new ByteArrayOutputStream();

@@ -48,4 +48,5 @@ public interface LiveTimingService {
     boolean checkIfEventIsGenerating();
 
     SessionInfo getSessionInfo();
+
 }

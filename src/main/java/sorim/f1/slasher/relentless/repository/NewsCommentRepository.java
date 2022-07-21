@@ -17,9 +17,9 @@ import java.util.List;
 public interface NewsCommentRepository extends CrudRepository<NewsComment, String> {
 
     List<NewsComment> findAll();
-    List<NewsComment> findAllByContentCodeAndStatusOrderByTimestampCreatedDesc(String code, Integer status);
+    List<NewsComment> findAllByContentCodeAndStatusLessThanOrderByTimestampCreatedDesc(String code, Integer status);
 
-    NewsComment findNewsCommentByIdAndStatus(Integer id, Integer status);
+    NewsComment findNewsCommentById(Integer id);
 
     @Modifying
     @Query("update NewsComment u set u.status = :newStatus where u.id = :id")

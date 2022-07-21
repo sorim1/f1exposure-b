@@ -13,5 +13,7 @@ public interface InstagramService {
 
     byte[] getImage(String code);
 
+    byte[] getImageFromUrl(String urlString);
+
     Boolean cleanup() throws IGLoginException;
 }

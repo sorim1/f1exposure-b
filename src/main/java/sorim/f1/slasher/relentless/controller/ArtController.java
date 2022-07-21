@@ -36,6 +36,13 @@ public class ArtController {
         byte[] bytes = image.getBytes();
         return artService.saveImage(code, bytes);
     }
+    @PostMapping("/saveCommentImage/{code}")
+    Boolean saveCommentImage(@RequestHeader String client, @RequestParam("image") MultipartFile image,  @PathVariable("code") String code) throws Exception {
+        securityService.validateHeader(client);
+        byte[] bytes = image.getBytes();
+        String newsCode = "comment_" + code;
+        return artService.saveImage(newsCode, bytes);
+    }
     @GetMapping("/deleteImage/{code}")
     Boolean deleteImage(@RequestHeader String client, @PathVariable("code") String code) throws Exception {
         securityService.validateAdminHeader(client);

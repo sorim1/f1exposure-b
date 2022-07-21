@@ -392,7 +392,6 @@ public class LiveTimingServiceImpl implements LiveTimingService {
     @Override
     public boolean checkIfEventIsGenerating() {
         SessionInfo sessionInfo = getSessionInfo();
-        log.info("checkIfEventIsGenerating: " + sessionInfo.getArchiveStatus().getStatus());
         return sessionInfo.getArchiveStatus().getStatus().equals("Generating");
     }
 
