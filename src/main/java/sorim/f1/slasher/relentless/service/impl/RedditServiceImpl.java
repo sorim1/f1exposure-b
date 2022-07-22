@@ -44,7 +44,7 @@ public class RedditServiceImpl implements RedditService {
     private static final String REDDIT_DAILY_NEWS = "https://reddit.com/r/formula1/search.json?q=flair:news&sort=comments&restrict_sr=on&t=day";
     private static final String I_REDDIT = "i.redd.it";
     private static final String TWITTER_URL = "twitter.com";
-    private static final String IMAGE_BASE_PATH = "/f1exposure/getImage/";
+    private static final String IMAGE_BASE_PATH = "/f1exposure/image/";
     private static final String NEWS_PREFIX = "NEWS_";
     private static final String REDDIT_FAVICON = "https://reddit.com/favicon.ico";
     private static final String TWITTER_FAVICON = "https://abs.twimg.com/favicons/twitter.ico";
