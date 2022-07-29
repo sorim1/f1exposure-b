@@ -23,13 +23,21 @@ public class FourChanPostEntity {
     @Id
     private Integer id;
     private String text;
-    private Integer thread;
+    private String tags;
+
+    private Integer status;
     private String url;
 
     public FourChanPostEntity(FourchanPost post, Integer status) {
         this.id=post.getNo();
         this.text ="( " + post.getW() + " x " + post.getH() + " )";
-        this.thread =status;
+        this.status =status;
+        this.url = "https://i.4cdn.org/sp/" + post.getTim() + post.getExt();
+    }
+    public FourChanPostEntity(FourchanPost post) {
+        this.id=post.getNo();
+        this.text ="( " + post.getW() + " x " + post.getH() + " )";
+        this.status =1;
         this.url = "https://i.4cdn.org/sp/" + post.getTim() + post.getExt();
     }
 }

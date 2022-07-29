@@ -128,16 +128,9 @@ public class FourchanServiceImpl implements FourchanService {
         uriVariables.put("threadNumber", String.valueOf(threadId));
         FourchanThread response = restTemplate
                 .getForObject(THREAD_URL, FourchanThread.class, uriVariables);
-
         response.getPosts().forEach(post -> {
             if (checkFourchanImageSize(post)) {
-                int status;
-                if(checkFourchanImageUniqueness(post)){
-                    status = 1;
-                } else {
-                    status = 2;
-                }
-                chanPosts.add(new FourChanPostEntity(post, status));
+                chanPosts.add(new FourChanPostEntity(post));
             }
         });
 
@@ -155,6 +148,9 @@ public class FourchanServiceImpl implements FourchanService {
 
     private boolean checkFourchanImageSize(FourchanPost post) {
         if (post.getW() == null || post.getH() == null) {
+            return false;
+        }
+        if (".webm".equals(post.getExt())) {
             return false;
         }
         return post.getW() + post.getH() > 1500;
@@ -195,7 +191,7 @@ public class FourchanServiceImpl implements FourchanService {
     @Override
     public List<FourChanPostEntity> getChanPostsByStatus(Integer status) {
         Pageable paging = PageRequest.of(0, 20);
-        return fourChanPostRepository.findAllByThreadOrderByIdAsc(status, paging);
+        return fourChanPostRepository.findAllByStatusOrderByIdAsc(status, paging);
     }
 
     @Override
@@ -214,6 +210,12 @@ public class FourchanServiceImpl implements FourchanService {
         NO_DUPLICATES_FOUND = newValue;
         response = response + NO_DUPLICATES_FOUND;
         return response;
+    }
+
+    @Override
+    public List<FourChanPostEntity> saveChanPosts(List<FourChanPostEntity> body) {
+        fourChanPostRepository.saveAll(body);
+        return getChanPostsByStatus(1);
     }
 
     private void initWebClient() {

@@ -16,6 +16,7 @@ import sorim.f1.slasher.relentless.model.FourchanPost;
 import sorim.f1.slasher.relentless.model.UploadResponseMessage;
 import sorim.f1.slasher.relentless.service.FileService;
 import sorim.f1.slasher.relentless.service.FourchanService;
+import sorim.f1.slasher.relentless.service.InstagramService;
 import sorim.f1.slasher.relentless.service.SecurityService;
 
 import java.io.IOException;
@@ -32,16 +33,17 @@ public class SocialMediaController {
 
     private final SecurityService securityService;
     private final FourchanService fourchanService;
+    private final InstagramService instagramService;
 
     @GetMapping("/getChanPostsByStatus/{status}")
     List<FourChanPostEntity> getChanPostsByStatus(@RequestHeader String client, @RequestHeader String username, @PathVariable("status") Integer status) throws Exception {
-        securityService.validateHeader(client);
+        securityService.validateClientAndUsername(client, username);
         return fourchanService.getChanPostsByStatus(status);
     }
 
     @GetMapping("/getChanPostsSums")
     List<Integer> getChanPostsSums(@RequestHeader String client, @RequestHeader String username) throws Exception {
-        securityService.validateHeader(client);
+        securityService.validateClientAndUsername(client, username);
         return fourchanService.getChanPostsSums();
     }
 
@@ -49,5 +51,16 @@ public class SocialMediaController {
     String setNoDuplicatesFound(@RequestHeader String client,@RequestBody String newValue) throws Exception {
         securityService.validateAdminHeader(client);
         return fourchanService.setNoDuplicatesFound(newValue);
+    }
+
+    @PostMapping("/saveChanPosts")
+    List<FourChanPostEntity> saveChanPosts(@RequestHeader String client, @RequestHeader String username, @RequestBody List<FourChanPostEntity> body) throws Exception {
+        securityService.validateClientAndUsername(client, username);
+        return fourchanService.saveChanPosts(body);
+    }
+    @GetMapping("/getInstagramFollows")
+    List<String> getInstagramFollows(@RequestHeader String client) throws Exception {
+        securityService.validateHeader(client);
+        return instagramService.getInstagramFollows();
     }
 }

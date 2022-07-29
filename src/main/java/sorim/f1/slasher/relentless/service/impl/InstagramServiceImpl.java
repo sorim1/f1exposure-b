@@ -23,6 +23,7 @@ import sorim.f1.slasher.relentless.repository.ImageRepository;
 import sorim.f1.slasher.relentless.repository.InstagramRepository;
 import sorim.f1.slasher.relentless.service.InstagramService;
 
+import javax.annotation.PostConstruct;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -37,7 +38,7 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class InstagramServiceImpl implements InstagramService {
 
-    private static final List<String> follows = new ArrayList<>();
+    private static final List<String> instagram_following = new ArrayList<>();
     private static IGClient client;
     private final MainProperties properties;
     private final InstagramRepository instagramRepository;
@@ -57,7 +58,7 @@ public class InstagramServiceImpl implements InstagramService {
             response.stream().takeWhile(n -> iterate.get()).forEach(row -> {
                 List<TimelineMedia> timelineMedias = row.getFeed_items();
                 timelineMedias.forEach(post -> {
-                    if (follows.contains(post.getUser().getUsername())) {
+                    if (instagram_following.contains(post.getUser().getUsername())) {
                         String url = "";
                         String location = " ";
                         if (post.getLocation() != null) {
@@ -215,13 +216,17 @@ public class InstagramServiceImpl implements InstagramService {
     }
 
     @Override
-    public void getMyFollows() {
+    public List<String> getInstagramFollows() {
+        return instagram_following;
+    }
+
+    private void fetchInstagramFollows() {
         List<Profile> result = client.actions().users().findByUsername(properties.getInstagramUsername())
                 .thenApply(userAction -> userAction.followingFeed().stream()
                         .flatMap(feedUsersResponse -> feedUsersResponse.getUsers().stream()).collect(Collectors.toList())
                 ).join();
         result.forEach(profile -> {
-            follows.add(profile.getUsername());
+            instagram_following.add(profile.getUsername());
         });
     }
 
@@ -239,12 +244,13 @@ public class InstagramServiceImpl implements InstagramService {
         return true;
     }
 
+    @PostConstruct
     void init() throws IGLoginException {
         client = IGClient.builder()
                 .username(properties.getInstagramUsername())
                 .password(properties.getInstagramPassword())
                 .login();
-        getMyFollows();
+        fetchInstagramFollows();
     }
 
 }

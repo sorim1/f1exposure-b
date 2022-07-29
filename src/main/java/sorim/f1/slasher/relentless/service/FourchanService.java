@@ -28,4 +28,6 @@ public interface FourchanService {
     List<Integer> getChanPostsSums();
 
     String setNoDuplicatesFound(String newValue);
+
+    List<FourChanPostEntity> saveChanPosts(List<FourChanPostEntity> body);
 }

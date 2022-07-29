@@ -3,13 +3,15 @@ package sorim.f1.slasher.relentless.service;
 import com.github.instagram4j.instagram4j.exceptions.IGLoginException;
 import sorim.f1.slasher.relentless.model.TripleInstagramFeed;
 
+import java.util.List;
+
 public interface InstagramService {
 
     Boolean fetchInstagramFeed() throws IGLoginException;
 
     TripleInstagramFeed getInstagramFeedPage(Integer mode, Integer page);
 
-    void getMyFollows() throws IGLoginException;
+    List<String> getInstagramFollows();
 
     byte[] getImage(String code);
 
