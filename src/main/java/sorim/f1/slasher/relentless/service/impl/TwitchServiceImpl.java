@@ -87,18 +87,4 @@ public class TwitchServiceImpl implements TwitchService {
         return streamer;
     }
 
-    public Integer checkAngelThumpStream() throws IOException {
-        String url = "https://player.angelthump.com/?channel=spf1general";
-        String url2 = "https://player.angelthump.com/?channel=spfal";
-        WebClient client = new WebClient(BrowserVersion.CHROME);
-        Page page = client.getPage(url);
-        WebResponse response = page.getWebResponse();
-        log.info("url1");
-        log.info(response.getContentAsString());
-        page = client.getPage(url2);
-        response = page.getWebResponse();
-        log.info("url2");
-        log.info(response.getContentAsString());
-        return 1;
-    }
 }

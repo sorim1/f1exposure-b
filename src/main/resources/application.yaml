@@ -78,7 +78,7 @@ spring:
   liquibase:
     datasource:
       f1-exposure:
-        enabled: false
+        enabled: true
         change-log: classpath:/db/liquibase-changelog.xml
         drop-first: false
         user: postgres
@@ -86,6 +86,8 @@ spring:
 security:
   require-ssl: true
 logging:
+  level:
+    c.g.h.javascript.host.css.CSSStyleSheet: ERROR
   logback:
     rollingpolicy:
       max-file-size: 20MB

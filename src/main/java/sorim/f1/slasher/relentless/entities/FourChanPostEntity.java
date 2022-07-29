@@ -26,10 +26,10 @@ public class FourChanPostEntity {
     private Integer thread;
     private String url;
 
-    public FourChanPostEntity(FourchanPost post, Integer threadId) {
+    public FourChanPostEntity(FourchanPost post, Integer status) {
         this.id=post.getNo();
         this.text ="( " + post.getW() + " x " + post.getH() + " )";
-        this.thread =threadId;
+        this.thread =status;
         this.url = "https://i.4cdn.org/sp/" + post.getTim() + post.getExt();
     }
 }

@@ -82,6 +82,7 @@ public interface AdminService {
     Boolean deleteFourChanPosts();
 
     Boolean deleteFourChanPost(Integer id);
+    Boolean reverseGoogleImage(String url);
 
     Boolean removeVideo(Integer id);
 

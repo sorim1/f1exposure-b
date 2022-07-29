@@ -109,6 +109,11 @@ public class AdminController {
         securityService.validateAdminHeader(client);
         return service.deleteFourChanPost(id);
     }
+    @PostMapping("/reverseGoogleImage")
+    Boolean reverseGoogleImage(@RequestHeader String client, @RequestBody String url) throws Exception {
+        securityService.validateAdminHeader(client);
+        return service.reverseGoogleImage(url);
+    }
 
     @GetMapping("/fetchReplayLinks")
     void fetchReplayLinks(@RequestHeader String client) throws Exception {

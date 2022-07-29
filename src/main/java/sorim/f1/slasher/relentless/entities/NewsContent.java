@@ -52,7 +52,7 @@ public class NewsContent {
         this.timestampCreated = new Date(createdDouble.longValue()) ;
         this.setStatus(3);
         this.setTimestampCreated(new Date(time));
-        this.setTimestampActivity(new Date(time-24*60*60*1000));
+        this.setTimestampActivity(new Date(time-18*60*60*1000));
         this.setCommentCount(0);
         this.numCommentsR = (Integer) data.get("num_comments");
     }

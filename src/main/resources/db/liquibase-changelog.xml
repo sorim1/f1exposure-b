@@ -40,4 +40,8 @@
         <validCheckSum>ANY</validCheckSum>
         <sqlFile path="changelog/010_calendar_sprint.sql" endDelimiter="/" relativeToChangelogFile="true"/>
     </changeSet>
+    <changeSet author="mdragicevic" id="011_4chan_images">
+        <validCheckSum>ANY</validCheckSum>
+        <sqlFile path="changelog/011_4chan_images.sql" endDelimiter="/" relativeToChangelogFile="true"/>
+    </changeSet>
 </databaseChangeLog>

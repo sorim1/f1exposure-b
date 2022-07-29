@@ -1,5 +1,7 @@
 package sorim.f1.slasher.relentless.service.impl;
 
+import com.gargoylesoftware.htmlunit.BrowserVersion;
+import com.gargoylesoftware.htmlunit.WebClient;
 import com.github.instagram4j.instagram4j.exceptions.IGLoginException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -645,7 +647,10 @@ public class AdminServiceImpl implements AdminService {
     public Boolean deleteFourChanPost(Integer id) {
         return fourchanService.deleteFourChanPost(id);
     }
-
+    @Override
+    public Boolean reverseGoogleImage(String url) {
+        return fourchanService.reverseGoogleImage(url, true);
+    }
     @Override
     public Boolean removeVideo(Integer id) {
         return videoService.removeVideo(id);

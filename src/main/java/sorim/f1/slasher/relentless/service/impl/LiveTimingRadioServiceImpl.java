@@ -73,7 +73,7 @@ public class LiveTimingRadioServiceImpl implements LiveTimingRadioService {
         });
         saveRadioMessagesToFiles(radioMap);
         log.info(String.valueOf(radioMap.size()));
-        return false;
+        return true;
     }
 
     private void saveRadioMessagesToFiles(Map<Integer, byte[]> radioMap) {

@@ -43,6 +43,7 @@ public class RedditServiceImpl implements RedditService {
     private static final String FAVICON = "/favicon.ico";
     private static final String REDDIT_DAILY_NEWS = "https://reddit.com/r/formula1/search.json?q=flair:news&sort=comments&restrict_sr=on&t=day";
     private static final String I_REDDIT = "i.redd.it";
+    private static final String I_IMGUR = "i.imgur.com";
     private static final String TWITTER_URL = "twitter.com";
     private static final String IMAGE_BASE_PATH = "/f1exposure/image/";
     private static final String NEWS_PREFIX = "NEWS_";
@@ -177,9 +178,9 @@ public class RedditServiceImpl implements RedditService {
             HttpEntity entity = new HttpEntity(htmlHeaders);
             boolean iconUrlSet = false;
             String domainUrl = MainUtility.getDomain(post.getUrl());
-            if (domainUrl.contains(I_REDDIT)) {
-                post.setIconUrl(REDDIT_FAVICON);
-                saveRedditImageToRepository(post);
+            if (domainUrl.contains(I_REDDIT) || domainUrl.contains(I_IMGUR)) {
+                saveRedditOrImgurImageToRepository(post);
+                post.setIconUrl(FAVICON);
                 post.setStatus(4);
             } else if (domainUrl.contains(TWITTER_URL)) {
                 post.setIconUrl(TWITTER_FAVICON);
@@ -241,7 +242,7 @@ public class RedditServiceImpl implements RedditService {
         }
     }
 
-    private void saveRedditImageToRepository(NewsContent content) {
+    private void saveRedditOrImgurImageToRepository(NewsContent content) {
         byte[] imageBytes = instagramService.getImageFromUrl(content.getUrl());
         String imageCode = NEWS_PREFIX + content.getCode();
         ImageRow imageRow = ImageRow.builder().code(imageCode).image(imageBytes).build();
@@ -249,7 +250,6 @@ public class RedditServiceImpl implements RedditService {
         String imageUrl = mainProperties.getUrl() + IMAGE_BASE_PATH + imageCode;
         content.setUrl(null);
         content.setImageUrl(imageUrl);
-        content.setIconUrl(FAVICON);
     }
 
     private String relativeToAbsoluteUrl(String domainUrl, String href) {
