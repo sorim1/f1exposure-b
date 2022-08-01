@@ -24,8 +24,10 @@ public class MainProperties {
     private String twitterSecret;
     private String twitterAccessToken;
     private String twitterAccessTokenSecret;
-    private String instagramUsername;
-    private String instagramPassword;
+    private String instagramWorkerUsername;
+    private String instagramWorkerPassword;
+    private String instagramOfficialUsername;
+    private String instagramOfficialPassword;
     private String[] clients;
     private String[] admins;
     private String calendarUrl;

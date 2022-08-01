@@ -1,6 +1,8 @@
 package sorim.f1.slasher.relentless.service;
 
 import com.gargoylesoftware.htmlunit.WebClient;
+import com.github.instagram4j.instagram4j.exceptions.IGLoginException;
+import org.springframework.web.multipart.MultipartFile;
 import sorim.f1.slasher.relentless.entities.FourChanPostEntity;
 import sorim.f1.slasher.relentless.entities.Streamable;
 import sorim.f1.slasher.relentless.model.FourchanPost;
@@ -30,4 +32,10 @@ public interface FourchanService {
     String setNoDuplicatesFound(String newValue);
 
     List<FourChanPostEntity> saveChanPosts(List<FourChanPostEntity> body);
+
+    String postToInstagram(boolean personalMeme) throws IGLoginException;
+
+    List<String> saveChanImages(MultipartFile[] files);
+
+    byte[] getChanImage(Integer id);
 }

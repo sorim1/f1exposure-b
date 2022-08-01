@@ -24,7 +24,7 @@ public class Scheduler {
     private final ClientService clientService;
     private final LiveTimingService liveTimingService;
     private final ErgastService ergastService;
-
+    private final FourchanService fourchanService;
     private static final String CODE = "SCHEDULER";
     public static Boolean standingsUpdated = false;
     public static Boolean analysisDone = false;
@@ -34,7 +34,7 @@ public class Scheduler {
     @Scheduled(cron = "0 0 4 * * MON")
     public void mondayJobs() throws IOException {
         log.info(CODE + " mondayJobs called");
-        exposureService.closeExposurePoll(false);
+        exposureService.closeExposurePoll(true);
         analysisDone = true;
         strawpollFound = false;
         if (!standingsUpdated) {
@@ -280,5 +280,15 @@ public class Scheduler {
     void bihourlyJob() throws Exception {
         imageFeedJob();
         adminService.checkCurrentStream();
+    }
+
+     @Scheduled(cron = "0 0 12 * * *")
+    void noonInstagramPost() throws Exception {
+         fourchanService.postToInstagram(false);
+         adminService.fetchFourChanPosts();
+    }
+    @Scheduled(cron = "0 0 18 * * *")
+    void eveningInstagramPost() throws Exception {
+        fourchanService.postToInstagram(true);
     }
 }

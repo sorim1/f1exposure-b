@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -62,5 +63,22 @@ public class SocialMediaController {
     List<String> getInstagramFollows(@RequestHeader String client) throws Exception {
         securityService.validateHeader(client);
         return instagramService.getInstagramFollows();
+    }
+
+    @GetMapping("/postToInstagram")
+    String postToInstagram(@RequestHeader String client, @RequestParam Boolean personalMeme) throws Exception {
+        securityService.validateAdminHeader(client);
+        return fourchanService.postToInstagram(personalMeme);
+    }
+
+    @PostMapping("/saveChanImages")
+    List<String> saveChanImages(@RequestHeader String client, @RequestParam("image") MultipartFile[] images) throws Exception {
+        securityService.validateAdminHeader(client);
+        return fourchanService.saveChanImages(images);
+    }
+
+    @GetMapping(value = "/image/{id}", produces = MediaType.IMAGE_JPEG_VALUE)
+    byte[] getImage(@PathVariable("id") Integer id) {
+        return fourchanService.getChanImage(id);
     }
 }

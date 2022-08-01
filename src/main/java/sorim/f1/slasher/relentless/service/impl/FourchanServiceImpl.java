@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.gargoylesoftware.htmlunit.*;
+import com.github.instagram4j.instagram4j.exceptions.IGLoginException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,8 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.multipart.MultipartFile;
+import sorim.f1.slasher.relentless.configuration.MainProperties;
 import sorim.f1.slasher.relentless.entities.*;
 import sorim.f1.slasher.relentless.model.FourchanCatalog;
 import sorim.f1.slasher.relentless.model.FourchanPost;
@@ -23,6 +26,7 @@ import sorim.f1.slasher.relentless.service.FourchanService;
 import sorim.f1.slasher.relentless.service.InstagramService;
 
 import javax.annotation.PostConstruct;
+import java.io.IOException;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -33,21 +37,17 @@ public class FourchanServiceImpl implements FourchanService {
 
     private static final String CATALOG_URL = "https://a.4cdn.org/sp/catalog.json";
     private static final String THREAD_URL = "https://a.4cdn.org/sp/thread/{threadNumber}.json";
-
     private static final String GOOGLE_REVERSE_IMAGE ="https://www.google.com/searchbyimage?image_url=";
-
     private static String NO_DUPLICATES_FOUND ="ene druge veli";
-
     private static Integer processedThread = 0;
-
     private final InstagramService instagramService;
     private final PropertiesRepository propertiesRepository;
     private final FourChanPostRepository fourChanPostRepository;
     private final StreamableRepository streamableRepository;
-
     private final FourChanImageRepository fourChanImageRepository;
     private final ObjectMapper mapper = new ObjectMapper();
 
+    private final MainProperties mainProperties;
     RestTemplate restTemplate = new RestTemplate();
     WebClient client;
 
@@ -130,7 +130,12 @@ public class FourchanServiceImpl implements FourchanService {
                 .getForObject(THREAD_URL, FourchanThread.class, uriVariables);
         response.getPosts().forEach(post -> {
             if (checkFourchanImageSize(post)) {
-                chanPosts.add(new FourChanPostEntity(post));
+                if (".jpg".equals(post.getExt())) {
+                    chanPosts.add(new FourChanPostEntity(post, 1));
+                }
+                if (".png".equals(post.getExt())) {
+                    chanPosts.add(new FourChanPostEntity(post, 2));
+                }
             }
         });
 
@@ -141,9 +146,18 @@ public class FourchanServiceImpl implements FourchanService {
         List<FourChanImageRow> images = new ArrayList<>();
         chanPosts.forEach(post -> {
             byte[] imageBytes = instagramService.getImageFromUrl(post.getUrl());
-            images.add(FourChanImageRow.builder().id(post.getId()).image(imageBytes).build());
+            images.add(FourChanImageRow.builder().id(post.getId()).status(post.getStatus()).image(imageBytes).build());
         });
         fourChanImageRepository.saveAll(images);
+    }
+    private void uploadImageToDatabase(Integer id, Integer status, MultipartFile file) {
+        try {
+            FourChanImageRow image  = FourChanImageRow.builder().id(id).status(status).image(file.getBytes()).build();
+            fourChanImageRepository.save(image);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 
     private boolean checkFourchanImageSize(FourchanPost post) {
@@ -200,8 +214,12 @@ public class FourchanServiceImpl implements FourchanService {
         Integer two = Math.toIntExact(fourChanPostRepository.countRowsByStatus(2));
         Integer three = Math.toIntExact(fourChanPostRepository.countRowsByStatus(3));
         Integer four = Math.toIntExact(fourChanPostRepository.countRowsByStatus(4));
-        Integer five = Math.toIntExact(fourChanImageRepository.countRows());
-        return Arrays.asList(one,two,three,four,five);
+        Integer five = Math.toIntExact(fourChanPostRepository.countRowsByStatus(5));
+        Integer six = Math.toIntExact(fourChanPostRepository.countRowsByStatus(6));
+        Integer seven = Math.toIntExact(fourChanPostRepository.countRowsByStatus(7));
+        Integer eight = Math.toIntExact(fourChanPostRepository.countRowsByStatus(8));
+        Integer count = Math.toIntExact(fourChanImageRepository.countRows());
+        return Arrays.asList(one,two,three,four,five, six, seven, eight, count);
     }
 
     @Override
@@ -216,6 +234,68 @@ public class FourchanServiceImpl implements FourchanService {
     public List<FourChanPostEntity> saveChanPosts(List<FourChanPostEntity> body) {
         fourChanPostRepository.saveAll(body);
         return getChanPostsByStatus(1);
+    }
+
+    @Override
+    public String postToInstagram(boolean personalMeme) throws IGLoginException {
+        List<Integer> approvedPosts = Arrays.asList(4,5);
+        FourChanPostEntity chanPost;
+        FourChanImageRow chanImage;
+        if(personalMeme){
+            chanPost = fourChanPostRepository.findFirstByIdLessThanAndStatusInOrderByIdAsc(10000,approvedPosts);
+        } else {
+            chanPost = fourChanPostRepository.findFirstByIdGreaterThanAndStatusInOrderByIdAsc(10000,approvedPosts);
+        }
+        if(chanPost!=null) {
+            chanImage = fourChanImageRepository.findFirstById(chanPost.getId());
+            while (chanImage == null) {
+                fourChanPostRepository.delete(chanPost);
+                if (personalMeme) {
+                    chanPost = fourChanPostRepository.findFirstByIdLessThanAndStatusInOrderByIdAsc(10000, approvedPosts);
+                } else {
+                    chanPost = fourChanPostRepository.findFirstByIdGreaterThanAndStatusInOrderByIdAsc(10000, approvedPosts);
+                }
+                chanImage = fourChanImageRepository.findFirstById(chanPost.getId());
+            }
+            String response = instagramService.postToInstagram(chanPost, chanImage);
+            if(response!=null){
+                chanPost.setStatus(8);
+                chanImage.setStatus(8);
+                fourChanPostRepository.save(chanPost);
+                fourChanImageRepository.save(chanImage);
+                return response;
+            } else {
+                fourChanPostRepository.delete(chanPost);
+                fourChanImageRepository.delete(chanImage);
+                return postToInstagram(personalMeme);
+            }
+        }
+        return "NO POST FOUND - personalMeme:" +personalMeme;
+    }
+
+    @Override
+    public List<String> saveChanImages(MultipartFile[] files) {
+        List<FourChanPostEntity> chanPosts = new ArrayList<>();
+        Long time = System.currentTimeMillis();
+        String num = String.valueOf(time);
+        num = num.substring(3, 8);
+        String baseUrl  = mainProperties.getUrl() + "/social/image/";
+        AtomicReference<Integer> id = new AtomicReference<>(Integer.valueOf(num));
+        List<String> fileNames = new ArrayList<>();
+        Arrays.stream(files).forEach(file -> {
+            fileNames.add(id.get() + " - " + file.getOriginalFilename());
+            chanPosts.add(new FourChanPostEntity(id.get(), baseUrl, 3));
+            uploadImageToDatabase(id.get(), 3, file);
+            id.getAndSet(id.get() + 1);
+        });
+        fourChanPostRepository.saveAll(chanPosts);
+        return fileNames;
+    }
+
+    @Override
+    public byte[] getChanImage(Integer id) {
+        FourChanImageRow result = fourChanImageRepository.findFirstById(id);
+        return result.getImage();
     }
 
     private void initWebClient() {

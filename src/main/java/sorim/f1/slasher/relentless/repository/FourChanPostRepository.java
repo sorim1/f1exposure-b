@@ -17,7 +17,9 @@ public interface FourChanPostRepository extends CrudRepository<FourChanPostEntit
     List<FourChanPostEntity> findAllByOrderByIdDesc(Pageable pageable);
 
     List<FourChanPostEntity> findAllByStatusOrderByIdAsc(Integer thread, Pageable pageable);
-
+    FourChanPostEntity findFirstByStatusInOrderByIdAsc(List<Integer> statusList);
+    FourChanPostEntity findFirstByIdGreaterThanAndStatusInOrderByIdAsc(Integer id, List<Integer> statusList);
+    FourChanPostEntity findFirstByIdLessThanAndStatusInOrderByIdAsc(Integer id, List<Integer> statusList);
     @Query("SELECT COUNT(u) FROM FourChanPostEntity u WHERE u.status= :status")
     long countRowsByStatus(Integer status);
     Integer deleteById(Integer id);
