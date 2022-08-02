@@ -36,6 +36,11 @@ public class SocialMediaController {
     private final FourchanService fourchanService;
     private final InstagramService instagramService;
 
+    @GetMapping(value = "/image/{id}", produces = MediaType.IMAGE_JPEG_VALUE)
+    byte[] getImage(@PathVariable("id") Integer id) {
+        return fourchanService.getChanImage(id);
+    }
+
     @GetMapping("/getChanPostsByStatus/{status}")
     List<FourChanPostEntity> getChanPostsByStatus(@RequestHeader String client, @RequestHeader String username, @PathVariable("status") Integer status) throws Exception {
         securityService.validateClientAndUsername(client, username);
@@ -77,8 +82,10 @@ public class SocialMediaController {
         return fourchanService.saveChanImages(images);
     }
 
-    @GetMapping(value = "/image/{id}", produces = MediaType.IMAGE_JPEG_VALUE)
-    byte[] getImage(@PathVariable("id") Integer id) {
-        return fourchanService.getChanImage(id);
+    @GetMapping("/followMoreOnInstagram")
+    Boolean followMoreOnInstagram(@RequestHeader String client) throws Exception {
+        securityService.validateAdminHeader(client);
+        instagramService.followMoreOnInstagram();
+        return true;
     }
 }

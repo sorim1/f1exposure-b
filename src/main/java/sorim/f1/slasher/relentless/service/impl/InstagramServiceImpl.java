@@ -2,11 +2,20 @@ package sorim.f1.slasher.relentless.service.impl;
 
 import com.github.instagram4j.instagram4j.IGClient;
 import com.github.instagram4j.instagram4j.actions.feed.FeedIterable;
+import com.github.instagram4j.instagram4j.actions.search.SearchAction;
 import com.github.instagram4j.instagram4j.exceptions.IGLoginException;
 import com.github.instagram4j.instagram4j.models.media.timeline.*;
 import com.github.instagram4j.instagram4j.models.user.Profile;
+import com.github.instagram4j.instagram4j.requests.discover.DiscoverTopicalExploreRequest;
+import com.github.instagram4j.instagram4j.requests.feed.FeedTagRequest;
 import com.github.instagram4j.instagram4j.requests.feed.FeedTimelineRequest;
+import com.github.instagram4j.instagram4j.requests.friendships.FriendshipsActionRequest;
+import com.github.instagram4j.instagram4j.responses.IGResponse;
+import com.github.instagram4j.instagram4j.responses.discover.DiscoverTopicalExploreResponse;
+import com.github.instagram4j.instagram4j.responses.feed.FeedTagResponse;
 import com.github.instagram4j.instagram4j.responses.feed.FeedTimelineResponse;
+import com.github.instagram4j.instagram4j.responses.tags.TagsSearchResponse;
+import com.github.instagram4j.instagram4j.responses.users.UsersSearchResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +41,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.Collectors;
 
@@ -50,6 +60,8 @@ public class InstagramServiceImpl implements InstagramService {
     private static final String FUN_TAGS = "#f1 #formula1 #f1meme #f1edit #formula1meme #formula1memes #f1memes #f1humor";
     private static final String SERIOUS_TAGS = "#f1 #formula1 #f1meme #f1driver";
 
+    private static List<String> ACCOUNTS_TO_FOLLOW = new ArrayList<>();
+    private static List<Long> ACCOUNT_IDS_TO_FOLLOW = new ArrayList<>();
     @Override
     public Boolean fetchInstagramFeed() throws IGLoginException {
         List<InstagramPost> instagramPosts = new ArrayList<>();
@@ -267,15 +279,52 @@ public class InstagramServiceImpl implements InstagramService {
         }
         return caption;
     }
+    @Override
+    public
+    void followMoreOnInstagram() throws Exception {
+        IGClient client = getOfficialClient();
+        if(ACCOUNT_IDS_TO_FOLLOW.size()<10){
+            getAccountsToFollow(client);
+        }
+        followAccounts(client, 5);
+    }
+
+    private void getAccountsToFollow(IGClient client) throws Exception {
+        FeedTagRequest request = new FeedTagRequest("f1memes");
+        client.sendRequest(request).get().getRanked_items()
+                .forEach(entry->{
+                    entry.getPreview_comments().forEach(previewComment->{
+                        Long id = previewComment.getUser_id();
+                        ACCOUNT_IDS_TO_FOLLOW.add(id);
+                    });
+                });
+    }
+    private void followAccounts(IGClient client, Integer accountCount) throws Exception {
+        int counter = 0;
+        do{
+            followAnAccount(client, ACCOUNT_IDS_TO_FOLLOW.get(0));
+            ACCOUNT_IDS_TO_FOLLOW.remove(0);
+            counter++;
+        } while(counter<accountCount);
+    }
+    private void followAnAccount(IGClient client, Long pk) throws Exception {
+        IGResponse response = new FriendshipsActionRequest(pk, FriendshipsActionRequest.FriendshipsAction.CREATE)
+                .execute(client).join();
+    }
+    private void unfollowAnAccount(IGClient client, Long pk) throws Exception {
+        IGResponse response = new FriendshipsActionRequest(pk, FriendshipsActionRequest.FriendshipsAction.DESTROY)
+                .execute(client).join();
+        log.info("followAnAccount: {}", response.getStatus());
+    }
+
 
     private String generateCaption(FourChanPostEntity chanPost) {
         if(chanPost.getTags()==null){
             chanPost.setTags("");
         }
         String response = chanPost.getTags().replace("#", "\r\n   #");
-        response += "\r\n";
-        response += "   https://f1exposure.com    ";
-        response += "\r\n";
+        response += "\r\n\n";
+
 
         if(chanPost.getStatus()==4){
             response += FUN_TAGS;
@@ -283,6 +332,8 @@ public class InstagramServiceImpl implements InstagramService {
         if(chanPost.getStatus()==5){
             response += SERIOUS_TAGS;
         }
+        response += "\r\n\n";
+        response += "   https://f1exposure.com    ";
         return response;
     }
 

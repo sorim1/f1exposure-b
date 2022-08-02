@@ -242,9 +242,9 @@ public class FourchanServiceImpl implements FourchanService {
         FourChanPostEntity chanPost;
         FourChanImageRow chanImage;
         if(personalMeme){
-            chanPost = fourChanPostRepository.findFirstByIdLessThanAndStatusInOrderByIdAsc(10000,approvedPosts);
+            chanPost = fourChanPostRepository.findFirstByIdLessThanAndStatusInOrderByIdAsc(100000,approvedPosts);
         } else {
-            chanPost = fourChanPostRepository.findFirstByIdGreaterThanAndStatusInOrderByIdAsc(10000,approvedPosts);
+            chanPost = fourChanPostRepository.findFirstByIdGreaterThanAndStatusInOrderByIdAsc(100000,approvedPosts);
         }
         if(chanPost!=null) {
             chanImage = fourChanImageRepository.findFirstById(chanPost.getId());

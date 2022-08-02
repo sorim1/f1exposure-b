@@ -6,6 +6,7 @@ import sorim.f1.slasher.relentless.entities.FourChanPostEntity;
 import sorim.f1.slasher.relentless.model.TripleInstagramFeed;
 
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 public interface InstagramService {
 
@@ -22,4 +23,6 @@ public interface InstagramService {
     Boolean cleanup() throws IGLoginException;
 
     String postToInstagram(FourChanPostEntity chanPost, FourChanImageRow chanImage) throws IGLoginException;
+
+    void followMoreOnInstagram() throws Exception;
 }

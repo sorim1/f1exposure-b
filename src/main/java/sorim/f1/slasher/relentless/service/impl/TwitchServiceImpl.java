@@ -65,7 +65,7 @@ public class TwitchServiceImpl implements TwitchService {
         return null;
     }
 
-    @PostConstruct
+   // @PostConstruct
     public void onInit() {
         twitchHelixclient = TwitchHelixBuilder.builder()
                 .withClientId("c0r4sbsc7uiz3r0g8z7q2sdyayyrlj")

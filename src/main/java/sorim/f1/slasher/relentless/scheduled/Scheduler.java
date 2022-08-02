@@ -25,6 +25,7 @@ public class Scheduler {
     private final LiveTimingService liveTimingService;
     private final ErgastService ergastService;
     private final FourchanService fourchanService;
+    private final InstagramService instagramService;
     private static final String CODE = "SCHEDULER";
     public static Boolean standingsUpdated = false;
     public static Boolean analysisDone = false;
@@ -282,13 +283,17 @@ public class Scheduler {
         adminService.checkCurrentStream();
     }
 
-     @Scheduled(cron = "0 0 12 * * *")
+     @Scheduled(cron = "0 0 11 * * *")
     void noonInstagramPost() throws Exception {
+        log.info("noonInstagramPost called");
          fourchanService.postToInstagram(false);
          adminService.fetchFourChanPosts();
+        instagramService.followMoreOnInstagram();
     }
-    @Scheduled(cron = "0 0 18 * * *")
+    @Scheduled(cron = "0 0 17 * * *")
     void eveningInstagramPost() throws Exception {
+        log.info("eveningInstagramPost called");
         fourchanService.postToInstagram(true);
+        instagramService.followMoreOnInstagram();
     }
 }
