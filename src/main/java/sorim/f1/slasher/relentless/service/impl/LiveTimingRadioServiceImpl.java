@@ -4,11 +4,13 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
+import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import sorim.f1.slasher.relentless.configuration.MainProperties;
+import sorim.f1.slasher.relentless.handling.Logger;
 import sorim.f1.slasher.relentless.model.enums.RoundEnum;
 import sorim.f1.slasher.relentless.model.livetiming.*;
 import sorim.f1.slasher.relentless.service.LiveTimingRadioService;
@@ -50,18 +52,16 @@ public class LiveTimingRadioServiceImpl implements LiveTimingRadioService {
     public String generatePostRaceRadio() {
         Boolean success = getPathAndTimestamp();
         if (success) {
-            success = getPostRaceRadioMessages();
+            success = getPostRaceRadioMessages2();
         }
         return String.valueOf(success);
     }
 
-    private Boolean getPostRaceRadioMessages() {
+    private Boolean getPostRaceRadioMessages2() {
+        List<Driver> drivers = getDriversData();
         String jsonStream = restTemplate.getForObject(LIVETIMING_URL + relativePath + TEAM_RADIO_STREAM, String.class);
         List<RadioData> radioData = getRadioData(null, jsonStream);
         List<RadioData> postRaceRadioData = radioData.stream().filter(entry -> entry.getUtc().isAfter(this.finishedDate)).collect(Collectors.toList());
-        log.info("getPostRaceRadioMessages");
-        log.info(String.valueOf(radioData.size()));
-        log.info(String.valueOf(postRaceRadioData.size()));
         Map<Integer, byte[]> radioMap = new TreeMap<>();
         postRaceRadioData.forEach(entry -> {
             byte[] byteArray = restTemplate.getForObject(LIVETIMING_URL + relativePath + entry.getPath(), byte[].class);
@@ -71,45 +71,65 @@ public class LiveTimingRadioServiceImpl implements LiveTimingRadioService {
                 radioMap.put(Integer.valueOf(entry.getDriverNumber()), byteArray);
             }
         });
-        saveRadioMessagesToFiles(radioMap);
-        log.info(String.valueOf(radioMap.size()));
+        saveRadioMessagesToFiles(radioMap, drivers);
         return true;
     }
 
-    private void saveRadioMessagesToFiles(Map<Integer, byte[]> radioMap) {
+    private void saveRadioMessagesToFiles(Map<Integer, byte[]> radioMap, List<Driver> drivers) {
+        drivers.sort(Comparator.comparing(Driver::getPosition));
         String rootPath = properties.getSaveRadioLocation();
         String directoryName = rootPath + finishedDate.toString().substring(0, 10);
-        File directory = new File(directoryName);
+        createRadioDirectories(directoryName);
         AtomicReference<String> mergeImageAndAudioString = new AtomicReference<>("");
+        AtomicReference<String> bottomImage = new AtomicReference<>("ffmpeg ");
+        AtomicReference<String> topImageString = new AtomicReference<>("");
         AtomicReference<String> mkvListString = new AtomicReference<>("");
-        if (!directory.exists()) {
-            directory.mkdir();
-        }
-        radioMap.forEach((key, value) -> {
-            mergeImageAndAudioString.set(generateMergeImageAndAudioString(directoryName, mergeImageAndAudioString.get(), String.valueOf(key)));
-            mkvListString.set(generateMkvListString(directoryName, mkvListString.get(), String.valueOf(key)));
 
-            File file = new File(directoryName + "/" + key + ".mp3");
+        drivers.forEach(driver->{
+            bottomImage.set(generateBottomImageString(bottomImage.get(), String.valueOf(driver.getNum()), driver.getPosition()));
+            topImageString.set(generateTopImageString(topImageString.get(), String.valueOf(driver.getNum()), driver.getPosition()));
+
+            if(radioMap.containsKey(Integer.valueOf(driver.getNum()))){
+            mergeImageAndAudioString.set(generateMergeImageAndAudioString(directoryName, mergeImageAndAudioString.get(), String.valueOf(driver.getNum())));
+            mkvListString.set(generateMkvListString(directoryName, mkvListString.get(), String.valueOf(driver.getNum())));
+
+            File file = new File(directoryName + "/mp3/" + driver.getNum() + ".mp3");
             try {
                 OutputStream os = new FileOutputStream(file);
-                os.write(value);
+                os.write(radioMap.get(Integer.valueOf(driver.getNum())));
                 os.close();
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
+            }
         });
         try {
+            bottomImage.set(closeImagesString(bottomImage.get(), drivers.size()));
             mergeImageAndAudioString.set(generateMergeImageAndAudioStringEnding(directoryName, mergeImageAndAudioString.get()));
 
             BufferedWriter writer = new BufferedWriter(new FileWriter(directoryName + "/generate.bat"));
-            writer.write(mergeImageAndAudioString.get());
+            writer.write(bottomImage.get() + topImageString.get() + mergeImageAndAudioString.get());
             writer.close();
             writer = new BufferedWriter(new FileWriter(directoryName + "/list.txt"));
             writer.write(mkvListString.get());
             writer.close();
-
         } catch (Exception e) {
             throw new RuntimeException(e);
+        }
+    }
+
+    private void createRadioDirectories(String directoryName) {
+        File directory = new File(directoryName);
+        if (!directory.exists()) {
+            directory.mkdir();
+        }
+        File directory2 = new File(directoryName +"/mp3");
+        if (!directory2.exists()) {
+            directory2.mkdir();
+        }
+        File directory3 = new File(directoryName +"/images");
+        if (!directory3.exists()) {
+            directory3.mkdir();
         }
     }
 
@@ -122,10 +142,37 @@ public class LiveTimingRadioServiceImpl implements LiveTimingRadioService {
 
     private String generateMergeImageAndAudioString(String dateDirectory, String input, String key) {
         String response = input;
-        response += "ffmpeg -loop 1 -i C:/root/drivers/" + key + ".png -i " + dateDirectory + "/" + key + ".mp3 -shortest -acodec copy -vcodec mjpeg " + dateDirectory + "/" + key + ".mkv";
+        response += "ffmpeg -loop 1 -i images/F" + key + ".png -i " + "mp3/" + key + ".mp3 -shortest -tune stillimage " + dateDirectory + "/" + key + ".mkv";
         response += System.lineSeparator();
         return response;
     }
+    private String generateBottomImageString(String input, String key, Integer position) {
+        String response = input;
+         response += "-i C:/root/drivers/L" + key + ".png ";
+         if(position==10){
+             response += "-filter_complex \"hstack=inputs=" + 10 + "[v]\" -map \"[v]\" images/bottom-image-1.png";
+             response += System.lineSeparator();
+             response += "ffmpeg ";
+         }
+        return response;
+    }
+    private String generateTopImageString(String input, String key, Integer position) {
+        String response = input;
+        response += "ffmpeg -i C:/root/drivers/P"+position+".png -i C:/root/drivers/T"+key+".png -filter_complex hstack images/T" +key+ ".png";
+        response += System.lineSeparator();
+        response += "ffmpeg -i images/T"+key+".png -i images/bottom-image.png -filter_complex vstack images/F" +key+ ".png";
+        response += System.lineSeparator();
+        return response;
+    }
+    private String closeImagesString(String input, Integer size) {
+        String response = input;
+        response += "-filter_complex \"hstack=inputs=" + (size-10) + "[v]\" -map \"[v]\" images/bottom-image-2.png";
+        response += System.lineSeparator();
+        response += "ffmpeg -i images/bottom-image-1.png -i images/bottom-image-2.png -filter_complex vstack images/bottom-image.png";
+        response += System.lineSeparator();
+        return response;
+    }
+
 
     private String generateMergeImageAndAudioStringEnding(String dateDirectory, String input) {
         String response = input;
@@ -147,6 +194,26 @@ public class LiveTimingRadioServiceImpl implements LiveTimingRadioService {
 
         }
         return false;
+    }
+    private List<Driver>  getDriversData() {
+        log.info(LIVETIMING_URL + relativePath + "SPFeed.json");
+        String liveTimingResponse = restTemplate.getForObject(LIVETIMING_URL + relativePath + "SPFeed.json", String.class);
+        liveTimingResponse = liveTimingResponse.substring(liveTimingResponse.indexOf("{"));
+        List<Driver> driversResponse = null;
+        try {
+            LiveTimingData response = mapper.readValue(liveTimingResponse, LiveTimingData.class);
+            driversResponse = response.getInit().getData().getDrivers();
+            List<LinkedHashMap> freeDr = (List<LinkedHashMap>) response.getFree().data.getDataField("DR");
+
+            for (int i = 0; i < driversResponse.size(); i++) {
+                List<String> fData = (List<String>) freeDr.get(i).get("F");
+                driversResponse.get(i).setPosition(Integer.valueOf(fData.get(3)));
+            }
+        } catch (JsonProcessingException e) {
+            Logger.log("getDriversData failed", e.getMessage());
+        }
+        driversResponse.sort(Comparator.comparing(Driver::getPosition));
+        return driversResponse;
     }
 
     private RadioData getRadioDataFromObject(Integer id, Object object, List<Driver> drivers) {

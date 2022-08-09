@@ -14,12 +14,14 @@ import org.springframework.web.servlet.mvc.method.annotation.MvcUriComponentsBui
 import sorim.f1.slasher.relentless.entities.FourChanPostEntity;
 import sorim.f1.slasher.relentless.model.FileData;
 import sorim.f1.slasher.relentless.model.FourchanPost;
+import sorim.f1.slasher.relentless.model.KeyValue;
 import sorim.f1.slasher.relentless.model.UploadResponseMessage;
 import sorim.f1.slasher.relentless.service.FileService;
 import sorim.f1.slasher.relentless.service.FourchanService;
 import sorim.f1.slasher.relentless.service.InstagramService;
 import sorim.f1.slasher.relentless.service.SecurityService;
 
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -65,7 +67,7 @@ public class SocialMediaController {
         return fourchanService.saveChanPosts(body);
     }
     @GetMapping("/getInstagramFollows")
-    List<String> getInstagramFollows(@RequestHeader String client) throws Exception {
+    List<KeyValue> getInstagramFollows(@RequestHeader String client) throws Exception {
         securityService.validateHeader(client);
         return instagramService.getInstagramFollows();
     }
@@ -87,5 +89,24 @@ public class SocialMediaController {
         securityService.validateAdminHeader(client);
         instagramService.followMoreOnInstagram();
         return true;
+    }
+
+    @GetMapping("/cleanup")
+    Boolean cleanup(@RequestHeader String client) throws Exception {
+        securityService.validateAdminHeader(client);
+         fourchanService.cleanup();
+        return true;
+    }
+    @GetMapping("/deleteByStatus/{status}")
+    Boolean cleanup(@RequestHeader String client, @PathVariable Integer status) throws Exception {
+        securityService.validateAdminHeader(client);
+        fourchanService.deleteByStatus(status);
+        return true;
+    }
+
+    @GetMapping("/downloadPngs")
+    public void downloadPngs(@RequestHeader String client, HttpServletResponse response) throws Exception {
+        securityService.validateAdminHeader(client);
+        fourchanService.getAcceptedPngImages(response);
     }
 }

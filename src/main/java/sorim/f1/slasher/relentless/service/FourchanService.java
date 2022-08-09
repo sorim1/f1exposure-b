@@ -7,6 +7,8 @@ import sorim.f1.slasher.relentless.entities.FourChanPostEntity;
 import sorim.f1.slasher.relentless.entities.Streamable;
 import sorim.f1.slasher.relentless.model.FourchanPost;
 
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.util.List;
 
 public interface FourchanService {
@@ -38,4 +40,9 @@ public interface FourchanService {
     List<String> saveChanImages(MultipartFile[] files);
 
     byte[] getChanImage(Integer id);
+
+    void cleanup();
+
+    Integer deleteByStatus(Integer status);
+    byte[] getAcceptedPngImages(HttpServletResponse response) throws IOException;
 }

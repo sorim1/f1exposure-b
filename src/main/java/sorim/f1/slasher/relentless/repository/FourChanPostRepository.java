@@ -1,11 +1,13 @@
 package sorim.f1.slasher.relentless.repository;
 
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+import sorim.f1.slasher.relentless.entities.FourChanImageRow;
 import sorim.f1.slasher.relentless.entities.FourChanPostEntity;
 
 import java.util.List;
@@ -15,7 +17,7 @@ import java.util.List;
 @EnableJpaAuditing
 public interface FourChanPostRepository extends CrudRepository<FourChanPostEntity, String> {
     List<FourChanPostEntity> findAllByOrderByIdDesc(Pageable pageable);
-
+    List<FourChanPostEntity> findAllByStatus(Integer status);
     List<FourChanPostEntity> findAllByStatusOrderByIdAsc(Integer thread, Pageable pageable);
     FourChanPostEntity findFirstByStatusInOrderByIdAsc(List<Integer> statusList);
     FourChanPostEntity findFirstByIdGreaterThanAndStatusInOrderByIdAsc(Integer id, List<Integer> statusList);
@@ -23,4 +25,8 @@ public interface FourChanPostRepository extends CrudRepository<FourChanPostEntit
     @Query("SELECT COUNT(u) FROM FourChanPostEntity u WHERE u.status= :status")
     long countRowsByStatus(Integer status);
     Integer deleteById(Integer id);
+    @Modifying
+    Integer deleteByIdGreaterThanAndIdLessThan(Integer id1, Integer id2);
+    @Modifying
+    Integer deleteByStatusIn(List<Integer> ids);
 }

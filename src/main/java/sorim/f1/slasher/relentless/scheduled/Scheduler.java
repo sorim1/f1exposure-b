@@ -6,6 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
+import sorim.f1.slasher.relentless.configuration.MainProperties;
 import sorim.f1.slasher.relentless.model.CalendarData;
 import sorim.f1.slasher.relentless.service.*;
 import sorim.f1.slasher.relentless.util.MainUtility;
@@ -13,6 +14,7 @@ import sorim.f1.slasher.relentless.util.MainUtility;
 import javax.annotation.PostConstruct;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.Random;
 
 @Service
 @Slf4j
@@ -26,6 +28,8 @@ public class Scheduler {
     private final ErgastService ergastService;
     private final FourchanService fourchanService;
     private final InstagramService instagramService;
+
+    private final MainProperties properties;
     private static final String CODE = "SCHEDULER";
     public static Boolean standingsUpdated = false;
     public static Boolean analysisDone = false;
@@ -279,21 +283,43 @@ public class Scheduler {
 
     @Scheduled(cron = "0 0 1,6,8,10,12,14,16,18,20,22 * * *")
     void bihourlyJob() throws Exception {
-        imageFeedJob();
-        adminService.checkCurrentStream();
+        if(properties.getUrl().contains("f1exposure.com")){
+            imageFeedJob();
+            adminService.checkCurrentStream();
+        } else {
+            log.error("url not f1exposure.com");
+            log.error(properties.getUrl());
+        }
+
     }
 
      @Scheduled(cron = "0 0 11 * * *")
     void noonInstagramPost() throws Exception {
-        log.info("noonInstagramPost called");
-         fourchanService.postToInstagram(false);
-         adminService.fetchFourChanPosts();
-        instagramService.followMoreOnInstagram();
+         Random rand = new Random();
+         int minutes = rand.nextInt(30);
+        log.info("noonInstagramPost called: " + minutes);
+         if(properties.getUrl().contains("f1exposure.com")){
+             Thread.sleep(1000 * 60 * minutes);
+             fourchanService.postToInstagram(false);
+             adminService.fetchFourChanPosts();
+             instagramService.followMoreOnInstagram();
+         } else {
+             log.error("url not f1exposure.com");
+             log.error(properties.getUrl());
+         }
     }
     @Scheduled(cron = "0 0 17 * * *")
     void eveningInstagramPost() throws Exception {
-        log.info("eveningInstagramPost called");
-        fourchanService.postToInstagram(true);
-        instagramService.followMoreOnInstagram();
+        Random rand = new Random();
+        int minutes = rand.nextInt(30);
+        log.info("eveningInstagramPost called: " + minutes);
+        if(properties.getUrl().contains("f1exposure.com")){
+            Thread.sleep(1000 * 60 * minutes);
+            fourchanService.postToInstagram(true);
+            instagramService.followMoreOnInstagram();
+        } else {
+            log.error("url not f1exposure.com");
+            log.error(properties.getUrl());
+        }
     }
 }

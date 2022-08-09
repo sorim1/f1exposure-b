@@ -22,7 +22,7 @@ import java.util.List;
 public interface FourChanImageRepository extends PagingAndSortingRepository<FourChanImageRow, String> {
 
     FourChanImageRow findFirstById(Integer id);
-
+    List<FourChanImageRow> findAllByIdIn(List<Integer> ids);
     @Modifying
     @Query("update FourChanImageRow u set u.status = :newStatus where u.id = :id")
     Integer updateStatusById(@Param(value = "id") Integer id, @Param(value = "newStatus") Integer newStatus);
@@ -32,5 +32,9 @@ public interface FourChanImageRepository extends PagingAndSortingRepository<Four
 
     @Query("SELECT COUNT(u) FROM FourChanImageRow u")
     long countRows();
+    @Modifying
+    Integer deleteByIdGreaterThanAndIdLessThan(Integer id1, Integer id2);
 
+    @Modifying
+    Integer deleteByStatusIn(List<Integer> ids);
 }

@@ -28,6 +28,7 @@ import sorim.f1.slasher.relentless.entities.FourChanPostEntity;
 import sorim.f1.slasher.relentless.entities.ImageRow;
 import sorim.f1.slasher.relentless.entities.InstagramPost;
 import sorim.f1.slasher.relentless.handling.Logger;
+import sorim.f1.slasher.relentless.model.KeyValue;
 import sorim.f1.slasher.relentless.model.TripleInstagramFeed;
 import sorim.f1.slasher.relentless.model.enums.InstagramPostType;
 import sorim.f1.slasher.relentless.repository.ImageRepository;
@@ -38,9 +39,7 @@ import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.Collectors;
@@ -51,17 +50,16 @@ import java.util.stream.Collectors;
 public class InstagramServiceImpl implements InstagramService {
 
     private static final List<String> instagram_following = new ArrayList<>();
+    private static final List<KeyValue> instagramfollowingHashtags = new ArrayList<>();
     private static IGClient workerClient;
     private static IGClient officialClient;
     private final MainProperties properties;
     private final InstagramRepository instagramRepository;
     private final ImageRepository imageRepository;
     private static final String PREFIX = "INSTA_";
-    private static final String FUN_TAGS = "#f1 #formula1 #f1meme #f1edit #formula1meme #formula1memes #f1memes #f1humor";
-    private static final String SERIOUS_TAGS = "#f1 #formula1 #f1meme #f1driver";
-
-    private static List<String> ACCOUNTS_TO_FOLLOW = new ArrayList<>();
-    private static List<Long> ACCOUNT_IDS_TO_FOLLOW = new ArrayList<>();
+    private static final List<String> FUN_TAGS = Arrays.asList("#f1", "#formula1", "#f1meme","#f1edit", "#formula1meme", "#formula1memes","#f1memes", "#f1humor", "#lewishamilton", "#charlesleclerc", "#carlossainz","#maxverstappen", "#ferrari", "#scuderiaferrari");
+    private static final List<String> SERIOUS_TAGS = Arrays.asList("#f1", "#formula1", "#f1meme","#f1edit", "#formula1meme", "#formula1memes","#f1memes", "#f1driver", "#lewishamilton", "#charlesleclerc", "#carlossainz","#maxverstappen", "#ferrari", "#scuderiaferrari");
+   private static List<Long> ACCOUNT_IDS_TO_FOLLOW = new ArrayList<>();
     @Override
     public Boolean fetchInstagramFeed() throws IGLoginException {
         List<InstagramPost> instagramPosts = new ArrayList<>();
@@ -229,11 +227,11 @@ public class InstagramServiceImpl implements InstagramService {
     }
 
     @Override
-    public List<String> getInstagramFollows() throws IGLoginException {
-        if(instagram_following.isEmpty()){
+    public List<KeyValue> getInstagramFollows() throws IGLoginException {
+        if(instagramfollowingHashtags.isEmpty()){
             getWorkerClient();
         }
-        return instagram_following;
+        return instagramfollowingHashtags;
     }
 
     private void fetchInstagramFollows() {
@@ -243,8 +241,14 @@ public class InstagramServiceImpl implements InstagramService {
                 ).join();
         result.forEach(profile -> {
             instagram_following.add(profile.getUsername());
+            String hashtag = fullNameToHashtag(profile.getFull_name());
+            instagramfollowingHashtags.add(KeyValue.builder().key(profile.getUsername()).value(hashtag).build());
         });
         Collections.sort(instagram_following);
+    }
+
+    private String fullNameToHashtag(String fullName) {
+        return "#" + fullName.replaceAll("\\s","");
     }
 
     @Override
@@ -282,11 +286,12 @@ public class InstagramServiceImpl implements InstagramService {
     @Override
     public
     void followMoreOnInstagram() throws Exception {
+        log.info("followMoreOnInstagram called");
         IGClient client = getOfficialClient();
         if(ACCOUNT_IDS_TO_FOLLOW.size()<10){
             getAccountsToFollow(client);
         }
-        followAccounts(client, 5);
+        followAccounts(client, 4);
     }
 
     private void getAccountsToFollow(IGClient client) throws Exception {
@@ -305,6 +310,7 @@ public class InstagramServiceImpl implements InstagramService {
             followAnAccount(client, ACCOUNT_IDS_TO_FOLLOW.get(0));
             ACCOUNT_IDS_TO_FOLLOW.remove(0);
             counter++;
+            Thread.sleep(1000);
         } while(counter<accountCount);
     }
     private void followAnAccount(IGClient client, Long pk) throws Exception {
@@ -319,21 +325,34 @@ public class InstagramServiceImpl implements InstagramService {
 
 
     private String generateCaption(FourChanPostEntity chanPost) {
+        Random rand = new Random();
         if(chanPost.getTags()==null){
             chanPost.setTags("");
         }
-        String response = chanPost.getTags().replace("#", "\r\n   #");
+        String response = chanPost.getTags();
         response += "\r\n\n";
-
-
+        response += "f1exposure.com";
+        response += "\r\n";
+        response += "Follow @f1exposure for more daily content.";
+        response += "\r\n\n";
         if(chanPost.getStatus()==4){
             response += FUN_TAGS;
+            for (int i = 0; i < 5; i++) {
+                int randomIndex = rand.nextInt(FUN_TAGS.size());
+                String randomElement = FUN_TAGS.get(randomIndex);
+                response += randomElement;
+            }
         }
         if(chanPost.getStatus()==5){
             response += SERIOUS_TAGS;
+
+            for (int i = 0; i < 5; i++) {
+                int randomIndex = rand.nextInt(SERIOUS_TAGS.size());
+                String randomElement = SERIOUS_TAGS.get(randomIndex);
+                response += randomElement;
+            }
         }
-        response += "\r\n\n";
-        response += "   https://f1exposure.com    ";
+
         return response;
     }
 

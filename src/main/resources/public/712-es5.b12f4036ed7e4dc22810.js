@@ -50807,7 +50807,7 @@
         }, {
           key: "selectRow",
           value: function selectRow(value) {
-            this.dialogRef.close('@' + value);
+            this.dialogRef.close(value);
           }
         }]);
 
@@ -50867,26 +50867,26 @@
 
       function SocialComponent_ng_template_2_div_0_tr_11_button_2_Template(rf, ctx) {
         if (rf & 1) {
-          var _r19 = core
+          var _r20 = core
           /* ɵɵgetCurrentView */
           .EpF();
 
           core
           /* ɵɵelementStart */
-          .TgZ(0, "button", 22);
+          .TgZ(0, "button", 23);
           core
           /* ɵɵlistener */
           .NdJ("click", function SocialComponent_ng_template_2_div_0_tr_11_button_2_Template_button_click_0_listener() {
             core
             /* ɵɵrestoreView */
-            .CHM(_r19);
-            var row_r9 = core
+            .CHM(_r20);
+            var row_r10 = core
             /* ɵɵnextContext */
             .oxw().$implicit;
-            var ctx_r17 = core
+            var ctx_r18 = core
             /* ɵɵnextContext */
             .oxw(3);
-            return ctx_r17.changeStatus(row_r9, 4);
+            return ctx_r18.changeStatus(row_r10, 4);
           });
 
           core
@@ -50901,26 +50901,26 @@
 
       function SocialComponent_ng_template_2_div_0_tr_11_button_3_Template(rf, ctx) {
         if (rf & 1) {
-          var _r22 = core
+          var _r23 = core
           /* ɵɵgetCurrentView */
           .EpF();
 
           core
           /* ɵɵelementStart */
-          .TgZ(0, "button", 22);
+          .TgZ(0, "button", 23);
           core
           /* ɵɵlistener */
           .NdJ("click", function SocialComponent_ng_template_2_div_0_tr_11_button_3_Template_button_click_0_listener() {
             core
             /* ɵɵrestoreView */
-            .CHM(_r22);
-            var row_r9 = core
+            .CHM(_r23);
+            var row_r10 = core
             /* ɵɵnextContext */
             .oxw().$implicit;
-            var ctx_r20 = core
+            var ctx_r21 = core
             /* ɵɵnextContext */
             .oxw(3);
-            return ctx_r20.changeStatus(row_r9, 5);
+            return ctx_r21.changeStatus(row_r10, 5);
           });
 
           core
@@ -50935,26 +50935,26 @@
 
       function SocialComponent_ng_template_2_div_0_tr_11_button_4_Template(rf, ctx) {
         if (rf & 1) {
-          var _r25 = core
+          var _r26 = core
           /* ɵɵgetCurrentView */
           .EpF();
 
           core
           /* ɵɵelementStart */
-          .TgZ(0, "button", 23);
+          .TgZ(0, "button", 24);
           core
           /* ɵɵlistener */
           .NdJ("click", function SocialComponent_ng_template_2_div_0_tr_11_button_4_Template_button_click_0_listener() {
             core
             /* ɵɵrestoreView */
-            .CHM(_r25);
-            var row_r9 = core
+            .CHM(_r26);
+            var row_r10 = core
             /* ɵɵnextContext */
             .oxw().$implicit;
-            var ctx_r23 = core
+            var ctx_r24 = core
             /* ɵɵnextContext */
             .oxw(3);
-            return ctx_r23.changeStatus(row_r9, 7);
+            return ctx_r24.changeStatus(row_r10, 7);
           });
 
           core
@@ -50969,53 +50969,7 @@
 
       function SocialComponent_ng_template_2_div_0_tr_11_button_5_Template(rf, ctx) {
         if (rf & 1) {
-          var _r28 = core
-          /* ɵɵgetCurrentView */
-          .EpF();
-
-          core
-          /* ɵɵelementStart */
-          .TgZ(0, "button", 24);
-          core
-          /* ɵɵlistener */
-          .NdJ("click", function SocialComponent_ng_template_2_div_0_tr_11_button_5_Template_button_click_0_listener() {
-            core
-            /* ɵɵrestoreView */
-            .CHM(_r28);
-            var row_r9 = core
-            /* ɵɵnextContext */
-            .oxw().$implicit;
-            var ctx_r26 = core
-            /* ɵɵnextContext */
-            .oxw(3);
-            return ctx_r26.changeStatus(row_r9, 1);
-          });
-
-          core
-          /* ɵɵtext */
-          ._uU(1);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-        }
-
-        if (rf & 2) {
-          var row_r9 = core
-          /* ɵɵnextContext */
-          .oxw().$implicit;
-          core
-          /* ɵɵadvance */
-          .xp6(1);
-          core
-          /* ɵɵtextInterpolate */
-          .Oqu(row_r9.status);
-        }
-      }
-
-      function SocialComponent_ng_template_2_div_0_tr_11_button_6_Template(rf, ctx) {
-        if (rf & 1) {
-          var _r32 = core
+          var _r29 = core
           /* ɵɵgetCurrentView */
           .EpF();
 
@@ -51024,17 +50978,17 @@
           .TgZ(0, "button", 25);
           core
           /* ɵɵlistener */
-          .NdJ("click", function SocialComponent_ng_template_2_div_0_tr_11_button_6_Template_button_click_0_listener() {
+          .NdJ("click", function SocialComponent_ng_template_2_div_0_tr_11_button_5_Template_button_click_0_listener() {
             core
             /* ɵɵrestoreView */
-            .CHM(_r32);
-            var row_r9 = core
+            .CHM(_r29);
+            var row_r10 = core
             /* ɵɵnextContext */
             .oxw().$implicit;
-            var ctx_r30 = core
+            var ctx_r27 = core
             /* ɵɵnextContext */
             .oxw(3);
-            return ctx_r30.changeStatus(row_r9, 1);
+            return ctx_r27.changeStatus(row_r10, 1);
           });
 
           core
@@ -51047,7 +51001,7 @@
         }
 
         if (rf & 2) {
-          var row_r9 = core
+          var row_r10 = core
           /* ɵɵnextContext */
           .oxw().$implicit;
           core
@@ -51055,7 +51009,53 @@
           .xp6(1);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(row_r9.status);
+          .Oqu(row_r10.status);
+        }
+      }
+
+      function SocialComponent_ng_template_2_div_0_tr_11_button_6_Template(rf, ctx) {
+        if (rf & 1) {
+          var _r33 = core
+          /* ɵɵgetCurrentView */
+          .EpF();
+
+          core
+          /* ɵɵelementStart */
+          .TgZ(0, "button", 26);
+          core
+          /* ɵɵlistener */
+          .NdJ("click", function SocialComponent_ng_template_2_div_0_tr_11_button_6_Template_button_click_0_listener() {
+            core
+            /* ɵɵrestoreView */
+            .CHM(_r33);
+            var row_r10 = core
+            /* ɵɵnextContext */
+            .oxw().$implicit;
+            var ctx_r31 = core
+            /* ɵɵnextContext */
+            .oxw(3);
+            return ctx_r31.changeStatus(row_r10, 1);
+          });
+
+          core
+          /* ɵɵtext */
+          ._uU(1);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+        }
+
+        if (rf & 2) {
+          var row_r10 = core
+          /* ɵɵnextContext */
+          .oxw().$implicit;
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵtextInterpolate */
+          .Oqu(row_r10.status);
         }
       }
 
@@ -51063,16 +51063,16 @@
         if (rf & 1) {
           core
           /* ɵɵelement */
-          ._UZ(0, "img", 26);
+          ._UZ(0, "img", 27);
         }
 
         if (rf & 2) {
-          var row_r9 = core
+          var row_r10 = core
           /* ɵɵnextContext */
           .oxw().$implicit;
           core
           /* ɵɵproperty */
-          .Q6J("src", row_r9.url, core
+          .Q6J("src", row_r10.url, core
           /* ɵɵsanitizeUrl */
           .LSH);
         }
@@ -51080,7 +51080,7 @@
 
       function SocialComponent_ng_template_2_div_0_tr_11_Template(rf, ctx) {
         if (rf & 1) {
-          var _r36 = core
+          var _r37 = core
           /* ɵɵgetCurrentView */
           .EpF();
 
@@ -51092,19 +51092,19 @@
           .TgZ(1, "td");
           core
           /* ɵɵtemplate */
-          .YNc(2, SocialComponent_ng_template_2_div_0_tr_11_button_2_Template, 2, 0, "button", 15);
+          .YNc(2, SocialComponent_ng_template_2_div_0_tr_11_button_2_Template, 2, 0, "button", 16);
           core
           /* ɵɵtemplate */
-          .YNc(3, SocialComponent_ng_template_2_div_0_tr_11_button_3_Template, 2, 0, "button", 15);
+          .YNc(3, SocialComponent_ng_template_2_div_0_tr_11_button_3_Template, 2, 0, "button", 16);
           core
           /* ɵɵtemplate */
-          .YNc(4, SocialComponent_ng_template_2_div_0_tr_11_button_4_Template, 2, 0, "button", 16);
+          .YNc(4, SocialComponent_ng_template_2_div_0_tr_11_button_4_Template, 2, 0, "button", 17);
           core
           /* ɵɵtemplate */
-          .YNc(5, SocialComponent_ng_template_2_div_0_tr_11_button_5_Template, 2, 1, "button", 17);
+          .YNc(5, SocialComponent_ng_template_2_div_0_tr_11_button_5_Template, 2, 1, "button", 18);
           core
           /* ɵɵtemplate */
-          .YNc(6, SocialComponent_ng_template_2_div_0_tr_11_button_6_Template, 2, 1, "button", 18);
+          .YNc(6, SocialComponent_ng_template_2_div_0_tr_11_button_6_Template, 2, 1, "button", 19);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -51113,7 +51113,7 @@
           .TgZ(7, "td");
           core
           /* ɵɵtemplate */
-          .YNc(8, SocialComponent_ng_template_2_div_0_tr_11_img_8_Template, 1, 1, "img", 19);
+          .YNc(8, SocialComponent_ng_template_2_div_0_tr_11_img_8_Template, 1, 1, "img", 20);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -51125,15 +51125,15 @@
           .TgZ(10, "div");
           core
           /* ɵɵelementStart */
-          .TgZ(11, "textarea", 20);
+          .TgZ(11, "textarea", 21);
           core
           /* ɵɵlistener */
           .NdJ("ngModelChange", function SocialComponent_ng_template_2_div_0_tr_11_Template_textarea_ngModelChange_11_listener($event) {
             var restoredCtx = core
             /* ɵɵrestoreView */
-            .CHM(_r36);
-            var row_r9 = restoredCtx.$implicit;
-            return row_r9.tags = $event;
+            .CHM(_r37);
+            var row_r10 = restoredCtx.$implicit;
+            return row_r10.tags = $event;
           });
           core
           /* ɵɵelementEnd */
@@ -51146,18 +51146,18 @@
           .TgZ(12, "div");
           core
           /* ɵɵelementStart */
-          .TgZ(13, "button", 21);
+          .TgZ(13, "button", 22);
           core
           /* ɵɵlistener */
           .NdJ("click", function SocialComponent_ng_template_2_div_0_tr_11_Template_button_click_13_listener() {
             var restoredCtx = core
             /* ɵɵrestoreView */
-            .CHM(_r36);
-            var row_r9 = restoredCtx.$implicit;
-            var ctx_r37 = core
+            .CHM(_r37);
+            var row_r10 = restoredCtx.$implicit;
+            var ctx_r38 = core
             /* ɵɵnextContext */
             .oxw(3);
-            return ctx_r37.openPopup(row_r9);
+            return ctx_r38.openPopup(row_r10);
           });
 
           core
@@ -51179,49 +51179,49 @@
         }
 
         if (rf & 2) {
-          var row_r9 = ctx.$implicit;
+          var row_r10 = ctx.$implicit;
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵproperty */
-          .Q6J("ngIf", row_r9.status == 1);
+          .Q6J("ngIf", row_r10.status == 1);
           core
           /* ɵɵadvance */
           .xp6(1);
           core
           /* ɵɵproperty */
-          .Q6J("ngIf", row_r9.status == 1);
+          .Q6J("ngIf", row_r10.status == 1);
           core
           /* ɵɵadvance */
           .xp6(1);
           core
           /* ɵɵproperty */
-          .Q6J("ngIf", row_r9.status == 1);
+          .Q6J("ngIf", row_r10.status == 1);
           core
           /* ɵɵadvance */
           .xp6(1);
           core
           /* ɵɵproperty */
-          .Q6J("ngIf", row_r9.status == 4 || row_r9.status == 5);
+          .Q6J("ngIf", row_r10.status == 4 || row_r10.status == 5);
           core
           /* ɵɵadvance */
           .xp6(1);
           core
           /* ɵɵproperty */
-          .Q6J("ngIf", row_r9.status == 7);
+          .Q6J("ngIf", row_r10.status == 7);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵproperty */
-          .Q6J("ngIf", row_r9.status == 1);
+          .Q6J("ngIf", row_r10.status == 1);
           core
           /* ɵɵadvance */
           .xp6(3);
           core
           /* ɵɵproperty */
-          .Q6J("ngModel", row_r9.tags);
+          .Q6J("ngModel", row_r10.tags);
         }
       }
 
@@ -51232,16 +51232,16 @@
           .TgZ(0, "div");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "table", 8);
+          .TgZ(1, "table", 9);
           core
           /* ɵɵelementStart */
           .TgZ(2, "thead");
           core
           /* ɵɵelementStart */
-          .TgZ(3, "tr", 9);
+          .TgZ(3, "tr", 10);
           core
           /* ɵɵelementStart */
-          .TgZ(4, "th", 10);
+          .TgZ(4, "th", 11);
 
           core
           /* ɵɵtext */
@@ -51252,7 +51252,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(6, "th", 12);
+          .TgZ(6, "th", 13);
 
           core
           /* ɵɵtext */
@@ -51263,7 +51263,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(8, "th", 12);
+          .TgZ(8, "th", 13);
 
           core
           /* ɵɵtext */
@@ -51283,7 +51283,7 @@
           .TgZ(10, "tbody");
           core
           /* ɵɵtemplate */
-          .YNc(11, SocialComponent_ng_template_2_div_0_tr_11_Template, 15, 7, "tr", 14);
+          .YNc(11, SocialComponent_ng_template_2_div_0_tr_11_Template, 15, 7, "tr", 15);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -51296,7 +51296,7 @@
         }
 
         if (rf & 2) {
-          var ctx_r6 = core
+          var ctx_r7 = core
           /* ɵɵnextContext */
           .oxw(2);
           core
@@ -51304,7 +51304,7 @@
           .xp6(11);
           core
           /* ɵɵproperty */
-          .Q6J("ngForOf", ctx_r6.status1Data);
+          .Q6J("ngForOf", ctx_r7.status1Data);
         }
       }
 
@@ -51341,32 +51341,32 @@
         }
 
         if (rf & 2) {
-          var value_r38 = ctx.$implicit;
-          var i_r39 = ctx.index;
+          var value_r39 = ctx.$implicit;
+          var i_r40 = ctx.index;
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(i_r39 + 1);
+          .Oqu(i_r40 + 1);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(value_r38);
+          .Oqu(value_r39);
         }
       }
 
       function SocialComponent_ng_template_2_Template(rf, ctx) {
         if (rf & 1) {
-          var _r41 = core
+          var _r42 = core
           /* ɵɵgetCurrentView */
           .EpF();
 
           core
           /* ɵɵtemplate */
-          .YNc(0, SocialComponent_ng_template_2_div_0_Template, 12, 1, "div", 7);
+          .YNc(0, SocialComponent_ng_template_2_div_0_Template, 12, 1, "div", 8);
           core
           /* ɵɵelementStart */
           .TgZ(1, "div");
@@ -51375,29 +51375,29 @@
           .TgZ(2, "div");
           core
           /* ɵɵelementStart */
-          .TgZ(3, "table", 8);
+          .TgZ(3, "table", 9);
           core
           /* ɵɵelementStart */
           .TgZ(4, "thead");
           core
           /* ɵɵelementStart */
-          .TgZ(5, "tr", 9);
+          .TgZ(5, "tr", 10);
           core
           /* ɵɵelementStart */
-          .TgZ(6, "th", 10);
+          .TgZ(6, "th", 11);
           core
           /* ɵɵelementStart */
-          .TgZ(7, "button", 11);
+          .TgZ(7, "button", 12);
           core
           /* ɵɵlistener */
           .NdJ("click", function SocialComponent_ng_template_2_Template_button_click_7_listener() {
             core
             /* ɵɵrestoreView */
-            .CHM(_r41);
-            var ctx_r40 = core
+            .CHM(_r42);
+            var ctx_r41 = core
             /* ɵɵnextContext */
             .oxw();
-            return ctx_r40.loadSumData();
+            return ctx_r41.loadSumData();
           });
 
           core
@@ -51412,20 +51412,20 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(9, "th", 12);
+          .TgZ(9, "th", 13);
           core
           /* ɵɵelementStart */
-          .TgZ(10, "button", 13);
+          .TgZ(10, "button", 14);
           core
           /* ɵɵlistener */
           .NdJ("click", function SocialComponent_ng_template_2_Template_button_click_10_listener() {
             core
             /* ɵɵrestoreView */
-            .CHM(_r41);
-            var ctx_r42 = core
+            .CHM(_r42);
+            var ctx_r43 = core
             /* ɵɵnextContext */
             .oxw();
-            return ctx_r42.save(1);
+            return ctx_r43.save(1);
           });
 
           core
@@ -51449,7 +51449,7 @@
           .TgZ(12, "tbody");
           core
           /* ɵɵtemplate */
-          .YNc(13, SocialComponent_ng_template_2_tr_13_Template, 5, 2, "tr", 14);
+          .YNc(13, SocialComponent_ng_template_2_tr_13_Template, 5, 2, "tr", 15);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -51482,26 +51482,26 @@
 
       function SocialComponent_ng_template_4_div_0_tr_11_button_2_Template(rf, ctx) {
         if (rf & 1) {
-          var _r53 = core
+          var _r54 = core
           /* ɵɵgetCurrentView */
           .EpF();
 
           core
           /* ɵɵelementStart */
-          .TgZ(0, "button", 22);
+          .TgZ(0, "button", 23);
           core
           /* ɵɵlistener */
           .NdJ("click", function SocialComponent_ng_template_4_div_0_tr_11_button_2_Template_button_click_0_listener() {
             core
             /* ɵɵrestoreView */
-            .CHM(_r53);
-            var row_r45 = core
+            .CHM(_r54);
+            var row_r46 = core
             /* ɵɵnextContext */
             .oxw().$implicit;
-            var ctx_r51 = core
+            var ctx_r52 = core
             /* ɵɵnextContext */
             .oxw(3);
-            return ctx_r51.changeStatus(row_r45, 6);
+            return ctx_r52.changeStatus(row_r46, 6);
           });
 
           core
@@ -51516,26 +51516,26 @@
 
       function SocialComponent_ng_template_4_div_0_tr_11_button_3_Template(rf, ctx) {
         if (rf & 1) {
-          var _r56 = core
+          var _r57 = core
           /* ɵɵgetCurrentView */
           .EpF();
 
           core
           /* ɵɵelementStart */
-          .TgZ(0, "button", 23);
+          .TgZ(0, "button", 24);
           core
           /* ɵɵlistener */
           .NdJ("click", function SocialComponent_ng_template_4_div_0_tr_11_button_3_Template_button_click_0_listener() {
             core
             /* ɵɵrestoreView */
-            .CHM(_r56);
-            var row_r45 = core
+            .CHM(_r57);
+            var row_r46 = core
             /* ɵɵnextContext */
             .oxw().$implicit;
-            var ctx_r54 = core
+            var ctx_r55 = core
             /* ɵɵnextContext */
             .oxw(3);
-            return ctx_r54.changeStatus(row_r45, 7);
+            return ctx_r55.changeStatus(row_r46, 7);
           });
 
           core
@@ -51550,26 +51550,26 @@
 
       function SocialComponent_ng_template_4_div_0_tr_11_button_4_Template(rf, ctx) {
         if (rf & 1) {
-          var _r59 = core
+          var _r60 = core
           /* ɵɵgetCurrentView */
           .EpF();
 
           core
           /* ɵɵelementStart */
-          .TgZ(0, "button", 24);
+          .TgZ(0, "button", 25);
           core
           /* ɵɵlistener */
           .NdJ("click", function SocialComponent_ng_template_4_div_0_tr_11_button_4_Template_button_click_0_listener() {
             core
             /* ɵɵrestoreView */
-            .CHM(_r59);
-            var row_r45 = core
+            .CHM(_r60);
+            var row_r46 = core
             /* ɵɵnextContext */
             .oxw().$implicit;
-            var ctx_r57 = core
+            var ctx_r58 = core
             /* ɵɵnextContext */
             .oxw(3);
-            return ctx_r57.changeStatus(row_r45, 1);
+            return ctx_r58.changeStatus(row_r46, 2);
           });
 
           core
@@ -51582,7 +51582,7 @@
         }
 
         if (rf & 2) {
-          var row_r45 = core
+          var row_r46 = core
           /* ɵɵnextContext */
           .oxw().$implicit;
           core
@@ -51590,7 +51590,7 @@
           .xp6(1);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(row_r45.status);
+          .Oqu(row_r46.status);
         }
       }
 
@@ -51598,16 +51598,16 @@
         if (rf & 1) {
           core
           /* ɵɵelement */
-          ._UZ(0, "img", 26);
+          ._UZ(0, "img", 27);
         }
 
         if (rf & 2) {
-          var row_r45 = core
+          var row_r46 = core
           /* ɵɵnextContext */
           .oxw().$implicit;
           core
           /* ɵɵproperty */
-          .Q6J("src", row_r45.url, core
+          .Q6J("src", row_r46.url, core
           /* ɵɵsanitizeUrl */
           .LSH);
         }
@@ -51615,7 +51615,7 @@
 
       function SocialComponent_ng_template_4_div_0_tr_11_Template(rf, ctx) {
         if (rf & 1) {
-          var _r63 = core
+          var _r64 = core
           /* ɵɵgetCurrentView */
           .EpF();
 
@@ -51627,13 +51627,13 @@
           .TgZ(1, "td");
           core
           /* ɵɵtemplate */
-          .YNc(2, SocialComponent_ng_template_4_div_0_tr_11_button_2_Template, 2, 0, "button", 15);
+          .YNc(2, SocialComponent_ng_template_4_div_0_tr_11_button_2_Template, 2, 0, "button", 16);
           core
           /* ɵɵtemplate */
-          .YNc(3, SocialComponent_ng_template_4_div_0_tr_11_button_3_Template, 2, 0, "button", 16);
+          .YNc(3, SocialComponent_ng_template_4_div_0_tr_11_button_3_Template, 2, 0, "button", 17);
           core
           /* ɵɵtemplate */
-          .YNc(4, SocialComponent_ng_template_4_div_0_tr_11_button_4_Template, 2, 1, "button", 17);
+          .YNc(4, SocialComponent_ng_template_4_div_0_tr_11_button_4_Template, 2, 1, "button", 18);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -51642,7 +51642,7 @@
           .TgZ(5, "td");
           core
           /* ɵɵtemplate */
-          .YNc(6, SocialComponent_ng_template_4_div_0_tr_11_img_6_Template, 1, 1, "img", 19);
+          .YNc(6, SocialComponent_ng_template_4_div_0_tr_11_img_6_Template, 1, 1, "img", 20);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -51654,15 +51654,15 @@
           .TgZ(8, "div");
           core
           /* ɵɵelementStart */
-          .TgZ(9, "input", 20);
+          .TgZ(9, "input", 28);
           core
           /* ɵɵlistener */
           .NdJ("ngModelChange", function SocialComponent_ng_template_4_div_0_tr_11_Template_input_ngModelChange_9_listener($event) {
             var restoredCtx = core
             /* ɵɵrestoreView */
-            .CHM(_r63);
-            var row_r45 = restoredCtx.$implicit;
-            return row_r45.tags = $event;
+            .CHM(_r64);
+            var row_r46 = restoredCtx.$implicit;
+            return row_r46.tags = $event;
           });
           core
           /* ɵɵelementEnd */
@@ -51675,18 +51675,18 @@
           .TgZ(10, "div");
           core
           /* ɵɵelementStart */
-          .TgZ(11, "button", 21);
+          .TgZ(11, "button", 22);
           core
           /* ɵɵlistener */
           .NdJ("click", function SocialComponent_ng_template_4_div_0_tr_11_Template_button_click_11_listener() {
             var restoredCtx = core
             /* ɵɵrestoreView */
-            .CHM(_r63);
-            var row_r45 = restoredCtx.$implicit;
-            var ctx_r64 = core
+            .CHM(_r64);
+            var row_r46 = restoredCtx.$implicit;
+            var ctx_r65 = core
             /* ɵɵnextContext */
             .oxw(3);
-            return ctx_r64.openPopup(row_r45);
+            return ctx_r65.openPopup(row_r46);
           });
 
           core
@@ -51708,57 +51708,61 @@
         }
 
         if (rf & 2) {
-          var row_r45 = ctx.$implicit;
+          var row_r46 = ctx.$implicit;
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵproperty */
-          .Q6J("ngIf", row_r45.status == 2);
+          .Q6J("ngIf", row_r46.status == 2);
           core
           /* ɵɵadvance */
           .xp6(1);
           core
           /* ɵɵproperty */
-          .Q6J("ngIf", row_r45.status == 2);
+          .Q6J("ngIf", row_r46.status == 2);
           core
           /* ɵɵadvance */
           .xp6(1);
           core
           /* ɵɵproperty */
-          .Q6J("ngIf", row_r45.status == 6);
+          .Q6J("ngIf", row_r46.status == 6);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵproperty */
-          .Q6J("ngIf", row_r45.status == 2);
+          .Q6J("ngIf", row_r46.status == 2);
           core
           /* ɵɵadvance */
           .xp6(3);
           core
           /* ɵɵproperty */
-          .Q6J("ngModel", row_r45.tags);
+          .Q6J("ngModel", row_r46.tags);
         }
       }
 
       function SocialComponent_ng_template_4_div_0_Template(rf, ctx) {
         if (rf & 1) {
+          var _r67 = core
+          /* ɵɵgetCurrentView */
+          .EpF();
+
           core
           /* ɵɵelementStart */
           .TgZ(0, "div");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "table", 8);
+          .TgZ(1, "table", 9);
           core
           /* ɵɵelementStart */
           .TgZ(2, "thead");
           core
           /* ɵɵelementStart */
-          .TgZ(3, "tr", 9);
+          .TgZ(3, "tr", 10);
           core
           /* ɵɵelementStart */
-          .TgZ(4, "th", 10);
+          .TgZ(4, "th", 11);
 
           core
           /* ɵɵtext */
@@ -51769,7 +51773,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(6, "th", 12);
+          .TgZ(6, "th", 13);
 
           core
           /* ɵɵtext */
@@ -51780,7 +51784,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(8, "th", 12);
+          .TgZ(8, "th", 13);
 
           core
           /* ɵɵtext */
@@ -51800,10 +51804,32 @@
           .TgZ(10, "tbody");
           core
           /* ɵɵtemplate */
-          .YNc(11, SocialComponent_ng_template_4_div_0_tr_11_Template, 13, 5, "tr", 14);
+          .YNc(11, SocialComponent_ng_template_4_div_0_tr_11_Template, 13, 5, "tr", 15);
           core
           /* ɵɵelementEnd */
           .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(12, "button", 14);
+          core
+          /* ɵɵlistener */
+          .NdJ("click", function SocialComponent_ng_template_4_div_0_Template_button_click_12_listener() {
+            core
+            /* ɵɵrestoreView */
+            .CHM(_r67);
+            var ctx_r66 = core
+            /* ɵɵnextContext */
+            .oxw(2);
+            return ctx_r66.save(2);
+          });
+
+          core
+          /* ɵɵtext */
+          ._uU(13, "Save");
+
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -51813,7 +51839,7 @@
         }
 
         if (rf & 2) {
-          var ctx_r43 = core
+          var ctx_r44 = core
           /* ɵɵnextContext */
           .oxw(2);
           core
@@ -51821,7 +51847,7 @@
           .xp6(11);
           core
           /* ɵɵproperty */
-          .Q6J("ngForOf", ctx_r43.status2Data);
+          .Q6J("ngForOf", ctx_r44.status2Data);
         }
       }
 
@@ -51829,7 +51855,7 @@
         if (rf & 1) {
           core
           /* ɵɵtemplate */
-          .YNc(0, SocialComponent_ng_template_4_div_0_Template, 12, 1, "div", 7);
+          .YNc(0, SocialComponent_ng_template_4_div_0_Template, 14, 1, "div", 8);
         }
 
         if (rf & 2) {
@@ -51844,26 +51870,26 @@
 
       function SocialComponent_ng_template_6_div_0_tr_11_button_2_Template(rf, ctx) {
         if (rf & 1) {
-          var _r77 = core
+          var _r80 = core
           /* ɵɵgetCurrentView */
           .EpF();
 
           core
           /* ɵɵelementStart */
-          .TgZ(0, "button", 22);
+          .TgZ(0, "button", 23);
           core
           /* ɵɵlistener */
           .NdJ("click", function SocialComponent_ng_template_6_div_0_tr_11_button_2_Template_button_click_0_listener() {
             core
             /* ɵɵrestoreView */
-            .CHM(_r77);
-            var row_r67 = core
+            .CHM(_r80);
+            var row_r70 = core
             /* ɵɵnextContext */
             .oxw().$implicit;
-            var ctx_r75 = core
+            var ctx_r78 = core
             /* ɵɵnextContext */
             .oxw(3);
-            return ctx_r75.changeStatus(row_r67, 4);
+            return ctx_r78.changeStatus(row_r70, 4);
           });
 
           core
@@ -51878,26 +51904,26 @@
 
       function SocialComponent_ng_template_6_div_0_tr_11_button_3_Template(rf, ctx) {
         if (rf & 1) {
-          var _r80 = core
+          var _r83 = core
           /* ɵɵgetCurrentView */
           .EpF();
 
           core
           /* ɵɵelementStart */
-          .TgZ(0, "button", 22);
+          .TgZ(0, "button", 23);
           core
           /* ɵɵlistener */
           .NdJ("click", function SocialComponent_ng_template_6_div_0_tr_11_button_3_Template_button_click_0_listener() {
             core
             /* ɵɵrestoreView */
-            .CHM(_r80);
-            var row_r67 = core
+            .CHM(_r83);
+            var row_r70 = core
             /* ɵɵnextContext */
             .oxw().$implicit;
-            var ctx_r78 = core
+            var ctx_r81 = core
             /* ɵɵnextContext */
             .oxw(3);
-            return ctx_r78.changeStatus(row_r67, 5);
+            return ctx_r81.changeStatus(row_r70, 5);
           });
 
           core
@@ -51912,26 +51938,26 @@
 
       function SocialComponent_ng_template_6_div_0_tr_11_button_4_Template(rf, ctx) {
         if (rf & 1) {
-          var _r83 = core
+          var _r86 = core
           /* ɵɵgetCurrentView */
           .EpF();
 
           core
           /* ɵɵelementStart */
-          .TgZ(0, "button", 23);
+          .TgZ(0, "button", 24);
           core
           /* ɵɵlistener */
           .NdJ("click", function SocialComponent_ng_template_6_div_0_tr_11_button_4_Template_button_click_0_listener() {
             core
             /* ɵɵrestoreView */
-            .CHM(_r83);
-            var row_r67 = core
+            .CHM(_r86);
+            var row_r70 = core
             /* ɵɵnextContext */
             .oxw().$implicit;
-            var ctx_r81 = core
+            var ctx_r84 = core
             /* ɵɵnextContext */
             .oxw(3);
-            return ctx_r81.changeStatus(row_r67, 7);
+            return ctx_r84.changeStatus(row_r70, 7);
           });
 
           core
@@ -51946,53 +51972,7 @@
 
       function SocialComponent_ng_template_6_div_0_tr_11_button_5_Template(rf, ctx) {
         if (rf & 1) {
-          var _r86 = core
-          /* ɵɵgetCurrentView */
-          .EpF();
-
-          core
-          /* ɵɵelementStart */
-          .TgZ(0, "button", 24);
-          core
-          /* ɵɵlistener */
-          .NdJ("click", function SocialComponent_ng_template_6_div_0_tr_11_button_5_Template_button_click_0_listener() {
-            core
-            /* ɵɵrestoreView */
-            .CHM(_r86);
-            var row_r67 = core
-            /* ɵɵnextContext */
-            .oxw().$implicit;
-            var ctx_r84 = core
-            /* ɵɵnextContext */
-            .oxw(3);
-            return ctx_r84.changeStatus(row_r67, 3);
-          });
-
-          core
-          /* ɵɵtext */
-          ._uU(1);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-        }
-
-        if (rf & 2) {
-          var row_r67 = core
-          /* ɵɵnextContext */
-          .oxw().$implicit;
-          core
-          /* ɵɵadvance */
-          .xp6(1);
-          core
-          /* ɵɵtextInterpolate */
-          .Oqu(row_r67.status);
-        }
-      }
-
-      function SocialComponent_ng_template_6_div_0_tr_11_button_6_Template(rf, ctx) {
-        if (rf & 1) {
-          var _r90 = core
+          var _r89 = core
           /* ɵɵgetCurrentView */
           .EpF();
 
@@ -52001,17 +51981,17 @@
           .TgZ(0, "button", 25);
           core
           /* ɵɵlistener */
-          .NdJ("click", function SocialComponent_ng_template_6_div_0_tr_11_button_6_Template_button_click_0_listener() {
+          .NdJ("click", function SocialComponent_ng_template_6_div_0_tr_11_button_5_Template_button_click_0_listener() {
             core
             /* ɵɵrestoreView */
-            .CHM(_r90);
-            var row_r67 = core
+            .CHM(_r89);
+            var row_r70 = core
             /* ɵɵnextContext */
             .oxw().$implicit;
-            var ctx_r88 = core
+            var ctx_r87 = core
             /* ɵɵnextContext */
             .oxw(3);
-            return ctx_r88.changeStatus(row_r67, 3);
+            return ctx_r87.changeStatus(row_r70, 3);
           });
 
           core
@@ -52024,7 +52004,7 @@
         }
 
         if (rf & 2) {
-          var row_r67 = core
+          var row_r70 = core
           /* ɵɵnextContext */
           .oxw().$implicit;
           core
@@ -52032,7 +52012,53 @@
           .xp6(1);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(row_r67.status);
+          .Oqu(row_r70.status);
+        }
+      }
+
+      function SocialComponent_ng_template_6_div_0_tr_11_button_6_Template(rf, ctx) {
+        if (rf & 1) {
+          var _r93 = core
+          /* ɵɵgetCurrentView */
+          .EpF();
+
+          core
+          /* ɵɵelementStart */
+          .TgZ(0, "button", 26);
+          core
+          /* ɵɵlistener */
+          .NdJ("click", function SocialComponent_ng_template_6_div_0_tr_11_button_6_Template_button_click_0_listener() {
+            core
+            /* ɵɵrestoreView */
+            .CHM(_r93);
+            var row_r70 = core
+            /* ɵɵnextContext */
+            .oxw().$implicit;
+            var ctx_r91 = core
+            /* ɵɵnextContext */
+            .oxw(3);
+            return ctx_r91.changeStatus(row_r70, 3);
+          });
+
+          core
+          /* ɵɵtext */
+          ._uU(1);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+        }
+
+        if (rf & 2) {
+          var row_r70 = core
+          /* ɵɵnextContext */
+          .oxw().$implicit;
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵtextInterpolate */
+          .Oqu(row_r70.status);
         }
       }
 
@@ -52040,16 +52066,16 @@
         if (rf & 1) {
           core
           /* ɵɵelement */
-          ._UZ(0, "img", 26);
+          ._UZ(0, "img", 27);
         }
 
         if (rf & 2) {
-          var row_r67 = core
+          var row_r70 = core
           /* ɵɵnextContext */
           .oxw().$implicit;
           core
           /* ɵɵproperty */
-          .Q6J("src", row_r67.url, core
+          .Q6J("src", row_r70.url, core
           /* ɵɵsanitizeUrl */
           .LSH);
         }
@@ -52057,7 +52083,7 @@
 
       function SocialComponent_ng_template_6_div_0_tr_11_Template(rf, ctx) {
         if (rf & 1) {
-          var _r94 = core
+          var _r97 = core
           /* ɵɵgetCurrentView */
           .EpF();
 
@@ -52069,19 +52095,19 @@
           .TgZ(1, "td");
           core
           /* ɵɵtemplate */
-          .YNc(2, SocialComponent_ng_template_6_div_0_tr_11_button_2_Template, 2, 0, "button", 15);
+          .YNc(2, SocialComponent_ng_template_6_div_0_tr_11_button_2_Template, 2, 0, "button", 16);
           core
           /* ɵɵtemplate */
-          .YNc(3, SocialComponent_ng_template_6_div_0_tr_11_button_3_Template, 2, 0, "button", 15);
+          .YNc(3, SocialComponent_ng_template_6_div_0_tr_11_button_3_Template, 2, 0, "button", 16);
           core
           /* ɵɵtemplate */
-          .YNc(4, SocialComponent_ng_template_6_div_0_tr_11_button_4_Template, 2, 0, "button", 16);
+          .YNc(4, SocialComponent_ng_template_6_div_0_tr_11_button_4_Template, 2, 0, "button", 17);
           core
           /* ɵɵtemplate */
-          .YNc(5, SocialComponent_ng_template_6_div_0_tr_11_button_5_Template, 2, 1, "button", 17);
+          .YNc(5, SocialComponent_ng_template_6_div_0_tr_11_button_5_Template, 2, 1, "button", 18);
           core
           /* ɵɵtemplate */
-          .YNc(6, SocialComponent_ng_template_6_div_0_tr_11_button_6_Template, 2, 1, "button", 18);
+          .YNc(6, SocialComponent_ng_template_6_div_0_tr_11_button_6_Template, 2, 1, "button", 19);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -52090,7 +52116,7 @@
           .TgZ(7, "td");
           core
           /* ɵɵtemplate */
-          .YNc(8, SocialComponent_ng_template_6_div_0_tr_11_img_8_Template, 1, 1, "img", 19);
+          .YNc(8, SocialComponent_ng_template_6_div_0_tr_11_img_8_Template, 1, 1, "img", 20);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -52102,15 +52128,15 @@
           .TgZ(10, "div");
           core
           /* ɵɵelementStart */
-          .TgZ(11, "input", 20);
+          .TgZ(11, "textarea", 21);
           core
           /* ɵɵlistener */
-          .NdJ("ngModelChange", function SocialComponent_ng_template_6_div_0_tr_11_Template_input_ngModelChange_11_listener($event) {
+          .NdJ("ngModelChange", function SocialComponent_ng_template_6_div_0_tr_11_Template_textarea_ngModelChange_11_listener($event) {
             var restoredCtx = core
             /* ɵɵrestoreView */
-            .CHM(_r94);
-            var row_r67 = restoredCtx.$implicit;
-            return row_r67.tags = $event;
+            .CHM(_r97);
+            var row_r70 = restoredCtx.$implicit;
+            return row_r70.tags = $event;
           });
           core
           /* ɵɵelementEnd */
@@ -52123,18 +52149,18 @@
           .TgZ(12, "div");
           core
           /* ɵɵelementStart */
-          .TgZ(13, "button", 21);
+          .TgZ(13, "button", 22);
           core
           /* ɵɵlistener */
           .NdJ("click", function SocialComponent_ng_template_6_div_0_tr_11_Template_button_click_13_listener() {
             var restoredCtx = core
             /* ɵɵrestoreView */
-            .CHM(_r94);
-            var row_r67 = restoredCtx.$implicit;
-            var ctx_r95 = core
+            .CHM(_r97);
+            var row_r70 = restoredCtx.$implicit;
+            var ctx_r98 = core
             /* ɵɵnextContext */
             .oxw(3);
-            return ctx_r95.openPopup(row_r67);
+            return ctx_r98.openPopup(row_r70);
           });
 
           core
@@ -52156,55 +52182,55 @@
         }
 
         if (rf & 2) {
-          var row_r67 = ctx.$implicit;
+          var row_r70 = ctx.$implicit;
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵproperty */
-          .Q6J("ngIf", row_r67.status == 3);
+          .Q6J("ngIf", row_r70.status == 3);
           core
           /* ɵɵadvance */
           .xp6(1);
           core
           /* ɵɵproperty */
-          .Q6J("ngIf", row_r67.status == 3);
+          .Q6J("ngIf", row_r70.status == 3);
           core
           /* ɵɵadvance */
           .xp6(1);
           core
           /* ɵɵproperty */
-          .Q6J("ngIf", row_r67.status == 3);
+          .Q6J("ngIf", row_r70.status == 3);
           core
           /* ɵɵadvance */
           .xp6(1);
           core
           /* ɵɵproperty */
-          .Q6J("ngIf", row_r67.status == 4 || row_r67.status == 5);
+          .Q6J("ngIf", row_r70.status == 4 || row_r70.status == 5);
           core
           /* ɵɵadvance */
           .xp6(1);
           core
           /* ɵɵproperty */
-          .Q6J("ngIf", row_r67.status == 7);
+          .Q6J("ngIf", row_r70.status == 7);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵproperty */
-          .Q6J("ngIf", row_r67.status == 3);
+          .Q6J("ngIf", row_r70.status == 3);
           core
           /* ɵɵadvance */
           .xp6(3);
           core
           /* ɵɵproperty */
-          .Q6J("ngModel", row_r67.tags);
+          .Q6J("ngModel", row_r70.tags);
         }
       }
 
       function SocialComponent_ng_template_6_div_0_Template(rf, ctx) {
         if (rf & 1) {
-          var _r97 = core
+          var _r100 = core
           /* ɵɵgetCurrentView */
           .EpF();
 
@@ -52213,16 +52239,16 @@
           .TgZ(0, "div");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "table", 8);
+          .TgZ(1, "table", 9);
           core
           /* ɵɵelementStart */
           .TgZ(2, "thead");
           core
           /* ɵɵelementStart */
-          .TgZ(3, "tr", 9);
+          .TgZ(3, "tr", 10);
           core
           /* ɵɵelementStart */
-          .TgZ(4, "th", 10);
+          .TgZ(4, "th", 11);
 
           core
           /* ɵɵtext */
@@ -52233,7 +52259,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(6, "th", 12);
+          .TgZ(6, "th", 13);
 
           core
           /* ɵɵtext */
@@ -52244,7 +52270,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(8, "th", 12);
+          .TgZ(8, "th", 13);
 
           core
           /* ɵɵtext */
@@ -52264,7 +52290,7 @@
           .TgZ(10, "tbody");
           core
           /* ɵɵtemplate */
-          .YNc(11, SocialComponent_ng_template_6_div_0_tr_11_Template, 15, 7, "tr", 14);
+          .YNc(11, SocialComponent_ng_template_6_div_0_tr_11_Template, 15, 7, "tr", 15);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -52273,17 +52299,17 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(12, "button", 13);
+          .TgZ(12, "button", 14);
           core
           /* ɵɵlistener */
           .NdJ("click", function SocialComponent_ng_template_6_div_0_Template_button_click_12_listener() {
             core
             /* ɵɵrestoreView */
-            .CHM(_r97);
-            var ctx_r96 = core
+            .CHM(_r100);
+            var ctx_r99 = core
             /* ɵɵnextContext */
             .oxw(2);
-            return ctx_r96.save(3);
+            return ctx_r99.save(3);
           });
 
           core
@@ -52299,7 +52325,7 @@
         }
 
         if (rf & 2) {
-          var ctx_r65 = core
+          var ctx_r68 = core
           /* ɵɵnextContext */
           .oxw(2);
           core
@@ -52307,7 +52333,7 @@
           .xp6(11);
           core
           /* ɵɵproperty */
-          .Q6J("ngForOf", ctx_r65.status3Data);
+          .Q6J("ngForOf", ctx_r68.status3Data);
         }
       }
 
@@ -52315,7 +52341,7 @@
         if (rf & 1) {
           core
           /* ɵɵtemplate */
-          .YNc(0, SocialComponent_ng_template_6_div_0_Template, 14, 1, "div", 7);
+          .YNc(0, SocialComponent_ng_template_6_div_0_Template, 14, 1, "div", 8);
 
           core
           /* ɵɵelement */
@@ -52334,26 +52360,26 @@
 
       function SocialComponent_ng_template_8_div_0_tr_11_button_2_Template(rf, ctx) {
         if (rf & 1) {
-          var _r108 = core
+          var _r111 = core
           /* ɵɵgetCurrentView */
           .EpF();
 
           core
           /* ɵɵelementStart */
-          .TgZ(0, "button", 22);
+          .TgZ(0, "button", 23);
           core
           /* ɵɵlistener */
           .NdJ("click", function SocialComponent_ng_template_8_div_0_tr_11_button_2_Template_button_click_0_listener() {
             core
             /* ɵɵrestoreView */
-            .CHM(_r108);
-            var row_r100 = core
+            .CHM(_r111);
+            var row_r103 = core
             /* ɵɵnextContext */
             .oxw().$implicit;
-            var ctx_r106 = core
+            var ctx_r109 = core
             /* ɵɵnextContext */
             .oxw(3);
-            return ctx_r106.changeStatus(row_r100, 6);
+            return ctx_r109.changeStatus(row_r103, 6);
           });
 
           core
@@ -52368,26 +52394,26 @@
 
       function SocialComponent_ng_template_8_div_0_tr_11_button_3_Template(rf, ctx) {
         if (rf & 1) {
-          var _r111 = core
+          var _r114 = core
           /* ɵɵgetCurrentView */
           .EpF();
 
           core
           /* ɵɵelementStart */
-          .TgZ(0, "button", 23);
+          .TgZ(0, "button", 24);
           core
           /* ɵɵlistener */
           .NdJ("click", function SocialComponent_ng_template_8_div_0_tr_11_button_3_Template_button_click_0_listener() {
             core
             /* ɵɵrestoreView */
-            .CHM(_r111);
-            var row_r100 = core
+            .CHM(_r114);
+            var row_r103 = core
             /* ɵɵnextContext */
             .oxw().$implicit;
-            var ctx_r109 = core
+            var ctx_r112 = core
             /* ɵɵnextContext */
             .oxw(3);
-            return ctx_r109.changeStatus(row_r100, 7);
+            return ctx_r112.changeStatus(row_r103, 7);
           });
 
           core
@@ -52402,26 +52428,26 @@
 
       function SocialComponent_ng_template_8_div_0_tr_11_button_4_Template(rf, ctx) {
         if (rf & 1) {
-          var _r114 = core
+          var _r117 = core
           /* ɵɵgetCurrentView */
           .EpF();
 
           core
           /* ɵɵelementStart */
-          .TgZ(0, "button", 24);
+          .TgZ(0, "button", 25);
           core
           /* ɵɵlistener */
           .NdJ("click", function SocialComponent_ng_template_8_div_0_tr_11_button_4_Template_button_click_0_listener() {
             core
             /* ɵɵrestoreView */
-            .CHM(_r114);
-            var row_r100 = core
+            .CHM(_r117);
+            var row_r103 = core
             /* ɵɵnextContext */
             .oxw().$implicit;
-            var ctx_r112 = core
+            var ctx_r115 = core
             /* ɵɵnextContext */
             .oxw(3);
-            return ctx_r112.changeStatus(row_r100, 4);
+            return ctx_r115.changeStatus(row_r103, 4);
           });
 
           core
@@ -52434,7 +52460,7 @@
         }
 
         if (rf & 2) {
-          var row_r100 = core
+          var row_r103 = core
           /* ɵɵnextContext */
           .oxw().$implicit;
           core
@@ -52442,7 +52468,7 @@
           .xp6(1);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(row_r100.status);
+          .Oqu(row_r103.status);
         }
       }
 
@@ -52450,16 +52476,16 @@
         if (rf & 1) {
           core
           /* ɵɵelement */
-          ._UZ(0, "img", 26);
+          ._UZ(0, "img", 27);
         }
 
         if (rf & 2) {
-          var row_r100 = core
+          var row_r103 = core
           /* ɵɵnextContext */
           .oxw().$implicit;
           core
           /* ɵɵproperty */
-          .Q6J("src", row_r100.url, core
+          .Q6J("src", row_r103.url, core
           /* ɵɵsanitizeUrl */
           .LSH);
         }
@@ -52467,7 +52493,7 @@
 
       function SocialComponent_ng_template_8_div_0_tr_11_Template(rf, ctx) {
         if (rf & 1) {
-          var _r118 = core
+          var _r121 = core
           /* ɵɵgetCurrentView */
           .EpF();
 
@@ -52479,13 +52505,13 @@
           .TgZ(1, "td");
           core
           /* ɵɵtemplate */
-          .YNc(2, SocialComponent_ng_template_8_div_0_tr_11_button_2_Template, 2, 0, "button", 15);
+          .YNc(2, SocialComponent_ng_template_8_div_0_tr_11_button_2_Template, 2, 0, "button", 16);
           core
           /* ɵɵtemplate */
-          .YNc(3, SocialComponent_ng_template_8_div_0_tr_11_button_3_Template, 2, 0, "button", 16);
+          .YNc(3, SocialComponent_ng_template_8_div_0_tr_11_button_3_Template, 2, 0, "button", 17);
           core
           /* ɵɵtemplate */
-          .YNc(4, SocialComponent_ng_template_8_div_0_tr_11_button_4_Template, 2, 1, "button", 17);
+          .YNc(4, SocialComponent_ng_template_8_div_0_tr_11_button_4_Template, 2, 1, "button", 18);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -52494,7 +52520,7 @@
           .TgZ(5, "td");
           core
           /* ɵɵtemplate */
-          .YNc(6, SocialComponent_ng_template_8_div_0_tr_11_img_6_Template, 1, 1, "img", 19);
+          .YNc(6, SocialComponent_ng_template_8_div_0_tr_11_img_6_Template, 1, 1, "img", 20);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -52506,15 +52532,15 @@
           .TgZ(8, "div");
           core
           /* ɵɵelementStart */
-          .TgZ(9, "input", 20);
+          .TgZ(9, "textarea", 21);
           core
           /* ɵɵlistener */
-          .NdJ("ngModelChange", function SocialComponent_ng_template_8_div_0_tr_11_Template_input_ngModelChange_9_listener($event) {
+          .NdJ("ngModelChange", function SocialComponent_ng_template_8_div_0_tr_11_Template_textarea_ngModelChange_9_listener($event) {
             var restoredCtx = core
             /* ɵɵrestoreView */
-            .CHM(_r118);
-            var row_r100 = restoredCtx.$implicit;
-            return row_r100.tags = $event;
+            .CHM(_r121);
+            var row_r103 = restoredCtx.$implicit;
+            return row_r103.tags = $event;
           });
           core
           /* ɵɵelementEnd */
@@ -52527,18 +52553,18 @@
           .TgZ(10, "div");
           core
           /* ɵɵelementStart */
-          .TgZ(11, "button", 21);
+          .TgZ(11, "button", 22);
           core
           /* ɵɵlistener */
           .NdJ("click", function SocialComponent_ng_template_8_div_0_tr_11_Template_button_click_11_listener() {
             var restoredCtx = core
             /* ɵɵrestoreView */
-            .CHM(_r118);
-            var row_r100 = restoredCtx.$implicit;
-            var ctx_r119 = core
+            .CHM(_r121);
+            var row_r103 = restoredCtx.$implicit;
+            var ctx_r122 = core
             /* ɵɵnextContext */
             .oxw(3);
-            return ctx_r119.openPopup(row_r100);
+            return ctx_r122.openPopup(row_r103);
           });
 
           core
@@ -52560,57 +52586,61 @@
         }
 
         if (rf & 2) {
-          var row_r100 = ctx.$implicit;
+          var row_r103 = ctx.$implicit;
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵproperty */
-          .Q6J("ngIf", row_r100.status == 4);
+          .Q6J("ngIf", row_r103.status == 4);
           core
           /* ɵɵadvance */
           .xp6(1);
           core
           /* ɵɵproperty */
-          .Q6J("ngIf", row_r100.status == 4);
+          .Q6J("ngIf", row_r103.status == 4);
           core
           /* ɵɵadvance */
           .xp6(1);
           core
           /* ɵɵproperty */
-          .Q6J("ngIf", row_r100.status == 6);
+          .Q6J("ngIf", row_r103.status == 6);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵproperty */
-          .Q6J("ngIf", row_r100.status == 4);
+          .Q6J("ngIf", row_r103.status == 4);
           core
           /* ɵɵadvance */
           .xp6(3);
           core
           /* ɵɵproperty */
-          .Q6J("ngModel", row_r100.tags);
+          .Q6J("ngModel", row_r103.tags);
         }
       }
 
       function SocialComponent_ng_template_8_div_0_Template(rf, ctx) {
         if (rf & 1) {
+          var _r124 = core
+          /* ɵɵgetCurrentView */
+          .EpF();
+
           core
           /* ɵɵelementStart */
           .TgZ(0, "div");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "table", 8);
+          .TgZ(1, "table", 9);
           core
           /* ɵɵelementStart */
           .TgZ(2, "thead");
           core
           /* ɵɵelementStart */
-          .TgZ(3, "tr", 9);
+          .TgZ(3, "tr", 10);
           core
           /* ɵɵelementStart */
-          .TgZ(4, "th", 10);
+          .TgZ(4, "th", 11);
 
           core
           /* ɵɵtext */
@@ -52621,7 +52651,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(6, "th", 12);
+          .TgZ(6, "th", 13);
 
           core
           /* ɵɵtext */
@@ -52632,7 +52662,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(8, "th", 12);
+          .TgZ(8, "th", 13);
 
           core
           /* ɵɵtext */
@@ -52652,10 +52682,32 @@
           .TgZ(10, "tbody");
           core
           /* ɵɵtemplate */
-          .YNc(11, SocialComponent_ng_template_8_div_0_tr_11_Template, 13, 5, "tr", 14);
+          .YNc(11, SocialComponent_ng_template_8_div_0_tr_11_Template, 13, 5, "tr", 15);
           core
           /* ɵɵelementEnd */
           .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(12, "button", 14);
+          core
+          /* ɵɵlistener */
+          .NdJ("click", function SocialComponent_ng_template_8_div_0_Template_button_click_12_listener() {
+            core
+            /* ɵɵrestoreView */
+            .CHM(_r124);
+            var ctx_r123 = core
+            /* ɵɵnextContext */
+            .oxw(2);
+            return ctx_r123.save(4);
+          });
+
+          core
+          /* ɵɵtext */
+          ._uU(13, "Save");
+
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -52665,7 +52717,7 @@
         }
 
         if (rf & 2) {
-          var ctx_r98 = core
+          var ctx_r101 = core
           /* ɵɵnextContext */
           .oxw(2);
           core
@@ -52673,7 +52725,7 @@
           .xp6(11);
           core
           /* ɵɵproperty */
-          .Q6J("ngForOf", ctx_r98.status4Data);
+          .Q6J("ngForOf", ctx_r101.status4Data);
         }
       }
 
@@ -52681,7 +52733,7 @@
         if (rf & 1) {
           core
           /* ɵɵtemplate */
-          .YNc(0, SocialComponent_ng_template_8_div_0_Template, 12, 1, "div", 7);
+          .YNc(0, SocialComponent_ng_template_8_div_0_Template, 14, 1, "div", 8);
         }
 
         if (rf & 2) {
@@ -52696,26 +52748,26 @@
 
       function SocialComponent_ng_template_10_div_0_tr_11_button_2_Template(rf, ctx) {
         if (rf & 1) {
-          var _r130 = core
+          var _r135 = core
           /* ɵɵgetCurrentView */
           .EpF();
 
           core
           /* ɵɵelementStart */
-          .TgZ(0, "button", 22);
+          .TgZ(0, "button", 23);
           core
           /* ɵɵlistener */
           .NdJ("click", function SocialComponent_ng_template_10_div_0_tr_11_button_2_Template_button_click_0_listener() {
             core
             /* ɵɵrestoreView */
-            .CHM(_r130);
-            var row_r122 = core
+            .CHM(_r135);
+            var row_r127 = core
             /* ɵɵnextContext */
             .oxw().$implicit;
-            var ctx_r128 = core
+            var ctx_r133 = core
             /* ɵɵnextContext */
             .oxw(3);
-            return ctx_r128.changeStatus(row_r122, 6);
+            return ctx_r133.changeStatus(row_r127, 6);
           });
 
           core
@@ -52730,26 +52782,26 @@
 
       function SocialComponent_ng_template_10_div_0_tr_11_button_3_Template(rf, ctx) {
         if (rf & 1) {
-          var _r133 = core
+          var _r138 = core
           /* ɵɵgetCurrentView */
           .EpF();
 
           core
           /* ɵɵelementStart */
-          .TgZ(0, "button", 23);
+          .TgZ(0, "button", 24);
           core
           /* ɵɵlistener */
           .NdJ("click", function SocialComponent_ng_template_10_div_0_tr_11_button_3_Template_button_click_0_listener() {
             core
             /* ɵɵrestoreView */
-            .CHM(_r133);
-            var row_r122 = core
+            .CHM(_r138);
+            var row_r127 = core
             /* ɵɵnextContext */
             .oxw().$implicit;
-            var ctx_r131 = core
+            var ctx_r136 = core
             /* ɵɵnextContext */
             .oxw(3);
-            return ctx_r131.changeStatus(row_r122, 7);
+            return ctx_r136.changeStatus(row_r127, 7);
           });
 
           core
@@ -52764,26 +52816,26 @@
 
       function SocialComponent_ng_template_10_div_0_tr_11_button_4_Template(rf, ctx) {
         if (rf & 1) {
-          var _r136 = core
+          var _r141 = core
           /* ɵɵgetCurrentView */
           .EpF();
 
           core
           /* ɵɵelementStart */
-          .TgZ(0, "button", 24);
+          .TgZ(0, "button", 25);
           core
           /* ɵɵlistener */
           .NdJ("click", function SocialComponent_ng_template_10_div_0_tr_11_button_4_Template_button_click_0_listener() {
             core
             /* ɵɵrestoreView */
-            .CHM(_r136);
-            var row_r122 = core
+            .CHM(_r141);
+            var row_r127 = core
             /* ɵɵnextContext */
             .oxw().$implicit;
-            var ctx_r134 = core
+            var ctx_r139 = core
             /* ɵɵnextContext */
             .oxw(3);
-            return ctx_r134.changeStatus(row_r122, 5);
+            return ctx_r139.changeStatus(row_r127, 5);
           });
 
           core
@@ -52796,7 +52848,7 @@
         }
 
         if (rf & 2) {
-          var row_r122 = core
+          var row_r127 = core
           /* ɵɵnextContext */
           .oxw().$implicit;
           core
@@ -52804,7 +52856,7 @@
           .xp6(1);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(row_r122.status);
+          .Oqu(row_r127.status);
         }
       }
 
@@ -52812,16 +52864,16 @@
         if (rf & 1) {
           core
           /* ɵɵelement */
-          ._UZ(0, "img", 26);
+          ._UZ(0, "img", 27);
         }
 
         if (rf & 2) {
-          var row_r122 = core
+          var row_r127 = core
           /* ɵɵnextContext */
           .oxw().$implicit;
           core
           /* ɵɵproperty */
-          .Q6J("src", row_r122.url, core
+          .Q6J("src", row_r127.url, core
           /* ɵɵsanitizeUrl */
           .LSH);
         }
@@ -52829,7 +52881,7 @@
 
       function SocialComponent_ng_template_10_div_0_tr_11_Template(rf, ctx) {
         if (rf & 1) {
-          var _r140 = core
+          var _r145 = core
           /* ɵɵgetCurrentView */
           .EpF();
 
@@ -52841,13 +52893,13 @@
           .TgZ(1, "td");
           core
           /* ɵɵtemplate */
-          .YNc(2, SocialComponent_ng_template_10_div_0_tr_11_button_2_Template, 2, 0, "button", 15);
+          .YNc(2, SocialComponent_ng_template_10_div_0_tr_11_button_2_Template, 2, 0, "button", 16);
           core
           /* ɵɵtemplate */
-          .YNc(3, SocialComponent_ng_template_10_div_0_tr_11_button_3_Template, 2, 0, "button", 16);
+          .YNc(3, SocialComponent_ng_template_10_div_0_tr_11_button_3_Template, 2, 0, "button", 17);
           core
           /* ɵɵtemplate */
-          .YNc(4, SocialComponent_ng_template_10_div_0_tr_11_button_4_Template, 2, 1, "button", 17);
+          .YNc(4, SocialComponent_ng_template_10_div_0_tr_11_button_4_Template, 2, 1, "button", 18);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -52856,7 +52908,7 @@
           .TgZ(5, "td");
           core
           /* ɵɵtemplate */
-          .YNc(6, SocialComponent_ng_template_10_div_0_tr_11_img_6_Template, 1, 1, "img", 19);
+          .YNc(6, SocialComponent_ng_template_10_div_0_tr_11_img_6_Template, 1, 1, "img", 20);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -52868,15 +52920,15 @@
           .TgZ(8, "div");
           core
           /* ɵɵelementStart */
-          .TgZ(9, "input", 20);
+          .TgZ(9, "textarea", 21);
           core
           /* ɵɵlistener */
-          .NdJ("ngModelChange", function SocialComponent_ng_template_10_div_0_tr_11_Template_input_ngModelChange_9_listener($event) {
+          .NdJ("ngModelChange", function SocialComponent_ng_template_10_div_0_tr_11_Template_textarea_ngModelChange_9_listener($event) {
             var restoredCtx = core
             /* ɵɵrestoreView */
-            .CHM(_r140);
-            var row_r122 = restoredCtx.$implicit;
-            return row_r122.tags = $event;
+            .CHM(_r145);
+            var row_r127 = restoredCtx.$implicit;
+            return row_r127.tags = $event;
           });
           core
           /* ɵɵelementEnd */
@@ -52889,18 +52941,18 @@
           .TgZ(10, "div");
           core
           /* ɵɵelementStart */
-          .TgZ(11, "button", 21);
+          .TgZ(11, "button", 22);
           core
           /* ɵɵlistener */
           .NdJ("click", function SocialComponent_ng_template_10_div_0_tr_11_Template_button_click_11_listener() {
             var restoredCtx = core
             /* ɵɵrestoreView */
-            .CHM(_r140);
-            var row_r122 = restoredCtx.$implicit;
-            var ctx_r141 = core
+            .CHM(_r145);
+            var row_r127 = restoredCtx.$implicit;
+            var ctx_r146 = core
             /* ɵɵnextContext */
             .oxw(3);
-            return ctx_r141.openPopup(row_r122);
+            return ctx_r146.openPopup(row_r127);
           });
 
           core
@@ -52922,57 +52974,61 @@
         }
 
         if (rf & 2) {
-          var row_r122 = ctx.$implicit;
+          var row_r127 = ctx.$implicit;
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵproperty */
-          .Q6J("ngIf", row_r122.status == 5);
+          .Q6J("ngIf", row_r127.status == 5);
           core
           /* ɵɵadvance */
           .xp6(1);
           core
           /* ɵɵproperty */
-          .Q6J("ngIf", row_r122.status == 5);
+          .Q6J("ngIf", row_r127.status == 5);
           core
           /* ɵɵadvance */
           .xp6(1);
           core
           /* ɵɵproperty */
-          .Q6J("ngIf", row_r122.status == 6);
+          .Q6J("ngIf", row_r127.status == 6);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵproperty */
-          .Q6J("ngIf", row_r122.status == 5);
+          .Q6J("ngIf", row_r127.status == 5);
           core
           /* ɵɵadvance */
           .xp6(3);
           core
           /* ɵɵproperty */
-          .Q6J("ngModel", row_r122.tags);
+          .Q6J("ngModel", row_r127.tags);
         }
       }
 
       function SocialComponent_ng_template_10_div_0_Template(rf, ctx) {
         if (rf & 1) {
+          var _r148 = core
+          /* ɵɵgetCurrentView */
+          .EpF();
+
           core
           /* ɵɵelementStart */
           .TgZ(0, "div");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "table", 8);
+          .TgZ(1, "table", 9);
           core
           /* ɵɵelementStart */
           .TgZ(2, "thead");
           core
           /* ɵɵelementStart */
-          .TgZ(3, "tr", 9);
+          .TgZ(3, "tr", 10);
           core
           /* ɵɵelementStart */
-          .TgZ(4, "th", 10);
+          .TgZ(4, "th", 11);
 
           core
           /* ɵɵtext */
@@ -52983,7 +53039,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(6, "th", 12);
+          .TgZ(6, "th", 13);
 
           core
           /* ɵɵtext */
@@ -52994,7 +53050,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(8, "th", 12);
+          .TgZ(8, "th", 13);
 
           core
           /* ɵɵtext */
@@ -53014,10 +53070,32 @@
           .TgZ(10, "tbody");
           core
           /* ɵɵtemplate */
-          .YNc(11, SocialComponent_ng_template_10_div_0_tr_11_Template, 13, 5, "tr", 14);
+          .YNc(11, SocialComponent_ng_template_10_div_0_tr_11_Template, 13, 5, "tr", 15);
           core
           /* ɵɵelementEnd */
           .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(12, "button", 14);
+          core
+          /* ɵɵlistener */
+          .NdJ("click", function SocialComponent_ng_template_10_div_0_Template_button_click_12_listener() {
+            core
+            /* ɵɵrestoreView */
+            .CHM(_r148);
+            var ctx_r147 = core
+            /* ɵɵnextContext */
+            .oxw(2);
+            return ctx_r147.save(5);
+          });
+
+          core
+          /* ɵɵtext */
+          ._uU(13, "Save");
+
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -53027,7 +53105,7 @@
         }
 
         if (rf & 2) {
-          var ctx_r120 = core
+          var ctx_r125 = core
           /* ɵɵnextContext */
           .oxw(2);
           core
@@ -53035,7 +53113,7 @@
           .xp6(11);
           core
           /* ɵɵproperty */
-          .Q6J("ngForOf", ctx_r120.status5Data);
+          .Q6J("ngForOf", ctx_r125.status5Data);
         }
       }
 
@@ -53043,7 +53121,7 @@
         if (rf & 1) {
           core
           /* ɵɵtemplate */
-          .YNc(0, SocialComponent_ng_template_10_div_0_Template, 12, 1, "div", 7);
+          .YNc(0, SocialComponent_ng_template_10_div_0_Template, 14, 1, "div", 8);
         }
 
         if (rf & 2) {
@@ -53060,16 +53138,16 @@
         if (rf & 1) {
           core
           /* ɵɵelement */
-          ._UZ(0, "img", 26);
+          ._UZ(0, "img", 27);
         }
 
         if (rf & 2) {
-          var row_r144 = core
+          var row_r151 = core
           /* ɵɵnextContext */
           .oxw().$implicit;
           core
           /* ɵɵproperty */
-          .Q6J("src", row_r144.url, core
+          .Q6J("src", row_r151.url, core
           /* ɵɵsanitizeUrl */
           .LSH);
         }
@@ -53077,7 +53155,7 @@
 
       function SocialComponent_ng_template_12_div_0_tr_11_Template(rf, ctx) {
         if (rf & 1) {
-          var _r149 = core
+          var _r156 = core
           /* ɵɵgetCurrentView */
           .EpF();
 
@@ -53094,7 +53172,7 @@
           .TgZ(2, "td");
           core
           /* ɵɵtemplate */
-          .YNc(3, SocialComponent_ng_template_12_div_0_tr_11_img_3_Template, 1, 1, "img", 19);
+          .YNc(3, SocialComponent_ng_template_12_div_0_tr_11_img_3_Template, 1, 1, "img", 20);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -53106,15 +53184,15 @@
           .TgZ(5, "div");
           core
           /* ɵɵelementStart */
-          .TgZ(6, "input", 20);
+          .TgZ(6, "textarea", 21);
           core
           /* ɵɵlistener */
-          .NdJ("ngModelChange", function SocialComponent_ng_template_12_div_0_tr_11_Template_input_ngModelChange_6_listener($event) {
+          .NdJ("ngModelChange", function SocialComponent_ng_template_12_div_0_tr_11_Template_textarea_ngModelChange_6_listener($event) {
             var restoredCtx = core
             /* ɵɵrestoreView */
-            .CHM(_r149);
-            var row_r144 = restoredCtx.$implicit;
-            return row_r144.tags = $event;
+            .CHM(_r156);
+            var row_r151 = restoredCtx.$implicit;
+            return row_r151.tags = $event;
           });
           core
           /* ɵɵelementEnd */
@@ -53127,18 +53205,18 @@
           .TgZ(7, "div");
           core
           /* ɵɵelementStart */
-          .TgZ(8, "button", 21);
+          .TgZ(8, "button", 22);
           core
           /* ɵɵlistener */
           .NdJ("click", function SocialComponent_ng_template_12_div_0_tr_11_Template_button_click_8_listener() {
             var restoredCtx = core
             /* ɵɵrestoreView */
-            .CHM(_r149);
-            var row_r144 = restoredCtx.$implicit;
-            var ctx_r150 = core
+            .CHM(_r156);
+            var row_r151 = restoredCtx.$implicit;
+            var ctx_r157 = core
             /* ɵɵnextContext */
             .oxw(3);
-            return ctx_r150.openPopup(row_r144);
+            return ctx_r157.openPopup(row_r151);
           });
 
           core
@@ -53160,39 +53238,43 @@
         }
 
         if (rf & 2) {
-          var row_r144 = ctx.$implicit;
+          var row_r151 = ctx.$implicit;
           core
           /* ɵɵadvance */
           .xp6(3);
           core
           /* ɵɵproperty */
-          .Q6J("ngIf", row_r144.status == 8);
+          .Q6J("ngIf", row_r151.status == 6);
           core
           /* ɵɵadvance */
           .xp6(3);
           core
           /* ɵɵproperty */
-          .Q6J("ngModel", row_r144.tags);
+          .Q6J("ngModel", row_r151.tags);
         }
       }
 
       function SocialComponent_ng_template_12_div_0_Template(rf, ctx) {
         if (rf & 1) {
+          var _r159 = core
+          /* ɵɵgetCurrentView */
+          .EpF();
+
           core
           /* ɵɵelementStart */
           .TgZ(0, "div");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "table", 8);
+          .TgZ(1, "table", 9);
           core
           /* ɵɵelementStart */
           .TgZ(2, "thead");
           core
           /* ɵɵelementStart */
-          .TgZ(3, "tr", 9);
+          .TgZ(3, "tr", 10);
           core
           /* ɵɵelementStart */
-          .TgZ(4, "th", 10);
+          .TgZ(4, "th", 11);
 
           core
           /* ɵɵtext */
@@ -53203,7 +53285,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(6, "th", 12);
+          .TgZ(6, "th", 13);
 
           core
           /* ɵɵtext */
@@ -53214,7 +53296,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(8, "th", 12);
+          .TgZ(8, "th", 13);
 
           core
           /* ɵɵtext */
@@ -53234,10 +53316,32 @@
           .TgZ(10, "tbody");
           core
           /* ɵɵtemplate */
-          .YNc(11, SocialComponent_ng_template_12_div_0_tr_11_Template, 10, 2, "tr", 14);
+          .YNc(11, SocialComponent_ng_template_12_div_0_tr_11_Template, 10, 2, "tr", 15);
           core
           /* ɵɵelementEnd */
           .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(12, "button", 14);
+          core
+          /* ɵɵlistener */
+          .NdJ("click", function SocialComponent_ng_template_12_div_0_Template_button_click_12_listener() {
+            core
+            /* ɵɵrestoreView */
+            .CHM(_r159);
+            var ctx_r158 = core
+            /* ɵɵnextContext */
+            .oxw(2);
+            return ctx_r158.clear(6);
+          });
+
+          core
+          /* ɵɵtext */
+          ._uU(13, "Clear");
+
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -53247,7 +53351,7 @@
         }
 
         if (rf & 2) {
-          var ctx_r142 = core
+          var ctx_r149 = core
           /* ɵɵnextContext */
           .oxw(2);
           core
@@ -53255,7 +53359,7 @@
           .xp6(11);
           core
           /* ɵɵproperty */
-          .Q6J("ngForOf", ctx_r142.status8Data);
+          .Q6J("ngForOf", ctx_r149.status6Data);
         }
       }
 
@@ -53263,7 +53367,7 @@
         if (rf & 1) {
           core
           /* ɵɵtemplate */
-          .YNc(0, SocialComponent_ng_template_12_div_0_Template, 12, 1, "div", 7);
+          .YNc(0, SocialComponent_ng_template_12_div_0_Template, 14, 1, "div", 8);
         }
 
         if (rf & 2) {
@@ -53272,33 +53376,271 @@
           .oxw();
           core
           /* ɵɵproperty */
-          .Q6J("ngIf", ctx_r5.status8Data != null);
+          .Q6J("ngIf", ctx_r5.status6Data != null);
+        }
+      }
+
+      function SocialComponent_ng_template_14_div_0_tr_11_img_3_Template(rf, ctx) {
+        if (rf & 1) {
+          core
+          /* ɵɵelement */
+          ._UZ(0, "img", 27);
+        }
+
+        if (rf & 2) {
+          var row_r162 = core
+          /* ɵɵnextContext */
+          .oxw().$implicit;
+          core
+          /* ɵɵproperty */
+          .Q6J("src", row_r162.url, core
+          /* ɵɵsanitizeUrl */
+          .LSH);
+        }
+      }
+
+      function SocialComponent_ng_template_14_div_0_tr_11_Template(rf, ctx) {
+        if (rf & 1) {
+          var _r167 = core
+          /* ɵɵgetCurrentView */
+          .EpF();
+
+          core
+          /* ɵɵelementStart */
+          .TgZ(0, "tr");
+
+          core
+          /* ɵɵelement */
+          ._UZ(1, "td");
+
+          core
+          /* ɵɵelementStart */
+          .TgZ(2, "td");
+          core
+          /* ɵɵtemplate */
+          .YNc(3, SocialComponent_ng_template_14_div_0_tr_11_img_3_Template, 1, 1, "img", 20);
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(4, "td");
+          core
+          /* ɵɵelementStart */
+          .TgZ(5, "div");
+          core
+          /* ɵɵelementStart */
+          .TgZ(6, "input", 28);
+          core
+          /* ɵɵlistener */
+          .NdJ("ngModelChange", function SocialComponent_ng_template_14_div_0_tr_11_Template_input_ngModelChange_6_listener($event) {
+            var restoredCtx = core
+            /* ɵɵrestoreView */
+            .CHM(_r167);
+            var row_r162 = restoredCtx.$implicit;
+            return row_r162.tags = $event;
+          });
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(7, "div");
+          core
+          /* ɵɵelementStart */
+          .TgZ(8, "button", 22);
+          core
+          /* ɵɵlistener */
+          .NdJ("click", function SocialComponent_ng_template_14_div_0_tr_11_Template_button_click_8_listener() {
+            var restoredCtx = core
+            /* ɵɵrestoreView */
+            .CHM(_r167);
+            var row_r162 = restoredCtx.$implicit;
+            var ctx_r168 = core
+            /* ɵɵnextContext */
+            .oxw(3);
+            return ctx_r168.openPopup(row_r162);
+          });
+
+          core
+          /* ɵɵtext */
+          ._uU(9, "X");
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+        }
+
+        if (rf & 2) {
+          var row_r162 = ctx.$implicit;
+          core
+          /* ɵɵadvance */
+          .xp6(3);
+          core
+          /* ɵɵproperty */
+          .Q6J("ngIf", row_r162.status == 8);
+          core
+          /* ɵɵadvance */
+          .xp6(3);
+          core
+          /* ɵɵproperty */
+          .Q6J("ngModel", row_r162.tags);
+        }
+      }
+
+      function SocialComponent_ng_template_14_div_0_Template(rf, ctx) {
+        if (rf & 1) {
+          core
+          /* ɵɵelementStart */
+          .TgZ(0, "div");
+          core
+          /* ɵɵelementStart */
+          .TgZ(1, "table", 9);
+          core
+          /* ɵɵelementStart */
+          .TgZ(2, "thead");
+          core
+          /* ɵɵelementStart */
+          .TgZ(3, "tr", 10);
+          core
+          /* ɵɵelementStart */
+          .TgZ(4, "th", 11);
+
+          core
+          /* ɵɵtext */
+          ._uU(5, "Action");
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(6, "th", 13);
+
+          core
+          /* ɵɵtext */
+          ._uU(7, "Image");
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(8, "th", 13);
+
+          core
+          /* ɵɵtext */
+          ._uU(9, "Tags");
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(10, "tbody");
+          core
+          /* ɵɵtemplate */
+          .YNc(11, SocialComponent_ng_template_14_div_0_tr_11_Template, 10, 2, "tr", 15);
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+        }
+
+        if (rf & 2) {
+          var ctx_r160 = core
+          /* ɵɵnextContext */
+          .oxw(2);
+          core
+          /* ɵɵadvance */
+          .xp6(11);
+          core
+          /* ɵɵproperty */
+          .Q6J("ngForOf", ctx_r160.status8Data);
+        }
+      }
+
+      function SocialComponent_ng_template_14_Template(rf, ctx) {
+        if (rf & 1) {
+          core
+          /* ɵɵtemplate */
+          .YNc(0, SocialComponent_ng_template_14_div_0_Template, 12, 1, "div", 8);
+        }
+
+        if (rf & 2) {
+          var ctx_r6 = core
+          /* ɵɵnextContext */
+          .oxw();
+          core
+          /* ɵɵproperty */
+          .Q6J("ngIf", ctx_r6.status8Data != null);
         }
       }
 
       var SocialComponent = /*#__PURE__*/function () {
-        function SocialComponent(toastr, restService, dialog) {
+        function SocialComponent(toastr, restService, dialog, utilityService) {
           _classCallCheck(this, SocialComponent);
 
           this.toastr = toastr;
           this.restService = restService;
           this.dialog = dialog;
+          this.utilityService = utilityService;
           this.sumData = [];
           this.myControl = new fesm2015_forms
           /* FormControl */
           .NI('');
           this.username = localStorage.getItem('f1-chosen-nickname');
+          this.utilityService.setTitle(12, 'Socials');
           this.getData();
         }
 
         _createClass(SocialComponent, [{
+          key: "handleInstagramTags",
+          value: function handleInstagramTags(data) {
+            var instagramTags = [];
+            var instagramTagsMap = new Map();
+            data.forEach(function (person) {
+              instagramTags.push(person.key);
+              instagramTagsMap.set(person.key, person.value);
+            });
+            this.instagramTags = instagramTags;
+            this.instagramTagsMap = instagramTagsMap;
+            console.log('handleInstagramTags');
+            console.log(data);
+            console.log(this.instagramTagsMap);
+          }
+        }, {
           key: "getData",
           value: function getData() {
             var _this22 = this;
 
             this.restService.getInstagramFollows().subscribe({
               next: function next(data) {
-                _this22.instagramTags = data;
+                _this22.handleInstagramTags(data);
+
                 return data;
               }
             });
@@ -53329,6 +53671,12 @@
             this.restService.getChanPostsByStatus(5, this.username).subscribe({
               next: function next(data) {
                 _this22.status5Data = data;
+                return data;
+              }
+            });
+            this.restService.getChanPostsByStatus(6, this.username).subscribe({
+              next: function next(data) {
+                _this22.status6Data = data;
                 return data;
               }
             });
@@ -53378,9 +53726,34 @@
             row.status = status;
           }
         }, {
+          key: "clear",
+          value: function clear(table) {
+            var _this25 = this;
+
+            if (table == 6) {
+              this.status6Data.forEach(function (entry) {
+                entry.status = 7;
+              });
+              this.restService.saveChanPosts(this.status6Data, this.username).subscribe({
+                next: function next(data) {
+                  _this25.restService.getChanPostsByStatus(6, _this25.username).subscribe({
+                    next: function next(data) {
+                      _this25.status6Data = data;
+                      return data;
+                    }
+                  });
+
+                  _this25.toastr.info('Cleared', '');
+
+                  return data;
+                }
+              });
+            }
+          }
+        }, {
           key: "save",
           value: function save(table) {
-            var _this25 = this;
+            var _this26 = this;
 
             if (table == 1) {
               this.status1Data.forEach(function (entry) {
@@ -53390,9 +53763,31 @@
               });
               this.restService.saveChanPosts(this.status1Data, this.username).subscribe({
                 next: function next(data) {
-                  _this25.status1Data = data;
+                  _this26.status1Data = data;
 
-                  _this25.toastr.info('Saved', '');
+                  _this26.toastr.info('Saved', '');
+
+                  return data;
+                }
+              });
+            }
+
+            if (table == 2) {
+              this.status2Data.forEach(function (entry) {
+                if (entry.status == 2) {
+                  entry.status = 7;
+                }
+              });
+              this.restService.saveChanPosts(this.status2Data, this.username).subscribe({
+                next: function next(data) {
+                  _this26.restService.getChanPostsByStatus(2, _this26.username).subscribe({
+                    next: function next(data) {
+                      _this26.status2Data = data;
+                      return data;
+                    }
+                  });
+
+                  _this26.toastr.info('Saved', '');
 
                   return data;
                 }
@@ -53407,14 +53802,48 @@
               });
               this.restService.saveChanPosts(this.status3Data, this.username).subscribe({
                 next: function next(data) {
-                  _this25.restService.getChanPostsByStatus(3, _this25.username).subscribe({
+                  _this26.restService.getChanPostsByStatus(3, _this26.username).subscribe({
                     next: function next(data) {
-                      _this25.status3Data = data;
+                      _this26.status3Data = data;
                       return data;
                     }
                   });
 
-                  _this25.toastr.info('Saved', '');
+                  _this26.toastr.info('Saved', '');
+
+                  return data;
+                }
+              });
+            }
+
+            if (table == 4) {
+              this.restService.saveChanPosts(this.status4Data, this.username).subscribe({
+                next: function next(data) {
+                  _this26.restService.getChanPostsByStatus(4, _this26.username).subscribe({
+                    next: function next(data) {
+                      _this26.status4Data = data;
+                      return data;
+                    }
+                  });
+
+                  _this26.toastr.info('Saved', '');
+
+                  return data;
+                }
+              });
+            }
+
+            if (table == 5) {
+              this.restService.saveChanPosts(this.status5Data, this.username).subscribe({
+                next: function next(data) {
+                  _this26.restService.getChanPostsByStatus(5, _this26.username).subscribe({
+                    next: function next(data) {
+                      _this26.status5Data = data;
+                      return data;
+                    }
+                  });
+
+                  _this26.toastr.info('Saved', '');
 
                   return data;
                 }
@@ -53424,15 +53853,19 @@
         }, {
           key: "openPopup",
           value: function openPopup(row) {
+            var _this27 = this;
+
             console.log(row.tags);
             var dialogRef = this.dialog.open(SingleColumnTableWithEventDialogComponent);
             dialogRef.componentInstance.init('Tag', this.instagramTags);
             dialogRef.afterClosed().subscribe(function (selectedTag) {
+              console.log(selectedTag);
+
               if (selectedTag != null) {
                 if (row.tags == null) {
-                  row.tags = 'Thank you ' + selectedTag + ', very cool! \r\n  \r\n';
+                  row.tags = 'Thank you ' + '@' + selectedTag + ', very cool! \r\n\n' + _this27.instagramTagsMap.get(selectedTag);
                 } else {
-                  row.tags = row.tags + selectedTag + ' ';
+                  row.tags = row.tags + '@' + selectedTag + ' ' + _this27.instagramTagsMap.get(selectedTag);
                 }
               }
             });
@@ -53453,7 +53886,11 @@
         /* RestService */
         .v), core
         /* ɵɵdirectiveInject */
-        .Y36(MatDialog));
+        .Y36(MatDialog), core
+        /* ɵɵdirectiveInject */
+        .Y36(utility_service
+        /* UtilityService */
+        .t));
       };
 
       SocialComponent.ɵcmp = /*@__PURE__*/core
@@ -53461,9 +53898,9 @@
       .Xpm({
         type: SocialComponent,
         selectors: [["socials-cmp"]],
-        decls: 13,
+        decls: 15,
         vars: 0,
-        consts: [["label", "Status 1 (jpg)"], ["matTabContent", ""], ["label", "Status 2 (png)"], ["label", "Status 3 (imported)"], ["label", "Status 4 (memes)"], ["label", "Status 5  (serious)"], ["label", "Status 8 (Posted)"], [4, "ngIf"], [1, "table", "table-striped"], [1, "text-center", "bg-primary", "text-white"], ["scope", "col", 1, "width-100-px"], ["color", "accent", "mat-raised-button", "", 1, "width-100-px", 3, "click"], ["scope", "col"], ["color", "primary", "mat-raised-button", "", 1, "width-100", 3, "click"], [4, "ngFor", "ngForOf"], ["class", "width-100-px div-height-70 mt-4", "color", "primary", "mat-raised-button", "", 3, "click", 4, "ngIf"], ["class", "width-100-px div-height-70 mt-4", "color", "warn", "mat-raised-button", "", 3, "click", 4, "ngIf"], ["class", "width-100-px", "color", "primary", "mat-raised-button", "", 3, "click", 4, "ngIf"], ["class", "width-100-px", "color", "warn", "mat-raised-button", "", 3, "click", 4, "ngIf"], ["alt", "image", "style", "max-height:50vh", 3, "src", 4, "ngIf"], ["type", "text", 3, "ngModel", "ngModelChange"], ["color", "primary", "mat-flat-button", "", 3, "click"], ["color", "primary", "mat-raised-button", "", 1, "width-100-px", "div-height-70", "mt-4", 3, "click"], ["color", "warn", "mat-raised-button", "", 1, "width-100-px", "div-height-70", "mt-4", 3, "click"], ["color", "primary", "mat-raised-button", "", 1, "width-100-px", 3, "click"], ["color", "warn", "mat-raised-button", "", 1, "width-100-px", 3, "click"], ["alt", "image", 2, "max-height", "50vh", 3, "src"]],
+        consts: [["label", "Status 1 (jpg)"], ["matTabContent", ""], ["label", "Status 2 (png)"], ["label", "Status 3 (imported)"], ["label", "Status 4 (memes)"], ["label", "Status 5  (serious)"], ["label", "Status 6  (toConvert)"], ["label", "Status 8 (Posted)"], [4, "ngIf"], [1, "table", "table-striped"], [1, "text-center", "bg-primary", "text-white"], ["scope", "col", 1, "width-100-px"], ["color", "accent", "mat-raised-button", "", 1, "width-100-px", 3, "click"], ["scope", "col"], ["color", "primary", "mat-raised-button", "", 1, "width-100", 3, "click"], [4, "ngFor", "ngForOf"], ["class", "width-100-px div-height-70 mt-4", "color", "primary", "mat-raised-button", "", 3, "click", 4, "ngIf"], ["class", "width-100-px div-height-70 mt-4", "color", "warn", "mat-raised-button", "", 3, "click", 4, "ngIf"], ["class", "width-100-px", "color", "primary", "mat-raised-button", "", 3, "click", 4, "ngIf"], ["class", "width-100-px", "color", "warn", "mat-raised-button", "", 3, "click", 4, "ngIf"], ["alt", "image", "style", "max-height:50vh", 3, "src", 4, "ngIf"], ["rows", "5", "type", "text", 1, "width-100", 3, "ngModel", "ngModelChange"], ["color", "primary", "mat-flat-button", "", 3, "click"], ["color", "primary", "mat-raised-button", "", 1, "width-100-px", "div-height-70", "mt-4", 3, "click"], ["color", "warn", "mat-raised-button", "", 1, "width-100-px", "div-height-70", "mt-4", 3, "click"], ["color", "primary", "mat-raised-button", "", 1, "width-100-px", 3, "click"], ["color", "warn", "mat-raised-button", "", 1, "width-100-px", 3, "click"], ["alt", "image", 2, "max-height", "50vh", 3, "src"], ["type", "text", 3, "ngModel", "ngModelChange"]],
         template: function SocialComponent_Template(rf, ctx) {
           if (rf & 1) {
             core
@@ -53520,6 +53957,15 @@
             core
             /* ɵɵtemplate */
             .YNc(12, SocialComponent_ng_template_12_Template, 1, 1, "ng-template", 1);
+            core
+            /* ɵɵelementEnd */
+            .qZA();
+            core
+            /* ɵɵelementStart */
+            .TgZ(13, "mat-tab", 7);
+            core
+            /* ɵɵtemplate */
+            .YNc(14, SocialComponent_ng_template_14_Template, 1, 1, "ng-template", 1);
             core
             /* ɵɵelementEnd */
             .qZA();
@@ -53714,13 +54160,13 @@
             return this._name;
           },
           set: function set(value) {
-            var _this26 = this;
+            var _this28 = this;
 
             this._name = value;
 
             if (this._buttonToggles) {
               this._buttonToggles.forEach(function (toggle) {
-                toggle.name = _this26._name;
+                toggle.name = _this28._name;
 
                 toggle._markForCheck();
               });
@@ -53866,7 +54312,7 @@
         }, {
           key: "_syncButtonToggle",
           value: function _syncButtonToggle(toggle, select) {
-            var _this27 = this;
+            var _this29 = this;
 
             var isUserInput = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
             var deferEvents = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
@@ -53892,7 +54338,7 @@
 
             if (deferEvents) {
               Promise.resolve().then(function () {
-                return _this27._updateModelValue(isUserInput);
+                return _this29._updateModelValue(isUserInput);
               });
             } else {
               this._updateModelValue(isUserInput);
@@ -53927,7 +54373,7 @@
         }, {
           key: "_setSelectionByValue",
           value: function _setSelectionByValue(value) {
-            var _this28 = this;
+            var _this30 = this;
 
             this._rawValue = value;
 
@@ -53943,7 +54389,7 @@
               this._clearSelection();
 
               value.forEach(function (currentValue) {
-                return _this28._selectValue(currentValue);
+                return _this30._selectValue(currentValue);
               });
             } else {
               this._clearSelection();
@@ -54257,32 +54703,32 @@
         var _super8 = _createSuper(MatButtonToggle);
 
         function MatButtonToggle(toggleGroup, _changeDetectorRef, _elementRef, _focusMonitor, defaultTabIndex, defaultOptions) {
-          var _this29;
+          var _this31;
 
           _classCallCheck(this, MatButtonToggle);
 
-          _this29 = _super8.call(this);
-          _this29._changeDetectorRef = _changeDetectorRef;
-          _this29._elementRef = _elementRef;
-          _this29._focusMonitor = _focusMonitor;
-          _this29._isSingleSelector = false;
-          _this29._checked = false;
+          _this31 = _super8.call(this);
+          _this31._changeDetectorRef = _changeDetectorRef;
+          _this31._elementRef = _elementRef;
+          _this31._focusMonitor = _focusMonitor;
+          _this31._isSingleSelector = false;
+          _this31._checked = false;
           /**
            * Users can specify the `aria-labelledby` attribute which will be forwarded to the input element
            */
 
-          _this29.ariaLabelledby = null;
-          _this29._disabled = false;
+          _this31.ariaLabelledby = null;
+          _this31._disabled = false;
           /** Event emitted when the group value changes. */
 
-          _this29.change = new core
+          _this31.change = new core
           /* EventEmitter */
           .vpe();
           var parsedTabIndex = Number(defaultTabIndex);
-          _this29.tabIndex = parsedTabIndex || parsedTabIndex === 0 ? parsedTabIndex : null;
-          _this29.buttonToggleGroup = toggleGroup;
-          _this29.appearance = defaultOptions && defaultOptions.appearance ? defaultOptions.appearance : 'standard';
-          return _this29;
+          _this31.tabIndex = parsedTabIndex || parsedTabIndex === 0 ? parsedTabIndex : null;
+          _this31.buttonToggleGroup = toggleGroup;
+          _this31.appearance = defaultOptions && defaultOptions.appearance ? defaultOptions.appearance : 'standard';
+          return _this31;
         }
         /** Unique ID for the underlying `button` element. */
 
@@ -56343,7 +56789,7 @@
 
       var ExposureComponent = /*#__PURE__*/function () {
         function ExposureComponent(restService, snackBar, router, utilityService) {
-          var _this30 = this;
+          var _this32 = this;
 
           _classCallCheck(this, ExposureComponent);
 
@@ -56355,25 +56801,25 @@
           this.exposureCountdown = 0;
           this.restService.getExposureDriverList().subscribe({
             next: function next(data) {
-              _this30.exposureResponse = data;
+              _this32.exposureResponse = data;
 
-              if (localStorage.getItem('f1-vote-status') == _this30.exposureResponse.title + _this30.exposureResponse.year) {
-                _this30.redirectToExposedResults();
+              if (localStorage.getItem('f1-vote-status') == _this32.exposureResponse.title + _this32.exposureResponse.year) {
+                _this32.redirectToExposedResults();
               }
 
-              _this30.utilityService.setTitle(8, 'Who got exposed? - /' + _this30.exposureResponse.title + '/ edition');
+              _this32.utilityService.setTitle(8, 'Who got exposed? - /' + _this32.exposureResponse.title + '/ edition');
 
-              switch (_this30.exposureResponse.status) {
+              switch (_this32.exposureResponse.status) {
                 case 'OVER':
                   {
-                    _this30.redirectToExposedResults();
+                    _this32.redirectToExposedResults();
 
                     break;
                   }
 
                 case 'SOON':
                   {
-                    _this30.exposureCountdown = ~~((new Date(_this30.exposureResponse.exposureTime).getTime() - new Date().getTime()) / 1000);
+                    _this32.exposureCountdown = ~~((new Date(_this32.exposureResponse.exposureTime).getTime() - new Date().getTime()) / 1000);
                     break;
                   }
 
@@ -56391,15 +56837,15 @@
         _createClass(ExposureComponent, [{
           key: "expose",
           value: function expose() {
-            var _this31 = this;
+            var _this33 = this;
 
             this.restService.exposeDrivers(this.exposedDrivers).subscribe({
               next: function next(data) {
-                _this31.openSnackBar(data);
+                _this33.openSnackBar(data);
 
-                localStorage.setItem('f1-vote-status', _this31.exposureResponse.title + _this31.exposureResponse.year);
+                localStorage.setItem('f1-vote-status', _this33.exposureResponse.title + _this33.exposureResponse.year);
 
-                _this31.redirectToExposedResults();
+                _this33.redirectToExposedResults();
 
                 return data;
               }
@@ -57532,7 +57978,7 @@
         _createClass(ExposedComponent, [{
           key: "setExposureChampionshipData",
           value: function setExposureChampionshipData() {
-            var _this32 = this;
+            var _this34 = this;
 
             var standingSeries = [];
             var roundByRound = [];
@@ -57566,7 +58012,7 @@
               maxExposureSeries.push(driverExposure.maxExposure);
               driverNamesSortedByMaxExpo.push(driverExposure.code);
 
-              _this32.maxExposureColors.push(_this32.getColor(driverExposure.maxExposureRound));
+              _this34.maxExposureColors.push(_this34.getColor(driverExposure.maxExposureRound));
             });
             this.exposureStandingsOptions = {
               series: standingSeries,
@@ -57667,44 +58113,44 @@
         }, {
           key: "getExposureResults",
           value: function getExposureResults(delay) {
-            var _this33 = this;
+            var _this35 = this;
 
             this.restService.getExposureResults().subscribe({
               next: function next(data) {
-                _this33.exposureData = data;
+                _this35.exposureData = data;
 
-                _this33.utilityService.setTitle(8, 'Exposure - /' + _this33.exposureData.title + '/ edition');
+                _this35.utilityService.setTitle(8, 'Exposure - /' + _this35.exposureData.title + '/ edition');
 
-                _this33.exposedChart = _this33.exposureData.activeExposureChart;
-                var exposureChampionshipData = JSON.parse(JSON.stringify(_this33.exposureData.exposureChampionshipData));
-                _this33.exposureChampionshipDataSortedByMaxExpo = exposureChampionshipData.sort(sortByMaxExpoDesc);
-                _this33.round = _this33.exposureData.activeExposureChart.round;
+                _this35.exposedChart = _this35.exposureData.activeExposureChart;
+                var exposureChampionshipData = JSON.parse(JSON.stringify(_this35.exposureData.exposureChampionshipData));
+                _this35.exposureChampionshipDataSortedByMaxExpo = exposureChampionshipData.sort(sortByMaxExpoDesc);
+                _this35.round = _this35.exposureData.activeExposureChart.round;
 
-                if (_this33.round > 0) {
-                  _this33.numericXaxis.max = _this33.round;
-                  _this33.numericXaxis.tickAmount = (_this33.round + 1) / 2;
+                if (_this35.round > 0) {
+                  _this35.numericXaxis.max = _this35.round;
+                  _this35.numericXaxis.tickAmount = (_this35.round + 1) / 2;
                 }
 
-                _this33.votesChartOptions = {
+                _this35.votesChartOptions = {
                   series: [{
                     name: 'Votes',
-                    data: _this33.exposedChart.results
+                    data: _this35.exposedChart.results
                   }],
                   xaxis: {
-                    categories: _this33.exposedChart.driverNames
+                    categories: _this35.exposedChart.driverNames
                   },
                   title: {
                     text: 'Total votes',
                     align: 'center'
                   }
                 };
-                _this33.exposedChartOptions = {
+                _this35.exposedChartOptions = {
                   series: [{
                     name: 'Exposure',
-                    data: _this33.exposedChart.exposure
+                    data: _this35.exposedChart.exposure
                   }],
                   xaxis: {
-                    categories: _this33.exposedChart.driverNames
+                    categories: _this35.exposedChart.driverNames
                   },
                   title: {
                     text: 'Exposure (%)',
@@ -57712,12 +58158,12 @@
                   }
                 };
 
-                _this33.setExposureChampionshipData();
+                _this35.setExposureChampionshipData();
 
-                if (_this33.exposedChart.delay > 1) {
+                if (_this35.exposedChart.delay > 1) {
                   setTimeout(function () {
-                    return _this33.getExposureResultsPeriodically();
-                  }, _this33.exposedChart.delay);
+                    return _this35.getExposureResultsPeriodically();
+                  }, _this35.exposedChart.delay);
                 }
 
                 return data;
@@ -57727,39 +58173,39 @@
         }, {
           key: "getExposureResultsPeriodically",
           value: function getExposureResultsPeriodically() {
-            var _this34 = this;
+            var _this36 = this;
 
             this.restService.getExposureResults().subscribe({
               next: function next(data) {
-                _this34.exposureData = data;
-                _this34.exposedChart = _this34.exposureData.activeExposureChart;
-                _this34.round = _this34.exposureData.activeExposureChart.round;
+                _this36.exposureData = data;
+                _this36.exposedChart = _this36.exposureData.activeExposureChart;
+                _this36.round = _this36.exposureData.activeExposureChart.round;
 
-                if (_this34.round > 0) {
-                  _this34.numericXaxis.max = _this34.round;
-                  _this34.numericXaxis.tickAmount = (_this34.round + 1) / 2;
+                if (_this36.round > 0) {
+                  _this36.numericXaxis.max = _this36.round;
+                  _this36.numericXaxis.tickAmount = (_this36.round + 1) / 2;
                 }
 
-                _this34.votesChartOptions = {
+                _this36.votesChartOptions = {
                   series: [{
                     name: 'Votes',
-                    data: _this34.exposedChart.results
+                    data: _this36.exposedChart.results
                   }],
                   xaxis: {
-                    categories: _this34.exposedChart.driverNames
+                    categories: _this36.exposedChart.driverNames
                   },
                   title: {
                     text: 'Total votes',
                     align: 'center'
                   }
                 };
-                _this34.exposedChartOptions = {
+                _this36.exposedChartOptions = {
                   series: [{
                     name: 'Exposure',
-                    data: _this34.exposedChart.exposure
+                    data: _this36.exposedChart.exposure
                   }],
                   xaxis: {
-                    categories: _this34.exposedChart.driverNames
+                    categories: _this36.exposedChart.driverNames
                   },
                   title: {
                     text: 'Exposure (%)',
@@ -57767,10 +58213,10 @@
                   }
                 };
 
-                if (_this34.exposedChart.delay > 1 && !_this34.destroyed) {
+                if (_this36.exposedChart.delay > 1 && !_this36.destroyed) {
                   setTimeout(function () {
-                    return _this34.getExposureResultsPeriodically();
-                  }, _this34.exposedChart.delay);
+                    return _this36.getExposureResultsPeriodically();
+                  }, _this36.exposedChart.delay);
                 }
 
                 return data;
@@ -58220,18 +58666,18 @@
         var _super9 = _createSuper(MatSort);
 
         function MatSort(_defaultOptions) {
-          var _this35;
+          var _this37;
 
           _classCallCheck(this, MatSort);
 
-          _this35 = _super9.call(this);
-          _this35._defaultOptions = _defaultOptions;
+          _this37 = _super9.call(this);
+          _this37._defaultOptions = _defaultOptions;
           /** Collection of all registered sortables that this directive manages. */
 
-          _this35.sortables = new Map();
+          _this37.sortables = new Map();
           /** Used to notify any child components listening to state changes. */
 
-          _this35._stateChanges = new Subject
+          _this37._stateChanges = new Subject
           /* Subject */
           .xQ();
           /**
@@ -58239,14 +58685,14 @@
            * May be overriden by the MatSortable's sort start.
            */
 
-          _this35.start = 'asc';
-          _this35._direction = '';
+          _this37.start = 'asc';
+          _this37._direction = '';
           /** Event emitted when the user changes either the active sort or sort direction. */
 
-          _this35.sortChange = new core
+          _this37.sortChange = new core
           /* EventEmitter */
           .vpe();
-          return _this35;
+          return _this37;
         }
         /** The sort direction of the currently active MatSortable. */
 
@@ -58861,7 +59307,7 @@
         _intl, _changeDetectorRef, // `MatSort` is not optionally injected, but just asserted manually w/ better error.
         // tslint:disable-next-line: lightweight-tokens
         _sort, _columnDef, _focusMonitor, _elementRef) {
-          var _this36;
+          var _this38;
 
           _classCallCheck(this, MatSortHeader);
 
@@ -58869,45 +59315,45 @@
           // `material/table` and `cdk/table` and we can't have the CDK depending on Material,
           // and we want to avoid having the sort header depending on the CDK table because
           // of this single reference.
-          _this36 = _super10.call(this);
-          _this36._intl = _intl;
-          _this36._changeDetectorRef = _changeDetectorRef;
-          _this36._sort = _sort;
-          _this36._columnDef = _columnDef;
-          _this36._focusMonitor = _focusMonitor;
-          _this36._elementRef = _elementRef;
+          _this38 = _super10.call(this);
+          _this38._intl = _intl;
+          _this38._changeDetectorRef = _changeDetectorRef;
+          _this38._sort = _sort;
+          _this38._columnDef = _columnDef;
+          _this38._focusMonitor = _focusMonitor;
+          _this38._elementRef = _elementRef;
           /**
            * Flag set to true when the indicator should be displayed while the sort is not active. Used to
            * provide an affordance that the header is sortable by showing on focus and hover.
            */
 
-          _this36._showIndicatorHint = false;
+          _this38._showIndicatorHint = false;
           /**
            * The view transition state of the arrow (translation/ opacity) - indicates its `from` and `to`
            * position through the animation. If animations are currently disabled, the fromState is removed
            * so that there is no animation displayed.
            */
 
-          _this36._viewState = {};
+          _this38._viewState = {};
           /** The direction the arrow should be facing according to the current state. */
 
-          _this36._arrowDirection = '';
+          _this38._arrowDirection = '';
           /**
            * Whether the view state animation should show the transition between the `from` and `to` states.
            */
 
-          _this36._disableViewStateAnimation = false;
+          _this38._disableViewStateAnimation = false;
           /** Sets the position of the arrow that displays when sorted. */
 
-          _this36.arrowPosition = 'after';
+          _this38.arrowPosition = 'after';
 
           if (!_sort && (typeof ngDevMode === 'undefined' || ngDevMode)) {
             throw getSortHeaderNotContainedWithinSortError();
           }
 
-          _this36._handleStateChanges();
+          _this38._handleStateChanges();
 
-          return _this36;
+          return _this38;
         }
         /** Overrides the disable clear value of the containing MatSort for this MatSortable. */
 
@@ -58941,17 +59387,17 @@
         }, {
           key: "ngAfterViewInit",
           value: function ngAfterViewInit() {
-            var _this37 = this;
+            var _this39 = this;
 
             // We use the focus monitor because we also want to style
             // things differently based on the focus origin.
             this._focusMonitor.monitor(this._elementRef, true).subscribe(function (origin) {
               var newState = !!origin;
 
-              if (newState !== _this37._showIndicatorHint) {
-                _this37._setIndicatorHintVisible(newState);
+              if (newState !== _this39._showIndicatorHint) {
+                _this39._setIndicatorHintVisible(newState);
 
-                _this37._changeDetectorRef.markForCheck();
+                _this39._changeDetectorRef.markForCheck();
               }
             });
           }
@@ -59116,38 +59562,38 @@
         }, {
           key: "_handleStateChanges",
           value: function _handleStateChanges() {
-            var _this38 = this;
+            var _this40 = this;
 
             this._rerenderSubscription = (0, merge
             /* merge */
             .T)(this._sort.sortChange, this._sort._stateChanges, this._intl.changes).subscribe(function () {
-              if (_this38._isSorted()) {
-                _this38._updateArrowDirection(); // Do not show the animation if the header was already shown in the right position.
+              if (_this40._isSorted()) {
+                _this40._updateArrowDirection(); // Do not show the animation if the header was already shown in the right position.
 
 
-                if (_this38._viewState.toState === 'hint' || _this38._viewState.toState === 'active') {
-                  _this38._disableViewStateAnimation = true;
+                if (_this40._viewState.toState === 'hint' || _this40._viewState.toState === 'active') {
+                  _this40._disableViewStateAnimation = true;
                 }
 
-                _this38._setAnimationTransitionState({
-                  fromState: _this38._arrowDirection,
+                _this40._setAnimationTransitionState({
+                  fromState: _this40._arrowDirection,
                   toState: 'active'
                 });
 
-                _this38._showIndicatorHint = false;
+                _this40._showIndicatorHint = false;
               } // If this header was recently active and now no longer sorted, animate away the arrow.
 
 
-              if (!_this38._isSorted() && _this38._viewState && _this38._viewState.toState === 'active') {
-                _this38._disableViewStateAnimation = false;
+              if (!_this40._isSorted() && _this40._viewState && _this40._viewState.toState === 'active') {
+                _this40._disableViewStateAnimation = false;
 
-                _this38._setAnimationTransitionState({
+                _this40._setAnimationTransitionState({
                   fromState: 'active',
-                  toState: _this38._arrowDirection
+                  toState: _this40._arrowDirection
                 });
               }
 
-              _this38._changeDetectorRef.markForCheck();
+              _this40._changeDetectorRef.markForCheck();
             });
           }
         }]);
@@ -60447,32 +60893,32 @@
         }, {
           key: "openCircuitList",
           value: function openCircuitList() {
-            var _this39 = this;
+            var _this41 = this;
 
             var dialogRef = this.dialog.open(CircuitsPopupComponent);
             dialogRef.componentInstance.setCircuits(this.allCircuits);
             dialogRef.afterClosed().subscribe(function (circuitId) {
               if (circuitId != null) {
-                _this39.circuitId = circuitId;
+                _this41.circuitId = circuitId;
 
-                _this39.getCircuit(_this39.circuitId);
+                _this41.getCircuit(_this41.circuitId);
 
-                _this39.updateUrl();
+                _this41.updateUrl();
               }
             });
           }
         }, {
           key: "getCircuit",
           value: function getCircuit(circuitId) {
-            var _this40 = this;
+            var _this42 = this;
 
             this.restService.getCircuit(circuitId).subscribe({
               next: function next(data) {
-                _this40.circuit = data;
+                _this42.circuit = data;
 
-                _this40.utilityService.setTitle(74, _this40.circuit.ergastCircuit.circuitName);
+                _this42.utilityService.setTitle(74, _this42.circuit.ergastCircuit.circuitName);
 
-                _this40.updateUrl();
+                _this42.updateUrl();
               }
             });
           }
@@ -60501,11 +60947,11 @@
         }, {
           key: "openRace",
           value: function openRace(season, round) {
-            var _this41 = this;
+            var _this43 = this;
 
             this.restService.getRace(season, round).subscribe({
               next: function next(data) {
-                var dialogRef = _this41.dialog.open(RacePopupComponent, {
+                var dialogRef = _this43.dialog.open(RacePopupComponent, {
                   maxWidth: '90vw'
                 });
 
@@ -60516,11 +60962,11 @@
         }, {
           key: "getAllCircuits",
           value: function getAllCircuits() {
-            var _this42 = this;
+            var _this44 = this;
 
             this.restService.getAllCircuits().subscribe({
               next: function next(data) {
-                _this42.allCircuits = data;
+                _this44.allCircuits = data;
               }
             });
           }
@@ -61175,7 +61621,7 @@
 
       var _MatTooltipBase = /*#__PURE__*/function () {
         function _MatTooltipBase(_overlay, _elementRef, _scrollDispatcher, _viewContainerRef, _ngZone, _platform, _ariaDescriber, _focusMonitor, scrollStrategy, _dir, _defaultOptions, _document) {
-          var _this43 = this;
+          var _this45 = this;
 
           _classCallCheck(this, _MatTooltipBase);
 
@@ -61232,7 +61678,7 @@
            */
 
           this._handleKeydown = function (event) {
-            if (_this43._isTooltipVisible() && event.keyCode === keycodes
+            if (_this45._isTooltipVisible() && event.keyCode === keycodes
             /* ESCAPE */
             .hY && !(0, keycodes
             /* hasModifierKey */
@@ -61240,8 +61686,8 @@
               event.preventDefault();
               event.stopPropagation();
 
-              _this43._ngZone.run(function () {
-                return _this43.hide(0);
+              _this45._ngZone.run(function () {
+                return _this45.hide(0);
               });
             }
           };
@@ -61262,13 +61708,13 @@
           _dir.change.pipe((0, takeUntil
           /* takeUntil */
           .R)(this._destroyed)).subscribe(function () {
-            if (_this43._overlayRef) {
-              _this43._updatePosition(_this43._overlayRef);
+            if (_this45._overlayRef) {
+              _this45._updatePosition(_this45._overlayRef);
             }
           });
 
           _ngZone.runOutsideAngular(function () {
-            _elementRef.nativeElement.addEventListener('keydown', _this43._handleKeydown);
+            _elementRef.nativeElement.addEventListener('keydown', _this45._handleKeydown);
           });
         }
         /** Allows the user to define the position of the tooltip relative to the parent element */
@@ -61320,7 +61766,7 @@
             return this._message;
           },
           set: function set(value) {
-            var _this44 = this;
+            var _this46 = this;
 
             this._ariaDescriber.removeDescription(this._elementRef.nativeElement, this._message, 'tooltip'); // If the message is not a string (e.g. number), convert it to a string and trim it.
             // Must convert with `String(value)`, not `${value}`, otherwise Closure Compiler optimises
@@ -61342,7 +61788,7 @@
                 // has a data-bound `aria-label` or when it'll be set for the first time. We can avoid the
                 // issue by deferring the description by a tick so Angular has time to set the `aria-label`.
                 Promise.resolve().then(function () {
-                  _this44._ariaDescriber.describe(_this44._elementRef.nativeElement, _this44.message, 'tooltip');
+                  _this46._ariaDescriber.describe(_this46._elementRef.nativeElement, _this46.message, 'tooltip');
                 });
               });
             }
@@ -61364,7 +61810,7 @@
         }, {
           key: "ngAfterViewInit",
           value: function ngAfterViewInit() {
-            var _this45 = this;
+            var _this47 = this;
 
             // This needs to happen after view init so the initial values for all inputs have been set.
             this._viewInitialized = true;
@@ -61376,12 +61822,12 @@
             .R)(this._destroyed)).subscribe(function (origin) {
               // Note that the focus monitor runs outside the Angular zone.
               if (!origin) {
-                _this45._ngZone.run(function () {
-                  return _this45.hide(0);
+                _this47._ngZone.run(function () {
+                  return _this47.hide(0);
                 });
               } else if (origin === 'keyboard') {
-                _this45._ngZone.run(function () {
-                  return _this45.show();
+                _this47._ngZone.run(function () {
+                  return _this47.show();
                 });
               }
             });
@@ -61428,7 +61874,7 @@
         }, {
           key: "show",
           value: function show() {
-            var _this46 = this;
+            var _this48 = this;
 
             var delay = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : this.showDelay;
 
@@ -61448,7 +61894,7 @@
             this._tooltipInstance.afterHidden().pipe((0, takeUntil
             /* takeUntil */
             .R)(this._destroyed)).subscribe(function () {
-              return _this46._detach();
+              return _this48._detach();
             });
 
             this._setTooltipClass(this._tooltipClass);
@@ -61487,7 +61933,7 @@
         }, {
           key: "_createOverlay",
           value: function _createOverlay() {
-            var _this47 = this;
+            var _this49 = this;
 
             if (this._overlayRef) {
               return this._overlayRef;
@@ -61501,14 +61947,14 @@
             strategy.positionChanges.pipe((0, takeUntil
             /* takeUntil */
             .R)(this._destroyed)).subscribe(function (change) {
-              _this47._updateCurrentPositionClass(change.connectionPair);
+              _this49._updateCurrentPositionClass(change.connectionPair);
 
-              if (_this47._tooltipInstance) {
-                if (change.scrollableViewProperties.isOverlayClipped && _this47._tooltipInstance.isVisible()) {
+              if (_this49._tooltipInstance) {
+                if (change.scrollableViewProperties.isOverlayClipped && _this49._tooltipInstance.isVisible()) {
                   // After position changes occur and the overlay is clipped by
                   // a parent scrollable then close the tooltip.
-                  _this47._ngZone.run(function () {
-                    return _this47.hide(0);
+                  _this49._ngZone.run(function () {
+                    return _this49.hide(0);
                   });
                 }
               }
@@ -61525,7 +61971,7 @@
             this._overlayRef.detachments().pipe((0, takeUntil
             /* takeUntil */
             .R)(this._destroyed)).subscribe(function () {
-              return _this47._detach();
+              return _this49._detach();
             });
 
             this._overlayRef.outsidePointerEvents().pipe((0, takeUntil
@@ -61533,7 +61979,7 @@
             .R)(this._destroyed)).subscribe(function () {
               var _a;
 
-              return (_a = _this47._tooltipInstance) === null || _a === void 0 ? void 0 : _a._handleBodyInteraction();
+              return (_a = _this49._tooltipInstance) === null || _a === void 0 ? void 0 : _a._handleBodyInteraction();
             });
 
             return this._overlayRef;
@@ -61662,7 +62108,7 @@
         }, {
           key: "_updateTooltipMessage",
           value: function _updateTooltipMessage() {
-            var _this48 = this;
+            var _this50 = this;
 
             // Must wait for the message to be painted to the tooltip so that the overlay can properly
             // calculate the correct positioning based on the size of the text.
@@ -61676,8 +62122,8 @@
               .q)(1), (0, takeUntil
               /* takeUntil */
               .R)(this._destroyed)).subscribe(function () {
-                if (_this48._tooltipInstance) {
-                  _this48._overlayRef.updatePosition();
+                if (_this50._tooltipInstance) {
+                  _this50._overlayRef.updatePosition();
                 }
               });
             }
@@ -61758,7 +62204,7 @@
         }, {
           key: "_setupPointerEnterEventsIfNeeded",
           value: function _setupPointerEnterEventsIfNeeded() {
-            var _this49 = this;
+            var _this51 = this;
 
             // Optimization: Defer hooking up events if there's no message or the tooltip is disabled.
             if (this._disabled || !this.message || !this._viewInitialized || this._passiveListeners.length) {
@@ -61769,9 +62215,9 @@
 
             if (this._platformSupportsMouseEvents()) {
               this._passiveListeners.push(['mouseenter', function () {
-                _this49._setupPointerExitEventsIfNeeded();
+                _this51._setupPointerExitEventsIfNeeded();
 
-                _this49.show();
+                _this51.show();
               }]);
             } else if (this.touchGestures !== 'off') {
               this._disableNativeGesturesIfNecessary();
@@ -61779,11 +62225,11 @@
               this._passiveListeners.push(['touchstart', function () {
                 // Note that it's important that we don't `preventDefault` here,
                 // because it can prevent click events from firing on the element.
-                _this49._setupPointerExitEventsIfNeeded();
+                _this51._setupPointerExitEventsIfNeeded();
 
-                clearTimeout(_this49._touchstartTimeout);
-                _this49._touchstartTimeout = setTimeout(function () {
-                  return _this49.show();
+                clearTimeout(_this51._touchstartTimeout);
+                _this51._touchstartTimeout = setTimeout(function () {
+                  return _this51.show();
                 }, LONGPRESS_DELAY);
               }]);
             }
@@ -61793,7 +62239,7 @@
         }, {
           key: "_setupPointerExitEventsIfNeeded",
           value: function _setupPointerExitEventsIfNeeded() {
-            var _this50 = this,
+            var _this52 = this,
                 _this$_passiveListene;
 
             if (this._pointerExitEventsInitialized) {
@@ -61805,17 +62251,17 @@
 
             if (this._platformSupportsMouseEvents()) {
               exitListeners.push(['mouseleave', function () {
-                return _this50.hide();
+                return _this52.hide();
               }], ['wheel', function (event) {
-                return _this50._wheelListener(event);
+                return _this52._wheelListener(event);
               }]);
             } else if (this.touchGestures !== 'off') {
               this._disableNativeGesturesIfNecessary();
 
               var touchendListener = function touchendListener() {
-                clearTimeout(_this50._touchstartTimeout);
+                clearTimeout(_this52._touchstartTimeout);
 
-                _this50.hide(_this50._defaultOptions.touchendHideDelay);
+                _this52.hide(_this52._defaultOptions.touchendHideDelay);
               };
 
               exitListeners.push(['touchend', touchendListener], ['touchcancel', touchendListener]);
@@ -61828,14 +62274,14 @@
         }, {
           key: "_addListeners",
           value: function _addListeners(listeners) {
-            var _this51 = this;
+            var _this53 = this;
 
             listeners.forEach(function (_ref7) {
               var _ref8 = _slicedToArray2(_ref7, 2),
                   event = _ref8[0],
                   listener = _ref8[1];
 
-              _this51._elementRef.nativeElement.addEventListener(event, listener, passiveListenerOptions);
+              _this53._elementRef.nativeElement.addEventListener(event, listener, passiveListenerOptions);
             });
           }
         }, {
@@ -62172,13 +62618,13 @@
         var _super11 = _createSuper(MatTooltip);
 
         function MatTooltip(overlay, elementRef, scrollDispatcher, viewContainerRef, ngZone, platform, ariaDescriber, focusMonitor, scrollStrategy, dir, defaultOptions, _document) {
-          var _this52;
+          var _this54;
 
           _classCallCheck(this, MatTooltip);
 
-          _this52 = _super11.call(this, overlay, elementRef, scrollDispatcher, viewContainerRef, ngZone, platform, ariaDescriber, focusMonitor, scrollStrategy, dir, defaultOptions, _document);
-          _this52._tooltipComponent = TooltipComponent;
-          return _this52;
+          _this54 = _super11.call(this, overlay, elementRef, scrollDispatcher, viewContainerRef, ngZone, platform, ariaDescriber, focusMonitor, scrollStrategy, dir, defaultOptions, _document);
+          _this54._tooltipComponent = TooltipComponent;
+          return _this54;
         }
 
         return MatTooltip;
@@ -62435,21 +62881,21 @@
         _createClass(_TooltipComponentBase, [{
           key: "show",
           value: function show(delay) {
-            var _this53 = this;
+            var _this55 = this;
 
             // Cancel the delayed hide if it is scheduled
             clearTimeout(this._hideTimeoutId); // Body interactions should cancel the tooltip if there is a delay in showing.
 
             this._closeOnInteraction = true;
             this._showTimeoutId = setTimeout(function () {
-              _this53._visibility = 'visible';
-              _this53._showTimeoutId = undefined;
+              _this55._visibility = 'visible';
+              _this55._showTimeoutId = undefined;
 
-              _this53._onShow(); // Mark for check so if any parent component has set the
+              _this55._onShow(); // Mark for check so if any parent component has set the
               // ChangeDetectionStrategy to OnPush it will be checked anyways
 
 
-              _this53._markForCheck();
+              _this55._markForCheck();
             }, delay);
           }
           /**
@@ -62460,16 +62906,16 @@
         }, {
           key: "hide",
           value: function hide(delay) {
-            var _this54 = this;
+            var _this56 = this;
 
             // Cancel the delayed show if it is scheduled
             clearTimeout(this._showTimeoutId);
             this._hideTimeoutId = setTimeout(function () {
-              _this54._visibility = 'hidden';
-              _this54._hideTimeoutId = undefined; // Mark for check so if any parent component has set the
+              _this56._visibility = 'hidden';
+              _this56._hideTimeoutId = undefined; // Mark for check so if any parent component has set the
               // ChangeDetectionStrategy to OnPush it will be checked anyways
 
-              _this54._markForCheck();
+              _this56._markForCheck();
             }, delay);
           }
           /** Returns an observable that notifies when the tooltip has been hidden from view. */
@@ -62599,18 +63045,18 @@
         var _super12 = _createSuper(TooltipComponent);
 
         function TooltipComponent(changeDetectorRef, _breakpointObserver) {
-          var _this55;
+          var _this57;
 
           _classCallCheck(this, TooltipComponent);
 
-          _this55 = _super12.call(this, changeDetectorRef);
-          _this55._breakpointObserver = _breakpointObserver;
+          _this57 = _super12.call(this, changeDetectorRef);
+          _this57._breakpointObserver = _breakpointObserver;
           /** Stream that emits whether the user has a handset-sized display.  */
 
-          _this55._isHandset = _this55._breakpointObserver.observe(layout
+          _this57._isHandset = _this57._breakpointObserver.observe(layout
           /* Breakpoints.Handset */
           .u3.Handset);
-          return _this55;
+          return _this57;
         }
 
         return TooltipComponent;
@@ -63332,73 +63778,73 @@
         var _super13 = _createSuper(_MatSelectBase);
 
         function _MatSelectBase(_viewportRuler, _changeDetectorRef, _ngZone, _defaultErrorStateMatcher, elementRef, _dir, _parentForm, _parentFormGroup, _parentFormField, ngControl, tabIndex, scrollStrategyFactory, _liveAnnouncer, _defaultOptions) {
-          var _this56;
+          var _this58;
 
           _classCallCheck(this, _MatSelectBase);
 
           var _a, _b, _c;
 
-          _this56 = _super13.call(this, elementRef, _defaultErrorStateMatcher, _parentForm, _parentFormGroup, ngControl);
-          _this56._viewportRuler = _viewportRuler;
-          _this56._changeDetectorRef = _changeDetectorRef;
-          _this56._ngZone = _ngZone;
-          _this56._dir = _dir;
-          _this56._parentFormField = _parentFormField;
-          _this56._liveAnnouncer = _liveAnnouncer;
-          _this56._defaultOptions = _defaultOptions;
+          _this58 = _super13.call(this, elementRef, _defaultErrorStateMatcher, _parentForm, _parentFormGroup, ngControl);
+          _this58._viewportRuler = _viewportRuler;
+          _this58._changeDetectorRef = _changeDetectorRef;
+          _this58._ngZone = _ngZone;
+          _this58._dir = _dir;
+          _this58._parentFormField = _parentFormField;
+          _this58._liveAnnouncer = _liveAnnouncer;
+          _this58._defaultOptions = _defaultOptions;
           /** Whether or not the overlay panel is open. */
 
-          _this56._panelOpen = false;
+          _this58._panelOpen = false;
           /** Comparison function to specify which option is displayed. Defaults to object equality. */
 
-          _this56._compareWith = function (o1, o2) {
+          _this58._compareWith = function (o1, o2) {
             return o1 === o2;
           };
           /** Unique id for this input. */
 
 
-          _this56._uid = "mat-select-".concat(select_nextUniqueId++);
+          _this58._uid = "mat-select-".concat(select_nextUniqueId++);
           /** Current `ariar-labelledby` value for the select trigger. */
 
-          _this56._triggerAriaLabelledBy = null;
+          _this58._triggerAriaLabelledBy = null;
           /** Emits whenever the component is destroyed. */
 
-          _this56._destroy = new Subject
+          _this58._destroy = new Subject
           /* Subject */
           .xQ();
           /** `View -> model callback called when value changes` */
 
-          _this56._onChange = function () {};
+          _this58._onChange = function () {};
           /** `View -> model callback called when select has been touched` */
 
 
-          _this56._onTouched = function () {};
+          _this58._onTouched = function () {};
           /** ID for the DOM node containing the select's value. */
 
 
-          _this56._valueId = "mat-select-value-".concat(select_nextUniqueId++);
+          _this58._valueId = "mat-select-value-".concat(select_nextUniqueId++);
           /** Emits when the panel element is finished transforming in. */
 
-          _this56._panelDoneAnimatingStream = new Subject
+          _this58._panelDoneAnimatingStream = new Subject
           /* Subject */
           .xQ();
-          _this56._overlayPanelClass = ((_a = _this56._defaultOptions) === null || _a === void 0 ? void 0 : _a.overlayPanelClass) || '';
-          _this56._focused = false;
+          _this58._overlayPanelClass = ((_a = _this58._defaultOptions) === null || _a === void 0 ? void 0 : _a.overlayPanelClass) || '';
+          _this58._focused = false;
           /** A name for this control that can be used by `mat-form-field`. */
 
-          _this56.controlType = 'mat-select';
-          _this56._required = false;
-          _this56._multiple = false;
-          _this56._disableOptionCentering = (_c = (_b = _this56._defaultOptions) === null || _b === void 0 ? void 0 : _b.disableOptionCentering) !== null && _c !== void 0 ? _c : false;
+          _this58.controlType = 'mat-select';
+          _this58._required = false;
+          _this58._multiple = false;
+          _this58._disableOptionCentering = (_c = (_b = _this58._defaultOptions) === null || _b === void 0 ? void 0 : _b.disableOptionCentering) !== null && _c !== void 0 ? _c : false;
           /** Aria label of the select. */
 
-          _this56.ariaLabel = '';
+          _this58.ariaLabel = '';
           /** Combined stream of all of the child options' change events. */
 
-          _this56.optionSelectionChanges = (0, defer
+          _this58.optionSelectionChanges = (0, defer
           /* defer */
           .P)(function () {
-            var options = _this56.options;
+            var options = _this58.options;
 
             if (options) {
               return options.changes.pipe((0, startWith
@@ -63414,22 +63860,22 @@
               }));
             }
 
-            return _this56._ngZone.onStable.pipe((0, take
+            return _this58._ngZone.onStable.pipe((0, take
             /* take */
             .q)(1), (0, switchMap
             /* switchMap */
             .w)(function () {
-              return _this56.optionSelectionChanges;
+              return _this58.optionSelectionChanges;
             }));
           });
           /** Event emitted when the select panel has been toggled. */
 
-          _this56.openedChange = new core
+          _this58.openedChange = new core
           /* EventEmitter */
           .vpe();
           /** Event emitted when the select has been opened. */
 
-          _this56._openedStream = _this56.openedChange.pipe((0, filter
+          _this58._openedStream = _this58.openedChange.pipe((0, filter
           /* filter */
           .h)(function (o) {
             return o;
@@ -63438,7 +63884,7 @@
           .U)(function () {}));
           /** Event emitted when the select has been closed. */
 
-          _this56._closedStream = _this56.openedChange.pipe((0, filter
+          _this58._closedStream = _this58.openedChange.pipe((0, filter
           /* filter */
           .h)(function (o) {
             return !o;
@@ -63447,7 +63893,7 @@
           .U)(function () {}));
           /** Event emitted when the selected value has been changed by the user. */
 
-          _this56.selectionChange = new core
+          _this58.selectionChange = new core
           /* EventEmitter */
           .vpe();
           /**
@@ -63456,28 +63902,28 @@
            * @docs-private
            */
 
-          _this56.valueChange = new core
+          _this58.valueChange = new core
           /* EventEmitter */
           .vpe();
 
-          if (_this56.ngControl) {
+          if (_this58.ngControl) {
             // Note: we provide the value accessor through here, instead of
             // the `providers` to avoid running into a circular import.
-            _this56.ngControl.valueAccessor = _assertThisInitialized(_this56);
+            _this58.ngControl.valueAccessor = _assertThisInitialized(_this58);
           } // Note that we only want to set this when the defaults pass it in, otherwise it should
           // stay as `undefined` so that it falls back to the default in the key manager.
 
 
           if ((_defaultOptions === null || _defaultOptions === void 0 ? void 0 : _defaultOptions.typeaheadDebounceInterval) != null) {
-            _this56._typeaheadDebounceInterval = _defaultOptions.typeaheadDebounceInterval;
+            _this58._typeaheadDebounceInterval = _defaultOptions.typeaheadDebounceInterval;
           }
 
-          _this56._scrollStrategyFactory = scrollStrategyFactory;
-          _this56._scrollStrategy = _this56._scrollStrategyFactory();
-          _this56.tabIndex = parseInt(tabIndex) || 0; // Force setter to be called in case id was not specified.
+          _this58._scrollStrategyFactory = scrollStrategyFactory;
+          _this58._scrollStrategy = _this58._scrollStrategyFactory();
+          _this58.tabIndex = parseInt(tabIndex) || 0; // Force setter to be called in case id was not specified.
 
-          _this56.id = _this56.id;
-          return _this56;
+          _this58.id = _this58.id;
+          return _this58;
         }
         /** Whether the select is focused. */
 
@@ -63605,7 +64051,7 @@
         }, {
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this57 = this;
+            var _this59 = this;
 
             this._selectionModel = new collections
             /* SelectionModel */
@@ -63619,13 +64065,13 @@
             .x)(), (0, takeUntil
             /* takeUntil */
             .R)(this._destroy)).subscribe(function () {
-              return _this57._panelDoneAnimating(_this57.panelOpen);
+              return _this59._panelDoneAnimating(_this59.panelOpen);
             });
           }
         }, {
           key: "ngAfterContentInit",
           value: function ngAfterContentInit() {
-            var _this58 = this;
+            var _this60 = this;
 
             this._initKeyManager();
 
@@ -63645,9 +64091,9 @@
             .O)(null), (0, takeUntil
             /* takeUntil */
             .R)(this._destroy)).subscribe(function () {
-              _this58._resetOptions();
+              _this60._resetOptions();
 
-              _this58._initializeSelection();
+              _this60._initializeSelection();
             });
           }
         }, {
@@ -63961,14 +64407,14 @@
         }, {
           key: "_onAttached",
           value: function _onAttached() {
-            var _this59 = this;
+            var _this61 = this;
 
             this._overlayDir.positionChange.pipe((0, take
             /* take */
             .q)(1)).subscribe(function () {
-              _this59._changeDetectorRef.detectChanges();
+              _this61._changeDetectorRef.detectChanges();
 
-              _this59._positioningSettled();
+              _this61._positioningSettled();
             });
           }
           /** Returns the theme to be used on the panel. */
@@ -63988,14 +64434,14 @@
         }, {
           key: "_initializeSelection",
           value: function _initializeSelection() {
-            var _this60 = this;
+            var _this62 = this;
 
             // Defer setting the value in order to avoid the "Expression
             // has changed after it was checked" errors from Angular.
             Promise.resolve().then(function () {
-              _this60._setSelectionByValue(_this60.ngControl ? _this60.ngControl.value : _this60._value);
+              _this62._setSelectionByValue(_this62.ngControl ? _this62.ngControl.value : _this62._value);
 
-              _this60.stateChanges.next();
+              _this62.stateChanges.next();
             });
           }
           /**
@@ -64006,7 +64452,7 @@
         }, {
           key: "_setSelectionByValue",
           value: function _setSelectionByValue(value) {
-            var _this61 = this;
+            var _this63 = this;
 
             this._selectionModel.selected.forEach(function (option) {
               return option.setInactiveStyles();
@@ -64020,7 +64466,7 @@
               }
 
               value.forEach(function (currentValue) {
-                return _this61._selectValue(currentValue);
+                return _this63._selectValue(currentValue);
               });
 
               this._sortValues();
@@ -64048,18 +64494,18 @@
         }, {
           key: "_selectValue",
           value: function _selectValue(value) {
-            var _this62 = this;
+            var _this64 = this;
 
             var correspondingOption = this.options.find(function (option) {
               // Skip options that are already in the model. This allows us to handle cases
               // where the same primitive value is selected multiple times.
-              if (_this62._selectionModel.isSelected(option)) {
+              if (_this64._selectionModel.isSelected(option)) {
                 return false;
               }
 
               try {
                 // Treat null as a special reset value.
-                return option.value != null && _this62._compareWith(option.value, value);
+                return option.value != null && _this64._compareWith(option.value, value);
               } catch (error) {
                 if (typeof ngDevMode === 'undefined' || ngDevMode) {
                   // Notify developers of errors in their comparator.
@@ -64081,7 +64527,7 @@
         }, {
           key: "_initKeyManager",
           value: function _initKeyManager() {
-            var _this63 = this;
+            var _this65 = this;
 
             this._keyManager = new a11y
             /* ActiveDescendantKeyManager */
@@ -64090,28 +64536,28 @@
             this._keyManager.tabOut.pipe((0, takeUntil
             /* takeUntil */
             .R)(this._destroy)).subscribe(function () {
-              if (_this63.panelOpen) {
+              if (_this65.panelOpen) {
                 // Select the active item when tabbing away. This is consistent with how the native
                 // select behaves. Note that we only want to do this in single selection mode.
-                if (!_this63.multiple && _this63._keyManager.activeItem) {
-                  _this63._keyManager.activeItem._selectViaInteraction();
+                if (!_this65.multiple && _this65._keyManager.activeItem) {
+                  _this65._keyManager.activeItem._selectViaInteraction();
                 } // Restore focus to the trigger before closing. Ensures that the focus
                 // position won't be lost if the user got focus into the overlay.
 
 
-                _this63.focus();
+                _this65.focus();
 
-                _this63.close();
+                _this65.close();
               }
             });
 
             this._keyManager.change.pipe((0, takeUntil
             /* takeUntil */
             .R)(this._destroy)).subscribe(function () {
-              if (_this63._panelOpen && _this63.panel) {
-                _this63._scrollOptionIntoView(_this63._keyManager.activeItemIndex || 0);
-              } else if (!_this63._panelOpen && !_this63.multiple && _this63._keyManager.activeItem) {
-                _this63._keyManager.activeItem._selectViaInteraction();
+              if (_this65._panelOpen && _this65.panel) {
+                _this65._scrollOptionIntoView(_this65._keyManager.activeItemIndex || 0);
+              } else if (!_this65._panelOpen && !_this65.multiple && _this65._keyManager.activeItem) {
+                _this65._keyManager.activeItem._selectViaInteraction();
               }
             });
           }
@@ -64120,7 +64566,7 @@
         }, {
           key: "_resetOptions",
           value: function _resetOptions() {
-            var _this64 = this;
+            var _this66 = this;
 
             var changedOrDestroyed = (0, merge
             /* merge */
@@ -64128,12 +64574,12 @@
             this.optionSelectionChanges.pipe((0, takeUntil
             /* takeUntil */
             .R)(changedOrDestroyed)).subscribe(function (event) {
-              _this64._onSelect(event.source, event.isUserInput);
+              _this66._onSelect(event.source, event.isUserInput);
 
-              if (event.isUserInput && !_this64.multiple && _this64._panelOpen) {
-                _this64.close();
+              if (event.isUserInput && !_this66.multiple && _this66._panelOpen) {
+                _this66.close();
 
-                _this64.focus();
+                _this66.focus();
               }
             }); // Listen to changes in the internal state of the options and react accordingly.
             // Handles cases like the labels of the selected options changing.
@@ -64145,9 +64591,9 @@
             }))).pipe((0, takeUntil
             /* takeUntil */
             .R)(changedOrDestroyed)).subscribe(function () {
-              _this64._changeDetectorRef.markForCheck();
+              _this66._changeDetectorRef.markForCheck();
 
-              _this64.stateChanges.next();
+              _this66.stateChanges.next();
             });
           }
           /** Invoked when an option is clicked. */
@@ -64198,13 +64644,13 @@
         }, {
           key: "_sortValues",
           value: function _sortValues() {
-            var _this65 = this;
+            var _this67 = this;
 
             if (this.multiple) {
               var options = this.options.toArray();
 
               this._selectionModel.sort(function (a, b) {
-                return _this65.sortComparator ? _this65.sortComparator(a, b, options) : options.indexOf(a) - options.indexOf(b);
+                return _this67.sortComparator ? _this67.sortComparator(a, b, options) : options.indexOf(a) - options.indexOf(b);
               });
 
               this.stateChanges.next();
@@ -64937,28 +65383,28 @@
         var _super14 = _createSuper(MatSelect);
 
         function MatSelect() {
-          var _this66;
+          var _this68;
 
           _classCallCheck(this, MatSelect);
 
-          _this66 = _super14.apply(this, arguments);
+          _this68 = _super14.apply(this, arguments);
           /** The scroll position of the overlay panel, calculated to center the selected option. */
 
-          _this66._scrollTop = 0;
+          _this68._scrollTop = 0;
           /** The cached font-size of the trigger element. */
 
-          _this66._triggerFontSize = 0;
+          _this68._triggerFontSize = 0;
           /** The value of the select panel's transform-origin property. */
 
-          _this66._transformOrigin = 'top';
+          _this68._transformOrigin = 'top';
           /**
            * The y-offset of the overlay panel in relation to the trigger's top start corner.
            * This must be adjusted to align the selected option text over the trigger text.
            * when the panel opens. Will change based on the y-position of the selected option.
            */
 
-          _this66._offsetY = 0;
-          _this66._positions = [{
+          _this68._offsetY = 0;
+          _this68._positions = [{
             originX: 'start',
             originY: 'top',
             overlayX: 'start',
@@ -64969,7 +65415,7 @@
             overlayX: 'start',
             overlayY: 'bottom'
           }];
-          return _this66;
+          return _this68;
         }
         /**
          * Calculates the scroll position of the select's overlay panel.
@@ -64997,24 +65443,24 @@
         }, {
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this67 = this;
+            var _this69 = this;
 
             _get(_getPrototypeOf(MatSelect.prototype), "ngOnInit", this).call(this);
 
             this._viewportRuler.change().pipe((0, takeUntil
             /* takeUntil */
             .R)(this._destroy)).subscribe(function () {
-              if (_this67.panelOpen) {
-                _this67._triggerRect = _this67.trigger.nativeElement.getBoundingClientRect();
+              if (_this69.panelOpen) {
+                _this69._triggerRect = _this69.trigger.nativeElement.getBoundingClientRect();
 
-                _this67._changeDetectorRef.markForCheck();
+                _this69._changeDetectorRef.markForCheck();
               }
             });
           }
         }, {
           key: "open",
           value: function open() {
-            var _this68 = this;
+            var _this70 = this;
 
             if (_get(_getPrototypeOf(MatSelect.prototype), "_canOpen", this).call(this)) {
               _get(_getPrototypeOf(MatSelect.prototype), "open", this).call(this);
@@ -65030,8 +65476,8 @@
               this._ngZone.onStable.pipe((0, take
               /* take */
               .q)(1)).subscribe(function () {
-                if (_this68._triggerFontSize && _this68._overlayDir.overlayRef && _this68._overlayDir.overlayRef.overlayElement) {
-                  _this68._overlayDir.overlayRef.overlayElement.style.fontSize = "".concat(_this68._triggerFontSize, "px");
+                if (_this70._triggerFontSize && _this70._overlayDir.overlayRef && _this70._overlayDir.overlayRef.overlayElement) {
+                  _this70._overlayDir.overlayRef.overlayElement.style.fontSize = "".concat(_this70._triggerFontSize, "px");
                 }
               });
             }
@@ -67773,7 +68219,7 @@
 
       var StandingsComponent = /*#__PURE__*/function () {
         function StandingsComponent(restService, utilityService, router, route, dialog) {
-          var _this69 = this;
+          var _this71 = this;
 
           _classCallCheck(this, StandingsComponent);
 
@@ -67905,18 +68351,18 @@
           this.showDnf = false;
           this.restService.getStandings().subscribe({
             next: function next(data) {
-              _this69.standings = data;
+              _this71.standings = data;
 
-              _this69.utilityService.setTitle(4, _this69.standings.currentYear + ' Championship');
+              _this71.utilityService.setTitle(4, _this71.standings.currentYear + ' Championship');
 
-              _this69.enrichStandingsGaps();
+              _this71.enrichStandingsGaps();
 
-              _this69.mapPositions();
+              _this71.mapPositions();
 
-              _this69.setCalculatorData();
+              _this71.setCalculatorData();
 
-              _this69.standings.driverStandingByRound.forEach(function (standing) {
-                _this69.driverStandingsSeries.push({
+              _this71.standings.driverStandingByRound.forEach(function (standing) {
+                _this71.driverStandingsSeries.push({
                   name: standing.name,
                   data: standing.series,
                   color: standing.color
@@ -67927,7 +68373,7 @@
               var roundByRoundCategories = [];
               var roundByRoundSeriesMap = new Map();
 
-              _this69.standings.driverPointsByRound.forEach(function (standing) {
+              _this71.standings.driverPointsByRound.forEach(function (standing) {
                 roundByRoundCategories.push(standing.name);
                 var roundCounter = 1;
                 standing.series.forEach(function (scoreByRound) {
@@ -67955,7 +68401,7 @@
                   roundCounter++;
                 }); // delete me?
 
-                _this69.driverPointsByRoundSeries.push({
+                _this71.driverPointsByRoundSeries.push({
                   name: standing.name,
                   data: standing.series,
                   color: standing.color
@@ -67969,20 +68415,20 @@
                 });
               });
 
-              _this69.setStackedChart(roundByRound, roundByRoundCategories);
+              _this71.setStackedChart(roundByRound, roundByRoundCategories);
 
-              _this69.standings.driverResultByRound.forEach(function (standing) {
-                _this69.setPodiums(standing);
+              _this71.standings.driverResultByRound.forEach(function (standing) {
+                _this71.setPodiums(standing);
 
                 var copy = JSON.parse(JSON.stringify(standing.series));
 
-                if (copy.length < _this69.raceCount) {
+                if (copy.length < _this71.raceCount) {
                   var array = [];
                   copy.forEach(function (serie) {
                     array.push(serie[0]);
                   });
 
-                  for (var i = 1; i <= _this69.raceCount; i++) {
+                  for (var i = 1; i <= _this71.raceCount; i++) {
                     if (array.indexOf(i) < 0) {
                       copy.push([i, null]);
                     }
@@ -68003,49 +68449,49 @@
 
                 copy.forEach(function (serie) {
                   if (serie[1] != null && serie[1] != 0) {
-                    serie[1] = _this69.driverCount - serie[1];
+                    serie[1] = _this71.driverCount - serie[1];
                   }
                 });
-                _this69.driversHeatMapStandingsSeries[_this69.driverCount - _this69.driverPositionMap.get(standing.name)] = {
+                _this71.driversHeatMapStandingsSeries[_this71.driverCount - _this71.driverPositionMap.get(standing.name)] = {
                   name: standing.name,
                   data: copy
                 };
               });
 
-              _this69.chartWidth = _this69.calculateChartWidthForMobileDevices(_this69.raceCount);
+              _this71.chartWidth = _this71.calculateChartWidthForMobileDevices(_this71.raceCount);
 
-              _this69.standings.gridToResultChartWithoutDnf.forEach(function (standing) {
-                _this69.gridToResultSeries.push({
+              _this71.standings.gridToResultChartWithoutDnf.forEach(function (standing) {
+                _this71.gridToResultSeries.push({
                   name: standing.name,
                   data: standing.series,
                   color: standing.color
                 });
               });
 
-              _this69.standings.constructorStandingByRound.forEach(function (standing) {
-                _this69.constructorStandingsSeries.push({
+              _this71.standings.constructorStandingByRound.forEach(function (standing) {
+                _this71.constructorStandingsSeries.push({
                   name: standing.name,
                   data: standing.series,
                   color: standing.color
                 });
               });
 
-              _this69.standings.constructorPointsByRound.forEach(function (standing) {
-                _this69.constructorRoundsSeries.push({
+              _this71.standings.constructorPointsByRound.forEach(function (standing) {
+                _this71.constructorRoundsSeries.push({
                   name: standing.name,
                   data: standing.series,
                   color: standing.color
                 });
 
-                _this69.constructorsHeatMapStandingsSeries[_this69.constructorCount - _this69.constructorPositionMap.get(standing.name)] = {
+                _this71.constructorsHeatMapStandingsSeries[_this71.constructorCount - _this71.constructorPositionMap.get(standing.name)] = {
                   name: standing.name,
                   data: standing.series
                 };
               });
 
-              _this69.setDriversHeatMapChart();
+              _this71.setDriversHeatMapChart();
 
-              _this69.setConstructorHeatMapChart();
+              _this71.setConstructorHeatMapChart();
 
               return data;
             }
@@ -68088,13 +68534,13 @@
         }, {
           key: "includeDnf",
           value: function includeDnf(event) {
-            var _this70 = this;
+            var _this72 = this;
 
             this.gridToResultSeries = [];
 
             if (event.checked) {
               this.standings.gridToResultChartWithDnf.forEach(function (standing) {
-                _this70.gridToResultSeries.push({
+                _this72.gridToResultSeries.push({
                   name: standing.name,
                   data: standing.series,
                   color: standing.color
@@ -68102,7 +68548,7 @@
               });
             } else {
               this.standings.gridToResultChartWithoutDnf.forEach(function (standing) {
-                _this70.gridToResultSeries.push({
+                _this72.gridToResultSeries.push({
                   name: standing.name,
                   data: standing.series,
                   color: standing.color
@@ -68129,11 +68575,11 @@
         }, {
           key: "openRace",
           value: function openRace(season, round) {
-            var _this71 = this;
+            var _this73 = this;
 
             this.restService.getRace(season, round).subscribe({
               next: function next(data) {
-                var dialogRef = _this71.dialog.open(RacePopupComponent, {
+                var dialogRef = _this73.dialog.open(RacePopupComponent, {
                   maxWidth: '90vw'
                 });
 
@@ -68153,7 +68599,7 @@
         }, {
           key: "setPodiums",
           value: function setPodiums(standing) {
-            var _this72 = this;
+            var _this74 = this;
 
             standing.series.forEach(function (item) {
               if (item[1] < 4) {
@@ -68161,10 +68607,10 @@
                 podium.name = standing.name;
                 podium.color = standing.color;
                 podium.value = item[1];
-                _this72.podiums[item[0]][item[1]] = podium;
+                _this74.podiums[item[0]][item[1]] = podium;
 
-                if (item[0] > _this72.raceCount) {
-                  _this72.raceCount = item[0];
+                if (item[0] > _this74.raceCount) {
+                  _this74.raceCount = item[0];
                 }
               }
             });
@@ -68222,7 +68668,7 @@
         }, {
           key: "setDriversHeatMapChart",
           value: function setDriversHeatMapChart() {
-            var _this73 = this;
+            var _this75 = this;
 
             this.driversHeatMapChartOptions = {
               colors: ['#0000ff'],
@@ -68254,7 +68700,7 @@
                     return 'DNF';
                   }
 
-                  return _this73.driverCount - val;
+                  return _this75.driverCount - val;
                 }
               },
               plotOptions: {
@@ -68269,7 +68715,7 @@
               tooltip: {
                 y: {
                   formatter: function formatter(val, opts) {
-                    return _this73.standings.races[opts.dataPointIndex].raceName;
+                    return _this75.standings.races[opts.dataPointIndex].raceName;
                   }
                 }
               }
@@ -68278,7 +68724,7 @@
         }, {
           key: "setConstructorHeatMapChart",
           value: function setConstructorHeatMapChart() {
-            var _this74 = this;
+            var _this76 = this;
 
             this.constructorHeatMapChartOptions = {
               colors: ['#0000ff'],
@@ -68314,7 +68760,7 @@
               tooltip: {
                 y: {
                   formatter: function formatter(val, opts) {
-                    return _this74.standings.races[opts.dataPointIndex].raceName;
+                    return _this76.standings.races[opts.dataPointIndex].raceName;
                   }
                 }
               }
@@ -68412,7 +68858,7 @@
         }, {
           key: "executeCalculator",
           value: function executeCalculator() {
-            var _this75 = this,
+            var _this77 = this,
                 _this$calculatorData$,
                 _this$calculatorData$2;
 
@@ -68421,10 +68867,10 @@
             }
 
             var filtered1 = JSON.parse(JSON.stringify(this.driverStandingsSeries.filter(function (serie) {
-              return serie.name == _this75.calculatorData.left.driver.code;
+              return serie.name == _this77.calculatorData.left.driver.code;
             })));
             var filtered2 = JSON.parse(JSON.stringify(this.driverStandingsSeries.filter(function (serie) {
-              return serie.name == _this75.calculatorData.right.driver.code;
+              return serie.name == _this77.calculatorData.right.driver.code;
             })));
             var leftChart = this.calculateDriver(filtered1, this.calculatorData.left);
             var rightChart = this.calculateDriver(filtered2, this.calculatorData.right);
@@ -69741,22 +70187,22 @@
         _createClass(VideostreamsComponent, [{
           key: "getVideos",
           value: function getVideos() {
-            var _this76 = this;
+            var _this78 = this;
 
             this.restService.getVideos().subscribe({
               next: function next(data) {
                 var tempVideos = data;
                 tempVideos.forEach(function (video) {
                   if (video.url.includes('youtube')) {
-                    _this76.utilityService.setReferrerToOrigin();
+                    _this78.utilityService.setReferrerToOrigin();
                   }
 
-                  video.safeUrl = _this76.sanitizer.bypassSecurityTrustResourceUrl(video.url);
+                  video.safeUrl = _this78.sanitizer.bypassSecurityTrustResourceUrl(video.url);
                 });
-                _this76.videos = tempVideos;
+                _this78.videos = tempVideos;
 
-                if (_this76.selectedTab === 0) {
-                  _this76.activeVideo = 0;
+                if (_this78.selectedTab === 0) {
+                  _this78.activeVideo = 0;
                 }
 
                 return data;
@@ -69766,7 +70212,7 @@
         }, {
           key: "getTwitchStream",
           value: function getTwitchStream() {
-            var _this77 = this;
+            var _this79 = this;
 
             this.restService.getStreamer().subscribe({
               next: function next(data) {
@@ -69774,8 +70220,8 @@
                 var url = 'https://player.twitch.tv/?channel=' + streamerName.message + '&parent=' + environment
                 /* environment.frontUrl */
                 .N.frontUrl;
-                _this77.twitchUrl = _this77.sanitizer.bypassSecurityTrustResourceUrl(url);
-                _this77.streamer = streamerName.message;
+                _this79.twitchUrl = _this79.sanitizer.bypassSecurityTrustResourceUrl(url);
+                _this79.streamer = streamerName.message;
                 return data;
               }
             });
@@ -69816,22 +70262,22 @@
         }, {
           key: "updateStreamer",
           value: function updateStreamer() {
-            var _this78 = this;
+            var _this80 = this;
 
             var dialogRef = this.dialog.open(SimpleInputDialog);
             dialogRef.componentInstance.init('Enter Twitch stream');
             dialogRef.afterClosed().subscribe(function (newStreamer) {
               if (newStreamer != null) {
-                _this78.restService.updateStreamer(newStreamer).subscribe({
+                _this80.restService.updateStreamer(newStreamer).subscribe({
                   next: function next(data) {
                     if (data === true) {
                       var url = 'https://player.twitch.tv/?channel=' + newStreamer + '&parent=' + environment
                       /* environment.frontUrl */
                       .N.frontUrl;
-                      _this78.twitchUrl = _this78.sanitizer.bypassSecurityTrustResourceUrl(url);
-                      _this78.streamer = newStreamer;
+                      _this80.twitchUrl = _this80.sanitizer.bypassSecurityTrustResourceUrl(url);
+                      _this80.streamer = newStreamer;
                     } else {
-                      _this78.utilityService.pushToastrMessage('Stream not found');
+                      _this80.utilityService.pushToastrMessage('Stream not found');
                     }
 
                     return data;
@@ -75427,7 +75873,7 @@
 
       var UpcomingRaceAnalysisComponent = /*#__PURE__*/function () {
         function UpcomingRaceAnalysisComponent(restService, utilityService, router, route, dialog) {
-          var _this79 = this;
+          var _this81 = this;
 
           _classCallCheck(this, UpcomingRaceAnalysisComponent);
 
@@ -75488,18 +75934,18 @@
           };
           restService.getUpcomingRaceAnalysis().subscribe({
             next: function next(data) {
-              _this79.upcomingRaceAnalysis = data;
+              _this81.upcomingRaceAnalysis = data;
 
-              if (_this79.upcomingRaceAnalysis != null) {
-                _this79.setAllLaps();
+              if (_this81.upcomingRaceAnalysis != null) {
+                _this81.setAllLaps();
 
-                _this79.utilityService.setTitle(5, _this79.upcomingRaceAnalysis.title);
+                _this81.utilityService.setTitle(5, _this81.upcomingRaceAnalysis.title);
 
-                _this79.setCharts();
+                _this81.setCharts();
 
-                _this79.checkIfSprintMode();
+                _this81.checkIfSprintMode();
               } else {
-                _this79.utilityService.setTitle(5, 'Season is finished');
+                _this81.utilityService.setTitle(5, 'Season is finished');
               }
 
               return data;
@@ -75750,11 +76196,11 @@
         }, {
           key: "openRace",
           value: function openRace(season, round) {
-            var _this80 = this;
+            var _this82 = this;
 
             this.restService.getRace(season, round).subscribe({
               next: function next(data) {
-                var dialogRef = _this80.dialog.open(RacePopupComponent, {
+                var dialogRef = _this82.dialog.open(RacePopupComponent, {
                   maxWidth: '90vw'
                 });
 
@@ -76171,32 +76617,32 @@
         var _super15 = _createSuper(MatSlider);
 
         function MatSlider(elementRef, _focusMonitor, _changeDetectorRef, _dir, tabIndex, _ngZone, _document, _animationMode) {
-          var _this81;
+          var _this83;
 
           _classCallCheck(this, MatSlider);
 
-          _this81 = _super15.call(this, elementRef);
-          _this81._focusMonitor = _focusMonitor;
-          _this81._changeDetectorRef = _changeDetectorRef;
-          _this81._dir = _dir;
-          _this81._ngZone = _ngZone;
-          _this81._animationMode = _animationMode;
-          _this81._invert = false;
-          _this81._max = 100;
-          _this81._min = 0;
-          _this81._step = 1;
-          _this81._thumbLabel = false;
-          _this81._tickInterval = 0;
-          _this81._value = null;
-          _this81._vertical = false;
+          _this83 = _super15.call(this, elementRef);
+          _this83._focusMonitor = _focusMonitor;
+          _this83._changeDetectorRef = _changeDetectorRef;
+          _this83._dir = _dir;
+          _this83._ngZone = _ngZone;
+          _this83._animationMode = _animationMode;
+          _this83._invert = false;
+          _this83._max = 100;
+          _this83._min = 0;
+          _this83._step = 1;
+          _this83._thumbLabel = false;
+          _this83._tickInterval = 0;
+          _this83._value = null;
+          _this83._vertical = false;
           /** Event emitted when the slider value has changed. */
 
-          _this81.change = new core
+          _this83.change = new core
           /* EventEmitter */
           .vpe();
           /** Event emitted when the slider thumb moves. */
 
-          _this81.input = new core
+          _this83.input = new core
           /* EventEmitter */
           .vpe();
           /**
@@ -76205,74 +76651,74 @@
            * @docs-private
            */
 
-          _this81.valueChange = new core
+          _this83.valueChange = new core
           /* EventEmitter */
           .vpe();
           /** onTouch function registered via registerOnTouch (ControlValueAccessor). */
 
-          _this81.onTouched = function () {};
+          _this83.onTouched = function () {};
 
-          _this81._percent = 0;
+          _this83._percent = 0;
           /**
            * Whether or not the thumb is sliding and what the user is using to slide it with.
            * Used to determine if there should be a transition for the thumb and fill track.
            */
 
-          _this81._isSliding = null;
+          _this83._isSliding = null;
           /**
            * Whether or not the slider is active (clicked or sliding).
            * Used to shrink and grow the thumb as according to the Material Design spec.
            */
 
-          _this81._isActive = false;
+          _this83._isActive = false;
           /** The size of a tick interval as a percentage of the size of the track. */
 
-          _this81._tickIntervalPercent = 0;
+          _this83._tickIntervalPercent = 0;
           /** The dimensions of the slider. */
 
-          _this81._sliderDimensions = null;
+          _this83._sliderDimensions = null;
 
-          _this81._controlValueAccessorChangeFn = function () {};
+          _this83._controlValueAccessorChangeFn = function () {};
           /** Subscription to the Directionality change EventEmitter. */
 
 
-          _this81._dirChangeSubscription = Subscription
+          _this83._dirChangeSubscription = Subscription
           /* Subscription.EMPTY */
           .w.EMPTY;
           /** Called when the user has put their pointer down on the slider. */
 
-          _this81._pointerDown = function (event) {
+          _this83._pointerDown = function (event) {
             // Don't do anything if the slider is disabled or the
             // user is using anything other than the main mouse button.
-            if (_this81.disabled || _this81._isSliding || !slider_isTouchEvent(event) && event.button !== 0) {
+            if (_this83.disabled || _this83._isSliding || !slider_isTouchEvent(event) && event.button !== 0) {
               return;
             }
 
-            _this81._ngZone.run(function () {
-              _this81._touchId = slider_isTouchEvent(event) ? getTouchIdForSlider(event, _this81._elementRef.nativeElement) : undefined;
-              var pointerPosition = getPointerPositionOnPage(event, _this81._touchId);
+            _this83._ngZone.run(function () {
+              _this83._touchId = slider_isTouchEvent(event) ? getTouchIdForSlider(event, _this83._elementRef.nativeElement) : undefined;
+              var pointerPosition = getPointerPositionOnPage(event, _this83._touchId);
 
               if (pointerPosition) {
-                var oldValue = _this81.value;
-                _this81._isSliding = 'pointer';
-                _this81._lastPointerEvent = event;
+                var oldValue = _this83.value;
+                _this83._isSliding = 'pointer';
+                _this83._lastPointerEvent = event;
                 event.preventDefault();
 
-                _this81._focusHostElement();
+                _this83._focusHostElement();
 
-                _this81._onMouseenter(); // Simulate mouseenter in case this is a mobile device.
+                _this83._onMouseenter(); // Simulate mouseenter in case this is a mobile device.
 
 
-                _this81._bindGlobalEvents(event);
+                _this83._bindGlobalEvents(event);
 
-                _this81._focusHostElement();
+                _this83._focusHostElement();
 
-                _this81._updateValueFromPosition(pointerPosition);
+                _this83._updateValueFromPosition(pointerPosition);
 
-                _this81._valueOnSlideStart = oldValue; // Emit a change and input event if the value changed.
+                _this83._valueOnSlideStart = oldValue; // Emit a change and input event if the value changed.
 
-                if (oldValue != _this81.value) {
-                  _this81._emitInputEvent();
+                if (oldValue != _this83.value) {
+                  _this83._emitInputEvent();
                 }
               }
             });
@@ -76283,21 +76729,21 @@
            */
 
 
-          _this81._pointerMove = function (event) {
-            if (_this81._isSliding === 'pointer') {
-              var pointerPosition = getPointerPositionOnPage(event, _this81._touchId);
+          _this83._pointerMove = function (event) {
+            if (_this83._isSliding === 'pointer') {
+              var pointerPosition = getPointerPositionOnPage(event, _this83._touchId);
 
               if (pointerPosition) {
                 // Prevent the slide from selecting anything else.
                 event.preventDefault();
-                var oldValue = _this81.value;
-                _this81._lastPointerEvent = event;
+                var oldValue = _this83.value;
+                _this83._lastPointerEvent = event;
 
-                _this81._updateValueFromPosition(pointerPosition); // Native range elements always emit `input` events when the value changed while sliding.
+                _this83._updateValueFromPosition(pointerPosition); // Native range elements always emit `input` events when the value changed while sliding.
 
 
-                if (oldValue != _this81.value) {
-                  _this81._emitInputEvent();
+                if (oldValue != _this83.value) {
+                  _this83._emitInputEvent();
                 }
               }
             }
@@ -76305,47 +76751,47 @@
           /** Called when the user has lifted their pointer. Bound on the document level. */
 
 
-          _this81._pointerUp = function (event) {
-            if (_this81._isSliding === 'pointer') {
-              if (!slider_isTouchEvent(event) || typeof _this81._touchId !== 'number' || // Note that we use `changedTouches`, rather than `touches` because it
+          _this83._pointerUp = function (event) {
+            if (_this83._isSliding === 'pointer') {
+              if (!slider_isTouchEvent(event) || typeof _this83._touchId !== 'number' || // Note that we use `changedTouches`, rather than `touches` because it
               // seems like in most cases `touches` is empty for `touchend` events.
-              findMatchingTouch(event.changedTouches, _this81._touchId)) {
+              findMatchingTouch(event.changedTouches, _this83._touchId)) {
                 event.preventDefault();
 
-                _this81._removeGlobalEvents();
+                _this83._removeGlobalEvents();
 
-                _this81._isSliding = null;
-                _this81._touchId = undefined;
+                _this83._isSliding = null;
+                _this83._touchId = undefined;
 
-                if (_this81._valueOnSlideStart != _this81.value && !_this81.disabled) {
-                  _this81._emitChangeEvent();
+                if (_this83._valueOnSlideStart != _this83.value && !_this83.disabled) {
+                  _this83._emitChangeEvent();
                 }
 
-                _this81._valueOnSlideStart = _this81._lastPointerEvent = null;
+                _this83._valueOnSlideStart = _this83._lastPointerEvent = null;
               }
             }
           };
           /** Called when the window has lost focus. */
 
 
-          _this81._windowBlur = function () {
+          _this83._windowBlur = function () {
             // If the window is blurred while dragging we need to stop dragging because the
             // browser won't dispatch the `mouseup` and `touchend` events anymore.
-            if (_this81._lastPointerEvent) {
-              _this81._pointerUp(_this81._lastPointerEvent);
+            if (_this83._lastPointerEvent) {
+              _this83._pointerUp(_this83._lastPointerEvent);
             }
           };
 
-          _this81._document = _document;
-          _this81.tabIndex = parseInt(tabIndex) || 0;
+          _this83._document = _document;
+          _this83.tabIndex = parseInt(tabIndex) || 0;
 
           _ngZone.runOutsideAngular(function () {
             var element = elementRef.nativeElement;
-            element.addEventListener('mousedown', _this81._pointerDown, activeEventOptions);
-            element.addEventListener('touchstart', _this81._pointerDown, activeEventOptions);
+            element.addEventListener('mousedown', _this83._pointerDown, activeEventOptions);
+            element.addEventListener('touchstart', _this83._pointerDown, activeEventOptions);
           });
 
-          return _this81;
+          return _this83;
         }
         /** Whether the slider is inverted. */
 
@@ -76678,17 +77124,17 @@
         }, {
           key: "ngAfterViewInit",
           value: function ngAfterViewInit() {
-            var _this82 = this;
+            var _this84 = this;
 
             this._focusMonitor.monitor(this._elementRef, true).subscribe(function (origin) {
-              _this82._isActive = !!origin && origin !== 'keyboard';
+              _this84._isActive = !!origin && origin !== 'keyboard';
 
-              _this82._changeDetectorRef.detectChanges();
+              _this84._changeDetectorRef.detectChanges();
             });
 
             if (this._dir) {
               this._dirChangeSubscription = this._dir.change.subscribe(function () {
-                _this82._changeDetectorRef.markForCheck();
+                _this84._changeDetectorRef.markForCheck();
               });
             }
           }
@@ -78105,14 +78551,14 @@
         }, {
           key: "ngOnDestroy",
           value: function ngOnDestroy() {
-            var _this83 = this;
+            var _this85 = this;
 
             // Clean up chart when the component is removed
             this.browserOnly(function () {
-              if (_this83.root) {
-                _this83.root.dispose();
+              if (_this85.root) {
+                _this85.root.dispose();
               } else {
-                _this83.root.dispose();
+                _this85.root.dispose();
               }
             });
           }
@@ -78420,7 +78866,7 @@
           .xp6(3);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(driver_r17.FullName);
+          .Oqu(driver_r17.LastName);
           core
           /* ɵɵadvance */
           .xp6(1);
@@ -80549,7 +80995,7 @@
 
       var RaceAnalysisComponent = /*#__PURE__*/function () {
         function RaceAnalysisComponent(restService, utilityService, router, route, dialog) {
-          var _this84 = this;
+          var _this86 = this;
 
           _classCallCheck(this, RaceAnalysisComponent);
 
@@ -80685,62 +81131,62 @@
           };
           restService.getRaceAnalysis().subscribe({
             next: function next(data) {
-              _this84.livetimingUrl = data.livetimingUrl;
-              _this84.radioData = data.radioData;
-              _this84.artCode = data.art;
-              _this84.status = data.status;
-              _this84.drivers = data.driverData;
-              _this84.lapTimesLowerLimit = _this84.getLowerLimit();
-              _this84.driversTab2 = _this84.sortDrivers(_this84.drivers, 'position', 'asc');
-              _this84.driversTab1 = _this84.sortDrivers(_this84.drivers, 'startingPosition', 'asc');
-              _this84.chartWidth = _this84.calculateChartWidthForMobileDevices(_this84.driversTab1[0].lapByLapData.positions.length);
-              _this84.driversTabByStandings = _this84.sortDrivers(_this84.drivers, 'standing', 'asc');
-              _this84.maxLaps = _this84.driversTab2[0].lapByLapData.positions.length;
-              _this84.driversByPositionReverse = _this84.sortDrivers(_this84.drivers, 'position', 'desc');
+              _this86.livetimingUrl = data.livetimingUrl;
+              _this86.radioData = data.radioData;
+              _this86.artCode = data.art;
+              _this86.status = data.status;
+              _this86.drivers = data.driverData;
+              _this86.lapTimesLowerLimit = _this86.getLowerLimit();
+              _this86.driversTab2 = _this86.sortDrivers(_this86.drivers, 'position', 'asc');
+              _this86.driversTab1 = _this86.sortDrivers(_this86.drivers, 'startingPosition', 'asc');
+              _this86.chartWidth = _this86.calculateChartWidthForMobileDevices(_this86.driversTab1[0].lapByLapData.positions.length);
+              _this86.driversTabByStandings = _this86.sortDrivers(_this86.drivers, 'standing', 'asc');
+              _this86.maxLaps = _this86.driversTab2[0].lapByLapData.positions.length;
+              _this86.driversByPositionReverse = _this86.sortDrivers(_this86.drivers, 'position', 'desc');
 
-              _this84.updateComparisonTable();
+              _this86.updateComparisonTable();
 
-              _this84.title = data.title;
+              _this86.title = data.title;
 
-              _this84.utilityService.setTitle(6, _this84.title);
+              _this86.utilityService.setTitle(6, _this86.title);
 
-              _this84.year = data.year;
-              _this84.weatherDataList = data.weatherChartData;
+              _this86.year = data.year;
+              _this86.weatherDataList = data.weatherChartData;
 
-              _this84.setXAxis();
+              _this86.setXAxis();
 
-              _this84.setTrackTemperature();
+              _this86.setTrackTemperature();
 
-              _this84.setAirTemperature();
+              _this86.setAirTemperature();
 
-              _this84.setRainingChart();
+              _this86.setRainingChart();
 
-              _this84.setWindspeedChart();
+              _this86.setWindspeedChart();
 
-              _this84.setWindDirChart();
+              _this86.setWindDirChart();
 
-              _this84.setHumidityChart();
+              _this86.setHumidityChart();
 
-              _this84.setPressureChart();
+              _this86.setPressureChart();
 
-              _this84.setSteering();
+              _this86.setSteering();
 
-              _this84.setGforceLat();
+              _this86.setGforceLat();
 
-              _this84.setGforceLong();
+              _this86.setGforceLong();
 
-              _this84.setBrake();
+              _this86.setBrake();
 
-              _this84.setPerformance();
+              _this86.setPerformance();
 
-              _this84.setThrottle();
+              _this86.setThrottle();
 
-              _this84.fastestLaps = _this84.setFastestLaps(_this84.drivers);
+              _this86.fastestLaps = _this86.setFastestLaps(_this86.drivers);
 
-              _this84.setDriverCharts();
+              _this86.setDriverCharts();
 
-              if (_this84.status < 2) {
-                _this84.setLapsHeatMapChart();
+              if (_this86.status < 2) {
+                _this86.setLapsHeatMapChart();
               }
 
               return data;
@@ -80854,7 +81300,7 @@
         }, {
           key: "setDriverCharts",
           value: function setDriverCharts() {
-            var _this85 = this;
+            var _this87 = this;
 
             var positionsByLapchartSeries = [];
             var timesByLapchartSeries = [];
@@ -80992,7 +81438,7 @@
               tooltip: {
                 y: {
                   formatter: function formatter(val, opts) {
-                    return _this85.drivers[opts.seriesIndex].lapByLapData.lapTimesY[opts.dataPointIndex];
+                    return _this87.drivers[opts.seriesIndex].lapByLapData.lapTimesY[opts.dataPointIndex];
                   },
                   title: {
                     formatter: function formatter(seriesName) {
@@ -81576,7 +82022,7 @@
         }, {
           key: "updateLapsHeatMapLabels",
           value: function updateLapsHeatMapLabels() {
-            var _this86 = this;
+            var _this88 = this;
 
             this.lapsHeatMapChartOptions.dataLabels = {
               enabled: true,
@@ -81588,32 +82034,32 @@
                   return 'PIT';
                 }
 
-                switch (_this86.selectedHeatmapRadio) {
+                switch (_this88.selectedHeatmapRadio) {
                   case '1':
-                    return _this86.driversByPositionReverse[opts.seriesIndex].lapByLapData.lapTimesY[opts.dataPointIndex];
+                    return _this88.driversByPositionReverse[opts.seriesIndex].lapByLapData.lapTimesY[opts.dataPointIndex];
                     break;
 
                   case '2':
-                    return _this86.driversByPositionReverse[opts.seriesIndex].lapByLapData.lapTimePositions[opts.dataPointIndex];
+                    return _this88.driversByPositionReverse[opts.seriesIndex].lapByLapData.lapTimePositions[opts.dataPointIndex];
                     break;
 
                   case '3':
-                    return _this86.driversByPositionReverse[opts.seriesIndex].lapByLapData.positions[opts.dataPointIndex];
+                    return _this88.driversByPositionReverse[opts.seriesIndex].lapByLapData.positions[opts.dataPointIndex];
                     break;
 
                   default:
-                    return _this86.driversByPositionReverse[opts.seriesIndex].lapByLapData.lapTimesY[opts.dataPointIndex];
+                    return _this88.driversByPositionReverse[opts.seriesIndex].lapByLapData.lapTimesY[opts.dataPointIndex];
                     break;
                 }
 
-                return _this86.driversByPositionReverse[opts.seriesIndex].lapByLapData.lapTimesY[opts.dataPointIndex];
+                return _this88.driversByPositionReverse[opts.seriesIndex].lapByLapData.lapTimesY[opts.dataPointIndex];
               }
             };
           }
         }, {
           key: "setLapsHeatMapChart",
           value: function setLapsHeatMapChart() {
-            var _this87 = this;
+            var _this89 = this;
 
             var lapsHeatMapSeries = [];
             var counter = 0;
@@ -81695,7 +82141,7 @@
                     return 'PIT';
                   }
 
-                  return _this87.driversByPositionReverse[opts.seriesIndex].lapByLapData.lapTimesY[opts.dataPointIndex];
+                  return _this89.driversByPositionReverse[opts.seriesIndex].lapByLapData.lapTimesY[opts.dataPointIndex];
                 }
               },
               plotOptions: {
@@ -82146,17 +82592,17 @@
         var _super16 = _createSuper(ThrottleSubscriber);
 
         function ThrottleSubscriber(destination, durationSelector, _leading, _trailing) {
-          var _this88;
+          var _this90;
 
           _classCallCheck(this, ThrottleSubscriber);
 
-          _this88 = _super16.call(this, destination);
-          _this88.destination = destination;
-          _this88.durationSelector = durationSelector;
-          _this88._leading = _leading;
-          _this88._trailing = _trailing;
-          _this88._hasValue = false;
-          return _this88;
+          _this90 = _super16.call(this, destination);
+          _this90.destination = destination;
+          _this90.durationSelector = durationSelector;
+          _this90._leading = _leading;
+          _this90._trailing = _trailing;
+          _this90._hasValue = false;
+          return _this90;
         }
 
         _createClass(ThrottleSubscriber, [{
@@ -82278,18 +82724,18 @@
         var _super17 = _createSuper(ThrottleTimeSubscriber);
 
         function ThrottleTimeSubscriber(destination, duration, scheduler, leading, trailing) {
-          var _this89;
+          var _this91;
 
           _classCallCheck(this, ThrottleTimeSubscriber);
 
-          _this89 = _super17.call(this, destination);
-          _this89.duration = duration;
-          _this89.scheduler = scheduler;
-          _this89.leading = leading;
-          _this89.trailing = trailing;
-          _this89._hasTrailingValue = false;
-          _this89._trailingValue = null;
-          return _this89;
+          _this91 = _super17.call(this, destination);
+          _this91.duration = duration;
+          _this91.scheduler = scheduler;
+          _this91.leading = leading;
+          _this91.trailing = trailing;
+          _this91._hasTrailingValue = false;
+          _this91._trailingValue = null;
+          return _this91;
         }
 
         _createClass(ThrottleTimeSubscriber, [{
@@ -83236,7 +83682,7 @@
         }, {
           key: "setup",
           value: function setup() {
-            var _this90 = this;
+            var _this92 = this;
 
             if (hasWindowDefined()) {
               this.zone.runOutsideAngular(
@@ -83244,29 +83690,29 @@
               * @return {?}
               */
               function () {
-                _this90.disposeScroller = createScroller({
-                  fromRoot: _this90.fromRoot,
-                  alwaysCallback: _this90.alwaysCallback,
-                  disable: _this90.infiniteScrollDisabled,
-                  downDistance: _this90.infiniteScrollDistance,
-                  element: _this90.element,
-                  horizontal: _this90.horizontal,
-                  scrollContainer: _this90.infiniteScrollContainer,
-                  scrollWindow: _this90.scrollWindow,
-                  throttle: _this90.infiniteScrollThrottle,
-                  upDistance: _this90.infiniteScrollUpDistance
+                _this92.disposeScroller = createScroller({
+                  fromRoot: _this92.fromRoot,
+                  alwaysCallback: _this92.alwaysCallback,
+                  disable: _this92.infiniteScrollDisabled,
+                  downDistance: _this92.infiniteScrollDistance,
+                  element: _this92.element,
+                  horizontal: _this92.horizontal,
+                  scrollContainer: _this92.infiniteScrollContainer,
+                  scrollWindow: _this92.scrollWindow,
+                  throttle: _this92.infiniteScrollThrottle,
+                  upDistance: _this92.infiniteScrollUpDistance
                 }).subscribe(
                 /**
                 * @param {?} payload
                 * @return {?}
                 */
                 function (payload) {
-                  return _this90.zone.run(
+                  return _this92.zone.run(
                   /**
                   * @return {?}
                   */
                   function () {
-                    return _this90.handleOnScroll(payload);
+                    return _this92.handleOnScroll(payload);
                   });
                 });
               });
@@ -87300,32 +87746,32 @@
         }, {
           key: "getFeed",
           value: function getFeed() {
-            var _this91 = this;
+            var _this93 = this;
 
             this.restService.getInstagramPostsPaged(this.feedColumnPreference, this.instaPageNum).subscribe({
               next: function next(data) {
-                _this91.initialInstagramLoad(data);
+                _this93.initialInstagramLoad(data);
 
                 return data;
               }
             });
             this.restService.getTwitterPostsPaged(this.feedColumnPreference, this.twitterpageNum).subscribe({
               next: function next(data) {
-                _this91.initialTwitterLoad(data);
+                _this93.initialTwitterLoad(data);
 
                 return data;
               }
             });
             this.restService.getRedditPostsPaged(this.feedColumnPreference, this.redditpageNum).subscribe({
               next: function next(data) {
-                _this91.initialRedditLoad(data);
+                _this93.initialRedditLoad(data);
 
                 return data;
               }
             });
             this.restService.getFourchanPostsPaged(this.feedColumnPreference, this.fourchanPageNum).subscribe({
               next: function next(data) {
-                _this91.initialFourchanLoad(data);
+                _this93.initialFourchanLoad(data);
 
                 return data;
               }
@@ -87334,12 +87780,12 @@
         }, {
           key: "checkFourchanDisabled",
           value: function checkFourchanDisabled() {
-            var _this92 = this;
+            var _this94 = this;
 
             this.restService.getFourchanDisabled().subscribe({
               next: function next(data) {
                 var fourchanDisabled = data;
-                _this92.fourchanEnabled = !fourchanDisabled;
+                _this94.fourchanEnabled = !fourchanDisabled;
                 return data;
               }
             });
@@ -87347,11 +87793,11 @@
         }, {
           key: "updateInstagramFeed",
           value: function updateInstagramFeed() {
-            var _this93 = this;
+            var _this95 = this;
 
             this.restService.getInstagramPostsPaged(this.feedColumnPreference, this.instaPageNum).subscribe({
               next: function next(data) {
-                _this93.slowlyAddInstaPosts(data);
+                _this95.slowlyAddInstaPosts(data);
 
                 return data;
               }
@@ -87360,11 +87806,11 @@
         }, {
           key: "updateTwitterFeed",
           value: function updateTwitterFeed() {
-            var _this94 = this;
+            var _this96 = this;
 
             this.restService.getTwitterPostsPaged(this.feedColumnPreference, this.twitterpageNum).subscribe({
               next: function next(data) {
-                _this94.slowlyAddTwitterPosts(data);
+                _this96.slowlyAddTwitterPosts(data);
 
                 return data;
               }
@@ -87373,11 +87819,11 @@
         }, {
           key: "updateRedditFeed",
           value: function updateRedditFeed() {
-            var _this95 = this;
+            var _this97 = this;
 
             this.restService.getRedditPostsPaged(this.feedColumnPreference, this.redditpageNum).subscribe({
               next: function next(data) {
-                _this95.slowlyAddRedditPosts(data);
+                _this97.slowlyAddRedditPosts(data);
 
                 return data;
               }
@@ -87386,11 +87832,11 @@
         }, {
           key: "updateFourchanFeed",
           value: function updateFourchanFeed() {
-            var _this96 = this;
+            var _this98 = this;
 
             this.restService.getFourchanPostsPaged(this.feedColumnPreference, this.fourchanPageNum).subscribe({
               next: function next(data) {
-                _this96.slowlyAddFourchanPosts(data);
+                _this98.slowlyAddFourchanPosts(data);
 
                 return data;
               }
@@ -87476,7 +87922,7 @@
         }, {
           key: "slowlyAddInstaPosts",
           value: function slowlyAddInstaPosts(newPosts) {
-            var _this97 = this;
+            var _this99 = this;
 
             this.instaPosts.first.push(newPosts.first[0]);
 
@@ -87490,20 +87936,20 @@
 
             var _loop = function _loop(i) {
               setTimeout(function () {
-                _this97.instaPosts.first.push(newPosts.first[i]);
+                _this99.instaPosts.first.push(newPosts.first[i]);
 
-                if (_this97.isMobile) {
-                  _this97.instaPosts.first.push(newPosts.second[i]);
+                if (_this99.isMobile) {
+                  _this99.instaPosts.first.push(newPosts.second[i]);
 
-                  _this97.instaPosts.first.push(newPosts.third[i]);
+                  _this99.instaPosts.first.push(newPosts.third[i]);
                 } else {
-                  _this97.instaPosts.second.push(newPosts.second[i]);
+                  _this99.instaPosts.second.push(newPosts.second[i]);
 
-                  _this97.instaPosts.third.push(newPosts.third[i]);
+                  _this99.instaPosts.third.push(newPosts.third[i]);
                 }
 
                 if (i === newPosts.first.length - 1) {
-                  _this97.instaInitialized = true;
+                  _this99.instaInitialized = true;
                 }
               }, i * 200);
             };
@@ -87524,7 +87970,7 @@
         }, {
           key: "slowlyAddTwitterPosts",
           value: function slowlyAddTwitterPosts(newPosts) {
-            var _this98 = this;
+            var _this100 = this;
 
             this.twitterPosts.first.push(newPosts.first[0]);
 
@@ -87544,24 +87990,24 @@
 
             var _loop2 = function _loop2(i) {
               setTimeout(function () {
-                _this98.twitterPosts.first.push(newPosts.first[i]);
+                _this100.twitterPosts.first.push(newPosts.first[i]);
 
-                if (_this98.isMobile) {
-                  _this98.twitterPosts.first.push(newPosts.second[i]);
+                if (_this100.isMobile) {
+                  _this100.twitterPosts.first.push(newPosts.second[i]);
                 } else {
-                  _this98.twitterPosts.second.push(newPosts.second[i]);
+                  _this100.twitterPosts.second.push(newPosts.second[i]);
                 }
 
-                if (_this98.feedColumnPreference == 3) {
-                  if (_this98.isMobile) {
-                    _this98.twitterPosts.first.push(newPosts.third[i]);
+                if (_this100.feedColumnPreference == 3) {
+                  if (_this100.isMobile) {
+                    _this100.twitterPosts.first.push(newPosts.third[i]);
                   } else {
-                    _this98.twitterPosts.third.push(newPosts.third[i]);
+                    _this100.twitterPosts.third.push(newPosts.third[i]);
                   }
                 }
 
                 if (i === newPosts.first.length - 1) {
-                  _this98.twitterInitialized = true;
+                  _this100.twitterInitialized = true;
                 }
               }, i * 500);
             };
@@ -87582,7 +88028,7 @@
         }, {
           key: "slowlyAddRedditPosts",
           value: function slowlyAddRedditPosts(newPosts) {
-            var _this99 = this;
+            var _this101 = this;
 
             this.redditPosts.first.push(newPosts.first[0]);
 
@@ -87602,24 +88048,24 @@
 
             var _loop3 = function _loop3(i) {
               setTimeout(function () {
-                _this99.redditPosts.first.push(newPosts.first[i]);
+                _this101.redditPosts.first.push(newPosts.first[i]);
 
-                if (_this99.isMobile) {
-                  _this99.redditPosts.first.push(newPosts.second[i]);
+                if (_this101.isMobile) {
+                  _this101.redditPosts.first.push(newPosts.second[i]);
                 } else {
-                  _this99.redditPosts.second.push(newPosts.second[i]);
+                  _this101.redditPosts.second.push(newPosts.second[i]);
                 }
 
-                if (_this99.feedColumnPreference == 3) {
-                  if (_this99.isMobile) {
-                    _this99.redditPosts.first.push(newPosts.third[i]);
+                if (_this101.feedColumnPreference == 3) {
+                  if (_this101.isMobile) {
+                    _this101.redditPosts.first.push(newPosts.third[i]);
                   } else {
-                    _this99.redditPosts.third.push(newPosts.third[i]);
+                    _this101.redditPosts.third.push(newPosts.third[i]);
                   }
                 }
 
                 if (i === newPosts.first.length - 1) {
-                  _this99.redditInitialized = true;
+                  _this101.redditInitialized = true;
                 }
               }, i * 500);
             };
@@ -87640,7 +88086,7 @@
         }, {
           key: "slowlyAddFourchanPosts",
           value: function slowlyAddFourchanPosts(newPosts) {
-            var _this100 = this;
+            var _this102 = this;
 
             this.fourchanPosts.first.push(newPosts.first[0]);
 
@@ -87660,24 +88106,24 @@
 
             var _loop4 = function _loop4(i) {
               setTimeout(function () {
-                _this100.fourchanPosts.first.push(newPosts.first[i]);
+                _this102.fourchanPosts.first.push(newPosts.first[i]);
 
-                if (_this100.isMobile) {
-                  _this100.fourchanPosts.first.push(newPosts.second[i]);
+                if (_this102.isMobile) {
+                  _this102.fourchanPosts.first.push(newPosts.second[i]);
                 } else {
-                  _this100.fourchanPosts.second.push(newPosts.second[i]);
+                  _this102.fourchanPosts.second.push(newPosts.second[i]);
                 }
 
-                if (_this100.feedColumnPreference == 3) {
-                  if (_this100.isMobile) {
-                    _this100.fourchanPosts.first.push(newPosts.third[i]);
+                if (_this102.feedColumnPreference == 3) {
+                  if (_this102.isMobile) {
+                    _this102.fourchanPosts.first.push(newPosts.third[i]);
                   } else {
-                    _this100.fourchanPosts.third.push(newPosts.third[i]);
+                    _this102.fourchanPosts.third.push(newPosts.third[i]);
                   }
                 }
 
                 if (i === newPosts.first.length - 1) {
-                  _this100.fourchanInitialized = true;
+                  _this102.fourchanInitialized = true;
                 }
               }, i * 1000);
             };
@@ -88269,20 +88715,20 @@
         _createClass(SubmitContentDialog, [{
           key: "sendMessage",
           value: function sendMessage() {
-            var _this101 = this;
+            var _this103 = this;
 
             this.newContent.username = localStorage.getItem('f1-chosen-nickname');
             this.newContent.status = +this.status;
             var observableStandings = this.restService.postContent(this.newContent);
             observableStandings.subscribe({
               next: function next(data) {
-                _this101.newContent = new NewsContent();
+                _this103.newContent = new NewsContent();
 
-                _this101.utilityService.pushToastrMessage("Posted.");
+                _this103.utilityService.pushToastrMessage("Posted.");
 
-                _this101.dialogRef.close();
+                _this103.dialogRef.close();
 
-                _this101.router.navigate(['news/post'], {
+                _this103.router.navigate(['news/post'], {
                   queryParams: {
                     code: data
                   }
@@ -88291,7 +88737,7 @@
                 return data;
               },
               error: function error(_error3) {
-                _this101.utilityService.pushToastrMessage("Error occured.");
+                _this103.utilityService.pushToastrMessage("Error occured.");
 
                 console.error('There was an error!', _error3);
               }
@@ -89241,11 +89687,11 @@
         }, {
           key: "getPosts",
           value: function getPosts() {
-            var _this102 = this;
+            var _this104 = this;
 
             this.restService.getNews(this.page).subscribe({
               next: function next(data) {
-                _this102.posts = data;
+                _this104.posts = data;
                 return data;
               }
             });
@@ -90423,24 +90869,24 @@
         _createClass(NewsComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this103 = this;
+            var _this105 = this;
 
             this.utilityService.disablePeriodicFetchOfComments();
             this.route.queryParams.subscribe(function (params) {
               var selectedCode = params['code'];
 
-              _this103.restService.getNewsPost(selectedCode).subscribe({
+              _this105.restService.getNewsPost(selectedCode).subscribe({
                 next: function next(data) {
-                  _this103.post = data;
+                  _this105.post = data;
 
-                  _this103.checkIfTweet();
+                  _this105.checkIfTweet();
 
-                  _this103.checkIfImage();
+                  _this105.checkIfImage();
 
-                  if (_this103.post == null) {
-                    _this103.goToAwsList();
+                  if (_this105.post == null) {
+                    _this105.goToAwsList();
                   } else {
-                    _this103.utilityService.setTitle(2, _this103.post.title);
+                    _this105.utilityService.setTitle(2, _this105.post.title);
                   }
                 },
                 error: function error(_error4) {
@@ -90494,7 +90940,7 @@
         }, {
           key: "postNewsComment",
           value: function postNewsComment() {
-            var _this104 = this;
+            var _this106 = this;
 
             var awsComment = new NewsComment();
             var validCauseImage = this.checkImageUpload();
@@ -90513,18 +90959,18 @@
                   var comment = data;
 
                   if (validCauseImage) {
-                    _this104.uploadImage(comment.id);
+                    _this106.uploadImage(comment.id);
                   } else {
-                    _this104.reloadAwsComments();
+                    _this106.reloadAwsComments();
                   }
 
-                  _this104.commentText = '';
-                  _this104.uploadFile = null;
+                  _this106.commentText = '';
+                  _this106.uploadFile = null;
                 },
                 error: function error(_error5) {
                   console.error('There was an error!', _error5);
 
-                  _this104.utilityService.pushToastrErrorMessage('Refused. Comment not posted.');
+                  _this106.utilityService.pushToastrErrorMessage('Refused. Comment not posted.');
                 }
               });
               this.minimumReloadCounterValue = 0;
@@ -90552,11 +90998,11 @@
         }, {
           key: "getNewsComments",
           value: function getNewsComments() {
-            var _this105 = this;
+            var _this107 = this;
 
             this.restService.getNewsComments(this.post.code).subscribe({
               next: function next(data) {
-                _this105.post.comments = data;
+                _this107.post.comments = data;
               },
               error: function error(_error6) {
                 console.error('There was an error!', _error6);
@@ -90637,18 +91083,18 @@
         }, {
           key: "uploadImage",
           value: function uploadImage(id) {
-            var _this106 = this;
+            var _this108 = this;
 
             var formData = new FormData();
             formData.append('image', this.uploadFile);
             this.restService.saveCommentImage(id, formData).subscribe({
               next: function next(data) {
-                _this106.reloadAwsComments();
+                _this108.reloadAwsComments();
               },
               error: function error(_error7) {
                 console.error('There was an error!', _error7);
 
-                _this106.utilityService.pushToastrErrorMessage('ERROR OCCURED. Comment not posted.');
+                _this108.utilityService.pushToastrErrorMessage('ERROR OCCURED. Comment not posted.');
               }
             });
           }
@@ -91526,7 +91972,7 @@
         }, {
           key: "executeModeratorAction",
           value: function executeModeratorAction() {
-            var _this107 = this;
+            var _this109 = this;
 
             if (isNaN(this.moderation.commentId)) {
               this.moderation.commentId = null;
@@ -91543,12 +91989,12 @@
             } else {
               this.restService.moderateComment(this.moderation).subscribe({
                 next: function next(data) {
-                  _this107.response = data;
+                  _this109.response = data;
 
-                  if (_this107.response.state > 0) {
-                    _this107.moderation = new CommentModeration();
+                  if (_this109.response.state > 0) {
+                    _this109.moderation = new CommentModeration();
 
-                    _this107.toastr.success(_this107.response.message, '', {
+                    _this109.toastr.success(_this109.response.message, '', {
                       timeOut: 4000,
                       closeButton: false,
                       enableHtml: false,
@@ -91557,8 +92003,8 @@
                     });
                   }
 
-                  if (_this107.response.state <= 0) {
-                    _this107.toastr.error('Unable to find comment no.' + _this107.moderation.commentId, '', {
+                  if (_this109.response.state <= 0) {
+                    _this109.toastr.error('Unable to find comment no.' + _this109.moderation.commentId, '', {
                       timeOut: 4000,
                       closeButton: false,
                       enableHtml: false,
@@ -92234,20 +92680,20 @@
         _createClass(AwsDemoComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this108 = this;
+            var _this110 = this;
 
             this.utilityService.disablePeriodicFetchOfComments();
             this.route.queryParams.subscribe(function (params) {
               var selectedCode = params['code'];
 
-              _this108.restService.getNewsPost(selectedCode).subscribe({
+              _this110.restService.getNewsPost(selectedCode).subscribe({
                 next: function next(data) {
-                  _this108.post = data;
+                  _this110.post = data;
 
-                  if (_this108.post == null) {
-                    _this108.goToAwsList();
+                  if (_this110.post == null) {
+                    _this110.goToAwsList();
                   } else {
-                    _this108.utilityService.setTitle(2, _this108.post.title);
+                    _this110.utilityService.setTitle(2, _this110.post.title);
                   }
                 },
                 error: function error(_error8) {
@@ -92256,16 +92702,16 @@
               });
             });
             this.commentsReloader = setInterval(function () {
-              _this108.getNewsCommentsPeriodically();
+              _this110.getNewsCommentsPeriodically();
             }, 20000);
             this.minimumReloadCounterValue = 0;
             this.currentReloadCounter = 1;
             var rawHtml = this.restService.readFile('assets/html/demo.html');
             rawHtml.subscribe({
               next: function next(data) {
-                _this108.postText = data;
+                _this110.postText = data;
                 console.info('this.postText');
-                console.info(_this108.postText);
+                console.info(_this110.postText);
               },
               error: function error(_error9) {
                 console.error('There was an error!', _error9);
@@ -92292,7 +92738,7 @@
         }, {
           key: "postNewsComment",
           value: function postNewsComment() {
-            var _this109 = this;
+            var _this111 = this;
 
             var newsComment = new NewsComment();
 
@@ -92302,12 +92748,12 @@
               newsComment.username = localStorage.getItem('f1-chosen-nickname');
               this.restService.postNewsComment(newsComment).subscribe({
                 next: function next(data) {
-                  _this109.commentText = '';
+                  _this111.commentText = '';
                 },
                 error: function error(_error10) {
                   console.error('There was an error!', _error10);
 
-                  _this109.utilityService.pushToastrErrorMessage('ERROR OCCURED. Comment not posted.');
+                  _this111.utilityService.pushToastrErrorMessage('ERROR OCCURED. Comment not posted.');
                 }
               });
               this.minimumReloadCounterValue = 0;
@@ -92335,11 +92781,11 @@
         }, {
           key: "getNewsComments",
           value: function getNewsComments() {
-            var _this110 = this;
+            var _this112 = this;
 
             this.restService.getNewsComments(this.post.code).subscribe({
               next: function next(data) {
-                _this110.post.comments = data;
+                _this112.post.comments = data;
               },
               error: function error(_error11) {
                 console.error('There was an error!', _error11);
@@ -92642,7 +93088,7 @@
 
       var ArtCarousel = /*#__PURE__*/function () {
         function ArtCarousel(restService, utilityService, config, dialog) {
-          var _this111 = this;
+          var _this113 = this;
 
           _classCallCheck(this, ArtCarousel);
 
@@ -92656,9 +93102,9 @@
           this.currentImage = 0;
           this.restService.getAllArt().subscribe({
             next: function next(data) {
-              _this111.images = data;
+              _this113.images = data;
 
-              _this111.setTitle();
+              _this113.setTitle();
             }
           });
         }
@@ -93088,21 +93534,21 @@
         }, {
           key: "ngOnDestroy",
           value: function ngOnDestroy() {
-            var _this112 = this;
+            var _this114 = this;
 
             // Clean up chart when the component is removed
             this.browserOnly(function () {
-              if (_this112.root) {
-                _this112.root.dispose();
+              if (_this114.root) {
+                _this114.root.dispose();
               } else {
-                _this112.root.dispose();
+                _this114.root.dispose();
               }
             });
           }
         }, {
           key: "getDataFromSeries",
           value: function getDataFromSeries() {
-            var _this113 = this;
+            var _this115 = this;
 
             var dataMap = new Map();
 
@@ -93113,8 +93559,8 @@
             this.series.forEach(function (serie) {
               var name;
 
-              if (_this113.codeMapping != null) {
-                name = _this113.codeMapping.get(serie.name);
+              if (_this115.codeMapping != null) {
+                name = _this115.codeMapping.get(serie.name);
               } else {
                 name = serie.name;
               }
@@ -94764,13 +95210,13 @@
         }, {
           key: "includeDnf",
           value: function includeDnf(event) {
-            var _this114 = this;
+            var _this116 = this;
 
             this.gridToResultSeries = [];
 
             if (event.checked) {
               this.standings.gridToResultChartWithDnf.forEach(function (standing) {
-                _this114.gridToResultSeries.push({
+                _this116.gridToResultSeries.push({
                   name: standing.name,
                   data: standing.series //  color: standing.color
 
@@ -94778,7 +95224,7 @@
               });
             } else {
               this.standings.gridToResultChartWithoutDnf.forEach(function (standing) {
-                _this114.gridToResultSeries.push({
+                _this116.gridToResultSeries.push({
                   name: standing.name,
                   data: standing.series // color: standing.color
 
@@ -94819,7 +95265,7 @@
         }, {
           key: "setPodiums",
           value: function setPodiums(standing) {
-            var _this115 = this;
+            var _this117 = this;
 
             standing.series.forEach(function (item) {
               if (item[1] < 4) {
@@ -94827,10 +95273,10 @@
                 podium.name = standing.name; // podium.color = standing.color;
 
                 podium.value = item[1];
-                _this115.podiums[item[0]][item[1]] = podium;
+                _this117.podiums[item[0]][item[1]] = podium;
 
-                if (item[0] > _this115.raceCount) {
-                  _this115.raceCount = item[0];
+                if (item[0] > _this117.raceCount) {
+                  _this117.raceCount = item[0];
                 }
               }
             }); // this.reverseXaxis.tickAmount = this.raceCount;
@@ -94838,7 +95284,7 @@
         }, {
           key: "setDriversHeatMapChart",
           value: function setDriversHeatMapChart() {
-            var _this116 = this;
+            var _this118 = this;
 
             this.driversHeatMapChartOptions = {
               colors: ['#0000ff'],
@@ -94884,7 +95330,7 @@
               tooltip: {
                 y: {
                   formatter: function formatter(val, opts) {
-                    return _this116.standings.races[opts.dataPointIndex].raceName;
+                    return _this118.standings.races[opts.dataPointIndex].raceName;
                   }
                 }
               }
@@ -94893,7 +95339,7 @@
         }, {
           key: "setConstructorHeatMapChart",
           value: function setConstructorHeatMapChart() {
-            var _this117 = this;
+            var _this119 = this;
 
             this.constructorHeatMapChartOptions = {
               colors: ['#0000ff'],
@@ -94929,7 +95375,7 @@
               tooltip: {
                 y: {
                   formatter: function formatter(val, opts) {
-                    return _this117.standings.races[opts.dataPointIndex].raceName;
+                    return _this119.standings.races[opts.dataPointIndex].raceName;
                   }
                 }
               }
@@ -95000,41 +95446,41 @@
         }, {
           key: "initializeChampionshipData",
           value: function initializeChampionshipData(season) {
-            var _this118 = this;
+            var _this120 = this;
 
             this.restService.getHistoricSeason(season).subscribe({
               next: function next(data) {
-                _this118.standings = data;
+                _this120.standings = data;
 
-                _this118.mapPositionsAndCodes();
+                _this120.mapPositionsAndCodes();
 
-                _this118.driverPointsSeries = [];
+                _this120.driverPointsSeries = [];
 
-                _this118.standings.driverStandingByRound.forEach(function (standing) {
-                  _this118.driverPointsSeries.push({
+                _this120.standings.driverStandingByRound.forEach(function (standing) {
+                  _this120.driverPointsSeries.push({
                     name: standing.name,
                     data: standing.series
                   });
                 });
 
-                _this118.podiums = SeasonsComponent.initializeMultidimensionalArray();
-                _this118.driverPositionByRaceMap = new Map();
-                _this118.driversHeatMapStandingsSeries = [];
+                _this120.podiums = SeasonsComponent.initializeMultidimensionalArray();
+                _this120.driverPositionByRaceMap = new Map();
+                _this120.driversHeatMapStandingsSeries = [];
 
-                _this118.standings.driverPointsByRound.forEach(function (standing) {
-                  _this118.setPodiums(standing); // let copy = JSON.parse(JSON.stringify(standing.series));
+                _this120.standings.driverPointsByRound.forEach(function (standing) {
+                  _this120.setPodiums(standing); // let copy = JSON.parse(JSON.stringify(standing.series));
 
 
                   var copy = standing.series;
 
-                  if (copy.length < _this118.raceCount) {
+                  if (copy.length < _this120.raceCount) {
                     //popuni null utrke
                     var array = [];
                     copy.forEach(function (serie) {
                       array.push(serie[0]);
                     });
 
-                    for (var i = 1; i <= _this118.raceCount; i++) {
+                    for (var i = 1; i <= _this120.raceCount; i++) {
                       if (array.indexOf(i) < 0) {
                         copy.push([i, null]);
                       }
@@ -95056,62 +95502,62 @@
 
                   copy.forEach(function (serie) {
                     if (serie[1] != null) {
-                      _this118.driverPositionByRaceMap.set(standing.name + serie[0], serie[1]);
+                      _this120.driverPositionByRaceMap.set(standing.name + serie[0], serie[1]);
                     }
                   });
 
-                  if (_this118.driverPositionMap.get(standing.name) == undefined) {} else {
-                    var position = _this118.driverCount - _this118.driverPositionMap.get(standing.name);
+                  if (_this120.driverPositionMap.get(standing.name) == undefined) {} else {
+                    var position = _this120.driverCount - _this120.driverPositionMap.get(standing.name);
 
-                    _this118.driversHeatMapStandingsSeries[position] = {
+                    _this120.driversHeatMapStandingsSeries[position] = {
                       name: standing.name,
                       data: copy
                     };
                   }
                 });
 
-                _this118.chartWidth = _this118.calculateChartWidthForMobileDevices(_this118.raceCount);
-                _this118.gridToResultSeries = [];
+                _this120.chartWidth = _this120.calculateChartWidthForMobileDevices(_this120.raceCount);
+                _this120.gridToResultSeries = [];
 
-                _this118.standings.gridToResultChartWithoutDnf.forEach(function (standing) {
-                  _this118.gridToResultSeries.push({
+                _this120.standings.gridToResultChartWithoutDnf.forEach(function (standing) {
+                  _this120.gridToResultSeries.push({
                     name: standing.name,
                     data: standing.series // color: standing.color
 
                   });
                 });
 
-                _this118.constructorPointsSeries = [];
-                _this118.constructorsHeatMapStandingsSeries = [];
+                _this120.constructorPointsSeries = [];
+                _this120.constructorsHeatMapStandingsSeries = [];
 
-                _this118.standings.constructorStandingByRound.forEach(function (standing) {
-                  _this118.constructorPointsSeries.push({
+                _this120.standings.constructorStandingByRound.forEach(function (standing) {
+                  _this120.constructorPointsSeries.push({
                     name: standing.name,
                     data: standing.series //   color: standing.color
 
                   });
                 });
 
-                _this118.constructorRoundsSeries = [];
+                _this120.constructorRoundsSeries = [];
 
-                _this118.standings.constructorPointsByRound.forEach(function (standing) {
-                  _this118.constructorRoundsSeries.push({
+                _this120.standings.constructorPointsByRound.forEach(function (standing) {
+                  _this120.constructorRoundsSeries.push({
                     name: standing.name,
                     data: standing.series // color: standing.color
 
                   });
 
-                  _this118.constructorsHeatMapStandingsSeries[_this118.constructorCount - _this118.constructorPositionMap.get(standing.name)] = {
+                  _this120.constructorsHeatMapStandingsSeries[_this120.constructorCount - _this120.constructorPositionMap.get(standing.name)] = {
                     name: standing.name,
                     data: standing.series
                   };
                 });
 
-                _this118.setDriversHeatMapChart();
+                _this120.setDriversHeatMapChart();
 
-                _this118.setConstructorHeatMapChart();
+                _this120.setConstructorHeatMapChart();
 
-                _this118.utilityService.setTitle(71, season + ' Championship');
+                _this120.utilityService.setTitle(71, season + ' Championship');
 
                 return data;
               }
@@ -95120,11 +95566,11 @@
         }, {
           key: "openRace",
           value: function openRace(season, round) {
-            var _this119 = this;
+            var _this121 = this;
 
             this.restService.getRace(season, round).subscribe({
               next: function next(data) {
-                var dialogRef = _this119.dialog.open(RacePopupComponent, {
+                var dialogRef = _this121.dialog.open(RacePopupComponent, {
                   maxWidth: '90vw'
                 });
 
@@ -96359,28 +96805,28 @@
         }, {
           key: "callCompare",
           value: function callCompare() {
-            var _this120 = this;
+            var _this122 = this;
 
             this.restService.compareDrivers(this.requestComparator).subscribe({
               next: function next(data) {
-                _this120.displayComparator = data;
+                _this122.displayComparator = data;
 
-                _this120.updateChart();
+                _this122.updateChart();
               }
             });
           }
         }, {
           key: "getCompareDriversDropdown",
           value: function getCompareDriversDropdown() {
-            var _this121 = this;
+            var _this123 = this;
 
             this.restService.compareDriversDropdown(this.requestComparator.year).subscribe({
               next: function next(data) {
-                _this121.dropdownItems = data;
+                _this123.dropdownItems = data;
 
-                _this121.checkCurrentDriversExistInDropdown();
+                _this123.checkCurrentDriversExistInDropdown();
 
-                _this121.callCompare();
+                _this123.callCompare();
               }
             });
           }
@@ -96416,11 +96862,11 @@
         }, {
           key: "checkCurrentDriversExistInDropdown",
           value: function checkCurrentDriversExistInDropdown() {
-            var _this122 = this;
+            var _this124 = this;
 
             var positionCounter = 0;
             var found = this.dropdownItems.filter(function (item) {
-              return item.driverId == _this122.requestComparator.driver1.driverId;
+              return item.driverId == _this124.requestComparator.driver1.driverId;
             }).length;
 
             if (found == 0) {
@@ -96429,7 +96875,7 @@
             }
 
             found = this.dropdownItems.filter(function (item) {
-              return item.driverId == _this122.requestComparator.driver2.driverId;
+              return item.driverId == _this124.requestComparator.driver2.driverId;
             }).length;
 
             if (found == 0) {
@@ -97947,14 +98393,14 @@
         _createClass(DriversComponent, [{
           key: "getDriverDropdown",
           value: function getDriverDropdown() {
-            var _this123 = this;
+            var _this125 = this;
 
             this.restService.getErgastDrivers().subscribe({
               next: function next(data) {
-                _this123.dropdownDrivers = data;
-                _this123.driverId = _this123.getSelectedDriver();
+                _this125.dropdownDrivers = data;
+                _this125.driverId = _this125.getSelectedDriver();
 
-                _this123.getDriver(_this123.driverId, true);
+                _this125.getDriver(_this125.driverId, true);
               }
             });
           }
@@ -98218,17 +98664,17 @@
         }, {
           key: "openDriversPopup",
           value: function openDriversPopup() {
-            var _this124 = this;
+            var _this126 = this;
 
             var dialogRef = this.dialog.open(DriversPopupComponent);
             dialogRef.componentInstance.setDrivers(this.dropdownDrivers);
             dialogRef.afterClosed().subscribe(function (driverId) {
               if (driverId != null) {
-                _this124.driverId = driverId;
+                _this126.driverId = driverId;
 
-                _this124.getDriver(_this124.driverId, true);
+                _this126.getDriver(_this126.driverId, true);
 
-                _this124.updateUrl();
+                _this126.updateUrl();
               }
             });
           }
@@ -98247,23 +98693,23 @@
         }, {
           key: "getDriver",
           value: function getDriver(driverId, retry) {
-            var _this125 = this;
+            var _this127 = this;
 
             this.restService.getDriverStatistics(driverId).subscribe({
               next: function next(data) {
-                _this125.driver = data;
+                _this127.driver = data;
 
-                _this125.utilityService.setTitle(72, _this125.driver.givenName + ' ' + _this125.driver.familyName);
+                _this127.utilityService.setTitle(72, _this127.driver.givenName + ' ' + _this127.driver.familyName);
 
-                _this125.setCharts();
+                _this127.setCharts();
               },
               error: function error(_error12) {
-                _this125.utilityService.pushToastrMessage('Driver not found');
+                _this127.utilityService.pushToastrMessage('Driver not found');
 
-                _this125.driverId = 'max_verstappen';
+                _this127.driverId = 'max_verstappen';
 
                 if (retry) {
-                  _this125.getDriver(_this125.driverId, false);
+                  _this127.getDriver(_this127.driverId, false);
                 }
 
                 console.error('There was an error!', _error12);
@@ -99773,14 +100219,14 @@
         _createClass(ConstructorsComponent, [{
           key: "getConstructorDropdown",
           value: function getConstructorDropdown() {
-            var _this126 = this;
+            var _this128 = this;
 
             this.restService.getErgastConstructors().subscribe({
               next: function next(data) {
-                _this126.dropdownConstructors = data;
-                _this126.constructorId = _this126.getSelectedConstructor();
+                _this128.dropdownConstructors = data;
+                _this128.constructorId = _this128.getSelectedConstructor();
 
-                _this126.getConstructor(_this126.constructorId);
+                _this128.getConstructor(_this128.constructorId);
               }
             });
           }
@@ -100052,32 +100498,32 @@
         }, {
           key: "openDialog",
           value: function openDialog() {
-            var _this127 = this;
+            var _this129 = this;
 
             var dialogRef = this.dialog.open(ConstructorsPopupComponent);
             dialogRef.componentInstance.setConstructors(this.dropdownConstructors);
             dialogRef.afterClosed().subscribe(function (constructorId) {
               if (constructorId != null) {
-                _this127.constructorId = constructorId;
+                _this129.constructorId = constructorId;
 
-                _this127.getConstructor(_this127.constructorId);
+                _this129.getConstructor(_this129.constructorId);
 
-                _this127.updateUrl();
+                _this129.updateUrl();
               }
             });
           }
         }, {
           key: "getConstructor",
           value: function getConstructor(id) {
-            var _this128 = this;
+            var _this130 = this;
 
             this.restService.getConstructorStatistics(id).subscribe({
               next: function next(data) {
-                _this128.constructorStatistics = data;
+                _this130.constructorStatistics = data;
 
-                _this128.utilityService.setTitle(73, _this128.constructorStatistics.ergastConstructor.name);
+                _this130.utilityService.setTitle(73, _this130.constructorStatistics.ergastConstructor.name);
 
-                _this128.setCharts();
+                _this130.setCharts();
               }
             });
           }
@@ -100967,11 +101413,11 @@
         }, {
           key: "getTimePeriodically",
           value: function getTimePeriodically() {
-            var _this129 = this;
+            var _this131 = this;
 
             this.getTime();
             this.clockRefresher = setInterval(function () {
-              _this129.getTime();
+              _this131.getTime();
             }, 5000);
           }
         }, {
@@ -100993,13 +101439,13 @@
         }, {
           key: "getTwitterFeed",
           value: function getTwitterFeed() {
-            var _this130 = this;
+            var _this132 = this;
 
             console.log('getTwitterFeed');
             this.restService.getTwitterFerrariPosts().subscribe({
               next: function next(data) {
-                _this130.tweets = data;
-                console.log(_this130.tweets);
+                _this132.tweets = data;
+                console.log(_this132.tweets);
                 return data;
               }
             });
@@ -104167,59 +104613,59 @@
         _createClass(F1CountdownComponent, [{
           key: "getCountdownData",
           value: function getCountdownData(mode) {
-            var _this131 = this;
+            var _this133 = this;
 
             this.restService.getCountdownData(mode).subscribe({
               next: function next(data) {
-                if (_this131.calendarData == null) {
-                  _this131.calendarData = data;
+                if (_this133.calendarData == null) {
+                  _this133.calendarData = data;
 
-                  _this131.setupOverlays();
+                  _this133.setupOverlays();
 
-                  _this131.setTimezoneOffset();
+                  _this133.setTimezoneOffset();
                 }
 
-                _this131.calendarData = data;
+                _this133.calendarData = data;
 
-                if (_this131.calendarData == null || _this131.calendarData.f1Calendar == null) {
-                  _this131.unknown = true;
+                if (_this133.calendarData == null || _this133.calendarData.f1Calendar == null) {
+                  _this133.unknown = true;
 
-                  _this131.setupIframes();
+                  _this133.setupIframes();
                 } else {
                   if (mode === 0 || mode === 1) {
-                    _this131.FP1Days = _this131.calendarData.countdownData.FP1Days;
-                    _this131.FP1Seconds = _this131.calendarData.countdownData.FP1Seconds;
+                    _this133.FP1Days = _this133.calendarData.countdownData.FP1Days;
+                    _this133.FP1Seconds = _this133.calendarData.countdownData.FP1Seconds;
                   }
 
                   if (mode === 0 || mode === 2) {
-                    _this131.FP2Days = _this131.calendarData.countdownData.FP2Days;
-                    _this131.FP2Seconds = _this131.calendarData.countdownData.FP2Seconds;
+                    _this133.FP2Days = _this133.calendarData.countdownData.FP2Days;
+                    _this133.FP2Seconds = _this133.calendarData.countdownData.FP2Seconds;
                   }
 
                   if (mode === 0 || mode === 3) {
-                    _this131.FP3Days = _this131.calendarData.countdownData.FP3Days;
-                    _this131.FP3Seconds = _this131.calendarData.countdownData.FP3Seconds;
+                    _this133.FP3Days = _this133.calendarData.countdownData.FP3Days;
+                    _this133.FP3Seconds = _this133.calendarData.countdownData.FP3Seconds;
                   }
 
                   if (mode === 0 || mode === 4) {
-                    _this131.qualifyingDays = _this131.calendarData.countdownData.qualifyingDays;
-                    _this131.qualifyingSeconds = _this131.calendarData.countdownData.qualifyingSeconds;
+                    _this133.qualifyingDays = _this133.calendarData.countdownData.qualifyingDays;
+                    _this133.qualifyingSeconds = _this133.calendarData.countdownData.qualifyingSeconds;
                   }
 
                   if (mode === 0 || mode === 5) {
-                    _this131.raceDays = _this131.calendarData.countdownData.raceDays;
-                    _this131.raceSeconds = _this131.calendarData.countdownData.raceSeconds;
+                    _this133.raceDays = _this133.calendarData.countdownData.raceDays;
+                    _this133.raceSeconds = _this133.calendarData.countdownData.raceSeconds;
                   }
 
                   if (mode === 0 || mode === 6) {
-                    _this131.sprintDays = _this131.calendarData.countdownData.sprintDays;
-                    _this131.sprintSeconds = _this131.calendarData.countdownData.sprintSeconds;
+                    _this133.sprintDays = _this133.calendarData.countdownData.sprintDays;
+                    _this133.sprintSeconds = _this133.calendarData.countdownData.sprintSeconds;
                   }
 
                   if (mode === 0) {
-                    _this131.getSelectedTab();
+                    _this133.getSelectedTab();
 
-                    _this131.utilityService.setTitleDefaultPage(1, _this131.calendarData.f1Calendar.summary);
+                    _this133.utilityService.setTitleDefaultPage(1, _this133.calendarData.f1Calendar.summary);
                   }
                 }
 
@@ -104227,9 +104673,9 @@
               },
               'error': function error(_error13) {
                 console.error('There was an error!', _error13);
-                _this131.calendarData = new CalendarData();
-                _this131.calendarData.countdownData.raceDays = 0;
-                _this131.calendarData.countdownData.raceSeconds = 0;
+                _this133.calendarData = new CalendarData();
+                _this133.calendarData.countdownData.raceDays = 0;
+                _this133.calendarData.countdownData.raceSeconds = 0;
               }
             });
           }
@@ -104951,14 +105397,14 @@
         }, {
           key: "update",
           value: function update(numColumns, tiles) {
-            var _this132 = this;
+            var _this134 = this;
 
             this.columnIndex = 0;
             this.rowIndex = 0;
             this.tracker = new Array(numColumns);
             this.tracker.fill(0, 0, this.tracker.length);
             this.positions = tiles.map(function (tile) {
-              return _this132._trackTile(tile);
+              return _this134._trackTile(tile);
             });
           }
           /** Calculates the row and col position of a tile. */
@@ -105715,13 +106161,13 @@
         var _super18 = _createSuper(FixedTileStyler);
 
         function FixedTileStyler(fixedRowHeight) {
-          var _this133;
+          var _this135;
 
           _classCallCheck(this, FixedTileStyler);
 
-          _this133 = _super18.call(this);
-          _this133.fixedRowHeight = fixedRowHeight;
-          return _this133;
+          _this135 = _super18.call(this);
+          _this135.fixedRowHeight = fixedRowHeight;
+          return _this135;
         }
 
         _createClass(FixedTileStyler, [{
@@ -105777,15 +106223,15 @@
         var _super19 = _createSuper(RatioTileStyler);
 
         function RatioTileStyler(value) {
-          var _this134;
+          var _this136;
 
           _classCallCheck(this, RatioTileStyler);
 
-          _this134 = _super19.call(this);
+          _this136 = _super19.call(this);
 
-          _this134._parseRatio(value);
+          _this136._parseRatio(value);
 
-          return _this134;
+          return _this136;
         }
 
         _createClass(RatioTileStyler, [{
@@ -106012,7 +106458,7 @@
         }, {
           key: "_layoutTiles",
           value: function _layoutTiles() {
-            var _this135 = this;
+            var _this137 = this;
 
             if (!this._tileCoordinator) {
               this._tileCoordinator = new TileCoordinator();
@@ -106021,7 +106467,7 @@
             var tracker = this._tileCoordinator;
 
             var tiles = this._tiles.filter(function (tile) {
-              return !tile._gridList || tile._gridList === _this135;
+              return !tile._gridList || tile._gridList === _this137;
             });
 
             var direction = this._dir ? this._dir.value : 'ltr';
@@ -106033,7 +106479,7 @@
             tiles.forEach(function (tile, index) {
               var pos = tracker.positions[index];
 
-              _this135._tileStyler.setStyle(tile, pos.row, pos.col);
+              _this137._tileStyler.setStyle(tile, pos.row, pos.col);
             });
 
             this._setListStyle(this._tileStyler.getComputedHeight());
@@ -107177,7 +107623,7 @@
         }, {
           key: "ngAfterContentInit",
           value: function ngAfterContentInit() {
-            var _this136 = this;
+            var _this138 = this;
 
             this.listKeyManager = new a11y
             /* ListKeyManager */
@@ -107190,7 +107636,7 @@
             * @return {?}
             */
             function () {
-              return _this136.playAnimation();
+              return _this138.playAnimation();
             });
           }
           /**
@@ -107200,7 +107646,7 @@
         }, {
           key: "ngAfterViewInit",
           value: function ngAfterViewInit() {
-            var _this137 = this;
+            var _this139 = this;
 
             this.autoplay$.pipe((0, takeUntil
             /* takeUntil */
@@ -107210,9 +107656,9 @@
             * @return {?}
             */
             function (value) {
-              _this137.stopTimer();
+              _this139.stopTimer();
 
-              _this137.startTimer(value);
+              _this139.startTimer(value);
             });
             this.interval$.pipe((0, takeUntil
             /* takeUntil */
@@ -107222,11 +107668,11 @@
             * @return {?}
             */
             function (value) {
-              _this137.stopTimer();
+              _this139.stopTimer();
 
-              _this137.resetTimer(value);
+              _this139.resetTimer(value);
 
-              _this137.startTimer(_this137._autoplay);
+              _this139.startTimer(_this139._autoplay);
             });
             this.maxWidth$.pipe((0, takeUntil
             /* takeUntil */
@@ -107235,7 +107681,7 @@
             * @return {?}
             */
             function () {
-              return _this137.slideTo(0);
+              return _this139.slideTo(0);
             });
             this.loop$.pipe((0, takeUntil
             /* takeUntil */
@@ -107245,7 +107691,7 @@
             * @return {?}
             */
             function (value) {
-              return _this137.listKeyManager.withWrap(value);
+              return _this139.listKeyManager.withWrap(value);
             });
             this.orientation$.pipe((0, takeUntil
             /* takeUntil */
@@ -107255,7 +107701,7 @@
             * @return {?}
             */
             function (value) {
-              return _this137.listKeyManager.withHorizontalOrientation(value);
+              return _this139.listKeyManager.withHorizontalOrientation(value);
             });
             this.slides$.pipe((0, takeUntil
             /* takeUntil */
@@ -107267,14 +107713,14 @@
             * @return {?}
             */
             function (value) {
-              return value && value < _this137.slidesList.length;
+              return value && value < _this139.slidesList.length;
             })).subscribe(
             /**
             * @param {?} value
             * @return {?}
             */
             function (value) {
-              return _this137.resetSlides(value);
+              return _this139.resetSlides(value);
             });
           }
           /**
@@ -107554,7 +108000,7 @@
         }, {
           key: "playAnimation",
           value: function playAnimation() {
-            var _this138 = this;
+            var _this140 = this;
 
             /** @type {?} */
             var translation = this.getTranslation(this.getOffset());
@@ -107575,18 +108021,18 @@
             * @return {?}
             */
             function () {
-              return _this138.playing = true;
+              return _this140.playing = true;
             });
             animation.onDone(
             /**
             * @return {?}
             */
             function () {
-              _this138.change.emit(_this138.currentIndex);
+              _this140.change.emit(_this140.currentIndex);
 
-              _this138.playing = false;
+              _this140.playing = false;
 
-              _this138.renderer.setStyle(_this138.carouselList.nativeElement, 'transform', translation);
+              _this140.renderer.setStyle(_this140.carouselList.nativeElement, 'transform', translation);
 
               animation.destroy();
             });
@@ -107623,7 +108069,7 @@
         }, {
           key: "startTimer",
           value: function startTimer(autoplay) {
-            var _this139 = this;
+            var _this141 = this;
 
             if (!autoplay) {
               return;
@@ -107640,15 +108086,15 @@
             * @return {?}
             */
             function () {
-              return _this139.isVisible();
+              return _this141.isVisible();
             })).subscribe(
             /**
             * @return {?}
             */
             function () {
-              _this139.listKeyManager.withWrap(true).setNextItemActive();
+              _this141.listKeyManager.withWrap(true).setNextItemActive();
 
-              _this139.listKeyManager.withWrap(_this139.loop);
+              _this141.listKeyManager.withWrap(_this141.loop);
             });
           }
           /**
@@ -108216,12 +108662,12 @@
         var _super21 = _createSuper(MatCarouselHammerConfig);
 
         function MatCarouselHammerConfig() {
-          var _this140;
+          var _this142;
 
           _classCallCheck(this, MatCarouselHammerConfig);
 
-          _this140 = _super21.apply(this, arguments);
-          _this140.overrides = {
+          _this142 = _super21.apply(this, arguments);
+          _this142.overrides = {
             pinch: {
               enable: false
             },
@@ -108229,7 +108675,7 @@
               enable: false
             }
           };
-          return _this140;
+          return _this142;
         }
 
         return MatCarouselHammerConfig;
@@ -108591,13 +109037,13 @@
         _createClass(ImagePopupDialog, [{
           key: "getData",
           value: function getData() {
-            var _this141 = this;
+            var _this143 = this;
 
             var observable;
             observable = this.restService.getOpenSeaAsset(this.contractAddress, this.tokenId);
             observable.subscribe({
               next: function next(data) {
-                _this141.asset = data;
+                _this143.asset = data;
               }
             });
           }
@@ -108743,54 +109189,54 @@
         var _super22 = _createSuper(_MatAutocompleteBase);
 
         function _MatAutocompleteBase(_changeDetectorRef, _elementRef, defaults, platform) {
-          var _this142;
+          var _this144;
 
           _classCallCheck(this, _MatAutocompleteBase);
 
-          _this142 = _super22.call(this);
-          _this142._changeDetectorRef = _changeDetectorRef;
-          _this142._elementRef = _elementRef;
-          _this142._activeOptionChanges = Subscription
+          _this144 = _super22.call(this);
+          _this144._changeDetectorRef = _changeDetectorRef;
+          _this144._elementRef = _elementRef;
+          _this144._activeOptionChanges = Subscription
           /* Subscription.EMPTY */
           .w.EMPTY;
           /** Whether the autocomplete panel should be visible, depending on option length. */
 
-          _this142.showPanel = false;
-          _this142._isOpen = false;
+          _this144.showPanel = false;
+          _this144._isOpen = false;
           /** Function that maps an option's control value to its display value in the trigger. */
 
-          _this142.displayWith = null;
+          _this144.displayWith = null;
           /** Event that is emitted whenever an option from the list is selected. */
 
-          _this142.optionSelected = new core
+          _this144.optionSelected = new core
           /* EventEmitter */
           .vpe();
           /** Event that is emitted when the autocomplete panel is opened. */
 
-          _this142.opened = new core
+          _this144.opened = new core
           /* EventEmitter */
           .vpe();
           /** Event that is emitted when the autocomplete panel is closed. */
 
-          _this142.closed = new core
+          _this144.closed = new core
           /* EventEmitter */
           .vpe();
           /** Emits whenever an option is activated using the keyboard. */
 
-          _this142.optionActivated = new core
+          _this144.optionActivated = new core
           /* EventEmitter */
           .vpe();
-          _this142._classList = {};
+          _this144._classList = {};
           /** Unique ID to be used by autocomplete trigger's "aria-owns" property. */
 
-          _this142.id = "mat-autocomplete-".concat(_uniqueAutocompleteIdCounter++); // TODO(crisbeto): the problem that the `inertGroups` option resolves is only present on
+          _this144.id = "mat-autocomplete-".concat(_uniqueAutocompleteIdCounter++); // TODO(crisbeto): the problem that the `inertGroups` option resolves is only present on
           // Safari using VoiceOver. We should occasionally check back to see whether the bug
           // wasn't resolved in VoiceOver, and if it has, we can remove this and the `inertGroups`
           // option altogether.
 
-          _this142.inertGroups = (platform === null || platform === void 0 ? void 0 : platform.SAFARI) || false;
-          _this142._autoActiveFirstOption = !!defaults.autoActiveFirstOption;
-          return _this142;
+          _this144.inertGroups = (platform === null || platform === void 0 ? void 0 : platform.SAFARI) || false;
+          _this144._autoActiveFirstOption = !!defaults.autoActiveFirstOption;
+          return _this144;
         }
         /** Whether the autocomplete panel is open. */
 
@@ -108841,15 +109287,15 @@
         }, {
           key: "ngAfterContentInit",
           value: function ngAfterContentInit() {
-            var _this143 = this;
+            var _this145 = this;
 
             this._keyManager = new a11y
             /* ActiveDescendantKeyManager */
             .s1(this.options).withWrap();
             this._activeOptionChanges = this._keyManager.change.subscribe(function (index) {
-              _this143.optionActivated.emit({
-                source: _this143,
-                option: _this143.options.toArray()[index] || null
+              _this145.optionActivated.emit({
+                source: _this145,
+                option: _this145.options.toArray()[index] || null
               });
             }); // Set the initial visibility state.
 
@@ -109195,14 +109641,14 @@
         var _super23 = _createSuper(MatAutocomplete);
 
         function MatAutocomplete() {
-          var _this144;
+          var _this146;
 
           _classCallCheck(this, MatAutocomplete);
 
-          _this144 = _super23.apply(this, arguments);
-          _this144._visibleClass = 'mat-autocomplete-visible';
-          _this144._hiddenClass = 'mat-autocomplete-hidden';
-          return _this144;
+          _this146 = _super23.apply(this, arguments);
+          _this146._visibleClass = 'mat-autocomplete-visible';
+          _this146._hiddenClass = 'mat-autocomplete-hidden';
+          return _this146;
         }
 
         return MatAutocomplete;
@@ -109531,7 +109977,7 @@
 
       var _MatAutocompleteTriggerBase = /*#__PURE__*/function () {
         function _MatAutocompleteTriggerBase(_element, _overlay, _viewContainerRef, _zone, _changeDetectorRef, scrollStrategy, _dir, _formField, _document, _viewportRuler, _defaults) {
-          var _this145 = this;
+          var _this147 = this;
 
           _classCallCheck(this, _MatAutocompleteTriggerBase);
 
@@ -109576,7 +110022,7 @@
             // If the user blurred the window while the autocomplete is focused, it means that it'll be
             // refocused when they come back. In this case we want to skip the first focus event, if the
             // pane was closed, in order to avoid reopening it unintentionally.
-            _this145._canOpenOnNextFocus = _this145._document.activeElement !== _this145._element.nativeElement || _this145.panelOpen;
+            _this147._canOpenOnNextFocus = _this147._document.activeElement !== _this147._element.nativeElement || _this147.panelOpen;
           };
           /** `View -> model callback called when value changes` */
 
@@ -109608,22 +110054,22 @@
           this.optionSelections = (0, defer
           /* defer */
           .P)(function () {
-            if (_this145.autocomplete && _this145.autocomplete.options) {
+            if (_this147.autocomplete && _this147.autocomplete.options) {
               return (0, merge
               /* merge */
-              .T).apply(void 0, _toConsumableArray(_this145.autocomplete.options.map(function (option) {
+              .T).apply(void 0, _toConsumableArray(_this147.autocomplete.options.map(function (option) {
                 return option.onSelectionChange;
               })));
             } // If there are any subscribers before `ngAfterViewInit`, the `autocomplete` will be undefined.
             // Return a stream that we'll replace with the real one once everything is in place.
 
 
-            return _this145._zone.onStable.pipe((0, take
+            return _this147._zone.onStable.pipe((0, take
             /* take */
             .q)(1), (0, switchMap
             /* switchMap */
             .w)(function () {
-              return _this145.optionSelections;
+              return _this147.optionSelections;
             }));
           });
           this._scrollStrategy = scrollStrategy;
@@ -109647,13 +110093,13 @@
         }, {
           key: "ngAfterViewInit",
           value: function ngAfterViewInit() {
-            var _this146 = this;
+            var _this148 = this;
 
             var window = this._getWindow();
 
             if (typeof window !== 'undefined') {
               this._zone.runOutsideAngular(function () {
-                return window.addEventListener('blur', _this146._windowBlurHandler);
+                return window.addEventListener('blur', _this148._windowBlurHandler);
               });
             }
           }
@@ -109755,18 +110201,18 @@
         }, {
           key: "panelClosingActions",
           get: function get() {
-            var _this147 = this;
+            var _this149 = this;
 
             return (0, merge
             /* merge */
             .T)(this.optionSelections, this.autocomplete._keyManager.tabOut.pipe((0, filter
             /* filter */
             .h)(function () {
-              return _this147._overlayAttached;
+              return _this149._overlayAttached;
             })), this._closeKeyEventStream, this._getOutsideClickStream(), this._overlayRef ? this._overlayRef.detachments().pipe((0, filter
             /* filter */
             .h)(function () {
-              return _this147._overlayAttached;
+              return _this149._overlayAttached;
             })) : (0, of.of)()).pipe( // Normalize the output so we return a consistent type.
             (0, operators_map
             /* map */
@@ -109792,7 +110238,7 @@
         }, {
           key: "_getOutsideClickStream",
           value: function _getOutsideClickStream() {
-            var _this148 = this;
+            var _this150 = this;
 
             return (0, merge
             /* merge */
@@ -109810,19 +110256,19 @@
               var clickTarget = (0, platform
               /* _getEventTarget */
               .sA)(event);
-              var formField = _this148._formField ? _this148._formField._elementRef.nativeElement : null;
-              var customOrigin = _this148.connectedTo ? _this148.connectedTo.elementRef.nativeElement : null;
-              return _this148._overlayAttached && clickTarget !== _this148._element.nativeElement && (!formField || !formField.contains(clickTarget)) && (!customOrigin || !customOrigin.contains(clickTarget)) && !!_this148._overlayRef && !_this148._overlayRef.overlayElement.contains(clickTarget);
+              var formField = _this150._formField ? _this150._formField._elementRef.nativeElement : null;
+              var customOrigin = _this150.connectedTo ? _this150.connectedTo.elementRef.nativeElement : null;
+              return _this150._overlayAttached && clickTarget !== _this150._element.nativeElement && (!formField || !formField.contains(clickTarget)) && (!customOrigin || !customOrigin.contains(clickTarget)) && !!_this150._overlayRef && !_this150._overlayRef.overlayElement.contains(clickTarget);
             }));
           } // Implemented as part of ControlValueAccessor.
 
         }, {
           key: "writeValue",
           value: function writeValue(value) {
-            var _this149 = this;
+            var _this151 = this;
 
             Promise.resolve(null).then(function () {
-              return _this149._setTriggerValue(value);
+              return _this151._setTriggerValue(value);
             });
           } // Implemented as part of ControlValueAccessor.
 
@@ -109966,7 +110412,7 @@
         }, {
           key: "_subscribeToClosingActions",
           value: function _subscribeToClosingActions() {
-            var _this150 = this;
+            var _this152 = this;
 
             var firstStable = this._zone.onStable.pipe((0, take
             /* take */
@@ -109975,7 +110421,7 @@
             var optionChanges = this.autocomplete.options.changes.pipe((0, tap
             /* tap */
             .b)(function () {
-              return _this150._positionStrategy.reapplyLastPosition();
+              return _this152._positionStrategy.reapplyLastPosition();
             }), // Defer emitting to the stream until the next tick, because changing
             // bindings in here will cause "changed after checked" errors.
             (0, delay
@@ -109989,31 +110435,31 @@
             (0, switchMap
             /* switchMap */
             .w)(function () {
-              var wasOpen = _this150.panelOpen;
+              var wasOpen = _this152.panelOpen;
 
-              _this150._resetActiveItem();
+              _this152._resetActiveItem();
 
-              _this150.autocomplete._setVisibility();
+              _this152.autocomplete._setVisibility();
 
-              if (_this150.panelOpen) {
-                _this150._overlayRef.updatePosition(); // If the `panelOpen` state changed, we need to make sure to emit the `opened`
+              if (_this152.panelOpen) {
+                _this152._overlayRef.updatePosition(); // If the `panelOpen` state changed, we need to make sure to emit the `opened`
                 // event, because we may not have emitted it when the panel was attached. This
                 // can happen if the users opens the panel and there are no options, but the
                 // options come in slightly later or as a result of the value changing.
 
 
-                if (wasOpen !== _this150.panelOpen) {
-                  _this150.autocomplete.opened.emit();
+                if (wasOpen !== _this152.panelOpen) {
+                  _this152.autocomplete.opened.emit();
                 }
               }
 
-              return _this150.panelClosingActions;
+              return _this152.panelClosingActions;
             }), // when the first closing event occurs...
             (0, take
             /* take */
             .q)(1)) // set the value, close the panel, and complete.
             .subscribe(function (event) {
-              return _this150._setValueAndClose(event);
+              return _this152._setValueAndClose(event);
             });
           }
           /** Destroys the autocomplete suggestion panel. */
@@ -110085,7 +110531,7 @@
         }, {
           key: "_attachOverlay",
           value: function _attachOverlay() {
-            var _this151 = this;
+            var _this153 = this;
 
             var _a;
 
@@ -110117,9 +110563,9 @@
                 .LH && (0, keycodes
                 /* hasModifierKey */
                 .Vb)(event, 'altKey')) {
-                  _this151._resetActiveItem();
+                  _this153._resetActiveItem();
 
-                  _this151._closeKeyEventStream.next(); // We need to stop propagation, otherwise the event will eventually
+                  _this153._closeKeyEventStream.next(); // We need to stop propagation, otherwise the event will eventually
                   // reach the input itself and cause the overlay to be reopened.
 
 
@@ -110128,9 +110574,9 @@
                 }
               });
               this._viewportSubscription = this._viewportRuler.change().subscribe(function () {
-                if (_this151.panelOpen && overlayRef) {
+                if (_this153.panelOpen && overlayRef) {
                   overlayRef.updateSize({
-                    width: _this151._getPanelWidth()
+                    width: _this153._getPanelWidth()
                   });
                 }
               });
@@ -110638,13 +111084,13 @@
         var _super25 = _createSuper(MatAutocompleteTrigger);
 
         function MatAutocompleteTrigger() {
-          var _this152;
+          var _this154;
 
           _classCallCheck(this, MatAutocompleteTrigger);
 
-          _this152 = _super25.apply(this, arguments);
-          _this152._aboveClass = 'mat-autocomplete-panel-above';
-          return _this152;
+          _this154 = _super25.apply(this, arguments);
+          _this154._aboveClass = 'mat-autocomplete-panel-above';
+          return _this154;
         }
 
         return MatAutocompleteTrigger;

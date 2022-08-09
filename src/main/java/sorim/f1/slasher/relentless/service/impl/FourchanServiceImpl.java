@@ -26,9 +26,13 @@ import sorim.f1.slasher.relentless.service.FourchanService;
 import sorim.f1.slasher.relentless.service.InstagramService;
 
 import javax.annotation.PostConstruct;
+import javax.servlet.http.HttpServletResponse;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipOutputStream;
 
 @Slf4j
 @Service
@@ -133,9 +137,9 @@ public class FourchanServiceImpl implements FourchanService {
                 if (".jpg".equals(post.getExt())) {
                     chanPosts.add(new FourChanPostEntity(post, 1));
                 }
-                if (".png".equals(post.getExt())) {
-                    chanPosts.add(new FourChanPostEntity(post, 2));
-                }
+//                if (".png".equals(post.getExt())) {
+//                    chanPosts.add(new FourChanPostEntity(post, 2));
+//                }
             }
         });
 
@@ -231,21 +235,24 @@ public class FourchanServiceImpl implements FourchanService {
     }
 
     @Override
-    public List<FourChanPostEntity> saveChanPosts(List<FourChanPostEntity> body) {
-        fourChanPostRepository.saveAll(body);
+    public List<FourChanPostEntity> saveChanPosts(List<FourChanPostEntity> posts) {
+        posts.forEach(post-> fourChanImageRepository.updateStatusById(post.getId(), post.getStatus()));
+        fourChanPostRepository.saveAll(posts);
         return getChanPostsByStatus(1);
     }
 
     @Override
     public String postToInstagram(boolean personalMeme) throws IGLoginException {
         List<Integer> approvedPosts = Arrays.asList(4,5);
-        FourChanPostEntity chanPost;
+        FourChanPostEntity chanPost = null;
         FourChanImageRow chanImage;
         if(personalMeme){
             chanPost = fourChanPostRepository.findFirstByIdLessThanAndStatusInOrderByIdAsc(100000,approvedPosts);
-        } else {
+        }
+        if(!personalMeme || chanPost==null){
             chanPost = fourChanPostRepository.findFirstByIdGreaterThanAndStatusInOrderByIdAsc(100000,approvedPosts);
         }
+
         if(chanPost!=null) {
             chanImage = fourChanImageRepository.findFirstById(chanPost.getId());
             while (chanImage == null) {
@@ -296,6 +303,29 @@ public class FourchanServiceImpl implements FourchanService {
     public byte[] getChanImage(Integer id) {
         FourChanImageRow result = fourChanImageRepository.findFirstById(id);
         return result.getImage();
+    }
+
+    @Override
+    @PostConstruct
+    public void cleanup() {
+        try{
+        List<Integer> approvedPosts = Arrays.asList(4,5);
+        //image repo nema 7 jer ih ne updejtam tokom rejecta
+        List<Integer> safeDelete = Arrays.asList(7,8);
+        FourChanPostEntity chanPost = fourChanPostRepository.findFirstByIdGreaterThanAndStatusInOrderByIdAsc(100000,approvedPosts);
+        fourChanPostRepository.deleteByIdGreaterThanAndIdLessThan(100000,chanPost.getId());
+        fourChanImageRepository.deleteByIdGreaterThanAndIdLessThan(100000,chanPost.getId());
+        fourChanPostRepository.deleteByStatusIn(safeDelete);
+        fourChanImageRepository.deleteByStatusIn(safeDelete);
+        }catch(Exception e){
+            log.error("cleanup failed", e);
+        }
+    }
+    @Override
+    public Integer deleteByStatus(Integer status){
+        List<Integer> statusList = Collections.singletonList(status);
+        fourChanPostRepository.deleteByStatusIn(statusList);
+        return fourChanImageRepository.deleteByStatusIn(statusList);
     }
 
     private void initWebClient() {
@@ -414,6 +444,31 @@ public class FourchanServiceImpl implements FourchanService {
                 });
         return strawpollId.get();
     }
-
+    @Override
+    public byte[] getAcceptedPngImages(HttpServletResponse response) throws IOException {
+        response.setContentType("application/zip");
+        response.setHeader("Content-Disposition", "attachment; filename=acceptedf1exposurePngImages.zip");
+        List<FourChanPostEntity> status6Posts = fourChanPostRepository.findAllByStatus(6);
+        List<Integer> ids = new ArrayList<>();
+        status6Posts.forEach(post->{
+            ids.add(post.getId());
+        });
+        List<FourChanImageRow> status6Images = fourChanImageRepository.findAllByIdIn(ids);
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        ZipOutputStream zos = new ZipOutputStream(response.getOutputStream());
+        status6Images.forEach(image->{
+            try {
+            ZipEntry entry = new ZipEntry(image.getId() + ".png");
+            entry.setSize(image.getImage().length);
+                zos.putNextEntry(entry);
+                zos.write(image.getImage());
+                zos.closeEntry();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+        zos.finish();
+        return baos.toByteArray();
+    }
 
 }
