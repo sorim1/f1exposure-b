@@ -329,31 +329,28 @@ public class InstagramServiceImpl implements InstagramService {
         if(chanPost.getTags()==null){
             chanPost.setTags("");
         }
-        String response = chanPost.getTags();
-        response += "\r\n\n";
-        response += "f1exposure.com";
-        response += "\r\n";
-        response += "Follow @f1exposure for more daily content.";
-        response += "\r\n\n";
+        StringBuilder response = new StringBuilder(chanPost.getTags());
+        response.append("\r\n\n");
+        response.append("f1exposure.com");
+        response.append("\r\n");
+        response.append("Follow @f1exposure for more daily content.");
+        response.append("\r\n\n");
         if(chanPost.getStatus()==4){
-            response += FUN_TAGS;
             for (int i = 0; i < 5; i++) {
                 int randomIndex = rand.nextInt(FUN_TAGS.size());
                 String randomElement = FUN_TAGS.get(randomIndex);
-                response += randomElement;
+                response.append(randomElement);
             }
         }
         if(chanPost.getStatus()==5){
-            response += SERIOUS_TAGS;
-
             for (int i = 0; i < 5; i++) {
                 int randomIndex = rand.nextInt(SERIOUS_TAGS.size());
                 String randomElement = SERIOUS_TAGS.get(randomIndex);
-                response += randomElement;
+                response.append(randomElement);
             }
         }
 
-        return response;
+        return response.toString();
     }
 
 

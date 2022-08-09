@@ -37,4 +37,5 @@ public interface FourChanImageRepository extends PagingAndSortingRepository<Four
 
     @Modifying
     Integer deleteByStatusIn(List<Integer> ids);
+    Integer deleteAllByStatus(Integer status);
 }

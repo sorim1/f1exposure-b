@@ -66,6 +66,11 @@ public class SocialMediaController {
         securityService.validateClientAndUsername(client, username);
         return fourchanService.saveChanPosts(body);
     }
+    @GetMapping("/deleteChanByStatus/{status}")
+    Boolean deleteChanByStatus(@RequestHeader String client, @PathVariable Integer status) throws Exception {
+        securityService.validateAdminHeader(client);
+        return fourchanService.deleteChanByStatus(status);
+    }
     @GetMapping("/getInstagramFollows")
     List<KeyValue> getInstagramFollows(@RequestHeader String client) throws Exception {
         securityService.validateHeader(client);

@@ -34,6 +34,8 @@ public interface FourchanService {
     String setNoDuplicatesFound(String newValue);
 
     List<FourChanPostEntity> saveChanPosts(List<FourChanPostEntity> body);
+    Boolean deleteChanByStatus(Integer status);
+
 
     String postToInstagram(boolean personalMeme) throws IGLoginException;
 

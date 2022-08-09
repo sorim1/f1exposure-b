@@ -241,6 +241,7 @@ public class FourchanServiceImpl implements FourchanService {
         return getChanPostsByStatus(1);
     }
 
+
     @Override
     public String postToInstagram(boolean personalMeme) throws IGLoginException {
         List<Integer> approvedPosts = Arrays.asList(4,5);
@@ -306,20 +307,24 @@ public class FourchanServiceImpl implements FourchanService {
     }
 
     @Override
-    @PostConstruct
+    //@PostConstruct
     public void cleanup() {
         try{
-        List<Integer> approvedPosts = Arrays.asList(4,5);
-        //image repo nema 7 jer ih ne updejtam tokom rejecta
+
         List<Integer> safeDelete = Arrays.asList(7,8);
-        FourChanPostEntity chanPost = fourChanPostRepository.findFirstByIdGreaterThanAndStatusInOrderByIdAsc(100000,approvedPosts);
-        fourChanPostRepository.deleteByIdGreaterThanAndIdLessThan(100000,chanPost.getId());
-        fourChanImageRepository.deleteByIdGreaterThanAndIdLessThan(100000,chanPost.getId());
+        log.info("chan cleanup start");
         fourChanPostRepository.deleteByStatusIn(safeDelete);
         fourChanImageRepository.deleteByStatusIn(safeDelete);
+            log.info("chan cleanup end");
         }catch(Exception e){
             log.error("cleanup failed", e);
         }
+    }
+    @Override
+    public Boolean deleteChanByStatus(Integer status){
+        fourChanPostRepository.deleteAllByStatus(status);
+        fourChanImageRepository.deleteAllByStatus(status);
+        return true;
     }
     @Override
     public Integer deleteByStatus(Integer status){

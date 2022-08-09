@@ -29,4 +29,6 @@ public interface FourChanPostRepository extends CrudRepository<FourChanPostEntit
     Integer deleteByIdGreaterThanAndIdLessThan(Integer id1, Integer id2);
     @Modifying
     Integer deleteByStatusIn(List<Integer> ids);
+    @Modifying
+    Integer deleteAllByStatus(Integer status);
 }
