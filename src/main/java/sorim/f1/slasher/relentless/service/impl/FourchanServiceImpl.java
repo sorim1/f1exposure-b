@@ -315,6 +315,11 @@ public class FourchanServiceImpl implements FourchanService {
         log.info("chan cleanup start");
         fourChanPostRepository.deleteByStatusIn(safeDelete);
         fourChanImageRepository.deleteByStatusIn(safeDelete);
+            int one = Math.toIntExact(fourChanPostRepository.countRowsByStatus(1));
+            if(one>600){
+                fourChanPostRepository.deleteAllByStatus(1);
+                fourChanImageRepository.deleteAllByStatus(1);
+            }
             log.info("chan cleanup end");
         }catch(Exception e){
             log.error("cleanup failed", e);

@@ -339,14 +339,14 @@ public class InstagramServiceImpl implements InstagramService {
             for (int i = 0; i < 5; i++) {
                 int randomIndex = rand.nextInt(FUN_TAGS.size());
                 String randomElement = FUN_TAGS.get(randomIndex);
-                response.append(randomElement);
+                response.append(randomElement).append(" ");
             }
         }
         if(chanPost.getStatus()==5){
             for (int i = 0; i < 5; i++) {
                 int randomIndex = rand.nextInt(SERIOUS_TAGS.size());
                 String randomElement = SERIOUS_TAGS.get(randomIndex);
-                response.append(randomElement);
+                response.append(randomElement).append(" ");
             }
         }
 

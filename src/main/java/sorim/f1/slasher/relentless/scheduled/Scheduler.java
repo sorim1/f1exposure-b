@@ -63,6 +63,7 @@ public class Scheduler {
         } else {
             clientService.setOverlays("sasha-sometimes", true);
         }
+        fourchanService.cleanup();
     }
 
     @Scheduled(cron = "0 0 4 * * FRI")
@@ -281,7 +282,7 @@ public class Scheduler {
         clientService.fetchRedditPosts();
     }
 
-    @Scheduled(cron = "0 0 1,6,8,10,12,14,16,18,20,22 * * *")
+    @Scheduled(cron = "0 0 1,6,10,12,14,16,18,20,22 * * *")
     void bihourlyJob() throws Exception {
         if(properties.getUrl().contains("f1exposure.com")){
             imageFeedJob();
@@ -293,29 +294,29 @@ public class Scheduler {
 
     }
 
-   //  @Scheduled(cron = "0 0 11 * * *")
+     @Scheduled(cron = "0 0 11 * * *")
     void noonInstagramPost() throws Exception {
          Random rand = new Random();
          int minutes = rand.nextInt(30);
         log.info("noonInstagramPost called: " + minutes);
          if(properties.getUrl().contains("f1exposure.com")){
              Thread.sleep(1000 * 60 * minutes);
-             fourchanService.postToInstagram(true);
+             fourchanService.postToInstagram(false);
              adminService.fetchFourChanPosts();
-             instagramService.followMoreOnInstagram();
+         //    instagramService.followMoreOnInstagram();
          } else {
              log.error("url not f1exposure.com");
              log.error(properties.getUrl());
          }
     }
-    @Scheduled(cron = "0 0 18 * * *")
+   // @Scheduled(cron = "0 0 18 * * *")
     void eveningInstagramPost() throws Exception {
         Random rand = new Random();
         int minutes = rand.nextInt(30);
         log.info("eveningInstagramPost called: " + minutes);
         if(properties.getUrl().contains("f1exposure.com")){
             Thread.sleep(1000 * 60 * minutes);
-            fourchanService.postToInstagram(false);
+            fourchanService.postToInstagram(true);
          //   instagramService.followMoreOnInstagram();
         } else {
             log.error("url not f1exposure.com");
