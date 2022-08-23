@@ -63,7 +63,7 @@ public class Scheduler {
         } else {
             clientService.setOverlays("sasha-sometimes", true);
         }
-        fourchanService.cleanup();
+      //  fourchanService.cleanup();
     }
 
     @Scheduled(cron = "0 0 4 * * FRI")
