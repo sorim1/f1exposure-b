@@ -239,8 +239,19 @@ public class FourchanServiceImpl implements FourchanService {
 
     @Override
     public List<FourChanPostEntity> saveChanPosts(List<FourChanPostEntity> posts) {
-        posts.forEach(post-> fourChanImageRepository.updateStatusById(post.getId(), post.getStatus()));
-        fourChanPostRepository.saveAll(posts);
+        List<FourChanPostEntity> deletePosts = new ArrayList<>();
+        List<FourChanPostEntity> savePosts = new ArrayList<>();
+        posts.forEach(post->{
+            if(post.getStatus()==7){
+                deletePosts.add(post);
+            } else {
+                savePosts.add(post);
+            }
+        });
+        savePosts.forEach(post-> fourChanImageRepository.updateStatusById(post.getId(), post.getStatus()));
+        fourChanPostRepository.saveAll(savePosts);
+        deletePosts.forEach(post-> fourChanImageRepository.deleteById(String.valueOf(post.getId())));
+        fourChanPostRepository.deleteAll(deletePosts);
         return getChanPostsByStatus(1);
     }
 
@@ -309,7 +320,9 @@ public class FourchanServiceImpl implements FourchanService {
         List<Integer> safeDelete = Arrays.asList(7,8);
         log.info("chan cleanup start");
         fourChanPostRepository.deleteByStatusIn(safeDelete);
+            log.info("chan cleanup 7,8 done1");
         fourChanImageRepository.deleteByStatusIn(safeDelete);
+            log.info("chan cleanup 7,8 done1");
             int one = Math.toIntExact(fourChanPostRepository.countRowsByStatus(1));
             if(one>600){
                 fourChanPostRepository.deleteAllByStatus(1);
