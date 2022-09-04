@@ -2,20 +2,14 @@ package sorim.f1.slasher.relentless.service.impl;
 
 import com.github.instagram4j.instagram4j.IGClient;
 import com.github.instagram4j.instagram4j.actions.feed.FeedIterable;
-import com.github.instagram4j.instagram4j.actions.search.SearchAction;
 import com.github.instagram4j.instagram4j.exceptions.IGLoginException;
 import com.github.instagram4j.instagram4j.models.media.timeline.*;
 import com.github.instagram4j.instagram4j.models.user.Profile;
-import com.github.instagram4j.instagram4j.requests.discover.DiscoverTopicalExploreRequest;
 import com.github.instagram4j.instagram4j.requests.feed.FeedTagRequest;
 import com.github.instagram4j.instagram4j.requests.feed.FeedTimelineRequest;
 import com.github.instagram4j.instagram4j.requests.friendships.FriendshipsActionRequest;
 import com.github.instagram4j.instagram4j.responses.IGResponse;
-import com.github.instagram4j.instagram4j.responses.discover.DiscoverTopicalExploreResponse;
-import com.github.instagram4j.instagram4j.responses.feed.FeedTagResponse;
 import com.github.instagram4j.instagram4j.responses.feed.FeedTimelineResponse;
-import com.github.instagram4j.instagram4j.responses.tags.TagsSearchResponse;
-import com.github.instagram4j.instagram4j.responses.users.UsersSearchResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,24 +17,21 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import sorim.f1.slasher.relentless.configuration.MainProperties;
-import sorim.f1.slasher.relentless.entities.FourChanImageRow;
-import sorim.f1.slasher.relentless.entities.FourChanPostEntity;
-import sorim.f1.slasher.relentless.entities.ImageRow;
-import sorim.f1.slasher.relentless.entities.InstagramPost;
+import sorim.f1.slasher.relentless.entities.*;
 import sorim.f1.slasher.relentless.handling.Logger;
 import sorim.f1.slasher.relentless.model.KeyValue;
 import sorim.f1.slasher.relentless.model.TripleInstagramFeed;
 import sorim.f1.slasher.relentless.model.enums.InstagramPostType;
 import sorim.f1.slasher.relentless.repository.ImageRepository;
 import sorim.f1.slasher.relentless.repository.InstagramRepository;
+import sorim.f1.slasher.relentless.repository.PropertiesRepository;
 import sorim.f1.slasher.relentless.service.InstagramService;
 
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
-import java.io.*;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
 import java.util.*;
-import java.util.concurrent.ExecutionException;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.Collectors;
 
@@ -54,6 +45,8 @@ public class InstagramServiceImpl implements InstagramService {
     private static IGClient workerClient;
     private static IGClient officialClient;
     private final MainProperties properties;
+
+    private final PropertiesRepository propertiesRepository;
     private final InstagramRepository instagramRepository;
     private final ImageRepository imageRepository;
     private static final String PREFIX = "INSTA_";
@@ -63,7 +56,7 @@ public class InstagramServiceImpl implements InstagramService {
     @Override
     public Boolean fetchInstagramFeed() throws IGLoginException {
         List<InstagramPost> instagramPosts = new ArrayList<>();
-        IGClient client = getWorkerClient();
+        IGClient client = getWorkerClient(false);
         AtomicReference<Integer> counter = new AtomicReference<>(0);
         FeedIterable<FeedTimelineRequest, FeedTimelineResponse> response = client.getActions().timeline().feed();
         AtomicReference<Boolean> iterate = new AtomicReference<>(true);
@@ -164,6 +157,8 @@ public class InstagramServiceImpl implements InstagramService {
             log.error("insta error");
             log.error("caught2", e);
             e.printStackTrace();
+            getWorkerClient(true);
+            return false;
         }
         instagramRepository.saveAll(instagramPosts);
         fetchImages(instagramPosts);
@@ -229,7 +224,7 @@ public class InstagramServiceImpl implements InstagramService {
     @Override
     public List<KeyValue> getInstagramFollows() throws IGLoginException {
         if(instagramfollowingHashtags.isEmpty()){
-            getWorkerClient();
+            getWorkerClient(false);
         }
         return instagramfollowingHashtags;
     }
@@ -269,7 +264,7 @@ public class InstagramServiceImpl implements InstagramService {
     public String postToInstagram(FourChanPostEntity chanPost, FourChanImageRow chanImage) throws IGLoginException {
         log.info("postToInstagram");
         String caption = generateCaption(chanPost);
-        IGClient client = getOfficialClient();
+        IGClient client = getOfficialClient(false);
         try{
         client.actions()
                 .timeline()
@@ -280,6 +275,9 @@ public class InstagramServiceImpl implements InstagramService {
                 .join();
         }catch(Exception e){
             caption = null;
+            log.error("postToInstagram error");
+            e.printStackTrace();
+            getOfficialClient(true);
         }
         return caption;
     }
@@ -287,7 +285,7 @@ public class InstagramServiceImpl implements InstagramService {
     public
     void followMoreOnInstagram() throws Exception {
         log.info("followMoreOnInstagram called");
-        IGClient client = getOfficialClient();
+        IGClient client = getOfficialClient(false);
         if(ACCOUNT_IDS_TO_FOLLOW.size()<10){
             getAccountsToFollow(client);
         }
@@ -354,18 +352,34 @@ public class InstagramServiceImpl implements InstagramService {
     }
 
 
-    IGClient getWorkerClient() throws IGLoginException {
-        if(workerClient == null || !workerClient.isLoggedIn()) {
+    IGClient getWorkerClient(boolean force) throws IGLoginException {
+        if(workerClient == null || !workerClient.isLoggedIn() || force) {
             workerClient = IGClient.builder()
                     .username(properties.getInstagramWorkerUsername())
-                    .password(properties.getInstagramWorkerPassword())
+                    .password(getInstagramWorkerPassword())
                     .login();
             fetchInstagramFollows();
         }
         return workerClient;
     }
-    IGClient getOfficialClient() throws IGLoginException {
-        if(officialClient == null || !officialClient.isLoggedIn()) {
+
+    private String getInstagramWorkerPassword() {
+            AppProperty ap = propertiesRepository.findDistinctFirstByName("INSTAGRAM_WORKER_PASSWORD");
+            if (ap == null) {
+                ap = AppProperty.builder().name("INSTAGRAM_WORKER_PASSWORD").value("qwadrat1").build();
+                propertiesRepository.save(ap);
+            }
+        return ap.getValue();
+    }
+    @Override
+    public String setInstagramWorkerPassword(String password) throws IGLoginException {
+        AppProperty ap = AppProperty.builder().name("INSTAGRAM_WORKER_PASSWORD").value(password).build();
+            propertiesRepository.save(ap);
+        getWorkerClient(true);
+        return ap.getValue();
+    }
+    IGClient getOfficialClient(Boolean force) throws IGLoginException {
+        if(officialClient == null || !officialClient.isLoggedIn() || force) {
             officialClient = IGClient.builder()
                     .username(properties.getInstagramOfficialUsername())
                     .password(properties.getInstagramOfficialPassword())

@@ -25,5 +25,7 @@ public interface InstagramService {
 
     String postToInstagram(FourChanPostEntity chanPost, FourChanImageRow chanImage) throws IGLoginException;
 
+    String setInstagramWorkerPassword(String password) throws IGLoginException;
+
     void followMoreOnInstagram() throws Exception;
 }

@@ -105,7 +105,7 @@
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = function(chunkId) {
 /******/ 			// return url for filenames based on template
-/******/ 			return "" + chunkId + "-es2015." + "b12f4036ed7e4dc22810" + ".js";
+/******/ 			return "" + chunkId +    "-es5." + "b12f4036ed7e4dc22810" + ".js";
 /******/ 		};
 /******/ 	}();
 /******/ 	
@@ -114,7 +114,7 @@
 /******/ 		// This function allow to reference all chunks
 /******/ 		__webpack_require__.miniCssF = function(chunkId) {
 /******/ 			// return url for filenames based on template
-/******/ 			return "" + "styles" + "." + "0438aa36887e839af3ae" + ".css";
+/******/ 			return "" + "styles" + "." + "09be8a0066f84a64329d" + ".css";
 /******/ 		};
 /******/ 	}();
 /******/ 	

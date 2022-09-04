@@ -24,6 +24,7 @@ public class StrawpollModelTwo {
             private String title;
             private String url;
             private String status;
+            private Boolean is_votable;
             private List<PollOptions> poll_options;
             private PollMeta poll_meta;
 

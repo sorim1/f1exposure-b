@@ -73,6 +73,8 @@ public interface AdminService {
     Boolean cleanup() throws Exception;
     Boolean instagramCleanup() throws IGLoginException;
 
+    String setInstagramWorkerPassword(String password) throws IGLoginException;
+
     Boolean twitterCleanup() throws Exception;
 
     Boolean checkCurrentStream() throws IOException;

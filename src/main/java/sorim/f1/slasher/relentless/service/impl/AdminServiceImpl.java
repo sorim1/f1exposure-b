@@ -1,7 +1,5 @@
 package sorim.f1.slasher.relentless.service.impl;
 
-import com.gargoylesoftware.htmlunit.BrowserVersion;
-import com.gargoylesoftware.htmlunit.WebClient;
 import com.github.instagram4j.instagram4j.exceptions.IGLoginException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -619,6 +617,10 @@ public class AdminServiceImpl implements AdminService {
     @Override
     public Boolean instagramCleanup() throws IGLoginException {
         return instagramService.cleanup();
+    }
+    @Override
+    public String setInstagramWorkerPassword(String password) throws IGLoginException {
+        return instagramService.setInstagramWorkerPassword(password);
     }
 
     @Override

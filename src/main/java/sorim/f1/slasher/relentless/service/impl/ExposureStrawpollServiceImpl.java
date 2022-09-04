@@ -130,7 +130,6 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
     public void startPolling() {
         StrawpollModelTwo newStrawpoll = fetchStrawpollResults();
         if (newStrawpoll != null && exposureOn()) {
-            log.info("strawpoll jest");
             updateExposureDataFromStrawpoll(newStrawpoll);
             new java.util.Timer().schedule(
                     new java.util.TimerTask() {
@@ -142,8 +141,6 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
                     },
                     reloadDelay
             );
-        } else {
-            log.info("strawpoll nije");
         }
     }
 
@@ -154,11 +151,9 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
     }
 
     private void updateCurrentExposureRound(Integer increment) {
-        log.info("updateCurrentExposureRound1: " + currentExposureRound);
         Integer round;
         try {
             round = ergastService.getCurrentDriverStandings().getMrData().getStandingsTable().getStandingsLists().get(0).getRound();
-            log.info("updateCurrentExposureRound2: " + currentExposureRound + " - " + round);
             if (currentExposureRound == null || currentExposureRound <= round) {
                 currentExposureRound = round + increment;
             } else {

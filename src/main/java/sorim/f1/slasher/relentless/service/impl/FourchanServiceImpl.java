@@ -14,7 +14,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.multipart.MultipartFile;
 import sorim.f1.slasher.relentless.configuration.MainProperties;
-import sorim.f1.slasher.relentless.entities.*;
+import sorim.f1.slasher.relentless.entities.AppProperty;
+import sorim.f1.slasher.relentless.entities.FourChanImageRow;
+import sorim.f1.slasher.relentless.entities.FourChanPostEntity;
+import sorim.f1.slasher.relentless.entities.Streamable;
 import sorim.f1.slasher.relentless.model.FourchanCatalog;
 import sorim.f1.slasher.relentless.model.FourchanPost;
 import sorim.f1.slasher.relentless.model.FourchanThread;
@@ -266,17 +269,9 @@ public class FourchanServiceImpl implements FourchanService {
                 chanImage = fourChanImageRepository.findFirstById(chanPost.getId());
             }
             String response = instagramService.postToInstagram(chanPost, chanImage);
-            if(response!=null){
-                chanPost.setStatus(8);
-                chanImage.setStatus(8);
-                fourChanPostRepository.save(chanPost);
-                fourChanImageRepository.save(chanImage);
-                return response;
-            } else {
-                fourChanPostRepository.delete(chanPost);
+                 fourChanPostRepository.delete(chanPost);
                 fourChanImageRepository.delete(chanImage);
-                return postToInstagram(personalMeme);
-            }
+                return response;
         }
         return "NO POST FOUND - personalMeme:" +personalMeme;
     }
