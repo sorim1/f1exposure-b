@@ -141,7 +141,7 @@ public class LiveTimingRadioServiceImpl implements LiveTimingRadioService {
 
     private String generateMergeImageAndAudioString(String dateDirectory, String input, String key) {
         String response = input;
-        response += "ffmpeg -loop 1 -i images/F" + key + ".png -i " + "mp3/" + key + ".mp3 -shortest -tune stillimage " + dateDirectory + "/" + key + ".mkv";
+        response += "ffmpeg -loop 1 -i images/F" + key + ".png -i " + "mp3/" + key + ".mp3 -af volume=+6dB -shortest -tune stillimage " + dateDirectory + "/" + key + ".mkv";
         response += System.lineSeparator();
         return response;
     }
