@@ -50,6 +50,11 @@ public class InstagramServiceImpl implements InstagramService {
     private final InstagramRepository instagramRepository;
     private final ImageRepository imageRepository;
     private static final String PREFIX = "INSTA_";
+
+    private static final String FUN_TAGS_STRING = "#f1 , #formula1 , #f1meme , #f1edit , #formula1meme , #formula1memes , #f1memes , #f1humor , #ferrari";
+    private static final String SERIOUS_TAGS_STRING = "#f1 , #formula1 , #f1meme , #f1edit , #formula1meme , #formula1memes , #f1memes , #f1driver";
+
+
     private static final List<String> FUN_TAGS = Arrays.asList("#f1", "#formula1", "#f1meme","#f1edit", "#formula1meme", "#formula1memes","#f1memes", "#f1humor", "#lewishamilton", "#charlesleclerc", "#carlossainz","#maxverstappen", "#ferrari", "#scuderiaferrari");
     private static final List<String> SERIOUS_TAGS = Arrays.asList("#f1", "#formula1", "#f1meme","#f1edit", "#formula1meme", "#formula1memes","#f1memes", "#f1driver", "#lewishamilton", "#charlesleclerc", "#carlossainz","#maxverstappen", "#ferrari", "#scuderiaferrari");
    private static List<Long> ACCOUNT_IDS_TO_FOLLOW = new ArrayList<>();
@@ -329,23 +334,14 @@ public class InstagramServiceImpl implements InstagramService {
         }
         StringBuilder response = new StringBuilder(chanPost.getTags());
         response.append("\r\n\n");
-        response.append("f1exposure.com");
-        response.append("\r\n");
         response.append("Follow @f1exposure for more daily content.");
         response.append("\r\n\n");
+
         if(chanPost.getStatus()==4){
-            for (int i = 0; i < 5; i++) {
-                int randomIndex = rand.nextInt(FUN_TAGS.size());
-                String randomElement = FUN_TAGS.get(randomIndex);
-                response.append(randomElement).append(" ");
-            }
+            response.append(FUN_TAGS_STRING);
         }
         if(chanPost.getStatus()==5){
-            for (int i = 0; i < 5; i++) {
-                int randomIndex = rand.nextInt(SERIOUS_TAGS.size());
-                String randomElement = SERIOUS_TAGS.get(randomIndex);
-                response.append(randomElement).append(" ");
-            }
+            response.append(SERIOUS_TAGS_STRING);
         }
 
         return response.toString();

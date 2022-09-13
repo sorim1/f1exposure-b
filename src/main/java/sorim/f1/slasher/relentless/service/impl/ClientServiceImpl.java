@@ -266,6 +266,15 @@ public class ClientServiceImpl implements ClientService {
         }
         return response;
     }
+    @Override
+    public String bumpNewsPost(String code) {
+        NewsContent response = newsRepository.findByCodeAndStatusLessThanEqual(code, 4);
+        if (response != null) {
+            response.setTimestampActivity(new Date());
+        }
+        return response.getTitle();
+    }
+
 
     @Override
     public NewsComment postNewsComment(NewsComment comment, String ipAddress) {

@@ -31,8 +31,6 @@ import java.util.stream.Collectors;
 @Service
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
-
-    private static final String strawpollUrlBase = "https://strawpoll.com/";
     private static final String strawPollApiV2 = "https://api.strawpoll.com/v2/polls/";
     private static final Map<String, String> colorMap = new HashMap<>();
     private static boolean exposureToday = false;
@@ -130,17 +128,23 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
     public void startPolling() {
         StrawpollModelTwo newStrawpoll = fetchStrawpollResults();
         if (newStrawpoll != null && exposureOn()) {
-            updateExposureDataFromStrawpoll(newStrawpoll);
-            new java.util.Timer().schedule(
-                    new java.util.TimerTask() {
-                        @SneakyThrows
-                        @Override
-                        public void run() {
-                            startPolling();
-                        }
-                    },
-                    reloadDelay
-            );
+            Boolean isVotable = updateExposureDataFromStrawpoll(newStrawpoll);
+            log.info("isVotable" + isVotable);
+            if(isVotable) {
+                new java.util.Timer().schedule(
+                        new java.util.TimerTask() {
+                            @SneakyThrows
+                            @Override
+                            public void run() {
+                                startPolling();
+                            }
+                        },
+                        reloadDelay
+                );
+            } else {
+                log.info("closeExposurePoll because voting is over" + isVotable);
+                closeExposurePoll(true);
+            }
         }
     }
 
@@ -371,7 +375,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
         }
     }
 
-    private void updateExposureDataFromStrawpoll(StrawpollModelTwo strawpoll) {
+    private Boolean updateExposureDataFromStrawpoll(StrawpollModelTwo strawpoll) {
         List<ExposureChampionship> list = new ArrayList<>();
         Integer voters = strawpoll.getPoll().getPoll_meta().getParticipant_count();
 
@@ -405,6 +409,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
                 .strawpoll(strawpollId)
                 .build();
         exposedVoteTotalsRepository.save(totals);
+        return strawpoll.getPoll().getIs_votable();
     }
 
 

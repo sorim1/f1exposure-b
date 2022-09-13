@@ -189,9 +189,14 @@ public class ClientController {
     }
 
     @GetMapping("/getNewsPost/{code}")
-    NewsContent getAwsPost(@RequestHeader String client, @PathVariable("code") String code) throws Exception {
+    NewsContent getNewsPost(@RequestHeader String client, @PathVariable("code") String code) throws Exception {
         securityService.validateHeader(client);
         return service.getNewsPost(code);
+    }
+    @GetMapping("/bumpNewsPost/{code}")
+    String bumpNewsPost(@RequestHeader String client, @PathVariable("code") String code) throws Exception {
+        securityService.validateHeader(client);
+        return service.bumpNewsPost(code);
     }
 
     @PostMapping("/postNewsComment")
