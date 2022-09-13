@@ -111,7 +111,7 @@ public class ExposureController {
     }
 
     @GetMapping("/backupExposure")
-    FullExposure getExposureDriverList(@RequestHeader String client) throws Exception {
+    FullExposure backupExposure(@RequestHeader String client) throws Exception {
         securityService.validateAdminHeader(client);
         return service.backupExposure();
     }

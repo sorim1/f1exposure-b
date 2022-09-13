@@ -250,7 +250,7 @@ public class FourchanServiceImpl implements FourchanService {
         });
         savePosts.forEach(post-> fourChanImageRepository.updateStatusById(post.getId(), post.getStatus()));
         fourChanPostRepository.saveAll(savePosts);
-        deletePosts.forEach(post-> fourChanImageRepository.deleteById(String.valueOf(post.getId())));
+        deletePosts.forEach(post-> fourChanImageRepository.deleteById(post.getId()));
         fourChanPostRepository.deleteAll(deletePosts);
         return getChanPostsByStatus(1);
     }

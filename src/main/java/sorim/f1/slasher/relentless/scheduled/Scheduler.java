@@ -180,7 +180,7 @@ public class Scheduler {
     }
     private void getImagesPeriodicallyRoot() {
         Integer delay = adminService.getNextRefreshTimeUsingCalendar(3600);
-        log.info(CODE + " - getImagesPeriodicallyRoot called");
+        log.info(CODE + " - getImagesPeriodicallyRoot called: " + delay);
         if (delay != null) {
             int delayInMiliseconds = delay * 1000;
             MainUtility.logTime("getImagesPeriodicallyRoot", delayInMiliseconds);
@@ -198,7 +198,7 @@ public class Scheduler {
         }
     }
     private void getImagesPeriodically(Integer countdown) {
-        log.info(CODE + " - getImagesPeriodically called");
+        log.info(CODE + " - getImagesPeriodically called " + countdown);
         int delayInMiliseconds = 900000;
         if(countdown>0) {
             new java.util.Timer().schedule(

@@ -129,6 +129,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
         StrawpollModelTwo newStrawpoll = fetchStrawpollResults();
         if (newStrawpoll != null && exposureOn()) {
             Boolean isVotable = updateExposureDataFromStrawpoll(newStrawpoll);
+            log.info("newStrawpoll - isVotable: " + newStrawpoll.getPoll().getIs_votable());
             log.info("isVotable" + isVotable);
             if(isVotable) {
                 new java.util.Timer().schedule(

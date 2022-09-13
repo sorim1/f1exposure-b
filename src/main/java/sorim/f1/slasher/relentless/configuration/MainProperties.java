@@ -47,7 +47,7 @@ public class MainProperties {
         if(ap==null){
             ap = AppProperty.builder().name("CURRENT_SEASON_PAST").value("2021").build();
             propertiesRepository.save(ap);
-            this.currentSeasonPast = 2021;
+            this.currentSeasonPast = 2022;
         } else{
             this.currentSeasonPast = Integer.valueOf(ap.getValue());
         }
