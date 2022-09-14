@@ -317,7 +317,7 @@ public class Scheduler {
         if(properties.getUrl().contains("f1exposure.com")){
             Thread.sleep(1000 * 60 * minutes);
            // fourchanService.postToInstagram(true);
-            String title = redditService.postFormulaDankNew();
+            String title = redditService.postFormulaDankToInstagram();
             log.info("eveningInstagramPost ended: " + title);
         } else {
             log.error("url not f1exposure.com");

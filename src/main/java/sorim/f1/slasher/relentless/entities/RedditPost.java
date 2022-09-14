@@ -53,8 +53,7 @@ public class RedditPost {
         this.url = "https://reddit.com" + (String) data.get("permalink");
         this.imageUrl = (String) data.get("url");
         this.valid = isItPhoto();
-        String upsString = (String) data.get("ups");
-        this.ups = Integer.valueOf(upsString);
+        this.ups = (Integer) data.get("ups");
         Double createdDouble = (Double) data.get("created");
         this.created = createdDouble.longValue() ;
     }

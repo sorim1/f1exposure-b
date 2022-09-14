@@ -12,6 +12,6 @@ public interface RedditService {
 
     void updatePostImages(NewsContent post);
 
-    String postFormulaDankNew() throws IGLoginException;
+    String postFormulaDankToInstagram() throws IGLoginException;
     NewsContent fetchRedditPosts();
 }

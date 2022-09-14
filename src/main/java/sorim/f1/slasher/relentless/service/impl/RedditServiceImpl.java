@@ -312,7 +312,7 @@ public class RedditServiceImpl implements RedditService {
     }
 
     @Override
-    public String postFormulaDankNew() throws IGLoginException {
+    public String postFormulaDankToInstagram() throws IGLoginException {
         AtomicReference<Boolean> iterate = new AtomicReference<>(true);
         HttpEntity entity = new HttpEntity(headers);
         ResponseEntity<String> response = restTemplate.exchange(

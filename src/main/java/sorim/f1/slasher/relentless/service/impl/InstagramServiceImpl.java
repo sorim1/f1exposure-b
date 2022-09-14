@@ -307,7 +307,7 @@ public class InstagramServiceImpl implements InstagramService {
             e.printStackTrace();
             getOfficialClient(true);
         }
-        return caption;
+        return post.getTitle();
     }
     @Override
     public

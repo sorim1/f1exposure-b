@@ -103,4 +103,5 @@ public interface AdminService {
     JsonRepositoryModel getJsonRepository(String id);
 
     Boolean deleteJsonRepository(String id);
+    String postFormulaDankToInstagram () throws IGLoginException;
 }

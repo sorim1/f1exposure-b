@@ -1,5 +1,6 @@
 package sorim.f1.slasher.relentless.controller;
 
+import com.github.instagram4j.instagram4j.exceptions.IGLoginException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -278,7 +279,10 @@ public class AdminController {
     JsonRepositoryModel updateJsonRepository(@RequestBody JsonRepositoryModel body) {
         return service.updateJsonRepository(body);
     }
-
+    @GetMapping("/postFormulaDankToInstagram")
+    String postFormulaDankToInstagram() throws IGLoginException {
+        return service.postFormulaDankToInstagram();
+    }
     @GetMapping("/getJsonRepository/{id}")
     JsonRepositoryModel getJsonRepository(@PathVariable("id") String id) {
         return service.getJsonRepository(id);

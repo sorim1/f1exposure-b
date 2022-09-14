@@ -287,12 +287,25 @@ public class ErgastServiceImpl implements ErgastService {
             List<ErgastStanding> list = getErgastStandingsByYear(season);
             int finalSeason = season;
             Boolean ongoingSeason = isItOngoingSeason(season);
-            list.forEach(es -> driversMap.get(es.getDriver().getDriverId()).pushSeasonStanding(finalSeason, es, ongoingSeason));
+            list.forEach(es ->
+                    {
+                        if(!driversMap.containsKey(es.getDriver().getDriverId())){
+                            log.info("adding driver: " + es.getDriver().getDriverId());
+                            driversMap.put(es.getDriver().getDriverId(), new DriverStatistics(es.getDriver()));
+                            generateAllErgastDrivers();
+                        }
+                        driversMap.get(es.getDriver().getDriverId()).pushSeasonStanding(finalSeason, es, ongoingSeason);
+                    });
             if (!ongoingSeason) {
                 constructorsMap.get(list.get(0).getConstructors().get(list.get(0).getConstructors().size() - 1).getConstructorId()).addWdc(season, list.get(0).getDriver().getGivenName() + " " + list.get(0).getDriver().getFamilyName());
             }
             List<ErgastStanding> list2 = getErgastConstructorStandingsByYear(season);
             list2.forEach(es -> {
+                if(!constructorsMap.containsKey(es.getConstructor().getConstructorId())){
+                    log.info("adding constructor: " + es.getDriver().getDriverId());
+                    constructorsMap.put(es.getConstructor().getConstructorId(), new ConstructorStatistics(es.getConstructor()));
+                    generateAllErgastConstructors();
+                }
                 constructorsMap.get(es.getConstructor().getConstructorId()).pushSeasonStanding(finalSeason, es, ongoingSeason);
             });
 

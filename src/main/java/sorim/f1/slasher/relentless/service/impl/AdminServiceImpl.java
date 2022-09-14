@@ -56,7 +56,7 @@ public class AdminServiceImpl implements AdminService {
     private final F1CommentRepository f1CommentRepository;
     private final JsonRepository jsonRepository;
     private final InstagramService instagramService;
-
+    private final RedditService redditService;
     private final TwitterService twitterService;
     private final TwitchService twitchService;
     private final FourchanService fourchanService;
@@ -731,6 +731,10 @@ public class AdminServiceImpl implements AdminService {
     public Boolean deleteJsonRepository(String id) {
          jsonRepository.deleteById(id);
         return true;
+    }
+    @Override
+    public String postFormulaDankToInstagram() throws IGLoginException {
+        return redditService.postFormulaDankToInstagram();
     }
 
     private void generateChartsDriverStandingsByRound() {
