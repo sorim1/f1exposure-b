@@ -3,6 +3,7 @@ package sorim.f1.slasher.relentless.service;
 import com.github.instagram4j.instagram4j.exceptions.IGLoginException;
 import sorim.f1.slasher.relentless.entities.FourChanImageRow;
 import sorim.f1.slasher.relentless.entities.FourChanPostEntity;
+import sorim.f1.slasher.relentless.entities.RedditPost;
 import sorim.f1.slasher.relentless.model.KeyValue;
 import sorim.f1.slasher.relentless.model.TripleInstagramFeed;
 
@@ -24,7 +25,7 @@ public interface InstagramService {
     Boolean cleanup() throws IGLoginException;
 
     String postToInstagram(FourChanPostEntity chanPost, FourChanImageRow chanImage) throws IGLoginException;
-
+    String postDankToInstagram(RedditPost post) throws IGLoginException;
     String setInstagramWorkerPassword(String password) throws IGLoginException;
 
     void followMoreOnInstagram() throws Exception;

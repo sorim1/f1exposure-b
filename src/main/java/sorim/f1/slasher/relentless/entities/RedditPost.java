@@ -40,6 +40,9 @@ public class RedditPost {
     @JsonIgnore
     private Boolean valid =false;
 
+    @Transient
+    private Integer ups;
+
     public RedditPost(LinkedHashMap<String, Object> data) {
         this.id = (String) data.get("id");
         this.title = (String) data.get("title");
@@ -50,6 +53,8 @@ public class RedditPost {
         this.url = "https://reddit.com" + (String) data.get("permalink");
         this.imageUrl = (String) data.get("url");
         this.valid = isItPhoto();
+        String upsString = (String) data.get("ups");
+        this.ups = Integer.valueOf(upsString);
         Double createdDouble = (Double) data.get("created");
         this.created = createdDouble.longValue() ;
     }
@@ -70,11 +75,6 @@ public class RedditPost {
             return true;
         }
 
-//        if(this.imageUrl.startsWith("https://streamable.com")){
-//            //TODO https://streamable.com NECE RADIT
-//            type=3;
-//            return false;
-//        }
         return false;
     }
 }

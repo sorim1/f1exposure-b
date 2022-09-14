@@ -27,7 +27,7 @@ public class Scheduler {
     private final LiveTimingService liveTimingService;
     private final ErgastService ergastService;
     private final FourchanService fourchanService;
-    private final InstagramService instagramService;
+    private final RedditService redditService;
 
     private final MainProperties properties;
     private static final String CODE = "SCHEDULER";
@@ -309,15 +309,16 @@ public class Scheduler {
              log.error(properties.getUrl());
          }
     }
-   // @Scheduled(cron = "0 0 18 * * *")
+    @Scheduled(cron = "0 0 19 * * *")
     void eveningInstagramPost() throws Exception {
         Random rand = new Random();
         int minutes = rand.nextInt(30);
         log.info("eveningInstagramPost called: " + minutes);
         if(properties.getUrl().contains("f1exposure.com")){
             Thread.sleep(1000 * 60 * minutes);
-            fourchanService.postToInstagram(true);
-         //   instagramService.followMoreOnInstagram();
+           // fourchanService.postToInstagram(true);
+            String title = redditService.postFormulaDankNew();
+            log.info("eveningInstagramPost ended: " + title);
         } else {
             log.error("url not f1exposure.com");
             log.error(properties.getUrl());

@@ -3,6 +3,7 @@ package sorim.f1.slasher.relentless.service.impl;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.github.instagram4j.instagram4j.exceptions.IGLoginException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.jsoup.Jsoup;
@@ -47,7 +48,7 @@ public class RedditServiceImpl implements RedditService {
     private static final String TWITTER_URL = "twitter.com";
     private static final String IMAGE_BASE_PATH = "/f1exposure/image/";
     private static final String NEWS_PREFIX = "NEWS_";
-    private static final String REDDIT_FAVICON = "https://reddit.com/favicon.ico";
+    private static final String FORMULA_DANK_NEW_POSTS = "https://reddit.com/r/formuladank/new/.json?limit=100";
     private static final String TWITTER_FAVICON = "https://abs.twimg.com/favicons/twitter.ico";
     private static String lastNewPost = "";
     private static String lastNewF1PornPost = "";
@@ -308,6 +309,35 @@ public class RedditServiceImpl implements RedditService {
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public String postFormulaDankNew() throws IGLoginException {
+        AtomicReference<Boolean> iterate = new AtomicReference<>(true);
+        HttpEntity entity = new HttpEntity(headers);
+        ResponseEntity<String> response = restTemplate.exchange(
+                FORMULA_DANK_NEW_POSTS, HttpMethod.GET, entity, String.class);
+        AtomicReference<RedditPost> output = new AtomicReference<>();
+        try {
+            Map<String, Object> mapping = mapper.readValue(response.getBody(), typeRef);
+
+            LinkedHashMap<String, Object> root = (LinkedHashMap<String, Object>) mapping.get("data");
+            List<LinkedHashMap<String, Object>> children = (ArrayList<LinkedHashMap<String, Object>>) root.get("children");
+            children.forEach(child -> {
+                if (iterate.get()) {
+                    LinkedHashMap<String, Object> data = (LinkedHashMap<String, Object>) child.get("data");
+                    RedditPost post = new RedditPost(data);
+                    if (post.isItPhoto() && post.getUps()>1000) {
+                        iterate.set(false);
+                        output.set(post);
+                    }
+                }
+            });
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+        return instagramService.postDankToInstagram(output.get());
+
     }
 
     private void getRF1PornHot() {

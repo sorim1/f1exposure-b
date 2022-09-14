@@ -286,6 +286,29 @@ public class InstagramServiceImpl implements InstagramService {
         }
         return caption;
     }
+
+    @Override
+    public String postDankToInstagram(RedditPost post) throws IGLoginException {
+        log.info("postDankToInstagram");
+        String caption = generateFunCaption();
+        byte[] imageBytes = getImageFromUrl(post.getUrl());
+        IGClient client = getOfficialClient(false);
+        try{
+            client.actions()
+                    .timeline()
+                    .uploadPhoto(imageBytes, caption)
+                    .thenAccept(response -> {
+                        log.info("uploaded photo {}", post.getTitle());
+                    })
+                    .join();
+        }catch(Exception e){
+            caption = null;
+            log.error("postToInstagram error");
+            e.printStackTrace();
+            getOfficialClient(true);
+        }
+        return caption;
+    }
     @Override
     public
     void followMoreOnInstagram() throws Exception {
@@ -344,6 +367,19 @@ public class InstagramServiceImpl implements InstagramService {
             response.append(SERIOUS_TAGS_STRING);
         }
 
+        return response.toString();
+    }
+
+    private String generateFunCaption() {
+        Random random = new Random();
+        StringBuilder response = new StringBuilder("Follow @f1exposure for more daily content.");
+        for(String funTag : FUN_TAGS){
+            int randomNumber = random.nextInt(10);
+            if(randomNumber>3){
+                response.append(funTag).append(" , ");
+            }
+        }
+        response.append(FUN_TAGS_STRING);
         return response.toString();
     }
 
