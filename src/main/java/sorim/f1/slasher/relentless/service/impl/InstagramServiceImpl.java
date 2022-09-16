@@ -291,7 +291,7 @@ public class InstagramServiceImpl implements InstagramService {
     public String postDankToInstagram(RedditPost post) throws IGLoginException {
         log.info("postDankToInstagram");
         String caption = generateFunCaption();
-        byte[] imageBytes = getImageFromUrl(post.getUrl());
+        byte[] imageBytes = getImageFromUrl(post.getImageUrl());
         IGClient client = getOfficialClient(false);
         try{
             client.actions()
