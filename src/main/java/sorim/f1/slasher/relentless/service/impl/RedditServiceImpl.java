@@ -327,7 +327,7 @@ public class RedditServiceImpl implements RedditService {
                 if (iterate.get()) {
                     LinkedHashMap<String, Object> data = (LinkedHashMap<String, Object>) child.get("data");
                     RedditPost post = new RedditPost(data);
-                    if (post.isItPhoto() && post.getUps()>1000) {
+                    if (post.isItJpeg() && post.getUps()>1000) {
                         iterate.set(false);
                         output.set(post);
                     }

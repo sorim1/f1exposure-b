@@ -282,7 +282,7 @@ public class InstagramServiceImpl implements InstagramService {
             caption = null;
             log.error("postToInstagram error");
             e.printStackTrace();
-            getOfficialClient(true);
+          //  getOfficialClient(true);
         }
         return caption;
     }
@@ -302,10 +302,9 @@ public class InstagramServiceImpl implements InstagramService {
                     })
                     .join();
         }catch(Exception e){
-            caption = null;
-            log.error("postToInstagram error");
+            log.error("postDankToInstagram error");
             e.printStackTrace();
-            getOfficialClient(true);
+         //   getOfficialClient(true);
         }
         return post.getTitle();
     }
@@ -340,7 +339,7 @@ public class InstagramServiceImpl implements InstagramService {
         } while(counter<accountCount);
     }
     private void followAnAccount(IGClient client, Long pk) throws Exception {
-        IGResponse response = new FriendshipsActionRequest(pk, FriendshipsActionRequest.FriendshipsAction.CREATE)
+        new FriendshipsActionRequest(pk, FriendshipsActionRequest.FriendshipsAction.CREATE)
                 .execute(client).join();
     }
     private void unfollowAnAccount(IGClient client, Long pk) throws Exception {
@@ -372,7 +371,9 @@ public class InstagramServiceImpl implements InstagramService {
 
     private String generateFunCaption() {
         Random random = new Random();
-        StringBuilder response = new StringBuilder("Follow @f1exposure for more daily content.");
+        StringBuilder response = new StringBuilder("\n");
+        response.append("Follow @f1exposure for more daily content.");
+        response.append("\r\n\n");
         for(String funTag : FUN_TAGS){
             int randomNumber = random.nextInt(10);
             if(randomNumber>3){

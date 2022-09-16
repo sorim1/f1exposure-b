@@ -76,5 +76,12 @@ public class RedditPost {
 
         return false;
     }
+
+    public Boolean isItJpeg() {
+        if(isItPhoto()){
+            return this.imageUrl.endsWith("jpg") || this.imageUrl.endsWith("jpeg");
+        }
+        return false;
+    }
 }
 
