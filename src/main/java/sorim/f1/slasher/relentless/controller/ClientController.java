@@ -194,7 +194,7 @@ public class ClientController {
         return service.getNewsPost(code);
     }
     @GetMapping("/bumpNewsPost/{code}")
-    String bumpNewsPost(@RequestHeader String client, @PathVariable("code") String code) throws Exception {
+    Boolean bumpNewsPost(@RequestHeader String client, @PathVariable("code") String code) throws Exception {
         securityService.validateHeader(client);
         return service.bumpNewsPost(code);
     }

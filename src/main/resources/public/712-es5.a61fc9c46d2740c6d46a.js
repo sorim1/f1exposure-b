@@ -90898,7 +90898,9 @@
 
               if (bump != null) {
                 _this105.restService.bumpNewsPost(selectedCode).subscribe({
-                  next: function next(data) {},
+                  next: function next(data) {
+                    console.log('bump result: ' + data);
+                  },
                   error: function error(_error5) {
                     console.error('There was a bumpNewsPost error!', _error5);
                   }

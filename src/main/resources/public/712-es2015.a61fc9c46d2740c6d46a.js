@@ -56575,6 +56575,7 @@ class NewsComponent {
             if (bump != null) {
                 this.restService.bumpNewsPost(selectedCode).subscribe({
                     next: data => {
+                        console.log('bump result: ' + data);
                     },
                     error: error => {
                         console.error('There was a bumpNewsPost error!', error);

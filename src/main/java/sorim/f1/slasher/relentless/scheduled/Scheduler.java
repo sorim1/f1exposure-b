@@ -294,7 +294,7 @@ public class Scheduler {
 
     }
 
-     @Scheduled(cron = "0 0 11 * * *")
+     @Scheduled(cron = "0 0 10 * * *")
     void noonInstagramPost() throws Exception {
          Random rand = new Random();
          int minutes = rand.nextInt(30);
@@ -309,7 +309,7 @@ public class Scheduler {
              log.error(properties.getUrl());
          }
     }
-    @Scheduled(cron = "0 0 19 * * *")
+    @Scheduled(cron = "0 0 17 * * *")
     void eveningInstagramPost() throws Exception {
         Random rand = new Random();
         int minutes = rand.nextInt(30);

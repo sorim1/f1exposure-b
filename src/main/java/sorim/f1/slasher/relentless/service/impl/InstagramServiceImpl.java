@@ -290,7 +290,7 @@ public class InstagramServiceImpl implements InstagramService {
     @Override
     public String postDankToInstagram(RedditPost post) throws IGLoginException {
         log.info("postDankToInstagram");
-        String caption = generateFunCaption();
+        String caption = generateFunCaption(post.getTitle());
         byte[] imageBytes = getImageFromUrl(post.getImageUrl());
         IGClient client = getOfficialClient(false);
         try{
@@ -350,7 +350,7 @@ public class InstagramServiceImpl implements InstagramService {
 
 
     private String generateCaption(FourChanPostEntity chanPost) {
-        Random rand = new Random();
+      //  Random rand = new Random();
         if(chanPost.getTags()==null){
             chanPost.setTags("");
         }
@@ -369,9 +369,10 @@ public class InstagramServiceImpl implements InstagramService {
         return response.toString();
     }
 
-    private String generateFunCaption() {
+    private String generateFunCaption(String title) {
         Random random = new Random();
-        StringBuilder response = new StringBuilder("\n");
+        StringBuilder response = new StringBuilder(title);
+        response.append("\r\n");
         response.append("Follow @f1exposure for more daily content.");
         response.append("\r\n\n");
         for(String funTag : FUN_TAGS){

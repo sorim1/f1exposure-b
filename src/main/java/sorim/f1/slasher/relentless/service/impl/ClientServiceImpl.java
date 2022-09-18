@@ -267,12 +267,14 @@ public class ClientServiceImpl implements ClientService {
         return response;
     }
     @Override
-    public String bumpNewsPost(String code) {
+    public Boolean bumpNewsPost(String code) {
         NewsContent response = newsRepository.findByCodeAndStatusLessThanEqual(code, 4);
         if (response != null) {
             response.setTimestampActivity(new Date());
+            newsRepository.save(response);
+            return true;
         }
-        return response.getTitle();
+        return false;
     }
 
 

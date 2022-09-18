@@ -55,7 +55,7 @@ public interface ClientService {
     List<NewsContent> getNews(Integer page);
 
     NewsContent getNewsPost(String code);
-    String bumpNewsPost(String code);
+    Boolean bumpNewsPost(String code);
 
     NewsComment postNewsComment(NewsComment comment, String ipAddress);
 

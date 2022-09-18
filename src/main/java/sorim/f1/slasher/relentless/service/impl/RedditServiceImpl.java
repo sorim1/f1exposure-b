@@ -231,10 +231,10 @@ public class RedditServiceImpl implements RedditService {
                         String content = imageTag.get().attr("content");
                         post.setImageUrl(content);
                     }
-                    Elements titleTags = doc.getElementsByTag("title");
-                    if (titleTags.size() > 0 && !domainUrl.contains("instagram")) {
-                        post.setTitle(titleTags.get(0).wholeText());
-                    }
+//                    Elements titleTags = doc.getElementsByTag("title");
+//                    if (titleTags.size() > 0 && !domainUrl.contains("instagram")) {
+//                        post.setTitle(titleTags.get(0).wholeText());
+//                    }
                 } catch (Exception ex) {
                     log.info("ex2 " + post.getUrl());
                     ex.printStackTrace();
