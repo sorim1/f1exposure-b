@@ -34,7 +34,7 @@ public interface FourChanImageRepository extends PagingAndSortingRepository<Four
 
     @Modifying
     @Query("delete from FourChanImageRow u where u.status = :newStatus")
-    void deleteAllByStatus(Integer status);
+    void deleteAllByStatus(Integer newStatus);
 
     Integer deleteById(Integer id);
 }

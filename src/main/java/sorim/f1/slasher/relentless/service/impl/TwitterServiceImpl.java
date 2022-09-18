@@ -38,7 +38,6 @@ public class TwitterServiceImpl implements TwitterService {
         cal.add(Calendar.MONTH, -1);
         Date lastMonth = cal.getTime();
         twitterRepository.deleteByCreatedAtBefore(lastMonth);
-        fetchTwitterPosts();
         return true;
     }
 

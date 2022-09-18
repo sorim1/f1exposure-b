@@ -159,7 +159,7 @@ public class Scheduler {
                         @SneakyThrows
                         @Override
                         public void run() {
-                            imageFeedJobWithoutInstagram();
+                            imageFeedJob();
                             analyzeUpcomingRacePeriodically();
                         }
                     },
@@ -170,7 +170,7 @@ public class Scheduler {
                         @SneakyThrows
                         @Override
                         public void run() {
-                            imageFeedJobWithoutInstagram();
+                            imageFeedJob();
                             liveTimingService.analyzeUpcomingRace(false);
                         }
                     },
@@ -189,7 +189,7 @@ public class Scheduler {
                         @SneakyThrows
                         @Override
                         public void run() {
-                            imageFeedJobWithoutInstagram();
+                            imageFeedJob();
                             getImagesPeriodically(9);
                         }
                     },
@@ -206,7 +206,7 @@ public class Scheduler {
                         @SneakyThrows
                         @Override
                         public void run() {
-                            imageFeedJobWithoutInstagram();
+                            imageFeedJob();
                             getImagesPeriodically(countdown - 1);
                         }
                     },
@@ -220,7 +220,7 @@ public class Scheduler {
                             @SneakyThrows
                             @Override
                             public void run() {
-                                imageFeedJobWithoutInstagram();
+                                imageFeedJob();
                                 getImagesPeriodically(0);
                             }
                         },

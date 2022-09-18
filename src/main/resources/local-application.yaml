@@ -17,12 +17,14 @@ f1:
       twitterSecret_f1ex: ZcpC4aVpIee4euvZF4IiAHzlYY06VpI22kKfroX6Cxe5u7uBgC
       twitterAccessToken_f1ex: 1530482716990394368-E0efMcIWH4IT2lsfzTjqUCClf8rtWq
       twitterAccessTokenSecret_f1ex: 41DI3NKWO4NX2FYv0S4yC9hoI9Iap8Dxn7ohRBJX8e48g
+      #      instagramWorkerUsername: miroslav.dragicevic1
+      #      instagramWorkerPassword: "qwadrat1"
       instagramWorkerUsername: npc6599
       instagramWorkerPassword: "poliokox"
       instagramOfficialUsername: npc6599
       instagramOfficialPassword: "poliokox"
       instagramUsername1: miroslav.dragicevic1
-      instagramPassword1: "qwadrat1Q"
+      instagramPassword1: "qwadrat1"
       instagramUsername2: f1exposure
       instagramPassword2: "!qwadrat1"
       calendarUrl: https://www.formula1.com/calendar/Formula_1_Official_Calendar.ics
@@ -48,7 +50,7 @@ server:
   http-port-to-redirect: 80
   ssl:
     key-store: /root/keystore.p12
-#    key-store: classpath:keystore.p12
+    #    key-store: classpath:keystore.p12
     key-store-password: password
     key-store-type: pkcs12
     key-alias: f1exposure

@@ -272,6 +272,7 @@ public class ClientServiceImpl implements ClientService {
         if (response != null) {
             response.setTimestampActivity(new Date());
             newsRepository.save(response);
+            fetchRedditPosts();
             return true;
         }
         return false;

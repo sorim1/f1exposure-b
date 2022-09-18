@@ -48,7 +48,6 @@ server:
   http-port-to-redirect: 80
   ssl:
     key-store: /root/keystore.p12
-#    key-store: classpath:keystore.p12
     key-store-password: password
     key-store-type: pkcs12
     key-alias: f1exposure

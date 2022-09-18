@@ -313,30 +313,30 @@ public class RedditServiceImpl implements RedditService {
 
     @Override
     public String postFormulaDankToInstagram() throws IGLoginException {
-        AtomicReference<Boolean> iterate = new AtomicReference<>(true);
+        AtomicReference<Integer> two = new AtomicReference<>(0);
         HttpEntity entity = new HttpEntity(headers);
         ResponseEntity<String> response = restTemplate.exchange(
                 FORMULA_DANK_NEW_POSTS, HttpMethod.GET, entity, String.class);
-        AtomicReference<RedditPost> output = new AtomicReference<>();
+        List<RedditPost> output = new ArrayList<>();
         try {
             Map<String, Object> mapping = mapper.readValue(response.getBody(), typeRef);
 
             LinkedHashMap<String, Object> root = (LinkedHashMap<String, Object>) mapping.get("data");
             List<LinkedHashMap<String, Object>> children = (ArrayList<LinkedHashMap<String, Object>>) root.get("children");
             children.forEach(child -> {
-                if (iterate.get()) {
+                if (two.get()<2) {
                     LinkedHashMap<String, Object> data = (LinkedHashMap<String, Object>) child.get("data");
                     RedditPost post = new RedditPost(data);
                     if (post.isItJpeg() && post.getUps()>1000) {
-                        iterate.set(false);
-                        output.set(post);
+                        two.set(two.get()+1);
+                        output.add(post);
                     }
                 }
             });
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }
-        return instagramService.postDankToInstagram(output.get());
+        return instagramService.postDankToInstagram(output);
 
     }
 

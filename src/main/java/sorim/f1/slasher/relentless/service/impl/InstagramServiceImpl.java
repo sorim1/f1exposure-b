@@ -64,99 +64,93 @@ public class InstagramServiceImpl implements InstagramService {
         IGClient client = getWorkerClient(false);
         AtomicReference<Integer> counter = new AtomicReference<>(0);
         FeedIterable<FeedTimelineRequest, FeedTimelineResponse> response = client.getActions().timeline().feed();
-        AtomicReference<Boolean> iterate = new AtomicReference<>(true);
+        AtomicReference<Integer> iterate = new AtomicReference<>(0);
         try {
-            response.stream().takeWhile(n -> iterate.get()).forEach(row -> {
+            response.stream().takeWhile(n -> iterate.get()<10).forEach(row -> {
                 List<TimelineMedia> timelineMedias = row.getFeed_items();
+                iterate.set(iterate.get()+timelineMedias.size());
+                counter.set(counter.get()+1);
                 timelineMedias.forEach(post -> {
                     if (instagram_following.contains(post.getUser().getUsername())) {
-                        String url = "";
-                        String location = " ";
-                        if (post.getLocation() != null) {
-                            location = post.getLocation().getName();
-                        }
-                        if (post instanceof TimelineCarouselMedia) {
-                            TimelineCarouselMedia timelineCarouselMedia = (TimelineCarouselMedia) post;
-                            List<String> urlList = new ArrayList<>();
-                            timelineCarouselMedia.getCarousel_media().forEach(cItem -> {
-                                if (cItem instanceof ImageCarouselItem) {
-                                    ImageCarouselItem cItem2 = (ImageCarouselItem) cItem;
-                                    urlList.add(cItem2.getImage_versions2().getCandidates()
-                                            .get(cItem2.getImage_versions2().getCandidates().size() - 1)
-                                            .getUrl());
-                                } else if (cItem instanceof VideoCarouselItem) {
-                                    VideoCarouselItem cItem2 = (VideoCarouselItem) cItem;
-                                    urlList.add(cItem2.getImage_versions2().getCandidates()
-                                            .get(cItem2.getImage_versions2().getCandidates().size() - 1)
-                                            .getUrl());
-                                } else {
-                                    log.error("OVO NIJE ImageCaraouselItem: {}", cItem.getClass().getName());
-                                }
-                            });
-                            url = urlList.get(0);
-                            instagramPosts.add(InstagramPost.builder().code(timelineCarouselMedia.getCode())
-                                    .takenAt(post.getTaken_at())
-                                    .comments(timelineCarouselMedia.getComment_count())
-                                    .likes(timelineCarouselMedia.getLike_count())
-                                    .postType(InstagramPostType.TimelineCarouselMedia.getValue())
-                                    .url(url)
-                                    .location(location)
-                                    .caption(getPostCaption(post.getCaption()))
-                                    .username(post.getUser().getFull_name())
-                                    .userpic(post.getUser().getProfile_pic_url())
-                                    .build());
-                        } else if (post instanceof TimelineImageMedia) {
-                            TimelineImageMedia timelineImageMedia = (TimelineImageMedia) post;
-                            url = timelineImageMedia.getImage_versions2().getCandidates()
-                                    .get(timelineImageMedia.getImage_versions2().getCandidates().size() - 1)
-                                    .getUrl();
-                            String caption = "";
-                            if (post.getCaption() != null) {
-                                caption = post.getCaption().getText();
+                        boolean exists = instagramRepository.existsByCode(post.getCode());
+                        if (!exists) {
+                            String url = "";
+                            String location = " ";
+                            if (post.getLocation() != null) {
+                                location = post.getLocation().getName();
                             }
-                            instagramPosts.add(InstagramPost.builder().code(timelineImageMedia.getCode())
-                                    .takenAt(post.getTaken_at())
-                                    .comments(timelineImageMedia.getComment_count())
-                                    .likes(timelineImageMedia.getLike_count())
-                                    .postType(InstagramPostType.TimelineImageMedia.getValue())
-                                    .url(url)
-                                    .location(location)
-                                    .caption(caption)
-                                    .username(post.getUser().getFull_name())
-                                    .userpic(post.getUser().getProfile_pic_url())
-                                    .build());
-                        } else if (post instanceof TimelineVideoMedia) {
-                            TimelineVideoMedia timelineVideoMedia = (TimelineVideoMedia) post;
-                            url = timelineVideoMedia.getImage_versions2().getCandidates()
-                                    .get(timelineVideoMedia.getImage_versions2().getCandidates().size() - 1)
-                                    .getUrl();
-                            instagramPosts.add(InstagramPost.builder().code(timelineVideoMedia.getCode())
-                                    .takenAt(post.getTaken_at())
-                                    .comments(timelineVideoMedia.getComment_count())
-                                    .likes(timelineVideoMedia.getLike_count())
-                                    .postType(InstagramPostType.TimelineVideoMedia.getValue())
-                                    .url(url)
-                                    .location(location)
-                                    .caption(getCaptionText(post.getCaption()))
-                                    .username(post.getUser().getFull_name())
-                                    .userpic(post.getUser().getProfile_pic_url())
-                                    .build());
-                        } else {
-                            log.error("OVAJ INSTAGRAM POST JE: {}", post.getClass().getName());
+                            if (post instanceof TimelineCarouselMedia) {
+                                TimelineCarouselMedia timelineCarouselMedia = (TimelineCarouselMedia) post;
+                                List<String> urlList = new ArrayList<>();
+                                timelineCarouselMedia.getCarousel_media().forEach(cItem -> {
+                                    if (cItem instanceof ImageCarouselItem) {
+                                        ImageCarouselItem cItem2 = (ImageCarouselItem) cItem;
+                                        urlList.add(cItem2.getImage_versions2().getCandidates()
+                                                .get(cItem2.getImage_versions2().getCandidates().size() - 1)
+                                                .getUrl());
+                                    } else if (cItem instanceof VideoCarouselItem) {
+                                        VideoCarouselItem cItem2 = (VideoCarouselItem) cItem;
+                                        urlList.add(cItem2.getImage_versions2().getCandidates()
+                                                .get(cItem2.getImage_versions2().getCandidates().size() - 1)
+                                                .getUrl());
+                                    } else {
+                                        log.error("OVO NIJE ImageCaraouselItem: {}", cItem.getClass().getName());
+                                    }
+                                });
+                                url = urlList.get(0);
+                                instagramPosts.add(InstagramPost.builder().code(timelineCarouselMedia.getCode())
+                                        .takenAt(post.getTaken_at())
+                                        .comments(timelineCarouselMedia.getComment_count())
+                                        .likes(timelineCarouselMedia.getLike_count())
+                                        .postType(InstagramPostType.TimelineCarouselMedia.getValue())
+                                        .url(url)
+                                        .location(location)
+                                        .caption(getPostCaption(post.getCaption()))
+                                        .username(post.getUser().getFull_name())
+                                        .userpic(post.getUser().getProfile_pic_url())
+                                        .build());
+                            } else if (post instanceof TimelineImageMedia) {
+                                TimelineImageMedia timelineImageMedia = (TimelineImageMedia) post;
+                                url = timelineImageMedia.getImage_versions2().getCandidates()
+                                        .get(timelineImageMedia.getImage_versions2().getCandidates().size() - 1)
+                                        .getUrl();
+                                String caption = "";
+                                if (post.getCaption() != null) {
+                                    caption = post.getCaption().getText();
+                                }
+                                instagramPosts.add(InstagramPost.builder().code(timelineImageMedia.getCode())
+                                        .takenAt(post.getTaken_at())
+                                        .comments(timelineImageMedia.getComment_count())
+                                        .likes(timelineImageMedia.getLike_count())
+                                        .postType(InstagramPostType.TimelineImageMedia.getValue())
+                                        .url(url)
+                                        .location(location)
+                                        .caption(caption)
+                                        .username(post.getUser().getFull_name())
+                                        .userpic(post.getUser().getProfile_pic_url())
+                                        .build());
+                            } else if (post instanceof TimelineVideoMedia) {
+                                TimelineVideoMedia timelineVideoMedia = (TimelineVideoMedia) post;
+                                url = timelineVideoMedia.getImage_versions2().getCandidates()
+                                        .get(timelineVideoMedia.getImage_versions2().getCandidates().size() - 1)
+                                        .getUrl();
+                                instagramPosts.add(InstagramPost.builder().code(timelineVideoMedia.getCode())
+                                        .takenAt(post.getTaken_at())
+                                        .comments(timelineVideoMedia.getComment_count())
+                                        .likes(timelineVideoMedia.getLike_count())
+                                        .postType(InstagramPostType.TimelineVideoMedia.getValue())
+                                        .url(url)
+                                        .location(location)
+                                        .caption(getCaptionText(post.getCaption()))
+                                        .username(post.getUser().getFull_name())
+                                        .userpic(post.getUser().getProfile_pic_url())
+                                        .build());
+                            } else {
+                                log.error("OVAJ INSTAGRAM POST JE: {}", post.getClass().getName());
+                            }
                         }
                     }
                 });
-                boolean exists = instagramRepository.existsByCode(timelineMedias.get(timelineMedias.size() - 1).getCode());
-                if (counter.get() < 1) {
-                    iterate.set(true);
-                } else if (counter.get() > 5) {
-                    iterate.set(false);
-                } else if (exists) {
-                    iterate.set(false);
-                } else {
-                    iterate.set(true);
-                }
-                counter.set(counter.get() + 1);
             });
         } catch (Exception e) {
             log.error("insta error");
@@ -167,7 +161,8 @@ public class InstagramServiceImpl implements InstagramService {
         }
         instagramRepository.saveAll(instagramPosts);
         fetchImages(instagramPosts);
-        Logger.log("INSTAGRAM_FETCH_DONE -  : ", String.valueOf(counter.get()));
+        log.info("INSTAGRAM_FETCH_DONE -  NEW IMAGES: " + instagramPosts.size());
+        log.info("INSTAGRAM PAGES: " + counter.get());
         return true;
     }
 
@@ -288,8 +283,18 @@ public class InstagramServiceImpl implements InstagramService {
     }
 
     @Override
-    public String postDankToInstagram(RedditPost post) throws IGLoginException {
+    public String postDankToInstagram(List<RedditPost> posts) throws IGLoginException {
         log.info("postDankToInstagram");
+        boolean success = postDankToInstagramCore(posts.get(0));
+        if(!success){
+            log.info("postDankToInstagram attempt 2");
+            postDankToInstagramCore(posts.get(1));
+            return posts.get(1).getTitle();
+        }
+        return posts.get(0).getTitle();
+    }
+
+    public Boolean postDankToInstagramCore(RedditPost post) throws IGLoginException {
         String caption = generateFunCaption(post.getTitle());
         byte[] imageBytes = getImageFromUrl(post.getImageUrl());
         IGClient client = getOfficialClient(false);
@@ -298,15 +303,16 @@ public class InstagramServiceImpl implements InstagramService {
                     .timeline()
                     .uploadPhoto(imageBytes, caption)
                     .thenAccept(response -> {
-                        log.info("uploaded photo {}", post.getTitle());
+                        log.info("upload response {}", response.getMessage());
                     })
                     .join();
+            return true;
         }catch(Exception e){
-            log.error("postDankToInstagram error");
+            log.error("postDankToInstagram error: {} ", e.getMessage());
             e.printStackTrace();
-         //   getOfficialClient(true);
+            //   getOfficialClient(true);
         }
-        return post.getTitle();
+        return false;
     }
     @Override
     public
@@ -373,7 +379,7 @@ public class InstagramServiceImpl implements InstagramService {
         Random random = new Random();
         StringBuilder response = new StringBuilder(title);
         response.append("\r\n");
-        response.append("Follow @f1exposure for more daily content.");
+   //     response.append("Follow @f1exposure for more daily content.");
         response.append("\r\n\n");
         for(String funTag : FUN_TAGS){
             int randomNumber = random.nextInt(10);
@@ -400,7 +406,7 @@ public class InstagramServiceImpl implements InstagramService {
     private String getInstagramWorkerPassword() {
             AppProperty ap = propertiesRepository.findDistinctFirstByName("INSTAGRAM_WORKER_PASSWORD");
             if (ap == null) {
-                ap = AppProperty.builder().name("INSTAGRAM_WORKER_PASSWORD").value("qwadrat1").build();
+                ap = AppProperty.builder().name("INSTAGRAM_WORKER_PASSWORD").value("poliokox").build();
                 propertiesRepository.save(ap);
             }
         return ap.getValue();
