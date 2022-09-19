@@ -51,12 +51,14 @@ public class InstagramServiceImpl implements InstagramService {
     private final ImageRepository imageRepository;
     private static final String PREFIX = "INSTA_";
 
-    private static final String FUN_TAGS_STRING = "#f1 , #formula1 , #f1meme , #f1edit , #formula1meme , #formula1memes , #f1memes , #f1humor , #ferrari";
-    private static final String SERIOUS_TAGS_STRING = "#f1 , #formula1 , #f1meme , #f1edit , #formula1meme , #formula1memes , #f1memes , #f1driver";
+    private static final String FUN_TAGS_STRING_OLD = "#f1 , #formula1 , #f1meme , #f1edit , #formula1meme , #formula1memes , #f1memes , #f1humor , #ferrari";
+    private static final String SERIOUS_TAGS_STRING_OLD = "#f1 , #formula1 , #f1meme , #f1edit , #formula1meme , #formula1memes , #f1memes , #f1driver";
+    private static final String FUN_TAGS_STRING_BASE = "#f1 , #formula1 , #f1meme , #f1edit , #formula1memes , #f1memes , #f1humor ";
+    private static final String SERIOUS_TAGS_STRING_BASE = "#f1 , #formula1 , #f1meme , #f1edit , #formula1memes , #f1memes , #f1driver";
 
 
-    private static final List<String> FUN_TAGS = Arrays.asList("#f1", "#formula1", "#f1meme","#f1edit", "#formula1meme", "#formula1memes","#f1memes", "#f1humor", "#lewishamilton", "#charlesleclerc", "#carlossainz","#maxverstappen", "#ferrari", "#scuderiaferrari");
-    private static final List<String> SERIOUS_TAGS = Arrays.asList("#f1", "#formula1", "#f1meme","#f1edit", "#formula1meme", "#formula1memes","#f1memes", "#f1driver", "#lewishamilton", "#charlesleclerc", "#carlossainz","#maxverstappen", "#ferrari", "#scuderiaferrari");
+    private static final List<String> FUN_TAGS_OLD = Arrays.asList("#f1", "#formula1", "#f1meme","#f1edit", "#formula1meme", "#formula1memes","#f1memes", "#f1humor", "#lewishamilton", "#charlesleclerc", "#carlossainz","#maxverstappen", "#ferrari", "#scuderiaferrari");
+    private static final List<String> EXTRA_TAGS = Arrays.asList("#lewishamilton", "#charlesleclerc", "#carlossainz","#maxverstappen", "#ferrari", "#scuderiaferrari", "#LH44", "#MV33");
    private static List<Long> ACCOUNT_IDS_TO_FOLLOW = new ArrayList<>();
     @Override
     public Boolean fetchInstagramFeed() throws IGLoginException {
@@ -356,7 +358,7 @@ public class InstagramServiceImpl implements InstagramService {
 
 
     private String generateCaption(FourChanPostEntity chanPost) {
-      //  Random rand = new Random();
+        Random random = new Random();
         if(chanPost.getTags()==null){
             chanPost.setTags("");
         }
@@ -366,28 +368,34 @@ public class InstagramServiceImpl implements InstagramService {
         response.append("\r\n\n");
 
         if(chanPost.getStatus()==4){
-            response.append(FUN_TAGS_STRING);
+            response.append(FUN_TAGS_STRING_BASE);
         }
         if(chanPost.getStatus()==5){
-            response.append(SERIOUS_TAGS_STRING);
+            response.append(SERIOUS_TAGS_STRING_BASE);
         }
-
+        for(String funTag : EXTRA_TAGS){
+            int randomNumber = random.nextInt(10);
+            if(randomNumber>=5){
+                response.append(funTag).append(" , ");
+            }
+        }
         return response.toString();
     }
 
     private String generateFunCaption(String title) {
         Random random = new Random();
-        StringBuilder response = new StringBuilder(title);
+        StringBuilder response = new StringBuilder("\r\n");
+        response.append(title);
         response.append("\r\n");
-   //     response.append("Follow @f1exposure for more daily content.");
+        response.append("Follow @f1exposure for more daily content.");
         response.append("\r\n\n");
-        for(String funTag : FUN_TAGS){
+        response.append(FUN_TAGS_STRING_BASE);
+        for(String funTag : EXTRA_TAGS){
             int randomNumber = random.nextInt(10);
-            if(randomNumber>3){
+            if(randomNumber>=5){
                 response.append(funTag).append(" , ");
             }
         }
-        response.append(FUN_TAGS_STRING);
         return response.toString();
     }
 
