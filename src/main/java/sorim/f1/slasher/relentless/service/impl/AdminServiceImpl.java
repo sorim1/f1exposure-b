@@ -622,7 +622,10 @@ public class AdminServiceImpl implements AdminService {
     public String setInstagramWorkerPassword(String password) throws IGLoginException {
         return instagramService.setInstagramWorkerPassword(password);
     }
-
+    @Override
+    public String setInstagramWorker2Password(String password) throws IGLoginException {
+        return instagramService.setInstagramWorker2Password(password);
+    }
     @Override
     public Boolean twitterCleanup() throws Exception {
         return twitterService.cleanup();

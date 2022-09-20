@@ -158,7 +158,7 @@ public class InstagramServiceImpl implements InstagramService {
             log.error("insta error");
             log.error("caught2", e);
             e.printStackTrace();
-            getWorkerClient(true);
+           // getWorkerClient(true);
             return false;
         }
         instagramRepository.saveAll(instagramPosts);
@@ -410,13 +410,31 @@ public class InstagramServiceImpl implements InstagramService {
         }
         return workerClient;
     }
+    IGClient getWorker2Client(boolean force) throws IGLoginException {
+        if(workerClient == null || !workerClient.isLoggedIn() || force) {
+            workerClient = IGClient.builder()
+                    .username(properties.getInstagramWorker2Username())
+                    .password(getInstagramWorker2Password())
+                    .login();
+            fetchInstagramFollows();
+        }
+        return workerClient;
+    }
 
     private String getInstagramWorkerPassword() {
             AppProperty ap = propertiesRepository.findDistinctFirstByName("INSTAGRAM_WORKER_PASSWORD");
             if (ap == null) {
-                ap = AppProperty.builder().name("INSTAGRAM_WORKER_PASSWORD").value("poliokox").build();
+                ap = AppProperty.builder().name("INSTAGRAM_WORKER_PASSWORD").value("qwadrat").build();
                 propertiesRepository.save(ap);
             }
+        return ap.getValue();
+    }
+    private String getInstagramWorker2Password() {
+        AppProperty ap = propertiesRepository.findDistinctFirstByName("INSTAGRAM_WORKER_2_PASSWORD");
+        if (ap == null) {
+            ap = AppProperty.builder().name("INSTAGRAM_WORKER_PASSWORD").value("qwadrat").build();
+            propertiesRepository.save(ap);
+        }
         return ap.getValue();
     }
     @Override
@@ -424,6 +442,13 @@ public class InstagramServiceImpl implements InstagramService {
         AppProperty ap = AppProperty.builder().name("INSTAGRAM_WORKER_PASSWORD").value(password).build();
             propertiesRepository.save(ap);
         getWorkerClient(true);
+        return ap.getValue();
+    }
+    @Override
+    public String setInstagramWorker2Password(String password) throws IGLoginException {
+        AppProperty ap = AppProperty.builder().name("INSTAGRAM_WORKER_2_PASSWORD").value(password).build();
+        propertiesRepository.save(ap);
+        getWorker2Client(true);
         return ap.getValue();
     }
     IGClient getOfficialClient(Boolean force) throws IGLoginException {
