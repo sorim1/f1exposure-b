@@ -302,11 +302,9 @@ public class Scheduler {
          if(properties.getUrl().contains("f1exposure.com")){
              Thread.sleep(1000 * 60 * minutes);
              fourchanService.postToInstagram(false);
-             adminService.fetchFourChanPosts();
-         //    instagramService.followMoreOnInstagram();
          } else {
-             log.error("url not f1exposure.com");
-             log.error(properties.getUrl());
+             log.warn("url not f1exposure.com");
+             log.warn(properties.getUrl());
          }
     }
     @Scheduled(cron = "0 0 17 * * *")
@@ -320,8 +318,8 @@ public class Scheduler {
             String title = redditService.postFormulaDankToInstagram();
             log.info("eveningInstagramPost ended: " + title);
         } else {
-            log.error("url not f1exposure.com");
-            log.error(properties.getUrl());
+            log.warn("url not f1exposure.com");
+            log.warn(properties.getUrl());
         }
     }
 }

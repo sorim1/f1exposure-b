@@ -615,15 +615,15 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
-    public Boolean instagramCleanup() throws IGLoginException {
+    public Boolean instagramCleanup() throws Exception {
         return instagramService.cleanup();
     }
     @Override
-    public String setInstagramWorkerPassword(String password) throws IGLoginException {
+    public String setInstagramWorkerPassword(String password) throws Exception {
         return instagramService.setInstagramWorkerPassword(password);
     }
     @Override
-    public String setInstagramWorker2Password(String password) throws IGLoginException {
+    public String setInstagramWorker2Password(String password) throws Exception {
         return instagramService.setInstagramWorker2Password(password);
     }
     @Override

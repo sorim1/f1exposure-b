@@ -1,6 +1,5 @@
 package sorim.f1.slasher.relentless.service.impl;
 
-import com.github.instagram4j.instagram4j.exceptions.IGLoginException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -149,7 +148,7 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
-    public Boolean fetchInstagramPosts() throws IGLoginException {
+    public Boolean fetchInstagramPosts() throws Exception {
         return instagramService.fetchInstagramFeed();
     }
 

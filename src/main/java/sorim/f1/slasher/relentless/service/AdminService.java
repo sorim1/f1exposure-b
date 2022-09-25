@@ -71,10 +71,10 @@ public interface AdminService {
     Boolean generateChart();
 
     Boolean cleanup() throws Exception;
-    Boolean instagramCleanup() throws IGLoginException;
+    Boolean instagramCleanup() throws Exception;
 
-    String setInstagramWorkerPassword(String password) throws IGLoginException;
-    String setInstagramWorker2Password(String password) throws IGLoginException;
+    String setInstagramWorkerPassword(String password) throws Exception;
+    String setInstagramWorker2Password(String password) throws Exception;
     Boolean twitterCleanup() throws Exception;
 
     Boolean checkCurrentStream() throws IOException;

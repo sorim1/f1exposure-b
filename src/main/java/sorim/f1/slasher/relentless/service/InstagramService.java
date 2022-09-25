@@ -12,22 +12,22 @@ import java.util.concurrent.ExecutionException;
 
 public interface InstagramService {
 
-    Boolean fetchInstagramFeed() throws IGLoginException;
+    Boolean fetchInstagramFeed() throws Exception;
 
     TripleInstagramFeed getInstagramFeedPage(Integer mode, Integer page);
 
-    List<KeyValue> getInstagramFollows() throws IGLoginException;
+    List<KeyValue> getInstagramFollows() throws Exception;
 
     byte[] getImage(String code);
 
     byte[] getImageFromUrl(String urlString);
 
-    Boolean cleanup() throws IGLoginException;
+    Boolean cleanup() throws Exception;
 
     String postToInstagram(FourChanPostEntity chanPost, FourChanImageRow chanImage) throws IGLoginException;
     String postDankToInstagram(List<RedditPost> posts) throws IGLoginException;
-    String setInstagramWorkerPassword(String password) throws IGLoginException;
-    String setInstagramWorker2Password(String password) throws IGLoginException;
+    String setInstagramWorkerPassword(String password) throws Exception;
+    String setInstagramWorker2Password(String password) throws Exception;
 
     void followMoreOnInstagram() throws Exception;
 }

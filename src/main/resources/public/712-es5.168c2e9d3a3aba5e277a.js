@@ -4663,7 +4663,7 @@
       .Xpm({
         type: ContactInfoComponent,
         selectors: [["app-contact-info-cmp"]],
-        decls: 151,
+        decls: 143,
         vars: 5,
         consts: [["autosize", ""], ["autosize", "", "mode", "side", "position", "end", 1, "example-sidenav", 3, "opened", "openedChange"], ["drawer", ""], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area", 3, "ngModel", "ngModelChange", "focus", "focusout"], [1, "post-comment"], ["mat-flat-button", "", 1, "active-color-button", 3, "click"], [4, "ngFor", "ngForOf"], [1, "fixed-button"], ["mat-button", "", "type", "fixed-plugin", 3, "click"], [1, "fa", "fa-commenting-o", "fa-2x"], [1, "div-padded-left-2", "div-padded-top-1", "col-lg-3", "col-md-6", "col-sm-6"], [1, "card", "card-stats"], [1, "card-header"], [1, "implying"], [1, "card-body"], [1, "col-12", "col-lg-2", "no-right-padding"], [1, "icon-big", "text-center", "icon-warning"], [1, "nc-icon", "nc-zoom-split", "text-warning"], [1, "col-12", "col-lg-10"], [1, "div-padded-mobile"], [1, "col-lg-4", "col-md-6", "div-padded-top-1", "col-sm-6"], [1, "col-12", "col-lg-12"], ["list-style-type", "circle"], [1, "nc-icon", "nc-minimal-up", "text-warning"], [1, "div-padded-right-2", "div-padded-top-1", "col-lg-5", "col-md-6", "col-sm-6"], [1, "col-12"], [1, "nc-icon", "nc-money-coins", "text-warning"], ["hideToggle", ""], ["href", "https://ko-fi.com/sorim", "target", "_blank", 1, "postLinks"], ["src", "assets/img/QR_BTC.png"], ["src", "assets/img/QR_ETH.png"], ["src", "assets/img/QR_DOT.png"], [1, "col-lg-12", "col-md-6", "col-sm-6"], [1, "bg-secondary", "row"], [1, "col-7", "col-md-9"], [1, "text-white"], ["placeholder", "e-mail", "type", "text", 1, "form-control", 3, "ngModel", "ngModelChange"], [1, "form-group"], ["matInput", "", "placeholder", "type a message", 1, "form-control", "message-text-area-150", 3, "ngModel", "ngModelChange"], [1, "col-md-2", "no-right-padding"], [1, "nc-icon", "nc-email-85", "text-warning"], ["mat-raised-button", "", 1, "bg-success", "text-white", "height-5-rem", 3, "click"], [1, "basic-comment"], [1, "header-left", "hover-pointer", 3, "click"], [1, "header-right", "hover-pointer", 3, "click"], [1, "basic-comment-body"]],
         template: function ContactInfoComponent_Template(rf, ctx) {
@@ -5120,49 +5120,10 @@
             core
             /* ɵɵelementStart */
             .TgZ(74, "div", 27);
-            core
-            /* ɵɵelementStart */
-            .TgZ(75, "div", 23);
-            core
-            /* ɵɵelementStart */
-            .TgZ(76, "div");
-            core
-            /* ɵɵelementStart */
-            .TgZ(77, "ul", 24);
-
-            core
-            /* ɵɵtext */
-            ._uU(78, " - https://www.instagram.com/F1Exposure ");
-
-            core
-            /* ɵɵelementEnd */
-            .qZA();
-            core
-            /* ɵɵelementStart */
-            .TgZ(79, "ul", 24);
-
-            core
-            /* ɵɵtext */
-            ._uU(80, " - https://twitter.com/F1Exposure ");
-
-            core
-            /* ɵɵelementEnd */
-            .qZA();
-            core
-            /* ɵɵelementEnd */
-            .qZA();
-
-            core
-            /* ɵɵtext */
-            ._uU(81, " What these instagram/twitter accounts follow - will appear in the feed. ");
 
             core
             /* ɵɵelement */
-            ._UZ(82, "br");
-
-            core
-            /* ɵɵtext */
-            ._uU(83, "Official accounts of active drivers and teams are always followed. ");
+            ._UZ(75, "div", 23);
 
             core
             /* ɵɵelementEnd */
@@ -5177,27 +5138,24 @@
             /* ɵɵelementEnd */
             .qZA();
             core
-            /* ɵɵelementEnd */
-            .qZA();
+            /* ɵɵelementStart */
+            .TgZ(76, "div", 13);
             core
             /* ɵɵelementStart */
-            .TgZ(84, "div", 13);
+            .TgZ(77, "div", 16);
             core
             /* ɵɵelementStart */
-            .TgZ(85, "div", 16);
+            .TgZ(78, "div", 3);
             core
             /* ɵɵelementStart */
-            .TgZ(86, "div", 3);
+            .TgZ(79, "div", 17);
             core
             /* ɵɵelementStart */
-            .TgZ(87, "div", 17);
-            core
-            /* ɵɵelementStart */
-            .TgZ(88, "div", 18);
+            .TgZ(80, "div", 18);
 
             core
             /* ɵɵelement */
-            ._UZ(89, "i", 28);
+            ._UZ(81, "i", 28);
 
             core
             /* ɵɵelementEnd */
@@ -5207,40 +5165,26 @@
             .qZA();
             core
             /* ɵɵelementStart */
-            .TgZ(90, "div", 23);
+            .TgZ(82, "div", 23);
             core
             /* ɵɵelementStart */
-            .TgZ(91, "div", 21);
+            .TgZ(83, "div", 21);
             core
             /* ɵɵelementStart */
-            .TgZ(92, "mat-accordion");
+            .TgZ(84, "mat-accordion");
             core
             /* ɵɵelementStart */
-            .TgZ(93, "mat-expansion-panel", 29);
+            .TgZ(85, "mat-expansion-panel", 29);
             core
             /* ɵɵelementStart */
-            .TgZ(94, "mat-expansion-panel-header");
+            .TgZ(86, "mat-expansion-panel-header");
             core
             /* ɵɵelementStart */
-            .TgZ(95, "mat-panel-title");
-
-            core
-            /* ɵɵtext */
-            ._uU(96, " Buy me coffee ");
-
-            core
-            /* ɵɵelementEnd */
-            .qZA();
-            core
-            /* ɵɵelementEnd */
-            .qZA();
-            core
-            /* ɵɵelementStart */
-            .TgZ(97, "a", 30);
+            .TgZ(87, "mat-panel-title");
 
             core
             /* ɵɵtext */
-            ._uU(98, "https://ko-fi.com/sorim");
+            ._uU(88, " Buy me coffee ");
 
             core
             /* ɵɵelementEnd */
@@ -5250,17 +5194,11 @@
             .qZA();
             core
             /* ɵɵelementStart */
-            .TgZ(99, "mat-expansion-panel", 29);
-            core
-            /* ɵɵelementStart */
-            .TgZ(100, "mat-expansion-panel-header");
-            core
-            /* ɵɵelementStart */
-            .TgZ(101, "mat-panel-title");
+            .TgZ(89, "a", 30);
 
             core
             /* ɵɵtext */
-            ._uU(102, " Donate via crypto ");
+            ._uU(90, "https://ko-fi.com/sorim");
 
             core
             /* ɵɵelementEnd */
@@ -5270,50 +5208,70 @@
             .qZA();
             core
             /* ɵɵelementStart */
-            .TgZ(103, "mat-expansion-panel", 29);
+            .TgZ(91, "mat-expansion-panel", 29);
             core
             /* ɵɵelementStart */
-            .TgZ(104, "mat-expansion-panel-header");
+            .TgZ(92, "mat-expansion-panel-header");
             core
             /* ɵɵelementStart */
-            .TgZ(105, "mat-panel-title");
-
-            core
-            /* ɵɵtext */
-            ._uU(106, " Bitcoin ");
-
-            core
-            /* ɵɵelementEnd */
-            .qZA();
-            core
-            /* ɵɵelementEnd */
-            .qZA();
-            core
-            /* ɵɵelementStart */
-            .TgZ(107, "p");
+            .TgZ(93, "mat-panel-title");
 
             core
             /* ɵɵtext */
-            ._uU(108, "Address: ");
+            ._uU(94, " Donate via crypto ");
+
+            core
+            /* ɵɵelementEnd */
+            .qZA();
+            core
+            /* ɵɵelementEnd */
+            .qZA();
+            core
+            /* ɵɵelementStart */
+            .TgZ(95, "mat-expansion-panel", 29);
+            core
+            /* ɵɵelementStart */
+            .TgZ(96, "mat-expansion-panel-header");
+            core
+            /* ɵɵelementStart */
+            .TgZ(97, "mat-panel-title");
+
+            core
+            /* ɵɵtext */
+            ._uU(98, " Bitcoin ");
+
+            core
+            /* ɵɵelementEnd */
+            .qZA();
+            core
+            /* ɵɵelementEnd */
+            .qZA();
+            core
+            /* ɵɵelementStart */
+            .TgZ(99, "p");
+
+            core
+            /* ɵɵtext */
+            ._uU(100, "Address: ");
 
             core
             /* ɵɵelement */
-            ._UZ(109, "br");
+            ._UZ(101, "br");
 
             core
             /* ɵɵtext */
-            ._uU(110, " bc1q8ugeufzg4mw5rtezcdax52q4uhavrtdhvnf2et");
+            ._uU(102, " bc1q8ugeufzg4mw5rtezcdax52q4uhavrtdhvnf2et");
 
             core
             /* ɵɵelementEnd */
             .qZA();
             core
             /* ɵɵelementStart */
-            .TgZ(111, "p");
+            .TgZ(103, "p");
 
             core
             /* ɵɵelement */
-            ._UZ(112, "img", 31);
+            ._UZ(104, "img", 31);
 
             core
             /* ɵɵelementEnd */
@@ -5323,39 +5281,39 @@
             .qZA();
             core
             /* ɵɵelementStart */
-            .TgZ(113, "mat-expansion-panel", 29);
+            .TgZ(105, "mat-expansion-panel", 29);
             core
             /* ɵɵelementStart */
-            .TgZ(114, "mat-expansion-panel-header");
+            .TgZ(106, "mat-expansion-panel-header");
             core
             /* ɵɵelementStart */
-            .TgZ(115, "mat-panel-title");
-
-            core
-            /* ɵɵtext */
-            ._uU(116, " Ethereum ");
-
-            core
-            /* ɵɵelementEnd */
-            .qZA();
-            core
-            /* ɵɵelementEnd */
-            .qZA();
-            core
-            /* ɵɵelementStart */
-            .TgZ(117, "p");
+            .TgZ(107, "mat-panel-title");
 
             core
             /* ɵɵtext */
-            ._uU(118, "Address: ");
+            ._uU(108, " Ethereum ");
+
+            core
+            /* ɵɵelementEnd */
+            .qZA();
+            core
+            /* ɵɵelementEnd */
+            .qZA();
+            core
+            /* ɵɵelementStart */
+            .TgZ(109, "p");
+
+            core
+            /* ɵɵtext */
+            ._uU(110, "Address: ");
 
             core
             /* ɵɵelement */
-            ._UZ(119, "br");
+            ._UZ(111, "br");
 
             core
             /* ɵɵtext */
-            ._uU(120, " 0x44EBCE434E54568EeaD6BBf5C38D41bb5d54093F");
+            ._uU(112, " 0x44EBCE434E54568EeaD6BBf5C38D41bb5d54093F");
 
             core
             /* ɵɵelementEnd */
@@ -5363,24 +5321,24 @@
 
             core
             /* ɵɵelement */
-            ._UZ(121, "img", 32);
+            ._UZ(113, "img", 32);
 
             core
             /* ɵɵelementEnd */
             .qZA();
             core
             /* ɵɵelementStart */
-            .TgZ(122, "mat-expansion-panel", 29);
+            .TgZ(114, "mat-expansion-panel", 29);
             core
             /* ɵɵelementStart */
-            .TgZ(123, "mat-expansion-panel-header");
+            .TgZ(115, "mat-expansion-panel-header");
             core
             /* ɵɵelementStart */
-            .TgZ(124, "mat-panel-title");
+            .TgZ(116, "mat-panel-title");
 
             core
             /* ɵɵtext */
-            ._uU(125, " Polkadot ");
+            ._uU(117, " Polkadot ");
 
             core
             /* ɵɵelementEnd */
@@ -5390,19 +5348,19 @@
             .qZA();
             core
             /* ɵɵelementStart */
-            .TgZ(126, "p");
+            .TgZ(118, "p");
 
             core
             /* ɵɵtext */
-            ._uU(127, "Address: ");
+            ._uU(119, "Address: ");
 
             core
             /* ɵɵelement */
-            ._UZ(128, "br");
+            ._UZ(120, "br");
 
             core
             /* ɵɵtext */
-            ._uU(129, " 16XhxmxrAZtnba5PeCwCAHT8XfwVjxCgf8vu9K8F5Moec6TF");
+            ._uU(121, " 16XhxmxrAZtnba5PeCwCAHT8XfwVjxCgf8vu9K8F5Moec6TF");
 
             core
             /* ɵɵelementEnd */
@@ -5410,7 +5368,7 @@
 
             core
             /* ɵɵelement */
-            ._UZ(130, "img", 33);
+            ._UZ(122, "img", 33);
 
             core
             /* ɵɵelementEnd */
@@ -5444,42 +5402,42 @@
             .qZA();
             core
             /* ɵɵelementStart */
-            .TgZ(131, "div", 3);
+            .TgZ(123, "div", 3);
             core
             /* ɵɵelementStart */
-            .TgZ(132, "div", 34);
+            .TgZ(124, "div", 34);
             core
             /* ɵɵelementStart */
-            .TgZ(133, "div", 13);
+            .TgZ(125, "div", 13);
             core
             /* ɵɵelementStart */
-            .TgZ(134, "div", 16);
+            .TgZ(126, "div", 16);
             core
             /* ɵɵelementStart */
-            .TgZ(135, "div", 35);
+            .TgZ(127, "div", 35);
             core
             /* ɵɵelementStart */
-            .TgZ(136, "div", 36);
+            .TgZ(128, "div", 36);
             core
             /* ɵɵelementStart */
-            .TgZ(137, "div", 4);
+            .TgZ(129, "div", 4);
             core
             /* ɵɵelementStart */
-            .TgZ(138, "label", 37);
+            .TgZ(130, "label", 37);
 
             core
             /* ɵɵtext */
-            ._uU(139, "Your contact e-mail (not required)");
+            ._uU(131, "Your contact e-mail (not required)");
 
             core
             /* ɵɵelementEnd */
             .qZA();
             core
             /* ɵɵelementStart */
-            .TgZ(140, "input", 38);
+            .TgZ(132, "input", 38);
             core
             /* ɵɵlistener */
-            .NdJ("ngModelChange", function ContactInfoComponent_Template_input_ngModelChange_140_listener($event) {
+            .NdJ("ngModelChange", function ContactInfoComponent_Template_input_ngModelChange_132_listener($event) {
               return ctx.email = $event;
             });
             core
@@ -5487,24 +5445,24 @@
             .qZA();
             core
             /* ɵɵelementStart */
-            .TgZ(141, "div", 39);
+            .TgZ(133, "div", 39);
             core
             /* ɵɵelementStart */
-            .TgZ(142, "label", 37);
+            .TgZ(134, "label", 37);
 
             core
             /* ɵɵtext */
-            ._uU(143, "Message");
+            ._uU(135, "Message");
 
             core
             /* ɵɵelementEnd */
             .qZA();
             core
             /* ɵɵelementStart */
-            .TgZ(144, "textarea", 40);
+            .TgZ(136, "textarea", 40);
             core
             /* ɵɵlistener */
-            .NdJ("ngModelChange", function ContactInfoComponent_Template_textarea_ngModelChange_144_listener($event) {
+            .NdJ("ngModelChange", function ContactInfoComponent_Template_textarea_ngModelChange_136_listener($event) {
               return ctx.messageText = $event;
             });
             core
@@ -5521,33 +5479,33 @@
             .qZA();
             core
             /* ɵɵelementStart */
-            .TgZ(145, "div", 41);
+            .TgZ(137, "div", 41);
             core
             /* ɵɵelementStart */
-            .TgZ(146, "div", 18);
+            .TgZ(138, "div", 18);
 
             core
             /* ɵɵelement */
-            ._UZ(147, "i", 42);
+            ._UZ(139, "i", 42);
 
             core
             /* ɵɵelementEnd */
             .qZA();
             core
             /* ɵɵelementStart */
-            .TgZ(148, "div", 3);
+            .TgZ(140, "div", 3);
             core
             /* ɵɵelementStart */
-            .TgZ(149, "button", 43);
+            .TgZ(141, "button", 43);
             core
             /* ɵɵlistener */
-            .NdJ("click", function ContactInfoComponent_Template_button_click_149_listener() {
+            .NdJ("click", function ContactInfoComponent_Template_button_click_141_listener() {
               return ctx.sendMessage();
             });
 
             core
             /* ɵɵtext */
-            ._uU(150, " Send message ");
+            ._uU(142, " Send message ");
 
             core
             /* ɵɵelementEnd */
@@ -5602,7 +5560,7 @@
             .Q6J("ngForOf", ctx.utilityService.comments);
             core
             /* ɵɵadvance */
-            .xp6(127);
+            .xp6(119);
             core
             /* ɵɵproperty */
             .Q6J("ngModel", ctx.email);
@@ -87917,6 +87875,7 @@
               this.slowlyAddInstaPosts(newPosts);
             } else {
               this.instaPostsInitial = newPosts;
+              console.log('instagram feed fetched:' + this.instaPostsInitial.fetchOk);
             }
           }
         }, {

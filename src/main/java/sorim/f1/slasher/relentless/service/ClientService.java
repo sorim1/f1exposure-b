@@ -26,7 +26,7 @@ public interface ClientService {
 
     List<F1Comment> getComments(String page);
 
-    Boolean fetchInstagramPosts() throws IGLoginException;
+    Boolean fetchInstagramPosts() throws Exception;
 
     TripleInstagramFeed getInstagramFeedPage(Integer mode, Integer page) throws IGLoginException;
 

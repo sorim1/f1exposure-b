@@ -56,12 +56,13 @@ public class InstagramServiceImpl implements InstagramService {
     private static final String FUN_TAGS_STRING_BASE = "#f1 , #formula1 , #f1meme , #f1edit , #formula1memes , #f1memes , #f1humor ";
     private static final String SERIOUS_TAGS_STRING_BASE = "#f1 , #formula1 , #f1meme , #f1edit , #formula1memes , #f1memes , #f1driver";
 
-
+    private static Boolean fetchOk = false;
     private static final List<String> FUN_TAGS_OLD = Arrays.asList("#f1", "#formula1", "#f1meme","#f1edit", "#formula1meme", "#formula1memes","#f1memes", "#f1humor", "#lewishamilton", "#charlesleclerc", "#carlossainz","#maxverstappen", "#ferrari", "#scuderiaferrari");
     private static final List<String> EXTRA_TAGS = Arrays.asList("#lewishamilton", "#charlesleclerc", "#carlossainz","#maxverstappen", "#ferrari", "#scuderiaferrari", "#LH44", "#MV33");
    private static List<Long> ACCOUNT_IDS_TO_FOLLOW = new ArrayList<>();
     @Override
-    public Boolean fetchInstagramFeed() throws IGLoginException {
+    public Boolean fetchInstagramFeed() throws Exception {
+        fetchOk = true;
         List<InstagramPost> instagramPosts = new ArrayList<>();
         IGClient client = getWorkerClient(false);
         AtomicReference<Integer> counter = new AtomicReference<>(0);
@@ -153,12 +154,20 @@ public class InstagramServiceImpl implements InstagramService {
                         }
                     }
                 });
+                try {
+                    log.info("sleep 20 seconds");
+                    Thread.sleep(20000);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
             });
         } catch (Exception e) {
             log.error("insta error");
-            log.error("caught2", e);
-            e.printStackTrace();
-           // getWorkerClient(true);
+            fetchOk = false;
+            log.error(e.getMessage());
+            if(e.getMessage().contains("login_required")){
+                getWorkerClient(true);
+            }
             return false;
         }
         instagramRepository.saveAll(instagramPosts);
@@ -187,6 +196,12 @@ public class InstagramServiceImpl implements InstagramService {
         List<ImageRow> images = new ArrayList<>();
         instagramPosts.forEach(post -> {
             byte[] image = getImageFromUrl(post.getUrl());
+            try {
+                log.info("sleep 3 seconds");
+                Thread.sleep(3000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
             images.add(ImageRow.builder().code(PREFIX + post.getCode()).image(image).build());
         });
         imageRepository.saveAll(images);
@@ -220,11 +235,11 @@ public class InstagramServiceImpl implements InstagramService {
         Pageable paging = PageRequest.of(page, 20);
         List<InstagramPost> posts = instagramRepository.findAllByOrderByTakenAtDesc(paging);
 
-        return new TripleInstagramFeed(mode, posts);
+        return new TripleInstagramFeed(mode, posts, fetchOk);
     }
 
     @Override
-    public List<KeyValue> getInstagramFollows() throws IGLoginException {
+    public List<KeyValue> getInstagramFollows() throws Exception {
         if(instagramfollowingHashtags.isEmpty()){
             getWorkerClient(false);
         }
@@ -255,7 +270,7 @@ public class InstagramServiceImpl implements InstagramService {
     }
 
     @Override
-    public Boolean cleanup() throws IGLoginException {
+    public Boolean cleanup() throws Exception {
         instagramRepository.deleteAll();
         imageRepository.deleteEverythingExceptM();
         fetchInstagramFeed();
@@ -384,7 +399,7 @@ public class InstagramServiceImpl implements InstagramService {
 
     private String generateFunCaption(String title) {
         Random random = new Random();
-        StringBuilder response = new StringBuilder("\r\n");
+        StringBuilder response = new StringBuilder(" \r\n\n");
         response.append(title);
         response.append("\r\n");
         response.append("Follow @f1exposure for more daily content.");
@@ -400,22 +415,24 @@ public class InstagramServiceImpl implements InstagramService {
     }
 
 
-    IGClient getWorkerClient(boolean force) throws IGLoginException {
+    IGClient getWorkerClient(boolean force) throws Exception {
         if(workerClient == null || !workerClient.isLoggedIn() || force) {
             workerClient = IGClient.builder()
                     .username(properties.getInstagramWorkerUsername())
                     .password(getInstagramWorkerPassword())
                     .login();
+            Thread.sleep(2000);
             fetchInstagramFollows();
         }
         return workerClient;
     }
-    IGClient getWorker2Client(boolean force) throws IGLoginException {
+    IGClient getWorker2Client(boolean force) throws Exception {
         if(workerClient == null || !workerClient.isLoggedIn() || force) {
             workerClient = IGClient.builder()
                     .username(properties.getInstagramWorker2Username())
                     .password(getInstagramWorker2Password())
                     .login();
+            Thread.sleep(2000);
             fetchInstagramFollows();
         }
         return workerClient;
@@ -438,14 +455,14 @@ public class InstagramServiceImpl implements InstagramService {
         return ap.getValue();
     }
     @Override
-    public String setInstagramWorkerPassword(String password) throws IGLoginException {
+    public String setInstagramWorkerPassword(String password) throws Exception {
         AppProperty ap = AppProperty.builder().name("INSTAGRAM_WORKER_PASSWORD").value(password).build();
             propertiesRepository.save(ap);
         getWorkerClient(true);
         return ap.getValue();
     }
     @Override
-    public String setInstagramWorker2Password(String password) throws IGLoginException {
+    public String setInstagramWorker2Password(String password) throws Exception {
         AppProperty ap = AppProperty.builder().name("INSTAGRAM_WORKER_2_PASSWORD").value(password).build();
         propertiesRepository.save(ap);
         getWorker2Client(true);
