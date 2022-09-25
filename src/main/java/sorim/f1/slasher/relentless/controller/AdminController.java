@@ -266,10 +266,16 @@ public class AdminController {
         securityService.validateAdminHeader(client);
         return service.setInstagramWorkerPassword(password);
     }
-    @GetMapping("/setInstagramWorker2Password/{password}")
-    String setInstagramWorker2Password(@RequestHeader String client, @PathVariable String password) throws Exception {
+    @GetMapping("/setInstagramWorker/{username}/{password}")
+    String setInstagramWorker2Password(@RequestHeader String client, @PathVariable String username, @PathVariable String password) throws Exception {
         securityService.validateAdminHeader(client);
-        return service.setInstagramWorker2Password(password);
+        return service.setInstagramWorker(username, password);
+    }
+
+    @GetMapping("/instagram/{bool}")
+    String turnOnOffInstagram(@RequestHeader String client, @PathVariable Boolean bool) throws Exception {
+        securityService.validateAdminHeader(client);
+        return service.turnOnOffInstagram(bool);
     }
     @GetMapping("/checkCurrentStream")
     Boolean checkCurrentStream() throws IOException {

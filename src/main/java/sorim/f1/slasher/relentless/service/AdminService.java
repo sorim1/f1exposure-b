@@ -74,7 +74,9 @@ public interface AdminService {
     Boolean instagramCleanup() throws Exception;
 
     String setInstagramWorkerPassword(String password) throws Exception;
-    String setInstagramWorker2Password(String password) throws Exception;
+    String setInstagramWorker(String username, String password) throws Exception;
+    String turnOnOffInstagram(Boolean bool) throws Exception;
+
     Boolean twitterCleanup() throws Exception;
 
     Boolean checkCurrentStream() throws IOException;

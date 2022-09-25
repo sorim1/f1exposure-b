@@ -19,8 +19,8 @@ f1:
       twitterAccessTokenSecret_f1ex: 41DI3NKWO4NX2FYv0S4yC9hoI9Iap8Dxn7ohRBJX8e48g
       instagramWorkerUsername: npc3422
       instagramWorkerPassword: "qwadrat"
-      instagramWorkerUsername2: miroslav.dragicevic1
-      instagramWorkerPassword2: "qwadrat1234"
+      instagramWorker2Username: miroslav.dragicevic1
+      instagramWorker2Password: "qwadrat1234"
       instagramOfficialUsername: f1exposure
       instagramOfficialPassword: "!qwadrat1"
       calendarUrl: https://www.formula1.com/calendar/Formula_1_Official_Calendar.ics

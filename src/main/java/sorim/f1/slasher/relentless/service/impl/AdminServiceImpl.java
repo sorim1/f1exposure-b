@@ -623,8 +623,12 @@ public class AdminServiceImpl implements AdminService {
         return instagramService.setInstagramWorkerPassword(password);
     }
     @Override
-    public String setInstagramWorker2Password(String password) throws Exception {
-        return instagramService.setInstagramWorker2Password(password);
+    public String setInstagramWorker(String username, String password) throws Exception {
+        return instagramService.setInstagramWorker(username, password);
+    }
+    @Override
+    public String turnOnOffInstagram(Boolean bool) throws Exception {
+        return instagramService.turnOnOffInstagram(bool);
     }
     @Override
     public Boolean twitterCleanup() throws Exception {

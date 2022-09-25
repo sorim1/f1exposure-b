@@ -50,6 +50,7 @@ public class InstagramServiceImpl implements InstagramService {
     private final InstagramRepository instagramRepository;
     private final ImageRepository imageRepository;
     private static final String PREFIX = "INSTA_";
+    private static Boolean fetchEnabled = true;
 
     private static final String FUN_TAGS_STRING_OLD = "#f1 , #formula1 , #f1meme , #f1edit , #formula1meme , #formula1memes , #f1memes , #f1humor , #ferrari";
     private static final String SERIOUS_TAGS_STRING_OLD = "#f1 , #formula1 , #f1meme , #f1edit , #formula1meme , #formula1memes , #f1memes , #f1driver";
@@ -62,6 +63,7 @@ public class InstagramServiceImpl implements InstagramService {
    private static List<Long> ACCOUNT_IDS_TO_FOLLOW = new ArrayList<>();
     @Override
     public Boolean fetchInstagramFeed() throws Exception {
+        if(fetchEnabled){
         fetchOk = true;
         List<InstagramPost> instagramPosts = new ArrayList<>();
         IGClient client = getWorkerClient(false);
@@ -174,6 +176,11 @@ public class InstagramServiceImpl implements InstagramService {
         fetchImages(instagramPosts);
         log.info("INSTAGRAM_FETCH_DONE -  NEW IMAGES: " + instagramPosts.size());
         log.info("INSTAGRAM PAGES: " + counter.get());
+
+        } else {
+            log.info("fetch disabled");
+            return false;
+        }
         return true;
     }
 
@@ -247,7 +254,7 @@ public class InstagramServiceImpl implements InstagramService {
     }
 
     private void fetchInstagramFollows() {
-        List<Profile> result = workerClient.actions().users().findByUsername(properties.getInstagramWorkerUsername())
+        List<Profile> result = workerClient.actions().users().findByUsername(getInstagramWorkerUsername())
                 .thenApply(userAction -> userAction.followingFeed().stream()
                         .flatMap(feedUsersResponse -> feedUsersResponse.getUsers().stream()).collect(Collectors.toList())
                 ).join();
@@ -342,6 +349,13 @@ public class InstagramServiceImpl implements InstagramService {
         followAccounts(client, 4);
     }
 
+    @Override
+    public String turnOnOffInstagram(Boolean bool) {
+        String response = String.valueOf(fetchEnabled) + "->" + String.valueOf(bool);
+        fetchEnabled = bool;
+        return response;
+    }
+
     private void getAccountsToFollow(IGClient client) throws Exception {
         FeedTagRequest request = new FeedTagRequest("f1memes");
         client.sendRequest(request).get().getRanked_items()
@@ -417,20 +431,12 @@ public class InstagramServiceImpl implements InstagramService {
 
     IGClient getWorkerClient(boolean force) throws Exception {
         if(workerClient == null || !workerClient.isLoggedIn() || force) {
+            String username = getInstagramWorkerUsername();
+            String password = getInstagramWorkerPassword();
+            log.info("instagram login: {} - {}", username, password);
             workerClient = IGClient.builder()
-                    .username(properties.getInstagramWorkerUsername())
-                    .password(getInstagramWorkerPassword())
-                    .login();
-            Thread.sleep(2000);
-            fetchInstagramFollows();
-        }
-        return workerClient;
-    }
-    IGClient getWorker2Client(boolean force) throws Exception {
-        if(workerClient == null || !workerClient.isLoggedIn() || force) {
-            workerClient = IGClient.builder()
-                    .username(properties.getInstagramWorker2Username())
-                    .password(getInstagramWorker2Password())
+                    .username(username)
+                    .password(password)
                     .login();
             Thread.sleep(2000);
             fetchInstagramFollows();
@@ -438,18 +444,19 @@ public class InstagramServiceImpl implements InstagramService {
         return workerClient;
     }
 
+
     private String getInstagramWorkerPassword() {
             AppProperty ap = propertiesRepository.findDistinctFirstByName("INSTAGRAM_WORKER_PASSWORD");
             if (ap == null) {
-                ap = AppProperty.builder().name("INSTAGRAM_WORKER_PASSWORD").value("qwadrat").build();
+                ap = AppProperty.builder().name("INSTAGRAM_WORKER_PASSWORD").value("qwadrat1").build();
                 propertiesRepository.save(ap);
             }
         return ap.getValue();
     }
-    private String getInstagramWorker2Password() {
-        AppProperty ap = propertiesRepository.findDistinctFirstByName("INSTAGRAM_WORKER_2_PASSWORD");
+    private String getInstagramWorkerUsername() {
+        AppProperty ap = propertiesRepository.findDistinctFirstByName("INSTAGRAM_WORKER_USERNAME");
         if (ap == null) {
-            ap = AppProperty.builder().name("INSTAGRAM_WORKER_PASSWORD").value("qwadrat").build();
+            ap = AppProperty.builder().name("INSTAGRAM_WORKER_USERNAME").value("npc3422").build();
             propertiesRepository.save(ap);
         }
         return ap.getValue();
@@ -462,10 +469,12 @@ public class InstagramServiceImpl implements InstagramService {
         return ap.getValue();
     }
     @Override
-    public String setInstagramWorker2Password(String password) throws Exception {
-        AppProperty ap = AppProperty.builder().name("INSTAGRAM_WORKER_2_PASSWORD").value(password).build();
+    public String setInstagramWorker(String username, String password) throws Exception {
+        AppProperty ap = AppProperty.builder().name("INSTAGRAM_WORKER_USERNAME").value(username).build();
         propertiesRepository.save(ap);
-        getWorker2Client(true);
+        ap = AppProperty.builder().name("INSTAGRAM_WORKER_PASSWORD").value(password).build();
+        propertiesRepository.save(ap);
+        getWorkerClient(true);
         return ap.getValue();
     }
     IGClient getOfficialClient(Boolean force) throws IGLoginException {
