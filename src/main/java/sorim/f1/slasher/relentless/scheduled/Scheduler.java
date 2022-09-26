@@ -316,8 +316,13 @@ public class Scheduler {
     void eveningInstagramPost() throws Exception {
         Random rand = new Random();
         int minutes = rand.nextInt(30);
-        log.info("eveningInstagramPost called: " + minutes);
+        log.info("17 InstagramPost called: " + minutes);
         if(properties.getUrl().contains("f1exposure.com")){
+            try{
+                clientService.fetchInstagramPosts();
+            }catch(Exception e){
+                log.info("17 InstagramPost fetch failed: {}", e.getMessage());
+            }
             Thread.sleep(1000 * 60 * minutes);
            // fourchanService.postToInstagram(true);
             String title = redditService.postFormulaDankToInstagram();

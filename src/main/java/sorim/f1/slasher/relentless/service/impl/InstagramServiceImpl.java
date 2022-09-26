@@ -201,10 +201,10 @@ public class InstagramServiceImpl implements InstagramService {
 
     private void fetchImages(List<InstagramPost> instagramPosts) {
         List<ImageRow> images = new ArrayList<>();
+        log.info("fetchImages - {} instagram images with a 3 second pause", instagramPosts.size());
         instagramPosts.forEach(post -> {
             byte[] image = getImageFromUrl(post.getUrl());
             try {
-                log.info("sleep 3 seconds");
                 Thread.sleep(3000);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
@@ -413,7 +413,7 @@ public class InstagramServiceImpl implements InstagramService {
 
     private String generateFunCaption(String title) {
         Random random = new Random();
-        StringBuilder response = new StringBuilder(" \r\n\n");
+        StringBuilder response = new StringBuilder("\r\n\r\n");
         response.append(title);
         response.append("\r\n");
         response.append("Follow @f1exposure for more daily content.");
