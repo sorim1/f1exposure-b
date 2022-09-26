@@ -285,7 +285,7 @@ public class Scheduler {
     @Scheduled(cron = "0 0 1,6,10,12,14,16,18,20,22 * * *")
     void bihourlyJob() throws Exception {
         if(properties.getUrl().contains("f1exposure.com")){
-            imageFeedJob();
+            imageFeedJobWithoutInstagram();
             adminService.checkCurrentStream();
         } else {
             log.error("url not f1exposure.com");
@@ -298,8 +298,13 @@ public class Scheduler {
     void noonInstagramPost() throws Exception {
          Random rand = new Random();
          int minutes = rand.nextInt(30);
-        log.info("noonInstagramPost called: " + minutes);
+        log.info("10 AM InstagramPost to be called: " + minutes);
          if(properties.getUrl().contains("f1exposure.com")){
+             try{
+                 clientService.fetchInstagramPosts();
+             }catch(Exception e){
+                 log.info("10 AM Instagram fetch failed: {}", e.getMessage());
+             }
              Thread.sleep(1000 * 60 * minutes);
              fourchanService.postToInstagram(false);
          } else {
