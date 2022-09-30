@@ -105,7 +105,6 @@ public class Scheduler {
                         @SneakyThrows
                         @Override
                         public void run() {
-                            imageFeedJob();
                             sundayStandingsJobs();
                         }
                     },
@@ -136,7 +135,6 @@ public class Scheduler {
                                 @Override
                                 public void run() {
                                     sundayAnalysisJob();
-                                    imageFeedJob();
                                 }
                             },
                             delayInMiliseconds
@@ -159,7 +157,7 @@ public class Scheduler {
                         @SneakyThrows
                         @Override
                         public void run() {
-                            imageFeedJob();
+                            imageFeedJobWithoutInstagram();
                             analyzeUpcomingRacePeriodically();
                         }
                     },
@@ -170,7 +168,6 @@ public class Scheduler {
                         @SneakyThrows
                         @Override
                         public void run() {
-                            imageFeedJob();
                             liveTimingService.analyzeUpcomingRace(false);
                         }
                     },
@@ -206,7 +203,11 @@ public class Scheduler {
                         @SneakyThrows
                         @Override
                         public void run() {
-                            imageFeedJob();
+                            if(countdown==1){
+                                imageFeedJob();
+                            } else {
+                                imageFeedJobWithoutInstagram();
+                            }
                             getImagesPeriodically(countdown - 1);
                         }
                     },
@@ -220,7 +221,7 @@ public class Scheduler {
                             @SneakyThrows
                             @Override
                             public void run() {
-                                imageFeedJob();
+                               imageFeedJobWithoutInstagram();
                                 getImagesPeriodically(0);
                             }
                         },
