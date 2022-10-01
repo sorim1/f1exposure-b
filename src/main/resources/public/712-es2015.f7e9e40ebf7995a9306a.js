@@ -55810,6 +55810,8 @@ class NewsContent {
 }
 class NewsComment {
 }
+class NewsCommentSection {
+}
 
 ;// CONCATENATED MODULE: ./src/app/shared/dialog/submit-content-dialog.component.ts
 
@@ -56258,14 +56260,14 @@ NewsSectionComponent.ɵcmp = /*@__PURE__*/ core/* ɵɵdefineComponent */.Xpm({ t
 
 
 
-function NewsComponent_div_2_div_1_div_8_Template(rf, ctx) { if (rf & 1) {
+function NewsComponent_div_1_div_2_div_8_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div", 20);
     core/* ɵɵelementStart */.TgZ(1, "div", 21);
     core/* ɵɵelement */._UZ(2, "i", 22);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } }
-function NewsComponent_div_2_div_1_div_9_div_3_Template(rf, ctx) { if (rf & 1) {
+function NewsComponent_div_1_div_2_div_9_div_3_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div", 21);
     core/* ɵɵelement */._UZ(1, "img", 27);
     core/* ɵɵelementEnd */.qZA();
@@ -56274,17 +56276,17 @@ function NewsComponent_div_2_div_1_div_9_div_3_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵadvance */.xp6(1);
     core/* ɵɵproperty */.Q6J("src", ctx_r9.post.iconUrl, core/* ɵɵsanitizeUrl */.LSH);
 } }
-function NewsComponent_div_2_div_1_div_9_div_4_Template(rf, ctx) { if (rf & 1) {
+function NewsComponent_div_1_div_2_div_9_div_4_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div", 21);
     core/* ɵɵelement */._UZ(1, "i", 28);
     core/* ɵɵelementEnd */.qZA();
 } }
-function NewsComponent_div_2_div_1_div_9_Template(rf, ctx) { if (rf & 1) {
+function NewsComponent_div_1_div_2_div_9_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div", 20);
     core/* ɵɵelementStart */.TgZ(1, "a", 23);
     core/* ɵɵelementStart */.TgZ(2, "div", 24);
-    core/* ɵɵtemplate */.YNc(3, NewsComponent_div_2_div_1_div_9_div_3_Template, 2, 1, "div", 25);
-    core/* ɵɵtemplate */.YNc(4, NewsComponent_div_2_div_1_div_9_div_4_Template, 2, 0, "div", 25);
+    core/* ɵɵtemplate */.YNc(3, NewsComponent_div_1_div_2_div_9_div_3_Template, 2, 1, "div", 25);
+    core/* ɵɵtemplate */.YNc(4, NewsComponent_div_1_div_2_div_9_div_4_Template, 2, 0, "div", 25);
     core/* ɵɵelementStart */.TgZ(5, "span", 26);
     core/* ɵɵtext */._uU(6);
     core/* ɵɵelementEnd */.qZA();
@@ -56302,7 +56304,7 @@ function NewsComponent_div_2_div_1_div_9_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵadvance */.xp6(2);
     core/* ɵɵtextInterpolate */.Oqu(ctx_r5.getDomain());
 } }
-function NewsComponent_div_2_div_1_div_10_a_1_Template(rf, ctx) { if (rf & 1) {
+function NewsComponent_div_1_div_2_div_10_a_1_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "a", 23);
     core/* ɵɵelement */._UZ(1, "img", 32);
     core/* ɵɵelementEnd */.qZA();
@@ -56312,16 +56314,16 @@ function NewsComponent_div_2_div_1_div_10_a_1_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵadvance */.xp6(1);
     core/* ɵɵproperty */.Q6J("src", ctx_r11.post.imageUrl, core/* ɵɵsanitizeUrl */.LSH);
 } }
-function NewsComponent_div_2_div_1_div_10_img_2_Template(rf, ctx) { if (rf & 1) {
+function NewsComponent_div_1_div_2_div_10_img_2_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelement */._UZ(0, "img", 32);
 } if (rf & 2) {
     const ctx_r12 = core/* ɵɵnextContext */.oxw(4);
     core/* ɵɵproperty */.Q6J("src", ctx_r12.post.imageUrl, core/* ɵɵsanitizeUrl */.LSH);
 } }
-function NewsComponent_div_2_div_1_div_10_Template(rf, ctx) { if (rf & 1) {
+function NewsComponent_div_1_div_2_div_10_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div", 29);
-    core/* ɵɵtemplate */.YNc(1, NewsComponent_div_2_div_1_div_10_a_1_Template, 2, 2, "a", 30);
-    core/* ɵɵtemplate */.YNc(2, NewsComponent_div_2_div_1_div_10_img_2_Template, 1, 1, "img", 31);
+    core/* ɵɵtemplate */.YNc(1, NewsComponent_div_1_div_2_div_10_a_1_Template, 2, 2, "a", 30);
+    core/* ɵɵtemplate */.YNc(2, NewsComponent_div_1_div_2_div_10_img_2_Template, 1, 1, "img", 31);
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
     const ctx_r6 = core/* ɵɵnextContext */.oxw(3);
@@ -56330,7 +56332,7 @@ function NewsComponent_div_2_div_1_div_10_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵadvance */.xp6(1);
     core/* ɵɵproperty */.Q6J("ngIf", ctx_r6.post.url == null);
 } }
-function NewsComponent_div_2_div_1_div_11_Template(rf, ctx) { if (rf & 1) {
+function NewsComponent_div_1_div_2_div_11_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div", 29);
     core/* ɵɵelementStart */.TgZ(1, "div");
     core/* ɵɵtext */._uU(2);
@@ -56353,7 +56355,7 @@ function NewsComponent_div_2_div_1_div_11_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵadvance */.xp6(7);
     core/* ɵɵtextInterpolate1 */.hij("", ctx_r7.post.username, ".");
 } }
-function NewsComponent_div_2_div_1_div_12_div_1_Template(rf, ctx) { if (rf & 1) {
+function NewsComponent_div_1_div_2_div_12_div_1_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div");
     core/* ɵɵelementStart */.TgZ(1, "blockquote", 33);
     core/* ɵɵelement */._UZ(2, "p", 34);
@@ -56372,7 +56374,7 @@ function NewsComponent_div_2_div_1_div_12_div_1_Template(rf, ctx) { if (rf & 1) 
     core/* ɵɵadvance */.xp6(3);
     core/* ɵɵtextInterpolate */.Oqu(ctx_r13.post.title);
 } }
-function NewsComponent_div_2_div_1_div_12_div_2_Template(rf, ctx) { if (rf & 1) {
+function NewsComponent_div_1_div_2_div_12_div_2_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div");
     core/* ɵɵelement */._UZ(1, "img", 32);
     core/* ɵɵelementEnd */.qZA();
@@ -56381,10 +56383,10 @@ function NewsComponent_div_2_div_1_div_12_div_2_Template(rf, ctx) { if (rf & 1) 
     core/* ɵɵadvance */.xp6(1);
     core/* ɵɵproperty */.Q6J("src", ctx_r14.post.url, core/* ɵɵsanitizeUrl */.LSH);
 } }
-function NewsComponent_div_2_div_1_div_12_Template(rf, ctx) { if (rf & 1) {
+function NewsComponent_div_1_div_2_div_12_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div", 29);
-    core/* ɵɵtemplate */.YNc(1, NewsComponent_div_2_div_1_div_12_div_1_Template, 7, 2, "div", 13);
-    core/* ɵɵtemplate */.YNc(2, NewsComponent_div_2_div_1_div_12_div_2_Template, 2, 1, "div", 13);
+    core/* ɵɵtemplate */.YNc(1, NewsComponent_div_1_div_2_div_12_div_1_Template, 7, 2, "div", 4);
+    core/* ɵɵtemplate */.YNc(2, NewsComponent_div_1_div_2_div_12_div_2_Template, 2, 1, "div", 4);
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
     const ctx_r8 = core/* ɵɵnextContext */.oxw(3);
@@ -56393,44 +56395,44 @@ function NewsComponent_div_2_div_1_div_12_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵadvance */.xp6(1);
     core/* ɵɵproperty */.Q6J("ngIf", ctx_r8.isImage);
 } }
-function NewsComponent_div_2_div_1_Template(rf, ctx) { if (rf & 1) {
+function NewsComponent_div_1_div_2_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div", 14);
     core/* ɵɵelementStart */.TgZ(1, "div", 15);
     core/* ɵɵelementStart */.TgZ(2, "div", 16);
-    core/* ɵɵelementStart */.TgZ(3, "div", 2);
+    core/* ɵɵelementStart */.TgZ(3, "div", 5);
     core/* ɵɵelementStart */.TgZ(4, "div", 17);
     core/* ɵɵtext */._uU(5);
     core/* ɵɵpipe */.ALo(6, "date");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(7, "div", 2);
-    core/* ɵɵtemplate */.YNc(8, NewsComponent_div_2_div_1_div_8_Template, 3, 0, "div", 18);
-    core/* ɵɵtemplate */.YNc(9, NewsComponent_div_2_div_1_div_9_Template, 7, 4, "div", 18);
-    core/* ɵɵtemplate */.YNc(10, NewsComponent_div_2_div_1_div_10_Template, 3, 2, "div", 19);
-    core/* ɵɵtemplate */.YNc(11, NewsComponent_div_2_div_1_div_11_Template, 10, 2, "div", 19);
-    core/* ɵɵtemplate */.YNc(12, NewsComponent_div_2_div_1_div_12_Template, 3, 2, "div", 19);
+    core/* ɵɵelementStart */.TgZ(7, "div", 5);
+    core/* ɵɵtemplate */.YNc(8, NewsComponent_div_1_div_2_div_8_Template, 3, 0, "div", 18);
+    core/* ɵɵtemplate */.YNc(9, NewsComponent_div_1_div_2_div_9_Template, 7, 4, "div", 18);
+    core/* ɵɵtemplate */.YNc(10, NewsComponent_div_1_div_2_div_10_Template, 3, 2, "div", 19);
+    core/* ɵɵtemplate */.YNc(11, NewsComponent_div_1_div_2_div_11_Template, 10, 2, "div", 19);
+    core/* ɵɵtemplate */.YNc(12, NewsComponent_div_1_div_2_div_12_Template, 3, 2, "div", 19);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const ctx_r2 = core/* ɵɵnextContext */.oxw(2);
+    const ctx_r1 = core/* ɵɵnextContext */.oxw(2);
     core/* ɵɵadvance */.xp6(5);
-    core/* ɵɵtextInterpolate1 */.hij("", core/* ɵɵpipeBind2 */.xi3(6, 6, ctx_r2.post.timestampCreated, "MMM d, y"), " ");
+    core/* ɵɵtextInterpolate1 */.hij("", core/* ɵɵpipeBind2 */.xi3(6, 6, ctx_r1.post.timestampCreated, "MMM d, y"), " ");
     core/* ɵɵadvance */.xp6(3);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r2.post.url == null);
+    core/* ɵɵproperty */.Q6J("ngIf", ctx_r1.post.url == null);
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r2.post.url != null);
+    core/* ɵɵproperty */.Q6J("ngIf", ctx_r1.post.url != null);
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r2.post.imageUrl != null);
+    core/* ɵɵproperty */.Q6J("ngIf", ctx_r1.post.imageUrl != null);
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r2.post.textContent != null);
+    core/* ɵɵproperty */.Q6J("ngIf", ctx_r1.post.textContent != null);
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r2.post.imageUrl == null && ctx_r2.post.textContent == null);
+    core/* ɵɵproperty */.Q6J("ngIf", ctx_r1.post.imageUrl == null && ctx_r1.post.textContent == null);
 } }
-function NewsComponent_div_2_div_2_Template(rf, ctx) { if (rf & 1) {
+function NewsComponent_div_1_div_3_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div");
-    core/* ɵɵelementStart */.TgZ(1, "div", 2);
+    core/* ɵɵelementStart */.TgZ(1, "div", 5);
     core/* ɵɵelementStart */.TgZ(2, "div", 37);
     core/* ɵɵtext */._uU(3);
     core/* ɵɵpipe */.ALo(4, "date");
@@ -56446,70 +56448,159 @@ function NewsComponent_div_2_div_2_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const ctx_r3 = core/* ɵɵnextContext */.oxw(2);
+    const ctx_r2 = core/* ɵɵnextContext */.oxw(2);
     core/* ɵɵadvance */.xp6(3);
-    core/* ɵɵtextInterpolate1 */.hij("", core/* ɵɵpipeBind2 */.xi3(4, 2, ctx_r3.post.timestampCreated, "MMM d, y, HH:mm"), " ");
+    core/* ɵɵtextInterpolate1 */.hij("", core/* ɵɵpipeBind2 */.xi3(4, 2, ctx_r2.post.timestampCreated, "MMM d, y, HH:mm"), " ");
     core/* ɵɵadvance */.xp6(3);
-    core/* ɵɵproperty */.Q6J("innerHTML", ctx_r3.sanitizedHtml(), core/* ɵɵsanitizeHtml */.oJD);
+    core/* ɵɵproperty */.Q6J("innerHTML", ctx_r2.sanitizedHtml(), core/* ɵɵsanitizeHtml */.oJD);
 } }
-const news_component_c0 = function () { return [1, 3, 4]; };
-function NewsComponent_div_2_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "div", 11);
-    core/* ɵɵtemplate */.YNc(1, NewsComponent_div_2_div_1_Template, 13, 9, "div", 12);
-    core/* ɵɵtemplate */.YNc(2, NewsComponent_div_2_div_2_Template, 10, 5, "div", 13);
+function NewsComponent_div_1_div_14_div_8_div_1_div_1_Template(rf, ctx) { if (rf & 1) {
+    core/* ɵɵelementStart */.TgZ(0, "div");
+    core/* ɵɵtext */._uU(1);
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const ctx_r0 = core/* ɵɵnextContext */.oxw();
+    const comment_r15 = core/* ɵɵnextContext */.oxw(3).$implicit;
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("ngIf", core/* ɵɵpureFunction0 */.DdM(2, news_component_c0).includes(ctx_r0.post.status));
-    core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r0.post.status == 2);
+    core/* ɵɵtextInterpolate */.Oqu(comment_r15.textContent);
 } }
-function NewsComponent_div_13_div_8_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "div", 46);
-    core/* ɵɵelementStart */.TgZ(1, "div", 47);
+function NewsComponent_div_1_div_14_div_8_div_1_div_2_div_1_div_3_Template(rf, ctx) { if (rf & 1) {
+    core/* ɵɵelementStart */.TgZ(0, "div", 24);
+    core/* ɵɵelement */._UZ(1, "iframe", 50);
+    core/* ɵɵelementEnd */.qZA();
+} if (rf & 2) {
+    const section_r23 = core/* ɵɵnextContext */.oxw().$implicit;
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵproperty */.Q6J("src", section_r23.youtubeLink, core/* ɵɵsanitizeResourceUrl */.uOi);
+} }
+function NewsComponent_div_1_div_14_div_8_div_1_div_2_div_1_Template(rf, ctx) { if (rf & 1) {
+    core/* ɵɵelementStart */.TgZ(0, "div");
+    core/* ɵɵelementStart */.TgZ(1, "div");
     core/* ɵɵtext */._uU(2);
     core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵtemplate */.YNc(3, NewsComponent_div_1_div_14_div_8_div_1_div_2_div_1_div_3_Template, 2, 1, "div", 49);
+    core/* ɵɵelementEnd */.qZA();
+} if (rf & 2) {
+    const section_r23 = ctx.$implicit;
+    core/* ɵɵadvance */.xp6(2);
+    core/* ɵɵtextInterpolate */.Oqu(section_r23.textContent);
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵproperty */.Q6J("ngIf", section_r23.youtubeLink != null);
+} }
+function NewsComponent_div_1_div_14_div_8_div_1_div_2_Template(rf, ctx) { if (rf & 1) {
+    core/* ɵɵelementStart */.TgZ(0, "div");
+    core/* ɵɵtemplate */.YNc(1, NewsComponent_div_1_div_14_div_8_div_1_div_2_div_1_Template, 4, 2, "div", 12);
+    core/* ɵɵelementEnd */.qZA();
+} if (rf & 2) {
+    const comment_r15 = core/* ɵɵnextContext */.oxw(3).$implicit;
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵproperty */.Q6J("ngForOf", comment_r15.sections);
+} }
+function NewsComponent_div_1_div_14_div_8_div_1_Template(rf, ctx) { if (rf & 1) {
+    core/* ɵɵelementStart */.TgZ(0, "div", 48);
+    core/* ɵɵtemplate */.YNc(1, NewsComponent_div_1_div_14_div_8_div_1_div_1_Template, 2, 1, "div", 4);
+    core/* ɵɵtemplate */.YNc(2, NewsComponent_div_1_div_14_div_8_div_1_div_2_Template, 2, 1, "div", 4);
+    core/* ɵɵelementEnd */.qZA();
+} if (rf & 2) {
+    const comment_r15 = core/* ɵɵnextContext */.oxw(2).$implicit;
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵproperty */.Q6J("ngIf", comment_r15.sections.length == 0);
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵproperty */.Q6J("ngIf", comment_r15.sections.length > 0);
+} }
+function NewsComponent_div_1_div_14_div_8_Template(rf, ctx) { if (rf & 1) {
+    core/* ɵɵelementStart */.TgZ(0, "div", 46);
+    core/* ɵɵtemplate */.YNc(1, NewsComponent_div_1_div_14_div_8_div_1_Template, 3, 2, "div", 47);
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
     const comment_r15 = core/* ɵɵnextContext */.oxw().$implicit;
-    core/* ɵɵadvance */.xp6(2);
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵproperty */.Q6J("ngIf", comment_r15.sections != null);
+} }
+function NewsComponent_div_1_div_14_div_9_div_3_div_1_Template(rf, ctx) { if (rf & 1) {
+    core/* ɵɵelementStart */.TgZ(0, "div");
+    core/* ɵɵtext */._uU(1);
+    core/* ɵɵelementEnd */.qZA();
+} if (rf & 2) {
+    const comment_r15 = core/* ɵɵnextContext */.oxw(3).$implicit;
+    core/* ɵɵadvance */.xp6(1);
     core/* ɵɵtextInterpolate */.Oqu(comment_r15.textContent);
 } }
-function NewsComponent_div_13_div_9_Template(rf, ctx) { if (rf & 1) {
+function NewsComponent_div_1_div_14_div_9_div_3_div_2_div_1_div_3_Template(rf, ctx) { if (rf & 1) {
+    core/* ɵɵelementStart */.TgZ(0, "div", 24);
+    core/* ɵɵelement */._UZ(1, "iframe", 50);
+    core/* ɵɵelementEnd */.qZA();
+} if (rf & 2) {
+    const section_r34 = core/* ɵɵnextContext */.oxw().$implicit;
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵproperty */.Q6J("src", section_r34.youtubeLink, core/* ɵɵsanitizeResourceUrl */.uOi);
+} }
+function NewsComponent_div_1_div_14_div_9_div_3_div_2_div_1_Template(rf, ctx) { if (rf & 1) {
+    core/* ɵɵelementStart */.TgZ(0, "div");
+    core/* ɵɵelementStart */.TgZ(1, "div");
+    core/* ɵɵtext */._uU(2);
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵtemplate */.YNc(3, NewsComponent_div_1_div_14_div_9_div_3_div_2_div_1_div_3_Template, 2, 1, "div", 49);
+    core/* ɵɵelementEnd */.qZA();
+} if (rf & 2) {
+    const section_r34 = ctx.$implicit;
+    core/* ɵɵadvance */.xp6(2);
+    core/* ɵɵtextInterpolate */.Oqu(section_r34.textContent);
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵproperty */.Q6J("ngIf", section_r34.youtubeLink != null);
+} }
+function NewsComponent_div_1_div_14_div_9_div_3_div_2_Template(rf, ctx) { if (rf & 1) {
+    core/* ɵɵelementStart */.TgZ(0, "div");
+    core/* ɵɵtemplate */.YNc(1, NewsComponent_div_1_div_14_div_9_div_3_div_2_div_1_Template, 4, 2, "div", 12);
+    core/* ɵɵelementEnd */.qZA();
+} if (rf & 2) {
+    const comment_r15 = core/* ɵɵnextContext */.oxw(3).$implicit;
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵproperty */.Q6J("ngForOf", comment_r15.sections);
+} }
+function NewsComponent_div_1_div_14_div_9_div_3_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div", 48);
-    core/* ɵɵelementStart */.TgZ(1, "div", 49);
-    core/* ɵɵelement */._UZ(2, "img", 50);
+    core/* ɵɵtemplate */.YNc(1, NewsComponent_div_1_div_14_div_9_div_3_div_1_Template, 2, 1, "div", 4);
+    core/* ɵɵtemplate */.YNc(2, NewsComponent_div_1_div_14_div_9_div_3_div_2_Template, 2, 1, "div", 4);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(3, "div", 47);
-    core/* ɵɵtext */._uU(4);
+} if (rf & 2) {
+    const comment_r15 = core/* ɵɵnextContext */.oxw(2).$implicit;
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵproperty */.Q6J("ngIf", comment_r15.sections.length == 0);
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵproperty */.Q6J("ngIf", comment_r15.sections.length > 0);
+} }
+function NewsComponent_div_1_div_14_div_9_Template(rf, ctx) { if (rf & 1) {
+    core/* ɵɵelementStart */.TgZ(0, "div", 51);
+    core/* ɵɵelementStart */.TgZ(1, "div", 52);
+    core/* ɵɵelement */._UZ(2, "img", 53);
     core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵtemplate */.YNc(3, NewsComponent_div_1_div_14_div_9_div_3_Template, 3, 2, "div", 47);
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
     const comment_r15 = core/* ɵɵnextContext */.oxw().$implicit;
-    const ctx_r17 = core/* ɵɵnextContext */.oxw();
+    const ctx_r17 = core/* ɵɵnextContext */.oxw(2);
     core/* ɵɵadvance */.xp6(2);
     core/* ɵɵproperty */.Q6J("src", ctx_r17.getCommentImageUrl(comment_r15.id), core/* ɵɵsanitizeUrl */.LSH);
-    core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(comment_r15.textContent);
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵproperty */.Q6J("ngIf", comment_r15.sections != null);
 } }
-function NewsComponent_div_13_Template(rf, ctx) { if (rf & 1) {
-    const _r21 = core/* ɵɵgetCurrentView */.EpF();
+function NewsComponent_div_1_div_14_Template(rf, ctx) { if (rf & 1) {
+    const _r41 = core/* ɵɵgetCurrentView */.EpF();
     core/* ɵɵelementStart */.TgZ(0, "div");
     core/* ɵɵelementStart */.TgZ(1, "div", 41);
     core/* ɵɵelementStart */.TgZ(2, "div");
     core/* ɵɵelementStart */.TgZ(3, "div", 42);
-    core/* ɵɵlistener */.NdJ("click", function NewsComponent_div_13_Template_div_click_3_listener() { const restoredCtx = core/* ɵɵrestoreView */.CHM(_r21); const comment_r15 = restoredCtx.$implicit; const ctx_r20 = core/* ɵɵnextContext */.oxw(); return ctx_r20.addressUser(comment_r15.username); });
+    core/* ɵɵlistener */.NdJ("click", function NewsComponent_div_1_div_14_Template_div_click_3_listener() { const restoredCtx = core/* ɵɵrestoreView */.CHM(_r41); const comment_r15 = restoredCtx.$implicit; const ctx_r40 = core/* ɵɵnextContext */.oxw(2); return ctx_r40.addressUser(comment_r15.username); });
     core/* ɵɵtext */._uU(4);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(5, "div", 43);
-    core/* ɵɵlistener */.NdJ("click", function NewsComponent_div_13_Template_div_click_5_listener() { const restoredCtx = core/* ɵɵrestoreView */.CHM(_r21); const comment_r15 = restoredCtx.$implicit; const ctx_r22 = core/* ɵɵnextContext */.oxw(); return ctx_r22.addressUser("" + comment_r15.id); });
+    core/* ɵɵlistener */.NdJ("click", function NewsComponent_div_1_div_14_Template_div_click_5_listener() { const restoredCtx = core/* ɵɵrestoreView */.CHM(_r41); const comment_r15 = restoredCtx.$implicit; const ctx_r42 = core/* ɵɵnextContext */.oxw(2); return ctx_r42.addressUser("" + comment_r15.id); });
     core/* ɵɵtext */._uU(6);
     core/* ɵɵpipe */.ALo(7, "date");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵtemplate */.YNc(8, NewsComponent_div_13_div_8_Template, 3, 1, "div", 44);
-    core/* ɵɵtemplate */.YNc(9, NewsComponent_div_13_div_9_Template, 5, 2, "div", 45);
+    core/* ɵɵtemplate */.YNc(8, NewsComponent_div_1_div_14_div_8_Template, 2, 1, "div", 44);
+    core/* ɵɵtemplate */.YNc(9, NewsComponent_div_1_div_14_div_9_Template, 4, 2, "div", 45);
     core/* ɵɵelement */._UZ(10, "br");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -56523,6 +56614,51 @@ function NewsComponent_div_13_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵproperty */.Q6J("ngIf", comment_r15.status == 1);
     core/* ɵɵadvance */.xp6(1);
     core/* ɵɵproperty */.Q6J("ngIf", comment_r15.status == 2);
+} }
+const news_component_c0 = function () { return [1, 3, 4]; };
+function NewsComponent_div_1_Template(rf, ctx) { if (rf & 1) {
+    const _r44 = core/* ɵɵgetCurrentView */.EpF();
+    core/* ɵɵelementStart */.TgZ(0, "div", 1);
+    core/* ɵɵelementStart */.TgZ(1, "div", 2);
+    core/* ɵɵtemplate */.YNc(2, NewsComponent_div_1_div_2_Template, 13, 9, "div", 3);
+    core/* ɵɵtemplate */.YNc(3, NewsComponent_div_1_div_3_Template, 10, 5, "div", 4);
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(4, "div", 5);
+    core/* ɵɵelementStart */.TgZ(5, "div", 6);
+    core/* ɵɵelementStart */.TgZ(6, "div");
+    core/* ɵɵelementStart */.TgZ(7, "textarea", 7);
+    core/* ɵɵlistener */.NdJ("ngModelChange", function NewsComponent_div_1_Template_textarea_ngModelChange_7_listener($event) { core/* ɵɵrestoreView */.CHM(_r44); const ctx_r43 = core/* ɵɵnextContext */.oxw(); return ctx_r43.commentText = $event; });
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(8, "div", 8);
+    core/* ɵɵelementStart */.TgZ(9, "button", 9);
+    core/* ɵɵlistener */.NdJ("click", function NewsComponent_div_1_Template_button_click_9_listener() { core/* ɵɵrestoreView */.CHM(_r44); const ctx_r45 = core/* ɵɵnextContext */.oxw(); return ctx_r45.postNewsComment(); });
+    core/* ɵɵtext */._uU(10, "Leave comment");
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(11, "input", 10);
+    core/* ɵɵlistener */.NdJ("change", function NewsComponent_div_1_Template_input_change_11_listener($event) { core/* ɵɵrestoreView */.CHM(_r44); const ctx_r46 = core/* ɵɵnextContext */.oxw(); return ctx_r46.addFileToComment($event); });
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(12, "label", 11);
+    core/* ɵɵtext */._uU(13);
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵtemplate */.YNc(14, NewsComponent_div_1_div_14_Template, 11, 8, "div", 12);
+    core/* ɵɵelement */._UZ(15, "div", 13);
+    core/* ɵɵelementEnd */.qZA();
+} if (rf & 2) {
+    const ctx_r0 = core/* ɵɵnextContext */.oxw();
+    core/* ɵɵadvance */.xp6(2);
+    core/* ɵɵproperty */.Q6J("ngIf", core/* ɵɵpureFunction0 */.DdM(5, news_component_c0).includes(ctx_r0.post.status));
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵproperty */.Q6J("ngIf", ctx_r0.post.status == 2);
+    core/* ɵɵadvance */.xp6(4);
+    core/* ɵɵproperty */.Q6J("ngModel", ctx_r0.commentText);
+    core/* ɵɵadvance */.xp6(6);
+    core/* ɵɵtextInterpolate */.Oqu(ctx_r0.fileUploadLabel);
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵproperty */.Q6J("ngForOf", ctx_r0.post.comments);
 } }
 class NewsComponent {
     constructor(restService, utilityService, route, router, dialog, sanitizer) {
@@ -56538,7 +56674,7 @@ class NewsComponent {
         this.isTweet = false;
         this.isImage = false;
         this.imageExtensions = ['.jpg', '.png', '.webp'];
-        this.fileUploadLabel = "Add image";
+        this.fileUploadLabel = 'Add image';
     }
     ngOnInit() {
         this.utilityService.disablePeriodicFetchOfComments();
@@ -56547,14 +56683,15 @@ class NewsComponent {
             this.restService.getNewsPost(selectedCode).subscribe({
                 next: data => {
                     this.post = data;
-                    this.checkIfTweet();
-                    this.checkIfImage();
                     if (this.post == null) {
                         this.goToAwsList();
                     }
                     else {
                         this.utilityService.setTitle(2, this.post.title);
                     }
+                    this.checkIfTweet();
+                    this.checkIfImage();
+                    this.checkIfYoutube();
                 },
                 error: error => {
                     console.error('There was an error!', error);
@@ -56593,13 +56730,13 @@ class NewsComponent {
             this.uploadFile = fileList.item(0);
             let label = this.uploadFile.name;
             if (label.length > 15) {
-                label = label.substring(0, 11) + "...";
+                label = label.substring(0, 11) + '...';
             }
             this.fileUploadLabel = label;
         }
         else {
             this.uploadFile = null;
-            this.fileUploadLabel = "Add image";
+            this.fileUploadLabel = 'Add image';
         }
     }
     postNewsComment() {
@@ -56653,6 +56790,7 @@ class NewsComponent {
         this.restService.getNewsComments(this.post.code).subscribe({
             next: data => {
                 this.post.comments = data;
+                this.checkIfYoutube();
             },
             error: error => {
                 console.error('There was an error!', error);
@@ -56712,46 +56850,73 @@ class NewsComponent {
             }
         });
     }
+    sectionComment(comment, startingPoint) {
+        let response = -1;
+        let subcomment = comment.textContent.substring(startingPoint).replace('\n', ' ');
+        let index1 = subcomment.indexOf('https://youtu.be/');
+        let index2 = subcomment.indexOf('https://www.youtube.com/watch?v=');
+        let index = null;
+        let baseLength = null;
+        if (index1 >= 0 && (index2 == -1 || index1 < index2)) {
+            index = index1;
+            baseLength = 17;
+        }
+        else if (index2 >= 0 && (index1 == -1 || index2 < index1)) {
+            index = index2;
+            baseLength = 32;
+        }
+        if (index != null) {
+            let remainder = subcomment.substring(index).replace('\n', ' ');
+            let spaceIndex = remainder.indexOf(' ');
+            if (spaceIndex < 0) {
+                spaceIndex = remainder.length;
+            }
+            let text = subcomment.substring(0, Number(index + spaceIndex));
+            let code = subcomment.substring(Number(index + baseLength), Number(index + spaceIndex));
+            let url = 'https://www.youtube.com/embed/' + code.replace('?t=', '?start=');
+            let safeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(url);
+            response = startingPoint + index + spaceIndex;
+            let entry = {};
+            entry.textContent = text;
+            entry.youtubeLink = safeUrl;
+            comment.sections.push(entry);
+        }
+        else {
+            if (comment.sections.length > 0) {
+                let entry = {};
+                entry.textContent = subcomment;
+                comment.sections.push(entry);
+            }
+        }
+        return response;
+    }
+    checkIfYoutube() {
+        if (this.post.comments != null && this.post.comments.length > 0) {
+            this.post.comments.forEach(comment => {
+                comment.sections = [];
+                let startingPoint = 0;
+                let counter = 0;
+                while (startingPoint >= 0) {
+                    startingPoint = this.sectionComment(comment, startingPoint);
+                    counter++;
+                    if (counter > 10) {
+                        startingPoint = -1;
+                    }
+                }
+            });
+        }
+        console.log('111');
+        console.log(this.post.comments);
+    }
 }
 NewsComponent.ɵfac = function NewsComponent_Factory(t) { return new (t || NewsComponent)(core/* ɵɵdirectiveInject */.Y36(rest_service/* RestService */.v), core/* ɵɵdirectiveInject */.Y36(utility_service/* UtilityService */.t), core/* ɵɵdirectiveInject */.Y36(router/* ActivatedRoute */.gz), core/* ɵɵdirectiveInject */.Y36(router/* Router */.F0), core/* ɵɵdirectiveInject */.Y36(MatDialog), core/* ɵɵdirectiveInject */.Y36(platform_browser/* DomSanitizer */.H7)); };
-NewsComponent.ɵcmp = /*@__PURE__*/ core/* ɵɵdefineComponent */.Xpm({ type: NewsComponent, selectors: [["app-aws-cmp"]], decls: 15, vars: 4, consts: [[1, "height-fill-screen"], ["class", "div-padded-mobile-0-5", 4, "ngIf"], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area-100", 3, "ngModel", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "black-button", 3, "click"], ["id", "file-upload", "type", "file", 2, "display", "none", 3, "change"], ["for", "file-upload", 1, "mat-focus-indicator", "black-button", "mat-flat-button", "mat-button-base"], [4, "ngFor", "ngForOf"], [1, "pb-4"], [1, "div-padded-mobile-0-5"], ["class", "div-padded-left-right-1", 4, "ngIf"], [4, "ngIf"], [1, "div-padded-left-right-1"], [1, "card", "card-stats"], [1, "card-body"], [1, "col-12", "col-lg-12", "div-padded-always-left-right-1-2", "text-right"], ["class", "col-12 col-lg-2 no-right-padding", 4, "ngIf"], ["class", "pre-line col-12 col-lg-10 div-padded-always-left-right-1-2", 4, "ngIf"], [1, "col-12", "col-lg-2", "no-right-padding"], [1, "icon-big", "text-center", "icon-warning"], [1, "nc-icon", "nc-align-left-2", "text-success"], ["target", "_blank", 3, "href"], [1, "text-center"], ["class", "icon-big text-center icon-warning", 4, "ngIf"], [1, "teko-text-small"], ["alt", "iconUrl", "onerror", "this.src='assets/img/favicon2.png'", 1, "w-42px", 3, "src"], [1, "nc-icon", "nc-globe", "text-success"], [1, "pre-line", "col-12", "col-lg-10", "div-padded-always-left-right-1-2"], ["target", "_blank", 3, "href", 4, "ngIf"], ["alt", "imageUrl", 3, "src", 4, "ngIf"], ["alt", "imageUrl", 3, "src"], [1, "twitter-tweet"], ["dir", "ltr", "lang", "en"], [1, "postLinks", 3, "href"], ["alt", "loading", "src", "assets/img/loading.gif", 2, "max-width", "35px"], [1, "col-12", "col-lg-12", "div-padded-always-top-right-2rem", "text-right"], [1, "div-padded-left-right-1", "pb-3"], [3, "innerHTML"], [1, "pt-5", "pb-3"], [1, "basic-news-comment"], [1, "one-aws", 3, "click"], [1, "two-aws", 3, "click"], ["class", "basic-comment-body", 4, "ngIf"], ["class", "basic-comment-body d-flex", 4, "ngIf"], [1, "basic-comment-body"], [1, "pl-3", "pr-5"], [1, "basic-comment-body", "d-flex"], [1, "max-width-30-pc", "px-3"], ["alt", "commentImage", "onerror", "this.src='assets/img/drivers/default.png'", 3, "src"]], template: function NewsComponent_Template(rf, ctx) { if (rf & 1) {
+NewsComponent.ɵcmp = /*@__PURE__*/ core/* ɵɵdefineComponent */.Xpm({ type: NewsComponent, selectors: [["app-aws-cmp"]], decls: 2, vars: 1, consts: [["class", "height-fill-screen", 4, "ngIf"], [1, "height-fill-screen"], [1, "div-padded-mobile-0-5"], ["class", "div-padded-left-right-1", 4, "ngIf"], [4, "ngIf"], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area-100", 3, "ngModel", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "black-button", 3, "click"], ["id", "file-upload", "type", "file", 2, "display", "none", 3, "change"], ["for", "file-upload", 1, "mat-focus-indicator", "black-button", "mat-flat-button", "mat-button-base"], [4, "ngFor", "ngForOf"], [1, "pb-4"], [1, "div-padded-left-right-1"], [1, "card", "card-stats"], [1, "card-body"], [1, "col-12", "col-lg-12", "div-padded-always-left-right-1-2", "text-right"], ["class", "col-12 col-lg-2 no-right-padding", 4, "ngIf"], ["class", "pre-line col-12 col-lg-10 div-padded-always-left-right-1-2", 4, "ngIf"], [1, "col-12", "col-lg-2", "no-right-padding"], [1, "icon-big", "text-center", "icon-warning"], [1, "nc-icon", "nc-align-left-2", "text-success"], ["target", "_blank", 3, "href"], [1, "text-center"], ["class", "icon-big text-center icon-warning", 4, "ngIf"], [1, "teko-text-small"], ["alt", "iconUrl", "onerror", "this.src='assets/img/favicon2.png'", 1, "w-42px", 3, "src"], [1, "nc-icon", "nc-globe", "text-success"], [1, "pre-line", "col-12", "col-lg-10", "div-padded-always-left-right-1-2"], ["target", "_blank", 3, "href", 4, "ngIf"], ["alt", "imageUrl", 3, "src", 4, "ngIf"], ["alt", "imageUrl", 3, "src"], [1, "twitter-tweet"], ["dir", "ltr", "lang", "en"], [1, "postLinks", 3, "href"], ["alt", "loading", "src", "assets/img/loading.gif", 2, "max-width", "35px"], [1, "col-12", "col-lg-12", "div-padded-always-top-right-2rem", "text-right"], [1, "div-padded-left-right-1", "pb-3"], [3, "innerHTML"], [1, "pt-5", "pb-3"], [1, "basic-news-comment"], [1, "one-aws", 3, "click"], [1, "two-aws", 3, "click"], ["class", "basic-comment-body", 4, "ngIf"], ["class", "basic-comment-body-no-padding d-flex", 4, "ngIf"], [1, "basic-comment-body"], ["class", "pl-3 pr-5", 4, "ngIf"], [1, "pl-3", "pr-5"], ["class", "text-center", 4, "ngIf"], ["allow", "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture", "allowfullscreen", "", "height", "315", "title", "YouTube video player", "width", "560", 3, "src"], [1, "basic-comment-body-no-padding", "d-flex"], [1, "max-width-30-pc", "px-3"], ["alt", "commentImage", "onerror", "this.src='assets/img/drivers/default.png'", 3, "src"]], template: function NewsComponent_Template(rf, ctx) { if (rf & 1) {
         core/* ɵɵelementStart */.TgZ(0, "div");
-        core/* ɵɵelementStart */.TgZ(1, "div", 0);
-        core/* ɵɵtemplate */.YNc(2, NewsComponent_div_2_Template, 3, 3, "div", 1);
-        core/* ɵɵelementStart */.TgZ(3, "div", 2);
-        core/* ɵɵelementStart */.TgZ(4, "div", 3);
-        core/* ɵɵelementStart */.TgZ(5, "div");
-        core/* ɵɵelementStart */.TgZ(6, "textarea", 4);
-        core/* ɵɵlistener */.NdJ("ngModelChange", function NewsComponent_Template_textarea_ngModelChange_6_listener($event) { return ctx.commentText = $event; });
-        core/* ɵɵelementEnd */.qZA();
-        core/* ɵɵelementStart */.TgZ(7, "div", 5);
-        core/* ɵɵelementStart */.TgZ(8, "button", 6);
-        core/* ɵɵlistener */.NdJ("click", function NewsComponent_Template_button_click_8_listener() { return ctx.postNewsComment(); });
-        core/* ɵɵtext */._uU(9, "Leave comment");
-        core/* ɵɵelementEnd */.qZA();
-        core/* ɵɵelementStart */.TgZ(10, "input", 7);
-        core/* ɵɵlistener */.NdJ("change", function NewsComponent_Template_input_change_10_listener($event) { return ctx.addFileToComment($event); });
-        core/* ɵɵelementEnd */.qZA();
-        core/* ɵɵelementStart */.TgZ(11, "label", 8);
-        core/* ɵɵtext */._uU(12);
-        core/* ɵɵelementEnd */.qZA();
-        core/* ɵɵelementEnd */.qZA();
-        core/* ɵɵelementEnd */.qZA();
-        core/* ɵɵelementEnd */.qZA();
-        core/* ɵɵelementEnd */.qZA();
-        core/* ɵɵtemplate */.YNc(13, NewsComponent_div_13_Template, 11, 8, "div", 9);
-        core/* ɵɵelement */._UZ(14, "div", 10);
-        core/* ɵɵelementEnd */.qZA();
+        core/* ɵɵtemplate */.YNc(1, NewsComponent_div_1_Template, 16, 6, "div", 0);
         core/* ɵɵelementEnd */.qZA();
     } if (rf & 2) {
-        core/* ɵɵadvance */.xp6(2);
-        core/* ɵɵproperty */.Q6J("ngIf", ctx.post != null);
-        core/* ɵɵadvance */.xp6(4);
-        core/* ɵɵproperty */.Q6J("ngModel", ctx.commentText);
-        core/* ɵɵadvance */.xp6(6);
-        core/* ɵɵtextInterpolate */.Oqu(ctx.fileUploadLabel);
         core/* ɵɵadvance */.xp6(1);
-        core/* ɵɵproperty */.Q6J("ngForOf", ctx.post.comments);
+        core/* ɵɵproperty */.Q6J("ngIf", ctx.post != null);
     } }, directives: [common/* NgIf */.O5, MatInput, fesm2015_forms/* DefaultValueAccessor */.Fj, fesm2015_forms/* NgControlStatus */.JJ, fesm2015_forms/* NgModel */.On, fesm2015_button/* MatButton */.lW, common/* NgForOf */.sg, bidi/* Dir */.Lv], pipes: [common/* DatePipe */.uU], encapsulation: 2 });
 
 ;// CONCATENATED MODULE: ./src/app/model/commentModeration.ts

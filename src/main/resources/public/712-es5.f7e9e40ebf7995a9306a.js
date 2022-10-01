@@ -88657,6 +88657,10 @@
         _classCallCheck(this, NewsComment);
       };
 
+      var NewsCommentSection = function NewsCommentSection() {
+        _classCallCheck(this, NewsCommentSection);
+      };
+
       ; // CONCATENATED MODULE: ./src/app/shared/dialog/submit-content-dialog.component.ts
 
       var SubmitContentDialog = /*#__PURE__*/function () {
@@ -89933,7 +89937,7 @@
       });
       ; // CONCATENATED MODULE: ./src/app/pages/poweredByAws/news.component.ts
 
-      function NewsComponent_div_2_div_1_div_8_Template(rf, ctx) {
+      function NewsComponent_div_1_div_2_div_8_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵelementStart */
@@ -89955,7 +89959,7 @@
         }
       }
 
-      function NewsComponent_div_2_div_1_div_9_div_3_Template(rf, ctx) {
+      function NewsComponent_div_1_div_2_div_9_div_3_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵelementStart */
@@ -89985,7 +89989,7 @@
         }
       }
 
-      function NewsComponent_div_2_div_1_div_9_div_4_Template(rf, ctx) {
+      function NewsComponent_div_1_div_2_div_9_div_4_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵelementStart */
@@ -90001,7 +90005,7 @@
         }
       }
 
-      function NewsComponent_div_2_div_1_div_9_Template(rf, ctx) {
+      function NewsComponent_div_1_div_2_div_9_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵelementStart */
@@ -90014,10 +90018,10 @@
           .TgZ(2, "div", 24);
           core
           /* ɵɵtemplate */
-          .YNc(3, NewsComponent_div_2_div_1_div_9_div_3_Template, 2, 1, "div", 25);
+          .YNc(3, NewsComponent_div_1_div_2_div_9_div_3_Template, 2, 1, "div", 25);
           core
           /* ɵɵtemplate */
-          .YNc(4, NewsComponent_div_2_div_1_div_9_div_4_Template, 2, 0, "div", 25);
+          .YNc(4, NewsComponent_div_1_div_2_div_9_div_4_Template, 2, 0, "div", 25);
           core
           /* ɵɵelementStart */
           .TgZ(5, "span", 26);
@@ -90073,7 +90077,7 @@
         }
       }
 
-      function NewsComponent_div_2_div_1_div_10_a_1_Template(rf, ctx) {
+      function NewsComponent_div_1_div_2_div_10_a_1_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵelementStart */
@@ -90108,7 +90112,7 @@
         }
       }
 
-      function NewsComponent_div_2_div_1_div_10_img_2_Template(rf, ctx) {
+      function NewsComponent_div_1_div_2_div_10_img_2_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵelement */
@@ -90127,17 +90131,17 @@
         }
       }
 
-      function NewsComponent_div_2_div_1_div_10_Template(rf, ctx) {
+      function NewsComponent_div_1_div_2_div_10_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵelementStart */
           .TgZ(0, "div", 29);
           core
           /* ɵɵtemplate */
-          .YNc(1, NewsComponent_div_2_div_1_div_10_a_1_Template, 2, 2, "a", 30);
+          .YNc(1, NewsComponent_div_1_div_2_div_10_a_1_Template, 2, 2, "a", 30);
           core
           /* ɵɵtemplate */
-          .YNc(2, NewsComponent_div_2_div_1_div_10_img_2_Template, 1, 1, "img", 31);
+          .YNc(2, NewsComponent_div_1_div_2_div_10_img_2_Template, 1, 1, "img", 31);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -90162,7 +90166,7 @@
         }
       }
 
-      function NewsComponent_div_2_div_1_div_11_Template(rf, ctx) {
+      function NewsComponent_div_1_div_2_div_11_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵelementStart */
@@ -90240,7 +90244,7 @@
         }
       }
 
-      function NewsComponent_div_2_div_1_div_12_div_1_Template(rf, ctx) {
+      function NewsComponent_div_1_div_2_div_12_div_1_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵelementStart */
@@ -90304,7 +90308,7 @@
         }
       }
 
-      function NewsComponent_div_2_div_1_div_12_div_2_Template(rf, ctx) {
+      function NewsComponent_div_1_div_2_div_12_div_2_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵelementStart */
@@ -90334,17 +90338,17 @@
         }
       }
 
-      function NewsComponent_div_2_div_1_div_12_Template(rf, ctx) {
+      function NewsComponent_div_1_div_2_div_12_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵelementStart */
           .TgZ(0, "div", 29);
           core
           /* ɵɵtemplate */
-          .YNc(1, NewsComponent_div_2_div_1_div_12_div_1_Template, 7, 2, "div", 13);
+          .YNc(1, NewsComponent_div_1_div_2_div_12_div_1_Template, 7, 2, "div", 4);
           core
           /* ɵɵtemplate */
-          .YNc(2, NewsComponent_div_2_div_1_div_12_div_2_Template, 2, 1, "div", 13);
+          .YNc(2, NewsComponent_div_1_div_2_div_12_div_2_Template, 2, 1, "div", 4);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -90369,7 +90373,7 @@
         }
       }
 
-      function NewsComponent_div_2_div_1_Template(rf, ctx) {
+      function NewsComponent_div_1_div_2_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵelementStart */
@@ -90382,7 +90386,7 @@
           .TgZ(2, "div", 16);
           core
           /* ɵɵelementStart */
-          .TgZ(3, "div", 2);
+          .TgZ(3, "div", 5);
           core
           /* ɵɵelementStart */
           .TgZ(4, "div", 17);
@@ -90402,22 +90406,22 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(7, "div", 2);
+          .TgZ(7, "div", 5);
           core
           /* ɵɵtemplate */
-          .YNc(8, NewsComponent_div_2_div_1_div_8_Template, 3, 0, "div", 18);
+          .YNc(8, NewsComponent_div_1_div_2_div_8_Template, 3, 0, "div", 18);
           core
           /* ɵɵtemplate */
-          .YNc(9, NewsComponent_div_2_div_1_div_9_Template, 7, 4, "div", 18);
+          .YNc(9, NewsComponent_div_1_div_2_div_9_Template, 7, 4, "div", 18);
           core
           /* ɵɵtemplate */
-          .YNc(10, NewsComponent_div_2_div_1_div_10_Template, 3, 2, "div", 19);
+          .YNc(10, NewsComponent_div_1_div_2_div_10_Template, 3, 2, "div", 19);
           core
           /* ɵɵtemplate */
-          .YNc(11, NewsComponent_div_2_div_1_div_11_Template, 10, 2, "div", 19);
+          .YNc(11, NewsComponent_div_1_div_2_div_11_Template, 10, 2, "div", 19);
           core
           /* ɵɵtemplate */
-          .YNc(12, NewsComponent_div_2_div_1_div_12_Template, 3, 2, "div", 19);
+          .YNc(12, NewsComponent_div_1_div_2_div_12_Template, 3, 2, "div", 19);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -90433,7 +90437,7 @@
         }
 
         if (rf & 2) {
-          var ctx_r2 = core
+          var ctx_r1 = core
           /* ɵɵnextContext */
           .oxw(2);
           core
@@ -90443,48 +90447,48 @@
           /* ɵɵtextInterpolate1 */
           .hij("", core
           /* ɵɵpipeBind2 */
-          .xi3(6, 6, ctx_r2.post.timestampCreated, "MMM d, y"), " ");
+          .xi3(6, 6, ctx_r1.post.timestampCreated, "MMM d, y"), " ");
           core
           /* ɵɵadvance */
           .xp6(3);
           core
           /* ɵɵproperty */
-          .Q6J("ngIf", ctx_r2.post.url == null);
+          .Q6J("ngIf", ctx_r1.post.url == null);
           core
           /* ɵɵadvance */
           .xp6(1);
           core
           /* ɵɵproperty */
-          .Q6J("ngIf", ctx_r2.post.url != null);
+          .Q6J("ngIf", ctx_r1.post.url != null);
           core
           /* ɵɵadvance */
           .xp6(1);
           core
           /* ɵɵproperty */
-          .Q6J("ngIf", ctx_r2.post.imageUrl != null);
+          .Q6J("ngIf", ctx_r1.post.imageUrl != null);
           core
           /* ɵɵadvance */
           .xp6(1);
           core
           /* ɵɵproperty */
-          .Q6J("ngIf", ctx_r2.post.textContent != null);
+          .Q6J("ngIf", ctx_r1.post.textContent != null);
           core
           /* ɵɵadvance */
           .xp6(1);
           core
           /* ɵɵproperty */
-          .Q6J("ngIf", ctx_r2.post.imageUrl == null && ctx_r2.post.textContent == null);
+          .Q6J("ngIf", ctx_r1.post.imageUrl == null && ctx_r1.post.textContent == null);
         }
       }
 
-      function NewsComponent_div_2_div_2_Template(rf, ctx) {
+      function NewsComponent_div_1_div_3_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵelementStart */
           .TgZ(0, "div");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "div", 2);
+          .TgZ(1, "div", 5);
           core
           /* ɵɵelementStart */
           .TgZ(2, "div", 37);
@@ -90536,7 +90540,7 @@
         }
 
         if (rf & 2) {
-          var ctx_r3 = core
+          var ctx_r2 = core
           /* ɵɵnextContext */
           .oxw(2);
           core
@@ -90546,67 +90550,84 @@
           /* ɵɵtextInterpolate1 */
           .hij("", core
           /* ɵɵpipeBind2 */
-          .xi3(4, 2, ctx_r3.post.timestampCreated, "MMM d, y, HH:mm"), " ");
+          .xi3(4, 2, ctx_r2.post.timestampCreated, "MMM d, y, HH:mm"), " ");
           core
           /* ɵɵadvance */
           .xp6(3);
           core
           /* ɵɵproperty */
-          .Q6J("innerHTML", ctx_r3.sanitizedHtml(), core
+          .Q6J("innerHTML", ctx_r2.sanitizedHtml(), core
           /* ɵɵsanitizeHtml */
           .oJD);
         }
       }
 
-      var news_component_c0 = function news_component_c0() {
-        return [1, 3, 4];
-      };
-
-      function NewsComponent_div_2_Template(rf, ctx) {
+      function NewsComponent_div_1_div_14_div_8_div_1_div_1_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 11);
+          .TgZ(0, "div");
+
           core
-          /* ɵɵtemplate */
-          .YNc(1, NewsComponent_div_2_div_1_Template, 13, 9, "div", 12);
-          core
-          /* ɵɵtemplate */
-          .YNc(2, NewsComponent_div_2_div_2_Template, 10, 5, "div", 13);
+          /* ɵɵtext */
+          ._uU(1);
+
           core
           /* ɵɵelementEnd */
           .qZA();
         }
 
         if (rf & 2) {
-          var ctx_r0 = core
+          var comment_r15 = core
           /* ɵɵnextContext */
-          .oxw();
+          .oxw(3).$implicit;
           core
           /* ɵɵadvance */
           .xp6(1);
           core
-          /* ɵɵproperty */
-          .Q6J("ngIf", core
-          /* ɵɵpureFunction0 */
-          .DdM(2, news_component_c0).includes(ctx_r0.post.status));
-          core
-          /* ɵɵadvance */
-          .xp6(1);
-          core
-          /* ɵɵproperty */
-          .Q6J("ngIf", ctx_r0.post.status == 2);
+          /* ɵɵtextInterpolate */
+          .Oqu(comment_r15.textContent);
         }
       }
 
-      function NewsComponent_div_13_div_8_Template(rf, ctx) {
+      function NewsComponent_div_1_div_14_div_8_div_1_div_2_div_1_div_3_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 46);
+          .TgZ(0, "div", 24);
+
+          core
+          /* ɵɵelement */
+          ._UZ(1, "iframe", 50);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+        }
+
+        if (rf & 2) {
+          var section_r23 = core
+          /* ɵɵnextContext */
+          .oxw().$implicit;
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵproperty */
+          .Q6J("src", section_r23.youtubeLink, core
+          /* ɵɵsanitizeResourceUrl */
+          .uOi);
+        }
+      }
+
+      function NewsComponent_div_1_div_14_div_8_div_1_div_2_div_1_Template(rf, ctx) {
+        if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(1, "div", 47);
+          .TgZ(0, "div");
+          core
+          /* ɵɵelementStart */
+          .TgZ(1, "div");
 
           core
           /* ɵɵtext */
@@ -90615,6 +90636,100 @@
           core
           /* ɵɵelementEnd */
           .qZA();
+          core
+          /* ɵɵtemplate */
+          .YNc(3, NewsComponent_div_1_div_14_div_8_div_1_div_2_div_1_div_3_Template, 2, 1, "div", 49);
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+        }
+
+        if (rf & 2) {
+          var section_r23 = ctx.$implicit;
+          core
+          /* ɵɵadvance */
+          .xp6(2);
+          core
+          /* ɵɵtextInterpolate */
+          .Oqu(section_r23.textContent);
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵproperty */
+          .Q6J("ngIf", section_r23.youtubeLink != null);
+        }
+      }
+
+      function NewsComponent_div_1_div_14_div_8_div_1_div_2_Template(rf, ctx) {
+        if (rf & 1) {
+          core
+          /* ɵɵelementStart */
+          .TgZ(0, "div");
+          core
+          /* ɵɵtemplate */
+          .YNc(1, NewsComponent_div_1_div_14_div_8_div_1_div_2_div_1_Template, 4, 2, "div", 12);
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+        }
+
+        if (rf & 2) {
+          var comment_r15 = core
+          /* ɵɵnextContext */
+          .oxw(3).$implicit;
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵproperty */
+          .Q6J("ngForOf", comment_r15.sections);
+        }
+      }
+
+      function NewsComponent_div_1_div_14_div_8_div_1_Template(rf, ctx) {
+        if (rf & 1) {
+          core
+          /* ɵɵelementStart */
+          .TgZ(0, "div", 48);
+          core
+          /* ɵɵtemplate */
+          .YNc(1, NewsComponent_div_1_div_14_div_8_div_1_div_1_Template, 2, 1, "div", 4);
+          core
+          /* ɵɵtemplate */
+          .YNc(2, NewsComponent_div_1_div_14_div_8_div_1_div_2_Template, 2, 1, "div", 4);
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+        }
+
+        if (rf & 2) {
+          var comment_r15 = core
+          /* ɵɵnextContext */
+          .oxw(2).$implicit;
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵproperty */
+          .Q6J("ngIf", comment_r15.sections.length == 0);
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵproperty */
+          .Q6J("ngIf", comment_r15.sections.length > 0);
+        }
+      }
+
+      function NewsComponent_div_1_div_14_div_8_Template(rf, ctx) {
+        if (rf & 1) {
+          core
+          /* ɵɵelementStart */
+          .TgZ(0, "div", 46);
+          core
+          /* ɵɵtemplate */
+          .YNc(1, NewsComponent_div_1_div_14_div_8_div_1_Template, 3, 2, "div", 47);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -90626,40 +90741,192 @@
           .oxw().$implicit;
           core
           /* ɵɵadvance */
-          .xp6(2);
+          .xp6(1);
+          core
+          /* ɵɵproperty */
+          .Q6J("ngIf", comment_r15.sections != null);
+        }
+      }
+
+      function NewsComponent_div_1_div_14_div_9_div_3_div_1_Template(rf, ctx) {
+        if (rf & 1) {
+          core
+          /* ɵɵelementStart */
+          .TgZ(0, "div");
+
+          core
+          /* ɵɵtext */
+          ._uU(1);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+        }
+
+        if (rf & 2) {
+          var comment_r15 = core
+          /* ɵɵnextContext */
+          .oxw(3).$implicit;
+          core
+          /* ɵɵadvance */
+          .xp6(1);
           core
           /* ɵɵtextInterpolate */
           .Oqu(comment_r15.textContent);
         }
       }
 
-      function NewsComponent_div_13_div_9_Template(rf, ctx) {
+      function NewsComponent_div_1_div_14_div_9_div_3_div_2_div_1_div_3_Template(rf, ctx) {
+        if (rf & 1) {
+          core
+          /* ɵɵelementStart */
+          .TgZ(0, "div", 24);
+
+          core
+          /* ɵɵelement */
+          ._UZ(1, "iframe", 50);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+        }
+
+        if (rf & 2) {
+          var section_r34 = core
+          /* ɵɵnextContext */
+          .oxw().$implicit;
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵproperty */
+          .Q6J("src", section_r34.youtubeLink, core
+          /* ɵɵsanitizeResourceUrl */
+          .uOi);
+        }
+      }
+
+      function NewsComponent_div_1_div_14_div_9_div_3_div_2_div_1_Template(rf, ctx) {
+        if (rf & 1) {
+          core
+          /* ɵɵelementStart */
+          .TgZ(0, "div");
+          core
+          /* ɵɵelementStart */
+          .TgZ(1, "div");
+
+          core
+          /* ɵɵtext */
+          ._uU(2);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵtemplate */
+          .YNc(3, NewsComponent_div_1_div_14_div_9_div_3_div_2_div_1_div_3_Template, 2, 1, "div", 49);
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+        }
+
+        if (rf & 2) {
+          var section_r34 = ctx.$implicit;
+          core
+          /* ɵɵadvance */
+          .xp6(2);
+          core
+          /* ɵɵtextInterpolate */
+          .Oqu(section_r34.textContent);
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵproperty */
+          .Q6J("ngIf", section_r34.youtubeLink != null);
+        }
+      }
+
+      function NewsComponent_div_1_div_14_div_9_div_3_div_2_Template(rf, ctx) {
+        if (rf & 1) {
+          core
+          /* ɵɵelementStart */
+          .TgZ(0, "div");
+          core
+          /* ɵɵtemplate */
+          .YNc(1, NewsComponent_div_1_div_14_div_9_div_3_div_2_div_1_Template, 4, 2, "div", 12);
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+        }
+
+        if (rf & 2) {
+          var comment_r15 = core
+          /* ɵɵnextContext */
+          .oxw(3).$implicit;
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵproperty */
+          .Q6J("ngForOf", comment_r15.sections);
+        }
+      }
+
+      function NewsComponent_div_1_div_14_div_9_div_3_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵelementStart */
           .TgZ(0, "div", 48);
           core
+          /* ɵɵtemplate */
+          .YNc(1, NewsComponent_div_1_div_14_div_9_div_3_div_1_Template, 2, 1, "div", 4);
+          core
+          /* ɵɵtemplate */
+          .YNc(2, NewsComponent_div_1_div_14_div_9_div_3_div_2_Template, 2, 1, "div", 4);
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+        }
+
+        if (rf & 2) {
+          var comment_r15 = core
+          /* ɵɵnextContext */
+          .oxw(2).$implicit;
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵproperty */
+          .Q6J("ngIf", comment_r15.sections.length == 0);
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵproperty */
+          .Q6J("ngIf", comment_r15.sections.length > 0);
+        }
+      }
+
+      function NewsComponent_div_1_div_14_div_9_Template(rf, ctx) {
+        if (rf & 1) {
+          core
           /* ɵɵelementStart */
-          .TgZ(1, "div", 49);
+          .TgZ(0, "div", 51);
+          core
+          /* ɵɵelementStart */
+          .TgZ(1, "div", 52);
 
           core
           /* ɵɵelement */
-          ._UZ(2, "img", 50);
+          ._UZ(2, "img", 53);
 
           core
           /* ɵɵelementEnd */
           .qZA();
           core
-          /* ɵɵelementStart */
-          .TgZ(3, "div", 47);
-
-          core
-          /* ɵɵtext */
-          ._uU(4);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
+          /* ɵɵtemplate */
+          .YNc(3, NewsComponent_div_1_div_14_div_9_div_3_Template, 3, 2, "div", 47);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -90671,7 +90938,7 @@
           .oxw().$implicit;
           var ctx_r17 = core
           /* ɵɵnextContext */
-          .oxw();
+          .oxw(2);
           core
           /* ɵɵadvance */
           .xp6(2);
@@ -90682,16 +90949,16 @@
           .LSH);
           core
           /* ɵɵadvance */
-          .xp6(2);
+          .xp6(1);
           core
-          /* ɵɵtextInterpolate */
-          .Oqu(comment_r15.textContent);
+          /* ɵɵproperty */
+          .Q6J("ngIf", comment_r15.sections != null);
         }
       }
 
-      function NewsComponent_div_13_Template(rf, ctx) {
+      function NewsComponent_div_1_div_14_Template(rf, ctx) {
         if (rf & 1) {
-          var _r21 = core
+          var _r41 = core
           /* ɵɵgetCurrentView */
           .EpF();
 
@@ -90709,15 +90976,15 @@
           .TgZ(3, "div", 42);
           core
           /* ɵɵlistener */
-          .NdJ("click", function NewsComponent_div_13_Template_div_click_3_listener() {
+          .NdJ("click", function NewsComponent_div_1_div_14_Template_div_click_3_listener() {
             var restoredCtx = core
             /* ɵɵrestoreView */
-            .CHM(_r21);
+            .CHM(_r41);
             var comment_r15 = restoredCtx.$implicit;
-            var ctx_r20 = core
+            var ctx_r40 = core
             /* ɵɵnextContext */
-            .oxw();
-            return ctx_r20.addressUser(comment_r15.username);
+            .oxw(2);
+            return ctx_r40.addressUser(comment_r15.username);
           });
 
           core
@@ -90732,15 +90999,15 @@
           .TgZ(5, "div", 43);
           core
           /* ɵɵlistener */
-          .NdJ("click", function NewsComponent_div_13_Template_div_click_5_listener() {
+          .NdJ("click", function NewsComponent_div_1_div_14_Template_div_click_5_listener() {
             var restoredCtx = core
             /* ɵɵrestoreView */
-            .CHM(_r21);
+            .CHM(_r41);
             var comment_r15 = restoredCtx.$implicit;
-            var ctx_r22 = core
+            var ctx_r42 = core
             /* ɵɵnextContext */
-            .oxw();
-            return ctx_r22.addressUser("" + comment_r15.id);
+            .oxw(2);
+            return ctx_r42.addressUser("" + comment_r15.id);
           });
 
           core
@@ -90758,10 +91025,10 @@
           .qZA();
           core
           /* ɵɵtemplate */
-          .YNc(8, NewsComponent_div_13_div_8_Template, 3, 1, "div", 44);
+          .YNc(8, NewsComponent_div_1_div_14_div_8_Template, 2, 1, "div", 44);
           core
           /* ɵɵtemplate */
-          .YNc(9, NewsComponent_div_13_div_9_Template, 5, 2, "div", 45);
+          .YNc(9, NewsComponent_div_1_div_14_div_9_Template, 4, 2, "div", 45);
 
           core
           /* ɵɵelement */
@@ -90806,6 +91073,174 @@
         }
       }
 
+      var news_component_c0 = function news_component_c0() {
+        return [1, 3, 4];
+      };
+
+      function NewsComponent_div_1_Template(rf, ctx) {
+        if (rf & 1) {
+          var _r44 = core
+          /* ɵɵgetCurrentView */
+          .EpF();
+
+          core
+          /* ɵɵelementStart */
+          .TgZ(0, "div", 1);
+          core
+          /* ɵɵelementStart */
+          .TgZ(1, "div", 2);
+          core
+          /* ɵɵtemplate */
+          .YNc(2, NewsComponent_div_1_div_2_Template, 13, 9, "div", 3);
+          core
+          /* ɵɵtemplate */
+          .YNc(3, NewsComponent_div_1_div_3_Template, 10, 5, "div", 4);
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(4, "div", 5);
+          core
+          /* ɵɵelementStart */
+          .TgZ(5, "div", 6);
+          core
+          /* ɵɵelementStart */
+          .TgZ(6, "div");
+          core
+          /* ɵɵelementStart */
+          .TgZ(7, "textarea", 7);
+          core
+          /* ɵɵlistener */
+          .NdJ("ngModelChange", function NewsComponent_div_1_Template_textarea_ngModelChange_7_listener($event) {
+            core
+            /* ɵɵrestoreView */
+            .CHM(_r44);
+            var ctx_r43 = core
+            /* ɵɵnextContext */
+            .oxw();
+            return ctx_r43.commentText = $event;
+          });
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(8, "div", 8);
+          core
+          /* ɵɵelementStart */
+          .TgZ(9, "button", 9);
+          core
+          /* ɵɵlistener */
+          .NdJ("click", function NewsComponent_div_1_Template_button_click_9_listener() {
+            core
+            /* ɵɵrestoreView */
+            .CHM(_r44);
+            var ctx_r45 = core
+            /* ɵɵnextContext */
+            .oxw();
+            return ctx_r45.postNewsComment();
+          });
+
+          core
+          /* ɵɵtext */
+          ._uU(10, "Leave comment");
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(11, "input", 10);
+          core
+          /* ɵɵlistener */
+          .NdJ("change", function NewsComponent_div_1_Template_input_change_11_listener($event) {
+            core
+            /* ɵɵrestoreView */
+            .CHM(_r44);
+            var ctx_r46 = core
+            /* ɵɵnextContext */
+            .oxw();
+            return ctx_r46.addFileToComment($event);
+          });
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(12, "label", 11);
+
+          core
+          /* ɵɵtext */
+          ._uU(13);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵtemplate */
+          .YNc(14, NewsComponent_div_1_div_14_Template, 11, 8, "div", 12);
+
+          core
+          /* ɵɵelement */
+          ._UZ(15, "div", 13);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+        }
+
+        if (rf & 2) {
+          var ctx_r0 = core
+          /* ɵɵnextContext */
+          .oxw();
+          core
+          /* ɵɵadvance */
+          .xp6(2);
+          core
+          /* ɵɵproperty */
+          .Q6J("ngIf", core
+          /* ɵɵpureFunction0 */
+          .DdM(5, news_component_c0).includes(ctx_r0.post.status));
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵproperty */
+          .Q6J("ngIf", ctx_r0.post.status == 2);
+          core
+          /* ɵɵadvance */
+          .xp6(4);
+          core
+          /* ɵɵproperty */
+          .Q6J("ngModel", ctx_r0.commentText);
+          core
+          /* ɵɵadvance */
+          .xp6(6);
+          core
+          /* ɵɵtextInterpolate */
+          .Oqu(ctx_r0.fileUploadLabel);
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵproperty */
+          .Q6J("ngForOf", ctx_r0.post.comments);
+        }
+      }
+
       var NewsComponent = /*#__PURE__*/function () {
         function NewsComponent(restService, utilityService, route, router, dialog, sanitizer) {
           _classCallCheck(this, NewsComponent);
@@ -90822,7 +91257,7 @@
           this.isTweet = false;
           this.isImage = false;
           this.imageExtensions = ['.jpg', '.png', '.webp'];
-          this.fileUploadLabel = "Add image";
+          this.fileUploadLabel = 'Add image';
         }
 
         _createClass(NewsComponent, [{
@@ -90838,15 +91273,17 @@
                 next: function next(data) {
                   _this105.post = data;
 
-                  _this105.checkIfTweet();
-
-                  _this105.checkIfImage();
-
                   if (_this105.post == null) {
                     _this105.goToAwsList();
                   } else {
                     _this105.utilityService.setTitle(2, _this105.post.title);
                   }
+
+                  _this105.checkIfTweet();
+
+                  _this105.checkIfImage();
+
+                  _this105.checkIfYoutube();
                 },
                 error: function error(_error4) {
                   console.error('There was an error!', _error4);
@@ -90897,13 +91334,13 @@
               var label = this.uploadFile.name;
 
               if (label.length > 15) {
-                label = label.substring(0, 11) + "...";
+                label = label.substring(0, 11) + '...';
               }
 
               this.fileUploadLabel = label;
             } else {
               this.uploadFile = null;
-              this.fileUploadLabel = "Add image";
+              this.fileUploadLabel = 'Add image';
             }
           }
         }, {
@@ -90972,6 +91409,8 @@
             this.restService.getNewsComments(this.post.code).subscribe({
               next: function next(data) {
                 _this107.post.comments = data;
+
+                _this107.checkIfYoutube();
               },
               error: function error(_error7) {
                 console.error('There was an error!', _error7);
@@ -91067,6 +91506,76 @@
               }
             });
           }
+        }, {
+          key: "sectionComment",
+          value: function sectionComment(comment, startingPoint) {
+            var response = -1;
+            var subcomment = comment.textContent.substring(startingPoint).replace('\n', ' ');
+            var index1 = subcomment.indexOf('https://youtu.be/');
+            var index2 = subcomment.indexOf('https://www.youtube.com/watch?v=');
+            var index = null;
+            var baseLength = null;
+
+            if (index1 >= 0 && (index2 == -1 || index1 < index2)) {
+              index = index1;
+              baseLength = 17;
+            } else if (index2 >= 0 && (index1 == -1 || index2 < index1)) {
+              index = index2;
+              baseLength = 32;
+            }
+
+            if (index != null) {
+              var remainder = subcomment.substring(index).replace('\n', ' ');
+              var spaceIndex = remainder.indexOf(' ');
+
+              if (spaceIndex < 0) {
+                spaceIndex = remainder.length;
+              }
+
+              var text = subcomment.substring(0, Number(index + spaceIndex));
+              var code = subcomment.substring(Number(index + baseLength), Number(index + spaceIndex));
+              var url = 'https://www.youtube.com/embed/' + code.replace('?t=', '?start=');
+              var safeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(url);
+              response = startingPoint + index + spaceIndex;
+              var entry = {};
+              entry.textContent = text;
+              entry.youtubeLink = safeUrl;
+              comment.sections.push(entry);
+            } else {
+              if (comment.sections.length > 0) {
+                var _entry = {};
+                _entry.textContent = subcomment;
+                comment.sections.push(_entry);
+              }
+            }
+
+            return response;
+          }
+        }, {
+          key: "checkIfYoutube",
+          value: function checkIfYoutube() {
+            var _this109 = this;
+
+            if (this.post.comments != null && this.post.comments.length > 0) {
+              this.post.comments.forEach(function (comment) {
+                comment.sections = [];
+                var startingPoint = 0;
+                var counter = 0;
+
+                while (startingPoint >= 0) {
+                  startingPoint = _this109.sectionComment(comment, startingPoint);
+                  counter++;
+
+                  if (counter > 10) {
+                    startingPoint = -1;
+                  }
+                }
+              });
+            }
+
+            console.log('111');
+            console.log(this.post.comments);
+          }
         }]);
 
         return NewsComponent;
@@ -91103,104 +91612,17 @@
       .Xpm({
         type: NewsComponent,
         selectors: [["app-aws-cmp"]],
-        decls: 15,
-        vars: 4,
-        consts: [[1, "height-fill-screen"], ["class", "div-padded-mobile-0-5", 4, "ngIf"], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area-100", 3, "ngModel", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "black-button", 3, "click"], ["id", "file-upload", "type", "file", 2, "display", "none", 3, "change"], ["for", "file-upload", 1, "mat-focus-indicator", "black-button", "mat-flat-button", "mat-button-base"], [4, "ngFor", "ngForOf"], [1, "pb-4"], [1, "div-padded-mobile-0-5"], ["class", "div-padded-left-right-1", 4, "ngIf"], [4, "ngIf"], [1, "div-padded-left-right-1"], [1, "card", "card-stats"], [1, "card-body"], [1, "col-12", "col-lg-12", "div-padded-always-left-right-1-2", "text-right"], ["class", "col-12 col-lg-2 no-right-padding", 4, "ngIf"], ["class", "pre-line col-12 col-lg-10 div-padded-always-left-right-1-2", 4, "ngIf"], [1, "col-12", "col-lg-2", "no-right-padding"], [1, "icon-big", "text-center", "icon-warning"], [1, "nc-icon", "nc-align-left-2", "text-success"], ["target", "_blank", 3, "href"], [1, "text-center"], ["class", "icon-big text-center icon-warning", 4, "ngIf"], [1, "teko-text-small"], ["alt", "iconUrl", "onerror", "this.src='assets/img/favicon2.png'", 1, "w-42px", 3, "src"], [1, "nc-icon", "nc-globe", "text-success"], [1, "pre-line", "col-12", "col-lg-10", "div-padded-always-left-right-1-2"], ["target", "_blank", 3, "href", 4, "ngIf"], ["alt", "imageUrl", 3, "src", 4, "ngIf"], ["alt", "imageUrl", 3, "src"], [1, "twitter-tweet"], ["dir", "ltr", "lang", "en"], [1, "postLinks", 3, "href"], ["alt", "loading", "src", "assets/img/loading.gif", 2, "max-width", "35px"], [1, "col-12", "col-lg-12", "div-padded-always-top-right-2rem", "text-right"], [1, "div-padded-left-right-1", "pb-3"], [3, "innerHTML"], [1, "pt-5", "pb-3"], [1, "basic-news-comment"], [1, "one-aws", 3, "click"], [1, "two-aws", 3, "click"], ["class", "basic-comment-body", 4, "ngIf"], ["class", "basic-comment-body d-flex", 4, "ngIf"], [1, "basic-comment-body"], [1, "pl-3", "pr-5"], [1, "basic-comment-body", "d-flex"], [1, "max-width-30-pc", "px-3"], ["alt", "commentImage", "onerror", "this.src='assets/img/drivers/default.png'", 3, "src"]],
+        decls: 2,
+        vars: 1,
+        consts: [["class", "height-fill-screen", 4, "ngIf"], [1, "height-fill-screen"], [1, "div-padded-mobile-0-5"], ["class", "div-padded-left-right-1", 4, "ngIf"], [4, "ngIf"], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area-100", 3, "ngModel", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "black-button", 3, "click"], ["id", "file-upload", "type", "file", 2, "display", "none", 3, "change"], ["for", "file-upload", 1, "mat-focus-indicator", "black-button", "mat-flat-button", "mat-button-base"], [4, "ngFor", "ngForOf"], [1, "pb-4"], [1, "div-padded-left-right-1"], [1, "card", "card-stats"], [1, "card-body"], [1, "col-12", "col-lg-12", "div-padded-always-left-right-1-2", "text-right"], ["class", "col-12 col-lg-2 no-right-padding", 4, "ngIf"], ["class", "pre-line col-12 col-lg-10 div-padded-always-left-right-1-2", 4, "ngIf"], [1, "col-12", "col-lg-2", "no-right-padding"], [1, "icon-big", "text-center", "icon-warning"], [1, "nc-icon", "nc-align-left-2", "text-success"], ["target", "_blank", 3, "href"], [1, "text-center"], ["class", "icon-big text-center icon-warning", 4, "ngIf"], [1, "teko-text-small"], ["alt", "iconUrl", "onerror", "this.src='assets/img/favicon2.png'", 1, "w-42px", 3, "src"], [1, "nc-icon", "nc-globe", "text-success"], [1, "pre-line", "col-12", "col-lg-10", "div-padded-always-left-right-1-2"], ["target", "_blank", 3, "href", 4, "ngIf"], ["alt", "imageUrl", 3, "src", 4, "ngIf"], ["alt", "imageUrl", 3, "src"], [1, "twitter-tweet"], ["dir", "ltr", "lang", "en"], [1, "postLinks", 3, "href"], ["alt", "loading", "src", "assets/img/loading.gif", 2, "max-width", "35px"], [1, "col-12", "col-lg-12", "div-padded-always-top-right-2rem", "text-right"], [1, "div-padded-left-right-1", "pb-3"], [3, "innerHTML"], [1, "pt-5", "pb-3"], [1, "basic-news-comment"], [1, "one-aws", 3, "click"], [1, "two-aws", 3, "click"], ["class", "basic-comment-body", 4, "ngIf"], ["class", "basic-comment-body-no-padding d-flex", 4, "ngIf"], [1, "basic-comment-body"], ["class", "pl-3 pr-5", 4, "ngIf"], [1, "pl-3", "pr-5"], ["class", "text-center", 4, "ngIf"], ["allow", "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture", "allowfullscreen", "", "height", "315", "title", "YouTube video player", "width", "560", 3, "src"], [1, "basic-comment-body-no-padding", "d-flex"], [1, "max-width-30-pc", "px-3"], ["alt", "commentImage", "onerror", "this.src='assets/img/drivers/default.png'", 3, "src"]],
         template: function NewsComponent_Template(rf, ctx) {
           if (rf & 1) {
             core
             /* ɵɵelementStart */
             .TgZ(0, "div");
             core
-            /* ɵɵelementStart */
-            .TgZ(1, "div", 0);
-            core
             /* ɵɵtemplate */
-            .YNc(2, NewsComponent_div_2_Template, 3, 3, "div", 1);
-            core
-            /* ɵɵelementStart */
-            .TgZ(3, "div", 2);
-            core
-            /* ɵɵelementStart */
-            .TgZ(4, "div", 3);
-            core
-            /* ɵɵelementStart */
-            .TgZ(5, "div");
-            core
-            /* ɵɵelementStart */
-            .TgZ(6, "textarea", 4);
-            core
-            /* ɵɵlistener */
-            .NdJ("ngModelChange", function NewsComponent_Template_textarea_ngModelChange_6_listener($event) {
-              return ctx.commentText = $event;
-            });
-            core
-            /* ɵɵelementEnd */
-            .qZA();
-            core
-            /* ɵɵelementStart */
-            .TgZ(7, "div", 5);
-            core
-            /* ɵɵelementStart */
-            .TgZ(8, "button", 6);
-            core
-            /* ɵɵlistener */
-            .NdJ("click", function NewsComponent_Template_button_click_8_listener() {
-              return ctx.postNewsComment();
-            });
-
-            core
-            /* ɵɵtext */
-            ._uU(9, "Leave comment");
-
-            core
-            /* ɵɵelementEnd */
-            .qZA();
-            core
-            /* ɵɵelementStart */
-            .TgZ(10, "input", 7);
-            core
-            /* ɵɵlistener */
-            .NdJ("change", function NewsComponent_Template_input_change_10_listener($event) {
-              return ctx.addFileToComment($event);
-            });
-            core
-            /* ɵɵelementEnd */
-            .qZA();
-            core
-            /* ɵɵelementStart */
-            .TgZ(11, "label", 8);
-
-            core
-            /* ɵɵtext */
-            ._uU(12);
-
-            core
-            /* ɵɵelementEnd */
-            .qZA();
-            core
-            /* ɵɵelementEnd */
-            .qZA();
-            core
-            /* ɵɵelementEnd */
-            .qZA();
-            core
-            /* ɵɵelementEnd */
-            .qZA();
-            core
-            /* ɵɵelementEnd */
-            .qZA();
-            core
-            /* ɵɵtemplate */
-            .YNc(13, NewsComponent_div_13_Template, 11, 8, "div", 9);
-
-            core
-            /* ɵɵelement */
-            ._UZ(14, "div", 10);
-
-            core
-            /* ɵɵelementEnd */
-            .qZA();
+            .YNc(1, NewsComponent_div_1_Template, 16, 6, "div", 0);
             core
             /* ɵɵelementEnd */
             .qZA();
@@ -91209,28 +91631,10 @@
           if (rf & 2) {
             core
             /* ɵɵadvance */
-            .xp6(2);
-            core
-            /* ɵɵproperty */
-            .Q6J("ngIf", ctx.post != null);
-            core
-            /* ɵɵadvance */
-            .xp6(4);
-            core
-            /* ɵɵproperty */
-            .Q6J("ngModel", ctx.commentText);
-            core
-            /* ɵɵadvance */
-            .xp6(6);
-            core
-            /* ɵɵtextInterpolate */
-            .Oqu(ctx.fileUploadLabel);
-            core
-            /* ɵɵadvance */
             .xp6(1);
             core
             /* ɵɵproperty */
-            .Q6J("ngForOf", ctx.post.comments);
+            .Q6J("ngIf", ctx.post != null);
           }
         },
         directives: [common
@@ -91941,7 +92345,7 @@
         }, {
           key: "executeModeratorAction",
           value: function executeModeratorAction() {
-            var _this109 = this;
+            var _this110 = this;
 
             if (isNaN(this.moderation.commentId)) {
               this.moderation.commentId = null;
@@ -91958,12 +92362,12 @@
             } else {
               this.restService.moderateComment(this.moderation).subscribe({
                 next: function next(data) {
-                  _this109.response = data;
+                  _this110.response = data;
 
-                  if (_this109.response.state > 0) {
-                    _this109.moderation = new CommentModeration();
+                  if (_this110.response.state > 0) {
+                    _this110.moderation = new CommentModeration();
 
-                    _this109.toastr.success(_this109.response.message, '', {
+                    _this110.toastr.success(_this110.response.message, '', {
                       timeOut: 4000,
                       closeButton: false,
                       enableHtml: false,
@@ -91972,8 +92376,8 @@
                     });
                   }
 
-                  if (_this109.response.state <= 0) {
-                    _this109.toastr.error('Unable to find comment no.' + _this109.moderation.commentId, '', {
+                  if (_this110.response.state <= 0) {
+                    _this110.toastr.error('Unable to find comment no.' + _this110.moderation.commentId, '', {
                       timeOut: 4000,
                       closeButton: false,
                       enableHtml: false,
@@ -92649,20 +93053,20 @@
         _createClass(AwsDemoComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this110 = this;
+            var _this111 = this;
 
             this.utilityService.disablePeriodicFetchOfComments();
             this.route.queryParams.subscribe(function (params) {
               var selectedCode = params['code'];
 
-              _this110.restService.getNewsPost(selectedCode).subscribe({
+              _this111.restService.getNewsPost(selectedCode).subscribe({
                 next: function next(data) {
-                  _this110.post = data;
+                  _this111.post = data;
 
-                  if (_this110.post == null) {
-                    _this110.goToAwsList();
+                  if (_this111.post == null) {
+                    _this111.goToAwsList();
                   } else {
-                    _this110.utilityService.setTitle(2, _this110.post.title);
+                    _this111.utilityService.setTitle(2, _this111.post.title);
                   }
                 },
                 error: function error(_error9) {
@@ -92671,16 +93075,16 @@
               });
             });
             this.commentsReloader = setInterval(function () {
-              _this110.getNewsCommentsPeriodically();
+              _this111.getNewsCommentsPeriodically();
             }, 20000);
             this.minimumReloadCounterValue = 0;
             this.currentReloadCounter = 1;
             var rawHtml = this.restService.readFile('assets/html/demo.html');
             rawHtml.subscribe({
               next: function next(data) {
-                _this110.postText = data;
+                _this111.postText = data;
                 console.info('this.postText');
-                console.info(_this110.postText);
+                console.info(_this111.postText);
               },
               error: function error(_error10) {
                 console.error('There was an error!', _error10);
@@ -92707,7 +93111,7 @@
         }, {
           key: "postNewsComment",
           value: function postNewsComment() {
-            var _this111 = this;
+            var _this112 = this;
 
             var newsComment = new NewsComment();
 
@@ -92717,12 +93121,12 @@
               newsComment.username = localStorage.getItem('f1-chosen-nickname');
               this.restService.postNewsComment(newsComment).subscribe({
                 next: function next(data) {
-                  _this111.commentText = '';
+                  _this112.commentText = '';
                 },
                 error: function error(_error11) {
                   console.error('There was an error!', _error11);
 
-                  _this111.utilityService.pushToastrErrorMessage('ERROR OCCURED. Comment not posted.');
+                  _this112.utilityService.pushToastrErrorMessage('ERROR OCCURED. Comment not posted.');
                 }
               });
               this.minimumReloadCounterValue = 0;
@@ -92750,11 +93154,11 @@
         }, {
           key: "getNewsComments",
           value: function getNewsComments() {
-            var _this112 = this;
+            var _this113 = this;
 
             this.restService.getNewsComments(this.post.code).subscribe({
               next: function next(data) {
-                _this112.post.comments = data;
+                _this113.post.comments = data;
               },
               error: function error(_error12) {
                 console.error('There was an error!', _error12);
@@ -93057,7 +93461,7 @@
 
       var ArtCarousel = /*#__PURE__*/function () {
         function ArtCarousel(restService, utilityService, config, dialog) {
-          var _this113 = this;
+          var _this114 = this;
 
           _classCallCheck(this, ArtCarousel);
 
@@ -93071,9 +93475,9 @@
           this.currentImage = 0;
           this.restService.getAllArt().subscribe({
             next: function next(data) {
-              _this113.images = data;
+              _this114.images = data;
 
-              _this113.setTitle();
+              _this114.setTitle();
             }
           });
         }
@@ -93503,21 +93907,21 @@
         }, {
           key: "ngOnDestroy",
           value: function ngOnDestroy() {
-            var _this114 = this;
+            var _this115 = this;
 
             // Clean up chart when the component is removed
             this.browserOnly(function () {
-              if (_this114.root) {
-                _this114.root.dispose();
+              if (_this115.root) {
+                _this115.root.dispose();
               } else {
-                _this114.root.dispose();
+                _this115.root.dispose();
               }
             });
           }
         }, {
           key: "getDataFromSeries",
           value: function getDataFromSeries() {
-            var _this115 = this;
+            var _this116 = this;
 
             var dataMap = new Map();
 
@@ -93528,8 +93932,8 @@
             this.series.forEach(function (serie) {
               var name;
 
-              if (_this115.codeMapping != null) {
-                name = _this115.codeMapping.get(serie.name);
+              if (_this116.codeMapping != null) {
+                name = _this116.codeMapping.get(serie.name);
               } else {
                 name = serie.name;
               }
@@ -95179,13 +95583,13 @@
         }, {
           key: "includeDnf",
           value: function includeDnf(event) {
-            var _this116 = this;
+            var _this117 = this;
 
             this.gridToResultSeries = [];
 
             if (event.checked) {
               this.standings.gridToResultChartWithDnf.forEach(function (standing) {
-                _this116.gridToResultSeries.push({
+                _this117.gridToResultSeries.push({
                   name: standing.name,
                   data: standing.series //  color: standing.color
 
@@ -95193,7 +95597,7 @@
               });
             } else {
               this.standings.gridToResultChartWithoutDnf.forEach(function (standing) {
-                _this116.gridToResultSeries.push({
+                _this117.gridToResultSeries.push({
                   name: standing.name,
                   data: standing.series // color: standing.color
 
@@ -95234,7 +95638,7 @@
         }, {
           key: "setPodiums",
           value: function setPodiums(standing) {
-            var _this117 = this;
+            var _this118 = this;
 
             standing.series.forEach(function (item) {
               if (item[1] < 4) {
@@ -95242,10 +95646,10 @@
                 podium.name = standing.name; // podium.color = standing.color;
 
                 podium.value = item[1];
-                _this117.podiums[item[0]][item[1]] = podium;
+                _this118.podiums[item[0]][item[1]] = podium;
 
-                if (item[0] > _this117.raceCount) {
-                  _this117.raceCount = item[0];
+                if (item[0] > _this118.raceCount) {
+                  _this118.raceCount = item[0];
                 }
               }
             }); // this.reverseXaxis.tickAmount = this.raceCount;
@@ -95253,7 +95657,7 @@
         }, {
           key: "setDriversHeatMapChart",
           value: function setDriversHeatMapChart() {
-            var _this118 = this;
+            var _this119 = this;
 
             this.driversHeatMapChartOptions = {
               colors: ['#0000ff'],
@@ -95299,7 +95703,7 @@
               tooltip: {
                 y: {
                   formatter: function formatter(val, opts) {
-                    return _this118.standings.races[opts.dataPointIndex].raceName;
+                    return _this119.standings.races[opts.dataPointIndex].raceName;
                   }
                 }
               }
@@ -95308,7 +95712,7 @@
         }, {
           key: "setConstructorHeatMapChart",
           value: function setConstructorHeatMapChart() {
-            var _this119 = this;
+            var _this120 = this;
 
             this.constructorHeatMapChartOptions = {
               colors: ['#0000ff'],
@@ -95344,7 +95748,7 @@
               tooltip: {
                 y: {
                   formatter: function formatter(val, opts) {
-                    return _this119.standings.races[opts.dataPointIndex].raceName;
+                    return _this120.standings.races[opts.dataPointIndex].raceName;
                   }
                 }
               }
@@ -95415,41 +95819,41 @@
         }, {
           key: "initializeChampionshipData",
           value: function initializeChampionshipData(season) {
-            var _this120 = this;
+            var _this121 = this;
 
             this.restService.getHistoricSeason(season).subscribe({
               next: function next(data) {
-                _this120.standings = data;
+                _this121.standings = data;
 
-                _this120.mapPositionsAndCodes();
+                _this121.mapPositionsAndCodes();
 
-                _this120.driverPointsSeries = [];
+                _this121.driverPointsSeries = [];
 
-                _this120.standings.driverStandingByRound.forEach(function (standing) {
-                  _this120.driverPointsSeries.push({
+                _this121.standings.driverStandingByRound.forEach(function (standing) {
+                  _this121.driverPointsSeries.push({
                     name: standing.name,
                     data: standing.series
                   });
                 });
 
-                _this120.podiums = SeasonsComponent.initializeMultidimensionalArray();
-                _this120.driverPositionByRaceMap = new Map();
-                _this120.driversHeatMapStandingsSeries = [];
+                _this121.podiums = SeasonsComponent.initializeMultidimensionalArray();
+                _this121.driverPositionByRaceMap = new Map();
+                _this121.driversHeatMapStandingsSeries = [];
 
-                _this120.standings.driverPointsByRound.forEach(function (standing) {
-                  _this120.setPodiums(standing); // let copy = JSON.parse(JSON.stringify(standing.series));
+                _this121.standings.driverPointsByRound.forEach(function (standing) {
+                  _this121.setPodiums(standing); // let copy = JSON.parse(JSON.stringify(standing.series));
 
 
                   var copy = standing.series;
 
-                  if (copy.length < _this120.raceCount) {
+                  if (copy.length < _this121.raceCount) {
                     //popuni null utrke
                     var array = [];
                     copy.forEach(function (serie) {
                       array.push(serie[0]);
                     });
 
-                    for (var i = 1; i <= _this120.raceCount; i++) {
+                    for (var i = 1; i <= _this121.raceCount; i++) {
                       if (array.indexOf(i) < 0) {
                         copy.push([i, null]);
                       }
@@ -95471,62 +95875,62 @@
 
                   copy.forEach(function (serie) {
                     if (serie[1] != null) {
-                      _this120.driverPositionByRaceMap.set(standing.name + serie[0], serie[1]);
+                      _this121.driverPositionByRaceMap.set(standing.name + serie[0], serie[1]);
                     }
                   });
 
-                  if (_this120.driverPositionMap.get(standing.name) == undefined) {} else {
-                    var position = _this120.driverCount - _this120.driverPositionMap.get(standing.name);
+                  if (_this121.driverPositionMap.get(standing.name) == undefined) {} else {
+                    var position = _this121.driverCount - _this121.driverPositionMap.get(standing.name);
 
-                    _this120.driversHeatMapStandingsSeries[position] = {
+                    _this121.driversHeatMapStandingsSeries[position] = {
                       name: standing.name,
                       data: copy
                     };
                   }
                 });
 
-                _this120.chartWidth = _this120.calculateChartWidthForMobileDevices(_this120.raceCount);
-                _this120.gridToResultSeries = [];
+                _this121.chartWidth = _this121.calculateChartWidthForMobileDevices(_this121.raceCount);
+                _this121.gridToResultSeries = [];
 
-                _this120.standings.gridToResultChartWithoutDnf.forEach(function (standing) {
-                  _this120.gridToResultSeries.push({
+                _this121.standings.gridToResultChartWithoutDnf.forEach(function (standing) {
+                  _this121.gridToResultSeries.push({
                     name: standing.name,
                     data: standing.series // color: standing.color
 
                   });
                 });
 
-                _this120.constructorPointsSeries = [];
-                _this120.constructorsHeatMapStandingsSeries = [];
+                _this121.constructorPointsSeries = [];
+                _this121.constructorsHeatMapStandingsSeries = [];
 
-                _this120.standings.constructorStandingByRound.forEach(function (standing) {
-                  _this120.constructorPointsSeries.push({
+                _this121.standings.constructorStandingByRound.forEach(function (standing) {
+                  _this121.constructorPointsSeries.push({
                     name: standing.name,
                     data: standing.series //   color: standing.color
 
                   });
                 });
 
-                _this120.constructorRoundsSeries = [];
+                _this121.constructorRoundsSeries = [];
 
-                _this120.standings.constructorPointsByRound.forEach(function (standing) {
-                  _this120.constructorRoundsSeries.push({
+                _this121.standings.constructorPointsByRound.forEach(function (standing) {
+                  _this121.constructorRoundsSeries.push({
                     name: standing.name,
                     data: standing.series // color: standing.color
 
                   });
 
-                  _this120.constructorsHeatMapStandingsSeries[_this120.constructorCount - _this120.constructorPositionMap.get(standing.name)] = {
+                  _this121.constructorsHeatMapStandingsSeries[_this121.constructorCount - _this121.constructorPositionMap.get(standing.name)] = {
                     name: standing.name,
                     data: standing.series
                   };
                 });
 
-                _this120.setDriversHeatMapChart();
+                _this121.setDriversHeatMapChart();
 
-                _this120.setConstructorHeatMapChart();
+                _this121.setConstructorHeatMapChart();
 
-                _this120.utilityService.setTitle(71, season + ' Championship');
+                _this121.utilityService.setTitle(71, season + ' Championship');
 
                 return data;
               }
@@ -95535,11 +95939,11 @@
         }, {
           key: "openRace",
           value: function openRace(season, round) {
-            var _this121 = this;
+            var _this122 = this;
 
             this.restService.getRace(season, round).subscribe({
               next: function next(data) {
-                var dialogRef = _this121.dialog.open(RacePopupComponent, {
+                var dialogRef = _this122.dialog.open(RacePopupComponent, {
                   maxWidth: '90vw'
                 });
 
@@ -96774,28 +97178,28 @@
         }, {
           key: "callCompare",
           value: function callCompare() {
-            var _this122 = this;
+            var _this123 = this;
 
             this.restService.compareDrivers(this.requestComparator).subscribe({
               next: function next(data) {
-                _this122.displayComparator = data;
+                _this123.displayComparator = data;
 
-                _this122.updateChart();
+                _this123.updateChart();
               }
             });
           }
         }, {
           key: "getCompareDriversDropdown",
           value: function getCompareDriversDropdown() {
-            var _this123 = this;
+            var _this124 = this;
 
             this.restService.compareDriversDropdown(this.requestComparator.year).subscribe({
               next: function next(data) {
-                _this123.dropdownItems = data;
+                _this124.dropdownItems = data;
 
-                _this123.checkCurrentDriversExistInDropdown();
+                _this124.checkCurrentDriversExistInDropdown();
 
-                _this123.callCompare();
+                _this124.callCompare();
               }
             });
           }
@@ -96831,11 +97235,11 @@
         }, {
           key: "checkCurrentDriversExistInDropdown",
           value: function checkCurrentDriversExistInDropdown() {
-            var _this124 = this;
+            var _this125 = this;
 
             var positionCounter = 0;
             var found = this.dropdownItems.filter(function (item) {
-              return item.driverId == _this124.requestComparator.driver1.driverId;
+              return item.driverId == _this125.requestComparator.driver1.driverId;
             }).length;
 
             if (found == 0) {
@@ -96844,7 +97248,7 @@
             }
 
             found = this.dropdownItems.filter(function (item) {
-              return item.driverId == _this124.requestComparator.driver2.driverId;
+              return item.driverId == _this125.requestComparator.driver2.driverId;
             }).length;
 
             if (found == 0) {
@@ -98362,14 +98766,14 @@
         _createClass(DriversComponent, [{
           key: "getDriverDropdown",
           value: function getDriverDropdown() {
-            var _this125 = this;
+            var _this126 = this;
 
             this.restService.getErgastDrivers().subscribe({
               next: function next(data) {
-                _this125.dropdownDrivers = data;
-                _this125.driverId = _this125.getSelectedDriver();
+                _this126.dropdownDrivers = data;
+                _this126.driverId = _this126.getSelectedDriver();
 
-                _this125.getDriver(_this125.driverId, true);
+                _this126.getDriver(_this126.driverId, true);
               }
             });
           }
@@ -98633,17 +99037,17 @@
         }, {
           key: "openDriversPopup",
           value: function openDriversPopup() {
-            var _this126 = this;
+            var _this127 = this;
 
             var dialogRef = this.dialog.open(DriversPopupComponent);
             dialogRef.componentInstance.setDrivers(this.dropdownDrivers);
             dialogRef.afterClosed().subscribe(function (driverId) {
               if (driverId != null) {
-                _this126.driverId = driverId;
+                _this127.driverId = driverId;
 
-                _this126.getDriver(_this126.driverId, true);
+                _this127.getDriver(_this127.driverId, true);
 
-                _this126.updateUrl();
+                _this127.updateUrl();
               }
             });
           }
@@ -98662,23 +99066,23 @@
         }, {
           key: "getDriver",
           value: function getDriver(driverId, retry) {
-            var _this127 = this;
+            var _this128 = this;
 
             this.restService.getDriverStatistics(driverId).subscribe({
               next: function next(data) {
-                _this127.driver = data;
+                _this128.driver = data;
 
-                _this127.utilityService.setTitle(72, _this127.driver.givenName + ' ' + _this127.driver.familyName);
+                _this128.utilityService.setTitle(72, _this128.driver.givenName + ' ' + _this128.driver.familyName);
 
-                _this127.setCharts();
+                _this128.setCharts();
               },
               error: function error(_error13) {
-                _this127.utilityService.pushToastrMessage('Driver not found');
+                _this128.utilityService.pushToastrMessage('Driver not found');
 
-                _this127.driverId = 'max_verstappen';
+                _this128.driverId = 'max_verstappen';
 
                 if (retry) {
-                  _this127.getDriver(_this127.driverId, false);
+                  _this128.getDriver(_this128.driverId, false);
                 }
 
                 console.error('There was an error!', _error13);
@@ -100188,14 +100592,14 @@
         _createClass(ConstructorsComponent, [{
           key: "getConstructorDropdown",
           value: function getConstructorDropdown() {
-            var _this128 = this;
+            var _this129 = this;
 
             this.restService.getErgastConstructors().subscribe({
               next: function next(data) {
-                _this128.dropdownConstructors = data;
-                _this128.constructorId = _this128.getSelectedConstructor();
+                _this129.dropdownConstructors = data;
+                _this129.constructorId = _this129.getSelectedConstructor();
 
-                _this128.getConstructor(_this128.constructorId);
+                _this129.getConstructor(_this129.constructorId);
               }
             });
           }
@@ -100467,32 +100871,32 @@
         }, {
           key: "openDialog",
           value: function openDialog() {
-            var _this129 = this;
+            var _this130 = this;
 
             var dialogRef = this.dialog.open(ConstructorsPopupComponent);
             dialogRef.componentInstance.setConstructors(this.dropdownConstructors);
             dialogRef.afterClosed().subscribe(function (constructorId) {
               if (constructorId != null) {
-                _this129.constructorId = constructorId;
+                _this130.constructorId = constructorId;
 
-                _this129.getConstructor(_this129.constructorId);
+                _this130.getConstructor(_this130.constructorId);
 
-                _this129.updateUrl();
+                _this130.updateUrl();
               }
             });
           }
         }, {
           key: "getConstructor",
           value: function getConstructor(id) {
-            var _this130 = this;
+            var _this131 = this;
 
             this.restService.getConstructorStatistics(id).subscribe({
               next: function next(data) {
-                _this130.constructorStatistics = data;
+                _this131.constructorStatistics = data;
 
-                _this130.utilityService.setTitle(73, _this130.constructorStatistics.ergastConstructor.name);
+                _this131.utilityService.setTitle(73, _this131.constructorStatistics.ergastConstructor.name);
 
-                _this130.setCharts();
+                _this131.setCharts();
               }
             });
           }
@@ -101382,11 +101786,11 @@
         }, {
           key: "getTimePeriodically",
           value: function getTimePeriodically() {
-            var _this131 = this;
+            var _this132 = this;
 
             this.getTime();
             this.clockRefresher = setInterval(function () {
-              _this131.getTime();
+              _this132.getTime();
             }, 5000);
           }
         }, {
@@ -101408,13 +101812,13 @@
         }, {
           key: "getTwitterFeed",
           value: function getTwitterFeed() {
-            var _this132 = this;
+            var _this133 = this;
 
             console.log('getTwitterFeed');
             this.restService.getTwitterFerrariPosts().subscribe({
               next: function next(data) {
-                _this132.tweets = data;
-                console.log(_this132.tweets);
+                _this133.tweets = data;
+                console.log(_this133.tweets);
                 return data;
               }
             });
@@ -104582,59 +104986,59 @@
         _createClass(F1CountdownComponent, [{
           key: "getCountdownData",
           value: function getCountdownData(mode) {
-            var _this133 = this;
+            var _this134 = this;
 
             this.restService.getCountdownData(mode).subscribe({
               next: function next(data) {
-                if (_this133.calendarData == null) {
-                  _this133.calendarData = data;
+                if (_this134.calendarData == null) {
+                  _this134.calendarData = data;
 
-                  _this133.setupOverlays();
+                  _this134.setupOverlays();
 
-                  _this133.setTimezoneOffset();
+                  _this134.setTimezoneOffset();
                 }
 
-                _this133.calendarData = data;
+                _this134.calendarData = data;
 
-                if (_this133.calendarData == null || _this133.calendarData.f1Calendar == null) {
-                  _this133.unknown = true;
+                if (_this134.calendarData == null || _this134.calendarData.f1Calendar == null) {
+                  _this134.unknown = true;
 
-                  _this133.setupIframes();
+                  _this134.setupIframes();
                 } else {
                   if (mode === 0 || mode === 1) {
-                    _this133.FP1Days = _this133.calendarData.countdownData.FP1Days;
-                    _this133.FP1Seconds = _this133.calendarData.countdownData.FP1Seconds;
+                    _this134.FP1Days = _this134.calendarData.countdownData.FP1Days;
+                    _this134.FP1Seconds = _this134.calendarData.countdownData.FP1Seconds;
                   }
 
                   if (mode === 0 || mode === 2) {
-                    _this133.FP2Days = _this133.calendarData.countdownData.FP2Days;
-                    _this133.FP2Seconds = _this133.calendarData.countdownData.FP2Seconds;
+                    _this134.FP2Days = _this134.calendarData.countdownData.FP2Days;
+                    _this134.FP2Seconds = _this134.calendarData.countdownData.FP2Seconds;
                   }
 
                   if (mode === 0 || mode === 3) {
-                    _this133.FP3Days = _this133.calendarData.countdownData.FP3Days;
-                    _this133.FP3Seconds = _this133.calendarData.countdownData.FP3Seconds;
+                    _this134.FP3Days = _this134.calendarData.countdownData.FP3Days;
+                    _this134.FP3Seconds = _this134.calendarData.countdownData.FP3Seconds;
                   }
 
                   if (mode === 0 || mode === 4) {
-                    _this133.qualifyingDays = _this133.calendarData.countdownData.qualifyingDays;
-                    _this133.qualifyingSeconds = _this133.calendarData.countdownData.qualifyingSeconds;
+                    _this134.qualifyingDays = _this134.calendarData.countdownData.qualifyingDays;
+                    _this134.qualifyingSeconds = _this134.calendarData.countdownData.qualifyingSeconds;
                   }
 
                   if (mode === 0 || mode === 5) {
-                    _this133.raceDays = _this133.calendarData.countdownData.raceDays;
-                    _this133.raceSeconds = _this133.calendarData.countdownData.raceSeconds;
+                    _this134.raceDays = _this134.calendarData.countdownData.raceDays;
+                    _this134.raceSeconds = _this134.calendarData.countdownData.raceSeconds;
                   }
 
                   if (mode === 0 || mode === 6) {
-                    _this133.sprintDays = _this133.calendarData.countdownData.sprintDays;
-                    _this133.sprintSeconds = _this133.calendarData.countdownData.sprintSeconds;
+                    _this134.sprintDays = _this134.calendarData.countdownData.sprintDays;
+                    _this134.sprintSeconds = _this134.calendarData.countdownData.sprintSeconds;
                   }
 
                   if (mode === 0) {
-                    _this133.getSelectedTab();
+                    _this134.getSelectedTab();
 
-                    _this133.utilityService.setTitleDefaultPage(1, _this133.calendarData.f1Calendar.summary);
+                    _this134.utilityService.setTitleDefaultPage(1, _this134.calendarData.f1Calendar.summary);
                   }
                 }
 
@@ -104642,9 +105046,9 @@
               },
               'error': function error(_error14) {
                 console.error('There was an error!', _error14);
-                _this133.calendarData = new CalendarData();
-                _this133.calendarData.countdownData.raceDays = 0;
-                _this133.calendarData.countdownData.raceSeconds = 0;
+                _this134.calendarData = new CalendarData();
+                _this134.calendarData.countdownData.raceDays = 0;
+                _this134.calendarData.countdownData.raceSeconds = 0;
               }
             });
           }
@@ -105366,14 +105770,14 @@
         }, {
           key: "update",
           value: function update(numColumns, tiles) {
-            var _this134 = this;
+            var _this135 = this;
 
             this.columnIndex = 0;
             this.rowIndex = 0;
             this.tracker = new Array(numColumns);
             this.tracker.fill(0, 0, this.tracker.length);
             this.positions = tiles.map(function (tile) {
-              return _this134._trackTile(tile);
+              return _this135._trackTile(tile);
             });
           }
           /** Calculates the row and col position of a tile. */
@@ -106130,13 +106534,13 @@
         var _super18 = _createSuper(FixedTileStyler);
 
         function FixedTileStyler(fixedRowHeight) {
-          var _this135;
+          var _this136;
 
           _classCallCheck(this, FixedTileStyler);
 
-          _this135 = _super18.call(this);
-          _this135.fixedRowHeight = fixedRowHeight;
-          return _this135;
+          _this136 = _super18.call(this);
+          _this136.fixedRowHeight = fixedRowHeight;
+          return _this136;
         }
 
         _createClass(FixedTileStyler, [{
@@ -106192,15 +106596,15 @@
         var _super19 = _createSuper(RatioTileStyler);
 
         function RatioTileStyler(value) {
-          var _this136;
+          var _this137;
 
           _classCallCheck(this, RatioTileStyler);
 
-          _this136 = _super19.call(this);
+          _this137 = _super19.call(this);
 
-          _this136._parseRatio(value);
+          _this137._parseRatio(value);
 
-          return _this136;
+          return _this137;
         }
 
         _createClass(RatioTileStyler, [{
@@ -106427,7 +106831,7 @@
         }, {
           key: "_layoutTiles",
           value: function _layoutTiles() {
-            var _this137 = this;
+            var _this138 = this;
 
             if (!this._tileCoordinator) {
               this._tileCoordinator = new TileCoordinator();
@@ -106436,7 +106840,7 @@
             var tracker = this._tileCoordinator;
 
             var tiles = this._tiles.filter(function (tile) {
-              return !tile._gridList || tile._gridList === _this137;
+              return !tile._gridList || tile._gridList === _this138;
             });
 
             var direction = this._dir ? this._dir.value : 'ltr';
@@ -106448,7 +106852,7 @@
             tiles.forEach(function (tile, index) {
               var pos = tracker.positions[index];
 
-              _this137._tileStyler.setStyle(tile, pos.row, pos.col);
+              _this138._tileStyler.setStyle(tile, pos.row, pos.col);
             });
 
             this._setListStyle(this._tileStyler.getComputedHeight());
@@ -107592,7 +107996,7 @@
         }, {
           key: "ngAfterContentInit",
           value: function ngAfterContentInit() {
-            var _this138 = this;
+            var _this139 = this;
 
             this.listKeyManager = new a11y
             /* ListKeyManager */
@@ -107605,7 +108009,7 @@
             * @return {?}
             */
             function () {
-              return _this138.playAnimation();
+              return _this139.playAnimation();
             });
           }
           /**
@@ -107615,7 +108019,7 @@
         }, {
           key: "ngAfterViewInit",
           value: function ngAfterViewInit() {
-            var _this139 = this;
+            var _this140 = this;
 
             this.autoplay$.pipe((0, takeUntil
             /* takeUntil */
@@ -107625,9 +108029,9 @@
             * @return {?}
             */
             function (value) {
-              _this139.stopTimer();
+              _this140.stopTimer();
 
-              _this139.startTimer(value);
+              _this140.startTimer(value);
             });
             this.interval$.pipe((0, takeUntil
             /* takeUntil */
@@ -107637,11 +108041,11 @@
             * @return {?}
             */
             function (value) {
-              _this139.stopTimer();
+              _this140.stopTimer();
 
-              _this139.resetTimer(value);
+              _this140.resetTimer(value);
 
-              _this139.startTimer(_this139._autoplay);
+              _this140.startTimer(_this140._autoplay);
             });
             this.maxWidth$.pipe((0, takeUntil
             /* takeUntil */
@@ -107650,7 +108054,7 @@
             * @return {?}
             */
             function () {
-              return _this139.slideTo(0);
+              return _this140.slideTo(0);
             });
             this.loop$.pipe((0, takeUntil
             /* takeUntil */
@@ -107660,7 +108064,7 @@
             * @return {?}
             */
             function (value) {
-              return _this139.listKeyManager.withWrap(value);
+              return _this140.listKeyManager.withWrap(value);
             });
             this.orientation$.pipe((0, takeUntil
             /* takeUntil */
@@ -107670,7 +108074,7 @@
             * @return {?}
             */
             function (value) {
-              return _this139.listKeyManager.withHorizontalOrientation(value);
+              return _this140.listKeyManager.withHorizontalOrientation(value);
             });
             this.slides$.pipe((0, takeUntil
             /* takeUntil */
@@ -107682,14 +108086,14 @@
             * @return {?}
             */
             function (value) {
-              return value && value < _this139.slidesList.length;
+              return value && value < _this140.slidesList.length;
             })).subscribe(
             /**
             * @param {?} value
             * @return {?}
             */
             function (value) {
-              return _this139.resetSlides(value);
+              return _this140.resetSlides(value);
             });
           }
           /**
@@ -107969,7 +108373,7 @@
         }, {
           key: "playAnimation",
           value: function playAnimation() {
-            var _this140 = this;
+            var _this141 = this;
 
             /** @type {?} */
             var translation = this.getTranslation(this.getOffset());
@@ -107990,18 +108394,18 @@
             * @return {?}
             */
             function () {
-              return _this140.playing = true;
+              return _this141.playing = true;
             });
             animation.onDone(
             /**
             * @return {?}
             */
             function () {
-              _this140.change.emit(_this140.currentIndex);
+              _this141.change.emit(_this141.currentIndex);
 
-              _this140.playing = false;
+              _this141.playing = false;
 
-              _this140.renderer.setStyle(_this140.carouselList.nativeElement, 'transform', translation);
+              _this141.renderer.setStyle(_this141.carouselList.nativeElement, 'transform', translation);
 
               animation.destroy();
             });
@@ -108038,7 +108442,7 @@
         }, {
           key: "startTimer",
           value: function startTimer(autoplay) {
-            var _this141 = this;
+            var _this142 = this;
 
             if (!autoplay) {
               return;
@@ -108055,15 +108459,15 @@
             * @return {?}
             */
             function () {
-              return _this141.isVisible();
+              return _this142.isVisible();
             })).subscribe(
             /**
             * @return {?}
             */
             function () {
-              _this141.listKeyManager.withWrap(true).setNextItemActive();
+              _this142.listKeyManager.withWrap(true).setNextItemActive();
 
-              _this141.listKeyManager.withWrap(_this141.loop);
+              _this142.listKeyManager.withWrap(_this142.loop);
             });
           }
           /**
@@ -108631,12 +109035,12 @@
         var _super21 = _createSuper(MatCarouselHammerConfig);
 
         function MatCarouselHammerConfig() {
-          var _this142;
+          var _this143;
 
           _classCallCheck(this, MatCarouselHammerConfig);
 
-          _this142 = _super21.apply(this, arguments);
-          _this142.overrides = {
+          _this143 = _super21.apply(this, arguments);
+          _this143.overrides = {
             pinch: {
               enable: false
             },
@@ -108644,7 +109048,7 @@
               enable: false
             }
           };
-          return _this142;
+          return _this143;
         }
 
         return MatCarouselHammerConfig;
@@ -109006,13 +109410,13 @@
         _createClass(ImagePopupDialog, [{
           key: "getData",
           value: function getData() {
-            var _this143 = this;
+            var _this144 = this;
 
             var observable;
             observable = this.restService.getOpenSeaAsset(this.contractAddress, this.tokenId);
             observable.subscribe({
               next: function next(data) {
-                _this143.asset = data;
+                _this144.asset = data;
               }
             });
           }
@@ -109158,54 +109562,54 @@
         var _super22 = _createSuper(_MatAutocompleteBase);
 
         function _MatAutocompleteBase(_changeDetectorRef, _elementRef, defaults, platform) {
-          var _this144;
+          var _this145;
 
           _classCallCheck(this, _MatAutocompleteBase);
 
-          _this144 = _super22.call(this);
-          _this144._changeDetectorRef = _changeDetectorRef;
-          _this144._elementRef = _elementRef;
-          _this144._activeOptionChanges = Subscription
+          _this145 = _super22.call(this);
+          _this145._changeDetectorRef = _changeDetectorRef;
+          _this145._elementRef = _elementRef;
+          _this145._activeOptionChanges = Subscription
           /* Subscription.EMPTY */
           .w.EMPTY;
           /** Whether the autocomplete panel should be visible, depending on option length. */
 
-          _this144.showPanel = false;
-          _this144._isOpen = false;
+          _this145.showPanel = false;
+          _this145._isOpen = false;
           /** Function that maps an option's control value to its display value in the trigger. */
 
-          _this144.displayWith = null;
+          _this145.displayWith = null;
           /** Event that is emitted whenever an option from the list is selected. */
 
-          _this144.optionSelected = new core
+          _this145.optionSelected = new core
           /* EventEmitter */
           .vpe();
           /** Event that is emitted when the autocomplete panel is opened. */
 
-          _this144.opened = new core
+          _this145.opened = new core
           /* EventEmitter */
           .vpe();
           /** Event that is emitted when the autocomplete panel is closed. */
 
-          _this144.closed = new core
+          _this145.closed = new core
           /* EventEmitter */
           .vpe();
           /** Emits whenever an option is activated using the keyboard. */
 
-          _this144.optionActivated = new core
+          _this145.optionActivated = new core
           /* EventEmitter */
           .vpe();
-          _this144._classList = {};
+          _this145._classList = {};
           /** Unique ID to be used by autocomplete trigger's "aria-owns" property. */
 
-          _this144.id = "mat-autocomplete-".concat(_uniqueAutocompleteIdCounter++); // TODO(crisbeto): the problem that the `inertGroups` option resolves is only present on
+          _this145.id = "mat-autocomplete-".concat(_uniqueAutocompleteIdCounter++); // TODO(crisbeto): the problem that the `inertGroups` option resolves is only present on
           // Safari using VoiceOver. We should occasionally check back to see whether the bug
           // wasn't resolved in VoiceOver, and if it has, we can remove this and the `inertGroups`
           // option altogether.
 
-          _this144.inertGroups = (platform === null || platform === void 0 ? void 0 : platform.SAFARI) || false;
-          _this144._autoActiveFirstOption = !!defaults.autoActiveFirstOption;
-          return _this144;
+          _this145.inertGroups = (platform === null || platform === void 0 ? void 0 : platform.SAFARI) || false;
+          _this145._autoActiveFirstOption = !!defaults.autoActiveFirstOption;
+          return _this145;
         }
         /** Whether the autocomplete panel is open. */
 
@@ -109256,15 +109660,15 @@
         }, {
           key: "ngAfterContentInit",
           value: function ngAfterContentInit() {
-            var _this145 = this;
+            var _this146 = this;
 
             this._keyManager = new a11y
             /* ActiveDescendantKeyManager */
             .s1(this.options).withWrap();
             this._activeOptionChanges = this._keyManager.change.subscribe(function (index) {
-              _this145.optionActivated.emit({
-                source: _this145,
-                option: _this145.options.toArray()[index] || null
+              _this146.optionActivated.emit({
+                source: _this146,
+                option: _this146.options.toArray()[index] || null
               });
             }); // Set the initial visibility state.
 
@@ -109610,14 +110014,14 @@
         var _super23 = _createSuper(MatAutocomplete);
 
         function MatAutocomplete() {
-          var _this146;
+          var _this147;
 
           _classCallCheck(this, MatAutocomplete);
 
-          _this146 = _super23.apply(this, arguments);
-          _this146._visibleClass = 'mat-autocomplete-visible';
-          _this146._hiddenClass = 'mat-autocomplete-hidden';
-          return _this146;
+          _this147 = _super23.apply(this, arguments);
+          _this147._visibleClass = 'mat-autocomplete-visible';
+          _this147._hiddenClass = 'mat-autocomplete-hidden';
+          return _this147;
         }
 
         return MatAutocomplete;
@@ -109946,7 +110350,7 @@
 
       var _MatAutocompleteTriggerBase = /*#__PURE__*/function () {
         function _MatAutocompleteTriggerBase(_element, _overlay, _viewContainerRef, _zone, _changeDetectorRef, scrollStrategy, _dir, _formField, _document, _viewportRuler, _defaults) {
-          var _this147 = this;
+          var _this148 = this;
 
           _classCallCheck(this, _MatAutocompleteTriggerBase);
 
@@ -109991,7 +110395,7 @@
             // If the user blurred the window while the autocomplete is focused, it means that it'll be
             // refocused when they come back. In this case we want to skip the first focus event, if the
             // pane was closed, in order to avoid reopening it unintentionally.
-            _this147._canOpenOnNextFocus = _this147._document.activeElement !== _this147._element.nativeElement || _this147.panelOpen;
+            _this148._canOpenOnNextFocus = _this148._document.activeElement !== _this148._element.nativeElement || _this148.panelOpen;
           };
           /** `View -> model callback called when value changes` */
 
@@ -110023,22 +110427,22 @@
           this.optionSelections = (0, defer
           /* defer */
           .P)(function () {
-            if (_this147.autocomplete && _this147.autocomplete.options) {
+            if (_this148.autocomplete && _this148.autocomplete.options) {
               return (0, merge
               /* merge */
-              .T).apply(void 0, _toConsumableArray(_this147.autocomplete.options.map(function (option) {
+              .T).apply(void 0, _toConsumableArray(_this148.autocomplete.options.map(function (option) {
                 return option.onSelectionChange;
               })));
             } // If there are any subscribers before `ngAfterViewInit`, the `autocomplete` will be undefined.
             // Return a stream that we'll replace with the real one once everything is in place.
 
 
-            return _this147._zone.onStable.pipe((0, take
+            return _this148._zone.onStable.pipe((0, take
             /* take */
             .q)(1), (0, switchMap
             /* switchMap */
             .w)(function () {
-              return _this147.optionSelections;
+              return _this148.optionSelections;
             }));
           });
           this._scrollStrategy = scrollStrategy;
@@ -110062,13 +110466,13 @@
         }, {
           key: "ngAfterViewInit",
           value: function ngAfterViewInit() {
-            var _this148 = this;
+            var _this149 = this;
 
             var window = this._getWindow();
 
             if (typeof window !== 'undefined') {
               this._zone.runOutsideAngular(function () {
-                return window.addEventListener('blur', _this148._windowBlurHandler);
+                return window.addEventListener('blur', _this149._windowBlurHandler);
               });
             }
           }
@@ -110170,18 +110574,18 @@
         }, {
           key: "panelClosingActions",
           get: function get() {
-            var _this149 = this;
+            var _this150 = this;
 
             return (0, merge
             /* merge */
             .T)(this.optionSelections, this.autocomplete._keyManager.tabOut.pipe((0, filter
             /* filter */
             .h)(function () {
-              return _this149._overlayAttached;
+              return _this150._overlayAttached;
             })), this._closeKeyEventStream, this._getOutsideClickStream(), this._overlayRef ? this._overlayRef.detachments().pipe((0, filter
             /* filter */
             .h)(function () {
-              return _this149._overlayAttached;
+              return _this150._overlayAttached;
             })) : (0, of.of)()).pipe( // Normalize the output so we return a consistent type.
             (0, operators_map
             /* map */
@@ -110207,7 +110611,7 @@
         }, {
           key: "_getOutsideClickStream",
           value: function _getOutsideClickStream() {
-            var _this150 = this;
+            var _this151 = this;
 
             return (0, merge
             /* merge */
@@ -110225,19 +110629,19 @@
               var clickTarget = (0, platform
               /* _getEventTarget */
               .sA)(event);
-              var formField = _this150._formField ? _this150._formField._elementRef.nativeElement : null;
-              var customOrigin = _this150.connectedTo ? _this150.connectedTo.elementRef.nativeElement : null;
-              return _this150._overlayAttached && clickTarget !== _this150._element.nativeElement && (!formField || !formField.contains(clickTarget)) && (!customOrigin || !customOrigin.contains(clickTarget)) && !!_this150._overlayRef && !_this150._overlayRef.overlayElement.contains(clickTarget);
+              var formField = _this151._formField ? _this151._formField._elementRef.nativeElement : null;
+              var customOrigin = _this151.connectedTo ? _this151.connectedTo.elementRef.nativeElement : null;
+              return _this151._overlayAttached && clickTarget !== _this151._element.nativeElement && (!formField || !formField.contains(clickTarget)) && (!customOrigin || !customOrigin.contains(clickTarget)) && !!_this151._overlayRef && !_this151._overlayRef.overlayElement.contains(clickTarget);
             }));
           } // Implemented as part of ControlValueAccessor.
 
         }, {
           key: "writeValue",
           value: function writeValue(value) {
-            var _this151 = this;
+            var _this152 = this;
 
             Promise.resolve(null).then(function () {
-              return _this151._setTriggerValue(value);
+              return _this152._setTriggerValue(value);
             });
           } // Implemented as part of ControlValueAccessor.
 
@@ -110381,7 +110785,7 @@
         }, {
           key: "_subscribeToClosingActions",
           value: function _subscribeToClosingActions() {
-            var _this152 = this;
+            var _this153 = this;
 
             var firstStable = this._zone.onStable.pipe((0, take
             /* take */
@@ -110390,7 +110794,7 @@
             var optionChanges = this.autocomplete.options.changes.pipe((0, tap
             /* tap */
             .b)(function () {
-              return _this152._positionStrategy.reapplyLastPosition();
+              return _this153._positionStrategy.reapplyLastPosition();
             }), // Defer emitting to the stream until the next tick, because changing
             // bindings in here will cause "changed after checked" errors.
             (0, delay
@@ -110404,31 +110808,31 @@
             (0, switchMap
             /* switchMap */
             .w)(function () {
-              var wasOpen = _this152.panelOpen;
+              var wasOpen = _this153.panelOpen;
 
-              _this152._resetActiveItem();
+              _this153._resetActiveItem();
 
-              _this152.autocomplete._setVisibility();
+              _this153.autocomplete._setVisibility();
 
-              if (_this152.panelOpen) {
-                _this152._overlayRef.updatePosition(); // If the `panelOpen` state changed, we need to make sure to emit the `opened`
+              if (_this153.panelOpen) {
+                _this153._overlayRef.updatePosition(); // If the `panelOpen` state changed, we need to make sure to emit the `opened`
                 // event, because we may not have emitted it when the panel was attached. This
                 // can happen if the users opens the panel and there are no options, but the
                 // options come in slightly later or as a result of the value changing.
 
 
-                if (wasOpen !== _this152.panelOpen) {
-                  _this152.autocomplete.opened.emit();
+                if (wasOpen !== _this153.panelOpen) {
+                  _this153.autocomplete.opened.emit();
                 }
               }
 
-              return _this152.panelClosingActions;
+              return _this153.panelClosingActions;
             }), // when the first closing event occurs...
             (0, take
             /* take */
             .q)(1)) // set the value, close the panel, and complete.
             .subscribe(function (event) {
-              return _this152._setValueAndClose(event);
+              return _this153._setValueAndClose(event);
             });
           }
           /** Destroys the autocomplete suggestion panel. */
@@ -110500,7 +110904,7 @@
         }, {
           key: "_attachOverlay",
           value: function _attachOverlay() {
-            var _this153 = this;
+            var _this154 = this;
 
             var _a;
 
@@ -110532,9 +110936,9 @@
                 .LH && (0, keycodes
                 /* hasModifierKey */
                 .Vb)(event, 'altKey')) {
-                  _this153._resetActiveItem();
+                  _this154._resetActiveItem();
 
-                  _this153._closeKeyEventStream.next(); // We need to stop propagation, otherwise the event will eventually
+                  _this154._closeKeyEventStream.next(); // We need to stop propagation, otherwise the event will eventually
                   // reach the input itself and cause the overlay to be reopened.
 
 
@@ -110543,9 +110947,9 @@
                 }
               });
               this._viewportSubscription = this._viewportRuler.change().subscribe(function () {
-                if (_this153.panelOpen && overlayRef) {
+                if (_this154.panelOpen && overlayRef) {
                   overlayRef.updateSize({
-                    width: _this153._getPanelWidth()
+                    width: _this154._getPanelWidth()
                   });
                 }
               });
@@ -111053,13 +111457,13 @@
         var _super25 = _createSuper(MatAutocompleteTrigger);
 
         function MatAutocompleteTrigger() {
-          var _this154;
+          var _this155;
 
           _classCallCheck(this, MatAutocompleteTrigger);
 
-          _this154 = _super25.apply(this, arguments);
-          _this154._aboveClass = 'mat-autocomplete-panel-above';
-          return _this154;
+          _this155 = _super25.apply(this, arguments);
+          _this155._aboveClass = 'mat-autocomplete-panel-above';
+          return _this155;
         }
 
         return MatAutocompleteTrigger;

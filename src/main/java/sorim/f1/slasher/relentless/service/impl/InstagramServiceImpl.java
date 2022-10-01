@@ -172,8 +172,8 @@ public class InstagramServiceImpl implements InstagramService {
             }
             return false;
         }
-        instagramRepository.saveAll(instagramPosts);
         fetchImages(instagramPosts);
+         instagramRepository.saveAll(instagramPosts);
         log.info("INSTAGRAM_FETCH_DONE -  NEW IMAGES: " + instagramPosts.size());
         log.info("INSTAGRAM PAGES: " + counter.get());
 

@@ -203,7 +203,7 @@ public class Scheduler {
                         @SneakyThrows
                         @Override
                         public void run() {
-                            if(countdown==1){
+                            if(countdown==2){
                                 imageFeedJob();
                             } else {
                                 imageFeedJobWithoutInstagram();
