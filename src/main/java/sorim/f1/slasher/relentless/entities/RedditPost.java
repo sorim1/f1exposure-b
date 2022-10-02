@@ -58,7 +58,11 @@ public class RedditPost {
         this.created = createdDouble.longValue() ;
     }
 
-   public Boolean isItPhoto() {
+    public RedditPost(int ups) {
+        this.ups = ups;
+    }
+
+    public Boolean isItPhoto() {
         if(this.imageUrl.startsWith("https://imgur.com/a/")){
             //TODO ALBUM NECE RADIT https://imgur.com/a/ZBzAKwz
             type=2;

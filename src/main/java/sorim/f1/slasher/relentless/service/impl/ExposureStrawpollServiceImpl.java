@@ -194,7 +194,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
 
     @Override
     public String initializeStrawpoll(String id) {
-        reloadDelay = 5000;
+        reloadDelay = 20000;
         strawpollId = id;
         if (id == null) {
             initializeExposureFrontendVariables(null);
@@ -217,7 +217,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
 
     @Override
     public String setStrawpoll(String id) {
-        reloadDelay = 5000;
+        reloadDelay = 20000;
         strawpollId = id;
         if (strawpollId != null) {
             startPolling();
@@ -379,10 +379,10 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
     private Boolean updateExposureDataFromStrawpoll(StrawpollModelTwo strawpoll) {
         List<ExposureChampionship> list = new ArrayList<>();
         Integer voters = strawpoll.getPoll().getPoll_meta().getParticipant_count();
-
+        if(voters>0){
         Integer totalVotes = strawpoll.getPoll().getPoll_meta().getVote_count();
         if (totalVotes > latestVoteCount) {
-            reloadDelay = 10000;
+            reloadDelay = 20000;
         } else {
             reloadDelay = reloadDelay * 2;
         }
@@ -410,6 +410,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
                 .strawpoll(strawpollId)
                 .build();
         exposedVoteTotalsRepository.save(totals);
+        }
         return strawpoll.getPoll().getIs_votable();
     }
 

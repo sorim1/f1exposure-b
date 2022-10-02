@@ -31,6 +31,8 @@ public class Scheduler {
 
     private final MainProperties properties;
     private static final String CODE = "SCHEDULER";
+    private static final String F1EXPOSURE_COM = "f1exposure.com";
+
     public static Boolean standingsUpdated = false;
     public static Boolean analysisDone = false;
     public static Boolean strawpollFound = false;
@@ -283,13 +285,13 @@ public class Scheduler {
         clientService.fetchRedditPosts();
     }
 
-    @Scheduled(cron = "0 0 1,6,10,12,14,16,18,20,22 * * *")
+    @Scheduled(cron = "0 0 1,8,10,12,14,16,18,20,22 * * *")
     void bihourlyJob() throws Exception {
-        if(properties.getUrl().contains("f1exposure.com")){
+        if(properties.getUrl().contains(F1EXPOSURE_COM)){
             imageFeedJobWithoutInstagram();
             adminService.checkCurrentStream();
         } else {
-            log.error("url not f1exposure.com");
+            log.error("url not " + F1EXPOSURE_COM);
             log.error(properties.getUrl());
         }
 
@@ -300,7 +302,7 @@ public class Scheduler {
          Random rand = new Random();
          int minutes = rand.nextInt(30);
         log.info("10 AM InstagramPost to be called: " + minutes);
-         if(properties.getUrl().contains("f1exposure.com")){
+         if(properties.getUrl().contains(F1EXPOSURE_COM)){
              try{
                  clientService.fetchInstagramPosts();
              }catch(Exception e){
@@ -309,7 +311,7 @@ public class Scheduler {
              Thread.sleep(1000 * 60 * minutes);
              fourchanService.postToInstagram(false);
          } else {
-             log.warn("url not f1exposure.com");
+             log.warn("url not " + F1EXPOSURE_COM);
              log.warn(properties.getUrl());
          }
     }
@@ -318,7 +320,7 @@ public class Scheduler {
         Random rand = new Random();
         int minutes = rand.nextInt(30);
         log.info("17 InstagramPost called: " + minutes);
-        if(properties.getUrl().contains("f1exposure.com")){
+        if(properties.getUrl().contains(F1EXPOSURE_COM)){
             try{
                 clientService.fetchInstagramPosts();
             }catch(Exception e){
@@ -329,7 +331,7 @@ public class Scheduler {
             String title = redditService.postFormulaDankToInstagram();
             log.info("eveningInstagramPost ended: " + title);
         } else {
-            log.warn("url not f1exposure.com");
+            log.warn("url not " + F1EXPOSURE_COM);
             log.warn(properties.getUrl());
         }
     }

@@ -318,26 +318,39 @@ public class RedditServiceImpl implements RedditService {
         ResponseEntity<String> response = restTemplate.exchange(
                 FORMULA_DANK_NEW_POSTS, HttpMethod.GET, entity, String.class);
         List<RedditPost> output = new ArrayList<>();
+        List<RedditPost> fallback = new ArrayList<>();
         try {
             Map<String, Object> mapping = mapper.readValue(response.getBody(), typeRef);
 
             LinkedHashMap<String, Object> root = (LinkedHashMap<String, Object>) mapping.get("data");
             List<LinkedHashMap<String, Object>> children = (ArrayList<LinkedHashMap<String, Object>>) root.get("children");
+            fallback.add(new RedditPost(0));
+            fallback.add(new RedditPost(0));
             children.forEach(child -> {
                 if (two.get()<2) {
                     LinkedHashMap<String, Object> data = (LinkedHashMap<String, Object>) child.get("data");
                     RedditPost post = new RedditPost(data);
-                    if (post.isItJpeg() && post.getUps()>1000) {
-                        two.set(two.get()+1);
-                        output.add(post);
+                    if (post.isItJpeg()) {
+                        if (post.getUps()>1000) {
+                            two.set(two.get()+1);
+                            output.add(post);
+                        }
+                        if (post.getUps()> fallback.get(0).getUps()) {
+                            fallback.set(1, fallback.get(0));
+                            fallback.set(0, post);
+                        }
                     }
                 }
             });
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }
-        return instagramService.postDankToInstagram(output);
-
+        if(output.size()==2){
+            return instagramService.postDankToInstagram(output);
+        } else {
+            log.warn("dank instagram post fallback!");
+            return instagramService.postDankToInstagram(fallback);
+        }
     }
 
     private void getRF1PornHot() {
