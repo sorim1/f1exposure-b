@@ -619,6 +619,7 @@ public class ErgastServiceImpl implements ErgastService {
         ergastResponse.getMrData().getDriverTable().getDrivers().forEach(ed -> {
             drivers.add(new Driver(ed));
         });
+        log.info("fetchCurrentDrivers - save driver list - all");
         driverRepository.saveAll(drivers);
     }
 

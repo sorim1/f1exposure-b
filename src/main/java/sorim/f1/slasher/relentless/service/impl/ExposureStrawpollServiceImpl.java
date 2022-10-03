@@ -436,7 +436,12 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
             return driversMap.get(name).getCode();
         } else {
             Driver newDriver = Driver.builder().status(1).fullName(name)
-                    .code(name.substring(0, 3).toUpperCase()).build();
+                    .code(name.substring(0, 3).toUpperCase()).ergastCode(name.toLowerCase()).build();
+            log.info("getDriverCodeFromName - save driver list - one: " + name);
+            if(newDriver.getCode().equals("PER")){
+                log.error("PEREZ NIJE U MAPI - ZASTO?? ");
+                newDriver.setErgastCode("perez");
+            }
             driverRepository.save(newDriver);
             driversMap.put(name, newDriver);
             return newDriver.getCode();
