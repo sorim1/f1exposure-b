@@ -297,39 +297,39 @@ public class Scheduler {
 
     }
 
-     @Scheduled(cron = "0 0 10 * * *")
-    void noonInstagramPost() throws Exception {
+     @Scheduled(cron = "0 0 15 * * *")
+    void firstInstagramJob() throws Exception {
          Random rand = new Random();
          int minutes = rand.nextInt(30);
-        log.info("10 AM InstagramPost to be called: " + minutes);
+        log.info("firstInstagramJob to be called: " + minutes);
          if(properties.getUrl().contains(F1EXPOSURE_COM)){
              try{
                  clientService.fetchInstagramPosts();
              }catch(Exception e){
-                 log.info("10 AM Instagram fetch failed: {}", e.getMessage());
+                 log.info("firstInstagramJob fetch failed: {}", e.getMessage());
              }
              Thread.sleep(1000 * 60 * minutes);
-             fourchanService.postToInstagram(false);
+             String title = redditService.postFormulaDankToInstagram();
+             log.info("firstInstagramJob ended: " + title);
          } else {
              log.warn("url not " + F1EXPOSURE_COM);
              log.warn(properties.getUrl());
          }
     }
-    @Scheduled(cron = "0 0 17 * * *")
-    void eveningInstagramPost() throws Exception {
+    @Scheduled(cron = "0 0 1 * * *")
+    void secondInstagramJob() throws Exception {
         Random rand = new Random();
         int minutes = rand.nextInt(30);
-        log.info("17 InstagramPost called: " + minutes);
+        log.info("secondInstagramJob called: " + minutes);
         if(properties.getUrl().contains(F1EXPOSURE_COM)){
             try{
                 clientService.fetchInstagramPosts();
             }catch(Exception e){
-                log.info("17 InstagramPost fetch failed: {}", e.getMessage());
+                log.info("secondInstagramJob fetch failed: {}", e.getMessage());
             }
             Thread.sleep(1000 * 60 * minutes);
-           // fourchanService.postToInstagram(true);
             String title = redditService.postFormulaDankToInstagram();
-            log.info("eveningInstagramPost ended: " + title);
+            log.info("secondInstagramJob ended: " + title);
         } else {
             log.warn("url not " + F1EXPOSURE_COM);
             log.warn(properties.getUrl());

@@ -284,6 +284,7 @@ public class FourchanServiceImpl implements FourchanService {
                 fourChanImageRepository.delete(chanImage);
                 return response;
         }
+        log.info("InstagramPost NO POST FOUND - personalMeme " +  personalMeme);
         return "NO POST FOUND - personalMeme:" +personalMeme;
     }
 
