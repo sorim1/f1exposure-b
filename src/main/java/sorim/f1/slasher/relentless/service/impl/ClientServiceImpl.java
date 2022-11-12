@@ -261,7 +261,7 @@ public class ClientServiceImpl implements ClientService {
     public NewsContent getNewsPost(String code) {
         NewsContent response = newsRepository.findByCodeAndStatusLessThanEqual(code, 4);
         if (response != null) {
-            response.setComments(newsCommentRepository.findAllByContentCodeAndStatusLessThanOrderByTimestampCreatedDesc(code, 3));
+            response.setComments(newsCommentRepository.findAllByContentCodeAndStatusLessThanOrderByTimestampCreatedDesc(code, 5));
         }
         return response;
     }
