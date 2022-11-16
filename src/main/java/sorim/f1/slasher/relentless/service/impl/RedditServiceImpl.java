@@ -32,6 +32,8 @@ import javax.annotation.PostConstruct;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @Slf4j
 @Service
@@ -43,6 +45,7 @@ public class RedditServiceImpl implements RedditService {
     private static final String IMGUR_COM_3_ALBUM = "https://api.imgur.com/3/album/";
     private static final String FAVICON = "/favicon.ico";
     private static final String REDDIT_DAILY_NEWS = "https://reddit.com/r/formula1/search.json?q=flair:news&sort=comments&restrict_sr=on&t=day";
+    private static final String REDDIT_DAILY_VIDEO_POSTS = "https://reddit.com/r/formula1/search.json?q=flair:video&sort=comments&restrict_sr=on&t=day";
     private static final String I_REDDIT = "i.redd.it";
     private static final String I_IMGUR = "i.imgur.com";
     private static final String TWITTER_URL = "twitter.com";
@@ -75,34 +78,66 @@ public class RedditServiceImpl implements RedditService {
 
     @Override
     public NewsContent fetchRedditPosts() {
-        getRFormula1New();
+        getRFormula1NewImages();
         getRF1PornHot();
         return getNews();
     }
 
     private NewsContent getNews() {
-        HttpEntity entity = new HttpEntity(headers);
-        ResponseEntity<String> response = restTemplate.exchange(
-                REDDIT_DAILY_NEWS, HttpMethod.GET, entity, String.class);
-        List<NewsContent> list = new ArrayList<>();
+        List<NewsContent> newsPosts =  getRedditNewsByFlair(REDDIT_DAILY_NEWS, 3);
+        List<NewsContent> videoPosts =  getRedditNewsByFlair(REDDIT_DAILY_VIDEO_POSTS, 5);
+        List<NewsContent> finalList = mergeAndEnrichNewsLists(newsPosts, videoPosts);
+        saveNewsList(finalList);
+        return finalList.get(0);
+    }
+
+    private List<NewsContent> mergeAndEnrichNewsLists(List<NewsContent> newsPosts, List<NewsContent> videoPosts) {
+        List<NewsContent> filteredVideoPosts = new ArrayList<>();
+        videoPosts.forEach(post->{
+            if(post.getUrl().contains("streamja")){
+                post.setUrl(post.getUrl().replace("streamja.com/", "streamja.com/embed/"));
+                filteredVideoPosts.add(post);
+            }
+            if(post.getUrl().contains("streamable")){
+                post.setUrl(post.getUrl().replace("streamable.com/", "streamable.com/e/"));
+                filteredVideoPosts.add(post);
+            }
+            if(post.getUrl().contains("youtu")){
+                post.setUrl(post.getUrl().replace("youtu.be/", "www.youtube.com/embed/"));
+                post.setUrl(post.getUrl().replace("youtube.com/watch?v=", "youtube.com/embed/"));
+                filteredVideoPosts.add(post);
+            }
+        });
+        List<NewsContent> finalList = Stream.concat(newsPosts.stream(), filteredVideoPosts.stream()).sorted().collect(Collectors.toList());
+        Collections.sort(finalList);
+        AtomicReference<Integer> counter = new AtomicReference<>(1000);
         long currentTime = System.currentTimeMillis();
+        finalList.forEach(post->{
+            post.setDates(currentTime - counter.get());
+            counter.set(counter.get() + 1000);
+        });
+        return finalList;
+    }
+
+    private List<NewsContent>  getRedditNewsByFlair(String apiUrl, Integer status) {
+        HttpEntity entity = new HttpEntity(headers);
+        ResponseEntity<String> newsResponse = restTemplate.exchange(
+                apiUrl, HttpMethod.GET, entity, String.class);
+        List<NewsContent> list = new ArrayList<>();
         try {
-            Map<String, Object> mapping = mapper.readValue(response.getBody(), typeRef);
+            Map<String, Object> mapping = mapper.readValue(newsResponse.getBody(), typeRef);
             LinkedHashMap<String, Object> root = (LinkedHashMap<String, Object>) mapping.get("data");
             List<LinkedHashMap<String, Object>> children = (ArrayList<LinkedHashMap<String, Object>>) root.get("children");
-            AtomicReference<Integer> counter = new AtomicReference<>(1000);
             children.forEach(child -> {
                 LinkedHashMap<String, Object> data = (LinkedHashMap<String, Object>) child.get("data");
-                NewsContent post = new NewsContent(data, currentTime - counter.get());
+                NewsContent post = new NewsContent(data, status);
                 list.add(post);
-                counter.set(counter.get() + 1000);
             });
-            saveNewsList(list);
-            return list.get(0);
+            return list;
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }
-        return null;
+        return new ArrayList<>();
     }
 
     private void saveNewsList(List<NewsContent> list) {
@@ -110,7 +145,9 @@ public class RedditServiceImpl implements RedditService {
         for (NewsContent post : list) {
             NewsContent fromDb = newsRepository.findByCode(post.getCode());
             if (fromDb == null) {
-                getImagesForPost(post);
+                if(post.getStatus()==3) {
+                    getImagesForPost(post);
+                }
                 saveToDatabaseList.add(post);
             } else {
                 if (fromDb.getTimestampActivity().before(post.getTimestampActivity())) {
@@ -231,10 +268,6 @@ public class RedditServiceImpl implements RedditService {
                         String content = imageTag.get().attr("content");
                         post.setImageUrl(content);
                     }
-//                    Elements titleTags = doc.getElementsByTag("title");
-//                    if (titleTags.size() > 0 && !domainUrl.contains("instagram")) {
-//                        post.setTitle(titleTags.get(0).wholeText());
-//                    }
                 } catch (Exception ex) {
                     log.info("ex2 " + post.getUrl());
                     ex.printStackTrace();
@@ -282,7 +315,7 @@ public class RedditServiceImpl implements RedditService {
         }
     }
 
-    private void getRFormula1New() {
+    private void getRFormula1NewImages() {
         AtomicReference<Boolean> iterate = new AtomicReference<>(true);
         HttpEntity entity = new HttpEntity(headers);
         ResponseEntity<String> response = restTemplate.exchange(

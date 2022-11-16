@@ -176,7 +176,7 @@ public class ClientServiceImpl implements ClientService {
         if (latestNews != null && !allowNonRedditNews) {
             topNews = latestNews;
         } else {
-            topNews = newsRepository.findFirstByStatusLessThanEqualOrderByTimestampActivityDesc(4);
+            topNews = newsRepository.findFirstByStatusLessThanEqualOrderByTimestampActivityDesc(5);
         }
     }
 
@@ -254,12 +254,12 @@ public class ClientServiceImpl implements ClientService {
     @Override
     public List<NewsContent> getNews(Integer page) {
         Pageable paging = PageRequest.of(page, 15);
-        return newsRepository.findAllByStatusLessThanEqualOrderByTimestampActivityDesc(4, paging);
+        return newsRepository.findAllByStatusLessThanEqualOrderByTimestampActivityDesc(5, paging);
     }
 
     @Override
     public NewsContent getNewsPost(String code) {
-        NewsContent response = newsRepository.findByCodeAndStatusLessThanEqual(code, 4);
+        NewsContent response = newsRepository.findByCodeAndStatusLessThanEqual(code, 5);
         if (response != null) {
             response.setComments(newsCommentRepository.findAllByContentCodeAndStatusLessThanOrderByTimestampCreatedDesc(code, 5));
         }
@@ -267,7 +267,7 @@ public class ClientServiceImpl implements ClientService {
     }
     @Override
     public Boolean bumpNewsPost(String code) {
-        NewsContent response = newsRepository.findByCodeAndStatusLessThanEqual(code, 4);
+        NewsContent response = newsRepository.findByCodeAndStatusLessThanEqual(code, 5);
         if (response != null) {
             response.setTimestampActivity(new Date());
             newsRepository.save(response);
@@ -437,7 +437,7 @@ public class ClientServiceImpl implements ClientService {
         initIframeLink();
         initFourchanDisabled();
         setAllowNonRedditNews();
-        topNews = newsRepository.findFirstByStatusLessThanEqualOrderByTimestampActivityDesc(4);
+        topNews = newsRepository.findFirstByStatusLessThanEqualOrderByTimestampActivityDesc(5);
         log.info("clientServiceInit: {} -{}", iframeLink, overlays);
     }
 

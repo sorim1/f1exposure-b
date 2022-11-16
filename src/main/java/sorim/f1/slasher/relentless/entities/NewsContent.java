@@ -20,7 +20,7 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class NewsContent {
+public class NewsContent implements Comparable<NewsContent> {
 
     @Id
     private String code;
@@ -56,6 +56,23 @@ public class NewsContent {
         this.setCommentCount(0);
         this.numCommentsR = (Integer) data.get("num_comments");
     }
-
-
+    public NewsContent(LinkedHashMap<String, Object> data, Integer status) {
+        this.code = MainUtility.generateCodeFromTitleAndId((String) data.get("title"), (String) data.get("id"));
+        this.title = (String) data.get("title");
+        this.title = this.title.replace("&amp;", "&");
+        this.url = (String) data.get("url_overridden_by_dest");
+        Double createdDouble = (Double) data.get("created");
+        this.timestampCreated = new Date(createdDouble.longValue()) ;
+        this.setStatus(status);
+        this.setCommentCount(0);
+        this.numCommentsR = (Integer) data.get("num_comments");
+    }
+    @Override
+    public int compareTo(NewsContent u) {
+        return u.numCommentsR - this.numCommentsR;
+    }
+    public void setDates(long time) {
+        this.setTimestampCreated(new Date(time));
+        this.setTimestampActivity(new Date(time-18*60*60*1000));
+    }
 }

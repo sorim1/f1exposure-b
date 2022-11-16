@@ -188,7 +188,7 @@ public class Scheduler {
                         @SneakyThrows
                         @Override
                         public void run() {
-                            imageFeedJob();
+                            imageFeedJobWithoutInstagram();
                             getImagesPeriodically(9);
                         }
                     },
