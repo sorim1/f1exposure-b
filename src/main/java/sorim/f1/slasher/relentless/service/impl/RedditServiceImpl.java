@@ -84,8 +84,8 @@ public class RedditServiceImpl implements RedditService {
     }
 
     private NewsContent getNews() {
-        List<NewsContent> newsPosts =  getRedditNewsByFlair(REDDIT_DAILY_NEWS, 3);
-        List<NewsContent> videoPosts =  getRedditNewsByFlair(REDDIT_DAILY_VIDEO_POSTS, 5);
+        List<NewsContent> newsPosts = getRedditNewsByFlair(REDDIT_DAILY_NEWS, 3);
+        List<NewsContent> videoPosts = getRedditNewsByFlair(REDDIT_DAILY_VIDEO_POSTS, 5);
         List<NewsContent> finalList = mergeAndEnrichNewsLists(newsPosts, videoPosts);
         saveNewsList(finalList);
         return finalList.get(0);
@@ -93,33 +93,38 @@ public class RedditServiceImpl implements RedditService {
 
     private List<NewsContent> mergeAndEnrichNewsLists(List<NewsContent> newsPosts, List<NewsContent> videoPosts) {
         List<NewsContent> filteredVideoPosts = new ArrayList<>();
-        videoPosts.forEach(post->{
-            if(post.getUrl().contains("streamja")){
-                post.setUrl(post.getUrl().replace("streamja.com/", "streamja.com/embed/"));
-                filteredVideoPosts.add(post);
-            }
-            if(post.getUrl().contains("streamable")){
-                post.setUrl(post.getUrl().replace("streamable.com/", "streamable.com/e/"));
-                filteredVideoPosts.add(post);
-            }
-            if(post.getUrl().contains("youtu")){
-                post.setUrl(post.getUrl().replace("youtu.be/", "www.youtube.com/embed/"));
-                post.setUrl(post.getUrl().replace("youtube.com/watch?v=", "youtube.com/embed/"));
-                filteredVideoPosts.add(post);
+        videoPosts.forEach(post -> {
+            if (post.getUrl() != null) {
+                if (post.getUrl().contains("streamja")) {
+                    post.setUrl(post.getUrl().replace("streamja.com/", "streamja.com/embed/"));
+                    filteredVideoPosts.add(post);
+                }
+                if (post.getUrl().contains("streamable")) {
+                    post.setUrl(post.getUrl().replace("streamable.com/", "streamable.com/e/"));
+                    filteredVideoPosts.add(post);
+                }
+                if (post.getUrl().contains("youtu")) {
+                    post.setUrl(post.getUrl().replace("youtu.be/", "www.youtube.com/embed/"));
+                    post.setUrl(post.getUrl().replace("youtube.com/watch?v=", "youtube.com/embed/"));
+                    if(post.getUrl().contains("&")){
+                        post.setUrl(post.getUrl().substring(0, post.getUrl().indexOf("&")));
+                    }
+                    filteredVideoPosts.add(post);
+                }
             }
         });
         List<NewsContent> finalList = Stream.concat(newsPosts.stream(), filteredVideoPosts.stream()).sorted().collect(Collectors.toList());
         Collections.sort(finalList);
         AtomicReference<Integer> counter = new AtomicReference<>(1000);
         long currentTime = System.currentTimeMillis();
-        finalList.forEach(post->{
+        finalList.forEach(post -> {
             post.setDates(currentTime - counter.get());
             counter.set(counter.get() + 1000);
         });
         return finalList;
     }
 
-    private List<NewsContent>  getRedditNewsByFlair(String apiUrl, Integer status) {
+    private List<NewsContent> getRedditNewsByFlair(String apiUrl, Integer status) {
         HttpEntity entity = new HttpEntity(headers);
         ResponseEntity<String> newsResponse = restTemplate.exchange(
                 apiUrl, HttpMethod.GET, entity, String.class);
@@ -145,7 +150,7 @@ public class RedditServiceImpl implements RedditService {
         for (NewsContent post : list) {
             NewsContent fromDb = newsRepository.findByCode(post.getCode());
             if (fromDb == null) {
-                if(post.getStatus()==3) {
+                if (post.getStatus() == 3) {
                     getImagesForPost(post);
                 }
                 saveToDatabaseList.add(post);
@@ -212,7 +217,7 @@ public class RedditServiceImpl implements RedditService {
     }
 
     private void getImagesForPost(NewsContent post) {
-        if(post !=null && post.getUrl()!=null) {
+        if (post != null && post.getUrl() != null) {
             HttpEntity entity = new HttpEntity(htmlHeaders);
             boolean iconUrlSet = false;
             String domainUrl = MainUtility.getDomain(post.getUrl());
@@ -360,15 +365,15 @@ public class RedditServiceImpl implements RedditService {
             fallback.add(new RedditPost(0));
             fallback.add(new RedditPost(0));
             children.forEach(child -> {
-                if (two.get()<2) {
+                if (two.get() < 2) {
                     LinkedHashMap<String, Object> data = (LinkedHashMap<String, Object>) child.get("data");
                     RedditPost post = new RedditPost(data);
                     if (post.isItJpeg()) {
-                        if (post.getUps()>1300) {
-                            two.set(two.get()+1);
+                        if (post.getUps() > 1300) {
+                            two.set(two.get() + 1);
                             output.add(post);
                         }
-                        if (post.getUps()> fallback.get(0).getUps()) {
+                        if (post.getUps() > fallback.get(0).getUps()) {
                             fallback.set(1, fallback.get(0));
                             fallback.set(0, post);
                         }
@@ -378,7 +383,7 @@ public class RedditServiceImpl implements RedditService {
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }
-        if(output.size()==2){
+        if (output.size() == 2) {
             return instagramService.postDankToInstagram(output);
         } else {
             log.warn("dank instagram post fallback!");
@@ -434,7 +439,7 @@ public class RedditServiceImpl implements RedditService {
 
     @PostConstruct
     void init() {
-        headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
+        headers.setAccept(List.of(MediaType.APPLICATION_JSON));
         headers.setContentType(MediaType.APPLICATION_JSON);
         headers.add("user-agent", "Mozilla/4.8 Firefox/21.0");
         HttpEntity<String> entity = new HttpEntity<String>("parameters", headers);
