@@ -60,12 +60,7 @@ public class Scheduler {
             standingsUpdated = true;
         }
         isItRaceWeek();
-        if (isRaceWeek) {
-            clientService.setOverlays("", true);
-        } else {
-            clientService.setOverlays("sasha-sometimes", true);
-        }
-      //  fourchanService.cleanup();
+        clientService.setOverlays("", true);
     }
 
     @Scheduled(cron = "0 0 4 * * FRI")

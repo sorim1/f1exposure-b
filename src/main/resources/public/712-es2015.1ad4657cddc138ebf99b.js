@@ -55827,8 +55827,6 @@ class NewsCommentSection {
 
 
 
-
-
 class SubmitContentDialog {
     constructor(restService, utilityService, router, dialogRef) {
         this.restService = restService;
@@ -55858,7 +55856,7 @@ class SubmitContentDialog {
     }
 }
 SubmitContentDialog.ɵfac = function SubmitContentDialog_Factory(t) { return new (t || SubmitContentDialog)(core/* ɵɵdirectiveInject */.Y36(rest_service/* RestService */.v), core/* ɵɵdirectiveInject */.Y36(utility_service/* UtilityService */.t), core/* ɵɵdirectiveInject */.Y36(router/* Router */.F0), core/* ɵɵdirectiveInject */.Y36(MatDialogRef)); };
-SubmitContentDialog.ɵcmp = /*@__PURE__*/ core/* ɵɵdefineComponent */.Xpm({ type: SubmitContentDialog, selectors: [["submit-content-dialog"]], decls: 27, vars: 4, consts: [["mat-dialog-content", "", 1, "min-dialog-size", "overflow-hidden"], [1, "row"], [1, "col-lg-12", "col-md-12", "col-sm-12"], [1, "col-12"], ["placeholder", "title", "type", "text", 1, "form-control", 3, "ngModel", "ngModelChange"], [1, "left-70"], ["placeholder", "url", "type", "text", 1, "form-control", 3, "ngModel", "ngModelChange"], [1, "padding-top-35", "right-30"], [3, "value", "valueChange"], ["selected", "true", "value", "1"], ["value", "2"], [1, "form-group"], ["matInput", "", 1, "form-control", "message-text-area-50vh", 3, "ngModel", "ngModelChange"], [1, "row", "align-bottom"], ["mat-raised-button", "", 1, "active-color-button", "bg-success", "text-white", 3, "click"]], template: function SubmitContentDialog_Template(rf, ctx) { if (rf & 1) {
+SubmitContentDialog.ɵcmp = /*@__PURE__*/ core/* ɵɵdefineComponent */.Xpm({ type: SubmitContentDialog, selectors: [["submit-content-dialog"]], decls: 20, vars: 3, consts: [["mat-dialog-content", "", 1, "min-dialog-size", "overflow-hidden"], [1, "row"], [1, "col-lg-12", "col-md-12", "col-sm-12"], [1, "col-12"], ["placeholder", "title", "type", "text", 1, "form-control", 3, "ngModel", "ngModelChange"], [1, "w-100"], ["placeholder", "url", "type", "text", 1, "form-control", 3, "ngModel", "ngModelChange"], [1, "form-group"], ["matInput", "", 1, "form-control", "message-text-area-50vh", 3, "ngModel", "ngModelChange"], [1, "row", "align-bottom"], ["mat-raised-button", "", 1, "active-color-button", "bg-success", "text-white", "w-100", "px-6", 3, "click"]], template: function SubmitContentDialog_Template(rf, ctx) { if (rf & 1) {
         core/* ɵɵelementStart */.TgZ(0, "div", 0);
         core/* ɵɵelementStart */.TgZ(1, "div", 1);
         core/* ɵɵelementStart */.TgZ(2, "div", 2);
@@ -55878,36 +55876,24 @@ SubmitContentDialog.ɵcmp = /*@__PURE__*/ core/* ɵɵdefineComponent */.Xpm({ ty
         core/* ɵɵlistener */.NdJ("ngModelChange", function SubmitContentDialog_Template_input_ngModelChange_11_listener($event) { return ctx.newContent.url = $event; });
         core/* ɵɵelementEnd */.qZA();
         core/* ɵɵelementEnd */.qZA();
-        core/* ɵɵelementStart */.TgZ(12, "div", 7);
-        core/* ɵɵelement */._UZ(13, "label");
-        core/* ɵɵelementStart */.TgZ(14, "mat-select", 8);
-        core/* ɵɵlistener */.NdJ("valueChange", function SubmitContentDialog_Template_mat_select_valueChange_14_listener($event) { return ctx.status = $event; });
-        core/* ɵɵelementStart */.TgZ(15, "mat-option", 9);
-        core/* ɵɵtext */._uU(16, "Standard post");
         core/* ɵɵelementEnd */.qZA();
-        core/* ɵɵelementStart */.TgZ(17, "mat-option", 10);
-        core/* ɵɵtext */._uU(18, "Pure HTML");
+        core/* ɵɵelementStart */.TgZ(12, "div", 3);
+        core/* ɵɵelementStart */.TgZ(13, "div", 7);
+        core/* ɵɵelementStart */.TgZ(14, "label");
+        core/* ɵɵtext */._uU(15, "Text");
         core/* ɵɵelementEnd */.qZA();
-        core/* ɵɵelementEnd */.qZA();
-        core/* ɵɵelementEnd */.qZA();
-        core/* ɵɵelementEnd */.qZA();
-        core/* ɵɵelementStart */.TgZ(19, "div", 3);
-        core/* ɵɵelementStart */.TgZ(20, "div", 11);
-        core/* ɵɵelementStart */.TgZ(21, "label");
-        core/* ɵɵtext */._uU(22, "Text");
-        core/* ɵɵelementEnd */.qZA();
-        core/* ɵɵelementStart */.TgZ(23, "textarea", 12);
-        core/* ɵɵlistener */.NdJ("ngModelChange", function SubmitContentDialog_Template_textarea_ngModelChange_23_listener($event) { return ctx.newContent.textContent = $event; });
+        core/* ɵɵelementStart */.TgZ(16, "textarea", 8);
+        core/* ɵɵlistener */.NdJ("ngModelChange", function SubmitContentDialog_Template_textarea_ngModelChange_16_listener($event) { return ctx.newContent.textContent = $event; });
         core/* ɵɵelementEnd */.qZA();
         core/* ɵɵelementEnd */.qZA();
         core/* ɵɵelementEnd */.qZA();
         core/* ɵɵelementEnd */.qZA();
         core/* ɵɵelementEnd */.qZA();
         core/* ɵɵelementEnd */.qZA();
-        core/* ɵɵelementStart */.TgZ(24, "div", 13);
-        core/* ɵɵelementStart */.TgZ(25, "button", 14);
-        core/* ɵɵlistener */.NdJ("click", function SubmitContentDialog_Template_button_click_25_listener() { return ctx.sendMessage(); });
-        core/* ɵɵtext */._uU(26, " POST ");
+        core/* ɵɵelementStart */.TgZ(17, "div", 9);
+        core/* ɵɵelementStart */.TgZ(18, "button", 10);
+        core/* ɵɵlistener */.NdJ("click", function SubmitContentDialog_Template_button_click_18_listener() { return ctx.sendMessage(); });
+        core/* ɵɵtext */._uU(19, " POST ");
         core/* ɵɵelementEnd */.qZA();
         core/* ɵɵelementEnd */.qZA();
         core/* ɵɵelementEnd */.qZA();
@@ -55916,11 +55902,9 @@ SubmitContentDialog.ɵcmp = /*@__PURE__*/ core/* ɵɵdefineComponent */.Xpm({ ty
         core/* ɵɵproperty */.Q6J("ngModel", ctx.newContent.title);
         core/* ɵɵadvance */.xp6(4);
         core/* ɵɵproperty */.Q6J("ngModel", ctx.newContent.url);
-        core/* ɵɵadvance */.xp6(3);
-        core/* ɵɵproperty */.Q6J("value", ctx.status);
-        core/* ɵɵadvance */.xp6(9);
+        core/* ɵɵadvance */.xp6(5);
         core/* ɵɵproperty */.Q6J("ngModel", ctx.newContent.textContent);
-    } }, directives: [MatDialogContent, fesm2015_forms/* DefaultValueAccessor */.Fj, fesm2015_forms/* NgControlStatus */.JJ, fesm2015_forms/* NgModel */.On, MatSelect, fesm2015_core/* MatOption */.ey, MatInput, fesm2015_button/* MatButton */.lW], encapsulation: 2 });
+    } }, directives: [MatDialogContent, fesm2015_forms/* DefaultValueAccessor */.Fj, fesm2015_forms/* NgControlStatus */.JJ, fesm2015_forms/* NgModel */.On, MatInput, fesm2015_button/* MatButton */.lW], encapsulation: 2 });
 
 ;// CONCATENATED MODULE: ./src/app/pages/poweredByAws/news-section.component.ts
 
@@ -56451,22 +56435,26 @@ function NewsComponent_div_1_div_3_Template(rf, ctx) { if (rf & 1) {
 } }
 function NewsComponent_div_1_div_4_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div");
-    core/* ɵɵelementStart */.TgZ(1, "div", 5);
-    core/* ɵɵelementStart */.TgZ(2, "div", 37);
-    core/* ɵɵtext */._uU(3);
-    core/* ɵɵpipe */.ALo(4, "date");
+    core/* ɵɵelementStart */.TgZ(1, "div", 15);
+    core/* ɵɵelementStart */.TgZ(2, "div", 16);
+    core/* ɵɵelementStart */.TgZ(3, "div", 5);
+    core/* ɵɵelementStart */.TgZ(4, "div", 37);
+    core/* ɵɵtext */._uU(5);
+    core/* ɵɵpipe */.ALo(6, "date");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(5, "div", 40);
-    core/* ɵɵelementStart */.TgZ(6, "div", 41);
-    core/* ɵɵelement */._UZ(7, "iframe", 42);
+    core/* ɵɵelementStart */.TgZ(7, "div", 40);
+    core/* ɵɵelementStart */.TgZ(8, "div", 41);
+    core/* ɵɵelement */._UZ(9, "iframe", 42);
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
     const ctx_r3 = core/* ɵɵnextContext */.oxw(2);
-    core/* ɵɵadvance */.xp6(3);
-    core/* ɵɵtextInterpolate1 */.hij("", core/* ɵɵpipeBind2 */.xi3(4, 2, ctx_r3.post.timestampCreated, "MMM d, y, HH:mm"), " ");
+    core/* ɵɵadvance */.xp6(5);
+    core/* ɵɵtextInterpolate1 */.hij("", core/* ɵɵpipeBind2 */.xi3(6, 2, ctx_r3.post.timestampCreated, "MMM d, y, HH:mm"), " ");
     core/* ɵɵadvance */.xp6(4);
     core/* ɵɵproperty */.Q6J("src", ctx_r3.sanitizeUrl(ctx_r3.post.url), core/* ɵɵsanitizeResourceUrl */.uOi);
 } }
@@ -56676,7 +56664,7 @@ function NewsComponent_div_1_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(1, "div", 2);
     core/* ɵɵtemplate */.YNc(2, NewsComponent_div_1_div_2_Template, 13, 9, "div", 3);
     core/* ɵɵtemplate */.YNc(3, NewsComponent_div_1_div_3_Template, 7, 5, "div", 4);
-    core/* ɵɵtemplate */.YNc(4, NewsComponent_div_1_div_4_Template, 8, 5, "div", 4);
+    core/* ɵɵtemplate */.YNc(4, NewsComponent_div_1_div_4_Template, 10, 5, "div", 4);
     core/* ɵɵelementStart */.TgZ(5, "div", 5);
     core/* ɵɵelementStart */.TgZ(6, "div", 6);
     core/* ɵɵelementStart */.TgZ(7, "div");
@@ -56983,7 +56971,7 @@ class NewsComponent {
     }
 }
 NewsComponent.ɵfac = function NewsComponent_Factory(t) { return new (t || NewsComponent)(core/* ɵɵdirectiveInject */.Y36(rest_service/* RestService */.v), core/* ɵɵdirectiveInject */.Y36(utility_service/* UtilityService */.t), core/* ɵɵdirectiveInject */.Y36(router/* ActivatedRoute */.gz), core/* ɵɵdirectiveInject */.Y36(router/* Router */.F0), core/* ɵɵdirectiveInject */.Y36(MatDialog), core/* ɵɵdirectiveInject */.Y36(platform_browser/* DomSanitizer */.H7)); };
-NewsComponent.ɵcmp = /*@__PURE__*/ core/* ɵɵdefineComponent */.Xpm({ type: NewsComponent, selectors: [["app-aws-cmp"]], decls: 2, vars: 1, consts: [["class", "height-fill-screen", 4, "ngIf"], [1, "height-fill-screen"], [1, "div-padded-mobile-0-5"], ["class", "div-padded-left-right-1", 4, "ngIf"], [4, "ngIf"], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area-100", 3, "ngModel", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "black-button", 3, "click"], ["id", "file-upload", "type", "file", 2, "display", "none", 3, "change"], ["for", "file-upload", 1, "mat-focus-indicator", "black-button", "mat-flat-button", "mat-button-base"], [4, "ngFor", "ngForOf"], [1, "pb-4"], [1, "div-padded-left-right-1"], [1, "card", "card-stats"], [1, "card-body"], [1, "col-12", "col-lg-12", "div-padded-always-left-right-1-2", "text-right"], ["class", "col-12 col-lg-2 no-right-padding", 4, "ngIf"], ["class", "pre-line col-12 col-lg-10 div-padded-always-left-right-1-2", 4, "ngIf"], [1, "col-12", "col-lg-2", "no-right-padding"], [1, "icon-big", "text-center", "icon-warning"], [1, "nc-icon", "nc-align-left-2", "text-success"], ["target", "_blank", 3, "href"], [1, "text-center"], ["class", "icon-big text-center icon-warning", 4, "ngIf"], [1, "teko-text-small"], ["alt", "iconUrl", "onerror", "this.src='assets/img/favicon2.png'", 1, "w-42px", 3, "src"], [1, "nc-icon", "nc-globe", "text-success"], [1, "pre-line", "col-12", "col-lg-10", "div-padded-always-left-right-1-2"], ["target", "_blank", 3, "href", 4, "ngIf"], ["alt", "imageUrl", 3, "src", 4, "ngIf"], ["alt", "imageUrl", 3, "src"], [1, "twitter-tweet"], ["dir", "ltr", "lang", "en"], [1, "postLinks", 3, "href"], ["alt", "loading", "src", "assets/img/loading.gif", 2, "max-width", "35px"], [1, "col-12", "col-lg-12", "div-padded-always-top-right-2rem", "text-right"], [1, "div-padded-left-right-1", "pb-3"], [3, "innerHTML"], [1, "div-padded-left-right-1", "w-100", "pb-3"], [2, "width", "100%", "position", "relative", "padding-bottom", "50vh"], ["frameborder", "0", "allowfullscreen", "", 2, "width", "100%", "height", "50vh", "position", "absolute", "display", "block", "margin", "0 auto", 3, "src"], [1, "basic-news-comment"], [1, "one-aws", "hover-pointer", 3, "click"], [1, "two-aws", "hover-pointer", 3, "click"], ["class", "basic-comment-body", 4, "ngIf"], ["class", "basic-comment-body-no-padding d-flex", 4, "ngIf"], [1, "basic-comment-body"], ["class", "pl-3 pr-5", 4, "ngIf"], [1, "pl-3", "pr-5"], ["class", "text-center", 4, "ngIf"], ["allow", "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture", "allowfullscreen", "", "height", "315", "title", "YouTube video player", "width", "560", 3, "src"], [1, "basic-comment-body-no-padding", "d-flex"], ["class", "max-width-30-pc px-3", 4, "ngIf"], [1, "max-width-30-pc", "px-3"], ["alt", "commentImage", "onerror", "this.src='assets/img/drivers/default.png'", 3, "src"], ["width", "100%", "controls", ""], ["type", "video/webm", 3, "src", 4, "ngIf"], ["type", "video/mp4", 3, "src", 4, "ngIf"], ["type", "video/webm", 3, "src"], ["type", "video/mp4", 3, "src"]], template: function NewsComponent_Template(rf, ctx) { if (rf & 1) {
+NewsComponent.ɵcmp = /*@__PURE__*/ core/* ɵɵdefineComponent */.Xpm({ type: NewsComponent, selectors: [["app-aws-cmp"]], decls: 2, vars: 1, consts: [["class", "height-fill-screen bg-grey", 4, "ngIf"], [1, "height-fill-screen", "bg-grey"], [1, "px-sm-0", "pt-sm-0", "px-lg-2", "pt-lg-2"], ["class", "div-padded-left-right-1", 4, "ngIf"], [4, "ngIf"], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area-100", 3, "ngModel", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "black-button", 3, "click"], ["id", "file-upload", "type", "file", 2, "display", "none", 3, "change"], ["for", "file-upload", 1, "mat-focus-indicator", "black-button", "mat-flat-button", "mat-button-base"], [4, "ngFor", "ngForOf"], [1, "pb-4"], [1, "div-padded-left-right-1"], [1, "card", "card-stats"], [1, "card-body"], [1, "col-12", "col-lg-12", "div-padded-always-left-right-1-2", "text-right"], ["class", "col-12 col-lg-2 no-right-padding", 4, "ngIf"], ["class", "pre-line col-12 col-lg-10 div-padded-always-left-right-1-2", 4, "ngIf"], [1, "col-12", "col-lg-2", "no-right-padding"], [1, "icon-big", "text-center", "icon-warning"], [1, "nc-icon", "nc-align-left-2", "text-success"], ["target", "_blank", 3, "href"], [1, "text-center"], ["class", "icon-big text-center icon-warning", 4, "ngIf"], [1, "teko-text-small"], ["alt", "iconUrl", "onerror", "this.src='assets/img/favicon2.png'", 1, "w-42px", 3, "src"], [1, "nc-icon", "nc-globe", "text-success"], [1, "pre-line", "col-12", "col-lg-10", "div-padded-always-left-right-1-2"], ["target", "_blank", 3, "href", 4, "ngIf"], ["alt", "imageUrl", 3, "src", 4, "ngIf"], ["alt", "imageUrl", 3, "src"], [1, "twitter-tweet"], ["dir", "ltr", "lang", "en"], [1, "postLinks", 3, "href"], ["alt", "loading", "src", "assets/img/loading.gif", 2, "max-width", "35px"], [1, "col-12", "col-lg-12", "div-padded-always-top-right-2rem", "text-right"], [1, "div-padded-left-right-1", "pb-3"], [3, "innerHTML"], [1, "div-padded-left-right-1", "w-100", "pb-3"], [2, "width", "100%", "position", "relative", "padding-bottom", "50vh"], ["allowfullscreen", "", "frameborder", "0", 2, "width", "100%", "height", "50vh", "position", "absolute", "display", "block", "margin", "0 auto", 3, "src"], [1, "basic-news-comment"], [1, "one-aws", "hover-pointer", 3, "click"], [1, "two-aws", "hover-pointer", 3, "click"], ["class", "basic-comment-body", 4, "ngIf"], ["class", "basic-comment-body-no-padding d-flex", 4, "ngIf"], [1, "basic-comment-body"], ["class", "pl-3 pr-5", 4, "ngIf"], [1, "pl-3", "pr-5"], ["class", "text-center", 4, "ngIf"], ["allow", "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture", "allowfullscreen", "", "height", "315", "title", "YouTube video player", "width", "560", 3, "src"], [1, "basic-comment-body-no-padding", "d-flex"], ["class", "max-width-30-pc px-3", 4, "ngIf"], [1, "max-width-30-pc", "px-3"], ["alt", "commentImage", "onerror", "this.src='assets/img/drivers/default.png'", 3, "src"], ["controls", "", "width", "100%"], ["type", "video/webm", 3, "src", 4, "ngIf"], ["type", "video/mp4", 3, "src", 4, "ngIf"], ["type", "video/webm", 3, "src"], ["type", "video/mp4", 3, "src"]], template: function NewsComponent_Template(rf, ctx) { if (rf & 1) {
         core/* ɵɵelementStart */.TgZ(0, "div");
         core/* ɵɵtemplate */.YNc(1, NewsComponent_div_1_Template, 17, 7, "div", 0);
         core/* ɵɵelementEnd */.qZA();
