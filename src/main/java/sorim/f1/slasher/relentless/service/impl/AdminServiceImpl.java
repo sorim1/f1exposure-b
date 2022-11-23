@@ -9,6 +9,7 @@ import net.fortuna.ical4j.model.PropertyList;
 import net.fortuna.ical4j.model.component.CalendarComponent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.client.RestTemplate;
 import sorim.f1.slasher.relentless.configuration.MainProperties;
 import sorim.f1.slasher.relentless.entities.*;
@@ -673,6 +674,12 @@ public class AdminServiceImpl implements AdminService {
     @Override
     public String updateCurrentSeasonPast(Integer season) {
         return properties.updateCurrentSeasonPast(season);
+    }
+
+    @Override
+    public String saveProperty(String name, String value) {
+        properties.saveProperty(name, value);
+        return "DONE";
     }
 
     @Override

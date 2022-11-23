@@ -285,6 +285,11 @@ public class AdminController {
     String updateCurrentSeasonPast(@PathVariable("season") Integer season) {
         return service.updateCurrentSeasonPast(season);
     }
+    @GetMapping("/saveProperty/{name}/{value}")
+    String saveProperty(@PathVariable String name, @PathVariable String value) {
+        return service.saveProperty(name, value);
+    }
+
 
     @PostMapping("/updateJsonRepository")
     JsonRepositoryModel updateJsonRepository(@RequestBody JsonRepositoryModel body) {

@@ -93,7 +93,7 @@ public interface AdminService {
     List<Replay> saveVideos(List<Replay> video);
 
     String updateCurrentSeasonPast(Integer season);
-
+    String saveProperty(String name, String value);
     F1Calendar getCalendar();
 
     F1Calendar saveCalendar(F1Calendar body);
