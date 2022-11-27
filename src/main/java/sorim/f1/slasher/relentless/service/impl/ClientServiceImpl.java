@@ -34,7 +34,8 @@ public class ClientServiceImpl implements ClientService {
 
     public static String FOURCHAN_DISABLED = "FOURCHAN_DISABLED";
     private static Boolean allowNonRedditNews;
-    private static NewsContent topNews = new NewsContent();
+
+    private static SidebarData sidebarData = new SidebarData();
     private final MainProperties properties;
     private final CalendarRepository calendarRepository;
     private final DriverStandingsRepository driverStandingsRepository;
@@ -174,9 +175,9 @@ public class ClientServiceImpl implements ClientService {
     public void fetchRedditPosts() {
         NewsContent latestNews = redditService.fetchRedditPosts();
         if (latestNews != null && !allowNonRedditNews) {
-            topNews = latestNews;
+            setSidebarData(latestNews);
         } else {
-            topNews = newsRepository.findFirstByStatusLessThanEqualOrderByTimestampActivityDesc(5);
+            setSidebarData(newsRepository.findFirstByStatusLessThanEqualOrderByTimestampActivityDesc(5));
         }
     }
 
@@ -392,10 +393,7 @@ public class ClientServiceImpl implements ClientService {
 
     @Override
     public SidebarData getSidebarData() {
-        return SidebarData.builder()
-                .topNews(topNews)
-                .exposureOn(exposureService.isExposureNow())
-                .build();
+        return sidebarData;
     }
 
     @Override
@@ -437,8 +435,14 @@ public class ClientServiceImpl implements ClientService {
         initIframeLink();
         initFourchanDisabled();
         setAllowNonRedditNews();
-        topNews = newsRepository.findFirstByStatusLessThanEqualOrderByTimestampActivityDesc(5);
+        setSidebarData(newsRepository.findFirstByStatusLessThanEqualOrderByTimestampActivityDesc(5));
         log.info("clientServiceInit: {} -{}", iframeLink, overlays);
+    }
+
+    private void setSidebarData(NewsContent topNews) {
+        this.sidebarData = SidebarData.builder()
+                .topNews(topNews).latestTwitterPost(twitterService.getMostPopularDailyPost())
+                .build();
     }
 
     private void setAllowNonRedditNews() {

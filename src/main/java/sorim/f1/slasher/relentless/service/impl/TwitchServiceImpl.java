@@ -76,11 +76,16 @@ public class TwitchServiceImpl implements TwitchService {
     }
 
     private List<String> topIracingStream() {
-        List<String> streamer = new ArrayList<>();
-        StreamList streamList = twitchHelixclient.getStreams(null, null, null, 1, List.of("19554"), null, null, null).execute();
-        streamer.add(streamList.getStreams().get(0).getId());
-        streamer.add(streamList.getStreams().get(0).getUserName());
-        return streamer;
+        try {
+            List<String> streamer = new ArrayList<>();
+            StreamList streamList = twitchHelixclient.getStreams(null, null, null, 1, List.of("19554"), null, null, null).execute();
+            streamer.add(streamList.getStreams().get(0).getId());
+            streamer.add(streamList.getStreams().get(0).getUserName());
+            return streamer;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new ArrayList<>();
+        }
     }
 
 }

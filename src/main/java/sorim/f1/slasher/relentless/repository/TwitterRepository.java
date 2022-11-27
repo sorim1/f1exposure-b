@@ -6,8 +6,11 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+import sorim.f1.slasher.relentless.entities.F1Calendar;
 import sorim.f1.slasher.relentless.entities.TwitterPost;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
@@ -16,6 +19,9 @@ import java.util.List;
 @EnableJpaAuditing
 public interface TwitterRepository extends PagingAndSortingRepository<TwitterPost, String> {
     List<TwitterPost> findAllByOrderByCreatedAtDesc(Pageable pageable);
+
+    TwitterPost findFirstByCreatedAtAfterOrderByRetweetCountDesc(Date yesterday);
+
 
     @Modifying
     public void deleteByCreatedAtBefore(Date expiryDate);

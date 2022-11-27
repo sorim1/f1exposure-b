@@ -14,6 +14,7 @@ import twitter4j.*;
 import twitter4j.conf.ConfigurationBuilder;
 
 import javax.annotation.PostConstruct;
+import java.time.LocalDateTime;
 import java.util.*;
 
 @Slf4j
@@ -30,6 +31,12 @@ public class TwitterServiceImpl implements TwitterService {
     public List<TwitterPost> getTwitterPosts(Integer page) {
         Pageable paging = PageRequest.of(page, 21);
         return twitterRepository.findAllByOrderByCreatedAtDesc(paging);
+    }
+    @Override
+    public TwitterPost getMostPopularDailyPost() {
+        Date yesterday = new Date(System.currentTimeMillis()-24*60*60*1000);;
+        log.info("yesterday; " + yesterday.toString());
+        return twitterRepository.findFirstByCreatedAtAfterOrderByRetweetCountDesc(yesterday);
     }
 
     @Override
