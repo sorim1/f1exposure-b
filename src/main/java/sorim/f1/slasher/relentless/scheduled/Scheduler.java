@@ -317,11 +317,11 @@ public class Scheduler {
         int minutes = rand.nextInt(30);
         log.info("secondInstagramJob called: " + minutes);
         if(properties.getUrl().contains(F1EXPOSURE_COM)){
-            try{
-                clientService.fetchInstagramPosts();
-            }catch(Exception e){
-                log.info("secondInstagramJob fetch failed: {}", e.getMessage());
-            }
+//            try{
+//                clientService.fetchInstagramPosts();
+//            }catch(Exception e){
+//                log.info("secondInstagramJob fetch failed: {}", e.getMessage());
+//            }
             Thread.sleep(1000 * 60 * minutes);
             String title = redditService.postFormulaDankToInstagram();
             log.info("secondInstagramJob ended: " + title);

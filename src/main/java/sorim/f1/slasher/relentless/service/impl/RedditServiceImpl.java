@@ -109,6 +109,7 @@ public class RedditServiceImpl implements RedditService {
                     if(post.getUrl().contains("&")){
                         post.setUrl(post.getUrl().substring(0, post.getUrl().indexOf("&")));
                     }
+                    post.setImageUrl(getYoutubeThumbnail(post.getUrl()));
                     filteredVideoPosts.add(post);
                 }
             }
@@ -122,6 +123,15 @@ public class RedditServiceImpl implements RedditService {
             counter.set(counter.get() + 1000);
         });
         return finalList;
+    }
+
+    private String getYoutubeThumbnail(String url) {
+        Integer index = url.indexOf("/embed/");
+        if(index>0) {
+            String code = url.substring(index + 7, index + 18);
+            return "https://img.youtube.com/vi/" + code + "/maxresdefault.jpg";
+        }
+        return null;
     }
 
     private List<NewsContent> getRedditNewsByFlair(String apiUrl, Integer status) {
