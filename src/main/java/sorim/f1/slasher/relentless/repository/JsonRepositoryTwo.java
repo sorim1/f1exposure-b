@@ -4,12 +4,13 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
-import sorim.f1.slasher.relentless.entities.ExposedVote;
+import sorim.f1.slasher.relentless.entities.JsonRepositoryTwoModel;
+
 
 @Repository
 @Transactional
 @EnableJpaAuditing
-public interface ExposedVoteRepository extends CrudRepository<ExposedVote, String> {
+public interface JsonRepositoryTwo extends CrudRepository<JsonRepositoryTwoModel, String> {
+    JsonRepositoryTwoModel findAllById(String id);
 
-    boolean existsExposedVoteByIpAddressAndSeasonAndRound(String ipAddress, Integer season, Integer Round);
 }

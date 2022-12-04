@@ -14,8 +14,6 @@ import java.util.List;
 @Builder
 public class FullExposure {
 
-    private List<ExposedVote> exposedVote;
-    private List<Exposed> exposed;
     private List<ExposureChampionship> exposureChampionship;
     private List<ExposureChampionshipStanding> exposureChampionshipStandings;
     private List<ExposedVoteTotals> exposedVoteTotals;

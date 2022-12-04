@@ -31,7 +31,7 @@ import java.util.stream.Collectors;
 @Service
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
-    private static final String strawPollApiV2 = "https://api.strawpoll.com/v2/polls/";
+    private static final String strawPollApiV3 = "https://api.strawpoll.com/v3/polls/";
     private static final Map<String, String> colorMap = new HashMap<>();
     private static boolean exposureToday = false;
     private static boolean exposureNow = false;
@@ -44,9 +44,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
     private static Integer reloadDelay = 0;
     private static Integer latestVoteCount = 0;
     private static Map<String, Driver> driversMap = new HashMap<>();
-    private final ExposedVoteRepository exposedVoteRepository;
     private final ExposedVoteTotalsRepository exposedVoteTotalsRepository;
-    private final ExposedRepository exposedRepository;
     private final ExposureChampionshipRepository exposureChampionshipRepository;
     private final ExposureChampionshipStandingsRepository exposureChampionshipStandingsRepository;
     private final DriverStandingsByRoundRepository driverStandingsByRoundRepository;
@@ -180,10 +178,9 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
 
     @Override
     public StrawpollModelTwo fetchStrawpollResults() {
-        // https://api.strawpoll.com/v2/polls/2ayLWLAjBZ4
         try {
             StrawpollModelTwo strawPoll = restTemplate
-                    .getForObject(strawPollApiV2 + strawpollId, StrawpollModelTwo.class);
+                    .getForObject(strawPollApiV3 + strawpollId, StrawpollModelTwo.class);
             return strawPoll;
         } catch (Exception e) {
             log.error("fetchStrawpollResults error", e);
@@ -288,7 +285,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
     }
 
     private List<Integer> getExposureVoters() {
-        return exposedRepository.getVoterCountOfSeason(properties.getCurrentSeasonPast());
+        return exposedVoteTotalsRepository.getVoterCountOfSeason(properties.getCurrentSeasonPast());
     }
 
     @Override
@@ -299,7 +296,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
         List<BigDecimal> exposureList = new ArrayList<>();
         List<ExposureChampionship> list = exposureChampionshipRepository.findAllByIdSeasonAndIdRoundOrderByVotesDesc(properties.getCurrentSeasonPast(), currentExposureRound);
 
-        ExposedVoteTotals total = exposedRepository.findExposedTotalBySeasonAndRound(properties.getCurrentSeasonPast(), currentExposureRound);
+        ExposedVoteTotals total = exposedVoteTotalsRepository.findExposedTotalBySeasonAndRound(properties.getCurrentSeasonPast(), currentExposureRound);
         if (total == null) {
             total = new ExposedVoteTotals();
         }
@@ -505,9 +502,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
     @Override
     public FullExposure backupExposure() {
         return FullExposure.builder()
-                .exposedVote((List<ExposedVote>) exposedVoteRepository.findAll())
                 .exposedVoteTotals((List<ExposedVoteTotals>) exposedVoteTotalsRepository.findAll())
-                .exposed((List<Exposed>) exposedRepository.findAll())
                 .exposureChampionship((List<ExposureChampionship>) exposureChampionshipRepository.findAll())
                 .exposureChampionshipStandings((List<ExposureChampionshipStanding>) exposureChampionshipStandingsRepository.findAll())
                 .build();
@@ -515,10 +510,6 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
 
     @Override
     public Boolean restoreExposureFromBackup(FullExposure fullExposure) {
-        exposedVoteRepository.deleteAll();
-        exposedVoteRepository.saveAll(fullExposure.getExposedVote());
-        exposedRepository.deleteAll();
-        exposedRepository.saveAll(fullExposure.getExposed());
         exposureChampionshipRepository.deleteAll();
         exposureChampionshipRepository.saveAll(fullExposure.getExposureChampionship());
         exposureChampionshipStandingsRepository.deleteAll();

@@ -5,7 +5,6 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import sorim.f1.slasher.relentless.entities.ArtImageRow;
-import sorim.f1.slasher.relentless.entities.ImageRow;
 
 import java.util.List;
 
