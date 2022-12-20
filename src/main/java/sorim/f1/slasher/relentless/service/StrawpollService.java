@@ -1,14 +1,24 @@
 package sorim.f1.slasher.relentless.service;
 
-import sorim.f1.slasher.relentless.model.StrawpollModelTwo;
+import sorim.f1.slasher.relentless.model.strawpoll.StrawpollModelThree;
+import sorim.f1.slasher.relentless.model.strawpoll.StrawpollPoll;
+import sorim.f1.slasher.relentless.model.strawpoll.StrawpollPollOption;
+
+import java.util.List;
 
 public interface StrawpollService {
 
-    StrawpollModelTwo createStrawpoll();
+    StrawpollModelThree generateStrawpoll();
 
-    String getStrawpollDrivers();
+    List<StrawpollPollOption> getStrawpollDrivers();
 
-    String generateStrawpollDrivers();
+    List<StrawpollPollOption> generateStrawpollDrivers();
 
     String setStrawpollDrivers(String drivers);
+
+    StrawpollModelThree getStrawpoll();
+
+    StrawpollModelThree saveStrawpoll(StrawpollModelThree body);
+
+    StrawpollPoll postStrawpoll();
 }

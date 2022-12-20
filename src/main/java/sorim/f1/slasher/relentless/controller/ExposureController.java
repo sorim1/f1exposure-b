@@ -5,8 +5,11 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import sorim.f1.slasher.relentless.model.*;
+import sorim.f1.slasher.relentless.model.strawpoll.StrawpollModelThree;
+import sorim.f1.slasher.relentless.model.strawpoll.StrawpollPoll;
 import sorim.f1.slasher.relentless.service.ExposureStrawpollService;
 import sorim.f1.slasher.relentless.service.SecurityService;
+import sorim.f1.slasher.relentless.service.StrawpollService;
 
 import java.util.List;
 
@@ -16,13 +19,14 @@ import java.util.List;
 @Slf4j
 public class ExposureController {
 
-    private final ExposureStrawpollService service;
+    private final ExposureStrawpollService exposureService;
+    private final StrawpollService strawpollService;
     private final SecurityService securityService;
 
     @GetMapping("/initializeStrawpoll/{id}")
     String initializeStrawpoll(@RequestHeader String client, @PathVariable("id") String id) throws Exception {
         securityService.validateAdminHeader(client);
-        String response = service.initializeStrawpoll(id);
+        String response = exposureService.initializeStrawpoll(id);
         log.info("initializeStrawpoll called:" + response);
         return response;
     }
@@ -30,7 +34,7 @@ public class ExposureController {
     @GetMapping("/setStrawpoll/{id}")
     String setStrawpoll(@RequestHeader String client, @PathVariable("id") String id) throws Exception {
         securityService.validateAdminHeader(client);
-        String response = service.setStrawpoll(id);
+        String response = exposureService.setStrawpoll(id);
         log.info("setStrawpoll called:" + response);
         return response;
     }
@@ -38,7 +42,7 @@ public class ExposureController {
     @GetMapping("/findAndInitializeStrawpoll")
     String findAndInitializeStrawpoll(@RequestHeader String client) throws Exception {
         securityService.validateAdminHeader(client);
-        String response = service.initializeStrawpoll(null);
+        String response = exposureService.initializeStrawpoll(null);
         log.info("initializeStrawpoll called:" + response);
         return response;
     }
@@ -46,79 +50,101 @@ public class ExposureController {
     @GetMapping("/resetLatestPoll")
     Integer resetLatestPoll(@RequestHeader String client) throws Exception {
         securityService.validateAdminHeader(client);
-        return service.resetLatestPoll();
+        return exposureService.resetLatestPoll();
     }
 
     @GetMapping("/getExposureResults")
     ExposureData getExposedChartData(@RequestHeader String client) throws Exception {
         securityService.validateHeader(client);
-        return service.getExposedChartData();
+        return exposureService.getExposedChartData();
     }
 
     @GetMapping("/getExposureResultsPartial")
     ActiveExposureChart getActiveExposureChart(@RequestHeader String client) throws Exception {
         securityService.validateHeader(client);
-        return service.getActiveExposureChart();
+        return exposureService.getActiveExposureChart();
     }
 
 
     @GetMapping("/closeExposurePoll")
     void closeExposurePoll(@RequestHeader String client) throws Exception {
         securityService.validateAdminHeader(client);
-        service.closeExposurePoll(true);
+        exposureService.closeExposurePoll(true);
     }
 
     @GetMapping("/startPolling")
     void startPolling(@RequestHeader String client) throws Exception {
         securityService.validateAdminHeader(client);
-        service.startPolling();
+        exposureService.startPolling();
     }
 
     @GetMapping("/openExposurePoll/{minutes}")
     void openExposurePoll(@RequestHeader String client, @PathVariable("minutes") Integer minutes) throws Exception {
         securityService.validateAdminHeader(client);
-        service.openExposurePoll(minutes);
+        exposureService.openExposurePoll(minutes);
     }
 
     @GetMapping("/incrementExposureRound")
     List<Integer> incrementExposureRound(@RequestHeader String client) throws Exception {
         securityService.validateAdminHeader(client);
-        return service.incrementExposureRound();
+        return exposureService.incrementExposureRound();
     }
 
     @GetMapping("/updateCurrentRound/{round}")
     List<Integer> setCurrentRound(@RequestHeader String client, @PathVariable("round") String round) throws Exception {
         securityService.validateAdminHeader(client);
-        return service.setCurrentRound(Integer.valueOf(round));
+        return exposureService.setCurrentRound(Integer.valueOf(round));
     }
 
     @GetMapping("/getCurrentRoundUp")
     Integer getCurrentRoundUp(@RequestHeader String client) throws Exception {
         securityService.validateAdminHeader(client);
-        return service.getCurrentRoundUp();
+        return exposureService.getCurrentRoundUp();
     }
 
     @GetMapping("/getExposureStrawpoll")
     String getExposureStrawpoll(@RequestHeader String client) throws Exception {
         securityService.validateAdminHeader(client);
-        return service.getExposureStrawpoll();
+        return exposureService.getExposureStrawpoll();
     }
 
     @GetMapping("/showWinner/{value}")
     String showWinner(@RequestHeader String client,@PathVariable("value") Boolean value) throws Exception {
         securityService.validateAdminHeader(client);
-        return service.changeShowWinner(value);
+        return exposureService.changeShowWinner(value);
     }
 
     @GetMapping("/backupExposure")
     FullExposure backupExposure(@RequestHeader String client) throws Exception {
         securityService.validateAdminHeader(client);
-        return service.backupExposure();
+        return exposureService.backupExposure();
     }
 
     @PostMapping("/restoreExposureFromBackup")
     Boolean restoreExposureFromBackup(@RequestHeader String client, @RequestBody FullExposure body) throws Exception {
         securityService.validateAdminHeader(client);
-        return service.restoreExposureFromBackup(body);
+        return exposureService.restoreExposureFromBackup(body);
     }
+
+    @GetMapping("/generateStrawpoll")
+    StrawpollModelThree generateStrawpoll(@RequestHeader String client) throws Exception {
+        securityService.validateAdminHeader(client);
+        return strawpollService.generateStrawpoll();
+    }
+    @GetMapping("/postStrawpoll")
+    StrawpollPoll postStrawpoll(@RequestHeader String client) throws Exception {
+        securityService.validateAdminHeader(client);
+        return strawpollService.postStrawpoll();
+    }
+    @GetMapping("/getStrawpoll")
+    StrawpollModelThree getStrawpoll(@RequestHeader String client) throws Exception {
+        securityService.validateAdminHeader(client);
+        return strawpollService.getStrawpoll();
+    }
+    @PostMapping("/saveStrawpoll")
+    StrawpollModelThree saveStrawpoll(@RequestHeader String client, @RequestBody StrawpollModelThree body) throws Exception {
+        securityService.validateAdminHeader(client);
+        return strawpollService.saveStrawpoll(body);
+    }
+
 }

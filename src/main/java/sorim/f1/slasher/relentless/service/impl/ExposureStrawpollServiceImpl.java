@@ -11,6 +11,7 @@ import sorim.f1.slasher.relentless.entities.*;
 import sorim.f1.slasher.relentless.handling.Logger;
 import sorim.f1.slasher.relentless.model.*;
 import sorim.f1.slasher.relentless.model.enums.ExposureStatusEnum;
+import sorim.f1.slasher.relentless.model.strawpoll.StrawpollModelThree;
 import sorim.f1.slasher.relentless.repository.*;
 import sorim.f1.slasher.relentless.service.ErgastService;
 import sorim.f1.slasher.relentless.service.ExposureStrawpollService;
@@ -39,7 +40,6 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
     private static String title = "Strange";
     private static Integer currentExposureRound;
     private static String strawpollId;
-
     private static Boolean showWinner = false;
     private static Integer reloadDelay = 0;
     private static Integer latestVoteCount = 0;
@@ -124,7 +124,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
 
     @Override
     public void startPolling() {
-        StrawpollModelTwo newStrawpoll = fetchStrawpollResults();
+        StrawpollModelThree newStrawpoll = fetchStrawpollResults();
         if (newStrawpoll != null && exposureOn()) {
             Boolean isVotable = updateExposureDataFromStrawpoll(newStrawpoll);
             log.info("newStrawpoll - isVotable: " + newStrawpoll.getPoll().getIs_votable());
@@ -177,10 +177,10 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
     }
 
     @Override
-    public StrawpollModelTwo fetchStrawpollResults() {
+    public StrawpollModelThree fetchStrawpollResults() {
         try {
-            StrawpollModelTwo strawPoll = restTemplate
-                    .getForObject(strawPollApiV3 + strawpollId, StrawpollModelTwo.class);
+            StrawpollModelThree strawPoll = restTemplate
+                    .getForObject(strawPollApiV3 + strawpollId, StrawpollModelThree.class);
             return strawPoll;
         } catch (Exception e) {
             log.error("fetchStrawpollResults error", e);
@@ -196,7 +196,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
         if (id == null) {
             initializeExposureFrontendVariables(null);
         } else {
-            StrawpollModelTwo newStrawpoll = fetchStrawpollResults();
+            StrawpollModelThree newStrawpoll = fetchStrawpollResults();
             if (newStrawpoll != null) {
                 log.info("strawpoll found: {} ", newStrawpoll);
                 initializeExposureFrontendVariables(id);
@@ -373,7 +373,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
         }
     }
 
-    private Boolean updateExposureDataFromStrawpoll(StrawpollModelTwo strawpoll) {
+    private Boolean updateExposureDataFromStrawpoll(StrawpollModelThree strawpoll) {
         List<ExposureChampionship> list = new ArrayList<>();
         Integer voters = strawpoll.getPoll().getPoll_meta().getParticipant_count();
         if(voters>0){
@@ -463,7 +463,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
                 .build();
         if (exposureOn()) {
             // if(true) {
-            List<Driver> drivers = driverRepository.findAllByStatus(1);
+            List<Driver> drivers = driverRepository.findAllByStatusOrderByFullName(1);
             response.setDrivers(drivers);
             response.setStatus(ExposureStatusEnum.ACTIVE);
         } else {

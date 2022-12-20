@@ -1,12 +1,13 @@
 package sorim.f1.slasher.relentless.service;
 
 import sorim.f1.slasher.relentless.model.*;
+import sorim.f1.slasher.relentless.model.strawpoll.StrawpollModelThree;
 
 import java.util.List;
 
 public interface ExposureStrawpollService {
 
-    StrawpollModelTwo fetchStrawpollResults();
+    StrawpollModelThree fetchStrawpollResults();
 
     String initializeStrawpoll(String id);
 
