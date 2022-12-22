@@ -473,16 +473,6 @@ public class InstagramServiceImpl implements InstagramService {
         return ap.getValue();
     }
 
-    IGClient getOfficialClient1(Boolean force) throws IGLoginException {
-        if (officialClient == null || !officialClient.isLoggedIn() || force) {
-            officialClient = IGClient.builder()
-                    .username(properties.getInstagramOfficialUsername())
-                    .password(properties.getInstagramOfficialPassword())
-                    .login();
-        }
-        return officialClient;
-    }
-
     IGClient getOfficialClient(boolean force) {
         if (officialClient == null || !officialClient.isLoggedIn() || force) {
             String username = getInstagramOfficialUsername();
@@ -498,7 +488,7 @@ public class InstagramServiceImpl implements InstagramService {
             }
 
         }
-        return workerClient;
+        return officialClient;
     }
 
     private String getInstagramOfficialUsername() {
