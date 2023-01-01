@@ -19,5 +19,5 @@ public class StrawpollPoll {
     private Boolean is_votable;
     private List<StrawpollPollOption> poll_options;
     private StrawpollPollMeta poll_meta;
-
+    private StrawpollPollConfig poll_config;
 }

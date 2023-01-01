@@ -34,7 +34,6 @@ public class VideoServiceImpl implements VideoService {
     private static String replaysUrl = "https://f1hd.net/";
     private final MainProperties properties;
     private final ReplayRepository replayRepository;
-    private final ObjectMapper mapper = new ObjectMapper();
     RestTemplate restTemplate = new RestTemplate();
     HttpHeaders headers = new HttpHeaders();
     TypeReference<HashMap<String, Object>> typeRef = new TypeReference<>() {
