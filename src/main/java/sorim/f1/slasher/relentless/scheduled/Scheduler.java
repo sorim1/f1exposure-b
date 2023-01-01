@@ -311,17 +311,17 @@ public class Scheduler {
              log.warn(properties.getUrl());
          }
     }
-    @Scheduled(cron = "0 0 1 * * *")
+   // @Scheduled(cron = "0 0 1 * * *")
     void secondInstagramJob() throws Exception {
         Random rand = new Random();
         int minutes = rand.nextInt(30);
         log.info("secondInstagramJob called: " + minutes);
         if(properties.getUrl().contains(F1EXPOSURE_COM)){
-//            try{
-//                clientService.fetchInstagramPosts();
-//            }catch(Exception e){
-//                log.info("secondInstagramJob fetch failed: {}", e.getMessage());
-//            }
+            try{
+                clientService.fetchInstagramPosts();
+            }catch(Exception e){
+                log.info("secondInstagramJob fetch failed: {}", e.getMessage());
+            }
             Thread.sleep(1000 * 60 * minutes);
             String title = redditService.postFormulaDankToInstagram();
             log.info("secondInstagramJob ended: " + title);

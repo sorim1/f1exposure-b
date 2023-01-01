@@ -22,7 +22,7 @@ f1:
       instagramWorker2Username: miroslav.dragicevic1
       instagramWorker2Password: "qwadrat1234"
       instagramOfficialUsername: f1exposure
-      instagramOfficialPassword: "!qwadrat1"
+      instagramOfficialPassword: "!qwadrat"
       calendarUrl: https://www.formula1.com/calendar/Formula_1_Official_Calendar.ics
       sportSurgeRoot: https://api.sportsurge.net/events/list?group=13
       sportSurgeStreams: https://api.sportsurge.net/streams/list?event=
