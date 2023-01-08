@@ -77,10 +77,10 @@ public class StrawpollServiceImpl implements StrawpollService {
         ZonedDateTime gmtZoned = ZonedDateTime.now(ZoneId.of("Europe/London"));
         LocalDateTime gmtDateTime = gmtZoned.toLocalDateTime();
         F1Calendar f1calendar = calendarRepository.findFirstByRaceAfterOrderByRace(gmtDateTime);
-        if(f1calendar==null){
-            //TODO ovo se ne bi smjelo dogodit za pravi poll
-            f1calendar = calendarRepository.findFirstByRaceBeforeOrderByRaceDesc(gmtDateTime);
-        }
+//        if(f1calendar==null){
+//            //TODO ovo se ne bi smjelo dogodit za pravi poll
+//            f1calendar = calendarRepository.findFirstByRaceBeforeOrderByRaceDesc(gmtDateTime);
+//        }
         return f1calendar;
            }
 
@@ -127,6 +127,7 @@ public class StrawpollServiceImpl implements StrawpollService {
         HttpEntity entity = new HttpEntity(pollFromDatabase.getPoll(), headers);
         ResponseEntity<StrawpollPoll> response = restTemplate.exchange(
                 strawPollApiV3, HttpMethod.POST, entity, StrawpollPoll.class);
+        setStraw
         return response.getBody();
     }
 }

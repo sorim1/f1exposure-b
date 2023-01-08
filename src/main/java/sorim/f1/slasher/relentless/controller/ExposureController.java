@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import sorim.f1.slasher.relentless.entities.JsonRepositoryModel;
 import sorim.f1.slasher.relentless.model.*;
 import sorim.f1.slasher.relentless.model.strawpoll.StrawpollModelThree;
 import sorim.f1.slasher.relentless.model.strawpoll.StrawpollPoll;
@@ -59,11 +60,18 @@ public class ExposureController {
         return exposureService.getExposedChartData();
     }
 
-    @GetMapping("/getExposureResultsPartial")
-    ActiveExposureChart getActiveExposureChart(@RequestHeader String client) throws Exception {
+    @GetMapping("/getSingleExposureResult/{season}/{round}")
+    Object getSingleExposureResult(@RequestHeader String client, @PathVariable("season") Integer season, @PathVariable("round") Integer round) throws Exception {
         securityService.validateHeader(client);
-        return exposureService.getActiveExposureChart();
+        return exposureService.getSingleExposureResult(season, round);
     }
+
+    @GetMapping("/archiveExposureData")
+    JsonRepositoryModel archiveExposureData(@RequestHeader String client) throws Exception {
+        securityService.validateHeader(client);
+        return exposureService.archiveExposureData();
+    }
+
 
 
     @GetMapping("/closeExposurePoll")
@@ -133,6 +141,14 @@ public class ExposureController {
     }
     @GetMapping("/postStrawpoll")
     StrawpollPoll postStrawpoll(@RequestHeader String client) throws Exception {
+        securityService.validateAdminHeader(client);
+        StrawpollPoll poll = strawpollService.postStrawpoll();
+        exposureService.setStrawpoll(poll.getId());
+        return poll;
+    }
+
+    @GetMapping("/postStrawpollWithoutSubscribing")
+    StrawpollPoll postStrawpollWithoutSubscribing(@RequestHeader String client) throws Exception {
         securityService.validateAdminHeader(client);
         return strawpollService.postStrawpoll();
     }

@@ -404,6 +404,7 @@ public class LiveTimingServiceImpl implements LiveTimingService {
     public Boolean upcomingRacesAnalysisInitialLoad(String season) {
         Integer howManySeasonsBack = properties.getHowManySeasonsBack();
         List<RaceData> races = ergastService.findRacesBySeason(season);
+        if(!races.isEmpty()){
         Map<String, UpcomingRaceAnalysis> upcomingRaceAnalysisMapByCircuitId =
                 races.stream()
                         .collect(Collectors.toMap(
@@ -434,6 +435,7 @@ public class LiveTimingServiceImpl implements LiveTimingService {
             race.setUpcomingRaceAnalysis(upcomingRaceAnalysisMapByCircuitId.get(race.getCircuitId()));
         });
         ergastService.saveRaces(races);
+        }
         return true;
     }
 

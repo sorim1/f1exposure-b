@@ -1,5 +1,6 @@
 package sorim.f1.slasher.relentless.service;
 
+import sorim.f1.slasher.relentless.entities.JsonRepositoryModel;
 import sorim.f1.slasher.relentless.model.*;
 import sorim.f1.slasher.relentless.model.strawpoll.StrawpollModelThree;
 
@@ -12,8 +13,9 @@ public interface ExposureStrawpollService {
     String initializeStrawpoll(String id);
 
     ExposureData getExposedChartData();
+    JsonRepositoryModel archiveExposureData();
 
-    ActiveExposureChart getActiveExposureChart();
+    ActiveExposureChart generateSingleExposureResult(Integer season, Integer round, boolean detailed);
 
     void closeExposurePoll(Boolean showWinnerValue);
 
@@ -48,4 +50,6 @@ public interface ExposureStrawpollService {
     String setStrawpoll(String id);
 
     String changeShowWinner(Boolean value);
+
+    Object getSingleExposureResult(Integer season, Integer round);
 }

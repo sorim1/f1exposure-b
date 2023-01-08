@@ -230,6 +230,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
         return response;
     }
 
+
     @Override
     public ExposureData getExposedChartData() {
         List<ExposureChampionshipStanding> standings = getExposureStandings();
@@ -238,13 +239,25 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
                 .currentYear(properties.getCurrentSeasonPast())
                 .showWinner(showWinner)
                 .delay(reloadDelay)
-                .activeExposureChart(getActiveExposureChart())
+                .activeExposureChart(generateSingleExposureResult(properties.getCurrentSeasonPast(), currentExposureRound, true))
                 .exposureChampionshipData(getExposureChampionshipData(standings))
                 .standings(standings)
                 .voters(getExposureVoters())
                 .exposureRaces(ergastService.getRacesSoFar(String.valueOf(properties.getCurrentSeasonPast()), currentExposureRound))
                 .build();
     }
+    @Override
+    public JsonRepositoryModel archiveExposureData() {
+        ExposureData response = getExposedChartData();
+        response.setActiveExposureChart(null);
+        response.setTitle("Season " + response.getCurrentYear());
+        JsonRepositoryModel jrm = JsonRepositoryModel.builder()
+                .id("EXPOSURE_ARCHIVE_" + response.getCurrentYear())
+                .json(response).build();
+        jsonRepository.save(jrm);
+        return jrm;
+    }
+
 
     @Override
     public void closeExposurePoll(Boolean showWinnerValue) {
@@ -264,6 +277,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
         exposureChampionshipStandingsRepository.updateChampionshipNames();
         showWinner = showWinnerValue;
         backupExposureToDatabase();
+        resetStrawpoll();
     }
 
     private void backupExposureToDatabase() {
@@ -289,35 +303,56 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
     }
 
     @Override
-    public ActiveExposureChart getActiveExposureChart() {
+    public ActiveExposureChart generateSingleExposureResult(Integer season, Integer round, boolean detailed) {
         List<String> drivers = new ArrayList<>();
         List<String> driverNames = new ArrayList<>();
         List<Integer> results = new ArrayList<>();
         List<BigDecimal> exposureList = new ArrayList<>();
-        List<ExposureChampionship> list = exposureChampionshipRepository.findAllByIdSeasonAndIdRoundOrderByVotesDesc(properties.getCurrentSeasonPast(), currentExposureRound);
-
-        ExposedVoteTotals total = exposedVoteTotalsRepository.findExposedTotalBySeasonAndRound(properties.getCurrentSeasonPast(), currentExposureRound);
-        if (total == null) {
-            total = new ExposedVoteTotals();
-        }
+        List<ExposureChampionship> list = exposureChampionshipRepository.findAllByIdSeasonAndIdRoundOrderByVotesDesc(season, round);
         list.forEach((row) -> {
             drivers.add(row.getId().getDriver());
             driverNames.add(row.getName());
-            results.add(row.getVotes());
             exposureList.add(row.getExposure());
+            if(detailed){
+                results.add(row.getVotes());
+            }
         });
-        return ActiveExposureChart.builder()
+        ActiveExposureChart response = ActiveExposureChart.builder()
                 .drivers(drivers.toArray(new String[drivers.size()]))
                 .driverNames(driverNames.toArray(new String[driverNames.size()]))
-                .results(results.toArray(new Integer[results.size()]))
                 .exposure(exposureList.toArray(new BigDecimal[results.size()]))
-                .round(currentExposureRound)
-                .season(properties.getCurrentSeasonPast())
-                .votes(total.getVotes())
-                .voters(total.getVoters())
-                .strawpoll(total.getStrawpoll())
-                .delay(getReloadDelay())
+                .round(round)
+                .season(season)
                 .build();
+        if(detailed){
+            ExposedVoteTotals total = exposedVoteTotalsRepository.findExposedTotalBySeasonAndRound(season, round);
+            if (total == null) {
+                total = new ExposedVoteTotals();
+            }
+            response.setResults(results.toArray(new Integer[results.size()]));
+            response.setVotes(total.getVotes());
+            response.setVoters(total.getVoters());
+            response.setStrawpoll(total.getStrawpoll());
+            response.setDelay(getReloadDelay());
+        }
+        return response;
+    }
+
+    @Override
+    public Object getSingleExposureResult(Integer season, Integer round) {
+        JsonRepositoryModel jrm = jsonRepository.findAllById("EXPOSURE_RESULT_" + season + "_" + round);
+        if(jrm!=null){
+            log.info("nasao single exposure result u bazi");
+            return jrm.getJson();
+        } else {
+          ActiveExposureChart generatedExposureResult = generateSingleExposureResult(season, round, false);
+            JsonRepositoryModel saveData = JsonRepositoryModel.builder()
+                    .id("EXPOSURE_RESULT_" + season + "_" + round)
+                    .json(generatedExposureResult).build();
+            jsonRepository.save(saveData);
+            log.info("spremio single exposure result u bazi");
+            return generatedExposureResult;
+        }
     }
 
     private Integer getReloadDelay() {
