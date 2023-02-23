@@ -543,6 +543,7 @@ public class AdminServiceImpl implements AdminService {
 
     @Override
     public List<Driver> updateExposureDrivers(List<Driver> list) {
+        driverRepository.deleteAll();
         driverRepository.saveAll(list);
         return driverRepository.findAll();
     }

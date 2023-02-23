@@ -68,7 +68,7 @@ public class InstagramServiceImpl implements InstagramService {
             FeedIterable<FeedTimelineRequest, FeedTimelineResponse> response = client.getActions().timeline().feed();
             AtomicReference<Integer> iterate = new AtomicReference<>(0);
             try {
-                response.stream().limit(1).forEach(row -> {
+                response.stream().limit(2).forEach(row -> {
                     List<TimelineMedia> timelineMedias = row.getFeed_items();
                     iterate.set(iterate.get() + timelineMedias.size());
                     counter.set(counter.get() + 1);

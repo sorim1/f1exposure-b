@@ -118,7 +118,10 @@ public class StrawpollServiceImpl implements StrawpollService {
     @Override
     public StrawpollPoll postStrawpoll() {
         HttpHeaders headers = new HttpHeaders();
-        headers.add("X-API-Key", "ec64bbae-7323-11ed-ab5a-9556bc37aaf0");
+        //sunshine
+       // headers.add("X-API-Key", "ec64bbae-7323-11ed-ab5a-9556bc37aaf0");
+        //f1exposure
+        headers.add("X-API-Key", "3d56ce08-b3ca-11ed-bffc-b1d74cc9522e");
         JsonRepositoryTwoModel data = jsonRepository.findAllById("STRAWPOLL_CURRENT");
         StrawpollModelThree pollFromDatabase =  objectMapper.convertValue(data.getJson(), StrawpollModelThree.class);
         Long currentUnixSeconds = Instant.now().getEpochSecond();
@@ -127,7 +130,6 @@ public class StrawpollServiceImpl implements StrawpollService {
         HttpEntity entity = new HttpEntity(pollFromDatabase.getPoll(), headers);
         ResponseEntity<StrawpollPoll> response = restTemplate.exchange(
                 strawPollApiV3, HttpMethod.POST, entity, StrawpollPoll.class);
-        setStraw
         return response.getBody();
     }
 }
