@@ -28,7 +28,7 @@ public class TwitchServiceImpl implements TwitchService {
     @Override
     public Boolean setStreamer(String username) {
         String userId = getUserId(username);
-        if (userId != null && isUserOnline(userId)) {
+        if (userId != null) {
             currentStreamer = new ArrayList<>();
             currentStreamer.add(userId);
             currentStreamer.add(username);
@@ -67,7 +67,7 @@ public class TwitchServiceImpl implements TwitchService {
                 .withClientId("c0r4sbsc7uiz3r0g8z7q2sdyayyrlj")
                 .withClientSecret("6gdm7tw99mt3kjxkta7xhvbxytw8de")
                 .build();
-        currentStreamer = topIracingStream();
+        setStreamer("landonorris");
     }
 
     private Boolean isUserOnline(String userId) {

@@ -32,7 +32,7 @@ import java.util.stream.Collectors;
 @Service
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
-    private static final String strawPollApiV3 = "https://api.strawpoll.com/v3/polls/";
+    private static final String strawPollApiV3 = "https://api.strawpoll.com/v2/polls/";
     private static final Map<String, String> colorMap = new HashMap<>();
     private static boolean exposureToday = false;
     private static boolean exposureNow = false;
