@@ -26,7 +26,7 @@ public class Scheduler {
     private final ClientService clientService;
     private final LiveTimingService liveTimingService;
     private final ErgastService ergastService;
-    private final FourchanService fourchanService;
+    private final StrawpollService strawpollService;
     private final RedditService redditService;
 
     private final MainProperties properties;
@@ -59,27 +59,29 @@ public class Scheduler {
             adminService.initializeStandings(true);
             standingsUpdated = true;
         }
-        isItRaceWeek();
+        if (isItRaceWeek()) {
+            strawpollService.generateStrawpoll();
+        }
         clientService.setOverlays("", true);
     }
 
     @Scheduled(cron = "0 0 4 * * FRI")
     private void weekendJobsContinuous() throws IOException {
         log.info("fridayJobs called");
-        isItRaceWeek();
-        if (isRaceWeek) {
+        if (isItRaceWeek()) {
             analyzeUpcomingRacePeriodically();
             getImagesPeriodicallyRoot();
         }
     }
 
-    private void isItRaceWeek() {
+    private Boolean isItRaceWeek() {
         CalendarData calendarData = clientService.getCountdownData(5);
         if(calendarData.getF1Calendar()!=null) {
-            isRaceWeek = calendarData.getCountdownData().get("raceDays") < 6;
+            isRaceWeek = calendarData.getCountdownData().get("raceDays") < 7;
         } else {
             isRaceWeek = false;
         }
+        return isRaceWeek;
     }
 
     @Scheduled(cron = "0 0 4 * * SUN")
