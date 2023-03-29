@@ -18,5 +18,5 @@ public interface DriverStandingsByRoundRepository extends CrudRepository<DriverS
 
     List<DriverStandingByRound> findAllByIdSeasonOrderByIdRoundAscNameAsc(Integer season);
 
-    DriverStandingByRound findFirstByCode(String code);
+    DriverStandingByRound findFirstByCodeOrderByIdSeasonDesc(String code);
 }

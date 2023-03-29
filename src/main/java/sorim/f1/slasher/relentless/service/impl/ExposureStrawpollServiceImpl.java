@@ -451,7 +451,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
         if (colorMap.containsKey(code)) {
             return colorMap.get(code);
         } else {
-            DriverStandingByRound dsbr = driverStandingsByRoundRepository.findFirstByCode(code);
+            DriverStandingByRound dsbr = driverStandingsByRoundRepository.findFirstByCodeOrderByIdSeasonDesc(code);
             String color = null;
             if (dsbr != null) {
                 color = dsbr.getColor();
@@ -460,7 +460,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
             }
 
         }
-        return null;
+        return "#000000";
     }
 
     private String getDriverCodeFromName(String name) {
