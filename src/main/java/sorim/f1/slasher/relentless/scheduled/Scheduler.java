@@ -48,7 +48,7 @@ public class Scheduler {
             adminService.initializeStandings(true);
             standingsUpdated = true;
         }
-        ergastService.fetchStatisticsFullFromPartial(false);
+        ergastService.fetchStatisticsFullFromPartial(true);
         isItRaceWeek();
     }
 
