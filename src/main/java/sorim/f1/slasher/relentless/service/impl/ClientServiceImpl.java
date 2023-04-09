@@ -63,23 +63,24 @@ public class ClientServiceImpl implements ClientService {
 
     @Override
     public CalendarData getCountdownData(Integer mode) {
-        ZonedDateTime gmtZoned = ZonedDateTime.now(ZoneId.of("Europe/London"));
-        LocalDateTime gmtDateTime = gmtZoned.toLocalDateTime();
-        LocalDateTime keepCalendarOneHourLonger = gmtDateTime.minusHours(1);
-        int londonOffsetMinutes = (gmtZoned.getOffset().getTotalSeconds()) / 60;
+       // ZonedDateTime gmtZoned = ZonedDateTime.now(ZoneId.of("Europe/London"));
+        ZonedDateTime utcZoned = ZonedDateTime.now(ZoneId.of("UTC"));
+        LocalDateTime utcDateTime = utcZoned.toLocalDateTime();
+        LocalDateTime keepCalendarOneHourLonger = utcDateTime.minusHours(1);
+        //int londonOffsetMinutes = (utcZoned.getOffset().getTotalSeconds()) / 60;
         F1Calendar f1calendar = calendarRepository.findFirstByRaceAfterOrPractice3AfterOrderByPractice1(keepCalendarOneHourLonger, keepCalendarOneHourLonger);
         if (f1calendar == null) {
             return CalendarData.builder()
-                    .londonOffset(londonOffsetMinutes)
+                   // .londonOffset(londonOffsetMinutes)
                     .overlays(overlayList)
                     .iframeLink(iframeLink)
                     .build();
         }
-        Map<String, Integer> countdownData = getRemainingTime(gmtDateTime, f1calendar, mode);
+        Map<String, Integer> countdownData = getRemainingTime(utcDateTime, f1calendar, mode);
         return CalendarData.builder().f1Calendar(f1calendar).countdownData(countdownData)
                 .overlays(overlayList)
                 .iframeLink(iframeLink)
-                .londonOffset(londonOffsetMinutes)
+             //   .londonOffset(londonOffsetMinutes)
                 .build();
     }
 
