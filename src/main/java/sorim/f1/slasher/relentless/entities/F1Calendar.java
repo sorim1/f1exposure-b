@@ -121,34 +121,43 @@ public class F1Calendar {
 
         switch (category) {
             case "Free Practice 1":
+            case "FP1,F1":
                 this.practice1 = dateTime;
                 this.practice1Original = dateTime;
-                this.practice1Name = summary;
+                this.practice1Name = "Free Practice 1";
                 break;
             case "Free Practice 2":
+            case "FP2,F1":
                 this.practice2 = dateTime;
                 this.practice2Original = dateTime;
-                this.practice2Name = summary;
+                this.practice2Name = "Free Practice 2";
                 break;
             case "Free Practice 3":
+            case "FP3,F1":
                 this.practice3 = dateTime;
                 this.practice3Original = dateTime;
-                this.practice3Name = summary;
+                this.practice3Name = "Free Practice 3";
                 break;
             case "Qualifying":
+            case "Qualifying,F1":
                 this.qualifying = dateTime;
                 this.qualifyingOriginal = dateTime;
-                this.qualifyingName = summary;
+                this.qualifyingName = "Qualifying";
                 break;
             case "Grand Prix":
+            case "Grand Prix,F1":
                 this.race = dateTime;
                 this.raceOriginal = dateTime;
-                this.raceName = summary;
+                this.raceName = "Grand Prix";
                 break;
             case "Sprint":
+            case "Sprint,F1":
                 this.sprint = dateTime;
                 this.sprintOriginal = dateTime;
-                this.sprintName = summary;
+                this.sprintName = "Sprint";
+                break;
+            default:
+                System.out.println("ERROR setDateAndNameFromCategory: " + category);
                 break;
         }
     }

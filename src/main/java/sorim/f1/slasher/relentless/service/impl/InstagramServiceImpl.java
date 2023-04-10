@@ -554,10 +554,10 @@ public class InstagramServiceImpl implements InstagramService {
 
 
     IGClient getWorkerClient(boolean force) throws Exception {
+        String username = getInstagramWorkerUsername();
+        String password = getInstagramWorkerPassword();
+        log.info("instagram worker: {} - {}", username, password);
         if (workerClient == null || !workerClient.isLoggedIn() || force) {
-            String username = getInstagramWorkerUsername();
-            String password = getInstagramWorkerPassword();
-            log.info("instagram login: {} - {}", username, password);
             workerClient = IGClient.builder()
                     .username(username)
                     .password(password)
