@@ -501,9 +501,11 @@ public class ClientServiceImpl implements ClientService {
             output.put("FP1Seconds", (int) duration.toSeconds());
         }
         if (mode == 0 || mode == 2) {
-            duration = Duration.between(gmtDateTime, f1calendar.getPractice2());
-            output.put("FP2Days", (int) duration.toDays());
-            output.put("FP2Seconds", (int) duration.toSeconds());
+            if(f1calendar.getPractice2()!=null){
+                duration = Duration.between(gmtDateTime, f1calendar.getPractice2());
+                output.put("FP2Days", (int) duration.toDays());
+                output.put("FP2Seconds", (int) duration.toSeconds());
+            }
         }
         if (mode == 0 || mode == 3) {
             if (f1calendar.getPractice3() != null) {
