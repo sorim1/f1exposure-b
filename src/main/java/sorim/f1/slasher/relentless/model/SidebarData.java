@@ -15,4 +15,5 @@ public class SidebarData {
     private NewsContent topNews;
     private Boolean exposureOn;
     private TwitterPost latestTwitterPost;
+    private KeyValue exposedDriver;
 }

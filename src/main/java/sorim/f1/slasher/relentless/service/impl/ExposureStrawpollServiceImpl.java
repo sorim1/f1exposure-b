@@ -337,6 +337,22 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
         }
         return response;
     }
+    @Override
+    public KeyValue getLatestRaceExposureWinner(){
+        try{
+        //TODO remove trycatch ako je sve ok properties.getCurrentSeasonPast(), currentExposureRound
+        ExposureChampionship winner= exposureChampionshipRepository.findFirstByIdSeasonAndIdRoundOrderByVotesDesc(properties.getCurrentSeasonPast(), currentExposureRound);
+        if(winner!=null){
+            String key = title;
+            String value = winner.getId().getDriver();
+            return KeyValue.builder().key(key).value(value).build();
+        }
+        }catch(Exception ex){
+            log.error("getSingleRaceExposureWinner1 error");
+            ex.printStackTrace();
+        }
+        return null;
+    }
 
     @Override
     public Object getSingleExposureResult(Integer season, Integer round) {

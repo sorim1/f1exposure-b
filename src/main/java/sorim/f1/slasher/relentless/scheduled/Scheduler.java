@@ -60,7 +60,9 @@ public class Scheduler {
             standingsUpdated = true;
         }
         if (isItRaceWeek()) {
+            log.info(CODE + " - generating strawpoll");
             strawpollService.generateStrawpoll();
+            log.info(CODE + " - generated strawpoll");
         }
         clientService.setOverlays("", true);
     }

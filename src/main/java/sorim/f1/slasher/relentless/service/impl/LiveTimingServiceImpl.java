@@ -201,6 +201,10 @@ public class LiveTimingServiceImpl implements LiveTimingService {
                 date = MainUtility.subtractDays(raceDate, 1);
                 raceName = date + "_Sprint";
                 break;
+            case SPRINT_SHOOTOUT:
+                date = MainUtility.subtractDays(raceDate, 1);
+                raceName = date + "_Sprint_Shootout";
+                break;
         }
         log.info("https://livetiming.formula1.com/static/" + raceData.getSeason() + "/" + grandPrix + "/" + raceName + "/SPFeed.json");
         try {

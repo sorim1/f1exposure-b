@@ -442,7 +442,9 @@ public class ClientServiceImpl implements ClientService {
 
     private void setSidebarData(NewsContent topNews) {
         this.sidebarData = SidebarData.builder()
-                .topNews(topNews).latestTwitterPost(twitterService.getMostPopularDailyPost())
+                .topNews(topNews)
+                .latestTwitterPost(twitterService.getMostPopularDailyPost())
+                .exposedDriver(exposureService.getLatestRaceExposureWinner())
                 .build();
     }
 

@@ -13,7 +13,8 @@ public enum RoundEnum {
     QUALIFYING(3, "Qualifying"),
     RACE(4, "Race"),
     SPRINT_QUALIFYING(5, "Sprint_Qualifying"),
-    SPRINT(6, "Sprint");
+    SPRINT(6, "Sprint"),
+    SPRINT_SHOOTOUT(7, "Sprint_Shootout");
 
     private final Integer value;
     private final String description;

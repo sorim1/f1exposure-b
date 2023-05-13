@@ -17,6 +17,8 @@ public interface ExposureStrawpollService {
 
     ActiveExposureChart generateSingleExposureResult(Integer season, Integer round, boolean detailed);
 
+    KeyValue getLatestRaceExposureWinner();
+
     void closeExposurePoll(Boolean showWinnerValue);
 
     ExposureResponse getExposureDriverList();
