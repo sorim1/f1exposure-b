@@ -282,21 +282,23 @@ public class AdminController {
         return service.checkCurrentStream();
     }
     @GetMapping("/updateCurrentSeasonPast/{season}")
-    String updateCurrentSeasonPast(@PathVariable("season") Integer season) {
+    String updateCurrentSeasonPast(@RequestHeader String client, @PathVariable("season") Integer season) {
         return service.updateCurrentSeasonPast(season);
     }
     @GetMapping("/saveProperty/{name}/{value}")
-    String saveProperty(@PathVariable String name, @PathVariable String value) {
+    String saveProperty(@RequestHeader String client, @PathVariable String name, @PathVariable String value) throws Exception {
+        securityService.validateAdminHeader(client);
         return service.saveProperty(name, value);
     }
 
 
     @PostMapping("/updateJsonRepository")
-    JsonRepositoryModel updateJsonRepository(@RequestBody JsonRepositoryModel body) {
+    JsonRepositoryModel updateJsonRepository(@RequestHeader String client, @RequestBody JsonRepositoryModel body) throws Exception {
+        securityService.validateAdminHeader(client);
         return service.updateJsonRepository(body);
     }
     @GetMapping("/postFormulaDankToInstagram")
-    String postFormulaDankToInstagram() throws IGLoginException {
+    String postFormulaDankToInstagram(@RequestHeader String client) throws IGLoginException {
         return service.postFormulaDankToInstagram();
     }
     @GetMapping("/getJsonRepository/{id}")
@@ -305,7 +307,18 @@ public class AdminController {
     }
 
     @GetMapping("/deleteJsonRepository/{id}")
-    Boolean deleteJsonRepository(@PathVariable("id") String id) {
+    Boolean deleteJsonRepository(@RequestHeader String client, @PathVariable("id") String id) {
         return service.deleteJsonRepository(id);
     }
+
+    @PostMapping("/updateJsonRepositoryTwo")
+    JsonRepositoryTwoModel addArtAlbum(@RequestBody JsonRepositoryTwoModel body) {
+        return service.updateJsonRepositoryTwo(body);
+    }
+
+    @GetMapping("/getJsonRepositoryTwo/{id}")
+    Object getJsonRepositoryTwo(@PathVariable("id") String id) {
+        return service.getJsonRepositoryTwo(id).getJson();
+    }
+
 }

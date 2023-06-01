@@ -20,6 +20,7 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.util.*;
+import java.util.concurrent.ThreadLocalRandom;
 
 @Slf4j
 @Service
@@ -41,6 +42,7 @@ public class ClientServiceImpl implements ClientService {
     private final DriverStandingsRepository driverStandingsRepository;
     private final ConstructorStandingsRepository constructorStandingsRepository;
     private final JsonRepository jsonRepository;
+    private final JsonRepositoryTwo jsonRepositoryTwo;
     private final F1CommentRepository f1CommentRepository;
     private final NewsRepository newsRepository;
     private final NewsCommentRepository newsCommentRepository;
@@ -445,7 +447,22 @@ public class ClientServiceImpl implements ClientService {
                 .topNews(topNews)
                 .latestTwitterPost(twitterService.getMostPopularDailyPost())
                 .exposedDriver(exposureService.getLatestRaceExposureWinner())
+                .randomArt(getRandomImgur())
                 .build();
+    }
+
+    private String getRandomImgur() {
+        try{
+        List<LinkedHashMap<String,String>> dropdownList = (List<LinkedHashMap<String,String>>) jsonRepositoryTwo.findAllById("ART_DROPDOWN").getJson();
+        int randomNum = ThreadLocalRandom.current().nextInt(0, dropdownList.size() + 1);
+        String albumKey = dropdownList.get(randomNum).get("key");
+        List<String> imageLinks = (List<String>) jsonRepositoryTwo.findAllById(albumKey).getJson();
+        randomNum = ThreadLocalRandom.current().nextInt(0, imageLinks.size() + 1);
+        return imageLinks.get(randomNum);
+        } catch (Exception e){
+            e.printStackTrace();
+            return null;
+        }
     }
 
     private void setAllowNonRedditNews() {

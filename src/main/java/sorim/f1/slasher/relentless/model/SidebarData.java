@@ -16,4 +16,5 @@ public class SidebarData {
     private Boolean exposureOn;
     private TwitterPost latestTwitterPost;
     private KeyValue exposedDriver;
+    private String randomArt;
 }

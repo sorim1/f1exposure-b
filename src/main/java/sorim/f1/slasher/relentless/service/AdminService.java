@@ -104,6 +104,9 @@ public interface AdminService {
 
     JsonRepositoryModel getJsonRepository(String id);
 
+    JsonRepositoryTwoModel updateJsonRepositoryTwo(JsonRepositoryTwoModel body);
+    JsonRepositoryTwoModel getJsonRepositoryTwo(String id);
+
     Boolean deleteJsonRepository(String id);
     String postFormulaDankToInstagram () throws IGLoginException;
 }

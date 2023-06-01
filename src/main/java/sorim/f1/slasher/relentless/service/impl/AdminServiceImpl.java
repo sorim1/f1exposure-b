@@ -1,5 +1,9 @@
 package sorim.f1.slasher.relentless.service.impl;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.instagram4j.instagram4j.exceptions.IGLoginException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -18,6 +22,7 @@ import sorim.f1.slasher.relentless.handling.Logger;
 import sorim.f1.slasher.relentless.model.*;
 import sorim.f1.slasher.relentless.model.ergast.ErgastResponse;
 import sorim.f1.slasher.relentless.model.livetiming.RaceAnalysis;
+import sorim.f1.slasher.relentless.model.strawpoll.StrawpollModelThree;
 import sorim.f1.slasher.relentless.repository.*;
 import sorim.f1.slasher.relentless.scheduled.Scheduler;
 import sorim.f1.slasher.relentless.service.*;
@@ -35,6 +40,7 @@ import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
+import java.util.concurrent.ThreadLocalRandom;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -56,6 +62,7 @@ public class AdminServiceImpl implements AdminService {
     private final NewsCommentRepository newsCommentRepository;
     private final F1CommentRepository f1CommentRepository;
     private final JsonRepository jsonRepository;
+    private final JsonRepositoryTwo jsonRepositoryTwo;
     private final InstagramService instagramService;
     private final RedditService redditService;
     private final TwitterService twitterService;
@@ -68,7 +75,6 @@ public class AdminServiceImpl implements AdminService {
     private final MarketingService marketingService;
     private final ArtService artService;
     private final VideoService videoService;
-    private final RestTemplate restTemplate = new RestTemplate();
 
     private static boolean isNumeric(String strNum) {
         if (strNum == null) {
@@ -742,7 +748,16 @@ public class AdminServiceImpl implements AdminService {
     public JsonRepositoryModel getJsonRepository(String id) {
         return jsonRepository.findAllById(id);
     }
+    @Override
+    public JsonRepositoryTwoModel updateJsonRepositoryTwo(JsonRepositoryTwoModel body) {
+        jsonRepositoryTwo.save(body);
+        return jsonRepositoryTwo.findAllById(body.getId());
+    }
 
+    @Override
+    public JsonRepositoryTwoModel getJsonRepositoryTwo(String id) {
+        return jsonRepositoryTwo.findAllById(id);
+    }
     public Boolean deleteJsonRepository(String id) {
          jsonRepository.deleteById(id);
         return true;

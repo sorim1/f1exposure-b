@@ -658,7 +658,12 @@ public class LiveTimingServiceImpl implements LiveTimingService {
                     updateStandingsAndEnrichTreeMapData(driversMap, race.getRound());
 
                     Map<String, String> ergastCodes = mapErgastWithLiveTiming(driversMap);
-                    Boolean bool = enrichDriversWithErgast(driversMap, ergastCodes, race.getSeason(), race.getRound());
+                    Boolean bool;
+                    try{
+                        bool = enrichDriversWithErgast(driversMap, ergastCodes, race.getSeason(), race.getRound());
+                    } catch (Exception e){
+                        bool = false;
+                    }
                     if (bool) {
                         adminService.initializeStandings(updateStatistics);
                     }

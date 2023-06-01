@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import sorim.f1.slasher.relentless.entities.JsonRepositoryModel;
+import sorim.f1.slasher.relentless.entities.JsonRepositoryTwoModel;
 import sorim.f1.slasher.relentless.model.*;
 import sorim.f1.slasher.relentless.model.strawpoll.StrawpollModelThree;
 import sorim.f1.slasher.relentless.model.strawpoll.StrawpollPoll;
@@ -153,7 +154,7 @@ public class ExposureController {
         return strawpollService.postStrawpoll();
     }
     @GetMapping("/getStrawpoll")
-    StrawpollModelThree getStrawpoll(@RequestHeader String client) throws Exception {
+    JsonRepositoryTwoModel getStrawpoll(@RequestHeader String client) throws Exception {
         securityService.validateAdminHeader(client);
         return strawpollService.getStrawpoll();
     }

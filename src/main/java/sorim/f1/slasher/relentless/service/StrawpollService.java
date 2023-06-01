@@ -1,5 +1,6 @@
 package sorim.f1.slasher.relentless.service;
 
+import sorim.f1.slasher.relentless.entities.JsonRepositoryTwoModel;
 import sorim.f1.slasher.relentless.model.strawpoll.StrawpollModelThree;
 import sorim.f1.slasher.relentless.model.strawpoll.StrawpollPoll;
 import sorim.f1.slasher.relentless.model.strawpoll.StrawpollPollOption;
@@ -16,8 +17,7 @@ public interface StrawpollService {
 
     String setStrawpollDrivers(String drivers);
 
-    StrawpollModelThree getStrawpoll();
-
+    JsonRepositoryTwoModel getStrawpoll();
     StrawpollModelThree saveStrawpoll(StrawpollModelThree body);
 
     StrawpollPoll postStrawpoll();

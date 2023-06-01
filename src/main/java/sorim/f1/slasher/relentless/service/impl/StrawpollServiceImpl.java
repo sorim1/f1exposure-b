@@ -103,8 +103,8 @@ public class StrawpollServiceImpl implements StrawpollService {
     }
 
     @Override
-    public StrawpollModelThree getStrawpoll() {
-        return null;
+    public JsonRepositoryTwoModel getStrawpoll() {
+        return jsonRepository.findAllById("STRAWPOLL_CURRENT");
     }
 
     @Override
