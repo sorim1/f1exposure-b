@@ -54,7 +54,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
     private final PropertiesRepository propertiesRepository;
     private final ErgastService ergastService;
     private final FourchanService fourchanService;
-    private final RestTemplate restTemplate = new RestTemplate();
+    private final RestTemplate restTemplate;
 
     private final JsonRepository jsonRepository;
 
@@ -342,7 +342,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
         try{
         //TODO remove trycatch ako je sve ok properties.getCurrentSeasonPast(), currentExposureRound
         ExposureChampionship winner= exposureChampionshipRepository.findFirstByIdSeasonAndIdRoundOrderByVotesDesc(properties.getCurrentSeasonPast(), currentExposureRound);
-        if(winner!=null){
+        if(winner!=null && winner.getVotes()>20){
             String key = title;
             String value = winner.getId().getDriver();
             return KeyValue.builder().key(key).value(value).build();

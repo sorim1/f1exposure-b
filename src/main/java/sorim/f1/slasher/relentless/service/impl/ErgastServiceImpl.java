@@ -36,7 +36,7 @@ public class ErgastServiceImpl implements ErgastService {
     private final DriverStandingsRepository driverStandingsRepository;
     private final DriverRepository driverRepository;
     private final JsonRepository jsonRepository;
-    private final RestTemplate restTemplate = new RestTemplate();
+    private final RestTemplate restTemplate;
     private final ObjectMapper mapper = new ObjectMapper();
     private final PropertiesRepository propertiesRepository;
 

@@ -38,7 +38,7 @@ public class StrawpollServiceImpl implements StrawpollService {
     private final CalendarRepository calendarRepository;
     private final JsonRepositoryTwo jsonRepository;
     private final ObjectMapper objectMapper = new ObjectMapper();
-    private final RestTemplate restTemplate = new RestTemplate();
+    private final RestTemplate restTemplate;
     @Override
     public StrawpollModelThree generateStrawpoll() {
         List<StrawpollPollOption> pollOptions = generateStrawpollDrivers();
