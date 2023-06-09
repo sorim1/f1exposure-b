@@ -5,22 +5,31 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 import sorim.f1.slasher.relentless.configuration.MainProperties;
 import sorim.f1.slasher.relentless.entities.*;
+import sorim.f1.slasher.relentless.entities.ergast.RaceData;
 import sorim.f1.slasher.relentless.model.*;
+import sorim.f1.slasher.relentless.model.livetiming.Driver;
+import sorim.f1.slasher.relentless.model.livetiming.UpcomingRaceAnalysis;
 import sorim.f1.slasher.relentless.repository.*;
 import sorim.f1.slasher.relentless.service.*;
 import sorim.f1.slasher.relentless.util.MainUtility;
 
 import javax.annotation.PostConstruct;
-import java.time.Duration;
-import java.time.LocalDateTime;
-import java.time.ZoneId;
-import java.time.ZonedDateTime;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.*;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.concurrent.atomic.AtomicReference;
 
 @Slf4j
 @Service
@@ -30,6 +39,7 @@ public class ClientServiceImpl implements ClientService {
     private static final String SYSTEM_MESSAGE = "### SYSTEM MESSAGE ###";
     public static String overlays;
     public static List<String> overlayList;
+    public static NavbarData navbarData = new NavbarData();
     public static String iframeLink;
     public static Boolean fourchanDisabled;
 
@@ -65,7 +75,7 @@ public class ClientServiceImpl implements ClientService {
 
     @Override
     public CalendarData getCountdownData(Integer mode) {
-       // ZonedDateTime gmtZoned = ZonedDateTime.now(ZoneId.of("Europe/London"));
+        // ZonedDateTime gmtZoned = ZonedDateTime.now(ZoneId.of("Europe/London"));
         ZonedDateTime utcZoned = ZonedDateTime.now(ZoneId.of("UTC"));
         LocalDateTime utcDateTime = utcZoned.toLocalDateTime();
         LocalDateTime keepCalendarOneHourLonger = utcDateTime.minusHours(1);
@@ -73,7 +83,7 @@ public class ClientServiceImpl implements ClientService {
         F1Calendar f1calendar = calendarRepository.findFirstByRaceAfterOrPractice3AfterOrderByPractice1(keepCalendarOneHourLonger, keepCalendarOneHourLonger);
         if (f1calendar == null) {
             return CalendarData.builder()
-                   // .londonOffset(londonOffsetMinutes)
+                    // .londonOffset(londonOffsetMinutes)
                     .overlays(overlayList)
                     .iframeLink(iframeLink)
                     .build();
@@ -82,7 +92,7 @@ public class ClientServiceImpl implements ClientService {
         return CalendarData.builder().f1Calendar(f1calendar).countdownData(countdownData)
                 .overlays(overlayList)
                 .iframeLink(iframeLink)
-             //   .londonOffset(londonOffsetMinutes)
+                //   .londonOffset(londonOffsetMinutes)
                 .build();
     }
 
@@ -270,6 +280,115 @@ public class ClientServiceImpl implements ClientService {
         return response;
     }
     @Override
+    public NavbarData getNavbarData() {
+        return navbarData;
+    }
+    @Override
+    public NavbarData updateNavbarData(NavbarData input) {
+        navbarData = input;
+        return navbarData;
+    }
+    @Override
+    public Boolean setNavbarData() {
+        RaceData raceData = ergastService.getUpcomingRace(properties.getCurrentSeasonFuture());
+       // RaceData raceData = ergastService.getLatestAnalyzedRace();
+        if (raceData != null) {
+            UpcomingRaceAnalysis upcomingRaceAnalysis = raceData.getUpcomingRaceAnalysis();
+            if (upcomingRaceAnalysis.getQualiRadio() != null) {
+                if (navbarData.getSessionName().equals("Qualifying")) {
+                    return true;
+                } else {
+                    log.info("Qualifying navbar");
+                    navbarData.setSessionName("Qualifying");
+                    navbarData.setTabNumber(6);
+                    setNavbarDriver(upcomingRaceAnalysis.getQualiLivetimingUrl(), upcomingRaceAnalysis.getQuali().get(0));
+                }
+            } else if (upcomingRaceAnalysis.getFp3Radio() != null) {
+                if (navbarData.getSessionName().equals("Practice3")) {
+                    return true;
+                } else {
+                    log.info("Practice3 navbar");
+                    navbarData.setSessionName("Practice3");
+                    navbarData.setTabNumber(5);
+                    setNavbarDriver(upcomingRaceAnalysis.getFp3LivetimingUrl(), upcomingRaceAnalysis.getFp3().get(0));
+                }
+            } else if (upcomingRaceAnalysis.getFp2Radio() != null) {
+                if (navbarData.getSessionName().equals("Practice2")) {
+                    return true;
+                } else {
+                    log.info("Practice2 navbar");
+                    navbarData.setSessionName("Practice2");
+                    navbarData.setTabNumber(4);
+                    setNavbarDriver(upcomingRaceAnalysis.getFp2LivetimingUrl(), upcomingRaceAnalysis.getFp2().get(0));
+                }
+            } else if (upcomingRaceAnalysis.getFp1Radio() != null) {
+                if (navbarData.getSessionName().equals("Practice1")) {
+                    return true;
+                } else {
+                    log.info("Practice1 navbar");
+                    navbarData.setSessionName("Practice1");
+                    navbarData.setTabNumber(3);
+                    setNavbarDriver(upcomingRaceAnalysis.getFp1LivetimingUrl(), upcomingRaceAnalysis.getFp1().get(0));
+                }
+            } else {
+                raceData = ergastService.getLatestAnalyzedRace();
+                long daysAgo = howManyDaysAgo(raceData.getDate());
+                if (daysAgo < 3) {
+                    navbarData.setSessionName(raceData.getRaceName().replace("Grand Prix", "GP"));
+                    navbarData.setTabNumber(null);
+                    Driver winner = raceData.getRaceAnalysis().getDriverData().stream()
+                            .filter(driver -> driver.getPosition() == 1).findFirst().get();
+                    setNavbarDriver(raceData.getRaceAnalysis().getLivetimingUrl(), winner);
+                } else {
+                    navbarData.setSessionName("");
+                    navbarData.setTabNumber(null);
+                }
+            }
+        }
+        return true;
+    }
+
+    private long howManyDaysAgo(String input) {
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDate d1 = LocalDate.parse(input, dtf);
+        LocalDate today = LocalDate.now();
+        return d1.datesUntil(today).count();
+    }
+
+    private void setNavbarDriver(String baseUrl, Driver driver) {
+        navbarData.setWinner(driver.getLastName());
+        if (driver.getRadioData().isEmpty()) {
+            navbarData.setRadioUrl(null);
+        } else {
+            RestTemplate restTemplate = new RestTemplate();
+            AtomicReference<Integer> finalAudioSize = new AtomicReference<>(0);
+            driver.getRadioData().forEach(entry -> {
+                Integer audioSize = getAudioSize(restTemplate, baseUrl + entry.getPath());
+                if (audioSize > finalAudioSize.get()) {
+                    finalAudioSize.set(audioSize);
+                    navbarData.setRadioUrl(baseUrl + entry.getPath());
+                }
+            });
+        }
+    }
+
+    private Integer getAudioSize(RestTemplate restTemplate, String url) {
+        HttpEntity<String> entity = new HttpEntity<>(new HttpHeaders());
+        HttpEntity<String> response = restTemplate.exchange(url, HttpMethod.GET, entity, String.class);
+        HttpHeaders headers = response.getHeaders();
+        List<String> length = headers.get("Content-Length");
+        return Integer.valueOf(length.get(0));
+    }
+
+    @Override
+    public List<NewsContent> getNextNewsList(String timestampActivity) throws ParseException {
+        Pageable paging = PageRequest.of(0, 4);
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
+        Date dateTime = df.parse(timestampActivity);
+        return newsRepository.findAllByTimestampActivityBeforeOrderByTimestampActivityDesc(dateTime, paging);
+    }
+
+    @Override
     public Boolean bumpNewsPost(String code) {
         NewsContent response = newsRepository.findByCodeAndStatusLessThanEqual(code, 5);
         if (response != null) {
@@ -288,7 +407,7 @@ public class ClientServiceImpl implements ClientService {
         comment.setTextContent(comment.getTextContent().replaceAll("[\n\n\n]+", "\n"));
         String username = MainUtility.handleUsername(comment.getUsername());
         comment.setUsername(username);
-        if(comment.getStatus()==null){
+        if (comment.getStatus() == null) {
             comment.setStatus(1);
         }
         comment.setIp(ipAddress);
@@ -336,7 +455,7 @@ public class ClientServiceImpl implements ClientService {
         if (moderation.getPanel() == 2) {
             NewsComment comment = newsCommentRepository.findNewsCommentById(moderation.getCommentId());
             if (comment != null) {
-                state = newsCommentRepository.updateStatus(moderation.getCommentId(), moderation.getAction()+1);
+                state = newsCommentRepository.updateStatus(moderation.getCommentId(), moderation.getAction() + 1);
                 NewsComment notification = NewsComment.builder()
                         .textContent(message)
                         .status(1)
@@ -399,6 +518,15 @@ public class ClientServiceImpl implements ClientService {
         return sidebarData;
     }
 
+    private void setSidebarData(NewsContent topNews) {
+        sidebarData = SidebarData.builder()
+                .topNews(topNews)
+                .latestTwitterPost(twitterService.getMostPopularDailyPost())
+                .exposedDriver(exposureService.getLatestRaceExposureWinner())
+                .randomArt(getRandomImgur())
+                .build();
+    }
+
     @Override
     public String getStreamer() {
         return twitchService.getStreamer();
@@ -439,27 +567,19 @@ public class ClientServiceImpl implements ClientService {
         initFourchanDisabled();
         setAllowNonRedditNews();
         setSidebarData(newsRepository.findFirstByStatusLessThanEqualOrderByTimestampActivityDesc(5));
+        setNavbarData();
         log.info("clientServiceInit: {} -{}", iframeLink, overlays);
     }
 
-    private void setSidebarData(NewsContent topNews) {
-        this.sidebarData = SidebarData.builder()
-                .topNews(topNews)
-                .latestTwitterPost(twitterService.getMostPopularDailyPost())
-                .exposedDriver(exposureService.getLatestRaceExposureWinner())
-                .randomArt(getRandomImgur())
-                .build();
-    }
-
     private String getRandomImgur() {
-        try{
-        List<LinkedHashMap<String,String>> dropdownList = (List<LinkedHashMap<String,String>>) jsonRepositoryTwo.findAllById("ART_DROPDOWN").getJson();
-        int randomNum = ThreadLocalRandom.current().nextInt(0, dropdownList.size() + 1);
-        String albumKey = dropdownList.get(randomNum).get("key");
-        List<String> imageLinks = (List<String>) jsonRepositoryTwo.findAllById(albumKey).getJson();
-        randomNum = ThreadLocalRandom.current().nextInt(0, imageLinks.size() + 1);
-        return imageLinks.get(randomNum);
-        } catch (Exception e){
+        try {
+            List<LinkedHashMap<String, String>> dropdownList = (List<LinkedHashMap<String, String>>) jsonRepositoryTwo.findAllById("ART_DROPDOWN").getJson();
+            int randomNum = ThreadLocalRandom.current().nextInt(0, dropdownList.size());
+            String albumKey = dropdownList.get(randomNum).get("key");
+            List<String> imageLinks = (List<String>) jsonRepositoryTwo.findAllById(albumKey).getJson();
+            randomNum = ThreadLocalRandom.current().nextInt(0, imageLinks.size() + 1);
+            return imageLinks.get(randomNum);
+        } catch (Exception e) {
             e.printStackTrace();
             return null;
         }
@@ -520,7 +640,7 @@ public class ClientServiceImpl implements ClientService {
             output.put("FP1Seconds", (int) duration.toSeconds());
         }
         if (mode == 0 || mode == 2) {
-            if(f1calendar.getPractice2()!=null){
+            if (f1calendar.getPractice2() != null) {
                 duration = Duration.between(gmtDateTime, f1calendar.getPractice2());
                 output.put("FP2Days", (int) duration.toDays());
                 output.put("FP2Seconds", (int) duration.toSeconds());

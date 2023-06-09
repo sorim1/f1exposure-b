@@ -93,6 +93,7 @@ public class RedditServiceImpl implements RedditService {
 
     private List<NewsContent> mergeAndEnrichNewsLists(List<NewsContent> newsPosts, List<NewsContent> videoPosts) {
         List<NewsContent> filteredVideoPosts = new ArrayList<>();
+        List<NewsContent> filteredNewsPosts = new ArrayList<>();
         videoPosts.forEach(post -> {
             if (post.getUrl() != null) {
                 if (post.getUrl().contains("streamja")) {
@@ -114,7 +115,13 @@ public class RedditServiceImpl implements RedditService {
                 }
             }
         });
-        List<NewsContent> finalList = Stream.concat(newsPosts.stream(), filteredVideoPosts.stream()).sorted().collect(Collectors.toList());
+        newsPosts.forEach(post -> {
+            if(newsPostIsValid(post)){
+                filteredNewsPosts.add(post);
+            }
+
+                });
+        List<NewsContent> finalList = Stream.concat(filteredNewsPosts.stream(), filteredVideoPosts.stream()).sorted().collect(Collectors.toList());
         Collections.sort(finalList);
         AtomicReference<Integer> counter = new AtomicReference<>(1000);
         long currentTime = System.currentTimeMillis();
@@ -123,6 +130,16 @@ public class RedditServiceImpl implements RedditService {
             counter.set(counter.get() + 1000);
         });
         return finalList;
+    }
+
+    private Boolean newsPostIsValid(NewsContent news){
+        if(news.getUrl()==null && news.getImageUrl()==null && news.getTextContent() ==null){
+            return false;
+        }
+        if(news.getUrl()!=null && news.getUrl().indexOf("reddit.com")>0 && news.getImageUrl()==null){
+            return false;
+        }
+        return true;
     }
 
     private String getYoutubeThumbnail(String url) {

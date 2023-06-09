@@ -271,6 +271,7 @@ public class LiveTimingServiceImpl implements LiveTimingService {
                 ergastService.saveRace(raceData);
                 RaceAnalysis analysis = fetchNewRaceAnalysis(raceData.getCircuit().getCircuitId(), updateStatistics);
                 adminService.updateOverlays(analysis);
+                clientService.setNavbarData();
                 analyzeUpcomingRace(false);
                 Scheduler.analysisDone = true;
             }
@@ -532,6 +533,8 @@ public class LiveTimingServiceImpl implements LiveTimingService {
         } else {
             properties.checkCurrentSeasonFuture();
         }
+
+        clientService.setNavbarData();
         return getNextRefreshTime(-6000);
     }
 

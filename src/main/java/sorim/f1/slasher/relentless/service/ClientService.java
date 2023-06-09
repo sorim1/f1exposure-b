@@ -4,6 +4,7 @@ import com.github.instagram4j.instagram4j.exceptions.IGLoginException;
 import sorim.f1.slasher.relentless.entities.*;
 import sorim.f1.slasher.relentless.model.*;
 
+import java.text.ParseException;
 import java.util.List;
 
 public interface ClientService {
@@ -55,6 +56,7 @@ public interface ClientService {
     List<NewsContent> getNews(Integer page);
 
     NewsContent getNewsPost(String code);
+    List<NewsContent> getNextNewsList(String timestampActivity) throws ParseException;
     Boolean bumpNewsPost(String code);
 
     NewsComment postNewsComment(NewsComment comment, String ipAddress);
@@ -84,4 +86,8 @@ public interface ClientService {
     Boolean setFourchanDisabled(String value);
 
     void setAllowNonRedditNewsProperty(Boolean bool);
+
+    NavbarData getNavbarData();
+    Boolean setNavbarData();
+    NavbarData updateNavbarData(NavbarData navbarData);
 }

@@ -193,6 +193,22 @@ public class ClientController {
         securityService.validateHeader(client);
         return service.getNewsPost(code);
     }
+    @GetMapping("/getNextThreeNews/{timestampActivity}")
+    List<NewsContent> getNextNewsList(@RequestHeader String client, @PathVariable("timestampActivity") String timestampActivity) throws Exception {
+        securityService.validateHeader(client);
+        return service.getNextNewsList(timestampActivity);
+    }
+    @GetMapping("/getNavbarData")
+    NavbarData getNavbarData(@RequestHeader String client) throws Exception {
+        securityService.validateHeader(client);
+        return service.getNavbarData();
+    }
+
+    @GetMapping("/updateNavbarData")
+    NavbarData updateNavbarData(@RequestHeader String client, @RequestBody NavbarData navbarData) throws Exception {
+         securityService.validateHeader(client);
+        return service.updateNavbarData(navbarData);
+    }
     @GetMapping("/bumpNewsPost/{code}")
     Boolean bumpNewsPost(@RequestHeader String client, @PathVariable("code") String code) throws Exception {
         securityService.validateHeader(client);
