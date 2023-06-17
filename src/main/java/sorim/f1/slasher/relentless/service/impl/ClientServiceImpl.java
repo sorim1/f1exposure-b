@@ -58,6 +58,8 @@ public class ClientServiceImpl implements ClientService {
     private final NewsCommentRepository newsCommentRepository;
     private final InstagramService instagramService;
     private final TwitterService twitterService;
+   // private final TwitterServiceMarkTwo twitterService2;
+
     private final TwitchService twitchService;
     private final RedditService redditService;
     private final FourchanService forchanService;
@@ -220,7 +222,8 @@ public class ClientServiceImpl implements ClientService {
 
     @Override
     public Boolean fetchTwitterPosts() throws Exception {
-        return twitterService.fetchTwitterPosts();
+       // return twitterService2.fetchTwitterPosts();
+         return twitterService.fetchTwitterPosts();
     }
 
     @Override
@@ -521,7 +524,7 @@ public class ClientServiceImpl implements ClientService {
     private void setSidebarData(NewsContent topNews) {
         sidebarData = SidebarData.builder()
                 .topNews(topNews)
-                .latestTwitterPost(twitterService.getMostPopularDailyPost())
+                .latestImagePost(instagramService.getLatestPost())
                 .exposedDriver(exposureService.getLatestRaceExposureWinner())
                 .randomArt(getRandomImgur())
                 .build();

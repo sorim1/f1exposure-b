@@ -88,7 +88,12 @@ public class RedditServiceImpl implements RedditService {
         List<NewsContent> videoPosts = getRedditNewsByFlair(REDDIT_DAILY_VIDEO_POSTS, 5);
         List<NewsContent> finalList = mergeAndEnrichNewsLists(newsPosts, videoPosts);
         saveNewsList(finalList);
-        return finalList.get(0);
+        if(!finalList.isEmpty()){
+            return finalList.get(0);
+        } else {
+            return null;
+        }
+
     }
 
     private List<NewsContent> mergeAndEnrichNewsLists(List<NewsContent> newsPosts, List<NewsContent> videoPosts) {
@@ -105,11 +110,12 @@ public class RedditServiceImpl implements RedditService {
                     filteredVideoPosts.add(post);
                 }
                 if (post.getUrl().contains("youtu")) {
-                    post.setUrl(post.getUrl().replace("youtu.be/", "www.youtube.com/embed/"));
-                    post.setUrl(post.getUrl().replace("youtube.com/watch?v=", "youtube.com/embed/"));
-                    if(post.getUrl().contains("&")){
-                        post.setUrl(post.getUrl().substring(0, post.getUrl().indexOf("&")));
-                    }
+//                    post.setUrl(post.getUrl().replace("youtu.be/", "www.youtube.com/embed/"));
+//                    post.setUrl(post.getUrl().replace("youtube.com/watch?v=", "youtube.com/embed/"));
+//                    if(post.getUrl().contains("&")){
+//                        post.setUrl(post.getUrl().substring(0, post.getUrl().indexOf("&")));
+//                    }
+                    post.setIconUrl("https://www.youtube.com/favicon.ico");
                     post.setImageUrl(getYoutubeThumbnail(post.getUrl()));
                     filteredVideoPosts.add(post);
                 }
@@ -153,10 +159,11 @@ public class RedditServiceImpl implements RedditService {
 
     private List<NewsContent> getRedditNewsByFlair(String apiUrl, Integer status) {
         HttpEntity entity = new HttpEntity(headers);
+        try {
         ResponseEntity<String> newsResponse = restTemplate.exchange(
                 apiUrl, HttpMethod.GET, entity, String.class);
         List<NewsContent> list = new ArrayList<>();
-        try {
+
             Map<String, Object> mapping = mapper.readValue(newsResponse.getBody(), typeRef);
             LinkedHashMap<String, Object> root = (LinkedHashMap<String, Object>) mapping.get("data");
             List<LinkedHashMap<String, Object>> children = (ArrayList<LinkedHashMap<String, Object>>) root.get("children");
@@ -166,7 +173,7 @@ public class RedditServiceImpl implements RedditService {
                 list.add(post);
             });
             return list;
-        } catch (JsonProcessingException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return new ArrayList<>();
@@ -350,10 +357,11 @@ public class RedditServiceImpl implements RedditService {
     private void getRFormula1NewImages() {
         AtomicReference<Boolean> iterate = new AtomicReference<>(true);
         HttpEntity entity = new HttpEntity(headers);
+        try {
         ResponseEntity<String> response = restTemplate.exchange(
                 REDDIT_NEW_POSTS, HttpMethod.GET, entity, String.class);
         List<RedditPost> list = new ArrayList<>();
-        try {
+
             Map<String, Object> mapping = mapper.readValue(response.getBody(), typeRef);
             LinkedHashMap<String, Object> root = (LinkedHashMap<String, Object>) mapping.get("data");
             List<LinkedHashMap<String, Object>> children = (ArrayList<LinkedHashMap<String, Object>>) root.get("children");
@@ -371,7 +379,7 @@ public class RedditServiceImpl implements RedditService {
             });
             lastNewPost = list.get(0).getId();
             redditRepository.saveAll(list);
-        } catch (JsonProcessingException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -421,10 +429,11 @@ public class RedditServiceImpl implements RedditService {
     private void getRF1PornHot() {
         AtomicReference<Boolean> iterate = new AtomicReference<>(true);
         HttpEntity entity = new HttpEntity(headers);
+        try {
         ResponseEntity<String> response = restTemplate.exchange(
                 REDDIT_NEW_F1_PORN_POSTS, HttpMethod.GET, entity, String.class);
         List<RedditPost> list = new ArrayList<>();
-        try {
+
             Map<String, Object> mapping = mapper.readValue(response.getBody(), typeRef);
             LinkedHashMap<String, Object> root = (LinkedHashMap<String, Object>) mapping.get("data");
             List<LinkedHashMap<String, Object>> children = (ArrayList<LinkedHashMap<String, Object>>) root.get("children");
@@ -442,7 +451,7 @@ public class RedditServiceImpl implements RedditService {
             });
             lastNewF1PornPost = list.get(0).getId();
             redditRepository.saveAll(list);
-        } catch (JsonProcessingException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

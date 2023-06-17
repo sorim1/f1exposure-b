@@ -1,6 +1,5 @@
 package sorim.f1.slasher.relentless.service.impl;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -17,7 +16,6 @@ import sorim.f1.slasher.relentless.entities.JsonRepositoryTwoModel;
 import sorim.f1.slasher.relentless.model.strawpoll.*;
 import sorim.f1.slasher.relentless.repository.CalendarRepository;
 import sorim.f1.slasher.relentless.repository.DriverRepository;
-import sorim.f1.slasher.relentless.repository.JsonRepository;
 import sorim.f1.slasher.relentless.repository.JsonRepositoryTwo;
 import sorim.f1.slasher.relentless.service.StrawpollService;
 
@@ -26,7 +24,6 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
 import java.util.List;
 
 @Slf4j

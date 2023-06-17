@@ -9,6 +9,8 @@ f1:
       twitterSecret: hkjZw8YFhRDLjL3yVuUgxwF5DRKgyQ7ZuNscQMJgr8fA9ycCPI
       twitterAccessToken: 2307261354-VCg4IcH8xOjbv6NhlMfYtO7kA2z5tbp7Bo7xBWf
       twitterAccessTokenSecret: I56TyVDo9GVw0s9WfyMuyZt2K9tGrb4XAVO2wax8RKFbs
+      twitterClientId: a1BIb1BUYVlyVnB6ejM2bzQ4QVQ6MTpjaQ
+      twitterClientSecret: BEh2qOmAp0jRJHEfjh71fcgX5yJ7BC2uM0p4OqHKk2PP8y-88I
       twitterKey_duke: eCF9Xm6wa5brKSAxOhFS4FpXP
       twitterSecret_duke: hkjZw8YFhRDLjL3yVuUgxwF5DRKgyQ7ZuNscQMJgr8fA9ycCPI
       twitterAccessToken_duke: 2307261354-VCg4IcH8xOjbv6NhlMfYtO7kA2z5tbp7Bo7xBWf
@@ -17,6 +19,8 @@ f1:
       twitterSecret_f1ex: ZcpC4aVpIee4euvZF4IiAHzlYY06VpI22kKfroX6Cxe5u7uBgC
       twitterAccessToken_f1ex: 1530482716990394368-E0efMcIWH4IT2lsfzTjqUCClf8rtWq
       twitterAccessTokenSecret_f1ex: 41DI3NKWO4NX2FYv0S4yC9hoI9Iap8Dxn7ohRBJX8e48g
+      newTwitterClientID_Duke: a1BIb1BUYVlyVnB6ejM2bzQ4QVQ6MTpjaQ
+      newTwitterClientSecret_Duke: BEh2qOmAp0jRJHEfjh71fcgX5yJ7BC2uM0p4OqHKk2PP8y-88I
       instagramWorkerUsername: npc3422
       instagramWorkerPassword: "qwadrat"
       instagramWorker2Username: miroslav.dragicevic1

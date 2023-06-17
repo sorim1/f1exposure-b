@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import sorim.f1.slasher.relentless.entities.InstagramPost;
 import sorim.f1.slasher.relentless.entities.NewsContent;
 import sorim.f1.slasher.relentless.entities.TwitterPost;
 
@@ -14,7 +15,7 @@ import sorim.f1.slasher.relentless.entities.TwitterPost;
 public class SidebarData {
     private NewsContent topNews;
     private Boolean exposureOn;
-    private TwitterPost latestTwitterPost;
+    private InstagramPost latestImagePost;
     private KeyValue exposedDriver;
     private String randomArt;
 }

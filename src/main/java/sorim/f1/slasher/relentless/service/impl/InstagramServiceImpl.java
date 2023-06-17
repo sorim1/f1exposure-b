@@ -42,11 +42,8 @@ public class InstagramServiceImpl implements InstagramService {
     private static final List<String> instagram_following = new ArrayList<>();
     private static final List<KeyValue> instagramfollowingHashtags = new ArrayList<>();
     private static final String PREFIX = "INSTA_";
-    private static final String FUN_TAGS_STRING_OLD = "#f1 , #formula1 , #f1meme , #f1edit , #formula1meme , #formula1memes , #f1memes , #f1humor , #ferrari";
-    private static final String SERIOUS_TAGS_STRING_OLD = "#f1 , #formula1 , #f1meme , #f1edit , #formula1meme , #formula1memes , #f1memes , #f1driver";
     private static final String FUN_TAGS_STRING_BASE = "#f1 , #formula1 , #f1meme , #f1edit , #formula1memes , #f1memes , #f1humor ";
     private static final String SERIOUS_TAGS_STRING_BASE = "#f1 , #formula1 , #f1meme , #f1edit , #formula1memes , #f1memes , #f1driver";
-    private static final List<String> FUN_TAGS_OLD = Arrays.asList("#f1", "#formula1", "#f1meme", "#f1edit", "#formula1meme", "#formula1memes", "#f1memes", "#f1humor", "#lewishamilton", "#charlesleclerc", "#carlossainz", "#maxverstappen", "#ferrari", "#scuderiaferrari");
     private static final List<String> EXTRA_TAGS = Arrays.asList("#lewishamilton", "#charlesleclerc", "#carlossainz", "#maxverstappen", "#ferrari", "#scuderiaferrari", "#LH44", "#MV33");
     private static IGClient workerClient;
     private static IGClient officialClient;
@@ -475,6 +472,11 @@ public class InstagramServiceImpl implements InstagramService {
         String response = fetchEnabled + "->" + bool;
         fetchEnabled = bool;
         return response;
+    }
+
+    @Override
+    public InstagramPost getLatestPost() {
+        return instagramRepository.findTopByOrderByTakenAtDesc();
     }
 
     private void getAccountsToFollow(IGClient client) throws Exception {

@@ -15,7 +15,7 @@ import java.util.List;
 public interface InstagramRepository extends PagingAndSortingRepository<InstagramPost, String> {
 
     //@Query("SELECT TOP 500 a FROM InstagramPost a ORDER BY a.deviceTimestamp DESC")
-    List<InstagramPost> findFirst10ByOrderByLikesDesc();
+    InstagramPost findTopByOrderByTakenAtDesc();
     List<InstagramPost> findAllByOrderByTakenAtDesc(Pageable pageable);
 
     boolean existsByCode(String code);

@@ -11,10 +11,12 @@ import sorim.f1.slasher.relentless.entities.TwitterPost;
 import sorim.f1.slasher.relentless.repository.TwitterRepository;
 import sorim.f1.slasher.relentless.service.TwitterService;
 import twitter4j.*;
-import twitter4j.conf.ConfigurationBuilder;
+import twitter4j.v1.Query;
+import twitter4j.v1.QueryResult;
+import twitter4j.v1.ResponseList;
+import twitter4j.v1.Status;
 
 import javax.annotation.PostConstruct;
-import java.time.LocalDateTime;
 import java.util.*;
 
 @Slf4j
@@ -51,7 +53,7 @@ public class TwitterServiceImpl implements TwitterService {
     @Override
     public Boolean fetchTwitterPosts() throws Exception {
         Twitter twitter = getTwitterinstance();
-        ResponseList<Status> timeline = twitter.getHomeTimeline();
+        ResponseList<Status> timeline = twitter.v1().timelines().getHomeTimeline();
         List<TwitterPost> list = getListFromResponseList(timeline);
         twitterRepository.saveAll(list);
         fetchTwitterFerrariPosts();
@@ -113,13 +115,13 @@ public class TwitterServiceImpl implements TwitterService {
                     .mediaUrl(mediaUrl)
                     .userPicture(item.getUser().getProfileImageURLHttps())
                     .username(item.getUser().getName())
-                    .createdAt(item.getCreatedAt())
+                   // .createdAt(item.getCreatedAt())
                     .build();
         }
         return response;
     }
 
-    @PostConstruct
+   // @PostConstruct
     @Override
     public List<TwitterPost> fetchTwitterFerrariPosts() throws Exception {
         if (twitterPostsMap.size() > 300) {
@@ -129,9 +131,8 @@ public class TwitterServiceImpl implements TwitterService {
             }
         }
         Twitter twitter = getTwitterinstance();
-        Query query = new Query("ScuderiaFerrari");
-
-        QueryResult result = twitter.search(query);
+        Query query = Query.of("ScuderiaFerrari");
+        QueryResult result = twitter.v1().search().search(query);
         for (Status status : result.getTweets()) {
             TwitterPost post = getTwitterPostFromResponseItem(status, true);
             if (post != null) {
@@ -156,14 +157,15 @@ public class TwitterServiceImpl implements TwitterService {
     }
 
     private Twitter getTwitterinstance() {
-        ConfigurationBuilder cb = new ConfigurationBuilder();
-        cb.setDebugEnabled(properties.getTwitterDebug())
-                .setOAuthConsumerKey(properties.getTwitterKey())
-                .setOAuthConsumerSecret(properties.getTwitterSecret())
-                .setOAuthAccessToken(properties.getTwitterAccessToken())
-                .setOAuthAccessTokenSecret(properties.getTwitterAccessTokenSecret());
-        TwitterFactory tf = new TwitterFactory(cb.build());
-        return tf.getInstance();
+        Twitter twitter = Twitter.newBuilder()
+                .oAuthConsumer(properties.getTwitterKey(), properties.getTwitterSecret())
+                .oAuthAccessToken(properties.getTwitterAccessToken(), properties.getTwitterAccessTokenSecret())
+                .build();
+//        Twitter twitter2 = Twitter.newBuilder().oau
+//                .oAuthConsumer(properties.getTwitterKey(), properties.getTwitterSecret())
+//                .oAuthAccessToken(properties.getTwitterAccessToken(), properties.getTwitterAccessTokenSecret())
+//                .build();
+        return twitter;
     }
 
 }

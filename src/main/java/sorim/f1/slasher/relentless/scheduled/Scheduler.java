@@ -280,7 +280,7 @@ public class Scheduler {
     }
     void imageFeedJobWithoutInstagram() throws Exception {
         log.info("imageFeedJobWithoutInstgram called");
-        clientService.fetchTwitterPosts();
+      //  clientService.fetchTwitterPosts();
         clientService.fetchRedditPosts();
     }
 
@@ -315,7 +315,7 @@ public class Scheduler {
              log.warn(properties.getUrl());
          }
     }
-   // @Scheduled(cron = "0 0 1 * * *")
+    @Scheduled(cron = "0 0 1 * * *")
     void secondInstagramJob() throws Exception {
         Random rand = new Random();
         int minutes = rand.nextInt(30);

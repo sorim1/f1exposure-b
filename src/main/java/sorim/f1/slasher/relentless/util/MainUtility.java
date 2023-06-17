@@ -132,6 +132,9 @@ public class MainUtility {
     }
 
     public static String handleUsername(String username) {
+        if("hide.me".equals(username)){
+            return null;
+        }
         String finalUsername = username;
         Integer passwordStart = username.indexOf("#");
         if(passwordStart>=0){

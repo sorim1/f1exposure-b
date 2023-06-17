@@ -3,12 +3,12 @@ package sorim.f1.slasher.relentless.service;
 import com.github.instagram4j.instagram4j.exceptions.IGLoginException;
 import sorim.f1.slasher.relentless.entities.FourChanImageRow;
 import sorim.f1.slasher.relentless.entities.FourChanPostEntity;
+import sorim.f1.slasher.relentless.entities.InstagramPost;
 import sorim.f1.slasher.relentless.entities.RedditPost;
 import sorim.f1.slasher.relentless.model.KeyValue;
 import sorim.f1.slasher.relentless.model.TripleInstagramFeed;
 
 import java.util.List;
-import java.util.concurrent.ExecutionException;
 
 public interface InstagramService {
 
@@ -32,4 +32,6 @@ public interface InstagramService {
     void followMoreOnInstagram() throws Exception;
 
     String turnOnOffInstagram(Boolean bool);
+
+    InstagramPost getLatestPost();
 }
