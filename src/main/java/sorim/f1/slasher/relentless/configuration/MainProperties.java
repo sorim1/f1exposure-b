@@ -44,9 +44,19 @@ public class MainProperties {
     public void setProperty() {
         System.setProperty("net.fortuna.ical4j.timezone.cache.impl", MapTimeZoneCache.class.getName());
         AppProperty ap = propertiesRepository.findDistinctFirstByName("CURRENT_SEASON_PAST");
-        this.currentSeasonPast = Integer.valueOf(ap.getValue());
+        if(ap!=null){
+            this.currentSeasonPast = Integer.valueOf(ap.getValue());
+        } else {
+            saveProperty("CURRENT_SEASON_PAST", "2023");
+            this.currentSeasonPast = 2023;
+        }
         ap = propertiesRepository.findDistinctFirstByName("CURRENT_SEASON_FUTURE");
-        this.currentSeasonFuture = Integer.valueOf(ap.getValue());
+        if(ap!=null){
+            this.currentSeasonFuture = Integer.valueOf(ap.getValue());
+        } else {
+            saveProperty("CURRENT_SEASON_FUTURE", "2023");
+            this.currentSeasonFuture = 2023;
+        }
     }
 
     public String updateCurrentSeasonPast(Integer newValue) {

@@ -44,8 +44,8 @@ public class RedditServiceImpl implements RedditService {
     private static final String REDDIT_NEW_F1_PORN_POSTS = "https://reddit.com/r/f1porn/hot/.json?limit=100";
     private static final String IMGUR_COM_3_ALBUM = "https://api.imgur.com/3/album/";
     private static final String FAVICON = "/favicon.ico";
-    private static final String REDDIT_DAILY_NEWS = "https://reddit.com/r/formula1/search.json?q=flair:statistics+OR+flair:news+OR+flair:social-media+OR+flair:quotes&sort=comments&restrict_sr=on&t=day";
-    private static final String REDDIT_DAILY_VIDEO_POSTS = "https://reddit.com/r/formula1/search.json?q=flair:video&sort=comments&restrict_sr=on&t=day";
+    private static final String REDDIT_DAILY_NEWS = "https://reddit.com/r/formula1/search.json?q=flair:statistics+OR+flair:news+OR+flair:social-media+OR+flair:quotes&sort=comments&restrict_sr=off&t=day";
+    private static final String REDDIT_DAILY_VIDEO_POSTS = "https://reddit.com/r/formula1/search.json?q=flair:video&sort=comments&restrict_sr=off&t=day";
     private static final String I_REDDIT = "i.redd.it";
     private static final String I_IMGUR = "i.imgur.com";
     private static final String TWITTER_URL = "twitter.com";
