@@ -56,6 +56,7 @@ public class Scheduler {
     public void tuesdayJobs() throws IOException {
         log.info(CODE + " - tuesdayJobs called");
         if (!standingsUpdated) {
+            log.info(CODE + " - standingsUpdating");
             adminService.initializeStandings(true);
             standingsUpdated = true;
         }
@@ -65,6 +66,13 @@ public class Scheduler {
             log.info(CODE + " - generated strawpoll");
         }
         clientService.setOverlays("", true);
+    }
+
+    @Scheduled(cron = "0 0 1 * * WED")
+    public void wednesdayJobs(){
+        log.info(CODE + " - wednesdayJobs called");
+            log.info(CODE + " - setNavbarData");
+            clientService.setNavbarData();
     }
 
     @Scheduled(cron = "0 0 4 * * FRI")

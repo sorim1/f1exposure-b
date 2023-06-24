@@ -44,8 +44,8 @@ public class RedditServiceImpl implements RedditService {
     private static final String REDDIT_NEW_F1_PORN_POSTS = "https://reddit.com/r/f1porn/hot/.json?limit=100";
     private static final String IMGUR_COM_3_ALBUM = "https://api.imgur.com/3/album/";
     private static final String FAVICON = "/favicon.ico";
-    private static final String REDDIT_DAILY_NEWS = "https://reddit.com/r/formula1/search.json?q=flair:statistics+OR+flair:news+OR+flair:social-media+OR+flair:quotes&sort=comments&restrict_sr=off&t=day";
-    private static final String REDDIT_DAILY_VIDEO_POSTS = "https://reddit.com/r/formula1/search.json?q=flair:video&sort=comments&restrict_sr=off&t=day";
+    private static final String REDDIT_DAILY_NEWS = "https://reddit.com/r/formula1/search.json?q=flair:statistics+OR+flair:news+OR+flair:social-media+OR+flair:quotes&sort=comments&restrict_sr=on&t=day&include_over_18=on";
+    private static final String REDDIT_DAILY_VIDEO_POSTS = "https://reddit.com/r/formula1/search.json?q=flair:video&sort=comments&restrict_sr=on&t=day&include_over_18=on";
     private static final String I_REDDIT = "i.redd.it";
     private static final String I_IMGUR = "i.imgur.com";
     private static final String TWITTER_URL = "twitter.com";
@@ -117,6 +117,7 @@ public class RedditServiceImpl implements RedditService {
 //                    }
                     post.setIconUrl("https://www.youtube.com/favicon.ico");
                     post.setImageUrl(getYoutubeThumbnail(post.getUrl()));
+                    post.setStatus(1);
                     filteredVideoPosts.add(post);
                 }
             }
@@ -148,10 +149,25 @@ public class RedditServiceImpl implements RedditService {
         return true;
     }
 
-    private String getYoutubeThumbnail(String url) {
+    private String getYoutubeThumbnailOld(String url) {
         Integer index = url.indexOf("/embed/");
         if(index>0) {
             String code = url.substring(index + 7, index + 18);
+            return "https://img.youtube.com/vi/" + code + "/maxresdefault.jpg";
+        }
+        return null;
+    }
+
+    private String getYoutubeThumbnail(String finalUrl) {
+
+        finalUrl = finalUrl.replace("youtu.be/", "/MD/");
+        finalUrl = finalUrl.replace("youtube.com/watch?v=", "/MD/");
+        if(finalUrl.contains("&")){
+            finalUrl = finalUrl.substring(0, finalUrl.indexOf("&"));
+        }
+        Integer index = finalUrl.indexOf("/MD/");
+        if(index>0) {
+            String code = finalUrl.substring(index + 4, index + 15);
             return "https://img.youtube.com/vi/" + code + "/maxresdefault.jpg";
         }
         return null;

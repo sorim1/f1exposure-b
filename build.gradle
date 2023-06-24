@@ -34,7 +34,7 @@ dependencies {
 	implementation group: 'com.squareup.okhttp3', name: 'okhttp-urlconnection', version: '5.0.0-alpha.3'
 	implementation group: 'com.github.twitch4j', name: 'twitch4j', version: '1.7.0'
 	implementation group: 'commons-codec', name: 'commons-codec', version: '1.15'
-	//	implementation group: 'org.twitter4j', name: 'twitter4j-core', version: '4.1.2'
+		implementation group: 'org.twitter4j', name: 'twitter4j-core', version: '4.1.2'
 	//implementation "com.twitter:twitter-api-java-sdk:2.0.3"
 }
 
