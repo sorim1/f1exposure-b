@@ -192,7 +192,7 @@ public class ClientServiceImpl implements ClientService {
         if (latestNews != null && !allowNonRedditNews) {
             setSidebarData(latestNews);
         } else {
-            setSidebarData(newsRepository.findFirstByStatusLessThanEqualOrderByTimestampActivityDesc(5));
+            setSidebarData(newsRepository.findFirstByStatusLessThanEqualOrderByTimestampActivityDesc(7));
         }
     }
 
@@ -271,12 +271,12 @@ public class ClientServiceImpl implements ClientService {
     @Override
     public List<NewsContent> getNews(Integer page) {
         Pageable paging = PageRequest.of(page, 15);
-        return newsRepository.findAllByStatusLessThanEqualOrderByTimestampActivityDesc(5, paging);
+        return newsRepository.findAllByStatusLessThanEqualOrderByTimestampActivityDesc(7, paging);
     }
 
     @Override
     public NewsContent getNewsPost(String code) {
-        NewsContent response = newsRepository.findByCodeAndStatusLessThanEqual(code, 5);
+        NewsContent response = newsRepository.findByCodeAndStatusLessThanEqual(code, 7);
         if (response != null) {
             response.setComments(newsCommentRepository.findAllByContentCodeAndStatusLessThanOrderByTimestampCreatedDesc(code, 5));
         }
@@ -393,7 +393,7 @@ public class ClientServiceImpl implements ClientService {
 
     @Override
     public Boolean bumpNewsPost(String code) {
-        NewsContent response = newsRepository.findByCodeAndStatusLessThanEqual(code, 5);
+        NewsContent response = newsRepository.findByCodeAndStatusLessThanEqual(code, 7);
         if (response != null) {
             response.setTimestampActivity(new Date());
             newsRepository.save(response);
@@ -569,7 +569,7 @@ public class ClientServiceImpl implements ClientService {
         initIframeLink();
         initFourchanDisabled();
         setAllowNonRedditNews();
-        setSidebarData(newsRepository.findFirstByStatusLessThanEqualOrderByTimestampActivityDesc(5));
+        setSidebarData(newsRepository.findFirstByStatusLessThanEqualOrderByTimestampActivityDesc(7));
         setNavbarData();
         log.info("clientServiceInit: {} -{}", iframeLink, overlays);
     }

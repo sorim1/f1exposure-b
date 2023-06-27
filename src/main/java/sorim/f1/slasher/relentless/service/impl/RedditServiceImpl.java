@@ -109,6 +109,10 @@ public class RedditServiceImpl implements RedditService {
                     post.setUrl(post.getUrl().replace("streamable.com/", "streamable.com/e/"));
                     filteredVideoPosts.add(post);
                 }
+                if (post.getUrl().contains("imgur")) {
+                    post.setStatus(1);
+                    filteredVideoPosts.add(post);
+                }
                 if (post.getUrl().contains("youtu")) {
 //                    post.setUrl(post.getUrl().replace("youtu.be/", "www.youtube.com/embed/"));
 //                    post.setUrl(post.getUrl().replace("youtube.com/watch?v=", "youtube.com/embed/"));
