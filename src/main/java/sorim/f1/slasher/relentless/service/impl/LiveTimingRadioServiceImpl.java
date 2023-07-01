@@ -255,10 +255,13 @@ public class LiveTimingRadioServiceImpl implements LiveTimingRadioService {
                 upcomingRaceAnalysis.setFp3(drivers);
                 upcomingRaceAnalysis.setFp3Radio(radioData);
                 break;
-            case SPRINT_QUALIFYING:
-            case SPRINT:
+            case SPRINT_SHOOTOUT:
                 upcomingRaceAnalysis.setSprintQuali(drivers);
                 upcomingRaceAnalysis.setSprintQualiRadio(radioData);
+                break;
+            case SPRINT:
+                upcomingRaceAnalysis.setSprint(drivers);
+                upcomingRaceAnalysis.setSprintRadio(radioData);
                 break;
             default:
                 log.error("CASE NE POSTOJI: " + session);
@@ -275,9 +278,10 @@ public class LiveTimingRadioServiceImpl implements LiveTimingRadioService {
                 return upcomingRaceAnalysis.getFp2();
             case PRACTICE_3:
                 return upcomingRaceAnalysis.getFp3();
-            case SPRINT_QUALIFYING:
-            case SPRINT:
+            case SPRINT_SHOOTOUT:
                 return upcomingRaceAnalysis.getSprintQuali();
+            case SPRINT:
+                return upcomingRaceAnalysis.getSprint();
             default:
                 log.error("CASE NE POSTOJI: " + session);
                 return Collections.emptyList();

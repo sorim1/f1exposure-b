@@ -297,13 +297,34 @@ public class ClientServiceImpl implements ClientService {
        // RaceData raceData = ergastService.getLatestAnalyzedRace();
         if (raceData != null) {
             UpcomingRaceAnalysis upcomingRaceAnalysis = raceData.getUpcomingRaceAnalysis();
-            if (upcomingRaceAnalysis.getQualiRadio() != null) {
-                if (navbarData.getSessionName().equals("Qualifying")) {
+            if (upcomingRaceAnalysis.getSprintRadio() != null) {
+                if (navbarData.getSessionName().equals("Sprint")) {
+                    return true;
+                } else {
+                    navbarData.setSessionName("Sprint");
+                    navbarData.setTabNumber(6);
+                    setNavbarDriver(upcomingRaceAnalysis.getSprintLivetimingUrl(), upcomingRaceAnalysis.getSprint().get(0));
+                }
+            } else
+            if (upcomingRaceAnalysis.getSprintQualiRadio() != null) {
+                if (navbarData.getSessionName().equals("Sprint shootout")) {
+                    return true;
+                } else {
+                    navbarData.setSessionName("Sprint shootout");
+                    navbarData.setTabNumber(5);
+                    setNavbarDriver(upcomingRaceAnalysis.getSprintQualiLivetimingUrl(), upcomingRaceAnalysis.getSprintQuali().get(0));
+                }
+            } else if (upcomingRaceAnalysis.getQualiRadio() != null) {
+                if (navbarData.getSessionName().equals("Qualifying") && upcomingRaceAnalysis.getSprintQuali()==null) {
                     return true;
                 } else {
                     log.info("Qualifying navbar");
                     navbarData.setSessionName("Qualifying");
-                    navbarData.setTabNumber(6);
+                    if (upcomingRaceAnalysis.getFp3Radio() != null){
+                        navbarData.setTabNumber(6);
+                    } else {
+                        navbarData.setTabNumber(4);
+                    }
                     setNavbarDriver(upcomingRaceAnalysis.getQualiLivetimingUrl(), upcomingRaceAnalysis.getQuali().get(0));
                 }
             } else if (upcomingRaceAnalysis.getFp3Radio() != null) {

@@ -193,17 +193,13 @@ public class LiveTimingServiceImpl implements LiveTimingService {
                 date = MainUtility.subtractDays(raceDate, 1);
                 raceName = date + "_Practice_3";
                 break;
-            case SPRINT_QUALIFYING:
+            case SPRINT_SHOOTOUT:
                 date = MainUtility.subtractDays(raceDate, 1);
-                raceName = date + "_Sprint_Qualifying";
+                raceName = date + "_Sprint_Shootout";
                 break;
             case SPRINT:
                 date = MainUtility.subtractDays(raceDate, 1);
                 raceName = date + "_Sprint";
-                break;
-            case SPRINT_SHOOTOUT:
-                date = MainUtility.subtractDays(raceDate, 1);
-                raceName = date + "_Sprint_Shootout";
                 break;
         }
         log.info("https://livetiming.formula1.com/static/" + raceData.getSeason() + "/" + grandPrix + "/" + raceName + "/SPFeed.json");
@@ -514,20 +510,36 @@ public class LiveTimingServiceImpl implements LiveTimingService {
                 }
             }
             if (raceData.getLiveTimingSprintQuali() == null || redo) {
-                String liveTimingResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.SPRINT, 1);
+                String liveTimingResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.SPRINT_SHOOTOUT, 1);
                 if (liveTimingResponse != null) {
                     raceData.setLiveTimingSprintQuali(liveTimingResponse.substring(liveTimingResponse.indexOf("{")));
-                    List<Driver> drivers = analyzeSprintRace(liveTimingResponse.substring(liveTimingResponse.indexOf("{")));
+                    List<Driver> drivers = createDriverListOfEvent(liveTimingResponse.substring(liveTimingResponse.indexOf("{")));
                     raceData.getUpcomingRaceAnalysis().setSprintQuali(drivers);
-                    String timingAppDataResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.SPRINT, 2);
+                    String timingAppDataResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.SPRINT_SHOOTOUT, 2);
                     Map<String, String> driverMap = drivers.stream()
                             .collect(Collectors.toMap(Driver::getNum, Driver::getFullName));
-                    raceData.getUpcomingRaceAnalysis().setSprintQualiLaps(createLapTimeDataList(timingAppDataResponse, driverMap, "Sprint"));
-                    String radioDataResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.SPRINT, 3);
+                    raceData.getUpcomingRaceAnalysis().setSprintQualiLaps(createLapTimeDataList(timingAppDataResponse, driverMap, "Sprint Shootout"));
+                    String radioDataResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.SPRINT_SHOOTOUT, 3);
                     raceData.getUpcomingRaceAnalysis().setSprintQualiLivetimingUrl(temporaryUrl);
-                    liveTimingRadioService.enrichUpcomingRaceAnalysisWithRadioData(raceData.getUpcomingRaceAnalysis(), radioDataResponse, RoundEnum.SPRINT);
+                    liveTimingRadioService.enrichUpcomingRaceAnalysisWithRadioData(raceData.getUpcomingRaceAnalysis(), radioDataResponse, RoundEnum.SPRINT_SHOOTOUT);
+                }
+                if (raceData.getLiveTimingFp3() == null) {
+                    liveTimingResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.SPRINT, 1);
+                    if (liveTimingResponse != null) {
+                        raceData.setLiveTimingFp3(liveTimingResponse.substring(liveTimingResponse.indexOf("{")));
+                        List<Driver> drivers = analyzeSprintRace(liveTimingResponse.substring(liveTimingResponse.indexOf("{")));
+                        raceData.getUpcomingRaceAnalysis().setSprint(drivers);
+                        String timingAppDataResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.SPRINT, 2);
+                        Map<String, String> driverMap = drivers.stream()
+                                .collect(Collectors.toMap(Driver::getNum, Driver::getFullName));
+                        raceData.getUpcomingRaceAnalysis().setSprintLaps(createLapTimeDataList(timingAppDataResponse, driverMap, "Sprint"));
+                        String radioDataResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.SPRINT, 3);
+                        raceData.getUpcomingRaceAnalysis().setSprintLivetimingUrl(temporaryUrl);
+                        liveTimingRadioService.enrichUpcomingRaceAnalysisWithRadioData(raceData.getUpcomingRaceAnalysis(), radioDataResponse, RoundEnum.SPRINT);
+                    }
                 }
             }
+
 
             ergastService.saveRace(raceData);
         } else {

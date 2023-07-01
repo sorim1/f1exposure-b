@@ -71278,7 +71278,7 @@
           .TgZ(1, "div");
           core
           /* ɵɵelementStart */
-          .TgZ(2, "div", 27);
+          .TgZ(2, "div", 28);
 
           core
           /* ɵɵtext */
@@ -71289,14 +71289,14 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(4, "div", 28);
+          .TgZ(4, "div", 29);
           core
           /* ɵɵelementStart */
-          .TgZ(5, "a", 29);
+          .TgZ(5, "a", 30);
 
           core
           /* ɵɵelement */
-          ._UZ(6, "img", 30);
+          ._UZ(6, "img", 31);
 
           core
           /* ɵɵelementEnd */
@@ -71365,7 +71365,7 @@
           .TgZ(0, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "th", 41);
+          .TgZ(1, "th", 42);
 
           core
           /* ɵɵtext */
@@ -71432,10 +71432,10 @@
 
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 35);
+          .TgZ(0, "div", 36);
           core
           /* ɵɵelementStart */
-          .TgZ(1, "div", 36);
+          .TgZ(1, "div", 37);
           core
           /* ɵɵlistener */
           .NdJ("click", function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_5_div_0_div_1_Template_div_click_1_listener() {
@@ -71450,10 +71450,10 @@
           });
           core
           /* ɵɵelementStart */
-          .TgZ(2, "div", 37);
+          .TgZ(2, "div", 38);
           core
           /* ɵɵelementStart */
-          .TgZ(3, "table", 38);
+          .TgZ(3, "table", 39);
           core
           /* ɵɵelementStart */
           .TgZ(4, "thead");
@@ -71462,7 +71462,7 @@
           .TgZ(5, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(6, "th", 39);
+          .TgZ(6, "th", 40);
 
           core
           /* ɵɵtext */
@@ -71493,7 +71493,7 @@
           .TgZ(11, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(12, "th", 40);
+          .TgZ(12, "th", 41);
 
           core
           /* ɵɵtext */
@@ -71582,10 +71582,10 @@
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 33);
+          .TgZ(0, "div", 34);
           core
           /* ɵɵtemplate */
-          .YNc(1, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_5_div_0_div_1_Template, 20, 6, "div", 34);
+          .YNc(1, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_5_div_0_div_1_Template, 20, 6, "div", 35);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -71608,13 +71608,13 @@
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 42);
+          .TgZ(0, "div", 43);
           core
           /* ɵɵelementStart */
-          .TgZ(1, "div", 43);
+          .TgZ(1, "div", 44);
           core
           /* ɵɵelementStart */
-          .TgZ(2, "div", 37);
+          .TgZ(2, "div", 38);
 
           core
           /* ɵɵtext */
@@ -71622,7 +71622,7 @@
 
           core
           /* ɵɵelementStart */
-          .TgZ(4, "a", 44);
+          .TgZ(4, "a", 45);
 
           core
           /* ɵɵtext */
@@ -71672,10 +71672,10 @@
         if (rf & 1) {
           core
           /* ɵɵtemplate */
-          .YNc(0, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_5_div_0_Template, 2, 1, "div", 31);
+          .YNc(0, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_5_div_0_Template, 2, 1, "div", 32);
           core
           /* ɵɵtemplate */
-          .YNc(1, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_5_div_1_Template, 7, 2, "div", 32);
+          .YNc(1, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_5_div_1_Template, 7, 2, "div", 33);
         }
 
         if (rf & 2) {
@@ -71702,7 +71702,7 @@
 
           core
           /* ɵɵelementStart */
-          .TgZ(0, "button", 65);
+          .TgZ(0, "button", 66);
           core
           /* ɵɵlistener */
           .NdJ("click", function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_7_div_0_tr_27_button_12_Template_button_click_0_listener() {
@@ -71747,7 +71747,7 @@
           .TgZ(0, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "th", 60);
+          .TgZ(1, "th", 61);
 
           core
           /* ɵɵtext */
@@ -71758,7 +71758,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(3, "td", 61);
+          .TgZ(3, "td", 62);
 
           core
           /* ɵɵtext */
@@ -71769,7 +71769,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(5, "td", 62);
+          .TgZ(5, "td", 63);
 
           core
           /* ɵɵtext */
@@ -71780,7 +71780,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(7, "td", 61);
+          .TgZ(7, "td", 62);
 
           core
           /* ɵɵtext */
@@ -71791,7 +71791,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(9, "td", 61);
+          .TgZ(9, "td", 62);
 
           core
           /* ɵɵtext */
@@ -71802,16 +71802,16 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(11, "td", 63);
+          .TgZ(11, "td", 64);
           core
           /* ɵɵtemplate */
-          .YNc(12, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_7_div_0_tr_27_button_12_Template, 3, 0, "button", 64);
+          .YNc(12, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_7_div_0_tr_27_button_12_Template, 3, 0, "button", 65);
           core
           /* ɵɵelementEnd */
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(13, "td", 62);
+          .TgZ(13, "td", 63);
 
           core
           /* ɵɵtext */
@@ -71822,7 +71822,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(15, "td", 62);
+          .TgZ(15, "td", 63);
 
           core
           /* ɵɵtext */
@@ -71833,7 +71833,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(17, "td", 62);
+          .TgZ(17, "td", 63);
 
           core
           /* ɵɵtext */
@@ -71989,7 +71989,7 @@
           .TgZ(0, "div");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "table", 47);
+          .TgZ(1, "table", 48);
           core
           /* ɵɵlistener */
           .NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_7_div_0_Template_table_matSortChange_1_listener($event) {
@@ -72009,7 +72009,7 @@
           .TgZ(3, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(4, "th", 52);
+          .TgZ(4, "th", 53);
 
           core
           /* ɵɵtext */
@@ -72020,7 +72020,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(6, "th", 53);
+          .TgZ(6, "th", 54);
 
           core
           /* ɵɵtext */
@@ -72037,7 +72037,7 @@
           .TgZ(8, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(9, "th", 49);
+          .TgZ(9, "th", 50);
 
           core
           /* ɵɵtext */
@@ -72048,7 +72048,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(11, "th", 54);
+          .TgZ(11, "th", 55);
 
           core
           /* ɵɵtext */
@@ -72059,7 +72059,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(13, "th", 55);
+          .TgZ(13, "th", 56);
 
           core
           /* ɵɵtext */
@@ -72070,7 +72070,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(15, "th", 54);
+          .TgZ(15, "th", 55);
 
           core
           /* ɵɵtext */
@@ -72081,7 +72081,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(17, "th", 49);
+          .TgZ(17, "th", 50);
 
           core
           /* ɵɵtext */
@@ -72093,11 +72093,11 @@
 
           core
           /* ɵɵelement */
-          ._UZ(19, "th", 56);
+          ._UZ(19, "th", 57);
 
           core
           /* ɵɵelementStart */
-          .TgZ(20, "th", 57);
+          .TgZ(20, "th", 58);
 
           core
           /* ɵɵtext */
@@ -72108,7 +72108,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(22, "th", 58);
+          .TgZ(22, "th", 59);
 
           core
           /* ɵɵtext */
@@ -72119,7 +72119,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(24, "th", 59);
+          .TgZ(24, "th", 60);
 
           core
           /* ɵɵtext */
@@ -72171,7 +72171,7 @@
           .TgZ(0, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "th", 41);
+          .TgZ(1, "th", 42);
 
           core
           /* ɵɵtext */
@@ -72258,16 +72258,16 @@
           .YNc(0, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_7_div_0_Template, 28, 1, "div", 0);
           core
           /* ɵɵelementStart */
-          .TgZ(1, "div", 45);
+          .TgZ(1, "div", 46);
           core
           /* ɵɵelementStart */
-          .TgZ(2, "div", 46);
+          .TgZ(2, "div", 47);
           core
           /* ɵɵelementStart */
-          .TgZ(3, "div", 37);
+          .TgZ(3, "div", 38);
           core
           /* ɵɵelementStart */
-          .TgZ(4, "table", 47);
+          .TgZ(4, "table", 48);
           core
           /* ɵɵlistener */
           .NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_7_Template_table_matSortChange_4_listener($event) {
@@ -72287,7 +72287,7 @@
           .TgZ(6, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(7, "th", 48);
+          .TgZ(7, "th", 49);
 
           core
           /* ɵɵtext */
@@ -72304,7 +72304,7 @@
           .TgZ(9, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(10, "th", 49);
+          .TgZ(10, "th", 50);
 
           core
           /* ɵɵtext */
@@ -72315,7 +72315,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(12, "th", 50);
+          .TgZ(12, "th", 51);
 
           core
           /* ɵɵtext */
@@ -72326,7 +72326,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(14, "th", 49);
+          .TgZ(14, "th", 50);
 
           core
           /* ɵɵtext */
@@ -72337,7 +72337,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(16, "th", 51);
+          .TgZ(16, "th", 52);
 
           core
           /* ɵɵtext */
@@ -72399,7 +72399,7 @@
 
           core
           /* ɵɵelementStart */
-          .TgZ(0, "button", 65);
+          .TgZ(0, "button", 66);
           core
           /* ɵɵlistener */
           .NdJ("click", function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_8_ng_template_1_div_0_tr_27_button_12_Template_button_click_0_listener() {
@@ -72438,7 +72438,7 @@
           .TgZ(0, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "th", 60);
+          .TgZ(1, "th", 61);
 
           core
           /* ɵɵtext */
@@ -72449,7 +72449,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(3, "td", 61);
+          .TgZ(3, "td", 62);
 
           core
           /* ɵɵtext */
@@ -72460,7 +72460,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(5, "td", 62);
+          .TgZ(5, "td", 63);
 
           core
           /* ɵɵtext */
@@ -72471,7 +72471,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(7, "td", 61);
+          .TgZ(7, "td", 62);
 
           core
           /* ɵɵtext */
@@ -72482,7 +72482,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(9, "td", 61);
+          .TgZ(9, "td", 62);
 
           core
           /* ɵɵtext */
@@ -72493,16 +72493,16 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(11, "td", 63);
+          .TgZ(11, "td", 64);
           core
           /* ɵɵtemplate */
-          .YNc(12, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_8_ng_template_1_div_0_tr_27_button_12_Template, 3, 0, "button", 64);
+          .YNc(12, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_8_ng_template_1_div_0_tr_27_button_12_Template, 3, 0, "button", 65);
           core
           /* ɵɵelementEnd */
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(13, "td", 62);
+          .TgZ(13, "td", 63);
 
           core
           /* ɵɵtext */
@@ -72513,7 +72513,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(15, "td", 62);
+          .TgZ(15, "td", 63);
 
           core
           /* ɵɵtext */
@@ -72524,7 +72524,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(17, "td", 62);
+          .TgZ(17, "td", 63);
 
           core
           /* ɵɵtext */
@@ -72680,7 +72680,7 @@
           .TgZ(0, "div");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "table", 47);
+          .TgZ(1, "table", 48);
           core
           /* ɵɵlistener */
           .NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_8_ng_template_1_div_0_Template_table_matSortChange_1_listener($event) {
@@ -72700,7 +72700,7 @@
           .TgZ(3, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(4, "th", 52);
+          .TgZ(4, "th", 53);
 
           core
           /* ɵɵtext */
@@ -72711,7 +72711,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(6, "th", 53);
+          .TgZ(6, "th", 54);
 
           core
           /* ɵɵtext */
@@ -72728,7 +72728,7 @@
           .TgZ(8, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(9, "th", 49);
+          .TgZ(9, "th", 50);
 
           core
           /* ɵɵtext */
@@ -72739,7 +72739,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(11, "th", 54);
+          .TgZ(11, "th", 55);
 
           core
           /* ɵɵtext */
@@ -72750,7 +72750,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(13, "th", 55);
+          .TgZ(13, "th", 56);
 
           core
           /* ɵɵtext */
@@ -72761,7 +72761,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(15, "th", 54);
+          .TgZ(15, "th", 55);
 
           core
           /* ɵɵtext */
@@ -72772,7 +72772,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(17, "th", 49);
+          .TgZ(17, "th", 50);
 
           core
           /* ɵɵtext */
@@ -72784,11 +72784,11 @@
 
           core
           /* ɵɵelement */
-          ._UZ(19, "th", 56);
+          ._UZ(19, "th", 57);
 
           core
           /* ɵɵelementStart */
-          .TgZ(20, "th", 67);
+          .TgZ(20, "th", 68);
 
           core
           /* ɵɵtext */
@@ -72799,7 +72799,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(22, "th", 68);
+          .TgZ(22, "th", 69);
 
           core
           /* ɵɵtext */
@@ -72810,7 +72810,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(24, "th", 69);
+          .TgZ(24, "th", 70);
 
           core
           /* ɵɵtext */
@@ -72862,7 +72862,7 @@
           .TgZ(0, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "th", 41);
+          .TgZ(1, "th", 42);
 
           core
           /* ɵɵtext */
@@ -72949,16 +72949,16 @@
           .YNc(0, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_8_ng_template_1_div_0_Template, 28, 1, "div", 0);
           core
           /* ɵɵelementStart */
-          .TgZ(1, "div", 45);
+          .TgZ(1, "div", 46);
           core
           /* ɵɵelementStart */
-          .TgZ(2, "div", 46);
+          .TgZ(2, "div", 47);
           core
           /* ɵɵelementStart */
-          .TgZ(3, "div", 37);
+          .TgZ(3, "div", 38);
           core
           /* ɵɵelementStart */
-          .TgZ(4, "table", 47);
+          .TgZ(4, "table", 48);
           core
           /* ɵɵlistener */
           .NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_8_ng_template_1_Template_table_matSortChange_4_listener($event) {
@@ -72978,7 +72978,7 @@
           .TgZ(6, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(7, "th", 48);
+          .TgZ(7, "th", 49);
 
           core
           /* ɵɵtext */
@@ -72995,7 +72995,7 @@
           .TgZ(9, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(10, "th", 49);
+          .TgZ(10, "th", 50);
 
           core
           /* ɵɵtext */
@@ -73006,7 +73006,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(12, "th", 50);
+          .TgZ(12, "th", 51);
 
           core
           /* ɵɵtext */
@@ -73017,7 +73017,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(14, "th", 49);
+          .TgZ(14, "th", 50);
 
           core
           /* ɵɵtext */
@@ -73028,7 +73028,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(16, "th", 51);
+          .TgZ(16, "th", 52);
 
           core
           /* ɵɵtext */
@@ -73086,7 +73086,7 @@
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "mat-tab", 66);
+          .TgZ(0, "mat-tab", 67);
           core
           /* ɵɵtemplate */
           .YNc(1, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_8_ng_template_1_Template, 20, 2, "ng-template", 19);
@@ -73113,7 +73113,7 @@
 
           core
           /* ɵɵelementStart */
-          .TgZ(0, "button", 65);
+          .TgZ(0, "button", 66);
           core
           /* ɵɵlistener */
           .NdJ("click", function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_9_ng_template_1_div_0_tr_27_button_12_Template_button_click_0_listener() {
@@ -73152,7 +73152,7 @@
           .TgZ(0, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "th", 60);
+          .TgZ(1, "th", 61);
 
           core
           /* ɵɵtext */
@@ -73163,7 +73163,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(3, "td", 61);
+          .TgZ(3, "td", 62);
 
           core
           /* ɵɵtext */
@@ -73174,7 +73174,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(5, "td", 62);
+          .TgZ(5, "td", 63);
 
           core
           /* ɵɵtext */
@@ -73185,7 +73185,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(7, "td", 61);
+          .TgZ(7, "td", 62);
 
           core
           /* ɵɵtext */
@@ -73196,7 +73196,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(9, "td", 61);
+          .TgZ(9, "td", 62);
 
           core
           /* ɵɵtext */
@@ -73207,16 +73207,16 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(11, "td", 63);
+          .TgZ(11, "td", 64);
           core
           /* ɵɵtemplate */
-          .YNc(12, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_9_ng_template_1_div_0_tr_27_button_12_Template, 3, 0, "button", 64);
+          .YNc(12, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_9_ng_template_1_div_0_tr_27_button_12_Template, 3, 0, "button", 65);
           core
           /* ɵɵelementEnd */
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(13, "td", 62);
+          .TgZ(13, "td", 63);
 
           core
           /* ɵɵtext */
@@ -73227,7 +73227,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(15, "td", 62);
+          .TgZ(15, "td", 63);
 
           core
           /* ɵɵtext */
@@ -73238,7 +73238,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(17, "td", 62);
+          .TgZ(17, "td", 63);
 
           core
           /* ɵɵtext */
@@ -73394,7 +73394,7 @@
           .TgZ(0, "div");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "table", 47);
+          .TgZ(1, "table", 48);
           core
           /* ɵɵlistener */
           .NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_9_ng_template_1_div_0_Template_table_matSortChange_1_listener($event) {
@@ -73414,7 +73414,7 @@
           .TgZ(3, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(4, "th", 52);
+          .TgZ(4, "th", 53);
 
           core
           /* ɵɵtext */
@@ -73425,7 +73425,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(6, "th", 53);
+          .TgZ(6, "th", 54);
 
           core
           /* ɵɵtext */
@@ -73442,7 +73442,7 @@
           .TgZ(8, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(9, "th", 49);
+          .TgZ(9, "th", 50);
 
           core
           /* ɵɵtext */
@@ -73453,7 +73453,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(11, "th", 54);
+          .TgZ(11, "th", 55);
 
           core
           /* ɵɵtext */
@@ -73464,7 +73464,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(13, "th", 55);
+          .TgZ(13, "th", 56);
 
           core
           /* ɵɵtext */
@@ -73475,7 +73475,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(15, "th", 54);
+          .TgZ(15, "th", 55);
 
           core
           /* ɵɵtext */
@@ -73486,7 +73486,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(17, "th", 49);
+          .TgZ(17, "th", 50);
 
           core
           /* ɵɵtext */
@@ -73498,11 +73498,11 @@
 
           core
           /* ɵɵelement */
-          ._UZ(19, "th", 56);
+          ._UZ(19, "th", 57);
 
           core
           /* ɵɵelementStart */
-          .TgZ(20, "th", 57);
+          .TgZ(20, "th", 58);
 
           core
           /* ɵɵtext */
@@ -73513,7 +73513,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(22, "th", 58);
+          .TgZ(22, "th", 59);
 
           core
           /* ɵɵtext */
@@ -73524,7 +73524,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(24, "th", 59);
+          .TgZ(24, "th", 60);
 
           core
           /* ɵɵtext */
@@ -73576,7 +73576,7 @@
           .TgZ(0, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "th", 41);
+          .TgZ(1, "th", 42);
 
           core
           /* ɵɵtext */
@@ -73663,16 +73663,16 @@
           .YNc(0, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_9_ng_template_1_div_0_Template, 28, 1, "div", 0);
           core
           /* ɵɵelementStart */
-          .TgZ(1, "div", 45);
+          .TgZ(1, "div", 46);
           core
           /* ɵɵelementStart */
-          .TgZ(2, "div", 46);
+          .TgZ(2, "div", 47);
           core
           /* ɵɵelementStart */
-          .TgZ(3, "div", 37);
+          .TgZ(3, "div", 38);
           core
           /* ɵɵelementStart */
-          .TgZ(4, "table", 47);
+          .TgZ(4, "table", 48);
           core
           /* ɵɵlistener */
           .NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_9_ng_template_1_Template_table_matSortChange_4_listener($event) {
@@ -73692,7 +73692,7 @@
           .TgZ(6, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(7, "th", 48);
+          .TgZ(7, "th", 49);
 
           core
           /* ɵɵtext */
@@ -73709,7 +73709,7 @@
           .TgZ(9, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(10, "th", 49);
+          .TgZ(10, "th", 50);
 
           core
           /* ɵɵtext */
@@ -73720,7 +73720,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(12, "th", 50);
+          .TgZ(12, "th", 51);
 
           core
           /* ɵɵtext */
@@ -73731,7 +73731,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(14, "th", 49);
+          .TgZ(14, "th", 50);
 
           core
           /* ɵɵtext */
@@ -73742,7 +73742,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(16, "th", 51);
+          .TgZ(16, "th", 52);
 
           core
           /* ɵɵtext */
@@ -73800,7 +73800,7 @@
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "mat-tab", 70);
+          .TgZ(0, "mat-tab", 71);
           core
           /* ɵɵtemplate */
           .YNc(1, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_9_ng_template_1_Template, 20, 2, "ng-template", 19);
@@ -73827,7 +73827,7 @@
 
           core
           /* ɵɵelementStart */
-          .TgZ(0, "button", 65);
+          .TgZ(0, "button", 66);
           core
           /* ɵɵlistener */
           .NdJ("click", function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_div_0_tr_27_button_12_Template_button_click_0_listener() {
@@ -73866,7 +73866,7 @@
           .TgZ(0, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "th", 60);
+          .TgZ(1, "th", 61);
 
           core
           /* ɵɵtext */
@@ -73877,7 +73877,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(3, "td", 61);
+          .TgZ(3, "td", 62);
 
           core
           /* ɵɵtext */
@@ -73888,7 +73888,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(5, "td", 62);
+          .TgZ(5, "td", 63);
 
           core
           /* ɵɵtext */
@@ -73899,7 +73899,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(7, "td", 61);
+          .TgZ(7, "td", 62);
 
           core
           /* ɵɵtext */
@@ -73910,7 +73910,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(9, "td", 61);
+          .TgZ(9, "td", 62);
 
           core
           /* ɵɵtext */
@@ -73921,16 +73921,16 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(11, "td", 63);
+          .TgZ(11, "td", 64);
           core
           /* ɵɵtemplate */
-          .YNc(12, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_div_0_tr_27_button_12_Template, 3, 0, "button", 64);
+          .YNc(12, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_div_0_tr_27_button_12_Template, 3, 0, "button", 65);
           core
           /* ɵɵelementEnd */
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(13, "td", 62);
+          .TgZ(13, "td", 63);
 
           core
           /* ɵɵtext */
@@ -73941,7 +73941,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(15, "td", 62);
+          .TgZ(15, "td", 63);
 
           core
           /* ɵɵtext */
@@ -73952,7 +73952,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(17, "td", 62);
+          .TgZ(17, "td", 63);
 
           core
           /* ɵɵtext */
@@ -74108,7 +74108,7 @@
           .TgZ(0, "div");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "table", 47);
+          .TgZ(1, "table", 48);
           core
           /* ɵɵlistener */
           .NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_div_0_Template_table_matSortChange_1_listener($event) {
@@ -74128,7 +74128,7 @@
           .TgZ(3, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(4, "th", 52);
+          .TgZ(4, "th", 53);
 
           core
           /* ɵɵtext */
@@ -74139,7 +74139,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(6, "th", 53);
+          .TgZ(6, "th", 54);
 
           core
           /* ɵɵtext */
@@ -74156,7 +74156,7 @@
           .TgZ(8, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(9, "th", 49);
+          .TgZ(9, "th", 50);
 
           core
           /* ɵɵtext */
@@ -74167,7 +74167,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(11, "th", 54);
+          .TgZ(11, "th", 55);
 
           core
           /* ɵɵtext */
@@ -74178,7 +74178,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(13, "th", 55);
+          .TgZ(13, "th", 56);
 
           core
           /* ɵɵtext */
@@ -74189,7 +74189,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(15, "th", 54);
+          .TgZ(15, "th", 55);
 
           core
           /* ɵɵtext */
@@ -74200,7 +74200,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(17, "th", 49);
+          .TgZ(17, "th", 50);
 
           core
           /* ɵɵtext */
@@ -74212,11 +74212,11 @@
 
           core
           /* ɵɵelement */
-          ._UZ(19, "th", 56);
+          ._UZ(19, "th", 57);
 
           core
           /* ɵɵelementStart */
-          .TgZ(20, "th", 57);
+          .TgZ(20, "th", 58);
 
           core
           /* ɵɵtext */
@@ -74227,7 +74227,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(22, "th", 58);
+          .TgZ(22, "th", 59);
 
           core
           /* ɵɵtext */
@@ -74238,7 +74238,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(24, "th", 59);
+          .TgZ(24, "th", 60);
 
           core
           /* ɵɵtext */
@@ -74290,7 +74290,7 @@
           .TgZ(0, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "th", 41);
+          .TgZ(1, "th", 42);
 
           core
           /* ɵɵtext */
@@ -74377,16 +74377,16 @@
           .YNc(0, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_div_0_Template, 28, 1, "div", 0);
           core
           /* ɵɵelementStart */
-          .TgZ(1, "div", 45);
+          .TgZ(1, "div", 46);
           core
           /* ɵɵelementStart */
-          .TgZ(2, "div", 46);
+          .TgZ(2, "div", 47);
           core
           /* ɵɵelementStart */
-          .TgZ(3, "div", 37);
+          .TgZ(3, "div", 38);
           core
           /* ɵɵelementStart */
-          .TgZ(4, "table", 47);
+          .TgZ(4, "table", 48);
           core
           /* ɵɵlistener */
           .NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_Template_table_matSortChange_4_listener($event) {
@@ -74406,7 +74406,7 @@
           .TgZ(6, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(7, "th", 48);
+          .TgZ(7, "th", 49);
 
           core
           /* ɵɵtext */
@@ -74423,7 +74423,7 @@
           .TgZ(9, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(10, "th", 49);
+          .TgZ(10, "th", 50);
 
           core
           /* ɵɵtext */
@@ -74434,7 +74434,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(12, "th", 50);
+          .TgZ(12, "th", 51);
 
           core
           /* ɵɵtext */
@@ -74445,7 +74445,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(14, "th", 49);
+          .TgZ(14, "th", 50);
 
           core
           /* ɵɵtext */
@@ -74456,7 +74456,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(16, "th", 51);
+          .TgZ(16, "th", 52);
 
           core
           /* ɵɵtext */
@@ -74518,7 +74518,7 @@
 
           core
           /* ɵɵelementStart */
-          .TgZ(0, "button", 65);
+          .TgZ(0, "button", 66);
           core
           /* ɵɵlistener */
           .NdJ("click", function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_div_0_tr_27_button_12_Template_button_click_0_listener() {
@@ -74531,7 +74531,7 @@
             var ctx_r97 = core
             /* ɵɵnextContext */
             .oxw(6);
-            return ctx_r97.openRadioDialog(standing_r94.radioData, ctx_r97.upcomingRaceAnalysis.fp2LivetimingUrl);
+            return ctx_r97.openRadioDialog(standing_r94.radioData, ctx_r97.upcomingRaceAnalysis.sprintQualiLivetimingUrl);
           });
           core
           /* ɵɵelementStart */
@@ -74557,7 +74557,7 @@
           .TgZ(0, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "th", 60);
+          .TgZ(1, "th", 61);
 
           core
           /* ɵɵtext */
@@ -74568,7 +74568,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(3, "td", 61);
+          .TgZ(3, "td", 62);
 
           core
           /* ɵɵtext */
@@ -74579,7 +74579,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(5, "td", 62);
+          .TgZ(5, "td", 63);
 
           core
           /* ɵɵtext */
@@ -74590,7 +74590,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(7, "td", 61);
+          .TgZ(7, "td", 62);
 
           core
           /* ɵɵtext */
@@ -74601,7 +74601,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(9, "td", 61);
+          .TgZ(9, "td", 62);
 
           core
           /* ɵɵtext */
@@ -74612,16 +74612,16 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(11, "td", 63);
+          .TgZ(11, "td", 64);
           core
           /* ɵɵtemplate */
-          .YNc(12, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_div_0_tr_27_button_12_Template, 3, 0, "button", 64);
+          .YNc(12, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_div_0_tr_27_button_12_Template, 3, 0, "button", 65);
           core
           /* ɵɵelementEnd */
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(13, "td", 62);
+          .TgZ(13, "td", 63);
 
           core
           /* ɵɵtext */
@@ -74632,7 +74632,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(15, "td", 62);
+          .TgZ(15, "td", 63);
 
           core
           /* ɵɵtext */
@@ -74643,7 +74643,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(17, "td", 62);
+          .TgZ(17, "td", 63);
 
           core
           /* ɵɵtext */
@@ -74799,7 +74799,7 @@
           .TgZ(0, "div");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "table", 47);
+          .TgZ(1, "table", 48);
           core
           /* ɵɵlistener */
           .NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_div_0_Template_table_matSortChange_1_listener($event) {
@@ -74809,7 +74809,7 @@
             var ctx_r100 = core
             /* ɵɵnextContext */
             .oxw(5);
-            return ctx_r100.sortMainResultData($event, 2);
+            return ctx_r100.sortMainResultData($event, 5);
           });
           core
           /* ɵɵelementStart */
@@ -74819,18 +74819,18 @@
           .TgZ(3, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(4, "th", 52);
+          .TgZ(4, "th", 53);
 
           core
           /* ɵɵtext */
-          ._uU(5, "Fastest lap");
+          ._uU(5, "Result");
 
           core
           /* ɵɵelementEnd */
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(6, "th", 71);
+          .TgZ(6, "th", 54);
 
           core
           /* ɵɵtext */
@@ -74847,7 +74847,7 @@
           .TgZ(8, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(9, "th", 49);
+          .TgZ(9, "th", 50);
 
           core
           /* ɵɵtext */
@@ -74858,7 +74858,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(11, "th", 54);
+          .TgZ(11, "th", 55);
 
           core
           /* ɵɵtext */
@@ -74869,7 +74869,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(13, "th", 55);
+          .TgZ(13, "th", 56);
 
           core
           /* ɵɵtext */
@@ -74880,7 +74880,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(15, "th", 54);
+          .TgZ(15, "th", 55);
 
           core
           /* ɵɵtext */
@@ -74891,7 +74891,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(17, "th", 49);
+          .TgZ(17, "th", 50);
 
           core
           /* ɵɵtext */
@@ -74903,11 +74903,11 @@
 
           core
           /* ɵɵelement */
-          ._UZ(19, "th", 56);
+          ._UZ(19, "th", 57);
 
           core
           /* ɵɵelementStart */
-          .TgZ(20, "th", 57);
+          .TgZ(20, "th", 58);
 
           core
           /* ɵɵtext */
@@ -74918,7 +74918,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(22, "th", 58);
+          .TgZ(22, "th", 59);
 
           core
           /* ɵɵtext */
@@ -74929,7 +74929,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(24, "th", 59);
+          .TgZ(24, "th", 60);
 
           core
           /* ɵɵtext */
@@ -74970,7 +74970,7 @@
           .xp6(27);
           core
           /* ɵɵproperty */
-          .Q6J("ngForOf", ctx_r91.upcomingRaceAnalysis.fp2);
+          .Q6J("ngForOf", ctx_r91.upcomingRaceAnalysis.sprintQuali);
         }
       }
 
@@ -74981,7 +74981,7 @@
           .TgZ(0, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "th", 41);
+          .TgZ(1, "th", 42);
 
           core
           /* ɵɵtext */
@@ -75068,16 +75068,16 @@
           .YNc(0, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_div_0_Template, 28, 1, "div", 0);
           core
           /* ɵɵelementStart */
-          .TgZ(1, "div", 45);
+          .TgZ(1, "div", 46);
           core
           /* ɵɵelementStart */
-          .TgZ(2, "div", 46);
+          .TgZ(2, "div", 47);
           core
           /* ɵɵelementStart */
-          .TgZ(3, "div", 37);
+          .TgZ(3, "div", 38);
           core
           /* ɵɵelementStart */
-          .TgZ(4, "table", 47);
+          .TgZ(4, "table", 48);
           core
           /* ɵɵlistener */
           .NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_Template_table_matSortChange_4_listener($event) {
@@ -75087,7 +75087,7 @@
             var ctx_r104 = core
             /* ɵɵnextContext */
             .oxw(4);
-            return ctx_r104.sortResultData($event, 2);
+            return ctx_r104.sortResultData($event, 5);
           });
           core
           /* ɵɵelementStart */
@@ -75097,7 +75097,7 @@
           .TgZ(6, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(7, "th", 48);
+          .TgZ(7, "th", 49);
 
           core
           /* ɵɵtext */
@@ -75114,7 +75114,7 @@
           .TgZ(9, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(10, "th", 49);
+          .TgZ(10, "th", 50);
 
           core
           /* ɵɵtext */
@@ -75125,7 +75125,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(12, "th", 50);
+          .TgZ(12, "th", 51);
 
           core
           /* ɵɵtext */
@@ -75136,7 +75136,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(14, "th", 49);
+          .TgZ(14, "th", 50);
 
           core
           /* ɵɵtext */
@@ -75147,7 +75147,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(16, "th", 51);
+          .TgZ(16, "th", 52);
 
           core
           /* ɵɵtext */
@@ -75191,13 +75191,13 @@
           .oxw(4);
           core
           /* ɵɵproperty */
-          .Q6J("ngIf", ctx_r90.upcomingRaceAnalysis.fp2 !== null);
+          .Q6J("ngIf", ctx_r90.upcomingRaceAnalysis.quali !== null);
           core
           /* ɵɵadvance */
           .xp6(19);
           core
           /* ɵɵproperty */
-          .Q6J("ngForOf", ctx_r90.upcomingRaceAnalysis.fp2Laps);
+          .Q6J("ngForOf", ctx_r90.upcomingRaceAnalysis.sprintQualiLaps);
         }
       }
 
@@ -75205,7 +75205,7 @@
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "mat-tab", 66);
+          .TgZ(0, "mat-tab", 72);
           core
           /* ɵɵtemplate */
           .YNc(1, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_Template, 20, 2, "ng-template", 19);
@@ -75220,7 +75220,7 @@
           .oxw(3);
           core
           /* ɵɵproperty */
-          .Q6J("disabled", ctx_r15.upcomingRaceAnalysis.fp2 == null);
+          .Q6J("disabled", ctx_r15.upcomingRaceAnalysis.sprintQuali == null);
         }
       }
 
@@ -75232,7 +75232,7 @@
 
           core
           /* ɵɵelementStart */
-          .TgZ(0, "button", 65);
+          .TgZ(0, "button", 66);
           core
           /* ɵɵlistener */
           .NdJ("click", function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_13_ng_template_1_div_0_tr_21_button_12_Template_button_click_0_listener() {
@@ -75245,7 +75245,7 @@
             var ctx_r112 = core
             /* ɵɵnextContext */
             .oxw(6);
-            return ctx_r112.openRadioDialog(standing_r109.radioData, ctx_r112.upcomingRaceAnalysis.sprintQualiLivetimingUrl);
+            return ctx_r112.openRadioDialog(standing_r109.radioData, ctx_r112.upcomingRaceAnalysis.sprintLivetimingUrl);
           });
           core
           /* ɵɵelementStart */
@@ -75271,7 +75271,7 @@
           .TgZ(0, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "th", 41);
+          .TgZ(1, "th", 42);
 
           core
           /* ɵɵtext */
@@ -75293,7 +75293,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(5, "td", 77);
+          .TgZ(5, "td", 78);
 
           core
           /* ɵɵtext */
@@ -75315,7 +75315,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(9, "td", 77);
+          .TgZ(9, "td", 78);
 
           core
           /* ɵɵtext */
@@ -75326,16 +75326,16 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(11, "td", 78);
+          .TgZ(11, "td", 79);
           core
           /* ɵɵtemplate */
-          .YNc(12, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_13_ng_template_1_div_0_tr_21_button_12_Template, 3, 0, "button", 64);
+          .YNc(12, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_13_ng_template_1_div_0_tr_21_button_12_Template, 3, 0, "button", 65);
           core
           /* ɵɵelementEnd */
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(13, "td", 79);
+          .TgZ(13, "td", 80);
 
           core
           /* ɵɵtext */
@@ -75416,7 +75416,7 @@
           .TgZ(0, "div");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "table", 47);
+          .TgZ(1, "table", 48);
           core
           /* ɵɵlistener */
           .NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_13_ng_template_1_div_0_Template_table_matSortChange_1_listener($event) {
@@ -75426,7 +75426,7 @@
             var ctx_r115 = core
             /* ɵɵnextContext */
             .oxw(5);
-            return ctx_r115.sortMainResultData($event, 5);
+            return ctx_r115.sortMainResultData($event, 6);
           });
           core
           /* ɵɵelementStart */
@@ -75436,7 +75436,7 @@
           .TgZ(3, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(4, "th", 74);
+          .TgZ(4, "th", 75);
 
           core
           /* ɵɵtext */
@@ -75453,7 +75453,7 @@
           .TgZ(6, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(7, "th", 49);
+          .TgZ(7, "th", 50);
 
           core
           /* ɵɵtext */
@@ -75464,7 +75464,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(9, "th", 54);
+          .TgZ(9, "th", 55);
 
           core
           /* ɵɵtext */
@@ -75475,7 +75475,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(11, "th", 55);
+          .TgZ(11, "th", 56);
 
           core
           /* ɵɵtext */
@@ -75486,7 +75486,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(13, "th", 54);
+          .TgZ(13, "th", 55);
 
           core
           /* ɵɵtext */
@@ -75497,7 +75497,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(15, "th", 75);
+          .TgZ(15, "th", 76);
 
           core
           /* ɵɵtext */
@@ -75509,11 +75509,11 @@
 
           core
           /* ɵɵelement */
-          ._UZ(17, "th", 56);
+          ._UZ(17, "th", 57);
 
           core
           /* ɵɵelementStart */
-          .TgZ(18, "th", 76);
+          .TgZ(18, "th", 77);
 
           core
           /* ɵɵtext */
@@ -75554,7 +75554,7 @@
           .xp6(21);
           core
           /* ɵɵproperty */
-          .Q6J("ngForOf", ctx_r107.upcomingRaceAnalysis.sprintQuali);
+          .Q6J("ngForOf", ctx_r107.upcomingRaceAnalysis.sprint);
         }
       }
 
@@ -75571,14 +75571,14 @@
           .TgZ(2, "div", 5);
           core
           /* ɵɵelementStart */
-          .TgZ(3, "div", 43);
+          .TgZ(3, "div", 44);
           core
           /* ɵɵelementStart */
-          .TgZ(4, "div", 37);
+          .TgZ(4, "div", 38);
 
           core
           /* ɵɵelement */
-          ._UZ(5, "apx-chart", 73);
+          ._UZ(5, "apx-chart", 74);
 
           core
           /* ɵɵelement */
@@ -75612,7 +75612,7 @@
           .oxw(4);
           core
           /* ɵɵproperty */
-          .Q6J("ngIf", ctx_r106.upcomingRaceAnalysis.sprintQuali != null);
+          .Q6J("ngIf", ctx_r106.upcomingRaceAnalysis.sprint != null);
           core
           /* ɵɵadvance */
           .xp6(5);
@@ -75626,7 +75626,7 @@
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "mat-tab", 72);
+          .TgZ(0, "mat-tab", 73);
           core
           /* ɵɵtemplate */
           .YNc(1, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_13_ng_template_1_Template, 9, 9, "ng-template", 19);
@@ -75641,7 +75641,7 @@
           .oxw(3);
           core
           /* ɵɵproperty */
-          .Q6J("disabled", ctx_r16.upcomingRaceAnalysis.sprintQuali == null);
+          .Q6J("disabled", ctx_r16.upcomingRaceAnalysis.sprint == null);
         }
       }
 
@@ -75652,7 +75652,7 @@
           .TgZ(0, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "th", 41);
+          .TgZ(1, "th", 42);
 
           core
           /* ɵɵtext */
@@ -75753,16 +75753,16 @@
 
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 45);
+          .TgZ(0, "div", 46);
           core
           /* ɵɵelementStart */
-          .TgZ(1, "div", 46);
+          .TgZ(1, "div", 47);
           core
           /* ɵɵelementStart */
-          .TgZ(2, "div", 37);
+          .TgZ(2, "div", 38);
           core
           /* ɵɵelementStart */
-          .TgZ(3, "table", 47);
+          .TgZ(3, "table", 48);
           core
           /* ɵɵlistener */
           .NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_15_Template_table_matSortChange_3_listener($event) {
@@ -75772,7 +75772,7 @@
             var ctx_r120 = core
             /* ɵɵnextContext */
             .oxw(3);
-            return ctx_r120.sortResultData($event, 6);
+            return ctx_r120.sortResultData($event, 7);
           });
           core
           /* ɵɵelementStart */
@@ -75782,7 +75782,7 @@
           .TgZ(5, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(6, "th", 48);
+          .TgZ(6, "th", 49);
 
           core
           /* ɵɵtext */
@@ -75799,7 +75799,7 @@
           .TgZ(8, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(9, "th", 49);
+          .TgZ(9, "th", 50);
 
           core
           /* ɵɵtext */
@@ -75810,7 +75810,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(11, "th", 50);
+          .TgZ(11, "th", 51);
 
           core
           /* ɵɵtext */
@@ -75821,7 +75821,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(13, "th", 49);
+          .TgZ(13, "th", 50);
 
           core
           /* ɵɵtext */
@@ -75832,7 +75832,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(15, "th", 51);
+          .TgZ(15, "th", 52);
 
           core
           /* ɵɵtext */
@@ -75843,7 +75843,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(17, "th", 51);
+          .TgZ(17, "th", 52);
 
           core
           /* ɵɵtext */
@@ -75969,13 +75969,13 @@
           .qZA();
           core
           /* ɵɵtemplate */
-          .YNc(12, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_Template, 2, 1, "mat-tab", 22);
+          .YNc(12, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_Template, 2, 1, "mat-tab", 25);
           core
           /* ɵɵtemplate */
-          .YNc(13, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_13_Template, 2, 1, "mat-tab", 25);
+          .YNc(13, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_13_Template, 2, 1, "mat-tab", 26);
           core
           /* ɵɵelementStart */
-          .TgZ(14, "mat-tab", 26);
+          .TgZ(14, "mat-tab", 27);
           core
           /* ɵɵtemplate */
           .YNc(15, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_15_Template, 21, 1, "ng-template", 19);
@@ -76058,11 +76058,11 @@
           .TgZ(0, "div");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "div", 80);
+          .TgZ(1, "div", 81);
 
           core
           /* ɵɵelement */
-          ._UZ(2, "img", 81);
+          ._UZ(2, "img", 82);
 
           core
           /* ɵɵelementEnd */
@@ -76494,6 +76494,10 @@
               case 5:
                 this.upcomingRaceAnalysis.sprintQuali = this.sortResults(this.upcomingRaceAnalysis.sprintQuali, sort.active, sort.direction);
                 break;
+
+              case 6:
+                this.upcomingRaceAnalysis.sprint = this.sortResults(this.upcomingRaceAnalysis.sprint, sort.active, sort.direction);
+                break;
             }
           }
         }, {
@@ -76521,6 +76525,10 @@
                 break;
 
               case 6:
+                this.upcomingRaceAnalysis.sprintLaps = this.sortLaps(this.upcomingRaceAnalysis.sprintLaps, sort.active, sort.direction);
+                break;
+
+              case 7:
                 this.allLaps = this.sortLaps(this.allLaps, sort.active, sort.direction);
                 break;
             }
@@ -76735,7 +76743,7 @@
         }, {
           key: "checkIfSprintMode",
           value: function checkIfSprintMode() {
-            if (this.upcomingRaceAnalysis.sprintQuali != null) {
+            if (this.upcomingRaceAnalysis.sprint != null) {
               this.sprintMode = true;
             } else if ((this.upcomingRaceAnalysis.fp2 == null || this.upcomingRaceAnalysis.fp3 == null) && this.upcomingRaceAnalysis.quali != null) {
               this.sprintMode = true;
@@ -76747,13 +76755,13 @@
         }, {
           key: "setCharts",
           value: function setCharts() {
-            if (this.upcomingRaceAnalysis.sprintQuali == null) {
+            if (this.upcomingRaceAnalysis.sprint == null) {
               return;
             }
 
             var positionsByLapchartSeries = [];
 
-            var _iterator3 = _createForOfIteratorHelper(this.upcomingRaceAnalysis.sprintQuali),
+            var _iterator3 = _createForOfIteratorHelper(this.upcomingRaceAnalysis.sprint),
                 _step3;
 
             try {
@@ -76876,7 +76884,7 @@
         },
         decls: 1,
         vars: 1,
-        consts: [[4, "ngIf"], ["autosize", ""], ["autosize", "", "mode", "side", "position", "end", 1, "example-sidenav", 3, "opened", "openedChange"], ["drawer", ""], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area", 3, "ngModel", "focus", "focusout", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "active-color-button", 3, "click"], [4, "ngFor", "ngForOf"], [1, "fixed-button"], ["mat-button", "", "type", "fixed-plugin", 3, "click"], [1, "fa", "fa-commenting-o", "fa-2x"], [1, "basic-comment"], [1, "header-left", "hover-pointer", 3, "click"], [1, "header-right", "hover-pointer", 3, "click"], [1, "basic-comment-body"], [3, "selectedIndex", "selectedTabChange", "selectedIndexChange"], ["label", "Circuit"], ["matTabContent", ""], ["label", "Circuit winners", 3, "disabled"], ["label", "Practice 1", 3, "disabled"], ["label", "Practice 2", 3, "disabled", 4, "ngIf"], ["label", "Practice 3", 3, "disabled", 4, "ngIf"], ["label", "Qualifying", 3, "disabled"], ["label", "Sprint", 3, "disabled", 4, "ngIf"], ["label", "All laps", 3, "disabled"], [1, "black-footer", "text-center"], [1, "image"], ["target", "_blank", 3, "href"], [3, "src"], ["class", "div-padded-1rem row", 4, "ngIf"], ["class", "div-padded-1rem div-padded-left-2 row", 4, "ngIf"], [1, "div-padded-1rem", "row"], ["class", "col-lg-6 col-12", 4, "ngFor", "ngForOf"], [1, "col-lg-6", "col-12"], [1, "card", "hover-effects-row", 3, "click"], [1, "card-body-padded"], [1, "table", "table-striped"], ["colspan", "2", "scope", "col"], [2, "width", "35px"], ["scope", "row"], [1, "div-padded-1rem", "div-padded-left-2", "row"], [1, "card"], [3, "href"], [1, "div-padded-1rem", "div-padded-left-2", "div-padded-right-2", "row"], [1, "card", "col-lg-12", "col-12"], ["matSort", "", 1, "table", "table-striped", 3, "matSortChange"], ["colspan", "4", 1, "text-center"], ["mat-sort-header", "position", "scope", "col"], ["mat-sort-header", "name", "scope", "col"], ["mat-sort-header", "lapNumber", "scope", "col"], ["colspan", "6", 1, "text-center"], ["colspan", "3", 1, "text-center", "d-sm-none", "d-none", "d-lg-table-cell", "bg-grey"], ["scope", "col"], ["scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], ["scope", "col", 1, "w-20px"], ["mat-sort-header", "sector1", "scope", "col", 1, "text-center", "bg-grey", "d-sm-none", "d-none", "d-lg-table-cell"], ["mat-sort-header", "sector2", "scope", "col", 1, "text-center", "bg-grey", "d-sm-none", "d-none", "d-lg-table-cell"], ["mat-sort-header", "sector3", "scope", "col", 1, "text-center", "bg-grey", "d-sm-none", "d-none", "d-lg-table-cell"], ["scope", "row", 3, "ngClass"], [3, "ngClass"], [1, "d-sm-none", "d-none", "d-lg-table-cell", 3, "ngClass"], [1, "no-padding-td", 3, "ngClass"], ["color", "primary", "mat-mini-fab", "", 3, "click", 4, "ngIf"], ["color", "primary", "mat-mini-fab", "", 3, "click"], ["label", "Practice 2", 3, "disabled"], ["mat-sort-header", "sector1", "scope", "col", 1, "text-center", "bg-grey", "d-sm-none", "d-none", "d-lg-table-cell", "bg-grey"], ["mat-sort-header", "sector2", "scope", "col", 1, "text-center", "bg-grey", "d-sm-none", "d-none", "d-lg-table-cell", "bg-grey"], ["mat-sort-header", "sector3", "scope", "col", 1, "text-center", "bg-grey", "d-sm-none", "d-none", "d-lg-table-cell", "bg-grey"], ["label", "Practice 3", 3, "disabled"], ["colspan", "3", 1, "text-center", "bg-grey", "d-sm-none", "d-none", "d-lg-table-cell"], ["label", "Sprint", 3, "disabled"], [3, "chart", "dataLabels", "grid", "series", "stroke", "title", "xaxis", "yaxis"], ["colspan", "9", 1, "text-center"], ["mat-sort-header", "lapTime", "scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], ["scope", "col", 1, "text-center"], [1, "d-sm-none", "d-none", "d-lg-table-cell"], [1, "no-padding-td"], [1, "font-weight-bold", "text-center"], [1, "icon-big", "text-center", "icon-warning"], ["src", "assets/img/tifosi/kimi-raikkonen-smile.gif", 1, "div-height-70vh"]],
+        consts: [[4, "ngIf"], ["autosize", ""], ["autosize", "", "mode", "side", "position", "end", 1, "example-sidenav", 3, "opened", "openedChange"], ["drawer", ""], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area", 3, "ngModel", "focus", "focusout", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "active-color-button", 3, "click"], [4, "ngFor", "ngForOf"], [1, "fixed-button"], ["mat-button", "", "type", "fixed-plugin", 3, "click"], [1, "fa", "fa-commenting-o", "fa-2x"], [1, "basic-comment"], [1, "header-left", "hover-pointer", 3, "click"], [1, "header-right", "hover-pointer", 3, "click"], [1, "basic-comment-body"], [3, "selectedIndex", "selectedTabChange", "selectedIndexChange"], ["label", "Circuit"], ["matTabContent", ""], ["label", "Circuit winners", 3, "disabled"], ["label", "Practice 1", 3, "disabled"], ["label", "Practice 2", 3, "disabled", 4, "ngIf"], ["label", "Practice 3", 3, "disabled", 4, "ngIf"], ["label", "Qualifying", 3, "disabled"], ["label", "Sprint SHoOToUt", 3, "disabled", 4, "ngIf"], ["label", "Sprint", 3, "disabled", 4, "ngIf"], ["label", "All laps", 3, "disabled"], [1, "black-footer", "text-center"], [1, "image"], ["target", "_blank", 3, "href"], [3, "src"], ["class", "div-padded-1rem row", 4, "ngIf"], ["class", "div-padded-1rem div-padded-left-2 row", 4, "ngIf"], [1, "div-padded-1rem", "row"], ["class", "col-lg-6 col-12", 4, "ngFor", "ngForOf"], [1, "col-lg-6", "col-12"], [1, "card", "hover-effects-row", 3, "click"], [1, "card-body-padded"], [1, "table", "table-striped"], ["colspan", "2", "scope", "col"], [2, "width", "35px"], ["scope", "row"], [1, "div-padded-1rem", "div-padded-left-2", "row"], [1, "card"], [3, "href"], [1, "div-padded-1rem", "div-padded-left-2", "div-padded-right-2", "row"], [1, "card", "col-lg-12", "col-12"], ["matSort", "", 1, "table", "table-striped", 3, "matSortChange"], ["colspan", "4", 1, "text-center"], ["mat-sort-header", "position", "scope", "col"], ["mat-sort-header", "name", "scope", "col"], ["mat-sort-header", "lapNumber", "scope", "col"], ["colspan", "6", 1, "text-center"], ["colspan", "3", 1, "text-center", "d-sm-none", "d-none", "d-lg-table-cell", "bg-grey"], ["scope", "col"], ["scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], ["scope", "col", 1, "w-20px"], ["mat-sort-header", "sector1", "scope", "col", 1, "text-center", "bg-grey", "d-sm-none", "d-none", "d-lg-table-cell"], ["mat-sort-header", "sector2", "scope", "col", 1, "text-center", "bg-grey", "d-sm-none", "d-none", "d-lg-table-cell"], ["mat-sort-header", "sector3", "scope", "col", 1, "text-center", "bg-grey", "d-sm-none", "d-none", "d-lg-table-cell"], ["scope", "row", 3, "ngClass"], [3, "ngClass"], [1, "d-sm-none", "d-none", "d-lg-table-cell", 3, "ngClass"], [1, "no-padding-td", 3, "ngClass"], ["color", "primary", "mat-mini-fab", "", 3, "click", 4, "ngIf"], ["color", "primary", "mat-mini-fab", "", 3, "click"], ["label", "Practice 2", 3, "disabled"], ["mat-sort-header", "sector1", "scope", "col", 1, "text-center", "bg-grey", "d-sm-none", "d-none", "d-lg-table-cell", "bg-grey"], ["mat-sort-header", "sector2", "scope", "col", 1, "text-center", "bg-grey", "d-sm-none", "d-none", "d-lg-table-cell", "bg-grey"], ["mat-sort-header", "sector3", "scope", "col", 1, "text-center", "bg-grey", "d-sm-none", "d-none", "d-lg-table-cell", "bg-grey"], ["label", "Practice 3", 3, "disabled"], ["label", "Sprint SHoOToUt", 3, "disabled"], ["label", "Sprint", 3, "disabled"], [3, "chart", "dataLabels", "grid", "series", "stroke", "title", "xaxis", "yaxis"], ["colspan", "9", 1, "text-center"], ["mat-sort-header", "lapTime", "scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], ["scope", "col", 1, "text-center"], [1, "d-sm-none", "d-none", "d-lg-table-cell"], [1, "no-padding-td"], [1, "font-weight-bold", "text-center"], [1, "icon-big", "text-center", "icon-warning"], ["src", "assets/img/tifosi/kimi-raikkonen-smile.gif", 1, "div-height-70vh"]],
         template: function UpcomingRaceAnalysisComponent_Template(rf, ctx) {
           if (rf & 1) {
             core
@@ -107005,7 +107013,7 @@
 
       function TifosiComponent_div_13_Template(rf, ctx) {
         if (rf & 1) {
-          var _r7 = core
+          var _r6 = core
           /* ɵɵgetCurrentView */
           .EpF();
 
@@ -107014,21 +107022,21 @@
           .TgZ(0, "div");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "div", 23);
+          .TgZ(1, "div", 21);
           core
           /* ɵɵelementStart */
-          .TgZ(2, "div", 24);
+          .TgZ(2, "div", 22);
           core
           /* ɵɵlistener */
           .NdJ("click", function TifosiComponent_div_13_Template_div_click_2_listener() {
             var restoredCtx = core
             /* ɵɵrestoreView */
-            .CHM(_r7);
-            var comment_r5 = restoredCtx.$implicit;
-            var ctx_r6 = core
+            .CHM(_r6);
+            var comment_r4 = restoredCtx.$implicit;
+            var ctx_r5 = core
             /* ɵɵnextContext */
             .oxw();
-            return ctx_r6.utilityService.replyingTo(comment_r5.nickname);
+            return ctx_r5.utilityService.replyingTo(comment_r4.nickname);
           });
 
           core
@@ -107040,18 +107048,18 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(4, "div", 25);
+          .TgZ(4, "div", 23);
           core
           /* ɵɵlistener */
           .NdJ("click", function TifosiComponent_div_13_Template_div_click_4_listener() {
             var restoredCtx = core
             /* ɵɵrestoreView */
-            .CHM(_r7);
-            var comment_r5 = restoredCtx.$implicit;
-            var ctx_r8 = core
+            .CHM(_r6);
+            var comment_r4 = restoredCtx.$implicit;
+            var ctx_r7 = core
             /* ɵɵnextContext */
             .oxw();
-            return ctx_r8.utilityService.replyingTo(comment_r5.id + "");
+            return ctx_r7.utilityService.replyingTo(comment_r4.id + "");
           });
 
           core
@@ -107063,7 +107071,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(6, "div", 26);
+          .TgZ(6, "div", 24);
 
           core
           /* ɵɵtext */
@@ -107081,25 +107089,25 @@
         }
 
         if (rf & 2) {
-          var comment_r5 = ctx.$implicit;
+          var comment_r4 = ctx.$implicit;
           core
           /* ɵɵadvance */
           .xp6(3);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(comment_r5.nickname);
+          .Oqu(comment_r4.nickname);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(comment_r5.id);
+          .Oqu(comment_r4.id);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(comment_r5.comment);
+          .Oqu(comment_r4.comment);
         }
       }
 
@@ -107107,7 +107115,7 @@
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 27);
+          .TgZ(0, "div", 25);
 
           core
           /* ɵɵtext */
@@ -107135,7 +107143,7 @@
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 28);
+          .TgZ(0, "div", 26);
 
           core
           /* ɵɵtext */
@@ -107156,184 +107164,6 @@
           core
           /* ɵɵtextInterpolate1 */
           .hij(" ", ctx_r3.difference, " ");
-        }
-      }
-
-      function TifosiComponent_div_29_div_3_Template(rf, ctx) {
-        if (rf & 1) {
-          core
-          /* ɵɵelementStart */
-          .TgZ(0, "div", 33);
-          core
-          /* ɵɵelementStart */
-          .TgZ(1, "a", 34);
-
-          core
-          /* ɵɵelement */
-          ._UZ(2, "img", 35);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(3, "div", 36);
-
-          core
-          /* ɵɵtext */
-          ._uU(4);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-        }
-
-        if (rf & 2) {
-          var post_r9 = core
-          /* ɵɵnextContext */
-          .oxw().$implicit;
-          core
-          /* ɵɵadvance */
-          .xp6(1);
-          core
-          /* ɵɵproperty */
-          .Q6J("href", post_r9.url, core
-          /* ɵɵsanitizeUrl */
-          .LSH);
-          core
-          /* ɵɵadvance */
-          .xp6(1);
-          core
-          /* ɵɵproperty */
-          .Q6J("src", post_r9.mediaUrl, core
-          /* ɵɵsanitizeUrl */
-          .LSH);
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵtextInterpolate1 */
-          .hij(" ", post_r9.text, " ");
-        }
-      }
-
-      function TifosiComponent_div_29_div_4_Template(rf, ctx) {
-        if (rf & 1) {
-          core
-          /* ɵɵelementStart */
-          .TgZ(0, "div", 37);
-          core
-          /* ɵɵelementStart */
-          .TgZ(1, "a", 34);
-          core
-          /* ɵɵelementStart */
-          .TgZ(2, "div");
-
-          core
-          /* ɵɵelement */
-          ._UZ(3, "img", 38);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(4, "div", 39);
-
-          core
-          /* ɵɵtext */
-          ._uU(5);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-        }
-
-        if (rf & 2) {
-          var post_r9 = core
-          /* ɵɵnextContext */
-          .oxw().$implicit;
-          core
-          /* ɵɵadvance */
-          .xp6(1);
-          core
-          /* ɵɵproperty */
-          .Q6J("href", post_r9.url, core
-          /* ɵɵsanitizeUrl */
-          .LSH);
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵproperty */
-          .Q6J("src", post_r9.userPicture, core
-          /* ɵɵsanitizeUrl */
-          .LSH);
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵtextInterpolate1 */
-          .hij(" ", post_r9.text, " ");
-        }
-      }
-
-      function TifosiComponent_div_29_Template(rf, ctx) {
-        if (rf & 1) {
-          core
-          /* ɵɵelementStart */
-          .TgZ(0, "div", 29);
-          core
-          /* ɵɵelementStart */
-          .TgZ(1, "div", 30);
-
-          core
-          /* ɵɵtext */
-          ._uU(2);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵtemplate */
-          .YNc(3, TifosiComponent_div_29_div_3_Template, 5, 3, "div", 31);
-          core
-          /* ɵɵtemplate */
-          .YNc(4, TifosiComponent_div_29_div_4_Template, 6, 3, "div", 32);
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-        }
-
-        if (rf & 2) {
-          var post_r9 = ctx.$implicit;
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵtextInterpolate1 */
-          .hij(" ", post_r9.username, " ");
-          core
-          /* ɵɵadvance */
-          .xp6(1);
-          core
-          /* ɵɵproperty */
-          .Q6J("ngIf", post_r9.mediaUrl != null);
-          core
-          /* ɵɵadvance */
-          .xp6(1);
-          core
-          /* ɵɵproperty */
-          .Q6J("ngIf", post_r9.mediaUrl == null);
         }
       }
 
@@ -107421,12 +107251,12 @@
       .Xpm({
         type: TifosiComponent,
         selectors: [["app-tifosi-cmp"]],
-        decls: 31,
-        vars: 6,
-        consts: [[1, "mat-drawer-no-overflow"], ["mode", "side", "position", "end", 1, "example-sidenav", 3, "opened", "openedChange"], ["drawer", ""], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area", 3, "ngModel", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "active-color-button", 3, "click"], [4, "ngFor", "ngForOf"], [1, "fixed-button"], ["type", "fixed-plugin", "mat-button", "", 3, "click"], [1, "fa", "fa-commenting-o", "fa-2x"], [1, "height-fill-screen", "tifosi_container"], [1, "tifosi_left"], ["src", "assets/img/tifosi/leclerc1.jpg", "alt", "left1"], ["src", "assets/img/tifosi/clowns.jpg", "alt", "left2"], [1, "tifosi_middle"], [1, "tifoso-div"], ["class", "tifoso-clock-div", 4, "ngIf"], ["matTooltip", "World Constructor Championship 2008", "class", "tifoso-countdown-div", 4, "ngIf"], [1, "tifosi_right"], ["class", "instagram-post-margin", 4, "ngFor", "ngForOf"], [1, "tifoso-1-div", "overlay-bottom-left-div-fixed-2", "display-on-desktop-only"], [1, "basic-comment"], [1, "header-left", "hover-pointer", 3, "click"], [1, "header-right", "hover-pointer", 3, "click"], [1, "basic-comment-body"], [1, "tifoso-clock-div"], ["matTooltip", "World Constructor Championship 2008", 1, "tifoso-countdown-div"], [1, "instagram-post-margin"], [1, "twitter-post-info"], ["class", "text-center", 4, "ngIf"], ["class", "div-left-header bg-dark-blue", 4, "ngIf"], [1, "text-center"], ["target", "_blank", 3, "href"], ["onerror", "this.src='assets/img/twitter-icon.png';", 3, "src"], [1, "instagram-post-info"], [1, "div-left-header", "bg-dark-blue"], [3, "src"], [1, "bg-dark-blue", "tweet-without-image"]],
+        decls: 32,
+        vars: 5,
+        consts: [[1, "mat-drawer-no-overflow"], ["mode", "side", "position", "end", 1, "example-sidenav", 3, "opened", "openedChange"], ["drawer", ""], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area", 3, "ngModel", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "active-color-button", 3, "click"], [4, "ngFor", "ngForOf"], [1, "fixed-button"], ["type", "fixed-plugin", "mat-button", "", 3, "click"], [1, "fa", "fa-commenting-o", "fa-2x"], [1, "height-fill-screen", "tifosi_container"], [1, "tifosi_left"], ["src", "assets/img/tifosi/leclerc1.jpg", "alt", "left1"], ["src", "assets/img/tifosi/clowns.jpg", "alt", "left2"], [1, "tifosi_middle"], [1, "tifoso-div"], ["class", "tifoso-clock-div", 4, "ngIf"], ["matTooltip", "World Constructor Championship 2008", "class", "tifoso-countdown-div", 4, "ngIf"], [1, "tifoso-1-div", "overlay-bottom-left-div-fixed-2", "display-on-desktop-only"], [1, "basic-comment"], [1, "header-left", "hover-pointer", 3, "click"], [1, "header-right", "hover-pointer", 3, "click"], [1, "basic-comment-body"], [1, "tifoso-clock-div"], ["matTooltip", "World Constructor Championship 2008", 1, "tifoso-countdown-div"]],
         template: function TifosiComponent_Template(rf, ctx) {
           if (rf & 1) {
-            var _r14 = core
+            var _r8 = core
             /* ɵɵgetCurrentView */
             .EpF();
 
@@ -107525,7 +107355,7 @@
             .NdJ("click", function TifosiComponent_Template_button_click_15_listener() {
               core
               /* ɵɵrestoreView */
-              .CHM(_r14);
+              .CHM(_r8);
 
               var _r0 = core
               /* ɵɵreference */
@@ -107558,7 +107388,7 @@
             .NdJ("click", function TifosiComponent_Template_button_click_18_listener() {
               core
               /* ɵɵrestoreView */
-              .CHM(_r14);
+              .CHM(_r8);
 
               var _r0 = core
               /* ɵɵreference */
@@ -107615,17 +107445,23 @@
             .qZA();
             core
             /* ɵɵelementStart */
-            .TgZ(28, "div", 20);
+            .TgZ(28, "div", 13);
+
             core
-            /* ɵɵtemplate */
-            .YNc(29, TifosiComponent_div_29_Template, 5, 3, "div", 21);
+            /* ɵɵelement */
+            ._UZ(29, "img", 14);
+
+            core
+            /* ɵɵelement */
+            ._UZ(30, "img", 15);
+
             core
             /* ɵɵelementEnd */
             .qZA();
 
             core
             /* ɵɵelement */
-            ._UZ(30, "div", 22);
+            ._UZ(31, "div", 20);
 
             core
             /* ɵɵelementEnd */
@@ -107669,12 +107505,6 @@
             core
             /* ɵɵproperty */
             .Q6J("ngIf", ctx.difference != null);
-            core
-            /* ɵɵadvance */
-            .xp6(2);
-            core
-            /* ɵɵproperty */
-            .Q6J("ngForOf", ctx.tweets);
           }
         },
         directives: [sidenav

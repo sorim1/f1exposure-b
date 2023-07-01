@@ -27,21 +27,25 @@ public class UpcomingRaceAnalysis {
     List<Driver> fp3;
     List<Driver> quali;
     List<Driver> sprintQuali;
+    List<Driver> sprint;
     List<LapTimeData> fp1Laps;
     List<LapTimeData> fp2Laps;
     List<LapTimeData> fp3Laps;
     List<LapTimeData> qualiLaps;
     List<LapTimeData> sprintQualiLaps;
+    List<LapTimeData> sprintLaps;
     List<RadioData> fp1Radio;
     List<RadioData> fp2Radio;
     List<RadioData> fp3Radio;
     List<RadioData> qualiRadio;
     List<RadioData> sprintQualiRadio;
+    List<RadioData> sprintRadio;
     String fp1LivetimingUrl;
     String fp2LivetimingUrl;
     String fp3LivetimingUrl;
     String qualiLivetimingUrl;
     String sprintQualiLivetimingUrl;
+    String sprintLivetimingUrl;
 
 
     public UpcomingRaceAnalysis(RaceData raceData) {
