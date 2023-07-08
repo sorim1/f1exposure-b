@@ -337,12 +337,16 @@ public class RedditServiceImpl implements RedditService {
 
     private void saveRedditOrImgurImageToRepository(NewsContent content) {
         byte[] imageBytes = instagramService.getImageFromUrl(content.getUrl());
-        String imageCode = NEWS_PREFIX + content.getCode();
-        ImageRow imageRow = ImageRow.builder().code(imageCode).image(imageBytes).build();
-        imageRepository.save(imageRow);
-        String imageUrl = mainProperties.getUrl() + IMAGE_BASE_PATH + imageCode;
         content.setUrl(null);
-        content.setImageUrl(imageUrl);
+        if(imageBytes!=null) {
+            String imageCode = NEWS_PREFIX + content.getCode();
+            ImageRow imageRow = ImageRow.builder().code(imageCode).image(imageBytes).build();
+            imageRepository.save(imageRow);
+            String imageUrl = mainProperties.getUrl() + IMAGE_BASE_PATH + imageCode;
+            content.setImageUrl(imageUrl);
+        } else {
+            content.setImageUrl(content.getUrl());
+        }
     }
 
     private String relativeToAbsoluteUrl(String domainUrl, String href) {

@@ -350,7 +350,7 @@ public class InstagramServiceImpl implements InstagramService {
         } catch (IOException e) {
             log.error("fetchImages ", e);
         }
-        return new byte[0];
+        return null;
     }
 
     @Override
