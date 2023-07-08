@@ -21,6 +21,7 @@ public class FrontendRace {
     private String x;
     private String y;
     private ErgastDriver driver;
+    private String  exposureWinner;
 
     public FrontendRace(RaceData raceData) {
         this.round= raceData.getRound();

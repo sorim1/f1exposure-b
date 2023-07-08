@@ -57,7 +57,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
     private final RestTemplate restTemplate;
 
     private final JsonRepository jsonRepository;
-
+    private final JsonRepositoryTwo jsonRepository2;
     @PostConstruct
     private void init() {
         AppProperty app = propertiesRepository.findDistinctFirstByName("exposureRound");
@@ -243,7 +243,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
                 .exposureChampionshipData(getExposureChampionshipData(standings))
                 .standings(standings)
                 .voters(getExposureVoters())
-                .exposureRaces(ergastService.getRacesSoFar(String.valueOf(properties.getCurrentSeasonPast()), currentExposureRound))
+                .exposureRaces(jsonRepository2.findAllById("EXPOSURE_CURRENT_RACES").getJson())
                 .build();
     }
     @Override
@@ -255,7 +255,29 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
                 .id("EXPOSURE_ARCHIVE_" + response.getCurrentYear())
                 .json(response).build();
         jsonRepository.save(jrm);
+
+        saveExposureRaces();
         return jrm;
+    }
+
+    private void saveExposureRaces(){
+        List<FrontendRace> races = ergastService.getRacesSoFar(String.valueOf(properties.getCurrentSeasonPast()), currentExposureRound);
+        enrichRacesWithExposureWinner(races);
+        JsonRepositoryTwoModel jrm2 = JsonRepositoryTwoModel.builder()
+                .id("EXPOSURE_CURRENT_RACES")
+                .json(races).build();
+        jsonRepository2.save(jrm2);
+    }
+
+    private void enrichRacesWithExposureWinner(List<FrontendRace> races) {
+        Integer season = properties.getCurrentSeasonPast();
+        races.forEach(race->{
+            race.setRaceName(race.getRaceName().replace("Grand Prix", "GP"));
+            List<ExposureChampionship> list = exposureChampionshipRepository.findAllByIdSeasonAndIdRoundOrderByVotesDesc(season, race.getRound());
+            if(list!=null && !list.isEmpty()){
+                race.setExposureWinner(list.get(0).getName());
+            }
+        });
     }
 
 
@@ -278,6 +300,13 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
         showWinner = showWinnerValue;
         backupExposureToDatabase();
         resetStrawpoll();
+        try{
+            saveExposureRaces();
+        } catch(Exception e){
+            //TODO delete ako radi ok
+            log.error("saveExposureRaces error", e);
+        }
+
     }
 
     private void backupExposureToDatabase() {

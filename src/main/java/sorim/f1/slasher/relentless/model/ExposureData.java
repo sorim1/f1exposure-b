@@ -20,6 +20,6 @@ public class ExposureData {
     private List<ExposureChampionshipData> exposureChampionshipData;
     private List<ExposureChampionshipStanding> standings;
     private List<Integer> voters;
-    private List<FrontendRace> exposureRaces;
+    private Object exposureRaces;
     private Boolean showWinner;
 }
