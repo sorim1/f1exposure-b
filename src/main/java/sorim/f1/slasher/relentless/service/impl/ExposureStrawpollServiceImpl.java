@@ -82,14 +82,14 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
             title = f1calendar.getLocation();
             Duration howMuchTimeSincePreviousRace = Duration.between(f1calendar.getRace(), gmtDateTime);
             if (howMuchTimeSincePreviousRace.toDays() < 1) {
-                if (strawpollId == null) {
-                    String newId = getExposureStrawpoll();
-                    if (newId != null) {
-                        strawpollId = newId;
-                        startPolling();
-                        response = true;
-                    }
-                }
+//                if (strawpollId == null) {
+//                    String newId = getExposureStrawpoll();
+//                    if (newId != null) {
+//                        strawpollId = newId;
+//                        startPolling();
+//                        response = true;
+//                    }
+//                }
                 exposureNow = true;
                 exposureToday = true;
             } else {
@@ -456,7 +456,8 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
         if (totalVotes > latestVoteCount) {
             reloadDelay = 20000;
         } else {
-            reloadDelay = reloadDelay * 2;
+            reloadDelay = reloadDelay + 20000;
+            log.info("reloadDelay increased:" + reloadDelay);
         }
         latestVoteCount = totalVotes;
         strawpoll.getPoll().getPoll_options().forEach(pollAnswer -> {

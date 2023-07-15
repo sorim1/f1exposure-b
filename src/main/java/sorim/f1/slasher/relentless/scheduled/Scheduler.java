@@ -134,9 +134,9 @@ public class Scheduler {
                 delay = liveTimingService.analyzeLatestRace(true);
                 if (delay != null) {
                     int delayInMiliseconds = delay * 1000;
-                    if (!strawpollFound) {
-                        strawpollFound = exposureService.initializeExposureFrontendVariables(null);
-                    }
+//                    if (!strawpollFound) {
+//                        strawpollFound = exposureService.initializeExposureFrontendVariables(null);
+//                    }
                     log.info(CODE + " - sundayAnalysisJob delayed: " + delayInMiliseconds);
                     new java.util.Timer().schedule(
                             new java.util.TimerTask() {
@@ -323,7 +323,7 @@ public class Scheduler {
              log.warn(properties.getUrl());
          }
     }
- //   @Scheduled(cron = "0 0 1 * * *")
+    @Scheduled(cron = "0 0 1 * * *")
     void secondInstagramJob() throws Exception {
         Random rand = new Random();
         int minutes = rand.nextInt(30);
