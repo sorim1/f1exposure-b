@@ -187,6 +187,11 @@ public class ClientController {
         securityService.validateHeader(client);
         return service.getSidebarData();
     }
+    @GetMapping("/setSidebarExposureDriver")
+    SidebarData setSidebarExposureDriver(@RequestHeader String client, @RequestBody(required=false) KeyValue exposureDriver) throws Exception {
+        securityService.validateHeader(client);
+        return service.setSidebarExposureDriver(exposureDriver);
+    }
 
     @GetMapping("/getNewsPost/{code}")
     NewsContent getNewsPost(@RequestHeader String client, @PathVariable("code") String code) throws Exception {

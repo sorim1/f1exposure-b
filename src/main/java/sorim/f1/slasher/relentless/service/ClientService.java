@@ -90,4 +90,6 @@ public interface ClientService {
     NavbarData getNavbarData();
     Boolean setNavbarData();
     NavbarData updateNavbarData(NavbarData navbarData);
+
+    SidebarData setSidebarExposureDriver(KeyValue exposureDriver);
 }

@@ -291,6 +291,7 @@ public class ClientServiceImpl implements ClientService {
         navbarData = input;
         return navbarData;
     }
+
     @Override
     public Boolean setNavbarData() {
         RaceData raceData = ergastService.getUpcomingRace(properties.getCurrentSeasonFuture());
@@ -551,6 +552,11 @@ public class ClientServiceImpl implements ClientService {
                 .build();
     }
 
+    @Override
+    public SidebarData setSidebarExposureDriver(KeyValue exposureDriver) {
+        sidebarData.setExposedDriver(exposureDriver);
+        return sidebarData;
+    }
     @Override
     public String getStreamer() {
         return twitchService.getStreamer();
