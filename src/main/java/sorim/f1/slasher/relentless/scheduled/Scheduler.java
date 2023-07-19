@@ -304,12 +304,13 @@ public class Scheduler {
 
     }
 
-     @Scheduled(cron = "0 0 15 * * *")
+     @Scheduled(cron = "0 0 12 * * *")
     void firstInstagramJob() throws Exception {
          Random rand = new Random();
-         int minutes = rand.nextInt(30);
+         int minutes = rand.nextInt(20);
         log.info("firstInstagramJob to be called: " + minutes);
          if(properties.getUrl().contains(F1EXPOSURE_COM)){
+             Thread.sleep(1000 * 60 * minutes);
              try{
                  clientService.fetchInstagramPosts();
              }catch(Exception e){
@@ -323,12 +324,13 @@ public class Scheduler {
              log.warn(properties.getUrl());
          }
     }
-    @Scheduled(cron = "0 0 1 * * *")
+   // @Scheduled(cron = "0 0 1 * * *")
     void secondInstagramJob() throws Exception {
         Random rand = new Random();
-        int minutes = rand.nextInt(30);
+        int minutes = rand.nextInt(20);
         log.info("secondInstagramJob called: " + minutes);
         if(properties.getUrl().contains(F1EXPOSURE_COM)){
+            Thread.sleep(1000 * 60 * minutes);
             try{
                 clientService.fetchInstagramPosts();
             }catch(Exception e){
