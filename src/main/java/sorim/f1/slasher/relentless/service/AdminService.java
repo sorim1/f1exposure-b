@@ -22,8 +22,6 @@ public interface AdminService {
 
     Boolean initializeStandings(Boolean updateStatistics) throws IOException;
 
-    Boolean initializeStandingsFromLivetiming(Map<String, DriverStanding> standingsMap, Map<String, sorim.f1.slasher.relentless.model.livetiming.Driver> driversMap, Integer newRound);
-
     Boolean initializeFullStandingsThroughRounds() throws IOException;
 
     Boolean fetchReplayLinks();

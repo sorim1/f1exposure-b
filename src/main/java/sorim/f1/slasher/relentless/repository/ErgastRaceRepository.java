@@ -26,7 +26,7 @@ public interface ErgastRaceRepository extends CrudRepository<RaceData, String> {
 
     RaceData findFirstByRaceAnalysisIsNotNullAndLiveTimingRaceIsNullAndSeasonOrderByDateAsc(String year);
 
-    List<RaceData> findByCircuitIdOrderBySeasonDesc(String circuitId);
+    RaceData findFirstByCircuitIdOrderBySeasonDesc(String circuitId);
 
     List<FrontendRace> findAllBySeasonAndRoundLessThanEqualOrderByRoundAsc(String season, Integer round);
 

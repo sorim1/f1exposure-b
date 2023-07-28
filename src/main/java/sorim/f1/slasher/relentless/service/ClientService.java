@@ -57,7 +57,7 @@ public interface ClientService {
 
     NewsContent getNewsPost(String code);
     List<NewsContent> getNextNewsList(String timestampActivity) throws ParseException;
-    Boolean bumpNewsPost(String code);
+    Boolean bumpNewsPost(String code, Integer mode);
 
     NewsComment postNewsComment(NewsComment comment, String ipAddress);
 

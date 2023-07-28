@@ -22,6 +22,7 @@ public interface NewsRepository extends CrudRepository<NewsContent, String> {
     List<NewsContent> findAllByTimestampActivityBeforeOrderByTimestampActivityDesc(Date timestampActivity, Pageable pageable);
     NewsContent findByCodeAndStatusLessThanEqual(String code, Integer status);
     NewsContent findByCode(String code);
+    Integer deleteByCode(String code);
     NewsContent findFirstByStatusLessThanEqualOrderByTimestampActivityDesc(Integer status);
 
     Integer deleteAllByUsername(String username);

@@ -15,5 +15,6 @@ public class TimingAppDataStint {
     String lapTime;
     @JsonProperty("LapNumber")
     Integer lapNumber;
-
+    @JsonProperty("Compound")
+    String compound;
 }

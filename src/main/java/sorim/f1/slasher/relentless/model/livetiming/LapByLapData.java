@@ -18,7 +18,7 @@ import java.util.regex.Pattern;
 @Slf4j
 public class LapByLapData {
     public List<Integer> positions = new ArrayList<>();
-    public List<Tyre> tyres = new ArrayList<>();
+    public List<TimingAppDataStint> tyres = new ArrayList<>();
     public List<Integer> lapTimesX = new ArrayList<>();
     public List<String> lapTimesY = new ArrayList<>();
     public List<Integer> lapTimesYms = new ArrayList<>();
@@ -28,9 +28,9 @@ public class LapByLapData {
 
     public Integer addLapTime(Integer lapNumber, Timing timing) {
         String[] lapTime = timing.getTime().split(":");
-        int miliseconds = Integer.parseInt(lapTime[0])*60000;
+        int miliseconds = Integer.parseInt(lapTime[0]) * 60000;
         String[] lapTime2 = lapTime[1].split(Pattern.quote("."));
-        miliseconds += Integer.parseInt(lapTime2[0])*1000;
+        miliseconds += Integer.parseInt(lapTime2[0]) * 1000;
         miliseconds += Integer.parseInt(lapTime2[1]);
         lapTimesYms.add(miliseconds);
         lapTimesX.add(lapNumber);
@@ -44,18 +44,18 @@ public class LapByLapData {
     }
 
     public void addLapTimePosition(String code, Integer lapNumber, Integer lapTimePosition) {
-        if(lapNumber==lapTimePositions.size()+1){
+        if (lapNumber == lapTimePositions.size() + 1) {
             lapTimePositions.add(lapTimePosition);
-        } else if(lapNumber>lapTimePositions.size()+1){
-            log.error("VECI PROBLEM1: {} vs {}", lapNumber, lapTimePositions.size()+1 );
-            for(int i=0; i<lapNumber-lapTimePositions.size()+1;i++){
+        } else if (lapNumber > lapTimePositions.size() + 1) {
+            log.error("VECI PROBLEM1: {} vs {}", lapNumber, lapTimePositions.size() + 1);
+            for (int i = 0; i < lapNumber - lapTimePositions.size() + 1; i++) {
                 lapTimePositions.add(null);
             }
-        } else if(lapNumber<lapTimePositions.size()+1){
-            log.error("MANJI PROBLEM1: {} vs {}", lapNumber, lapTimePositions.size()+1 );
-            lapTimePositions.set(lapNumber-1, lapTimePosition);
+        } else if (lapNumber < lapTimePositions.size() + 1) {
+            log.error("MANJI PROBLEM1: {} vs {}", lapNumber, lapTimePositions.size() + 1);
+            lapTimePositions.set(lapNumber - 1, lapTimePosition);
         } else {
-            log.error("NEMOGUCE1" );
+            log.error("NEMOGUCE1");
         }
 
     }

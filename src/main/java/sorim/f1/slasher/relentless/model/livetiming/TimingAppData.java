@@ -1,5 +1,6 @@
 package sorim.f1.slasher.relentless.model.livetiming;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -10,7 +11,8 @@ import java.util.Map;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class TimingAppData {
     @JsonProperty("Lines")
-    Map<Integer, TimingAppDataEntry> lines;
+    Map<String, TimingAppDataEntry> lines;
 }

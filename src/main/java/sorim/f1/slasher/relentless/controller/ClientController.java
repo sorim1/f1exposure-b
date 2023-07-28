@@ -214,11 +214,13 @@ public class ClientController {
          securityService.validateHeader(client);
         return service.updateNavbarData(navbarData);
     }
-    @GetMapping("/bumpNewsPost/{code}")
-    Boolean bumpNewsPost(@RequestHeader String client, @PathVariable("code") String code) throws Exception {
+    @GetMapping("/bumpNewsPost/{code}/{mode}")
+    Boolean bumpNewsPost(@RequestHeader String client, @PathVariable("code") String code, @PathVariable("mode") Integer mode) throws Exception {
         securityService.validateHeader(client);
-        return service.bumpNewsPost(code);
+        return service.bumpNewsPost(code, mode);
     }
+
+
 
     @PostMapping("/postNewsComment")
     NewsComment postNewsComment(@RequestHeader String client, @RequestBody NewsComment comment, HttpServletRequest request) throws Exception {

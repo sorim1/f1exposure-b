@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class RawData {
-    private Map<String, Object> dataFields = new HashMap<>();
+    private final Map<String, Object> dataFields = new HashMap<>();
 
     @JsonAnyGetter
     public Map<String, Object> getDataFields() {

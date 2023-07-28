@@ -30,6 +30,7 @@ public class SessionInfo {
 
     @JsonProperty("EndDate")
     private LocalDateTime endDate;
+
     @Data
     @NoArgsConstructor
     @AllArgsConstructor

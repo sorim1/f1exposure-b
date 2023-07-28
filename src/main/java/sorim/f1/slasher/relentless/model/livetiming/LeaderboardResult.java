@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import sorim.f1.slasher.relentless.util.MainUtility;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Data

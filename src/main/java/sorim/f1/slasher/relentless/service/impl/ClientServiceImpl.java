@@ -414,14 +414,20 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
-    public Boolean bumpNewsPost(String code) {
-        NewsContent response = newsRepository.findByCodeAndStatusLessThanEqual(code, 7);
-        if (response != null) {
-            response.setTimestampActivity(new Date());
-            newsRepository.save(response);
-            fetchRedditPosts();
+    public Boolean bumpNewsPost(String code, Integer mode) {
+        if(mode==0){
+            newsRepository.deleteByCode(code);
             return true;
+        } else {
+            NewsContent response = newsRepository.findByCodeAndStatusLessThanEqual(code, 7);
+            if (response != null) {
+                response.setTimestampActivity(new Date());
+                newsRepository.save(response);
+                fetchRedditPosts();
+                return true;
+            }
         }
+
         return false;
     }
 
@@ -597,7 +603,13 @@ public class ClientServiceImpl implements ClientService {
         initFourchanDisabled();
         setAllowNonRedditNews();
         setSidebarData(newsRepository.findFirstByStatusLessThanEqualOrderByTimestampActivityDesc(7));
-        setNavbarData();
+        try{
+            setNavbarData();
+        } catch(Exception ex){
+            log.error("printStackTrace1");
+            ex.printStackTrace();
+        }
+
         log.info("clientServiceInit: {} -{}", iframeLink, overlays);
     }
 

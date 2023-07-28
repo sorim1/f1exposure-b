@@ -39,7 +39,6 @@ public interface LiveTimingService {
 
     String updateCircuitImage(String season, Integer round, String newImageUrl);
 
-    Boolean setLatestTreeMap(Boolean ergastStandingsUpdated);
 
     RaceData backupRaceData(Integer id);
 

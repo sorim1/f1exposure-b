@@ -175,6 +175,7 @@ public class AdminServiceImpl implements AdminService {
             List<RaceData> ergastRaceData = ergastService.fetchSeason(String.valueOf(f1Calendar.getRace().getYear()));
             enrichCalendarWithErgastData(f1calendarList, ergastRaceData);
         }
+        calendarRepository.deleteAll();
         calendarRepository.saveAll(f1calendarList);
         return true;
     }
@@ -218,21 +219,6 @@ public class AdminServiceImpl implements AdminService {
             ergastService.fetchStatisticsFullFromPartial(false);
         }
         generateChart();
-        return changesDetected;
-    }
-
-    @Override
-    public Boolean initializeStandingsFromLivetiming(Map<String, DriverStanding> standingsMap, Map<String, sorim.f1.slasher.relentless.model.livetiming.Driver> driversMap, Integer newRound) {
-        Logger.log("initializeStandingsFromLivetiming");
-        //TODO ukloniti try-catch ako radi ok?
-        Boolean changesDetected = false;
-        try {
-            changesDetected = refreshStandingsFromLivetiming(standingsMap, driversMap, newRound);
-        } catch (Exception e) {
-            Logger.log("ERROR", e.getMessage());
-            e.printStackTrace();
-            return false;
-        }
         return changesDetected;
     }
 
@@ -386,30 +372,6 @@ public class AdminServiceImpl implements AdminService {
         return response;
     }
 
-    private Boolean refreshStandingsFromLivetiming(Map<String, DriverStanding> standingsMap, Map<String, sorim.f1.slasher.relentless.model.livetiming.Driver> driversMap, Integer newRound) {
-        Boolean bool = false;
-        if (newRound == CURRENT_ROUND + 1) {
-            Logger.log("refreshDriverStandingsFromLiveTiming - newRound == CURRENT_ROUND+1");
-            bool = true;
-            Map<String, ConstructorStanding> constructorStandingsMap = clientService.getConstructorStandings().stream()
-                    .collect(Collectors.toMap(key -> key.getName().substring(5), Function.identity()));
-            driversMap.forEach((key, driver) -> {
-                if (standingsMap.containsKey(driver.getInitials())) {
-                    standingsMap.get(driver.getInitials()).setPoints(standingsMap.get(driver.getInitials()).getPoints().add(new BigDecimal(driver.getPoints())));
-                    constructorStandingsMap.get(driver.getName().substring(5)).setPoints(constructorStandingsMap.get(driver.getName().substring(5)).getPoints().add(new BigDecimal(driver.getPoints())));
-                }
-            });
-            List<DriverStanding> driverStandings = standingsMap.values().stream()
-                    .collect(Collectors.toList());
-            List<ConstructorStanding> constructorStandings = constructorStandingsMap.values().stream()
-                    .collect(Collectors.toList());
-            driverStandingsRepository.deleteAll();
-            driverStandingsRepository.saveAll(driverStandings);
-            constructorStandingsRepository.deleteAll();
-            constructorStandingsRepository.saveAll(constructorStandings);
-        }
-        return bool;
-    }
 
     private void initializeConstructorStandings() {
         List<ConstructorStanding> constructorStandings = new ArrayList<>();

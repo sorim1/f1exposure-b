@@ -5,8 +5,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -21,6 +19,6 @@ public class LapTimeData {
     String sessionName;
 
     public LapTimeData(Integer driverNumber) {
-        this.driverNumber=driverNumber;
+        this.driverNumber = driverNumber;
     }
 }

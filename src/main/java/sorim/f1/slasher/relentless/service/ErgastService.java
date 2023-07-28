@@ -31,7 +31,7 @@ public interface ErgastService {
 
     RaceData findById(Integer id);
 
-    List<RaceData> findByCircuitIdOrderBySeasonDesc(String circuitId);
+    RaceData findByCircuitIdOrderBySeasonDesc(String circuitId);
 
     List<RaceData> findRacesBySeason(String season);
 

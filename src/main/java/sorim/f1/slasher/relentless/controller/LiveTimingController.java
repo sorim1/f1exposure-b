@@ -126,10 +126,6 @@ public class LiveTimingController {
         return service.updateCircuitImage(season, round, newImageUrl);
     }
 
-    @GetMapping("/setLatestTreeMap")
-    public Boolean setLatestTreeMap(@RequestHeader String client, @RequestParam(value = "ergastStandingsUpdated", required = false) Boolean ergastStandingsUpdated) throws Exception {
-        return service.setLatestTreeMap(ergastStandingsUpdated);
-    }
 
     @GetMapping("/backupRaceData/{id}")
     public RaceData backupRaceData(@RequestHeader String client, @PathVariable("id") Integer id) throws Exception {

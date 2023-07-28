@@ -10,7 +10,6 @@ import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import sorim.f1.slasher.relentless.configuration.MainProperties;
-import sorim.f1.slasher.relentless.entities.DriverStanding;
 import sorim.f1.slasher.relentless.entities.ergast.RaceData;
 import sorim.f1.slasher.relentless.handling.Logger;
 import sorim.f1.slasher.relentless.model.enums.RoundEnum;
@@ -21,11 +20,8 @@ import sorim.f1.slasher.relentless.service.*;
 import sorim.f1.slasher.relentless.util.MainUtility;
 
 import javax.annotation.PostConstruct;
-import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
-import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -36,23 +32,26 @@ import java.util.stream.Collectors;
 public class LiveTimingServiceImpl implements LiveTimingService {
 
     private static final String LIVE_TIMING_URL_BASE = "https://livetiming.formula1.com/static/{year}/{grandPrix}/{race}/";
-    private static final String SPFEED_JSON = "SPFeed.json";
     private static final String TIMING_APP_DATA_STREAM = "TimingAppData.jsonStream";
 
+    private static final String TIMING_APP_DATA = "TimingAppData.json";
     private static final String TEAM_RADIO_STREAM = "TeamRadio.jsonStream";
+    private static final String DRIVER_LIST = "DriverList.json";
+    private static final String TIMING_DATA_F1 = "TimingDataF1.json";
+    private static final String CHAMPIONSHIP_PREDICTION = "ChampionshipPrediction.json";
+    private static final String RACE_CONTROL_MESSAGES = "RaceControlMessages.json";
+    private static final String TIMING_STATS = "TimingStats.json";
     private static final String WIKIPEDIA_IMAGES_URL_1 = "https://en.wikipedia.org/w/api.php?action=query&prop=pageimages&piprop=original&format=json&redirects&titles={title}";
     private static final String WIKIPEDIA_IMAGES_URL_2 = "https://en.wikipedia.org/w/api.php?action=query&prop=pageimages&piprop=thumbnail&pithumbsize=2000&format=json&redirects&titles={title}";
     private static final String SESSION_INFO_URL = "https://livetiming.formula1.com/static/SessionInfo.json";
-
-    private String temporaryUrl;
     private final ErgastService ergastService;
     private final AdminService adminService;
     private final ClientService clientService;
     private final MainProperties properties;
-
     private final LiveTimingRadioService liveTimingRadioService;
     private final ObjectMapper mapper = new ObjectMapper();
     RestTemplate restTemplate = new RestTemplate();
+    private String temporaryUrl;
 
     @Override
     public void getAllRaceDataFromErgastTable(String year, Boolean detailed, Boolean deleteOld) {
@@ -60,30 +59,30 @@ public class LiveTimingServiceImpl implements LiveTimingService {
         raceData.forEach(race -> {
             race.setCircuitId(race.getCircuit().getCircuitId());
             race.setImageUrl(getWikipediaOriginalImageUrl(race.getCircuit().getUrl(), race.getCircuit().getCircuitName(), false));
-            String response = getLiveTimingResponseOfErgastRace(race, RoundEnum.RACE, 1);
-            if (response != null) {
-                race.setLiveTimingRace(response.substring(response.indexOf("{")));
-                if (detailed) {
-                    response = getLiveTimingResponseOfErgastRace(race, RoundEnum.QUALIFYING, 1);
-                    if (response != null) {
-                        race.setLiveTimingQuali(response.substring(response.indexOf("{")));
-                    }
-                    response = getLiveTimingResponseOfErgastRace(race, RoundEnum.PRACTICE_1, 1);
-                    if (response != null) {
-                        race.setLiveTimingFp1(response.substring(response.indexOf("{")));
-                    }
-                    response = getLiveTimingResponseOfErgastRace(race, RoundEnum.PRACTICE_2, 1);
-                    if (response != null) {
-                        race.setLiveTimingFp2(response.substring(response.indexOf("{")));
-                    }
-                    response = getLiveTimingResponseOfErgastRace(race, RoundEnum.PRACTICE_3, 1);
-                    if (response != null) {
-                        race.setLiveTimingFp3(response.substring(response.indexOf("{")));
-                    }
-
-                }
-
-            }
+//            String response = getLiveTimingResponseOfErgastRace(race, RoundEnum.RACE, 1);
+//            if (response != null) {
+//                race.setLiveTimingRace(response.substring(response.indexOf("{")));
+//                if (detailed) {
+//                    response = getLiveTimingResponseOfErgastRace(race, RoundEnum.QUALIFYING, 1);
+//                    if (response != null) {
+//                        race.setLiveTimingQuali(response.substring(response.indexOf("{")));
+//                    }
+//                    response = getLiveTimingResponseOfErgastRace(race, RoundEnum.PRACTICE_1, 1);
+//                    if (response != null) {
+//                        race.setLiveTimingFp1(response.substring(response.indexOf("{")));
+//                    }
+//                    response = getLiveTimingResponseOfErgastRace(race, RoundEnum.PRACTICE_2, 1);
+//                    if (response != null) {
+//                        race.setLiveTimingFp2(response.substring(response.indexOf("{")));
+//                    }
+//                    response = getLiveTimingResponseOfErgastRace(race, RoundEnum.PRACTICE_3, 1);
+//                    if (response != null) {
+//                        race.setLiveTimingFp3(response.substring(response.indexOf("{")));
+//                    }
+//
+//                }
+//
+//            }
         });
         if (deleteOld) {
             ergastService.deleteRaces(year);
@@ -152,22 +151,9 @@ public class LiveTimingServiceImpl implements LiveTimingService {
     }
 
 
-    private String getLiveTimingResponseOfErgastRace(RaceData raceData, RoundEnum round, Integer liveTimingEndpoint) {
+    private String getLiveTimingResponseOfErgastRace(RaceData raceData, RoundEnum round, String liveTimingEndpoint) {
         String response;
-        String url;
-        switch (liveTimingEndpoint) {
-            case 1:
-                url = LIVE_TIMING_URL_BASE +  SPFEED_JSON;
-                break;
-            case 2:
-                url = LIVE_TIMING_URL_BASE + TIMING_APP_DATA_STREAM;
-                break;
-            case 3:
-                url = LIVE_TIMING_URL_BASE + TEAM_RADIO_STREAM;
-                break;
-            default:
-                throw new IllegalStateException("Unexpected value: " + liveTimingEndpoint);
-        }
+        String url = LIVE_TIMING_URL_BASE + liveTimingEndpoint;
         String grandPrixName = raceData.getRaceName().replaceAll(" ", "_");
         String grandPrix = raceData.getDate() + "_" + grandPrixName;
         String raceName = null;
@@ -202,12 +188,12 @@ public class LiveTimingServiceImpl implements LiveTimingService {
                 raceName = date + "_Sprint";
                 break;
         }
-        log.info("https://livetiming.formula1.com/static/" + raceData.getSeason() + "/" + grandPrix + "/" + raceName + "/SPFeed.json");
+        log.info(url);
         try {
             response = restTemplate
                     .getForObject(url, String.class, raceData.getSeason(), grandPrix, raceName);
             temporaryUrl = "https://livetiming.formula1.com/static/" + raceData.getSeason() + "/" + grandPrix + "/" + raceName + "/";
-        return response;
+            return response;
         } catch (Exception e) {
             Logger.log("getLiveTimingResponseOfErgastRace1 " + grandPrix, e.getMessage());
             if (round.equals(RoundEnum.PRACTICE_2)) {
@@ -252,22 +238,24 @@ public class LiveTimingServiceImpl implements LiveTimingService {
 
     private Integer getNextRefreshTime(Integer seconds) {
         Boolean isGenerating = checkIfEventIsGenerating();
-        if(isGenerating){
+        if (isGenerating) {
             //600 sekundi = 10 minuta
             return 600;
         } else {
             return adminService.getNextRefreshTimeUsingCalendar(seconds);
         }
     }
+
     private void analyzeRaceData(RaceData raceData, Boolean updateStatistics) {
         if (raceData != null) {
-            String liveTimingResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.RACE, 1);
-            if (liveTimingResponse != null) {
-                raceData.setLiveTimingRace(liveTimingResponse.substring(liveTimingResponse.indexOf("{")));
+            String driverListResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.RACE, DRIVER_LIST);
+            String timingDataF1Response = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.RACE, TIMING_DATA_F1);
+            if (timingDataF1Response != null) {
+                raceData.setLiveTimingRace(timingDataF1Response.substring(timingDataF1Response.indexOf("{")));
                 ergastService.saveRace(raceData);
-                RaceAnalysis analysis = fetchNewRaceAnalysis(raceData.getCircuit().getCircuitId(), updateStatistics);
+                RaceAnalysis analysis = fetchNewRaceAnalysis(driverListResponse, timingDataF1Response, raceData.getCircuit().getCircuitId(), updateStatistics);
                 adminService.updateOverlays(analysis);
-                clientService.setNavbarData();
+                //   clientService.setNavbarData();
                 analyzeUpcomingRace(false);
                 Scheduler.analysisDone = true;
             }
@@ -304,7 +292,7 @@ public class LiveTimingServiceImpl implements LiveTimingService {
     @Override
     public String validateLatestRaceAnalysis() {
         RaceData raceData = ergastService.getLatestAnalyzedRace();
-        String response = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.RACE, 1);
+        String response = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.RACE, "TODO");
         if (response != null) {
             String newLiveTiming = response.substring(response.indexOf("{"));
             String oldLiveTiming = raceData.getLiveTimingRace();
@@ -352,31 +340,6 @@ public class LiveTimingServiceImpl implements LiveTimingService {
         return response;
     }
 
-    @Override
-    public Boolean setLatestTreeMap(Boolean ergastStandingsUpdated) {
-        Map<String, DriverStanding> standingsMap = clientService.getDriverStandings().stream()
-                .collect(Collectors.toMap(DriverStanding::getCode, Function.identity()));
-        RaceData raceData = ergastService.getLatestAnalyzedRace();
-        RaceAnalysis analysis = raceData.getRaceAnalysis();
-        Integer round = raceData.getRound();
-        analysis.getDriverData().forEach(driver -> {
-            if (standingsMap.containsKey(driver.getInitials())) {
-                BigDecimal averagePoints = standingsMap.get(driver.getInitials()).getPoints().divide(new BigDecimal(round));
-                averagePoints = averagePoints.setScale(2, RoundingMode.HALF_UP);
-                driver.setStandingsNewAveragePoints(averagePoints);
-                Integer positionPoints = MainUtility.getPointsFromPosition(driver.getPosition());
-                if (driver.getFastestLapPosition() == 1 && driver.getPosition() < 11) {
-                    positionPoints++;
-                }
-                driver.setPoints(positionPoints);
-                BigDecimal standingsAverageDifference = new BigDecimal(positionPoints).subtract(averagePoints);
-                driver.setStandingsAverageDifference(standingsAverageDifference);
-            }
-        });
-        raceData.setRaceAnalysis(analysis);
-        ergastService.saveRace(raceData);
-        return true;
-    }
 
     @Override
     public RaceData backupRaceData(Integer id) {
@@ -405,37 +368,37 @@ public class LiveTimingServiceImpl implements LiveTimingService {
     public Boolean upcomingRacesAnalysisInitialLoad(String season) {
         Integer howManySeasonsBack = properties.getHowManySeasonsBack();
         List<RaceData> races = ergastService.findRacesBySeason(season);
-        if(!races.isEmpty()){
-        Map<String, UpcomingRaceAnalysis> upcomingRaceAnalysisMapByCircuitId =
-                races.stream()
-                        .collect(Collectors.toMap(
-                                RaceData::getCircuitId,
-                                UpcomingRaceAnalysis::new,
-                                (circuitId1, circuitId2) -> {
-                                    System.out.println("duplicate circuitId found: " + circuitId1);
-                                    return circuitId1;
-                                }
-                        ));
-        ErgastResponse response;
-        for (int i = 0; i <= howManySeasonsBack; i++) {
-            Integer round = 1;
-            do {
-                response = ergastService.getResultsByRound(properties.getCurrentSeasonPast() - i, round);
+        if (!races.isEmpty()) {
+            Map<String, UpcomingRaceAnalysis> upcomingRaceAnalysisMapByCircuitId =
+                    races.stream()
+                            .collect(Collectors.toMap(
+                                    RaceData::getCircuitId,
+                                    UpcomingRaceAnalysis::new,
+                                    (circuitId1, circuitId2) -> {
+                                        System.out.println("duplicate circuitId found: " + circuitId1);
+                                        return circuitId1;
+                                    }
+                            ));
+            ErgastResponse response;
+            for (int i = 0; i <= howManySeasonsBack; i++) {
+                Integer round = 1;
+                do {
+                    response = ergastService.getResultsByRound(properties.getCurrentSeasonPast() - i, round);
 
-                if ((!response.getMrData().getRaceTable().getRaces().isEmpty())) {
-                    String circuitId = response.getMrData().getRaceTable().getRaces().get(0).getCircuit().getCircuitId();
-                    if (upcomingRaceAnalysisMapByCircuitId.containsKey(circuitId)) {
-                        upcomingRaceAnalysisMapByCircuitId.get(circuitId).getBasicRaces().add(new BasicRaceData(response.getMrData().getRaceTable().getRaces().get(0)));
+                    if ((!response.getMrData().getRaceTable().getRaces().isEmpty())) {
+                        String circuitId = response.getMrData().getRaceTable().getRaces().get(0).getCircuit().getCircuitId();
+                        if (upcomingRaceAnalysisMapByCircuitId.containsKey(circuitId)) {
+                            upcomingRaceAnalysisMapByCircuitId.get(circuitId).getBasicRaces().add(new BasicRaceData(response.getMrData().getRaceTable().getRaces().get(0)));
+                        }
                     }
-                }
-                round++;
+                    round++;
 
-            } while (!response.getMrData().getRaceTable().getRaces().isEmpty());
-        }
-        races.forEach(race -> {
-            race.setUpcomingRaceAnalysis(upcomingRaceAnalysisMapByCircuitId.get(race.getCircuitId()));
-        });
-        ergastService.saveRaces(races);
+                } while (!response.getMrData().getRaceTable().getRaces().isEmpty());
+            }
+            races.forEach(race -> {
+                race.setUpcomingRaceAnalysis(upcomingRaceAnalysisMapByCircuitId.get(race.getCircuitId()));
+            });
+            ergastService.saveRaces(races);
         }
         return true;
     }
@@ -448,92 +411,98 @@ public class LiveTimingServiceImpl implements LiveTimingService {
         RaceData raceData = ergastService.getLatestNonAnalyzedRace(properties.getCurrentSeasonFuture());
         if (raceData != null) {
             if (raceData.getLiveTimingFp1() == null || redo) {
-                String liveTimingResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.PRACTICE_1, 1);
-                if (liveTimingResponse != null) {
-                    raceData.setLiveTimingFp1(liveTimingResponse.substring(liveTimingResponse.indexOf("{")));
-                    List<Driver> drivers = createDriverListOfEvent(liveTimingResponse.substring(liveTimingResponse.indexOf("{")));
+                String driverListResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.PRACTICE_1, DRIVER_LIST);
+                String timingDataF1Response = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.PRACTICE_1, TIMING_DATA_F1);
+                if (timingDataF1Response != null) {
+                    raceData.setLiveTimingFp1(timingDataF1Response.substring(timingDataF1Response.indexOf("{")));
+                    List<Driver> drivers = createDriverList(driverListResponse.substring(driverListResponse.indexOf("{")), timingDataF1Response.substring(timingDataF1Response.indexOf("{")));
                     raceData.getUpcomingRaceAnalysis().setFp1(drivers);
-                    String timingAppDataResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.PRACTICE_1, 2);
+                    String timingAppDataResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.PRACTICE_1, TIMING_APP_DATA_STREAM);
                     Map<String, String> driverMap = drivers.stream()
                             .collect(Collectors.toMap(Driver::getNum, Driver::getFullName));
                     raceData.getUpcomingRaceAnalysis().setFp1Laps(createLapTimeDataList(timingAppDataResponse, driverMap, "Practice 1"));
-                    String radioDataResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.PRACTICE_1, 3);
+                    String radioDataResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.PRACTICE_1, TEAM_RADIO_STREAM);
                     raceData.getUpcomingRaceAnalysis().setFp1LivetimingUrl(temporaryUrl);
                     liveTimingRadioService.enrichUpcomingRaceAnalysisWithRadioData(raceData.getUpcomingRaceAnalysis(), radioDataResponse, RoundEnum.PRACTICE_1);
 
                 }
             }
             if (raceData.getLiveTimingFp2() == null || redo) {
-                String liveTimingResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.PRACTICE_2, 1);
-                if (liveTimingResponse != null) {
-                    raceData.setLiveTimingFp2(liveTimingResponse.substring(liveTimingResponse.indexOf("{")));
-                    List<Driver> drivers = createDriverListOfEvent(liveTimingResponse.substring(liveTimingResponse.indexOf("{")));
+                String driverListResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.PRACTICE_2, DRIVER_LIST);
+                String timingDataF1Response = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.PRACTICE_2, TIMING_DATA_F1);
+                if (timingDataF1Response != null) {
+                    raceData.setLiveTimingFp2(timingDataF1Response.substring(timingDataF1Response.indexOf("{")));
+                    List<Driver> drivers = createDriverList(driverListResponse.substring(driverListResponse.indexOf("{")), timingDataF1Response.substring(timingDataF1Response.indexOf("{")));
                     raceData.getUpcomingRaceAnalysis().setFp2(drivers);
-                    String timingAppDataResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.PRACTICE_2, 2);
+                    String timingAppDataResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.PRACTICE_2, TIMING_APP_DATA_STREAM);
                     Map<String, String> driverMap = drivers.stream()
                             .collect(Collectors.toMap(Driver::getNum, Driver::getFullName));
                     raceData.getUpcomingRaceAnalysis().setFp2Laps(createLapTimeDataList(timingAppDataResponse, driverMap, "Practice 2"));
-                    String radioDataResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.PRACTICE_2, 3);
+                    String radioDataResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.PRACTICE_2, TEAM_RADIO_STREAM);
                     raceData.getUpcomingRaceAnalysis().setFp2LivetimingUrl(temporaryUrl);
                     liveTimingRadioService.enrichUpcomingRaceAnalysisWithRadioData(raceData.getUpcomingRaceAnalysis(), radioDataResponse, RoundEnum.PRACTICE_2);
                 }
             }
             if (raceData.getLiveTimingFp3() == null || redo) {
-                String liveTimingResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.PRACTICE_3, 1);
-                if (liveTimingResponse != null) {
-                    raceData.setLiveTimingFp3(liveTimingResponse.substring(liveTimingResponse.indexOf("{")));
-                    List<Driver> drivers = createDriverListOfEvent(liveTimingResponse.substring(liveTimingResponse.indexOf("{")));
+                String driverListResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.PRACTICE_3, DRIVER_LIST);
+                String timingDataF1Response = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.PRACTICE_3, TIMING_DATA_F1);
+                if (timingDataF1Response != null) {
+                    raceData.setLiveTimingFp3(timingDataF1Response.substring(timingDataF1Response.indexOf("{")));
+                    List<Driver> drivers = createDriverList(driverListResponse.substring(driverListResponse.indexOf("{")), timingDataF1Response.substring(timingDataF1Response.indexOf("{")));
                     raceData.getUpcomingRaceAnalysis().setFp3(drivers);
-                    String timingAppDataResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.PRACTICE_3, 2);
+                    String timingAppDataResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.PRACTICE_3, TIMING_APP_DATA_STREAM);
                     Map<String, String> driverMap = drivers.stream()
                             .collect(Collectors.toMap(Driver::getNum, Driver::getFullName));
                     raceData.getUpcomingRaceAnalysis().setFp3Laps(createLapTimeDataList(timingAppDataResponse, driverMap, "Practice 3"));
-                    String radioDataResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.PRACTICE_3, 3);
+                    String radioDataResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.PRACTICE_3, TEAM_RADIO_STREAM);
                     raceData.getUpcomingRaceAnalysis().setFp3LivetimingUrl(temporaryUrl);
                     liveTimingRadioService.enrichUpcomingRaceAnalysisWithRadioData(raceData.getUpcomingRaceAnalysis(), radioDataResponse, RoundEnum.PRACTICE_3);
 
                 }
             }
             if (raceData.getLiveTimingQuali() == null || redo) {
-                String liveTimingResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.QUALIFYING, 1);
-                if (liveTimingResponse != null) {
-                    raceData.setLiveTimingQuali(liveTimingResponse.substring(liveTimingResponse.indexOf("{")));
-                    List<Driver> drivers = createDriverListOfEvent(liveTimingResponse.substring(liveTimingResponse.indexOf("{")));
+                String driverListResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.QUALIFYING, DRIVER_LIST);
+                String timingDataF1Response = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.QUALIFYING, TIMING_DATA_F1);
+                if (timingDataF1Response != null) {
+                    raceData.setLiveTimingQuali(timingDataF1Response.substring(timingDataF1Response.indexOf("{")));
+                    List<Driver> drivers = createDriverList(driverListResponse.substring(driverListResponse.indexOf("{")), timingDataF1Response.substring(timingDataF1Response.indexOf("{")));
                     raceData.getUpcomingRaceAnalysis().setQuali(drivers);
-                    String timingAppDataResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.QUALIFYING, 2);
+                    String timingAppDataResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.QUALIFYING, TIMING_APP_DATA_STREAM);
                     Map<String, String> driverMap = drivers.stream()
                             .collect(Collectors.toMap(Driver::getNum, Driver::getFullName));
                     raceData.getUpcomingRaceAnalysis().setQualiLaps(createLapTimeDataList(timingAppDataResponse, driverMap, "Qualifying"));
-                    String radioDataResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.QUALIFYING, 3);
+                    String radioDataResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.QUALIFYING, TEAM_RADIO_STREAM);
                     raceData.getUpcomingRaceAnalysis().setQualiLivetimingUrl(temporaryUrl);
                     liveTimingRadioService.enrichUpcomingRaceAnalysisWithRadioData(raceData.getUpcomingRaceAnalysis(), radioDataResponse, RoundEnum.QUALIFYING);
                 }
             }
             if (raceData.getLiveTimingSprintQuali() == null || redo) {
-                String liveTimingResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.SPRINT_SHOOTOUT, 1);
-                if (liveTimingResponse != null) {
-                    raceData.setLiveTimingSprintQuali(liveTimingResponse.substring(liveTimingResponse.indexOf("{")));
-                    List<Driver> drivers = createDriverListOfEvent(liveTimingResponse.substring(liveTimingResponse.indexOf("{")));
+                String driverListResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.SPRINT_SHOOTOUT, DRIVER_LIST);
+                String timingDataF1Response = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.SPRINT_SHOOTOUT, TIMING_DATA_F1);
+                if (timingDataF1Response != null) {
+                    raceData.setLiveTimingSprintQuali(timingDataF1Response.substring(timingDataF1Response.indexOf("{")));
+                    List<Driver> drivers = createDriverList(driverListResponse.substring(driverListResponse.indexOf("{")), timingDataF1Response.substring(timingDataF1Response.indexOf("{")));
                     raceData.getUpcomingRaceAnalysis().setSprintQuali(drivers);
-                    String timingAppDataResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.SPRINT_SHOOTOUT, 2);
+                    String timingAppDataResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.SPRINT_SHOOTOUT, TIMING_APP_DATA_STREAM);
                     Map<String, String> driverMap = drivers.stream()
                             .collect(Collectors.toMap(Driver::getNum, Driver::getFullName));
                     raceData.getUpcomingRaceAnalysis().setSprintQualiLaps(createLapTimeDataList(timingAppDataResponse, driverMap, "Sprint Shootout"));
-                    String radioDataResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.SPRINT_SHOOTOUT, 3);
+                    String radioDataResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.SPRINT_SHOOTOUT, TEAM_RADIO_STREAM);
                     raceData.getUpcomingRaceAnalysis().setSprintQualiLivetimingUrl(temporaryUrl);
                     liveTimingRadioService.enrichUpcomingRaceAnalysisWithRadioData(raceData.getUpcomingRaceAnalysis(), radioDataResponse, RoundEnum.SPRINT_SHOOTOUT);
                 }
                 if (raceData.getLiveTimingFp3() == null) {
-                    liveTimingResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.SPRINT, 1);
-                    if (liveTimingResponse != null) {
-                        raceData.setLiveTimingFp3(liveTimingResponse.substring(liveTimingResponse.indexOf("{")));
-                        List<Driver> drivers = analyzeSprintRace(liveTimingResponse.substring(liveTimingResponse.indexOf("{")));
+                    String driverListResponse2 = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.SPRINT, DRIVER_LIST);
+                    String timingDataF1Response2 = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.SPRINT, TIMING_DATA_F1);
+                    if (timingDataF1Response2 != null) {
+                        raceData.setLiveTimingFp3(timingDataF1Response2.substring(timingDataF1Response2.indexOf("{")));
+                        List<Driver> drivers = createDriverList(driverListResponse.substring(driverListResponse.indexOf("{")), timingDataF1Response.substring(timingDataF1Response.indexOf("{")));
                         raceData.getUpcomingRaceAnalysis().setSprint(drivers);
-                        String timingAppDataResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.SPRINT, 2);
+                        String timingAppDataResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.SPRINT, TIMING_APP_DATA_STREAM);
                         Map<String, String> driverMap = drivers.stream()
                                 .collect(Collectors.toMap(Driver::getNum, Driver::getFullName));
                         raceData.getUpcomingRaceAnalysis().setSprintLaps(createLapTimeDataList(timingAppDataResponse, driverMap, "Sprint"));
-                        String radioDataResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.SPRINT, 3);
+                        String radioDataResponse = getLiveTimingResponseOfErgastRace(raceData, RoundEnum.SPRINT, TEAM_RADIO_STREAM);
                         raceData.getUpcomingRaceAnalysis().setSprintLivetimingUrl(temporaryUrl);
                         liveTimingRadioService.enrichUpcomingRaceAnalysisWithRadioData(raceData.getUpcomingRaceAnalysis(), radioDataResponse, RoundEnum.SPRINT);
                     }
@@ -605,117 +574,192 @@ public class LiveTimingServiceImpl implements LiveTimingService {
         return true;
     }
 
-    private List<Driver> createDriverListOfEvent(String liveTimingResponse) {
-        List<Driver> driversResponse = null;
+    private List<Driver> createDriverList(String driverList, String timingDataF1) {
+        List<Driver> driversResponse = new ArrayList<>();
         try {
-            LiveTimingData response = mapper.readValue(liveTimingResponse, LiveTimingData.class);
-            driversResponse = response.getInit().getData().getDrivers();
-            List<LinkedHashMap> freeDr = (List<LinkedHashMap>) response.getFree().data.getDataField("DR");
-            List<LinkedHashMap> bestDr = (List<LinkedHashMap>) response.getBest().data.getDataField("DR");
+            TypeReference<HashMap<String, Driver>> typeRef = new TypeReference<HashMap<String, Driver>>() {
+            };
+            Map<String, Driver> driverListMap = mapper.readValue(driverList, typeRef);
 
-            for (int i = 0; i < driversResponse.size(); i++) {
-                List<String> fData = (List<String>) freeDr.get(i).get("F");
-                driversResponse.get(i).setPosition(Integer.valueOf(fData.get(3)));
-                driversResponse.get(i).setFinalGap(fData.get(4));
-                List<Object> bData = (List<Object>) bestDr.get(i).get("B");
-                driversResponse.get(i).setFastestLap((String) bData.get(1));
-                driversResponse.get(i).setFastestLapNumber((Integer) bData.get(2));
-                driversResponse.get(i).setFastestLapPosition((Integer) bData.get(3));
-                driversResponse.get(i).setFastestLapSector1((String) bData.get(4));
-                driversResponse.get(i).setFastestLapPositionSector1((Integer) bData.get(6));
-                driversResponse.get(i).setFastestLapSector2((String) bData.get(7));
-                driversResponse.get(i).setFastestLapPositionSector2((Integer) bData.get(9));
-                driversResponse.get(i).setFastestLapSector3((String) bData.get(10));
-                driversResponse.get(i).setFastestLapPositionSector3((Integer) bData.get(12));
-            }
-        } catch (JsonProcessingException e) {
-            Logger.log("createBasicEventData failed", e.getMessage());
+            TimingDataF1Root root = mapper.readValue(timingDataF1, TimingDataF1Root.class);
+            root.getLines().forEach((k, v) -> {
+                driverListMap.get(k).setTimingDataF1(v);
+                driverListMap.get(k).setPosition(Integer.valueOf(driverListMap.get(k).getTimingDataF1().getPosition()));
+                driversResponse.add(driverListMap.get(k));
+            });
+        } catch (Exception e) {
+            log.error("createLapTimeDataList JsonProcessingException", e);
+            e.printStackTrace();
         }
         driversResponse.sort(Comparator.comparing(Driver::getPosition));
         return driversResponse;
     }
 
-
-    public RaceAnalysis fetchNewRaceAnalysis(String circuitId, Boolean updateStatistics) {
-        List<RaceData> raceData = ergastService.findByCircuitIdOrderBySeasonDesc(circuitId);
-        if (raceData.get(0).getLiveTimingRace() == null) {
-            raceData.remove(0);
+    private List<Driver> createDriverListWithTyres(String driverList, String timingDataF1, String timingAppData) {
+        List<Driver> driversResponse = createDriverList(driverList, timingDataF1);
+        try {
+            TimingAppData root = mapper.readValue(timingDataF1, TimingAppData.class);
+            root.getLines().forEach((k,v)->{
+                Optional<Driver> optional = driversResponse.stream().filter(entry -> Objects.equals(k, entry.getNum())).findFirst();
+                optional.ifPresent(driver -> driver.getLapByLapData().setTyres(v.getStints()));
+            });
+            return driversResponse;
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException(e);
         }
-        List<FrontendGraphWeatherData> weatherChartData = new ArrayList<>();
-        AtomicReference<Boolean> onlyFirstOne = new AtomicReference<>(true);
-        AtomicReference<Boolean> ergastDataAvailable = new AtomicReference<>(false);
-        AtomicReference<List<Driver>> drivers = new AtomicReference<>();
-        AtomicReference<String> title = new AtomicReference<>();
-        AtomicReference<List<RadioData>> radioData = new AtomicReference<>();
-
-        raceData.forEach(race -> {
-            try {
-                LiveTimingData response = mapper.readValue(race.getLiveTimingRace(), LiveTimingData.class);
-                FrontendGraphWeatherData weatherRow = new FrontendGraphWeatherData(response.getWeather().getGraph().getData(), race.getSeason() + " (round " + race.getRound() + ")");
-                weatherChartData.add(weatherRow);
-                if (onlyFirstOne.get()) {
-                    List<Driver> driversResponse = response.getInit().getData().getDrivers();
-                    for (int i = 0; i < driversResponse.size(); i++) {
-                        driversResponse.get(i).setStartingPosition(i + 1);
-                    }
-                    Map<String, Driver> driversMap = driversResponse.stream()
-                            .collect(Collectors.toMap(Driver::getInitials, Function.identity(), (o1, o2) -> o1, TreeMap::new));
-                    List<String> driverCodes = MainUtility.extractDriverCodes(driversResponse);
-
-                    // title.set((String) response.getFree().data.getDataField("R"));
-                    title.set(race.getRaceName());
-
-                    enrichDriversWithScoringData(driversMap, response.getScores().getGraph());
-                    enrichDriversWithFreeData(driversMap, response.getFree().data);
-                    enrichDriversWithBestData(driversMap, response.getBest().data, driverCodes);
-                    enrichDriversWithLapByLapData(driversMap, response.getLapPos().getGraph(), response.getXtra().data, driverCodes);
-
-                    updateStandingsAndEnrichTreeMapData(driversMap, race.getRound());
-
-                    Map<String, String> ergastCodes = mapErgastWithLiveTiming(driversMap);
-                    Boolean bool;
-                    try{
-                        bool = enrichDriversWithErgast(driversMap, ergastCodes, race.getSeason(), race.getRound());
-                    } catch (Exception e){
-                        bool = false;
-                    }
-                    if (bool) {
-                        adminService.initializeStandings(updateStatistics);
-                    }
-                    ergastDataAvailable.set(bool);
-                    onlyFirstOne.set(false);
-                    drivers.set(new ArrayList<>(driversMap.values()));
-
-                    String radioDataResponse = getLiveTimingResponseOfErgastRace(race, RoundEnum.RACE, 3);
-                    radioData.set(liveTimingRadioService.enrichRaceAnalysisWithRadioData(drivers.get(), radioDataResponse));
-
-                }
-            } catch (Exception e) {
-                log.error("fetchNewRaceAnalysis error", e);
-                e.printStackTrace();
-            }
-        });
-
-        RaceAnalysis analysis = RaceAnalysis.builder()
-                .weatherChartData(weatherChartData)
-                .driverData(drivers.get())
-                .livetimingUrl(temporaryUrl)
-                .year(properties.getCurrentSeasonFuture())
-                .radioData(radioData.get())
-                .status(1)
-                .title(title.get()).build();
-        RaceData latestRace = raceData.get(0);
-        latestRace.setRaceAnalysis(analysis);
-        if (!ergastDataAvailable.get()) {
-            latestRace.setLiveTimingRace(null);
-            analysis.setStatus(2);
-        }
-        latestRace.setRaceAnalysis(analysis);
-        ergastService.saveRace(latestRace);
-        log.info("raceAnalysis done");
-        return analysis;
     }
 
+    public RaceAnalysis fetchNewRaceAnalysis(String driverListResponse, String timingDataF1Response, String circuitId, Boolean updateStatistics) {
+        RaceData race = ergastService.findByCircuitIdOrderBySeasonDesc(circuitId);
+        String timingAppData = getLiveTimingResponseOfErgastRace(race, RoundEnum.RACE, TIMING_APP_DATA);
+
+        List<Driver> driversResponse = createDriverListWithTyres(driverListResponse.substring(driverListResponse.indexOf("{")),
+                timingDataF1Response.substring(timingDataF1Response.indexOf("{")), timingAppData.substring(timingAppData.indexOf("{")));
+        Map<String, Driver> driversMap = driversResponse.stream()
+                .collect(Collectors.toMap(Driver::getInitials, Function.identity(), (o1, o2) -> o1, TreeMap::new));
+
+        String title = race.getRaceName();
+        Map<String, String> ergastCodes = mapErgastWithLiveTiming(driversMap);
+        Boolean bool;
+        try {
+            bool = enrichDriversWithErgast(driversMap, ergastCodes, race.getSeason(), race.getRound());
+            if (bool) {
+                adminService.initializeStandings(updateStatistics);
+            }
+            Boolean ergastDataAvailable = bool;
+            List<Driver> drivers = new ArrayList<>(driversMap.values());
+
+            String radioDataResponse = getLiveTimingResponseOfErgastRace(race, RoundEnum.RACE, TEAM_RADIO_STREAM);
+            List<RadioData> radioData = liveTimingRadioService.enrichRaceAnalysisWithRadioData(drivers, radioDataResponse);
+
+            String championshipPredictionString = getLiveTimingResponseOfErgastRace(race, RoundEnum.RACE, CHAMPIONSHIP_PREDICTION);
+            List<List<ChampionshipPrediction>> championshipPredictions = getChampionshipPrediction(drivers, championshipPredictionString.substring(championshipPredictionString.indexOf("{")));
+
+            String raceControlMessagesString = getLiveTimingResponseOfErgastRace(race, RoundEnum.RACE, RACE_CONTROL_MESSAGES);
+            List<RaceControlMessage> raceControlMessages = getRaceControlMessages(drivers, raceControlMessagesString.substring(raceControlMessagesString.indexOf("{")));
+
+            String timingStatsString = getLiveTimingResponseOfErgastRace(race, RoundEnum.RACE, TIMING_STATS);
+            List<TimingStat> timingStats = getTimingStats(drivers, timingStatsString.substring(timingStatsString.indexOf("{")));
+            List<String> bestSpeedKeys = new ArrayList<>(timingStats.get(0).bestSpeeds.keySet());
+
+            String lapSeriesString = getLiveTimingResponseOfErgastRace(race, RoundEnum.RACE, "LapSeries.jsonStream");
+            List<LapSeries> lapSeries= getLapSeries(drivers, lapSeriesString.substring(lapSeriesString.indexOf("{")));
+            drivers.sort(Comparator.comparing(Driver::getPosition));
+
+            RaceAnalysis analysis = RaceAnalysis.builder()
+                    .driverData(drivers)
+                    .livetimingUrl(temporaryUrl)
+                    .year(properties.getCurrentSeasonFuture())
+                    .radioData(radioData)
+                    .driversChampionshipPrediction(championshipPredictions.get(0))
+                    .teamsChampionshipPrediction(championshipPredictions.get(1))
+                    .lapSeries(lapSeries)
+                    .raceControlMessages(raceControlMessages)
+                    .timingStats(timingStats)
+                    .bestSpeedKeys(bestSpeedKeys)
+                    .status(1)
+                    .title(title).build();
+            race.setRaceAnalysis(analysis);
+            if (!ergastDataAvailable) {
+                race.setLiveTimingRace(null);
+                analysis.setStatus(2);
+            }
+            race.setRaceAnalysis(analysis);
+            ergastService.saveRace(race);
+            log.info("raceAnalysis done");
+            return analysis;
+        } catch (Exception e) {
+            log.error("fetchNewRaceAnalysis error", e);
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    private List<RaceControlMessage> getRaceControlMessages(List<Driver> drivers, String input) {
+
+        try {
+            RaceControlMessageRoot root = mapper.readValue(input, RaceControlMessageRoot.class);
+            root.getMessages().forEach(message->{
+                if(message.getRacingNumber()!=null){
+                Optional<Driver> optional = drivers.stream().filter(entry -> message.getRacingNumber().equals(entry.getNum())).findFirst();
+                    optional.ifPresent(driver -> message.setName(driver.getLastName()));
+            }
+            });
+            return root.getMessages();
+        } catch (JsonProcessingException e) {
+            log.error("createLapTimeDataList JsonProcessingException", e);
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    private List<LapSeries> getLapSeries(List<Driver> driversList, String input) {
+        try {
+            List<LapSeries> response = new ArrayList<>();
+        TypeReference<HashMap<String, LapSeries>> typeRef = new TypeReference<HashMap<String, LapSeries>>() {
+        };
+        Map<String, LapSeries> lapSeriesMap = mapper.readValue(input, typeRef);
+
+        lapSeriesMap.forEach((k, v) -> {
+            Optional<Driver> optional = driversList.stream().filter(entry -> k.equals(entry.getNum())).findFirst();
+            if (optional.isPresent()) {
+                v.setName(optional.get().getLastName());
+                response.add(v);
+            }
+        });
+        return response;
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private List<List<ChampionshipPrediction>> getChampionshipPrediction(List<Driver> driversList, String input) {
+        try {
+            List<List<ChampionshipPrediction>> response = new ArrayList<>();
+            ChampionshipPredictionRoot root = mapper.readValue(input, ChampionshipPredictionRoot.class);
+            List<ChampionshipPrediction> drivers = new ArrayList<>();
+            List<ChampionshipPrediction> teams = new ArrayList<>();
+            root.getDrivers().forEach((k, v) -> {
+                if (!Objects.equals(k, "")) {
+                    Optional<Driver> optional = driversList.stream().filter(entry -> k.equals(entry.getNum())).findFirst();
+                    if (optional.isPresent()) {
+                        v.setName(optional.get().getLastName());
+                        drivers.add(v);
+                    }
+                }
+            });
+            root.getTeams().forEach((k, v) -> {
+                if (!Objects.equals(k, "")) {
+                    teams.add(v);
+                }
+            });
+            drivers.sort(Comparator.comparing(ChampionshipPrediction::getPredictedPosition));
+            teams.sort(Comparator.comparing(ChampionshipPrediction::getPredictedPosition));
+            response.add(drivers);
+            response.add(teams);
+            return response;
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private List<TimingStat> getTimingStats(List<Driver> driversList, String input) {
+        try {
+            TimingStats root = mapper.readValue(input, TimingStats.class);
+            List<TimingStat> response = new ArrayList<>();
+            root.getLines().forEach((k, v) -> {
+                    Optional<Driver> optional = driversList.stream().filter(entry -> k.equals(entry.getNum())).findFirst();
+                    if (optional.isPresent()) {
+                        v.setName(optional.get().getLastName());
+                        response.add(v);
+                    }
+            });
+            response.sort(Comparator.comparing(n -> n.getPersonalBestLapTime().getPosition(), Comparator.nullsLast(Comparator.naturalOrder())));
+            return response;
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException(e);
+        }
+    }
     private Map<String, String> mapErgastWithLiveTiming(Map<String, Driver> driversMap) {
         Map<String, String> ergastCodes = ergastService.connectDriverCodesWithErgastCodes();
         Boolean missingDriver = addErgastCodesToDrivers(driversMap, ergastCodes);
@@ -740,63 +784,6 @@ public class LiveTimingServiceImpl implements LiveTimingService {
             }
         });
         return driverMissing.get();
-    }
-
-    private void updateStandingsAndEnrichTreeMapData(Map<String, Driver> driversMap, Integer newRound) {
-
-        List<DriverStanding> standings = clientService.getDriverStandings();
-        Map<String, DriverStanding> standingsMap = standings.stream()
-                .collect(Collectors.toMap(DriverStanding::getCode, Function.identity()));
-        Integer oldRound = newRound - 1;
-        if (oldRound != 0) {
-            driversMap.forEach((key, driver) -> {
-                if (standingsMap.containsKey(driver.getInitials())) {
-                    BigDecimal oldAveragePoints = standingsMap.get(driver.getInitials()).getPoints().divide(new BigDecimal(oldRound), 2, RoundingMode.HALF_UP);
-                    oldAveragePoints = oldAveragePoints.setScale(2, RoundingMode.HALF_UP);
-                    Integer positionPoints = MainUtility.getPointsFromPosition(driver.getPosition());
-                    if (driver.getFastestLapPosition() != null && driver.getFastestLapPosition() == 1 && driver.getPosition() < 11) {
-                        positionPoints++;
-                    }
-                    BigDecimal standingsAverageDifference = new BigDecimal(positionPoints).subtract(oldAveragePoints);
-                    driver.setStandingsNewAveragePoints(oldAveragePoints.add(standingsAverageDifference));
-                    driver.setStandingsAverageDifference(standingsAverageDifference);
-                }
-            });
-            adminService.initializeStandingsFromLivetiming(standingsMap, driversMap, newRound);
-        }
-    }
-
-    public List<Driver> analyzeSprintRace(String liveTimingDataResponse) {
-        List<Driver> drivers = new ArrayList<>();
-        String title;
-        try {
-            LiveTimingData response = mapper.readValue(liveTimingDataResponse, LiveTimingData.class);
-            List<Driver> driversResponse = response.getInit().getData().getDrivers();
-            for (int i = 0; i < driversResponse.size(); i++) {
-                driversResponse.get(i).setStartingPosition(i + 1);
-            }
-            Map<String, Driver> driversMap = driversResponse.stream()
-                    .collect(Collectors.toMap(Driver::getInitials, Function.identity(), (o1, o2) -> o1, TreeMap::new));
-            List<String> driverCodes = MainUtility.extractDriverCodes(driversResponse);
-
-            // title.set((String) response.getFree().data.getDataField("R"));
-
-            enrichDriversWithScoringData(driversMap, response.getScores().getGraph());
-            enrichDriversWithFreeData(driversMap, response.getFree().data);
-            enrichDriversWithBestData(driversMap, response.getBest().data, driverCodes);
-            enrichDriversWithLapByLapData(driversMap, response.getLapPos().getGraph(), response.getXtra().data, driverCodes);
-
-
-            //TODO ERGAST SPRINT LAP TIMES URL?
-            //  Map<String, String> ergastCodes = ergastService.connectDriverCodesWithErgastCodes();
-            //enrichDriversWithErgastLapTimes(driversMap, ergastCodes, race.getSeason(), race.getRound());
-            drivers = new ArrayList<>(driversMap.values());
-        } catch (Exception e) {
-            log.error("analyzeSprintRace error", e);
-            e.printStackTrace();
-        }
-        drivers.sort(Comparator.comparing(Driver::getPosition));
-        return drivers;
     }
 
     private Boolean enrichDriversWithErgast(Map<String, Driver> driversMap, Map<String, String> ergastCodes, String season, Integer round) throws JsonProcessingException {
@@ -863,85 +850,6 @@ public class LiveTimingServiceImpl implements LiveTimingService {
         }
     }
 
-    private void enrichDriversWithLapByLapData(Map<String, Driver> driversMap, LapPosGraph lapPos, RawData xtraData, List<String> driverCodes) {
-        Map<String, Object> map = lapPos.data.getDataFields();
-        map.forEach((key, v) -> {
-            List<Integer> laps = (List<Integer>) v;
-            //im deleting odd rows here because theyre lap counters, not positions
-            for (int i = laps.size() - 2; i >= 0; i -= 2) {
-                laps.remove(i);
-            }
-            driversMap.get(key.substring(1)).getLapByLapData().setPositions(laps);
-        });
-        List<LinkedHashMap> dr = (List<LinkedHashMap>) xtraData.getDataField("DR");
-        AtomicInteger driverCounter = new AtomicInteger();
-        dr.forEach(row -> {
-            List<String> xData = (List<String>) row.get("X");
-            List<Integer> tiData = (List<Integer>) row.get("TI");
-            String tyreSequence = xData.get(9);
-            if (tiData != null) {
-                for (int i = 0; i < tiData.size(); i = i + 3) {
-                    driversMap.get(driverCodes.get(driverCounter.get())).getLapByLapData().getTyres()
-                            .add(new Tyre(String.valueOf(tyreSequence.charAt(tyreSequence.length() - 1 - (i / 3))), tiData.get(i + 1)));
-                }
-            }
-            driverCounter.incrementAndGet();
-        });
-    }
-
-    private void enrichDriversWithBestData(Map<String, Driver> driversMap, RawData bestData, List<String> driverCodes) {
-        List<LinkedHashMap> dr = (List<LinkedHashMap>) bestData.getDataField("DR");
-        AtomicReference<Integer> counter = new AtomicReference<>(0);
-        dr.forEach(row -> {
-            List<Object> data = (List<Object>) row.get("B");
-            driversMap.get(driverCodes.get(counter.get())).setFastestLap((String) data.get(1));
-            driversMap.get(driverCodes.get(counter.get())).setFastestLapNumber((Integer) data.get(2));
-            driversMap.get(driverCodes.get(counter.get())).setFastestLapPosition((Integer) data.get(3));
-            driversMap.get(driverCodes.get(counter.get())).setFastestLapSector1((String) data.get(4));
-            driversMap.get(driverCodes.get(counter.get())).setFastestLapPositionSector1((Integer) data.get(6));
-            driversMap.get(driverCodes.get(counter.get())).setFastestLapSector2((String) data.get(7));
-            driversMap.get(driverCodes.get(counter.get())).setFastestLapPositionSector2((Integer) data.get(9));
-            driversMap.get(driverCodes.get(counter.get())).setFastestLapSector3((String) data.get(10));
-            driversMap.get(driverCodes.get(counter.get())).setFastestLapPositionSector3((Integer) data.get(12));
-            counter.set(counter.get() + 1);
-        });
-    }
-
-    private void enrichDriversWithFreeData(Map<String, Driver> driversMap, RawData freeData) {
-        List<LinkedHashMap> dr = (List<LinkedHashMap>) freeData.getDataField("DR");
-        dr.forEach(row -> {
-            List<String> data = (List<String>) row.get("F");
-            driversMap.get(data.get(0)).setPosition(Integer.valueOf(data.get(3)));
-            driversMap.get(data.get(0)).setFinalGap(data.get(4));
-        });
-    }
-
-    public void enrichDriversWithScoringData(Map<String, Driver> driversMap, ScoresGraph scoresGraph) {
-        scoresGraph.steering.getDataFields().forEach((key, value) -> {
-            List<Integer> list = (List<Integer>) value;
-            driversMap.get(key.substring(1)).setSteering(list.get(1));
-        });
-        scoresGraph.gforceLat.getDataFields().forEach((key, value) -> {
-            List<Integer> list = (List<Integer>) value;
-            driversMap.get(key.substring(1)).setGforceLat(list.get(1));
-        });
-        scoresGraph.gforceLong.getDataFields().forEach((key, value) -> {
-            List<Integer> list = (List<Integer>) value;
-            driversMap.get(key.substring(1)).setGforceLong(list.get(1));
-        });
-        scoresGraph.brake.getDataFields().forEach((key, value) -> {
-            List<Integer> list = (List<Integer>) value;
-            driversMap.get(key.substring(1)).setBrake(list.get(1));
-        });
-        scoresGraph.performance.getDataFields().forEach((key, value) -> {
-            List<Integer> list = (List<Integer>) value;
-            driversMap.get(key.substring(1)).setPerformance(list.get(1));
-        });
-        scoresGraph.throttle.getDataFields().forEach((key, value) -> {
-            List<Integer> list = (List<Integer>) value;
-            driversMap.get(key.substring(1)).setThrottle(list.get(1));
-        });
-    }
 
     @PostConstruct
     void init() {

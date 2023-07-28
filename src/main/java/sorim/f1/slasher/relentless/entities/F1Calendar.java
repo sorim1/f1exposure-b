@@ -156,6 +156,15 @@ public class F1Calendar {
                 this.sprintOriginal = dateTime;
                 this.sprintName = "Sprint";
                 break;
+            case "Sprint Shootout":
+            case "Sprint Shootout,F1":
+                this.practice2 = this.qualifying;
+                this.practice2Original = this.qualifyingOriginal;
+                this.practice2Name = "Qualifying";
+                this.qualifying = dateTime;
+                this.qualifyingOriginal = dateTime;
+                this.qualifyingName = "Sprint Shootout";
+                break;
             default:
                 System.out.println("ERROR setDateAndNameFromCategory: " + category);
                 break;

@@ -92,8 +92,8 @@ public class ErgastServiceImpl implements ErgastService {
     }
 
     @Override
-    public List<RaceData> findByCircuitIdOrderBySeasonDesc(String circuitId) {
-        return ergastRaceRepository.findByCircuitIdOrderBySeasonDesc(circuitId);
+    public RaceData findByCircuitIdOrderBySeasonDesc(String circuitId) {
+        return ergastRaceRepository.findFirstByCircuitIdOrderBySeasonDesc(circuitId);
     }
 
     @Override

@@ -18,6 +18,8 @@ public class ArtDriver {
     public String colorCode;
     public Color color;
     public Color teamColor;
+    public List<Integer> conflictX = new ArrayList<>();
+    public List<Integer> conflictY = new ArrayList<>();
     private Integer finalPosition;
     private Integer currentPosition;
     private Integer x;
@@ -26,8 +28,6 @@ public class ArtDriver {
     private Integer y1;
     private Integer lapTime;
     private LapByLapData lapByLapData = new LapByLapData();
-    public List<Integer> conflictX = new ArrayList<>();
-    public List<Integer> conflictY = new ArrayList<>();
     private Integer diameter;
 
     public ArtDriver(Driver driver, int x, int y) {
@@ -37,7 +37,7 @@ public class ArtDriver {
         this.color = Color.decode("#" + driver.getColor());
         this.teamColor = Color.decode("#" + driver.getColor());
         this.finalPosition = driver.getPosition();
-        this.lapByLapData = driver.getLapByLapData() ;
+        this.lapByLapData = driver.getLapByLapData();
         this.currentPosition = 20;
         this.x = x;
         this.y = y;

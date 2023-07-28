@@ -7,7 +7,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
-import java.util.Map;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -16,7 +15,7 @@ import java.util.Map;
 public class TimingAppDataEntry {
     @JsonProperty("RacingNumber")
     Integer racingNumber;
-        @JsonProperty("Stints")
-    Map<Integer, TimingAppDataStint> stints;
+    @JsonProperty("Stints")
+    List<TimingAppDataStint> stints;
 }
 

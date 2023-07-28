@@ -244,12 +244,11 @@ public class Scheduler {
         }
     }
 
-    @PostConstruct
+   // @PostConstruct
     void onInit() throws Exception {
         log.info("onInitScheduler Called");
         isItRaceWeek();
         int weekDay = MainUtility.getWeekDay();
-     //   imageFeedJob();
      //   adminService.cleanup();
         try {
             switch (weekDay) {
