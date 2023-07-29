@@ -58,7 +58,7 @@ public class ClientServiceImpl implements ClientService {
     private final NewsCommentRepository newsCommentRepository;
     private final InstagramService instagramService;
     private final TwitterService twitterService;
-   // private final TwitterServiceMarkTwo twitterService2;
+    // private final TwitterServiceMarkTwo twitterService2;
 
     private final TwitchService twitchService;
     private final RedditService redditService;
@@ -222,8 +222,8 @@ public class ClientServiceImpl implements ClientService {
 
     @Override
     public Boolean fetchTwitterPosts() throws Exception {
-       // return twitterService2.fetchTwitterPosts();
-         return twitterService.fetchTwitterPosts();
+        // return twitterService2.fetchTwitterPosts();
+        return twitterService.fetchTwitterPosts();
     }
 
     @Override
@@ -282,10 +282,12 @@ public class ClientServiceImpl implements ClientService {
         }
         return response;
     }
+
     @Override
     public NavbarData getNavbarData() {
         return navbarData;
     }
+
     @Override
     public NavbarData updateNavbarData(NavbarData input) {
         navbarData = input;
@@ -295,7 +297,7 @@ public class ClientServiceImpl implements ClientService {
     @Override
     public Boolean setNavbarData() {
         RaceData raceData = ergastService.getUpcomingRace(properties.getCurrentSeasonFuture());
-       // RaceData raceData = ergastService.getLatestAnalyzedRace();
+        // RaceData raceData = ergastService.getLatestAnalyzedRace();
         if (raceData != null) {
             UpcomingRaceAnalysis upcomingRaceAnalysis = raceData.getUpcomingRaceAnalysis();
             if (upcomingRaceAnalysis.getSprintRadio() != null) {
@@ -306,8 +308,7 @@ public class ClientServiceImpl implements ClientService {
                     navbarData.setTabNumber(6);
                     setNavbarDriver(upcomingRaceAnalysis.getSprintLivetimingUrl(), upcomingRaceAnalysis.getSprint().get(0));
                 }
-            } else
-            if (upcomingRaceAnalysis.getSprintQualiRadio() != null) {
+            } else if (upcomingRaceAnalysis.getSprintQualiRadio() != null) {
                 if (navbarData.getSessionName().equals("Sprint shootout")) {
                     return true;
                 } else {
@@ -316,12 +317,12 @@ public class ClientServiceImpl implements ClientService {
                     setNavbarDriver(upcomingRaceAnalysis.getSprintQualiLivetimingUrl(), upcomingRaceAnalysis.getSprintQuali().get(0));
                 }
             } else if (upcomingRaceAnalysis.getQualiRadio() != null) {
-                if (navbarData.getSessionName().equals("Qualifying") && upcomingRaceAnalysis.getSprintQuali()==null) {
+                if (navbarData.getSessionName().equals("Qualifying") && upcomingRaceAnalysis.getSprintQuali() == null) {
                     return true;
                 } else {
                     log.info("Qualifying navbar");
                     navbarData.setSessionName("Qualifying");
-                    if (upcomingRaceAnalysis.getFp3Radio() != null){
+                    if (upcomingRaceAnalysis.getFp3Radio() != null) {
                         navbarData.setTabNumber(6);
                     } else {
                         navbarData.setTabNumber(4);
@@ -415,7 +416,7 @@ public class ClientServiceImpl implements ClientService {
 
     @Override
     public Boolean bumpNewsPost(String code, Integer mode) {
-        if(mode==0){
+        if (mode == 0) {
             newsRepository.deleteByCode(code);
             return true;
         } else {
@@ -563,6 +564,7 @@ public class ClientServiceImpl implements ClientService {
         sidebarData.setExposedDriver(exposureDriver);
         return sidebarData;
     }
+
     @Override
     public String getStreamer() {
         return twitchService.getStreamer();
@@ -603,9 +605,9 @@ public class ClientServiceImpl implements ClientService {
         initFourchanDisabled();
         setAllowNonRedditNews();
         setSidebarData(newsRepository.findFirstByStatusLessThanEqualOrderByTimestampActivityDesc(7));
-        try{
+        try {
             setNavbarData();
-        } catch(Exception ex){
+        } catch (Exception ex) {
             log.error("printStackTrace1");
             ex.printStackTrace();
         }

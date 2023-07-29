@@ -55,13 +55,13 @@ public class DriverStatistics {
     }
 
     public void pushSeasonStanding(Integer season, ErgastStanding es, Boolean ongoingSeason) {
-        if(!ongoingSeason && es.getPosition()==1){
+        if (!ongoingSeason && es.getPosition() == 1) {
             this.wdcCount++;
             this.wdcList.add(season + " - " + extractConstructor(es.getConstructors()));
         }
         standingsBySeason.add(new SeasonStanding(season, es));
 
-        es.getConstructors().forEach(team->{
+        es.getConstructors().forEach(team -> {
             List<String> newConstructorEntry = new ArrayList<>();
             newConstructorEntry.add(String.valueOf(season));
             newConstructorEntry.add(team.getConstructorId());
@@ -71,35 +71,36 @@ public class DriverStatistics {
     }
 
     private String extractConstructor(List<ErgastConstructor> constructors) {
-        if(constructors.size()==1){
+        if (constructors.size() == 1) {
             return constructors.get(0).getName();
-        } else if(constructors.size()>1){
+        } else if (constructors.size() > 1) {
             AtomicReference<String> ar = new AtomicReference<>("");
-            constructors.forEach(cs->{
+            constructors.forEach(cs -> {
                 ar.set(ar.get() + cs.getName() + " / ");
             });
-            return ar.get().substring(0, ar.get().length()-3);
+            return ar.get().substring(0, ar.get().length() - 3);
         }
         return null;
     }
 
     public void incrementRaceCounts(ErgastStanding es) {
         this.raceCount++;
-        this.lapCount =  this.lapCount+es.getLaps();
-        if(es.getGrid()==1){
+        this.lapCount = this.lapCount + es.getLaps();
+        if (es.getGrid() == 1) {
             this.poleCount++;
         }
-        if(es.getPosition()<4){
+        if (es.getPosition() < 4) {
             this.podiumCount++;
-            if(es.getPosition()==1){
+            if (es.getPosition() == 1) {
                 this.winCount++;
             }
         }
     }
+
     public void addPointThroughSeason(Integer season, Integer round, ErgastStanding es) {
         Optional<ChartSeries> cs = pointsThroughSeasons.stream().filter(x -> season.toString().equals(x.getName()))
                 .findFirst();
-        if (cs.isPresent()){
+        if (cs.isPresent()) {
             List<BigDecimal> newPoint = new ArrayList<>();
             newPoint.add(new BigDecimal(round));
             newPoint.add(es.getPoints());

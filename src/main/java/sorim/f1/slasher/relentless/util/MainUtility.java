@@ -16,20 +16,6 @@ import java.util.regex.Pattern;
 @Slf4j
 public class MainUtility {
 
-    public static Map<String, String> driverMap = new HashMap<>();
-    public static Map<String, String> colorMap = new HashMap<>() {{
-        put("mercedes", "#00D2BE");
-        put("aston_martin", "#006F62");
-        put("williams", "#005AFF");
-        put("ferrari", "#DC0004");
-        put("haas", "#888888");
-        put("alfa", "#900000");
-        put("mclaren", "#FF9800");
-        put("alphatauri", "#2B4562");
-        put("red_bull", "#0600EF");
-        put("alpine", "#0090FF");
-    }};
-
     private static final Map<Integer, Integer> positionToPointsMap = new HashMap<>() {{
         put(1, 25);
         put(2, 18);
@@ -49,13 +35,25 @@ public class MainUtility {
         put(16, 0);
         put(17, 0);
         put(18, 0);
-        put(19, 0);;
+        put(19, 0);
         put(20, 0);
         put(21, 0);
         put(22, 0);
 
     }};
-
+    public static Map<String, String> driverMap = new HashMap<>();
+    public static Map<String, String> colorMap = new HashMap<>() {{
+        put("mercedes", "#00D2BE");
+        put("aston_martin", "#006F62");
+        put("williams", "#005AFF");
+        put("ferrari", "#DC0004");
+        put("haas", "#888888");
+        put("alfa", "#900000");
+        put("mclaren", "#FF9800");
+        put("alphatauri", "#2B4562");
+        put("red_bull", "#0600EF");
+        put("alpine", "#0090FF");
+    }};
 
     public static List<String> extractDriverCodes(Set<String> keySet) {
         List<String> response = new ArrayList<>();
@@ -98,7 +96,7 @@ public class MainUtility {
 
     public static List<Integer> orderDriverCodes(List<String> driverCodes, List<String> orderedDriverCodes) {
         List<Integer> response = new ArrayList<>();
-        for(int i=0; i<driverCodes.size(); i++){
+        for (int i = 0; i < driverCodes.size(); i++) {
             int index = orderedDriverCodes.indexOf(driverCodes.get(i));
             response.add(index);
         }
@@ -107,16 +105,16 @@ public class MainUtility {
 
     public static List<Integer> extractDataFields(Map<String, Object> dataFields, List<Integer> order) {
         Integer size = 20;
-        if(order.size()>size){
-            size=order.size();
+        if (order.size() > size) {
+            size = order.size();
         }
-        Integer[] output= new Integer[size];
+        Integer[] output = new Integer[size];
         AtomicReference<Integer> counter = new AtomicReference<>(0);
         dataFields.values().forEach(row -> {
             List<Integer> list = (List<Integer>) row;
             log.info(String.valueOf(output.length));
             log.info(String.valueOf(order.get(counter.get())));
-            output[order.get(counter.get())]=list.get(1);
+            output[order.get(counter.get())] = list.get(1);
             counter.set(counter.get() + 1);
         });
         return Arrays.asList(output);
@@ -132,20 +130,20 @@ public class MainUtility {
     }
 
     public static String handleUsername(String username) {
-        if("hide.me".equals(username)){
+        if ("hide.me".equals(username)) {
             return null;
         }
         String finalUsername = username;
         Integer passwordStart = username.indexOf("#");
-        if(passwordStart>=0){
+        if (passwordStart >= 0) {
             String password = String.valueOf(Math.abs(username.hashCode()));
-            if(password.length()>6){
-                password = password.substring(0,6);
+            if (password.length() > 6) {
+                password = password.substring(0, 6);
             }
-            if(passwordStart>20){
-                finalUsername = username.substring(0,20) +"#"+ password;
+            if (passwordStart > 20) {
+                finalUsername = username.substring(0, 20) + "#" + password;
             } else {
-                finalUsername = username.substring(0,passwordStart+1) + password;
+                finalUsername = username.substring(0, passwordStart + 1) + password;
             }
         }
 
@@ -159,9 +157,9 @@ public class MainUtility {
 
     public static Integer lapTimeToMiliseconds(String time) {
         String[] lapTime = time.split(":");
-        int miliseconds = Integer.parseInt(lapTime[0])*60000;
+        int miliseconds = Integer.parseInt(lapTime[0]) * 60000;
         String[] lapTime2 = lapTime[1].split(Pattern.quote("."));
-        miliseconds += Integer.parseInt(lapTime2[0])*1000;
+        miliseconds += Integer.parseInt(lapTime2[0]) * 1000;
         miliseconds += Integer.parseInt(lapTime2[1]);
         return miliseconds;
     }
@@ -175,37 +173,37 @@ public class MainUtility {
     }
 
     public static void logTime(String code, Integer delayInMiliseconds) {
-        long nextTick = System.currentTimeMillis()+delayInMiliseconds;
+        long nextTick = System.currentTimeMillis() + delayInMiliseconds;
         Instant instant = Instant.ofEpochMilli(nextTick);
         LocalDateTime date = instant.atZone(ZoneId.systemDefault()).toLocalDateTime();
         Logger.log(code, "NEXT TICK: " + date);
     }
 
     public static String generateCodeFromTitle(String title) {
-       String uuid =  UUID.randomUUID().toString();
+        String uuid = UUID.randomUUID().toString();
         String code = title.replaceAll(
                 "[^a-zA-Z0-9 ]", "").replaceAll(" ", "-");
-        code = code.substring(0, Math.min(30, code.length()))+"-"+uuid.substring(0,5);
+        code = code.substring(0, Math.min(30, code.length())) + "-" + uuid.substring(0, 5);
         return code;
     }
 
     public static String generateCodeFromTitleAndId(String title, String id) {
-        String hashId =  String.valueOf(id.hashCode()).substring(0,5);
+        String hashId = String.valueOf(id.hashCode()).substring(0, 5);
         String code = title.replaceAll(
                 "[^a-zA-Z0-9 ]", "").replaceAll(" ", "-");
-        code = code.substring(0, Math.min(30, code.length()))+hashId;
+        code = code.substring(0, Math.min(30, code.length())) + hashId;
         return code;
     }
 
     public static String getDomain(String fullUrl) {
         int start = 0;
         String domainUrl = "";
-        if(fullUrl.indexOf("//")>0){
-            start =fullUrl.indexOf("//")+2;
+        if (fullUrl.indexOf("//") > 0) {
+            start = fullUrl.indexOf("//") + 2;
         }
         String prefix = fullUrl.substring(0, start);
         domainUrl = fullUrl.substring(start);
-        if(domainUrl.indexOf("/")>0){
+        if (domainUrl.indexOf("/") > 0) {
             domainUrl = domainUrl.substring(0, domainUrl.indexOf("/"));
         }
         domainUrl = prefix + domainUrl;

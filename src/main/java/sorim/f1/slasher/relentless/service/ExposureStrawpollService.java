@@ -13,6 +13,7 @@ public interface ExposureStrawpollService {
     String initializeStrawpoll(String id);
 
     ExposureData getExposedChartData();
+
     JsonRepositoryModel archiveExposureData();
 
     ActiveExposureChart generateSingleExposureResult(Integer season, Integer round, boolean detailed);

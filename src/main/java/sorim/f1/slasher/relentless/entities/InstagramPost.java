@@ -1,9 +1,11 @@
 package sorim.f1.slasher.relentless.entities;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import sorim.f1.slasher.relentless.model.enums.InstagramPostType;
 
-import javax.annotation.PostConstruct;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -35,7 +37,7 @@ public class InstagramPost {
     private List<String> urls;
 
     public String theGetUrlBackup() {
-        if(this.postType.equals(InstagramPostType.TimelineCarouselMedia.getValue())){
+        if (this.postType.equals(InstagramPostType.TimelineCarouselMedia.getValue())) {
             this.urls = Stream.of(this.url.split(",", -1))
                     .collect(Collectors.toList());
         }

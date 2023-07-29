@@ -11,5 +11,6 @@ import sorim.f1.slasher.relentless.entities.Ban;
 @EnableJpaAuditing
 public interface BanlistRepository extends CrudRepository<Ban, String> {
     boolean existsBanByIp(String ip);
+
     boolean existsBanByIpAndStatus(String ip, Integer status);
- }
+}

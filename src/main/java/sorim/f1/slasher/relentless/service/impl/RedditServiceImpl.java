@@ -88,7 +88,7 @@ public class RedditServiceImpl implements RedditService {
         List<NewsContent> videoPosts = getRedditNewsByFlair(REDDIT_DAILY_VIDEO_POSTS, 5);
         List<NewsContent> finalList = mergeAndEnrichNewsLists(newsPosts, videoPosts);
         saveNewsList(finalList);
-        if(!finalList.isEmpty()){
+        if (!finalList.isEmpty()) {
             return finalList.get(0);
         } else {
             return null;
@@ -127,11 +127,11 @@ public class RedditServiceImpl implements RedditService {
             }
         });
         newsPosts.forEach(post -> {
-            if(newsPostIsValid(post)){
+            if (newsPostIsValid(post)) {
                 filteredNewsPosts.add(post);
             }
 
-                });
+        });
         List<NewsContent> finalList = Stream.concat(filteredNewsPosts.stream(), filteredVideoPosts.stream()).sorted().collect(Collectors.toList());
         Collections.sort(finalList);
         AtomicReference<Integer> counter = new AtomicReference<>(1000);
@@ -143,19 +143,16 @@ public class RedditServiceImpl implements RedditService {
         return finalList;
     }
 
-    private Boolean newsPostIsValid(NewsContent news){
-        if(news.getUrl()==null && news.getImageUrl()==null && news.getTextContent() ==null){
+    private Boolean newsPostIsValid(NewsContent news) {
+        if (news.getUrl() == null && news.getImageUrl() == null && news.getTextContent() == null) {
             return false;
         }
-        if(news.getUrl()!=null && news.getUrl().indexOf("reddit.com")>0 && news.getImageUrl()==null){
-            return false;
-        }
-        return true;
+        return news.getUrl() == null || news.getUrl().indexOf("reddit.com") <= 0 || news.getImageUrl() != null;
     }
 
     private String getYoutubeThumbnailOld(String url) {
         Integer index = url.indexOf("/embed/");
-        if(index>0) {
+        if (index > 0) {
             String code = url.substring(index + 7, index + 18);
             return "https://img.youtube.com/vi/" + code + "/maxresdefault.jpg";
         }
@@ -166,11 +163,11 @@ public class RedditServiceImpl implements RedditService {
 
         finalUrl = finalUrl.replace("youtu.be/", "/MD/");
         finalUrl = finalUrl.replace("youtube.com/watch?v=", "/MD/");
-        if(finalUrl.contains("&")){
+        if (finalUrl.contains("&")) {
             finalUrl = finalUrl.substring(0, finalUrl.indexOf("&"));
         }
         Integer index = finalUrl.indexOf("/MD/");
-        if(index>0) {
+        if (index > 0) {
             String code = finalUrl.substring(index + 4, index + 15);
             return "https://img.youtube.com/vi/" + code + "/maxresdefault.jpg";
         }
@@ -180,9 +177,9 @@ public class RedditServiceImpl implements RedditService {
     private List<NewsContent> getRedditNewsByFlair(String apiUrl, Integer status) {
         HttpEntity entity = new HttpEntity(headers);
         try {
-        ResponseEntity<String> newsResponse = restTemplate.exchange(
-                apiUrl, HttpMethod.GET, entity, String.class);
-        List<NewsContent> list = new ArrayList<>();
+            ResponseEntity<String> newsResponse = restTemplate.exchange(
+                    apiUrl, HttpMethod.GET, entity, String.class);
+            List<NewsContent> list = new ArrayList<>();
 
             Map<String, Object> mapping = mapper.readValue(newsResponse.getBody(), typeRef);
             LinkedHashMap<String, Object> root = (LinkedHashMap<String, Object>) mapping.get("data");
@@ -338,7 +335,7 @@ public class RedditServiceImpl implements RedditService {
     private void saveRedditOrImgurImageToRepository(NewsContent content) {
         byte[] imageBytes = instagramService.getImageFromUrl(content.getUrl());
         content.setUrl(null);
-        if(imageBytes!=null) {
+        if (imageBytes != null) {
             String imageCode = NEWS_PREFIX + content.getCode();
             ImageRow imageRow = ImageRow.builder().code(imageCode).image(imageBytes).build();
             imageRepository.save(imageRow);
@@ -382,9 +379,9 @@ public class RedditServiceImpl implements RedditService {
         AtomicReference<Boolean> iterate = new AtomicReference<>(true);
         HttpEntity entity = new HttpEntity(headers);
         try {
-        ResponseEntity<String> response = restTemplate.exchange(
-                REDDIT_NEW_POSTS, HttpMethod.GET, entity, String.class);
-        List<RedditPost> list = new ArrayList<>();
+            ResponseEntity<String> response = restTemplate.exchange(
+                    REDDIT_NEW_POSTS, HttpMethod.GET, entity, String.class);
+            List<RedditPost> list = new ArrayList<>();
 
             Map<String, Object> mapping = mapper.readValue(response.getBody(), typeRef);
             LinkedHashMap<String, Object> root = (LinkedHashMap<String, Object>) mapping.get("data");
@@ -454,9 +451,9 @@ public class RedditServiceImpl implements RedditService {
         AtomicReference<Boolean> iterate = new AtomicReference<>(true);
         HttpEntity entity = new HttpEntity(headers);
         try {
-        ResponseEntity<String> response = restTemplate.exchange(
-                REDDIT_NEW_F1_PORN_POSTS, HttpMethod.GET, entity, String.class);
-        List<RedditPost> list = new ArrayList<>();
+            ResponseEntity<String> response = restTemplate.exchange(
+                    REDDIT_NEW_F1_PORN_POSTS, HttpMethod.GET, entity, String.class);
+            List<RedditPost> list = new ArrayList<>();
 
             Map<String, Object> mapping = mapper.readValue(response.getBody(), typeRef);
             LinkedHashMap<String, Object> root = (LinkedHashMap<String, Object>) mapping.get("data");

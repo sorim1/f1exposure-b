@@ -36,6 +36,7 @@ public class StrawpollServiceImpl implements StrawpollService {
     private final JsonRepositoryTwo jsonRepository;
     private final ObjectMapper objectMapper = new ObjectMapper();
     private final RestTemplate restTemplate;
+
     @Override
     public StrawpollModelThree generateStrawpoll() {
         List<StrawpollPollOption> pollOptions = generateStrawpollDrivers();
@@ -45,7 +46,7 @@ public class StrawpollServiceImpl implements StrawpollService {
         String gpName = getRaceName(f1calendar);
         StrawpollPoll poll = StrawpollPoll.builder().poll_options(pollOptions)
                 .poll_meta(meta).poll_config(config)
-                .title("" + f1calendar.getRace().getYear() + " " + gpName + " - official /EXPOSED/ poll")
+                .title(f1calendar.getRace().getYear() + " " + gpName + " - official /EXPOSED/ poll")
                 .build();
         StrawpollModelThree fullStrawpoll = StrawpollModelThree.builder().poll(poll)
                 .driverCount(pollOptions.size()).build();
@@ -56,15 +57,17 @@ public class StrawpollServiceImpl implements StrawpollService {
     private StrawpollPollMeta generateStrawpollMeta(F1Calendar f1calendar) {
         return StrawpollPollMeta.builder().location(f1calendar.getLocation()).build();
     }
+
     private StrawpollPollConfig generateStrawpollConfig() {
         return StrawpollPollConfig.builder()
                 .is_multiple_choice(true)
                 .is_private(true)
                 .build();
     }
-    private String getRaceName(F1Calendar f1calendar){
+
+    private String getRaceName(F1Calendar f1calendar) {
         String gpName = f1calendar.getErgastName();
-        if(gpName==null){
+        if (gpName == null) {
             gpName = f1calendar.getLocation();
         }
         return gpName;
@@ -79,12 +82,13 @@ public class StrawpollServiceImpl implements StrawpollService {
 //            f1calendar = calendarRepository.findFirstByRaceBeforeOrderByRaceDesc(gmtDateTime);
 //        }
         return f1calendar;
-           }
+    }
 
     @Override
     public List<StrawpollPollOption> getStrawpollDrivers() {
         return null;
     }
+
     @Override
     public List<StrawpollPollOption> generateStrawpollDrivers() {
         List<Driver> drivers = driverRepository.findAllByStatusOrderByFullName(1);
@@ -94,6 +98,7 @@ public class StrawpollServiceImpl implements StrawpollService {
         });
         return pollOptions;
     }
+
     @Override
     public String setStrawpollDrivers(String drivers) {
         return null;
@@ -116,11 +121,11 @@ public class StrawpollServiceImpl implements StrawpollService {
     public StrawpollPoll postStrawpoll() {
         HttpHeaders headers = new HttpHeaders();
         //sunshine
-       // headers.add("X-API-Key", "ec64bbae-7323-11ed-ab5a-9556bc37aaf0");
+        // headers.add("X-API-Key", "ec64bbae-7323-11ed-ab5a-9556bc37aaf0");
         //f1exposure
         headers.add("X-API-Key", "3d56ce08-b3ca-11ed-bffc-b1d74cc9522e");
         JsonRepositoryTwoModel data = jsonRepository.findAllById("STRAWPOLL_CURRENT");
-        StrawpollModelThree pollFromDatabase =  objectMapper.convertValue(data.getJson(), StrawpollModelThree.class);
+        StrawpollModelThree pollFromDatabase = objectMapper.convertValue(data.getJson(), StrawpollModelThree.class);
         Long currentUnixSeconds = Instant.now().getEpochSecond();
         Long inThreeHours = currentUnixSeconds + 10800;
         pollFromDatabase.getPoll().getPoll_config().setDeadline_at(inThreeHours);

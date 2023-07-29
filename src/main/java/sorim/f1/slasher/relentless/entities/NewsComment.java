@@ -26,7 +26,7 @@ public class NewsComment {
     private String contentCode;
     private String textContent;
     private Date timestampCreated;
-    private Integer status=1;
+    private Integer status = 1;
     private String username;
 
     @JsonIgnore

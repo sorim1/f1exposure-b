@@ -9,7 +9,6 @@ import sorim.f1.slasher.relentless.util.MainUtility;
 
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
-import javax.persistence.Id;
 import javax.persistence.Table;
 import java.math.BigDecimal;
 
@@ -38,7 +37,7 @@ public class ConstructorStandingByRound {
 
     public ConstructorStandingByRound(ErgastStanding ergastStanding, Integer season, Integer round, Boolean containsStanding) {
         this.setBaseData(ergastStanding, season, round);
-        if(containsStanding) {
+        if (containsStanding) {
             this.position = ergastStanding.getPosition();
             this.points = ergastStanding.getPoints();
         }
@@ -54,9 +53,9 @@ public class ConstructorStandingByRound {
         this.color = MainUtility.getTeamColor(ergastStanding.getConstructor().getConstructorId());
     }
 
-    public void incrementPointsThisRound(BigDecimal value){
-        if(this.pointsThisRound==null){
-            this.pointsThisRound=value;
+    public void incrementPointsThisRound(BigDecimal value) {
+        if (this.pointsThisRound == null) {
+            this.pointsThisRound = value;
         } else {
             this.pointsThisRound = this.pointsThisRound.add(value);
         }

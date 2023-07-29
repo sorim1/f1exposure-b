@@ -9,7 +9,6 @@ import sorim.f1.slasher.relentless.model.livetiming.RaceAnalysis;
 
 import java.io.IOException;
 import java.util.List;
-import java.util.Map;
 
 public interface AdminService {
     void initialize() throws Exception;
@@ -69,10 +68,13 @@ public interface AdminService {
     Boolean generateChart();
 
     Boolean cleanup() throws Exception;
+
     Boolean instagramCleanup() throws Exception;
 
     String setInstagramWorkerPassword(String password) throws Exception;
+
     String setInstagramWorker(String username, String password) throws Exception;
+
     String turnOnOffInstagram(Boolean bool) throws Exception;
 
     Boolean twitterCleanup() throws Exception;
@@ -84,6 +86,7 @@ public interface AdminService {
     Boolean deleteFourChanPosts();
 
     Boolean deleteFourChanPost(Integer id);
+
     Boolean reverseGoogleImage(String url);
 
     Boolean removeVideo(Integer id);
@@ -91,7 +94,9 @@ public interface AdminService {
     List<Replay> saveVideos(List<Replay> video);
 
     String updateCurrentSeasonPast(Integer season);
+
     String saveProperty(String name, String value);
+
     F1Calendar getCalendar();
 
     F1Calendar saveCalendar(F1Calendar body);
@@ -103,8 +108,10 @@ public interface AdminService {
     JsonRepositoryModel getJsonRepository(String id);
 
     JsonRepositoryTwoModel updateJsonRepositoryTwo(JsonRepositoryTwoModel body);
+
     JsonRepositoryTwoModel getJsonRepositoryTwo(String id);
 
     Boolean deleteJsonRepository(String id);
-    String postFormulaDankToInstagram () throws IGLoginException;
+
+    String postFormulaDankToInstagram() throws IGLoginException;
 }

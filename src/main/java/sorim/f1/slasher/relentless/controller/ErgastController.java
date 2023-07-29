@@ -37,7 +37,7 @@ public class ErgastController {
 
     @GetMapping("/fetchHistoricSeasonFull")
     public Boolean fetchHistoricSeasonFull(@RequestHeader String client) throws Exception {
-         securityService.validateAdminHeader(client);
+        securityService.validateAdminHeader(client);
         log.info("fetchHistoricSeasonFull");
         return service.fetchHistoricSeasonFull();
     }
@@ -99,7 +99,6 @@ public class ErgastController {
         securityService.validateHeader(client);
         return service.getHistoricSeason(season);
     }
-
 
 
     @GetMapping("/getCircuitStatistics/{circuitId}")

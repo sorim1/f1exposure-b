@@ -13,5 +13,6 @@ public interface RedditService {
     void updatePostImages(NewsContent post);
 
     String postFormulaDankToInstagram() throws IGLoginException;
+
     NewsContent fetchRedditPosts();
 }

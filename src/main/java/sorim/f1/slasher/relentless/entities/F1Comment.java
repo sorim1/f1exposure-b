@@ -9,7 +9,6 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.Date;
-import java.util.Set;
 
 @Entity
 @Table(name = "COMMENTS")
@@ -27,7 +26,7 @@ public class F1Comment {
     private Integer page;
     private String nickname;
     private String comment;
-    private Integer status=1;
+    private Integer status = 1;
     private Date timestamp;
 
     @JsonIgnore

@@ -45,11 +45,11 @@ public class InstagramServiceImpl implements InstagramService {
     private static final String FUN_TAGS_STRING_BASE = "#f1 , #formula1 , #f1meme , #f1edit , #formula1memes , #f1memes , #f1humor ";
     private static final String SERIOUS_TAGS_STRING_BASE = "#f1 , #formula1 , #f1meme , #f1edit , #formula1memes , #f1memes , #f1driver";
     private static final List<String> EXTRA_TAGS = Arrays.asList("#lewishamilton", "#charlesleclerc", "#carlossainz", "#maxverstappen", "#ferrari", "#scuderiaferrari", "#LH44", "#MV33");
+    private static final List<Long> ACCOUNT_IDS_TO_FOLLOW = new ArrayList<>();
     private static IGClient workerClient;
     private static IGClient officialClient;
     private static Boolean fetchEnabled = true;
     private static Boolean fetchOk = false;
-    private static final List<Long> ACCOUNT_IDS_TO_FOLLOW = new ArrayList<>();
     private final MainProperties properties;
     private final PropertiesRepository propertiesRepository;
     private final InstagramRepository instagramRepository;

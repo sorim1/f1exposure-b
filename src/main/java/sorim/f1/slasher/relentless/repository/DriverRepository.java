@@ -14,5 +14,6 @@ import java.util.List;
 public interface DriverRepository extends CrudRepository<Driver, String> {
 
     List<Driver> findAll();
+
     List<Driver> findAllByStatusOrderByFullName(Integer status);
 }

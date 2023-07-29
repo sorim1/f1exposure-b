@@ -21,17 +21,17 @@ public class ChartSeries {
     private List<List<Integer>> series2 = new ArrayList<>();
 
     public ChartSeries(String name) {
-        this.name=name;
+        this.name = name;
     }
 
-    public void add(Integer round, BigDecimal point){
+    public void add(Integer round, BigDecimal point) {
         List<BigDecimal> newPoint = new ArrayList<>();
         newPoint.add(new BigDecimal(round));
         newPoint.add(point);
         series.add(newPoint);
     }
 
-    public void add2(Integer x, Integer y){
+    public void add2(Integer x, Integer y) {
         List<Integer> newPoint = new ArrayList<>();
         newPoint.add(x);
         newPoint.add(y);
@@ -41,7 +41,7 @@ public class ChartSeries {
     public void calcSeries2Averages() {
         Integer intSumOfX = 0;
         Integer intSumOfY = 0;
-        for(List<Integer> entry : series2){
+        for (List<Integer> entry : series2) {
             intSumOfX = intSumOfX + entry.get(0);
             intSumOfY = intSumOfY + entry.get(1);
         }
@@ -49,9 +49,9 @@ public class ChartSeries {
         BigDecimal sumOfY = new BigDecimal(intSumOfY);
         BigDecimal x = BigDecimal.ZERO;
         BigDecimal y = BigDecimal.ZERO;
-        if(series2.size()>0){
-            x = sumOfX.divide(new BigDecimal(series2.size()),2, RoundingMode.HALF_UP);
-            y = sumOfY.divide(new BigDecimal(series2.size()),2, RoundingMode.HALF_UP);
+        if (series2.size() > 0) {
+            x = sumOfX.divide(new BigDecimal(series2.size()), 2, RoundingMode.HALF_UP);
+            y = sumOfY.divide(new BigDecimal(series2.size()), 2, RoundingMode.HALF_UP);
         }
         List<BigDecimal> newPoint = new ArrayList<>();
         newPoint.add(x);

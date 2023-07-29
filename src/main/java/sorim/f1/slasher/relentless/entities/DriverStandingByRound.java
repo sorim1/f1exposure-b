@@ -7,7 +7,10 @@ import lombok.NoArgsConstructor;
 import sorim.f1.slasher.relentless.model.ergast.ErgastStanding;
 import sorim.f1.slasher.relentless.util.MainUtility;
 
-import javax.persistence.*;
+import javax.persistence.EmbeddedId;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.Transient;
 import java.math.BigDecimal;
 
 @Entity
@@ -48,14 +51,14 @@ public class DriverStandingByRound {
 
     public DriverStandingByRound(ErgastStanding ergastStanding, Integer season, Integer round, Boolean positionBool) {
         this.basicData(ergastStanding, season, round);
-        if(positionBool){
+        if (positionBool) {
             this.position = ergastStanding.getPosition();
         }
     }
 
-    public void incrementPointsThisRound(BigDecimal value){
-        if(this.pointsThisRound==null){
-            this.pointsThisRound=value;
+    public void incrementPointsThisRound(BigDecimal value) {
+        if (this.pointsThisRound == null) {
+            this.pointsThisRound = value;
         } else {
             this.pointsThisRound = this.pointsThisRound.add(value);
         }
@@ -67,15 +70,15 @@ public class DriverStandingByRound {
         this.id.setRound(round);
         this.id.setId(ergastStanding.getDriver().getDriverId());
         this.name = ergastStanding.getDriver().getGivenName() + " " + ergastStanding.getDriver().getFamilyName();
-        if(ergastStanding.getDriver().getCode()!=null) {
+        if (ergastStanding.getDriver().getCode() != null) {
             this.code = ergastStanding.getDriver().getCode();
         } else {
             this.code = ergastStanding.getDriver().getDriverId();
         }
         this.nationality = ergastStanding.getDriver().getNationality();
-        if(ergastStanding.getConstructors()!=null) {
+        if (ergastStanding.getConstructors() != null) {
             this.car = ergastStanding.getConstructors().get(0).getName();
-            this.color = MainUtility.getTeamColor(ergastStanding.getConstructors().get(0).getConstructorId());;
+            this.color = MainUtility.getTeamColor(ergastStanding.getConstructors().get(0).getConstructorId());
         }
         this.points = ergastStanding.getPoints();
         this.wins = ergastStanding.getWins();

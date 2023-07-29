@@ -44,8 +44,8 @@ public class FourchanServiceImpl implements FourchanService {
 
     private static final String CATALOG_URL = "https://a.4cdn.org/sp/catalog.json";
     private static final String THREAD_URL = "https://a.4cdn.org/sp/thread/{threadNumber}.json";
-    private static final String GOOGLE_REVERSE_IMAGE ="https://www.google.com/searchbyimage?image_url=";
-    private static String NO_DUPLICATES_FOUND ="ene druge veli";
+    private static final String GOOGLE_REVERSE_IMAGE = "https://www.google.com/searchbyimage?image_url=";
+    private static String NO_DUPLICATES_FOUND = "ene druge veli";
     private static Integer processedThread = 0;
     private final InstagramService instagramService;
     private final PropertiesRepository propertiesRepository;
@@ -149,6 +149,7 @@ public class FourchanServiceImpl implements FourchanService {
         fourChanPostRepository.saveAll(chanPosts);
         fetchImages(chanPosts);
     }
+
     private void fetchImages(List<FourChanPostEntity> chanPosts) {
         List<FourChanImageRow> images = new ArrayList<>();
         chanPosts.forEach(post -> {
@@ -157,9 +158,10 @@ public class FourchanServiceImpl implements FourchanService {
         });
         fourChanImageRepository.saveAll(images);
     }
+
     private void uploadImageToDatabase(Integer id, Integer status, MultipartFile file) {
         try {
-            FourChanImageRow image  = FourChanImageRow.builder().id(id).status(status).image(file.getBytes()).build();
+            FourChanImageRow image = FourChanImageRow.builder().id(id).status(status).image(file.getBytes()).build();
             fourChanImageRepository.save(image);
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -178,32 +180,32 @@ public class FourchanServiceImpl implements FourchanService {
     }
 
     private boolean checkFourchanImageUniqueness(FourchanPost post) {
-            String url = "https://i.4cdn.org/sp/" + post.getTim() + post.getExt();
-            Boolean notFoundOnGoogle = reverseGoogleImage(url, false);
-            log.info(url + " - UNIQUE: " + notFoundOnGoogle);
-            return notFoundOnGoogle;
+        String url = "https://i.4cdn.org/sp/" + post.getTim() + post.getExt();
+        Boolean notFoundOnGoogle = reverseGoogleImage(url, false);
+        log.info(url + " - UNIQUE: " + notFoundOnGoogle);
+        return notFoundOnGoogle;
     }
 
     @Override
     public Boolean reverseGoogleImage(String url, Boolean logResponse) {
-        if(client==null){
+        if (client == null) {
             initWebClient();
         }
         try {
             Page page = client.getPage(GOOGLE_REVERSE_IMAGE + url);
             WebResponse response = page.getWebResponse();
-            String responseString =response.getContentAsString();
-            if(logResponse){
+            String responseString = response.getContentAsString();
+            if (logResponse) {
                 log.info("checkUrlUsingHtmlUnit");
                 log.info(responseString);
             } else {
                 Thread.sleep(5000);
             }
             return responseString.contains(NO_DUPLICATES_FOUND);
-        }catch(Exception e){
+        } catch (Exception e) {
             log.error("checkUrlUsingHtmlUnit ERROR");
             e.printStackTrace();
-        }finally{
+        } finally {
             client.close();
         }
         return false;
@@ -226,7 +228,7 @@ public class FourchanServiceImpl implements FourchanService {
         Integer seven = Math.toIntExact(fourChanPostRepository.countRowsByStatus(7));
         Integer eight = Math.toIntExact(fourChanPostRepository.countRowsByStatus(8));
         Integer count = Math.toIntExact(fourChanImageRepository.countRows());
-        return Arrays.asList(one,two,three,four,five, six, seven, eight, count);
+        return Arrays.asList(one, two, three, four, five, six, seven, eight, count);
     }
 
     @Override
@@ -241,16 +243,16 @@ public class FourchanServiceImpl implements FourchanService {
     public List<FourChanPostEntity> saveChanPosts(List<FourChanPostEntity> posts) {
         List<FourChanPostEntity> deletePosts = new ArrayList<>();
         List<FourChanPostEntity> savePosts = new ArrayList<>();
-        posts.forEach(post->{
-            if(post.getStatus()==7){
+        posts.forEach(post -> {
+            if (post.getStatus() == 7) {
                 deletePosts.add(post);
             } else {
                 savePosts.add(post);
             }
         });
-        savePosts.forEach(post-> fourChanImageRepository.updateStatusById(post.getId(), post.getStatus()));
+        savePosts.forEach(post -> fourChanImageRepository.updateStatusById(post.getId(), post.getStatus()));
         fourChanPostRepository.saveAll(savePosts);
-        deletePosts.forEach(post-> fourChanImageRepository.deleteById(post.getId()));
+        deletePosts.forEach(post -> fourChanImageRepository.deleteById(post.getId()));
         fourChanPostRepository.deleteAll(deletePosts);
         return getChanPostsByStatus(1);
     }
@@ -258,17 +260,17 @@ public class FourchanServiceImpl implements FourchanService {
 
     @Override
     public String postToInstagram(boolean personalMeme) throws IGLoginException {
-        List<Integer> approvedPosts = Arrays.asList(4,5);
+        List<Integer> approvedPosts = Arrays.asList(4, 5);
         FourChanPostEntity chanPost = null;
         FourChanImageRow chanImage;
-        if(personalMeme){
-            chanPost = fourChanPostRepository.findFirstByIdLessThanAndStatusInOrderByIdAsc(100000,approvedPosts);
+        if (personalMeme) {
+            chanPost = fourChanPostRepository.findFirstByIdLessThanAndStatusInOrderByIdAsc(100000, approvedPosts);
         }
-        if(!personalMeme || chanPost==null){
-            chanPost = fourChanPostRepository.findFirstByIdGreaterThanAndStatusInOrderByIdAsc(100000,approvedPosts);
+        if (!personalMeme || chanPost == null) {
+            chanPost = fourChanPostRepository.findFirstByIdGreaterThanAndStatusInOrderByIdAsc(100000, approvedPosts);
         }
 
-        if(chanPost!=null) {
+        if (chanPost != null) {
             chanImage = fourChanImageRepository.findFirstById(chanPost.getId());
             while (chanImage == null) {
                 fourChanPostRepository.delete(chanPost);
@@ -280,12 +282,12 @@ public class FourchanServiceImpl implements FourchanService {
                 chanImage = fourChanImageRepository.findFirstById(chanPost.getId());
             }
             String response = instagramService.postToInstagram(chanPost, chanImage);
-                 fourChanPostRepository.delete(chanPost);
-                fourChanImageRepository.delete(chanImage);
-                return response;
+            fourChanPostRepository.delete(chanPost);
+            fourChanImageRepository.delete(chanImage);
+            return response;
         }
-        log.info("InstagramPost NO POST FOUND - personalMeme " +  personalMeme);
-        return "NO POST FOUND - personalMeme:" +personalMeme;
+        log.info("InstagramPost NO POST FOUND - personalMeme " + personalMeme);
+        return "NO POST FOUND - personalMeme:" + personalMeme;
     }
 
     @Override
@@ -294,7 +296,7 @@ public class FourchanServiceImpl implements FourchanService {
         Long time = System.currentTimeMillis();
         String num = String.valueOf(time);
         num = num.substring(3, 8);
-        String baseUrl  = mainProperties.getUrl() + "/social/image/";
+        String baseUrl = mainProperties.getUrl() + "/social/image/";
         AtomicReference<Integer> id = new AtomicReference<>(Integer.valueOf(num));
         List<String> fileNames = new ArrayList<>();
         Arrays.stream(files).forEach(file -> {
@@ -316,32 +318,34 @@ public class FourchanServiceImpl implements FourchanService {
     @Override
     //@PostConstruct
     public void cleanup() {
-        try{
+        try {
 
-        List<Integer> safeDelete = Arrays.asList(7,8);
-        log.info("chan cleanup start");
-        fourChanPostRepository.deleteByStatusIn(safeDelete);
+            List<Integer> safeDelete = Arrays.asList(7, 8);
+            log.info("chan cleanup start");
+            fourChanPostRepository.deleteByStatusIn(safeDelete);
             log.info("chan cleanup 7,8 done1");
-        fourChanImageRepository.deleteByStatusIn(safeDelete);
+            fourChanImageRepository.deleteByStatusIn(safeDelete);
             log.info("chan cleanup 7,8 done1");
             int one = Math.toIntExact(fourChanPostRepository.countRowsByStatus(1));
-            if(one>600){
+            if (one > 600) {
                 fourChanPostRepository.deleteAllByStatus(1);
                 fourChanImageRepository.deleteAllByStatus(1);
             }
             log.info("chan cleanup end");
-        }catch(Exception e){
+        } catch (Exception e) {
             log.error("cleanup failed", e);
         }
     }
+
     @Override
-    public Boolean deleteChanByStatus(Integer status){
+    public Boolean deleteChanByStatus(Integer status) {
         fourChanPostRepository.deleteAllByStatus(status);
         fourChanImageRepository.deleteAllByStatus(status);
         return true;
     }
+
     @Override
-    public Integer deleteByStatus(Integer status){
+    public Integer deleteByStatus(Integer status) {
         List<Integer> statusList = Collections.singletonList(status);
         fourChanPostRepository.deleteByStatusIn(statusList);
         return fourChanImageRepository.deleteByStatusIn(statusList);
@@ -442,8 +446,8 @@ public class FourchanServiceImpl implements FourchanService {
 
         response.getPosts().stream().filter(post -> post.getCom() != null && post.getCom().toUpperCase().contains("STRAWPOLL.COM/"))
                 .forEach(strawPollPost -> {
-                    String postText = strawPollPost.getCom().replace("<wbr>","");
-                   int counter = 0;
+                    String postText = strawPollPost.getCom().replace("<wbr>", "");
+                    int counter = 0;
                     if (postText.contains("VERY IMPORTANT POLL")) {
                         counter += 2;
                     }
@@ -463,22 +467,23 @@ public class FourchanServiceImpl implements FourchanService {
                 });
         return strawpollId.get();
     }
+
     @Override
     public byte[] getAcceptedPngImages(HttpServletResponse response) throws IOException {
         response.setContentType("application/zip");
         response.setHeader("Content-Disposition", "attachment; filename=acceptedf1exposurePngImages.zip");
         List<FourChanPostEntity> status6Posts = fourChanPostRepository.findAllByStatus(6);
         List<Integer> ids = new ArrayList<>();
-        status6Posts.forEach(post->{
+        status6Posts.forEach(post -> {
             ids.add(post.getId());
         });
         List<FourChanImageRow> status6Images = fourChanImageRepository.findAllByIdIn(ids);
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         ZipOutputStream zos = new ZipOutputStream(response.getOutputStream());
-        status6Images.forEach(image->{
+        status6Images.forEach(image -> {
             try {
-            ZipEntry entry = new ZipEntry(image.getId() + ".png");
-            entry.setSize(image.getImage().length);
+                ZipEntry entry = new ZipEntry(image.getId() + ".png");
+                entry.setSize(image.getImage().length);
                 zos.putNextEntry(entry);
                 zos.write(image.getImage());
                 zos.closeEntry();

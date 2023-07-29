@@ -24,9 +24,9 @@ public class ExposureChampionshipData {
     private BigDecimal maxExposure = BigDecimal.ZERO;
 
     public void updateMaxExposure(Integer round, BigDecimal exposure) {
-        if(exposure.compareTo(maxExposure) > 0){
-            this.maxExposure=exposure;
-            this.maxExposureRound=round;
+        if (exposure.compareTo(maxExposure) > 0) {
+            this.maxExposure = exposure;
+            this.maxExposureRound = round;
         }
     }
 }

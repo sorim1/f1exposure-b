@@ -598,8 +598,8 @@ public class LiveTimingServiceImpl implements LiveTimingService {
     private List<Driver> createDriverListWithTyres(String driverList, String timingDataF1, String timingAppData) {
         List<Driver> driversResponse = createDriverList(driverList, timingDataF1);
         try {
-            TimingAppData root = mapper.readValue(timingDataF1, TimingAppData.class);
-            root.getLines().forEach((k,v)->{
+            TimingAppData root = mapper.readValue(timingAppData, TimingAppData.class);
+            root.getLines().forEach((k, v) -> {
                 Optional<Driver> optional = driversResponse.stream().filter(entry -> Objects.equals(k, entry.getNum())).findFirst();
                 optional.ifPresent(driver -> driver.getLapByLapData().setTyres(v.getStints()));
             });
@@ -643,7 +643,7 @@ public class LiveTimingServiceImpl implements LiveTimingService {
             List<String> bestSpeedKeys = new ArrayList<>(timingStats.get(0).bestSpeeds.keySet());
 
             String lapSeriesString = getLiveTimingResponseOfErgastRace(race, RoundEnum.RACE, "LapSeries.jsonStream");
-            List<LapSeries> lapSeries= getLapSeries(drivers, lapSeriesString.substring(lapSeriesString.indexOf("{")));
+            List<LapSeries> lapSeries = getLapSeries(drivers, lapSeriesString.substring(lapSeriesString.indexOf("{")));
             drivers.sort(Comparator.comparing(Driver::getPosition));
 
             RaceAnalysis analysis = RaceAnalysis.builder()
@@ -679,35 +679,35 @@ public class LiveTimingServiceImpl implements LiveTimingService {
 
         try {
             RaceControlMessageRoot root = mapper.readValue(input, RaceControlMessageRoot.class);
-            root.getMessages().forEach(message->{
-                if(message.getRacingNumber()!=null){
-                Optional<Driver> optional = drivers.stream().filter(entry -> message.getRacingNumber().equals(entry.getNum())).findFirst();
+            root.getMessages().forEach(message -> {
+                if (message.getRacingNumber() != null) {
+                    Optional<Driver> optional = drivers.stream().filter(entry -> message.getRacingNumber().equals(entry.getNum())).findFirst();
                     optional.ifPresent(driver -> message.setName(driver.getLastName()));
-            }
+                }
             });
             return root.getMessages();
         } catch (JsonProcessingException e) {
             log.error("createLapTimeDataList JsonProcessingException", e);
             e.printStackTrace();
         }
-        return null;
+        return Collections.emptyList();
     }
 
     private List<LapSeries> getLapSeries(List<Driver> driversList, String input) {
         try {
             List<LapSeries> response = new ArrayList<>();
-        TypeReference<HashMap<String, LapSeries>> typeRef = new TypeReference<HashMap<String, LapSeries>>() {
-        };
-        Map<String, LapSeries> lapSeriesMap = mapper.readValue(input, typeRef);
+            TypeReference<HashMap<String, LapSeries>> typeRef = new TypeReference<HashMap<String, LapSeries>>() {
+            };
+            Map<String, LapSeries> lapSeriesMap = mapper.readValue(input, typeRef);
 
-        lapSeriesMap.forEach((k, v) -> {
-            Optional<Driver> optional = driversList.stream().filter(entry -> k.equals(entry.getNum())).findFirst();
-            if (optional.isPresent()) {
-                v.setName(optional.get().getLastName());
-                response.add(v);
-            }
-        });
-        return response;
+            lapSeriesMap.forEach((k, v) -> {
+                Optional<Driver> optional = driversList.stream().filter(entry -> k.equals(entry.getNum())).findFirst();
+                if (optional.isPresent()) {
+                    v.setName(optional.get().getLastName());
+                    response.add(v);
+                }
+            });
+            return response;
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -748,11 +748,11 @@ public class LiveTimingServiceImpl implements LiveTimingService {
             TimingStats root = mapper.readValue(input, TimingStats.class);
             List<TimingStat> response = new ArrayList<>();
             root.getLines().forEach((k, v) -> {
-                    Optional<Driver> optional = driversList.stream().filter(entry -> k.equals(entry.getNum())).findFirst();
-                    if (optional.isPresent()) {
-                        v.setName(optional.get().getLastName());
-                        response.add(v);
-                    }
+                Optional<Driver> optional = driversList.stream().filter(entry -> k.equals(entry.getNum())).findFirst();
+                if (optional.isPresent()) {
+                    v.setName(optional.get().getLastName());
+                    response.add(v);
+                }
             });
             response.sort(Comparator.comparing(n -> n.getPersonalBestLapTime().getPosition(), Comparator.nullsLast(Comparator.naturalOrder())));
             return response;
@@ -760,6 +760,7 @@ public class LiveTimingServiceImpl implements LiveTimingService {
             throw new RuntimeException(e);
         }
     }
+
     private Map<String, String> mapErgastWithLiveTiming(Map<String, Driver> driversMap) {
         Map<String, String> ergastCodes = ergastService.connectDriverCodesWithErgastCodes();
         Boolean missingDriver = addErgastCodesToDrivers(driversMap, ergastCodes);

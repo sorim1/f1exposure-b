@@ -10,13 +10,12 @@ import sorim.f1.slasher.relentless.configuration.MainProperties;
 import sorim.f1.slasher.relentless.entities.TwitterPost;
 import sorim.f1.slasher.relentless.repository.TwitterRepository;
 import sorim.f1.slasher.relentless.service.TwitterService;
-import twitter4j.*;
+import twitter4j.Twitter;
 import twitter4j.v1.Query;
 import twitter4j.v1.QueryResult;
 import twitter4j.v1.ResponseList;
 import twitter4j.v1.Status;
 
-import javax.annotation.PostConstruct;
 import java.util.*;
 
 @Slf4j
@@ -24,8 +23,8 @@ import java.util.*;
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class TwitterServiceImpl implements TwitterService {
 
-    private static List<TwitterPost> twitterPostsList = new ArrayList<>();
     private static final Map<String, TwitterPost> twitterPostsMap = new HashMap<>();
+    private static List<TwitterPost> twitterPostsList = new ArrayList<>();
     private final MainProperties properties;
     private final TwitterRepository twitterRepository;
 
@@ -34,10 +33,11 @@ public class TwitterServiceImpl implements TwitterService {
         Pageable paging = PageRequest.of(page, 21);
         return twitterRepository.findAllByOrderByCreatedAtDesc(paging);
     }
+
     @Override
     public TwitterPost getMostPopularDailyPost() {
-        Date yesterday = new Date(System.currentTimeMillis()-24*60*60*1000);;
-        log.info("yesterday; " + yesterday.toString());
+        Date yesterday = new Date(System.currentTimeMillis() - 24 * 60 * 60 * 1000);
+        log.info("yesterday; " + yesterday);
         return twitterRepository.findFirstByCreatedAtAfterOrderByRetweetCountDesc(yesterday);
     }
 
@@ -77,7 +77,7 @@ public class TwitterServiceImpl implements TwitterService {
         String text = item.getText();
         String url = null;
         String mediaUrl = null;
-        if(item.getUser()!=null && item.getUser().getScreenName().equals("F1Exposure")){
+        if (item.getUser() != null && item.getUser().getScreenName().equals("F1Exposure")) {
             return null;
         }
         int splitter = text.lastIndexOf("https://t.co");
@@ -115,13 +115,13 @@ public class TwitterServiceImpl implements TwitterService {
                     .mediaUrl(mediaUrl)
                     .userPicture(item.getUser().getProfileImageURLHttps())
                     .username(item.getUser().getName())
-                   // .createdAt(item.getCreatedAt())
+                    // .createdAt(item.getCreatedAt())
                     .build();
         }
         return response;
     }
 
-   // @PostConstruct
+    // @PostConstruct
     @Override
     public List<TwitterPost> fetchTwitterFerrariPosts() throws Exception {
         if (twitterPostsMap.size() > 300) {

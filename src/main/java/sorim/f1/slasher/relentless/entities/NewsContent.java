@@ -8,7 +8,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import sorim.f1.slasher.relentless.util.MainUtility;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Transient;
 import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -49,30 +52,33 @@ public class NewsContent implements Comparable<NewsContent> {
         this.title = this.title.replace("&amp;", "&");
         this.url = (String) data.get("url_overridden_by_dest");
         Double createdDouble = (Double) data.get("created");
-        this.timestampCreated = new Date(createdDouble.longValue()) ;
+        this.timestampCreated = new Date(createdDouble.longValue());
         this.setStatus(3);
         this.setTimestampCreated(new Date(time));
-        this.setTimestampActivity(new Date(time-18*60*60*1000));
+        this.setTimestampActivity(new Date(time - 18 * 60 * 60 * 1000));
         this.setCommentCount(0);
         this.numCommentsR = (Integer) data.get("num_comments");
     }
+
     public NewsContent(LinkedHashMap<String, Object> data, Integer status) {
         this.code = MainUtility.generateCodeFromTitleAndId((String) data.get("title"), (String) data.get("id"));
         this.title = (String) data.get("title");
         this.title = this.title.replace("&amp;", "&");
         this.url = (String) data.get("url_overridden_by_dest");
         Double createdDouble = (Double) data.get("created");
-        this.timestampCreated = new Date(createdDouble.longValue()) ;
+        this.timestampCreated = new Date(createdDouble.longValue());
         this.setStatus(status);
         this.setCommentCount(0);
         this.numCommentsR = (Integer) data.get("num_comments");
     }
+
     @Override
     public int compareTo(NewsContent u) {
         return u.numCommentsR - this.numCommentsR;
     }
+
     public void setDates(long time) {
         this.setTimestampCreated(new Date(time));
-        this.setTimestampActivity(new Date(time-18*60*60*1000));
+        this.setTimestampActivity(new Date(time - 18 * 60 * 60 * 1000));
     }
 }

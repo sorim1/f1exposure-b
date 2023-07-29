@@ -56,7 +56,9 @@ public interface ClientService {
     List<NewsContent> getNews(Integer page);
 
     NewsContent getNewsPost(String code);
+
     List<NewsContent> getNextNewsList(String timestampActivity) throws ParseException;
+
     Boolean bumpNewsPost(String code, Integer mode);
 
     NewsComment postNewsComment(NewsComment comment, String ipAddress);
@@ -88,7 +90,9 @@ public interface ClientService {
     void setAllowNonRedditNewsProperty(Boolean bool);
 
     NavbarData getNavbarData();
+
     Boolean setNavbarData();
+
     NavbarData updateNavbarData(NavbarData navbarData);
 
     SidebarData setSidebarExposureDriver(KeyValue exposureDriver);

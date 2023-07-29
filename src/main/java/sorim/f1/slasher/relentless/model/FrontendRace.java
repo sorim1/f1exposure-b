@@ -21,19 +21,19 @@ public class FrontendRace {
     private String x;
     private String y;
     private ErgastDriver driver;
-    private String  exposureWinner;
+    private String exposureWinner;
 
     public FrontendRace(RaceData raceData) {
-        this.round= raceData.getRound();
-        this.raceName= raceData.getRaceName();
+        this.round = raceData.getRound();
+        this.raceName = raceData.getRaceName();
         this.url = raceData.getUrl();
         this.date = raceData.getDate();
         this.circuitName = raceData.getCircuit().getCircuitName();
         this.circuitId = raceData.getCircuit().getCircuitId();
         this.x = raceData.getCircuit().getLocation().getLat();
         this.y = raceData.getCircuit().getLocation().getLongitude();
-        if(raceData.getResults()!=null){
-        this.driver = raceData.getResults().get(0).getDriver();
+        if (raceData.getResults() != null) {
+            this.driver = raceData.getResults().get(0).getDriver();
         }
     }
 }

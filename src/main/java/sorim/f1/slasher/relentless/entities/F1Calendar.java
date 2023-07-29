@@ -7,7 +7,10 @@ import lombok.NoArgsConstructor;
 import net.fortuna.ical4j.model.PropertyList;
 import sorim.f1.slasher.relentless.model.enums.RoundEnum;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.concurrent.ThreadLocalRandom;
@@ -47,7 +50,7 @@ public class F1Calendar {
     private String summary;
 
     public F1Calendar(PropertyList properties, Boolean mainCalendar) throws Exception {
-        if(mainCalendar) {
+        if (mainCalendar) {
             String[] idAndRound = properties.get("UID").get(0).getValue().split("@");
             this.raceId = Integer.valueOf(idAndRound[1]);
             this.location = properties.get("LOCATION").get(0).getValue();
@@ -55,17 +58,17 @@ public class F1Calendar {
             this.practice1Name = "Practice 1";
             setDateAndNameFromRoundDescription(idAndRound[0], properties.get("DTSTART").get(0).getValue(), properties.get("SUMMARY").get(0).getValue());
         } else {
-            String tempo = "33" + String.valueOf(System.currentTimeMillis()).substring(8,10) + ThreadLocalRandom.current().nextInt(0, 10000);
+            String tempo = "33" + String.valueOf(System.currentTimeMillis()).substring(8, 10) + ThreadLocalRandom.current().nextInt(0, 10000);
             this.raceId = Integer.valueOf(tempo);
             this.location = properties.get("LOCATION").get(0).getValue();
             String summary = properties.get("SUMMARY").get(0).getValue();
-            Integer start = summary.lastIndexOf("(")+1;
+            Integer start = summary.lastIndexOf("(") + 1;
             Integer end = summary.lastIndexOf(")");
             this.summary = summary.substring(start, end);
             setDateAndNameFromCategory(properties.get("CATEGORIES").get(0).getValue(), properties.get("DTSTART").get(0).getValue(), properties.get("SUMMARY").get(0).getValue());
 
         }
-        }
+    }
 
     public void setDateAndNameFromRoundDescription(String roundDesc, String dateTimeString, String fullSummary) throws Exception {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd'T'HHmmss");
@@ -109,15 +112,15 @@ public class F1Calendar {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd'T'HHmmss'Z'");
         LocalDateTime dateTime = LocalDateTime.parse(dateTimeString, formatter);
         Integer start = summary.indexOf("(");
-        Integer end = summary.indexOf(")")+1;
-       // String summary = inputSummary;
-        do{
+        Integer end = summary.indexOf(")") + 1;
+        // String summary = inputSummary;
+        do {
             String deleteMe = summary.substring(start, end);
             summary = summary.replace(deleteMe, "");
             start = summary.indexOf("(");
-            end = summary.indexOf(")")+1;
+            end = summary.indexOf(")") + 1;
 
-        }while(start>=0);
+        } while (start >= 0);
 
         switch (category) {
             case "Free Practice 1":

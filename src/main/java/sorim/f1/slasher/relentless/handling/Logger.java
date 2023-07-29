@@ -1,12 +1,10 @@
 package sorim.f1.slasher.relentless.handling;
 
-import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import sorim.f1.slasher.relentless.entities.Log;
-import sorim.f1.slasher.relentless.repository.InstagramRepository;
 import sorim.f1.slasher.relentless.repository.LogRepository;
 
 import javax.annotation.PostConstruct;
@@ -18,15 +16,9 @@ import java.util.List;
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class Logger {
 
-    private final LogRepository wiredRepository;
-
     private static LogRepository repository = null;
-    private static String INFO = "INFO";
-
-    @PostConstruct
-    public void init() {
-        this.repository = wiredRepository;
-    }
+    private static final String INFO = "INFO";
+    private final LogRepository wiredRepository;
 
     public static void raiseException(String info) throws Exception {
         log.error(info);
@@ -42,14 +34,14 @@ public class Logger {
 
     public static void log(String code, String message) {
         log.info(code + " - " + message);
-     //   repository.save(Log.builder().code(code).message(message).created(new Date()).build());
+        //   repository.save(Log.builder().code(code).message(message).created(new Date()).build());
     }
 
     public static void logAdmin(String message) {
         log.info(message);
         try {
             repository.save(Log.builder().code("ADMIN").message(message).created(new Date()).build());
-        } catch(Exception e ){
+        } catch (Exception e) {
             log.error(message);
             log.error(e.getMessage());
         }
@@ -62,7 +54,12 @@ public class Logger {
     }
 
     public static List<Log> getLogs(Integer mode, String filter) {
-        Date yesterday = new Date(System.currentTimeMillis()-24*60*60*1000);
+        Date yesterday = new Date(System.currentTimeMillis() - 24 * 60 * 60 * 1000);
         return repository.findAllByCreatedAfterOrderByIdDesc(yesterday);
+    }
+
+    @PostConstruct
+    public void init() {
+        repository = wiredRepository;
     }
 }

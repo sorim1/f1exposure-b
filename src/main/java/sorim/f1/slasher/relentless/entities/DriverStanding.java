@@ -9,7 +9,6 @@ import sorim.f1.slasher.relentless.model.ergast.ErgastStanding;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 import java.math.BigDecimal;
 
 @Entity
@@ -39,23 +38,23 @@ public class DriverStanding {
         this.id = ergastStanding.getDriver().getDriverId();
         this.position = ergastStanding.getPosition();
         this.name = ergastStanding.getDriver().getGivenName() + " " + ergastStanding.getDriver().getFamilyName();
-        if(ergastStanding.getDriver().getCode()!=null) {
+        if (ergastStanding.getDriver().getCode() != null) {
             this.code = ergastStanding.getDriver().getCode();
         } else {
             this.code = ergastStanding.getDriver().getDriverId();
         }
-        this.ergastCode = ergastStanding.getConstructors().get(ergastStanding.getConstructors().size()-1).getConstructorId();
+        this.ergastCode = ergastStanding.getConstructors().get(ergastStanding.getConstructors().size() - 1).getConstructorId();
         this.driverUrl = ergastStanding.getDriver().getUrl();
         this.nationality = ergastStanding.getDriver().getNationality();
 
-        ergastStanding.getConstructors().forEach(constructor->{
+        ergastStanding.getConstructors().forEach(constructor -> {
             this.car = this.car + constructor.getName() + " / ";
         });
-        if(this.car.length()>0){
-            this.car = this.car.substring(0, this.car.length()-3);
+        if (this.car.length() > 0) {
+            this.car = this.car.substring(0, this.car.length() - 3);
         }
 
-        this.constructorUrl = ergastStanding.getConstructors().get(ergastStanding.getConstructors().size()-1).getUrl();
+        this.constructorUrl = ergastStanding.getConstructors().get(ergastStanding.getConstructors().size() - 1).getUrl();
         this.points = ergastStanding.getPoints();
         this.wins = ergastStanding.getWins();
         this.permanentNumber = ergastStanding.getDriver().getPermanentNumber();

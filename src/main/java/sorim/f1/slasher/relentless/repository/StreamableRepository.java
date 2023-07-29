@@ -12,5 +12,5 @@ import java.util.List;
 @Transactional
 @EnableJpaAuditing
 public interface StreamableRepository extends CrudRepository<Streamable, String> {
-        List<Streamable> findAllByOrderByIdDesc();
-    }
+    List<Streamable> findAllByOrderByIdDesc();
+}

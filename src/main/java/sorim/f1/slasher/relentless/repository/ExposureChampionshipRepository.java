@@ -15,8 +15,11 @@ import java.util.List;
 @EnableJpaAuditing
 public interface ExposureChampionshipRepository extends CrudRepository<ExposureChampionship, String> {
     List<ExposureChampionship> findAllByIdSeasonAndStatusOrderByIdRound(Integer season, Integer status);
+
     List<ExposureChampionship> findAllByIdSeasonAndIdRoundOrderByVotesDesc(Integer season, Integer round);
+
     ExposureChampionship findFirstByIdSeasonAndIdRoundOrderByVotesDesc(Integer season, Integer round);
+
     Integer deleteByIdSeasonAndIdRoundOrderByVotesDesc(Integer season, Integer round);
 
     @Modifying

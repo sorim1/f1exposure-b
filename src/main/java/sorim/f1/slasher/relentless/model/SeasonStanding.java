@@ -4,13 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import sorim.f1.slasher.relentless.entities.DriverStanding;
 import sorim.f1.slasher.relentless.model.ergast.ErgastStanding;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.persistence.Transient;
 import java.math.BigDecimal;
 
 @Data
@@ -32,15 +27,15 @@ public class SeasonStanding {
         this.positionText = ds.getPositionText();
         this.points = ds.getPoints();
         this.wins = ds.getWins();
-        if(ds.getConstructors()!=null && !ds.getConstructors().isEmpty()) {
+        if (ds.getConstructors() != null && !ds.getConstructors().isEmpty()) {
             this.constructorId = ds.getConstructors().get(0).getConstructorId();
             this.constructorName = ds.getConstructors().get(0).getName();
-            if(ds.getConstructors().size()>1) {
+            if (ds.getConstructors().size() > 1) {
                 this.constructorName = "";
-                ds.getConstructors().forEach(constructor->{
+                ds.getConstructors().forEach(constructor -> {
                     this.constructorName = this.constructorName + constructor.getName() + " / ";
                 });
-                this.constructorName = this.constructorName.substring(0, this.constructorName.length()-3);
+                this.constructorName = this.constructorName.substring(0, this.constructorName.length() - 3);
             }
         }
     }

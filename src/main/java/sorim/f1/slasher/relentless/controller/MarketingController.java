@@ -55,7 +55,7 @@ public class MarketingController {
     }
 
     @PostMapping("/restoreMarketing")
-    public Boolean restoreMarketing(@RequestHeader String client, @RequestBody List<Marketing>  marketings) throws Exception {
+    public Boolean restoreMarketing(@RequestHeader String client, @RequestBody List<Marketing> marketings) throws Exception {
         log.info("restoreMarketing");
         securityService.validateAdminHeader(client);
         return marketingService.restoreMarketing(marketings);

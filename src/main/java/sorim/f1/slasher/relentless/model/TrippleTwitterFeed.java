@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import sorim.f1.slasher.relentless.entities.InstagramPost;
 import sorim.f1.slasher.relentless.entities.TwitterPost;
 
 import java.util.ArrayList;
@@ -21,16 +20,18 @@ public class TrippleTwitterFeed {
     private List<TwitterPost> third = new ArrayList<>();
 
     public TrippleTwitterFeed(Integer mode, List<TwitterPost> posts) {
-        if(mode==2){
-        for(int i = 1; i<posts.size(); i+=2){
-            first.add(posts.get(i-1));
-            second.add(posts.get(i));
-        }}
-        if(mode==3){
-        for(int i = 2; i<posts.size(); i+=3){
-            first.add(posts.get(i-2));
-            second.add(posts.get(i-1));
-            third.add(posts.get(i));
-        }}
+        if (mode == 2) {
+            for (int i = 1; i < posts.size(); i += 2) {
+                first.add(posts.get(i - 1));
+                second.add(posts.get(i));
+            }
+        }
+        if (mode == 3) {
+            for (int i = 2; i < posts.size(); i += 3) {
+                first.add(posts.get(i - 2));
+                second.add(posts.get(i - 1));
+                third.add(posts.get(i));
+            }
+        }
     }
 }

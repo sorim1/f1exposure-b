@@ -21,5 +21,5 @@ public interface TwitterRepository extends PagingAndSortingRepository<TwitterPos
 
 
     @Modifying
-    public void deleteByCreatedAtBefore(Date expiryDate);
+    void deleteByCreatedAtBefore(Date expiryDate);
 }

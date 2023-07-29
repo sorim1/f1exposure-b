@@ -33,7 +33,6 @@ import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 
 @Slf4j
@@ -570,7 +569,7 @@ public class AdminServiceImpl implements AdminService {
 
         java.util.Calendar cal = java.util.Calendar.getInstance();
         cal.add(java.util.Calendar.MONTH, -1);
-        Date previousMonth= cal.getTime();
+        Date previousMonth = cal.getTime();
         newsRepository.deleteByTimestampCreatedBefore(previousMonth);
 
         return true;
@@ -580,18 +579,22 @@ public class AdminServiceImpl implements AdminService {
     public Boolean instagramCleanup() throws Exception {
         return instagramService.cleanup();
     }
+
     @Override
     public String setInstagramWorkerPassword(String password) throws Exception {
         return instagramService.setInstagramWorkerPassword(password);
     }
+
     @Override
     public String setInstagramWorker(String username, String password) throws Exception {
         return instagramService.setInstagramWorker(username, password);
     }
+
     @Override
     public String turnOnOffInstagram(Boolean bool) throws Exception {
         return instagramService.turnOnOffInstagram(bool);
     }
+
     @Override
     public Boolean twitterCleanup() throws Exception {
         return twitterService.cleanup();
@@ -618,10 +621,12 @@ public class AdminServiceImpl implements AdminService {
     public Boolean deleteFourChanPost(Integer id) {
         return fourchanService.deleteFourChanPost(id);
     }
+
     @Override
     public Boolean reverseGoogleImage(String url) {
         return fourchanService.reverseGoogleImage(url, true);
     }
+
     @Override
     public Boolean removeVideo(Integer id) {
         return videoService.removeVideo(id);
@@ -702,6 +707,7 @@ public class AdminServiceImpl implements AdminService {
     public JsonRepositoryModel getJsonRepository(String id) {
         return jsonRepository.findAllById(id);
     }
+
     @Override
     public JsonRepositoryTwoModel updateJsonRepositoryTwo(JsonRepositoryTwoModel body) {
         jsonRepositoryTwo.save(body);
@@ -712,10 +718,12 @@ public class AdminServiceImpl implements AdminService {
     public JsonRepositoryTwoModel getJsonRepositoryTwo(String id) {
         return jsonRepositoryTwo.findAllById(id);
     }
+
     public Boolean deleteJsonRepository(String id) {
-         jsonRepository.deleteById(id);
+        jsonRepository.deleteById(id);
         return true;
     }
+
     @Override
     public String postFormulaDankToInstagram() throws IGLoginException {
         return redditService.postFormulaDankToInstagram();

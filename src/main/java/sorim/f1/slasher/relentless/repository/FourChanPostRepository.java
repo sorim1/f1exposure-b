@@ -16,18 +16,28 @@ import java.util.List;
 @EnableJpaAuditing
 public interface FourChanPostRepository extends CrudRepository<FourChanPostEntity, String> {
     List<FourChanPostEntity> findAllByOrderByIdDesc(Pageable pageable);
+
     List<FourChanPostEntity> findAllByStatus(Integer status);
+
     List<FourChanPostEntity> findAllByStatusOrderByIdAsc(Integer thread, Pageable pageable);
+
     FourChanPostEntity findFirstByStatusInOrderByIdAsc(List<Integer> statusList);
+
     FourChanPostEntity findFirstByIdGreaterThanAndStatusInOrderByIdAsc(Integer id, List<Integer> statusList);
+
     FourChanPostEntity findFirstByIdLessThanAndStatusInOrderByIdAsc(Integer id, List<Integer> statusList);
+
     @Query("SELECT COUNT(u) FROM FourChanPostEntity u WHERE u.status= :status")
     long countRowsByStatus(Integer status);
+
     Integer deleteById(Integer id);
+
     @Modifying
     Integer deleteByIdGreaterThanAndIdLessThan(Integer id1, Integer id2);
+
     @Modifying
     Integer deleteByStatusIn(List<Integer> ids);
+
     @Modifying
     Integer deleteAllByStatus(Integer status);
 }

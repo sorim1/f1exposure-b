@@ -28,7 +28,7 @@ public class RedditPost {
     private String url;
     private String imageUrl;
     private Long created;
-    private Integer type=1;
+    private Integer type = 1;
 
     @Transient
     @JsonIgnore
@@ -38,7 +38,7 @@ public class RedditPost {
     private String t;
     @Transient
     @JsonIgnore
-    private Boolean valid =false;
+    private Boolean valid = false;
 
     @Transient
     private Integer ups;
@@ -47,15 +47,15 @@ public class RedditPost {
         this.id = (String) data.get("id");
         this.title = (String) data.get("title");
         ArrayList<LinkedHashMap<String, Object>> link_flair_richtext = (ArrayList<LinkedHashMap<String, Object>>) data.get("link_flair_richtext");
-        if(link_flair_richtext.size()>0 && link_flair_richtext.get(0).get("t")!=null){
+        if (link_flair_richtext.size() > 0 && link_flair_richtext.get(0).get("t") != null) {
             this.t = link_flair_richtext.get(0).get("t").toString();
         }
-        this.url = "https://reddit.com" + (String) data.get("permalink");
+        this.url = "https://reddit.com" + data.get("permalink");
         this.imageUrl = (String) data.get("url");
         this.valid = isItPhoto();
         this.ups = (Integer) data.get("ups");
         Double createdDouble = (Double) data.get("created");
-        this.created = createdDouble.longValue() ;
+        this.created = createdDouble.longValue();
     }
 
     public RedditPost(int ups) {
@@ -63,26 +63,22 @@ public class RedditPost {
     }
 
     public Boolean isItPhoto() {
-        if(this.imageUrl.startsWith("https://imgur.com/a/")){
+        if (this.imageUrl.startsWith("https://imgur.com/a/")) {
             //TODO ALBUM NECE RADIT https://imgur.com/a/ZBzAKwz
-            type=2;
+            type = 2;
             return false;
         }
-        if(Objects.equals(this.t, "Photo")){
+        if (Objects.equals(this.t, "Photo")) {
             return true;
         }
-        if(this.imageUrl.startsWith("https://i.redd")){
+        if (this.imageUrl.startsWith("https://i.redd")) {
             return true;
         }
-        if(this.imageUrl.startsWith("https://i.imgur.")){
-            return true;
-        }
-
-        return false;
+        return this.imageUrl.startsWith("https://i.imgur.");
     }
 
     public Boolean isItJpeg() {
-        if(isItPhoto()){
+        if (isItPhoto()) {
             return this.imageUrl.endsWith("jpg") || this.imageUrl.endsWith("jpeg");
         }
         return false;

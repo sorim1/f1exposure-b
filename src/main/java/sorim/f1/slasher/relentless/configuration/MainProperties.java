@@ -15,6 +15,7 @@ import java.util.Calendar;
 @ConfigurationProperties(prefix = "f1.exposure.properties")
 public class MainProperties {
 
+    private final PropertiesRepository propertiesRepository;
     public String formula1RacingUrl;
     private String url;
     private Integer currentSeasonPast;
@@ -32,26 +33,23 @@ public class MainProperties {
     private String[] admins;
     private String calendarUrl;
     private String sportSurgeRoot;
-
     private Integer howManySeasonsBack;
     private String sportSurgeStreams;
     private String replaysUrl;
     private String saveRadioLocation;
-    private final PropertiesRepository propertiesRepository;
-
 
     @PostConstruct
     public void setProperty() {
         System.setProperty("net.fortuna.ical4j.timezone.cache.impl", MapTimeZoneCache.class.getName());
         AppProperty ap = propertiesRepository.findDistinctFirstByName("CURRENT_SEASON_PAST");
-        if(ap!=null){
+        if (ap != null) {
             this.currentSeasonPast = Integer.valueOf(ap.getValue());
         } else {
             saveProperty("CURRENT_SEASON_PAST", "2023");
             this.currentSeasonPast = 2023;
         }
         ap = propertiesRepository.findDistinctFirstByName("CURRENT_SEASON_FUTURE");
-        if(ap!=null){
+        if (ap != null) {
             this.currentSeasonFuture = Integer.valueOf(ap.getValue());
         } else {
             saveProperty("CURRENT_SEASON_FUTURE", "2023");
@@ -64,7 +62,7 @@ public class MainProperties {
         AppProperty ap = AppProperty.builder().name("CURRENT_SEASON_PAST").value(String.valueOf(newValue)).build();
         propertiesRepository.save(ap);
         this.currentSeasonPast = newValue;
-        response+=this.currentSeasonPast;
+        response += this.currentSeasonPast;
         checkCurrentSeasonFuture();
         return response;
     }

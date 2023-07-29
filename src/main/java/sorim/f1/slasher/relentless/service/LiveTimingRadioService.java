@@ -10,6 +10,7 @@ import java.util.List;
 public interface LiveTimingRadioService {
 
     void enrichUpcomingRaceAnalysisWithRadioData(UpcomingRaceAnalysis upcomingRaceAnalysis, String jsonStream, RoundEnum session);
+
     List<RadioData> enrichRaceAnalysisWithRadioData(List<Driver> drivers, String jsonStream);
 
     String generatePostRaceRadio();

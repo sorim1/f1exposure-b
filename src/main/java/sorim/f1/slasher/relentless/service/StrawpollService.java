@@ -18,6 +18,7 @@ public interface StrawpollService {
     String setStrawpollDrivers(String drivers);
 
     JsonRepositoryTwoModel getStrawpoll();
+
     StrawpollModelThree saveStrawpoll(StrawpollModelThree body);
 
     StrawpollPoll postStrawpoll();

@@ -5,7 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.web.multipart.MultipartFile;
 import sorim.f1.slasher.relentless.model.FourchanPost;
 
 import javax.persistence.Entity;
@@ -30,22 +29,23 @@ public class FourChanPostEntity {
     private String url;
 
     public FourChanPostEntity(FourchanPost post, Integer status) {
-        this.id=post.getNo();
-        this.text ="( " + post.getW() + " x " + post.getH() + " )";
-        this.status =status;
+        this.id = post.getNo();
+        this.text = "( " + post.getW() + " x " + post.getH() + " )";
+        this.status = status;
         this.url = "https://i.4cdn.org/sp/" + post.getTim() + post.getExt();
     }
+
     public FourChanPostEntity(FourchanPost post) {
-        this.id=post.getNo();
-        this.text ="( " + post.getW() + " x " + post.getH() + " )";
-        this.status =1;
+        this.id = post.getNo();
+        this.text = "( " + post.getW() + " x " + post.getH() + " )";
+        this.status = 1;
         this.url = "https://i.4cdn.org/sp/" + post.getTim() + post.getExt();
     }
 
     public FourChanPostEntity(Integer id, String baseUrl, Integer status) {
-        this.id=id;
-        this.text ="imported image";
-        this.status =status;
+        this.id = id;
+        this.text = "imported image";
+        this.status = status;
         this.url = baseUrl + id;
     }
 }

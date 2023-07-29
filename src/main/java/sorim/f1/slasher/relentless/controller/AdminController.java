@@ -23,7 +23,7 @@ public class AdminController {
     private final SecurityService securityService;
 
     @PostMapping("/refreshCalendar")
-    boolean refreshCalendar(@RequestHeader String client, @RequestBody(required=false) String url) throws Exception {
+    boolean refreshCalendar(@RequestHeader String client, @RequestBody(required = false) String url) throws Exception {
         securityService.validateAdminHeader(client);
         return service.refreshCalendarOfCurrentSeason(url);
     }
@@ -40,7 +40,7 @@ public class AdminController {
     }
 
     @PostMapping("/refreshCalendarSecondary")
-    boolean refreshCalendarSecondary(@RequestHeader String client, @RequestBody(required=false) String url) throws Exception {
+    boolean refreshCalendarSecondary(@RequestHeader String client, @RequestBody(required = false) String url) throws Exception {
         securityService.validateAdminHeader(client);
         return service.refreshCalendarOfCurrentSeasonSecondary(url);
     }
@@ -52,13 +52,13 @@ public class AdminController {
     }
 
     @PostMapping("/setOverlays")
-    String setCountdownModes(@RequestHeader String client,@RequestBody String overlays) throws Exception {
+    String setCountdownModes(@RequestHeader String client, @RequestBody String overlays) throws Exception {
         securityService.validateAdminHeader(client);
         return service.setOverlays(overlays);
     }
 
     @PostMapping("/setIframeLink")
-    String setIframeLink(@RequestHeader String client,@RequestBody String body) throws Exception {
+    String setIframeLink(@RequestHeader String client, @RequestBody String body) throws Exception {
         securityService.validateAdminHeader(client);
         return service.setIframeLink(body);
     }
@@ -99,6 +99,7 @@ public class AdminController {
         securityService.validateAdminHeader(client);
         return service.fetchFourChanPosts();
     }
+
     @GetMapping("/deleteFourChan")
     Boolean deleteFourChan(@RequestHeader String client) throws Exception {
         securityService.validateAdminHeader(client);
@@ -110,6 +111,7 @@ public class AdminController {
         securityService.validateAdminHeader(client);
         return service.deleteFourChanPost(id);
     }
+
     @PostMapping("/reverseGoogleImage")
     Boolean reverseGoogleImage(@RequestHeader String client, @RequestBody String url) throws Exception {
         securityService.validateAdminHeader(client);
@@ -127,6 +129,7 @@ public class AdminController {
         securityService.validateAdminHeader(client);
         return service.removeVideo(id);
     }
+
     @PostMapping("/saveVideos")
     List<Replay> saveVideos(@RequestHeader String client, @RequestBody List<Replay> videos) throws Exception {
         securityService.validateAdminHeader(client);
@@ -136,7 +139,7 @@ public class AdminController {
     @GetMapping("/deleteComment/{mode}/{id}")
     Integer deleteComment(@RequestHeader String client, @PathVariable("mode") String mode, @PathVariable("id") String id) throws Exception {
         securityService.validateAdminHeader(client);
-        return service.deleteComment(Integer.valueOf(mode),Integer.valueOf(id));
+        return service.deleteComment(Integer.valueOf(mode), Integer.valueOf(id));
     }
 
     @PatchMapping("/updateAwsPost/")
@@ -202,7 +205,7 @@ public class AdminController {
     }
 
     @GetMapping("/getLogs")
-    List<Log> getLogs(@RequestHeader String client, @RequestParam(required=false) Integer mode, @RequestParam(required=false) String filter) throws Exception {
+    List<Log> getLogs(@RequestHeader String client, @RequestParam(required = false) Integer mode, @RequestParam(required = false) String filter) throws Exception {
         securityService.validateAdminHeader(client);
         return securityService.getLogs(mode, filter);
     }
@@ -238,7 +241,7 @@ public class AdminController {
     }
 
     @GetMapping("/deleteAwsContent")
-    Integer deleteAwsContent(@RequestHeader String client, @RequestParam(required=false) String username) throws Exception {
+    Integer deleteAwsContent(@RequestHeader String client, @RequestParam(required = false) String username) throws Exception {
         securityService.validateAdminHeader(client);
         return service.deleteAwsContent(username);
     }
@@ -266,6 +269,7 @@ public class AdminController {
         securityService.validateAdminHeader(client);
         return service.setInstagramWorkerPassword(password);
     }
+
     @GetMapping("/setInstagramWorker/{username}/{password}")
     String setInstagramWorker2Password(@RequestHeader String client, @PathVariable String username, @PathVariable String password) throws Exception {
         securityService.validateAdminHeader(client);
@@ -277,14 +281,17 @@ public class AdminController {
         securityService.validateAdminHeader(client);
         return service.turnOnOffInstagram(bool);
     }
+
     @GetMapping("/checkCurrentStream")
     Boolean checkCurrentStream() throws IOException {
         return service.checkCurrentStream();
     }
+
     @GetMapping("/updateCurrentSeasonPast/{season}")
     String updateCurrentSeasonPast(@RequestHeader String client, @PathVariable("season") Integer season) {
         return service.updateCurrentSeasonPast(season);
     }
+
     @GetMapping("/saveProperty/{name}/{value}")
     String saveProperty(@RequestHeader String client, @PathVariable String name, @PathVariable String value) throws Exception {
         securityService.validateAdminHeader(client);
@@ -297,10 +304,12 @@ public class AdminController {
         securityService.validateAdminHeader(client);
         return service.updateJsonRepository(body);
     }
+
     @GetMapping("/postFormulaDankToInstagram")
     String postFormulaDankToInstagram(@RequestHeader String client) throws IGLoginException {
         return service.postFormulaDankToInstagram();
     }
+
     @GetMapping("/getJsonRepository/{id}")
     JsonRepositoryModel getJsonRepository(@PathVariable("id") String id) {
         return service.getJsonRepository(id);

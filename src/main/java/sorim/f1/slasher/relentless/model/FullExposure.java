@@ -4,7 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import sorim.f1.slasher.relentless.entities.*;
+import sorim.f1.slasher.relentless.entities.ExposedVoteTotals;
+import sorim.f1.slasher.relentless.entities.ExposureChampionship;
+import sorim.f1.slasher.relentless.entities.ExposureChampionshipStanding;
 
 import java.util.List;
 

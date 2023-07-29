@@ -3,28 +3,16 @@ package sorim.f1.slasher.relentless.controller;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.Resource;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.servlet.mvc.method.annotation.MvcUriComponentsBuilder;
 import sorim.f1.slasher.relentless.entities.FourChanPostEntity;
-import sorim.f1.slasher.relentless.model.FileData;
-import sorim.f1.slasher.relentless.model.FourchanPost;
 import sorim.f1.slasher.relentless.model.KeyValue;
-import sorim.f1.slasher.relentless.model.UploadResponseMessage;
-import sorim.f1.slasher.relentless.service.FileService;
 import sorim.f1.slasher.relentless.service.FourchanService;
 import sorim.f1.slasher.relentless.service.InstagramService;
 import sorim.f1.slasher.relentless.service.SecurityService;
 
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.List;
 
 
@@ -56,7 +44,7 @@ public class SocialMediaController {
     }
 
     @PostMapping("/setNoDuplicatesFound")
-    String setNoDuplicatesFound(@RequestHeader String client,@RequestBody String newValue) throws Exception {
+    String setNoDuplicatesFound(@RequestHeader String client, @RequestBody String newValue) throws Exception {
         securityService.validateAdminHeader(client);
         return fourchanService.setNoDuplicatesFound(newValue);
     }
@@ -66,11 +54,13 @@ public class SocialMediaController {
         securityService.validateClientAndUsername(client, username);
         return fourchanService.saveChanPosts(body);
     }
+
     @GetMapping("/deleteChanByStatus/{status}")
     Boolean deleteChanByStatus(@RequestHeader String client, @PathVariable Integer status) throws Exception {
         securityService.validateAdminHeader(client);
         return fourchanService.deleteChanByStatus(status);
     }
+
     @GetMapping("/getInstagramFollows")
     List<KeyValue> getInstagramFollows(@RequestHeader String client) throws Exception {
         securityService.validateHeader(client);
@@ -99,9 +89,10 @@ public class SocialMediaController {
     @GetMapping("/cleanup")
     Boolean cleanup(@RequestHeader String client) throws Exception {
         securityService.validateAdminHeader(client);
-         fourchanService.cleanup();
+        fourchanService.cleanup();
         return true;
     }
+
     @GetMapping("/deleteByStatus/{status}")
     Boolean cleanup(@RequestHeader String client, @PathVariable Integer status) throws Exception {
         securityService.validateAdminHeader(client);

@@ -33,6 +33,7 @@ public class SecurityServiceImpl implements SecurityService {
             Logger.raiseException(AUTHORIZATION_CLIENT_FAILURE, authorization);
         }
     }
+
     @Override
     public void validateClientAndUsername(String authorization, String username) throws Exception {
         validateHeader(authorization);
@@ -41,7 +42,6 @@ public class SecurityServiceImpl implements SecurityService {
             Logger.raiseException(AUTHORIZATION_CLIENT_FAILURE, username);
         }
     }
-
 
 
     @Override

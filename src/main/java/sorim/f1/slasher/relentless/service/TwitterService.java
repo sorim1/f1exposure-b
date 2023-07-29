@@ -7,6 +7,7 @@ import java.util.List;
 public interface TwitterService {
 
     List<TwitterPost> getTwitterPosts(Integer page);
+
     TwitterPost getMostPopularDailyPost();
 
     Boolean fetchTwitterPosts() throws Exception;

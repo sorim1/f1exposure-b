@@ -17,6 +17,7 @@ import java.util.List;
 public interface NewsCommentRepository extends CrudRepository<NewsComment, String> {
 
     List<NewsComment> findAll();
+
     List<NewsComment> findAllByContentCodeAndStatusLessThanOrderByTimestampCreatedDesc(String code, Integer status);
 
     NewsComment findNewsCommentById(Integer id);

@@ -187,8 +187,9 @@ public class ClientController {
         securityService.validateHeader(client);
         return service.getSidebarData();
     }
+
     @GetMapping("/setSidebarExposureDriver")
-    SidebarData setSidebarExposureDriver(@RequestHeader String client, @RequestBody(required=false) KeyValue exposureDriver) throws Exception {
+    SidebarData setSidebarExposureDriver(@RequestHeader String client, @RequestBody(required = false) KeyValue exposureDriver) throws Exception {
         securityService.validateHeader(client);
         return service.setSidebarExposureDriver(exposureDriver);
     }
@@ -198,11 +199,13 @@ public class ClientController {
         securityService.validateHeader(client);
         return service.getNewsPost(code);
     }
+
     @GetMapping("/getNextThreeNews/{timestampActivity}")
     List<NewsContent> getNextNewsList(@RequestHeader String client, @PathVariable("timestampActivity") String timestampActivity) throws Exception {
         securityService.validateHeader(client);
         return service.getNextNewsList(timestampActivity);
     }
+
     @GetMapping("/getNavbarData")
     NavbarData getNavbarData(@RequestHeader String client) throws Exception {
         securityService.validateHeader(client);
@@ -211,15 +214,15 @@ public class ClientController {
 
     @GetMapping("/updateNavbarData")
     NavbarData updateNavbarData(@RequestHeader String client, @RequestBody NavbarData navbarData) throws Exception {
-         securityService.validateHeader(client);
+        securityService.validateHeader(client);
         return service.updateNavbarData(navbarData);
     }
+
     @GetMapping("/bumpNewsPost/{code}/{mode}")
     Boolean bumpNewsPost(@RequestHeader String client, @PathVariable("code") String code, @PathVariable("mode") Integer mode) throws Exception {
         securityService.validateHeader(client);
         return service.bumpNewsPost(code, mode);
     }
-
 
 
     @PostMapping("/postNewsComment")

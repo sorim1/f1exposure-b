@@ -6,7 +6,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import sorim.f1.slasher.relentless.model.ergast.ErgastDriver;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name = "DRIVERS")
@@ -29,6 +32,6 @@ public class Driver {
         this.code = ed.getCode();
         this.ergastCode = ed.getDriverId();
         this.fullName = ed.getFamilyName();
-        this.status=1;
+        this.status = 1;
     }
 }

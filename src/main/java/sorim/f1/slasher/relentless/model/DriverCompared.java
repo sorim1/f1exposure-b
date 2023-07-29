@@ -5,7 +5,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import sorim.f1.slasher.relentless.entities.DriverStanding;
-import sorim.f1.slasher.relentless.model.ergast.ErgastDriver;
 
 import java.math.BigDecimal;
 

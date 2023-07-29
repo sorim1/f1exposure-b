@@ -21,6 +21,12 @@ import java.util.Random;
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class Scheduler {
 
+    private static final String CODE = "SCHEDULER";
+    private static final String F1EXPOSURE_COM = "f1exposure.com";
+    public static Boolean standingsUpdated = false;
+    public static Boolean analysisDone = false;
+    public static Boolean strawpollFound = false;
+    private static boolean isRaceWeek = true;
     private final ExposureStrawpollService exposureService;
     private final AdminService adminService;
     private final ClientService clientService;
@@ -28,15 +34,7 @@ public class Scheduler {
     private final ErgastService ergastService;
     private final StrawpollService strawpollService;
     private final RedditService redditService;
-
     private final MainProperties properties;
-    private static final String CODE = "SCHEDULER";
-    private static final String F1EXPOSURE_COM = "f1exposure.com";
-
-    public static Boolean standingsUpdated = false;
-    public static Boolean analysisDone = false;
-    public static Boolean strawpollFound = false;
-    private static boolean isRaceWeek = true;
 
     @Scheduled(cron = "0 0 4 * * MON")
     public void mondayJobs() throws IOException {
@@ -69,10 +67,10 @@ public class Scheduler {
     }
 
     @Scheduled(cron = "0 0 1 * * WED")
-    public void wednesdayJobs(){
+    public void wednesdayJobs() {
         log.info(CODE + " - wednesdayJobs called");
-            log.info(CODE + " - setNavbarData");
-            clientService.setNavbarData();
+        log.info(CODE + " - setNavbarData");
+        clientService.setNavbarData();
     }
 
     @Scheduled(cron = "0 0 4 * * FRI")
@@ -86,7 +84,7 @@ public class Scheduler {
 
     private Boolean isItRaceWeek() {
         CalendarData calendarData = clientService.getCountdownData(5);
-        if(calendarData.getF1Calendar()!=null) {
+        if (calendarData.getF1Calendar() != null) {
             isRaceWeek = calendarData.getCountdownData().get("raceDays") < 7;
         } else {
             isRaceWeek = false;
@@ -107,7 +105,7 @@ public class Scheduler {
         log.info(CODE + " - sundayStandingsJobs called");
         adminService.initializeStandings(true);
         int weekDay = MainUtility.getWeekDay();
-        if (!standingsUpdated && weekDay==1) {
+        if (!standingsUpdated && weekDay == 1) {
             log.info(CODE + " - sundayStandingsJobs delayed");
             new java.util.Timer().schedule(
                     new java.util.TimerTask() {
@@ -119,7 +117,7 @@ public class Scheduler {
                     },
                     delay
             );
-        }else {
+        } else {
             log.info(CODE + " - sundayStandingsJobs UPDATED");
         }
     }
@@ -130,7 +128,7 @@ public class Scheduler {
             Integer delay;
             log.info(CODE + " - sundayAnalysisJob called");
             int weekDay = MainUtility.getWeekDay();
-            if (!analysisDone && weekDay==1) {
+            if (!analysisDone && weekDay == 1) {
                 delay = liveTimingService.analyzeLatestRace(true);
                 if (delay != null) {
                     int delayInMiliseconds = delay * 1000;
@@ -158,7 +156,7 @@ public class Scheduler {
         Integer delay = liveTimingService.analyzeUpcomingRace(false);
         log.info(CODE + " - analyzeUpcomingRacePeriodically called");
         int weekDay = MainUtility.getWeekDay();
-        if (delay != null && weekDay>5) {
+        if (delay != null && weekDay > 5) {
             int delayInMiliseconds = delay * 1000;
             MainUtility.logTime("analyzeUpcomingRacePeriodically", delayInMiliseconds);
             new java.util.Timer().schedule(
@@ -184,6 +182,7 @@ public class Scheduler {
             );
         }
     }
+
     private void getImagesPeriodicallyRoot() {
         Integer delay = adminService.getNextRefreshTimeUsingCalendar(3600);
         log.info(CODE + " - getImagesPeriodicallyRoot called: " + delay);
@@ -203,16 +202,17 @@ public class Scheduler {
             );
         }
     }
+
     private void getImagesPeriodically(Integer countdown) {
         log.info(CODE + " - getImagesPeriodically called " + countdown);
         int delayInMiliseconds = 900000;
-        if(countdown>0) {
+        if (countdown > 0) {
             new java.util.Timer().schedule(
                     new java.util.TimerTask() {
                         @SneakyThrows
                         @Override
                         public void run() {
-                            if(countdown==2){
+                            if (countdown == 2) {
                                 imageFeedJob();
                             } else {
                                 imageFeedJobWithoutInstagram();
@@ -224,13 +224,13 @@ public class Scheduler {
             );
         } else {
             boolean isGenerating = liveTimingService.checkIfEventIsGenerating();
-            if(isGenerating) {
+            if (isGenerating) {
                 new java.util.Timer().schedule(
                         new java.util.TimerTask() {
                             @SneakyThrows
                             @Override
                             public void run() {
-                               imageFeedJobWithoutInstagram();
+                                imageFeedJobWithoutInstagram();
                                 getImagesPeriodically(0);
                             }
                         },
@@ -244,22 +244,22 @@ public class Scheduler {
         }
     }
 
-   // @PostConstruct
+    @PostConstruct
     void onInit() throws Exception {
         log.info("onInitScheduler Called");
         isItRaceWeek();
         int weekDay = MainUtility.getWeekDay();
-     //   adminService.cleanup();
+        //   adminService.cleanup();
         try {
             switch (weekDay) {
-                case 1:{
+                case 1: {
                     weekendJobsContinuous();
                     sundayAnalysisJob();
                     sundayStandingsJobs();
                     break;
                 }
                 case 6:
-                case 7:{
+                case 7: {
                     weekendJobsContinuous();
                     break;
                 }
@@ -285,15 +285,16 @@ public class Scheduler {
         log.info("imageFeedJob called");
         clientService.fetchImageFeed();
     }
+
     void imageFeedJobWithoutInstagram() throws Exception {
         log.info("imageFeedJobWithoutInstgram called");
-      //  clientService.fetchTwitterPosts();
+        //  clientService.fetchTwitterPosts();
         clientService.fetchRedditPosts();
     }
 
     @Scheduled(cron = "0 0 1,8,10,12,14,16,18,20,22 * * *")
     void bihourlyJob() throws Exception {
-        if(properties.getUrl().contains(F1EXPOSURE_COM)){
+        if (properties.getUrl().contains(F1EXPOSURE_COM)) {
             imageFeedJobWithoutInstagram();
             adminService.checkCurrentStream();
         } else {
@@ -303,36 +304,37 @@ public class Scheduler {
 
     }
 
-     @Scheduled(cron = "0 0 12 * * *")
+    @Scheduled(cron = "0 0 12 * * *")
     void firstInstagramJob() throws Exception {
-         Random rand = new Random();
-         int minutes = rand.nextInt(20);
+        Random rand = new Random();
+        int minutes = rand.nextInt(20);
         log.info("firstInstagramJob to be called: " + minutes);
-         if(properties.getUrl().contains(F1EXPOSURE_COM)){
-             Thread.sleep(1000 * 60 * minutes);
-             try{
-                 clientService.fetchInstagramPosts();
-             }catch(Exception e){
-                 log.info("firstInstagramJob fetch failed: {}", e.getMessage());
-             }
-             Thread.sleep(1000 * 60 * minutes);
-             String title = redditService.postFormulaDankToInstagram();
-             log.info("firstInstagramJob ended: " + title);
-         } else {
-             log.warn("url not " + F1EXPOSURE_COM);
-             log.warn(properties.getUrl());
-         }
+        if (properties.getUrl().contains(F1EXPOSURE_COM)) {
+            Thread.sleep(1000 * 60 * minutes);
+            try {
+                clientService.fetchInstagramPosts();
+            } catch (Exception e) {
+                log.info("firstInstagramJob fetch failed: {}", e.getMessage());
+            }
+            Thread.sleep(1000 * 60 * minutes);
+            String title = redditService.postFormulaDankToInstagram();
+            log.info("firstInstagramJob ended: " + title);
+        } else {
+            log.warn("url not " + F1EXPOSURE_COM);
+            log.warn(properties.getUrl());
+        }
     }
-   // @Scheduled(cron = "0 0 1 * * *")
+
+    // @Scheduled(cron = "0 0 1 * * *")
     void secondInstagramJob() throws Exception {
         Random rand = new Random();
         int minutes = rand.nextInt(20);
         log.info("secondInstagramJob called: " + minutes);
-        if(properties.getUrl().contains(F1EXPOSURE_COM)){
+        if (properties.getUrl().contains(F1EXPOSURE_COM)) {
             Thread.sleep(1000 * 60 * minutes);
-            try{
+            try {
                 clientService.fetchInstagramPosts();
-            }catch(Exception e){
+            } catch (Exception e) {
                 log.info("secondInstagramJob fetch failed: {}", e.getMessage());
             }
             Thread.sleep(1000 * 60 * minutes);

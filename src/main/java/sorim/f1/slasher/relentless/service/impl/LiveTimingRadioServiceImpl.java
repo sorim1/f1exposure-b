@@ -84,22 +84,22 @@ public class LiveTimingRadioServiceImpl implements LiveTimingRadioService {
         AtomicReference<String> topImageString = new AtomicReference<>("");
         AtomicReference<String> mkvListString = new AtomicReference<>("");
 
-        drivers.forEach(driver->{
+        drivers.forEach(driver -> {
             bottomImage.set(generateBottomImageString(bottomImage.get(), String.valueOf(driver.getNum()), driver.getPosition()));
             topImageString.set(generateTopImageString(topImageString.get(), String.valueOf(driver.getNum()), driver.getPosition()));
 
-            if(radioMap.containsKey(Integer.valueOf(driver.getNum()))){
-            mergeImageAndAudioString.set(generateMergeImageAndAudioString(directoryName, mergeImageAndAudioString.get(), String.valueOf(driver.getNum())));
-            mkvListString.set(generateMkvListString(directoryName, mkvListString.get(), String.valueOf(driver.getNum())));
+            if (radioMap.containsKey(Integer.valueOf(driver.getNum()))) {
+                mergeImageAndAudioString.set(generateMergeImageAndAudioString(directoryName, mergeImageAndAudioString.get(), String.valueOf(driver.getNum())));
+                mkvListString.set(generateMkvListString(directoryName, mkvListString.get(), String.valueOf(driver.getNum())));
 
-            File file = new File(directoryName + "/mp3/" + driver.getNum() + ".mp3");
-            try {
-                OutputStream os = new FileOutputStream(file);
-                os.write(radioMap.get(Integer.valueOf(driver.getNum())));
-                os.close();
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            }
+                File file = new File(directoryName + "/mp3/" + driver.getNum() + ".mp3");
+                try {
+                    OutputStream os = new FileOutputStream(file);
+                    os.write(radioMap.get(Integer.valueOf(driver.getNum())));
+                    os.close();
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
             }
         });
         try {
@@ -122,11 +122,11 @@ public class LiveTimingRadioServiceImpl implements LiveTimingRadioService {
         if (!directory.exists()) {
             directory.mkdir();
         }
-        File directory2 = new File(directoryName +"/mp3");
+        File directory2 = new File(directoryName + "/mp3");
         if (!directory2.exists()) {
             directory2.mkdir();
         }
-        File directory3 = new File(directoryName +"/images");
+        File directory3 = new File(directoryName + "/images");
         if (!directory3.exists()) {
             directory3.mkdir();
         }
@@ -145,27 +145,30 @@ public class LiveTimingRadioServiceImpl implements LiveTimingRadioService {
         response += System.lineSeparator();
         return response;
     }
+
     private String generateBottomImageString(String input, String key, Integer position) {
         String response = input;
-         response += "-i C:/root/drivers/L" + key + ".png ";
-         if(position==10){
-             response += "-filter_complex \"hstack=inputs=" + 10 + "[v]\" -map \"[v]\" images/bottom-image-1.png";
-             response += System.lineSeparator();
-             response += "ffmpeg ";
-         }
+        response += "-i C:/root/drivers/L" + key + ".png ";
+        if (position == 10) {
+            response += "-filter_complex \"hstack=inputs=" + 10 + "[v]\" -map \"[v]\" images/bottom-image-1.png";
+            response += System.lineSeparator();
+            response += "ffmpeg ";
+        }
         return response;
     }
+
     private String generateTopImageString(String input, String key, Integer position) {
         String response = input;
-        response += "ffmpeg -i C:/root/drivers/P"+position+".png -i C:/root/drivers/T"+key+".png -filter_complex hstack images/T" +key+ ".png";
+        response += "ffmpeg -i C:/root/drivers/P" + position + ".png -i C:/root/drivers/T" + key + ".png -filter_complex hstack images/T" + key + ".png";
         response += System.lineSeparator();
-        response += "ffmpeg -i images/T"+key+".png -i images/bottom-image.png -filter_complex vstack images/F" +key+ ".png";
+        response += "ffmpeg -i images/T" + key + ".png -i images/bottom-image.png -filter_complex vstack images/F" + key + ".png";
         response += System.lineSeparator();
         return response;
     }
+
     private String closeImagesString(String input, Integer size) {
         String response = input;
-        response += "-filter_complex \"hstack=inputs=" + (size-10) + "[v]\" -map \"[v]\" images/bottom-image-2.png";
+        response += "-filter_complex \"hstack=inputs=" + (size - 10) + "[v]\" -map \"[v]\" images/bottom-image-2.png";
         response += System.lineSeparator();
         response += "ffmpeg -i images/bottom-image-1.png -i images/bottom-image-2.png -filter_complex vstack images/bottom-image.png";
         response += System.lineSeparator();
@@ -175,7 +178,7 @@ public class LiveTimingRadioServiceImpl implements LiveTimingRadioService {
 
     private String generateMergeImageAndAudioStringEnding(String dateDirectory, String input) {
         String response = input;
-        response += "ffmpeg -safe 0 -f concat -i list.txt -c copy " + dateDirectory +"\\000.mp4";
+        response += "ffmpeg -safe 0 -f concat -i list.txt -c copy " + dateDirectory + "\\000.mp4";
         response += System.lineSeparator();
         return response;
     }
@@ -194,7 +197,8 @@ public class LiveTimingRadioServiceImpl implements LiveTimingRadioService {
         }
         return false;
     }
-    private List<Driver>  getDriversData() {
+
+    private List<Driver> getDriversData() {
         log.info(LIVETIMING_URL + relativePath + "SPFeed.json");
         String liveTimingResponse = restTemplate.getForObject(LIVETIMING_URL + relativePath + "SPFeed.json", String.class);
         liveTimingResponse = liveTimingResponse.substring(liveTimingResponse.indexOf("{"));

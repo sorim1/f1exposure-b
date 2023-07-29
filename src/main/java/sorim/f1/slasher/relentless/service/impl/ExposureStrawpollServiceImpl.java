@@ -58,6 +58,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
 
     private final JsonRepository jsonRepository;
     private final JsonRepositoryTwo jsonRepository2;
+
     @PostConstruct
     private void init() {
         AppProperty app = propertiesRepository.findDistinctFirstByName("exposureRound");
@@ -129,7 +130,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
             Boolean isVotable = updateExposureDataFromStrawpoll(newStrawpoll);
             log.info("newStrawpoll - isVotable: " + newStrawpoll.getPoll().getIs_votable());
             log.info("isVotable" + isVotable);
-            if(isVotable) {
+            if (isVotable) {
                 new java.util.Timer().schedule(
                         new java.util.TimerTask() {
                             @SneakyThrows
@@ -246,6 +247,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
                 .exposureRaces(jsonRepository2.findAllById("EXPOSURE_CURRENT_RACES").getJson())
                 .build();
     }
+
     @Override
     public JsonRepositoryModel archiveExposureData() {
         ExposureData response = getExposedChartData();
@@ -260,7 +262,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
         return jrm;
     }
 
-    private void saveExposureRaces(){
+    private void saveExposureRaces() {
         List<FrontendRace> races = ergastService.getRacesSoFar(String.valueOf(properties.getCurrentSeasonPast()), currentExposureRound);
         enrichRacesWithExposureWinner(races);
         JsonRepositoryTwoModel jrm2 = JsonRepositoryTwoModel.builder()
@@ -271,10 +273,10 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
 
     private void enrichRacesWithExposureWinner(List<FrontendRace> races) {
         Integer season = properties.getCurrentSeasonPast();
-        races.forEach(race->{
+        races.forEach(race -> {
             race.setRaceName(race.getRaceName().replace("Grand Prix", "GP"));
             List<ExposureChampionship> list = exposureChampionshipRepository.findAllByIdSeasonAndIdRoundOrderByVotesDesc(season, race.getRound());
-            if(list!=null && !list.isEmpty()){
+            if (list != null && !list.isEmpty()) {
                 race.setExposureWinner(list.get(0).getName());
             }
         });
@@ -300,9 +302,9 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
         showWinner = showWinnerValue;
         backupExposureToDatabase();
         resetStrawpoll();
-        try{
+        try {
             saveExposureRaces();
-        } catch(Exception e){
+        } catch (Exception e) {
             //TODO delete ako radi ok
             log.error("saveExposureRaces error", e);
         }
@@ -342,7 +344,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
             drivers.add(row.getId().getDriver());
             driverNames.add(row.getName());
             exposureList.add(row.getExposure());
-            if(detailed){
+            if (detailed) {
                 results.add(row.getVotes());
             }
         });
@@ -353,7 +355,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
                 .round(round)
                 .season(season)
                 .build();
-        if(detailed){
+        if (detailed) {
             ExposedVoteTotals total = exposedVoteTotalsRepository.findExposedTotalBySeasonAndRound(season, round);
             if (total == null) {
                 total = new ExposedVoteTotals();
@@ -366,11 +368,12 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
         }
         return response;
     }
+
     @Override
-    public KeyValue getLatestRaceExposureWinner(){
+    public KeyValue getLatestRaceExposureWinner() {
         //TODO remove trycatch ako je sve ok properties.getCurrentSeasonPast(), currentExposureRound
-        ExposureChampionship winner= exposureChampionshipRepository.findFirstByIdSeasonAndIdRoundOrderByVotesDesc(properties.getCurrentSeasonPast(), currentExposureRound);
-        if(winner!=null && winner.getVotes()>20){
+        ExposureChampionship winner = exposureChampionshipRepository.findFirstByIdSeasonAndIdRoundOrderByVotesDesc(properties.getCurrentSeasonPast(), currentExposureRound);
+        if (winner != null && winner.getVotes() > 20) {
             String key = title;
             String value = winner.getId().getDriver();
             return KeyValue.builder().key(key).value(value).build();
@@ -381,11 +384,11 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
     @Override
     public Object getSingleExposureResult(Integer season, Integer round) {
         JsonRepositoryModel jrm = jsonRepository.findAllById("EXPOSURE_RESULT_" + season + "_" + round);
-        if(jrm!=null){
+        if (jrm != null) {
             log.info("nasao single exposure result u bazi");
             return jrm.getJson();
         } else {
-          ActiveExposureChart generatedExposureResult = generateSingleExposureResult(season, round, false);
+            ActiveExposureChart generatedExposureResult = generateSingleExposureResult(season, round, false);
             JsonRepositoryModel saveData = JsonRepositoryModel.builder()
                     .id("EXPOSURE_RESULT_" + season + "_" + round)
                     .json(generatedExposureResult).build();
@@ -451,38 +454,38 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
     private Boolean updateExposureDataFromStrawpoll(StrawpollModelThree strawpoll) {
         List<ExposureChampionship> list = new ArrayList<>();
         Integer voters = strawpoll.getPoll().getPoll_meta().getParticipant_count();
-        if(voters>0){
-        Integer totalVotes = strawpoll.getPoll().getPoll_meta().getVote_count();
-        if (totalVotes > latestVoteCount) {
-            reloadDelay = 20000;
-        } else {
-            reloadDelay = reloadDelay + 20000;
-            log.info("reloadDelay increased:" + reloadDelay);
-        }
-        latestVoteCount = totalVotes;
-        strawpoll.getPoll().getPoll_options().forEach(pollAnswer -> {
-            String code = getDriverCodeFromName(pollAnswer.getValue());
-            SeasonRoundDriverId exposedId = SeasonRoundDriverId.builder()
-                    .season(properties.getCurrentSeasonFuture())
-                    .round(currentExposureRound)
-                    .driver(code).build();
+        if (voters > 0) {
+            Integer totalVotes = strawpoll.getPoll().getPoll_meta().getVote_count();
+            if (totalVotes > latestVoteCount) {
+                reloadDelay = 20000;
+            } else {
+                reloadDelay = reloadDelay + 20000;
+                log.info("reloadDelay increased:" + reloadDelay);
+            }
+            latestVoteCount = totalVotes;
+            strawpoll.getPoll().getPoll_options().forEach(pollAnswer -> {
+                String code = getDriverCodeFromName(pollAnswer.getValue());
+                SeasonRoundDriverId exposedId = SeasonRoundDriverId.builder()
+                        .season(properties.getCurrentSeasonFuture())
+                        .round(currentExposureRound)
+                        .driver(code).build();
 
-            BigDecimal exposure = new BigDecimal(pollAnswer.getVote_count() * 100).divide(new BigDecimal(voters), 2, RoundingMode.HALF_UP);
-            ExposureChampionship newRow = ExposureChampionship.builder().id(exposedId)
-                    .exposure(exposure)
-                    .color(getColorFromDriverCode(code))
-                    .status(2)
-                    .name(pollAnswer.getValue())
-                    .votes(pollAnswer.getVote_count()).build();
-            list.add(newRow);
-        });
-        exposureChampionshipRepository.saveAll(list);
-        ExposedTotalsId totalsId = ExposedTotalsId.builder().season(properties.getCurrentSeasonFuture())
-                .round(currentExposureRound).build();
-        ExposedVoteTotals totals = ExposedVoteTotals.builder().id(totalsId).voters(voters).votes(totalVotes)
-                .strawpoll(strawpollId)
-                .build();
-        exposedVoteTotalsRepository.save(totals);
+                BigDecimal exposure = new BigDecimal(pollAnswer.getVote_count() * 100).divide(new BigDecimal(voters), 2, RoundingMode.HALF_UP);
+                ExposureChampionship newRow = ExposureChampionship.builder().id(exposedId)
+                        .exposure(exposure)
+                        .color(getColorFromDriverCode(code))
+                        .status(2)
+                        .name(pollAnswer.getValue())
+                        .votes(pollAnswer.getVote_count()).build();
+                list.add(newRow);
+            });
+            exposureChampionshipRepository.saveAll(list);
+            ExposedTotalsId totalsId = ExposedTotalsId.builder().season(properties.getCurrentSeasonFuture())
+                    .round(currentExposureRound).build();
+            ExposedVoteTotals totals = ExposedVoteTotals.builder().id(totalsId).voters(voters).votes(totalVotes)
+                    .strawpoll(strawpollId)
+                    .build();
+            exposedVoteTotalsRepository.save(totals);
         }
         return strawpoll.getPoll().getIs_votable();
     }
@@ -511,7 +514,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
             Driver newDriver = Driver.builder().status(1).fullName(name)
                     .code(name.substring(0, 3).toUpperCase()).ergastCode(name.toLowerCase()).build();
             log.info("getDriverCodeFromName - save driver list - one: " + name);
-            if(newDriver.getCode().equals("PER")){
+            if (newDriver.getCode().equals("PER")) {
                 log.error("PEREZ NIJE U MAPI - ZASTO?? ");
                 newDriver.setErgastCode("perez");
             }

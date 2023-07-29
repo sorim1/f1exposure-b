@@ -24,5 +24,4 @@ public interface F1CommentRepository extends CrudRepository<F1Comment, String> {
     Integer updateStatus(@Param(value = "id") Integer name, @Param(value = "newStatus") Integer newStatus);
 
 
-
 }

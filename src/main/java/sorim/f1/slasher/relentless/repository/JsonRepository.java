@@ -14,5 +14,6 @@ import java.util.List;
 public interface JsonRepository extends CrudRepository<JsonRepositoryModel, String> {
 
     JsonRepositoryModel findAllById(String id);
+
     List<JsonRepositoryModel> findAllByIdStartsWith(String prefix);
 }

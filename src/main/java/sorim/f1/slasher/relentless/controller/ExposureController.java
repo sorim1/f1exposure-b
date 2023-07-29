@@ -6,7 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import sorim.f1.slasher.relentless.entities.JsonRepositoryModel;
 import sorim.f1.slasher.relentless.entities.JsonRepositoryTwoModel;
-import sorim.f1.slasher.relentless.model.*;
+import sorim.f1.slasher.relentless.model.ExposureData;
+import sorim.f1.slasher.relentless.model.FullExposure;
 import sorim.f1.slasher.relentless.model.strawpoll.StrawpollModelThree;
 import sorim.f1.slasher.relentless.model.strawpoll.StrawpollPoll;
 import sorim.f1.slasher.relentless.service.ExposureStrawpollService;
@@ -74,7 +75,6 @@ public class ExposureController {
     }
 
 
-
     @GetMapping("/closeExposurePoll")
     void closeExposurePoll(@RequestHeader String client) throws Exception {
         securityService.validateAdminHeader(client);
@@ -118,7 +118,7 @@ public class ExposureController {
     }
 
     @GetMapping("/showWinner/{value}")
-    String showWinner(@RequestHeader String client,@PathVariable("value") Boolean value) throws Exception {
+    String showWinner(@RequestHeader String client, @PathVariable("value") Boolean value) throws Exception {
         securityService.validateAdminHeader(client);
         return exposureService.changeShowWinner(value);
     }
@@ -140,6 +140,7 @@ public class ExposureController {
         securityService.validateAdminHeader(client);
         return strawpollService.generateStrawpoll();
     }
+
     @GetMapping("/postStrawpoll")
     StrawpollPoll postStrawpoll(@RequestHeader String client) throws Exception {
         securityService.validateAdminHeader(client);
@@ -153,11 +154,13 @@ public class ExposureController {
         securityService.validateAdminHeader(client);
         return strawpollService.postStrawpoll();
     }
+
     @GetMapping("/getStrawpoll")
     JsonRepositoryTwoModel getStrawpoll(@RequestHeader String client) throws Exception {
         securityService.validateAdminHeader(client);
         return strawpollService.getStrawpoll();
     }
+
     @PostMapping("/saveStrawpoll")
     StrawpollModelThree saveStrawpoll(@RequestHeader String client, @RequestBody StrawpollModelThree body) throws Exception {
         securityService.validateAdminHeader(client);

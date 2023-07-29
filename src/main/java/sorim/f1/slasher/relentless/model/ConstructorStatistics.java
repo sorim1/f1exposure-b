@@ -35,14 +35,14 @@ public class ConstructorStatistics {
     private String wikiSummary;
     private String wikiImage;
     @JsonIgnore
-    private String roundIdentifier="";
+    private String roundIdentifier = "";
 
     public ConstructorStatistics(ErgastConstructor ergastConstructor) {
         this.ergastConstructor = ergastConstructor;
     }
 
     public void pushSeasonStanding(Integer season, ErgastStanding es, Boolean ongoingSeason) {
-        if(!ongoingSeason && es.getPosition()==1){
+        if (!ongoingSeason && es.getPosition() == 1) {
             this.wccCount++;
         }
         standingsBySeason.add(new SeasonStanding(season, es));
@@ -56,7 +56,7 @@ public class ConstructorStatistics {
     public void addPointThroughSeason(Integer season, Integer round, ErgastStanding es) {
         Optional<ChartSeries> cs = pointsThroughSeasons.stream().filter(x -> season.toString().equals(x.getName()))
                 .findFirst();
-        if (cs.isPresent()){
+        if (cs.isPresent()) {
             List<BigDecimal> newPoint = new ArrayList<>();
             newPoint.add(new BigDecimal(round));
             newPoint.add(es.getPoints());
@@ -67,18 +67,18 @@ public class ConstructorStatistics {
     }
 
     public void incrementRaceCounts(ErgastStanding es, Integer season, Integer round) {
-        String identifier = season+"-"+ round;
-        if(!roundIdentifier.equals(identifier)){
+        String identifier = season + "-" + round;
+        if (!roundIdentifier.equals(identifier)) {
             this.raceCount++;
-            this.roundIdentifier=identifier;
+            this.roundIdentifier = identifier;
         }
-        this.lapCount =  this.lapCount+es.getLaps();
-        if(es.getGrid()==1){
+        this.lapCount = this.lapCount + es.getLaps();
+        if (es.getGrid() == 1) {
             this.poleCount++;
         }
-        if(es.getPosition()<4){
+        if (es.getPosition() < 4) {
             this.podiumCount++;
-            if(es.getPosition()==1){
+            if (es.getPosition() == 1) {
                 this.winCount++;
             }
         }

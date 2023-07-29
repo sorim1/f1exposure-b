@@ -3,14 +3,12 @@ package sorim.f1.slasher.relentless.controller;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import sorim.f1.slasher.relentless.entities.ArtImageRow;
 import sorim.f1.slasher.relentless.service.ArtService;
 import sorim.f1.slasher.relentless.service.SecurityService;
 
-import java.io.IOException;
 import java.util.List;
 
 
@@ -24,25 +22,27 @@ public class ArtController {
     private final ArtService artService;
 
     @PostMapping("/updateImage/{code}")
-    Boolean updateImage(@RequestHeader String client, @RequestParam("image") MultipartFile image,  @PathVariable("code") String code) throws Exception {
+    Boolean updateImage(@RequestHeader String client, @RequestParam("image") MultipartFile image, @PathVariable("code") String code) throws Exception {
         securityService.validateAdminHeader(client);
         byte[] bytes = image.getBytes();
         return artService.updateImage(code, bytes);
     }
 
     @PostMapping("/saveImage/{code}")
-    Boolean saveImage(@RequestHeader String client, @RequestParam("image") MultipartFile image,  @PathVariable("code") String code) throws Exception {
+    Boolean saveImage(@RequestHeader String client, @RequestParam("image") MultipartFile image, @PathVariable("code") String code) throws Exception {
         securityService.validateAdminHeader(client);
         byte[] bytes = image.getBytes();
         return artService.saveImage(code, bytes);
     }
+
     @PostMapping("/saveCommentImage/{code}")
-    Boolean saveCommentImage(@RequestHeader String client, @RequestParam("image") MultipartFile image,  @PathVariable("code") String code) throws Exception {
+    Boolean saveCommentImage(@RequestHeader String client, @RequestParam("image") MultipartFile image, @PathVariable("code") String code) throws Exception {
         securityService.validateHeader(client);
         byte[] bytes = image.getBytes();
         String newsCode = "comment_" + code;
         return artService.saveImage(newsCode, bytes);
     }
+
     @GetMapping("/deleteImage/{code}")
     Boolean deleteImage(@RequestHeader String client, @PathVariable("code") String code) throws Exception {
         securityService.validateAdminHeader(client);
@@ -54,6 +54,7 @@ public class ArtController {
         securityService.validateAdminHeader(client);
         return artService.deleteImagesExceptM();
     }
+
     @GetMapping("/getAllImages")
     List<ArtImageRow> getAllImages(@RequestHeader String client) throws Exception {
         securityService.validateHeader(client);

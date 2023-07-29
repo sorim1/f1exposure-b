@@ -43,7 +43,7 @@ public class VideoServiceImpl implements VideoService {
     @PostConstruct
     void init() {
         replaysUrl = properties.getReplaysUrl();
-        headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
+        headers.setAccept(List.of(MediaType.APPLICATION_JSON));
         headers.setContentType(MediaType.APPLICATION_JSON);
         headers.add("user-agent", "Mozilla/4.8 Firefox/21.0");
         HttpEntity<String> entity = new HttpEntity<String>("parameters", headers);

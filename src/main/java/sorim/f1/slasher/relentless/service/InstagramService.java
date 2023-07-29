@@ -25,8 +25,11 @@ public interface InstagramService {
     Boolean cleanup() throws Exception;
 
     String postToInstagram(FourChanPostEntity chanPost, FourChanImageRow chanImage) throws IGLoginException;
+
     String postDankToInstagram(List<RedditPost> posts) throws IGLoginException;
+
     String setInstagramWorkerPassword(String password) throws Exception;
+
     String setInstagramWorker(String username, String password) throws Exception;
 
     void followMoreOnInstagram() throws Exception;

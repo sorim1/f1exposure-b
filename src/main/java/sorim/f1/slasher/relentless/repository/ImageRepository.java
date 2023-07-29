@@ -15,6 +15,7 @@ import sorim.f1.slasher.relentless.entities.ImageRow;
 public interface ImageRepository extends PagingAndSortingRepository<ImageRow, String> {
 
     ImageRow findFirstByCode(String code);
+
     @Modifying
     @Query("delete from ImageRow i where i.code not like 'M%'")
     Integer deleteEverythingExceptM();

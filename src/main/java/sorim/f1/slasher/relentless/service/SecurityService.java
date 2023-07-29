@@ -8,6 +8,7 @@ import java.util.List;
 public interface SecurityService {
 
     void validateHeader(String authorization) throws Exception;
+
     void validateClientAndUsername(String authorization, String username) throws Exception;
 
     void validateAdminHeader(String authorization) throws Exception;

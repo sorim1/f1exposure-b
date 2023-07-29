@@ -14,7 +14,7 @@ import java.util.List;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class TimingAppDataEntry {
     @JsonProperty("RacingNumber")
-    Integer racingNumber;
+    String racingNumber;
     @JsonProperty("Stints")
     List<TimingAppDataStint> stints;
 }
