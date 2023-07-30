@@ -24,6 +24,7 @@ public class TimingStat {
     public List<LapValuePosition> bestSectors;
     @JsonProperty("BestSpeeds")
     public Map<String, LapValuePosition> bestSpeeds;
-    public String name;
+    private String name;
+    private Integer topSpeed;
 }
 

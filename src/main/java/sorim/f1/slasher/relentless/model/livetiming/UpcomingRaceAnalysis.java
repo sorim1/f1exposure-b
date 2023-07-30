@@ -5,6 +5,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import sorim.f1.slasher.relentless.entities.ergast.RaceData;
+import sorim.f1.slasher.relentless.model.TimingStatCollection;
+import sorim.f1.slasher.relentless.model.TopSpeeds;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,7 +48,8 @@ public class UpcomingRaceAnalysis {
     String qualiLivetimingUrl;
     String sprintQualiLivetimingUrl;
     String sprintLivetimingUrl;
-
+    TopSpeeds topSpeeds = new TopSpeeds();
+    TimingStatCollection timingStats = new TimingStatCollection();
 
     public UpcomingRaceAnalysis(RaceData raceData) {
         this.season = Integer.valueOf(raceData.getSeason());

@@ -48643,9 +48643,9 @@ function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_5_Template(rf, c
     core/* ɵɵproperty */.Q6J("ngIf", ctx_r10.upcomingRaceAnalysis.basicRaces.length == 0);
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_7_div_0_tr_23_button_16_Template(rf, ctx) { if (rf & 1) {
-    const _r36 = core/* ɵɵgetCurrentView */.EpF();
-    core/* ɵɵelementStart */.TgZ(0, "button", 58);
-    core/* ɵɵlistener */.NdJ("click", function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_7_div_0_tr_23_button_16_Template_button_click_0_listener() { core/* ɵɵrestoreView */.CHM(_r36); const standing_r31 = core/* ɵɵnextContext */.oxw().$implicit; const ctx_r34 = core/* ɵɵnextContext */.oxw(5); return ctx_r34.openRadioDialog(standing_r31.radioData, ctx_r34.upcomingRaceAnalysis.fp1LivetimingUrl); });
+    const _r37 = core/* ɵɵgetCurrentView */.EpF();
+    core/* ɵɵelementStart */.TgZ(0, "button", 60);
+    core/* ɵɵlistener */.NdJ("click", function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_7_div_0_tr_23_button_16_Template_button_click_0_listener() { core/* ɵɵrestoreView */.CHM(_r37); const standing_r32 = core/* ɵɵnextContext */.oxw().$implicit; const ctx_r35 = core/* ɵɵnextContext */.oxw(5); return ctx_r35.openRadioDialog(standing_r32.radioData, ctx_r35.upcomingRaceAnalysis.fp1LivetimingUrl); });
     core/* ɵɵelementStart */.TgZ(1, "mat-icon");
     core/* ɵɵtext */._uU(2, "volume_up");
     core/* ɵɵelementEnd */.qZA();
@@ -48674,63 +48674,61 @@ function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_7_div_0_tr_23_Te
     core/* ɵɵelementStart */.TgZ(13, "td");
     core/* ɵɵtext */._uU(14);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(15, "td", 56);
-    core/* ɵɵtemplate */.YNc(16, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_7_div_0_tr_23_button_16_Template, 3, 0, "button", 57);
+    core/* ɵɵelementStart */.TgZ(15, "td", 58);
+    core/* ɵɵtemplate */.YNc(16, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_7_div_0_tr_23_button_16_Template, 3, 0, "button", 59);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const standing_r31 = ctx.$implicit;
+    const standing_r32 = ctx.$implicit;
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r31.position);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r32.position);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r31.FullName);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r32.FullName);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r31.TeamName);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r32.TeamName);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r31.timingDataF1.BestLapTime.Value);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r32.timingDataF1.BestLapTime.Value);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r31.timingDataF1.TimeDiffToFastest);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r32.timingDataF1.TimeDiffToFastest);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r31.timingDataF1.TimeDiffToPositionAhead);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r32.timingDataF1.TimeDiffToPositionAhead);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r31.timingDataF1.NumberOfLaps);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r32.timingDataF1.NumberOfLaps);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵproperty */.Q6J("ngIf", standing_r31.radioData.length > 0);
+    core/* ɵɵproperty */.Q6J("ngIf", standing_r32.radioData.length > 0);
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_7_div_0_Template(rf, ctx) { if (rf & 1) {
-    const _r38 = core/* ɵɵgetCurrentView */.EpF();
     core/* ɵɵelementStart */.TgZ(0, "div");
     core/* ɵɵelementStart */.TgZ(1, "table", 48);
-    core/* ɵɵlistener */.NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_7_div_0_Template_table_matSortChange_1_listener($event) { core/* ɵɵrestoreView */.CHM(_r38); const ctx_r37 = core/* ɵɵnextContext */.oxw(4); return ctx_r37.sortMainResultData($event, 1); });
     core/* ɵɵelementStart */.TgZ(2, "thead");
     core/* ɵɵelementStart */.TgZ(3, "tr");
-    core/* ɵɵelementStart */.TgZ(4, "th", 53);
+    core/* ɵɵelementStart */.TgZ(4, "th", 55);
     core/* ɵɵtext */._uU(5, "Fastest lap");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(6, "tr");
-    core/* ɵɵelementStart */.TgZ(7, "th", 50);
+    core/* ɵɵelementStart */.TgZ(7, "th", 52);
     core/* ɵɵtext */._uU(8, "#");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(9, "th", 54);
+    core/* ɵɵelementStart */.TgZ(9, "th", 56);
     core/* ɵɵtext */._uU(10, "Name");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(11, "th", 54);
+    core/* ɵɵelementStart */.TgZ(11, "th", 56);
     core/* ɵɵtext */._uU(12, "Team");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(13, "th", 50);
+    core/* ɵɵelementStart */.TgZ(13, "th", 52);
     core/* ɵɵtext */._uU(14, "Lap time");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(15, "th", 54);
+    core/* ɵɵelementStart */.TgZ(15, "th", 56);
     core/* ɵɵtext */._uU(16, "Gap to leader");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(17, "th", 54);
+    core/* ɵɵelementStart */.TgZ(17, "th", 56);
     core/* ɵɵtext */._uU(18, "Gap to previous");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(19, "th", 54);
+    core/* ɵɵelementStart */.TgZ(19, "th", 56);
     core/* ɵɵtext */._uU(20, "Lap count");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelement */._UZ(21, "th", 55);
+    core/* ɵɵelement */._UZ(21, "th", 57);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(22, "tbody");
@@ -48743,7 +48741,29 @@ function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_7_div_0_Template
     core/* ɵɵadvance */.xp6(23);
     core/* ɵɵproperty */.Q6J("ngForOf", ctx_r28.upcomingRaceAnalysis.fp1);
 } }
-function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_7_tr_19_Template(rf, ctx) { if (rf & 1) {
+function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_7_tr_17_Template(rf, ctx) { if (rf & 1) {
+    core/* ɵɵelementStart */.TgZ(0, "tr");
+    core/* ɵɵelementStart */.TgZ(1, "th", 42);
+    core/* ɵɵtext */._uU(2);
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(3, "td");
+    core/* ɵɵtext */._uU(4);
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(5, "td");
+    core/* ɵɵtext */._uU(6);
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+} if (rf & 2) {
+    const driver_r38 = ctx.$implicit;
+    const i_r39 = ctx.index;
+    core/* ɵɵadvance */.xp6(2);
+    core/* ɵɵtextInterpolate */.Oqu(i_r39 + 1);
+    core/* ɵɵadvance */.xp6(2);
+    core/* ɵɵtextInterpolate */.Oqu(driver_r38.key);
+    core/* ɵɵadvance */.xp6(2);
+    core/* ɵɵtextInterpolate */.Oqu(driver_r38.value);
+} }
+function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_7_tr_35_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "tr");
     core/* ɵɵelementStart */.TgZ(1, "th", 42);
     core/* ɵɵtext */._uU(2);
@@ -48759,47 +48779,74 @@ function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_7_tr_19_Template
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const lap_r39 = ctx.$implicit;
+    const lap_r40 = ctx.$implicit;
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(lap_r39.position);
+    core/* ɵɵtextInterpolate */.Oqu(lap_r40.position);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(lap_r39.driverName);
+    core/* ɵɵtextInterpolate */.Oqu(lap_r40.driverName);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(lap_r39.lapTime);
+    core/* ɵɵtextInterpolate */.Oqu(lap_r40.lapTime);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(lap_r39.lapNumber);
+    core/* ɵɵtextInterpolate */.Oqu(lap_r40.lapNumber);
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_7_Template(rf, ctx) { if (rf & 1) {
-    const _r42 = core/* ɵɵgetCurrentView */.EpF();
+    const _r43 = core/* ɵɵgetCurrentView */.EpF();
     core/* ɵɵtemplate */.YNc(0, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_7_div_0_Template, 24, 1, "div", 0);
     core/* ɵɵelementStart */.TgZ(1, "div", 46);
     core/* ɵɵelementStart */.TgZ(2, "div", 47);
     core/* ɵɵelementStart */.TgZ(3, "div", 38);
     core/* ɵɵelementStart */.TgZ(4, "table", 48);
-    core/* ɵɵlistener */.NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_7_Template_table_matSortChange_4_listener($event) { core/* ɵɵrestoreView */.CHM(_r42); const ctx_r41 = core/* ɵɵnextContext */.oxw(3); return ctx_r41.sortResultData($event, 1); });
     core/* ɵɵelementStart */.TgZ(5, "thead");
     core/* ɵɵelementStart */.TgZ(6, "tr");
     core/* ɵɵelementStart */.TgZ(7, "th", 49);
-    core/* ɵɵtext */._uU(8, "Recorded laps");
+    core/* ɵɵtext */._uU(8, "Top speeds");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(9, "tr");
-    core/* ɵɵelementStart */.TgZ(10, "th", 50);
+    core/* ɵɵelementStart */.TgZ(10, "th", 41);
     core/* ɵɵtext */._uU(11, "#");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(12, "th", 51);
+    core/* ɵɵelementStart */.TgZ(12, "th", 50);
     core/* ɵɵtext */._uU(13, "Name");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(14, "th", 50);
-    core/* ɵɵtext */._uU(15, "Lap Time");
-    core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(16, "th", 52);
-    core/* ɵɵtext */._uU(17, "Lap Number");
+    core/* ɵɵelementStart */.TgZ(14, "th");
+    core/* ɵɵtext */._uU(15, "Speed (kph)");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(18, "tbody");
-    core/* ɵɵtemplate */.YNc(19, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_7_tr_19_Template, 9, 4, "tr", 9);
+    core/* ɵɵelementStart */.TgZ(16, "tbody");
+    core/* ɵɵtemplate */.YNc(17, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_7_tr_17_Template, 7, 3, "tr", 9);
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(18, "div", 47);
+    core/* ɵɵelementStart */.TgZ(19, "div", 38);
+    core/* ɵɵelementStart */.TgZ(20, "table", 51);
+    core/* ɵɵlistener */.NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_7_Template_table_matSortChange_20_listener($event) { core/* ɵɵrestoreView */.CHM(_r43); const ctx_r42 = core/* ɵɵnextContext */.oxw(3); return ctx_r42.sortResultData($event, 1); });
+    core/* ɵɵelementStart */.TgZ(21, "thead");
+    core/* ɵɵelementStart */.TgZ(22, "tr");
+    core/* ɵɵelementStart */.TgZ(23, "th", 49);
+    core/* ɵɵtext */._uU(24, "Recorded laps");
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(25, "tr");
+    core/* ɵɵelementStart */.TgZ(26, "th", 52);
+    core/* ɵɵtext */._uU(27, "#");
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(28, "th", 53);
+    core/* ɵɵtext */._uU(29, "Name");
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(30, "th", 52);
+    core/* ɵɵtext */._uU(31, "Lap Time");
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(32, "th", 54);
+    core/* ɵɵtext */._uU(33, "Lap Number");
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(34, "tbody");
+    core/* ɵɵtemplate */.YNc(35, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_7_tr_35_Template, 9, 4, "tr", 9);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -48808,13 +48855,15 @@ function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_7_Template(rf, c
 } if (rf & 2) {
     const ctx_r11 = core/* ɵɵnextContext */.oxw(3);
     core/* ɵɵproperty */.Q6J("ngIf", ctx_r11.upcomingRaceAnalysis.fp1 !== null);
-    core/* ɵɵadvance */.xp6(19);
+    core/* ɵɵadvance */.xp6(17);
+    core/* ɵɵproperty */.Q6J("ngForOf", ctx_r11.upcomingRaceAnalysis.topSpeeds.fp1);
+    core/* ɵɵadvance */.xp6(18);
     core/* ɵɵproperty */.Q6J("ngForOf", ctx_r11.upcomingRaceAnalysis.fp1Laps);
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_8_ng_template_1_div_0_tr_23_button_16_Template(rf, ctx) { if (rf & 1) {
-    const _r52 = core/* ɵɵgetCurrentView */.EpF();
-    core/* ɵɵelementStart */.TgZ(0, "button", 58);
-    core/* ɵɵlistener */.NdJ("click", function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_8_ng_template_1_div_0_tr_23_button_16_Template_button_click_0_listener() { core/* ɵɵrestoreView */.CHM(_r52); const standing_r47 = core/* ɵɵnextContext */.oxw().$implicit; const ctx_r50 = core/* ɵɵnextContext */.oxw(6); return ctx_r50.openRadioDialog(standing_r47.radioData, ctx_r50.upcomingRaceAnalysis.fp2LivetimingUrl); });
+    const _r54 = core/* ɵɵgetCurrentView */.EpF();
+    core/* ɵɵelementStart */.TgZ(0, "button", 60);
+    core/* ɵɵlistener */.NdJ("click", function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_8_ng_template_1_div_0_tr_23_button_16_Template_button_click_0_listener() { core/* ɵɵrestoreView */.CHM(_r54); const standing_r49 = core/* ɵɵnextContext */.oxw().$implicit; const ctx_r52 = core/* ɵɵnextContext */.oxw(6); return ctx_r52.openRadioDialog(standing_r49.radioData, ctx_r52.upcomingRaceAnalysis.fp2LivetimingUrl); });
     core/* ɵɵelementStart */.TgZ(1, "mat-icon");
     core/* ɵɵtext */._uU(2, "volume_up");
     core/* ɵɵelementEnd */.qZA();
@@ -48843,63 +48892,63 @@ function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_8_ng_template_1_div_
     core/* ɵɵelementStart */.TgZ(13, "td");
     core/* ɵɵtext */._uU(14);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(15, "td", 56);
-    core/* ɵɵtemplate */.YNc(16, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_8_ng_template_1_div_0_tr_23_button_16_Template, 3, 0, "button", 57);
+    core/* ɵɵelementStart */.TgZ(15, "td", 58);
+    core/* ɵɵtemplate */.YNc(16, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_8_ng_template_1_div_0_tr_23_button_16_Template, 3, 0, "button", 59);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const standing_r47 = ctx.$implicit;
+    const standing_r49 = ctx.$implicit;
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r47.position);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r49.position);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r47.FullName);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r49.FullName);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r47.TeamName);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r49.TeamName);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r47.timingDataF1.BestLapTime.Value);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r49.timingDataF1.BestLapTime.Value);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r47.timingDataF1.TimeDiffToFastest);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r49.timingDataF1.TimeDiffToFastest);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r47.timingDataF1.TimeDiffToPositionAhead);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r49.timingDataF1.TimeDiffToPositionAhead);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r47.timingDataF1.NumberOfLaps);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r49.timingDataF1.NumberOfLaps);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵproperty */.Q6J("ngIf", standing_r47.radioData.length > 0);
+    core/* ɵɵproperty */.Q6J("ngIf", standing_r49.radioData.length > 0);
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_8_ng_template_1_div_0_Template(rf, ctx) { if (rf & 1) {
-    const _r54 = core/* ɵɵgetCurrentView */.EpF();
+    const _r56 = core/* ɵɵgetCurrentView */.EpF();
     core/* ɵɵelementStart */.TgZ(0, "div");
-    core/* ɵɵelementStart */.TgZ(1, "table", 48);
-    core/* ɵɵlistener */.NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_8_ng_template_1_div_0_Template_table_matSortChange_1_listener($event) { core/* ɵɵrestoreView */.CHM(_r54); const ctx_r53 = core/* ɵɵnextContext */.oxw(5); return ctx_r53.sortMainResultData($event, 2); });
+    core/* ɵɵelementStart */.TgZ(1, "table", 51);
+    core/* ɵɵlistener */.NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_8_ng_template_1_div_0_Template_table_matSortChange_1_listener($event) { core/* ɵɵrestoreView */.CHM(_r56); const ctx_r55 = core/* ɵɵnextContext */.oxw(5); return ctx_r55.sortMainResultData($event, 2); });
     core/* ɵɵelementStart */.TgZ(2, "thead");
     core/* ɵɵelementStart */.TgZ(3, "tr");
-    core/* ɵɵelementStart */.TgZ(4, "th", 53);
+    core/* ɵɵelementStart */.TgZ(4, "th", 55);
     core/* ɵɵtext */._uU(5, "Fastest lap");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(6, "tr");
-    core/* ɵɵelementStart */.TgZ(7, "th", 50);
+    core/* ɵɵelementStart */.TgZ(7, "th", 52);
     core/* ɵɵtext */._uU(8, "#");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(9, "th", 54);
+    core/* ɵɵelementStart */.TgZ(9, "th", 56);
     core/* ɵɵtext */._uU(10, "Name");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(11, "th", 54);
+    core/* ɵɵelementStart */.TgZ(11, "th", 56);
     core/* ɵɵtext */._uU(12, "Team");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(13, "th", 50);
+    core/* ɵɵelementStart */.TgZ(13, "th", 52);
     core/* ɵɵtext */._uU(14, "Lap time");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(15, "th", 54);
+    core/* ɵɵelementStart */.TgZ(15, "th", 56);
     core/* ɵɵtext */._uU(16, "Gap to leader");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(17, "th", 54);
+    core/* ɵɵelementStart */.TgZ(17, "th", 56);
     core/* ɵɵtext */._uU(18, "Gap to previous");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(19, "th", 54);
+    core/* ɵɵelementStart */.TgZ(19, "th", 56);
     core/* ɵɵtext */._uU(20, "Lap count");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelement */._UZ(21, "th", 55);
+    core/* ɵɵelement */._UZ(21, "th", 57);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(22, "tbody");
@@ -48908,11 +48957,33 @@ function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_8_ng_template_1_div_
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const ctx_r44 = core/* ɵɵnextContext */.oxw(5);
+    const ctx_r45 = core/* ɵɵnextContext */.oxw(5);
     core/* ɵɵadvance */.xp6(23);
-    core/* ɵɵproperty */.Q6J("ngForOf", ctx_r44.upcomingRaceAnalysis.fp2);
+    core/* ɵɵproperty */.Q6J("ngForOf", ctx_r45.upcomingRaceAnalysis.fp2);
 } }
-function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_8_ng_template_1_tr_19_Template(rf, ctx) { if (rf & 1) {
+function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_8_ng_template_1_tr_17_Template(rf, ctx) { if (rf & 1) {
+    core/* ɵɵelementStart */.TgZ(0, "tr");
+    core/* ɵɵelementStart */.TgZ(1, "th", 42);
+    core/* ɵɵtext */._uU(2);
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(3, "td");
+    core/* ɵɵtext */._uU(4);
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(5, "td");
+    core/* ɵɵtext */._uU(6);
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+} if (rf & 2) {
+    const driver_r57 = ctx.$implicit;
+    const i_r58 = ctx.index;
+    core/* ɵɵadvance */.xp6(2);
+    core/* ɵɵtextInterpolate */.Oqu(i_r58 + 1);
+    core/* ɵɵadvance */.xp6(2);
+    core/* ɵɵtextInterpolate */.Oqu(driver_r57.key);
+    core/* ɵɵadvance */.xp6(2);
+    core/* ɵɵtextInterpolate */.Oqu(driver_r57.value);
+} }
+function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_8_ng_template_1_tr_35_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "tr");
     core/* ɵɵelementStart */.TgZ(1, "th", 42);
     core/* ɵɵtext */._uU(2);
@@ -48928,70 +48999,99 @@ function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_8_ng_template_1_tr_1
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const lap_r55 = ctx.$implicit;
+    const lap_r59 = ctx.$implicit;
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(lap_r55.position);
+    core/* ɵɵtextInterpolate */.Oqu(lap_r59.position);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(lap_r55.driverName);
+    core/* ɵɵtextInterpolate */.Oqu(lap_r59.driverName);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(lap_r55.lapTime);
+    core/* ɵɵtextInterpolate */.Oqu(lap_r59.lapTime);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(lap_r55.lapNumber);
+    core/* ɵɵtextInterpolate */.Oqu(lap_r59.lapNumber);
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_8_ng_template_1_Template(rf, ctx) { if (rf & 1) {
-    const _r58 = core/* ɵɵgetCurrentView */.EpF();
+    const _r62 = core/* ɵɵgetCurrentView */.EpF();
     core/* ɵɵtemplate */.YNc(0, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_8_ng_template_1_div_0_Template, 24, 1, "div", 0);
     core/* ɵɵelementStart */.TgZ(1, "div", 46);
     core/* ɵɵelementStart */.TgZ(2, "div", 47);
     core/* ɵɵelementStart */.TgZ(3, "div", 38);
     core/* ɵɵelementStart */.TgZ(4, "table", 48);
-    core/* ɵɵlistener */.NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_8_ng_template_1_Template_table_matSortChange_4_listener($event) { core/* ɵɵrestoreView */.CHM(_r58); const ctx_r57 = core/* ɵɵnextContext */.oxw(4); return ctx_r57.sortResultData($event, 2); });
     core/* ɵɵelementStart */.TgZ(5, "thead");
     core/* ɵɵelementStart */.TgZ(6, "tr");
     core/* ɵɵelementStart */.TgZ(7, "th", 49);
-    core/* ɵɵtext */._uU(8, "Recorded laps");
+    core/* ɵɵtext */._uU(8, "Top speeds");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(9, "tr");
-    core/* ɵɵelementStart */.TgZ(10, "th", 50);
+    core/* ɵɵelementStart */.TgZ(10, "th", 41);
     core/* ɵɵtext */._uU(11, "#");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(12, "th", 51);
+    core/* ɵɵelementStart */.TgZ(12, "th", 50);
     core/* ɵɵtext */._uU(13, "Name");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(14, "th", 50);
-    core/* ɵɵtext */._uU(15, "Lap Time");
-    core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(16, "th", 52);
-    core/* ɵɵtext */._uU(17, "Lap Number");
+    core/* ɵɵelementStart */.TgZ(14, "th");
+    core/* ɵɵtext */._uU(15, "Speed (kph)");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(18, "tbody");
-    core/* ɵɵtemplate */.YNc(19, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_8_ng_template_1_tr_19_Template, 9, 4, "tr", 9);
+    core/* ɵɵelementStart */.TgZ(16, "tbody");
+    core/* ɵɵtemplate */.YNc(17, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_8_ng_template_1_tr_17_Template, 7, 3, "tr", 9);
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(18, "div", 47);
+    core/* ɵɵelementStart */.TgZ(19, "div", 38);
+    core/* ɵɵelementStart */.TgZ(20, "table", 51);
+    core/* ɵɵlistener */.NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_8_ng_template_1_Template_table_matSortChange_20_listener($event) { core/* ɵɵrestoreView */.CHM(_r62); const ctx_r61 = core/* ɵɵnextContext */.oxw(4); return ctx_r61.sortResultData($event, 2); });
+    core/* ɵɵelementStart */.TgZ(21, "thead");
+    core/* ɵɵelementStart */.TgZ(22, "tr");
+    core/* ɵɵelementStart */.TgZ(23, "th", 49);
+    core/* ɵɵtext */._uU(24, "Recorded laps");
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(25, "tr");
+    core/* ɵɵelementStart */.TgZ(26, "th", 52);
+    core/* ɵɵtext */._uU(27, "#");
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(28, "th", 53);
+    core/* ɵɵtext */._uU(29, "Name");
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(30, "th", 52);
+    core/* ɵɵtext */._uU(31, "Lap Time");
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(32, "th", 54);
+    core/* ɵɵtext */._uU(33, "Lap Number");
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(34, "tbody");
+    core/* ɵɵtemplate */.YNc(35, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_8_ng_template_1_tr_35_Template, 9, 4, "tr", 9);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const ctx_r43 = core/* ɵɵnextContext */.oxw(4);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r43.upcomingRaceAnalysis.fp2 !== null);
-    core/* ɵɵadvance */.xp6(19);
-    core/* ɵɵproperty */.Q6J("ngForOf", ctx_r43.upcomingRaceAnalysis.fp2Laps);
+    const ctx_r44 = core/* ɵɵnextContext */.oxw(4);
+    core/* ɵɵproperty */.Q6J("ngIf", ctx_r44.upcomingRaceAnalysis.fp2 !== null);
+    core/* ɵɵadvance */.xp6(17);
+    core/* ɵɵproperty */.Q6J("ngForOf", ctx_r44.upcomingRaceAnalysis.topSpeeds.fp2);
+    core/* ɵɵadvance */.xp6(18);
+    core/* ɵɵproperty */.Q6J("ngForOf", ctx_r44.upcomingRaceAnalysis.fp2Laps);
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_8_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "mat-tab", 59);
-    core/* ɵɵtemplate */.YNc(1, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_8_ng_template_1_Template, 20, 2, "ng-template", 19);
+    core/* ɵɵelementStart */.TgZ(0, "mat-tab", 61);
+    core/* ɵɵtemplate */.YNc(1, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_8_ng_template_1_Template, 36, 3, "ng-template", 19);
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
     const ctx_r12 = core/* ɵɵnextContext */.oxw(3);
     core/* ɵɵproperty */.Q6J("disabled", ctx_r12.upcomingRaceAnalysis.fp2 == null);
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_9_ng_template_1_div_0_tr_23_button_16_Template(rf, ctx) { if (rf & 1) {
-    const _r68 = core/* ɵɵgetCurrentView */.EpF();
-    core/* ɵɵelementStart */.TgZ(0, "button", 58);
-    core/* ɵɵlistener */.NdJ("click", function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_9_ng_template_1_div_0_tr_23_button_16_Template_button_click_0_listener() { core/* ɵɵrestoreView */.CHM(_r68); const standing_r63 = core/* ɵɵnextContext */.oxw().$implicit; const ctx_r66 = core/* ɵɵnextContext */.oxw(6); return ctx_r66.openRadioDialog(standing_r63.radioData, ctx_r66.upcomingRaceAnalysis.fp3LivetimingUrl); });
+    const _r73 = core/* ɵɵgetCurrentView */.EpF();
+    core/* ɵɵelementStart */.TgZ(0, "button", 60);
+    core/* ɵɵlistener */.NdJ("click", function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_9_ng_template_1_div_0_tr_23_button_16_Template_button_click_0_listener() { core/* ɵɵrestoreView */.CHM(_r73); const standing_r68 = core/* ɵɵnextContext */.oxw().$implicit; const ctx_r71 = core/* ɵɵnextContext */.oxw(6); return ctx_r71.openRadioDialog(standing_r68.radioData, ctx_r71.upcomingRaceAnalysis.fp3LivetimingUrl); });
     core/* ɵɵelementStart */.TgZ(1, "mat-icon");
     core/* ɵɵtext */._uU(2, "volume_up");
     core/* ɵɵelementEnd */.qZA();
@@ -49020,63 +49120,63 @@ function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_9_ng_template_1_div_
     core/* ɵɵelementStart */.TgZ(13, "td");
     core/* ɵɵtext */._uU(14);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(15, "td", 56);
-    core/* ɵɵtemplate */.YNc(16, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_9_ng_template_1_div_0_tr_23_button_16_Template, 3, 0, "button", 57);
+    core/* ɵɵelementStart */.TgZ(15, "td", 58);
+    core/* ɵɵtemplate */.YNc(16, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_9_ng_template_1_div_0_tr_23_button_16_Template, 3, 0, "button", 59);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const standing_r63 = ctx.$implicit;
+    const standing_r68 = ctx.$implicit;
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r63.position);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r68.position);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r63.FullName);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r68.FullName);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r63.TeamName);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r68.TeamName);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r63.timingDataF1.BestLapTime.Value);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r68.timingDataF1.BestLapTime.Value);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r63.timingDataF1.TimeDiffToFastest);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r68.timingDataF1.TimeDiffToFastest);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r63.timingDataF1.TimeDiffToPositionAhead);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r68.timingDataF1.TimeDiffToPositionAhead);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r63.timingDataF1.NumberOfLaps);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r68.timingDataF1.NumberOfLaps);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵproperty */.Q6J("ngIf", standing_r63.radioData.length > 0);
+    core/* ɵɵproperty */.Q6J("ngIf", standing_r68.radioData.length > 0);
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_9_ng_template_1_div_0_Template(rf, ctx) { if (rf & 1) {
-    const _r70 = core/* ɵɵgetCurrentView */.EpF();
+    const _r75 = core/* ɵɵgetCurrentView */.EpF();
     core/* ɵɵelementStart */.TgZ(0, "div");
-    core/* ɵɵelementStart */.TgZ(1, "table", 48);
-    core/* ɵɵlistener */.NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_9_ng_template_1_div_0_Template_table_matSortChange_1_listener($event) { core/* ɵɵrestoreView */.CHM(_r70); const ctx_r69 = core/* ɵɵnextContext */.oxw(5); return ctx_r69.sortMainResultData($event, 3); });
+    core/* ɵɵelementStart */.TgZ(1, "table", 51);
+    core/* ɵɵlistener */.NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_9_ng_template_1_div_0_Template_table_matSortChange_1_listener($event) { core/* ɵɵrestoreView */.CHM(_r75); const ctx_r74 = core/* ɵɵnextContext */.oxw(5); return ctx_r74.sortMainResultData($event, 3); });
     core/* ɵɵelementStart */.TgZ(2, "thead");
     core/* ɵɵelementStart */.TgZ(3, "tr");
-    core/* ɵɵelementStart */.TgZ(4, "th", 53);
+    core/* ɵɵelementStart */.TgZ(4, "th", 55);
     core/* ɵɵtext */._uU(5, "Fastest lap");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(6, "tr");
-    core/* ɵɵelementStart */.TgZ(7, "th", 50);
+    core/* ɵɵelementStart */.TgZ(7, "th", 52);
     core/* ɵɵtext */._uU(8, "#");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(9, "th", 54);
+    core/* ɵɵelementStart */.TgZ(9, "th", 56);
     core/* ɵɵtext */._uU(10, "Name");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(11, "th", 54);
+    core/* ɵɵelementStart */.TgZ(11, "th", 56);
     core/* ɵɵtext */._uU(12, "Team");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(13, "th", 50);
+    core/* ɵɵelementStart */.TgZ(13, "th", 52);
     core/* ɵɵtext */._uU(14, "Lap time");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(15, "th", 54);
+    core/* ɵɵelementStart */.TgZ(15, "th", 56);
     core/* ɵɵtext */._uU(16, "Gap to leader");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(17, "th", 54);
+    core/* ɵɵelementStart */.TgZ(17, "th", 56);
     core/* ɵɵtext */._uU(18, "Gap to previous");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(19, "th", 54);
+    core/* ɵɵelementStart */.TgZ(19, "th", 56);
     core/* ɵɵtext */._uU(20, "Lap count");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelement */._UZ(21, "th", 55);
+    core/* ɵɵelement */._UZ(21, "th", 57);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(22, "tbody");
@@ -49085,11 +49185,33 @@ function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_9_ng_template_1_div_
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const ctx_r60 = core/* ɵɵnextContext */.oxw(5);
+    const ctx_r64 = core/* ɵɵnextContext */.oxw(5);
     core/* ɵɵadvance */.xp6(23);
-    core/* ɵɵproperty */.Q6J("ngForOf", ctx_r60.upcomingRaceAnalysis.fp3);
+    core/* ɵɵproperty */.Q6J("ngForOf", ctx_r64.upcomingRaceAnalysis.fp3);
 } }
-function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_9_ng_template_1_tr_19_Template(rf, ctx) { if (rf & 1) {
+function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_9_ng_template_1_tr_17_Template(rf, ctx) { if (rf & 1) {
+    core/* ɵɵelementStart */.TgZ(0, "tr");
+    core/* ɵɵelementStart */.TgZ(1, "th", 42);
+    core/* ɵɵtext */._uU(2);
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(3, "td");
+    core/* ɵɵtext */._uU(4);
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(5, "td");
+    core/* ɵɵtext */._uU(6);
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+} if (rf & 2) {
+    const driver_r76 = ctx.$implicit;
+    const i_r77 = ctx.index;
+    core/* ɵɵadvance */.xp6(2);
+    core/* ɵɵtextInterpolate */.Oqu(i_r77 + 1);
+    core/* ɵɵadvance */.xp6(2);
+    core/* ɵɵtextInterpolate */.Oqu(driver_r76.key);
+    core/* ɵɵadvance */.xp6(2);
+    core/* ɵɵtextInterpolate */.Oqu(driver_r76.value);
+} }
+function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_9_ng_template_1_tr_35_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "tr");
     core/* ɵɵelementStart */.TgZ(1, "th", 42);
     core/* ɵɵtext */._uU(2);
@@ -49105,61 +49227,90 @@ function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_9_ng_template_1_tr_1
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const lap_r71 = ctx.$implicit;
+    const lap_r78 = ctx.$implicit;
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(lap_r71.position);
+    core/* ɵɵtextInterpolate */.Oqu(lap_r78.position);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(lap_r71.driverName);
+    core/* ɵɵtextInterpolate */.Oqu(lap_r78.driverName);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(lap_r71.lapTime);
+    core/* ɵɵtextInterpolate */.Oqu(lap_r78.lapTime);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(lap_r71.lapNumber);
+    core/* ɵɵtextInterpolate */.Oqu(lap_r78.lapNumber);
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_9_ng_template_1_Template(rf, ctx) { if (rf & 1) {
-    const _r74 = core/* ɵɵgetCurrentView */.EpF();
+    const _r81 = core/* ɵɵgetCurrentView */.EpF();
     core/* ɵɵtemplate */.YNc(0, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_9_ng_template_1_div_0_Template, 24, 1, "div", 0);
     core/* ɵɵelementStart */.TgZ(1, "div", 46);
     core/* ɵɵelementStart */.TgZ(2, "div", 47);
     core/* ɵɵelementStart */.TgZ(3, "div", 38);
     core/* ɵɵelementStart */.TgZ(4, "table", 48);
-    core/* ɵɵlistener */.NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_9_ng_template_1_Template_table_matSortChange_4_listener($event) { core/* ɵɵrestoreView */.CHM(_r74); const ctx_r73 = core/* ɵɵnextContext */.oxw(4); return ctx_r73.sortResultData($event, 3); });
     core/* ɵɵelementStart */.TgZ(5, "thead");
     core/* ɵɵelementStart */.TgZ(6, "tr");
     core/* ɵɵelementStart */.TgZ(7, "th", 49);
-    core/* ɵɵtext */._uU(8, "Recorded laps");
+    core/* ɵɵtext */._uU(8, "Top speeds");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(9, "tr");
-    core/* ɵɵelementStart */.TgZ(10, "th", 50);
+    core/* ɵɵelementStart */.TgZ(10, "th", 41);
     core/* ɵɵtext */._uU(11, "#");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(12, "th", 51);
+    core/* ɵɵelementStart */.TgZ(12, "th", 50);
     core/* ɵɵtext */._uU(13, "Name");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(14, "th", 50);
-    core/* ɵɵtext */._uU(15, "Lap Time");
-    core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(16, "th", 52);
-    core/* ɵɵtext */._uU(17, "Lap Number");
+    core/* ɵɵelementStart */.TgZ(14, "th");
+    core/* ɵɵtext */._uU(15, "Speed (kph)");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(18, "tbody");
-    core/* ɵɵtemplate */.YNc(19, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_9_ng_template_1_tr_19_Template, 9, 4, "tr", 9);
+    core/* ɵɵelementStart */.TgZ(16, "tbody");
+    core/* ɵɵtemplate */.YNc(17, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_9_ng_template_1_tr_17_Template, 7, 3, "tr", 9);
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(18, "div", 47);
+    core/* ɵɵelementStart */.TgZ(19, "div", 38);
+    core/* ɵɵelementStart */.TgZ(20, "table", 51);
+    core/* ɵɵlistener */.NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_9_ng_template_1_Template_table_matSortChange_20_listener($event) { core/* ɵɵrestoreView */.CHM(_r81); const ctx_r80 = core/* ɵɵnextContext */.oxw(4); return ctx_r80.sortResultData($event, 3); });
+    core/* ɵɵelementStart */.TgZ(21, "thead");
+    core/* ɵɵelementStart */.TgZ(22, "tr");
+    core/* ɵɵelementStart */.TgZ(23, "th", 49);
+    core/* ɵɵtext */._uU(24, "Recorded laps");
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(25, "tr");
+    core/* ɵɵelementStart */.TgZ(26, "th", 52);
+    core/* ɵɵtext */._uU(27, "#");
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(28, "th", 53);
+    core/* ɵɵtext */._uU(29, "Name");
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(30, "th", 52);
+    core/* ɵɵtext */._uU(31, "Lap Time");
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(32, "th", 54);
+    core/* ɵɵtext */._uU(33, "Lap Number");
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(34, "tbody");
+    core/* ɵɵtemplate */.YNc(35, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_9_ng_template_1_tr_35_Template, 9, 4, "tr", 9);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const ctx_r59 = core/* ɵɵnextContext */.oxw(4);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r59.upcomingRaceAnalysis.fp3 !== null);
-    core/* ɵɵadvance */.xp6(19);
-    core/* ɵɵproperty */.Q6J("ngForOf", ctx_r59.upcomingRaceAnalysis.fp3Laps);
+    const ctx_r63 = core/* ɵɵnextContext */.oxw(4);
+    core/* ɵɵproperty */.Q6J("ngIf", ctx_r63.upcomingRaceAnalysis.fp3 !== null);
+    core/* ɵɵadvance */.xp6(17);
+    core/* ɵɵproperty */.Q6J("ngForOf", ctx_r63.upcomingRaceAnalysis.topSpeeds.fp3);
+    core/* ɵɵadvance */.xp6(18);
+    core/* ɵɵproperty */.Q6J("ngForOf", ctx_r63.upcomingRaceAnalysis.fp3Laps);
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_9_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "mat-tab", 60);
-    core/* ɵɵtemplate */.YNc(1, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_9_ng_template_1_Template, 20, 2, "ng-template", 19);
+    core/* ɵɵelementStart */.TgZ(0, "mat-tab", 62);
+    core/* ɵɵtemplate */.YNc(1, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_9_ng_template_1_Template, 36, 3, "ng-template", 19);
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
     const ctx_r13 = core/* ɵɵnextContext */.oxw(3);
@@ -49167,19 +49318,19 @@ function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_9_Template(rf, ctx) 
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_div_0_tr_23_div_8_div_1_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div");
-    core/* ɵɵelementStart */.TgZ(1, "span", 61);
+    core/* ɵɵelementStart */.TgZ(1, "span", 63);
     core/* ɵɵtext */._uU(2);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵtext */._uU(3);
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const ctx_r88 = core/* ɵɵnextContext */.oxw();
-    const i_r85 = ctx_r88.index;
-    const lap_r84 = ctx_r88.$implicit;
+    const ctx_r96 = core/* ɵɵnextContext */.oxw();
+    const i_r93 = ctx_r96.index;
+    const lap_r92 = ctx_r96.$implicit;
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu("Q" + (i_r85 + 1) + ": ");
+    core/* ɵɵtextInterpolate */.Oqu("Q" + (i_r93 + 1) + ": ");
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵtextInterpolate1 */.hij(" ", lap_r84.Value, " ");
+    core/* ɵɵtextInterpolate1 */.hij(" ", lap_r92.Value, " ");
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_div_0_tr_23_div_8_div_2_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div");
@@ -49194,11 +49345,11 @@ function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_div_0_tr_23_d
     core/* ɵɵtemplate */.YNc(2, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_div_0_tr_23_div_8_div_2_Template, 3, 0, "div", 0);
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const lap_r84 = ctx.$implicit;
+    const lap_r92 = ctx.$implicit;
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("ngIf", lap_r84.Value != null);
+    core/* ɵɵproperty */.Q6J("ngIf", lap_r92.Value != null);
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("ngIf", lap_r84.Value == null);
+    core/* ɵɵproperty */.Q6J("ngIf", lap_r92.Value == null);
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_div_0_tr_23_div_11_div_1_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div");
@@ -49207,9 +49358,9 @@ function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_div_0_tr_23_d
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const stat_r89 = core/* ɵɵnextContext */.oxw().$implicit;
+    const stat_r97 = core/* ɵɵnextContext */.oxw().$implicit;
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(stat_r89.TimeDiffToFastest);
+    core/* ɵɵtextInterpolate */.Oqu(stat_r97.TimeDiffToFastest);
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_div_0_tr_23_div_11_div_2_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div");
@@ -49224,11 +49375,11 @@ function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_div_0_tr_23_d
     core/* ɵɵtemplate */.YNc(2, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_div_0_tr_23_div_11_div_2_Template, 3, 0, "div", 0);
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const stat_r89 = ctx.$implicit;
+    const stat_r97 = ctx.$implicit;
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("ngIf", stat_r89.TimeDiffToFastest != "");
+    core/* ɵɵproperty */.Q6J("ngIf", stat_r97.TimeDiffToFastest != "");
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("ngIf", stat_r89.TimeDiffToFastest == "");
+    core/* ɵɵproperty */.Q6J("ngIf", stat_r97.TimeDiffToFastest == "");
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_div_0_tr_23_div_14_div_1_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div");
@@ -49237,9 +49388,9 @@ function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_div_0_tr_23_d
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const stat_r93 = core/* ɵɵnextContext */.oxw().$implicit;
+    const stat_r101 = core/* ɵɵnextContext */.oxw().$implicit;
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(stat_r93.TimeDifftoPositionAhead);
+    core/* ɵɵtextInterpolate */.Oqu(stat_r101.TimeDifftoPositionAhead);
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_div_0_tr_23_div_14_div_2_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div");
@@ -49254,16 +49405,16 @@ function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_div_0_tr_23_d
     core/* ɵɵtemplate */.YNc(2, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_div_0_tr_23_div_14_div_2_Template, 3, 0, "div", 0);
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const stat_r93 = ctx.$implicit;
+    const stat_r101 = ctx.$implicit;
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("ngIf", stat_r93.TimeDifftoPositionAhead != "");
+    core/* ɵɵproperty */.Q6J("ngIf", stat_r101.TimeDifftoPositionAhead != "");
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("ngIf", stat_r93.TimeDifftoPositionAhead == "");
+    core/* ɵɵproperty */.Q6J("ngIf", stat_r101.TimeDifftoPositionAhead == "");
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_div_0_tr_23_button_18_Template(rf, ctx) { if (rf & 1) {
-    const _r99 = core/* ɵɵgetCurrentView */.EpF();
-    core/* ɵɵelementStart */.TgZ(0, "button", 58);
-    core/* ɵɵlistener */.NdJ("click", function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_div_0_tr_23_button_18_Template_button_click_0_listener() { core/* ɵɵrestoreView */.CHM(_r99); const standing_r78 = core/* ɵɵnextContext */.oxw().$implicit; const ctx_r97 = core/* ɵɵnextContext */.oxw(5); return ctx_r97.openRadioDialog(standing_r78.radioData, ctx_r97.upcomingRaceAnalysis.qualiLivetimingUrl); });
+    const _r107 = core/* ɵɵgetCurrentView */.EpF();
+    core/* ɵɵelementStart */.TgZ(0, "button", 60);
+    core/* ɵɵlistener */.NdJ("click", function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_div_0_tr_23_button_18_Template_button_click_0_listener() { core/* ɵɵrestoreView */.CHM(_r107); const standing_r86 = core/* ɵɵnextContext */.oxw().$implicit; const ctx_r105 = core/* ɵɵnextContext */.oxw(5); return ctx_r105.openRadioDialog(standing_r86.radioData, ctx_r105.upcomingRaceAnalysis.qualiLivetimingUrl); });
     core/* ɵɵelementStart */.TgZ(1, "mat-icon");
     core/* ɵɵtext */._uU(2, "volume_up");
     core/* ɵɵelementEnd */.qZA();
@@ -49294,67 +49445,65 @@ function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_div_0_tr_23_T
     core/* ɵɵelementStart */.TgZ(15, "td");
     core/* ɵɵtext */._uU(16);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(17, "td", 56);
-    core/* ɵɵtemplate */.YNc(18, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_div_0_tr_23_button_18_Template, 3, 0, "button", 57);
+    core/* ɵɵelementStart */.TgZ(17, "td", 58);
+    core/* ɵɵtemplate */.YNc(18, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_div_0_tr_23_button_18_Template, 3, 0, "button", 59);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const standing_r78 = ctx.$implicit;
+    const standing_r86 = ctx.$implicit;
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r78.position);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r86.position);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r78.FullName);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r86.FullName);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r78.TeamName);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r86.TeamName);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵproperty */.Q6J("ngForOf", standing_r78.timingDataF1.BestLapTimes);
+    core/* ɵɵproperty */.Q6J("ngForOf", standing_r86.timingDataF1.BestLapTimes);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate1 */.hij("", standing_r78.timingDataF1.TimeDiffToFastest, " ");
+    core/* ɵɵtextInterpolate1 */.hij("", standing_r86.timingDataF1.TimeDiffToFastest, " ");
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("ngForOf", standing_r78.timingDataF1.Stats);
+    core/* ɵɵproperty */.Q6J("ngForOf", standing_r86.timingDataF1.Stats);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate1 */.hij("", standing_r78.timingDataF1.TimeDiffToPositionAhead, " ");
+    core/* ɵɵtextInterpolate1 */.hij("", standing_r86.timingDataF1.TimeDiffToPositionAhead, " ");
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("ngForOf", standing_r78.timingDataF1.Stats);
+    core/* ɵɵproperty */.Q6J("ngForOf", standing_r86.timingDataF1.Stats);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r78.timingDataF1.NumberOfLaps);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r86.timingDataF1.NumberOfLaps);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵproperty */.Q6J("ngIf", standing_r78.radioData.length > 0);
+    core/* ɵɵproperty */.Q6J("ngIf", standing_r86.radioData.length > 0);
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_div_0_Template(rf, ctx) { if (rf & 1) {
-    const _r101 = core/* ɵɵgetCurrentView */.EpF();
     core/* ɵɵelementStart */.TgZ(0, "div");
     core/* ɵɵelementStart */.TgZ(1, "table", 48);
-    core/* ɵɵlistener */.NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_div_0_Template_table_matSortChange_1_listener($event) { core/* ɵɵrestoreView */.CHM(_r101); const ctx_r100 = core/* ɵɵnextContext */.oxw(4); return ctx_r100.sortMainResultData($event, 4); });
     core/* ɵɵelementStart */.TgZ(2, "thead");
     core/* ɵɵelementStart */.TgZ(3, "tr");
-    core/* ɵɵelementStart */.TgZ(4, "th", 53);
+    core/* ɵɵelementStart */.TgZ(4, "th", 55);
     core/* ɵɵtext */._uU(5, "Result");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(6, "tr");
-    core/* ɵɵelementStart */.TgZ(7, "th", 50);
+    core/* ɵɵelementStart */.TgZ(7, "th", 52);
     core/* ɵɵtext */._uU(8, "#");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(9, "th", 54);
-    core/* ɵɵtext */._uU(10, "Name");
+    core/* ɵɵelementStart */.TgZ(9, "th", 56);
+    core/* ɵɵtext */._uU(10, "Driver");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(11, "th", 54);
+    core/* ɵɵelementStart */.TgZ(11, "th", 56);
     core/* ɵɵtext */._uU(12, "Team");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(13, "th", 50);
+    core/* ɵɵelementStart */.TgZ(13, "th", 52);
     core/* ɵɵtext */._uU(14, "Lap time");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(15, "th", 54);
+    core/* ɵɵelementStart */.TgZ(15, "th", 56);
     core/* ɵɵtext */._uU(16, "Gap to leader");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(17, "th", 54);
+    core/* ɵɵelementStart */.TgZ(17, "th", 56);
     core/* ɵɵtext */._uU(18, "Gap to previous");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(19, "th", 54);
+    core/* ɵɵelementStart */.TgZ(19, "th", 56);
     core/* ɵɵtext */._uU(20, "Lap count");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelement */._UZ(21, "th", 55);
+    core/* ɵɵelement */._UZ(21, "th", 57);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(22, "tbody");
@@ -49363,11 +49512,33 @@ function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_div_0_Templat
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const ctx_r75 = core/* ɵɵnextContext */.oxw(4);
+    const ctx_r82 = core/* ɵɵnextContext */.oxw(4);
     core/* ɵɵadvance */.xp6(23);
-    core/* ɵɵproperty */.Q6J("ngForOf", ctx_r75.upcomingRaceAnalysis.quali);
+    core/* ɵɵproperty */.Q6J("ngForOf", ctx_r82.upcomingRaceAnalysis.quali);
 } }
-function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_tr_19_Template(rf, ctx) { if (rf & 1) {
+function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_tr_17_Template(rf, ctx) { if (rf & 1) {
+    core/* ɵɵelementStart */.TgZ(0, "tr");
+    core/* ɵɵelementStart */.TgZ(1, "th", 42);
+    core/* ɵɵtext */._uU(2);
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(3, "td");
+    core/* ɵɵtext */._uU(4);
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(5, "td");
+    core/* ɵɵtext */._uU(6);
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+} if (rf & 2) {
+    const driver_r108 = ctx.$implicit;
+    const i_r109 = ctx.index;
+    core/* ɵɵadvance */.xp6(2);
+    core/* ɵɵtextInterpolate */.Oqu(i_r109 + 1);
+    core/* ɵɵadvance */.xp6(2);
+    core/* ɵɵtextInterpolate */.Oqu(driver_r108.key);
+    core/* ɵɵadvance */.xp6(2);
+    core/* ɵɵtextInterpolate */.Oqu(driver_r108.value);
+} }
+function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_tr_35_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "tr");
     core/* ɵɵelementStart */.TgZ(1, "th", 42);
     core/* ɵɵtext */._uU(2);
@@ -49383,47 +49554,74 @@ function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_tr_19_Templat
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const lap_r102 = ctx.$implicit;
+    const lap_r110 = ctx.$implicit;
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(lap_r102.position);
+    core/* ɵɵtextInterpolate */.Oqu(lap_r110.position);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(lap_r102.driverName);
+    core/* ɵɵtextInterpolate */.Oqu(lap_r110.driverName);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(lap_r102.lapTime);
+    core/* ɵɵtextInterpolate */.Oqu(lap_r110.lapTime);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(lap_r102.lapNumber);
+    core/* ɵɵtextInterpolate */.Oqu(lap_r110.lapNumber);
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_Template(rf, ctx) { if (rf & 1) {
-    const _r105 = core/* ɵɵgetCurrentView */.EpF();
+    const _r113 = core/* ɵɵgetCurrentView */.EpF();
     core/* ɵɵtemplate */.YNc(0, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_div_0_Template, 24, 1, "div", 0);
     core/* ɵɵelementStart */.TgZ(1, "div", 46);
     core/* ɵɵelementStart */.TgZ(2, "div", 47);
     core/* ɵɵelementStart */.TgZ(3, "div", 38);
     core/* ɵɵelementStart */.TgZ(4, "table", 48);
-    core/* ɵɵlistener */.NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_Template_table_matSortChange_4_listener($event) { core/* ɵɵrestoreView */.CHM(_r105); const ctx_r104 = core/* ɵɵnextContext */.oxw(3); return ctx_r104.sortResultData($event, 4); });
     core/* ɵɵelementStart */.TgZ(5, "thead");
     core/* ɵɵelementStart */.TgZ(6, "tr");
     core/* ɵɵelementStart */.TgZ(7, "th", 49);
-    core/* ɵɵtext */._uU(8, "Recorded laps");
+    core/* ɵɵtext */._uU(8, "Top speeds");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(9, "tr");
-    core/* ɵɵelementStart */.TgZ(10, "th", 50);
+    core/* ɵɵelementStart */.TgZ(10, "th", 41);
     core/* ɵɵtext */._uU(11, "#");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(12, "th", 51);
+    core/* ɵɵelementStart */.TgZ(12, "th", 50);
     core/* ɵɵtext */._uU(13, "Name");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(14, "th", 50);
-    core/* ɵɵtext */._uU(15, "Lap Time");
-    core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(16, "th", 52);
-    core/* ɵɵtext */._uU(17, "Lap Number");
+    core/* ɵɵelementStart */.TgZ(14, "th");
+    core/* ɵɵtext */._uU(15, "Speed (kph)");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(18, "tbody");
-    core/* ɵɵtemplate */.YNc(19, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_tr_19_Template, 9, 4, "tr", 9);
+    core/* ɵɵelementStart */.TgZ(16, "tbody");
+    core/* ɵɵtemplate */.YNc(17, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_tr_17_Template, 7, 3, "tr", 9);
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(18, "div", 47);
+    core/* ɵɵelementStart */.TgZ(19, "div", 38);
+    core/* ɵɵelementStart */.TgZ(20, "table", 51);
+    core/* ɵɵlistener */.NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_Template_table_matSortChange_20_listener($event) { core/* ɵɵrestoreView */.CHM(_r113); const ctx_r112 = core/* ɵɵnextContext */.oxw(3); return ctx_r112.sortResultData($event, 4); });
+    core/* ɵɵelementStart */.TgZ(21, "thead");
+    core/* ɵɵelementStart */.TgZ(22, "tr");
+    core/* ɵɵelementStart */.TgZ(23, "th", 49);
+    core/* ɵɵtext */._uU(24, "Recorded laps");
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(25, "tr");
+    core/* ɵɵelementStart */.TgZ(26, "th", 52);
+    core/* ɵɵtext */._uU(27, "#");
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(28, "th", 53);
+    core/* ɵɵtext */._uU(29, "Name");
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(30, "th", 52);
+    core/* ɵɵtext */._uU(31, "Lap Time");
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(32, "th", 54);
+    core/* ɵɵtext */._uU(33, "Lap Number");
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(34, "tbody");
+    core/* ɵɵtemplate */.YNc(35, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_tr_35_Template, 9, 4, "tr", 9);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -49432,13 +49630,110 @@ function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_Template(rf, 
 } if (rf & 2) {
     const ctx_r14 = core/* ɵɵnextContext */.oxw(3);
     core/* ɵɵproperty */.Q6J("ngIf", ctx_r14.upcomingRaceAnalysis.quali !== null);
-    core/* ɵɵadvance */.xp6(19);
+    core/* ɵɵadvance */.xp6(17);
+    core/* ɵɵproperty */.Q6J("ngForOf", ctx_r14.upcomingRaceAnalysis.topSpeeds.quali);
+    core/* ɵɵadvance */.xp6(18);
     core/* ɵɵproperty */.Q6J("ngForOf", ctx_r14.upcomingRaceAnalysis.qualiLaps);
 } }
-function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_div_0_tr_23_button_16_Template(rf, ctx) { if (rf & 1) {
-    const _r115 = core/* ɵɵgetCurrentView */.EpF();
-    core/* ɵɵelementStart */.TgZ(0, "button", 58);
-    core/* ɵɵlistener */.NdJ("click", function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_div_0_tr_23_button_16_Template_button_click_0_listener() { core/* ɵɵrestoreView */.CHM(_r115); const standing_r110 = core/* ɵɵnextContext */.oxw().$implicit; const ctx_r113 = core/* ɵɵnextContext */.oxw(6); return ctx_r113.openRadioDialog(standing_r110.radioData, ctx_r113.upcomingRaceAnalysis.sprintQualiLivetimingUrl); });
+function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_div_0_tr_23_div_8_div_1_Template(rf, ctx) { if (rf & 1) {
+    core/* ɵɵelementStart */.TgZ(0, "div");
+    core/* ɵɵelementStart */.TgZ(1, "span", 63);
+    core/* ɵɵtext */._uU(2);
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵtext */._uU(3);
+    core/* ɵɵelementEnd */.qZA();
+} if (rf & 2) {
+    const ctx_r129 = core/* ɵɵnextContext */.oxw();
+    const i_r126 = ctx_r129.index;
+    const lap_r125 = ctx_r129.$implicit;
+    core/* ɵɵadvance */.xp6(2);
+    core/* ɵɵtextInterpolate */.Oqu("Q" + (i_r126 + 1) + ": ");
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵtextInterpolate1 */.hij(" ", lap_r125.Value, " ");
+} }
+function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_div_0_tr_23_div_8_div_2_Template(rf, ctx) { if (rf & 1) {
+    core/* ɵɵelementStart */.TgZ(0, "div");
+    core/* ɵɵelementStart */.TgZ(1, "span");
+    core/* ɵɵtext */._uU(2, "-");
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+} }
+function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_div_0_tr_23_div_8_Template(rf, ctx) { if (rf & 1) {
+    core/* ɵɵelementStart */.TgZ(0, "div");
+    core/* ɵɵtemplate */.YNc(1, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_div_0_tr_23_div_8_div_1_Template, 4, 2, "div", 0);
+    core/* ɵɵtemplate */.YNc(2, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_div_0_tr_23_div_8_div_2_Template, 3, 0, "div", 0);
+    core/* ɵɵelementEnd */.qZA();
+} if (rf & 2) {
+    const lap_r125 = ctx.$implicit;
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵproperty */.Q6J("ngIf", lap_r125.Value != null);
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵproperty */.Q6J("ngIf", lap_r125.Value == null);
+} }
+function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_div_0_tr_23_div_11_div_1_Template(rf, ctx) { if (rf & 1) {
+    core/* ɵɵelementStart */.TgZ(0, "div");
+    core/* ɵɵelementStart */.TgZ(1, "span");
+    core/* ɵɵtext */._uU(2);
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+} if (rf & 2) {
+    const stat_r130 = core/* ɵɵnextContext */.oxw().$implicit;
+    core/* ɵɵadvance */.xp6(2);
+    core/* ɵɵtextInterpolate */.Oqu(stat_r130.TimeDiffToFastest);
+} }
+function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_div_0_tr_23_div_11_div_2_Template(rf, ctx) { if (rf & 1) {
+    core/* ɵɵelementStart */.TgZ(0, "div");
+    core/* ɵɵelementStart */.TgZ(1, "span");
+    core/* ɵɵtext */._uU(2, "-");
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+} }
+function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_div_0_tr_23_div_11_Template(rf, ctx) { if (rf & 1) {
+    core/* ɵɵelementStart */.TgZ(0, "div");
+    core/* ɵɵtemplate */.YNc(1, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_div_0_tr_23_div_11_div_1_Template, 3, 1, "div", 0);
+    core/* ɵɵtemplate */.YNc(2, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_div_0_tr_23_div_11_div_2_Template, 3, 0, "div", 0);
+    core/* ɵɵelementEnd */.qZA();
+} if (rf & 2) {
+    const stat_r130 = ctx.$implicit;
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵproperty */.Q6J("ngIf", stat_r130.TimeDiffToFastest != "");
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵproperty */.Q6J("ngIf", stat_r130.TimeDiffToFastest == "");
+} }
+function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_div_0_tr_23_div_14_div_1_Template(rf, ctx) { if (rf & 1) {
+    core/* ɵɵelementStart */.TgZ(0, "div");
+    core/* ɵɵelementStart */.TgZ(1, "span");
+    core/* ɵɵtext */._uU(2);
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+} if (rf & 2) {
+    const stat_r134 = core/* ɵɵnextContext */.oxw().$implicit;
+    core/* ɵɵadvance */.xp6(2);
+    core/* ɵɵtextInterpolate */.Oqu(stat_r134.TimeDifftoPositionAhead);
+} }
+function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_div_0_tr_23_div_14_div_2_Template(rf, ctx) { if (rf & 1) {
+    core/* ɵɵelementStart */.TgZ(0, "div");
+    core/* ɵɵelementStart */.TgZ(1, "span");
+    core/* ɵɵtext */._uU(2, "-");
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+} }
+function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_div_0_tr_23_div_14_Template(rf, ctx) { if (rf & 1) {
+    core/* ɵɵelementStart */.TgZ(0, "div");
+    core/* ɵɵtemplate */.YNc(1, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_div_0_tr_23_div_14_div_1_Template, 3, 1, "div", 0);
+    core/* ɵɵtemplate */.YNc(2, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_div_0_tr_23_div_14_div_2_Template, 3, 0, "div", 0);
+    core/* ɵɵelementEnd */.qZA();
+} if (rf & 2) {
+    const stat_r134 = ctx.$implicit;
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵproperty */.Q6J("ngIf", stat_r134.TimeDifftoPositionAhead != "");
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵproperty */.Q6J("ngIf", stat_r134.TimeDifftoPositionAhead == "");
+} }
+function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_div_0_tr_23_button_18_Template(rf, ctx) { if (rf & 1) {
+    const _r140 = core/* ɵɵgetCurrentView */.EpF();
+    core/* ɵɵelementStart */.TgZ(0, "button", 60);
+    core/* ɵɵlistener */.NdJ("click", function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_div_0_tr_23_button_18_Template_button_click_0_listener() { core/* ɵɵrestoreView */.CHM(_r140); const standing_r119 = core/* ɵɵnextContext */.oxw().$implicit; const ctx_r138 = core/* ɵɵnextContext */.oxw(6); return ctx_r138.openRadioDialog(standing_r119.radioData, ctx_r138.upcomingRaceAnalysis.sprintQualiLivetimingUrl); });
     core/* ɵɵelementStart */.TgZ(1, "mat-icon");
     core/* ɵɵtext */._uU(2, "volume_up");
     core/* ɵɵelementEnd */.qZA();
@@ -49456,87 +49751,113 @@ function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_div
     core/* ɵɵtext */._uU(6);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(7, "td");
-    core/* ɵɵtext */._uU(8);
+    core/* ɵɵtemplate */.YNc(8, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_div_0_tr_23_div_8_Template, 3, 2, "div", 9);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(9, "td");
     core/* ɵɵtext */._uU(10);
+    core/* ɵɵtemplate */.YNc(11, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_div_0_tr_23_div_11_Template, 3, 2, "div", 9);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(11, "td");
-    core/* ɵɵtext */._uU(12);
+    core/* ɵɵelementStart */.TgZ(12, "td");
+    core/* ɵɵtext */._uU(13);
+    core/* ɵɵtemplate */.YNc(14, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_div_0_tr_23_div_14_Template, 3, 2, "div", 9);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(13, "td");
-    core/* ɵɵtext */._uU(14);
+    core/* ɵɵelementStart */.TgZ(15, "td");
+    core/* ɵɵtext */._uU(16);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(15, "td", 56);
-    core/* ɵɵtemplate */.YNc(16, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_div_0_tr_23_button_16_Template, 3, 0, "button", 57);
+    core/* ɵɵelementStart */.TgZ(17, "td", 58);
+    core/* ɵɵtemplate */.YNc(18, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_div_0_tr_23_button_18_Template, 3, 0, "button", 59);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const standing_r110 = ctx.$implicit;
+    const standing_r119 = ctx.$implicit;
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r110.position);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r119.position);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r110.FullName);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r119.FullName);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r110.TeamName);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r119.TeamName);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r110.timingDataF1.BestLapTime.Value);
+    core/* ɵɵproperty */.Q6J("ngForOf", standing_r119.timingDataF1.BestLapTimes);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r110.timingDataF1.TimeDiffToFastest);
+    core/* ɵɵtextInterpolate1 */.hij("", standing_r119.timingDataF1.TimeDiffToFastest, " ");
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵproperty */.Q6J("ngForOf", standing_r119.timingDataF1.Stats);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r110.timingDataF1.TimeDiffToPositionAhead);
+    core/* ɵɵtextInterpolate1 */.hij("", standing_r119.timingDataF1.TimeDiffToPositionAhead, " ");
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵproperty */.Q6J("ngForOf", standing_r119.timingDataF1.Stats);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r110.timingDataF1.NumberOfLaps);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r119.timingDataF1.NumberOfLaps);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵproperty */.Q6J("ngIf", standing_r110.radioData.length > 0);
+    core/* ɵɵproperty */.Q6J("ngIf", standing_r119.radioData.length > 0);
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_div_0_Template(rf, ctx) { if (rf & 1) {
-    const _r117 = core/* ɵɵgetCurrentView */.EpF();
     core/* ɵɵelementStart */.TgZ(0, "div");
     core/* ɵɵelementStart */.TgZ(1, "table", 48);
-    core/* ɵɵlistener */.NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_div_0_Template_table_matSortChange_1_listener($event) { core/* ɵɵrestoreView */.CHM(_r117); const ctx_r116 = core/* ɵɵnextContext */.oxw(5); return ctx_r116.sortMainResultData($event, 4); });
     core/* ɵɵelementStart */.TgZ(2, "thead");
     core/* ɵɵelementStart */.TgZ(3, "tr");
-    core/* ɵɵelementStart */.TgZ(4, "th", 53);
-    core/* ɵɵtext */._uU(5, "Fastest lap");
+    core/* ɵɵelementStart */.TgZ(4, "th", 55);
+    core/* ɵɵtext */._uU(5, "Result");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(6, "tr");
-    core/* ɵɵelementStart */.TgZ(7, "th", 50);
+    core/* ɵɵelementStart */.TgZ(7, "th", 52);
     core/* ɵɵtext */._uU(8, "#");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(9, "th", 54);
-    core/* ɵɵtext */._uU(10, "Name");
+    core/* ɵɵelementStart */.TgZ(9, "th", 65);
+    core/* ɵɵtext */._uU(10, "Driver");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(11, "th", 54);
+    core/* ɵɵelementStart */.TgZ(11, "th", 56);
     core/* ɵɵtext */._uU(12, "Team");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(13, "th", 50);
+    core/* ɵɵelementStart */.TgZ(13, "th", 56);
     core/* ɵɵtext */._uU(14, "Lap time");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(15, "th", 54);
+    core/* ɵɵelementStart */.TgZ(15, "th", 56);
     core/* ɵɵtext */._uU(16, "Gap to leader");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(17, "th", 54);
+    core/* ɵɵelementStart */.TgZ(17, "th", 56);
     core/* ɵɵtext */._uU(18, "Gap to previous");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(19, "th", 54);
+    core/* ɵɵelementStart */.TgZ(19, "th", 56);
     core/* ɵɵtext */._uU(20, "Lap count");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelement */._UZ(21, "th", 55);
+    core/* ɵɵelement */._UZ(21, "th", 57);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(22, "tbody");
-    core/* ɵɵtemplate */.YNc(23, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_div_0_tr_23_Template, 17, 8, "tr", 9);
+    core/* ɵɵtemplate */.YNc(23, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_div_0_tr_23_Template, 19, 10, "tr", 9);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const ctx_r107 = core/* ɵɵnextContext */.oxw(5);
+    const ctx_r115 = core/* ɵɵnextContext */.oxw(5);
     core/* ɵɵadvance */.xp6(23);
-    core/* ɵɵproperty */.Q6J("ngForOf", ctx_r107.upcomingRaceAnalysis.sprintQuali);
+    core/* ɵɵproperty */.Q6J("ngForOf", ctx_r115.upcomingRaceAnalysis.sprintQuali);
 } }
-function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_tr_19_Template(rf, ctx) { if (rf & 1) {
+function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_tr_17_Template(rf, ctx) { if (rf & 1) {
+    core/* ɵɵelementStart */.TgZ(0, "tr");
+    core/* ɵɵelementStart */.TgZ(1, "th", 42);
+    core/* ɵɵtext */._uU(2);
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(3, "td");
+    core/* ɵɵtext */._uU(4);
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(5, "td");
+    core/* ɵɵtext */._uU(6);
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+} if (rf & 2) {
+    const driver_r141 = ctx.$implicit;
+    const i_r142 = ctx.index;
+    core/* ɵɵadvance */.xp6(2);
+    core/* ɵɵtextInterpolate */.Oqu(i_r142 + 1);
+    core/* ɵɵadvance */.xp6(2);
+    core/* ɵɵtextInterpolate */.Oqu(driver_r141.key);
+    core/* ɵɵadvance */.xp6(2);
+    core/* ɵɵtextInterpolate */.Oqu(driver_r141.value);
+} }
+function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_tr_35_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "tr");
     core/* ɵɵelementStart */.TgZ(1, "th", 42);
     core/* ɵɵtext */._uU(2);
@@ -49552,76 +49873,105 @@ function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_tr_
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const lap_r118 = ctx.$implicit;
+    const lap_r143 = ctx.$implicit;
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(lap_r118.position);
+    core/* ɵɵtextInterpolate */.Oqu(lap_r143.position);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(lap_r118.driverName);
+    core/* ɵɵtextInterpolate */.Oqu(lap_r143.driverName);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(lap_r118.lapTime);
+    core/* ɵɵtextInterpolate */.Oqu(lap_r143.lapTime);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(lap_r118.lapNumber);
+    core/* ɵɵtextInterpolate */.Oqu(lap_r143.lapNumber);
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_Template(rf, ctx) { if (rf & 1) {
-    const _r121 = core/* ɵɵgetCurrentView */.EpF();
+    const _r146 = core/* ɵɵgetCurrentView */.EpF();
     core/* ɵɵtemplate */.YNc(0, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_div_0_Template, 24, 1, "div", 0);
     core/* ɵɵelementStart */.TgZ(1, "div", 46);
     core/* ɵɵelementStart */.TgZ(2, "div", 47);
     core/* ɵɵelementStart */.TgZ(3, "div", 38);
     core/* ɵɵelementStart */.TgZ(4, "table", 48);
-    core/* ɵɵlistener */.NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_Template_table_matSortChange_4_listener($event) { core/* ɵɵrestoreView */.CHM(_r121); const ctx_r120 = core/* ɵɵnextContext */.oxw(4); return ctx_r120.sortResultData($event, 5); });
     core/* ɵɵelementStart */.TgZ(5, "thead");
     core/* ɵɵelementStart */.TgZ(6, "tr");
     core/* ɵɵelementStart */.TgZ(7, "th", 49);
-    core/* ɵɵtext */._uU(8, "Recorded laps");
+    core/* ɵɵtext */._uU(8, "Top speeds");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(9, "tr");
-    core/* ɵɵelementStart */.TgZ(10, "th", 50);
+    core/* ɵɵelementStart */.TgZ(10, "th", 41);
     core/* ɵɵtext */._uU(11, "#");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(12, "th", 51);
+    core/* ɵɵelementStart */.TgZ(12, "th", 50);
     core/* ɵɵtext */._uU(13, "Name");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(14, "th", 50);
-    core/* ɵɵtext */._uU(15, "Lap Time");
-    core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(16, "th", 52);
-    core/* ɵɵtext */._uU(17, "Lap Number");
+    core/* ɵɵelementStart */.TgZ(14, "th");
+    core/* ɵɵtext */._uU(15, "Speed (kph)");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(18, "tbody");
-    core/* ɵɵtemplate */.YNc(19, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_tr_19_Template, 9, 4, "tr", 9);
+    core/* ɵɵelementStart */.TgZ(16, "tbody");
+    core/* ɵɵtemplate */.YNc(17, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_tr_17_Template, 7, 3, "tr", 9);
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(18, "div", 47);
+    core/* ɵɵelementStart */.TgZ(19, "div", 38);
+    core/* ɵɵelementStart */.TgZ(20, "table", 51);
+    core/* ɵɵlistener */.NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_Template_table_matSortChange_20_listener($event) { core/* ɵɵrestoreView */.CHM(_r146); const ctx_r145 = core/* ɵɵnextContext */.oxw(4); return ctx_r145.sortResultData($event, 5); });
+    core/* ɵɵelementStart */.TgZ(21, "thead");
+    core/* ɵɵelementStart */.TgZ(22, "tr");
+    core/* ɵɵelementStart */.TgZ(23, "th", 49);
+    core/* ɵɵtext */._uU(24, "Recorded laps");
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(25, "tr");
+    core/* ɵɵelementStart */.TgZ(26, "th", 52);
+    core/* ɵɵtext */._uU(27, "#");
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(28, "th", 53);
+    core/* ɵɵtext */._uU(29, "Name");
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(30, "th", 52);
+    core/* ɵɵtext */._uU(31, "Lap Time");
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(32, "th", 54);
+    core/* ɵɵtext */._uU(33, "Lap Number");
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(34, "tbody");
+    core/* ɵɵtemplate */.YNc(35, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_tr_35_Template, 9, 4, "tr", 9);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const ctx_r106 = core/* ɵɵnextContext */.oxw(4);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r106.upcomingRaceAnalysis.quali !== null);
-    core/* ɵɵadvance */.xp6(19);
-    core/* ɵɵproperty */.Q6J("ngForOf", ctx_r106.upcomingRaceAnalysis.sprintQualiLaps);
+    const ctx_r114 = core/* ɵɵnextContext */.oxw(4);
+    core/* ɵɵproperty */.Q6J("ngIf", ctx_r114.upcomingRaceAnalysis.sprintQuali !== null);
+    core/* ɵɵadvance */.xp6(17);
+    core/* ɵɵproperty */.Q6J("ngForOf", ctx_r114.upcomingRaceAnalysis.topSpeeds.sprintShootout);
+    core/* ɵɵadvance */.xp6(18);
+    core/* ɵɵproperty */.Q6J("ngForOf", ctx_r114.upcomingRaceAnalysis.sprintQualiLaps);
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "mat-tab", 62);
-    core/* ɵɵtemplate */.YNc(1, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_Template, 20, 2, "ng-template", 19);
+    core/* ɵɵelementStart */.TgZ(0, "mat-tab", 64);
+    core/* ɵɵtemplate */.YNc(1, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_ng_template_1_Template, 36, 3, "ng-template", 19);
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
     const ctx_r15 = core/* ɵɵnextContext */.oxw(3);
     core/* ɵɵproperty */.Q6J("disabled", ctx_r15.upcomingRaceAnalysis.sprintQuali == null);
 } }
-function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_13_ng_template_1_div_0_tr_21_button_12_Template(rf, ctx) { if (rf & 1) {
-    const _r130 = core/* ɵɵgetCurrentView */.EpF();
-    core/* ɵɵelementStart */.TgZ(0, "button", 58);
-    core/* ɵɵlistener */.NdJ("click", function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_13_ng_template_1_div_0_tr_21_button_12_Template_button_click_0_listener() { core/* ɵɵrestoreView */.CHM(_r130); const standing_r125 = core/* ɵɵnextContext */.oxw().$implicit; const ctx_r128 = core/* ɵɵnextContext */.oxw(6); return ctx_r128.openRadioDialog(standing_r125.radioData, ctx_r128.upcomingRaceAnalysis.sprintLivetimingUrl); });
+function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_13_ng_template_1_div_0_tr_18_button_12_Template(rf, ctx) { if (rf & 1) {
+    const _r156 = core/* ɵɵgetCurrentView */.EpF();
+    core/* ɵɵelementStart */.TgZ(0, "button", 60);
+    core/* ɵɵlistener */.NdJ("click", function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_13_ng_template_1_div_0_tr_18_button_12_Template_button_click_0_listener() { core/* ɵɵrestoreView */.CHM(_r156); const standing_r151 = core/* ɵɵnextContext */.oxw().$implicit; const ctx_r154 = core/* ɵɵnextContext */.oxw(6); return ctx_r154.openRadioDialog(standing_r151.radioData, ctx_r154.upcomingRaceAnalysis.sprintLivetimingUrl); });
     core/* ɵɵelementStart */.TgZ(1, "mat-icon");
     core/* ɵɵtext */._uU(2, "volume_up");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } }
-function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_13_ng_template_1_div_0_tr_21_Template(rf, ctx) { if (rf & 1) {
+function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_13_ng_template_1_div_0_tr_18_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "tr");
     core/* ɵɵelementStart */.TgZ(1, "th", 42);
     core/* ɵɵtext */._uU(2);
@@ -49629,108 +49979,152 @@ function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_13_ng_template_1_div
     core/* ɵɵelementStart */.TgZ(3, "td");
     core/* ɵɵtext */._uU(4);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(5, "td", 69);
+    core/* ɵɵelementStart */.TgZ(5, "td", 72);
     core/* ɵɵtext */._uU(6);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(7, "td");
     core/* ɵɵtext */._uU(8);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(9, "td", 69);
+    core/* ɵɵelementStart */.TgZ(9, "td");
     core/* ɵɵtext */._uU(10);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(11, "td", 56);
-    core/* ɵɵtemplate */.YNc(12, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_13_ng_template_1_div_0_tr_21_button_12_Template, 3, 0, "button", 57);
+    core/* ɵɵelementStart */.TgZ(11, "td", 58);
+    core/* ɵɵtemplate */.YNc(12, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_13_ng_template_1_div_0_tr_18_button_12_Template, 3, 0, "button", 59);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(13, "td", 70);
+    core/* ɵɵelementStart */.TgZ(13, "td", 73);
     core/* ɵɵtext */._uU(14);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const standing_r125 = ctx.$implicit;
-    const ctx_r124 = core/* ɵɵnextContext */.oxw(6);
+    const standing_r151 = ctx.$implicit;
+    const ctx_r150 = core/* ɵɵnextContext */.oxw(6);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r125.position);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r151.position);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r125.FullName);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r151.FullName);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r125.TeamName);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r151.TeamName);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r125.finalGap);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r151.timingDataF1.GapToLeader);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r125.fastestLap);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r151.timingDataF1.IntervalToPositionAhead.Value);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵproperty */.Q6J("ngIf", standing_r125.radioData.length > 0);
+    core/* ɵɵproperty */.Q6J("ngIf", standing_r151.radioData.length > 0);
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵstyleProp */.Udp("color", ctx_r124.getTyresClass(standing_r125.lapByLapData.tyres));
+    core/* ɵɵstyleProp */.Udp("color", ctx_r150.getTyresClass(standing_r151.lapByLapData.tyres));
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵtextInterpolate */.Oqu(ctx_r124.getTyresString(standing_r125.lapByLapData.tyres));
+    core/* ɵɵtextInterpolate */.Oqu(ctx_r150.getTyresString(standing_r151.lapByLapData.tyres));
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_13_ng_template_1_div_0_Template(rf, ctx) { if (rf & 1) {
-    const _r132 = core/* ɵɵgetCurrentView */.EpF();
     core/* ɵɵelementStart */.TgZ(0, "div");
-    core/* ɵɵelementStart */.TgZ(1, "table", 48);
-    core/* ɵɵlistener */.NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_13_ng_template_1_div_0_Template_table_matSortChange_1_listener($event) { core/* ɵɵrestoreView */.CHM(_r132); const ctx_r131 = core/* ɵɵnextContext */.oxw(5); return ctx_r131.sortMainResultData($event, 6); });
+    core/* ɵɵelementStart */.TgZ(1, "table", 39);
     core/* ɵɵelementStart */.TgZ(2, "thead");
     core/* ɵɵelementStart */.TgZ(3, "tr");
-    core/* ɵɵelementStart */.TgZ(4, "th", 65);
-    core/* ɵɵtext */._uU(5, "Results");
+    core/* ɵɵelementStart */.TgZ(4, "th", 56);
+    core/* ɵɵtext */._uU(5, "#");
     core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(6, "th", 56);
+    core/* ɵɵtext */._uU(7, "Name");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(6, "tr");
-    core/* ɵɵelementStart */.TgZ(7, "th", 50);
-    core/* ɵɵtext */._uU(8, "#");
+    core/* ɵɵelementStart */.TgZ(8, "th", 71);
+    core/* ɵɵtext */._uU(9, "Team");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(9, "th", 54);
-    core/* ɵɵtext */._uU(10, "Name");
+    core/* ɵɵelementStart */.TgZ(10, "th", 56);
+    core/* ɵɵtext */._uU(11, "Gap to leader");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(11, "th", 66);
-    core/* ɵɵtext */._uU(12, "Team");
+    core/* ɵɵelementStart */.TgZ(12, "th", 56);
+    core/* ɵɵtext */._uU(13, "Gap to previous");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(13, "th", 54);
-    core/* ɵɵtext */._uU(14, "Gap");
-    core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(15, "th", 67);
-    core/* ɵɵtext */._uU(16, "Lap time");
-    core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelement */._UZ(17, "th", 55);
-    core/* ɵɵelementStart */.TgZ(18, "th", 68);
-    core/* ɵɵtext */._uU(19, "Tyre");
+    core/* ɵɵelement */._UZ(14, "th", 57);
+    core/* ɵɵelementStart */.TgZ(15, "th", 65);
+    core/* ɵɵtext */._uU(16, "Tyre");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(20, "tbody");
-    core/* ɵɵtemplate */.YNc(21, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_13_ng_template_1_div_0_tr_21_Template, 15, 9, "tr", 9);
+    core/* ɵɵelementStart */.TgZ(17, "tbody");
+    core/* ɵɵtemplate */.YNc(18, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_13_ng_template_1_div_0_tr_18_Template, 15, 9, "tr", 9);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const ctx_r123 = core/* ɵɵnextContext */.oxw(5);
-    core/* ɵɵadvance */.xp6(21);
-    core/* ɵɵproperty */.Q6J("ngForOf", ctx_r123.upcomingRaceAnalysis.sprint);
+    const ctx_r148 = core/* ɵɵnextContext */.oxw(5);
+    core/* ɵɵadvance */.xp6(18);
+    core/* ɵɵproperty */.Q6J("ngForOf", ctx_r148.upcomingRaceAnalysis.sprint);
+} }
+function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_13_ng_template_1_tr_24_Template(rf, ctx) { if (rf & 1) {
+    core/* ɵɵelementStart */.TgZ(0, "tr");
+    core/* ɵɵelementStart */.TgZ(1, "th", 42);
+    core/* ɵɵtext */._uU(2);
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(3, "td");
+    core/* ɵɵtext */._uU(4);
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(5, "td");
+    core/* ɵɵtext */._uU(6);
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+} if (rf & 2) {
+    const driver_r157 = ctx.$implicit;
+    const i_r158 = ctx.index;
+    core/* ɵɵadvance */.xp6(2);
+    core/* ɵɵtextInterpolate */.Oqu(i_r158 + 1);
+    core/* ɵɵadvance */.xp6(2);
+    core/* ɵɵtextInterpolate */.Oqu(driver_r157.key);
+    core/* ɵɵadvance */.xp6(2);
+    core/* ɵɵtextInterpolate */.Oqu(driver_r157.value);
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_13_ng_template_1_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵtemplate */.YNc(0, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_13_ng_template_1_div_0_Template, 22, 1, "div", 0);
+    core/* ɵɵtemplate */.YNc(0, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_13_ng_template_1_div_0_Template, 19, 1, "div", 0);
     core/* ɵɵelementStart */.TgZ(1, "div", 4);
-    core/* ɵɵelementStart */.TgZ(2, "div", 5);
+    core/* ɵɵelementStart */.TgZ(2, "div", 67);
     core/* ɵɵelementStart */.TgZ(3, "div", 44);
     core/* ɵɵelementStart */.TgZ(4, "div", 38);
-    core/* ɵɵelement */._UZ(5, "apx-chart", 64);
+    core/* ɵɵelement */._UZ(5, "apx-chart", 68);
     core/* ɵɵelement */._UZ(6, "br");
     core/* ɵɵelement */._UZ(7, "br");
     core/* ɵɵelement */._UZ(8, "br");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(9, "div", 69);
+    core/* ɵɵelementStart */.TgZ(10, "div", 38);
+    core/* ɵɵelementStart */.TgZ(11, "table", 48);
+    core/* ɵɵelementStart */.TgZ(12, "thead");
+    core/* ɵɵelementStart */.TgZ(13, "tr");
+    core/* ɵɵelementStart */.TgZ(14, "th", 49);
+    core/* ɵɵtext */._uU(15, "Top speeds");
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(16, "tr");
+    core/* ɵɵelementStart */.TgZ(17, "th", 41);
+    core/* ɵɵtext */._uU(18, "#");
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(19, "th", 70);
+    core/* ɵɵtext */._uU(20, "Name");
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(21, "th");
+    core/* ɵɵtext */._uU(22, "Speed (kph)");
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(23, "tbody");
+    core/* ɵɵtemplate */.YNc(24, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_13_ng_template_1_tr_24_Template, 7, 3, "tr", 9);
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const ctx_r122 = core/* ɵɵnextContext */.oxw(4);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r122.upcomingRaceAnalysis.sprint != null);
+    const ctx_r147 = core/* ɵɵnextContext */.oxw(4);
+    core/* ɵɵproperty */.Q6J("ngIf", ctx_r147.upcomingRaceAnalysis.sprint != null);
     core/* ɵɵadvance */.xp6(5);
-    core/* ɵɵproperty */.Q6J("chart", ctx_r122.defChart)("dataLabels", ctx_r122.defDataLabels)("grid", ctx_r122.defGrid)("series", ctx_r122.lapPosChart.series)("stroke", ctx_r122.defStroke)("title", ctx_r122.lapPosChart.title)("xaxis", ctx_r122.lapXaxis)("yaxis", ctx_r122.reverseYAxis);
+    core/* ɵɵproperty */.Q6J("chart", ctx_r147.defChart)("dataLabels", ctx_r147.defDataLabels)("grid", ctx_r147.defGrid)("series", ctx_r147.lapPosChart.series)("stroke", ctx_r147.defStroke)("title", ctx_r147.lapPosChart.title)("xaxis", ctx_r147.lapXaxis)("yaxis", ctx_r147.reverseYAxis);
+    core/* ɵɵadvance */.xp6(19);
+    core/* ɵɵproperty */.Q6J("ngForOf", ctx_r147.upcomingRaceAnalysis.topSpeeds.sprint);
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_13_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "mat-tab", 63);
-    core/* ɵɵtemplate */.YNc(1, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_13_ng_template_1_Template, 9, 9, "ng-template", 19);
+    core/* ɵɵelementStart */.TgZ(0, "mat-tab", 66);
+    core/* ɵɵtemplate */.YNc(1, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_13_ng_template_1_Template, 25, 10, "ng-template", 19);
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
     const ctx_r16 = core/* ɵɵnextContext */.oxw(3);
@@ -49755,25 +50149,25 @@ function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_15_tr_20_Templat
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const lap_r134 = ctx.$implicit;
+    const lap_r160 = ctx.$implicit;
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(lap_r134.position);
+    core/* ɵɵtextInterpolate */.Oqu(lap_r160.position);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(lap_r134.driverName);
+    core/* ɵɵtextInterpolate */.Oqu(lap_r160.driverName);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(lap_r134.lapTime);
+    core/* ɵɵtextInterpolate */.Oqu(lap_r160.lapTime);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(lap_r134.lapNumber);
+    core/* ɵɵtextInterpolate */.Oqu(lap_r160.lapNumber);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(lap_r134.sessionName);
+    core/* ɵɵtextInterpolate */.Oqu(lap_r160.sessionName);
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_15_Template(rf, ctx) { if (rf & 1) {
-    const _r137 = core/* ɵɵgetCurrentView */.EpF();
+    const _r163 = core/* ɵɵgetCurrentView */.EpF();
     core/* ɵɵelementStart */.TgZ(0, "div", 46);
-    core/* ɵɵelementStart */.TgZ(1, "div", 47);
+    core/* ɵɵelementStart */.TgZ(1, "div", 74);
     core/* ɵɵelementStart */.TgZ(2, "div", 38);
-    core/* ɵɵelementStart */.TgZ(3, "table", 48);
-    core/* ɵɵlistener */.NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_15_Template_table_matSortChange_3_listener($event) { core/* ɵɵrestoreView */.CHM(_r137); const ctx_r136 = core/* ɵɵnextContext */.oxw(3); return ctx_r136.sortResultData($event, 7); });
+    core/* ɵɵelementStart */.TgZ(3, "table", 51);
+    core/* ɵɵlistener */.NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_15_Template_table_matSortChange_3_listener($event) { core/* ɵɵrestoreView */.CHM(_r163); const ctx_r162 = core/* ɵɵnextContext */.oxw(3); return ctx_r162.sortResultData($event, 7); });
     core/* ɵɵelementStart */.TgZ(4, "thead");
     core/* ɵɵelementStart */.TgZ(5, "tr");
     core/* ɵɵelementStart */.TgZ(6, "th", 49);
@@ -49781,19 +50175,19 @@ function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_15_Template(rf, 
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(8, "tr");
-    core/* ɵɵelementStart */.TgZ(9, "th", 50);
+    core/* ɵɵelementStart */.TgZ(9, "th", 52);
     core/* ɵɵtext */._uU(10, "#");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(11, "th", 51);
+    core/* ɵɵelementStart */.TgZ(11, "th", 53);
     core/* ɵɵtext */._uU(12, "Name");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(13, "th", 50);
+    core/* ɵɵelementStart */.TgZ(13, "th", 52);
     core/* ɵɵtext */._uU(14, "Lap Time");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(15, "th", 52);
+    core/* ɵɵelementStart */.TgZ(15, "th", 54);
     core/* ɵɵtext */._uU(16, "Lap Number");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(17, "th", 52);
+    core/* ɵɵelementStart */.TgZ(17, "th", 54);
     core/* ɵɵtext */._uU(18, "Session");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -49811,10 +50205,10 @@ function UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_15_Template(rf, 
     core/* ɵɵproperty */.Q6J("ngForOf", ctx_r17.allLaps);
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_20_Template(rf, ctx) { if (rf & 1) {
-    const _r139 = core/* ɵɵgetCurrentView */.EpF();
+    const _r165 = core/* ɵɵgetCurrentView */.EpF();
     core/* ɵɵelementStart */.TgZ(0, "div");
     core/* ɵɵelementStart */.TgZ(1, "mat-tab-group", 17);
-    core/* ɵɵlistener */.NdJ("selectedTabChange", function UpcomingRaceAnalysisComponent_div_0_div_20_Template_mat_tab_group_selectedTabChange_1_listener($event) { core/* ɵɵrestoreView */.CHM(_r139); const ctx_r138 = core/* ɵɵnextContext */.oxw(2); return ctx_r138.tabChanged($event); })("selectedIndexChange", function UpcomingRaceAnalysisComponent_div_0_div_20_Template_mat_tab_group_selectedIndexChange_1_listener($event) { core/* ɵɵrestoreView */.CHM(_r139); const ctx_r140 = core/* ɵɵnextContext */.oxw(2); return ctx_r140.selectedTab = $event; });
+    core/* ɵɵlistener */.NdJ("selectedTabChange", function UpcomingRaceAnalysisComponent_div_0_div_20_Template_mat_tab_group_selectedTabChange_1_listener($event) { core/* ɵɵrestoreView */.CHM(_r165); const ctx_r164 = core/* ɵɵnextContext */.oxw(2); return ctx_r164.tabChanged($event); })("selectedIndexChange", function UpcomingRaceAnalysisComponent_div_0_div_20_Template_mat_tab_group_selectedIndexChange_1_listener($event) { core/* ɵɵrestoreView */.CHM(_r165); const ctx_r166 = core/* ɵɵnextContext */.oxw(2); return ctx_r166.selectedTab = $event; });
     core/* ɵɵelementStart */.TgZ(2, "mat-tab", 18);
     core/* ɵɵtemplate */.YNc(3, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_3_Template, 1, 1, "ng-template", 19);
     core/* ɵɵelementEnd */.qZA();
@@ -49822,12 +50216,12 @@ function UpcomingRaceAnalysisComponent_div_0_div_20_Template(rf, ctx) { if (rf &
     core/* ɵɵtemplate */.YNc(5, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_5_Template, 2, 2, "ng-template", 19);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(6, "mat-tab", 21);
-    core/* ɵɵtemplate */.YNc(7, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_7_Template, 20, 2, "ng-template", 19);
+    core/* ɵɵtemplate */.YNc(7, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_7_Template, 36, 3, "ng-template", 19);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵtemplate */.YNc(8, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_8_Template, 2, 1, "mat-tab", 22);
     core/* ɵɵtemplate */.YNc(9, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_9_Template, 2, 1, "mat-tab", 23);
     core/* ɵɵelementStart */.TgZ(10, "mat-tab", 24);
-    core/* ɵɵtemplate */.YNc(11, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_Template, 20, 2, "ng-template", 19);
+    core/* ɵɵtemplate */.YNc(11, UpcomingRaceAnalysisComponent_div_0_div_20_ng_template_11_Template, 36, 3, "ng-template", 19);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵtemplate */.YNc(12, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_12_Template, 2, 1, "mat-tab", 25);
     core/* ɵɵtemplate */.YNc(13, UpcomingRaceAnalysisComponent_div_0_div_20_mat_tab_13_Template, 2, 1, "mat-tab", 26);
@@ -49859,30 +50253,30 @@ function UpcomingRaceAnalysisComponent_div_0_div_20_Template(rf, ctx) { if (rf &
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_21_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div");
-    core/* ɵɵelementStart */.TgZ(1, "div", 71);
-    core/* ɵɵelement */._UZ(2, "img", 72);
+    core/* ɵɵelementStart */.TgZ(1, "div", 75);
+    core/* ɵɵelement */._UZ(2, "img", 76);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } }
 function UpcomingRaceAnalysisComponent_div_0_Template(rf, ctx) { if (rf & 1) {
-    const _r142 = core/* ɵɵgetCurrentView */.EpF();
+    const _r168 = core/* ɵɵgetCurrentView */.EpF();
     core/* ɵɵelementStart */.TgZ(0, "div");
     core/* ɵɵelementStart */.TgZ(1, "mat-drawer-container", 1);
     core/* ɵɵelementStart */.TgZ(2, "mat-drawer", 2, 3);
-    core/* ɵɵlistener */.NdJ("openedChange", function UpcomingRaceAnalysisComponent_div_0_Template_mat_drawer_openedChange_2_listener($event) { core/* ɵɵrestoreView */.CHM(_r142); const ctx_r141 = core/* ɵɵnextContext */.oxw(); return ctx_r141.utilityService.setSidebarStatus($event); });
+    core/* ɵɵlistener */.NdJ("openedChange", function UpcomingRaceAnalysisComponent_div_0_Template_mat_drawer_openedChange_2_listener($event) { core/* ɵɵrestoreView */.CHM(_r168); const ctx_r167 = core/* ɵɵnextContext */.oxw(); return ctx_r167.utilityService.setSidebarStatus($event); });
     core/* ɵɵelementStart */.TgZ(4, "div", 4);
     core/* ɵɵelementStart */.TgZ(5, "div", 5);
     core/* ɵɵelementStart */.TgZ(6, "div");
     core/* ɵɵelementStart */.TgZ(7, "textarea", 6);
-    core/* ɵɵlistener */.NdJ("focus", function UpcomingRaceAnalysisComponent_div_0_Template_textarea_focus_7_listener() { core/* ɵɵrestoreView */.CHM(_r142); const ctx_r143 = core/* ɵɵnextContext */.oxw(); return ctx_r143.utilityService.focusFunction(); })("focusout", function UpcomingRaceAnalysisComponent_div_0_Template_textarea_focusout_7_listener() { core/* ɵɵrestoreView */.CHM(_r142); const ctx_r144 = core/* ɵɵnextContext */.oxw(); return ctx_r144.utilityService.focusOutFunction(); })("ngModelChange", function UpcomingRaceAnalysisComponent_div_0_Template_textarea_ngModelChange_7_listener($event) { core/* ɵɵrestoreView */.CHM(_r142); const ctx_r145 = core/* ɵɵnextContext */.oxw(); return ctx_r145.utilityService.postText = $event; });
+    core/* ɵɵlistener */.NdJ("focus", function UpcomingRaceAnalysisComponent_div_0_Template_textarea_focus_7_listener() { core/* ɵɵrestoreView */.CHM(_r168); const ctx_r169 = core/* ɵɵnextContext */.oxw(); return ctx_r169.utilityService.focusFunction(); })("focusout", function UpcomingRaceAnalysisComponent_div_0_Template_textarea_focusout_7_listener() { core/* ɵɵrestoreView */.CHM(_r168); const ctx_r170 = core/* ɵɵnextContext */.oxw(); return ctx_r170.utilityService.focusOutFunction(); })("ngModelChange", function UpcomingRaceAnalysisComponent_div_0_Template_textarea_ngModelChange_7_listener($event) { core/* ɵɵrestoreView */.CHM(_r168); const ctx_r171 = core/* ɵɵnextContext */.oxw(); return ctx_r171.utilityService.postText = $event; });
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(8, "div", 7);
     core/* ɵɵelementStart */.TgZ(9, "button", 8);
-    core/* ɵɵlistener */.NdJ("click", function UpcomingRaceAnalysisComponent_div_0_Template_button_click_9_listener() { core/* ɵɵrestoreView */.CHM(_r142); const ctx_r146 = core/* ɵɵnextContext */.oxw(); return ctx_r146.utilityService.postComment(11); });
+    core/* ɵɵlistener */.NdJ("click", function UpcomingRaceAnalysisComponent_div_0_Template_button_click_9_listener() { core/* ɵɵrestoreView */.CHM(_r168); const ctx_r172 = core/* ɵɵnextContext */.oxw(); return ctx_r172.utilityService.postComment(11); });
     core/* ɵɵtext */._uU(10, "Post ");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(11, "button", 8);
-    core/* ɵɵlistener */.NdJ("click", function UpcomingRaceAnalysisComponent_div_0_Template_button_click_11_listener() { core/* ɵɵrestoreView */.CHM(_r142); const ctx_r147 = core/* ɵɵnextContext */.oxw(); return ctx_r147.utilityService.reloadPosts(11); });
+    core/* ɵɵlistener */.NdJ("click", function UpcomingRaceAnalysisComponent_div_0_Template_button_click_11_listener() { core/* ɵɵrestoreView */.CHM(_r168); const ctx_r173 = core/* ɵɵnextContext */.oxw(); return ctx_r173.utilityService.reloadPosts(11); });
     core/* ɵɵtext */._uU(12, "Reload ");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -49892,14 +50286,14 @@ function UpcomingRaceAnalysisComponent_div_0_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵtemplate */.YNc(13, UpcomingRaceAnalysisComponent_div_0_div_13_Template, 8, 3, "div", 9);
     core/* ɵɵelementStart */.TgZ(14, "div", 10);
     core/* ɵɵelementStart */.TgZ(15, "button", 11);
-    core/* ɵɵlistener */.NdJ("click", function UpcomingRaceAnalysisComponent_div_0_Template_button_click_15_listener() { core/* ɵɵrestoreView */.CHM(_r142); const _r1 = core/* ɵɵreference */.MAs(3); const ctx_r148 = core/* ɵɵnextContext */.oxw(); return ctx_r148.utilityService.drawerToggle(_r1); });
+    core/* ɵɵlistener */.NdJ("click", function UpcomingRaceAnalysisComponent_div_0_Template_button_click_15_listener() { core/* ɵɵrestoreView */.CHM(_r168); const _r1 = core/* ɵɵreference */.MAs(3); const ctx_r174 = core/* ɵɵnextContext */.oxw(); return ctx_r174.utilityService.drawerToggle(_r1); });
     core/* ɵɵelement */._UZ(16, "i", 12);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(17, "div", 10);
     core/* ɵɵelementStart */.TgZ(18, "button", 11);
-    core/* ɵɵlistener */.NdJ("click", function UpcomingRaceAnalysisComponent_div_0_Template_button_click_18_listener() { core/* ɵɵrestoreView */.CHM(_r142); const _r1 = core/* ɵɵreference */.MAs(3); const ctx_r149 = core/* ɵɵnextContext */.oxw(); return ctx_r149.utilityService.drawerToggle(_r1); });
+    core/* ɵɵlistener */.NdJ("click", function UpcomingRaceAnalysisComponent_div_0_Template_button_click_18_listener() { core/* ɵɵrestoreView */.CHM(_r168); const _r1 = core/* ɵɵreference */.MAs(3); const ctx_r175 = core/* ɵɵnextContext */.oxw(); return ctx_r175.utilityService.drawerToggle(_r1); });
     core/* ɵɵelement */._UZ(19, "i", 12);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -50151,9 +50545,9 @@ class UpcomingRaceAnalysisComponent {
         };
     }
     getTyresString(tyres) {
-        let response = '';
+        let response = ' - ';
         tyres.forEach((tyre) => {
-            response = response + tyre.type;
+            response = response + tyre.Compound + " - ";
         });
         return response;
     }
@@ -50231,7 +50625,7 @@ class UpcomingRaceAnalysisComponent {
         }
         let positionsByLapchartSeries = [];
         for (let driver of this.upcomingRaceAnalysis.sprint) {
-            let color = driver.Color;
+            let color = driver.TeamColour;
             if (color == 'FFFFFF') {
                 color = '888888';
             }
@@ -50241,6 +50635,7 @@ class UpcomingRaceAnalysisComponent {
                 color: '#' + color
             });
         }
+        console.log(positionsByLapchartSeries);
         this.lapPosChart = {
             series: positionsByLapchartSeries,
             title: {
@@ -50287,7 +50682,7 @@ UpcomingRaceAnalysisComponent.ɵcmp = /*@__PURE__*/ core/* ɵɵdefineComponent *
     } if (rf & 2) {
         let _t;
         core/* ɵɵqueryRefresh */.iGM(_t = core/* ɵɵloadQuery */.CRH()) && (ctx.chart = _t.first);
-    } }, decls: 1, vars: 1, consts: [[4, "ngIf"], ["autosize", ""], ["autosize", "", "mode", "side", "position", "end", 1, "example-sidenav", 3, "opened", "openedChange"], ["drawer", ""], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area", 3, "ngModel", "focus", "focusout", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "active-color-button", 3, "click"], [4, "ngFor", "ngForOf"], [1, "fixed-button"], ["mat-button", "", "type", "fixed-plugin", 3, "click"], [1, "fa", "fa-commenting-o", "fa-2x"], [1, "basic-comment"], [1, "header-left", "hover-pointer", 3, "click"], [1, "header-right", "hover-pointer", 3, "click"], [1, "basic-comment-body"], [3, "selectedIndex", "selectedTabChange", "selectedIndexChange"], ["label", "Circuit"], ["matTabContent", ""], ["label", "Circuit winners", 3, "disabled"], ["label", "Practice 1", 3, "disabled"], ["label", "Practice 2", 3, "disabled", 4, "ngIf"], ["label", "Practice 3", 3, "disabled", 4, "ngIf"], ["label", "Qualifying", 3, "disabled"], ["label", "Sprint SHoOToUt", 3, "disabled", 4, "ngIf"], ["label", "Sprint", 3, "disabled", 4, "ngIf"], ["label", "All laps", 3, "disabled"], [1, "black-footer", "text-center"], [1, "image"], ["target", "_blank", 3, "href"], [3, "src"], ["class", "div-padded-1rem row", 4, "ngIf"], ["class", "div-padded-1rem div-padded-left-2 row", 4, "ngIf"], [1, "div-padded-1rem", "row"], ["class", "col-lg-6 col-12", 4, "ngFor", "ngForOf"], [1, "col-lg-6", "col-12"], [1, "card", "hover-effects-row", 3, "click"], [1, "card-body-padded"], [1, "table", "table-striped"], ["colspan", "2", "scope", "col"], [2, "width", "35px"], ["scope", "row"], [1, "div-padded-1rem", "div-padded-left-2", "row"], [1, "card"], [3, "href"], [1, "div-padded-1rem", "div-padded-left-2", "div-padded-right-2", "row"], [1, "card", "col-lg-12", "col-12"], ["matSort", "", 1, "table", "table-striped", 3, "matSortChange"], ["colspan", "4", 1, "text-center"], ["mat-sort-header", "position", "scope", "col"], ["mat-sort-header", "name", "scope", "col"], ["mat-sort-header", "lapNumber", "scope", "col"], ["colspan", "8", 1, "text-center"], ["scope", "col"], ["scope", "col", 1, "w-20px"], [1, "no-padding-td"], ["color", "primary", "mat-mini-fab", "", 3, "click", 4, "ngIf"], ["color", "primary", "mat-mini-fab", "", 3, "click"], ["label", "Practice 2", 3, "disabled"], ["label", "Practice 3", 3, "disabled"], [1, "font-weight-bold"], ["label", "Sprint SHoOToUt", 3, "disabled"], ["label", "Sprint", 3, "disabled"], [3, "chart", "dataLabels", "grid", "series", "stroke", "title", "xaxis", "yaxis"], ["colspan", "9", 1, "text-center"], ["scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], ["mat-sort-header", "lapTime", "scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], ["scope", "col", 1, "text-center"], [1, "d-sm-none", "d-none", "d-lg-table-cell"], [1, "font-weight-bold", "text-center"], [1, "icon-big", "text-center", "icon-warning"], ["src", "assets/img/tifosi/kimi-raikkonen-smile.gif", 1, "div-height-70vh"]], template: function UpcomingRaceAnalysisComponent_Template(rf, ctx) { if (rf & 1) {
+    } }, decls: 1, vars: 1, consts: [[4, "ngIf"], ["autosize", ""], ["autosize", "", "mode", "side", "position", "end", 1, "example-sidenav", 3, "opened", "openedChange"], ["drawer", ""], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area", 3, "ngModel", "focus", "focusout", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "active-color-button", 3, "click"], [4, "ngFor", "ngForOf"], [1, "fixed-button"], ["mat-button", "", "type", "fixed-plugin", 3, "click"], [1, "fa", "fa-commenting-o", "fa-2x"], [1, "basic-comment"], [1, "header-left", "hover-pointer", 3, "click"], [1, "header-right", "hover-pointer", 3, "click"], [1, "basic-comment-body"], [3, "selectedIndex", "selectedTabChange", "selectedIndexChange"], ["label", "Circuit"], ["matTabContent", ""], ["label", "Circuit winners", 3, "disabled"], ["label", "Practice 1", 3, "disabled"], ["label", "Practice 2", 3, "disabled", 4, "ngIf"], ["label", "Practice 3", 3, "disabled", 4, "ngIf"], ["label", "Qualifying", 3, "disabled"], ["label", "Sprint shootout", 3, "disabled", 4, "ngIf"], ["label", "Sprint", 3, "disabled", 4, "ngIf"], ["label", "All laps", 3, "disabled"], [1, "black-footer", "text-center"], [1, "image"], ["target", "_blank", 3, "href"], [3, "src"], ["class", "div-padded-1rem row", 4, "ngIf"], ["class", "div-padded-1rem div-padded-left-2 row", 4, "ngIf"], [1, "div-padded-1rem", "row"], ["class", "col-lg-6 col-12", 4, "ngFor", "ngForOf"], [1, "col-lg-6", "col-12"], [1, "card", "hover-effects-row", 3, "click"], [1, "card-body-padded"], [1, "table", "table-striped"], ["colspan", "2", "scope", "col"], [2, "width", "35px"], ["scope", "row"], [1, "div-padded-1rem", "div-padded-left-2", "row"], [1, "card"], [3, "href"], [1, "div-padded-1rem", "div-padded-left-2", "div-padded-right-2", "row"], [1, "card", "col-lg-6", "col-12"], ["matSort", "", 1, "table", "table-striped"], ["colspan", "4", 1, "text-center"], [2, "width", "100px"], ["matSort", "", 1, "table", "table-striped", 3, "matSortChange"], ["mat-sort-header", "position", "scope", "col"], ["mat-sort-header", "name", "scope", "col"], ["mat-sort-header", "lapNumber", "scope", "col"], ["colspan", "8", 1, "text-center"], ["scope", "col"], ["scope", "col", 1, "w-20px"], [1, "no-padding-td"], ["color", "primary", "mat-mini-fab", "", 3, "click", 4, "ngIf"], ["color", "primary", "mat-mini-fab", "", 3, "click"], ["label", "Practice 2", 3, "disabled"], ["label", "Practice 3", 3, "disabled"], [1, "font-weight-bold"], ["label", "Sprint shootout", 3, "disabled"], ["scope", "col", 1, "text-center"], ["label", "Sprint", 3, "disabled"], [1, "col-12"], [3, "chart", "dataLabels", "grid", "series", "stroke", "title", "xaxis", "yaxis"], [1, "card", "col-12"], [2, "width", "150px"], ["scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], [1, "d-sm-none", "d-none", "d-lg-table-cell"], [1, "text-center"], [1, "card", "col-lg-12", "col-12"], [1, "icon-big", "text-center", "icon-warning"], ["src", "assets/img/tifosi/kimi-raikkonen-smile.gif", 1, "div-height-70vh"]], template: function UpcomingRaceAnalysisComponent_Template(rf, ctx) { if (rf & 1) {
         core/* ɵɵtemplate */.YNc(0, UpcomingRaceAnalysisComponent_div_0_Template, 22, 5, "div", 0);
     } if (rf & 2) {
         core/* ɵɵproperty */.Q6J("ngIf", ctx.upcomingRaceAnalysis !== undefined);
@@ -50731,8 +51126,8 @@ function RaceAnalysisComponent_div_20_ng_template_9_Template(rf, ctx) { if (rf &
     core/* ɵɵadvance */.xp6(33);
     core/* ɵɵproperty */.Q6J("ngForOf", ctx_r10.timingStats);
 } }
-function RaceAnalysisComponent_div_20_ng_template_11_th_9_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "th", 70);
+function RaceAnalysisComponent_div_20_ng_template_11_th_12_Template(rf, ctx) { if (rf & 1) {
+    core/* ɵɵelementStart */.TgZ(0, "th", 73);
     core/* ɵɵtext */._uU(1);
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
@@ -50740,12 +51135,12 @@ function RaceAnalysisComponent_div_20_ng_template_11_th_9_Template(rf, ctx) { if
     core/* ɵɵadvance */.xp6(1);
     core/* ɵɵtextInterpolate */.Oqu(" " + key_r41);
 } }
-function RaceAnalysisComponent_div_20_ng_template_11_ng_container_13_Template(rf, ctx) { if (rf & 1) {
+function RaceAnalysisComponent_div_20_ng_template_11_ng_container_17_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementContainerStart */.ynx(0);
-    core/* ɵɵelementStart */.TgZ(1, "th", 71);
-    core/* ɵɵtext */._uU(2, "Speed (km/h)");
+    core/* ɵɵelementStart */.TgZ(1, "th", 74);
+    core/* ɵɵtext */._uU(2, "Speed (kph)");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(3, "th", 72);
+    core/* ɵɵelementStart */.TgZ(3, "th", 75);
     core/* ɵɵtext */._uU(4, "Position");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementContainerEnd */.BQk();
@@ -50756,12 +51151,12 @@ function RaceAnalysisComponent_div_20_ng_template_11_ng_container_13_Template(rf
     core/* ɵɵadvance */.xp6(2);
     core/* ɵɵproperty */.Q6J("mat-sort-header", key_r43);
 } }
-function RaceAnalysisComponent_div_20_ng_template_11_tr_15_ng_container_3_Template(rf, ctx) { if (rf & 1) {
+function RaceAnalysisComponent_div_20_ng_template_11_tr_19_ng_container_5_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementContainerStart */.ynx(0);
-    core/* ɵɵelementStart */.TgZ(1, "td", 73);
+    core/* ɵɵelementStart */.TgZ(1, "td", 77);
     core/* ɵɵtext */._uU(2);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(3, "td", 74);
+    core/* ɵɵelementStart */.TgZ(3, "td", 76);
     core/* ɵɵtext */._uU(4);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementContainerEnd */.BQk();
@@ -50773,18 +51168,23 @@ function RaceAnalysisComponent_div_20_ng_template_11_tr_15_ng_container_3_Templa
     core/* ɵɵadvance */.xp6(2);
     core/* ɵɵtextInterpolate */.Oqu(stat_r45.BestSpeeds[key_r48].Position);
 } }
-function RaceAnalysisComponent_div_20_ng_template_11_tr_15_Template(rf, ctx) { if (rf & 1) {
+function RaceAnalysisComponent_div_20_ng_template_11_tr_19_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "tr");
     core/* ɵɵelementStart */.TgZ(1, "td");
     core/* ɵɵtext */._uU(2);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵtemplate */.YNc(3, RaceAnalysisComponent_div_20_ng_template_11_tr_15_ng_container_3_Template, 5, 2, "ng-container", 8);
+    core/* ɵɵelementStart */.TgZ(3, "td", 76);
+    core/* ɵɵtext */._uU(4);
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵtemplate */.YNc(5, RaceAnalysisComponent_div_20_ng_template_11_tr_19_ng_container_5_Template, 5, 2, "ng-container", 8);
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
     const stat_r45 = ctx.$implicit;
     const ctx_r40 = core/* ɵɵnextContext */.oxw(3);
     core/* ɵɵadvance */.xp6(2);
     core/* ɵɵtextInterpolate */.Oqu(stat_r45.name);
+    core/* ɵɵadvance */.xp6(2);
+    core/* ɵɵtextInterpolate */.Oqu(stat_r45.topSpeed);
     core/* ɵɵadvance */.xp6(1);
     core/* ɵɵproperty */.Q6J("ngForOf", ctx_r40.bestSpeedKeys);
 } }
@@ -50795,37 +51195,42 @@ function RaceAnalysisComponent_div_20_ng_template_11_Template(rf, ctx) { if (rf 
     core/* ɵɵlistener */.NdJ("matSortChange", function RaceAnalysisComponent_div_20_ng_template_11_Template_table_matSortChange_1_listener($event) { core/* ɵɵrestoreView */.CHM(_r51); const ctx_r50 = core/* ɵɵnextContext */.oxw(2); return ctx_r50.sortTopSpeedTimingStats($event); });
     core/* ɵɵelementStart */.TgZ(2, "thead");
     core/* ɵɵelementStart */.TgZ(3, "tr");
-    core/* ɵɵelement */._UZ(4, "th", 59);
-    core/* ɵɵelementStart */.TgZ(5, "th", 68);
-    core/* ɵɵtext */._uU(6, "Detection points");
+    core/* ɵɵelement */._UZ(4, "th", 68);
+    core/* ɵɵelement */._UZ(5, "th", 69);
+    core/* ɵɵelementStart */.TgZ(6, "th", 70);
+    core/* ɵɵtext */._uU(7, "Detection points");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(7, "tr");
-    core/* ɵɵelement */._UZ(8, "th", 54);
-    core/* ɵɵtemplate */.YNc(9, RaceAnalysisComponent_div_20_ng_template_11_th_9_Template, 2, 1, "th", 69);
+    core/* ɵɵelementStart */.TgZ(8, "tr");
+    core/* ɵɵelement */._UZ(9, "th", 54);
+    core/* ɵɵelementStart */.TgZ(10, "th", 71);
+    core/* ɵɵtext */._uU(11, "Top recorded speed (kph)");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(10, "tr");
-    core/* ɵɵelementStart */.TgZ(11, "th", 54);
-    core/* ɵɵtext */._uU(12, "Name");
+    core/* ɵɵtemplate */.YNc(12, RaceAnalysisComponent_div_20_ng_template_11_th_12_Template, 2, 1, "th", 72);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵtemplate */.YNc(13, RaceAnalysisComponent_div_20_ng_template_11_ng_container_13_Template, 5, 2, "ng-container", 8);
+    core/* ɵɵelementStart */.TgZ(13, "tr");
+    core/* ɵɵelementStart */.TgZ(14, "th", 54);
+    core/* ɵɵtext */._uU(15, "Name");
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelement */._UZ(16, "th", 31);
+    core/* ɵɵtemplate */.YNc(17, RaceAnalysisComponent_div_20_ng_template_11_ng_container_17_Template, 5, 2, "ng-container", 8);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(14, "tbody");
-    core/* ɵɵtemplate */.YNc(15, RaceAnalysisComponent_div_20_ng_template_11_tr_15_Template, 4, 2, "tr", 8);
+    core/* ɵɵelementStart */.TgZ(18, "tbody");
+    core/* ɵɵtemplate */.YNc(19, RaceAnalysisComponent_div_20_ng_template_11_tr_19_Template, 6, 3, "tr", 8);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
     const ctx_r11 = core/* ɵɵnextContext */.oxw(2);
-    core/* ɵɵadvance */.xp6(5);
+    core/* ɵɵadvance */.xp6(6);
     core/* ɵɵattribute */.uIk("colspan", ctx_r11.bestSpeedKeys.length * 2 + "");
-    core/* ɵɵadvance */.xp6(4);
+    core/* ɵɵadvance */.xp6(6);
     core/* ɵɵproperty */.Q6J("ngForOf", ctx_r11.bestSpeedKeys);
-    core/* ɵɵadvance */.xp6(4);
+    core/* ɵɵadvance */.xp6(5);
     core/* ɵɵproperty */.Q6J("ngForOf", ctx_r11.bestSpeedKeys);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵproperty */.Q6J("ngForOf", ctx_r11.timingStats);
+    core/* ɵɵproperty */.Q6J("ngForOf", ctx_r11.timingStatsSpeeds);
 } }
 function RaceAnalysisComponent_div_20_ng_template_13_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵtext */._uU(0, " Radio ");
@@ -50835,8 +51240,8 @@ function RaceAnalysisComponent_div_20_ng_template_13_Template(rf, ctx) { if (rf 
 } }
 function RaceAnalysisComponent_div_20_ng_template_14_tr_10_div_7_Template(rf, ctx) { if (rf & 1) {
     const _r59 = core/* ɵɵgetCurrentView */.EpF();
-    core/* ɵɵelementStart */.TgZ(0, "div", 76);
-    core/* ɵɵelementStart */.TgZ(1, "button", 77);
+    core/* ɵɵelementStart */.TgZ(0, "div", 79);
+    core/* ɵɵelementStart */.TgZ(1, "button", 80);
     core/* ɵɵlistener */.NdJ("click", function RaceAnalysisComponent_div_20_ng_template_14_tr_10_div_7_Template_button_click_1_listener() { core/* ɵɵrestoreView */.CHM(_r59); const radio_r53 = core/* ɵɵnextContext */.oxw().$implicit; return radio_r53.active = true; });
     core/* ɵɵelementStart */.TgZ(2, "mat-icon");
     core/* ɵɵtext */._uU(3, "volume_up");
@@ -50846,8 +51251,8 @@ function RaceAnalysisComponent_div_20_ng_template_14_tr_10_div_7_Template(rf, ct
 } }
 function RaceAnalysisComponent_div_20_ng_template_14_tr_10_div_8_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div");
-    core/* ɵɵelementStart */.TgZ(1, "audio", 78);
-    core/* ɵɵelement */._UZ(2, "source", 79);
+    core/* ɵɵelementStart */.TgZ(1, "audio", 81);
+    core/* ɵɵelement */._UZ(2, "source", 82);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
@@ -50866,7 +51271,7 @@ function RaceAnalysisComponent_div_20_ng_template_14_tr_10_Template(rf, ctx) { i
     core/* ɵɵtext */._uU(5);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(6, "td");
-    core/* ɵɵtemplate */.YNc(7, RaceAnalysisComponent_div_20_ng_template_14_tr_10_div_7_Template, 4, 0, "div", 75);
+    core/* ɵɵtemplate */.YNc(7, RaceAnalysisComponent_div_20_ng_template_14_tr_10_div_7_Template, 4, 0, "div", 78);
     core/* ɵɵtemplate */.YNc(8, RaceAnalysisComponent_div_20_ng_template_14_tr_10_div_8_Template, 3, 1, "div", 51);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -50944,10 +51349,10 @@ function RaceAnalysisComponent_div_20_ng_template_16_Template(rf, ctx) { if (rf 
     core/* ɵɵelementStart */.TgZ(3, "th", 31);
     core/* ɵɵtext */._uU(4, "Lap");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(5, "th", 80);
+    core/* ɵɵelementStart */.TgZ(5, "th", 83);
     core/* ɵɵtext */._uU(6, "Category");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(7, "th", 81);
+    core/* ɵɵelementStart */.TgZ(7, "th", 84);
     core/* ɵɵtext */._uU(8, "Scope");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(9, "th", 31);
@@ -50971,8 +51376,8 @@ function RaceAnalysisComponent_div_20_ng_template_18_div_12_Template(rf, ctx) { 
     core/* ɵɵelementStart */.TgZ(0, "div", 3);
     core/* ɵɵelementStart */.TgZ(1, "div", 4);
     core/* ɵɵelementStart */.TgZ(2, "div", 39);
-    core/* ɵɵelementStart */.TgZ(3, "div", 87);
-    core/* ɵɵelement */._UZ(4, "apx-chart", 88);
+    core/* ɵɵelementStart */.TgZ(3, "div", 90);
+    core/* ɵɵelement */._UZ(4, "apx-chart", 91);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -50988,18 +51393,18 @@ function RaceAnalysisComponent_div_20_ng_template_18_Template(rf, ctx) { if (rf 
     core/* ɵɵelementStart */.TgZ(1, "div", 4);
     core/* ɵɵelementStart */.TgZ(2, "div", 39);
     core/* ɵɵelementStart */.TgZ(3, "div");
-    core/* ɵɵelementStart */.TgZ(4, "mat-radio-group", 82);
+    core/* ɵɵelementStart */.TgZ(4, "mat-radio-group", 85);
     core/* ɵɵlistener */.NdJ("ngModelChange", function RaceAnalysisComponent_div_20_ng_template_18_Template_mat_radio_group_ngModelChange_4_listener($event) { core/* ɵɵrestoreView */.CHM(_r66); const ctx_r65 = core/* ɵɵnextContext */.oxw(2); return ctx_r65.selectedHeatmapRadio = $event; });
-    core/* ɵɵelementStart */.TgZ(5, "mat-radio-button", 83);
+    core/* ɵɵelementStart */.TgZ(5, "mat-radio-button", 86);
     core/* ɵɵlistener */.NdJ("change", function RaceAnalysisComponent_div_20_ng_template_18_Template_mat_radio_button_change_5_listener($event) { core/* ɵɵrestoreView */.CHM(_r66); const ctx_r67 = core/* ɵɵnextContext */.oxw(2); return ctx_r67.heatRadioChange($event); });
     core/* ɵɵtext */._uU(6, "Lap times ");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(7, "mat-radio-button", 84);
+    core/* ɵɵelementStart */.TgZ(7, "mat-radio-button", 87);
     core/* ɵɵlistener */.NdJ("change", function RaceAnalysisComponent_div_20_ng_template_18_Template_mat_radio_button_change_7_listener($event) { core/* ɵɵrestoreView */.CHM(_r66); const ctx_r68 = core/* ɵɵnextContext */.oxw(2); return ctx_r68.heatRadioChange($event); });
     core/* ɵɵtext */._uU(8, "Lap time positions ");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelement */._UZ(9, "span");
-    core/* ɵɵelementStart */.TgZ(10, "mat-radio-button", 85);
+    core/* ɵɵelementStart */.TgZ(10, "mat-radio-button", 88);
     core/* ɵɵlistener */.NdJ("change", function RaceAnalysisComponent_div_20_ng_template_18_Template_mat_radio_button_change_10_listener($event) { core/* ɵɵrestoreView */.CHM(_r66); const ctx_r69 = core/* ɵɵnextContext */.oxw(2); return ctx_r69.heatRadioChange($event); });
     core/* ɵɵtext */._uU(11, "Driver positions ");
     core/* ɵɵelementEnd */.qZA();
@@ -51008,7 +51413,7 @@ function RaceAnalysisComponent_div_20_ng_template_18_Template(rf, ctx) { if (rf 
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵtemplate */.YNc(12, RaceAnalysisComponent_div_20_ng_template_18_div_12_Template, 5, 6, "div", 86);
+    core/* ɵɵtemplate */.YNc(12, RaceAnalysisComponent_div_20_ng_template_18_div_12_Template, 5, 6, "div", 89);
 } if (rf & 2) {
     const ctx_r15 = core/* ɵɵnextContext */.oxw(2);
     core/* ɵɵadvance */.xp6(4);
@@ -51034,7 +51439,7 @@ function RaceAnalysisComponent_div_20_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵtemplate */.YNc(9, RaceAnalysisComponent_div_20_ng_template_9_Template, 34, 1, "ng-template", 20);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(10, "mat-tab", 24);
-    core/* ɵɵtemplate */.YNc(11, RaceAnalysisComponent_div_20_ng_template_11_Template, 16, 4, "ng-template", 20);
+    core/* ɵɵtemplate */.YNc(11, RaceAnalysisComponent_div_20_ng_template_11_Template, 20, 4, "ng-template", 20);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(12, "mat-tab", 25);
     core/* ɵɵtemplate */.YNc(13, RaceAnalysisComponent_div_20_ng_template_13_Template, 3, 0, "ng-template", 26);
@@ -51137,6 +51542,7 @@ class RaceAnalysisComponent {
                 this.teamsChampionshipPrediction = data.teamsChampionshipPrediction;
                 this.raceControlMessages = data.raceControlMessages;
                 this.timingStats = data.timingStats;
+                this.timingStatsSpeeds = this.sortTopSpeedTimingStats2(data.timingStats);
                 this.bestSpeedKeys = data.bestSpeedKeys;
                 this.lapTimesLowerLimit = this.getLowerLimit();
                 this.chartWidth = this.calculateChartWidthForMobileDevices(this.drivers[0].lapByLapData.positions.length);
@@ -51516,6 +51922,19 @@ class RaceAnalysisComponent {
         }
         this.timingStats = sorted;
     }
+    sortTopSpeedTimingStats2(input) {
+        let sorted = input.slice();
+        sorted.sort(function (a, b) {
+            if (a.topSpeed < b.topSpeed) {
+                return 1;
+            }
+            if (a.topSpeed > b.topSpeed) {
+                return -1;
+            }
+            return 0;
+        });
+        return sorted;
+    }
     heatRadioChange(event) {
         this.selectedHeatmapRadio = event.value;
         this.updateLapsHeatMapLabels();
@@ -51633,7 +52052,7 @@ RaceAnalysisComponent.ɵcmp = /*@__PURE__*/ core/* ɵɵdefineComponent */.Xpm({ 
     } if (rf & 2) {
         let _t;
         core/* ɵɵqueryRefresh */.iGM(_t = core/* ɵɵloadQuery */.CRH()) && (ctx.chart = _t.first);
-    } }, decls: 21, vars: 4, consts: [["autosize", ""], ["autosize", "", "mode", "side", "position", "end", 1, "example-sidenav", 3, "opened", "openedChange"], ["drawer", ""], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area", 3, "ngModel", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "active-color-button", 3, "click"], [4, "ngFor", "ngForOf"], [1, "fixed-button"], ["type", "fixed-plugin", "mat-button", "", 3, "click"], [1, "fa", "fa-commenting-o", "fa-2x"], ["class", "\u201Dmat-content\u201D", 4, "ngIf"], [1, "basic-comment"], [1, "header-left", "hover-pointer", 3, "click"], [1, "header-right", "hover-pointer", 3, "click"], [1, "basic-comment-body"], [1, "\u201Dmat-content\u201D"], [3, "selectedIndex", "selectedIndexChange", "selectedTabChange"], ["label", "Result"], ["matTabContent", ""], ["label", "Lap-by-Lap"], ["label", "New standings"], ["label", "Fastest laps"], ["label", "Top speeds"], ["label", "Radio"], ["mat-tab-label", ""], ["label", "RaceControl Messages"], ["label", "Laps heatmap", 3, "disabled"], [1, "row", "col-padding-1"], [1, "table", "table-striped"], ["scope", "col"], ["scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], ["scope", "col", 1, "w-20px"], ["scope", "row"], [1, "d-sm-none", "d-none", "d-lg-table-cell"], [1, "no-padding-td"], ["color", "primary", "mat-mini-fab", "", 3, "click", 4, "ngIf"], ["color", "primary", "mat-mini-fab", "", 3, "click"], [1, "card"], [1, "overflowX", "card-body-padded"], [3, "series", "chart", "dataLabels", "grid", "stroke", "title", "yaxis", "xaxis"], [1, "card-body-padded"], [3, "title", "series", "chart", "fill", "legend", "plotOptions", "xaxis", "tooltip"], [1, "col-12", "col-xl-6", "pl-xl-4", "pt-2"], [1, "text-center", "bg-primary", "text-white"], ["colspan", "3"], ["scope", "col", 2, "width", "55px"], ["scope", "col", 2, "width", "100px"], [1, "col-12", "col-xl-6", "px-xl-4", "pt-2"], [3, "class", 4, "ngFor", "ngForOf"], [4, "ngIf"], [1, "text-left"], ["matSort", "", 1, "table", "table-striped", 3, "matSortChange"], ["scope", "col", 1, "bg-grey"], ["mat-sort-header", "1", "colspan", "2", "scope", "col", 1, "text-center"], ["mat-sort-header", "2", "colspan", "2", "scope", "col", 1, "text-center", "bg-grey"], ["mat-sort-header", "3", "colspan", "2", "scope", "col", 1, "text-center"], ["mat-sort-header", "4", "colspan", "2", "scope", "col", 1, "text-center", "bg-grey"], ["scope", "col", 1, "bg-grey", 2, "width", "200px"], ["mat-sort-header", "1", "scope", "col", 2, "width", "70px"], ["mat-sort-header", "1", "scope", "col", 2, "width", "40px"], ["mat-sort-header", "2", "scope", "col", 1, "bg-grey", 2, "width", "70px"], ["mat-sort-header", "2", "scope", "col", 1, "bg-grey", 2, "width", "40px"], ["mat-sort-header", "3", "scope", "col", 2, "width", "70px"], ["mat-sort-header", "3", "scope", "col", 2, "width", "40px"], ["mat-sort-header", "4", "scope", "col", 1, "bg-grey", 2, "width", "70px"], ["mat-sort-header", "4", "scope", "col", 1, "bg-grey", 2, "width", "40px"], ["scope", "col", 1, "text-center"], ["style", "width: 50px", "colspan", "2", "class", "text-center", "scope", "col", 4, "ngFor", "ngForOf"], ["colspan", "2", "scope", "col", 1, "text-center", 2, "width", "50px"], ["scope", "col", 1, "text-center", 2, "width", "90px", 3, "mat-sort-header"], ["scope", "col", 1, "text-center", 2, "width", "40px", 3, "mat-sort-header"], [1, "text-right"], [1, "text-center"], ["class", "div-padded-always-left-right-1", 4, "ngIf"], [1, "div-padded-always-left-right-1"], ["color", "accent", "mat-mini-fab", "", 3, "click"], ["controls", ""], [3, "src"], ["scope", "col", 2, "width", "120px"], ["scope", "col", 2, "width", "110px"], ["aria-label", "Select an option", 3, "ngModel", "ngModelChange"], ["checked", "", "value", "1", 1, "div-padded-always-0-3rem", 3, "change"], ["value", "2", 1, "div-padded-always-0-3rem", 3, "change"], ["value", "3", 1, "div-padded-always-0-3rem", 3, "change"], ["class", "row", 4, "ngIf"], [1, "overflowXAlways", "pr-1"], [3, "series", "chart", "dataLabels", "plotOptions", "colors", "tooltip"]], template: function RaceAnalysisComponent_Template(rf, ctx) { if (rf & 1) {
+    } }, decls: 21, vars: 4, consts: [["autosize", ""], ["autosize", "", "mode", "side", "position", "end", 1, "example-sidenav", 3, "opened", "openedChange"], ["drawer", ""], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area", 3, "ngModel", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "active-color-button", 3, "click"], [4, "ngFor", "ngForOf"], [1, "fixed-button"], ["type", "fixed-plugin", "mat-button", "", 3, "click"], [1, "fa", "fa-commenting-o", "fa-2x"], ["class", "\u201Dmat-content\u201D", 4, "ngIf"], [1, "basic-comment"], [1, "header-left", "hover-pointer", 3, "click"], [1, "header-right", "hover-pointer", 3, "click"], [1, "basic-comment-body"], [1, "\u201Dmat-content\u201D"], [3, "selectedIndex", "selectedIndexChange", "selectedTabChange"], ["label", "Result"], ["matTabContent", ""], ["label", "Lap-by-Lap"], ["label", "New standings"], ["label", "Fastest laps"], ["label", "Top speeds"], ["label", "Radio"], ["mat-tab-label", ""], ["label", "RaceControl Messages"], ["label", "Laps heatmap", 3, "disabled"], [1, "row", "col-padding-1"], [1, "table", "table-striped"], ["scope", "col"], ["scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], ["scope", "col", 1, "w-20px"], ["scope", "row"], [1, "d-sm-none", "d-none", "d-lg-table-cell"], [1, "no-padding-td"], ["color", "primary", "mat-mini-fab", "", 3, "click", 4, "ngIf"], ["color", "primary", "mat-mini-fab", "", 3, "click"], [1, "card"], [1, "overflowX", "card-body-padded"], [3, "series", "chart", "dataLabels", "grid", "stroke", "title", "yaxis", "xaxis"], [1, "card-body-padded"], [3, "title", "series", "chart", "fill", "legend", "plotOptions", "xaxis", "tooltip"], [1, "col-12", "col-xl-6", "pl-xl-4", "pt-2"], [1, "text-center", "bg-primary", "text-white"], ["colspan", "3"], ["scope", "col", 2, "width", "55px"], ["scope", "col", 2, "width", "100px"], [1, "col-12", "col-xl-6", "px-xl-4", "pt-2"], [3, "class", 4, "ngFor", "ngForOf"], [4, "ngIf"], [1, "text-left"], ["matSort", "", 1, "table", "table-striped", 3, "matSortChange"], ["scope", "col", 1, "bg-grey"], ["mat-sort-header", "1", "colspan", "2", "scope", "col", 1, "text-center"], ["mat-sort-header", "2", "colspan", "2", "scope", "col", 1, "text-center", "bg-grey"], ["mat-sort-header", "3", "colspan", "2", "scope", "col", 1, "text-center"], ["mat-sort-header", "4", "colspan", "2", "scope", "col", 1, "text-center", "bg-grey"], ["scope", "col", 1, "bg-grey", 2, "width", "200px"], ["mat-sort-header", "1", "scope", "col", 2, "width", "70px"], ["mat-sort-header", "1", "scope", "col", 2, "width", "40px"], ["mat-sort-header", "2", "scope", "col", 1, "bg-grey", 2, "width", "70px"], ["mat-sort-header", "2", "scope", "col", 1, "bg-grey", 2, "width", "40px"], ["mat-sort-header", "3", "scope", "col", 2, "width", "70px"], ["mat-sort-header", "3", "scope", "col", 2, "width", "40px"], ["mat-sort-header", "4", "scope", "col", 1, "bg-grey", 2, "width", "70px"], ["mat-sort-header", "4", "scope", "col", 1, "bg-grey", 2, "width", "40px"], ["scope", "col", 1, "bg-grey", 2, "width", "150px"], ["scope", "col", 2, "width", "150px"], ["scope", "col", 1, "bg-grey", "text-center"], ["scope", "col", 1, "text-center"], ["style", "width: 50px", "colspan", "2", "class", " bg-grey text-center", "scope", "col", 4, "ngFor", "ngForOf"], ["colspan", "2", "scope", "col", 1, "bg-grey", "text-center", 2, "width", "50px"], ["scope", "col", 1, "text-center", "bg-grey", 2, "width", "90px", 3, "mat-sort-header"], ["scope", "col", 1, "text-center", "bg-grey", 2, "width", "40px", 3, "mat-sort-header"], [1, "text-center"], [1, "text-right"], ["class", "div-padded-always-left-right-1", 4, "ngIf"], [1, "div-padded-always-left-right-1"], ["color", "accent", "mat-mini-fab", "", 3, "click"], ["controls", ""], [3, "src"], ["scope", "col", 2, "width", "120px"], ["scope", "col", 2, "width", "110px"], ["aria-label", "Select an option", 3, "ngModel", "ngModelChange"], ["checked", "", "value", "1", 1, "div-padded-always-0-3rem", 3, "change"], ["value", "2", 1, "div-padded-always-0-3rem", 3, "change"], ["value", "3", 1, "div-padded-always-0-3rem", 3, "change"], ["class", "row", 4, "ngIf"], [1, "overflowXAlways", "pr-1"], [3, "series", "chart", "dataLabels", "plotOptions", "colors", "tooltip"]], template: function RaceAnalysisComponent_Template(rf, ctx) { if (rf & 1) {
         const _r73 = core/* ɵɵgetCurrentView */.EpF();
         core/* ɵɵelementStart */.TgZ(0, "div");
         core/* ɵɵelementStart */.TgZ(1, "mat-drawer-container", 0);

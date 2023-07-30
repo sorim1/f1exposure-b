@@ -65,7 +65,7 @@ public class InstagramServiceImpl implements InstagramService {
             FeedIterable<FeedTimelineRequest, FeedTimelineResponse> response = client.getActions().timeline().feed();
             AtomicReference<Integer> iterate = new AtomicReference<>(0);
             try {
-                response.stream().limit(3).forEach(row -> {
+                response.stream().limit(4).forEach(row -> {
                     List<TimelineMedia> timelineMedias = row.getFeed_items();
                     iterate.set(iterate.get() + timelineMedias.size());
                     counter.set(counter.get() + 1);
@@ -151,8 +151,8 @@ public class InstagramServiceImpl implements InstagramService {
                         }
                     });
                     try {
-                        log.info("sleep 5 seconds vise ne treba?");
-                        Thread.sleep(5000);
+                        log.info("sleep 10 seconds vise ne treba?");
+                        Thread.sleep(10000);
                     } catch (InterruptedException e) {
                         throw new RuntimeException(e);
                     }

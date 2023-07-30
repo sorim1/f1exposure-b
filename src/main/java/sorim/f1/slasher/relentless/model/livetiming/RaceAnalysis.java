@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import sorim.f1.slasher.relentless.model.KeyValueInteger;
 
 import java.util.List;
 
@@ -28,4 +29,5 @@ public class RaceAnalysis {
     List<RaceControlMessage> raceControlMessages;
     List<TimingStat> timingStats;
     List<String> bestSpeedKeys;
+    List<KeyValueInteger> topSpeeds;
 }

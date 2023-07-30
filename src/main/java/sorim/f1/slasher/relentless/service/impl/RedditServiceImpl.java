@@ -109,16 +109,17 @@ public class RedditServiceImpl implements RedditService {
                     post.setUrl(post.getUrl().replace("streamable.com/", "streamable.com/e/"));
                     filteredVideoPosts.add(post);
                 }
-                if (post.getUrl().contains("imgur")) {
-                    post.setStatus(1);
+                if (post.getUrl().contains("imgur.com/a")) {
+                    String url = getUrlFromImgurAlbum(post.getUrl());
+                    if(url!=null){
+                        post.setUrl(url);
+                        post.setTitle("[VIDEO] " + post.getTitle());
+                    } else {
+                        post.setStatus(1);
+                    }
                     filteredVideoPosts.add(post);
                 }
                 if (post.getUrl().contains("youtu")) {
-//                    post.setUrl(post.getUrl().replace("youtu.be/", "www.youtube.com/embed/"));
-//                    post.setUrl(post.getUrl().replace("youtube.com/watch?v=", "youtube.com/embed/"));
-//                    if(post.getUrl().contains("&")){
-//                        post.setUrl(post.getUrl().substring(0, post.getUrl().indexOf("&")));
-//                    }
                     post.setIconUrl("https://www.youtube.com/favicon.ico");
                     post.setImageUrl(getYoutubeThumbnail(post.getUrl()));
                     post.setStatus(1);
@@ -141,6 +142,25 @@ public class RedditServiceImpl implements RedditService {
             counter.set(counter.get() + 1000);
         });
         return finalList;
+    }
+
+    private String getUrlFromImgurAlbum(String url) {
+        HttpEntity entity = new HttpEntity(headers);
+        ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.GET, entity, String.class);
+        String string = response.getBody();
+        Integer index;
+        String output = null;
+        do{
+            index = string.indexOf("https://i.imgur.com/");
+            string = string.substring(index);
+            String videoUrl = string.substring(0, string.indexOf("\""));
+            log.info("videoUrl: " + videoUrl);
+            if(videoUrl.indexOf(".mp4")>0){
+                output = videoUrl;
+            }
+            string = string.substring(videoUrl.length());
+        }while(index>=0 && output ==null);
+        return output;
     }
 
     private Boolean newsPostIsValid(NewsContent news) {
