@@ -78,6 +78,7 @@ public class RedditServiceImpl implements RedditService {
 
     @Override
     public NewsContent fetchRedditPosts() {
+        log.info("fetchRedditPosts");
         getRFormula1NewImages();
         getRF1PornHot();
         return getNews();
@@ -110,13 +111,10 @@ public class RedditServiceImpl implements RedditService {
                     filteredVideoPosts.add(post);
                 }
                 if (post.getUrl().contains("imgur.com/a")) {
-                    String url = getUrlFromImgurAlbum(post.getUrl());
-                    if(url!=null){
-                        post.setUrl(url);
-                        post.setTitle("[VIDEO] " + post.getTitle());
-                    } else {
-                        post.setStatus(1);
-                    }
+                    post.setStatus(1);
+                    filteredVideoPosts.add(post);
+                }
+                if (post.getUrl().contains("i.imgur.com/")) {
                     filteredVideoPosts.add(post);
                 }
                 if (post.getUrl().contains("youtu")) {
@@ -145,22 +143,35 @@ public class RedditServiceImpl implements RedditService {
     }
 
     private String getUrlFromImgurAlbum(String url) {
-        HttpEntity entity = new HttpEntity(headers);
-        ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.GET, entity, String.class);
-        String string = response.getBody();
-        Integer index;
-        String output = null;
-        do{
-            index = string.indexOf("https://i.imgur.com/");
-            string = string.substring(index);
-            String videoUrl = string.substring(0, string.indexOf("\""));
-            log.info("videoUrl: " + videoUrl);
-            if(videoUrl.indexOf(".mp4")>0){
-                output = videoUrl;
-            }
-            string = string.substring(videoUrl.length());
-        }while(index>=0 && output ==null);
-        return output;
+        List<String> list = new ArrayList<>();
+        log.info("getUrlFromImgurAlbum: " + url);
+        try {
+            HttpEntity entity = new HttpEntity(headers);
+            ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.GET, entity, String.class);
+            String string = response.getBody();
+            Integer index;
+            do {
+                index = string.indexOf("https://i.imgur.com/");
+                if (index >= 0) {
+                    string = string.substring(index);
+                    String videoUrl = string.substring(0, string.indexOf("\""));
+                    log.info("videoUrl: " + videoUrl);
+                    if (videoUrl.indexOf(".mp4") > 0 && !list.contains(videoUrl)) {
+                        list.add(videoUrl);
+                    }
+                    string = string.substring(videoUrl.length());
+                }
+            } while (index >= 0);
+        } catch (Exception ex) {
+            log.error("nisam dohvatio imgur url");
+            log.error(ex.getMessage());
+            ex.printStackTrace();
+            return null;
+        }
+        if (!list.isEmpty()) {
+            return list.get(0);
+        }
+        return null;
     }
 
     private Boolean newsPostIsValid(NewsContent news) {
@@ -224,6 +235,9 @@ public class RedditServiceImpl implements RedditService {
                 if (post.getStatus() == 3) {
                     getImagesForPost(post);
                 }
+//                if (post.getStatus() == 5) {
+//                    getVideosForPost(post);
+//                }
                 saveToDatabaseList.add(post);
             } else {
                 if (fromDb.getTimestampActivity().before(post.getTimestampActivity())) {
@@ -347,6 +361,20 @@ public class RedditServiceImpl implements RedditService {
                 } catch (Exception ex) {
                     log.info("ex2 " + post.getUrl());
                     ex.printStackTrace();
+                }
+            }
+        }
+    }
+
+    private void getVideosForPost(NewsContent post) {
+        if (post.getUrl() != null) {
+            if (post.getUrl().contains("imgur.com/a")) {
+                String url = getUrlFromImgurAlbum(post.getUrl());
+                if (url != null) {
+                    post.setUrl(url);
+                    post.setTitle("[VIDEO] " + post.getTitle());
+                } else {
+                    post.setStatus(1);
                 }
             }
         }

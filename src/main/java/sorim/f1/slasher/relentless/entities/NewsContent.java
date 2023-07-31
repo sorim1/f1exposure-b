@@ -65,6 +65,25 @@ public class NewsContent implements Comparable<NewsContent> {
         this.title = (String) data.get("title");
         this.title = this.title.replace("&amp;", "&");
         this.url = (String) data.get("url_overridden_by_dest");
+        if(status==5){
+            LinkedHashMap<String, Object> media = (LinkedHashMap<String, Object>) data.get("media");
+            if(media!=null){
+                String type = (String) media.get("type");
+                if("imgur.com".equals(type)){
+                    LinkedHashMap<String, Object> oembed = (LinkedHashMap<String, Object>) media.get("oembed");
+                    String thumbnail_url = (String) oembed.get("thumbnail_url");
+
+                    Integer index = thumbnail_url.indexOf(".jpg");
+                    if(index>0){
+                       String newUrl =  thumbnail_url.substring(0, index) + ".mp4";
+                        this.url = newUrl;
+                        this.title = "[VIDEO] " + this.title;
+                        this.imageUrl =  thumbnail_url.substring(0, index) + ".jpg";
+                    }
+                }
+            }
+        }
+
         Double createdDouble = (Double) data.get("created");
         this.timestampCreated = new Date(createdDouble.longValue());
         this.setStatus(status);

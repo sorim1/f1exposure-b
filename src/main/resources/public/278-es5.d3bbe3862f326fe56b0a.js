@@ -61222,13 +61222,25 @@
                 color: driverExposure.color
               });
               roundByRoundCategories.push(driverExposure.code);
+              var round = 1;
               driverExposure.scoresByRound.forEach(function (scoreByRound) {
                 if (!roundByRoundSeriesMap.has(scoreByRound[0])) {
                   roundByRoundSeriesMap.set(scoreByRound[0], []);
                 }
 
+                while (round < scoreByRound[0]) {
+                  roundByRoundSeriesMap.get(round).push(0);
+                  round++;
+                }
+
+                round++;
                 roundByRoundSeriesMap.get(scoreByRound[0]).push(scoreByRound[1]);
               });
+
+              while (round <= _this46.round) {
+                roundByRoundSeriesMap.get(round).push(0);
+                round++;
+              }
             });
             roundByRoundSeriesMap.forEach(function (value, name) {
               return roundByRound.push({

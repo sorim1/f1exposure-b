@@ -244,7 +244,7 @@ public class Scheduler {
         }
     }
 
-    @PostConstruct
+  //  @PostConstruct
     void onInit() throws Exception {
         log.info("onInitScheduler Called");
         isItRaceWeek();
@@ -296,7 +296,7 @@ public class Scheduler {
     void bihourlyJob() throws Exception {
         if (properties.getUrl().contains(F1EXPOSURE_COM)) {
             imageFeedJobWithoutInstagram();
-            adminService.checkCurrentStream();
+          //  adminService.checkCurrentStream();
         } else {
             log.error("url not " + F1EXPOSURE_COM);
             log.error(properties.getUrl());

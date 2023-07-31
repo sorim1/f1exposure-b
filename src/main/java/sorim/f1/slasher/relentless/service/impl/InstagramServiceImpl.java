@@ -227,6 +227,7 @@ public class InstagramServiceImpl implements InstagramService {
             }
             return output.toByteArray();
         } catch (IOException e) {
+            log.error("nisam dohvatio image1");
             log.error("fetchImages ", e);
         }
         return null;

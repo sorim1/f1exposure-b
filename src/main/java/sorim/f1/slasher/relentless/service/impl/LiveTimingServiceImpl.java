@@ -257,7 +257,7 @@ public class LiveTimingServiceImpl implements LiveTimingService {
                 ergastService.saveRace(raceData);
                 RaceAnalysis analysis = fetchNewRaceAnalysis(driverListResponse, timingDataF1Response, raceData.getCircuit().getCircuitId(), updateStatistics);
                 adminService.updateOverlays(analysis);
-                //   clientService.setNavbarData();
+                 clientService.setNavbarData();
                 analyzeUpcomingRace(false);
                 Scheduler.analysisDone = true;
             }
