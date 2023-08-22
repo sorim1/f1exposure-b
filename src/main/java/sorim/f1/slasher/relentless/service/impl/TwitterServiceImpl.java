@@ -1,8 +1,17 @@
 package sorim.f1.slasher.relentless.service.impl;
 
+import com.apptasticsoftware.rssreader.DateTime;
+import com.apptasticsoftware.rssreader.Item;
+import com.apptasticsoftware.rssreader.RssReader;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.collections4.ListUtils;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -16,7 +25,9 @@ import twitter4j.v1.QueryResult;
 import twitter4j.v1.ResponseList;
 import twitter4j.v1.Status;
 
+import java.time.Instant;
 import java.util.*;
+import java.util.stream.Collectors;
 
 @Slf4j
 @Service
@@ -25,8 +36,11 @@ public class TwitterServiceImpl implements TwitterService {
 
     private static final Map<String, TwitterPost> twitterPostsMap = new HashMap<>();
     private static List<TwitterPost> twitterPostsList = new ArrayList<>();
+    private static Boolean twitterFetchRunning = false;
     private final MainProperties properties;
     private final TwitterRepository twitterRepository;
+    @Value("${twitter.accounts.list}")
+    private String twitterAccountsForRss;
 
     @Override
     public List<TwitterPost> getTwitterPosts(Integer page) {
@@ -52,6 +66,37 @@ public class TwitterServiceImpl implements TwitterService {
 
     @Override
     public Boolean fetchTwitterPosts() throws Exception {
+        if (!twitterFetchRunning) {
+            twitterFetchRunning = true;
+            List<String> allAccounts = generateFollowersList();
+            List<List<String>> smallerLists = ListUtils.partition(allAccounts, 3);
+            for (List<String> urls : smallerLists) {
+                log.info("zovem 3");
+                List<Item> timeline = new RssReader().read(urls).sorted().collect(Collectors.toList());
+                List<TwitterPost> list = getListFromRssFeed(timeline);
+                twitterRepository.saveAll(list);
+                log.info("spavam 2 minute");
+                Thread.sleep(2 * 60 * 1000);
+            }
+            twitterFetchRunning = false;
+        } else {
+            log.info("twitterFetchRunning");
+        }
+        return twitterFetchRunning;
+    }
+
+    private List<String> generateFollowersList() {
+        log.info("twitterAccountsForRss: " + twitterAccountsForRss);
+        List<String> accountNames = Arrays.asList(twitterAccountsForRss.toLowerCase().split(","));
+        List<String> output = new ArrayList<>();
+        accountNames.forEach(account -> {
+            String rssUrl = "https://nitter.cz/" + account + "/rss";
+            output.add(rssUrl);
+        });
+        return output;
+    }
+
+    private Boolean fetchTwitterPostsOld() throws Exception {
         Twitter twitter = getTwitterinstance();
         ResponseList<Status> timeline = twitter.v1().timelines().getHomeTimeline();
         List<TwitterPost> list = getListFromResponseList(timeline);
@@ -69,6 +114,78 @@ public class TwitterServiceImpl implements TwitterService {
             }
         });
         return list;
+    }
+
+    private List<TwitterPost> getListFromRssFeed(List<Item> timeline) {
+        List<TwitterPost> list = new ArrayList<>();
+        timeline.forEach(item -> {
+            try {
+
+                if (!item.getTitle().get().startsWith("RT by @")) {
+                    List<TwitterPost> posts = getTwitterPostsFromRssItem(item);
+                    if (!posts.isEmpty()) {
+                        list.addAll(posts);
+                    }
+                }
+            } catch (Exception e) {
+                log.error("getListFromRssFeed error:" + item.getChannel().getTitle());
+                twitterFetchRunning = false;
+                e.printStackTrace();
+            }
+        });
+        return list;
+    }
+
+    private List<TwitterPost> getTwitterPostsFromRssItem(Item item) {
+        List<TwitterPost> output = new ArrayList<>();
+        Long id = DateTime.toEpochMilli(item.getPubDate().get());
+        Instant instant = DateTime.toInstant(item.getPubDate().get());
+        Date date1 = Date.from(instant);
+        List<String> imageUrls = getImageUrlsFromRssDescription(item.getDescription().get());
+        String url = getTwitterFromNitter(item.getGuid().get());
+        String username = item.getChannel().getTitle().substring(item.getChannel().getTitle().indexOf("@"));
+        imageUrls.forEach(imageUrl -> {
+            TwitterPost post = TwitterPost.builder()
+                    .id(id)
+                    .text(item.getTitle().get())
+                    .url(url)
+                    .source(1)
+                    .mediaUrl(imageUrl)
+                    .username(username)
+                    .createdAt(date1)
+                    .build();
+            output.add(post);
+        });
+        return output;
+    }
+
+    private String getTwitterFromNitter(String input) {
+        return input.replace("nitter.cz", "twitter.com");
+    }
+
+    private String getImageFromNitter(String input) {
+        if (input.contains("pic/enc/")) {
+            String encodedString = input.substring(input.indexOf("pic/enc/") + 8);
+            byte[] decodedBytes = Base64.getDecoder().decode(encodedString);
+            String decodedString = new String(decodedBytes);
+            String output = "https://pbs.twimg.com/" + decodedString;
+            return output;
+        } else {
+            return input;
+        }
+    }
+
+    private List<String> getImageUrlsFromRssDescription(String description) {
+        List<String> output = new ArrayList<>();
+        Document doc = Jsoup.parse(description);
+        Elements images = doc.getElementsByTag("img");
+        for (Element el : images) {
+            // If alt is empty or null, add one to counter
+            String src = el.attr("src");
+            String imageUrl = getImageFromNitter(src);
+            output.add(imageUrl);
+        }
+        return output;
     }
 
     private TwitterPost getTwitterPostFromResponseItem(Status item, Boolean mediaOnly) {

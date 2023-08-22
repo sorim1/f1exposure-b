@@ -98,4 +98,8 @@ logging:
     name: /root/exposure_log/exposure.log
 upload:
   path: /uploads-deleteme
+twitter:
+  accounts:
+    list: redbullracing,Max33Verstappen,SChecoPerez,MercedesAMGF1,LewisHamilton,GeorgeRussell63,ScuderiaFerrari,Carlossainz55,Charles_Leclerc,WilliamsRacing,alex_albon,LoganSargeant,McLarenF1,LandoNorris,OscarPiastri,AlpineF1Team,OconEsteban,PierreGASLY,AlphaTauriF1,danielricciardo,yukitsunoda07,alfaromeostake,ValtteriBottas,ZhouGuanyu24,HaasF1Team,KevinMagnussen,HulkHulkenberg,AstonMartinF1,alo_oficial,lance_stroll,SkySportsF1
+    list2: SChecoPerez,MercedesAMGF1
 

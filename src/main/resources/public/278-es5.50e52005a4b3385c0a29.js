@@ -83048,6 +83048,146 @@
           core
           /* ɵɵelement */
           ._UZ(0, "img", 24);
+
+          core
+          /* ɵɵelementStart */
+          .TgZ(1, "span", 25);
+
+          core
+          /* ɵɵtext */
+          ._uU(2, "Elon");
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+        }
+      }
+
+      function ImageFeedComponent_mat_tab_group_20_ng_template_3_div_0_div_2_div_3_Template(rf, ctx) {
+        if (rf & 1) {
+          core
+          /* ɵɵelementStart */
+          .TgZ(0, "div", 36);
+          core
+          /* ɵɵelementStart */
+          .TgZ(1, "a", 37);
+
+          core
+          /* ɵɵelement */
+          ._UZ(2, "img", 38);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(3, "div", 39);
+
+          core
+          /* ɵɵtext */
+          ._uU(4);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+        }
+
+        if (rf & 2) {
+          var post_r18 = core
+          /* ɵɵnextContext */
+          .oxw().$implicit;
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵproperty */
+          .Q6J("href", post_r18.url, core
+          /* ɵɵsanitizeUrl */
+          .LSH);
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵproperty */
+          .Q6J("src", post_r18.mediaUrl, core
+          /* ɵɵsanitizeUrl */
+          .LSH);
+          core
+          /* ɵɵadvance */
+          .xp6(2);
+          core
+          /* ɵɵtextInterpolate1 */
+          .hij(" ", post_r18.text, " ");
+        }
+      }
+
+      function ImageFeedComponent_mat_tab_group_20_ng_template_3_div_0_div_2_div_4_Template(rf, ctx) {
+        if (rf & 1) {
+          core
+          /* ɵɵelementStart */
+          .TgZ(0, "div", 40);
+          core
+          /* ɵɵelementStart */
+          .TgZ(1, "a", 37);
+          core
+          /* ɵɵelementStart */
+          .TgZ(2, "div");
+
+          core
+          /* ɵɵelement */
+          ._UZ(3, "img", 41);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(4, "div", 42);
+
+          core
+          /* ɵɵtext */
+          ._uU(5);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+        }
+
+        if (rf & 2) {
+          var post_r18 = core
+          /* ɵɵnextContext */
+          .oxw().$implicit;
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵproperty */
+          .Q6J("href", post_r18.url, core
+          /* ɵɵsanitizeUrl */
+          .LSH);
+          core
+          /* ɵɵadvance */
+          .xp6(2);
+          core
+          /* ɵɵproperty */
+          .Q6J("src", post_r18.userPicture, core
+          /* ɵɵsanitizeUrl */
+          .LSH);
+          core
+          /* ɵɵadvance */
+          .xp6(2);
+          core
+          /* ɵɵtextInterpolate1 */
+          .hij(" ", post_r18.text, " ");
         }
       }
 
@@ -83055,74 +83195,24 @@
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 31);
+          .TgZ(0, "div", 32);
           core
           /* ɵɵelementStart */
-          .TgZ(1, "div", 32);
-          core
-          /* ɵɵelementStart */
-          .TgZ(2, "div", 4);
-          core
-          /* ɵɵelementStart */
-          .TgZ(3, "div", 33);
+          .TgZ(1, "div", 33);
 
           core
           /* ɵɵtext */
-          ._uU(4);
+          ._uU(2);
 
           core
           /* ɵɵelementEnd */
           .qZA();
           core
-          /* ɵɵelementStart */
-          .TgZ(5, "div", 34);
-
+          /* ɵɵtemplate */
+          .YNc(3, ImageFeedComponent_mat_tab_group_20_ng_template_3_div_0_div_2_div_3_Template, 5, 3, "div", 34);
           core
-          /* ɵɵtext */
-          ._uU(6);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(7, "div", 33);
-
-          core
-          /* ɵɵtext */
-          ._uU(8);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(9, "a", 35);
-
-          core
-          /* ɵɵelement */
-          ._UZ(10, "img", 36);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(11, "div", 37);
-
-          core
-          /* ɵɵtext */
-          ._uU(12);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
+          /* ɵɵtemplate */
+          .YNc(4, ImageFeedComponent_mat_tab_group_20_ng_template_3_div_0_div_2_div_4_Template, 6, 3, "div", 35);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -83130,33 +83220,49 @@
 
         if (rf & 2) {
           var post_r18 = ctx.$implicit;
-          var ctx_r15 = core
-          /* ɵɵnextContext */
-          .oxw(4);
           core
           /* ɵɵadvance */
-          .xp6(4);
+          .xp6(2);
           core
           /* ɵɵtextInterpolate1 */
           .hij(" ", post_r18.username, " ");
           core
           /* ɵɵadvance */
-          .xp6(2);
+          .xp6(1);
           core
-          /* ɵɵtextInterpolate1 */
-          .hij(" \uD83E\uDDE1", post_r18.likes, " ");
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵtextInterpolate1 */
-          .hij(" ", post_r18.location, "\u200B ");
+          /* ɵɵproperty */
+          .Q6J("ngIf", post_r18.mediaUrl != null);
           core
           /* ɵɵadvance */
           .xp6(1);
           core
           /* ɵɵproperty */
-          .Q6J("href", ctx_r15.getInstagramUrl(post_r18.code), core
+          .Q6J("ngIf", post_r18.mediaUrl == null);
+        }
+      }
+
+      function ImageFeedComponent_mat_tab_group_20_ng_template_3_div_0_div_4_div_3_a_1_Template(rf, ctx) {
+        if (rf & 1) {
+          core
+          /* ɵɵelementStart */
+          .TgZ(0, "a", 37);
+
+          core
+          /* ɵɵelement */
+          ._UZ(1, "img", 38);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+        }
+
+        if (rf & 2) {
+          var post_r23 = core
+          /* ɵɵnextContext */
+          .oxw(2).$implicit;
+          core
+          /* ɵɵproperty */
+          .Q6J("href", post_r23.url, core
           /* ɵɵsanitizeUrl */
           .LSH);
           core
@@ -83164,7 +83270,111 @@
           .xp6(1);
           core
           /* ɵɵproperty */
-          .Q6J("src", ctx_r15.getInstagramImageUrl(post_r18.code), core
+          .Q6J("src", post_r23.mediaUrl, core
+          /* ɵɵsanitizeUrl */
+          .LSH);
+        }
+      }
+
+      function ImageFeedComponent_mat_tab_group_20_ng_template_3_div_0_div_4_div_3_Template(rf, ctx) {
+        if (rf & 1) {
+          core
+          /* ɵɵelementStart */
+          .TgZ(0, "div", 36);
+          core
+          /* ɵɵtemplate */
+          .YNc(1, ImageFeedComponent_mat_tab_group_20_ng_template_3_div_0_div_4_div_3_a_1_Template, 2, 2, "a", 43);
+          core
+          /* ɵɵelementStart */
+          .TgZ(2, "div", 39);
+
+          core
+          /* ɵɵtext */
+          ._uU(3);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+        }
+
+        if (rf & 2) {
+          var post_r23 = core
+          /* ɵɵnextContext */
+          .oxw().$implicit;
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵproperty */
+          .Q6J("ngIf", post_r23.mediaUrl != null);
+          core
+          /* ɵɵadvance */
+          .xp6(2);
+          core
+          /* ɵɵtextInterpolate1 */
+          .hij(" ", post_r23.text, " ");
+        }
+      }
+
+      function ImageFeedComponent_mat_tab_group_20_ng_template_3_div_0_div_4_div_4_Template(rf, ctx) {
+        if (rf & 1) {
+          core
+          /* ɵɵelementStart */
+          .TgZ(0, "div", 40);
+          core
+          /* ɵɵelementStart */
+          .TgZ(1, "a", 37);
+          core
+          /* ɵɵelementStart */
+          .TgZ(2, "div", 44);
+
+          core
+          /* ɵɵelement */
+          ._UZ(3, "img", 41);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(4, "div", 42);
+
+          core
+          /* ɵɵtext */
+          ._uU(5);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+        }
+
+        if (rf & 2) {
+          var post_r23 = core
+          /* ɵɵnextContext */
+          .oxw().$implicit;
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵproperty */
+          .Q6J("href", post_r23.url, core
+          /* ɵɵsanitizeUrl */
+          .LSH);
+          core
+          /* ɵɵadvance */
+          .xp6(2);
+          core
+          /* ɵɵproperty */
+          .Q6J("src", post_r23.userPicture, core
           /* ɵɵsanitizeUrl */
           .LSH);
           core
@@ -83172,7 +83382,7 @@
           .xp6(2);
           core
           /* ɵɵtextInterpolate1 */
-          .hij(" ", post_r18.caption, " ");
+          .hij(" ", post_r23.text, " ");
         }
       }
 
@@ -83180,70 +83390,102 @@
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 31);
+          .TgZ(0, "div", 32);
           core
           /* ɵɵelementStart */
-          .TgZ(1, "div", 32);
-          core
-          /* ɵɵelementStart */
-          .TgZ(2, "div", 4);
-          core
-          /* ɵɵelementStart */
-          .TgZ(3, "div", 33);
+          .TgZ(1, "div", 33);
 
           core
           /* ɵɵtext */
-          ._uU(4);
+          ._uU(2);
 
           core
           /* ɵɵelementEnd */
           .qZA();
+          core
+          /* ɵɵtemplate */
+          .YNc(3, ImageFeedComponent_mat_tab_group_20_ng_template_3_div_0_div_4_div_3_Template, 4, 2, "div", 34);
+          core
+          /* ɵɵtemplate */
+          .YNc(4, ImageFeedComponent_mat_tab_group_20_ng_template_3_div_0_div_4_div_4_Template, 6, 3, "div", 35);
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+        }
+
+        if (rf & 2) {
+          var post_r23 = ctx.$implicit;
+          core
+          /* ɵɵadvance */
+          .xp6(2);
+          core
+          /* ɵɵtextInterpolate1 */
+          .hij(" ", post_r23.username, " ");
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵproperty */
+          .Q6J("ngIf", post_r23.mediaUrl != null);
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵproperty */
+          .Q6J("ngIf", post_r23.mediaUrl == null);
+        }
+      }
+
+      function ImageFeedComponent_mat_tab_group_20_ng_template_3_div_0_div_6_div_3_a_1_Template(rf, ctx) {
+        if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(5, "div", 34);
-
-          core
-          /* ɵɵtext */
-          ._uU(6);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(7, "div", 33);
-
-          core
-          /* ɵɵtext */
-          ._uU(8);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(9, "a", 35);
+          .TgZ(0, "a", 37);
 
           core
           /* ɵɵelement */
-          ._UZ(10, "img", 36);
+          ._UZ(1, "img", 38);
 
           core
           /* ɵɵelementEnd */
           .qZA();
+        }
+
+        if (rf & 2) {
+          var post_r30 = core
+          /* ɵɵnextContext */
+          .oxw(2).$implicit;
+          core
+          /* ɵɵproperty */
+          .Q6J("href", post_r30.url, core
+          /* ɵɵsanitizeUrl */
+          .LSH);
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵproperty */
+          .Q6J("src", post_r30.mediaUrl, core
+          /* ɵɵsanitizeUrl */
+          .LSH);
+        }
+      }
+
+      function ImageFeedComponent_mat_tab_group_20_ng_template_3_div_0_div_6_div_3_Template(rf, ctx) {
+        if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(11, "div", 37);
+          .TgZ(0, "div", 36);
+          core
+          /* ɵɵtemplate */
+          .YNc(1, ImageFeedComponent_mat_tab_group_20_ng_template_3_div_0_div_6_div_3_a_1_Template, 2, 2, "a", 43);
+          core
+          /* ɵɵelementStart */
+          .TgZ(2, "div", 39);
 
           core
           /* ɵɵtext */
-          ._uU(12);
+          ._uU(3);
 
           core
           /* ɵɵelementEnd */
@@ -83254,42 +83496,80 @@
         }
 
         if (rf & 2) {
-          var post_r19 = ctx.$implicit;
-          var ctx_r16 = core
+          var post_r30 = core
           /* ɵɵnextContext */
-          .oxw(4);
-          core
-          /* ɵɵadvance */
-          .xp6(4);
-          core
-          /* ɵɵtextInterpolate1 */
-          .hij(" ", post_r19.username, " ");
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵtextInterpolate1 */
-          .hij(" \uD83E\uDDE1", post_r19.likes, " ");
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵtextInterpolate1 */
-          .hij(" ", post_r19.location, "\u200B ");
+          .oxw().$implicit;
           core
           /* ɵɵadvance */
           .xp6(1);
           core
           /* ɵɵproperty */
-          .Q6J("href", ctx_r16.getInstagramUrl(post_r19.code), core
-          /* ɵɵsanitizeUrl */
-          .LSH);
+          .Q6J("ngIf", post_r30.mediaUrl != null);
+          core
+          /* ɵɵadvance */
+          .xp6(2);
+          core
+          /* ɵɵtextInterpolate1 */
+          .hij(" ", post_r30.text, " ");
+        }
+      }
+
+      function ImageFeedComponent_mat_tab_group_20_ng_template_3_div_0_div_6_div_4_Template(rf, ctx) {
+        if (rf & 1) {
+          core
+          /* ɵɵelementStart */
+          .TgZ(0, "div", 40);
+          core
+          /* ɵɵelementStart */
+          .TgZ(1, "a", 37);
+          core
+          /* ɵɵelementStart */
+          .TgZ(2, "div", 44);
+
+          core
+          /* ɵɵelement */
+          ._UZ(3, "img", 41);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(4, "div", 42);
+
+          core
+          /* ɵɵtext */
+          ._uU(5);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+        }
+
+        if (rf & 2) {
+          var post_r30 = core
+          /* ɵɵnextContext */
+          .oxw().$implicit;
           core
           /* ɵɵadvance */
           .xp6(1);
           core
           /* ɵɵproperty */
-          .Q6J("src", ctx_r16.getInstagramImageUrl(post_r19.code), core
+          .Q6J("href", post_r30.url, core
+          /* ɵɵsanitizeUrl */
+          .LSH);
+          core
+          /* ɵɵadvance */
+          .xp6(2);
+          core
+          /* ɵɵproperty */
+          .Q6J("src", post_r30.userPicture, core
           /* ɵɵsanitizeUrl */
           .LSH);
           core
@@ -83297,7 +83577,7 @@
           .xp6(2);
           core
           /* ɵɵtextInterpolate1 */
-          .hij(" ", post_r19.caption, " ");
+          .hij(" ", post_r30.text, " ");
         }
       }
 
@@ -83305,124 +83585,49 @@
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 31);
+          .TgZ(0, "div", 32);
           core
           /* ɵɵelementStart */
-          .TgZ(1, "div", 32);
-          core
-          /* ɵɵelementStart */
-          .TgZ(2, "div", 4);
-          core
-          /* ɵɵelementStart */
-          .TgZ(3, "div", 33);
+          .TgZ(1, "div", 33);
 
           core
           /* ɵɵtext */
-          ._uU(4);
+          ._uU(2);
 
           core
           /* ɵɵelementEnd */
           .qZA();
           core
-          /* ɵɵelementStart */
-          .TgZ(5, "div", 34);
-
+          /* ɵɵtemplate */
+          .YNc(3, ImageFeedComponent_mat_tab_group_20_ng_template_3_div_0_div_6_div_3_Template, 4, 2, "div", 34);
           core
-          /* ɵɵtext */
-          ._uU(6);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(7, "div", 33);
-
-          core
-          /* ɵɵtext */
-          ._uU(8);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(9, "a", 35);
-
-          core
-          /* ɵɵelement */
-          ._UZ(10, "img", 36);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(11, "div", 37);
-
-          core
-          /* ɵɵtext */
-          ._uU(12);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
+          /* ɵɵtemplate */
+          .YNc(4, ImageFeedComponent_mat_tab_group_20_ng_template_3_div_0_div_6_div_4_Template, 6, 3, "div", 35);
           core
           /* ɵɵelementEnd */
           .qZA();
         }
 
         if (rf & 2) {
-          var post_r20 = ctx.$implicit;
-          var ctx_r17 = core
-          /* ɵɵnextContext */
-          .oxw(4);
-          core
-          /* ɵɵadvance */
-          .xp6(4);
-          core
-          /* ɵɵtextInterpolate1 */
-          .hij(" ", post_r20.username, " ");
+          var post_r30 = ctx.$implicit;
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate1 */
-          .hij(" \uD83E\uDDE1", post_r20.likes, " ");
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵtextInterpolate1 */
-          .hij(" ", post_r20.location, "\u200B ");
+          .hij(" ", post_r30.username, " ");
           core
           /* ɵɵadvance */
           .xp6(1);
           core
           /* ɵɵproperty */
-          .Q6J("href", ctx_r17.getInstagramUrl(post_r20.code), core
-          /* ɵɵsanitizeUrl */
-          .LSH);
+          .Q6J("ngIf", post_r30.mediaUrl != null);
           core
           /* ɵɵadvance */
           .xp6(1);
           core
           /* ɵɵproperty */
-          .Q6J("src", ctx_r17.getInstagramImageUrl(post_r20.code), core
-          /* ɵɵsanitizeUrl */
-          .LSH);
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵtextInterpolate1 */
-          .hij(" ", post_r20.caption, " ");
+          .Q6J("ngIf", post_r30.mediaUrl == null);
         }
       }
 
@@ -83433,28 +83638,28 @@
           .TgZ(0, "div", 4);
           core
           /* ɵɵelementStart */
-          .TgZ(1, "div", 27);
+          .TgZ(1, "div", 28);
           core
           /* ɵɵtemplate */
-          .YNc(2, ImageFeedComponent_mat_tab_group_20_ng_template_3_div_0_div_2_Template, 13, 6, "div", 28);
+          .YNc(2, ImageFeedComponent_mat_tab_group_20_ng_template_3_div_0_div_2_Template, 5, 3, "div", 29);
           core
           /* ɵɵelementEnd */
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(3, "div", 29);
+          .TgZ(3, "div", 30);
           core
           /* ɵɵtemplate */
-          .YNc(4, ImageFeedComponent_mat_tab_group_20_ng_template_3_div_0_div_4_Template, 13, 6, "div", 28);
+          .YNc(4, ImageFeedComponent_mat_tab_group_20_ng_template_3_div_0_div_4_Template, 5, 3, "div", 29);
           core
           /* ɵɵelementEnd */
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(5, "div", 30);
+          .TgZ(5, "div", 31);
           core
           /* ɵɵtemplate */
-          .YNc(6, ImageFeedComponent_mat_tab_group_20_ng_template_3_div_0_div_6_Template, 13, 6, "div", 28);
+          .YNc(6, ImageFeedComponent_mat_tab_group_20_ng_template_3_div_0_div_6_Template, 5, 3, "div", 29);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -83472,19 +83677,147 @@
           .xp6(2);
           core
           /* ɵɵproperty */
-          .Q6J("ngForOf", ctx_r13.instaPosts.first);
+          .Q6J("ngForOf", ctx_r13.twitterPosts.first);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵproperty */
-          .Q6J("ngForOf", ctx_r13.instaPosts.second);
+          .Q6J("ngForOf", ctx_r13.twitterPosts.second);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵproperty */
-          .Q6J("ngForOf", ctx_r13.instaPosts.third);
+          .Q6J("ngForOf", ctx_r13.twitterPosts.third);
+        }
+      }
+
+      function ImageFeedComponent_mat_tab_group_20_ng_template_3_div_1_div_2_div_3_Template(rf, ctx) {
+        if (rf & 1) {
+          core
+          /* ɵɵelementStart */
+          .TgZ(0, "div", 36);
+          core
+          /* ɵɵelementStart */
+          .TgZ(1, "a", 37);
+
+          core
+          /* ɵɵelement */
+          ._UZ(2, "img", 38);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(3, "div", 39);
+
+          core
+          /* ɵɵtext */
+          ._uU(4);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+        }
+
+        if (rf & 2) {
+          var post_r39 = core
+          /* ɵɵnextContext */
+          .oxw().$implicit;
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵproperty */
+          .Q6J("href", post_r39.url, core
+          /* ɵɵsanitizeUrl */
+          .LSH);
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵproperty */
+          .Q6J("src", post_r39.mediaUrl, core
+          /* ɵɵsanitizeUrl */
+          .LSH);
+          core
+          /* ɵɵadvance */
+          .xp6(2);
+          core
+          /* ɵɵtextInterpolate1 */
+          .hij(" ", post_r39.text, " ");
+        }
+      }
+
+      function ImageFeedComponent_mat_tab_group_20_ng_template_3_div_1_div_2_div_4_Template(rf, ctx) {
+        if (rf & 1) {
+          core
+          /* ɵɵelementStart */
+          .TgZ(0, "div", 40);
+          core
+          /* ɵɵelementStart */
+          .TgZ(1, "a", 37);
+          core
+          /* ɵɵelementStart */
+          .TgZ(2, "div");
+
+          core
+          /* ɵɵelement */
+          ._UZ(3, "img", 41);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(4, "div", 42);
+
+          core
+          /* ɵɵtext */
+          ._uU(5);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+        }
+
+        if (rf & 2) {
+          var post_r39 = core
+          /* ɵɵnextContext */
+          .oxw().$implicit;
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵproperty */
+          .Q6J("href", post_r39.url, core
+          /* ɵɵsanitizeUrl */
+          .LSH);
+          core
+          /* ɵɵadvance */
+          .xp6(2);
+          core
+          /* ɵɵproperty */
+          .Q6J("src", post_r39.userPicture, core
+          /* ɵɵsanitizeUrl */
+          .LSH);
+          core
+          /* ɵɵadvance */
+          .xp6(2);
+          core
+          /* ɵɵtextInterpolate1 */
+          .hij(" ", post_r39.text, " ");
         }
       }
 
@@ -83492,70 +83825,102 @@
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 31);
+          .TgZ(0, "div", 32);
           core
           /* ɵɵelementStart */
-          .TgZ(1, "div", 32);
-          core
-          /* ɵɵelementStart */
-          .TgZ(2, "div", 4);
-          core
-          /* ɵɵelementStart */
-          .TgZ(3, "div", 33);
+          .TgZ(1, "div", 33);
 
           core
           /* ɵɵtext */
-          ._uU(4);
+          ._uU(2);
 
           core
           /* ɵɵelementEnd */
           .qZA();
+          core
+          /* ɵɵtemplate */
+          .YNc(3, ImageFeedComponent_mat_tab_group_20_ng_template_3_div_1_div_2_div_3_Template, 5, 3, "div", 34);
+          core
+          /* ɵɵtemplate */
+          .YNc(4, ImageFeedComponent_mat_tab_group_20_ng_template_3_div_1_div_2_div_4_Template, 6, 3, "div", 35);
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+        }
+
+        if (rf & 2) {
+          var post_r39 = ctx.$implicit;
+          core
+          /* ɵɵadvance */
+          .xp6(2);
+          core
+          /* ɵɵtextInterpolate1 */
+          .hij(" ", post_r39.username, " ");
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵproperty */
+          .Q6J("ngIf", post_r39.mediaUrl != null);
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵproperty */
+          .Q6J("ngIf", post_r39.mediaUrl == null);
+        }
+      }
+
+      function ImageFeedComponent_mat_tab_group_20_ng_template_3_div_1_div_4_div_3_a_1_Template(rf, ctx) {
+        if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(5, "div", 34);
-
-          core
-          /* ɵɵtext */
-          ._uU(6);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(7, "div", 33);
-
-          core
-          /* ɵɵtext */
-          ._uU(8);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(9, "a", 35);
+          .TgZ(0, "a", 37);
 
           core
           /* ɵɵelement */
-          ._UZ(10, "img", 36);
+          ._UZ(1, "img", 38);
 
           core
           /* ɵɵelementEnd */
           .qZA();
+        }
+
+        if (rf & 2) {
+          var post_r44 = core
+          /* ɵɵnextContext */
+          .oxw(2).$implicit;
+          core
+          /* ɵɵproperty */
+          .Q6J("href", post_r44.url, core
+          /* ɵɵsanitizeUrl */
+          .LSH);
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵproperty */
+          .Q6J("src", post_r44.mediaUrl, core
+          /* ɵɵsanitizeUrl */
+          .LSH);
+        }
+      }
+
+      function ImageFeedComponent_mat_tab_group_20_ng_template_3_div_1_div_4_div_3_Template(rf, ctx) {
+        if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(11, "div", 37);
+          .TgZ(0, "div", 36);
+          core
+          /* ɵɵtemplate */
+          .YNc(1, ImageFeedComponent_mat_tab_group_20_ng_template_3_div_1_div_4_div_3_a_1_Template, 2, 2, "a", 43);
+          core
+          /* ɵɵelementStart */
+          .TgZ(2, "div", 39);
 
           core
           /* ɵɵtext */
-          ._uU(12);
+          ._uU(3);
 
           core
           /* ɵɵelementEnd */
@@ -83566,42 +83931,80 @@
         }
 
         if (rf & 2) {
-          var post_r23 = ctx.$implicit;
-          var ctx_r21 = core
+          var post_r44 = core
           /* ɵɵnextContext */
-          .oxw(4);
-          core
-          /* ɵɵadvance */
-          .xp6(4);
-          core
-          /* ɵɵtextInterpolate1 */
-          .hij(" ", post_r23.username, " ");
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵtextInterpolate1 */
-          .hij(" \uD83E\uDDE1", post_r23.likes, " ");
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵtextInterpolate1 */
-          .hij(" ", post_r23.location, "\u200B ");
+          .oxw().$implicit;
           core
           /* ɵɵadvance */
           .xp6(1);
           core
           /* ɵɵproperty */
-          .Q6J("href", ctx_r21.getInstagramUrl(post_r23.code), core
-          /* ɵɵsanitizeUrl */
-          .LSH);
+          .Q6J("ngIf", post_r44.mediaUrl != null);
+          core
+          /* ɵɵadvance */
+          .xp6(2);
+          core
+          /* ɵɵtextInterpolate1 */
+          .hij(" ", post_r44.text, " ");
+        }
+      }
+
+      function ImageFeedComponent_mat_tab_group_20_ng_template_3_div_1_div_4_div_4_Template(rf, ctx) {
+        if (rf & 1) {
+          core
+          /* ɵɵelementStart */
+          .TgZ(0, "div", 40);
+          core
+          /* ɵɵelementStart */
+          .TgZ(1, "a", 37);
+          core
+          /* ɵɵelementStart */
+          .TgZ(2, "div", 44);
+
+          core
+          /* ɵɵelement */
+          ._UZ(3, "img", 41);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(4, "div", 42);
+
+          core
+          /* ɵɵtext */
+          ._uU(5);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+        }
+
+        if (rf & 2) {
+          var post_r44 = core
+          /* ɵɵnextContext */
+          .oxw().$implicit;
           core
           /* ɵɵadvance */
           .xp6(1);
           core
           /* ɵɵproperty */
-          .Q6J("src", ctx_r21.getInstagramImageUrl(post_r23.code), core
+          .Q6J("href", post_r44.url, core
+          /* ɵɵsanitizeUrl */
+          .LSH);
+          core
+          /* ɵɵadvance */
+          .xp6(2);
+          core
+          /* ɵɵproperty */
+          .Q6J("src", post_r44.userPicture, core
           /* ɵɵsanitizeUrl */
           .LSH);
           core
@@ -83609,7 +84012,7 @@
           .xp6(2);
           core
           /* ɵɵtextInterpolate1 */
-          .hij(" ", post_r23.caption, " ");
+          .hij(" ", post_r44.text, " ");
         }
       }
 
@@ -83617,124 +84020,49 @@
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 31);
+          .TgZ(0, "div", 32);
           core
           /* ɵɵelementStart */
-          .TgZ(1, "div", 32);
-          core
-          /* ɵɵelementStart */
-          .TgZ(2, "div", 4);
-          core
-          /* ɵɵelementStart */
-          .TgZ(3, "div", 33);
+          .TgZ(1, "div", 33);
 
           core
           /* ɵɵtext */
-          ._uU(4);
+          ._uU(2);
 
           core
           /* ɵɵelementEnd */
           .qZA();
           core
-          /* ɵɵelementStart */
-          .TgZ(5, "div", 34);
-
+          /* ɵɵtemplate */
+          .YNc(3, ImageFeedComponent_mat_tab_group_20_ng_template_3_div_1_div_4_div_3_Template, 4, 2, "div", 34);
           core
-          /* ɵɵtext */
-          ._uU(6);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(7, "div", 33);
-
-          core
-          /* ɵɵtext */
-          ._uU(8);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(9, "a", 35);
-
-          core
-          /* ɵɵelement */
-          ._UZ(10, "img", 36);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(11, "div", 37);
-
-          core
-          /* ɵɵtext */
-          ._uU(12);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
+          /* ɵɵtemplate */
+          .YNc(4, ImageFeedComponent_mat_tab_group_20_ng_template_3_div_1_div_4_div_4_Template, 6, 3, "div", 35);
           core
           /* ɵɵelementEnd */
           .qZA();
         }
 
         if (rf & 2) {
-          var post_r24 = ctx.$implicit;
-          var ctx_r22 = core
-          /* ɵɵnextContext */
-          .oxw(4);
-          core
-          /* ɵɵadvance */
-          .xp6(4);
-          core
-          /* ɵɵtextInterpolate1 */
-          .hij(" ", post_r24.username, " ");
+          var post_r44 = ctx.$implicit;
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate1 */
-          .hij(" \uD83E\uDDE1", post_r24.likes, " ");
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵtextInterpolate1 */
-          .hij(" ", post_r24.location, "\u200B ");
+          .hij(" ", post_r44.username, " ");
           core
           /* ɵɵadvance */
           .xp6(1);
           core
           /* ɵɵproperty */
-          .Q6J("href", ctx_r22.getInstagramUrl(post_r24.code), core
-          /* ɵɵsanitizeUrl */
-          .LSH);
+          .Q6J("ngIf", post_r44.mediaUrl != null);
           core
           /* ɵɵadvance */
           .xp6(1);
           core
           /* ɵɵproperty */
-          .Q6J("src", ctx_r22.getInstagramImageUrl(post_r24.code), core
-          /* ɵɵsanitizeUrl */
-          .LSH);
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵtextInterpolate1 */
-          .hij(" ", post_r24.caption, " ");
+          .Q6J("ngIf", post_r44.mediaUrl == null);
         }
       }
 
@@ -83742,22 +84070,22 @@
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 38);
+          .TgZ(0, "div", 45);
           core
           /* ɵɵelementStart */
-          .TgZ(1, "div", 39);
+          .TgZ(1, "div", 46);
           core
           /* ɵɵtemplate */
-          .YNc(2, ImageFeedComponent_mat_tab_group_20_ng_template_3_div_1_div_2_Template, 13, 6, "div", 28);
+          .YNc(2, ImageFeedComponent_mat_tab_group_20_ng_template_3_div_1_div_2_Template, 5, 3, "div", 29);
           core
           /* ɵɵelementEnd */
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(3, "div", 39);
+          .TgZ(3, "div", 46);
           core
           /* ɵɵtemplate */
-          .YNc(4, ImageFeedComponent_mat_tab_group_20_ng_template_3_div_1_div_4_Template, 13, 6, "div", 28);
+          .YNc(4, ImageFeedComponent_mat_tab_group_20_ng_template_3_div_1_div_4_Template, 5, 3, "div", 29);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -83775,13 +84103,13 @@
           .xp6(2);
           core
           /* ɵɵproperty */
-          .Q6J("ngForOf", ctx_r14.instaPosts.first);
+          .Q6J("ngForOf", ctx_r14.twitterPosts.first);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵproperty */
-          .Q6J("ngForOf", ctx_r14.instaPosts.second);
+          .Q6J("ngForOf", ctx_r14.twitterPosts.second);
         }
       }
 
@@ -83789,10 +84117,10 @@
         if (rf & 1) {
           core
           /* ɵɵtemplate */
-          .YNc(0, ImageFeedComponent_mat_tab_group_20_ng_template_3_div_0_Template, 7, 3, "div", 25);
+          .YNc(0, ImageFeedComponent_mat_tab_group_20_ng_template_3_div_0_Template, 7, 3, "div", 26);
           core
           /* ɵɵtemplate */
-          .YNc(1, ImageFeedComponent_mat_tab_group_20_ng_template_3_div_1_Template, 5, 2, "div", 26);
+          .YNc(1, ImageFeedComponent_mat_tab_group_20_ng_template_3_div_1_Template, 5, 2, "div", 27);
         }
 
         if (rf & 2) {
@@ -83815,7 +84143,19 @@
         if (rf & 1) {
           core
           /* ɵɵelement */
-          ._UZ(0, "img", 40);
+          ._UZ(0, "img", 47);
+
+          core
+          /* ɵɵelementStart */
+          .TgZ(1, "span", 25);
+
+          core
+          /* ɵɵtext */
+          ._uU(2, "Reddit");
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
         }
       }
 
@@ -83823,29 +84163,29 @@
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 31);
+          .TgZ(0, "div", 32);
 
           core
           /* ɵɵelement */
-          ._UZ(1, "div", 41);
+          ._UZ(1, "div", 33);
 
           core
           /* ɵɵelementStart */
-          .TgZ(2, "div", 42);
+          .TgZ(2, "div", 36);
           core
           /* ɵɵelementStart */
-          .TgZ(3, "a", 35);
+          .TgZ(3, "a", 37);
 
           core
           /* ɵɵelement */
-          ._UZ(4, "img", 43);
+          ._UZ(4, "img", 48);
 
           core
           /* ɵɵelementEnd */
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(5, "div", 44);
+          .TgZ(5, "div", 49);
 
           core
           /* ɵɵtext */
@@ -83863,13 +84203,13 @@
         }
 
         if (rf & 2) {
-          var post_r30 = ctx.$implicit;
+          var post_r56 = ctx.$implicit;
           core
           /* ɵɵadvance */
           .xp6(3);
           core
           /* ɵɵproperty */
-          .Q6J("href", post_r30.url, core
+          .Q6J("href", post_r56.url, core
           /* ɵɵsanitizeUrl */
           .LSH);
           core
@@ -83877,7 +84217,7 @@
           .xp6(1);
           core
           /* ɵɵproperty */
-          .Q6J("src", post_r30.imageUrl, core
+          .Q6J("src", post_r56.imageUrl, core
           /* ɵɵsanitizeUrl */
           .LSH);
           core
@@ -83885,7 +84225,7 @@
           .xp6(2);
           core
           /* ɵɵtextInterpolate1 */
-          .hij(" ", post_r30.title, " ");
+          .hij(" ", post_r56.title, " ");
         }
       }
 
@@ -83893,29 +84233,29 @@
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 31);
+          .TgZ(0, "div", 32);
 
           core
           /* ɵɵelement */
-          ._UZ(1, "div", 41);
+          ._UZ(1, "div", 33);
 
           core
           /* ɵɵelementStart */
-          .TgZ(2, "div", 42);
+          .TgZ(2, "div", 36);
           core
           /* ɵɵelementStart */
-          .TgZ(3, "a", 35);
+          .TgZ(3, "a", 37);
 
           core
           /* ɵɵelement */
-          ._UZ(4, "img", 43);
+          ._UZ(4, "img", 48);
 
           core
           /* ɵɵelementEnd */
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(5, "div", 44);
+          .TgZ(5, "div", 49);
 
           core
           /* ɵɵtext */
@@ -83933,13 +84273,13 @@
         }
 
         if (rf & 2) {
-          var post_r31 = ctx.$implicit;
+          var post_r57 = ctx.$implicit;
           core
           /* ɵɵadvance */
           .xp6(3);
           core
           /* ɵɵproperty */
-          .Q6J("href", post_r31.url, core
+          .Q6J("href", post_r57.url, core
           /* ɵɵsanitizeUrl */
           .LSH);
           core
@@ -83947,7 +84287,7 @@
           .xp6(1);
           core
           /* ɵɵproperty */
-          .Q6J("src", post_r31.imageUrl, core
+          .Q6J("src", post_r57.imageUrl, core
           /* ɵɵsanitizeUrl */
           .LSH);
           core
@@ -83955,7 +84295,7 @@
           .xp6(2);
           core
           /* ɵɵtextInterpolate1 */
-          .hij(" ", post_r31.title, " ");
+          .hij(" ", post_r57.title, " ");
         }
       }
 
@@ -83963,29 +84303,29 @@
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 31);
+          .TgZ(0, "div", 32);
 
           core
           /* ɵɵelement */
-          ._UZ(1, "div", 41);
+          ._UZ(1, "div", 33);
 
           core
           /* ɵɵelementStart */
-          .TgZ(2, "div", 42);
+          .TgZ(2, "div", 36);
           core
           /* ɵɵelementStart */
-          .TgZ(3, "a", 35);
+          .TgZ(3, "a", 37);
 
           core
           /* ɵɵelement */
-          ._UZ(4, "img", 43);
+          ._UZ(4, "img", 48);
 
           core
           /* ɵɵelementEnd */
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(5, "div", 44);
+          .TgZ(5, "div", 49);
 
           core
           /* ɵɵtext */
@@ -84003,13 +84343,13 @@
         }
 
         if (rf & 2) {
-          var post_r32 = ctx.$implicit;
+          var post_r58 = ctx.$implicit;
           core
           /* ɵɵadvance */
           .xp6(3);
           core
           /* ɵɵproperty */
-          .Q6J("href", post_r32.url, core
+          .Q6J("href", post_r58.url, core
           /* ɵɵsanitizeUrl */
           .LSH);
           core
@@ -84017,7 +84357,7 @@
           .xp6(1);
           core
           /* ɵɵproperty */
-          .Q6J("src", post_r32.imageUrl, core
+          .Q6J("src", post_r58.imageUrl, core
           /* ɵɵsanitizeUrl */
           .LSH);
           core
@@ -84025,7 +84365,7 @@
           .xp6(2);
           core
           /* ɵɵtextInterpolate1 */
-          .hij(" ", post_r32.title, " ");
+          .hij(" ", post_r58.title, " ");
         }
       }
 
@@ -84036,28 +84376,28 @@
           .TgZ(0, "div", 4);
           core
           /* ɵɵelementStart */
-          .TgZ(1, "div", 27);
+          .TgZ(1, "div", 28);
           core
           /* ɵɵtemplate */
-          .YNc(2, ImageFeedComponent_mat_tab_group_20_ng_template_6_div_0_div_2_Template, 7, 3, "div", 28);
+          .YNc(2, ImageFeedComponent_mat_tab_group_20_ng_template_6_div_0_div_2_Template, 7, 3, "div", 29);
           core
           /* ɵɵelementEnd */
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(3, "div", 29);
+          .TgZ(3, "div", 30);
           core
           /* ɵɵtemplate */
-          .YNc(4, ImageFeedComponent_mat_tab_group_20_ng_template_6_div_0_div_4_Template, 7, 3, "div", 28);
+          .YNc(4, ImageFeedComponent_mat_tab_group_20_ng_template_6_div_0_div_4_Template, 7, 3, "div", 29);
           core
           /* ɵɵelementEnd */
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(5, "div", 30);
+          .TgZ(5, "div", 31);
           core
           /* ɵɵtemplate */
-          .YNc(6, ImageFeedComponent_mat_tab_group_20_ng_template_6_div_0_div_6_Template, 7, 3, "div", 28);
+          .YNc(6, ImageFeedComponent_mat_tab_group_20_ng_template_6_div_0_div_6_Template, 7, 3, "div", 29);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -84067,7 +84407,7 @@
         }
 
         if (rf & 2) {
-          var ctx_r25 = core
+          var ctx_r51 = core
           /* ɵɵnextContext */
           .oxw(3);
           core
@@ -84075,19 +84415,19 @@
           .xp6(2);
           core
           /* ɵɵproperty */
-          .Q6J("ngForOf", ctx_r25.redditPosts.first);
+          .Q6J("ngForOf", ctx_r51.redditPosts.first);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵproperty */
-          .Q6J("ngForOf", ctx_r25.redditPosts.second);
+          .Q6J("ngForOf", ctx_r51.redditPosts.second);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵproperty */
-          .Q6J("ngForOf", ctx_r25.redditPosts.third);
+          .Q6J("ngForOf", ctx_r51.redditPosts.third);
         }
       }
 
@@ -84095,29 +84435,29 @@
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 31);
+          .TgZ(0, "div", 32);
 
           core
           /* ɵɵelement */
-          ._UZ(1, "div", 41);
+          ._UZ(1, "div", 33);
 
           core
           /* ɵɵelementStart */
-          .TgZ(2, "div", 42);
+          .TgZ(2, "div", 36);
           core
           /* ɵɵelementStart */
-          .TgZ(3, "a", 35);
+          .TgZ(3, "a", 37);
 
           core
           /* ɵɵelement */
-          ._UZ(4, "img", 43);
+          ._UZ(4, "img", 48);
 
           core
           /* ɵɵelementEnd */
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(5, "div", 44);
+          .TgZ(5, "div", 49);
 
           core
           /* ɵɵtext */
@@ -84135,13 +84475,13 @@
         }
 
         if (rf & 2) {
-          var post_r35 = ctx.$implicit;
+          var post_r61 = ctx.$implicit;
           core
           /* ɵɵadvance */
           .xp6(3);
           core
           /* ɵɵproperty */
-          .Q6J("href", post_r35.url, core
+          .Q6J("href", post_r61.url, core
           /* ɵɵsanitizeUrl */
           .LSH);
           core
@@ -84149,7 +84489,7 @@
           .xp6(1);
           core
           /* ɵɵproperty */
-          .Q6J("src", post_r35.imageUrl, core
+          .Q6J("src", post_r61.imageUrl, core
           /* ɵɵsanitizeUrl */
           .LSH);
           core
@@ -84157,7 +84497,7 @@
           .xp6(2);
           core
           /* ɵɵtextInterpolate1 */
-          .hij(" ", post_r35.title, " ");
+          .hij(" ", post_r61.title, " ");
         }
       }
 
@@ -84165,29 +84505,29 @@
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 31);
+          .TgZ(0, "div", 32);
 
           core
           /* ɵɵelement */
-          ._UZ(1, "div", 41);
+          ._UZ(1, "div", 33);
 
           core
           /* ɵɵelementStart */
-          .TgZ(2, "div", 42);
+          .TgZ(2, "div", 36);
           core
           /* ɵɵelementStart */
-          .TgZ(3, "a", 35);
+          .TgZ(3, "a", 37);
 
           core
           /* ɵɵelement */
-          ._UZ(4, "img", 43);
+          ._UZ(4, "img", 48);
 
           core
           /* ɵɵelementEnd */
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(5, "div", 44);
+          .TgZ(5, "div", 49);
 
           core
           /* ɵɵtext */
@@ -84205,13 +84545,13 @@
         }
 
         if (rf & 2) {
-          var post_r36 = ctx.$implicit;
+          var post_r62 = ctx.$implicit;
           core
           /* ɵɵadvance */
           .xp6(3);
           core
           /* ɵɵproperty */
-          .Q6J("href", post_r36.url, core
+          .Q6J("href", post_r62.url, core
           /* ɵɵsanitizeUrl */
           .LSH);
           core
@@ -84219,7 +84559,7 @@
           .xp6(1);
           core
           /* ɵɵproperty */
-          .Q6J("src", post_r36.imageUrl, core
+          .Q6J("src", post_r62.imageUrl, core
           /* ɵɵsanitizeUrl */
           .LSH);
           core
@@ -84227,7 +84567,7 @@
           .xp6(2);
           core
           /* ɵɵtextInterpolate1 */
-          .hij(" ", post_r36.title, " ");
+          .hij(" ", post_r62.title, " ");
         }
       }
 
@@ -84235,22 +84575,22 @@
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 38);
+          .TgZ(0, "div", 45);
           core
           /* ɵɵelementStart */
-          .TgZ(1, "div", 39);
+          .TgZ(1, "div", 46);
           core
           /* ɵɵtemplate */
-          .YNc(2, ImageFeedComponent_mat_tab_group_20_ng_template_6_div_1_div_2_Template, 7, 3, "div", 28);
+          .YNc(2, ImageFeedComponent_mat_tab_group_20_ng_template_6_div_1_div_2_Template, 7, 3, "div", 29);
           core
           /* ɵɵelementEnd */
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(3, "div", 39);
+          .TgZ(3, "div", 46);
           core
           /* ɵɵtemplate */
-          .YNc(4, ImageFeedComponent_mat_tab_group_20_ng_template_6_div_1_div_4_Template, 7, 3, "div", 28);
+          .YNc(4, ImageFeedComponent_mat_tab_group_20_ng_template_6_div_1_div_4_Template, 7, 3, "div", 29);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -84260,7 +84600,7 @@
         }
 
         if (rf & 2) {
-          var ctx_r26 = core
+          var ctx_r52 = core
           /* ɵɵnextContext */
           .oxw(3);
           core
@@ -84268,13 +84608,13 @@
           .xp6(2);
           core
           /* ɵɵproperty */
-          .Q6J("ngForOf", ctx_r26.redditPosts.first);
+          .Q6J("ngForOf", ctx_r52.redditPosts.first);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵproperty */
-          .Q6J("ngForOf", ctx_r26.redditPosts.second);
+          .Q6J("ngForOf", ctx_r52.redditPosts.second);
         }
       }
 
@@ -84282,10 +84622,10 @@
         if (rf & 1) {
           core
           /* ɵɵtemplate */
-          .YNc(0, ImageFeedComponent_mat_tab_group_20_ng_template_6_div_0_Template, 7, 3, "div", 25);
+          .YNc(0, ImageFeedComponent_mat_tab_group_20_ng_template_6_div_0_Template, 7, 3, "div", 26);
           core
           /* ɵɵtemplate */
-          .YNc(1, ImageFeedComponent_mat_tab_group_20_ng_template_6_div_1_Template, 5, 2, "div", 26);
+          .YNc(1, ImageFeedComponent_mat_tab_group_20_ng_template_6_div_1_Template, 5, 2, "div", 27);
         }
 
         if (rf & 2) {
@@ -84308,157 +84648,36 @@
         if (rf & 1) {
           core
           /* ɵɵelement */
-          ._UZ(0, "img", 45);
-        }
-      }
-
-      function ImageFeedComponent_mat_tab_group_20_ng_template_9_div_3_div_2_div_7_Template(rf, ctx) {
-        if (rf & 1) {
-          core
-          /* ɵɵelementStart */
-          .TgZ(0, "div", 42);
-          core
-          /* ɵɵelementStart */
-          .TgZ(1, "a", 35);
+          ._UZ(0, "img", 50);
 
           core
-          /* ɵɵelement */
-          ._UZ(2, "img", 51);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
           /* ɵɵelementStart */
-          .TgZ(3, "div", 37);
+          .TgZ(1, "span", 25);
 
           core
           /* ɵɵtext */
-          ._uU(4);
+          ._uU(2, "Instagram");
 
           core
           /* ɵɵelementEnd */
           .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-        }
-
-        if (rf & 2) {
-          var post_r42 = core
-          /* ɵɵnextContext */
-          .oxw().$implicit;
-          core
-          /* ɵɵadvance */
-          .xp6(1);
-          core
-          /* ɵɵproperty */
-          .Q6J("href", post_r42.url, core
-          /* ɵɵsanitizeUrl */
-          .LSH);
-          core
-          /* ɵɵadvance */
-          .xp6(1);
-          core
-          /* ɵɵproperty */
-          .Q6J("src", post_r42.mediaUrl, core
-          /* ɵɵsanitizeUrl */
-          .LSH);
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵtextInterpolate1 */
-          .hij(" ", post_r42.text, " ");
-        }
-      }
-
-      function ImageFeedComponent_mat_tab_group_20_ng_template_9_div_3_div_2_div_8_Template(rf, ctx) {
-        if (rf & 1) {
-          core
-          /* ɵɵelementStart */
-          .TgZ(0, "div", 52);
-          core
-          /* ɵɵelementStart */
-          .TgZ(1, "a", 35);
-          core
-          /* ɵɵelementStart */
-          .TgZ(2, "div");
-
-          core
-          /* ɵɵelement */
-          ._UZ(3, "img", 53);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(4, "div", 54);
-
-          core
-          /* ɵɵtext */
-          ._uU(5);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-        }
-
-        if (rf & 2) {
-          var post_r42 = core
-          /* ɵɵnextContext */
-          .oxw().$implicit;
-          core
-          /* ɵɵadvance */
-          .xp6(1);
-          core
-          /* ɵɵproperty */
-          .Q6J("href", post_r42.url, core
-          /* ɵɵsanitizeUrl */
-          .LSH);
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵproperty */
-          .Q6J("src", post_r42.userPicture, core
-          /* ɵɵsanitizeUrl */
-          .LSH);
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵtextInterpolate1 */
-          .hij(" ", post_r42.text, " ");
         }
       }
 
-      function ImageFeedComponent_mat_tab_group_20_ng_template_9_div_3_div_2_Template(rf, ctx) {
+      function ImageFeedComponent_mat_tab_group_20_ng_template_9_div_0_div_2_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 31);
+          .TgZ(0, "div", 32);
           core
           /* ɵɵelementStart */
-          .TgZ(1, "div", 41);
-
-          core
-          /* ɵɵtext */
-          ._uU(2);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
+          .TgZ(1, "div", 51);
           core
           /* ɵɵelementStart */
-          .TgZ(3, "div", 47);
+          .TgZ(2, "div", 4);
+          core
+          /* ɵɵelementStart */
+          .TgZ(3, "div", 52);
 
           core
           /* ɵɵtext */
@@ -84469,7 +84688,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(5, "div", 48);
+          .TgZ(5, "div", 53);
 
           core
           /* ɵɵtext */
@@ -84479,972 +84698,44 @@
           /* ɵɵelementEnd */
           .qZA();
           core
-          /* ɵɵtemplate */
-          .YNc(7, ImageFeedComponent_mat_tab_group_20_ng_template_9_div_3_div_2_div_7_Template, 5, 3, "div", 49);
+          /* ɵɵelementStart */
+          .TgZ(7, "div", 52);
+
           core
-          /* ɵɵtemplate */
-          .YNc(8, ImageFeedComponent_mat_tab_group_20_ng_template_9_div_3_div_2_div_8_Template, 6, 3, "div", 50);
+          /* ɵɵtext */
+          ._uU(8);
+
           core
           /* ɵɵelementEnd */
           .qZA();
-        }
-
-        if (rf & 2) {
-          var post_r42 = ctx.$implicit;
           core
-          /* ɵɵadvance */
-          .xp6(2);
+          /* ɵɵelementEnd */
+          .qZA();
           core
-          /* ɵɵtextInterpolate1 */
-          .hij(" ", post_r42.username, " ");
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵtextInterpolate1 */
-          .hij(" \uD83E\uDDE1", post_r42.favoriteCount, " ");
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵtextInterpolate1 */
-          .hij(" \u21D5", post_r42.retweetCount, " ");
-          core
-          /* ɵɵadvance */
-          .xp6(1);
-          core
-          /* ɵɵproperty */
-          .Q6J("ngIf", post_r42.mediaUrl != null);
-          core
-          /* ɵɵadvance */
-          .xp6(1);
-          core
-          /* ɵɵproperty */
-          .Q6J("ngIf", post_r42.mediaUrl == null);
-        }
-      }
-
-      function ImageFeedComponent_mat_tab_group_20_ng_template_9_div_3_div_4_div_7_a_1_Template(rf, ctx) {
-        if (rf & 1) {
+          /* ɵɵelementEnd */
+          .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(0, "a", 35);
+          .TgZ(9, "a", 37);
 
           core
           /* ɵɵelement */
-          ._UZ(1, "img", 51);
+          ._UZ(10, "img", 54);
 
           core
           /* ɵɵelementEnd */
           .qZA();
-        }
-
-        if (rf & 2) {
-          var post_r47 = core
-          /* ɵɵnextContext */
-          .oxw(2).$implicit;
-          core
-          /* ɵɵproperty */
-          .Q6J("href", post_r47.url, core
-          /* ɵɵsanitizeUrl */
-          .LSH);
-          core
-          /* ɵɵadvance */
-          .xp6(1);
-          core
-          /* ɵɵproperty */
-          .Q6J("src", post_r47.mediaUrl, core
-          /* ɵɵsanitizeUrl */
-          .LSH);
-        }
-      }
-
-      function ImageFeedComponent_mat_tab_group_20_ng_template_9_div_3_div_4_div_7_Template(rf, ctx) {
-        if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 42);
-          core
-          /* ɵɵtemplate */
-          .YNc(1, ImageFeedComponent_mat_tab_group_20_ng_template_9_div_3_div_4_div_7_a_1_Template, 2, 2, "a", 55);
-          core
-          /* ɵɵelementStart */
-          .TgZ(2, "div", 37);
+          .TgZ(11, "div", 39);
 
           core
           /* ɵɵtext */
-          ._uU(3);
+          ._uU(12);
 
           core
           /* ɵɵelementEnd */
           .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-        }
-
-        if (rf & 2) {
-          var post_r47 = core
-          /* ɵɵnextContext */
-          .oxw().$implicit;
-          core
-          /* ɵɵadvance */
-          .xp6(1);
-          core
-          /* ɵɵproperty */
-          .Q6J("ngIf", post_r47.mediaUrl != null);
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵtextInterpolate1 */
-          .hij(" ", post_r47.text, " ");
-        }
-      }
-
-      function ImageFeedComponent_mat_tab_group_20_ng_template_9_div_3_div_4_div_8_Template(rf, ctx) {
-        if (rf & 1) {
-          core
-          /* ɵɵelementStart */
-          .TgZ(0, "div", 52);
-          core
-          /* ɵɵelementStart */
-          .TgZ(1, "a", 35);
-          core
-          /* ɵɵelementStart */
-          .TgZ(2, "div", 56);
-
-          core
-          /* ɵɵelement */
-          ._UZ(3, "img", 53);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(4, "div", 54);
-
-          core
-          /* ɵɵtext */
-          ._uU(5);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-        }
-
-        if (rf & 2) {
-          var post_r47 = core
-          /* ɵɵnextContext */
-          .oxw().$implicit;
-          core
-          /* ɵɵadvance */
-          .xp6(1);
-          core
-          /* ɵɵproperty */
-          .Q6J("href", post_r47.url, core
-          /* ɵɵsanitizeUrl */
-          .LSH);
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵproperty */
-          .Q6J("src", post_r47.userPicture, core
-          /* ɵɵsanitizeUrl */
-          .LSH);
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵtextInterpolate1 */
-          .hij(" ", post_r47.text, " ");
-        }
-      }
-
-      function ImageFeedComponent_mat_tab_group_20_ng_template_9_div_3_div_4_Template(rf, ctx) {
-        if (rf & 1) {
-          core
-          /* ɵɵelementStart */
-          .TgZ(0, "div", 31);
-          core
-          /* ɵɵelementStart */
-          .TgZ(1, "div", 41);
-
-          core
-          /* ɵɵtext */
-          ._uU(2);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(3, "div", 47);
-
-          core
-          /* ɵɵtext */
-          ._uU(4);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(5, "div", 48);
-
-          core
-          /* ɵɵtext */
-          ._uU(6);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵtemplate */
-          .YNc(7, ImageFeedComponent_mat_tab_group_20_ng_template_9_div_3_div_4_div_7_Template, 4, 2, "div", 49);
-          core
-          /* ɵɵtemplate */
-          .YNc(8, ImageFeedComponent_mat_tab_group_20_ng_template_9_div_3_div_4_div_8_Template, 6, 3, "div", 50);
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-        }
-
-        if (rf & 2) {
-          var post_r47 = ctx.$implicit;
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵtextInterpolate1 */
-          .hij(" ", post_r47.username, " ");
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵtextInterpolate1 */
-          .hij(" \uD83E\uDDE1", post_r47.favoriteCount, " ");
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵtextInterpolate1 */
-          .hij(" \u21D5", post_r47.retweetCount, " ");
-          core
-          /* ɵɵadvance */
-          .xp6(1);
-          core
-          /* ɵɵproperty */
-          .Q6J("ngIf", post_r47.mediaUrl != null);
-          core
-          /* ɵɵadvance */
-          .xp6(1);
-          core
-          /* ɵɵproperty */
-          .Q6J("ngIf", post_r47.mediaUrl == null);
-        }
-      }
-
-      function ImageFeedComponent_mat_tab_group_20_ng_template_9_div_3_div_6_div_7_a_1_Template(rf, ctx) {
-        if (rf & 1) {
-          core
-          /* ɵɵelementStart */
-          .TgZ(0, "a", 35);
-
-          core
-          /* ɵɵelement */
-          ._UZ(1, "img", 51);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-        }
-
-        if (rf & 2) {
-          var post_r54 = core
-          /* ɵɵnextContext */
-          .oxw(2).$implicit;
-          core
-          /* ɵɵproperty */
-          .Q6J("href", post_r54.url, core
-          /* ɵɵsanitizeUrl */
-          .LSH);
-          core
-          /* ɵɵadvance */
-          .xp6(1);
-          core
-          /* ɵɵproperty */
-          .Q6J("src", post_r54.mediaUrl, core
-          /* ɵɵsanitizeUrl */
-          .LSH);
-        }
-      }
-
-      function ImageFeedComponent_mat_tab_group_20_ng_template_9_div_3_div_6_div_7_Template(rf, ctx) {
-        if (rf & 1) {
-          core
-          /* ɵɵelementStart */
-          .TgZ(0, "div", 42);
-          core
-          /* ɵɵtemplate */
-          .YNc(1, ImageFeedComponent_mat_tab_group_20_ng_template_9_div_3_div_6_div_7_a_1_Template, 2, 2, "a", 55);
-          core
-          /* ɵɵelementStart */
-          .TgZ(2, "div", 37);
-
-          core
-          /* ɵɵtext */
-          ._uU(3);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-        }
-
-        if (rf & 2) {
-          var post_r54 = core
-          /* ɵɵnextContext */
-          .oxw().$implicit;
-          core
-          /* ɵɵadvance */
-          .xp6(1);
-          core
-          /* ɵɵproperty */
-          .Q6J("ngIf", post_r54.mediaUrl != null);
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵtextInterpolate1 */
-          .hij(" ", post_r54.text, " ");
-        }
-      }
-
-      function ImageFeedComponent_mat_tab_group_20_ng_template_9_div_3_div_6_div_8_Template(rf, ctx) {
-        if (rf & 1) {
-          core
-          /* ɵɵelementStart */
-          .TgZ(0, "div", 52);
-          core
-          /* ɵɵelementStart */
-          .TgZ(1, "a", 35);
-          core
-          /* ɵɵelementStart */
-          .TgZ(2, "div", 56);
-
-          core
-          /* ɵɵelement */
-          ._UZ(3, "img", 53);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(4, "div", 54);
-
-          core
-          /* ɵɵtext */
-          ._uU(5);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-        }
-
-        if (rf & 2) {
-          var post_r54 = core
-          /* ɵɵnextContext */
-          .oxw().$implicit;
-          core
-          /* ɵɵadvance */
-          .xp6(1);
-          core
-          /* ɵɵproperty */
-          .Q6J("href", post_r54.url, core
-          /* ɵɵsanitizeUrl */
-          .LSH);
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵproperty */
-          .Q6J("src", post_r54.userPicture, core
-          /* ɵɵsanitizeUrl */
-          .LSH);
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵtextInterpolate1 */
-          .hij(" ", post_r54.text, " ");
-        }
-      }
-
-      function ImageFeedComponent_mat_tab_group_20_ng_template_9_div_3_div_6_Template(rf, ctx) {
-        if (rf & 1) {
-          core
-          /* ɵɵelementStart */
-          .TgZ(0, "div", 31);
-          core
-          /* ɵɵelementStart */
-          .TgZ(1, "div", 41);
-
-          core
-          /* ɵɵtext */
-          ._uU(2);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(3, "div", 47);
-
-          core
-          /* ɵɵtext */
-          ._uU(4);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(5, "div", 48);
-
-          core
-          /* ɵɵtext */
-          ._uU(6);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵtemplate */
-          .YNc(7, ImageFeedComponent_mat_tab_group_20_ng_template_9_div_3_div_6_div_7_Template, 4, 2, "div", 49);
-          core
-          /* ɵɵtemplate */
-          .YNc(8, ImageFeedComponent_mat_tab_group_20_ng_template_9_div_3_div_6_div_8_Template, 6, 3, "div", 50);
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-        }
-
-        if (rf & 2) {
-          var post_r54 = ctx.$implicit;
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵtextInterpolate1 */
-          .hij(" ", post_r54.username, " ");
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵtextInterpolate1 */
-          .hij(" \uD83E\uDDE1", post_r54.favoriteCount, " ");
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵtextInterpolate1 */
-          .hij(" \u21D5", post_r54.retweetCount, " ");
-          core
-          /* ɵɵadvance */
-          .xp6(1);
-          core
-          /* ɵɵproperty */
-          .Q6J("ngIf", post_r54.mediaUrl != null);
-          core
-          /* ɵɵadvance */
-          .xp6(1);
-          core
-          /* ɵɵproperty */
-          .Q6J("ngIf", post_r54.mediaUrl == null);
-        }
-      }
-
-      function ImageFeedComponent_mat_tab_group_20_ng_template_9_div_3_Template(rf, ctx) {
-        if (rf & 1) {
-          core
-          /* ɵɵelementStart */
-          .TgZ(0, "div", 4);
-          core
-          /* ɵɵelementStart */
-          .TgZ(1, "div", 27);
-          core
-          /* ɵɵtemplate */
-          .YNc(2, ImageFeedComponent_mat_tab_group_20_ng_template_9_div_3_div_2_Template, 9, 5, "div", 28);
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(3, "div", 29);
-          core
-          /* ɵɵtemplate */
-          .YNc(4, ImageFeedComponent_mat_tab_group_20_ng_template_9_div_3_div_4_Template, 9, 5, "div", 28);
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(5, "div", 30);
-          core
-          /* ɵɵtemplate */
-          .YNc(6, ImageFeedComponent_mat_tab_group_20_ng_template_9_div_3_div_6_Template, 9, 5, "div", 28);
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-        }
-
-        if (rf & 2) {
-          var ctx_r37 = core
-          /* ɵɵnextContext */
-          .oxw(3);
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵproperty */
-          .Q6J("ngForOf", ctx_r37.twitterPosts.first);
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵproperty */
-          .Q6J("ngForOf", ctx_r37.twitterPosts.second);
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵproperty */
-          .Q6J("ngForOf", ctx_r37.twitterPosts.third);
-        }
-      }
-
-      function ImageFeedComponent_mat_tab_group_20_ng_template_9_div_4_div_2_div_7_Template(rf, ctx) {
-        if (rf & 1) {
-          core
-          /* ɵɵelementStart */
-          .TgZ(0, "div", 42);
-          core
-          /* ɵɵelementStart */
-          .TgZ(1, "a", 35);
-
-          core
-          /* ɵɵelement */
-          ._UZ(2, "img", 51);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(3, "div", 37);
-
-          core
-          /* ɵɵtext */
-          ._uU(4);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-        }
-
-        if (rf & 2) {
-          var post_r63 = core
-          /* ɵɵnextContext */
-          .oxw().$implicit;
-          core
-          /* ɵɵadvance */
-          .xp6(1);
-          core
-          /* ɵɵproperty */
-          .Q6J("href", post_r63.url, core
-          /* ɵɵsanitizeUrl */
-          .LSH);
-          core
-          /* ɵɵadvance */
-          .xp6(1);
-          core
-          /* ɵɵproperty */
-          .Q6J("src", post_r63.mediaUrl, core
-          /* ɵɵsanitizeUrl */
-          .LSH);
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵtextInterpolate1 */
-          .hij(" ", post_r63.text, " ");
-        }
-      }
-
-      function ImageFeedComponent_mat_tab_group_20_ng_template_9_div_4_div_2_div_8_Template(rf, ctx) {
-        if (rf & 1) {
-          core
-          /* ɵɵelementStart */
-          .TgZ(0, "div", 52);
-          core
-          /* ɵɵelementStart */
-          .TgZ(1, "a", 35);
-          core
-          /* ɵɵelementStart */
-          .TgZ(2, "div");
-
-          core
-          /* ɵɵelement */
-          ._UZ(3, "img", 53);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(4, "div", 54);
-
-          core
-          /* ɵɵtext */
-          ._uU(5);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-        }
-
-        if (rf & 2) {
-          var post_r63 = core
-          /* ɵɵnextContext */
-          .oxw().$implicit;
-          core
-          /* ɵɵadvance */
-          .xp6(1);
-          core
-          /* ɵɵproperty */
-          .Q6J("href", post_r63.url, core
-          /* ɵɵsanitizeUrl */
-          .LSH);
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵproperty */
-          .Q6J("src", post_r63.userPicture, core
-          /* ɵɵsanitizeUrl */
-          .LSH);
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵtextInterpolate1 */
-          .hij(" ", post_r63.text, " ");
-        }
-      }
-
-      function ImageFeedComponent_mat_tab_group_20_ng_template_9_div_4_div_2_Template(rf, ctx) {
-        if (rf & 1) {
-          core
-          /* ɵɵelementStart */
-          .TgZ(0, "div", 31);
-          core
-          /* ɵɵelementStart */
-          .TgZ(1, "div", 41);
-
-          core
-          /* ɵɵtext */
-          ._uU(2);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(3, "div", 47);
-
-          core
-          /* ɵɵtext */
-          ._uU(4);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(5, "div", 48);
-
-          core
-          /* ɵɵtext */
-          ._uU(6);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵtemplate */
-          .YNc(7, ImageFeedComponent_mat_tab_group_20_ng_template_9_div_4_div_2_div_7_Template, 5, 3, "div", 49);
-          core
-          /* ɵɵtemplate */
-          .YNc(8, ImageFeedComponent_mat_tab_group_20_ng_template_9_div_4_div_2_div_8_Template, 6, 3, "div", 50);
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-        }
-
-        if (rf & 2) {
-          var post_r63 = ctx.$implicit;
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵtextInterpolate1 */
-          .hij(" ", post_r63.username, " ");
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵtextInterpolate1 */
-          .hij(" \uD83E\uDDE1", post_r63.favoriteCount, " ");
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵtextInterpolate1 */
-          .hij(" \u21D5", post_r63.retweetCount, " ");
-          core
-          /* ɵɵadvance */
-          .xp6(1);
-          core
-          /* ɵɵproperty */
-          .Q6J("ngIf", post_r63.mediaUrl != null);
-          core
-          /* ɵɵadvance */
-          .xp6(1);
-          core
-          /* ɵɵproperty */
-          .Q6J("ngIf", post_r63.mediaUrl == null);
-        }
-      }
-
-      function ImageFeedComponent_mat_tab_group_20_ng_template_9_div_4_div_4_div_7_a_1_Template(rf, ctx) {
-        if (rf & 1) {
-          core
-          /* ɵɵelementStart */
-          .TgZ(0, "a", 35);
-
-          core
-          /* ɵɵelement */
-          ._UZ(1, "img", 51);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-        }
-
-        if (rf & 2) {
-          var post_r68 = core
-          /* ɵɵnextContext */
-          .oxw(2).$implicit;
-          core
-          /* ɵɵproperty */
-          .Q6J("href", post_r68.url, core
-          /* ɵɵsanitizeUrl */
-          .LSH);
-          core
-          /* ɵɵadvance */
-          .xp6(1);
-          core
-          /* ɵɵproperty */
-          .Q6J("src", post_r68.mediaUrl, core
-          /* ɵɵsanitizeUrl */
-          .LSH);
-        }
-      }
-
-      function ImageFeedComponent_mat_tab_group_20_ng_template_9_div_4_div_4_div_7_Template(rf, ctx) {
-        if (rf & 1) {
-          core
-          /* ɵɵelementStart */
-          .TgZ(0, "div", 42);
-          core
-          /* ɵɵtemplate */
-          .YNc(1, ImageFeedComponent_mat_tab_group_20_ng_template_9_div_4_div_4_div_7_a_1_Template, 2, 2, "a", 55);
-          core
-          /* ɵɵelementStart */
-          .TgZ(2, "div", 37);
-
-          core
-          /* ɵɵtext */
-          ._uU(3);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-        }
-
-        if (rf & 2) {
-          var post_r68 = core
-          /* ɵɵnextContext */
-          .oxw().$implicit;
-          core
-          /* ɵɵadvance */
-          .xp6(1);
-          core
-          /* ɵɵproperty */
-          .Q6J("ngIf", post_r68.mediaUrl != null);
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵtextInterpolate1 */
-          .hij(" ", post_r68.text, " ");
-        }
-      }
-
-      function ImageFeedComponent_mat_tab_group_20_ng_template_9_div_4_div_4_div_8_Template(rf, ctx) {
-        if (rf & 1) {
-          core
-          /* ɵɵelementStart */
-          .TgZ(0, "div", 52);
-          core
-          /* ɵɵelementStart */
-          .TgZ(1, "a", 35);
-          core
-          /* ɵɵelementStart */
-          .TgZ(2, "div", 56);
-
-          core
-          /* ɵɵelement */
-          ._UZ(3, "img", 53);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(4, "div", 54);
-
-          core
-          /* ɵɵtext */
-          ._uU(5);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-        }
-
-        if (rf & 2) {
-          var post_r68 = core
-          /* ɵɵnextContext */
-          .oxw().$implicit;
-          core
-          /* ɵɵadvance */
-          .xp6(1);
-          core
-          /* ɵɵproperty */
-          .Q6J("href", post_r68.url, core
-          /* ɵɵsanitizeUrl */
-          .LSH);
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵproperty */
-          .Q6J("src", post_r68.userPicture, core
-          /* ɵɵsanitizeUrl */
-          .LSH);
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵtextInterpolate1 */
-          .hij(" ", post_r68.text, " ");
-        }
-      }
-
-      function ImageFeedComponent_mat_tab_group_20_ng_template_9_div_4_div_4_Template(rf, ctx) {
-        if (rf & 1) {
-          core
-          /* ɵɵelementStart */
-          .TgZ(0, "div", 31);
-          core
-          /* ɵɵelementStart */
-          .TgZ(1, "div", 41);
-
-          core
-          /* ɵɵtext */
-          ._uU(2);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(3, "div", 47);
-
-          core
-          /* ɵɵtext */
-          ._uU(4);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(5, "div", 48);
-
-          core
-          /* ɵɵtext */
-          ._uU(6);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵtemplate */
-          .YNc(7, ImageFeedComponent_mat_tab_group_20_ng_template_9_div_4_div_4_div_7_Template, 4, 2, "div", 49);
-          core
-          /* ɵɵtemplate */
-          .YNc(8, ImageFeedComponent_mat_tab_group_20_ng_template_9_div_4_div_4_div_8_Template, 6, 3, "div", 50);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -85452,9 +84743,12 @@
 
         if (rf & 2) {
           var post_r68 = ctx.$implicit;
+          var ctx_r65 = core
+          /* ɵɵnextContext */
+          .oxw(4);
           core
           /* ɵɵadvance */
-          .xp6(2);
+          .xp6(4);
           core
           /* ɵɵtextInterpolate1 */
           .hij(" ", post_r68.username, " ");
@@ -85463,48 +84757,107 @@
           .xp6(2);
           core
           /* ɵɵtextInterpolate1 */
-          .hij(" \uD83E\uDDE1", post_r68.favoriteCount, " ");
+          .hij(" \uD83E\uDDE1", post_r68.likes, " ");
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate1 */
-          .hij(" \u21D5", post_r68.retweetCount, " ");
+          .hij(" ", post_r68.location, "\u200B ");
           core
           /* ɵɵadvance */
           .xp6(1);
           core
           /* ɵɵproperty */
-          .Q6J("ngIf", post_r68.mediaUrl != null);
+          .Q6J("href", ctx_r65.getInstagramUrl(post_r68.code), core
+          /* ɵɵsanitizeUrl */
+          .LSH);
           core
           /* ɵɵadvance */
           .xp6(1);
           core
           /* ɵɵproperty */
-          .Q6J("ngIf", post_r68.mediaUrl == null);
+          .Q6J("src", ctx_r65.getInstagramImageUrl(post_r68.code), core
+          /* ɵɵsanitizeUrl */
+          .LSH);
+          core
+          /* ɵɵadvance */
+          .xp6(2);
+          core
+          /* ɵɵtextInterpolate1 */
+          .hij(" ", post_r68.caption, " ");
         }
       }
 
-      function ImageFeedComponent_mat_tab_group_20_ng_template_9_div_4_Template(rf, ctx) {
+      function ImageFeedComponent_mat_tab_group_20_ng_template_9_div_0_div_4_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 38);
+          .TgZ(0, "div", 32);
           core
           /* ɵɵelementStart */
-          .TgZ(1, "div", 39);
+          .TgZ(1, "div", 51);
           core
-          /* ɵɵtemplate */
-          .YNc(2, ImageFeedComponent_mat_tab_group_20_ng_template_9_div_4_div_2_Template, 9, 5, "div", 28);
+          /* ɵɵelementStart */
+          .TgZ(2, "div", 4);
+          core
+          /* ɵɵelementStart */
+          .TgZ(3, "div", 52);
+
+          core
+          /* ɵɵtext */
+          ._uU(4);
+
           core
           /* ɵɵelementEnd */
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(3, "div", 39);
+          .TgZ(5, "div", 53);
+
           core
-          /* ɵɵtemplate */
-          .YNc(4, ImageFeedComponent_mat_tab_group_20_ng_template_9_div_4_div_4_Template, 9, 5, "div", 28);
+          /* ɵɵtext */
+          ._uU(6);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(7, "div", 52);
+
+          core
+          /* ɵɵtext */
+          ._uU(8);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(9, "a", 37);
+
+          core
+          /* ɵɵelement */
+          ._UZ(10, "img", 54);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(11, "div", 39);
+
+          core
+          /* ɵɵtext */
+          ._uU(12);
+
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -85514,7 +84867,217 @@
         }
 
         if (rf & 2) {
-          var ctx_r38 = core
+          var post_r69 = ctx.$implicit;
+          var ctx_r66 = core
+          /* ɵɵnextContext */
+          .oxw(4);
+          core
+          /* ɵɵadvance */
+          .xp6(4);
+          core
+          /* ɵɵtextInterpolate1 */
+          .hij(" ", post_r69.username, " ");
+          core
+          /* ɵɵadvance */
+          .xp6(2);
+          core
+          /* ɵɵtextInterpolate1 */
+          .hij(" \uD83E\uDDE1", post_r69.likes, " ");
+          core
+          /* ɵɵadvance */
+          .xp6(2);
+          core
+          /* ɵɵtextInterpolate1 */
+          .hij(" ", post_r69.location, "\u200B ");
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵproperty */
+          .Q6J("href", ctx_r66.getInstagramUrl(post_r69.code), core
+          /* ɵɵsanitizeUrl */
+          .LSH);
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵproperty */
+          .Q6J("src", ctx_r66.getInstagramImageUrl(post_r69.code), core
+          /* ɵɵsanitizeUrl */
+          .LSH);
+          core
+          /* ɵɵadvance */
+          .xp6(2);
+          core
+          /* ɵɵtextInterpolate1 */
+          .hij(" ", post_r69.caption, " ");
+        }
+      }
+
+      function ImageFeedComponent_mat_tab_group_20_ng_template_9_div_0_div_6_Template(rf, ctx) {
+        if (rf & 1) {
+          core
+          /* ɵɵelementStart */
+          .TgZ(0, "div", 32);
+          core
+          /* ɵɵelementStart */
+          .TgZ(1, "div", 51);
+          core
+          /* ɵɵelementStart */
+          .TgZ(2, "div", 4);
+          core
+          /* ɵɵelementStart */
+          .TgZ(3, "div", 52);
+
+          core
+          /* ɵɵtext */
+          ._uU(4);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(5, "div", 53);
+
+          core
+          /* ɵɵtext */
+          ._uU(6);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(7, "div", 52);
+
+          core
+          /* ɵɵtext */
+          ._uU(8);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(9, "a", 37);
+
+          core
+          /* ɵɵelement */
+          ._UZ(10, "img", 54);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(11, "div", 39);
+
+          core
+          /* ɵɵtext */
+          ._uU(12);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+        }
+
+        if (rf & 2) {
+          var post_r70 = ctx.$implicit;
+          var ctx_r67 = core
+          /* ɵɵnextContext */
+          .oxw(4);
+          core
+          /* ɵɵadvance */
+          .xp6(4);
+          core
+          /* ɵɵtextInterpolate1 */
+          .hij(" ", post_r70.username, " ");
+          core
+          /* ɵɵadvance */
+          .xp6(2);
+          core
+          /* ɵɵtextInterpolate1 */
+          .hij(" \uD83E\uDDE1", post_r70.likes, " ");
+          core
+          /* ɵɵadvance */
+          .xp6(2);
+          core
+          /* ɵɵtextInterpolate1 */
+          .hij(" ", post_r70.location, "\u200B ");
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵproperty */
+          .Q6J("href", ctx_r67.getInstagramUrl(post_r70.code), core
+          /* ɵɵsanitizeUrl */
+          .LSH);
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵproperty */
+          .Q6J("src", ctx_r67.getInstagramImageUrl(post_r70.code), core
+          /* ɵɵsanitizeUrl */
+          .LSH);
+          core
+          /* ɵɵadvance */
+          .xp6(2);
+          core
+          /* ɵɵtextInterpolate1 */
+          .hij(" ", post_r70.caption, " ");
+        }
+      }
+
+      function ImageFeedComponent_mat_tab_group_20_ng_template_9_div_0_Template(rf, ctx) {
+        if (rf & 1) {
+          core
+          /* ɵɵelementStart */
+          .TgZ(0, "div", 4);
+          core
+          /* ɵɵelementStart */
+          .TgZ(1, "div", 28);
+          core
+          /* ɵɵtemplate */
+          .YNc(2, ImageFeedComponent_mat_tab_group_20_ng_template_9_div_0_div_2_Template, 13, 6, "div", 29);
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(3, "div", 30);
+          core
+          /* ɵɵtemplate */
+          .YNc(4, ImageFeedComponent_mat_tab_group_20_ng_template_9_div_0_div_4_Template, 13, 6, "div", 29);
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(5, "div", 31);
+          core
+          /* ɵɵtemplate */
+          .YNc(6, ImageFeedComponent_mat_tab_group_20_ng_template_9_div_0_div_6_Template, 13, 6, "div", 29);
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+        }
+
+        if (rf & 2) {
+          var ctx_r63 = core
           /* ɵɵnextContext */
           .oxw(3);
           core
@@ -85522,50 +85085,333 @@
           .xp6(2);
           core
           /* ɵɵproperty */
-          .Q6J("ngForOf", ctx_r38.twitterPosts.first);
+          .Q6J("ngForOf", ctx_r63.instaPosts.first);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵproperty */
-          .Q6J("ngForOf", ctx_r38.twitterPosts.second);
+          .Q6J("ngForOf", ctx_r63.instaPosts.second);
+          core
+          /* ɵɵadvance */
+          .xp6(2);
+          core
+          /* ɵɵproperty */
+          .Q6J("ngForOf", ctx_r63.instaPosts.third);
+        }
+      }
+
+      function ImageFeedComponent_mat_tab_group_20_ng_template_9_div_1_div_2_Template(rf, ctx) {
+        if (rf & 1) {
+          core
+          /* ɵɵelementStart */
+          .TgZ(0, "div", 32);
+          core
+          /* ɵɵelementStart */
+          .TgZ(1, "div", 51);
+          core
+          /* ɵɵelementStart */
+          .TgZ(2, "div", 4);
+          core
+          /* ɵɵelementStart */
+          .TgZ(3, "div", 52);
+
+          core
+          /* ɵɵtext */
+          ._uU(4);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(5, "div", 53);
+
+          core
+          /* ɵɵtext */
+          ._uU(6);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(7, "div", 52);
+
+          core
+          /* ɵɵtext */
+          ._uU(8);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(9, "a", 37);
+
+          core
+          /* ɵɵelement */
+          ._UZ(10, "img", 54);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(11, "div", 39);
+
+          core
+          /* ɵɵtext */
+          ._uU(12);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+        }
+
+        if (rf & 2) {
+          var post_r73 = ctx.$implicit;
+          var ctx_r71 = core
+          /* ɵɵnextContext */
+          .oxw(4);
+          core
+          /* ɵɵadvance */
+          .xp6(4);
+          core
+          /* ɵɵtextInterpolate1 */
+          .hij(" ", post_r73.username, " ");
+          core
+          /* ɵɵadvance */
+          .xp6(2);
+          core
+          /* ɵɵtextInterpolate1 */
+          .hij(" \uD83E\uDDE1", post_r73.likes, " ");
+          core
+          /* ɵɵadvance */
+          .xp6(2);
+          core
+          /* ɵɵtextInterpolate1 */
+          .hij(" ", post_r73.location, "\u200B ");
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵproperty */
+          .Q6J("href", ctx_r71.getInstagramUrl(post_r73.code), core
+          /* ɵɵsanitizeUrl */
+          .LSH);
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵproperty */
+          .Q6J("src", ctx_r71.getInstagramImageUrl(post_r73.code), core
+          /* ɵɵsanitizeUrl */
+          .LSH);
+          core
+          /* ɵɵadvance */
+          .xp6(2);
+          core
+          /* ɵɵtextInterpolate1 */
+          .hij(" ", post_r73.caption, " ");
+        }
+      }
+
+      function ImageFeedComponent_mat_tab_group_20_ng_template_9_div_1_div_4_Template(rf, ctx) {
+        if (rf & 1) {
+          core
+          /* ɵɵelementStart */
+          .TgZ(0, "div", 32);
+          core
+          /* ɵɵelementStart */
+          .TgZ(1, "div", 51);
+          core
+          /* ɵɵelementStart */
+          .TgZ(2, "div", 4);
+          core
+          /* ɵɵelementStart */
+          .TgZ(3, "div", 52);
+
+          core
+          /* ɵɵtext */
+          ._uU(4);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(5, "div", 53);
+
+          core
+          /* ɵɵtext */
+          ._uU(6);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(7, "div", 52);
+
+          core
+          /* ɵɵtext */
+          ._uU(8);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(9, "a", 37);
+
+          core
+          /* ɵɵelement */
+          ._UZ(10, "img", 54);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(11, "div", 39);
+
+          core
+          /* ɵɵtext */
+          ._uU(12);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+        }
+
+        if (rf & 2) {
+          var post_r74 = ctx.$implicit;
+          var ctx_r72 = core
+          /* ɵɵnextContext */
+          .oxw(4);
+          core
+          /* ɵɵadvance */
+          .xp6(4);
+          core
+          /* ɵɵtextInterpolate1 */
+          .hij(" ", post_r74.username, " ");
+          core
+          /* ɵɵadvance */
+          .xp6(2);
+          core
+          /* ɵɵtextInterpolate1 */
+          .hij(" \uD83E\uDDE1", post_r74.likes, " ");
+          core
+          /* ɵɵadvance */
+          .xp6(2);
+          core
+          /* ɵɵtextInterpolate1 */
+          .hij(" ", post_r74.location, "\u200B ");
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵproperty */
+          .Q6J("href", ctx_r72.getInstagramUrl(post_r74.code), core
+          /* ɵɵsanitizeUrl */
+          .LSH);
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵproperty */
+          .Q6J("src", ctx_r72.getInstagramImageUrl(post_r74.code), core
+          /* ɵɵsanitizeUrl */
+          .LSH);
+          core
+          /* ɵɵadvance */
+          .xp6(2);
+          core
+          /* ɵɵtextInterpolate1 */
+          .hij(" ", post_r74.caption, " ");
+        }
+      }
+
+      function ImageFeedComponent_mat_tab_group_20_ng_template_9_div_1_Template(rf, ctx) {
+        if (rf & 1) {
+          core
+          /* ɵɵelementStart */
+          .TgZ(0, "div", 45);
+          core
+          /* ɵɵelementStart */
+          .TgZ(1, "div", 46);
+          core
+          /* ɵɵtemplate */
+          .YNc(2, ImageFeedComponent_mat_tab_group_20_ng_template_9_div_1_div_2_Template, 13, 6, "div", 29);
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(3, "div", 46);
+          core
+          /* ɵɵtemplate */
+          .YNc(4, ImageFeedComponent_mat_tab_group_20_ng_template_9_div_1_div_4_Template, 13, 6, "div", 29);
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+        }
+
+        if (rf & 2) {
+          var ctx_r64 = core
+          /* ɵɵnextContext */
+          .oxw(3);
+          core
+          /* ɵɵadvance */
+          .xp6(2);
+          core
+          /* ɵɵproperty */
+          .Q6J("ngForOf", ctx_r64.instaPosts.first);
+          core
+          /* ɵɵadvance */
+          .xp6(2);
+          core
+          /* ɵɵproperty */
+          .Q6J("ngForOf", ctx_r64.instaPosts.second);
         }
       }
 
       function ImageFeedComponent_mat_tab_group_20_ng_template_9_Template(rf, ctx) {
         if (rf & 1) {
           core
-          /* ɵɵelementStart */
-          .TgZ(0, "div", 46);
-          core
-          /* ɵɵelementStart */
-          .TgZ(1, "span");
-
-          core
-          /* ɵɵtext */
-          ._uU(2, "Earlier this year Twitter announced that access to their API will stop being free. This change finally caught up with this website. The feed is no longer being updated (unless I start paying subscription, which I won't). I will either find a way around or remove the twitter feed");
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
+          /* ɵɵtemplate */
+          .YNc(0, ImageFeedComponent_mat_tab_group_20_ng_template_9_div_0_Template, 7, 3, "div", 26);
           core
           /* ɵɵtemplate */
-          .YNc(3, ImageFeedComponent_mat_tab_group_20_ng_template_9_div_3_Template, 7, 3, "div", 25);
-          core
-          /* ɵɵtemplate */
-          .YNc(4, ImageFeedComponent_mat_tab_group_20_ng_template_9_div_4_Template, 5, 2, "div", 26);
+          .YNc(1, ImageFeedComponent_mat_tab_group_20_ng_template_9_div_1_Template, 5, 2, "div", 27);
         }
 
         if (rf & 2) {
           var ctx_r12 = core
           /* ɵɵnextContext */
           .oxw(2);
-          core
-          /* ɵɵadvance */
-          .xp6(3);
           core
           /* ɵɵproperty */
           .Q6J("ngIf", ctx_r12.feedColumnPreference == 3);
@@ -85611,7 +85457,7 @@
           .TgZ(1, "mat-tab", 19);
           core
           /* ɵɵtemplate */
-          .YNc(2, ImageFeedComponent_mat_tab_group_20_ng_template_2_Template, 1, 0, "ng-template", 20);
+          .YNc(2, ImageFeedComponent_mat_tab_group_20_ng_template_2_Template, 3, 0, "ng-template", 20);
           core
           /* ɵɵtemplate */
           .YNc(3, ImageFeedComponent_mat_tab_group_20_ng_template_3_Template, 2, 2, "ng-template", 21);
@@ -85623,7 +85469,7 @@
           .TgZ(4, "mat-tab", 22);
           core
           /* ɵɵtemplate */
-          .YNc(5, ImageFeedComponent_mat_tab_group_20_ng_template_5_Template, 1, 0, "ng-template", 20);
+          .YNc(5, ImageFeedComponent_mat_tab_group_20_ng_template_5_Template, 3, 0, "ng-template", 20);
           core
           /* ɵɵtemplate */
           .YNc(6, ImageFeedComponent_mat_tab_group_20_ng_template_6_Template, 2, 2, "ng-template", 21);
@@ -85635,10 +85481,10 @@
           .TgZ(7, "mat-tab", 23);
           core
           /* ɵɵtemplate */
-          .YNc(8, ImageFeedComponent_mat_tab_group_20_ng_template_8_Template, 1, 0, "ng-template", 20);
+          .YNc(8, ImageFeedComponent_mat_tab_group_20_ng_template_8_Template, 3, 0, "ng-template", 20);
           core
           /* ɵɵtemplate */
-          .YNc(9, ImageFeedComponent_mat_tab_group_20_ng_template_9_Template, 5, 2, "ng-template", 21);
+          .YNc(9, ImageFeedComponent_mat_tab_group_20_ng_template_9_Template, 2, 2, "ng-template", 21);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -85700,11 +85546,11 @@
         }, {
           key: "onScrollDown",
           value: function onScrollDown() {
-            if (this.selectedTab === 0) {
+            if (this.selectedTab === 2) {
               this.onInstagramScrollDown();
             }
 
-            if (this.selectedTab === 2) {
+            if (this.selectedTab === 0) {
               this.onTwitterScrollDown();
             }
 
@@ -85854,7 +85700,7 @@
         }, {
           key: "initialInstagramLoad",
           value: function initialInstagramLoad(newPosts) {
-            if (this.instaPosts.first.length === 0 && this.selectedTab === 0) {
+            if (this.instaPosts.first.length === 0 && this.selectedTab === 2) {
               this.slowlyAddInstaPosts(newPosts);
             } else {
               this.instaPostsInitial = newPosts;
@@ -85902,7 +85748,7 @@
         }, {
           key: "initialTwitterLoad",
           value: function initialTwitterLoad(newPosts) {
-            if (this.twitterPosts.first.length === 0 && this.selectedTab === 2) {
+            if (this.twitterPosts.first.length === 0 && this.selectedTab === 0) {
               this.slowlyAddTwitterPosts(newPosts);
             } else {
               this.twitterPostsInitial = newPosts;
@@ -86066,7 +85912,7 @@
         selectors: [["app-instagram-feed-cmp"]],
         decls: 21,
         vars: 5,
-        consts: [["infinite-scroll", "", 3, "infiniteScrollDistance", "scrolled"], ["autosize", ""], ["autosize", "", "mode", "side", "position", "end", 1, "example-sidenav", 3, "opened", "openedChange"], ["drawer", ""], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area", 3, "ngModel", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "active-color-button", 3, "click"], [4, "ngFor", "ngForOf"], [1, "fixed-button"], ["type", "fixed-plugin", "mat-button", "", 3, "click"], [1, "fa", "fa-commenting-o", "fa-2x"], [3, "selectedIndex", "selectedIndexChange", "selectedTabChange", 4, "ngIf"], [1, "basic-comment"], [1, "header-left", "hover-pointer", 3, "click"], [1, "header-right", "hover-pointer", 3, "click"], [1, "basic-comment-body"], [3, "selectedIndex", "selectedIndexChange", "selectedTabChange"], ["label", "Instagram"], ["mat-tab-label", ""], ["matTabContent", ""], ["label", "Reddit"], ["label", "Twitter"], ["src", "assets/img/instagram-icon.ico"], ["class", "row", 4, "ngIf"], ["class", "row container-fluid no-padding-no-margin", 4, "ngIf"], [1, "col-lg-4", "col-12", "no-right-padding"], ["class", "instagram-post-margin", 4, "ngFor", "ngForOf"], [1, "col-lg-4", "col-12", "no-padding"], [1, "col-lg-4", "col-12", "no-left-padding"], [1, "instagram-post-margin"], [1, "container-fluid"], [1, "col-lg-4", "col-4", "instagram-post-info", "single-line"], [1, "col-lg-4", "col-4", "instagram-post-info"], ["target", "_blank", 3, "href"], ["onerror", "this.src='assets/img/instagram-icon.png';", 1, "w-100", 3, "src"], [1, "instagram-post-info"], [1, "row", "container-fluid", "no-padding-no-margin"], [1, "col-lg-6", "col-12", "no-padding-always"], ["src", "assets/img/reddit-icon.png"], [1, "div-half", "twitter-post-info"], [1, "text-center"], ["onerror", "this.src='assets/img/reddit-icon.png';", 3, "src"], [1, "reddit-post-info"], ["src", "assets/img/twitter-icon.png"], [1, "p-3", "m-2", "card", "card-stats", "bg-danger", "border-solid"], [1, "div-quarter", "twitter-post-info"], [1, "div-quarter", "twitter-post-info", "single-line"], ["class", "text-center", 4, "ngIf"], ["class", "div-left-header bg-dark-blue", 4, "ngIf"], ["onerror", "this.src='assets/img/twitter-icon.png';", 3, "src"], [1, "div-left-header", "bg-dark-blue"], [3, "src"], [1, "bg-dark-blue", "tweet-without-image"], ["target", "_blank", 3, "href", 4, "ngIf"], [1, "aaa"]],
+        consts: [["infinite-scroll", "", 3, "infiniteScrollDistance", "scrolled"], ["autosize", ""], ["autosize", "", "mode", "side", "position", "end", 1, "example-sidenav", 3, "opened", "openedChange"], ["drawer", ""], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area", 3, "ngModel", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "active-color-button", 3, "click"], [4, "ngFor", "ngForOf"], [1, "fixed-button"], ["type", "fixed-plugin", "mat-button", "", 3, "click"], [1, "fa", "fa-commenting-o", "fa-2x"], [3, "selectedIndex", "selectedIndexChange", "selectedTabChange", 4, "ngIf"], [1, "basic-comment"], [1, "header-left", "hover-pointer", 3, "click"], [1, "header-right", "hover-pointer", 3, "click"], [1, "basic-comment-body"], [3, "selectedIndex", "selectedIndexChange", "selectedTabChange"], ["label", "Twitter"], ["mat-tab-label", ""], ["matTabContent", ""], ["label", "Reddit"], ["label", "Instagram"], ["src", "assets/img/twitter-icon.png"], [1, "pl-2"], ["class", "row", 4, "ngIf"], ["class", "row container-fluid no-padding-no-margin", 4, "ngIf"], [1, "col-lg-4", "col-12", "no-right-padding"], ["class", "instagram-post-margin", 4, "ngFor", "ngForOf"], [1, "col-lg-4", "col-12", "no-padding"], [1, "col-lg-4", "col-12", "no-left-padding"], [1, "instagram-post-margin"], [1, "div-half", "twitter-post-info"], ["class", "text-center", 4, "ngIf"], ["class", "div-left-header bg-dark-blue", 4, "ngIf"], [1, "text-center"], ["target", "_blank", 3, "href"], ["onerror", "this.src='assets/img/twitter-icon.png';", 3, "src"], [1, "instagram-post-info"], [1, "div-left-header", "bg-dark-blue"], [3, "src"], [1, "bg-dark-blue", "tweet-without-image"], ["target", "_blank", 3, "href", 4, "ngIf"], [1, "aaa"], [1, "row", "container-fluid", "no-padding-no-margin"], [1, "col-lg-6", "col-12", "no-padding-always"], ["src", "assets/img/reddit-icon.png"], ["onerror", "this.src='assets/img/reddit-icon.png';", 3, "src"], [1, "reddit-post-info"], ["src", "assets/img/instagram-icon.ico"], [1, "container-fluid"], [1, "col-lg-4", "col-4", "instagram-post-info", "single-line"], [1, "col-lg-4", "col-4", "instagram-post-info"], ["onerror", "this.src='assets/img/instagram-icon.png';", 1, "w-100", 3, "src"]],
         template: function ImageFeedComponent_Template(rf, ctx) {
           if (rf & 1) {
             var _r78 = core

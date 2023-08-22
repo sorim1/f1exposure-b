@@ -222,7 +222,6 @@ public class ClientServiceImpl implements ClientService {
 
     @Override
     public Boolean fetchTwitterPosts() throws Exception {
-        // return twitterService2.fetchTwitterPosts();
         return twitterService.fetchTwitterPosts();
     }
 
