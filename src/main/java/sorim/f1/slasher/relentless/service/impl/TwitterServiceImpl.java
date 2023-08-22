@@ -27,6 +27,7 @@ import twitter4j.v1.Status;
 
 import java.time.Instant;
 import java.util.*;
+import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.Collectors;
 
 @Slf4j
@@ -78,6 +79,7 @@ public class TwitterServiceImpl implements TwitterService {
                 log.info("spavam 2 minute");
                 Thread.sleep(2 * 60 * 1000);
             }
+            log.info("fetchTwitterPosts DONE");
             twitterFetchRunning = false;
         } else {
             log.info("twitterFetchRunning");
@@ -144,9 +146,10 @@ public class TwitterServiceImpl implements TwitterService {
         List<String> imageUrls = getImageUrlsFromRssDescription(item.getDescription().get());
         String url = getTwitterFromNitter(item.getGuid().get());
         String username = item.getChannel().getTitle().substring(item.getChannel().getTitle().indexOf("@"));
+        AtomicReference<Integer> counter = new AtomicReference<>(0);
         imageUrls.forEach(imageUrl -> {
             TwitterPost post = TwitterPost.builder()
-                    .id(id)
+                    .id(counter.get()-id)
                     .text(item.getTitle().get())
                     .url(url)
                     .source(1)
@@ -155,6 +158,7 @@ public class TwitterServiceImpl implements TwitterService {
                     .createdAt(date1)
                     .build();
             output.add(post);
+            counter.set(counter.get() + 1);
         });
         return output;
     }
@@ -168,8 +172,11 @@ public class TwitterServiceImpl implements TwitterService {
             String encodedString = input.substring(input.indexOf("pic/enc/") + 8);
             byte[] decodedBytes = Base64.getDecoder().decode(encodedString);
             String decodedString = new String(decodedBytes);
-            String output = "https://pbs.twimg.com/" + decodedString;
-            return output;
+            if(decodedString.contains("pbs.twimg.com")){
+                return decodedString;
+            } else {
+                return "https://pbs.twimg.com/" + decodedString;
+            }
         } else {
             return input;
         }
