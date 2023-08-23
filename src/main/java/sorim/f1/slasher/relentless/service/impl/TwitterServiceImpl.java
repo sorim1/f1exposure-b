@@ -38,6 +38,7 @@ public class TwitterServiceImpl implements TwitterService {
     private static final Map<String, TwitterPost> twitterPostsMap = new HashMap<>();
     private static List<TwitterPost> twitterPostsList = new ArrayList<>();
     private static Boolean twitterFetchRunning = false;
+    private static Date latestTweetDate;
     private final MainProperties properties;
     private final TwitterRepository twitterRepository;
     @Value("${twitter.accounts.list}")
@@ -66,29 +67,37 @@ public class TwitterServiceImpl implements TwitterService {
     }
 
     @Override
+    public Date getLatestTweetDate() {
+        return latestTweetDate;
+    }
+
+    @Override
     public Boolean fetchTwitterPosts() throws Exception {
         if (!twitterFetchRunning) {
             twitterFetchRunning = true;
-            List<String> allAccounts = generateFollowersList();
+            List<String> allAccounts = generateRssList();
             List<List<String>> smallerLists = ListUtils.partition(allAccounts, 3);
             for (List<String> urls : smallerLists) {
                 log.info("zovem 3");
                 List<Item> timeline = new RssReader().read(urls).sorted().collect(Collectors.toList());
                 List<TwitterPost> list = getListFromRssFeed(timeline);
                 twitterRepository.saveAll(list);
-                log.info("spavam 2 minute");
-                Thread.sleep(2 * 60 * 1000);
+                log.info("spavam 1 minutu");
+                Thread.sleep(60 * 1000);
             }
             log.info("fetchTwitterPosts DONE");
             twitterFetchRunning = false;
+            TwitterPost latest = twitterRepository.findFirstByOrderByCreatedAtDesc();
+            if(latest!=null){
+                latestTweetDate = latest.getCreatedAt();
+            }
         } else {
             log.info("twitterFetchRunning");
         }
         return twitterFetchRunning;
     }
 
-    private List<String> generateFollowersList() {
-        log.info("twitterAccountsForRss: " + twitterAccountsForRss);
+    private List<String> generateRssList() {
         List<String> accountNames = Arrays.asList(twitterAccountsForRss.toLowerCase().split(","));
         List<String> output = new ArrayList<>();
         accountNames.forEach(account -> {
@@ -172,8 +181,8 @@ public class TwitterServiceImpl implements TwitterService {
             String encodedString = input.substring(input.indexOf("pic/enc/") + 8);
             byte[] decodedBytes = Base64.getDecoder().decode(encodedString);
             String decodedString = new String(decodedBytes);
-            if(decodedString.contains("pbs.twimg.com")){
-                return decodedString;
+            if(decodedString.startsWith("pbs.twimg.com")){
+                return "https://" + decodedString;
             } else {
                 return "https://pbs.twimg.com/" + decodedString;
             }

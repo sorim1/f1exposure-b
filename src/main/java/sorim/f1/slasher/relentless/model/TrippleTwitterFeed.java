@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import sorim.f1.slasher.relentless.entities.TwitterPost;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Data
@@ -18,8 +19,9 @@ public class TrippleTwitterFeed {
     private List<TwitterPost> first = new ArrayList<>();
     private List<TwitterPost> second = new ArrayList<>();
     private List<TwitterPost> third = new ArrayList<>();
+    private Date latestTweetDate;
 
-    public TrippleTwitterFeed(Integer mode, List<TwitterPost> posts) {
+    public TrippleTwitterFeed(Integer mode, List<TwitterPost> posts, Date latestTweetDate) {
         if (mode == 2) {
             for (int i = 1; i < posts.size(); i += 2) {
                 first.add(posts.get(i - 1));
@@ -33,5 +35,6 @@ public class TrippleTwitterFeed {
                 third.add(posts.get(i));
             }
         }
+        this.latestTweetDate = latestTweetDate;
     }
 }

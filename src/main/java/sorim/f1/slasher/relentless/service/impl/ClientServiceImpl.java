@@ -58,7 +58,6 @@ public class ClientServiceImpl implements ClientService {
     private final NewsCommentRepository newsCommentRepository;
     private final InstagramService instagramService;
     private final TwitterService twitterService;
-    // private final TwitterServiceMarkTwo twitterService2;
 
     private final TwitchService twitchService;
     private final RedditService redditService;
@@ -178,7 +177,8 @@ public class ClientServiceImpl implements ClientService {
 
     @Override
     public TrippleTwitterFeed getTwitterPosts(Integer mode, Integer page) {
-        return new TrippleTwitterFeed(mode, twitterService.getTwitterPosts(page));
+        Date latestTweetDate = twitterService.getLatestTweetDate();
+        return new TrippleTwitterFeed(mode, twitterService.getTwitterPosts(page), latestTweetDate);
     }
 
     @Override
@@ -553,9 +553,17 @@ public class ClientServiceImpl implements ClientService {
         sidebarData = SidebarData.builder()
                 .topNews(topNews)
                 .latestImagePost(instagramService.getLatestPost())
-                .exposedDriver(exposureService.getLatestRaceExposureWinner())
-                .randomArt(getRandomImgur())
+                //     .randomArt(getRandomImgur())
                 .build();
+        ZonedDateTime gmtZoned = ZonedDateTime.now(ZoneId.of("Europe/London"));
+        LocalDateTime gmtDateTime = gmtZoned.toLocalDateTime();
+        F1Calendar f1calendar = calendarRepository.findFirstByRaceBeforeOrderByRaceDesc(gmtDateTime);
+        if (f1calendar != null) {
+            Duration howMuchTimeSincePreviousRace = Duration.between(f1calendar.getRace(), gmtDateTime);
+            if (howMuchTimeSincePreviousRace.toDays() < 3) {
+                sidebarData.setExposedDriver(exposureService.getLatestRaceExposureWinner());
+            }
+        }
     }
 
     @Override

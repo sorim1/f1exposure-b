@@ -18,6 +18,7 @@ public interface TwitterRepository extends PagingAndSortingRepository<TwitterPos
     List<TwitterPost> findAllByOrderByCreatedAtDesc(Pageable pageable);
 
     TwitterPost findFirstByCreatedAtAfterOrderByRetweetCountDesc(Date yesterday);
+    TwitterPost findFirstByOrderByCreatedAtDesc();
 
 
     @Modifying
