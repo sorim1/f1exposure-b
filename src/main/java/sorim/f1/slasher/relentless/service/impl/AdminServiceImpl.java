@@ -86,7 +86,7 @@ public class AdminServiceImpl implements AdminService {
 
     @Override
     public void initialize() throws Exception {
-        refreshCalendarOfCurrentSeason(null);
+        //refreshCalendarOfCurrentSeason(null);
         ergastService.fetchCurrentDrivers();
         initializeStandings(true);
     }
