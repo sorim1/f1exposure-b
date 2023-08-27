@@ -321,7 +321,7 @@ public class AdminController {
     }
 
     @PostMapping("/updateJsonRepositoryTwo")
-    JsonRepositoryTwoModel addArtAlbum(@RequestBody JsonRepositoryTwoModel body) {
+    JsonRepositoryTwoModel updateJsonRepositoryTwo(@RequestBody JsonRepositoryTwoModel body) {
         return service.updateJsonRepositoryTwo(body);
     }
 

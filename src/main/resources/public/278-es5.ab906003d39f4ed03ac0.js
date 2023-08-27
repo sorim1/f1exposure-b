@@ -61236,11 +61236,6 @@
                 round++;
                 roundByRoundSeriesMap.get(scoreByRound[0]).push(scoreByRound[1]);
               });
-
-              while (round <= _this46.round) {
-                roundByRoundSeriesMap.get(round).push(0);
-                round++;
-              }
             });
             roundByRoundSeriesMap.forEach(function (value, name) {
               return roundByRound.push({
@@ -61519,16 +61514,17 @@
 
             this.restService.getExposureArchivedResults(year).subscribe({
               next: function next(data) {
-                console.log(data.json);
-                _this49.exposureArchiveData = data.json;
-                _this49.exposureArchiveDataCharts = {};
-                var exposureChampionshipData = JSON.parse(JSON.stringify(_this49.exposureArchiveData.exposureChampionshipData));
-                _this49.exposureArchiveDataCharts.exposureChampionshipDataSortedByMaxExpo = exposureChampionshipData.sort(sortByMaxExpoDesc);
-                var raceCount = _this49.exposureArchiveData.exposureRaces.length;
-                _this49.numericXaxisHistoric.max = raceCount;
-                _this49.numericXaxisHistoric.tickAmount = (raceCount + 1) / 2;
+                if (data != null) {
+                  _this49.exposureArchiveData = data.json;
+                  _this49.exposureArchiveDataCharts = {};
+                  var exposureChampionshipData = JSON.parse(JSON.stringify(_this49.exposureArchiveData.exposureChampionshipData));
+                  _this49.exposureArchiveDataCharts.exposureChampionshipDataSortedByMaxExpo = exposureChampionshipData.sort(sortByMaxExpoDesc);
+                  var raceCount = _this49.exposureArchiveData.exposureRaces.length;
+                  _this49.numericXaxisHistoric.max = raceCount;
+                  _this49.numericXaxisHistoric.tickAmount = (raceCount + 1) / 2;
 
-                _this49.setHistoricExposureChampionshipData();
+                  _this49.setHistoricExposureChampionshipData();
+                }
 
                 return data;
               }

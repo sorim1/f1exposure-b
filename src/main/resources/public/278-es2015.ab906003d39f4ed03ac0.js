@@ -44223,10 +44223,6 @@ class ExposedComponent {
                 round++;
                 roundByRoundSeriesMap.get(scoreByRound[0]).push(scoreByRound[1]);
             });
-            while (round <= this.round) {
-                roundByRoundSeriesMap.get(round).push(0);
-                round++;
-            }
         });
         roundByRoundSeriesMap.forEach((value, name) => roundByRound.push({
             name: name + '',
@@ -44493,15 +44489,16 @@ class ExposedComponent {
     getExposureArchivedResults(year) {
         this.restService.getExposureArchivedResults(year).subscribe({
             next: data => {
-                console.log(data.json);
-                this.exposureArchiveData = data.json;
-                this.exposureArchiveDataCharts = {};
-                let exposureChampionshipData = JSON.parse(JSON.stringify(this.exposureArchiveData.exposureChampionshipData));
-                this.exposureArchiveDataCharts.exposureChampionshipDataSortedByMaxExpo = exposureChampionshipData.sort(sortByMaxExpoDesc);
-                let raceCount = this.exposureArchiveData.exposureRaces.length;
-                this.numericXaxisHistoric.max = raceCount;
-                this.numericXaxisHistoric.tickAmount = (raceCount + 1) / 2;
-                this.setHistoricExposureChampionshipData();
+                if (data != null) {
+                    this.exposureArchiveData = data.json;
+                    this.exposureArchiveDataCharts = {};
+                    let exposureChampionshipData = JSON.parse(JSON.stringify(this.exposureArchiveData.exposureChampionshipData));
+                    this.exposureArchiveDataCharts.exposureChampionshipDataSortedByMaxExpo = exposureChampionshipData.sort(sortByMaxExpoDesc);
+                    let raceCount = this.exposureArchiveData.exposureRaces.length;
+                    this.numericXaxisHistoric.max = raceCount;
+                    this.numericXaxisHistoric.tickAmount = (raceCount + 1) / 2;
+                    this.setHistoricExposureChampionshipData();
+                }
                 return data;
             }
         });
