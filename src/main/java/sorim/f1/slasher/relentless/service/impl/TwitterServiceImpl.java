@@ -27,6 +27,8 @@ import twitter4j.v1.Status;
 
 import java.time.Instant;
 import java.util.*;
+import java.util.concurrent.ThreadLocalRandom;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.Collectors;
 
@@ -41,6 +43,11 @@ public class TwitterServiceImpl implements TwitterService {
     private static Date latestTweetDate;
     private final MainProperties properties;
     private final TwitterRepository twitterRepository;
+    private static List<String> nitterList = Arrays.asList("nitter.cz", "nitter.poast.org", "nitter.privacydev.net",
+            "nitter.nicfab.eu");
+
+    //nitter.privacydev.net nitter.nicfab.eu
+
     @Value("${twitter.accounts.list}")
     private String twitterAccountsForRss;
 
@@ -76,9 +83,10 @@ public class TwitterServiceImpl implements TwitterService {
         if (!twitterFetchRunning) {
             twitterFetchRunning = true;
             List<String> allAccounts = generateRssList();
-            List<List<String>> smallerLists = ListUtils.partition(allAccounts, 3);
+            List<List<String>> smallerLists = ListUtils.partition(allAccounts, 4);
             for (List<String> urls : smallerLists) {
-                log.info("zovem 3");
+                log.info("zovem 4");
+                log.info(urls.toString());
                 List<Item> timeline = new RssReader().read(urls).sorted().collect(Collectors.toList());
                 List<TwitterPost> list = getListFromRssFeed(timeline);
                 twitterRepository.saveAll(list);
@@ -98,10 +106,17 @@ public class TwitterServiceImpl implements TwitterService {
     }
 
     private List<String> generateRssList() {
+        int randomNum = ThreadLocalRandom.current().nextInt(0, 4);
+        AtomicInteger counter = new AtomicInteger(randomNum);
         List<String> accountNames = Arrays.asList(twitterAccountsForRss.toLowerCase().split(","));
         List<String> output = new ArrayList<>();
         accountNames.forEach(account -> {
-            String rssUrl = "https://nitter.cz/" + account + "/rss";
+            counter.set(counter.get()+1);
+            if(counter.get() > 3){
+                counter.set(0);
+            }
+            String nitterEndpoint = nitterList.get(counter.get());
+            String rssUrl = "https://" + nitterEndpoint + "/" + account + "/rss";
             output.add(rssUrl);
         });
         return output;
@@ -173,21 +188,31 @@ public class TwitterServiceImpl implements TwitterService {
     }
 
     private String getTwitterFromNitter(String input) {
-        return input.replace("nitter.cz", "twitter.com");
+        return input
+                .replace("nitter.cz", "twitter.com")
+                .replace("nitter.poast.org", "twitter.com")
+                .replace("nitter.privacydev.net", "twitter.com")
+                .replace("nitter.nicfab.eu", "twitter.com");
     }
 
     private String getImageFromNitter(String input) {
+        String imageUrl = input;
+        String imageUrl2 = input;
         if (input.contains("pic/enc/")) {
             String encodedString = input.substring(input.indexOf("pic/enc/") + 8);
             byte[] decodedBytes = Base64.getDecoder().decode(encodedString);
-            String decodedString = new String(decodedBytes);
-            if(decodedString.startsWith("pbs.twimg.com")){
-                return "https://" + decodedString;
-            } else {
-                return "https://pbs.twimg.com/" + decodedString;
-            }
-        } else {
+            imageUrl = new String(decodedBytes);
+        } else if(input.contains("nitter") && input.contains("/pic/")) {
+            String imageUrlRelative = input.substring(input.indexOf("/pic/") + 5);
+            imageUrl = imageUrlRelative.replace("%2F", "/");
+            imageUrl2 = imageUrlRelative.replaceAll("%2F", "/");
+        }
+        if(imageUrl.startsWith("pbs.twimg.com")){
+            return "https://" + imageUrl;
+        } else if(imageUrl.startsWith("http")) {
             return input;
+        } else {
+            return "https://pbs.twimg.com/" + imageUrl;
         }
     }
 
