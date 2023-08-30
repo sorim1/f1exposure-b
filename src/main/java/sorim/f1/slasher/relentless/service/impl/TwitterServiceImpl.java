@@ -82,8 +82,8 @@ public class TwitterServiceImpl implements TwitterService {
                 List<Item> timeline = new RssReader().read(urls).sorted().collect(Collectors.toList());
                 List<TwitterPost> list = getListFromRssFeed(timeline);
                 twitterRepository.saveAll(list);
-                log.info("spavam 1 minutu");
-                Thread.sleep(60 * 1000);
+                log.info("spavam 3 minute");
+                Thread.sleep(180 * 1000);
             }
             log.info("fetchTwitterPosts DONE");
             twitterFetchRunning = false;
