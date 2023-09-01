@@ -49,10 +49,11 @@ public class RedditServiceImpl implements RedditService {
     private static final String I_REDDIT = "i.redd.it";
     private static final String I_IMGUR = "i.imgur.com";
     private static final String TWITTER_URL = "twitter.com";
+    private static final String X_URL = "x.com";
     private static final String IMAGE_BASE_PATH = "/f1exposure/image/";
     private static final String NEWS_PREFIX = "NEWS_";
     private static final String FORMULA_DANK_NEW_POSTS = "https://reddit.com/r/formuladank/new/.json?limit=100";
-    private static final String TWITTER_FAVICON = "https://abs.twimg.com/favicons/twitter.ico";
+    private static final String TWITTER_FAVICON = "https://abs.twimg.com/favicons/twitter.3.ico";
     private static String lastNewPost = "";
     private static String lastNewF1PornPost = "";
     private final RedditRepository redditRepository;
@@ -310,7 +311,8 @@ public class RedditServiceImpl implements RedditService {
                 saveRedditOrImgurImageToRepository(post);
                 post.setIconUrl(FAVICON);
                 post.setStatus(4);
-            } else if (domainUrl.contains(TWITTER_URL)) {
+            } else if (domainUrl.contains(TWITTER_URL) || domainUrl.contains(X_URL)) {
+                post.setUrl(post.getUrl().replace(X_URL, TWITTER_URL));
                 post.setIconUrl(TWITTER_FAVICON);
                 post.setStatus(4);
             } else {

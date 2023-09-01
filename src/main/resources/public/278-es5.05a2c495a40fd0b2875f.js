@@ -90364,6 +90364,11 @@
           key: "getDomain",
           value: function getDomain() {
             var url = this.post.url;
+
+            if (url.indexOf('twitter') >= 0) {
+              return 'X.com';
+            }
+
             var start = 0;
 
             if (this.post.url.indexOf('//') > 0) {

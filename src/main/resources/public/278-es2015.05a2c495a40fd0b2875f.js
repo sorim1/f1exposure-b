@@ -55751,6 +55751,9 @@ class NewsComponent {
     }
     getDomain() {
         let url = this.post.url;
+        if (url.indexOf('twitter') >= 0) {
+            return 'X.com';
+        }
         let start = 0;
         if (this.post.url.indexOf('//') > 0) {
             start = this.post.url.indexOf('//') + 2;

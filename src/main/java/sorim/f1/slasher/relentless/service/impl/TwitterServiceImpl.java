@@ -43,10 +43,8 @@ public class TwitterServiceImpl implements TwitterService {
     private static Date latestTweetDate;
     private final MainProperties properties;
     private final TwitterRepository twitterRepository;
-    private static List<String> nitterList = Arrays.asList("nitter.cz", "nitter.poast.org", "nitter.privacydev.net",
-            "nitter.nicfab.eu");
-
-    //nitter.privacydev.net nitter.nicfab.eu
+    private static List<String> nitterList = Arrays.asList("nitter.cz", "nitter.poast.org", "nitter.nicfab.eu");
+    private static List<String> nitterListObsolete = Arrays.asList("nitter.privacydev.net");
 
     @Value("${twitter.accounts.list}")
     private String twitterAccountsForRss;
@@ -83,15 +81,13 @@ public class TwitterServiceImpl implements TwitterService {
         if (!twitterFetchRunning) {
             twitterFetchRunning = true;
             List<String> allAccounts = generateRssList();
-            List<List<String>> smallerLists = ListUtils.partition(allAccounts, 4);
+            List<List<String>> smallerLists = ListUtils.partition(allAccounts, 3);
+            log.info("zovem twitter RSS: " +  allAccounts.size());
             for (List<String> urls : smallerLists) {
-                log.info("zovem 4");
-                log.info(urls.toString());
                 List<Item> timeline = new RssReader().read(urls).sorted().collect(Collectors.toList());
                 List<TwitterPost> list = getListFromRssFeed(timeline);
                 twitterRepository.saveAll(list);
-                log.info("spavam 3 minute");
-                Thread.sleep(180 * 1000);
+                Thread.sleep(200 * 1000);
             }
             log.info("fetchTwitterPosts DONE");
             twitterFetchRunning = false;
@@ -106,13 +102,13 @@ public class TwitterServiceImpl implements TwitterService {
     }
 
     private List<String> generateRssList() {
-        int randomNum = ThreadLocalRandom.current().nextInt(0, 4);
+        int randomNum = ThreadLocalRandom.current().nextInt(0, 3);
         AtomicInteger counter = new AtomicInteger(randomNum);
         List<String> accountNames = Arrays.asList(twitterAccountsForRss.toLowerCase().split(","));
         List<String> output = new ArrayList<>();
         accountNames.forEach(account -> {
             counter.set(counter.get()+1);
-            if(counter.get() > 3){
+            if(counter.get() > 2){
                 counter.set(0);
             }
             String nitterEndpoint = nitterList.get(counter.get());
