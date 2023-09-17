@@ -31,6 +31,8 @@ public class RaceControlMessage {
     public String status;
     @JsonProperty("Sector")
     public Integer sector;
+    @JsonProperty("Mode")
+    public String mode;
     public String name;
 
 }

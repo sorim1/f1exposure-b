@@ -44223,6 +44223,10 @@ class ExposedComponent {
                 round++;
                 roundByRoundSeriesMap.get(scoreByRound[0]).push(scoreByRound[1]);
             });
+            while (round < this.round) {
+                roundByRoundSeriesMap.get(round).push(0);
+                round++;
+            }
         });
         roundByRoundSeriesMap.forEach((value, name) => roundByRound.push({
             name: name + '',
@@ -44332,12 +44336,22 @@ class ExposedComponent {
                 color: driverExposure.color
             });
             roundByRoundCategories.push(driverExposure.code);
+            let round = 1;
             driverExposure.scoresByRound.forEach((scoreByRound) => {
                 if (!roundByRoundSeriesMap.has(scoreByRound[0])) {
                     roundByRoundSeriesMap.set(scoreByRound[0], []);
                 }
+                while (round < scoreByRound[0]) {
+                    roundByRoundSeriesMap.get(round).push(0);
+                    round++;
+                }
+                round++;
                 roundByRoundSeriesMap.get(scoreByRound[0]).push(scoreByRound[1]);
             });
+            while (round <= this.exposureArchiveData.voters.length) {
+                roundByRoundSeriesMap.get(round).push(0);
+                round++;
+            }
         });
         roundByRoundSeriesMap.forEach((value, name) => roundByRound.push({
             name: name + '',
