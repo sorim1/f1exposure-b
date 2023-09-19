@@ -44223,9 +44223,11 @@ class ExposedComponent {
                 round++;
                 roundByRoundSeriesMap.get(scoreByRound[0]).push(scoreByRound[1]);
             });
-            while (round < this.round) {
-                roundByRoundSeriesMap.get(round).push(0);
-                round++;
+            if (round < this.round) {
+                while (round <= this.round) {
+                    roundByRoundSeriesMap.get(round).push(0);
+                    round++;
+                }
             }
         });
         roundByRoundSeriesMap.forEach((value, name) => roundByRound.push({
@@ -44351,6 +44353,12 @@ class ExposedComponent {
             while (round <= this.exposureArchiveData.voters.length) {
                 roundByRoundSeriesMap.get(round).push(0);
                 round++;
+            }
+            if (round < this.exposureArchiveData.voters.length) {
+                while (round <= this.exposureArchiveData.voters.length) {
+                    roundByRoundSeriesMap.get(round).push(0);
+                    round++;
+                }
             }
         });
         roundByRoundSeriesMap.forEach((value, name) => roundByRound.push({

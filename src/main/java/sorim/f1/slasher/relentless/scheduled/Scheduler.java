@@ -293,7 +293,7 @@ public class Scheduler {
     }
 
    // @Scheduled(cron = "0 0 1,8,10,12,14,16,18,20,22 * * *")
-    @Scheduled(cron = "0 0 7,10,13,16,23 * * *")
+    @Scheduled(cron = "0 0 7,11,15,20 * * *")
     void bihourlyJob() throws Exception {
         if (properties.getUrl().contains(F1EXPOSURE_COM)) {
             imageFeedJobWithoutInstagram();

@@ -61237,9 +61237,11 @@
                 roundByRoundSeriesMap.get(scoreByRound[0]).push(scoreByRound[1]);
               });
 
-              while (round < _this46.round) {
-                roundByRoundSeriesMap.get(round).push(0);
-                round++;
+              if (round < _this46.round) {
+                while (round <= _this46.round) {
+                  roundByRoundSeriesMap.get(round).push(0);
+                  round++;
+                }
               }
             });
             roundByRoundSeriesMap.forEach(function (value, name) {
@@ -61369,6 +61371,13 @@
               while (round <= _this47.exposureArchiveData.voters.length) {
                 roundByRoundSeriesMap.get(round).push(0);
                 round++;
+              }
+
+              if (round < _this47.exposureArchiveData.voters.length) {
+                while (round <= _this47.exposureArchiveData.voters.length) {
+                  roundByRoundSeriesMap.get(round).push(0);
+                  round++;
+                }
               }
             });
             roundByRoundSeriesMap.forEach(function (value, name) {

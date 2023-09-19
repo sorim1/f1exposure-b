@@ -161,7 +161,8 @@ public class InstagramServiceImpl implements InstagramService {
                 log.error("insta error");
                 fetchOk = false;
                 log.error(e.getMessage());
-                if (e.getMessage().contains("login_required")) {
+                if (e.getMessage().contains("login_required") || e.getMessage().contains("few minutes")) {
+                    log.error("attempting to login again...");
                     getWorkerClient(true);
                 }
                 return false;
