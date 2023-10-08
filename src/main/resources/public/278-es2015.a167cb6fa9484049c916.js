@@ -44225,7 +44225,9 @@ class ExposedComponent {
             });
             if (round < this.round) {
                 while (round <= this.round) {
-                    roundByRoundSeriesMap.get(round).push(0);
+                    if (roundByRoundSeriesMap.get(round) != null) {
+                        roundByRoundSeriesMap.get(round).push(0);
+                    }
                     round++;
                 }
             }

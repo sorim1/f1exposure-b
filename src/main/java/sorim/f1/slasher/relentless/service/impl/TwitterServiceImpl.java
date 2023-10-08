@@ -43,8 +43,8 @@ public class TwitterServiceImpl implements TwitterService {
     private static Date latestTweetDate;
     private final MainProperties properties;
     private final TwitterRepository twitterRepository;
-    private static List<String> nitterList = Arrays.asList("nitter.cz", "nitter.poast.org", "nitter.nicfab.eu");
-    private static List<String> nitterListObsolete = Arrays.asList("nitter.privacydev.net");
+    private static List<String> nitterList = Arrays.asList("nitter.cz", "nitter.poast.org", "https://nitter.perennialte.ch", "https://nitter.services.woodland.cafe");
+    private static List<String> nitterListObsolete = Arrays.asList("nitter.privacydev.net", "nitter.nicfab.eu");
 
     @Value("${twitter.accounts.list}")
     private String twitterAccountsForRss;
@@ -108,7 +108,7 @@ public class TwitterServiceImpl implements TwitterService {
         List<String> output = new ArrayList<>();
         accountNames.forEach(account -> {
             counter.set(counter.get()+1);
-            if(counter.get() > 2){
+            if(counter.get() > 3){
                 counter.set(0);
             }
             String nitterEndpoint = nitterList.get(counter.get());

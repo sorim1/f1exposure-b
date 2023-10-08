@@ -61239,7 +61239,10 @@
 
               if (round < _this46.round) {
                 while (round <= _this46.round) {
-                  roundByRoundSeriesMap.get(round).push(0);
+                  if (roundByRoundSeriesMap.get(round) != null) {
+                    roundByRoundSeriesMap.get(round).push(0);
+                  }
+
                   round++;
                 }
               }
