@@ -128,8 +128,9 @@ public class Scheduler {
             Integer delay;
             log.info(CODE + " - sundayAnalysisJob called");
             int weekDay = MainUtility.getWeekDay();
-            if (!analysisDone && weekDay == 1) {
+            if (!analysisDone || weekDay == 1) {
                 delay = liveTimingService.analyzeLatestRace(true);
+                log.info(CODE + " - sundayAnalysisJob delay: " + delay);
                 if (delay != null) {
                     int delayInMiliseconds = delay * 1000;
 //                    if (!strawpollFound) {
@@ -164,6 +165,7 @@ public class Scheduler {
                         @SneakyThrows
                         @Override
                         public void run() {
+                            log.info(CODE + " - analyzeUpcomingRace 1: " + delay);
                             imageFeedJobWithoutInstagram();
                             analyzeUpcomingRacePeriodically();
                         }
@@ -175,6 +177,7 @@ public class Scheduler {
                         @SneakyThrows
                         @Override
                         public void run() {
+                            log.info(CODE + " - analyzeUpcomingRace 2: " + delay);
                             liveTimingService.analyzeUpcomingRace(false);
                         }
                     },
