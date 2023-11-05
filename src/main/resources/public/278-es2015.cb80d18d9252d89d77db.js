@@ -50576,9 +50576,9 @@ class UpcomingRaceAnalysisComponent {
         };
     }
     getTyresString(tyres) {
-        let response = ' - ';
+        let response = '';
         tyres.forEach((tyre) => {
-            response = response + tyre.Compound + " - ";
+            response = response + tyre.Compound + "";
         });
         return response;
     }
@@ -50958,8 +50958,9 @@ function RaceAnalysisComponent_div_20_ng_template_7_tr_28_span_4_Template(rf, ct
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
     const standing_r29 = core/* ɵɵnextContext */.oxw().$implicit;
+    const ctx_r31 = core/* ɵɵnextContext */.oxw(3);
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵtextInterpolate1 */.hij("'+' ", standing_r29.PredictedPosition - standing_r29.CurrentPosition, "");
+    core/* ɵɵtextInterpolate */.Oqu(ctx_r31.positionChange(standing_r29));
 } }
 function RaceAnalysisComponent_div_20_ng_template_7_tr_28_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "tr");
@@ -64840,25 +64841,25 @@ function F1CountdownComponent_div_13_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵtextInterpolate */.Oqu(comment_r4.comment);
 } }
 function F1CountdownComponent_div_20_div_1_img_1_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelement */._UZ(0, "img", 38);
+    core/* ɵɵelement */._UZ(0, "img", 37);
 } }
 function F1CountdownComponent_div_20_div_1_mat_tab_3_ng_template_1_div_4_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div");
     core/* ɵɵelementStart */.TgZ(1, "h1");
-    core/* ɵɵelementStart */.TgZ(2, "span", 45);
+    core/* ɵɵelementStart */.TgZ(2, "span", 44);
     core/* ɵɵtext */._uU(3);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const ctx_r30 = core/* ɵɵnextContext */.oxw(5);
+    const ctx_r29 = core/* ɵɵnextContext */.oxw(5);
     core/* ɵɵadvance */.xp6(3);
-    core/* ɵɵtextInterpolate1 */.hij("", ctx_r30.FP1Days, " days");
+    core/* ɵɵtextInterpolate1 */.hij("", ctx_r29.FP1Days, " days");
 } }
 function F1CountdownComponent_div_20_div_1_mat_tab_3_ng_template_1_div_5_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div");
     core/* ɵɵelementStart */.TgZ(1, "h1");
-    core/* ɵɵelementStart */.TgZ(2, "span", 45);
+    core/* ɵɵelementStart */.TgZ(2, "span", 44);
     core/* ɵɵtext */._uU(3, "1 day");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -64866,19 +64867,19 @@ function F1CountdownComponent_div_20_div_1_mat_tab_3_ng_template_1_div_5_Templat
 } }
 const f1_countdown_component_c1 = function (a0) { return { leftTime: a0 }; };
 function F1CountdownComponent_div_20_div_1_mat_tab_3_ng_template_1_Template(rf, ctx) { if (rf & 1) {
-    const _r34 = core/* ɵɵgetCurrentView */.EpF();
-    core/* ɵɵelementStart */.TgZ(0, "div", 40);
-    core/* ɵɵlistener */.NdJ("click", function F1CountdownComponent_div_20_div_1_mat_tab_3_ng_template_1_Template_div_click_0_listener() { core/* ɵɵrestoreView */.CHM(_r34); const ctx_r33 = core/* ɵɵnextContext */.oxw(4); return ctx_r33.countdownWasClicked(1); });
+    const _r33 = core/* ɵɵgetCurrentView */.EpF();
+    core/* ɵɵelementStart */.TgZ(0, "div", 39);
+    core/* ɵɵlistener */.NdJ("click", function F1CountdownComponent_div_20_div_1_mat_tab_3_ng_template_1_Template_div_click_0_listener() { core/* ɵɵrestoreView */.CHM(_r33); const ctx_r32 = core/* ɵɵnextContext */.oxw(4); return ctx_r32.countdownWasClicked(1); });
     core/* ɵɵelementStart */.TgZ(1, "h1");
-    core/* ɵɵelementStart */.TgZ(2, "span", 41);
+    core/* ɵɵelementStart */.TgZ(2, "span", 40);
     core/* ɵɵtext */._uU(3);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵtemplate */.YNc(4, F1CountdownComponent_div_20_div_1_mat_tab_3_ng_template_1_div_4_Template, 4, 1, "div", 42);
-    core/* ɵɵtemplate */.YNc(5, F1CountdownComponent_div_20_div_1_mat_tab_3_ng_template_1_div_5_Template, 4, 0, "div", 42);
+    core/* ɵɵtemplate */.YNc(4, F1CountdownComponent_div_20_div_1_mat_tab_3_ng_template_1_div_4_Template, 4, 1, "div", 41);
+    core/* ɵɵtemplate */.YNc(5, F1CountdownComponent_div_20_div_1_mat_tab_3_ng_template_1_div_5_Template, 4, 0, "div", 41);
     core/* ɵɵelementStart */.TgZ(6, "h1");
     core/* ɵɵelementStart */.TgZ(7, "span");
-    core/* ɵɵelement */._UZ(8, "countdown", 43, 44);
+    core/* ɵɵelement */._UZ(8, "countdown", 42, 43);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -64888,60 +64889,60 @@ function F1CountdownComponent_div_20_div_1_mat_tab_3_ng_template_1_Template(rf, 
     core/* ɵɵelement */._UZ(13, "br");
     core/* ɵɵelement */._UZ(14, "br");
 } if (rf & 2) {
-    const ctx_r29 = core/* ɵɵnextContext */.oxw(4);
+    const ctx_r28 = core/* ɵɵnextContext */.oxw(4);
     core/* ɵɵadvance */.xp6(3);
-    core/* ɵɵtextInterpolate1 */.hij(" ", ctx_r29.calendarData.f1Calendar.practice1Name, " in: ");
+    core/* ɵɵtextInterpolate1 */.hij(" ", ctx_r28.calendarData.f1Calendar.practice1Name, " in: ");
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r29.FP1Days > 1);
+    core/* ɵɵproperty */.Q6J("ngIf", ctx_r28.FP1Days > 1);
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r29.FP1Days == 1);
+    core/* ɵɵproperty */.Q6J("ngIf", ctx_r28.FP1Days == 1);
     core/* ɵɵadvance */.xp6(3);
-    core/* ɵɵproperty */.Q6J("config", core/* ɵɵpureFunction1 */.VKq(4, f1_countdown_component_c1, ctx_r29.FP1Seconds));
+    core/* ɵɵproperty */.Q6J("config", core/* ɵɵpureFunction1 */.VKq(4, f1_countdown_component_c1, ctx_r28.FP1Seconds));
 } }
 function F1CountdownComponent_div_20_div_1_mat_tab_3_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "mat-tab", 39);
-    core/* ɵɵtemplate */.YNc(1, F1CountdownComponent_div_20_div_1_mat_tab_3_ng_template_1_Template, 15, 6, "ng-template", 37);
+    core/* ɵɵelementStart */.TgZ(0, "mat-tab", 38);
+    core/* ɵɵtemplate */.YNc(1, F1CountdownComponent_div_20_div_1_mat_tab_3_ng_template_1_Template, 15, 6, "ng-template", 36);
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const ctx_r22 = core/* ɵɵnextContext */.oxw(3);
-    core/* ɵɵpropertyInterpolate */.s9C("label", ctx_r22.calendarData.f1Calendar.practice1Name);
+    const ctx_r21 = core/* ɵɵnextContext */.oxw(3);
+    core/* ɵɵpropertyInterpolate */.s9C("label", ctx_r21.calendarData.f1Calendar.practice1Name);
 } }
 function F1CountdownComponent_div_20_div_1_mat_tab_4_ng_template_1_div_4_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div");
     core/* ɵɵelementStart */.TgZ(1, "h1");
-    core/* ɵɵelementStart */.TgZ(2, "span", 45);
+    core/* ɵɵelementStart */.TgZ(2, "span", 44);
     core/* ɵɵtext */._uU(3);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const ctx_r36 = core/* ɵɵnextContext */.oxw(5);
+    const ctx_r35 = core/* ɵɵnextContext */.oxw(5);
     core/* ɵɵadvance */.xp6(3);
-    core/* ɵɵtextInterpolate1 */.hij("", ctx_r36.FP2Days, " days");
+    core/* ɵɵtextInterpolate1 */.hij("", ctx_r35.FP2Days, " days");
 } }
 function F1CountdownComponent_div_20_div_1_mat_tab_4_ng_template_1_div_5_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div");
     core/* ɵɵelementStart */.TgZ(1, "h1");
-    core/* ɵɵelementStart */.TgZ(2, "span", 45);
+    core/* ɵɵelementStart */.TgZ(2, "span", 44);
     core/* ɵɵtext */._uU(3, "1 day");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } }
 function F1CountdownComponent_div_20_div_1_mat_tab_4_ng_template_1_Template(rf, ctx) { if (rf & 1) {
-    const _r40 = core/* ɵɵgetCurrentView */.EpF();
-    core/* ɵɵelementStart */.TgZ(0, "div", 40);
-    core/* ɵɵlistener */.NdJ("click", function F1CountdownComponent_div_20_div_1_mat_tab_4_ng_template_1_Template_div_click_0_listener() { core/* ɵɵrestoreView */.CHM(_r40); const ctx_r39 = core/* ɵɵnextContext */.oxw(4); return ctx_r39.countdownWasClicked(2); });
+    const _r39 = core/* ɵɵgetCurrentView */.EpF();
+    core/* ɵɵelementStart */.TgZ(0, "div", 39);
+    core/* ɵɵlistener */.NdJ("click", function F1CountdownComponent_div_20_div_1_mat_tab_4_ng_template_1_Template_div_click_0_listener() { core/* ɵɵrestoreView */.CHM(_r39); const ctx_r38 = core/* ɵɵnextContext */.oxw(4); return ctx_r38.countdownWasClicked(2); });
     core/* ɵɵelementStart */.TgZ(1, "h1");
-    core/* ɵɵelementStart */.TgZ(2, "span", 41);
+    core/* ɵɵelementStart */.TgZ(2, "span", 40);
     core/* ɵɵtext */._uU(3);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵtemplate */.YNc(4, F1CountdownComponent_div_20_div_1_mat_tab_4_ng_template_1_div_4_Template, 4, 1, "div", 42);
-    core/* ɵɵtemplate */.YNc(5, F1CountdownComponent_div_20_div_1_mat_tab_4_ng_template_1_div_5_Template, 4, 0, "div", 42);
+    core/* ɵɵtemplate */.YNc(4, F1CountdownComponent_div_20_div_1_mat_tab_4_ng_template_1_div_4_Template, 4, 1, "div", 41);
+    core/* ɵɵtemplate */.YNc(5, F1CountdownComponent_div_20_div_1_mat_tab_4_ng_template_1_div_5_Template, 4, 0, "div", 41);
     core/* ɵɵelementStart */.TgZ(6, "h1");
     core/* ɵɵelementStart */.TgZ(7, "span");
-    core/* ɵɵelement */._UZ(8, "countdown", 43, 44);
+    core/* ɵɵelement */._UZ(8, "countdown", 42, 43);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -64951,60 +64952,60 @@ function F1CountdownComponent_div_20_div_1_mat_tab_4_ng_template_1_Template(rf, 
     core/* ɵɵelement */._UZ(13, "br");
     core/* ɵɵelement */._UZ(14, "br");
 } if (rf & 2) {
-    const ctx_r35 = core/* ɵɵnextContext */.oxw(4);
+    const ctx_r34 = core/* ɵɵnextContext */.oxw(4);
     core/* ɵɵadvance */.xp6(3);
-    core/* ɵɵtextInterpolate1 */.hij(" ", ctx_r35.calendarData.f1Calendar.practice2Name, " in: ");
+    core/* ɵɵtextInterpolate1 */.hij(" ", ctx_r34.calendarData.f1Calendar.practice2Name, " in: ");
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r35.FP2Days > 1);
+    core/* ɵɵproperty */.Q6J("ngIf", ctx_r34.FP2Days > 1);
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r35.FP2Days == 1);
+    core/* ɵɵproperty */.Q6J("ngIf", ctx_r34.FP2Days == 1);
     core/* ɵɵadvance */.xp6(3);
-    core/* ɵɵproperty */.Q6J("config", core/* ɵɵpureFunction1 */.VKq(4, f1_countdown_component_c1, ctx_r35.FP2Seconds));
+    core/* ɵɵproperty */.Q6J("config", core/* ɵɵpureFunction1 */.VKq(4, f1_countdown_component_c1, ctx_r34.FP2Seconds));
 } }
 function F1CountdownComponent_div_20_div_1_mat_tab_4_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "mat-tab", 39);
-    core/* ɵɵtemplate */.YNc(1, F1CountdownComponent_div_20_div_1_mat_tab_4_ng_template_1_Template, 15, 6, "ng-template", 37);
+    core/* ɵɵelementStart */.TgZ(0, "mat-tab", 38);
+    core/* ɵɵtemplate */.YNc(1, F1CountdownComponent_div_20_div_1_mat_tab_4_ng_template_1_Template, 15, 6, "ng-template", 36);
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const ctx_r23 = core/* ɵɵnextContext */.oxw(3);
-    core/* ɵɵpropertyInterpolate */.s9C("label", ctx_r23.calendarData.f1Calendar.practice2Name);
+    const ctx_r22 = core/* ɵɵnextContext */.oxw(3);
+    core/* ɵɵpropertyInterpolate */.s9C("label", ctx_r22.calendarData.f1Calendar.practice2Name);
 } }
 function F1CountdownComponent_div_20_div_1_mat_tab_5_ng_template_1_div_4_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div");
     core/* ɵɵelementStart */.TgZ(1, "h1");
-    core/* ɵɵelementStart */.TgZ(2, "span", 45);
+    core/* ɵɵelementStart */.TgZ(2, "span", 44);
     core/* ɵɵtext */._uU(3);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const ctx_r42 = core/* ɵɵnextContext */.oxw(5);
+    const ctx_r41 = core/* ɵɵnextContext */.oxw(5);
     core/* ɵɵadvance */.xp6(3);
-    core/* ɵɵtextInterpolate1 */.hij("", ctx_r42.FP3Days, " days");
+    core/* ɵɵtextInterpolate1 */.hij("", ctx_r41.FP3Days, " days");
 } }
 function F1CountdownComponent_div_20_div_1_mat_tab_5_ng_template_1_div_5_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div");
     core/* ɵɵelementStart */.TgZ(1, "h1");
-    core/* ɵɵelementStart */.TgZ(2, "span", 45);
+    core/* ɵɵelementStart */.TgZ(2, "span", 44);
     core/* ɵɵtext */._uU(3, "1 day");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } }
 function F1CountdownComponent_div_20_div_1_mat_tab_5_ng_template_1_Template(rf, ctx) { if (rf & 1) {
-    const _r46 = core/* ɵɵgetCurrentView */.EpF();
-    core/* ɵɵelementStart */.TgZ(0, "div", 40);
-    core/* ɵɵlistener */.NdJ("click", function F1CountdownComponent_div_20_div_1_mat_tab_5_ng_template_1_Template_div_click_0_listener() { core/* ɵɵrestoreView */.CHM(_r46); const ctx_r45 = core/* ɵɵnextContext */.oxw(4); return ctx_r45.countdownWasClicked(3); });
+    const _r45 = core/* ɵɵgetCurrentView */.EpF();
+    core/* ɵɵelementStart */.TgZ(0, "div", 39);
+    core/* ɵɵlistener */.NdJ("click", function F1CountdownComponent_div_20_div_1_mat_tab_5_ng_template_1_Template_div_click_0_listener() { core/* ɵɵrestoreView */.CHM(_r45); const ctx_r44 = core/* ɵɵnextContext */.oxw(4); return ctx_r44.countdownWasClicked(3); });
     core/* ɵɵelementStart */.TgZ(1, "h1");
-    core/* ɵɵelementStart */.TgZ(2, "span", 41);
+    core/* ɵɵelementStart */.TgZ(2, "span", 40);
     core/* ɵɵtext */._uU(3);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵtemplate */.YNc(4, F1CountdownComponent_div_20_div_1_mat_tab_5_ng_template_1_div_4_Template, 4, 1, "div", 42);
-    core/* ɵɵtemplate */.YNc(5, F1CountdownComponent_div_20_div_1_mat_tab_5_ng_template_1_div_5_Template, 4, 0, "div", 42);
+    core/* ɵɵtemplate */.YNc(4, F1CountdownComponent_div_20_div_1_mat_tab_5_ng_template_1_div_4_Template, 4, 1, "div", 41);
+    core/* ɵɵtemplate */.YNc(5, F1CountdownComponent_div_20_div_1_mat_tab_5_ng_template_1_div_5_Template, 4, 0, "div", 41);
     core/* ɵɵelementStart */.TgZ(6, "h1");
     core/* ɵɵelementStart */.TgZ(7, "span");
-    core/* ɵɵelement */._UZ(8, "countdown", 43, 44);
+    core/* ɵɵelement */._UZ(8, "countdown", 42, 43);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -65014,60 +65015,60 @@ function F1CountdownComponent_div_20_div_1_mat_tab_5_ng_template_1_Template(rf, 
     core/* ɵɵelement */._UZ(13, "br");
     core/* ɵɵelement */._UZ(14, "br");
 } if (rf & 2) {
-    const ctx_r41 = core/* ɵɵnextContext */.oxw(4);
+    const ctx_r40 = core/* ɵɵnextContext */.oxw(4);
     core/* ɵɵadvance */.xp6(3);
-    core/* ɵɵtextInterpolate1 */.hij(" ", ctx_r41.calendarData.f1Calendar.practice3Name, " in: ");
+    core/* ɵɵtextInterpolate1 */.hij(" ", ctx_r40.calendarData.f1Calendar.practice3Name, " in: ");
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r41.FP3Days > 1);
+    core/* ɵɵproperty */.Q6J("ngIf", ctx_r40.FP3Days > 1);
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r41.FP3Days == 1);
+    core/* ɵɵproperty */.Q6J("ngIf", ctx_r40.FP3Days == 1);
     core/* ɵɵadvance */.xp6(3);
-    core/* ɵɵproperty */.Q6J("config", core/* ɵɵpureFunction1 */.VKq(4, f1_countdown_component_c1, ctx_r41.FP3Seconds));
+    core/* ɵɵproperty */.Q6J("config", core/* ɵɵpureFunction1 */.VKq(4, f1_countdown_component_c1, ctx_r40.FP3Seconds));
 } }
 function F1CountdownComponent_div_20_div_1_mat_tab_5_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "mat-tab", 39);
-    core/* ɵɵtemplate */.YNc(1, F1CountdownComponent_div_20_div_1_mat_tab_5_ng_template_1_Template, 15, 6, "ng-template", 37);
+    core/* ɵɵelementStart */.TgZ(0, "mat-tab", 38);
+    core/* ɵɵtemplate */.YNc(1, F1CountdownComponent_div_20_div_1_mat_tab_5_ng_template_1_Template, 15, 6, "ng-template", 36);
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const ctx_r24 = core/* ɵɵnextContext */.oxw(3);
-    core/* ɵɵpropertyInterpolate */.s9C("label", ctx_r24.calendarData.f1Calendar.practice3Name);
+    const ctx_r23 = core/* ɵɵnextContext */.oxw(3);
+    core/* ɵɵpropertyInterpolate */.s9C("label", ctx_r23.calendarData.f1Calendar.practice3Name);
 } }
 function F1CountdownComponent_div_20_div_1_mat_tab_6_ng_template_1_div_4_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div");
     core/* ɵɵelementStart */.TgZ(1, "h1");
-    core/* ɵɵelementStart */.TgZ(2, "span", 45);
+    core/* ɵɵelementStart */.TgZ(2, "span", 44);
     core/* ɵɵtext */._uU(3);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const ctx_r48 = core/* ɵɵnextContext */.oxw(5);
+    const ctx_r47 = core/* ɵɵnextContext */.oxw(5);
     core/* ɵɵadvance */.xp6(3);
-    core/* ɵɵtextInterpolate1 */.hij("", ctx_r48.qualifyingDays, " days");
+    core/* ɵɵtextInterpolate1 */.hij("", ctx_r47.qualifyingDays, " days");
 } }
 function F1CountdownComponent_div_20_div_1_mat_tab_6_ng_template_1_div_5_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div");
     core/* ɵɵelementStart */.TgZ(1, "h1");
-    core/* ɵɵelementStart */.TgZ(2, "span", 45);
+    core/* ɵɵelementStart */.TgZ(2, "span", 44);
     core/* ɵɵtext */._uU(3, "1 day");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } }
 function F1CountdownComponent_div_20_div_1_mat_tab_6_ng_template_1_Template(rf, ctx) { if (rf & 1) {
-    const _r52 = core/* ɵɵgetCurrentView */.EpF();
-    core/* ɵɵelementStart */.TgZ(0, "div", 40);
-    core/* ɵɵlistener */.NdJ("click", function F1CountdownComponent_div_20_div_1_mat_tab_6_ng_template_1_Template_div_click_0_listener() { core/* ɵɵrestoreView */.CHM(_r52); const ctx_r51 = core/* ɵɵnextContext */.oxw(4); return ctx_r51.countdownWasClicked(4); });
+    const _r51 = core/* ɵɵgetCurrentView */.EpF();
+    core/* ɵɵelementStart */.TgZ(0, "div", 39);
+    core/* ɵɵlistener */.NdJ("click", function F1CountdownComponent_div_20_div_1_mat_tab_6_ng_template_1_Template_div_click_0_listener() { core/* ɵɵrestoreView */.CHM(_r51); const ctx_r50 = core/* ɵɵnextContext */.oxw(4); return ctx_r50.countdownWasClicked(4); });
     core/* ɵɵelementStart */.TgZ(1, "h1");
-    core/* ɵɵelementStart */.TgZ(2, "span", 41);
+    core/* ɵɵelementStart */.TgZ(2, "span", 40);
     core/* ɵɵtext */._uU(3);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵtemplate */.YNc(4, F1CountdownComponent_div_20_div_1_mat_tab_6_ng_template_1_div_4_Template, 4, 1, "div", 42);
-    core/* ɵɵtemplate */.YNc(5, F1CountdownComponent_div_20_div_1_mat_tab_6_ng_template_1_div_5_Template, 4, 0, "div", 42);
+    core/* ɵɵtemplate */.YNc(4, F1CountdownComponent_div_20_div_1_mat_tab_6_ng_template_1_div_4_Template, 4, 1, "div", 41);
+    core/* ɵɵtemplate */.YNc(5, F1CountdownComponent_div_20_div_1_mat_tab_6_ng_template_1_div_5_Template, 4, 0, "div", 41);
     core/* ɵɵelementStart */.TgZ(6, "h1");
     core/* ɵɵelementStart */.TgZ(7, "span");
-    core/* ɵɵelement */._UZ(8, "countdown", 43, 44);
+    core/* ɵɵelement */._UZ(8, "countdown", 42, 43);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -65077,60 +65078,60 @@ function F1CountdownComponent_div_20_div_1_mat_tab_6_ng_template_1_Template(rf, 
     core/* ɵɵelement */._UZ(13, "br");
     core/* ɵɵelement */._UZ(14, "br");
 } if (rf & 2) {
-    const ctx_r47 = core/* ɵɵnextContext */.oxw(4);
+    const ctx_r46 = core/* ɵɵnextContext */.oxw(4);
     core/* ɵɵadvance */.xp6(3);
-    core/* ɵɵtextInterpolate1 */.hij(" ", ctx_r47.calendarData.f1Calendar.qualifyingName, " in: ");
+    core/* ɵɵtextInterpolate1 */.hij(" ", ctx_r46.calendarData.f1Calendar.qualifyingName, " in: ");
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r47.qualifyingDays > 1);
+    core/* ɵɵproperty */.Q6J("ngIf", ctx_r46.qualifyingDays > 1);
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r47.qualifyingDays == 1);
+    core/* ɵɵproperty */.Q6J("ngIf", ctx_r46.qualifyingDays == 1);
     core/* ɵɵadvance */.xp6(3);
-    core/* ɵɵproperty */.Q6J("config", core/* ɵɵpureFunction1 */.VKq(4, f1_countdown_component_c1, ctx_r47.qualifyingSeconds));
+    core/* ɵɵproperty */.Q6J("config", core/* ɵɵpureFunction1 */.VKq(4, f1_countdown_component_c1, ctx_r46.qualifyingSeconds));
 } }
 function F1CountdownComponent_div_20_div_1_mat_tab_6_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "mat-tab", 39);
-    core/* ɵɵtemplate */.YNc(1, F1CountdownComponent_div_20_div_1_mat_tab_6_ng_template_1_Template, 15, 6, "ng-template", 37);
+    core/* ɵɵelementStart */.TgZ(0, "mat-tab", 38);
+    core/* ɵɵtemplate */.YNc(1, F1CountdownComponent_div_20_div_1_mat_tab_6_ng_template_1_Template, 15, 6, "ng-template", 36);
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const ctx_r25 = core/* ɵɵnextContext */.oxw(3);
-    core/* ɵɵpropertyInterpolate */.s9C("label", ctx_r25.calendarData.f1Calendar.qualifyingName);
+    const ctx_r24 = core/* ɵɵnextContext */.oxw(3);
+    core/* ɵɵpropertyInterpolate */.s9C("label", ctx_r24.calendarData.f1Calendar.qualifyingName);
 } }
 function F1CountdownComponent_div_20_div_1_mat_tab_7_ng_template_1_div_4_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div");
     core/* ɵɵelementStart */.TgZ(1, "h1");
-    core/* ɵɵelementStart */.TgZ(2, "span", 45);
+    core/* ɵɵelementStart */.TgZ(2, "span", 44);
     core/* ɵɵtext */._uU(3);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const ctx_r54 = core/* ɵɵnextContext */.oxw(5);
+    const ctx_r53 = core/* ɵɵnextContext */.oxw(5);
     core/* ɵɵadvance */.xp6(3);
-    core/* ɵɵtextInterpolate1 */.hij("", ctx_r54.sprintDays, " days");
+    core/* ɵɵtextInterpolate1 */.hij("", ctx_r53.sprintDays, " days");
 } }
 function F1CountdownComponent_div_20_div_1_mat_tab_7_ng_template_1_div_5_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div");
     core/* ɵɵelementStart */.TgZ(1, "h1");
-    core/* ɵɵelementStart */.TgZ(2, "span", 45);
+    core/* ɵɵelementStart */.TgZ(2, "span", 44);
     core/* ɵɵtext */._uU(3, "1 day");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } }
 function F1CountdownComponent_div_20_div_1_mat_tab_7_ng_template_1_Template(rf, ctx) { if (rf & 1) {
-    const _r58 = core/* ɵɵgetCurrentView */.EpF();
-    core/* ɵɵelementStart */.TgZ(0, "div", 40);
-    core/* ɵɵlistener */.NdJ("click", function F1CountdownComponent_div_20_div_1_mat_tab_7_ng_template_1_Template_div_click_0_listener() { core/* ɵɵrestoreView */.CHM(_r58); const ctx_r57 = core/* ɵɵnextContext */.oxw(4); return ctx_r57.countdownWasClicked(6); });
+    const _r57 = core/* ɵɵgetCurrentView */.EpF();
+    core/* ɵɵelementStart */.TgZ(0, "div", 39);
+    core/* ɵɵlistener */.NdJ("click", function F1CountdownComponent_div_20_div_1_mat_tab_7_ng_template_1_Template_div_click_0_listener() { core/* ɵɵrestoreView */.CHM(_r57); const ctx_r56 = core/* ɵɵnextContext */.oxw(4); return ctx_r56.countdownWasClicked(6); });
     core/* ɵɵelementStart */.TgZ(1, "h1");
-    core/* ɵɵelementStart */.TgZ(2, "span", 41);
+    core/* ɵɵelementStart */.TgZ(2, "span", 40);
     core/* ɵɵtext */._uU(3);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵtemplate */.YNc(4, F1CountdownComponent_div_20_div_1_mat_tab_7_ng_template_1_div_4_Template, 4, 1, "div", 42);
-    core/* ɵɵtemplate */.YNc(5, F1CountdownComponent_div_20_div_1_mat_tab_7_ng_template_1_div_5_Template, 4, 0, "div", 42);
+    core/* ɵɵtemplate */.YNc(4, F1CountdownComponent_div_20_div_1_mat_tab_7_ng_template_1_div_4_Template, 4, 1, "div", 41);
+    core/* ɵɵtemplate */.YNc(5, F1CountdownComponent_div_20_div_1_mat_tab_7_ng_template_1_div_5_Template, 4, 0, "div", 41);
     core/* ɵɵelementStart */.TgZ(6, "h1");
     core/* ɵɵelementStart */.TgZ(7, "span");
-    core/* ɵɵelement */._UZ(8, "countdown", 43, 44);
+    core/* ɵɵelement */._UZ(8, "countdown", 42, 43);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -65140,219 +65141,219 @@ function F1CountdownComponent_div_20_div_1_mat_tab_7_ng_template_1_Template(rf, 
     core/* ɵɵelement */._UZ(13, "br");
     core/* ɵɵelement */._UZ(14, "br");
 } if (rf & 2) {
-    const ctx_r53 = core/* ɵɵnextContext */.oxw(4);
+    const ctx_r52 = core/* ɵɵnextContext */.oxw(4);
     core/* ɵɵadvance */.xp6(3);
-    core/* ɵɵtextInterpolate1 */.hij(" ", ctx_r53.calendarData.f1Calendar.sprintName, " in: ");
+    core/* ɵɵtextInterpolate1 */.hij(" ", ctx_r52.calendarData.f1Calendar.sprintName, " in: ");
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r53.sprintDays > 1);
+    core/* ɵɵproperty */.Q6J("ngIf", ctx_r52.sprintDays > 1);
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r53.sprintDays == 1);
+    core/* ɵɵproperty */.Q6J("ngIf", ctx_r52.sprintDays == 1);
     core/* ɵɵadvance */.xp6(3);
-    core/* ɵɵproperty */.Q6J("config", core/* ɵɵpureFunction1 */.VKq(4, f1_countdown_component_c1, ctx_r53.sprintSeconds));
+    core/* ɵɵproperty */.Q6J("config", core/* ɵɵpureFunction1 */.VKq(4, f1_countdown_component_c1, ctx_r52.sprintSeconds));
 } }
 function F1CountdownComponent_div_20_div_1_mat_tab_7_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "mat-tab", 39);
-    core/* ɵɵtemplate */.YNc(1, F1CountdownComponent_div_20_div_1_mat_tab_7_ng_template_1_Template, 15, 6, "ng-template", 37);
+    core/* ɵɵelementStart */.TgZ(0, "mat-tab", 38);
+    core/* ɵɵtemplate */.YNc(1, F1CountdownComponent_div_20_div_1_mat_tab_7_ng_template_1_Template, 15, 6, "ng-template", 36);
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const ctx_r26 = core/* ɵɵnextContext */.oxw(3);
-    core/* ɵɵpropertyInterpolate */.s9C("label", ctx_r26.calendarData.f1Calendar.sprintName);
+    const ctx_r25 = core/* ɵɵnextContext */.oxw(3);
+    core/* ɵɵpropertyInterpolate */.s9C("label", ctx_r25.calendarData.f1Calendar.sprintName);
 } }
 function F1CountdownComponent_div_20_div_1_mat_tab_8_ng_template_1_mat_slide_toggle_0_Template(rf, ctx) { if (rf & 1) {
-    const _r63 = core/* ɵɵgetCurrentView */.EpF();
-    core/* ɵɵelementStart */.TgZ(0, "mat-slide-toggle", 48);
-    core/* ɵɵlistener */.NdJ("change", function F1CountdownComponent_div_20_div_1_mat_tab_8_ng_template_1_mat_slide_toggle_0_Template_mat_slide_toggle_change_0_listener($event) { core/* ɵɵrestoreView */.CHM(_r63); const ctx_r62 = core/* ɵɵnextContext */.oxw(5); return ctx_r62.toggleMusic($event); })("ngModelChange", function F1CountdownComponent_div_20_div_1_mat_tab_8_ng_template_1_mat_slide_toggle_0_Template_mat_slide_toggle_ngModelChange_0_listener($event) { core/* ɵɵrestoreView */.CHM(_r63); const ctx_r64 = core/* ɵɵnextContext */.oxw(5); return ctx_r64.isPlayingMusic = $event; });
-    core/* ɵɵelement */._UZ(1, "i", 49);
+    const _r62 = core/* ɵɵgetCurrentView */.EpF();
+    core/* ɵɵelementStart */.TgZ(0, "mat-slide-toggle", 47);
+    core/* ɵɵlistener */.NdJ("change", function F1CountdownComponent_div_20_div_1_mat_tab_8_ng_template_1_mat_slide_toggle_0_Template_mat_slide_toggle_change_0_listener($event) { core/* ɵɵrestoreView */.CHM(_r62); const ctx_r61 = core/* ɵɵnextContext */.oxw(5); return ctx_r61.toggleMusic($event); })("ngModelChange", function F1CountdownComponent_div_20_div_1_mat_tab_8_ng_template_1_mat_slide_toggle_0_Template_mat_slide_toggle_ngModelChange_0_listener($event) { core/* ɵɵrestoreView */.CHM(_r62); const ctx_r63 = core/* ɵɵnextContext */.oxw(5); return ctx_r63.isPlayingMusic = $event; });
+    core/* ɵɵelement */._UZ(1, "i", 48);
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const ctx_r60 = core/* ɵɵnextContext */.oxw(5);
-    core/* ɵɵproperty */.Q6J("ngModel", ctx_r60.isPlayingMusic);
+    const ctx_r59 = core/* ɵɵnextContext */.oxw(5);
+    core/* ɵɵproperty */.Q6J("ngModel", ctx_r59.isPlayingMusic);
 } }
 function F1CountdownComponent_div_20_div_1_mat_tab_8_ng_template_1_div_1_div_4_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div");
     core/* ɵɵelementStart */.TgZ(1, "h1");
-    core/* ɵɵelementStart */.TgZ(2, "span", 45);
+    core/* ɵɵelementStart */.TgZ(2, "span", 44);
     core/* ɵɵtext */._uU(3);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const ctx_r65 = core/* ɵɵnextContext */.oxw(6);
+    const ctx_r64 = core/* ɵɵnextContext */.oxw(6);
     core/* ɵɵadvance */.xp6(3);
-    core/* ɵɵtextInterpolate1 */.hij("", ctx_r65.raceDays, " days");
+    core/* ɵɵtextInterpolate1 */.hij("", ctx_r64.raceDays, " days");
 } }
 function F1CountdownComponent_div_20_div_1_mat_tab_8_ng_template_1_div_1_div_5_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div");
     core/* ɵɵelementStart */.TgZ(1, "h1");
-    core/* ɵɵelementStart */.TgZ(2, "span", 45);
+    core/* ɵɵelementStart */.TgZ(2, "span", 44);
     core/* ɵɵtext */._uU(3, "1 day");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } }
 function F1CountdownComponent_div_20_div_1_mat_tab_8_ng_template_1_div_1_Template(rf, ctx) { if (rf & 1) {
-    const _r69 = core/* ɵɵgetCurrentView */.EpF();
-    core/* ɵɵelementStart */.TgZ(0, "div", 40);
-    core/* ɵɵlistener */.NdJ("click", function F1CountdownComponent_div_20_div_1_mat_tab_8_ng_template_1_div_1_Template_div_click_0_listener() { core/* ɵɵrestoreView */.CHM(_r69); const ctx_r68 = core/* ɵɵnextContext */.oxw(5); return ctx_r68.countdownWasClicked(5); });
+    const _r68 = core/* ɵɵgetCurrentView */.EpF();
+    core/* ɵɵelementStart */.TgZ(0, "div", 39);
+    core/* ɵɵlistener */.NdJ("click", function F1CountdownComponent_div_20_div_1_mat_tab_8_ng_template_1_div_1_Template_div_click_0_listener() { core/* ɵɵrestoreView */.CHM(_r68); const ctx_r67 = core/* ɵɵnextContext */.oxw(5); return ctx_r67.countdownWasClicked(5); });
     core/* ɵɵelementStart */.TgZ(1, "h1");
-    core/* ɵɵelementStart */.TgZ(2, "span", 41);
+    core/* ɵɵelementStart */.TgZ(2, "span", 40);
     core/* ɵɵtext */._uU(3);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵtemplate */.YNc(4, F1CountdownComponent_div_20_div_1_mat_tab_8_ng_template_1_div_1_div_4_Template, 4, 1, "div", 42);
-    core/* ɵɵtemplate */.YNc(5, F1CountdownComponent_div_20_div_1_mat_tab_8_ng_template_1_div_1_div_5_Template, 4, 0, "div", 42);
+    core/* ɵɵtemplate */.YNc(4, F1CountdownComponent_div_20_div_1_mat_tab_8_ng_template_1_div_1_div_4_Template, 4, 1, "div", 41);
+    core/* ɵɵtemplate */.YNc(5, F1CountdownComponent_div_20_div_1_mat_tab_8_ng_template_1_div_1_div_5_Template, 4, 0, "div", 41);
     core/* ɵɵelementStart */.TgZ(6, "h1");
     core/* ɵɵelementStart */.TgZ(7, "span");
-    core/* ɵɵelement */._UZ(8, "countdown", 43, 44);
+    core/* ɵɵelement */._UZ(8, "countdown", 42, 43);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const ctx_r61 = core/* ɵɵnextContext */.oxw(5);
+    const ctx_r60 = core/* ɵɵnextContext */.oxw(5);
     core/* ɵɵadvance */.xp6(3);
-    core/* ɵɵtextInterpolate1 */.hij(" ", ctx_r61.calendarData.f1Calendar.raceName, " in: ");
+    core/* ɵɵtextInterpolate1 */.hij(" ", ctx_r60.calendarData.f1Calendar.raceName, " in: ");
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r61.raceDays > 1);
+    core/* ɵɵproperty */.Q6J("ngIf", ctx_r60.raceDays > 1);
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r61.raceDays == 1);
+    core/* ɵɵproperty */.Q6J("ngIf", ctx_r60.raceDays == 1);
     core/* ɵɵadvance */.xp6(3);
-    core/* ɵɵproperty */.Q6J("config", core/* ɵɵpureFunction1 */.VKq(4, f1_countdown_component_c1, ctx_r61.raceSeconds));
+    core/* ɵɵproperty */.Q6J("config", core/* ɵɵpureFunction1 */.VKq(4, f1_countdown_component_c1, ctx_r60.raceSeconds));
 } }
 function F1CountdownComponent_div_20_div_1_mat_tab_8_ng_template_1_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵtemplate */.YNc(0, F1CountdownComponent_div_20_div_1_mat_tab_8_ng_template_1_mat_slide_toggle_0_Template, 2, 1, "mat-slide-toggle", 46);
-    core/* ɵɵtemplate */.YNc(1, F1CountdownComponent_div_20_div_1_mat_tab_8_ng_template_1_div_1_Template, 10, 6, "div", 47);
+    core/* ɵɵtemplate */.YNc(0, F1CountdownComponent_div_20_div_1_mat_tab_8_ng_template_1_mat_slide_toggle_0_Template, 2, 1, "mat-slide-toggle", 45);
+    core/* ɵɵtemplate */.YNc(1, F1CountdownComponent_div_20_div_1_mat_tab_8_ng_template_1_div_1_Template, 10, 6, "div", 46);
     core/* ɵɵelement */._UZ(2, "br");
     core/* ɵɵelement */._UZ(3, "br");
     core/* ɵɵelement */._UZ(4, "br");
     core/* ɵɵelement */._UZ(5, "br");
     core/* ɵɵelement */._UZ(6, "br");
 } if (rf & 2) {
-    const ctx_r59 = core/* ɵɵnextContext */.oxw(4);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r59.itsTime);
+    const ctx_r58 = core/* ɵɵnextContext */.oxw(4);
+    core/* ɵɵproperty */.Q6J("ngIf", ctx_r58.itsTime);
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r59.calendarData != null);
+    core/* ɵɵproperty */.Q6J("ngIf", ctx_r58.calendarData != null);
 } }
 function F1CountdownComponent_div_20_div_1_mat_tab_8_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "mat-tab", 39);
-    core/* ɵɵtemplate */.YNc(1, F1CountdownComponent_div_20_div_1_mat_tab_8_ng_template_1_Template, 7, 2, "ng-template", 37);
+    core/* ɵɵelementStart */.TgZ(0, "mat-tab", 38);
+    core/* ɵɵtemplate */.YNc(1, F1CountdownComponent_div_20_div_1_mat_tab_8_ng_template_1_Template, 7, 2, "ng-template", 36);
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const ctx_r27 = core/* ɵɵnextContext */.oxw(3);
-    core/* ɵɵpropertyInterpolate */.s9C("label", ctx_r27.calendarData.f1Calendar.raceName);
+    const ctx_r26 = core/* ɵɵnextContext */.oxw(3);
+    core/* ɵɵpropertyInterpolate */.s9C("label", ctx_r26.calendarData.f1Calendar.raceName);
 } }
 function F1CountdownComponent_div_20_div_1_ng_template_10_div_0_div_9_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "div", 56);
+    core/* ɵɵelementStart */.TgZ(0, "div", 55);
+    core/* ɵɵtext */._uU(1);
+    core/* ɵɵelementEnd */.qZA();
+} if (rf & 2) {
+    const ctx_r70 = core/* ɵɵnextContext */.oxw(5);
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵtextInterpolate1 */.hij(" ", ctx_r70.calendarData.f1Calendar.practice1Name, " : ");
+} }
+function F1CountdownComponent_div_20_div_1_ng_template_10_div_0_div_14_Template(rf, ctx) { if (rf & 1) {
+    core/* ɵɵelementStart */.TgZ(0, "div", 55);
     core/* ɵɵtext */._uU(1);
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
     const ctx_r71 = core/* ɵɵnextContext */.oxw(5);
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵtextInterpolate1 */.hij(" ", ctx_r71.calendarData.f1Calendar.practice1Name, " : ");
+    core/* ɵɵtextInterpolate1 */.hij(" ", ctx_r71.calendarData.f1Calendar.practice2Name, " : ");
 } }
-function F1CountdownComponent_div_20_div_1_ng_template_10_div_0_div_14_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "div", 56);
+function F1CountdownComponent_div_20_div_1_ng_template_10_div_0_div_15_Template(rf, ctx) { if (rf & 1) {
+    core/* ɵɵelementStart */.TgZ(0, "div", 52);
     core/* ɵɵtext */._uU(1);
+    core/* ɵɵpipe */.ALo(2, "date");
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
     const ctx_r72 = core/* ɵɵnextContext */.oxw(5);
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵtextInterpolate1 */.hij(" ", ctx_r72.calendarData.f1Calendar.practice2Name, " : ");
+    core/* ɵɵtextInterpolate1 */.hij(" ", core/* ɵɵpipeBind2 */.xi3(2, 1, ctx_r72.checkTime(ctx_r72.calendarData.f1Calendar.practice2), "EEEE, MMMM d, HH:mm"), " ");
 } }
-function F1CountdownComponent_div_20_div_1_ng_template_10_div_0_div_15_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "div", 53);
+function F1CountdownComponent_div_20_div_1_ng_template_10_div_0_div_17_Template(rf, ctx) { if (rf & 1) {
+    core/* ɵɵelementStart */.TgZ(0, "div", 55);
     core/* ɵɵtext */._uU(1);
-    core/* ɵɵpipe */.ALo(2, "date");
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
     const ctx_r73 = core/* ɵɵnextContext */.oxw(5);
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵtextInterpolate1 */.hij(" ", core/* ɵɵpipeBind2 */.xi3(2, 1, ctx_r73.checkTime(ctx_r73.calendarData.f1Calendar.practice2), "EEEE, MMMM d, HH:mm"), " ");
+    core/* ɵɵtextInterpolate1 */.hij(" ", ctx_r73.calendarData.f1Calendar.practice3Name, " : ");
 } }
-function F1CountdownComponent_div_20_div_1_ng_template_10_div_0_div_17_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "div", 56);
+function F1CountdownComponent_div_20_div_1_ng_template_10_div_0_div_18_Template(rf, ctx) { if (rf & 1) {
+    core/* ɵɵelementStart */.TgZ(0, "div", 52);
     core/* ɵɵtext */._uU(1);
+    core/* ɵɵpipe */.ALo(2, "date");
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
     const ctx_r74 = core/* ɵɵnextContext */.oxw(5);
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵtextInterpolate1 */.hij(" ", ctx_r74.calendarData.f1Calendar.practice3Name, " : ");
+    core/* ɵɵtextInterpolate1 */.hij(" ", core/* ɵɵpipeBind2 */.xi3(2, 1, ctx_r74.checkTime(ctx_r74.calendarData.f1Calendar.practice3), "EEEE, MMMM d, HH:mm"), " ");
 } }
-function F1CountdownComponent_div_20_div_1_ng_template_10_div_0_div_18_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "div", 53);
+function F1CountdownComponent_div_20_div_1_ng_template_10_div_0_div_20_Template(rf, ctx) { if (rf & 1) {
+    core/* ɵɵelementStart */.TgZ(0, "div", 55);
     core/* ɵɵtext */._uU(1);
-    core/* ɵɵpipe */.ALo(2, "date");
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
     const ctx_r75 = core/* ɵɵnextContext */.oxw(5);
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵtextInterpolate1 */.hij(" ", core/* ɵɵpipeBind2 */.xi3(2, 1, ctx_r75.checkTime(ctx_r75.calendarData.f1Calendar.practice3), "EEEE, MMMM d, HH:mm"), " ");
+    core/* ɵɵtextInterpolate1 */.hij(" ", ctx_r75.calendarData.f1Calendar.qualifyingName, " : ");
 } }
-function F1CountdownComponent_div_20_div_1_ng_template_10_div_0_div_20_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "div", 56);
+function F1CountdownComponent_div_20_div_1_ng_template_10_div_0_div_21_Template(rf, ctx) { if (rf & 1) {
+    core/* ɵɵelementStart */.TgZ(0, "div", 52);
     core/* ɵɵtext */._uU(1);
+    core/* ɵɵpipe */.ALo(2, "date");
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
     const ctx_r76 = core/* ɵɵnextContext */.oxw(5);
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵtextInterpolate1 */.hij(" ", ctx_r76.calendarData.f1Calendar.qualifyingName, " : ");
+    core/* ɵɵtextInterpolate1 */.hij(" ", core/* ɵɵpipeBind2 */.xi3(2, 1, ctx_r76.checkTime(ctx_r76.calendarData.f1Calendar.qualifying), "EEEE, MMMM d, HH:mm"), " ");
 } }
-function F1CountdownComponent_div_20_div_1_ng_template_10_div_0_div_21_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "div", 53);
+function F1CountdownComponent_div_20_div_1_ng_template_10_div_0_div_23_Template(rf, ctx) { if (rf & 1) {
+    core/* ɵɵelementStart */.TgZ(0, "div", 55);
     core/* ɵɵtext */._uU(1);
-    core/* ɵɵpipe */.ALo(2, "date");
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
     const ctx_r77 = core/* ɵɵnextContext */.oxw(5);
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵtextInterpolate1 */.hij(" ", core/* ɵɵpipeBind2 */.xi3(2, 1, ctx_r77.checkTime(ctx_r77.calendarData.f1Calendar.qualifying), "EEEE, MMMM d, HH:mm"), " ");
+    core/* ɵɵtextInterpolate1 */.hij(" ", ctx_r77.calendarData.f1Calendar.sprintName, " : ");
 } }
-function F1CountdownComponent_div_20_div_1_ng_template_10_div_0_div_23_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "div", 56);
+function F1CountdownComponent_div_20_div_1_ng_template_10_div_0_div_24_Template(rf, ctx) { if (rf & 1) {
+    core/* ɵɵelementStart */.TgZ(0, "div", 52);
     core/* ɵɵtext */._uU(1);
+    core/* ɵɵpipe */.ALo(2, "date");
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
     const ctx_r78 = core/* ɵɵnextContext */.oxw(5);
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵtextInterpolate1 */.hij(" ", ctx_r78.calendarData.f1Calendar.sprintName, " : ");
+    core/* ɵɵtextInterpolate1 */.hij(" ", core/* ɵɵpipeBind2 */.xi3(2, 1, ctx_r78.checkTime(ctx_r78.calendarData.f1Calendar.sprint), "EEEE, MMMM d, HH:mm"), " ");
 } }
-function F1CountdownComponent_div_20_div_1_ng_template_10_div_0_div_24_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "div", 53);
+function F1CountdownComponent_div_20_div_1_ng_template_10_div_0_div_26_Template(rf, ctx) { if (rf & 1) {
+    core/* ɵɵelementStart */.TgZ(0, "div", 55);
     core/* ɵɵtext */._uU(1);
-    core/* ɵɵpipe */.ALo(2, "date");
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
     const ctx_r79 = core/* ɵɵnextContext */.oxw(5);
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵtextInterpolate1 */.hij(" ", core/* ɵɵpipeBind2 */.xi3(2, 1, ctx_r79.checkTime(ctx_r79.calendarData.f1Calendar.sprint), "EEEE, MMMM d, HH:mm"), " ");
-} }
-function F1CountdownComponent_div_20_div_1_ng_template_10_div_0_div_26_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "div", 56);
-    core/* ɵɵtext */._uU(1);
-    core/* ɵɵelementEnd */.qZA();
-} if (rf & 2) {
-    const ctx_r80 = core/* ɵɵnextContext */.oxw(5);
-    core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵtextInterpolate1 */.hij(" ", ctx_r80.calendarData.f1Calendar.raceName, " : ");
+    core/* ɵɵtextInterpolate1 */.hij(" ", ctx_r79.calendarData.f1Calendar.raceName, " : ");
 } }
 function F1CountdownComponent_div_20_div_1_ng_template_10_div_0_div_27_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "div", 53);
+    core/* ɵɵelementStart */.TgZ(0, "div", 52);
     core/* ɵɵtext */._uU(1);
     core/* ɵɵpipe */.ALo(2, "date");
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const ctx_r81 = core/* ɵɵnextContext */.oxw(5);
+    const ctx_r80 = core/* ɵɵnextContext */.oxw(5);
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵtextInterpolate1 */.hij(" ", core/* ɵɵpipeBind2 */.xi3(2, 1, ctx_r81.checkTime(ctx_r81.calendarData.f1Calendar.race), "EEEE, MMMM d, HH:mm"), " ");
+    core/* ɵɵtextInterpolate1 */.hij(" ", core/* ɵɵpipeBind2 */.xi3(2, 1, ctx_r80.checkTime(ctx_r80.calendarData.f1Calendar.race), "EEEE, MMMM d, HH:mm"), " ");
 } }
 function F1CountdownComponent_div_20_div_1_ng_template_10_div_0_Template(rf, ctx) { if (rf & 1) {
-    const _r83 = core/* ɵɵgetCurrentView */.EpF();
+    const _r82 = core/* ɵɵgetCurrentView */.EpF();
     core/* ɵɵelementStart */.TgZ(0, "div");
-    core/* ɵɵelementStart */.TgZ(1, "div", 50);
+    core/* ɵɵelementStart */.TgZ(1, "div", 49);
     core/* ɵɵelementStart */.TgZ(2, "span");
     core/* ɵɵtext */._uU(3, "My time ");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(4, "mat-slide-toggle", 51);
-    core/* ɵɵlistener */.NdJ("ngModelChange", function F1CountdownComponent_div_20_div_1_ng_template_10_div_0_Template_mat_slide_toggle_ngModelChange_4_listener($event) { core/* ɵɵrestoreView */.CHM(_r83); const ctx_r82 = core/* ɵɵnextContext */.oxw(4); return ctx_r82.isUtc = $event; });
+    core/* ɵɵelementStart */.TgZ(4, "mat-slide-toggle", 50);
+    core/* ɵɵlistener */.NdJ("ngModelChange", function F1CountdownComponent_div_20_div_1_ng_template_10_div_0_Template_mat_slide_toggle_ngModelChange_4_listener($event) { core/* ɵɵrestoreView */.CHM(_r82); const ctx_r81 = core/* ɵɵnextContext */.oxw(4); return ctx_r81.isUtc = $event; });
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(5, "span");
     core/* ɵɵtext */._uU(6, " UTC time");
@@ -65360,82 +65361,82 @@ function F1CountdownComponent_div_20_div_1_ng_template_10_div_0_Template(rf, ctx
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(7, "div");
     core/* ɵɵelementStart */.TgZ(8, "div", 3);
-    core/* ɵɵtemplate */.YNc(9, F1CountdownComponent_div_20_div_1_ng_template_10_div_0_div_9_Template, 2, 1, "div", 52);
-    core/* ɵɵelementStart */.TgZ(10, "div", 53);
+    core/* ɵɵtemplate */.YNc(9, F1CountdownComponent_div_20_div_1_ng_template_10_div_0_div_9_Template, 2, 1, "div", 51);
+    core/* ɵɵelementStart */.TgZ(10, "div", 52);
     core/* ɵɵtext */._uU(11);
     core/* ɵɵpipe */.ALo(12, "date");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelement */._UZ(13, "div", 54);
-    core/* ɵɵtemplate */.YNc(14, F1CountdownComponent_div_20_div_1_ng_template_10_div_0_div_14_Template, 2, 1, "div", 52);
-    core/* ɵɵtemplate */.YNc(15, F1CountdownComponent_div_20_div_1_ng_template_10_div_0_div_15_Template, 3, 4, "div", 55);
-    core/* ɵɵelement */._UZ(16, "div", 54);
-    core/* ɵɵtemplate */.YNc(17, F1CountdownComponent_div_20_div_1_ng_template_10_div_0_div_17_Template, 2, 1, "div", 52);
-    core/* ɵɵtemplate */.YNc(18, F1CountdownComponent_div_20_div_1_ng_template_10_div_0_div_18_Template, 3, 4, "div", 55);
-    core/* ɵɵelement */._UZ(19, "div", 54);
-    core/* ɵɵtemplate */.YNc(20, F1CountdownComponent_div_20_div_1_ng_template_10_div_0_div_20_Template, 2, 1, "div", 52);
-    core/* ɵɵtemplate */.YNc(21, F1CountdownComponent_div_20_div_1_ng_template_10_div_0_div_21_Template, 3, 4, "div", 55);
-    core/* ɵɵelement */._UZ(22, "div", 54);
-    core/* ɵɵtemplate */.YNc(23, F1CountdownComponent_div_20_div_1_ng_template_10_div_0_div_23_Template, 2, 1, "div", 52);
-    core/* ɵɵtemplate */.YNc(24, F1CountdownComponent_div_20_div_1_ng_template_10_div_0_div_24_Template, 3, 4, "div", 55);
-    core/* ɵɵelement */._UZ(25, "div", 54);
-    core/* ɵɵtemplate */.YNc(26, F1CountdownComponent_div_20_div_1_ng_template_10_div_0_div_26_Template, 2, 1, "div", 52);
-    core/* ɵɵtemplate */.YNc(27, F1CountdownComponent_div_20_div_1_ng_template_10_div_0_div_27_Template, 3, 4, "div", 55);
+    core/* ɵɵelement */._UZ(13, "div", 53);
+    core/* ɵɵtemplate */.YNc(14, F1CountdownComponent_div_20_div_1_ng_template_10_div_0_div_14_Template, 2, 1, "div", 51);
+    core/* ɵɵtemplate */.YNc(15, F1CountdownComponent_div_20_div_1_ng_template_10_div_0_div_15_Template, 3, 4, "div", 54);
+    core/* ɵɵelement */._UZ(16, "div", 53);
+    core/* ɵɵtemplate */.YNc(17, F1CountdownComponent_div_20_div_1_ng_template_10_div_0_div_17_Template, 2, 1, "div", 51);
+    core/* ɵɵtemplate */.YNc(18, F1CountdownComponent_div_20_div_1_ng_template_10_div_0_div_18_Template, 3, 4, "div", 54);
+    core/* ɵɵelement */._UZ(19, "div", 53);
+    core/* ɵɵtemplate */.YNc(20, F1CountdownComponent_div_20_div_1_ng_template_10_div_0_div_20_Template, 2, 1, "div", 51);
+    core/* ɵɵtemplate */.YNc(21, F1CountdownComponent_div_20_div_1_ng_template_10_div_0_div_21_Template, 3, 4, "div", 54);
+    core/* ɵɵelement */._UZ(22, "div", 53);
+    core/* ɵɵtemplate */.YNc(23, F1CountdownComponent_div_20_div_1_ng_template_10_div_0_div_23_Template, 2, 1, "div", 51);
+    core/* ɵɵtemplate */.YNc(24, F1CountdownComponent_div_20_div_1_ng_template_10_div_0_div_24_Template, 3, 4, "div", 54);
+    core/* ɵɵelement */._UZ(25, "div", 53);
+    core/* ɵɵtemplate */.YNc(26, F1CountdownComponent_div_20_div_1_ng_template_10_div_0_div_26_Template, 2, 1, "div", 51);
+    core/* ɵɵtemplate */.YNc(27, F1CountdownComponent_div_20_div_1_ng_template_10_div_0_div_27_Template, 3, 4, "div", 54);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const ctx_r70 = core/* ɵɵnextContext */.oxw(4);
+    const ctx_r69 = core/* ɵɵnextContext */.oxw(4);
     core/* ɵɵadvance */.xp6(4);
-    core/* ɵɵproperty */.Q6J("ngModel", ctx_r70.isUtc);
+    core/* ɵɵproperty */.Q6J("ngModel", ctx_r69.isUtc);
     core/* ɵɵadvance */.xp6(5);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r70.calendarData.f1Calendar.practice1Name != null);
+    core/* ɵɵproperty */.Q6J("ngIf", ctx_r69.calendarData.f1Calendar.practice1Name != null);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate1 */.hij(" ", core/* ɵɵpipeBind2 */.xi3(12, 13, ctx_r70.checkTime(ctx_r70.calendarData.f1Calendar.practice1), "EEEE, MMMM d, HH:mm"), " ");
+    core/* ɵɵtextInterpolate1 */.hij(" ", core/* ɵɵpipeBind2 */.xi3(12, 13, ctx_r69.checkTime(ctx_r69.calendarData.f1Calendar.practice1), "EEEE, MMMM d, HH:mm"), " ");
     core/* ɵɵadvance */.xp6(3);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r70.calendarData.f1Calendar.practice2Name != null);
+    core/* ɵɵproperty */.Q6J("ngIf", ctx_r69.calendarData.f1Calendar.practice2Name != null);
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r70.calendarData.f1Calendar.practice2Name != null);
+    core/* ɵɵproperty */.Q6J("ngIf", ctx_r69.calendarData.f1Calendar.practice2Name != null);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r70.calendarData.f1Calendar.practice3Name != null);
+    core/* ɵɵproperty */.Q6J("ngIf", ctx_r69.calendarData.f1Calendar.practice3Name != null);
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r70.calendarData.f1Calendar.practice3Name != null);
+    core/* ɵɵproperty */.Q6J("ngIf", ctx_r69.calendarData.f1Calendar.practice3Name != null);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r70.calendarData.f1Calendar.qualifyingName != null);
+    core/* ɵɵproperty */.Q6J("ngIf", ctx_r69.calendarData.f1Calendar.qualifyingName != null);
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r70.calendarData.f1Calendar.qualifyingName != null);
+    core/* ɵɵproperty */.Q6J("ngIf", ctx_r69.calendarData.f1Calendar.qualifyingName != null);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r70.calendarData.f1Calendar.sprintName != null);
+    core/* ɵɵproperty */.Q6J("ngIf", ctx_r69.calendarData.f1Calendar.sprintName != null);
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r70.calendarData.f1Calendar.sprint != null);
+    core/* ɵɵproperty */.Q6J("ngIf", ctx_r69.calendarData.f1Calendar.sprint != null);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r70.calendarData.f1Calendar.raceName != null);
+    core/* ɵɵproperty */.Q6J("ngIf", ctx_r69.calendarData.f1Calendar.raceName != null);
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r70.calendarData.f1Calendar.raceName != null);
+    core/* ɵɵproperty */.Q6J("ngIf", ctx_r69.calendarData.f1Calendar.raceName != null);
 } }
 function F1CountdownComponent_div_20_div_1_ng_template_10_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵtemplate */.YNc(0, F1CountdownComponent_div_20_div_1_ng_template_10_div_0_Template, 28, 16, "div", 42);
+    core/* ɵɵtemplate */.YNc(0, F1CountdownComponent_div_20_div_1_ng_template_10_div_0_Template, 28, 16, "div", 41);
     core/* ɵɵelement */._UZ(1, "br");
     core/* ɵɵelement */._UZ(2, "br");
     core/* ɵɵelement */._UZ(3, "br");
 } if (rf & 2) {
-    const ctx_r28 = core/* ɵɵnextContext */.oxw(3);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r28.calendarData != null);
+    const ctx_r27 = core/* ɵɵnextContext */.oxw(3);
+    core/* ɵɵproperty */.Q6J("ngIf", ctx_r27.calendarData != null);
 } }
 function F1CountdownComponent_div_20_div_1_Template(rf, ctx) { if (rf & 1) {
-    const _r85 = core/* ɵɵgetCurrentView */.EpF();
-    core/* ɵɵelementStart */.TgZ(0, "div", 32);
-    core/* ɵɵlistener */.NdJ("touchstart", function F1CountdownComponent_div_20_div_1_Template_div_touchstart_0_listener($event) { core/* ɵɵrestoreView */.CHM(_r85); const ctx_r84 = core/* ɵɵnextContext */.oxw(2); return ctx_r84.touchstart($event); })("touchend", function F1CountdownComponent_div_20_div_1_Template_div_touchend_0_listener($event) { core/* ɵɵrestoreView */.CHM(_r85); const ctx_r86 = core/* ɵɵnextContext */.oxw(2); return ctx_r86.touchend($event); });
-    core/* ɵɵtemplate */.YNc(1, F1CountdownComponent_div_20_div_1_img_1_Template, 1, 0, "img", 33);
-    core/* ɵɵelementStart */.TgZ(2, "mat-tab-group", 34);
-    core/* ɵɵlistener */.NdJ("selectedIndexChange", function F1CountdownComponent_div_20_div_1_Template_mat_tab_group_selectedIndexChange_2_listener($event) { core/* ɵɵrestoreView */.CHM(_r85); const ctx_r87 = core/* ɵɵnextContext */.oxw(2); return ctx_r87.selectedTab = $event; })("selectedTabChange", function F1CountdownComponent_div_20_div_1_Template_mat_tab_group_selectedTabChange_2_listener($event) { core/* ɵɵrestoreView */.CHM(_r85); const ctx_r88 = core/* ɵɵnextContext */.oxw(2); return ctx_r88.tabChanged($event); });
-    core/* ɵɵtemplate */.YNc(3, F1CountdownComponent_div_20_div_1_mat_tab_3_Template, 2, 1, "mat-tab", 35);
-    core/* ɵɵtemplate */.YNc(4, F1CountdownComponent_div_20_div_1_mat_tab_4_Template, 2, 1, "mat-tab", 35);
-    core/* ɵɵtemplate */.YNc(5, F1CountdownComponent_div_20_div_1_mat_tab_5_Template, 2, 1, "mat-tab", 35);
-    core/* ɵɵtemplate */.YNc(6, F1CountdownComponent_div_20_div_1_mat_tab_6_Template, 2, 1, "mat-tab", 35);
-    core/* ɵɵtemplate */.YNc(7, F1CountdownComponent_div_20_div_1_mat_tab_7_Template, 2, 1, "mat-tab", 35);
-    core/* ɵɵtemplate */.YNc(8, F1CountdownComponent_div_20_div_1_mat_tab_8_Template, 2, 1, "mat-tab", 35);
-    core/* ɵɵelementStart */.TgZ(9, "mat-tab", 36);
-    core/* ɵɵtemplate */.YNc(10, F1CountdownComponent_div_20_div_1_ng_template_10_Template, 4, 1, "ng-template", 37);
+    const _r84 = core/* ɵɵgetCurrentView */.EpF();
+    core/* ɵɵelementStart */.TgZ(0, "div", 31);
+    core/* ɵɵlistener */.NdJ("touchstart", function F1CountdownComponent_div_20_div_1_Template_div_touchstart_0_listener($event) { core/* ɵɵrestoreView */.CHM(_r84); const ctx_r83 = core/* ɵɵnextContext */.oxw(2); return ctx_r83.touchstart($event); })("touchend", function F1CountdownComponent_div_20_div_1_Template_div_touchend_0_listener($event) { core/* ɵɵrestoreView */.CHM(_r84); const ctx_r85 = core/* ɵɵnextContext */.oxw(2); return ctx_r85.touchend($event); });
+    core/* ɵɵtemplate */.YNc(1, F1CountdownComponent_div_20_div_1_img_1_Template, 1, 0, "img", 32);
+    core/* ɵɵelementStart */.TgZ(2, "mat-tab-group", 33);
+    core/* ɵɵlistener */.NdJ("selectedIndexChange", function F1CountdownComponent_div_20_div_1_Template_mat_tab_group_selectedIndexChange_2_listener($event) { core/* ɵɵrestoreView */.CHM(_r84); const ctx_r86 = core/* ɵɵnextContext */.oxw(2); return ctx_r86.selectedTab = $event; })("selectedTabChange", function F1CountdownComponent_div_20_div_1_Template_mat_tab_group_selectedTabChange_2_listener($event) { core/* ɵɵrestoreView */.CHM(_r84); const ctx_r87 = core/* ɵɵnextContext */.oxw(2); return ctx_r87.tabChanged($event); });
+    core/* ɵɵtemplate */.YNc(3, F1CountdownComponent_div_20_div_1_mat_tab_3_Template, 2, 1, "mat-tab", 34);
+    core/* ɵɵtemplate */.YNc(4, F1CountdownComponent_div_20_div_1_mat_tab_4_Template, 2, 1, "mat-tab", 34);
+    core/* ɵɵtemplate */.YNc(5, F1CountdownComponent_div_20_div_1_mat_tab_5_Template, 2, 1, "mat-tab", 34);
+    core/* ɵɵtemplate */.YNc(6, F1CountdownComponent_div_20_div_1_mat_tab_6_Template, 2, 1, "mat-tab", 34);
+    core/* ɵɵtemplate */.YNc(7, F1CountdownComponent_div_20_div_1_mat_tab_7_Template, 2, 1, "mat-tab", 34);
+    core/* ɵɵtemplate */.YNc(8, F1CountdownComponent_div_20_div_1_mat_tab_8_Template, 2, 1, "mat-tab", 34);
+    core/* ɵɵelementStart */.TgZ(9, "mat-tab", 35);
+    core/* ɵɵtemplate */.YNc(10, F1CountdownComponent_div_20_div_1_ng_template_10_Template, 4, 1, "ng-template", 36);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -65459,16 +65460,16 @@ function F1CountdownComponent_div_20_div_1_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵproperty */.Q6J("ngIf", ctx_r8.calendarData.f1Calendar.raceName != undefined);
 } }
 function F1CountdownComponent_div_20_div_2_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "div", 57);
-    core/* ɵɵelementStart */.TgZ(1, "div", 58);
+    core/* ɵɵelementStart */.TgZ(0, "div", 56);
+    core/* ɵɵelementStart */.TgZ(1, "div", 57);
     core/* ɵɵelementStart */.TgZ(2, "h2");
-    core/* ɵɵelementStart */.TgZ(3, "span", 41);
+    core/* ɵɵelementStart */.TgZ(3, "span", 40);
     core/* ɵɵtext */._uU(4, "February 23, 2023 ");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(5, "div");
     core/* ɵɵelementStart */.TgZ(6, "h1");
-    core/* ɵɵelementStart */.TgZ(7, "span", 45);
+    core/* ɵɵelementStart */.TgZ(7, "span", 44);
     core/* ɵɵtext */._uU(8);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -65481,47 +65482,44 @@ function F1CountdownComponent_div_20_div_2_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵtextInterpolate1 */.hij("", ctx_r9.preseasonDays, " days");
 } }
 function F1CountdownComponent_div_20_img_3_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelement */._UZ(0, "img", 59);
+    core/* ɵɵelement */._UZ(0, "img", 58);
 } if (rf & 2) {
     const ctx_r10 = core/* ɵɵnextContext */.oxw(2);
     core/* ɵɵproperty */.Q6J("src", ctx_r10.getBottomLeftUrl(), core/* ɵɵsanitizeUrl */.LSH);
 } }
 function F1CountdownComponent_div_20_img_4_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelement */._UZ(0, "img", 60);
+    core/* ɵɵelement */._UZ(0, "img", 59);
 } if (rf & 2) {
     const ctx_r11 = core/* ɵɵnextContext */.oxw(2);
     core/* ɵɵproperty */.Q6J("src", ctx_r11.getBottomRightUrl(), core/* ɵɵsanitizeUrl */.LSH);
 } }
 function F1CountdownComponent_div_20_img_5_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelement */._UZ(0, "img", 61);
+    core/* ɵɵelement */._UZ(0, "img", 60);
 } if (rf & 2) {
     const ctx_r12 = core/* ɵɵnextContext */.oxw(2);
     core/* ɵɵstyleMap */.Akn(ctx_r12.movingImageStyle);
     core/* ɵɵproperty */.Q6J("src", ctx_r12.getBottomCenterUrl(), core/* ɵɵsanitizeUrl */.LSH);
 } }
 function F1CountdownComponent_div_20_div_6_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelement */._UZ(0, "div", 62);
+    core/* ɵɵelement */._UZ(0, "div", 61);
 } }
 function F1CountdownComponent_div_20_div_7_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelement */._UZ(0, "div", 63);
+    core/* ɵɵelement */._UZ(0, "div", 62);
 } }
 function F1CountdownComponent_div_20_div_8_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelement */._UZ(0, "div", 64);
+    core/* ɵɵelement */._UZ(0, "div", 63);
 } }
 function F1CountdownComponent_div_20_div_9_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelement */._UZ(0, "div", 65);
+    core/* ɵɵelement */._UZ(0, "div", 64);
 } }
 function F1CountdownComponent_div_20_div_10_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelement */._UZ(0, "div", 66);
+    core/* ɵɵelement */._UZ(0, "div", 65);
 } }
 function F1CountdownComponent_div_20_div_11_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelement */._UZ(0, "div", 67);
+    core/* ɵɵelement */._UZ(0, "div", 66);
 } }
 function F1CountdownComponent_div_20_div_12_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelement */._UZ(0, "div", 68);
-} }
-function F1CountdownComponent_div_20_div_13_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelement */._UZ(0, "div", 69);
+    core/* ɵɵelement */._UZ(0, "div", 67);
 } }
 function F1CountdownComponent_div_20_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div", 18);
@@ -65537,7 +65535,6 @@ function F1CountdownComponent_div_20_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵtemplate */.YNc(10, F1CountdownComponent_div_20_div_10_Template, 1, 0, "div", 28);
     core/* ɵɵtemplate */.YNc(11, F1CountdownComponent_div_20_div_11_Template, 1, 0, "div", 29);
     core/* ɵɵtemplate */.YNc(12, F1CountdownComponent_div_20_div_12_Template, 1, 0, "div", 30);
-    core/* ɵɵtemplate */.YNc(13, F1CountdownComponent_div_20_div_13_Template, 1, 0, "div", 31);
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
     const ctx_r2 = core/* ɵɵnextContext */.oxw();
@@ -65564,12 +65561,10 @@ function F1CountdownComponent_div_20_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵadvance */.xp6(1);
     core/* ɵɵproperty */.Q6J("ngIf", ctx_r2.calendarData.overlays.includes("winner-mercedes"));
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r2.calendarData.overlays.includes("winner-redbull-1-2"));
-    core/* ɵɵadvance */.xp6(1);
     core/* ɵɵproperty */.Q6J("ngIf", ctx_r2.calendarData.overlays.includes("loser-ferrari"));
 } }
 function F1CountdownComponent_div_21_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelement */._UZ(0, "div", 70);
+    core/* ɵɵelement */._UZ(0, "div", 68);
 } }
 class F1CountdownComponent {
     constructor(restService, utilityService, toastr, router, route, sanitizer) {
@@ -65865,19 +65860,19 @@ class F1CountdownComponent {
         if (this.FP1Days > 0) {
             return 4;
         }
-        else if (this.FP1Days == 0 && this.FP1Seconds > 0) {
+        else if (this.FP1Days == 0 && this.FP1Seconds > -1800) {
             return 0;
         }
-        else if (this.FP2Days == 0 && this.FP2Seconds > 0) {
+        else if (this.FP2Days == 0 && this.FP2Seconds > -1800) {
             return 1;
         }
-        else if (this.FP3Days == 0 && this.FP3Seconds > 0) {
+        else if (this.FP3Days == 0 && this.FP3Seconds > -1800) {
             return 2;
         }
-        else if (this.qualifyingDays == 0 && this.qualifyingSeconds > 0) {
+        else if (this.qualifyingDays == 0 && this.qualifyingSeconds > -1800) {
             return 3;
         }
-        else if (this.sprintSeconds > 0) {
+        else if (this.sprintSeconds > -1800) {
             return 3;
         }
         else {
@@ -65890,6 +65885,9 @@ class F1CountdownComponent {
     getBottomLeftUrl() {
         return environment/* environment.f1exposureUrl */.N.f1exposureUrl + 'image/MD_bottomLeft_wp';
     }
+    getBottomLeftWebmUrl() {
+        return environment/* environment.f1exposureUrl */.N.f1exposureUrl + 'image/webm_bottomLeft';
+    }
     getBottomCenterUrl() {
         return environment/* environment.f1exposureUrl */.N.f1exposureUrl + 'image/bottom-center-wp';
     }
@@ -65900,8 +65898,8 @@ F1CountdownComponent.ɵcmp = /*@__PURE__*/ core/* ɵɵdefineComponent */.Xpm({ t
     } if (rf & 2) {
         let _t;
         core/* ɵɵqueryRefresh */.iGM(_t = core/* ɵɵloadQuery */.CRH()) && (ctx.countdown = _t.first);
-    } }, decls: 22, vars: 5, consts: [[1, "mat-drawer-no-overflow"], ["mode", "side", "position", "end", 1, "example-sidenav", 3, "opened", "openedChange"], ["drawer", ""], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area", 3, "ngModel", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "active-color-button", 3, "click"], [4, "ngFor", "ngForOf"], [1, "fixed-button"], ["type", "fixed-plugin", "mat-button", "", 3, "click"], [1, "fa", "fa-commenting-o", "fa-2x"], ["class", "height-fill-screen", 4, "ngIf"], ["class", "max-on-top-div", 4, "ngIf"], [1, "basic-comment"], [1, "header-left", "hover-pointer", 3, "click"], [1, "header-right", "hover-pointer", 3, "click"], [1, "basic-comment-body"], [1, "height-fill-screen"], ["class", "mat-content", 3, "touchstart", "touchend", 4, "ngIf"], ["class", "\u201Dmat-content\u201D", 4, "ngIf"], ["class", "bottom-left-image", "alt", "bottom-left-image", 3, "src", 4, "ngIf"], ["class", "bottom-right-image", "alt", "bottom-right-image", 3, "src", 4, "ngIf"], ["class", "bottom-center-image max-height-40-vh", "alt", "bottom-center-image", 3, "style", "src", 4, "ngIf"], ["class", "chika-div overlay-bottom-div-fixed overlay-animation-1", 4, "ngIf"], ["class", "boat-div overlay-bottom-div-fixed overlay-animation-boat-1", 4, "ngIf"], ["class", "boat-div overlay-bottom-div-fixed overlay-animation-boat-2", 4, "ngIf"], ["class", "forza-ferrari-div overlay-top-right-div-fixed", 4, "ngIf"], ["class", "hamilton-div overlay-bottom-right-div-fixed", 4, "ngIf"], ["class", "toto-div overlay-bottom-right-div-fixed", 4, "ngIf"], ["class", "redbull-1-2-div overlay-bottom-right-div-fixed-2", 4, "ngIf"], ["class", "fail-ferrari-div overlay-bottom-left-div-fixed", 4, "ngIf"], [1, "mat-content", 3, "touchstart", "touchend"], ["class", "basic-bg-1", "src", "assets/img/overlays/miami_waters1.jpg", "alt", "transparent-bg", 4, "ngIf"], [3, "selectedIndex", "selectedIndexChange", "selectedTabChange"], [3, "label", 4, "ngIf"], ["label", "Start times"], ["matTabContent", ""], ["src", "assets/img/overlays/miami_waters1.jpg", "alt", "transparent-bg", 1, "basic-bg-1"], [3, "label"], [3, "click"], [1, "countdown-desc", "f1-glow"], [4, "ngIf"], [3, "config"], ["cd", ""], [1, "count-down"], [3, "ngModel", "change", "ngModelChange", 4, "ngIf"], [3, "click", 4, "ngIf"], [3, "ngModel", "change", "ngModelChange"], [1, "nc-icon", "nc-note-03"], [1, "div-padded-always-1rem"], [3, "ngModel", "ngModelChange"], ["class", "col-lg-5 countdown-desc-2 text-lg-right", 4, "ngIf"], [1, "col-lg-7", "countdown-desc-2", "text-lg-left"], [1, "col-12", "mobile-space"], ["class", "col-lg-7 countdown-desc-2 text-lg-left", 4, "ngIf"], [1, "col-lg-5", "countdown-desc-2", "text-lg-right"], [1, "\u201Dmat-content\u201D"], [1, "pt-5"], ["alt", "bottom-left-image", 1, "bottom-left-image", 3, "src"], ["alt", "bottom-right-image", 1, "bottom-right-image", 3, "src"], ["alt", "bottom-center-image", 1, "bottom-center-image", "max-height-40-vh", 3, "src"], [1, "chika-div", "overlay-bottom-div-fixed", "overlay-animation-1"], [1, "boat-div", "overlay-bottom-div-fixed", "overlay-animation-boat-1"], [1, "boat-div", "overlay-bottom-div-fixed", "overlay-animation-boat-2"], [1, "forza-ferrari-div", "overlay-top-right-div-fixed"], [1, "hamilton-div", "overlay-bottom-right-div-fixed"], [1, "toto-div", "overlay-bottom-right-div-fixed"], [1, "redbull-1-2-div", "overlay-bottom-right-div-fixed-2"], [1, "fail-ferrari-div", "overlay-bottom-left-div-fixed"], [1, "max-on-top-div"]], template: function F1CountdownComponent_Template(rf, ctx) { if (rf & 1) {
-        const _r89 = core/* ɵɵgetCurrentView */.EpF();
+    } }, decls: 22, vars: 5, consts: [[1, "mat-drawer-no-overflow"], ["mode", "side", "position", "end", 1, "example-sidenav", 3, "opened", "openedChange"], ["drawer", ""], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area", 3, "ngModel", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "active-color-button", 3, "click"], [4, "ngFor", "ngForOf"], [1, "fixed-button"], ["type", "fixed-plugin", "mat-button", "", 3, "click"], [1, "fa", "fa-commenting-o", "fa-2x"], ["class", "height-fill-screen", 4, "ngIf"], ["class", "max-on-top-div", 4, "ngIf"], [1, "basic-comment"], [1, "header-left", "hover-pointer", 3, "click"], [1, "header-right", "hover-pointer", 3, "click"], [1, "basic-comment-body"], [1, "height-fill-screen"], ["class", "mat-content", 3, "touchstart", "touchend", 4, "ngIf"], ["class", "\u201Dmat-content\u201D", 4, "ngIf"], ["class", "bottom-left-image", "alt", "bottom-left-image", 3, "src", 4, "ngIf"], ["class", "bottom-right-image", "alt", "bottom-right-image", 3, "src", 4, "ngIf"], ["class", "bottom-center-image max-height-40-vh", "alt", "bottom-center-image", 3, "style", "src", 4, "ngIf"], ["class", "chika-div overlay-bottom-div-fixed overlay-animation-1", 4, "ngIf"], ["class", "boat-div overlay-bottom-div-fixed overlay-animation-boat-1", 4, "ngIf"], ["class", "boat-div overlay-bottom-div-fixed overlay-animation-boat-2", 4, "ngIf"], ["class", "forza-ferrari-div overlay-top-right-div-fixed", 4, "ngIf"], ["class", "hamilton-div overlay-bottom-right-div-fixed", 4, "ngIf"], ["class", "toto-div overlay-bottom-right-div-fixed", 4, "ngIf"], ["class", "fail-ferrari-div overlay-bottom-left-div-fixed", 4, "ngIf"], [1, "mat-content", 3, "touchstart", "touchend"], ["class", "basic-bg-1", "src", "assets/img/overlays/miami_waters1.jpg", "alt", "transparent-bg", 4, "ngIf"], [3, "selectedIndex", "selectedIndexChange", "selectedTabChange"], [3, "label", 4, "ngIf"], ["label", "Start times"], ["matTabContent", ""], ["src", "assets/img/overlays/miami_waters1.jpg", "alt", "transparent-bg", 1, "basic-bg-1"], [3, "label"], [3, "click"], [1, "countdown-desc", "f1-glow"], [4, "ngIf"], [3, "config"], ["cd", ""], [1, "count-down"], [3, "ngModel", "change", "ngModelChange", 4, "ngIf"], [3, "click", 4, "ngIf"], [3, "ngModel", "change", "ngModelChange"], [1, "nc-icon", "nc-note-03"], [1, "div-padded-always-1rem"], [3, "ngModel", "ngModelChange"], ["class", "col-lg-5 countdown-desc-2 text-lg-right", 4, "ngIf"], [1, "col-lg-7", "countdown-desc-2", "text-lg-left"], [1, "col-12", "mobile-space"], ["class", "col-lg-7 countdown-desc-2 text-lg-left", 4, "ngIf"], [1, "col-lg-5", "countdown-desc-2", "text-lg-right"], [1, "\u201Dmat-content\u201D"], [1, "pt-5"], ["alt", "bottom-left-image", 1, "bottom-left-image", 3, "src"], ["alt", "bottom-right-image", 1, "bottom-right-image", 3, "src"], ["alt", "bottom-center-image", 1, "bottom-center-image", "max-height-40-vh", 3, "src"], [1, "chika-div", "overlay-bottom-div-fixed", "overlay-animation-1"], [1, "boat-div", "overlay-bottom-div-fixed", "overlay-animation-boat-1"], [1, "boat-div", "overlay-bottom-div-fixed", "overlay-animation-boat-2"], [1, "forza-ferrari-div", "overlay-top-right-div-fixed"], [1, "hamilton-div", "overlay-bottom-right-div-fixed"], [1, "toto-div", "overlay-bottom-right-div-fixed"], [1, "fail-ferrari-div", "overlay-bottom-left-div-fixed"], [1, "max-on-top-div"]], template: function F1CountdownComponent_Template(rf, ctx) { if (rf & 1) {
+        const _r88 = core/* ɵɵgetCurrentView */.EpF();
         core/* ɵɵelementStart */.TgZ(0, "div");
         core/* ɵɵelementStart */.TgZ(1, "mat-drawer-container", 0);
         core/* ɵɵelementStart */.TgZ(2, "mat-drawer", 1, 2);
@@ -65928,18 +65926,18 @@ F1CountdownComponent.ɵcmp = /*@__PURE__*/ core/* ɵɵdefineComponent */.Xpm({ t
         core/* ɵɵtemplate */.YNc(13, F1CountdownComponent_div_13_Template, 8, 3, "div", 8);
         core/* ɵɵelementStart */.TgZ(14, "div", 9);
         core/* ɵɵelementStart */.TgZ(15, "button", 10);
-        core/* ɵɵlistener */.NdJ("click", function F1CountdownComponent_Template_button_click_15_listener() { core/* ɵɵrestoreView */.CHM(_r89); const _r0 = core/* ɵɵreference */.MAs(3); return ctx.utilityService.drawerToggle(_r0); });
+        core/* ɵɵlistener */.NdJ("click", function F1CountdownComponent_Template_button_click_15_listener() { core/* ɵɵrestoreView */.CHM(_r88); const _r0 = core/* ɵɵreference */.MAs(3); return ctx.utilityService.drawerToggle(_r0); });
         core/* ɵɵelement */._UZ(16, "i", 11);
         core/* ɵɵelementEnd */.qZA();
         core/* ɵɵelementEnd */.qZA();
         core/* ɵɵelementEnd */.qZA();
         core/* ɵɵelementStart */.TgZ(17, "div", 9);
         core/* ɵɵelementStart */.TgZ(18, "button", 10);
-        core/* ɵɵlistener */.NdJ("click", function F1CountdownComponent_Template_button_click_18_listener() { core/* ɵɵrestoreView */.CHM(_r89); const _r0 = core/* ɵɵreference */.MAs(3); return ctx.utilityService.drawerToggle(_r0); });
+        core/* ɵɵlistener */.NdJ("click", function F1CountdownComponent_Template_button_click_18_listener() { core/* ɵɵrestoreView */.CHM(_r88); const _r0 = core/* ɵɵreference */.MAs(3); return ctx.utilityService.drawerToggle(_r0); });
         core/* ɵɵelement */._UZ(19, "i", 11);
         core/* ɵɵelementEnd */.qZA();
         core/* ɵɵelementEnd */.qZA();
-        core/* ɵɵtemplate */.YNc(20, F1CountdownComponent_div_20_Template, 14, 13, "div", 12);
+        core/* ɵɵtemplate */.YNc(20, F1CountdownComponent_div_20_Template, 13, 12, "div", 12);
         core/* ɵɵtemplate */.YNc(21, F1CountdownComponent_div_21_Template, 1, 0, "div", 13);
         core/* ɵɵelementEnd */.qZA();
         core/* ɵɵelementEnd */.qZA();

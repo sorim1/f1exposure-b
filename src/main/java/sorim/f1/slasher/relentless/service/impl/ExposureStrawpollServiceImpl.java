@@ -376,7 +376,10 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
         if (winner != null && winner.getVotes() > 20) {
             String key = title;
             String value = winner.getId().getDriver();
+            showWinner = false;
             return KeyValue.builder().key(key).value(value).build();
+        } else {
+            showWinner = true;
         }
         return null;
     }
