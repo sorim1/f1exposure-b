@@ -185,11 +185,15 @@ public class TwitterServiceImpl implements TwitterService {
     }
 
     private String getTwitterFromNitter(String input) {
-        return input
-                .replace("nitter.cz", "twitter.com")
-                .replace("nitter.poast.org", "twitter.com")
-                .replace("nitter.privacydev.net", "twitter.com")
-                .replace("nitter.nicfab.eu", "twitter.com");
+        for ( String entry:nitterList){
+            input = input.replace(entry, "twitter.com");
+        }
+        return input;
+//        return input
+//                .replace("nitter.cz", "twitter.com")
+//                .replace("nitter.poast.org", "twitter.com")
+//                .replace("nitter.privacydev.net", "twitter.com")
+//                .replace("nitter.nicfab.eu", "twitter.com");
     }
 
     private String getImageFromNitter(String input) {
