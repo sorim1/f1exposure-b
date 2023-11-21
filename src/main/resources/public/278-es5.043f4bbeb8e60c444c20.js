@@ -109695,7 +109695,7 @@
 
           core
           /* ɵɵtext */
-          ._uU(4, "February 23, 2023 ");
+          ._uU(4, "February 21, 2024 ");
 
           core
           /* ɵɵelementEnd */
@@ -110054,7 +110054,7 @@
         }, {
           key: "preseasonCountdown",
           value: function preseasonCountdown() {
-            var testingDate = new Date('2/23/2023');
+            var testingDate = new Date('2/21/2024');
             var today = new Date();
             var diffTime = Math.abs(testingDate - today);
             var diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));

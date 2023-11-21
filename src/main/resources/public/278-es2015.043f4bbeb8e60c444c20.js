@@ -65464,7 +65464,7 @@ function F1CountdownComponent_div_20_div_2_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(1, "div", 57);
     core/* ɵɵelementStart */.TgZ(2, "h2");
     core/* ɵɵelementStart */.TgZ(3, "span", 40);
-    core/* ɵɵtext */._uU(4, "February 23, 2023 ");
+    core/* ɵɵtext */._uU(4, "February 21, 2024 ");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(5, "div");
@@ -65610,7 +65610,7 @@ class F1CountdownComponent {
         this.random_image_number = Math.floor(Math.random() * 30) + 1;
     }
     preseasonCountdown() {
-        const testingDate = new Date('2/23/2023');
+        const testingDate = new Date('2/21/2024');
         const today = new Date();
         const diffTime = Math.abs(testingDate - today);
         const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
