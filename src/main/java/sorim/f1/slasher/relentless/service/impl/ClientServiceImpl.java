@@ -369,6 +369,9 @@ public class ClientServiceImpl implements ClientService {
                     navbarData.setTabNumber(null);
                 }
             }
+        } else {
+            navbarData.setSessionName("");
+            navbarData.setTabNumber(null);
         }
         return true;
     }
