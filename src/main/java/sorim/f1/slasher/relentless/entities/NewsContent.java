@@ -75,10 +75,13 @@ public class NewsContent implements Comparable<NewsContent> {
 
                     Integer index = thumbnail_url.indexOf(".jpg");
                     if(index>0){
-                       String newUrl =  thumbnail_url.substring(0, index) + ".mp4";
-                        this.url = newUrl;
+                        String urlBase = thumbnail_url.substring(0, index);
+                        if(urlBase.endsWith("h")){
+                            urlBase = urlBase.substring(0, urlBase.length()-1);
+                        }
+                        this.url = urlBase + ".mp4";
                         this.title = "[VIDEO] " + this.title;
-                        this.imageUrl =  thumbnail_url.substring(0, index) + ".jpg";
+                        this.imageUrl =  urlBase + ".jpg";
                     }
                 }
             }
