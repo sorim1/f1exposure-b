@@ -40,19 +40,19 @@ import java.util.stream.Stream;
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class RedditServiceImpl implements RedditService {
 
-    private static final String REDDIT_NEW_POSTS = "https://reddit.com/r/formula1/new/.json?limit=100";
-    private static final String REDDIT_NEW_F1_PORN_POSTS = "https://reddit.com/r/f1porn/hot/.json?limit=100";
+    private static final String REDDIT_NEW_POSTS = "https://old.reddit.com/r/formula1/new/.json?limit=100";
+    private static final String REDDIT_NEW_F1_PORN_POSTS = "https://old.reddit.com/r/f1porn/hot/.json?limit=100";
     private static final String IMGUR_COM_3_ALBUM = "https://api.imgur.com/3/album/";
     private static final String FAVICON = "/favicon.ico";
-    private static final String REDDIT_DAILY_NEWS = "https://reddit.com/r/formula1/search.json?q=flair:statistics+OR+flair:news+OR+flair:social-media+OR+flair:quotes&sort=comments&restrict_sr=on&t=day&include_over_18=on";
-    private static final String REDDIT_DAILY_VIDEO_POSTS = "https://reddit.com/r/formula1/search.json?q=flair:video&sort=comments&restrict_sr=on&t=day&include_over_18=on";
+    private static final String REDDIT_DAILY_NEWS = "https://old.reddit.com/r/formula1/search.json?q=flair:statistics+OR+flair:news+OR+flair:social-media+OR+flair:quotes&sort=comments&restrict_sr=on&t=day&include_over_18=on";
+    private static final String REDDIT_DAILY_VIDEO_POSTS = "https://old.reddit.com/r/formula1/search.json?q=flair:video&sort=comments&restrict_sr=on&t=day&include_over_18=on";
     private static final String I_REDDIT = "i.redd.it";
     private static final String I_IMGUR = "i.imgur.com";
     private static final String TWITTER_URL = "twitter.com";
     private static final String X_URL = "x.com";
     private static final String IMAGE_BASE_PATH = "/f1exposure/image/";
     private static final String NEWS_PREFIX = "NEWS_";
-    private static final String FORMULA_DANK_NEW_POSTS = "https://reddit.com/r/formuladank/new/.json?limit=100";
+    private static final String FORMULA_DANK_NEW_POSTS = "https://old.reddit.com/r/formuladank/new/.json?limit=100";
     private static final String TWITTER_FAVICON = "https://abs.twimg.com/favicons/twitter.3.ico";
     private static String lastNewPost = "";
     private static String lastNewF1PornPost = "";
@@ -233,6 +233,7 @@ public class RedditServiceImpl implements RedditService {
             });
             return list;
         } catch (Exception e) {
+            log.error("nece mi getRedditNewsByFlair", e);
             e.printStackTrace();
         }
         return new ArrayList<>();
@@ -439,6 +440,7 @@ public class RedditServiceImpl implements RedditService {
         AtomicReference<Boolean> iterate = new AtomicReference<>(true);
         HttpEntity entity = new HttpEntity(headers);
         try {
+
             ResponseEntity<String> response = restTemplate.exchange(
                     REDDIT_NEW_POSTS, HttpMethod.GET, entity, String.class);
             List<RedditPost> list = new ArrayList<>();
@@ -558,7 +560,9 @@ public class RedditServiceImpl implements RedditService {
     void init() {
         headers.setAccept(List.of(MediaType.APPLICATION_JSON));
         headers.setContentType(MediaType.APPLICATION_JSON);
-        headers.add("user-agent", "Mozilla/4.8 Firefox/21.0");
+      //  headers.add("user-agent", "Mozilla/4.8 Firefox/21.0");
+        headers.add("user-agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:115.0) Gecko/20100101 Firefox/115.0");
+
         HttpEntity<String> entity = new HttpEntity<String>("parameters", headers);
         restTemplate.getMessageConverters()
                 .add(0, new StringHttpMessageConverter(StandardCharsets.UTF_8));
