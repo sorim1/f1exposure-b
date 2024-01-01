@@ -53,7 +53,7 @@ public class MainProperties {
             this.currentSeasonFuture = Integer.valueOf(ap.getValue());
         } else {
             saveProperty("CURRENT_SEASON_FUTURE", "2023");
-            this.currentSeasonFuture = 2023;
+            this.currentSeasonFuture = 2024;
         }
     }
 
