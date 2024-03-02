@@ -7,3 +7,17 @@
 7 - rejected
 8 - posted
 
+UPDATE f1exposure.current_driver_standings set points=0, wins=0;
+UPDATE f1exposure.current_constructor_standings set points=0, wins=0;
+
+delete from f1exposure.JSON_REPOSITORY where id = 'DRIVERS_TOTAL_POINTS';
+delete from f1exposure.JSON_REPOSITORY where id = 'DRIVERS_ROUND_POINTS';
+delete from f1exposure.JSON_REPOSITORY where id = 'DRIVERS_ROUND_RESULTS';
+delete from f1exposure.JSON_REPOSITORY where id = 'CONSTRUCTOR_TOTAL_POINTS';
+delete from f1exposure.JSON_REPOSITORY where id = 'CONSTRUCTOR_ROUND_POINTS';
+delete from f1exposure.JSON_REPOSITORY where id = 'GRID_TO_RESULT_WITH_DNF';
+delete from f1exposure.JSON_REPOSITORY where id = 'GRID_TO_RESULT_WITHOUT_DNF';
+
+UPDATE f1exposure.JSON_REPOSITORY set JSON = null where id  in ( 'DRIVERS_TOTAL_POINTS', 'DRIVERS_ROUND_RESULTS', 'CONSTRUCTOR_TOTAL_POINTS', 'DRIVERS_ROUND_POINTS', 'DRIVERS_ROUND_RESULTS', 'CONSTRUCTOR_TOTAL_POINTS', 'CONSTRUCTOR_ROUND_POINTS', 'GRID_TO_RESULT_WITH_DNF', 'GRID_TO_RESULT_WITHOUT_DNF');
+
+INSERT INTO f1exposure.calendar (race_id, race) VALUES(111, '2023-02-23 11:30:00.000');

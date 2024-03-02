@@ -43,8 +43,8 @@ public class TwitterServiceImpl implements TwitterService {
     private static Date latestTweetDate;
     private final MainProperties properties;
     private final TwitterRepository twitterRepository;
-    private static List<String> nitterList = Arrays.asList("nitter.cz", "nitter.poast.org", "nitter.services.woodland.cafe");
-    private static List<String> nitterListObsolete = Arrays.asList("nitter.privacydev.net", "nitter.nicfab.eu", "nitter.perennialte.ch");
+    private static List<String> nitterList = Arrays.asList("nitter.mint.lgbt", "nitter.poast.org", "nitter.esmailelbob.xyz", "nitter.holo-mix.com","nitter.tux.pizza");
+    private static List<String> nitterListObsolete = Arrays.asList("nitter.cz", "nitter.services.woodland.cafe", "nitter.privacydev.net", "nitter.nicfab.eu", "nitter.perennialte.ch");
 
     @Value("${twitter.accounts.list}")
     private String twitterAccountsForRss;
@@ -109,7 +109,7 @@ public class TwitterServiceImpl implements TwitterService {
         List<String> output = new ArrayList<>();
         accountNames.forEach(account -> {
             counter.set(counter.get()+1);
-            if(counter.get() > 2){
+            if(counter.get() >= nitterList.size()){
                 counter.set(0);
             }
             String nitterEndpoint = nitterList.get(counter.get());
@@ -189,11 +189,6 @@ public class TwitterServiceImpl implements TwitterService {
             input = input.replace(entry, "twitter.com");
         }
         return input;
-//        return input
-//                .replace("nitter.cz", "twitter.com")
-//                .replace("nitter.poast.org", "twitter.com")
-//                .replace("nitter.privacydev.net", "twitter.com")
-//                .replace("nitter.nicfab.eu", "twitter.com");
     }
 
     private String getImageFromNitter(String input) {
