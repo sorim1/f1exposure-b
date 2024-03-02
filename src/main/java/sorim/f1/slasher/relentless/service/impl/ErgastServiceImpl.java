@@ -39,6 +39,7 @@ public class ErgastServiceImpl implements ErgastService {
     private final RestTemplate restTemplate;
     private final ObjectMapper mapper = new ObjectMapper();
     private final PropertiesRepository propertiesRepository;
+    private final Integer partial_fetch = 2023;
 
     @Override
     public List<RaceData> fetchSeason(String year) {
@@ -270,7 +271,7 @@ public class ErgastServiceImpl implements ErgastService {
         Integer seasonLimit;
         String prefix;
         if (partial) {
-            seasonLimit = 2021;
+            seasonLimit = partial_fetch;
             prefix = "PARTIAL_";
         } else {
             seasonLimit = properties.getCurrentSeasonPast();
@@ -359,7 +360,7 @@ public class ErgastServiceImpl implements ErgastService {
                 log.error("ID NOT FOUND: " + id);
             }
         });
-        fetchStatisticsCore(driversMap, constructorsMap, circuitsMap, 2022, properties.getCurrentSeasonPast(), "");
+        fetchStatisticsCore(driversMap, constructorsMap, circuitsMap, partial_fetch+1, properties.getCurrentSeasonPast(), "");
         JsonRepositoryModel ongoingChampionship = fetchHistoricSeason(properties.getCurrentSeasonPast());
         jsonRepository.save(ongoingChampionship);
         return true;

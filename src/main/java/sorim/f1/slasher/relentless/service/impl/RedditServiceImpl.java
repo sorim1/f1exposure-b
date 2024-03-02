@@ -116,6 +116,7 @@ public class RedditServiceImpl implements RedditService {
                     filteredVideoPosts.add(post);
                 }
                 if (post.getUrl().contains("i.imgur.com/")) {
+                    post.setUrl(post.getUrl().replace("gifv", "mp4"));
                     filteredVideoPosts.add(post);
                 }
                 if (post.getUrl().contains("dubz.live/c/")) {

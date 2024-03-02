@@ -676,6 +676,8 @@ public class LiveTimingServiceImpl implements LiveTimingService {
             bool = enrichDriversWithErgast(driversMap, ergastCodes, race.getSeason(), race.getRound());
             if (bool) {
                 adminService.initializeStandings(updateStatistics);
+            } else {
+                adminService.initializeStandings(false);
             }
             Boolean ergastDataAvailable = bool;
             List<Driver> drivers = new ArrayList<>(driversMap.values());
