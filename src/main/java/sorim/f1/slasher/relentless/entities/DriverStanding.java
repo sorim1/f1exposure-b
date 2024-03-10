@@ -41,7 +41,11 @@ public class DriverStanding {
         if (ergastStanding.getDriver().getCode() != null) {
             this.code = ergastStanding.getDriver().getCode();
         } else {
-            this.code = ergastStanding.getDriver().getDriverId();
+            String driverId = ergastStanding.getDriver().getDriverId();
+            if(driverId!=null){
+                driverId = driverId.substring(0,3).toUpperCase();
+            }
+            this.code = driverId;
         }
         this.ergastCode = ergastStanding.getConstructors().get(ergastStanding.getConstructors().size() - 1).getConstructorId();
         this.driverUrl = ergastStanding.getDriver().getUrl();

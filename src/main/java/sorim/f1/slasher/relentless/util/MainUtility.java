@@ -43,16 +43,16 @@ public class MainUtility {
     }};
     public static Map<String, String> driverMap = new HashMap<>();
     public static Map<String, String> colorMap = new HashMap<>() {{
-        put("mercedes", "#00D2BE");
-        put("aston_martin", "#006F62");
-        put("williams", "#005AFF");
-        put("ferrari", "#DC0004");
-        put("haas", "#888888");
-        put("alfa", "#900000");
-        put("mclaren", "#FF9800");
-        put("alphatauri", "#2B4562");
-        put("red_bull", "#0600EF");
-        put("alpine", "#0090FF");
+        put("mercedes", "#27F4D2");
+        put("aston_martin", "#229971");
+        put("williams", "#64C4FF");
+        put("ferrari", "#E8002D");
+        put("haas", "#B6BABD");
+        put("sauber", "#52E252");
+        put("mclaren", "#FF8000");
+        put("rb", "#6692FF");
+        put("red_bull", "#3671C6");
+        put("alpine", "#FF87BC");
     }};
 
     public static List<String> extractDriverCodes(Set<String> keySet) {
@@ -121,7 +121,11 @@ public class MainUtility {
     }
 
     public static String getTeamColor(String team) {
-        return colorMap.get(team);
+        String response = colorMap.get(team);
+        if (response == null){
+            response = "#999999";
+        }
+        return response;
     }
 
 
