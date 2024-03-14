@@ -43,9 +43,9 @@ public class TwitterServiceImpl implements TwitterService {
     private static Date latestTweetDate;
     private final MainProperties properties;
     private final TwitterRepository twitterRepository;
-    https://nitter.no-logs.com/lewishamilton/rss
     private static List<String> nitterList = Arrays.asList("nitter.privacydev.net", "nitter.no-logs.com");
     private static List<String> nitterListObsolete = Arrays.asList("nitter.cz", "nitter.services.woodland.cafe", "nitter.privacydev.net", "nitter.nicfab.eu", "nitter.perennialte.ch", "nitter.mint.lgbt", "nitter.poast.org", "nitter.esmailelbob.xyz", "nitter.holo-mix.com","nitter.tux.pizza");
+    private static Integer twitterIterator = 0;
 
     @Value("${twitter.accounts.list}")
     private String twitterAccountsForRss;
@@ -104,22 +104,24 @@ public class TwitterServiceImpl implements TwitterService {
 
     private List<String> generateRssList() {
         List<String> accountNames = Arrays.asList(twitterAccountsForRss.toLowerCase().split(","));
-        int randomNum = ThreadLocalRandom.current().nextInt(0, accountNames.size()-2);
-        AtomicInteger counter = new AtomicInteger(randomNum);
         List<String> output = new ArrayList<>();
    //     accountNames.forEach(account -> {
 //            counter.set(counter.get()+1);
 //            if(counter.get() >= nitterList.size()){
 //                counter.set(0);
 //            }
-            String account = accountNames.get(randomNum);
+            if(twitterIterator>accountNames.size()-2){
+                twitterIterator=0;
+            }
+            String account = accountNames.get(twitterIterator);
             String nitterEndpoint = nitterList.get(0);
             String rssUrl = "https://" + nitterEndpoint + "/" + account + "/rss";
             output.add(rssUrl);
-            account = accountNames.get(randomNum+1);
+            account = accountNames.get(twitterIterator+1);
             nitterEndpoint = nitterList.get(1);
             rssUrl = "https://" + nitterEndpoint + "/" + account + "/rss";
             output.add(rssUrl);
+            twitterIterator = twitterIterator+2;
         return output;
     }
 
