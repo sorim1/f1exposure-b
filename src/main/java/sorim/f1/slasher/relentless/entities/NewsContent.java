@@ -65,6 +65,12 @@ public class NewsContent implements Comparable<NewsContent> {
         this.title = (String) data.get("title");
         this.title = this.title.replace("&amp;", "&");
         this.url = (String) data.get("url_overridden_by_dest");
+        Double createdDouble = (Double) data.get("created");
+        this.timestampCreated = new Date(createdDouble.longValue());
+        this.setStatus(status);
+        this.setCommentCount(0);
+        this.numCommentsR = (Integer) data.get("num_comments");
+
         if(status==5){
             LinkedHashMap<String, Object> media = (LinkedHashMap<String, Object>) data.get("media");
             if(media!=null){
@@ -80,18 +86,14 @@ public class NewsContent implements Comparable<NewsContent> {
                             urlBase = urlBase.substring(0, urlBase.length()-1);
                         }
                         this.url = urlBase + ".mp4";
-                        this.title = "[VIDEO] " + this.title;
                         this.imageUrl =  urlBase + ".jpg";
                     }
                 }
             }
+            this.title = "[VIDEO] " + this.title;
+            this.numCommentsR = this.numCommentsR + 100;
         }
 
-        Double createdDouble = (Double) data.get("created");
-        this.timestampCreated = new Date(createdDouble.longValue());
-        this.setStatus(status);
-        this.setCommentCount(0);
-        this.numCommentsR = (Integer) data.get("num_comments");
     }
 
     @Override

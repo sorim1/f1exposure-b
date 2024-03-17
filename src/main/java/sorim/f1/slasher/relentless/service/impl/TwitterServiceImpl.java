@@ -43,9 +43,10 @@ public class TwitterServiceImpl implements TwitterService {
     private static Date latestTweetDate;
     private final MainProperties properties;
     private final TwitterRepository twitterRepository;
-    https://nitter.no-logs.com/lewishamilton/rss
-    private static List<String> nitterList = Arrays.asList("nitter.privacydev.net", "nitter.no-logs.com");
-    private static List<String> nitterListObsolete = Arrays.asList("nitter.cz", "nitter.services.woodland.cafe", "nitter.privacydev.net", "nitter.nicfab.eu", "nitter.perennialte.ch", "nitter.mint.lgbt", "nitter.poast.org", "nitter.esmailelbob.xyz", "nitter.holo-mix.com","nitter.tux.pizza");
+    private static List<String> nitterList = Arrays.asList("nitter.privacydev.net", "nitter.no-logs.com", "nitter.poast.org");
+    //nitter.no-logs.com - dead?
+    //nitter.perennialte.ch - login code?
+    private static List<String> nitterListObsolete = Arrays.asList("nitter.perennialte.ch", "nitter.mint.lgbt");
 
     @Value("${twitter.accounts.list}")
     private String twitterAccountsForRss;
