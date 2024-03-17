@@ -83,14 +83,14 @@ public class TwitterServiceImpl implements TwitterService {
     public Boolean fetchTwitterPosts() throws Exception {
         if (!twitterFetchRunning) {
             twitterFetchRunning = true;
-            List<String> allAccounts = generateRssList();
-            List<List<String>> smallerLists = ListUtils.partition(allAccounts, 3);
-            log.info("zovem twitter RSS: " +  allAccounts.size());
-            for (List<String> urls : smallerLists) {
-                List<Item> timeline = new RssReader().read(urls).sorted().collect(Collectors.toList());
+            List<String> rssEndpoints = generateRssList();
+            log.info("zovem twitter RSS: " +  rssEndpoints.size());
+            for (String url : rssEndpoints) {
+                log.info("zovem twitter RSS: " +  url);
+                List<Item> timeline = new RssReader().read(url).sorted().collect(Collectors.toList());
                 List<TwitterPost> list = getListFromRssFeed(timeline);
                 twitterRepository.saveAll(list);
-                Thread.sleep(200 * 1000);
+                Thread.sleep(20 * 1000);
             }
             log.info("fetchTwitterPosts DONE");
             twitterFetchRunning = false;
@@ -112,18 +112,15 @@ public class TwitterServiceImpl implements TwitterService {
 //            if(counter.get() >= nitterList.size()){
 //                counter.set(0);
 //            }
-            if(twitterIterator>accountNames.size()-2){
+            if(twitterIterator>accountNames.size()-nitterList.size()){
                 twitterIterator=0;
             }
-            String account = accountNames.get(twitterIterator);
-            String nitterEndpoint = nitterList.get(0);
+            for(int i=0;i<nitterList.size();i++){
+            String nitterEndpoint = nitterList.get(i);
+            String account = accountNames.get(twitterIterator++);
             String rssUrl = "https://" + nitterEndpoint + "/" + account + "/rss";
             output.add(rssUrl);
-            account = accountNames.get(twitterIterator+1);
-            nitterEndpoint = nitterList.get(1);
-            rssUrl = "https://" + nitterEndpoint + "/" + account + "/rss";
-            output.add(rssUrl);
-            twitterIterator = twitterIterator+2;
+            }
         return output;
     }
 
