@@ -362,6 +362,15 @@ public class LiveTimingServiceImpl implements LiveTimingService {
     }
 
     @Override
+    public boolean checkIfRaceIsGenerating() {
+        SessionInfo sessionInfo = getSessionInfo();
+        Boolean isRace = sessionInfo.getType().equals("Race");
+        Boolean isGenerating = sessionInfo.getArchiveStatus().getStatus().equals("Generating");
+        log.info("checkIfRaceIsGenerating: {} - {}", isRace, isGenerating);
+        return isRace && isGenerating;
+    }
+
+    @Override
     public SessionInfo getSessionInfo() {
         return restTemplate.getForObject(SESSION_INFO_URL, SessionInfo.class);
     }

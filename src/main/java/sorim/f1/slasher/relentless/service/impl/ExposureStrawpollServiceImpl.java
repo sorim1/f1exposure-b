@@ -36,6 +36,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
     private static final Map<String, String> colorMap = new HashMap<>();
     private static boolean exposureToday = false;
     private static boolean exposureNow = false;
+    private static boolean exposureReady = false;
     private static LocalDateTime exposureTime;
     private static String title = "Strange";
     private static Integer currentExposureRound;
@@ -234,6 +235,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
 
     @Override
     public ExposureData getExposedChartData() {
+        Boolean timeIsRight = checkIfStrawpollCanBeStarted();
         List<ExposureChampionshipStanding> standings = getExposureStandings();
         return ExposureData.builder()
                 .title(title)
@@ -245,7 +247,15 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
                 .standings(standings)
                 .voters(getExposureVoters())
                 .exposureRaces(jsonRepository2.findAllById("EXPOSURE_CURRENT_RACES").getJson())
+                .timeIsRight(timeIsRight)
                 .build();
+    }
+
+    @Override
+    public Boolean checkIfStrawpollCanBeStarted() {
+        Boolean waitingForExposurePoll =exposureToday && !exposureNow;
+
+        return waitingForExposurePoll && exposureReady;
     }
 
     @Override
@@ -287,6 +297,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
     public void closeExposurePoll(Boolean showWinnerValue) {
         exposureToday = false;
         exposureNow = false;
+        exposureReady = false;
         exposureChampionshipRepository.closeAllPolls();
         List<ExposureChampionshipData> exposureChampionshipData = getExposureChampionshipData(null);
         List<ExposureChampionshipStanding> exposureStandings = new ArrayList<>();
@@ -399,6 +410,22 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
             log.info("spremio single exposure result u bazi");
             return generatedExposureResult;
         }
+    }
+
+    @Override
+    public void raceHasStarted() {
+        log.info("raceHasStarted");
+        new java.util.Timer().schedule(
+                new java.util.TimerTask() {
+                    @SneakyThrows
+                    @Override
+                    public void run() {
+                        log.info(" - PROŠLO JE SAT VREMENA UTRKE: ");
+                        exposureReady = true;
+                    }
+                },
+                3600000
+        );
     }
 
     private Integer getReloadDelay() {

@@ -86,10 +86,16 @@ public class TwitterServiceImpl implements TwitterService {
             List<String> rssEndpoints = generateRssList();
             log.info("zovem twitter RSS: " +  rssEndpoints.size());
             for (String url : rssEndpoints) {
-                log.info("zovem twitter RSS: " +  url);
-                List<Item> timeline = new RssReader().read(url).sorted().collect(Collectors.toList());
-                List<TwitterPost> list = getListFromRssFeed(timeline);
-                twitterRepository.saveAll(list);
+                try{
+                    List<Item> timeline = new RssReader().read(url).sorted().collect(Collectors.toList());
+                    List<TwitterPost> list = getListFromRssFeed(timeline);
+                    twitterRepository.saveAll(list);
+                    log.error("SUCCESS: " +  url);
+                } catch(Exception e){
+                    log.error("FAILED: " +  url, e);
+                    log.error(e.getMessage());
+                    ;
+                }
                 Thread.sleep(20 * 1000);
             }
             log.info("fetchTwitterPosts DONE");

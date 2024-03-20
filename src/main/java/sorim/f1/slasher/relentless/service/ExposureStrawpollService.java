@@ -28,6 +28,8 @@ public interface ExposureStrawpollService {
 
     Boolean isExposureNow();
 
+    public Boolean checkIfStrawpollCanBeStarted();
+
     void startPolling();
 
     boolean exposureOn();
@@ -55,4 +57,6 @@ public interface ExposureStrawpollService {
     String changeShowWinner(Boolean value);
 
     Object getSingleExposureResult(Integer season, Integer round);
+
+    void raceHasStarted();
 }

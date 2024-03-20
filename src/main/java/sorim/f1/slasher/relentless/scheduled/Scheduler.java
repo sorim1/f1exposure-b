@@ -122,7 +122,7 @@ public class Scheduler {
         }
     }
 
-    @Scheduled(cron = "0 0 8 * * SUN")
+    @Scheduled(cron = "0 0 4 * * SUN")
     private void sundayAnalysisJob() {
         if (isRaceWeek) {
             Integer delay;
@@ -133,6 +133,7 @@ public class Scheduler {
                 log.info(CODE + " - sundayAnalysisJob delay: " + delay);
                 if (delay != null) {
                     int delayInMiliseconds = delay * 1000;
+                    int delayTillRaceStartInMiliseconds = (delay-6000) * 1000;
 //                    if (!strawpollFound) {
 //                        strawpollFound = exposureService.initializeExposureFrontendVariables(null);
 //                    }
@@ -147,6 +148,20 @@ public class Scheduler {
                             },
                             delayInMiliseconds
                     );
+                    new java.util.Timer().schedule(
+                            new java.util.TimerTask() {
+                                @SneakyThrows
+                                @Override
+                                public void run() {
+                                log.info(CODE + " - POCINJE LI UTRKA, PRIPREMI STRAWPOLL?: ");
+                                    if(liveTimingService.checkIfRaceIsGenerating()){
+                                        exposureService.raceHasStarted();
+                                    }
+                                }
+                            },
+                            delayTillRaceStartInMiliseconds
+                    );
+
                 }
             }
         }

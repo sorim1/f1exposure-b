@@ -46,6 +46,8 @@ public interface LiveTimingService {
 
     boolean checkIfEventIsGenerating();
 
+    boolean checkIfRaceIsGenerating();
+
     SessionInfo getSessionInfo();
 
 }

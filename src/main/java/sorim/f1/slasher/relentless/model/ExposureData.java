@@ -22,4 +22,5 @@ public class ExposureData {
     private List<Integer> voters;
     private Object exposureRaces;
     private Boolean showWinner;
+    private Boolean timeIsRight;
 }
