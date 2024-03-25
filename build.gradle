@@ -35,7 +35,7 @@ dependencies {
 	implementation group: 'commons-codec', name: 'commons-codec', version: '1.15'
 		implementation group: 'org.twitter4j', name: 'twitter4j-core', version: '4.1.2'
 	//implementation "com.twitter:twitter-api-java-sdk:2.0.3"
-	implementation files('lib/instagram4j-2.jar')
+	implementation files('lib/instagram4j.jar')
 	//implementation group: 'com.github.instagram4j', name: 'instagram4j', version: '2.0.7'
 	implementation 'com.apptasticsoftware:rssreader:3.4.6'
 }

@@ -680,14 +680,9 @@ public class LiveTimingServiceImpl implements LiveTimingService {
 
         String title = race.getRaceName();
         Map<String, String> ergastCodes = mapErgastWithLiveTiming(driversMap);
-        Boolean bool;
+        Boolean bool = false;
         try {
             bool = enrichDriversWithErgast(driversMap, ergastCodes, race.getSeason(), race.getRound());
-            if (bool) {
-                adminService.initializeStandings(updateStatistics);
-            } else {
-                adminService.initializeStandings(false);
-            }
             Boolean ergastDataAvailable = bool;
             List<Driver> drivers = new ArrayList<>(driversMap.values());
 
@@ -736,6 +731,16 @@ public class LiveTimingServiceImpl implements LiveTimingService {
             log.error("fetchNewRaceAnalysis error", e);
             e.printStackTrace();
         }
+   try {
+        if (bool) {
+            adminService.initializeStandings(updateStatistics);
+        } else {
+            adminService.initializeStandings(false);
+        }
+    } catch (Exception e) {
+        log.error("fetchNewRaceAnalysis initializeStandings error", e);
+        e.printStackTrace();
+    }
         return null;
     }
 

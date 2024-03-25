@@ -43,10 +43,10 @@ public class TwitterServiceImpl implements TwitterService {
     private static Date latestTweetDate;
     private final MainProperties properties;
     private final TwitterRepository twitterRepository;
-    private static List<String> nitterList = Arrays.asList("nitter.privacydev.net", "nitter.no-logs.com", "nitter.poast.org");
+    private static List<String> nitterList = Arrays.asList("nitter.no-logs.com", "nitter.privacydev.net", "nitter.no-logs.com");
     //nitter.no-logs.com - dead?
     //nitter.perennialte.ch - login code?
-    private static List<String> nitterListObsolete = Arrays.asList("nitter.perennialte.ch", "nitter.mint.lgbt");
+    private static List<String> nitterListObsolete = Arrays.asList("nitter.poast.org", "nitter.perennialte.ch", "nitter.mint.lgbt");
     private static Integer twitterIterator = 0;
 
     @Value("${twitter.accounts.list}")
@@ -92,11 +92,9 @@ public class TwitterServiceImpl implements TwitterService {
                     twitterRepository.saveAll(list);
                     log.error("SUCCESS: " +  url);
                 } catch(Exception e){
-                    log.error("FAILED: " +  url, e);
-                    log.error(e.getMessage());
-                    ;
+                    log.error("FAILED: {} - {}",  url, e.getMessage());
                 }
-                Thread.sleep(20 * 1000);
+                Thread.sleep(10 * 1000);
             }
             log.info("fetchTwitterPosts DONE");
             twitterFetchRunning = false;

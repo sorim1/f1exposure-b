@@ -134,9 +134,10 @@ public class Scheduler {
                 if (delay != null) {
                     int delayInMiliseconds = delay * 1000;
                     int delayTillRaceStartInMiliseconds = (delay-6000) * 1000;
-//                    if (!strawpollFound) {
-//                        strawpollFound = exposureService.initializeExposureFrontendVariables(null);
-//                    }
+                    if (delayTillRaceStartInMiliseconds<0) {
+                        delayTillRaceStartInMiliseconds = delayInMiliseconds;
+                        log.info(CODE + " - delayTillRaceStartInMiliseconds fixed from negative ");
+                    }
                     log.info(CODE + " - sundayAnalysisJob delayed: " + delayInMiliseconds);
                     new java.util.Timer().schedule(
                             new java.util.TimerTask() {
