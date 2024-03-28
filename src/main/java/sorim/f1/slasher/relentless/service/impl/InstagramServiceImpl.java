@@ -304,7 +304,7 @@ public class InstagramServiceImpl implements InstagramService {
     }
 
     @Override
-    public String postDankToInstagram(List<RedditPost> posts) throws IGLoginException {
+    public String postDankToInstagram(List<MyRedditPost> posts) throws IGLoginException {
         log.info("postDankToInstagram");
         boolean success = postDankToInstagramCore(posts.get(0));
         if (!success) {
@@ -315,7 +315,7 @@ public class InstagramServiceImpl implements InstagramService {
         return posts.get(0).getTitle();
     }
 
-    public Boolean postDankToInstagramCore(RedditPost post) throws IGLoginException {
+    public Boolean postDankToInstagramCore(MyRedditPost post) throws IGLoginException {
         String caption = generateFunCaption(post.getTitle());
         byte[] imageBytes = getImageFromUrl(post.getImageUrl());
         IGClient client = getOfficialClient(false);

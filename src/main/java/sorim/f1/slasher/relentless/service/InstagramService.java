@@ -4,7 +4,7 @@ import com.github.instagram4j.instagram4j.exceptions.IGLoginException;
 import sorim.f1.slasher.relentless.entities.FourChanImageRow;
 import sorim.f1.slasher.relentless.entities.FourChanPostEntity;
 import sorim.f1.slasher.relentless.entities.InstagramPost;
-import sorim.f1.slasher.relentless.entities.RedditPost;
+import sorim.f1.slasher.relentless.entities.MyRedditPost;
 import sorim.f1.slasher.relentless.model.KeyValue;
 import sorim.f1.slasher.relentless.model.TripleInstagramFeed;
 
@@ -26,7 +26,7 @@ public interface InstagramService {
 
     String postToInstagram(FourChanPostEntity chanPost, FourChanImageRow chanImage) throws IGLoginException;
 
-    String postDankToInstagram(List<RedditPost> posts) throws IGLoginException;
+    String postDankToInstagram(List<MyRedditPost> posts) throws IGLoginException;
 
     String setInstagramWorkerPassword(String password) throws Exception;
 

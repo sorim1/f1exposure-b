@@ -10,6 +10,8 @@ import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import masecla.reddit4j.client.Reddit4J;
 import masecla.reddit4j.client.Reddit4JBeta;
+import masecla.reddit4j.objects.RedditPost;
+import masecla.reddit4j.objects.Sorting;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -24,7 +26,7 @@ import org.springframework.web.client.RestTemplate;
 import sorim.f1.slasher.relentless.configuration.MainProperties;
 import sorim.f1.slasher.relentless.entities.ImageRow;
 import sorim.f1.slasher.relentless.entities.NewsContent;
-import sorim.f1.slasher.relentless.entities.RedditPost;
+import sorim.f1.slasher.relentless.entities.MyRedditPost;
 import sorim.f1.slasher.relentless.repository.ImageRepository;
 import sorim.f1.slasher.relentless.repository.NewsRepository;
 import sorim.f1.slasher.relentless.repository.RedditRepository;
@@ -44,8 +46,8 @@ import java.util.stream.Stream;
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class RedditServiceImpl implements RedditService {
 
-    private static final String REDDIT_NEW_POSTS = "https://old.reddit.com/r/formula1/new/.json?limit=100";
-    private static final String REDDIT_NEW_F1_PORN_POSTS = "https://old.reddit.com/r/f1porn/hot/.json?limit=100";
+  //  private static final String REDDIT_NEW_POSTS = "https://old.reddit.com/r/formula1/new/.json?limit=100";
+ //   private static final String REDDIT_NEW_F1_PORN_POSTS = "https://old.reddit.com/r/f1porn/hot/.json?limit=100";
     private static final String IMGUR_COM_3_ALBUM = "https://api.imgur.com/3/album/";
     private static final String FAVICON = "/favicon.ico";
     private static final String REDDIT_DAILY_NEWS = "https://old.reddit.com/r/formula1/search.json?q=flair:statistics+OR+flair:news+OR+flair:social-media+OR+flair:quotes&sort=comments&restrict_sr=on&t=day&include_over_18=on";
@@ -67,6 +69,7 @@ public class RedditServiceImpl implements RedditService {
     private final MainProperties mainProperties;
     private final ObjectMapper mapper = new ObjectMapper();
     private final RestTemplate restTemplate;
+    private Reddit4J reddit4JClient;
 
     HttpHeaders headers = new HttpHeaders();
     HttpHeaders htmlHeaders = new HttpHeaders();
@@ -77,7 +80,7 @@ public class RedditServiceImpl implements RedditService {
 
 
     @Override
-    public List<RedditPost> getRedditPosts(Integer page) {
+    public List<MyRedditPost> getRedditPosts(Integer page) {
         Pageable paging = PageRequest.of(page, 21);
         return redditRepository.findAllByOrderByCreatedDesc(paging);
     }
@@ -85,22 +88,8 @@ public class RedditServiceImpl implements RedditService {
     @Override
     public NewsContent fetchRedditPosts() {
         log.info("fetchRedditPosts");
-        getRFormula1NewImages();
-        getRF1PornHot();
-        return getNews();
-    }
-
-    private NewsContent getNews() {
-        List<NewsContent> newsPosts = getRedditNewsByFlair(REDDIT_DAILY_NEWS, 3);
-        List<NewsContent> videoPosts = getRedditNewsByFlair(REDDIT_DAILY_VIDEO_POSTS, 5);
-        List<NewsContent> finalList = mergeAndEnrichNewsLists(newsPosts, videoPosts);
-        saveNewsList(finalList);
-        if (!finalList.isEmpty()) {
-            return finalList.get(0);
-        } else {
-            return null;
-        }
-
+        fetchF1PornSubreddit();
+        return getReddit4j();
     }
 
     private List<NewsContent> mergeAndEnrichNewsLists(List<NewsContent> newsPosts, List<NewsContent> videoPosts) {
@@ -198,14 +187,6 @@ public class RedditServiceImpl implements RedditService {
         return news.getUrl() == null || news.getUrl().indexOf("reddit.com") <= 0 || news.getImageUrl() != null;
     }
 
-    private String getYoutubeThumbnailOld(String url) {
-        Integer index = url.indexOf("/embed/");
-        if (index > 0) {
-            String code = url.substring(index + 7, index + 18);
-            return "https://img.youtube.com/vi/" + code + "/maxresdefault.jpg";
-        }
-        return null;
-    }
 
     private String getYoutubeThumbnail(String finalUrl) {
 
@@ -222,37 +203,76 @@ public class RedditServiceImpl implements RedditService {
         return null;
     }
 
-    private List<NewsContent> getRedditNewsByFlair(String apiUrl, Integer status) {
-        HttpEntity entity = new HttpEntity(headers);
-        try {
-            ResponseEntity<String> newsResponse = restTemplate.exchange(
-                    apiUrl, HttpMethod.GET, entity, String.class);
-            List<NewsContent> list = new ArrayList<>();
+    @SneakyThrows
+    public NewsContent  getReddit4j() {
+        List<NewsContent> newsPosts = new ArrayList<>();
+        List<NewsContent> videoPosts = new ArrayList<>();
+        List<MyRedditPost> imagePosts = new ArrayList<>();
 
-            Map<String, Object> mapping = mapper.readValue(newsResponse.getBody(), typeRef);
-            LinkedHashMap<String, Object> root = (LinkedHashMap<String, Object>) mapping.get("data");
-            List<LinkedHashMap<String, Object>> children = (ArrayList<LinkedHashMap<String, Object>>) root.get("children");
-            children.forEach(child -> {
-                LinkedHashMap<String, Object> data = (LinkedHashMap<String, Object>) child.get("data");
-                NewsContent post = new NewsContent(data, status);
-                list.add(post);
-            });
-            return list;
-        } catch (Exception e) {
-            log.error("nece mi getRedditNewsByFlair", e);
-            e.printStackTrace();
+        List<RedditPost> posts = reddit4JClient.getSubredditPosts("formula1", Sorting.HOT).submit();
+        log.info("posts.size: {}", posts.size());
+        List<RedditPost> redditImagePosts = posts.stream().filter(this::isImageRedditPost).collect(Collectors.toList());
+        List<RedditPost> redditNewsPosts = posts.stream().filter(this::isNewsRedditPost).collect(Collectors.toList());
+        List<RedditPost> redditVideoPosts = posts.stream().filter(this::isVideoRedditPost).collect(Collectors.toList());
+
+
+        redditNewsPosts.forEach(redditPost->{
+            NewsContent newsPost = new NewsContent(redditPost, 3);
+            newsPosts.add(newsPost);
+        });
+        redditVideoPosts.forEach(redditPost->{
+            NewsContent newsPost = new NewsContent(redditPost, 5);
+            videoPosts.add(newsPost);
+        });
+        redditImagePosts.forEach(redditPost->{
+            MyRedditPost post = new MyRedditPost(redditPost);
+            if (post.getValid()) {
+                imagePosts.add(post);
+            }
+        });
+        lastNewPost = imagePosts.get(0).getId();
+        redditRepository.saveAll(imagePosts);
+        log.info("save imagePosts count:{}", imagePosts.size());
+        List<NewsContent> finalList = mergeAndEnrichNewsLists(newsPosts, videoPosts);
+        saveNewsList(finalList);
+        log.info("save finalList count:{}", finalList.size());
+        if (!finalList.isEmpty()) {
+            return finalList.get(0);
+        } else {
+            return null;
         }
-        return new ArrayList<>();
     }
 
     @SneakyThrows
-    public List<NewsContent> getReddit4j() {
-        Reddit4JBeta reddit4JBeta = Reddit4J.rateLimited().beta();
-        Reddit4J client1 = Reddit4J.rateLimited();
-        log.info("client1", client1.getClientSecret());
-        Gson gson1 = client1.getSubreddit("formula1").getGson();
-        log.info("gson1", gson1);
-        return new ArrayList<>();
+    private void fetchF1PornSubreddit(){
+        List<MyRedditPost> imagePosts = new ArrayList<>();
+
+        List<RedditPost> posts = reddit4JClient.getSubredditPosts("f1porn", Sorting.NEW).submit();
+        posts.forEach(redditPost->{
+            MyRedditPost post = new MyRedditPost(redditPost);
+            if (post.getValid()) {
+                imagePosts.add(post);
+            }
+        });
+        log.info("save f1p count:{}", imagePosts.size());
+        redditRepository.saveAll(imagePosts);
+    }
+
+    private boolean isImageRedditPost(RedditPost post) {
+        if(post.getLinkFlairText()!=null && post.getLinkFlairText().contains("photo")){
+            return true;
+        }
+        return post.getUrl().startsWith("https://i.redd")
+                || post.getUrl().startsWith("https://i.imgur.");
+    }
+
+    private boolean isNewsRedditPost(RedditPost post) {
+        return post.getLinkFlairText().contains("news")
+                || post.getLinkFlairText().contains("social-media")
+                || post.getLinkFlairText().contains("statistics");
+    }
+    private boolean isVideoRedditPost(RedditPost post) {
+        return post.getLinkFlairText().contains("video");
     }
 
     private void saveNewsList(List<NewsContent> list) {
@@ -263,9 +283,7 @@ public class RedditServiceImpl implements RedditService {
                 if (post.getStatus() == 3) {
                     getImagesForPost(post);
                 }
-//                if (post.getStatus() == 5) {
-//                    getVideosForPost(post);
-//                }
+
                 saveToDatabaseList.add(post);
             } else {
                 if (fromDb.getTimestampActivity().before(post.getTimestampActivity())) {
@@ -389,21 +407,7 @@ public class RedditServiceImpl implements RedditService {
                     }
                 } catch (Exception ex) {
                     log.info("ex2 " + post.getUrl());
-                    ex.printStackTrace();
-                }
-            }
-        }
-    }
-
-    private void getVideosForPost(NewsContent post) {
-        if (post.getUrl() != null) {
-            if (post.getUrl().contains("imgur.com/a")) {
-                String url = getUrlFromImgurAlbum(post.getUrl());
-                if (url != null) {
-                    post.setUrl(url);
-                    post.setTitle("[VIDEO] " + post.getTitle());
-                } else {
-                    post.setStatus(1);
+                    log.info("ex2 " + ex.getMessage());
                 }
             }
         }
@@ -452,108 +456,24 @@ public class RedditServiceImpl implements RedditService {
         }
     }
 
-    private void getRFormula1NewImages() {
-        AtomicReference<Boolean> iterate = new AtomicReference<>(true);
-        HttpEntity entity = new HttpEntity(headers);
-        try {
-
-            ResponseEntity<String> response = restTemplate.exchange(
-                    REDDIT_NEW_POSTS, HttpMethod.GET, entity, String.class);
-            List<RedditPost> list = new ArrayList<>();
-
-            Map<String, Object> mapping = mapper.readValue(response.getBody(), typeRef);
-            LinkedHashMap<String, Object> root = (LinkedHashMap<String, Object>) mapping.get("data");
-            List<LinkedHashMap<String, Object>> children = (ArrayList<LinkedHashMap<String, Object>>) root.get("children");
-            children.forEach(child -> {
-                if (iterate.get()) {
-                    LinkedHashMap<String, Object> data = (LinkedHashMap<String, Object>) child.get("data");
-                    RedditPost post = new RedditPost(data);
-                    if (post.getId().equals(lastNewPost)) {
-                        iterate.set(false);
-                    }
-                    if (post.getValid()) {
-                        list.add(post);
-                    }
-                }
-            });
-            lastNewPost = list.get(0).getId();
-            redditRepository.saveAll(list);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
+    @SneakyThrows
     @Override
-    public String postFormulaDankToInstagram() throws IGLoginException {
-        AtomicReference<Integer> two = new AtomicReference<>(0);
-        HttpEntity entity = new HttpEntity(headers);
-        ResponseEntity<String> response = restTemplate.exchange(
-                FORMULA_DANK_NEW_POSTS, HttpMethod.GET, entity, String.class);
-        List<RedditPost> output = new ArrayList<>();
-        List<RedditPost> fallback = new ArrayList<>();
-        try {
-            Map<String, Object> mapping = mapper.readValue(response.getBody(), typeRef);
+    public String postFormulaDankToInstagram() {
+        List<MyRedditPost> output = new ArrayList<>();
 
-            LinkedHashMap<String, Object> root = (LinkedHashMap<String, Object>) mapping.get("data");
-            List<LinkedHashMap<String, Object>> children = (ArrayList<LinkedHashMap<String, Object>>) root.get("children");
-            fallback.add(new RedditPost(0));
-            fallback.add(new RedditPost(0));
-            children.forEach(child -> {
-                if (two.get() < 2) {
-                    LinkedHashMap<String, Object> data = (LinkedHashMap<String, Object>) child.get("data");
-                    RedditPost post = new RedditPost(data);
-                    if (post.isItJpeg()) {
-                        if (post.getUps() > 1300) {
-                            two.set(two.get() + 1);
-                            output.add(post);
-                        }
-                        if (post.getUps() > fallback.get(0).getUps()) {
-                            fallback.set(1, fallback.get(0));
-                            fallback.set(0, post);
-                        }
-                    }
-                }
-            });
-        } catch (JsonProcessingException e) {
-            e.printStackTrace();
-        }
-        if (output.size() == 2) {
+        List<RedditPost> posts = reddit4JClient.getSubredditPosts("formuladank", Sorting.HOT).submit();
+        List<RedditPost> imagePosts = posts.stream().filter(post->post.getUrl()!=null && post.getUrl().contains("i.redd.it")).collect(Collectors.toList());
+        if (imagePosts.size() >= 2) {
+            output.add(new MyRedditPost(imagePosts.get(0)));
+            output.add(new MyRedditPost(imagePosts.get(1)));
             return instagramService.postDankToInstagram(output);
         } else {
             log.warn("dank instagram post fallback!");
-            return instagramService.postDankToInstagram(fallback);
+            return "failed";
         }
     }
 
-    private void getRF1PornHot() {
-        AtomicReference<Boolean> iterate = new AtomicReference<>(true);
-        HttpEntity entity = new HttpEntity(headers);
-        try {
-            ResponseEntity<String> response = restTemplate.exchange(
-                    REDDIT_NEW_F1_PORN_POSTS, HttpMethod.GET, entity, String.class);
-            List<RedditPost> list = new ArrayList<>();
 
-            Map<String, Object> mapping = mapper.readValue(response.getBody(), typeRef);
-            LinkedHashMap<String, Object> root = (LinkedHashMap<String, Object>) mapping.get("data");
-            List<LinkedHashMap<String, Object>> children = (ArrayList<LinkedHashMap<String, Object>>) root.get("children");
-            children.forEach(child -> {
-                if (iterate.get()) {
-                    LinkedHashMap<String, Object> data = (LinkedHashMap<String, Object>) child.get("data");
-                    RedditPost post = new RedditPost(data);
-                    if (post.getId().equals(lastNewF1PornPost)) {
-                        iterate.set(false);
-                    }
-                    if (post.getValid()) {
-                        list.add(post);
-                    }
-                }
-            });
-            lastNewF1PornPost = list.get(0).getId();
-            redditRepository.saveAll(list);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 
     private String getImgurlAlbumFirstImage(String albumUrl) {
         String code = albumUrl.substring(albumUrl.lastIndexOf("/"));
@@ -574,9 +494,17 @@ public class RedditServiceImpl implements RedditService {
 
     @PostConstruct
     void init() {
+
+        reddit4JClient = Reddit4J.rateLimited();
+        reddit4JClient.setClientSecret("jMGac0NNRSD_pEcwwLtsQyVug2UqJw");
+        reddit4JClient.setClientId("iVJwKQTZgdjgkgqzAe4iVg");
+        reddit4JClient.setUsername("F1Exposure");
+        reddit4JClient.setPassword("qwadrat1");
+        reddit4JClient.setUserAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:115.0) Gecko/20100101 Firefox/115.0");
+
+
         headers.setAccept(List.of(MediaType.APPLICATION_JSON));
         headers.setContentType(MediaType.APPLICATION_JSON);
-      //  headers.add("user-agent", "Mozilla/4.8 Firefox/21.0");
         headers.add("user-agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:115.0) Gecko/20100101 Firefox/115.0");
 
         HttpEntity<String> entity = new HttpEntity<String>("parameters", headers);

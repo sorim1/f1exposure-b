@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import masecla.reddit4j.objects.RedditPost;
 import sorim.f1.slasher.relentless.util.MainUtility;
 
 import javax.persistence.Entity;
@@ -46,33 +47,19 @@ public class NewsContent implements Comparable<NewsContent> {
     @Transient
     private Integer numCommentsR;
 
-    public NewsContent(LinkedHashMap<String, Object> data, long time) {
-        this.code = MainUtility.generateCodeFromTitleAndId((String) data.get("title"), (String) data.get("id"));
-        this.title = (String) data.get("title");
+    public NewsContent(RedditPost post, int status) {
+        this.code = MainUtility.generateCodeFromTitleAndId(post.getTitle(), post.getId());
+        this.title = post.getTitle();
         this.title = this.title.replace("&amp;", "&");
-        this.url = (String) data.get("url_overridden_by_dest");
-        Double createdDouble = (Double) data.get("created");
-        this.timestampCreated = new Date(createdDouble.longValue());
-        this.setStatus(3);
-        this.setTimestampCreated(new Date(time));
-        this.setTimestampActivity(new Date(time - 18 * 60 * 60 * 1000));
-        this.setCommentCount(0);
-        this.numCommentsR = (Integer) data.get("num_comments");
-    }
-
-    public NewsContent(LinkedHashMap<String, Object> data, Integer status) {
-        this.code = MainUtility.generateCodeFromTitleAndId((String) data.get("title"), (String) data.get("id"));
-        this.title = (String) data.get("title");
-        this.title = this.title.replace("&amp;", "&");
-        this.url = (String) data.get("url_overridden_by_dest");
-        Double createdDouble = (Double) data.get("created");
-        this.timestampCreated = new Date(createdDouble.longValue());
+        this.url = post.getUrl();
+        this.timestampCreated = new Date(post.getCreated());
         this.setStatus(status);
         this.setCommentCount(0);
-        this.numCommentsR = (Integer) data.get("num_comments");
+        this.numCommentsR = post.getNumComments();
 
         if(status==5){
-            LinkedHashMap<String, Object> media = (LinkedHashMap<String, Object>) data.get("media");
+            Object tempo = post.getMedia();
+            LinkedHashMap<String, Object> media = (LinkedHashMap<String, Object>) post.getMedia();
             if(media!=null){
                 String type = (String) media.get("type");
                 if("imgur.com".equals(type)){
@@ -93,7 +80,6 @@ public class NewsContent implements Comparable<NewsContent> {
             this.title = "[VIDEO] " + this.title;
             this.numCommentsR = this.numCommentsR + 100;
         }
-
     }
 
     @Override
