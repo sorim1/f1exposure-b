@@ -188,12 +188,13 @@ public class ClientServiceImpl implements ClientService {
 
     @Override
     public void fetchRedditPosts() {
+        redditService.getReddit4j();
         NewsContent latestNews = redditService.fetchRedditPosts();
-        if (latestNews != null && !allowNonRedditNews) {
-            setSidebarData(latestNews);
-        } else {
-            setSidebarData(newsRepository.findFirstByStatusLessThanEqualOrderByTimestampActivityDesc(7));
-        }
+//        if (latestNews != null && !allowNonRedditNews) {
+//            setSidebarData(latestNews);
+//        } else {
+//            setSidebarData(newsRepository.findFirstByStatusLessThanEqualOrderByTimestampActivityDesc(7));
+//        }
     }
 
     @Override

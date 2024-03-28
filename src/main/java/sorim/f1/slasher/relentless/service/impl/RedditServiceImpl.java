@@ -4,8 +4,12 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.instagram4j.instagram4j.exceptions.IGLoginException;
+import com.google.gson.Gson;
 import lombok.RequiredArgsConstructor;
+import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
+import masecla.reddit4j.client.Reddit4J;
+import masecla.reddit4j.client.Reddit4JBeta;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -63,6 +67,7 @@ public class RedditServiceImpl implements RedditService {
     private final MainProperties mainProperties;
     private final ObjectMapper mapper = new ObjectMapper();
     private final RestTemplate restTemplate;
+
     HttpHeaders headers = new HttpHeaders();
     HttpHeaders htmlHeaders = new HttpHeaders();
     TypeReference<HashMap<String, Object>> typeRef = new TypeReference<>() {
@@ -237,6 +242,16 @@ public class RedditServiceImpl implements RedditService {
             log.error("nece mi getRedditNewsByFlair", e);
             e.printStackTrace();
         }
+        return new ArrayList<>();
+    }
+
+    @SneakyThrows
+    public List<NewsContent> getReddit4j() {
+        Reddit4JBeta reddit4JBeta = Reddit4J.rateLimited().beta();
+        Reddit4J client1 = Reddit4J.rateLimited();
+        log.info("client1", client1.getClientSecret());
+        Gson gson1 = client1.getSubreddit("formula1").getGson();
+        log.info("gson1", gson1);
         return new ArrayList<>();
     }
 

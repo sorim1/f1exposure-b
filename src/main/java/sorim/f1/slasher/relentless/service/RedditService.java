@@ -15,4 +15,7 @@ public interface RedditService {
     String postFormulaDankToInstagram() throws IGLoginException;
 
     NewsContent fetchRedditPosts();
+
+    List<NewsContent> getReddit4j();
+
 }
