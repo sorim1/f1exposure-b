@@ -63,11 +63,17 @@ public class TwitchServiceImpl implements TwitchService {
 
     @PostConstruct
     public void onInit() {
+        try{
+
         twitchHelixclient = TwitchHelixBuilder.builder()
                 .withClientId("c0r4sbsc7uiz3r0g8z7q2sdyayyrlj")
                 .withClientSecret("6gdm7tw99mt3kjxkta7xhvbxytw8de")
                 .build();
         setStreamer("landonorris");
+
+        }catch (Exception ex){
+            log.error("nisam startao twitch:", ex);
+        }
     }
 
     private Boolean isUserOnline(String userId) {

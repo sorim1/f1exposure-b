@@ -2,6 +2,7 @@ package sorim.f1.slasher.relentless.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.google.gson.internal.LinkedTreeMap;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -16,6 +17,7 @@ import javax.persistence.Transient;
 import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 @Entity
 @Table(name = "NEWS")
@@ -59,7 +61,7 @@ public class NewsContent implements Comparable<NewsContent> {
 
         if(status==5){
             Object tempo = post.getMedia();
-            LinkedHashMap<String, Object> media = (LinkedHashMap<String, Object>) post.getMedia();
+            Map<String, Object> media = (Map<String, Object>) post.getMedia();
             if(media!=null){
                 String type = (String) media.get("type");
                 if("imgur.com".equals(type)){
