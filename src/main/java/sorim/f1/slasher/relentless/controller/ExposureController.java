@@ -145,6 +145,7 @@ public class ExposureController {
     StrawpollPoll postStrawpoll(@RequestHeader String client) throws Exception {
         securityService.validateHeader(client);
         if(exposureService.checkIfStrawpollCanBeStarted()){
+            exposureService.setExposureNow(true);
             StrawpollPoll poll = strawpollService.postStrawpoll();
             exposureService.setStrawpoll(poll.getId());
             return poll;
@@ -157,6 +158,7 @@ public class ExposureController {
     @GetMapping("/postStrawpollForced")
     StrawpollPoll postStrawpollForced(@RequestHeader String client) throws Exception {
         securityService.validateAdminHeader(client);
+        exposureService.setExposureNow(true);
         StrawpollPoll poll = strawpollService.postStrawpoll();
         exposureService.setStrawpoll(poll.getId());
         return poll;

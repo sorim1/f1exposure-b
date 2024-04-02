@@ -28,6 +28,8 @@ public interface ExposureStrawpollService {
 
     Boolean isExposureNow();
 
+    Boolean setExposureNow(Boolean value);
+
     public Boolean checkIfStrawpollCanBeStarted();
 
     void startPolling();

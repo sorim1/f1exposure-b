@@ -11,11 +11,13 @@ import sorim.f1.slasher.relentless.entities.*;
 import sorim.f1.slasher.relentless.handling.Logger;
 import sorim.f1.slasher.relentless.model.*;
 import sorim.f1.slasher.relentless.model.enums.ExposureStatusEnum;
+import sorim.f1.slasher.relentless.model.openf1.RaceControlDto;
 import sorim.f1.slasher.relentless.model.strawpoll.StrawpollModelThree;
 import sorim.f1.slasher.relentless.repository.*;
 import sorim.f1.slasher.relentless.service.ErgastService;
 import sorim.f1.slasher.relentless.service.ExposureStrawpollService;
 import sorim.f1.slasher.relentless.service.FourchanService;
+import sorim.f1.slasher.relentless.service.OpenF1Service;
 
 import javax.annotation.PostConstruct;
 import java.math.BigDecimal;
@@ -55,6 +57,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
     private final PropertiesRepository propertiesRepository;
     private final ErgastService ergastService;
     private final FourchanService fourchanService;
+    private final OpenF1Service openF1Service;
     private final RestTemplate restTemplate;
 
     private final JsonRepository jsonRepository;
@@ -92,7 +95,6 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
 //                        response = true;
 //                    }
 //                }
-                exposureNow = true;
                 exposureToday = true;
             } else {
                 f1calendar = calendarRepository.findFirstByRaceAfterOrderByRace(gmtDateTime);
@@ -123,6 +125,13 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
     public Boolean isExposureNow() {
         return exposureNow;
     }
+
+    @Override
+    public Boolean setExposureNow(Boolean value) {
+        exposureNow = value;
+        return exposureNow;
+    }
+
 
     @Override
     public void startPolling() {
@@ -253,7 +262,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
 
     @Override
     public Boolean checkIfStrawpollCanBeStarted() {
-        Boolean waitingForExposurePoll =exposureToday && !exposureNow;
+        Boolean waitingForExposurePoll = exposureToday && !exposureNow;
 
         return waitingForExposurePoll && exposureReady;
     }
@@ -422,10 +431,27 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
                     public void run() {
                         log.info(" - PROŠLO JE SAT VREMENA UTRKE: ");
                         exposureReady = true;
+                        checkRaceStatusUsingOpenF1Service();
                     }
+
                 },
                 3600000
         );
+    }
+
+    private void checkRaceStatusUsingOpenF1Service() {
+        List<RaceControlDto> response;
+        int counter = 0;
+        try {
+            do {
+                log.info("POZIVAM getTodayRaceControlData: {}", counter++);
+                response = openF1Service.getTodayRaceControlData("CHEQUERED");
+                Thread.sleep(120000);
+            } while (!response.isEmpty() && counter < 60);
+            log.info("CHEQUERED flag found: {}", response.size());
+        } catch (Exception e) {
+           log.error("error checkRaceStatusUsingOpenF1Service ", e);
+        }
     }
 
     private Integer getReloadDelay() {
@@ -594,10 +620,10 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
         if (!exposureToday) {
             return false;
         }
-        if (LocalDateTime.now().isAfter(exposureTime)) {
-            exposureNow = true;
-            return true;
-        }
+//        if (LocalDateTime.now().isAfter(exposureTime)) {
+//            exposureNow = true;
+//            return true;
+//        }
 
         return false;
     }
