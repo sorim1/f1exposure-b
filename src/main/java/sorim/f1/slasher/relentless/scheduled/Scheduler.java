@@ -92,7 +92,7 @@ public class Scheduler {
         return isRaceWeek;
     }
 
-    @Scheduled(cron = "0 0 3 * * SUN")
+    @Scheduled(cron = "0 0 2 * * SUN")
     public void sundayExposureJobs() {
         log.info("sundayJobs called");
         exposureService.initializeExposureFrontendVariables(null);
