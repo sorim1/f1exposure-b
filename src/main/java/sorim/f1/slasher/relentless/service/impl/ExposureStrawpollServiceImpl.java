@@ -250,13 +250,13 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
                 .title(title)
                 .currentYear(properties.getCurrentSeasonPast())
                 .showWinner(showWinner)
-                .delay(reloadDelay)
                 .activeExposureChart(generateSingleExposureResult(properties.getCurrentSeasonPast(), currentExposureRound, true))
                 .exposureChampionshipData(getExposureChampionshipData(standings))
                 .standings(standings)
                 .voters(getExposureVoters())
                 .exposureRaces(jsonRepository2.findAllById("EXPOSURE_CURRENT_RACES").getJson())
                 .timeIsRight(timeIsRight)
+                .currentExposureRound(currentExposureRound)
                 .build();
     }
 

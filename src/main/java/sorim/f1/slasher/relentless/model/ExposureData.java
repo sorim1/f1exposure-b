@@ -15,7 +15,6 @@ import java.util.List;
 public class ExposureData {
     private String title;
     private Integer currentYear;
-    private Integer delay;
     private ActiveExposureChart activeExposureChart;
     private List<ExposureChampionshipData> exposureChampionshipData;
     private List<ExposureChampionshipStanding> standings;
@@ -23,4 +22,5 @@ public class ExposureData {
     private Object exposureRaces;
     private Boolean showWinner;
     private Boolean timeIsRight;
+    private Integer currentExposureRound;
 }
