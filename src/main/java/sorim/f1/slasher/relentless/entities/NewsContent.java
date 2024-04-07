@@ -60,12 +60,11 @@ public class NewsContent implements Comparable<NewsContent> {
         this.numCommentsR = post.getNumComments();
 
         if(status==5){
-            Object tempo = post.getMedia();
             Map<String, Object> media = (Map<String, Object>) post.getMedia();
             if(media!=null){
                 String type = (String) media.get("type");
                 if("imgur.com".equals(type)){
-                    LinkedHashMap<String, Object> oembed = (LinkedHashMap<String, Object>) media.get("oembed");
+                    Map<String, Object> oembed = (Map<String, Object>) media.get("oembed");
                     String thumbnail_url = (String) oembed.get("thumbnail_url");
 
                     Integer index = thumbnail_url.indexOf(".jpg");

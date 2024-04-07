@@ -123,6 +123,11 @@ public class RedditServiceImpl implements RedditService {
                     post.setUrl(post.getUrl() + ".mp4");
                     filteredVideoPosts.add(post);
                 }
+                if (post.getUrl().contains("dubz.link/c/")) {
+                    post.setUrl(post.getUrl().replace("dubz.link/c/", "dubzalt.com/storage/videos/"));
+                    post.setUrl(post.getUrl() + ".mp4");
+                    filteredVideoPosts.add(post);
+                }
                 if (post.getUrl().contains("youtu")) {
                     post.setIconUrl("https://www.youtube.com/favicon.ico");
                     post.setImageUrl(getYoutubeThumbnail(post.getUrl()));
@@ -210,7 +215,6 @@ public class RedditServiceImpl implements RedditService {
         List<MyRedditPost> imagePosts = new ArrayList<>();
 
         List<RedditPost> posts = reddit4JClient.getSubredditPosts("formula1", Sorting.HOT).submit();
-        log.info("posts.size: {}", posts.size());
         List<RedditPost> redditImagePosts = posts.stream().filter(this::isImageRedditPost).collect(Collectors.toList());
         List<RedditPost> redditNewsPosts = posts.stream().filter(this::isNewsRedditPost).collect(Collectors.toList());
         List<RedditPost> redditVideoPosts = posts.stream().filter(this::isVideoRedditPost).collect(Collectors.toList());
