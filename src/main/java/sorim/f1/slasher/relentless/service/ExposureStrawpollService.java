@@ -24,7 +24,7 @@ public interface ExposureStrawpollService {
 
     ExposureResponse getExposureDriverList();
 
-    Boolean initializeExposureFrontendVariables(String id);
+    Boolean setupExposureVariables(String id);
 
     Boolean isExposureNow();
 

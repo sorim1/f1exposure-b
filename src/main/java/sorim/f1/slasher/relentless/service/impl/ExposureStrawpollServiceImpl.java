@@ -13,11 +13,9 @@ import sorim.f1.slasher.relentless.model.*;
 import sorim.f1.slasher.relentless.model.enums.ExposureStatusEnum;
 import sorim.f1.slasher.relentless.model.openf1.RaceControlDto;
 import sorim.f1.slasher.relentless.model.strawpoll.StrawpollModelThree;
+import sorim.f1.slasher.relentless.model.strawpoll.StrawpollPoll;
 import sorim.f1.slasher.relentless.repository.*;
-import sorim.f1.slasher.relentless.service.ErgastService;
-import sorim.f1.slasher.relentless.service.ExposureStrawpollService;
-import sorim.f1.slasher.relentless.service.FourchanService;
-import sorim.f1.slasher.relentless.service.OpenF1Service;
+import sorim.f1.slasher.relentless.service.*;
 
 import javax.annotation.PostConstruct;
 import java.math.BigDecimal;
@@ -58,6 +56,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
     private final ErgastService ergastService;
     private final FourchanService fourchanService;
     private final OpenF1Service openF1Service;
+    private final StrawpollService strawpollService;
     private final RestTemplate restTemplate;
 
     private final JsonRepository jsonRepository;
@@ -71,11 +70,11 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
         } else {
             updateCurrentExposureRound(0);
         }
-        initializeExposureFrontendVariables(null);
+        setupExposureVariables(null);
     }
 
     @Override
-    public Boolean initializeExposureFrontendVariables(String id) {
+    public Boolean setupExposureVariables(String id) {
         Boolean response = false;
         strawpollId = id;
         Logger.logAdmin("initializeExposureFrontendVariablesNew called");
@@ -205,12 +204,12 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
         reloadDelay = 20000;
         strawpollId = id;
         if (id == null) {
-            initializeExposureFrontendVariables(null);
+            setupExposureVariables(null);
         } else {
             StrawpollModelThree newStrawpoll = fetchStrawpollResults();
             if (newStrawpoll != null) {
                 log.info("strawpoll found: {} ", newStrawpoll);
-                initializeExposureFrontendVariables(id);
+                setupExposureVariables(id);
                 updateExposureDataFromStrawpoll(newStrawpoll);
             } else {
                 log.info("strawpoll not found");
@@ -429,13 +428,15 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
                     @SneakyThrows
                     @Override
                     public void run() {
-                        log.info(" - PROŠLO JE SAT VREMENA UTRKE: ");
+                        if(!exposureReady){
+                        log.info(" - PROŠLO JE 70 minuta UTRKE: ");
                         exposureReady = true;
                         checkRaceStatusUsingOpenF1Service();
+                        }
                     }
 
                 },
-                3600000
+                4200000
         );
     }
 
@@ -447,8 +448,16 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
                 log.info("POZIVAM getTodayRaceControlData: {}", counter++);
                 response = openF1Service.getTodayRaceControlData("CHEQUERED");
                 Thread.sleep(120000);
-            } while (!response.isEmpty() && counter < 60);
+            } while (response.isEmpty() && counter < 60);
             log.info("CHEQUERED flag found: {}", response.size());
+            if(!response.isEmpty() && !exposureNow){
+                log.info("SADA BI AUTOMATSKI STARTAO POLL ali je zakomentirano");
+//                setExposureNow(true);
+//                StrawpollPoll poll = strawpollService.postStrawpoll();
+//                setStrawpoll(poll.getId());
+            } else {
+                log.info("SADA BI AUTOMATSKI STARTAO POLL ALI NEĆU JER NESTO NIJE OK: " + exposureNow);
+            }
         } catch (Exception e) {
            log.error("error checkRaceStatusUsingOpenF1Service ", e);
         }

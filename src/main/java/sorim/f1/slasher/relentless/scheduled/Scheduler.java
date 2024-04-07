@@ -11,7 +11,6 @@ import sorim.f1.slasher.relentless.model.CalendarData;
 import sorim.f1.slasher.relentless.service.*;
 import sorim.f1.slasher.relentless.util.MainUtility;
 
-import javax.annotation.PostConstruct;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.Random;
@@ -95,7 +94,7 @@ public class Scheduler {
     @Scheduled(cron = "0 0 2 * * SUN")
     public void sundayExposureJobs() {
         log.info("sundayJobs called");
-        exposureService.initializeExposureFrontendVariables(null);
+        exposureService.setupExposureVariables(null);
 
     }
 

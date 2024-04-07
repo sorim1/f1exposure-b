@@ -144,6 +144,7 @@ public class ExposureController {
     @GetMapping("/postStrawpoll")
     StrawpollPoll postStrawpoll(@RequestHeader String client) throws Exception {
         securityService.validateHeader(client);
+        log.info("POKUSAJ KREIRANJA STRAWPOLLA");
         if(exposureService.checkIfStrawpollCanBeStarted()){
             exposureService.setExposureNow(true);
             StrawpollPoll poll = strawpollService.postStrawpoll();

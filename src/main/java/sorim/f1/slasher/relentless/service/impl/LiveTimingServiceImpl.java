@@ -720,7 +720,7 @@ public class LiveTimingServiceImpl implements LiveTimingService {
                     .title(title).build();
             race.setRaceAnalysis(analysis);
             if (!ergastDataAvailable) {
-                race.setLiveTimingRace(null);
+             //   race.setLiveTimingRace(null);
                 analysis.setStatus(2);
             }
             race.setRaceAnalysis(analysis);
@@ -882,6 +882,7 @@ public class LiveTimingServiceImpl implements LiveTimingService {
     }
 
     private Boolean enrichDriversWithErgast(Map<String, Driver> driversMap, Map<String, String> ergastCodes, String season, Integer round) throws JsonProcessingException {
+        try {
         ErgastResponse response = ergastService.getRaceLaps(Integer.valueOf(season), round);
         if (response.getMrData().getRaceTable().getRaces().size() > 0) {
             //empty livetiming positions array, to fill with ergast positions because sometimes theyre not equal (Rflag..)
@@ -943,6 +944,10 @@ public class LiveTimingServiceImpl implements LiveTimingService {
         } else {
             return false;
         }
+    } catch (Exception e) {
+        log.error("enrichDriversWithErgast error ", e);
+        return false;
+    }
     }
 
 

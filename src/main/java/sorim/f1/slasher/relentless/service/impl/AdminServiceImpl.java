@@ -171,8 +171,12 @@ public class AdminServiceImpl implements AdminService {
         }
         f1calendarList.add(f1Calendar);
         if (f1Calendar != null && f1Calendar.getRace() != null) {
-            List<RaceData> ergastRaceData = ergastService.fetchSeason(String.valueOf(f1Calendar.getRace().getYear()));
-            enrichCalendarWithErgastData(f1calendarList, ergastRaceData);
+            try{
+                List<RaceData> ergastRaceData = ergastService.fetchSeason(String.valueOf(f1Calendar.getRace().getYear()));
+                enrichCalendarWithErgastData(f1calendarList, ergastRaceData);
+            }catch(Exception ex){
+                log.error("errow while fetching ergast for calendar", ex);
+            }
         }
         calendarRepository.deleteAll();
         calendarRepository.saveAll(f1calendarList);
