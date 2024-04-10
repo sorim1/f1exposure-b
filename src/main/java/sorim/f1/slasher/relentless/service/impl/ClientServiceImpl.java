@@ -1,5 +1,6 @@
 package sorim.f1.slasher.relentless.service.impl;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -553,10 +554,17 @@ public class ClientServiceImpl implements ClientService {
     }
 
     private void setSidebarData(NewsContent topNews) {
-        sidebarData = SidebarData.builder()
+        KeyValue sidebarStrawpoll = null;
+        try{
+            ObjectMapper mapper = new ObjectMapper();
+            sidebarStrawpoll = mapper.convertValue(jsonRepository.findAllById("SIDEBAR_STRAWPOLL").getJson(), KeyValue.class);
+         }  catch(Exception ex){
+            log.error("sidebarStrawpoll error", ex);
+        }
+                sidebarData = SidebarData.builder()
                 .topNews(topNews)
                 .latestImagePost(instagramService.getLatestPost())
-                //     .randomArt(getRandomImgur())
+                .strawpoll(sidebarStrawpoll)
                 .build();
         ZonedDateTime gmtZoned = ZonedDateTime.now(ZoneId.of("Europe/London"));
         LocalDateTime gmtDateTime = gmtZoned.toLocalDateTime();
@@ -574,6 +582,20 @@ public class ClientServiceImpl implements ClientService {
         sidebarData.setExposedDriver(exposureDriver);
         return sidebarData;
     }
+    @Override
+    public SidebarData setSidebarStrawpoll(KeyValue strawpoll) {
+        JsonRepositoryModel saveData = JsonRepositoryModel.builder().id("SIDEBAR_STRAWPOLL")
+                .json(strawpoll).build();
+        jsonRepository.save(saveData);
+        sidebarData.setStrawpoll(strawpoll);
+        return sidebarData;
+    }
+
+    @Override
+    public KeyValue getStrawpoll() {
+        return sidebarData.getStrawpoll();
+    }
+
 
     @Override
     public String getStreamer() {

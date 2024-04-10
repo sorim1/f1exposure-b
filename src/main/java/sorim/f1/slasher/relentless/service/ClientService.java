@@ -96,4 +96,6 @@ public interface ClientService {
     NavbarData updateNavbarData(NavbarData navbarData);
 
     SidebarData setSidebarExposureDriver(KeyValue exposureDriver);
+    SidebarData setSidebarStrawpoll(KeyValue strawpoll);
+    KeyValue getStrawpoll();
 }

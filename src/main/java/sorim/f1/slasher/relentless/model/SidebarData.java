@@ -16,5 +16,6 @@ public class SidebarData {
     private Boolean exposureOn;
     private InstagramPost latestImagePost;
     private KeyValue exposedDriver;
+    private KeyValue strawpoll;
     private String randomArt;
 }

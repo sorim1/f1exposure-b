@@ -188,10 +188,22 @@ public class ClientController {
         return service.getSidebarData();
     }
 
-    @GetMapping("/setSidebarExposureDriver")
+    @PostMapping("/setSidebarExposureDriver")
     SidebarData setSidebarExposureDriver(@RequestHeader String client, @RequestBody(required = false) KeyValue exposureDriver) throws Exception {
         securityService.validateHeader(client);
         return service.setSidebarExposureDriver(exposureDriver);
+    }
+
+    @PostMapping("/setSidebarStrawpoll")
+    SidebarData setSidebarStrawpoll(@RequestHeader String client, @RequestBody(required = false) KeyValue strawpoll) throws Exception {
+        securityService.validateHeader(client);
+        return service.setSidebarStrawpoll(strawpoll);
+    }
+
+    @GetMapping("/getStrawpoll")
+    KeyValue getStrawpoll(@RequestHeader String client) throws Exception {
+        securityService.validateHeader(client);
+        return service.getStrawpoll();
     }
 
     @GetMapping("/getNewsPost/{code}")
