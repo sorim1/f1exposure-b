@@ -43,7 +43,7 @@ public class TwitterServiceImpl implements TwitterService {
     private static Date latestTweetDate;
     private final MainProperties properties;
     private final TwitterRepository twitterRepository;
-    private static List<String> nitterList = Arrays.asList("nitter.no-logs.com", "nitter.privacydev.net", "nitter.no-logs.com");
+    private static List<String> nitterList = Arrays.asList("nitter.no-logs.com", "nitter.privacydev.net", "nitter.mint.lgbt");
     //nitter.no-logs.com - dead?
     //nitter.perennialte.ch - login code?
     private static List<String> nitterListObsolete = Arrays.asList("nitter.poast.org", "nitter.perennialte.ch", "nitter.mint.lgbt");
@@ -77,6 +77,11 @@ public class TwitterServiceImpl implements TwitterService {
     @Override
     public Date getLatestTweetDate() {
         return latestTweetDate;
+    }
+    @Override
+   public List<String> setTwitterEndpoints(List<String> endpoints){
+        nitterList = endpoints;
+        return nitterList;
     }
 
     @Override

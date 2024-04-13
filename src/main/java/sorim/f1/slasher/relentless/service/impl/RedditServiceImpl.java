@@ -46,12 +46,8 @@ import java.util.stream.Stream;
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class RedditServiceImpl implements RedditService {
 
-  //  private static final String REDDIT_NEW_POSTS = "https://old.reddit.com/r/formula1/new/.json?limit=100";
- //   private static final String REDDIT_NEW_F1_PORN_POSTS = "https://old.reddit.com/r/f1porn/hot/.json?limit=100";
     private static final String IMGUR_COM_3_ALBUM = "https://api.imgur.com/3/album/";
     private static final String FAVICON = "/favicon.ico";
-    private static final String REDDIT_DAILY_NEWS = "https://old.reddit.com/r/formula1/search.json?q=flair:statistics+OR+flair:news+OR+flair:social-media+OR+flair:quotes&sort=comments&restrict_sr=on&t=day&include_over_18=on";
-    private static final String REDDIT_DAILY_VIDEO_POSTS = "https://old.reddit.com/r/formula1/search.json?q=flair:video&sort=comments&restrict_sr=on&t=day&include_over_18=on";
     private static final String I_REDDIT = "i.redd.it";
     private static final String I_IMGUR = "i.imgur.com";
     private static final String TWITTER_URL = "twitter.com";

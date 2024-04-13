@@ -20,4 +20,6 @@ public interface TwitterService {
     Boolean cleanup() throws Exception;
 
     Date getLatestTweetDate();
+
+    List<String> setTwitterEndpoints(List<String> endpoints);
 }

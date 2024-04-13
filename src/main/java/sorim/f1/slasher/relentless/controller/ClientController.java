@@ -132,6 +132,12 @@ public class ClientController {
         return service.getTwitterPosts(mode, page);
     }
 
+    @PostMapping("/setTwitterEndpoints")
+    List<String> setTwitterEndpoints(@RequestHeader String client, @RequestBody List<String> newEndpoints) throws Exception {
+        securityService.validateAdminHeader(client);
+        return service.setTwitterEndpoints(newEndpoints);
+    }
+
     @GetMapping("/getRedditPosts/{mode}/{page}")
     TrippleRedditFeed getNewRedditPosts(@RequestHeader String client, @PathVariable("mode") Integer mode, @PathVariable("page") Integer page) throws Exception {
         securityService.validateHeader(client);

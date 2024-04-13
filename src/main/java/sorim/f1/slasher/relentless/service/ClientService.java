@@ -98,4 +98,7 @@ public interface ClientService {
     SidebarData setSidebarExposureDriver(KeyValue exposureDriver);
     SidebarData setSidebarStrawpoll(KeyValue strawpoll);
     KeyValue getStrawpoll();
+
+    List<String> setTwitterEndpoints(List<String> endpoints);
+
 }

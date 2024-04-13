@@ -595,7 +595,10 @@ public class ClientServiceImpl implements ClientService {
     public KeyValue getStrawpoll() {
         return sidebarData.getStrawpoll();
     }
-
+    @Override
+    public List<String> setTwitterEndpoints(List<String> endpoints){
+        return twitterService.setTwitterEndpoints(endpoints);
+    }
 
     @Override
     public String getStreamer() {
