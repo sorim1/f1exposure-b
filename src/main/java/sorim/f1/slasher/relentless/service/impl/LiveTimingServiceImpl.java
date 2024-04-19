@@ -181,8 +181,9 @@ public class LiveTimingServiceImpl implements LiveTimingService {
                 raceName = date + "_Practice_3";
                 break;
             case SPRINT_SHOOTOUT:
-                date = MainUtility.subtractDays(raceDate, 1);
-                raceName = date + "_Sprint_Shootout";
+                date = MainUtility.subtractDays(raceDate, 2);
+              //  raceName = date + "_Sprint_Shootout";
+                raceName = date + "_Sprint_Qualifying";
                 break;
             case SPRINT:
                 date = MainUtility.subtractDays(raceDate, 1);
