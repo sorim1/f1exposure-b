@@ -43,7 +43,9 @@ public class TwitterServiceImpl implements TwitterService {
     private static Date latestTweetDate;
     private final MainProperties properties;
     private final TwitterRepository twitterRepository;
-    private static List<String> nitterList = Arrays.asList("nitter.no-logs.com", "nitter.privacydev.net", "nitter.mint.lgbt");
+    private static List<String> nitterList = Arrays.asList("nitter.privacydev.net", "nitter.privacydev.net");
+    private static List<String> nitterList1 = Arrays.asList("nitter.poast.org");
+
     //nitter.no-logs.com - dead?
     //nitter.perennialte.ch - login code?
     private static List<String> nitterListObsolete = Arrays.asList("nitter.poast.org", "nitter.perennialte.ch", "nitter.mint.lgbt");

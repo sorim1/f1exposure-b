@@ -113,7 +113,6 @@ public class F1Calendar {
         LocalDateTime dateTime = LocalDateTime.parse(dateTimeString, formatter);
         Integer start = summary.indexOf("(");
         Integer end = summary.indexOf(")") + 1;
-        // String summary = inputSummary;
         do {
             String deleteMe = summary.substring(start, end);
             summary = summary.replace(deleteMe, "");
@@ -159,15 +158,12 @@ public class F1Calendar {
                 this.sprintOriginal = dateTime;
                 this.sprintName = "Sprint";
                 break;
-            case "Sprint Shootout":
+            case "Sprint Qualifying,F1":
             case "Sprint Shootout,F1":
-                this.practice2 = this.qualifying;
-                this.practice2Original = this.qualifyingOriginal;
-                this.practice2Name = "Qualifying";
-                this.qualifying = dateTime;
-                this.qualifyingOriginal = dateTime;
-                this.qualifyingName = "Sprint Shootout";
-                break;
+                this.practice2 = dateTime;
+                this.practice2Original = dateTime;
+                this.practice2Name = "Sprint Qualifying";
+                 break;
             default:
                 System.out.println("ERROR setDateAndNameFromCategory: " + category);
                 break;

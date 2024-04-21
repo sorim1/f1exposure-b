@@ -457,7 +457,9 @@ public class AdminServiceImpl implements AdminService {
     public Integer getNextRefreshTimeUsingCalendar(Integer seconds) {
         try {
             CalendarData calendarData = clientService.getCountdownData(0);
+            log.info("getNextRefreshTimeUsingCalendar: " + calendarData.getF1Calendar().getRaceName());
             if (calendarData.getCountdownData().get("raceDays") > 2) {
+                log.info("raceDays > 2");
                 return null;
             }
             if (calendarData.getCountdownData().get("FP1Seconds") > seconds) {
@@ -476,9 +478,10 @@ public class AdminServiceImpl implements AdminService {
                 return calendarData.getCountdownData().get("raceSeconds") - seconds;
             }
         } catch (Exception e) {
-            Logger.log("getNextRefreshTick", e.getMessage());
+            Logger.log("getNextRefreshTick error", e.getMessage());
             return null;
         }
+        log.info("getNextRefreshTimeUsingCalendar caught nothing");
         return null;
     }
 
