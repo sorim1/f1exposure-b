@@ -56,7 +56,6 @@ public class TwitterServiceImpl implements TwitterService {
     @Override
     public TwitterPost getMostPopularDailyPost() {
         Date yesterday = new Date(System.currentTimeMillis() - 24 * 60 * 60 * 1000);
-        log.info("yesterday; " + yesterday);
         return twitterRepository.findFirstByCreatedAtAfterOrderByRetweetCountDesc(yesterday);
     }
 
@@ -163,7 +162,9 @@ public class TwitterServiceImpl implements TwitterService {
         Date date1 = Date.from(instant);
         List<String> imageUrls = getImageUrlsFromRssDescription(item.getDescription().get());
         String url = getTwitterFromNitter(item.getGuid().get());
-        String username = item.getChannel().getTitle().substring(item.getChannel().getTitle().indexOf("@"));
+        String username = getAuthorFromNitterEntry(item);
+
+
         AtomicReference<Integer> counter = new AtomicReference<>(0);
         imageUrls.forEach(imageUrl -> {
             TwitterPost post = TwitterPost.builder()
@@ -185,7 +186,19 @@ public class TwitterServiceImpl implements TwitterService {
         for ( String entry:nitterList){
             input = input.replace(entry, "twitter.com");
         }
+        input = input.replace(nitterPoast, "twitter.com");
         return input;
+    }
+
+    private String getAuthorFromNitterEntry(Item item) {
+        String guid = item.getGuid().get();
+        if(guid.contains("poast.org")){
+            String subguid = guid.substring(guid.indexOf(".org/")+5);
+            String author = subguid.substring(0,subguid.indexOf("/"));
+            return author;
+        } else {
+            return item.getChannel().getTitle().substring(item.getChannel().getTitle().indexOf("@"));
+        }
     }
 
     private String getImageFromNitter(String input) {
