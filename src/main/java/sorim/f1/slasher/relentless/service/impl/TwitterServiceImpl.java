@@ -19,11 +19,6 @@ import sorim.f1.slasher.relentless.configuration.MainProperties;
 import sorim.f1.slasher.relentless.entities.TwitterPost;
 import sorim.f1.slasher.relentless.repository.TwitterRepository;
 import sorim.f1.slasher.relentless.service.TwitterService;
-import twitter4j.Twitter;
-import twitter4j.v1.Query;
-import twitter4j.v1.QueryResult;
-import twitter4j.v1.ResponseList;
-import twitter4j.v1.Status;
 
 import java.time.Instant;
 import java.util.*;
@@ -44,11 +39,9 @@ public class TwitterServiceImpl implements TwitterService {
     private final MainProperties properties;
     private final TwitterRepository twitterRepository;
     private static List<String> nitterList = Arrays.asList("nitter.privacydev.net", "nitter.privacydev.net");
-    private static List<String> nitterList1 = Arrays.asList("nitter.poast.org");
+    private static final String nitterPoast = "nitter.poast.org";
 
-    //nitter.no-logs.com - dead?
-    //nitter.perennialte.ch - login code?
-    private static List<String> nitterListObsolete = Arrays.asList("nitter.poast.org", "nitter.perennialte.ch", "nitter.mint.lgbt");
+    private static List<String> nitterListObsolete = Arrays.asList("nitter.no-logs.com","nitter.poast.org", "nitter.perennialte.ch", "nitter.mint.lgbt");
     private static Integer twitterIterator = 0;
 
     @Value("${twitter.accounts.list}")
@@ -118,42 +111,30 @@ public class TwitterServiceImpl implements TwitterService {
     private List<String> generateRssList() {
         List<String> accountNames = Arrays.asList(twitterAccountsForRss.toLowerCase().split(","));
         List<String> output = new ArrayList<>();
-   //     accountNames.forEach(account -> {
-//            counter.set(counter.get()+1);
-//            if(counter.get() >= nitterList.size()){
-//                counter.set(0);
-//            }
-            if(twitterIterator>accountNames.size()-nitterList.size()){
+        int poastCounter = 0;
+        StringBuilder accountsList = new StringBuilder("");
+        while(poastCounter<5){
+            accountsList.append(",").append(accountNames.get(twitterIterator++));
+            if(twitterIterator>=accountNames.size()){
                 twitterIterator=0;
             }
+            poastCounter++;
+        }
+        String rssPoastUrl = "https://" + nitterPoast + "/" + accountsList.substring(1) + "/rss";
+        output.add(rssPoastUrl);
+
             for(int i=0;i<nitterList.size();i++){
             String nitterEndpoint = nitterList.get(i);
             String account = accountNames.get(twitterIterator++);
             String rssUrl = "https://" + nitterEndpoint + "/" + account + "/rss";
             output.add(rssUrl);
+                if(twitterIterator>=accountNames.size()){
+                    twitterIterator=0;
+                }
             }
         return output;
     }
 
-    private Boolean fetchTwitterPostsOld() throws Exception {
-        Twitter twitter = getTwitterinstance();
-        ResponseList<Status> timeline = twitter.v1().timelines().getHomeTimeline();
-        List<TwitterPost> list = getListFromResponseList(timeline);
-        twitterRepository.saveAll(list);
-        fetchTwitterFerrariPosts();
-        return true;
-    }
-
-    private List<TwitterPost> getListFromResponseList(ResponseList<Status> timeline) {
-        List<TwitterPost> list = new ArrayList<>();
-        timeline.forEach(item -> {
-            TwitterPost post = getTwitterPostFromResponseItem(item, true);
-            if (post != null) {
-                list.add(post);
-            }
-        });
-        return list;
-    }
 
     private List<TwitterPost> getListFromRssFeed(List<Item> timeline) {
         List<TwitterPost> list = new ArrayList<>();
@@ -241,56 +222,6 @@ public class TwitterServiceImpl implements TwitterService {
         return output;
     }
 
-    private TwitterPost getTwitterPostFromResponseItem(Status item, Boolean mediaOnly) {
-        TwitterPost response = null;
-        Integer source = 0;
-        String text = item.getText();
-        String url = null;
-        String mediaUrl = null;
-        if (item.getUser() != null && item.getUser().getScreenName().equals("F1Exposure")) {
-            return null;
-        }
-        int splitter = text.lastIndexOf("https://t.co");
-        if (splitter > 0 && splitter > item.getText().length() - 30) {
-            text = item.getText().substring(0, splitter);
-            url = item.getText().substring(splitter);
-            source = 0;
-        }
-
-        if (item.getMediaEntities() != null && item.getMediaEntities().length > 0) {
-            mediaUrl = item.getMediaEntities()[0].getMediaURLHttps();
-            url = item.getMediaEntities()[0].getURL();
-            source = 1;
-        }
-        if (url == null && item.getURLEntities().length > 0) {
-            url = item.getURLEntities()[0].getURL();
-            source = 2;
-        }
-        if (url == null && item.getRetweetedStatus() != null && item.getRetweetedStatus().getURLEntities().length > 0) {
-            url = item.getRetweetedStatus().getURLEntities()[0].getURL();
-            source = 3;
-        }
-        if (url == null) {
-            url = "https://twitter.com/" + item.getUser().getScreenName() + "/status/" + item.getId();
-            source = 4;
-        }
-        if (mediaUrl != null || !mediaOnly) {
-            response = TwitterPost.builder()
-                    .id(item.getId())
-                    .text(text)
-                    .favoriteCount(item.getFavoriteCount())
-                    .retweetCount(item.getRetweetCount())
-                    .url(url)
-                    .source(source)
-                    .mediaUrl(mediaUrl)
-                    .userPicture(item.getUser().getProfileImageURLHttps())
-                    .username(item.getUser().getName())
-                    // .createdAt(item.getCreatedAt())
-                    .build();
-        }
-        return response;
-    }
-
     // @PostConstruct
     @Override
     public List<TwitterPost> fetchTwitterFerrariPosts() throws Exception {
@@ -300,15 +231,15 @@ public class TwitterServiceImpl implements TwitterService {
                 twitterPostsMap.put(post.getUrl(), post);
             }
         }
-        Twitter twitter = getTwitterinstance();
-        Query query = Query.of("ScuderiaFerrari");
-        QueryResult result = twitter.v1().search().search(query);
-        for (Status status : result.getTweets()) {
-            TwitterPost post = getTwitterPostFromResponseItem(status, true);
-            if (post != null) {
-                twitterPostsMap.put(post.getUrl(), post);
-            }
-        }
+//        Twitter twitter = getTwitterinstance();
+//        Query query = Query.of("ScuderiaFerrari");
+//        QueryResult result = twitter.v1().search().search(query);
+//        for (Status status : result.getTweets()) {
+//            TwitterPost post = getTwitterPostFromResponseItem(status, true);
+//            if (post != null) {
+//                twitterPostsMap.put(post.getUrl(), post);
+//            }
+//        }
         List<TwitterPost> list = new ArrayList<>(twitterPostsMap.values());
         Collections.sort(list);
         int upperLimit;
@@ -324,18 +255,6 @@ public class TwitterServiceImpl implements TwitterService {
     @Override
     public List<TwitterPost> getTwitterFerrariPosts() {
         return twitterPostsList;
-    }
-
-    private Twitter getTwitterinstance() {
-        Twitter twitter = Twitter.newBuilder()
-                .oAuthConsumer(properties.getTwitterKey(), properties.getTwitterSecret())
-                .oAuthAccessToken(properties.getTwitterAccessToken(), properties.getTwitterAccessTokenSecret())
-                .build();
-//        Twitter twitter2 = Twitter.newBuilder().oau
-//                .oAuthConsumer(properties.getTwitterKey(), properties.getTwitterSecret())
-//                .oAuthAccessToken(properties.getTwitterAccessToken(), properties.getTwitterAccessTokenSecret())
-//                .build();
-        return twitter;
     }
 
 }

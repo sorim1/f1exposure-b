@@ -77,7 +77,6 @@ public class Scheduler {
         log.info("fridayJobs called");
         if (isItRaceWeek()) {
             analyzeUpcomingRacePeriodically();
-            getImagesPeriodicallyRoot();
         }
     }
 
@@ -201,46 +200,9 @@ public class Scheduler {
         }
     }
 
-    private void getImagesPeriodicallyRoot() {
-        Integer delay = adminService.getNextRefreshTimeUsingCalendar(3600);
-        log.info(CODE + " - getImagesPeriodicallyRoot called: " + delay);
-        if (delay != null) {
-            int delayInMiliseconds = delay * 1000;
-            MainUtility.logTime("getImagesPeriodicallyRoot", delayInMiliseconds);
-            new java.util.Timer().schedule(
-                    new java.util.TimerTask() {
-                        @SneakyThrows
-                        @Override
-                        public void run() {
-                            imageFeedJobWithoutInstagram();
-                            getImagesPeriodically(9);
-                        }
-                    },
-                    delayInMiliseconds
-            );
-        }
-    }
-
     private void getImagesPeriodically(Integer countdown) {
         log.info(CODE + " - getImagesPeriodically called " + countdown);
         int delayInMiliseconds = 900000;
-        if (countdown > 0) {
-            new java.util.Timer().schedule(
-                    new java.util.TimerTask() {
-                        @SneakyThrows
-                        @Override
-                        public void run() {
-                            if (countdown == 2) {
-                                imageFeedJob();
-                            } else {
-                                imageFeedJobWithoutInstagram();
-                            }
-                            getImagesPeriodically(countdown - 1);
-                        }
-                    },
-                    delayInMiliseconds
-            );
-        } else {
             boolean isGenerating = liveTimingService.checkIfEventIsGenerating();
             if (isGenerating) {
                 new java.util.Timer().schedule(
@@ -255,11 +217,9 @@ public class Scheduler {
                         delayInMiliseconds
                 );
             } else {
-                getImagesPeriodicallyRoot();
                 liveTimingService.analyzeUpcomingRace(false);
                 liveTimingService.analyzeLatestRace(true);
             }
-        }
     }
 
   //  @PostConstruct
@@ -311,7 +271,7 @@ public class Scheduler {
     }
 
    // @Scheduled(cron = "0 0 1,8,10,12,14,16,18,20,22 * * *")
-    @Scheduled(cron = "0 0 7,11,15,20 * * *")
+    @Scheduled(cron = "0 0 5,9,14,20 * * *")
     void bihourlyJob() throws Exception {
         if (properties.getUrl().contains(F1EXPOSURE_COM)) {
             imageFeedJobWithoutInstagram();
