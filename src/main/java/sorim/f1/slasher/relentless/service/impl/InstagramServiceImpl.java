@@ -65,7 +65,7 @@ public class InstagramServiceImpl implements InstagramService {
             FeedIterable<FeedTimelineRequest, FeedTimelineResponse> response = client.getActions().timeline().feed();
             AtomicReference<Integer> iterate = new AtomicReference<>(0);
             try {
-                response.stream().limit(3).forEach(row -> {
+                response.stream().limit(1).forEach(row -> {
                     List<TimelineMedia> timelineMedias = row.getFeed_items();
                     iterate.set(iterate.get() + timelineMedias.size());
                     counter.set(counter.get() + 1);
@@ -84,6 +84,10 @@ public class InstagramServiceImpl implements InstagramService {
                                     timelineCarouselMedia.getCarousel_media().forEach(cItem -> {
                                         if (cItem instanceof ImageCarouselItem) {
                                             ImageCarouselItem cItem2 = (ImageCarouselItem) cItem;
+                                            log.info("insta candidates count: {}", cItem2.getImage_versions2().getCandidates().size());
+                                            cItem2.getImage_versions2().getCandidates().forEach(entry->{
+                                               log.info("dimenzije: {}", entry.getWidth(), entry.getHeight());
+                                            });
                                             urlList.add(cItem2.getImage_versions2().getCandidates()
                                                     .get(0)
                                                     .getUrl());
@@ -197,11 +201,11 @@ public class InstagramServiceImpl implements InstagramService {
 
     private void fetchImages(List<InstagramPost> instagramPosts) {
         List<ImageRow> images = new ArrayList<>();
-        log.info("fetchImages - {} instagram images with a 3 second pause", instagramPosts.size());
+        log.info("fetchImages - {} instagram images with a 5 second pause", instagramPosts.size());
         instagramPosts.forEach(post -> {
             byte[] image = getImageFromUrl(post.getUrl());
             try {
-                Thread.sleep(3000);
+                Thread.sleep(5000);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }

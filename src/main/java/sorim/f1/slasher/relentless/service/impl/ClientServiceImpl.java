@@ -297,30 +297,12 @@ public class ClientServiceImpl implements ClientService {
     @Override
     public Boolean setNavbarData() {
         RaceData raceData = ergastService.getUpcomingRace(properties.getCurrentSeasonFuture());
-        // RaceData raceData = ergastService.getLatestAnalyzedRace();
         if (raceData != null) {
             UpcomingRaceAnalysis upcomingRaceAnalysis = raceData.getUpcomingRaceAnalysis();
-            if (upcomingRaceAnalysis.getSprintRadio() != null) {
-                if (navbarData.getSessionName().equals("Sprint")) {
-                    return true;
-                } else {
-                    navbarData.setSessionName("Sprint");
-                    navbarData.setTabNumber(6);
-                    setNavbarDriver(upcomingRaceAnalysis.getSprintLivetimingUrl(), upcomingRaceAnalysis.getSprint().get(0));
-                }
-            } else if (upcomingRaceAnalysis.getSprintQualiRadio() != null) {
-                if (navbarData.getSessionName().equals("Sprint shootout")) {
-                    return true;
-                } else {
-                    navbarData.setSessionName("Sprint shootout");
-                    navbarData.setTabNumber(5);
-                    setNavbarDriver(upcomingRaceAnalysis.getSprintQualiLivetimingUrl(), upcomingRaceAnalysis.getSprintQuali().get(0));
-                }
-            } else if (upcomingRaceAnalysis.getQualiRadio() != null) {
+            if (upcomingRaceAnalysis.getQualiRadio() != null) {
                 if (navbarData.getSessionName().equals("Qualifying") && upcomingRaceAnalysis.getSprintQuali() == null) {
                     return true;
                 } else {
-                    log.info("Qualifying navbar");
                     navbarData.setSessionName("Qualifying");
                     if (upcomingRaceAnalysis.getFp3Radio() != null) {
                         navbarData.setTabNumber(6);
@@ -329,11 +311,26 @@ public class ClientServiceImpl implements ClientService {
                     }
                     setNavbarDriver(upcomingRaceAnalysis.getQualiLivetimingUrl(), upcomingRaceAnalysis.getQuali().get(0));
                 }
+            } else if (upcomingRaceAnalysis.getSprintRadio() != null) {
+                if (navbarData.getSessionName().equals("Sprint")) {
+                    return true;
+                } else {
+                    navbarData.setSessionName("Sprint");
+                    navbarData.setTabNumber(5);
+                    setNavbarDriver(upcomingRaceAnalysis.getSprintLivetimingUrl(), upcomingRaceAnalysis.getSprint().get(0));
+                }
+            } else if (upcomingRaceAnalysis.getSprintQualiRadio() != null) {
+                if (navbarData.getSessionName().equals("Sprint Quali")) {
+                    return true;
+                } else {
+                    navbarData.setSessionName("Sprint Quali");
+                    navbarData.setTabNumber(5);
+                    setNavbarDriver(upcomingRaceAnalysis.getSprintQualiLivetimingUrl(), upcomingRaceAnalysis.getSprintQuali().get(0));
+                }
             } else if (upcomingRaceAnalysis.getFp3Radio() != null) {
                 if (navbarData.getSessionName().equals("Practice3")) {
                     return true;
                 } else {
-                    log.info("Practice3 navbar");
                     navbarData.setSessionName("Practice3");
                     navbarData.setTabNumber(5);
                     setNavbarDriver(upcomingRaceAnalysis.getFp3LivetimingUrl(), upcomingRaceAnalysis.getFp3().get(0));
@@ -342,7 +339,6 @@ public class ClientServiceImpl implements ClientService {
                 if (navbarData.getSessionName().equals("Practice2")) {
                     return true;
                 } else {
-                    log.info("Practice2 navbar");
                     navbarData.setSessionName("Practice2");
                     navbarData.setTabNumber(4);
                     setNavbarDriver(upcomingRaceAnalysis.getFp2LivetimingUrl(), upcomingRaceAnalysis.getFp2().get(0));
@@ -351,7 +347,6 @@ public class ClientServiceImpl implements ClientService {
                 if (navbarData.getSessionName().equals("Practice1")) {
                     return true;
                 } else {
-                    log.info("Practice1 navbar");
                     navbarData.setSessionName("Practice1");
                     navbarData.setTabNumber(3);
                     setNavbarDriver(upcomingRaceAnalysis.getFp1LivetimingUrl(), upcomingRaceAnalysis.getFp1().get(0));
