@@ -20,7 +20,6 @@ import sorim.f1.slasher.relentless.service.VideoService;
 
 import javax.annotation.PostConstruct;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 

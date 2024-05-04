@@ -5,7 +5,6 @@ import com.apptasticsoftware.rssreader.Item;
 import com.apptasticsoftware.rssreader.RssReader;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.collections4.ListUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -22,8 +21,6 @@ import sorim.f1.slasher.relentless.service.TwitterService;
 
 import java.time.Instant;
 import java.util.*;
-import java.util.concurrent.ThreadLocalRandom;
-import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.Collectors;
 
@@ -38,7 +35,7 @@ public class TwitterServiceImpl implements TwitterService {
     private static Date latestTweetDate;
     private final MainProperties properties;
     private final TwitterRepository twitterRepository;
-    private static List<String> nitterList = Arrays.asList("nitter.privacydev.net", "nitter.privacydev.net");
+    private static List<String> nitterList = Arrays.asList("nitter.privacydev.net");
     private static final String nitterPoast = "nitter.poast.org";
 
     private static List<String> nitterListObsolete = Arrays.asList("nitter.no-logs.com","nitter.poast.org", "nitter.perennialte.ch", "nitter.mint.lgbt");

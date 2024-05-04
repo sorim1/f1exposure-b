@@ -13,7 +13,6 @@ import sorim.f1.slasher.relentless.model.*;
 import sorim.f1.slasher.relentless.model.enums.ExposureStatusEnum;
 import sorim.f1.slasher.relentless.model.openf1.RaceControlDto;
 import sorim.f1.slasher.relentless.model.strawpoll.StrawpollModelThree;
-import sorim.f1.slasher.relentless.model.strawpoll.StrawpollPoll;
 import sorim.f1.slasher.relentless.repository.*;
 import sorim.f1.slasher.relentless.service.*;
 

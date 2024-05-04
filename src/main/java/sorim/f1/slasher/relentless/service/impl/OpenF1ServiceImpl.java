@@ -1,7 +1,5 @@
 package sorim.f1.slasher.relentless.service.impl;
 
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,22 +8,13 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-import sorim.f1.slasher.relentless.configuration.MainProperties;
-import sorim.f1.slasher.relentless.entities.*;
-import sorim.f1.slasher.relentless.entities.ergast.RaceData;
-import sorim.f1.slasher.relentless.model.*;
-import sorim.f1.slasher.relentless.model.ergast.*;
 import sorim.f1.slasher.relentless.model.openf1.*;
-import sorim.f1.slasher.relentless.repository.*;
-import sorim.f1.slasher.relentless.service.ErgastService;
 import sorim.f1.slasher.relentless.service.OpenF1Service;
 
-import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.List;
 
 @Slf4j
 @Service
