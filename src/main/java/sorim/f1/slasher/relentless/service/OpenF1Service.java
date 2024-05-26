@@ -14,7 +14,7 @@ public interface OpenF1Service {
     List<MeetingDto> getMeetings(Integer year, String countryName);
     List<PitDto> getPitData(Integer sessionKey, Double pitDuration);
     List<PositionDto> getPositions(Integer meetingKey, Integer driverNumber, Integer position);
-    List<RaceControlDto> getTodayRaceControlData(String flag);
+    List<RaceControlDto> getTodayRaceControlData(String flag, Integer triggerLap);
     List<SessionDto> getSessions(String countryName, String sessionName, Integer year);
     List<StintDto> getStints(Integer sessionKey, Integer tyreAgeAtStart);
     List<TeamRadioDto> getTeamRadioMessages(Integer sessionKey, Integer driverNumber);

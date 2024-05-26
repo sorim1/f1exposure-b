@@ -82,11 +82,13 @@ public class OpenF1ServiceImpl implements OpenF1Service {
     }
 
     @Override
-    public List<RaceControlDto> getTodayRaceControlData(String flag) {
+    public List<RaceControlDto> getTodayRaceControlData(String flag, Integer triggerLap) {
         LocalDate today = LocalDate.now();
         String formattedToday = today.format(DateTimeFormatter.ISO_LOCAL_DATE);
         String url = baseUrl + "race_control?date>=" + formattedToday;
-        if(flag!=null){
+        if(triggerLap!=null){
+            url += "&lap_number>" + triggerLap;
+        } else if(flag!=null){
             url += "&flag=" + flag;
         }
         log.info(url);

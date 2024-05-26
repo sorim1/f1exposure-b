@@ -61,4 +61,6 @@ public interface ExposureStrawpollService {
     Object getSingleExposureResult(Integer season, Integer round);
 
     void raceHasStarted();
+
+    public Integer getLapCount(Integer year, Integer round);
 }

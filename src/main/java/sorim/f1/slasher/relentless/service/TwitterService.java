@@ -13,7 +13,7 @@ public interface TwitterService {
 
     Boolean fetchTwitterPosts() throws Exception;
 
-    List<TwitterPost> fetchTwitterFerrariPosts() throws Exception;
+    List<TwitterPost> updateTwitterFerrariPosts(List<TwitterPost> posts) throws Exception;
 
     List<TwitterPost> getTwitterFerrariPosts() throws Exception;
 

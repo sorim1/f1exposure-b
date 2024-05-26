@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 @Builder
 public class IntervalDto {
 
-    private LocalDateTime date;
+    private String date;
     private Integer driverNumber;
     private Double gapToLeader;
     private Double interval;

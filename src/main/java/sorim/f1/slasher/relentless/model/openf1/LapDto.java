@@ -13,7 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 public class LapDto {
-    private LocalDateTime dateStart;
+    private String dateStart;
     private Integer driverNumber;
     private Double durationSector1;
     private Double durationSector2;

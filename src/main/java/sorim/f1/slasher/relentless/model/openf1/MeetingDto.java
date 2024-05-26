@@ -17,7 +17,7 @@ public class MeetingDto {
     private String countryCode;
     private Integer countryKey;
     private String countryName;
-    private LocalDateTime dateStart;
+    private String dateStart;
     private String gmtOffset;
     private String location;
     private Integer meetingKey;

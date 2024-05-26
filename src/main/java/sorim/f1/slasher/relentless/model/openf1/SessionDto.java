@@ -17,8 +17,8 @@ public class SessionDto {
     private String countryCode;
     private Integer countryKey;
     private String countryName;
-    private LocalDateTime dateEnd;
-    private LocalDateTime dateStart;
+    private String dateEnd;
+    private String dateStart;
     private String gmtOffset;
     private String location;
     private Integer meetingKey;

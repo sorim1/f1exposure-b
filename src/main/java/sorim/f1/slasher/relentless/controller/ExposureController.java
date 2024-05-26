@@ -183,4 +183,10 @@ public class ExposureController {
         return strawpollService.saveStrawpoll(body);
     }
 
+    @GetMapping("/getLapCount")
+    Integer getLapCount(@RequestHeader String client, @RequestBody StrawpollModelThree body) throws Exception {
+        securityService.validateAdminHeader(client);
+        return exposureService.getLapCount(2024, 5);
+    }
+
 }

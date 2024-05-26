@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 public class CarDataDto {
 
     private Integer brake;
-    private LocalDateTime date;
+    private String date;
     private Integer driverNumber;
     private Integer drs;
     private Integer meetingKey;

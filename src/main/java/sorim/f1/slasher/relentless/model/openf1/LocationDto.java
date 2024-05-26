@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Builder
 public class LocationDto {
-    private LocalDateTime date;
+    private String date;
     private Integer driverNumber;
     private Integer meetingKey;
     private Integer sessionKey;

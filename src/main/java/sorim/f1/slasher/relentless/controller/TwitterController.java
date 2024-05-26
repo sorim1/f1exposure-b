@@ -23,13 +23,6 @@ public class TwitterController {
     private final SecurityService securityService;
     private final TwitterService service;
 
-    @GetMapping("/fetchTwitterFerrariPosts")
-    public List<TwitterPost> fetchTwitterFerrariPosts(@RequestHeader String client) throws Exception {
-        log.info("fetchTwitterFerrariPosts");
-        securityService.validateAdminHeader(client);
-        return service.fetchTwitterFerrariPosts();
-    }
-
     @GetMapping("/getTwitterFerrariPosts")
     public List<TwitterPost> getTwitterFerrariPosts(@RequestHeader String client) throws Exception {
         securityService.validateHeader(client);

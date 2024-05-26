@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Builder
 public class TeamRadioDto {
-    private LocalDateTime date;
+    private String date;
     private Integer driverNumber;
     private Integer meetingKey;
     private String recordingUrl;

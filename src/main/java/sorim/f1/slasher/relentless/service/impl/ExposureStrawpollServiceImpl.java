@@ -24,6 +24,7 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.util.*;
+import java.util.concurrent.ThreadLocalRandom;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -389,7 +390,6 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
 
     @Override
     public KeyValue getLatestRaceExposureWinner() {
-        //TODO remove trycatch ako je sve ok properties.getCurrentSeasonPast(), currentExposureRound
         ExposureChampionship winner = exposureChampionshipRepository.findFirstByIdSeasonAndIdRoundOrderByVotesDesc(properties.getCurrentSeasonPast(), currentExposureRound);
         if (winner != null && winner.getVotes() > 20) {
             String key = title;
@@ -428,7 +428,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
                     @Override
                     public void run() {
                         if(!exposureReady){
-                        log.info(" - PROŠLO JE 70 minuta UTRKE: ");
+                        log.info(" - PROŠLO JE 70 minuta (4200000ms) UTRKE: ");
                         exposureReady = true;
                         checkRaceStatusUsingOpenF1Service();
                         }
@@ -441,11 +441,16 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
 
     private void checkRaceStatusUsingOpenF1Service() {
         List<RaceControlDto> response;
+        Integer triggerLap = getLapCount(properties.getCurrentSeasonFuture(), currentExposureRound) - 5;
+        if(triggerLap!=null){
+            triggerLap= triggerLap-5;
+        }
         int counter = 0;
         try {
             do {
                 log.info("POZIVAM getTodayRaceControlData: {}", counter++);
-                response = openF1Service.getTodayRaceControlData("CHEQUERED");
+                response = openF1Service.getTodayRaceControlData("CHEQUERED", triggerLap);
+                //every 2 minutes for the next 2 hours
                 Thread.sleep(120000);
             } while (response.isEmpty() && counter < 60);
             log.info("CHEQUERED flag found: {}", response.size());
@@ -459,6 +464,19 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
             }
         } catch (Exception e) {
            log.error("error checkRaceStatusUsingOpenF1Service ", e);
+        }
+    }
+
+    @Override
+    public Integer getLapCount(Integer year, Integer round) {
+        try {
+            List<LinkedHashMap<String, String>> listOfTotalLaps = (List<LinkedHashMap<String, String>>) jsonRepository2.findAllById(year + "_RACE_LAPS").getJson();
+            String laps = listOfTotalLaps.get(round+1).get("laps");
+            return Integer.valueOf(laps);
+        } catch (Exception e) {
+            log.error("getLapCount error:", e);
+            e.printStackTrace();
+            return null;
         }
     }
 
@@ -518,7 +536,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
     private Boolean updateExposureDataFromStrawpoll(StrawpollModelThree strawpoll) {
         List<ExposureChampionship> list = new ArrayList<>();
         Integer voters = strawpoll.getPoll().getPoll_meta().getParticipant_count();
-        if (voters > 0) {
+     //   if (voters > 0) {
             Integer totalVotes = strawpoll.getPoll().getPoll_meta().getVote_count();
             if (totalVotes > latestVoteCount) {
                 reloadDelay = 20000;
@@ -550,7 +568,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
                     .strawpoll(strawpollId)
                     .build();
             exposedVoteTotalsRepository.save(totals);
-        }
+      //  }
         return strawpoll.getPoll().getIs_votable();
     }
 

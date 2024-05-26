@@ -19,8 +19,10 @@ import sorim.f1.slasher.relentless.entities.TwitterPost;
 import sorim.f1.slasher.relentless.repository.TwitterRepository;
 import sorim.f1.slasher.relentless.service.TwitterService;
 
+import javax.annotation.PostConstruct;
 import java.time.Instant;
 import java.util.*;
+import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.Collectors;
 
@@ -29,8 +31,8 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class TwitterServiceImpl implements TwitterService {
 
-    private static final Map<String, TwitterPost> twitterPostsMap = new HashMap<>();
-    private static List<TwitterPost> twitterPostsList = new ArrayList<>();
+    private static final Map<String, TwitterPost> ferrariTwitterPostsMap = new HashMap<>();
+    private static List<TwitterPost> ferrariTwitterPostsList = new ArrayList<>();
     private static Boolean twitterFetchRunning = false;
     private static Date latestTweetDate;
     private final MainProperties properties;
@@ -43,6 +45,11 @@ public class TwitterServiceImpl implements TwitterService {
 
     @Value("${twitter.accounts.list}")
     private String twitterAccountsForRss;
+    private static List<String> twitterAccountsForRssArray;
+
+    @Value("${twitter.accounts.ferrari}")
+    private String twitterAccountsFerrari;
+    private static List<String> twitterAccountsFerrariArray;
 
     @Override
     public List<TwitterPost> getTwitterPosts(Integer page) {
@@ -93,6 +100,7 @@ public class TwitterServiceImpl implements TwitterService {
                 Thread.sleep(10 * 1000);
             }
             log.info("fetchTwitterPosts DONE");
+            fetchFerrariTwitterPosts();
             twitterFetchRunning = false;
             TwitterPost latest = twitterRepository.findFirstByOrderByCreatedAtDesc();
             if(latest!=null){
@@ -104,8 +112,25 @@ public class TwitterServiceImpl implements TwitterService {
         return twitterFetchRunning;
     }
 
+    public void fetchFerrariTwitterPosts() throws Exception {
+        if (!twitterFetchRunning) {
+            String url = "no url";
+            try{
+            url = generateFerrariRssList();
+            log.info("zovem ferrari RSS: " + url);
+
+                    List<Item> timeline = new RssReader().read(url).sorted().collect(Collectors.toList());
+                    List<TwitterPost> list = getListFromRssFeed(timeline);
+                    updateTwitterFerrariPosts(list);
+                    log.error("SUCCESS: " +  url);
+                } catch(Exception e){
+                    log.error("FAILED: {} - {}",  url, e.getMessage());
+                }
+        }
+    }
+
     private List<String> generateRssList() {
-        List<String> accountNames = Arrays.asList(twitterAccountsForRss.toLowerCase().split(","));
+        List<String> accountNames = twitterAccountsForRssArray;
         List<String> output = new ArrayList<>();
         int poastCounter = 0;
         StringBuilder accountsList = new StringBuilder("");
@@ -119,16 +144,27 @@ public class TwitterServiceImpl implements TwitterService {
         String rssPoastUrl = "https://" + nitterPoast + "/" + accountsList.substring(1) + "/rss";
         output.add(rssPoastUrl);
 
-            for(int i=0;i<nitterList.size();i++){
-            String nitterEndpoint = nitterList.get(i);
-            String account = accountNames.get(twitterIterator++);
-            String rssUrl = "https://" + nitterEndpoint + "/" + account + "/rss";
-            output.add(rssUrl);
-                if(twitterIterator>=accountNames.size()){
-                    twitterIterator=0;
-                }
-            }
+//            for(int i=0;i<nitterList.size();i++){
+//                //FERRARI SAMO
+//                int randomNum = ThreadLocalRandom.current().nextInt(0, 3);
+//
+//                String nitterEndpoint = nitterList.get(i);
+//            String account = twitterAccountsForRssArray.get(randomNum);
+//            String rssUrl = "https://" + nitterEndpoint + "/" + account + "/rss";
+//            output.add(rssUrl);
+//                if(twitterIterator>=accountNames.size()){
+//                    twitterIterator=0;
+//                }
+//            }>
         return output;
+    }
+
+    private String generateFerrariRssList() {
+           int randomNum = ThreadLocalRandom.current().nextInt(0, 3);
+            String nitterEndpoint = nitterList.get(0);
+            String account = twitterAccountsForRssArray.get(randomNum);
+            String rssUrl = "https://" + nitterEndpoint + "/" + account + "/rss";
+        return rssUrl;
     }
 
 
@@ -176,6 +212,9 @@ public class TwitterServiceImpl implements TwitterService {
             output.add(post);
             counter.set(counter.get() + 1);
         });
+        if(twitterAccountsFerrari.contains(username)){
+            updateTwitterFerrariPosts(output);
+        }
         return output;
     }
 
@@ -232,25 +271,22 @@ public class TwitterServiceImpl implements TwitterService {
         return output;
     }
 
-    // @PostConstruct
+    @PostConstruct
+    void init(){
+        twitterAccountsForRssArray = Arrays.asList(twitterAccountsForRss.toLowerCase().split(","));
+        twitterAccountsFerrariArray = Arrays.asList(twitterAccountsFerrari.toLowerCase().split(","));
+    }
+
     @Override
-    public List<TwitterPost> fetchTwitterFerrariPosts() throws Exception {
-        if (twitterPostsMap.size() > 300) {
-            twitterPostsMap.clear();
-            for (TwitterPost post : twitterPostsList) {
-                twitterPostsMap.put(post.getUrl(), post);
-            }
+    public List<TwitterPost> updateTwitterFerrariPosts(List<TwitterPost> posts) {
+        log.info("updateTwitterFerrariPosts: {}", posts.size());
+        if (ferrariTwitterPostsMap.size() > 100) {
+            ferrariTwitterPostsMap.clear();
         }
-//        Twitter twitter = getTwitterinstance();
-//        Query query = Query.of("ScuderiaFerrari");
-//        QueryResult result = twitter.v1().search().search(query);
-//        for (Status status : result.getTweets()) {
-//            TwitterPost post = getTwitterPostFromResponseItem(status, true);
-//            if (post != null) {
-//                twitterPostsMap.put(post.getUrl(), post);
-//            }
-//        }
-        List<TwitterPost> list = new ArrayList<>(twitterPostsMap.values());
+        for (TwitterPost post : posts) {
+            ferrariTwitterPostsMap.put(post.getUrl(), post);
+        }
+        List<TwitterPost> list = new ArrayList<>(ferrariTwitterPostsMap.values());
         Collections.sort(list);
         int upperLimit;
         if (list.size() > 30) {
@@ -258,13 +294,13 @@ public class TwitterServiceImpl implements TwitterService {
         } else {
             upperLimit = list.size();
         }
-        twitterPostsList = list.subList(0, upperLimit);
-        return twitterPostsList;
+        ferrariTwitterPostsList = list.subList(0, upperLimit);
+        return ferrariTwitterPostsList;
     }
 
     @Override
     public List<TwitterPost> getTwitterFerrariPosts() {
-        return twitterPostsList;
+        return ferrariTwitterPostsList;
     }
 
 }

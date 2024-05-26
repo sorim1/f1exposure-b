@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @Builder
 public class RaceControlDto {
     private String category;
-    private LocalDateTime date;
+    private String date;
     private Integer driverNumber;
     private String flag;
     private Integer lapNumber;
