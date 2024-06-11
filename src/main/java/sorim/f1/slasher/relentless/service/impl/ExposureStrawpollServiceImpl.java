@@ -536,7 +536,6 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
     private Boolean updateExposureDataFromStrawpoll(StrawpollModelThree strawpoll) {
         List<ExposureChampionship> list = new ArrayList<>();
         Integer voters = strawpoll.getPoll().getPoll_meta().getParticipant_count();
-     //   if (voters > 0) {
             Integer totalVotes = strawpoll.getPoll().getPoll_meta().getVote_count();
             if (totalVotes > latestVoteCount) {
                 reloadDelay = 20000;
@@ -551,15 +550,19 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
                         .season(properties.getCurrentSeasonFuture())
                         .round(currentExposureRound)
                         .driver(code).build();
-
-                BigDecimal exposure = new BigDecimal(pollAnswer.getVote_count() * 100).divide(new BigDecimal(voters), 2, RoundingMode.HALF_UP);
-                ExposureChampionship newRow = ExposureChampionship.builder().id(exposedId)
-                        .exposure(exposure)
-                        .color(getColorFromDriverCode(code))
-                        .status(2)
-                        .name(pollAnswer.getValue())
-                        .votes(pollAnswer.getVote_count()).build();
-                list.add(newRow);
+                BigDecimal exposure = null;
+                if(voters>0) {
+                    exposure = new BigDecimal(pollAnswer.getVote_count() * 100).divide(new BigDecimal(voters), 2, RoundingMode.HALF_UP);
+                } else {
+                    exposure = new BigDecimal(0);
+                }
+                    ExposureChampionship newRow = ExposureChampionship.builder().id(exposedId)
+                            .exposure(exposure)
+                            .color(getColorFromDriverCode(code))
+                            .status(2)
+                            .name(pollAnswer.getValue())
+                            .votes(pollAnswer.getVote_count()).build();
+                    list.add(newRow);
             });
             exposureChampionshipRepository.saveAll(list);
             ExposedTotalsId totalsId = ExposedTotalsId.builder().season(properties.getCurrentSeasonFuture())
@@ -568,7 +571,6 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
                     .strawpoll(strawpollId)
                     .build();
             exposedVoteTotalsRepository.save(totals);
-      //  }
         return strawpoll.getPoll().getIs_votable();
     }
 
