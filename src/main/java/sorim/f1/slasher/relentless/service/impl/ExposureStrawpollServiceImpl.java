@@ -470,9 +470,8 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
     @Override
     public Integer getLapCount(Integer year, Integer round) {
         try {
-            List<LinkedHashMap<String, String>> listOfTotalLaps = (List<LinkedHashMap<String, String>>) jsonRepository2.findAllById(year + "_RACE_LAPS").getJson();
-            String laps = listOfTotalLaps.get(round+1).get("laps");
-            return Integer.valueOf(laps);
+            List<LinkedHashMap<String, Object>> listOfTotalLaps = (List<LinkedHashMap<String, Object>>) jsonRepository2.findAllById(year + "_RACE_LAPS").getJson();
+            return (Integer) listOfTotalLaps.get(round+1).get("laps");
         } catch (Exception e) {
             log.error("getLapCount error:", e);
             e.printStackTrace();
