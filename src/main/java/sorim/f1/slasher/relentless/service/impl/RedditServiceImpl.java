@@ -268,9 +268,13 @@ public class RedditServiceImpl implements RedditService {
     }
 
     private boolean isNewsRedditPost(RedditPost post) {
-        return post.getLinkFlairText().contains("news")
-                || post.getLinkFlairText().contains("social-media")
-                || post.getLinkFlairText().contains("statistics");
+        if(post.getLinkFlairText()==null){
+            return false;
+        } else {
+            return post.getLinkFlairText().contains("news")
+                    || post.getLinkFlairText().contains("social-media")
+                    || post.getLinkFlairText().contains("statistics");
+        }
     }
     private boolean isVideoRedditPost(RedditPost post) {
         return post.getLinkFlairText().contains("video");
