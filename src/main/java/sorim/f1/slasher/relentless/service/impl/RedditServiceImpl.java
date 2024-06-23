@@ -277,7 +277,11 @@ public class RedditServiceImpl implements RedditService {
         }
     }
     private boolean isVideoRedditPost(RedditPost post) {
-        return post.getLinkFlairText().contains("video");
+        if(post.getLinkFlairText()==null){
+            return false;
+        } else {
+            return post.getLinkFlairText().contains("video");
+        }
     }
 
     private void saveNewsList(List<NewsContent> list) {

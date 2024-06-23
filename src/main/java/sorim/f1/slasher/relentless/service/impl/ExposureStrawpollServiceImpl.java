@@ -441,7 +441,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
 
     private void checkRaceStatusUsingOpenF1Service() {
         List<RaceControlDto> response;
-        Integer triggerLap = getLapCount(properties.getCurrentSeasonFuture(), currentExposureRound) - 5;
+        Integer triggerLap = getLapCount(properties.getCurrentSeasonFuture(), currentExposureRound);
         if(triggerLap!=null){
             triggerLap= triggerLap-5;
         }
@@ -453,7 +453,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
                 //every 2 minutes for the next 2 hours
                 Thread.sleep(120000);
             } while (response.isEmpty() && counter < 60);
-            log.info("CHEQUERED flag found: {}", response.size());
+            log.info("CHEQUERED flag ili final 5 laps found found; response size: {}", response.size());
             if(!response.isEmpty() && !exposureNow){
                 log.info("SADA BI AUTOMATSKI STARTAO POLL ali je zakomentirano");
 //                setExposureNow(true);
@@ -471,7 +471,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
     public Integer getLapCount(Integer year, Integer round) {
         try {
             List<LinkedHashMap<String, Object>> listOfTotalLaps = (List<LinkedHashMap<String, Object>>) jsonRepository2.findAllById(year + "_RACE_LAPS").getJson();
-            return (Integer) listOfTotalLaps.get(round+1).get("laps");
+            return (Integer) listOfTotalLaps.get(round-1).get("laps");
         } catch (Exception e) {
             log.error("getLapCount error:", e);
             e.printStackTrace();

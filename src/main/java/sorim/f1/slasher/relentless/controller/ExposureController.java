@@ -183,10 +183,10 @@ public class ExposureController {
         return strawpollService.saveStrawpoll(body);
     }
 
-    @GetMapping("/getLapCount/{month}")
-    Integer getLapCount(@RequestHeader String client, @PathVariable("value") Integer month) throws Exception {
+    @GetMapping("/getLapCount/{round}")
+    Integer getLapCount(@RequestHeader String client, @PathVariable("round") Integer round) throws Exception {
         securityService.validateAdminHeader(client);
-        return exposureService.getLapCount(2024, month);
+        return exposureService.getLapCount(2024, round);
     }
 
 }
