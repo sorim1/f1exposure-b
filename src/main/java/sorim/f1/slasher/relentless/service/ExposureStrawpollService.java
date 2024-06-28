@@ -63,4 +63,6 @@ public interface ExposureStrawpollService {
     void raceHasStarted();
 
     public Integer getLapCount(Integer year, Integer round);
+
+    Long timeToExposurePollWindow();
 }

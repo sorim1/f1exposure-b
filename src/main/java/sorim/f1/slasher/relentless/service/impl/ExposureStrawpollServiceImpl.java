@@ -479,6 +479,19 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
         }
     }
 
+    @Override
+    public Long timeToExposurePollWindow() {
+        ZonedDateTime gmtZoned = ZonedDateTime.now(ZoneId.of("Europe/London"));
+        LocalDateTime gmtDateTime = gmtZoned.toLocalDateTime();
+        F1Calendar f1calendar = calendarRepository.findFirstByRaceAfterOrderByRace(gmtDateTime);
+        if (f1calendar != null) {
+            Duration howMuchTimeSincePreviousRace = Duration.between(f1calendar.getRace(), gmtDateTime);
+            log.info("minutes: {}", howMuchTimeSincePreviousRace.toMinutes());
+            return howMuchTimeSincePreviousRace.toMinutes();
+        }
+        return 0L;
+    }
+
     private Integer getReloadDelay() {
         if (exposureOn()) {
             return reloadDelay;

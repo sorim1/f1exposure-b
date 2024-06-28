@@ -146,8 +146,8 @@ public class ExposureController {
         securityService.validateHeader(client);
         log.info("POKUSAJ KREIRANJA STRAWPOLLA");
         if(exposureService.checkIfStrawpollCanBeStarted()){
-            exposureService.setExposureNow(true);
             StrawpollPoll poll = strawpollService.postStrawpoll();
+            exposureService.setExposureNow(true);
             exposureService.setStrawpoll(poll.getId());
             return poll;
         } else {
@@ -159,8 +159,8 @@ public class ExposureController {
     @GetMapping("/postStrawpollForced")
     StrawpollPoll postStrawpollForced(@RequestHeader String client) throws Exception {
         securityService.validateAdminHeader(client);
-        exposureService.setExposureNow(true);
         StrawpollPoll poll = strawpollService.postStrawpoll();
+        exposureService.setExposureNow(true);
         exposureService.setStrawpoll(poll.getId());
         return poll;
     }
@@ -187,6 +187,18 @@ public class ExposureController {
     Integer getLapCount(@RequestHeader String client, @PathVariable("round") Integer round) throws Exception {
         securityService.validateAdminHeader(client);
         return exposureService.getLapCount(2024, round);
+    }
+
+    @GetMapping("/app/timeToExposurePollWindow")
+    Long timeToExposurePollWindow()  {
+        log.info("timeToExposurePollWindow CALLED");
+        return exposureService.timeToExposurePollWindow();
+    }
+
+    @GetMapping("/app/isExposureNow")
+    Boolean exposureIsNow() {
+        log.info("isExposureNow CALLED");
+        return exposureService.isExposureNow();
     }
 
 }
