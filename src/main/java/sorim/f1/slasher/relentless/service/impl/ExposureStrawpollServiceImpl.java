@@ -484,10 +484,14 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
         ZonedDateTime gmtZoned = ZonedDateTime.now(ZoneId.of("Europe/London"));
         LocalDateTime gmtDateTime = gmtZoned.toLocalDateTime();
         F1Calendar f1calendar = calendarRepository.findFirstByRaceAfterOrderByRace(gmtDateTime);
-        if (f1calendar != null) {
-            Duration howMuchTimeSincePreviousRace = Duration.between(f1calendar.getRace(), gmtDateTime);
-            log.info("minutes: {}", howMuchTimeSincePreviousRace.toMinutes());
-            return howMuchTimeSincePreviousRace.toMinutes();
+         if (f1calendar != null) {
+             log.info("timeToExposurePollWindow: {}", f1calendar.getRaceName());
+             Duration nextRaceTimeTo = Duration.between(gmtDateTime, f1calendar.getRace());
+            log.info("days1: {}", nextRaceTimeTo.toDays());
+            if(nextRaceTimeTo.toDays()<3){
+                log.info("minutes1: {}", nextRaceTimeTo.toMinutes());
+                return nextRaceTimeTo.toMinutes();
+            }
         }
         return 0L;
     }

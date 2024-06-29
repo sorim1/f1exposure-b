@@ -324,7 +324,7 @@ public class ClientServiceImpl implements ClientService {
                     return true;
                 } else {
                     navbarData.setSessionName("Sprint Quali");
-                    navbarData.setTabNumber(5);
+                    navbarData.setTabNumber(4);
                     setNavbarDriver(upcomingRaceAnalysis.getSprintQualiLivetimingUrl(), upcomingRaceAnalysis.getSprintQuali().get(0));
                 }
             } else if (upcomingRaceAnalysis.getFp3Radio() != null) {

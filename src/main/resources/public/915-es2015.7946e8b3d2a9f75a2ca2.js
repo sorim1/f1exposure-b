@@ -46654,6 +46654,7 @@ var fesm2015_checkbox = __webpack_require__(7539);
 
 
 
+
 function StandingsComponent_div_13_Template(rf, ctx) { if (rf & 1) {
     const _r5 = core/* ɵɵgetCurrentView */.EpF();
     core/* ɵɵelementStart */.TgZ(0, "div");
@@ -46680,36 +46681,41 @@ function StandingsComponent_div_13_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵadvance */.xp6(2);
     core/* ɵɵtextInterpolate */.Oqu(comment_r3.comment);
 } }
+function StandingsComponent_div_20_div_1_Template(rf, ctx) { if (rf & 1) {
+    core/* ɵɵelementStart */.TgZ(0, "div", 20);
+    core/* ɵɵelement */._UZ(1, "mat-spinner");
+    core/* ɵɵelementEnd */.qZA();
+} }
 const standings_component_c0 = function () { return ["/data-drivers"]; };
 const standings_component_c1 = function (a0) { return { driver: a0 }; };
 const standings_component_c2 = function () { return ["/data-constructors"]; };
 const standings_component_c3 = function (a0) { return { constructor: a0 }; };
-function StandingsComponent_div_20_ng_template_3_tr_18_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "tr", 32);
-    core/* ɵɵelementStart */.TgZ(1, "th", 33);
+function StandingsComponent_div_20_div_2_ng_template_3_tr_18_Template(rf, ctx) { if (rf & 1) {
+    core/* ɵɵelementStart */.TgZ(0, "tr", 35);
+    core/* ɵɵelementStart */.TgZ(1, "th", 36);
     core/* ɵɵtext */._uU(2);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(3, "td", 34);
-    core/* ɵɵelementStart */.TgZ(4, "a", 35);
+    core/* ɵɵelementStart */.TgZ(3, "td", 37);
+    core/* ɵɵelementStart */.TgZ(4, "a", 38);
     core/* ɵɵelementStart */.TgZ(5, "div");
     core/* ɵɵtext */._uU(6);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(7, "td", 36);
+    core/* ɵɵelementStart */.TgZ(7, "td", 39);
     core/* ɵɵtext */._uU(8);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(9, "td", 36);
+    core/* ɵɵelementStart */.TgZ(9, "td", 39);
     core/* ɵɵtext */._uU(10);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(11, "td", 37);
-    core/* ɵɵelementStart */.TgZ(12, "a", 35);
+    core/* ɵɵelementStart */.TgZ(11, "td", 40);
+    core/* ɵɵelementStart */.TgZ(12, "a", 38);
     core/* ɵɵelementStart */.TgZ(13, "div");
     core/* ɵɵtext */._uU(14);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(15, "td", 38);
+    core/* ɵɵelementStart */.TgZ(15, "td", 39);
     core/* ɵɵtext */._uU(16);
     core/* ɵɵpipe */.ALo(17, "number");
     core/* ɵɵelementEnd */.qZA();
@@ -46718,166 +46724,166 @@ function StandingsComponent_div_20_ng_template_3_tr_18_Template(rf, ctx) { if (r
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const standing_r14 = ctx.$implicit;
+    const standing_r16 = ctx.$implicit;
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r14.position);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r16.position);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵproperty */.Q6J("routerLink", core/* ɵɵpureFunction0 */.DdM(13, standings_component_c0))("queryParams", core/* ɵɵpureFunction1 */.VKq(14, standings_component_c1, standing_r14.id));
+    core/* ɵɵproperty */.Q6J("routerLink", core/* ɵɵpureFunction0 */.DdM(13, standings_component_c0))("queryParams", core/* ɵɵpureFunction1 */.VKq(14, standings_component_c1, standing_r16.id));
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate1 */.hij(" ", standing_r14.name, " ");
+    core/* ɵɵtextInterpolate1 */.hij(" ", standing_r16.name, " ");
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r14.code);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r16.code);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r14.nationality);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r16.nationality);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵproperty */.Q6J("routerLink", core/* ɵɵpureFunction0 */.DdM(16, standings_component_c2))("queryParams", core/* ɵɵpureFunction1 */.VKq(17, standings_component_c3, standing_r14.ergastCode));
+    core/* ɵɵproperty */.Q6J("routerLink", core/* ɵɵpureFunction0 */.DdM(16, standings_component_c2))("queryParams", core/* ɵɵpureFunction1 */.VKq(17, standings_component_c3, standing_r16.ergastCode));
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate1 */.hij(" ", standing_r14.car, " ");
+    core/* ɵɵtextInterpolate1 */.hij(" ", standing_r16.car, " ");
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(core/* ɵɵpipeBind1 */.lcZ(17, 11, standing_r14.points));
+    core/* ɵɵtextInterpolate */.Oqu(core/* ɵɵpipeBind1 */.lcZ(17, 11, standing_r16.points));
     core/* ɵɵadvance */.xp6(3);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r14.gap);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r16.gap);
 } }
-function StandingsComponent_div_20_ng_template_3_Template(rf, ctx) { if (rf & 1) {
+function StandingsComponent_div_20_div_2_ng_template_3_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div");
-    core/* ɵɵelementStart */.TgZ(1, "table", 26);
+    core/* ɵɵelementStart */.TgZ(1, "table", 29);
     core/* ɵɵelementStart */.TgZ(2, "thead");
-    core/* ɵɵelementStart */.TgZ(3, "tr", 27);
-    core/* ɵɵelement */._UZ(4, "th", 28);
-    core/* ɵɵelementStart */.TgZ(5, "th", 28);
+    core/* ɵɵelementStart */.TgZ(3, "tr", 30);
+    core/* ɵɵelement */._UZ(4, "th", 31);
+    core/* ɵɵelementStart */.TgZ(5, "th", 31);
     core/* ɵɵtext */._uU(6, "Name");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(7, "th", 29);
+    core/* ɵɵelementStart */.TgZ(7, "th", 32);
     core/* ɵɵtext */._uU(8, "Code");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(9, "th", 29);
+    core/* ɵɵelementStart */.TgZ(9, "th", 32);
     core/* ɵɵtext */._uU(10, "Nationality");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(11, "th", 29);
+    core/* ɵɵelementStart */.TgZ(11, "th", 32);
     core/* ɵɵtext */._uU(12, "Car");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(13, "th", 28);
+    core/* ɵɵelementStart */.TgZ(13, "th", 31);
     core/* ɵɵtext */._uU(14, "Points");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(15, "th", 30);
+    core/* ɵɵelementStart */.TgZ(15, "th", 33);
     core/* ɵɵtext */._uU(16, "Gap");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(17, "tbody");
-    core/* ɵɵtemplate */.YNc(18, StandingsComponent_div_20_ng_template_3_tr_18_Template, 20, 19, "tr", 31);
+    core/* ɵɵtemplate */.YNc(18, StandingsComponent_div_20_div_2_ng_template_3_tr_18_Template, 20, 19, "tr", 34);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const ctx_r7 = core/* ɵɵnextContext */.oxw(2);
+    const ctx_r9 = core/* ɵɵnextContext */.oxw(3);
     core/* ɵɵadvance */.xp6(18);
-    core/* ɵɵproperty */.Q6J("ngForOf", ctx_r7.standings.driverStandings);
+    core/* ɵɵproperty */.Q6J("ngForOf", ctx_r9.standings.driverStandings);
 } }
-function StandingsComponent_div_20_ng_template_5_div_0_tr_12_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "tr", 32);
-    core/* ɵɵelementStart */.TgZ(1, "th", 33);
+function StandingsComponent_div_20_div_2_ng_template_5_div_0_tr_12_Template(rf, ctx) { if (rf & 1) {
+    core/* ɵɵelementStart */.TgZ(0, "tr", 35);
+    core/* ɵɵelementStart */.TgZ(1, "th", 36);
     core/* ɵɵtext */._uU(2);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(3, "td", 34);
-    core/* ɵɵelementStart */.TgZ(4, "a", 35);
+    core/* ɵɵelementStart */.TgZ(3, "td", 37);
+    core/* ɵɵelementStart */.TgZ(4, "a", 38);
     core/* ɵɵelementStart */.TgZ(5, "div");
     core/* ɵɵtext */._uU(6);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(7, "td", 38);
+    core/* ɵɵelementStart */.TgZ(7, "td", 42);
     core/* ɵɵtext */._uU(8);
     core/* ɵɵpipe */.ALo(9, "number");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(10, "td");
+    core/* ɵɵelementStart */.TgZ(10, "td", 41);
     core/* ɵɵtext */._uU(11);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const standing_r18 = ctx.$implicit;
+    const standing_r20 = ctx.$implicit;
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r18.position);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r20.position);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵproperty */.Q6J("routerLink", core/* ɵɵpureFunction0 */.DdM(8, standings_component_c2))("queryParams", core/* ɵɵpureFunction1 */.VKq(9, standings_component_c3, standing_r18.id));
+    core/* ɵɵproperty */.Q6J("routerLink", core/* ɵɵpureFunction0 */.DdM(8, standings_component_c2))("queryParams", core/* ɵɵpureFunction1 */.VKq(9, standings_component_c3, standing_r20.id));
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate1 */.hij(" ", standing_r18.name, " ");
+    core/* ɵɵtextInterpolate1 */.hij(" ", standing_r20.name, " ");
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(core/* ɵɵpipeBind1 */.lcZ(9, 6, standing_r18.points));
+    core/* ɵɵtextInterpolate */.Oqu(core/* ɵɵpipeBind1 */.lcZ(9, 6, standing_r20.points));
     core/* ɵɵadvance */.xp6(3);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r18.gap);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r20.gap);
 } }
-function StandingsComponent_div_20_ng_template_5_div_0_Template(rf, ctx) { if (rf & 1) {
+function StandingsComponent_div_20_div_2_ng_template_5_div_0_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div");
-    core/* ɵɵelementStart */.TgZ(1, "table", 26);
+    core/* ɵɵelementStart */.TgZ(1, "table", 29);
     core/* ɵɵelementStart */.TgZ(2, "thead");
-    core/* ɵɵelementStart */.TgZ(3, "tr", 27);
-    core/* ɵɵelement */._UZ(4, "th", 28);
-    core/* ɵɵelementStart */.TgZ(5, "th", 28);
+    core/* ɵɵelementStart */.TgZ(3, "tr", 30);
+    core/* ɵɵelement */._UZ(4, "th", 31);
+    core/* ɵɵelementStart */.TgZ(5, "th", 31);
     core/* ɵɵtext */._uU(6, "Name");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(7, "th", 28);
+    core/* ɵɵelementStart */.TgZ(7, "th", 31);
     core/* ɵɵtext */._uU(8, "Points");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(9, "th", 40);
+    core/* ɵɵelementStart */.TgZ(9, "th", 41);
     core/* ɵɵtext */._uU(10, "Gap");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(11, "tbody");
-    core/* ɵɵtemplate */.YNc(12, StandingsComponent_div_20_ng_template_5_div_0_tr_12_Template, 12, 11, "tr", 31);
+    core/* ɵɵtemplate */.YNc(12, StandingsComponent_div_20_div_2_ng_template_5_div_0_tr_12_Template, 12, 11, "tr", 34);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const ctx_r16 = core/* ɵɵnextContext */.oxw(3);
+    const ctx_r18 = core/* ɵɵnextContext */.oxw(4);
     core/* ɵɵadvance */.xp6(12);
-    core/* ɵɵproperty */.Q6J("ngForOf", ctx_r16.standings.constructorStandings);
+    core/* ɵɵproperty */.Q6J("ngForOf", ctx_r18.standings.constructorStandings);
 } }
-function StandingsComponent_div_20_ng_template_5_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵtemplate */.YNc(0, StandingsComponent_div_20_ng_template_5_div_0_Template, 13, 1, "div", 39);
+function StandingsComponent_div_20_div_2_ng_template_5_Template(rf, ctx) { if (rf & 1) {
+    core/* ɵɵtemplate */.YNc(0, StandingsComponent_div_20_div_2_ng_template_5_div_0_Template, 13, 1, "div", 19);
 } if (rf & 2) {
-    const ctx_r8 = core/* ɵɵnextContext */.oxw(2);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r8.standings !== undefined);
+    const ctx_r10 = core/* ɵɵnextContext */.oxw(3);
+    core/* ɵɵproperty */.Q6J("ngIf", ctx_r10.standings !== undefined);
 } }
-function StandingsComponent_div_20_ng_template_7_div_0_tr_15_div_14_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "div", 47);
-    core/* ɵɵelementStart */.TgZ(1, "div", 48);
-    core/* ɵɵelementStart */.TgZ(2, "div", 49);
-    core/* ɵɵelement */._UZ(3, "img", 50);
+function StandingsComponent_div_20_div_2_ng_template_7_div_0_tr_15_div_14_Template(rf, ctx) { if (rf & 1) {
+    core/* ɵɵelementStart */.TgZ(0, "div", 50);
+    core/* ɵɵelementStart */.TgZ(1, "div", 51);
+    core/* ɵɵelementStart */.TgZ(2, "div", 52);
+    core/* ɵɵelement */._UZ(3, "img", 53);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(4, "div", 51);
-    core/* ɵɵelementStart */.TgZ(5, "div", 49);
-    core/* ɵɵelement */._UZ(6, "img", 52);
+    core/* ɵɵelementStart */.TgZ(4, "div", 54);
+    core/* ɵɵelementStart */.TgZ(5, "div", 52);
+    core/* ɵɵelement */._UZ(6, "img", 55);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(7, "div", 53);
-    core/* ɵɵelementStart */.TgZ(8, "div", 49);
-    core/* ɵɵelement */._UZ(9, "img", 54);
+    core/* ɵɵelementStart */.TgZ(7, "div", 56);
+    core/* ɵɵelementStart */.TgZ(8, "div", 52);
+    core/* ɵɵelement */._UZ(9, "img", 57);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const i_r23 = core/* ɵɵnextContext */.oxw().index;
-    const ctx_r24 = core/* ɵɵnextContext */.oxw(4);
+    const i_r25 = core/* ɵɵnextContext */.oxw().index;
+    const ctx_r26 = core/* ɵɵnextContext */.oxw(5);
     core/* ɵɵadvance */.xp6(3);
-    core/* ɵɵpropertyInterpolate */.s9C("src", "assets/img/drivers/" + ctx_r24.standings.currentYear + "/" + ctx_r24.podiums[i_r23 + 1][2].name + ".png", core/* ɵɵsanitizeUrl */.LSH);
+    core/* ɵɵpropertyInterpolate */.s9C("src", "assets/img/drivers/" + ctx_r26.standings.currentYear + "/" + ctx_r26.podiums[i_r25 + 1][2].name + ".png", core/* ɵɵsanitizeUrl */.LSH);
     core/* ɵɵadvance */.xp6(3);
-    core/* ɵɵpropertyInterpolate */.s9C("src", "assets/img/drivers/" + ctx_r24.standings.currentYear + "/" + ctx_r24.podiums[i_r23 + 1][1].name + ".png", core/* ɵɵsanitizeUrl */.LSH);
+    core/* ɵɵpropertyInterpolate */.s9C("src", "assets/img/drivers/" + ctx_r26.standings.currentYear + "/" + ctx_r26.podiums[i_r25 + 1][1].name + ".png", core/* ɵɵsanitizeUrl */.LSH);
     core/* ɵɵadvance */.xp6(3);
-    core/* ɵɵpropertyInterpolate */.s9C("src", "assets/img/drivers/" + ctx_r24.standings.currentYear + "/" + ctx_r24.podiums[i_r23 + 1][3].name + ".png", core/* ɵɵsanitizeUrl */.LSH);
+    core/* ɵɵpropertyInterpolate */.s9C("src", "assets/img/drivers/" + ctx_r26.standings.currentYear + "/" + ctx_r26.podiums[i_r25 + 1][3].name + ".png", core/* ɵɵsanitizeUrl */.LSH);
 } }
 const standings_component_c4 = function () { return ["/data-circuit"]; };
 const standings_component_c5 = function (a0) { return { circuit: a0 }; };
-function StandingsComponent_div_20_ng_template_7_div_0_tr_15_Template(rf, ctx) { if (rf & 1) {
-    const _r27 = core/* ɵɵgetCurrentView */.EpF();
-    core/* ɵɵelementStart */.TgZ(0, "tr", 32);
-    core/* ɵɵelementStart */.TgZ(1, "th", 43);
+function StandingsComponent_div_20_div_2_ng_template_7_div_0_tr_15_Template(rf, ctx) { if (rf & 1) {
+    const _r29 = core/* ɵɵgetCurrentView */.EpF();
+    core/* ɵɵelementStart */.TgZ(0, "tr", 35);
+    core/* ɵɵelementStart */.TgZ(1, "th", 46);
     core/* ɵɵtext */._uU(2);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(3, "td", 44);
-    core/* ɵɵlistener */.NdJ("click", function StandingsComponent_div_20_ng_template_7_div_0_tr_15_Template_td_click_3_listener() { const restoredCtx = core/* ɵɵrestoreView */.CHM(_r27); const race_r22 = restoredCtx.$implicit; const ctx_r26 = core/* ɵɵnextContext */.oxw(4); return ctx_r26.openRace(ctx_r26.standings.currentYear, race_r22.round); });
+    core/* ɵɵelementStart */.TgZ(3, "td", 47);
+    core/* ɵɵlistener */.NdJ("click", function StandingsComponent_div_20_div_2_ng_template_7_div_0_tr_15_Template_td_click_3_listener() { const restoredCtx = core/* ɵɵrestoreView */.CHM(_r29); const race_r24 = restoredCtx.$implicit; const ctx_r28 = core/* ɵɵnextContext */.oxw(5); return ctx_r28.openRace(ctx_r28.standings.currentYear, race_r24.round); });
     core/* ɵɵelementStart */.TgZ(4, "div");
     core/* ɵɵtext */._uU(5);
     core/* ɵɵelementEnd */.qZA();
@@ -46886,178 +46892,168 @@ function StandingsComponent_div_20_ng_template_7_div_0_tr_15_Template(rf, ctx) {
     core/* ɵɵtext */._uU(7);
     core/* ɵɵpipe */.ALo(8, "date");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(9, "td", 34);
-    core/* ɵɵelementStart */.TgZ(10, "a", 35);
+    core/* ɵɵelementStart */.TgZ(9, "td", 40);
+    core/* ɵɵelementStart */.TgZ(10, "a", 38);
     core/* ɵɵelementStart */.TgZ(11, "div");
     core/* ɵɵtext */._uU(12);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(13, "td", 45);
-    core/* ɵɵtemplate */.YNc(14, StandingsComponent_div_20_ng_template_7_div_0_tr_15_div_14_Template, 10, 3, "div", 46);
+    core/* ɵɵelementStart */.TgZ(13, "td", 48);
+    core/* ɵɵtemplate */.YNc(14, StandingsComponent_div_20_div_2_ng_template_7_div_0_tr_15_div_14_Template, 10, 3, "div", 49);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const race_r22 = ctx.$implicit;
-    const i_r23 = ctx.index;
-    const ctx_r21 = core/* ɵɵnextContext */.oxw(4);
+    const race_r24 = ctx.$implicit;
+    const i_r25 = ctx.index;
+    const ctx_r23 = core/* ɵɵnextContext */.oxw(5);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(race_r22.round);
+    core/* ɵɵtextInterpolate */.Oqu(race_r24.round);
     core/* ɵɵadvance */.xp6(3);
-    core/* ɵɵtextInterpolate1 */.hij(" ", race_r22.raceName, " ");
+    core/* ɵɵtextInterpolate1 */.hij(" ", race_r24.raceName, " ");
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(core/* ɵɵpipeBind2 */.xi3(8, 7, race_r22.date, "MMMM d"));
+    core/* ɵɵtextInterpolate */.Oqu(core/* ɵɵpipeBind2 */.xi3(8, 7, race_r24.date, "MMMM d"));
     core/* ɵɵadvance */.xp6(3);
-    core/* ɵɵproperty */.Q6J("routerLink", core/* ɵɵpureFunction0 */.DdM(10, standings_component_c4))("queryParams", core/* ɵɵpureFunction1 */.VKq(11, standings_component_c5, race_r22.circuitId));
+    core/* ɵɵproperty */.Q6J("routerLink", core/* ɵɵpureFunction0 */.DdM(10, standings_component_c4))("queryParams", core/* ɵɵpureFunction1 */.VKq(11, standings_component_c5, race_r24.circuitId));
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate1 */.hij(" ", race_r22.circuitName, " ");
+    core/* ɵɵtextInterpolate1 */.hij(" ", race_r24.circuitName, " ");
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r21.podiums[i_r23 + 1].length > 0);
+    core/* ɵɵproperty */.Q6J("ngIf", ctx_r23.podiums[i_r25 + 1].length > 0);
 } }
-function StandingsComponent_div_20_ng_template_7_div_0_Template(rf, ctx) { if (rf & 1) {
+function StandingsComponent_div_20_div_2_ng_template_7_div_0_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div");
-    core/* ɵɵelementStart */.TgZ(1, "table", 26);
+    core/* ɵɵelementStart */.TgZ(1, "table", 29);
     core/* ɵɵelementStart */.TgZ(2, "thead");
-    core/* ɵɵelementStart */.TgZ(3, "tr", 27);
-    core/* ɵɵelementStart */.TgZ(4, "th", 41);
+    core/* ɵɵelementStart */.TgZ(3, "tr", 30);
+    core/* ɵɵelementStart */.TgZ(4, "th", 43);
     core/* ɵɵtext */._uU(5, "#");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(6, "th", 28);
+    core/* ɵɵelementStart */.TgZ(6, "th", 31);
     core/* ɵɵtext */._uU(7, "Race");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(8, "th", 42);
+    core/* ɵɵelementStart */.TgZ(8, "th", 44);
     core/* ɵɵtext */._uU(9, "Date");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(10, "th", 28);
+    core/* ɵɵelementStart */.TgZ(10, "th", 45);
     core/* ɵɵtext */._uU(11, "Circuit");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(12, "th", 28);
+    core/* ɵɵelementStart */.TgZ(12, "th", 31);
     core/* ɵɵtext */._uU(13, "Winner");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(14, "tbody");
-    core/* ɵɵtemplate */.YNc(15, StandingsComponent_div_20_ng_template_7_div_0_tr_15_Template, 15, 13, "tr", 31);
+    core/* ɵɵtemplate */.YNc(15, StandingsComponent_div_20_div_2_ng_template_7_div_0_tr_15_Template, 15, 13, "tr", 34);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const ctx_r20 = core/* ɵɵnextContext */.oxw(3);
+    const ctx_r22 = core/* ɵɵnextContext */.oxw(4);
     core/* ɵɵadvance */.xp6(15);
-    core/* ɵɵproperty */.Q6J("ngForOf", ctx_r20.standings.races);
+    core/* ɵɵproperty */.Q6J("ngForOf", ctx_r22.standings.races);
 } }
-function StandingsComponent_div_20_ng_template_7_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵtemplate */.YNc(0, StandingsComponent_div_20_ng_template_7_div_0_Template, 16, 1, "div", 39);
+function StandingsComponent_div_20_div_2_ng_template_7_Template(rf, ctx) { if (rf & 1) {
+    core/* ɵɵtemplate */.YNc(0, StandingsComponent_div_20_div_2_ng_template_7_div_0_Template, 16, 1, "div", 19);
 } if (rf & 2) {
-    const ctx_r9 = core/* ɵɵnextContext */.oxw(2);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r9.standings !== undefined);
+    const ctx_r11 = core/* ɵɵnextContext */.oxw(3);
+    core/* ɵɵproperty */.Q6J("ngIf", ctx_r11.standings !== undefined);
 } }
-function StandingsComponent_div_20_ng_template_9_div_0_Template(rf, ctx) { if (rf & 1) {
-    const _r30 = core/* ɵɵgetCurrentView */.EpF();
-    core/* ɵɵelementStart */.TgZ(0, "div", 56);
-    core/* ɵɵelementStart */.TgZ(1, "div", 57);
-    core/* ɵɵelementStart */.TgZ(2, "div", 58);
-    core/* ɵɵelement */._UZ(3, "apx-chart", 59);
+function StandingsComponent_div_20_div_2_ng_template_9_div_0_Template(rf, ctx) { if (rf & 1) {
+    const _r32 = core/* ɵɵgetCurrentView */.EpF();
+    core/* ɵɵelementStart */.TgZ(0, "div", 59);
+    core/* ɵɵelementStart */.TgZ(1, "div", 60);
+    core/* ɵɵelementStart */.TgZ(2, "div", 61);
+    core/* ɵɵelement */._UZ(3, "apx-chart", 62);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(4, "div", 57);
-    core/* ɵɵelementStart */.TgZ(5, "div", 58);
-    core/* ɵɵelement */._UZ(6, "apx-chart", 60);
+    core/* ɵɵelementStart */.TgZ(4, "div", 60);
+    core/* ɵɵelementStart */.TgZ(5, "div", 61);
+    core/* ɵɵelement */._UZ(6, "apx-chart", 63);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(7, "div", 57);
-    core/* ɵɵelementStart */.TgZ(8, "div", 58);
-    core/* ɵɵelement */._UZ(9, "apx-chart", 61);
+    core/* ɵɵelementStart */.TgZ(7, "div", 60);
+    core/* ɵɵelementStart */.TgZ(8, "div", 61);
+    core/* ɵɵelement */._UZ(9, "apx-chart", 64);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(10, "div", 57);
-    core/* ɵɵelementStart */.TgZ(11, "div", 58);
-    core/* ɵɵelementStart */.TgZ(12, "div", 62);
+    core/* ɵɵelementStart */.TgZ(10, "div", 60);
+    core/* ɵɵelementStart */.TgZ(11, "div", 61);
+    core/* ɵɵelementStart */.TgZ(12, "div", 65);
     core/* ɵɵelementStart */.TgZ(13, "span");
     core/* ɵɵtext */._uU(14, "Exclude DNF results ");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(15, "mat-slide-toggle", 63);
-    core/* ɵɵlistener */.NdJ("change", function StandingsComponent_div_20_ng_template_9_div_0_Template_mat_slide_toggle_change_15_listener($event) { core/* ɵɵrestoreView */.CHM(_r30); const ctx_r29 = core/* ɵɵnextContext */.oxw(3); return ctx_r29.includeDnf($event); })("ngModelChange", function StandingsComponent_div_20_ng_template_9_div_0_Template_mat_slide_toggle_ngModelChange_15_listener($event) { core/* ɵɵrestoreView */.CHM(_r30); const ctx_r31 = core/* ɵɵnextContext */.oxw(3); return ctx_r31.showDnf = $event; });
+    core/* ɵɵelementStart */.TgZ(15, "mat-slide-toggle", 66);
+    core/* ɵɵlistener */.NdJ("change", function StandingsComponent_div_20_div_2_ng_template_9_div_0_Template_mat_slide_toggle_change_15_listener($event) { core/* ɵɵrestoreView */.CHM(_r32); const ctx_r31 = core/* ɵɵnextContext */.oxw(4); return ctx_r31.includeDnf($event); })("ngModelChange", function StandingsComponent_div_20_div_2_ng_template_9_div_0_Template_mat_slide_toggle_ngModelChange_15_listener($event) { core/* ɵɵrestoreView */.CHM(_r32); const ctx_r33 = core/* ɵɵnextContext */.oxw(4); return ctx_r33.showDnf = $event; });
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(16, "span");
     core/* ɵɵtext */._uU(17, " Include DNF results");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelement */._UZ(18, "apx-chart", 64);
+    core/* ɵɵelement */._UZ(18, "apx-chart", 67);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(19, "div", 57);
-    core/* ɵɵelementStart */.TgZ(20, "div", 58);
-    core/* ɵɵelement */._UZ(21, "apx-chart", 59);
+    core/* ɵɵelementStart */.TgZ(19, "div", 60);
+    core/* ɵɵelementStart */.TgZ(20, "div", 61);
+    core/* ɵɵelement */._UZ(21, "apx-chart", 62);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const ctx_r28 = core/* ɵɵnextContext */.oxw(3);
+    const ctx_r30 = core/* ɵɵnextContext */.oxw(4);
     core/* ɵɵadvance */.xp6(3);
-    core/* ɵɵproperty */.Q6J("chart", ctx_r28.lineChartWithResponsiveWidth)("series", ctx_r28.driverStandingsSeries)("stroke", ctx_r28.defStroke)("title", ctx_r28.titleStandings)("tooltip", ctx_r28.defTooltip)("yaxis", ctx_r28.defYaxis);
+    core/* ɵɵproperty */.Q6J("chart", ctx_r30.lineChartWithResponsiveWidth)("series", ctx_r30.driverStandingsSeries)("stroke", ctx_r30.defStroke)("title", ctx_r30.titleStandings)("tooltip", ctx_r30.defTooltip)("yaxis", ctx_r30.defYaxis);
     core/* ɵɵadvance */.xp6(3);
-    core/* ɵɵproperty */.Q6J("chart", ctx_r28.driversRoundByRoundOptions.chart)("dataLabels", ctx_r28.driversRoundByRoundOptions.dataLabels)("fill", ctx_r28.driversRoundByRoundOptions.fill)("plotOptions", ctx_r28.driversRoundByRoundOptions.plotOptions)("responsive", ctx_r28.driversRoundByRoundOptions.responsive)("series", ctx_r28.driversRoundByRoundOptions.series)("title", ctx_r28.driversRoundByRoundOptions.title)("xaxis", ctx_r28.driversRoundByRoundOptions.xAxis);
+    core/* ɵɵproperty */.Q6J("chart", ctx_r30.driversRoundByRoundOptions.chart)("dataLabels", ctx_r30.driversRoundByRoundOptions.dataLabels)("fill", ctx_r30.driversRoundByRoundOptions.fill)("plotOptions", ctx_r30.driversRoundByRoundOptions.plotOptions)("responsive", ctx_r30.driversRoundByRoundOptions.responsive)("series", ctx_r30.driversRoundByRoundOptions.series)("title", ctx_r30.driversRoundByRoundOptions.title)("xaxis", ctx_r30.driversRoundByRoundOptions.xAxis);
     core/* ɵɵadvance */.xp6(3);
-    core/* ɵɵproperty */.Q6J("chart", ctx_r28.driversHeatMapChartOptions.chart)("colors", ctx_r28.driversHeatMapChartOptions.colors)("dataLabels", ctx_r28.driversHeatMapChartOptions.dataLabels)("plotOptions", ctx_r28.driversHeatMapChartOptions.plotOptions)("series", ctx_r28.driversHeatMapChartOptions.series)("title", ctx_r28.titleResultsHeatmap)("tooltip", ctx_r28.driversHeatMapChartOptions.tooltip);
+    core/* ɵɵproperty */.Q6J("chart", ctx_r30.driversHeatMapChartOptions.chart)("colors", ctx_r30.driversHeatMapChartOptions.colors)("dataLabels", ctx_r30.driversHeatMapChartOptions.dataLabels)("plotOptions", ctx_r30.driversHeatMapChartOptions.plotOptions)("series", ctx_r30.driversHeatMapChartOptions.series)("title", ctx_r30.titleResultsHeatmap)("tooltip", ctx_r30.driversHeatMapChartOptions.tooltip);
     core/* ɵɵadvance */.xp6(6);
-    core/* ɵɵproperty */.Q6J("ngModel", ctx_r28.showDnf);
+    core/* ɵɵproperty */.Q6J("ngModel", ctx_r30.showDnf);
     core/* ɵɵadvance */.xp6(3);
-    core/* ɵɵproperty */.Q6J("chart", ctx_r28.scatterChart)("series", ctx_r28.gridToResultSeries)("stroke", ctx_r28.defStroke)("title", ctx_r28.titleResultToGrid)("tooltip", ctx_r28.resultToGridTooltip)("xaxis", ctx_r28.xaxis19)("yaxis", ctx_r28.yAxis19);
+    core/* ɵɵproperty */.Q6J("chart", ctx_r30.scatterChart)("series", ctx_r30.gridToResultSeries)("stroke", ctx_r30.defStroke)("title", ctx_r30.titleResultToGrid)("tooltip", ctx_r30.resultToGridTooltip)("xaxis", ctx_r30.xaxis19)("yaxis", ctx_r30.yAxis19);
     core/* ɵɵadvance */.xp6(3);
-    core/* ɵɵproperty */.Q6J("chart", ctx_r28.lineChartWithoutAnimation)("series", ctx_r28.driverPointsByRoundSeries)("stroke", ctx_r28.defStroke)("title", ctx_r28.titleByRound)("tooltip", ctx_r28.defTooltip)("yaxis", ctx_r28.defYaxis);
+    core/* ɵɵproperty */.Q6J("chart", ctx_r30.lineChartWithoutAnimation)("series", ctx_r30.driverPointsByRoundSeries)("stroke", ctx_r30.defStroke)("title", ctx_r30.titleByRound)("tooltip", ctx_r30.defTooltip)("yaxis", ctx_r30.defYaxis);
 } }
-function StandingsComponent_div_20_ng_template_9_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵtemplate */.YNc(0, StandingsComponent_div_20_ng_template_9_div_0_Template, 22, 35, "div", 55);
+function StandingsComponent_div_20_div_2_ng_template_9_Template(rf, ctx) { if (rf & 1) {
+    core/* ɵɵtemplate */.YNc(0, StandingsComponent_div_20_div_2_ng_template_9_div_0_Template, 22, 35, "div", 58);
 } if (rf & 2) {
-    const ctx_r10 = core/* ɵɵnextContext */.oxw(2);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r10.standings != undefined);
+    const ctx_r12 = core/* ɵɵnextContext */.oxw(3);
+    core/* ɵɵproperty */.Q6J("ngIf", ctx_r12.standings != undefined);
 } }
-function StandingsComponent_div_20_ng_template_11_div_0_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "div", 56);
-    core/* ɵɵelementStart */.TgZ(1, "div", 57);
-    core/* ɵɵelementStart */.TgZ(2, "div", 58);
-    core/* ɵɵelement */._UZ(3, "apx-chart", 59);
+function StandingsComponent_div_20_div_2_ng_template_11_div_0_Template(rf, ctx) { if (rf & 1) {
+    core/* ɵɵelementStart */.TgZ(0, "div", 59);
+    core/* ɵɵelementStart */.TgZ(1, "div", 60);
+    core/* ɵɵelementStart */.TgZ(2, "div", 61);
+    core/* ɵɵelement */._UZ(3, "apx-chart", 62);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(4, "div", 57);
-    core/* ɵɵelementStart */.TgZ(5, "div", 58);
-    core/* ɵɵelement */._UZ(6, "apx-chart", 61);
+    core/* ɵɵelementStart */.TgZ(4, "div", 60);
+    core/* ɵɵelementStart */.TgZ(5, "div", 61);
+    core/* ɵɵelement */._UZ(6, "apx-chart", 64);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(7, "div", 57);
-    core/* ɵɵelementStart */.TgZ(8, "div", 58);
-    core/* ɵɵelement */._UZ(9, "apx-chart", 59);
+    core/* ɵɵelementStart */.TgZ(7, "div", 60);
+    core/* ɵɵelementStart */.TgZ(8, "div", 61);
+    core/* ɵɵelement */._UZ(9, "apx-chart", 62);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementEnd */.qZA();
-} if (rf & 2) {
-    const ctx_r32 = core/* ɵɵnextContext */.oxw(3);
-    core/* ɵɵadvance */.xp6(3);
-    core/* ɵɵproperty */.Q6J("chart", ctx_r32.lineChartWithResponsiveWidth)("series", ctx_r32.constructorStandingsSeries)("stroke", ctx_r32.defStroke)("title", ctx_r32.titleStandings)("tooltip", ctx_r32.defTooltip)("yaxis", ctx_r32.defYaxis);
-    core/* ɵɵadvance */.xp6(3);
-    core/* ɵɵproperty */.Q6J("chart", ctx_r32.constructorHeatMapChartOptions.chart)("colors", ctx_r32.constructorHeatMapChartOptions.colors)("dataLabels", ctx_r32.constructorHeatMapChartOptions.dataLabels)("plotOptions", ctx_r32.constructorHeatMapChartOptions.plotOptions)("series", ctx_r32.constructorHeatMapChartOptions.series)("title", ctx_r32.titleByRound)("tooltip", ctx_r32.constructorHeatMapChartOptions.tooltip);
-    core/* ɵɵadvance */.xp6(3);
-    core/* ɵɵproperty */.Q6J("chart", ctx_r32.lineChartWithoutAnimation)("series", ctx_r32.constructorRoundsSeries)("stroke", ctx_r32.defStroke)("title", ctx_r32.titleByRound)("tooltip", ctx_r32.defTooltip)("yaxis", ctx_r32.defYaxis);
-} }
-function StandingsComponent_div_20_ng_template_11_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵtemplate */.YNc(0, StandingsComponent_div_20_ng_template_11_div_0_Template, 10, 19, "div", 65);
-} if (rf & 2) {
-    const ctx_r11 = core/* ɵɵnextContext */.oxw(2);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r11.standings.constructorStandingByRound != undefined);
-} }
-function StandingsComponent_div_20_ng_template_13_div_0_mat_option_20_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "mat-option", 81);
-    core/* ɵɵtext */._uU(1);
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const driver_r37 = ctx.$implicit;
-    core/* ɵɵproperty */.Q6J("value", driver_r37);
-    core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵtextInterpolate1 */.hij(" ", driver_r37.name, " ");
+    const ctx_r34 = core/* ɵɵnextContext */.oxw(4);
+    core/* ɵɵadvance */.xp6(3);
+    core/* ɵɵproperty */.Q6J("chart", ctx_r34.lineChartWithResponsiveWidth)("series", ctx_r34.constructorStandingsSeries)("stroke", ctx_r34.defStroke)("title", ctx_r34.titleStandings)("tooltip", ctx_r34.defTooltip)("yaxis", ctx_r34.defYaxis);
+    core/* ɵɵadvance */.xp6(3);
+    core/* ɵɵproperty */.Q6J("chart", ctx_r34.constructorHeatMapChartOptions.chart)("colors", ctx_r34.constructorHeatMapChartOptions.colors)("dataLabels", ctx_r34.constructorHeatMapChartOptions.dataLabels)("plotOptions", ctx_r34.constructorHeatMapChartOptions.plotOptions)("series", ctx_r34.constructorHeatMapChartOptions.series)("title", ctx_r34.titleByRound)("tooltip", ctx_r34.constructorHeatMapChartOptions.tooltip);
+    core/* ɵɵadvance */.xp6(3);
+    core/* ɵɵproperty */.Q6J("chart", ctx_r34.lineChartWithoutAnimation)("series", ctx_r34.constructorRoundsSeries)("stroke", ctx_r34.defStroke)("title", ctx_r34.titleByRound)("tooltip", ctx_r34.defTooltip)("yaxis", ctx_r34.defYaxis);
 } }
-function StandingsComponent_div_20_ng_template_13_div_0_mat_option_25_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "mat-option", 81);
+function StandingsComponent_div_20_div_2_ng_template_11_Template(rf, ctx) { if (rf & 1) {
+    core/* ɵɵtemplate */.YNc(0, StandingsComponent_div_20_div_2_ng_template_11_div_0_Template, 10, 19, "div", 68);
+} if (rf & 2) {
+    const ctx_r13 = core/* ɵɵnextContext */.oxw(3);
+    core/* ɵɵproperty */.Q6J("ngIf", ctx_r13.standings.constructorStandingByRound != undefined);
+} }
+function StandingsComponent_div_20_div_2_ng_template_13_div_0_mat_option_20_Template(rf, ctx) { if (rf & 1) {
+    core/* ɵɵelementStart */.TgZ(0, "mat-option", 84);
     core/* ɵɵtext */._uU(1);
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
@@ -47066,32 +47062,42 @@ function StandingsComponent_div_20_ng_template_13_div_0_mat_option_25_Template(r
     core/* ɵɵadvance */.xp6(1);
     core/* ɵɵtextInterpolate1 */.hij(" ", driver_r39.name, " ");
 } }
-function StandingsComponent_div_20_ng_template_13_div_0_div_43_Template(rf, ctx) { if (rf & 1) {
+function StandingsComponent_div_20_div_2_ng_template_13_div_0_mat_option_25_Template(rf, ctx) { if (rf & 1) {
+    core/* ɵɵelementStart */.TgZ(0, "mat-option", 84);
+    core/* ɵɵtext */._uU(1);
+    core/* ɵɵelementEnd */.qZA();
+} if (rf & 2) {
+    const driver_r41 = ctx.$implicit;
+    core/* ɵɵproperty */.Q6J("value", driver_r41);
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵtextInterpolate1 */.hij(" ", driver_r41.name, " ");
+} }
+function StandingsComponent_div_20_div_2_ng_template_13_div_0_div_43_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div");
-    core/* ɵɵelementStart */.TgZ(1, "div", 57);
-    core/* ɵɵelementStart */.TgZ(2, "div", 82);
+    core/* ɵɵelementStart */.TgZ(1, "div", 60);
+    core/* ɵɵelementStart */.TgZ(2, "div", 85);
     core/* ɵɵelementStart */.TgZ(3, "span");
     core/* ɵɵtext */._uU(4, "Prediction");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelement */._UZ(5, "hr");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(6, "div", 58);
-    core/* ɵɵelementStart */.TgZ(7, "div", 83);
+    core/* ɵɵelementStart */.TgZ(6, "div", 61);
+    core/* ɵɵelementStart */.TgZ(7, "div", 86);
     core/* ɵɵelementStart */.TgZ(8, "p");
     core/* ɵɵtext */._uU(9);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(10, "div", 84);
-    core/* ɵɵelementStart */.TgZ(11, "div", 82);
+    core/* ɵɵelementStart */.TgZ(10, "div", 87);
+    core/* ɵɵelementStart */.TgZ(11, "div", 85);
     core/* ɵɵelementStart */.TgZ(12, "span");
     core/* ɵɵtext */._uU(13, "Current state");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelement */._UZ(14, "hr");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(15, "div", 58);
-    core/* ɵɵelementStart */.TgZ(16, "div", 83);
+    core/* ɵɵelementStart */.TgZ(15, "div", 61);
+    core/* ɵɵelementStart */.TgZ(16, "div", 86);
     core/* ɵɵelementStart */.TgZ(17, "p");
     core/* ɵɵtext */._uU(18);
     core/* ɵɵelementEnd */.qZA();
@@ -47101,33 +47107,33 @@ function StandingsComponent_div_20_ng_template_13_div_0_div_43_Template(rf, ctx)
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(21, "div", 85);
-    core/* ɵɵelement */._UZ(22, "apx-chart", 59);
+    core/* ɵɵelementStart */.TgZ(21, "div", 88);
+    core/* ɵɵelement */._UZ(22, "apx-chart", 62);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const ctx_r36 = core/* ɵɵnextContext */.oxw(4);
+    const ctx_r38 = core/* ɵɵnextContext */.oxw(5);
     core/* ɵɵadvance */.xp6(9);
-    core/* ɵɵtextInterpolate */.Oqu(ctx_r36.calculatorData.resultInfo1);
+    core/* ɵɵtextInterpolate */.Oqu(ctx_r38.calculatorData.resultInfo1);
     core/* ɵɵadvance */.xp6(9);
-    core/* ɵɵtextInterpolate */.Oqu(ctx_r36.calculatorData.resultInfo2);
+    core/* ɵɵtextInterpolate */.Oqu(ctx_r38.calculatorData.resultInfo2);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(ctx_r36.calculatorData.resultInfo3);
+    core/* ɵɵtextInterpolate */.Oqu(ctx_r38.calculatorData.resultInfo3);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵproperty */.Q6J("chart", ctx_r36.lineChartWithResponsiveWidth)("series", ctx_r36.calculatorData.calculatedSeries)("stroke", ctx_r36.defStroke)("title", ctx_r36.predictionChartTitle)("tooltip", ctx_r36.defTooltip)("yaxis", ctx_r36.defYaxis);
+    core/* ɵɵproperty */.Q6J("chart", ctx_r38.lineChartWithResponsiveWidth)("series", ctx_r38.calculatorData.calculatedSeries)("stroke", ctx_r38.defStroke)("title", ctx_r38.predictionChartTitle)("tooltip", ctx_r38.defTooltip)("yaxis", ctx_r38.defYaxis);
 } }
-function StandingsComponent_div_20_ng_template_13_div_0_Template(rf, ctx) { if (rf & 1) {
-    const _r42 = core/* ɵɵgetCurrentView */.EpF();
-    core/* ɵɵelementStart */.TgZ(0, "div", 67);
-    core/* ɵɵelementStart */.TgZ(1, "table", 26);
+function StandingsComponent_div_20_div_2_ng_template_13_div_0_Template(rf, ctx) { if (rf & 1) {
+    const _r44 = core/* ɵɵgetCurrentView */.EpF();
+    core/* ɵɵelementStart */.TgZ(0, "div", 70);
+    core/* ɵɵelementStart */.TgZ(1, "table", 29);
     core/* ɵɵelementStart */.TgZ(2, "thead");
     core/* ɵɵelementStart */.TgZ(3, "tr");
-    core/* ɵɵelementStart */.TgZ(4, "th", 68);
+    core/* ɵɵelementStart */.TgZ(4, "th", 71);
     core/* ɵɵtext */._uU(5);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelement */._UZ(6, "th", 69);
-    core/* ɵɵelementStart */.TgZ(7, "th", 70);
-    core/* ɵɵelementStart */.TgZ(8, "button", 71);
+    core/* ɵɵelement */._UZ(6, "th", 72);
+    core/* ɵɵelementStart */.TgZ(7, "th", 73);
+    core/* ɵɵelementStart */.TgZ(8, "button", 74);
     core/* ɵɵelementStart */.TgZ(9, "mat-icon");
     core/* ɵɵtext */._uU(10, "error_outline");
     core/* ɵɵelementEnd */.qZA();
@@ -47135,58 +47141,58 @@ function StandingsComponent_div_20_ng_template_13_div_0_Template(rf, ctx) { if (
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(11, "tr");
-    core/* ɵɵelementStart */.TgZ(12, "th", 72);
+    core/* ɵɵelementStart */.TgZ(12, "th", 75);
     core/* ɵɵtext */._uU(13, "If");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelement */._UZ(14, "th", 73);
-    core/* ɵɵelementStart */.TgZ(15, "th", 72);
+    core/* ɵɵelement */._UZ(14, "th", 76);
+    core/* ɵɵelementStart */.TgZ(15, "th", 75);
     core/* ɵɵtext */._uU(16, "If");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(17, "tr");
-    core/* ɵɵelementStart */.TgZ(18, "th", 74);
-    core/* ɵɵelementStart */.TgZ(19, "mat-select", 75);
-    core/* ɵɵlistener */.NdJ("valueChange", function StandingsComponent_div_20_ng_template_13_div_0_Template_mat_select_valueChange_19_listener($event) { core/* ɵɵrestoreView */.CHM(_r42); const ctx_r41 = core/* ɵɵnextContext */.oxw(3); return ctx_r41.calculatorData.left.driver = $event; });
-    core/* ɵɵtemplate */.YNc(20, StandingsComponent_div_20_ng_template_13_div_0_mat_option_20_Template, 2, 2, "mat-option", 76);
+    core/* ɵɵelementStart */.TgZ(18, "th", 77);
+    core/* ɵɵelementStart */.TgZ(19, "mat-select", 78);
+    core/* ɵɵlistener */.NdJ("valueChange", function StandingsComponent_div_20_div_2_ng_template_13_div_0_Template_mat_select_valueChange_19_listener($event) { core/* ɵɵrestoreView */.CHM(_r44); const ctx_r43 = core/* ɵɵnextContext */.oxw(4); return ctx_r43.calculatorData.left.driver = $event; });
+    core/* ɵɵtemplate */.YNc(20, StandingsComponent_div_20_div_2_ng_template_13_div_0_mat_option_20_Template, 2, 2, "mat-option", 79);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(21, "th", 77);
+    core/* ɵɵelementStart */.TgZ(21, "th", 80);
     core/* ɵɵtext */._uU(22, " and");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(23, "th", 74);
-    core/* ɵɵelementStart */.TgZ(24, "mat-select", 75);
-    core/* ɵɵlistener */.NdJ("valueChange", function StandingsComponent_div_20_ng_template_13_div_0_Template_mat_select_valueChange_24_listener($event) { core/* ɵɵrestoreView */.CHM(_r42); const ctx_r43 = core/* ɵɵnextContext */.oxw(3); return ctx_r43.calculatorData.right.driver = $event; });
-    core/* ɵɵtemplate */.YNc(25, StandingsComponent_div_20_ng_template_13_div_0_mat_option_25_Template, 2, 2, "mat-option", 76);
+    core/* ɵɵelementStart */.TgZ(23, "th", 77);
+    core/* ɵɵelementStart */.TgZ(24, "mat-select", 78);
+    core/* ɵɵlistener */.NdJ("valueChange", function StandingsComponent_div_20_div_2_ng_template_13_div_0_Template_mat_select_valueChange_24_listener($event) { core/* ɵɵrestoreView */.CHM(_r44); const ctx_r45 = core/* ɵɵnextContext */.oxw(4); return ctx_r45.calculatorData.right.driver = $event; });
+    core/* ɵɵtemplate */.YNc(25, StandingsComponent_div_20_div_2_ng_template_13_div_0_mat_option_25_Template, 2, 2, "mat-option", 79);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(26, "tr");
     core/* ɵɵelementStart */.TgZ(27, "td");
     core/* ɵɵtext */._uU(28, " finishes every race P");
-    core/* ɵɵelementStart */.TgZ(29, "input", 78);
-    core/* ɵɵlistener */.NdJ("ngModelChange", function StandingsComponent_div_20_ng_template_13_div_0_Template_input_ngModelChange_29_listener($event) { core/* ɵɵrestoreView */.CHM(_r42); const ctx_r44 = core/* ɵɵnextContext */.oxw(3); return ctx_r44.calculatorData.left.position = $event; });
+    core/* ɵɵelementStart */.TgZ(29, "input", 81);
+    core/* ɵɵlistener */.NdJ("ngModelChange", function StandingsComponent_div_20_div_2_ng_template_13_div_0_Template_input_ngModelChange_29_listener($event) { core/* ɵɵrestoreView */.CHM(_r44); const ctx_r46 = core/* ɵɵnextContext */.oxw(4); return ctx_r46.calculatorData.left.position = $event; });
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(30, "mat-checkbox", 63);
-    core/* ɵɵlistener */.NdJ("change", function StandingsComponent_div_20_ng_template_13_div_0_Template_mat_checkbox_change_30_listener($event) { core/* ɵɵrestoreView */.CHM(_r42); const ctx_r45 = core/* ɵɵnextContext */.oxw(3); return ctx_r45.calculatorCheckbox($event, true); })("ngModelChange", function StandingsComponent_div_20_ng_template_13_div_0_Template_mat_checkbox_ngModelChange_30_listener($event) { core/* ɵɵrestoreView */.CHM(_r42); const ctx_r46 = core/* ɵɵnextContext */.oxw(3); return ctx_r46.calculatorData.left.fastestLap = $event; });
+    core/* ɵɵelementStart */.TgZ(30, "mat-checkbox", 66);
+    core/* ɵɵlistener */.NdJ("change", function StandingsComponent_div_20_div_2_ng_template_13_div_0_Template_mat_checkbox_change_30_listener($event) { core/* ɵɵrestoreView */.CHM(_r44); const ctx_r47 = core/* ɵɵnextContext */.oxw(4); return ctx_r47.calculatorCheckbox($event, true); })("ngModelChange", function StandingsComponent_div_20_div_2_ng_template_13_div_0_Template_mat_checkbox_ngModelChange_30_listener($event) { core/* ɵɵrestoreView */.CHM(_r44); const ctx_r48 = core/* ɵɵnextContext */.oxw(4); return ctx_r48.calculatorData.left.fastestLap = $event; });
     core/* ɵɵtext */._uU(31, " with fastest lap ");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelement */._UZ(32, "td");
     core/* ɵɵelementStart */.TgZ(33, "td");
     core/* ɵɵtext */._uU(34, " finishes every race P");
-    core/* ɵɵelementStart */.TgZ(35, "input", 78);
-    core/* ɵɵlistener */.NdJ("ngModelChange", function StandingsComponent_div_20_ng_template_13_div_0_Template_input_ngModelChange_35_listener($event) { core/* ɵɵrestoreView */.CHM(_r42); const ctx_r47 = core/* ɵɵnextContext */.oxw(3); return ctx_r47.calculatorData.right.position = $event; });
+    core/* ɵɵelementStart */.TgZ(35, "input", 81);
+    core/* ɵɵlistener */.NdJ("ngModelChange", function StandingsComponent_div_20_div_2_ng_template_13_div_0_Template_input_ngModelChange_35_listener($event) { core/* ɵɵrestoreView */.CHM(_r44); const ctx_r49 = core/* ɵɵnextContext */.oxw(4); return ctx_r49.calculatorData.right.position = $event; });
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(36, "mat-checkbox", 63);
-    core/* ɵɵlistener */.NdJ("change", function StandingsComponent_div_20_ng_template_13_div_0_Template_mat_checkbox_change_36_listener($event) { core/* ɵɵrestoreView */.CHM(_r42); const ctx_r48 = core/* ɵɵnextContext */.oxw(3); return ctx_r48.calculatorCheckbox($event, false); })("ngModelChange", function StandingsComponent_div_20_ng_template_13_div_0_Template_mat_checkbox_ngModelChange_36_listener($event) { core/* ɵɵrestoreView */.CHM(_r42); const ctx_r49 = core/* ɵɵnextContext */.oxw(3); return ctx_r49.calculatorData.right.fastestLap = $event; });
+    core/* ɵɵelementStart */.TgZ(36, "mat-checkbox", 66);
+    core/* ɵɵlistener */.NdJ("change", function StandingsComponent_div_20_div_2_ng_template_13_div_0_Template_mat_checkbox_change_36_listener($event) { core/* ɵɵrestoreView */.CHM(_r44); const ctx_r50 = core/* ɵɵnextContext */.oxw(4); return ctx_r50.calculatorCheckbox($event, false); })("ngModelChange", function StandingsComponent_div_20_div_2_ng_template_13_div_0_Template_mat_checkbox_ngModelChange_36_listener($event) { core/* ɵɵrestoreView */.CHM(_r44); const ctx_r51 = core/* ɵɵnextContext */.oxw(4); return ctx_r51.calculatorData.right.fastestLap = $event; });
     core/* ɵɵtext */._uU(37, " with fastest lap ");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(38, "tr");
-    core/* ɵɵelementStart */.TgZ(39, "td", 79);
-    core/* ɵɵelementStart */.TgZ(40, "button", 80);
-    core/* ɵɵlistener */.NdJ("click", function StandingsComponent_div_20_ng_template_13_div_0_Template_button_click_40_listener() { core/* ɵɵrestoreView */.CHM(_r42); const ctx_r50 = core/* ɵɵnextContext */.oxw(3); return ctx_r50.executeCalculator(); });
+    core/* ɵɵelementStart */.TgZ(39, "td", 82);
+    core/* ɵɵelementStart */.TgZ(40, "button", 83);
+    core/* ɵɵlistener */.NdJ("click", function StandingsComponent_div_20_div_2_ng_template_13_div_0_Template_button_click_40_listener() { core/* ɵɵrestoreView */.CHM(_r44); const ctx_r52 = core/* ɵɵnextContext */.oxw(4); return ctx_r52.executeCalculator(); });
     core/* ɵɵtext */._uU(41, " Calculate ");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -47194,69 +47200,82 @@ function StandingsComponent_div_20_ng_template_13_div_0_Template(rf, ctx) { if (
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelement */._UZ(42, "tbody");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵtemplate */.YNc(43, StandingsComponent_div_20_ng_template_13_div_0_div_43_Template, 23, 9, "div", 39);
+    core/* ɵɵtemplate */.YNc(43, StandingsComponent_div_20_div_2_ng_template_13_div_0_div_43_Template, 23, 9, "div", 19);
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const ctx_r33 = core/* ɵɵnextContext */.oxw(3);
+    const ctx_r35 = core/* ɵɵnextContext */.oxw(4);
     core/* ɵɵadvance */.xp6(5);
-    core/* ɵɵtextInterpolate */.Oqu(ctx_r33.calculatorData.left.header);
+    core/* ɵɵtextInterpolate */.Oqu(ctx_r35.calculatorData.left.header);
     core/* ɵɵadvance */.xp6(14);
-    core/* ɵɵproperty */.Q6J("value", ctx_r33.calculatorData.left.driver);
+    core/* ɵɵproperty */.Q6J("value", ctx_r35.calculatorData.left.driver);
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("ngForOf", ctx_r33.standings.driverStandings);
+    core/* ɵɵproperty */.Q6J("ngForOf", ctx_r35.standings.driverStandings);
     core/* ɵɵadvance */.xp6(4);
-    core/* ɵɵproperty */.Q6J("value", ctx_r33.calculatorData.right.driver);
+    core/* ɵɵproperty */.Q6J("value", ctx_r35.calculatorData.right.driver);
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("ngForOf", ctx_r33.standings.driverStandings);
+    core/* ɵɵproperty */.Q6J("ngForOf", ctx_r35.standings.driverStandings);
     core/* ɵɵadvance */.xp6(4);
-    core/* ɵɵproperty */.Q6J("ngModel", ctx_r33.calculatorData.left.position);
+    core/* ɵɵproperty */.Q6J("ngModel", ctx_r35.calculatorData.left.position);
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("ngModel", ctx_r33.calculatorData.left.fastestLap);
+    core/* ɵɵproperty */.Q6J("ngModel", ctx_r35.calculatorData.left.fastestLap);
     core/* ɵɵadvance */.xp6(5);
-    core/* ɵɵproperty */.Q6J("ngModel", ctx_r33.calculatorData.right.position);
+    core/* ɵɵproperty */.Q6J("ngModel", ctx_r35.calculatorData.right.position);
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("ngModel", ctx_r33.calculatorData.right.fastestLap);
+    core/* ɵɵproperty */.Q6J("ngModel", ctx_r35.calculatorData.right.fastestLap);
     core/* ɵɵadvance */.xp6(7);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r33.calculatorData.calculatedSeries != null);
+    core/* ɵɵproperty */.Q6J("ngIf", ctx_r35.calculatorData.calculatedSeries != null);
 } }
-function StandingsComponent_div_20_ng_template_13_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵtemplate */.YNc(0, StandingsComponent_div_20_ng_template_13_div_0_Template, 44, 10, "div", 66);
+function StandingsComponent_div_20_div_2_ng_template_13_Template(rf, ctx) { if (rf & 1) {
+    core/* ɵɵtemplate */.YNc(0, StandingsComponent_div_20_div_2_ng_template_13_div_0_Template, 44, 10, "div", 69);
 } if (rf & 2) {
-    const ctx_r12 = core/* ɵɵnextContext */.oxw(2);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r12.calculatorData != null && ctx_r12.calculatorData.left != null);
+    const ctx_r14 = core/* ɵɵnextContext */.oxw(3);
+    core/* ɵɵproperty */.Q6J("ngIf", ctx_r14.calculatorData != null && ctx_r14.calculatorData.left != null);
+} }
+function StandingsComponent_div_20_div_2_Template(rf, ctx) { if (rf & 1) {
+    const _r54 = core/* ɵɵgetCurrentView */.EpF();
+    core/* ɵɵelementStart */.TgZ(0, "div");
+    core/* ɵɵelementStart */.TgZ(1, "mat-tab-group", 21);
+    core/* ɵɵlistener */.NdJ("selectedTabChange", function StandingsComponent_div_20_div_2_Template_mat_tab_group_selectedTabChange_1_listener($event) { core/* ɵɵrestoreView */.CHM(_r54); const ctx_r53 = core/* ɵɵnextContext */.oxw(2); return ctx_r53.tabChanged($event); })("selectedIndexChange", function StandingsComponent_div_20_div_2_Template_mat_tab_group_selectedIndexChange_1_listener($event) { core/* ɵɵrestoreView */.CHM(_r54); const ctx_r55 = core/* ɵɵnextContext */.oxw(2); return ctx_r55.selectedTab = $event; });
+    core/* ɵɵelementStart */.TgZ(2, "mat-tab", 22);
+    core/* ɵɵtemplate */.YNc(3, StandingsComponent_div_20_div_2_ng_template_3_Template, 19, 1, "ng-template", 23);
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(4, "mat-tab", 24);
+    core/* ɵɵtemplate */.YNc(5, StandingsComponent_div_20_div_2_ng_template_5_Template, 1, 1, "ng-template", 23);
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(6, "mat-tab", 25);
+    core/* ɵɵtemplate */.YNc(7, StandingsComponent_div_20_div_2_ng_template_7_Template, 1, 1, "ng-template", 23);
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(8, "mat-tab", 26);
+    core/* ɵɵtemplate */.YNc(9, StandingsComponent_div_20_div_2_ng_template_9_Template, 1, 1, "ng-template", 23);
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(10, "mat-tab", 27);
+    core/* ɵɵtemplate */.YNc(11, StandingsComponent_div_20_div_2_ng_template_11_Template, 1, 1, "ng-template", 23);
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(12, "mat-tab", 28);
+    core/* ɵɵtemplate */.YNc(13, StandingsComponent_div_20_div_2_ng_template_13_Template, 1, 1, "ng-template", 23);
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+} if (rf & 2) {
+    const ctx_r8 = core/* ɵɵnextContext */.oxw(2);
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵproperty */.Q6J("selectedIndex", ctx_r8.selectedTab);
+    core/* ɵɵadvance */.xp6(11);
+    core/* ɵɵproperty */.Q6J("disabled", ctx_r8.racesSoFar >= ctx_r8.totalRaces);
 } }
 function StandingsComponent_div_20_Template(rf, ctx) { if (rf & 1) {
-    const _r52 = core/* ɵɵgetCurrentView */.EpF();
+    const _r57 = core/* ɵɵgetCurrentView */.EpF();
     core/* ɵɵelementStart */.TgZ(0, "div", 17);
-    core/* ɵɵlistener */.NdJ("touchend", function StandingsComponent_div_20_Template_div_touchend_0_listener($event) { core/* ɵɵrestoreView */.CHM(_r52); const ctx_r51 = core/* ɵɵnextContext */.oxw(); return ctx_r51.touchend($event); })("touchstart", function StandingsComponent_div_20_Template_div_touchstart_0_listener($event) { core/* ɵɵrestoreView */.CHM(_r52); const ctx_r53 = core/* ɵɵnextContext */.oxw(); return ctx_r53.touchstart($event); });
-    core/* ɵɵelementStart */.TgZ(1, "mat-tab-group", 18);
-    core/* ɵɵlistener */.NdJ("selectedTabChange", function StandingsComponent_div_20_Template_mat_tab_group_selectedTabChange_1_listener($event) { core/* ɵɵrestoreView */.CHM(_r52); const ctx_r54 = core/* ɵɵnextContext */.oxw(); return ctx_r54.tabChanged($event); })("selectedIndexChange", function StandingsComponent_div_20_Template_mat_tab_group_selectedIndexChange_1_listener($event) { core/* ɵɵrestoreView */.CHM(_r52); const ctx_r55 = core/* ɵɵnextContext */.oxw(); return ctx_r55.selectedTab = $event; });
-    core/* ɵɵelementStart */.TgZ(2, "mat-tab", 19);
-    core/* ɵɵtemplate */.YNc(3, StandingsComponent_div_20_ng_template_3_Template, 19, 1, "ng-template", 20);
-    core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(4, "mat-tab", 21);
-    core/* ɵɵtemplate */.YNc(5, StandingsComponent_div_20_ng_template_5_Template, 1, 1, "ng-template", 20);
-    core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(6, "mat-tab", 22);
-    core/* ɵɵtemplate */.YNc(7, StandingsComponent_div_20_ng_template_7_Template, 1, 1, "ng-template", 20);
-    core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(8, "mat-tab", 23);
-    core/* ɵɵtemplate */.YNc(9, StandingsComponent_div_20_ng_template_9_Template, 1, 1, "ng-template", 20);
-    core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(10, "mat-tab", 24);
-    core/* ɵɵtemplate */.YNc(11, StandingsComponent_div_20_ng_template_11_Template, 1, 1, "ng-template", 20);
-    core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(12, "mat-tab", 25);
-    core/* ɵɵtemplate */.YNc(13, StandingsComponent_div_20_ng_template_13_Template, 1, 1, "ng-template", 20);
-    core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵlistener */.NdJ("touchend", function StandingsComponent_div_20_Template_div_touchend_0_listener($event) { core/* ɵɵrestoreView */.CHM(_r57); const ctx_r56 = core/* ɵɵnextContext */.oxw(); return ctx_r56.touchend($event); })("touchstart", function StandingsComponent_div_20_Template_div_touchstart_0_listener($event) { core/* ɵɵrestoreView */.CHM(_r57); const ctx_r58 = core/* ɵɵnextContext */.oxw(); return ctx_r58.touchstart($event); });
+    core/* ɵɵtemplate */.YNc(1, StandingsComponent_div_20_div_1_Template, 2, 0, "div", 18);
+    core/* ɵɵtemplate */.YNc(2, StandingsComponent_div_20_div_2_Template, 14, 2, "div", 19);
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
     const ctx_r2 = core/* ɵɵnextContext */.oxw();
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("selectedIndex", ctx_r2.selectedTab);
-    core/* ɵɵadvance */.xp6(11);
-    core/* ɵɵproperty */.Q6J("disabled", ctx_r2.racesSoFar >= ctx_r2.totalRaces);
+    core/* ɵɵproperty */.Q6J("ngIf", ctx_r2.loading);
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵproperty */.Q6J("ngIf", !ctx_r2.loading);
 } }
 class CalculatorData {
 }
@@ -47275,7 +47294,6 @@ class StandingsComponent {
         this.constructorStandingsSeries = [];
         this.constructorRoundsSeries = [];
         this.podiums = StandingsComponent.initializeMultidimensionalArray();
-        this.raceCount = 0;
         this.selectedTab = 0;
         this.driversHeatMapStandingsSeries = [];
         this.constructorsHeatMapStandingsSeries = [];
@@ -47283,6 +47301,7 @@ class StandingsComponent {
         this.constructorPositionMap = new Map();
         this.calculatorData = {};
         this.chartWidth = '100%';
+        this.raceCount = 0;
         this.lineChartWithResponsiveWidth = {
             animations: {
                 enabled: true,
@@ -47384,10 +47403,10 @@ class StandingsComponent {
             }
         };
         this.showDnf = false;
+        this.loading = true;
         this.restService.getStandings().subscribe({
             next: data => {
                 this.standings = data;
-                this.utilityService.setTitle(4, this.standings.currentYear + ' Championship');
                 this.enrichStandingsGaps();
                 this.mapPositions();
                 this.setCalculatorData();
@@ -47497,6 +47516,13 @@ class StandingsComponent {
                 });
                 this.setDriversHeatMapChart();
                 this.setConstructorHeatMapChart();
+                this.loading = false;
+                let title = this.standings.currentYear + ' Championship';
+                if (this.racesSoFar > 0) {
+                    let raceName = this.standings.races[this.racesSoFar - 1].raceName;
+                    title += ' after ' + raceName;
+                }
+                this.utilityService.setTitle(4, title);
                 return data;
             }
         });
@@ -47880,8 +47906,8 @@ StandingsComponent.ɵcmp = /*@__PURE__*/ core/* ɵɵdefineComponent */.Xpm({ typ
     } if (rf & 2) {
         let _t;
         core/* ɵɵqueryRefresh */.iGM(_t = core/* ɵɵloadQuery */.CRH()) && (ctx.driverTable = _t.first);
-    } }, decls: 21, vars: 4, consts: [["autosize", ""], ["autosize", "", "mode", "side", "position", "end", 1, "example-sidenav", 3, "opened", "openedChange"], ["drawer", ""], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area", 3, "ngModel", "focus", "focusout", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "active-color-button", 3, "click"], [4, "ngFor", "ngForOf"], [1, "fixed-button"], ["mat-button", "", "type", "fixed-plugin", 3, "click"], [1, "fa", "fa-commenting-o", "fa-2x"], ["class", "\u201Dmat-content\u201D", 3, "touchend", "touchstart", 4, "ngIf"], [1, "basic-comment"], [1, "header-left", "hover-pointer", 3, "click"], [1, "header-right", "hover-pointer", 3, "click"], [1, "basic-comment-body"], [1, "\u201Dmat-content\u201D", 3, "touchend", "touchstart"], [3, "selectedIndex", "selectedTabChange", "selectedIndexChange"], ["label", "Drivers"], ["matTabContent", ""], ["label", "Constructors"], ["label", "Races"], ["label", "Driver charts"], ["label", "Constructor charts"], ["label", "WDC Calculator", 3, "disabled"], [1, "table", "table-striped"], [1, "text-center", "bg-primary", "text-white"], ["scope", "col"], ["scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], ["scope", "col", 1, "width-50-px", "d-sm-none", "d-none", "d-lg-table-cell"], ["class", "hover-effects-row", 4, "ngFor", "ngForOf"], [1, "hover-effects-row"], ["scope", "row"], [1, "cursor-pointer"], [2, "color", "black", 3, "routerLink", "queryParams"], [1, "d-sm-none", "d-none", "d-lg-table-cell", "text-center"], [1, "d-sm-none", "d-none", "d-lg-table-cell", "cursor-pointer"], [1, "text-center"], [4, "ngIf"], [1, "width-50-px", "d-sm-none", "d-none", "d-lg-table-cell"], ["scope", "col", 1, "width-10", "text-left"], ["scope", "col", 1, "text-left"], ["scope", "width-10 row"], [1, "cursor-pointer", 3, "click"], [1, "div-width-300", "no-padding-no-margin-2"], ["class", "event-result", 4, "ngIf"], [1, "event-result"], [1, "display-on-desktop-only", "result-card", "position-1"], [1, "race-card-image-wrapper"], ["alt", "", "mat-card-image", "", "onerror", "this.src='assets/img/drivers/default.png'", 1, "div-height-80", 3, "src"], [1, "result-card", "position-2-on-desktop"], ["alt", "", "mat-card-image", "", "onerror", "this.src='assets/img/drivers/default.png'", 1, "div-height-95px", 3, "src"], [1, "display-on-desktop-only", "result-card", "position-3"], ["alt", "", "mat-card-image", "", "onerror", "this.src='assets/img/drivers/default.png'", 1, "div-height-70", 3, "src"], ["class", " div-padded-2rem", 4, "ngIf"], [1, "div-padded-2rem"], [1, "card", "card-stats", "px-1"], [1, "card-body"], [3, "chart", "series", "stroke", "title", "tooltip", "yaxis"], [3, "chart", "dataLabels", "fill", "plotOptions", "responsive", "series", "title", "xaxis"], [3, "chart", "colors", "dataLabels", "plotOptions", "series", "title", "tooltip"], [1, "px-4", "pt-2"], [3, "ngModel", "change", "ngModelChange"], [3, "chart", "series", "stroke", "title", "tooltip", "xaxis", "yaxis"], ["class", "div-padded-2rem", 4, "ngIf"], ["class", "div-padded-left-2 div-padded-right-2", 4, "ngIf"], [1, "div-padded-left-2", "div-padded-right-2"], ["colspan", "1", "scope", "col", 1, "text-left", "width-40"], ["colspan", "1", "scope", "col", 1, "text-center"], ["colspan", "1", "scope", "col", 1, "text-right", "width-40"], ["aria-label", "Tooltip button", "mat-mini-fab", "", "matTooltip", "Sprint points not included in calculations", 1, "bg-grey"], ["colspan", "1", 1, "text-center", "width-40"], ["colspan", "1", 1, "text-center"], ["colspan", "1", "scope", "col", 1, "custom-mat-select"], ["disableOptionCentering", "", "panelClass", "margin-top-30-px", 3, "value", "valueChange"], [3, "value", 4, "ngFor", "ngForOf"], ["colspan", "1", "scope", "col", 1, "text-center", 2, "width", "35px"], ["max", "20", "min", "1", "required", "", "step", "1", "type", "number", 1, "mx-1", "w-42px", "font-weight-bold", 3, "ngModel", "ngModelChange"], ["colspan", "3", 1, "text-center", "width-40"], ["mat-raised-button", "", 1, "bg-success", "text-white", "width-100", 3, "click"], [3, "value"], [1, "card-header", "font-weight-bold"], [1, "px-3"], [1, "card", "card-stats"], [1, "card"]], template: function StandingsComponent_Template(rf, ctx) { if (rf & 1) {
-        const _r56 = core/* ɵɵgetCurrentView */.EpF();
+    } }, decls: 21, vars: 4, consts: [["autosize", ""], ["autosize", "", "mode", "side", "position", "end", 1, "example-sidenav", 3, "opened", "openedChange"], ["drawer", ""], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area", 3, "ngModel", "focus", "focusout", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "active-color-button", 3, "click"], [4, "ngFor", "ngForOf"], [1, "fixed-button"], ["mat-button", "", "type", "fixed-plugin", 3, "click"], [1, "fa", "fa-commenting-o", "fa-2x"], ["class", "\u201Dmat-content\u201D", 3, "touchend", "touchstart", 4, "ngIf"], [1, "basic-comment"], [1, "header-left", "hover-pointer", 3, "click"], [1, "header-right", "hover-pointer", 3, "click"], [1, "basic-comment-body"], [1, "\u201Dmat-content\u201D", 3, "touchend", "touchstart"], ["class", "w-100 div-height-70vh p-4 bg-ffffff centered", 4, "ngIf"], [4, "ngIf"], [1, "w-100", "div-height-70vh", "p-4", "bg-ffffff", "centered"], [3, "selectedIndex", "selectedTabChange", "selectedIndexChange"], ["label", "Drivers"], ["matTabContent", ""], ["label", "Constructors"], ["label", "Races"], ["label", "Driver charts"], ["label", "Constructor charts"], ["label", "WDC Calculator", 3, "disabled"], [1, "table", "table-striped"], [1, "text-center", "bg-primary", "text-white"], ["scope", "col"], ["scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], ["scope", "col", 1, "width-50-px", "d-sm-none", "d-none", "d-lg-table-cell"], ["class", "hover-effects-row", 4, "ngFor", "ngForOf"], [1, "hover-effects-row"], ["scope", "row"], [1, "cursor-pointer"], [2, "color", "black", 3, "routerLink", "queryParams"], [1, "d-sm-none", "d-none", "d-lg-table-cell", "text-center"], [1, "d-sm-none", "d-none", "d-lg-table-cell", "cursor-pointer"], [1, "width-50-px", "d-sm-none", "d-none", "d-lg-table-cell"], [1, "text-center"], ["scope", "col", 1, "width-10", "text-left"], ["scope", "col", 1, "text-left"], ["scope", "col ", 1, "d-sm-none", "d-none", "d-lg-table-cell"], ["scope", "width-10 row"], [1, "cursor-pointer", 3, "click"], [1, "div-width-300", "no-padding-no-margin-2"], ["class", "event-result", 4, "ngIf"], [1, "event-result"], [1, "display-on-desktop-only", "result-card", "position-1"], [1, "race-card-image-wrapper"], ["alt", "", "mat-card-image", "", "onerror", "this.src='assets/img/drivers/default.png'", 1, "div-height-80", 3, "src"], [1, "result-card", "position-2-on-desktop"], ["alt", "", "mat-card-image", "", "onerror", "this.src='assets/img/drivers/default.png'", 1, "div-height-95px", 3, "src"], [1, "display-on-desktop-only", "result-card", "position-3"], ["alt", "", "mat-card-image", "", "onerror", "this.src='assets/img/drivers/default.png'", 1, "div-height-70", 3, "src"], ["class", " div-padded-2rem", 4, "ngIf"], [1, "div-padded-2rem"], [1, "card", "card-stats", "px-1"], [1, "card-body"], [3, "chart", "series", "stroke", "title", "tooltip", "yaxis"], [3, "chart", "dataLabels", "fill", "plotOptions", "responsive", "series", "title", "xaxis"], [3, "chart", "colors", "dataLabels", "plotOptions", "series", "title", "tooltip"], [1, "px-4", "pt-2"], [3, "ngModel", "change", "ngModelChange"], [3, "chart", "series", "stroke", "title", "tooltip", "xaxis", "yaxis"], ["class", "div-padded-2rem", 4, "ngIf"], ["class", "div-padded-left-2 div-padded-right-2", 4, "ngIf"], [1, "div-padded-left-2", "div-padded-right-2"], ["colspan", "1", "scope", "col", 1, "text-left", "width-40"], ["colspan", "1", "scope", "col", 1, "text-center"], ["colspan", "1", "scope", "col", 1, "text-right", "width-40"], ["aria-label", "Tooltip button", "mat-mini-fab", "", "matTooltip", "Sprint points not included in calculations", 1, "bg-grey"], ["colspan", "1", 1, "text-center", "width-40"], ["colspan", "1", 1, "text-center"], ["colspan", "1", "scope", "col", 1, "custom-mat-select"], ["disableOptionCentering", "", "panelClass", "margin-top-30-px", 3, "value", "valueChange"], [3, "value", 4, "ngFor", "ngForOf"], ["colspan", "1", "scope", "col", 1, "text-center", 2, "width", "35px"], ["max", "20", "min", "1", "required", "", "step", "1", "type", "number", 1, "mx-1", "w-42px", "font-weight-bold", 3, "ngModel", "ngModelChange"], ["colspan", "3", 1, "text-center", "width-40"], ["mat-raised-button", "", 1, "bg-success", "text-white", "width-100", 3, "click"], [3, "value"], [1, "card-header", "font-weight-bold"], [1, "px-3"], [1, "card", "card-stats"], [1, "card"]], template: function StandingsComponent_Template(rf, ctx) { if (rf & 1) {
+        const _r59 = core/* ɵɵgetCurrentView */.EpF();
         core/* ɵɵelementStart */.TgZ(0, "div");
         core/* ɵɵelementStart */.TgZ(1, "mat-drawer-container", 0);
         core/* ɵɵelementStart */.TgZ(2, "mat-drawer", 1, 2);
@@ -47908,18 +47934,18 @@ StandingsComponent.ɵcmp = /*@__PURE__*/ core/* ɵɵdefineComponent */.Xpm({ typ
         core/* ɵɵtemplate */.YNc(13, StandingsComponent_div_13_Template, 8, 3, "div", 8);
         core/* ɵɵelementStart */.TgZ(14, "div", 9);
         core/* ɵɵelementStart */.TgZ(15, "button", 10);
-        core/* ɵɵlistener */.NdJ("click", function StandingsComponent_Template_button_click_15_listener() { core/* ɵɵrestoreView */.CHM(_r56); const _r0 = core/* ɵɵreference */.MAs(3); return ctx.utilityService.drawerToggle(_r0); });
+        core/* ɵɵlistener */.NdJ("click", function StandingsComponent_Template_button_click_15_listener() { core/* ɵɵrestoreView */.CHM(_r59); const _r0 = core/* ɵɵreference */.MAs(3); return ctx.utilityService.drawerToggle(_r0); });
         core/* ɵɵelement */._UZ(16, "i", 11);
         core/* ɵɵelementEnd */.qZA();
         core/* ɵɵelementEnd */.qZA();
         core/* ɵɵelementEnd */.qZA();
         core/* ɵɵelementStart */.TgZ(17, "div", 9);
         core/* ɵɵelementStart */.TgZ(18, "button", 10);
-        core/* ɵɵlistener */.NdJ("click", function StandingsComponent_Template_button_click_18_listener() { core/* ɵɵrestoreView */.CHM(_r56); const _r0 = core/* ɵɵreference */.MAs(3); return ctx.utilityService.drawerToggle(_r0); });
+        core/* ɵɵlistener */.NdJ("click", function StandingsComponent_Template_button_click_18_listener() { core/* ɵɵrestoreView */.CHM(_r59); const _r0 = core/* ɵɵreference */.MAs(3); return ctx.utilityService.drawerToggle(_r0); });
         core/* ɵɵelement */._UZ(19, "i", 11);
         core/* ɵɵelementEnd */.qZA();
         core/* ɵɵelementEnd */.qZA();
-        core/* ɵɵtemplate */.YNc(20, StandingsComponent_div_20_Template, 14, 2, "div", 12);
+        core/* ɵɵtemplate */.YNc(20, StandingsComponent_div_20_Template, 3, 2, "div", 12);
         core/* ɵɵelementEnd */.qZA();
         core/* ɵɵelementEnd */.qZA();
     } if (rf & 2) {
@@ -47931,7 +47957,7 @@ StandingsComponent.ɵcmp = /*@__PURE__*/ core/* ɵɵdefineComponent */.Xpm({ typ
         core/* ɵɵproperty */.Q6J("ngForOf", ctx.utilityService.comments);
         core/* ɵɵadvance */.xp6(7);
         core/* ɵɵproperty */.Q6J("ngIf", ctx.standings !== undefined);
-    } }, directives: [sidenav/* MatDrawerContainer */.kh, sidenav/* MatDrawer */.jA, MatInput, fesm2015_forms/* DefaultValueAccessor */.Fj, fesm2015_forms/* NgControlStatus */.JJ, fesm2015_forms/* NgModel */.On, fesm2015_button/* MatButton */.lW, common/* NgForOf */.sg, common/* NgIf */.O5, tabs/* MatTabGroup */.SP, tabs/* MatTab */.uX, tabs/* MatTabContent */.Vc, router/* RouterLinkWithHref */.yS, MatCardImage, ng_apexcharts/* ChartComponent */.x, slide_toggle/* MatSlideToggle */.Rr, MatTooltip, icon/* MatIcon */.Hw, MatSelect, fesm2015_forms/* MaxValidator */.Fd, fesm2015_forms/* MinValidator */.qQ, fesm2015_forms/* NumberValueAccessor */.wV, fesm2015_forms/* RequiredValidator */.Q7, fesm2015_checkbox/* MatCheckbox */.oG, fesm2015_core/* MatOption */.ey], pipes: [common/* DecimalPipe */.JJ, common/* DatePipe */.uU], styles: [""] });
+    } }, directives: [sidenav/* MatDrawerContainer */.kh, sidenav/* MatDrawer */.jA, MatInput, fesm2015_forms/* DefaultValueAccessor */.Fj, fesm2015_forms/* NgControlStatus */.JJ, fesm2015_forms/* NgModel */.On, fesm2015_button/* MatButton */.lW, common/* NgForOf */.sg, common/* NgIf */.O5, MatSpinner, tabs/* MatTabGroup */.SP, tabs/* MatTab */.uX, tabs/* MatTabContent */.Vc, router/* RouterLinkWithHref */.yS, MatCardImage, ng_apexcharts/* ChartComponent */.x, slide_toggle/* MatSlideToggle */.Rr, MatTooltip, icon/* MatIcon */.Hw, MatSelect, fesm2015_forms/* MaxValidator */.Fd, fesm2015_forms/* MinValidator */.qQ, fesm2015_forms/* NumberValueAccessor */.wV, fesm2015_forms/* RequiredValidator */.Q7, fesm2015_checkbox/* MatCheckbox */.oG, fesm2015_core/* MatOption */.ey], pipes: [common/* DecimalPipe */.JJ, common/* DatePipe */.uU], styles: [""] });
 
 ;// CONCATENATED MODULE: ./src/app/shared/dialog/simple-input-dialog.component.ts
 
