@@ -457,28 +457,36 @@ public class AdminServiceImpl implements AdminService {
     public Integer getNextRefreshTimeUsingCalendar(Integer seconds) {
         try {
             CalendarData calendarData = clientService.getCountdownData(0);
-            log.info("getNextRefreshTimeUsingCalendar: " + calendarData.getF1Calendar().getRaceName());
-            if (calendarData.getCountdownData().get("raceDays") > 2) {
+            log.info("getNextRefreshTimeUsingCalendar: " + calendarData.getF1Calendar().getSummary());
+            Map<String, Integer> countdownData = calendarData.getCountdownData();
+            if (countdownData.get("raceDays") > 2) {
                 log.info("raceDays > 2");
                 return null;
             }
-            if (calendarData.getCountdownData().get("FP1Seconds") > seconds) {
-                return calendarData.getCountdownData().get("FP1Seconds") - seconds;
+
+            Integer fp1Seconds = countdownData.get("FP1Seconds");
+            if (fp1Seconds != null && fp1Seconds > seconds) {
+                return fp1Seconds - seconds;
             }
-            if (calendarData.getCountdownData().get("FP2Seconds") > seconds) {
-                return calendarData.getCountdownData().get("FP2Seconds") - seconds;
+            Integer fp2Seconds = countdownData.get("FP2Seconds");
+            if (fp2Seconds != null && fp2Seconds > seconds) {
+                return fp2Seconds - seconds;
             }
-            if (calendarData.getCountdownData().get("FP3Seconds") > seconds) {
-                return calendarData.getCountdownData().get("FP3Seconds") - seconds;
+            Integer fp3Seconds = countdownData.get("FP3Seconds");
+            if (fp3Seconds != null && fp3Seconds > seconds) {
+                return fp3Seconds - seconds;
             }
-            if (calendarData.getCountdownData().get("qualifyingSeconds") > seconds) {
-                return calendarData.getCountdownData().get("qualifyingSeconds") - seconds;
+            Integer qualifyingSeconds = countdownData.get("qualifyingSeconds");
+            if (qualifyingSeconds != null && qualifyingSeconds > seconds) {
+                return qualifyingSeconds - seconds;
             }
-            if (calendarData.getCountdownData().get("raceSeconds") > seconds) {
-                return calendarData.getCountdownData().get("raceSeconds") - seconds;
+            Integer raceSeconds = countdownData.get("raceSeconds");
+            if (raceSeconds != null && raceSeconds > seconds) {
+                return raceSeconds - seconds;
             }
         } catch (Exception e) {
             Logger.log("getNextRefreshTick error", e.getMessage());
+            e.printStackTrace();
             return null;
         }
         log.info("getNextRefreshTimeUsingCalendar caught nothing");
