@@ -13,6 +13,7 @@ import sorim.f1.slasher.relentless.model.*;
 import sorim.f1.slasher.relentless.model.enums.ExposureStatusEnum;
 import sorim.f1.slasher.relentless.model.openf1.RaceControlDto;
 import sorim.f1.slasher.relentless.model.strawpoll.StrawpollModelThree;
+import sorim.f1.slasher.relentless.model.strawpoll.StrawpollPoll;
 import sorim.f1.slasher.relentless.repository.*;
 import sorim.f1.slasher.relentless.service.*;
 
@@ -161,6 +162,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
         strawpollId = null;
         latestVoteCount = 0;
         reloadDelay = 0;
+        showWinner = false;
     }
 
     private void updateCurrentExposureRound(Integer increment) {
@@ -429,7 +431,6 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
                     public void run() {
                         if(!exposureReady){
                         log.info(" - PROŠLO JE 70 minuta (4200000ms) UTRKE: ");
-                        exposureReady = true;
                         checkRaceStatusUsingOpenF1Service();
                         }
                     }
@@ -451,18 +452,25 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
                 log.info("POZIVAM getTodayRaceControlData: {}", counter++);
                 response = openF1Service.getTodayRaceControlData("CHEQUERED", triggerLap);
                 //every 2 minutes for the next 2 hours
-                Thread.sleep(120000);
+                if(!response.isEmpty()){
+                    Thread.sleep(60000);
+                    response = openF1Service.getTodayRaceControlData("CHEQUERED", null);
+                    Thread.sleep(60000);
+                }
             } while (response.isEmpty() && counter < 60);
             log.info("CHEQUERED flag ili final 5 laps found found; response size: {}", response.size());
             if(!response.isEmpty() && !exposureNow){
-                log.info("SADA BI AUTOMATSKI STARTAO POLL ali je zakomentirano");
-//                setExposureNow(true);
-//                StrawpollPoll poll = strawpollService.postStrawpoll();
-//                setStrawpoll(poll.getId());
+                log.info("SADA SAM AUTOMATSKI STARTAO POLL");
+                setExposureNow(true);
+                StrawpollPoll poll = strawpollService.postStrawpoll();
+                setStrawpoll(poll.getId());
             } else {
                 log.info("SADA BI AUTOMATSKI STARTAO POLL ALI NEĆU JER NESTO NIJE OK: " + exposureNow);
             }
         } catch (Exception e) {
+            if(!exposureNow){
+                exposureReady = true;
+            }
            log.error("error checkRaceStatusUsingOpenF1Service ", e);
         }
     }
