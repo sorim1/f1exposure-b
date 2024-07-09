@@ -76,6 +76,7 @@ public class Scheduler {
     private void weekendJobsContinuous() throws IOException {
         log.info("fridayJobs called");
         if (isItRaceWeek()) {
+            standingsUpdated = false;
             analyzeUpcomingRacePeriodically();
         }
     }
@@ -97,11 +98,11 @@ public class Scheduler {
 
     }
 
-    @Scheduled(cron = "0 0 15 * * SUN")
+   // @Scheduled(cron = "0 0 15 * * SUN")
     private void sundayStandingsJobs() throws IOException {
         int delay = 1800000;
         log.info(CODE + " - sundayStandingsJobs called");
-        adminService.initializeStandings(true);
+      //  adminService.initializeStandings(true);
         int weekDay = MainUtility.getWeekDay();
         if (!standingsUpdated && weekDay == 1) {
             log.info(CODE + " - sundayStandingsJobs delayed");
