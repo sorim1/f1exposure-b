@@ -52,11 +52,16 @@ public class Scheduler {
     @Scheduled(cron = "0 0 1 * * TUE")
     public void tuesdayJobs() throws IOException {
         log.info(CODE + " - tuesdayJobs called");
-        if (!standingsUpdated) {
-            log.info(CODE + " - standingsUpdating");
-            adminService.initializeStandings(true);
-            standingsUpdated = true;
+        try {
+            if (!standingsUpdated) {
+                log.info(CODE + " - standingsUpdating");
+                adminService.initializeStandings(true);
+                standingsUpdated = true;
+            }
+        } catch (Exception e) {
+            log.info("initializeStandings failed: {}", e.getMessage());
         }
+
         if (isItRaceWeek()) {
             log.info(CODE + " - generating strawpoll");
             strawpollService.generateStrawpoll();

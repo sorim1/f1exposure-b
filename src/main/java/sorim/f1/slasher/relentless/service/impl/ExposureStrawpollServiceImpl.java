@@ -444,7 +444,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
         List<RaceControlDto> response;
         Integer triggerLap = getLapCount(properties.getCurrentSeasonFuture(), currentExposureRound);
         if(triggerLap!=null){
-            triggerLap= triggerLap-5;
+            triggerLap= triggerLap-7;
         }
         int counter = 0;
         try {
@@ -452,11 +452,12 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
                 log.info("POZIVAM getTodayRaceControlData: {}", counter++);
                 response = openF1Service.getTodayRaceControlData("CHEQUERED", triggerLap);
                 //every 2 minutes for the next 2 hours
-                if(!response.isEmpty()){
-                    Thread.sleep(60000);
+                if(response.isEmpty()){
+                    Thread.sleep(100000);
+                    log.info("POZIVAM getTodayRaceControlData2: {}", counter);
                     response = openF1Service.getTodayRaceControlData("CHEQUERED", null);
-                    Thread.sleep(60000);
                 }
+                Thread.sleep(100000);
             } while (response.isEmpty() && counter < 60);
             log.info("CHEQUERED flag ili final 5 laps found found; response size: {}", response.size());
             if(!response.isEmpty() && !exposureNow){
