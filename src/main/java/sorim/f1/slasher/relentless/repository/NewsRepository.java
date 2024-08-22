@@ -5,10 +5,12 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import sorim.f1.slasher.relentless.entities.NewsContent;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
@@ -22,6 +24,12 @@ public interface NewsRepository extends CrudRepository<NewsContent, String> {
     List<NewsContent> findAllByStatusLessThanEqualOrderByTimestampActivityDesc(Integer status, Pageable pageable);
 
     List<NewsContent> findAllByTimestampActivityBeforeOrderByTimestampActivityDesc(Date timestampActivity, Pageable pageable);
+
+    @Query("SELECT n FROM NewsContent n WHERE " +
+            "LOWER(n.title) LIKE LOWER(CONCAT('%', :substring, '%')) " +
+            "AND n.timestampCreated > :timestampCreated")
+    List<NewsContent> findAllByTitleContainingIgnoreCase(@Param("substring") String substring, @Param("timestampCreated") Date timestampCreated);
+
 
     NewsContent findByCodeAndStatusLessThanEqual(String code, Integer status);
 

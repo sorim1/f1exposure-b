@@ -5,6 +5,7 @@ import sorim.f1.slasher.relentless.entities.*;
 import sorim.f1.slasher.relentless.model.Aws;
 import sorim.f1.slasher.relentless.model.FullBackup;
 import sorim.f1.slasher.relentless.model.FullExposure;
+import sorim.f1.slasher.relentless.model.SearchParams;
 import sorim.f1.slasher.relentless.model.livetiming.RaceAnalysis;
 
 import java.io.IOException;
@@ -32,6 +33,9 @@ public interface AdminService {
     Integer deleteComment(Integer mode, Integer id);
 
     NewsContent patchAwsPost(NewsContent entry);
+
+    List<NewsContent> findNewsPosts(SearchParams searchParams);
+
 
     List<Integer> updateCurrentRound(boolean increaseOnly);
 

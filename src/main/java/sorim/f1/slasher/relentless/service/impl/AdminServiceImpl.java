@@ -426,6 +426,12 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
+    public List<NewsContent> findNewsPosts(SearchParams searchParams) {
+       log.info("mjesec je: {}", searchParams.getFromDate().getMonth());
+        return newsRepository.findAllByTitleContainingIgnoreCase(searchParams.getSearchwords().get(0), searchParams.getFromDate());
+    }
+
+    @Override
     public List<Integer> updateCurrentRound(boolean increaseOnly) {
         List<Integer> response = new ArrayList<>();
         response.add(CURRENT_ROUND);

@@ -8,6 +8,7 @@ import sorim.f1.slasher.relentless.entities.*;
 import sorim.f1.slasher.relentless.model.Aws;
 import sorim.f1.slasher.relentless.model.FullBackup;
 import sorim.f1.slasher.relentless.model.FullExposure;
+import sorim.f1.slasher.relentless.model.SearchParams;
 import sorim.f1.slasher.relentless.service.AdminService;
 import sorim.f1.slasher.relentless.service.SecurityService;
 
@@ -143,9 +144,15 @@ public class AdminController {
     }
 
     @PatchMapping("/updateAwsPost/")
-    NewsContent getAwsPost(@RequestHeader String client, @RequestBody NewsContent entry) throws Exception {
+    NewsContent updateNewsPost(@RequestHeader String client, @RequestBody NewsContent entry) throws Exception {
         securityService.validateHeader(client);
         return service.patchAwsPost(entry);
+    }
+
+    @PostMapping("/findNewsPosts")
+    List<NewsContent> findNewsPosts(@RequestHeader String client, @RequestBody SearchParams searchParams) throws Exception {
+        securityService.validateHeader(client);
+        return service.findNewsPosts(searchParams);
     }
 
 
