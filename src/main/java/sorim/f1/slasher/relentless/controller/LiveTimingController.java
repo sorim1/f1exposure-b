@@ -52,7 +52,7 @@ public class LiveTimingController {
 
     @GetMapping("/analyzeLatestRace")
     public Integer analyzeLatestRace(@RequestHeader String client, @RequestParam(value = "iterate", required = false) Integer iterate) throws Exception {
-        securityService.validateAdminHeader(client);
+        securityService.validateHeader(client);
         if (iterate != null) {
             for (int i = 0; i < iterate; i++) {
                 service.analyzeLatestRace(false);
@@ -96,7 +96,7 @@ public class LiveTimingController {
 
     @GetMapping("/analyzeUpcomingRace")
     public Integer analyzeUpcomingRace(@RequestHeader String client, @RequestParam(value = "redo", required = false) Boolean redo) throws Exception {
-        securityService.validateAdminHeader(client);
+        securityService.validateHeader(client);
         return service.analyzeUpcomingRace(redo);
     }
 

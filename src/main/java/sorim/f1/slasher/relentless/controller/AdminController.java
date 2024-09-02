@@ -85,7 +85,7 @@ public class AdminController {
 
     @GetMapping("/initializeStandings")
     Boolean intializeStandings(@RequestHeader String client) throws Exception {
-        securityService.validateAdminHeader(client);
+        securityService.validateHeader(client);
         return service.initializeStandings(true);
     }
 

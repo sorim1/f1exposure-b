@@ -99,7 +99,7 @@ public class ClientController {
 
     @GetMapping("/fetchTwitterPosts")
     Boolean fetchTwitterPosts(@RequestHeader String client) throws Exception {
-        securityService.validateAdminHeader(client);
+        securityService.validateHeader(client);
         return service.fetchTwitterPosts();
     }
 
@@ -158,10 +158,11 @@ public class ClientController {
 
     @GetMapping("/fetchRedditPosts")
     Boolean fetchRedditPosts(@RequestHeader String client) throws Exception {
-        securityService.validateAdminHeader(client);
+        securityService.validateHeader(client);
         service.fetchRedditPosts();
         return true;
     }
+
 
     @GetMapping("/fetch4chanPosts")
     Boolean fetch4chanPosts(@RequestHeader String client) throws Exception {
