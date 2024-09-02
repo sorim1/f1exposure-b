@@ -458,7 +458,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
                     response = openF1Service.getTodayRaceControlData("CHEQUERED", null);
                 }
                 Thread.sleep(100000);
-            } while (response.isEmpty() && counter < 60);
+            } while (response.isEmpty() && counter < 60 && !exposureNow);
             log.info("CHEQUERED flag ili final 5 laps found found; response size: {}", response.size());
             if(!response.isEmpty() && !exposureNow){
                 log.info("SADA SAM AUTOMATSKI STARTAO POLL");

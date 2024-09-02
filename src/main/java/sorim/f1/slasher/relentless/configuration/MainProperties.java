@@ -8,6 +8,7 @@ import sorim.f1.slasher.relentless.entities.AppProperty;
 import sorim.f1.slasher.relentless.repository.PropertiesRepository;
 
 import javax.annotation.PostConstruct;
+import java.time.LocalDate;
 import java.util.Calendar;
 
 @Data
@@ -45,15 +46,17 @@ public class MainProperties {
         if (ap != null) {
             this.currentSeasonPast = Integer.valueOf(ap.getValue());
         } else {
-            saveProperty("CURRENT_SEASON_PAST", "2023");
-            this.currentSeasonPast = 2023;
+            Integer currentYear = LocalDate.now().getYear();
+            saveProperty("CURRENT_SEASON_PAST", String.valueOf(currentYear));
+            this.currentSeasonPast = currentYear;
         }
         ap = propertiesRepository.findDistinctFirstByName("CURRENT_SEASON_FUTURE");
         if (ap != null) {
             this.currentSeasonFuture = Integer.valueOf(ap.getValue());
         } else {
-            saveProperty("CURRENT_SEASON_FUTURE", "2023");
-            this.currentSeasonFuture = 2024;
+            Integer currentYear = LocalDate.now().getYear();
+            saveProperty("CURRENT_SEASON_FUTURE", String.valueOf(currentYear));
+            this.currentSeasonFuture = currentYear;
         }
     }
 

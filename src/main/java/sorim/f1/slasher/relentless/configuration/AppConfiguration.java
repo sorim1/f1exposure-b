@@ -54,6 +54,9 @@ public class AppConfiguration {
                 new HttpComponentsClientHttpRequestFactory();
 
         requestFactory.setHttpClient(httpClient);
+        requestFactory.setConnectionRequestTimeout(20000);
+        requestFactory.setConnectTimeout(20000);
+        requestFactory.setReadTimeout(20000);
         return new RestTemplate(requestFactory);
     }
 }
