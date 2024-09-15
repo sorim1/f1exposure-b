@@ -452,12 +452,13 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
                 log.info("POZIVAM getTodayRaceControlData: {}", counter++);
                 response = openF1Service.getTodayRaceControlData("CHEQUERED", triggerLap);
                 //every 2 minutes for the next 2 hours
-                if(response.isEmpty()){
-                    Thread.sleep(100000);
-                    log.info("POZIVAM getTodayRaceControlData2: {}", counter);
-                    response = openF1Service.getTodayRaceControlData("CHEQUERED", null);
-                }
-                Thread.sleep(100000);
+//                if(response.isEmpty()){
+//                    Thread.sleep(100000);
+//                    log.info("POZIVAM getTodayRaceControlData2: {}", counter);
+//                    response = openF1Service.getTodayRaceControlData("CHEQUERED", null);
+//                }
+                Thread.sleep(150000);
+                log.info("response.isEmpty(): {}, exposureNow: {}", response.isEmpty(), exposureNow);
             } while (response.isEmpty() && counter < 60 && !exposureNow);
             log.info("CHEQUERED flag ili final 5 laps found found; response size: {}", response.size());
             if(!response.isEmpty() && !exposureNow){
@@ -466,7 +467,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
                 StrawpollPoll poll = strawpollService.postStrawpoll();
                 setStrawpoll(poll.getId());
             } else {
-                log.info("SADA BI AUTOMATSKI STARTAO POLL ALI NEĆU JER NESTO NIJE OK: " + exposureNow);
+                log.info("SADA BI AUTOMATSKI STARTAO POLL ALI NEĆU JER NESTO NIJE OK, exposureNow=" + exposureNow);
             }
         } catch (Exception e) {
             if(!exposureNow){
