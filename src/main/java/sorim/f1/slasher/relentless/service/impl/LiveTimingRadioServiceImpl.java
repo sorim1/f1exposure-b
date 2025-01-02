@@ -15,6 +15,7 @@ import sorim.f1.slasher.relentless.model.livetiming.*;
 import sorim.f1.slasher.relentless.service.LiveTimingRadioService;
 
 import java.io.*;
+import java.time.LocalDateTime;
 import java.time.ZonedDateTime;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
@@ -31,7 +32,8 @@ public class LiveTimingRadioServiceImpl implements LiveTimingRadioService {
     private final MainProperties properties;
     RestTemplate restTemplate = new RestTemplate();
     private String relativePath;
-    private ZonedDateTime finishedDate;
+    private ZonedDateTime finishedDate1;
+    private LocalDateTime finishedDate;
 
     @Override
     public void enrichUpcomingRaceAnalysisWithRadioData(UpcomingRaceAnalysis upcomingRaceAnalysis, String jsonStream, RoundEnum session) {
@@ -223,7 +225,8 @@ public class LiveTimingRadioServiceImpl implements LiveTimingRadioService {
         LinkedHashMap<String, Object> dataMap = (LinkedHashMap<String, Object>) object;
         RadioData entry = new RadioData();
         entry.setId(id);
-        ZonedDateTime dateTime = ZonedDateTime.parse((String) dataMap.get("Utc"));
+        ZonedDateTime dateTimeDeleteMe = ZonedDateTime.parse((String) dataMap.get("Utc"));
+        LocalDateTime dateTime = LocalDateTime.parse((String) dataMap.get("Utc"));
         entry.setUtc(dateTime);
         entry.setDriverNumber((String) dataMap.get("RacingNumber"));
         entry.setPath((String) dataMap.get("Path"));

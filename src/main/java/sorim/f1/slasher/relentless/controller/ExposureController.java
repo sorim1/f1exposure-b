@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import sorim.f1.slasher.relentless.configuration.MainProperties;
 import sorim.f1.slasher.relentless.entities.JsonRepositoryModel;
 import sorim.f1.slasher.relentless.entities.JsonRepositoryTwoModel;
 import sorim.f1.slasher.relentless.model.ExposureData;
@@ -25,6 +26,7 @@ public class ExposureController {
     private final ExposureStrawpollService exposureService;
     private final StrawpollService strawpollService;
     private final SecurityService securityService;
+    private final MainProperties properties;
 
     @GetMapping("/initializeStrawpoll/{id}")
     String initializeStrawpoll(@RequestHeader String client, @PathVariable("id") String id) throws Exception {
@@ -186,7 +188,7 @@ public class ExposureController {
     @GetMapping("/getLapCount/{round}")
     Integer getLapCount(@RequestHeader String client, @PathVariable("round") Integer round) throws Exception {
         securityService.validateAdminHeader(client);
-        return exposureService.getLapCount(2024, round);
+        return exposureService.getLapCount(properties.getCurrentSeasonPast(), round);
     }
 
     @GetMapping("/app/timeToExposurePollWindow")

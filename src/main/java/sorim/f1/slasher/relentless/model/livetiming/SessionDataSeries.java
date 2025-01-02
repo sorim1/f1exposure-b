@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
 import java.time.ZonedDateTime;
 
 @Data
@@ -14,7 +15,8 @@ import java.time.ZonedDateTime;
 @Builder
 public class SessionDataSeries {
     @JsonProperty("Utc")
-    ZonedDateTime utc;
+    LocalDateTime utc;
+  //  LocalDateTime ZonedDateTime
     @JsonProperty("TrackStatus")
     String trackStatus;
     @JsonProperty("SessionStatus")

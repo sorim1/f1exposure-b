@@ -95,6 +95,7 @@ public class TwitterServiceImpl implements TwitterService {
                     twitterRepository.saveAll(list);
                     log.error("SUCCESS: " +  url);
                 } catch(Exception e){
+                    e.printStackTrace();
                     log.error("FAILED: {} - {}",  url, e.getMessage());
                 }
                 Thread.sleep(10 * 1000);

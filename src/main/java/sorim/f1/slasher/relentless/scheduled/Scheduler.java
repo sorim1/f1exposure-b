@@ -272,7 +272,7 @@ public class Scheduler {
 
     void imageFeedJobWithoutInstagram() throws Exception {
         log.info("imageFeedJobWithoutInstgram called");
-          clientService.fetchTwitterPosts();
+       //   clientService.fetchTwitterPosts();
         clientService.fetchRedditPosts();
     }
 
