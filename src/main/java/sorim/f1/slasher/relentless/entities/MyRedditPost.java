@@ -7,10 +7,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import masecla.reddit4j.objects.RedditPost;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.persistence.Transient;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.Objects;
@@ -20,7 +20,6 @@ import java.util.Objects;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 public class MyRedditPost {
 
     @Id

@@ -21,7 +21,7 @@ import java.nio.file.Path;
 
 
 @RestController
-@RequiredArgsConstructor(onConstructor = @__(@Autowired))
+@RequiredArgsConstructor
 @Slf4j
 @RequestMapping("files")
 public class FilesController {

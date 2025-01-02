@@ -17,7 +17,6 @@ import java.util.concurrent.atomic.AtomicReference;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 public class DriverStatistics {
 
     private String driverId;

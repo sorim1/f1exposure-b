@@ -4,6 +4,7 @@ import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.ssl.TrustStrategy;
+import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
@@ -26,16 +27,21 @@ public class AppConfiguration {
         return taskScheduler;
     }
 
-//    @Bean
-//    public RestTemplate restTemplate() {
-//
-//        var factory = new SimpleClientHttpRequestFactory();
-//        factory.setConnectTimeout(10000);
-//        factory.setReadTimeout(30000);
-//        return new RestTemplate(factory);
-//    }
-
     @Bean
+    public RestTemplate restTemplate(RestTemplateBuilder restTemplateBuilder) {
+        return restTemplateBuilder.build();
+    }
+
+/*    @Bean
+    public RestTemplate restTemplate() {
+
+        var factory = new SimpleClientHttpRequestFactory();
+        factory.setConnectTimeout(10000);
+        factory.setReadTimeout(30000);
+        return new RestTemplate(factory);
+    }*/
+
+  /*  @Bean
     public RestTemplate restTemplate()
             throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
         TrustStrategy acceptingTrustStrategy = (X509Certificate[] chain, String authType) -> true;
@@ -58,5 +64,5 @@ public class AppConfiguration {
         requestFactory.setConnectTimeout(20000);
         requestFactory.setReadTimeout(20000);
         return new RestTemplate(requestFactory);
-    }
+    }*/
 }

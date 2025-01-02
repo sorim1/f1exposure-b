@@ -22,7 +22,7 @@ import java.util.stream.Collectors;
 
 @Slf4j
 @Service
-@RequiredArgsConstructor(onConstructor = @__(@Autowired))
+@RequiredArgsConstructor
 public class LiveTimingRadioServiceImpl implements LiveTimingRadioService {
     private static final String SESSION_INFO_URL = "SessionInfo.json";
     private static final String TEAM_RADIO_STREAM = "TeamRadio.jsonStream";

@@ -11,7 +11,6 @@ import java.math.BigDecimal;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 public class DriverCompared {
     private String driverId;
     private String teamId;

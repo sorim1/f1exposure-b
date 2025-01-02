@@ -14,7 +14,6 @@ import java.util.regex.Pattern;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 @Slf4j
 public class LapByLapData {
     public List<Integer> positions = new ArrayList<>();

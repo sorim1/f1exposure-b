@@ -12,7 +12,6 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 public class TrippleRedditFeed {
 
     private List<MyRedditPost> first = new ArrayList<>();

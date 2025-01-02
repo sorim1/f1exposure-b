@@ -12,12 +12,12 @@ import sorim.f1.slasher.relentless.service.FourchanService;
 import sorim.f1.slasher.relentless.service.InstagramService;
 import sorim.f1.slasher.relentless.service.SecurityService;
 
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpServletResponse;
 import java.util.List;
 
 
 @RestController
-@RequiredArgsConstructor(onConstructor = @__(@Autowired))
+@RequiredArgsConstructor
 @Slf4j
 @RequestMapping("social")
 public class SocialMediaController {

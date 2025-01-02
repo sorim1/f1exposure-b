@@ -11,7 +11,6 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 public class FrontendGraphWeatherData {
     public String name;
     public List<Double> yTrack = new ArrayList<>();

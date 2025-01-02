@@ -16,7 +16,7 @@ import java.nio.file.Files;
 
 @Slf4j
 @Service
-@RequiredArgsConstructor(onConstructor = @__(@Autowired))
+@RequiredArgsConstructor
 public class RadioServiceImpl implements RadioService {
 
     @Value("${upload.path}")

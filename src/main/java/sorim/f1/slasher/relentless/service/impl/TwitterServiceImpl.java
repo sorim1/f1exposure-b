@@ -19,7 +19,7 @@ import sorim.f1.slasher.relentless.entities.TwitterPost;
 import sorim.f1.slasher.relentless.repository.TwitterRepository;
 import sorim.f1.slasher.relentless.service.TwitterService;
 
-import javax.annotation.PostConstruct;
+import jakarta.annotation.PostConstruct;
 import java.time.Instant;
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
@@ -28,7 +28,7 @@ import java.util.stream.Collectors;
 
 @Slf4j
 @Service
-@RequiredArgsConstructor(onConstructor = @__(@Autowired))
+@RequiredArgsConstructor
 public class TwitterServiceImpl implements TwitterService {
 
     private static final Map<String, TwitterPost> ferrariTwitterPostsMap = new HashMap<>();
@@ -190,8 +190,10 @@ public class TwitterServiceImpl implements TwitterService {
 
     private List<TwitterPost> getTwitterPostsFromRssItem(Item item) {
         List<TwitterPost> output = new ArrayList<>();
-        Long id = DateTime.toEpochMilli(item.getPubDate().get());
-        Instant instant = DateTime.toInstant(item.getPubDate().get());
+
+       // Long id = DateTime.toEpochMilli(item.getPubDate().get());
+        Instant instant = Instant.parse(item.getPubDate().get());
+        Long id = instant.toEpochMilli();
         Date date1 = Date.from(instant);
         List<String> imageUrls = getImageUrlsFromRssDescription(item.getDescription().get());
         String url = getTwitterFromNitter(item.getGuid().get());

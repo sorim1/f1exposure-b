@@ -20,7 +20,7 @@ import sorim.f1.slasher.relentless.scheduled.Scheduler;
 import sorim.f1.slasher.relentless.service.*;
 import sorim.f1.slasher.relentless.util.MainUtility;
 
-import javax.annotation.PostConstruct;
+import jakarta.annotation.PostConstruct;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
@@ -29,7 +29,7 @@ import java.util.stream.Collectors;
 
 @Slf4j
 @Service
-@RequiredArgsConstructor(onConstructor = @__(@Autowired))
+@RequiredArgsConstructor
 public class LiveTimingServiceImpl implements LiveTimingService {
 
     private static final String LIVE_TIMING_URL_BASE = "https://livetiming.formula1.com/static/{year}/{grandPrix}/{race}/";
@@ -203,7 +203,8 @@ public class LiveTimingServiceImpl implements LiveTimingService {
                 date = MainUtility.subtractDays(raceDate, 1);
                 raceName = date + "_Practice_2";
             } else if (round.equals(RoundEnum.QUALIFYING)) {
-                date = MainUtility.subtractDays(raceDate, 2);
+                log.info("checking if quali the same day as race (brazil 2024)");
+                date = MainUtility.subtractDays(raceDate, 0);
                 raceName = date + "_Qualifying";
             } else {
                 return null;

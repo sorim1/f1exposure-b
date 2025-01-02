@@ -28,8 +28,8 @@ import sorim.f1.slasher.relentless.repository.StreamableRepository;
 import sorim.f1.slasher.relentless.service.FourchanService;
 import sorim.f1.slasher.relentless.service.InstagramService;
 
-import javax.annotation.PostConstruct;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.annotation.PostConstruct;
+import jakarta.servlet.http.HttpServletResponse;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.*;
@@ -39,7 +39,7 @@ import java.util.zip.ZipOutputStream;
 
 @Slf4j
 @Service
-@RequiredArgsConstructor(onConstructor = @__(@Autowired))
+@RequiredArgsConstructor
 public class FourchanServiceImpl implements FourchanService {
 
     private static final String CATALOG_URL = "https://a.4cdn.org/sp/catalog.json";

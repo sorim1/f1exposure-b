@@ -12,7 +12,6 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 public class TripleInstagramFeed {
     private Boolean fetchOk;
     private List<InstagramPost> first = new ArrayList<>();

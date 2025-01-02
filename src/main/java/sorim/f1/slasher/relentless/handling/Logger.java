@@ -7,13 +7,13 @@ import org.springframework.stereotype.Service;
 import sorim.f1.slasher.relentless.entities.Log;
 import sorim.f1.slasher.relentless.repository.LogRepository;
 
-import javax.annotation.PostConstruct;
+import jakarta.annotation.PostConstruct;
 import java.util.Date;
 import java.util.List;
 
 @Slf4j
 @Service
-@RequiredArgsConstructor(onConstructor = @__(@Autowired))
+@RequiredArgsConstructor
 public class Logger {
 
     private static LogRepository repository = null;

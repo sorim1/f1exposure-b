@@ -7,7 +7,6 @@ import net.fortuna.ical4j.data.CalendarBuilder;
 import net.fortuna.ical4j.model.Calendar;
 import net.fortuna.ical4j.model.PropertyList;
 import net.fortuna.ical4j.model.component.CalendarComponent;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import sorim.f1.slasher.relentless.configuration.MainProperties;
 import sorim.f1.slasher.relentless.entities.*;
@@ -20,7 +19,7 @@ import sorim.f1.slasher.relentless.repository.*;
 import sorim.f1.slasher.relentless.scheduled.Scheduler;
 import sorim.f1.slasher.relentless.service.*;
 
-import javax.annotation.PostConstruct;
+import jakarta.annotation.PostConstruct;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Reader;
@@ -37,7 +36,7 @@ import java.util.stream.Collectors;
 
 @Slf4j
 @Service
-@RequiredArgsConstructor(onConstructor = @__(@Autowired))
+@RequiredArgsConstructor
 public class AdminServiceImpl implements AdminService {
 
     private static Integer CURRENT_ROUND;
@@ -99,7 +98,7 @@ public class AdminServiceImpl implements AdminService {
 
     @Override
     public Boolean refreshCalendarOfCurrentSeason(String urlString) throws Exception {
-        URL url;
+       /* URL url;
         if (urlString == null) {
             url = new URL(properties.getCalendarUrl());
         } else {
@@ -113,7 +112,7 @@ public class AdminServiceImpl implements AdminService {
         int currentRaceId;
         List<F1Calendar> f1calendarList = new ArrayList<>();
         F1Calendar f1Calendar = null;
-        for (CalendarComponent component : calendar.getComponents().getAll()) {
+        for (CalendarComponent component : calendar.getComponents()) {
             if (component.getName().equals("VEVENT") && component.getProperties().get("STATUS").get(0).getValue().equals("CONFIRMED")) {
                 PropertyList properties = component.getProperties();
                 String[] idAndRound = properties.get("UID").get(0).getValue().split("@");
@@ -134,7 +133,7 @@ public class AdminServiceImpl implements AdminService {
             List<RaceData> ergastRaceData = ergastService.fetchSeason(String.valueOf(f1Calendar.getRace().getYear()));
             enrichCalendarWithErgastData(f1calendarList, ergastRaceData);
         }
-        calendarRepository.saveAll(f1calendarList);
+        calendarRepository.saveAll(f1calendarList);*/
         return true;
     }
 
@@ -154,8 +153,9 @@ public class AdminServiceImpl implements AdminService {
         String currentLocation;
         List<F1Calendar> f1calendarList = new ArrayList<>();
         F1Calendar f1Calendar = null;
-        for (CalendarComponent component : calendar.getComponents().getAll()) {
-            if (component.getName().equals("VEVENT") && !component.getProperties().get("STATUS").get(0).getValue().equals("CANCELLED")) {
+        for (CalendarComponent component : calendar.getComponents()) {
+            //TODO upgrade fix
+/*            if (component.getName().equals("VEVENT") && !component.getProperties().get("STATUS").get(0).getValue().equals("CANCELLED")) {
                 PropertyList properties = component.getProperties();
                 currentLocation = properties.get("LOCATION").get(0).getValue();
                 if (currentLocation.equals(location)) {
@@ -167,7 +167,7 @@ public class AdminServiceImpl implements AdminService {
                     location = currentLocation;
                     f1Calendar = new F1Calendar(properties, false);
                 }
-            }
+            }*/
         }
         f1calendarList.add(f1Calendar);
         if (f1Calendar != null && f1Calendar.getRace() != null) {

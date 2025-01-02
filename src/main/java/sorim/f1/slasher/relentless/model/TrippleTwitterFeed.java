@@ -13,7 +13,6 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 public class TrippleTwitterFeed {
 
     private List<TwitterPost> first = new ArrayList<>();

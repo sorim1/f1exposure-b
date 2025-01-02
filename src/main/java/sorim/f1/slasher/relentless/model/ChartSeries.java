@@ -17,7 +17,10 @@ import java.util.List;
 public class ChartSeries {
     private String name;
     private String color;
+
+    @Builder.Default
     private List<List<BigDecimal>> series = new ArrayList<>();
+    @Builder.Default
     private List<List<Integer>> series2 = new ArrayList<>();
 
     public ChartSeries(String name) {

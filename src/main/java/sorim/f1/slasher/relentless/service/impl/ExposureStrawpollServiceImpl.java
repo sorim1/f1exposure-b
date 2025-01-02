@@ -17,7 +17,7 @@ import sorim.f1.slasher.relentless.model.strawpoll.StrawpollPoll;
 import sorim.f1.slasher.relentless.repository.*;
 import sorim.f1.slasher.relentless.service.*;
 
-import javax.annotation.PostConstruct;
+import jakarta.annotation.PostConstruct;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.time.Duration;
@@ -31,7 +31,7 @@ import java.util.stream.Collectors;
 
 @Slf4j
 @Service
-@RequiredArgsConstructor(onConstructor = @__(@Autowired))
+@RequiredArgsConstructor
 public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
     private static final String strawPollApiV3 = "https://api.strawpoll.com/v2/polls/";
     private static final Map<String, String> colorMap = new HashMap<>();
@@ -444,6 +444,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
         List<RaceControlDto> response;
         Integer triggerLap = getLapCount(properties.getCurrentSeasonFuture(), currentExposureRound);
         if(triggerLap!=null){
+            log.info("ROUND: {} - triggerLap: {}", currentExposureRound, triggerLap);
             triggerLap= triggerLap-7;
         }
         int counter = 0;

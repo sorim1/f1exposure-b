@@ -22,7 +22,7 @@ import java.util.stream.Collectors;
 
 @Slf4j
 @Service
-@RequiredArgsConstructor(onConstructor = @__(@Autowired))
+@RequiredArgsConstructor
 public class FileServiceImpl implements FileService {
 
     @Value("${upload.path}")

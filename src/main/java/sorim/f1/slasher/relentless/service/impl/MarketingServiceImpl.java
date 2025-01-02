@@ -18,7 +18,7 @@ import java.util.List;
 
 @Slf4j
 @Service
-@RequiredArgsConstructor(onConstructor = @__(@Autowired))
+@RequiredArgsConstructor
 public class MarketingServiceImpl implements MarketingService {
 
     private static final String PREFIX = "MK_AA_";

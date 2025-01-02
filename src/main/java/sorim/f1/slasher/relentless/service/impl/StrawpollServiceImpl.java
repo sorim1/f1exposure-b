@@ -28,7 +28,7 @@ import java.util.List;
 
 @Slf4j
 @Service
-@RequiredArgsConstructor(onConstructor = @__(@Autowired))
+@RequiredArgsConstructor
 public class StrawpollServiceImpl implements StrawpollService {
     private static final String strawPollApiV3 = "https://api.strawpoll.com/v3/polls/";
     private final DriverRepository driverRepository;

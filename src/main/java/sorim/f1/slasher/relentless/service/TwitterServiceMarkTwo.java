@@ -15,7 +15,7 @@
 //import org.springframework.stereotype.Service;
 //import sorim.f1.slasher.relentless.configuration.MainProperties;
 //
-//import javax.annotation.PostConstruct;
+//import jakarta.annotation.PostConstruct;
 //import java.io.BufferedReader;
 //import java.io.InputStreamReader;
 //import java.lang.reflect.Type;
@@ -27,7 +27,7 @@
 //
 //@Slf4j
 //@Service
-//@RequiredArgsConstructor(onConstructor = @__(@Autowired))
+//@RequiredArgsConstructor
 //public class TwitterServiceMarkTwo {
 //    private final MainProperties properties;
 //    private static TwitterApi apiInstance;

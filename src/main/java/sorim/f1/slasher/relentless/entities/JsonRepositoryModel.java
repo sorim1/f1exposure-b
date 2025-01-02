@@ -6,16 +6,18 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.Type;
-import org.hibernate.annotations.TypeDef;
+import jakarta.persistence.Convert;
+import org.hibernate.annotations.JdbcTypeCode;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import org.hibernate.type.SqlTypes;
 
 @Entity
 @Table(name = "JSON_REPOSITORY")
-@TypeDef(name = "jsonb", typeClass = JsonBinaryType.class)
+@Convert(attributeName = "entityAttrName", converter = JsonBinaryType.class)
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -24,7 +26,7 @@ public class JsonRepositoryModel {
 
     @Id
     private String id;
-    @Type(type = "jsonb")
+    @JdbcTypeCode(SqlTypes.JSON)
     @Column(columnDefinition = "jsonb")
     private Object json;
 

@@ -15,7 +15,7 @@ import sorim.f1.slasher.relentless.service.SecurityService;
 import java.util.List;
 
 @RestController
-@RequiredArgsConstructor(onConstructor = @__(@Autowired))
+@RequiredArgsConstructor
 @Slf4j
 @RequestMapping("liveTiming")
 public class LiveTimingController {

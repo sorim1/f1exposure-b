@@ -15,7 +15,7 @@ import java.util.List;
 
 
 @RestController
-@RequiredArgsConstructor(onConstructor = @__(@Autowired))
+@RequiredArgsConstructor
 @Slf4j
 @RequestMapping("twitter")
 public class TwitterController {

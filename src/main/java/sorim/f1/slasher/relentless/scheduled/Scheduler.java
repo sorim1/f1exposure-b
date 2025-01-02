@@ -17,7 +17,7 @@ import java.util.Random;
 
 @Service
 @Slf4j
-@RequiredArgsConstructor(onConstructor = @__(@Autowired))
+@RequiredArgsConstructor
 public class Scheduler {
 
     private static final String CODE = "SCHEDULER";

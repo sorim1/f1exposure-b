@@ -14,7 +14,6 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 public class UpcomingRaceAnalysis {
     Integer season;
     String title;

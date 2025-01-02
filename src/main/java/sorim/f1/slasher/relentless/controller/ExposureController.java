@@ -17,7 +17,7 @@ import sorim.f1.slasher.relentless.service.StrawpollService;
 import java.util.List;
 
 @RestController
-@RequiredArgsConstructor(onConstructor = @__(@Autowired))
+@RequiredArgsConstructor
 @RequestMapping("exposure")
 @Slf4j
 public class ExposureController {

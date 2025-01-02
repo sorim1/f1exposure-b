@@ -31,7 +31,7 @@ import sorim.f1.slasher.relentless.service.InstagramService;
 import sorim.f1.slasher.relentless.service.RedditService;
 import sorim.f1.slasher.relentless.util.MainUtility;
 
-import javax.annotation.PostConstruct;
+import jakarta.annotation.PostConstruct;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
@@ -40,7 +40,7 @@ import java.util.stream.Stream;
 
 @Slf4j
 @Service
-@RequiredArgsConstructor(onConstructor = @__(@Autowired))
+@RequiredArgsConstructor
 public class RedditServiceImpl implements RedditService {
 
     private static final String IMGUR_COM_3_ALBUM = "https://api.imgur.com/3/album/";

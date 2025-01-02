@@ -17,7 +17,6 @@ import java.util.Optional;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 public class ConstructorStatistics {
 
     private ErgastConstructor ergastConstructor;

@@ -10,7 +10,6 @@ import java.time.ZonedDateTime;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 public class RadioData {
     Integer id;
     ZonedDateTime utc;

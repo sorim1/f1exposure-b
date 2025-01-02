@@ -14,7 +14,7 @@ import java.io.IOException;
 
 
 @RestController
-@RequiredArgsConstructor(onConstructor = @__(@Autowired))
+@RequiredArgsConstructor
 @Slf4j
 @RequestMapping("radio")
 public class RadioController {

@@ -7,7 +7,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.Date;
 
 @Entity
@@ -26,6 +26,7 @@ public class NewsComment {
     private String contentCode;
     private String textContent;
     private Date timestampCreated;
+    @Builder.Default
     private Integer status = 1;
     private String username;
 

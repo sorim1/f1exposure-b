@@ -1,9 +1,10 @@
 package sorim.f1.slasher.relentless.repository;
 
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
-import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import sorim.f1.slasher.relentless.entities.ImageRow;
@@ -12,7 +13,7 @@ import sorim.f1.slasher.relentless.entities.ImageRow;
 @Repository
 @Transactional
 @EnableJpaAuditing
-public interface ImageRepository extends PagingAndSortingRepository<ImageRow, String> {
+public interface ImageRepository extends JpaRepository<ImageRow, String> {
 
     ImageRow findFirstByCode(String code);
 

@@ -18,7 +18,7 @@ import java.util.List;
 
 @Slf4j
 @Service
-@RequiredArgsConstructor(onConstructor = @__(@Autowired))
+@RequiredArgsConstructor
 public class OpenF1ServiceImpl implements OpenF1Service {
     private final RestTemplate restTemplate;
 

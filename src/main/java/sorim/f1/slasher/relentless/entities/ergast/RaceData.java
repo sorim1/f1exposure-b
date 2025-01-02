@@ -7,19 +7,19 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.Type;
-import org.hibernate.annotations.TypeDef;
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
 import sorim.f1.slasher.relentless.model.ergast.Circuit;
 import sorim.f1.slasher.relentless.model.ergast.ErgastStanding;
 import sorim.f1.slasher.relentless.model.livetiming.RaceAnalysis;
 import sorim.f1.slasher.relentless.model.livetiming.UpcomingRaceAnalysis;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.List;
 
 @Entity
 @Table(name = "RACE_DATA")
-@TypeDef(name = "jsonb", typeClass = JsonBinaryType.class)
+@Convert(attributeName = "entityAttrName", converter = JsonBinaryType.class)
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -43,15 +43,15 @@ public class RaceData {
     private List<Lap> laps;
 
     @JsonProperty("Circuit")
-    @Type(type = "jsonb")
+    @JdbcTypeCode(SqlTypes.JSON)
     @Column(columnDefinition = "jsonb")
     private Circuit circuit;
 
-    @Type(type = "jsonb")
+    @JdbcTypeCode(SqlTypes.JSON)
     @Column(columnDefinition = "jsonb")
     private RaceAnalysis raceAnalysis;
 
-    @Type(type = "jsonb")
+    @JdbcTypeCode(SqlTypes.JSON)
     @Column(columnDefinition = "jsonb")
     private UpcomingRaceAnalysis upcomingRaceAnalysis;
 

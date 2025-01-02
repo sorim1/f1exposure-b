@@ -7,8 +7,8 @@ import org.springframework.context.annotation.Configuration;
 import sorim.f1.slasher.relentless.entities.AppProperty;
 import sorim.f1.slasher.relentless.repository.PropertiesRepository;
 
-import javax.annotation.PostConstruct;
 import java.time.LocalDate;
+import jakarta.annotation.PostConstruct;
 import java.util.Calendar;
 
 @Data

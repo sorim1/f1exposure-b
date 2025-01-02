@@ -21,7 +21,7 @@ import java.util.stream.Collectors;
 
 @Slf4j
 @Service
-@RequiredArgsConstructor(onConstructor = @__(@Autowired))
+@RequiredArgsConstructor
 public class ErgastServiceImpl implements ErgastService {
     private static final String CURRENT_SEASON = "http://ergast.com/api/f1/current.json";
     private static final String GET_SEASON = "https://ergast.com/api/f1/{year}.json";

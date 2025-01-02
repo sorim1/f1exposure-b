@@ -7,7 +7,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.Date;
 
 @Entity
@@ -26,6 +26,8 @@ public class F1Comment {
     private Integer page;
     private String nickname;
     private String comment;
+
+    @Builder.Default
     private Integer status = 1;
     private Date timestamp;
 

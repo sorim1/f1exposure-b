@@ -13,7 +13,7 @@ import java.util.List;
 
 
 @RestController
-@RequiredArgsConstructor(onConstructor = @__(@Autowired))
+@RequiredArgsConstructor
 @Slf4j
 @RequestMapping("art")
 public class ArtController {
