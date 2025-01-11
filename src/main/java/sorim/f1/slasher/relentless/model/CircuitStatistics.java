@@ -13,7 +13,6 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 public class CircuitStatistics {
     private Circuit ergastCircuit;
     private List<StatisticsRace> races = new ArrayList<>();

@@ -26,7 +26,10 @@ public class NewsComment {
     private String contentCode;
     private String textContent;
     private Date timestampCreated;
+
+    @Builder.Default
     private Integer status = 1;
+
     private String username;
 
     @JsonIgnore
