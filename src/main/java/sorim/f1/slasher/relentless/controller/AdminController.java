@@ -83,6 +83,12 @@ public class AdminController {
         return true;
     }
 
+    @GetMapping("/fetchDrivers")
+    List<Driver> fetchDrivers(@RequestHeader String client) throws Exception {
+        securityService.validateAdminHeader(client);
+        return service.fetchDrivers();
+    }
+
     @GetMapping("/initializeStandings")
     Boolean intializeStandings(@RequestHeader String client) throws Exception {
         securityService.validateHeader(client);

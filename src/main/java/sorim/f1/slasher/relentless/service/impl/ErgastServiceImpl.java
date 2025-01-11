@@ -23,9 +23,9 @@ import java.util.stream.Collectors;
 @Service
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class ErgastServiceImpl implements ErgastService {
-    private static final String CURRENT_SEASON = "http://ergast.com/api/f1/current.json";
-    private static final String GET_SEASON = "https://ergast.com/api/f1/{year}.json";
-    private static final String ERGAST_URL = "https://ergast.com/api/f1/";
+    private static final String CURRENT_SEASON = "https://api.jolpi.ca/ergast/f1/current.json";
+    private static final String GET_SEASON = "https://api.jolpi.ca/ergast/f1/{year}.json";
+    private static final String ERGAST_URL = "https://api.jolpi.ca/ergast/f1/";
     private static final String WIKIPEDIA_URL = "https://en.wikipedia.org/api/rest_v1/page/summary/";
     private static final Map<Integer, Integer> roundDriverCount = new HashMap<>();
     private static final String CHAMPIONSHIP_PREFIX = "CHAMPIONSHIP_";
@@ -613,7 +613,7 @@ public class ErgastServiceImpl implements ErgastService {
     }
 
     @Override
-    public void fetchCurrentDrivers() {
+    public List<Driver> fetchCurrentDrivers() {
         ErgastResponse ergastResponse = restTemplate
                 .getForObject(ERGAST_URL + "current/drivers.json", ErgastResponse.class);
         List<Driver> drivers = new ArrayList<>();
@@ -622,6 +622,7 @@ public class ErgastServiceImpl implements ErgastService {
         });
         log.info("fetchCurrentDrivers - save driver list - all");
         driverRepository.saveAll(drivers);
+        return drivers;
     }
 
     @Override

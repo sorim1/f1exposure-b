@@ -55,7 +55,7 @@ public class LiveTimingServiceImpl implements LiveTimingService {
     private String temporaryUrl;
 
     @Override
-    public void getAllRaceDataFromErgastTable(String year, Boolean detailed, Boolean deleteOld) {
+    public void getAllRaceDataFromErgastTable(String year, Boolean detailed, Boolean deleteOld) throws InterruptedException {
         List<RaceData> raceData = ergastService.fetchSeason(year);
         raceData.forEach(race -> {
             race.setCircuitId(race.getCircuit().getCircuitId());
@@ -377,8 +377,9 @@ public class LiveTimingServiceImpl implements LiveTimingService {
     }
 
     @Override
-    public Boolean upcomingRacesAnalysisInitialLoad(String season) {
+    public Boolean upcomingRacesAnalysisInitialLoad(String season) throws InterruptedException {
         Integer howManySeasonsBack = properties.getHowManySeasonsBack();
+        System.out.println("how many seasons back: " + howManySeasonsBack);
         List<RaceData> races = ergastService.findRacesBySeason(season);
         if (!races.isEmpty()) {
             Map<String, UpcomingRaceAnalysis> upcomingRaceAnalysisMapByCircuitId =
@@ -396,7 +397,8 @@ public class LiveTimingServiceImpl implements LiveTimingService {
                 Integer round = 1;
                 do {
                     response = ergastService.getResultsByRound(properties.getCurrentSeasonPast() - i, round);
-
+                    log.info("sleep 5 seconds, current round: {} - {} ", properties.getCurrentSeasonPast() - i, round);
+                    Thread.sleep(5000);
                     if ((!response.getMrData().getRaceTable().getRaces().isEmpty())) {
                         String circuitId = response.getMrData().getRaceTable().getRaces().get(0).getCircuit().getCircuitId();
                         if (upcomingRaceAnalysisMapByCircuitId.containsKey(circuitId)) {

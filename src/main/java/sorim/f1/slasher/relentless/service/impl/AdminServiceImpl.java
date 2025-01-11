@@ -92,6 +92,12 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
+    public List<Driver> fetchDrivers() {
+        return ergastService.fetchCurrentDrivers();
+    }
+
+
+    @Override
     public Boolean deleteCalendar() throws Exception {
         calendarRepository.deleteAll();
         return true;

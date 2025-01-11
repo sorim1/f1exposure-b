@@ -32,7 +32,7 @@ f1:
       sportSurgeStreams: https://api.sportsurge.net/streams/list?event=
       formula1RacingUrl: https://www.formula1.com/en/racing/
       replaysUrl: https://f1hd.net/
-      howManySeasonsBack: 10
+      howManySeasonsBack: 6
       admins:
         - fb26e2db-da1b-462e-aeea-fec3955b3e40
         - sorimsquare33

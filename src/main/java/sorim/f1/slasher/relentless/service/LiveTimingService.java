@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface LiveTimingService {
 
-    void getAllRaceDataFromErgastTable(String year, Boolean detailed, Boolean deleteOld);
+    void getAllRaceDataFromErgastTable(String year, Boolean detailed, Boolean deleteOld) throws InterruptedException;
 
     RaceAnalysis getRaceAnalysis() throws Exception;
 
@@ -27,7 +27,7 @@ public interface LiveTimingService {
 
     RaceData getUpcomingRace();
 
-    Boolean upcomingRacesAnalysisInitialLoad(String season);
+    Boolean upcomingRacesAnalysisInitialLoad(String season) throws InterruptedException;
 
     Integer analyzeUpcomingRace(Boolean redo);
 
