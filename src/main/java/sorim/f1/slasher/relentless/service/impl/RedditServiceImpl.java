@@ -274,7 +274,7 @@ public class RedditServiceImpl implements RedditService {
     }
 
     private boolean isNewsRedditPost(RedditPost post) {
-        if(post.getLinkFlairText()==null){
+        if (post.getLinkFlairText() == null || post.getUrl() == null || post.getUrl().contains("bsky.app")) {
             return false;
         } else {
             return post.getLinkFlairText().contains("news")
