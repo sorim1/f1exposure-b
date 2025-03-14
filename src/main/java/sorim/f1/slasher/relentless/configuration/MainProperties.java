@@ -59,6 +59,7 @@ public class MainProperties {
             saveProperty("CURRENT_SEASON_FUTURE", String.valueOf(currentYear));
             this.currentSeasonFuture = currentYear;
         }
+        System.out.println(this.currentSeasonPast + " : " + this.currentSeasonFuture);
     }
 
     public String updateCurrentSeasonPast(Integer newValue) {

@@ -39,7 +39,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
     private static boolean exposureNow = false;
     private static boolean exposureReady = false;
     private static LocalDateTime exposureTime;
-    private static String title = "Strange";
+    private static String title = "Nameless";
     private static Integer currentExposureRound;
     private static String strawpollId;
     private static Boolean showWinner = false;

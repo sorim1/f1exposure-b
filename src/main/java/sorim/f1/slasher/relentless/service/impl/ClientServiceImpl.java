@@ -299,19 +299,19 @@ public class ClientServiceImpl implements ClientService {
         RaceData raceData = ergastService.getUpcomingRace(properties.getCurrentSeasonFuture());
         if (raceData != null) {
             UpcomingRaceAnalysis upcomingRaceAnalysis = raceData.getUpcomingRaceAnalysis();
-            if (upcomingRaceAnalysis.getQualiRadio() != null) {
+            if (upcomingRaceAnalysis.getQuali() != null) {
                 if (navbarData.getSessionName().equals("Qualifying") && upcomingRaceAnalysis.getSprintQuali() == null) {
                     return true;
                 } else {
                     navbarData.setSessionName("Qualifying");
-                    if (upcomingRaceAnalysis.getFp3Radio() != null) {
+                    if (upcomingRaceAnalysis.getFp3() != null) {
                         navbarData.setTabNumber(6);
                     } else {
                         navbarData.setTabNumber(4);
                     }
                     setNavbarDriver(upcomingRaceAnalysis.getQualiLivetimingUrl(), upcomingRaceAnalysis.getQuali().get(0));
                 }
-            } else if (upcomingRaceAnalysis.getSprintRadio() != null) {
+            } else if (upcomingRaceAnalysis.getSprint() != null) {
                 if (navbarData.getSessionName().equals("Sprint")) {
                     return true;
                 } else {
@@ -319,7 +319,7 @@ public class ClientServiceImpl implements ClientService {
                     navbarData.setTabNumber(5);
                     setNavbarDriver(upcomingRaceAnalysis.getSprintLivetimingUrl(), upcomingRaceAnalysis.getSprint().get(0));
                 }
-            } else if (upcomingRaceAnalysis.getSprintQualiRadio() != null) {
+            } else if (upcomingRaceAnalysis.getSprintQuali() != null) {
                 if (navbarData.getSessionName().equals("Sprint Quali")) {
                     return true;
                 } else {
@@ -327,7 +327,7 @@ public class ClientServiceImpl implements ClientService {
                     navbarData.setTabNumber(4);
                     setNavbarDriver(upcomingRaceAnalysis.getSprintQualiLivetimingUrl(), upcomingRaceAnalysis.getSprintQuali().get(0));
                 }
-            } else if (upcomingRaceAnalysis.getFp3Radio() != null) {
+            } else if (upcomingRaceAnalysis.getFp3() != null) {
                 if (navbarData.getSessionName().equals("Practice3")) {
                     return true;
                 } else {
@@ -335,7 +335,7 @@ public class ClientServiceImpl implements ClientService {
                     navbarData.setTabNumber(5);
                     setNavbarDriver(upcomingRaceAnalysis.getFp3LivetimingUrl(), upcomingRaceAnalysis.getFp3().get(0));
                 }
-            } else if (upcomingRaceAnalysis.getFp2Radio() != null) {
+            } else if (upcomingRaceAnalysis.getFp2() != null) {
                 if (navbarData.getSessionName().equals("Practice2")) {
                     return true;
                 } else {
@@ -343,7 +343,7 @@ public class ClientServiceImpl implements ClientService {
                     navbarData.setTabNumber(4);
                     setNavbarDriver(upcomingRaceAnalysis.getFp2LivetimingUrl(), upcomingRaceAnalysis.getFp2().get(0));
                 }
-            } else if (upcomingRaceAnalysis.getFp1Radio() != null) {
+            } else if (upcomingRaceAnalysis.getFp1() != null) {
                 if (navbarData.getSessionName().equals("Practice1")) {
                     return true;
                 } else {
@@ -381,7 +381,7 @@ public class ClientServiceImpl implements ClientService {
 
     private void setNavbarDriver(String baseUrl, Driver driver) {
         navbarData.setWinner(driver.getLastName());
-        if (driver.getRadioData().isEmpty()) {
+        if (driver.getRadioData() == null || driver.getRadioData().isEmpty()) {
             navbarData.setRadioUrl(null);
         } else {
             RestTemplate restTemplate = new RestTemplate();

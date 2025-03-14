@@ -26,15 +26,6 @@ public class AppConfiguration {
         return taskScheduler;
     }
 
-//    @Bean
-//    public RestTemplate restTemplate() {
-//
-//        var factory = new SimpleClientHttpRequestFactory();
-//        factory.setConnectTimeout(10000);
-//        factory.setReadTimeout(30000);
-//        return new RestTemplate(factory);
-//    }
-
     @Bean
     public RestTemplate restTemplate()
             throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
