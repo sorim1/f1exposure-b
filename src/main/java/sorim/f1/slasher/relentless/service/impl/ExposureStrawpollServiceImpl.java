@@ -141,8 +141,8 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
             log.info("newStrawpoll - isVotable: " + newStrawpoll.getPoll().getIs_votable());
             log.info("isVotable" + isVotable);
             if (isVotable) {
-                new java.util.Timer().schedule(
-                        new java.util.TimerTask() {
+                new Timer().schedule(
+                        new TimerTask() {
                             @SneakyThrows
                             @Override
                             public void run() {
@@ -424,8 +424,8 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
     @Override
     public void raceHasStarted() {
         log.info("raceHasStarted");
-        new java.util.Timer().schedule(
-                new java.util.TimerTask() {
+        new Timer().schedule(
+                new TimerTask() {
                     @SneakyThrows
                     @Override
                     public void run() {
@@ -441,7 +441,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
     }
 
     private void checkRaceStatusUsingOpenF1Service() {
-        List<RaceControlDto> response;
+        List<RaceControlDto> response = new ArrayList<>();
         Integer triggerLap = getLapCount(properties.getCurrentSeasonFuture(), currentExposureRound);
         if(triggerLap!=null){
             triggerLap= triggerLap-7;
@@ -450,14 +450,15 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
         try {
             do {
                 log.info("POZIVAM getTodayRaceControlData: {}", counter++);
+                try {
                 response = openF1Service.getTodayRaceControlData("CHEQUERED", triggerLap);
-                //every 2 minutes for the next 2 hours
-//                if(response.isEmpty()){
-//                    Thread.sleep(100000);
-//                    log.info("POZIVAM getTodayRaceControlData2: {}", counter);
-//                    response = openF1Service.getTodayRaceControlData("CHEQUERED", null);
-//                }
-                Thread.sleep(150000);
+                } catch (Exception ex1) {
+                    if(!ex1.getMessage().contains("Traceback")){
+                        log.warn("'Traceback error': {}", ex1.getMessage());
+                        throw ex1;
+                    }
+                }
+                Thread.sleep(170000);
                 log.info("response.isEmpty(): {}, exposureNow: {}", response.isEmpty(), exposureNow);
             } while (response.isEmpty() && counter < 60 && !exposureNow);
             log.info("CHEQUERED flag ili final 5 laps found found; response size: {}", response.size());
@@ -469,11 +470,11 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
             } else {
                 log.info("SADA BI AUTOMATSKI STARTAO POLL ALI NEĆU JER NESTO NIJE OK, exposureNow=" + exposureNow);
             }
-        } catch (Exception e) {
+        } catch (Exception ex2) {
             if(!exposureNow){
                 exposureReady = true;
             }
-           log.error("error checkRaceStatusUsingOpenF1Service ", e);
+           log.error("error2 checkRaceStatusUsingOpenF1Service ", ex2);
         }
     }
 

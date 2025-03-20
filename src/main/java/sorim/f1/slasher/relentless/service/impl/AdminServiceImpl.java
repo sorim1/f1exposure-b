@@ -224,7 +224,8 @@ public class AdminServiceImpl implements AdminService {
         if (changesDetected) {
             Scheduler.standingsUpdated = true;
         }
-        if (updateStatistics) {
+        //TODO new api throttle problems
+        if (false) {
             ergastService.fetchStatisticsFullFromPartial(false);
         }
         generateChart();
