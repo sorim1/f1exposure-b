@@ -87,39 +87,40 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
             title = f1calendar.getLocation();
             Duration howMuchTimeSincePreviousRace = Duration.between(f1calendar.getRace(), gmtDateTime);
             if (howMuchTimeSincePreviousRace.toDays() < 1) {
-//                if (strawpollId == null) {
-//                    String newId = getExposureStrawpoll();
-//                    if (newId != null) {
-//                        strawpollId = newId;
-//                        startPolling();
-//                        response = true;
-//                    }
-//                }
                 exposureToday = true;
             } else {
-                f1calendar = calendarRepository.findFirstByRaceAfterOrderByRace(gmtDateTime);
-                if (f1calendar != null) {
-                    Duration duration = Duration.between(gmtDateTime, f1calendar.getRace());
-                    if (duration.toDays() > 0) {
-                        updateCurrentExposureRound(0);
-                        exposureToday = false;
-                        Logger.logAdmin("exposureToday: " + exposureToday);
-
-                    } else {
-                        exposureToday = true;
-                        title = f1calendar.getLocation();
-                        updateCurrentExposureRound(1);
-                        resetStrawpoll();
-                        exposureTime = LocalDateTime.now().plus(duration).plusHours(1).plusMinutes(10);
-                        Logger.logAdmin("initializeExposure-exposureToday: " + exposureToday);
-                        Logger.logAdmin("initializeExposure-exposureToday exposureTime: " + exposureTime);
-                        Logger.logAdmin("initializeExposure-exposureToday currentExposureRound: " + currentExposureRound);
-                    }
-                }
+                setupExposureForNextRace();
             }
+        } else {
+            setupExposureForNextRace();
         }
         return response;
     }
+
+    private void setupExposureForNextRace() {
+        ZonedDateTime gmtZoned = ZonedDateTime.now(ZoneId.of("Europe/London"));
+        LocalDateTime gmtDateTime = gmtZoned.toLocalDateTime();
+        F1Calendar f1calendar = calendarRepository.findFirstByRaceAfterOrderByRace(gmtDateTime);
+        if (f1calendar != null) {
+            Duration duration = Duration.between(gmtDateTime, f1calendar.getRace());
+            if (duration.toDays() > 0) {
+                updateCurrentExposureRound(0);
+                exposureToday = false;
+                Logger.logAdmin("exposureToday: " + exposureToday);
+
+            } else {
+                exposureToday = true;
+                title = f1calendar.getLocation();
+                updateCurrentExposureRound(1);
+                resetStrawpoll();
+                exposureTime = LocalDateTime.now().plus(duration).plusHours(1).plusMinutes(10);
+                Logger.logAdmin("initializeExposure-exposureToday: " + exposureToday);
+                Logger.logAdmin("initializeExposure-exposureToday exposureTime: " + exposureTime);
+                Logger.logAdmin("initializeExposure-exposureToday currentExposureRound: " + currentExposureRound);
+            }
+        }
+    }
+
 
     @Override
     public Boolean isExposureNow() {
