@@ -4,6 +4,7 @@ import sorim.f1.slasher.relentless.entities.ergast.RaceData;
 import sorim.f1.slasher.relentless.model.livetiming.RaceAnalysis;
 import sorim.f1.slasher.relentless.model.livetiming.SessionInfo;
 import sorim.f1.slasher.relentless.model.livetiming.UpcomingRaceAnalysis;
+import sorim.f1.slasher.relentless.model.youtube.YouTubeVideo;
 
 import java.util.List;
 
@@ -49,5 +50,7 @@ public interface LiveTimingService {
     boolean checkIfRaceIsGenerating();
 
     SessionInfo getSessionInfo();
+
+    List<YouTubeVideo> getYoutubeVideos();
 
 }

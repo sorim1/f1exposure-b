@@ -81,4 +81,8 @@ public class RaceData {
     private String wikiSummary;
     @Transient
     private String wikiImage;
+
+    public UpcomingRaceAnalysis getUpcomingRaceAnalysis() {
+        return upcomingRaceAnalysis;
+    }
 }

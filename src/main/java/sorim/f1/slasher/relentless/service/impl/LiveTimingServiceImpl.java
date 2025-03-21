@@ -16,14 +16,18 @@ import sorim.f1.slasher.relentless.model.KeyValueInteger;
 import sorim.f1.slasher.relentless.model.enums.RoundEnum;
 import sorim.f1.slasher.relentless.model.ergast.ErgastResponse;
 import sorim.f1.slasher.relentless.model.livetiming.*;
+import sorim.f1.slasher.relentless.model.youtube.YouTubeVideo;
 import sorim.f1.slasher.relentless.scheduled.Scheduler;
 import sorim.f1.slasher.relentless.service.*;
 import sorim.f1.slasher.relentless.util.MainUtility;
 
 import javax.annotation.PostConstruct;
 import java.nio.charset.StandardCharsets;
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.function.BiConsumer;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -50,6 +54,7 @@ public class LiveTimingServiceImpl implements LiveTimingService {
     private final ClientService clientService;
     private final MainProperties properties;
     private final LiveTimingRadioService liveTimingRadioService;
+    private final YoutubeService youtubeService;
     private final ObjectMapper mapper = new ObjectMapper();
     RestTemplate restTemplate = new RestTemplate();
     private String temporaryUrl;
@@ -60,30 +65,6 @@ public class LiveTimingServiceImpl implements LiveTimingService {
         raceData.forEach(race -> {
             race.setCircuitId(race.getCircuit().getCircuitId());
             race.setImageUrl(getWikipediaOriginalImageUrl(race.getCircuit().getUrl(), race.getCircuit().getCircuitName(), false));
-//            String response = getLiveTimingResponseOfErgastRace(race, RoundEnum.RACE, 1);
-//            if (response != null) {
-//                race.setLiveTimingRace(response.substring(response.indexOf("{")));
-//                if (detailed) {
-//                    response = getLiveTimingResponseOfErgastRace(race, RoundEnum.QUALIFYING, 1);
-//                    if (response != null) {
-//                        race.setLiveTimingQuali(response.substring(response.indexOf("{")));
-//                    }
-//                    response = getLiveTimingResponseOfErgastRace(race, RoundEnum.PRACTICE_1, 1);
-//                    if (response != null) {
-//                        race.setLiveTimingFp1(response.substring(response.indexOf("{")));
-//                    }
-//                    response = getLiveTimingResponseOfErgastRace(race, RoundEnum.PRACTICE_2, 1);
-//                    if (response != null) {
-//                        race.setLiveTimingFp2(response.substring(response.indexOf("{")));
-//                    }
-//                    response = getLiveTimingResponseOfErgastRace(race, RoundEnum.PRACTICE_3, 1);
-//                    if (response != null) {
-//                        race.setLiveTimingFp3(response.substring(response.indexOf("{")));
-//                    }
-//
-//                }
-//
-//            }
         });
         if (deleteOld) {
             ergastService.deleteRaces(year);
@@ -377,8 +358,13 @@ public class LiveTimingServiceImpl implements LiveTimingService {
     }
 
     @Override
+    public List<YouTubeVideo> getYoutubeVideos() {
+        return youtubeService.getYoutubeVideos();
+    }
+
+    @Override
     public Boolean upcomingRacesAnalysisInitialLoad(String season) throws InterruptedException {
-        Integer howManySeasonsBack = properties.getHowManySeasonsBack();
+        int howManySeasonsBack = 1;
         System.out.println("how many seasons back: " + howManySeasonsBack);
         List<RaceData> races = ergastService.findRacesBySeason(season);
         if (!races.isEmpty()) {
@@ -571,8 +557,7 @@ public class LiveTimingServiceImpl implements LiveTimingService {
                     }
                 }
 
-
-
+            enrichUpcomingRaceWithYoutube(raceData);
             ergastService.saveRace(raceData);
         } else {
             properties.checkCurrentSeasonFuture();
@@ -581,6 +566,83 @@ public class LiveTimingServiceImpl implements LiveTimingService {
         clientService.setNavbarData();
         return getNextRefreshTime(-6000);
     }
+
+    private void enrichUpcomingRaceWithYoutube(RaceData raceData) {
+        List<YouTubeVideo> videos = youtubeService.getYoutubeVideos();
+        LocalDateTime twoDaysAgo = LocalDateTime.now().minusDays(2);
+
+        List<String> sessionOrder = List.of("FP1", "FP2", "FP3", "Sprint Qualifying", "Qualifying", "Sprint");
+        Map<String, Function<UpcomingRaceAnalysis, List<YouTubeVideo>>> sessionGetters = Map.of(
+                "FP1", UpcomingRaceAnalysis::getFp1Youtube,
+                "FP2", UpcomingRaceAnalysis::getFp2Youtube,
+                "FP3", UpcomingRaceAnalysis::getFp3Youtube,
+                "Sprint Qualifying", UpcomingRaceAnalysis::getSprintQualiYoutube,
+                "Qualifying", UpcomingRaceAnalysis::getQualiYoutube,
+                "Sprint", UpcomingRaceAnalysis::getSprintYoutube
+        );
+
+        Map<String, BiConsumer<UpcomingRaceAnalysis, List<YouTubeVideo>>> sessionSetters = Map.of(
+                "FP1", UpcomingRaceAnalysis::setFp1Youtube,
+                "FP2", UpcomingRaceAnalysis::setFp2Youtube,
+                "FP3", UpcomingRaceAnalysis::setFp3Youtube,
+                "Sprint Qualifying", UpcomingRaceAnalysis::setSprintQualiYoutube,
+                "Qualifying", UpcomingRaceAnalysis::setQualiYoutube,
+                "Sprint", UpcomingRaceAnalysis::setSprintYoutube
+        );
+
+        videos.forEach(video -> {
+            for (String session : sessionOrder) {
+                if (video.getTitle().contains(session) && video.getPublishedAt().isAfter(twoDaysAgo)) {
+                    UpcomingRaceAnalysis analysis = raceData.getUpcomingRaceAnalysis();
+                    List<YouTubeVideo> sessionVideos = sessionGetters.get(session).apply(analysis);
+
+                    if (sessionVideos == null) {
+                        sessionVideos = new ArrayList<>();
+                        sessionSetters.get(session).accept(analysis, sessionVideos);
+                    }
+
+                    if (sessionVideos.stream().noneMatch(v -> v.getUrl().equals(video.getUrl()))) {
+                        sessionVideos.add(video);
+                    }
+                    break;
+                }
+            }
+        });
+    }
+
+    private void enrichLatestRaceWithYoutube(RaceData raceData) {
+        log.info("enrichLatestRaceWithYoutube");
+        List<YouTubeVideo> videos = youtubeService.getYoutubeVideos();
+        LocalDateTime twoDaysAgo = LocalDateTime.now().minusDays(2);
+
+        List<String> ignoreTitles = List.of("FP1", "FP2", "FP3", "Sprint Qualifying", "Qualifying", "Sprint");
+
+        videos.forEach(video -> {
+            String lowerCaseTitle = video.getTitle().toLowerCase(); // Convert title to lowercase for case-insensitive checks
+
+            // Check if title contains "race" or "grand prix" (case insensitive)
+            boolean containsRaceOrGrandPrix = lowerCaseTitle.contains("race") || lowerCaseTitle.contains("grand prix");
+
+            // Ensure title does NOT contain any ignored words
+            boolean doesNotContainIgnoredWords = ignoreTitles.stream()
+                    .noneMatch(ignore -> lowerCaseTitle.contains(ignore.toLowerCase()));
+
+            if (containsRaceOrGrandPrix && doesNotContainIgnoredWords && video.getPublishedAt().isAfter(twoDaysAgo)) {
+
+                RaceAnalysis analysis = raceData.getRaceAnalysis();
+                if (analysis.getRaceYoutube() == null) {
+                    analysis.setRaceYoutube(new ArrayList<>());
+                }
+
+                if (analysis.getRaceYoutube().stream().noneMatch(v -> v.getUrl().equals(video.getUrl()))) {
+                    analysis.getRaceYoutube().add(video);
+                }
+            }
+        });
+    }
+
+
+
 
     private List<LapTimeData> createLapTimeDataList(String timingAppData, Map<String, String> driverMap, String sessionName) {
         TypeReference<HashMap<String, Object>> typeRef = new TypeReference<>() {
@@ -723,10 +785,10 @@ public class LiveTimingServiceImpl implements LiveTimingService {
                     .title(title).build();
             race.setRaceAnalysis(analysis);
             if (!ergastDataAvailable) {
-             //   race.setLiveTimingRace(null);
                 analysis.setStatus(2);
             }
             race.setRaceAnalysis(analysis);
+            enrichLatestRaceWithYoutube(race);
             ergastService.saveRace(race);
             log.info("raceAnalysis done");
             return analysis;
