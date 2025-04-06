@@ -104,6 +104,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
         if (f1calendar != null) {
             Duration duration = Duration.between(gmtDateTime, f1calendar.getRace());
             if (duration.toDays() > 0) {
+                log.info("setupExposureForNextRace->updateCurrentExposureRound A");
                 updateCurrentExposureRound(0);
                 exposureToday = false;
                 Logger.logAdmin("exposureToday: " + exposureToday);
@@ -111,6 +112,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
             } else {
                 exposureToday = true;
                 title = f1calendar.getLocation();
+                log.info("setupExposureForNextRace->updateCurrentExposureRound B");
                 updateCurrentExposureRound(1);
                 resetStrawpoll();
                 exposureTime = LocalDateTime.now().plus(duration).plusHours(1).plusMinutes(10);
@@ -168,6 +170,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
 
     private void updateCurrentExposureRound(Integer increment) {
         Integer round;
+        log.info("updateCurrentExposureRound2: " + currentExposureRound);
         try {
             round = ergastService.getCurrentDriverStandings().getMrData().getStandingsTable().getStandingsLists().get(0).getRound();
             if (currentExposureRound == null || currentExposureRound <= round) {
@@ -229,6 +232,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
     public String setStrawpoll(String id) {
         reloadDelay = 20000;
         strawpollId = id;
+        showWinner = false;
         if (strawpollId != null) {
             startPolling();
         }
@@ -718,6 +722,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
 
     @Override
     public List<Integer> incrementExposureRound() {
+        //TODO delete me
         List<Integer> response = new ArrayList<>();
         response.add(currentExposureRound);
         currentExposureRound++;

@@ -67848,6 +67848,11 @@
           value: function setDriversHeatMapChart() {
             var _this76 = this;
 
+            if (this.driversHeatMapStandingsSeries.length > 0 && this.driversHeatMapStandingsSeries[0] == null) {
+              // dont know why this happens
+              this.driversHeatMapStandingsSeries.shift();
+            }
+
             this.driversHeatMapChartOptions = {
               colors: ['#0000ff'],
               series: this.driversHeatMapStandingsSeries,
@@ -74050,14 +74055,14 @@
         }
       }
 
-      function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_div_1_Template(rf, ctx) {
+      function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_div_2_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 66);
+          .TgZ(0, "div", 45);
           core
           /* ɵɵelementStart */
-          .TgZ(1, "div", 67);
+          .TgZ(1, "div", 46);
           core
           /* ɵɵelementStart */
           .TgZ(2, "a", 14);
@@ -74068,7 +74073,7 @@
 
           core
           /* ɵɵelementStart */
-          .TgZ(4, "p", 68);
+          .TgZ(4, "p", 48);
 
           core
           /* ɵɵtext */
@@ -74119,7 +74124,7 @@
         }
       }
 
-      function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_24_div_8_div_1_Template(rf, ctx) {
+      function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_25_div_8_div_1_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵelementStart */
@@ -74166,7 +74171,7 @@
         }
       }
 
-      function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_24_div_8_div_2_Template(rf, ctx) {
+      function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_25_div_8_div_2_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵelementStart */
@@ -74188,17 +74193,17 @@
         }
       }
 
-      function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_24_div_8_Template(rf, ctx) {
+      function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_25_div_8_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵelementStart */
           .TgZ(0, "div");
           core
           /* ɵɵtemplate */
-          .YNc(1, UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_24_div_8_div_1_Template, 4, 2, "div", 0);
+          .YNc(1, UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_25_div_8_div_1_Template, 4, 2, "div", 0);
           core
           /* ɵɵtemplate */
-          .YNc(2, UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_24_div_8_div_2_Template, 3, 0, "div", 0);
+          .YNc(2, UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_25_div_8_div_2_Template, 3, 0, "div", 0);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -74221,7 +74226,7 @@
         }
       }
 
-      function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_24_div_11_div_1_Template(rf, ctx) {
+      function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_25_div_11_div_1_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵelementStart */
@@ -74255,7 +74260,7 @@
         }
       }
 
-      function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_24_div_11_div_2_Template(rf, ctx) {
+      function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_25_div_11_div_2_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵelementStart */
@@ -74277,17 +74282,17 @@
         }
       }
 
-      function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_24_div_11_Template(rf, ctx) {
+      function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_25_div_11_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵelementStart */
           .TgZ(0, "div");
           core
           /* ɵɵtemplate */
-          .YNc(1, UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_24_div_11_div_1_Template, 3, 1, "div", 0);
+          .YNc(1, UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_25_div_11_div_1_Template, 3, 1, "div", 0);
           core
           /* ɵɵtemplate */
-          .YNc(2, UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_24_div_11_div_2_Template, 3, 0, "div", 0);
+          .YNc(2, UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_25_div_11_div_2_Template, 3, 0, "div", 0);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -74310,7 +74315,7 @@
         }
       }
 
-      function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_24_div_14_div_1_Template(rf, ctx) {
+      function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_25_div_14_div_1_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵelementStart */
@@ -74344,7 +74349,7 @@
         }
       }
 
-      function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_24_div_14_div_2_Template(rf, ctx) {
+      function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_25_div_14_div_2_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵelementStart */
@@ -74366,17 +74371,17 @@
         }
       }
 
-      function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_24_div_14_Template(rf, ctx) {
+      function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_25_div_14_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵelementStart */
           .TgZ(0, "div");
           core
           /* ɵɵtemplate */
-          .YNc(1, UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_24_div_14_div_1_Template, 3, 1, "div", 0);
+          .YNc(1, UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_25_div_14_div_1_Template, 3, 1, "div", 0);
           core
           /* ɵɵtemplate */
-          .YNc(2, UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_24_div_14_div_2_Template, 3, 0, "div", 0);
+          .YNc(2, UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_25_div_14_div_2_Template, 3, 0, "div", 0);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -74399,7 +74404,7 @@
         }
       }
 
-      function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_24_button_18_Template(rf, ctx) {
+      function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_25_button_18_Template(rf, ctx) {
         if (rf & 1) {
           var _r170 = core
           /* ɵɵgetCurrentView */
@@ -74410,7 +74415,7 @@
           .TgZ(0, "button", 51);
           core
           /* ɵɵlistener */
-          .NdJ("click", function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_24_button_18_Template_button_click_0_listener() {
+          .NdJ("click", function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_25_button_18_Template_button_click_0_listener() {
             core
             /* ɵɵrestoreView */
             .CHM(_r170);
@@ -74439,7 +74444,7 @@
         }
       }
 
-      function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_24_Template(rf, ctx) {
+      function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_25_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵelementStart */
@@ -74482,7 +74487,7 @@
           .TgZ(7, "td");
           core
           /* ɵɵtemplate */
-          .YNc(8, UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_24_div_8_Template, 3, 2, "div", 26);
+          .YNc(8, UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_25_div_8_Template, 3, 2, "div", 26);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -74496,7 +74501,7 @@
 
           core
           /* ɵɵtemplate */
-          .YNc(11, UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_24_div_11_Template, 3, 2, "div", 26);
+          .YNc(11, UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_25_div_11_Template, 3, 2, "div", 26);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -74510,7 +74515,7 @@
 
           core
           /* ɵɵtemplate */
-          .YNc(14, UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_24_div_14_Template, 3, 2, "div", 26);
+          .YNc(14, UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_25_div_14_Template, 3, 2, "div", 26);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -74530,7 +74535,7 @@
           .TgZ(17, "td", 49);
           core
           /* ɵɵtemplate */
-          .YNc(18, UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_24_button_18_Template, 3, 0, "button", 50);
+          .YNc(18, UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_25_button_18_Template, 3, 0, "button", 50);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -74610,24 +74615,30 @@
           /* ɵɵelementStart */
           .TgZ(0, "div");
           core
+          /* ɵɵelementStart */
+          .TgZ(1, "div", 40);
+          core
           /* ɵɵtemplate */
-          .YNc(1, UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_div_1_Template, 6, 4, "div", 65);
+          .YNc(2, UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_div_2_Template, 6, 4, "div", 41);
+          core
+          /* ɵɵelementEnd */
+          .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(2, "table", 33);
+          .TgZ(3, "table", 33);
           core
           /* ɵɵelementStart */
-          .TgZ(3, "thead");
+          .TgZ(4, "thead");
           core
           /* ɵɵelementStart */
-          .TgZ(4, "tr");
+          .TgZ(5, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(5, "th", 42);
+          .TgZ(6, "th", 42);
 
           core
           /* ɵɵtext */
-          ._uU(6, "Result");
+          ._uU(7, "Result");
 
           core
           /* ɵɵelementEnd */
@@ -74637,80 +74648,80 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(7, "tr");
+          .TgZ(8, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(8, "th", 37);
+          .TgZ(9, "th", 37);
 
           core
           /* ɵɵtext */
-          ._uU(9, "#");
+          ._uU(10, "#");
 
           core
           /* ɵɵelementEnd */
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(10, "th", 43);
+          .TgZ(11, "th", 43);
 
           core
           /* ɵɵtext */
-          ._uU(11, "Driver");
+          ._uU(12, "Driver");
 
           core
           /* ɵɵelementEnd */
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(12, "th", 43);
+          .TgZ(13, "th", 43);
 
           core
           /* ɵɵtext */
-          ._uU(13, "Team");
+          ._uU(14, "Team");
 
           core
           /* ɵɵelementEnd */
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(14, "th", 37);
+          .TgZ(15, "th", 37);
 
           core
           /* ɵɵtext */
-          ._uU(15, "Lap time");
+          ._uU(16, "Lap time");
 
           core
           /* ɵɵelementEnd */
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(16, "th", 43);
+          .TgZ(17, "th", 43);
 
           core
           /* ɵɵtext */
-          ._uU(17, "Gap to leader");
+          ._uU(18, "Gap to leader");
 
           core
           /* ɵɵelementEnd */
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(18, "th", 43);
+          .TgZ(19, "th", 43);
 
           core
           /* ɵɵtext */
-          ._uU(19, "Gap to previous");
+          ._uU(20, "Gap to previous");
 
           core
           /* ɵɵelementEnd */
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(20, "th", 43);
+          .TgZ(21, "th", 43);
 
           core
           /* ɵɵtext */
-          ._uU(21, "Lap count");
+          ._uU(22, "Lap count");
 
           core
           /* ɵɵelementEnd */
@@ -74718,7 +74729,7 @@
 
           core
           /* ɵɵelement */
-          ._UZ(22, "th", 44);
+          ._UZ(23, "th", 44);
 
           core
           /* ɵɵelementEnd */
@@ -74728,10 +74739,10 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(23, "tbody");
+          .TgZ(24, "tbody");
           core
           /* ɵɵtemplate */
-          .YNc(24, UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_24_Template, 19, 10, "tr", 26);
+          .YNc(25, UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_25_Template, 19, 10, "tr", 26);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -74749,7 +74760,7 @@
           .oxw(4);
           core
           /* ɵɵadvance */
-          .xp6(1);
+          .xp6(2);
           core
           /* ɵɵproperty */
           .Q6J("ngForOf", ctx_r141.upcomingRaceAnalysis.qualiYoutube);
@@ -74920,7 +74931,7 @@
 
           core
           /* ɵɵtemplate */
-          .YNc(0, UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_Template, 25, 2, "div", 0);
+          .YNc(0, UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_Template, 26, 2, "div", 0);
           core
           /* ɵɵelementStart */
           .TgZ(1, "div", 31);
@@ -75262,7 +75273,7 @@
           .TgZ(0, "div", 31);
           core
           /* ɵɵelementStart */
-          .TgZ(1, "div", 69);
+          .TgZ(1, "div", 65);
           core
           /* ɵɵelementStart */
           .TgZ(2, "div", 22);
@@ -75564,11 +75575,11 @@
           .TgZ(0, "div");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "div", 70);
+          .TgZ(1, "div", 66);
 
           core
           /* ɵɵelement */
-          ._UZ(2, "img", 71);
+          ._UZ(2, "img", 67);
 
           core
           /* ɵɵelementEnd */
@@ -76193,7 +76204,7 @@
         },
         decls: 1,
         vars: 1,
-        consts: [[4, "ngIf"], [3, "selectedIndex", "selectedTabChange", "selectedIndexChange"], ["label", "Circuit"], ["matTabContent", ""], ["label", "Circuit winners", 3, "disabled"], ["label", "Practice 1", 3, "disabled"], ["label", "Practice 2", 3, "disabled", 4, "ngIf"], ["label", "Practice 3", 3, "disabled", 4, "ngIf"], ["label", "Sprint quali", 3, "disabled", 4, "ngIf"], ["label", "Sprint", 3, "disabled", 4, "ngIf"], ["label", "Qualifying", 3, "disabled"], ["label", "All laps", 3, "disabled"], [1, "black-footer", "text-center"], [1, "image"], ["target", "_blank", 3, "href"], [3, "src"], ["class", "div-padded-1rem row", 4, "ngIf"], ["class", "div-padded-1rem div-padded-left-2 row", 4, "ngIf"], [1, "div-padded-1rem", "row"], ["class", "col-lg-6 col-12", 4, "ngFor", "ngForOf"], [1, "col-lg-6", "col-12"], [1, "card", "hover-effects-row", 3, "click"], [1, "card-body-padded"], [1, "table", "table-striped"], ["colspan", "2", "scope", "col"], [2, "width", "35px"], [4, "ngFor", "ngForOf"], ["scope", "row"], [1, "div-padded-1rem", "div-padded-left-2", "row"], [1, "card"], [3, "href"], [1, "div-padded-1rem", "div-padded-left-2", "div-padded-right-2", "row"], [1, "card", "col-lg-6", "col-12"], ["matSort", "", 1, "table", "table-striped"], ["colspan", "4", 1, "text-center"], [2, "width", "100px"], ["matSort", "", 1, "table", "table-striped", 3, "matSortChange"], ["mat-sort-header", "position", "scope", "col"], ["mat-sort-header", "name", "scope", "col"], ["mat-sort-header", "lapNumber", "scope", "col"], [1, "row"], ["class", "col-12", 3, "ngClass", 4, "ngFor", "ngForOf"], ["colspan", "8", 1, "text-center"], ["scope", "col"], ["scope", "col", 1, "w-20px"], [1, "col-12", 3, "ngClass"], [1, "card", "card-body-padded", "text-center", "bg-black", "m-1"], ["alt", "NO IMAGE", 1, "video-thumbnail", 3, "src"], [1, "text-white"], [1, "no-padding-td"], ["color", "primary", "mat-mini-fab", "", 3, "click", 4, "ngIf"], ["color", "primary", "mat-mini-fab", "", 3, "click"], ["label", "Practice 2", 3, "disabled"], ["label", "Practice 3", 3, "disabled"], ["label", "Sprint quali", 3, "disabled"], ["scope", "col", 1, "text-center"], [1, "font-weight-bold"], ["label", "Sprint", 3, "disabled"], [1, "col-12"], [3, "chart", "dataLabels", "grid", "series", "stroke", "title", "xaxis", "yaxis"], [1, "card", "col-12"], [2, "width", "150px"], ["scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], [1, "d-sm-none", "d-none", "d-lg-table-cell"], [1, "text-center"], ["class", "card col-12", 3, "ngClass", 4, "ngFor", "ngForOf"], [1, "card", "col-12", 3, "ngClass"], [1, "card-body-padded", "text-center"], [1, "text-black-50"], [1, "card", "col-lg-12", "col-12"], [1, "icon-big", "text-center", "icon-warning"], ["src", "assets/img/tifosi/kimi-raikkonen-smile.gif", 1, "div-height-70vh"]],
+        consts: [[4, "ngIf"], [3, "selectedIndex", "selectedTabChange", "selectedIndexChange"], ["label", "Circuit"], ["matTabContent", ""], ["label", "Circuit winners", 3, "disabled"], ["label", "Practice 1", 3, "disabled"], ["label", "Practice 2", 3, "disabled", 4, "ngIf"], ["label", "Practice 3", 3, "disabled", 4, "ngIf"], ["label", "Sprint quali", 3, "disabled", 4, "ngIf"], ["label", "Sprint", 3, "disabled", 4, "ngIf"], ["label", "Qualifying", 3, "disabled"], ["label", "All laps", 3, "disabled"], [1, "black-footer", "text-center"], [1, "image"], ["target", "_blank", 3, "href"], [3, "src"], ["class", "div-padded-1rem row", 4, "ngIf"], ["class", "div-padded-1rem div-padded-left-2 row", 4, "ngIf"], [1, "div-padded-1rem", "row"], ["class", "col-lg-6 col-12", 4, "ngFor", "ngForOf"], [1, "col-lg-6", "col-12"], [1, "card", "hover-effects-row", 3, "click"], [1, "card-body-padded"], [1, "table", "table-striped"], ["colspan", "2", "scope", "col"], [2, "width", "35px"], [4, "ngFor", "ngForOf"], ["scope", "row"], [1, "div-padded-1rem", "div-padded-left-2", "row"], [1, "card"], [3, "href"], [1, "div-padded-1rem", "div-padded-left-2", "div-padded-right-2", "row"], [1, "card", "col-lg-6", "col-12"], ["matSort", "", 1, "table", "table-striped"], ["colspan", "4", 1, "text-center"], [2, "width", "100px"], ["matSort", "", 1, "table", "table-striped", 3, "matSortChange"], ["mat-sort-header", "position", "scope", "col"], ["mat-sort-header", "name", "scope", "col"], ["mat-sort-header", "lapNumber", "scope", "col"], [1, "row"], ["class", "col-12", 3, "ngClass", 4, "ngFor", "ngForOf"], ["colspan", "8", 1, "text-center"], ["scope", "col"], ["scope", "col", 1, "w-20px"], [1, "col-12", 3, "ngClass"], [1, "card", "card-body-padded", "text-center", "bg-black", "m-1"], ["alt", "NO IMAGE", 1, "video-thumbnail", 3, "src"], [1, "text-white"], [1, "no-padding-td"], ["color", "primary", "mat-mini-fab", "", 3, "click", 4, "ngIf"], ["color", "primary", "mat-mini-fab", "", 3, "click"], ["label", "Practice 2", 3, "disabled"], ["label", "Practice 3", 3, "disabled"], ["label", "Sprint quali", 3, "disabled"], ["scope", "col", 1, "text-center"], [1, "font-weight-bold"], ["label", "Sprint", 3, "disabled"], [1, "col-12"], [3, "chart", "dataLabels", "grid", "series", "stroke", "title", "xaxis", "yaxis"], [1, "card", "col-12"], [2, "width", "150px"], ["scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], [1, "d-sm-none", "d-none", "d-lg-table-cell"], [1, "text-center"], [1, "card", "col-lg-12", "col-12"], [1, "icon-big", "text-center", "icon-warning"], ["src", "assets/img/tifosi/kimi-raikkonen-smile.gif", 1, "div-height-70vh"]],
         template: function UpcomingRaceAnalysisComponent_Template(rf, ctx) {
           if (rf & 1) {
             core
@@ -76358,28 +76369,97 @@
 
       var race_analysis_component_c0 = ["chart"];
 
-      function RaceAnalysisComponent_div_1_ng_template_3_tr_16_button_12_Template(rf, ctx) {
+      function RaceAnalysisComponent_div_1_ng_template_3_div_1_Template(rf, ctx) {
         if (rf & 1) {
-          var _r16 = core
+          core
+          /* ɵɵelementStart */
+          .TgZ(0, "div", 21);
+          core
+          /* ɵɵelementStart */
+          .TgZ(1, "div", 22);
+          core
+          /* ɵɵelementStart */
+          .TgZ(2, "a", 23);
+
+          core
+          /* ɵɵelement */
+          ._UZ(3, "img", 24);
+
+          core
+          /* ɵɵelementStart */
+          .TgZ(4, "p", 25);
+
+          core
+          /* ɵɵtext */
+          ._uU(5);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+        }
+
+        if (rf & 2) {
+          var video_r12 = ctx.$implicit;
+          var count_r14 = ctx.count;
+          core
+          /* ɵɵproperty */
+          .Q6J("ngClass", "col-lg-" + 12 / count_r14);
+          core
+          /* ɵɵadvance */
+          .xp6(2);
+          core
+          /* ɵɵproperty */
+          .Q6J("href", video_r12.url, core
+          /* ɵɵsanitizeUrl */
+          .LSH);
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵproperty */
+          .Q6J("src", video_r12.thumbnailUrl, core
+          /* ɵɵsanitizeUrl */
+          .LSH);
+          core
+          /* ɵɵadvance */
+          .xp6(2);
+          core
+          /* ɵɵtextInterpolate */
+          .Oqu(video_r12.title);
+        }
+      }
+
+      function RaceAnalysisComponent_div_1_ng_template_3_tr_18_button_12_Template(rf, ctx) {
+        if (rf & 1) {
+          var _r20 = core
           /* ɵɵgetCurrentView */
           .EpF();
 
           core
           /* ɵɵelementStart */
-          .TgZ(0, "button", 23);
+          .TgZ(0, "button", 30);
           core
           /* ɵɵlistener */
-          .NdJ("click", function RaceAnalysisComponent_div_1_ng_template_3_tr_16_button_12_Template_button_click_0_listener() {
+          .NdJ("click", function RaceAnalysisComponent_div_1_ng_template_3_tr_18_button_12_Template_button_click_0_listener() {
             core
             /* ɵɵrestoreView */
-            .CHM(_r16);
-            var standing_r11 = core
+            .CHM(_r20);
+            var standing_r15 = core
             /* ɵɵnextContext */
             .oxw().$implicit;
-            var ctx_r14 = core
+            var ctx_r18 = core
             /* ɵɵnextContext */
             .oxw(3);
-            return ctx_r14.openRadioDialog(standing_r11.radioData);
+            return ctx_r18.openRadioDialog(standing_r15.radioData);
           });
           core
           /* ɵɵelementStart */
@@ -76398,14 +76478,14 @@
         }
       }
 
-      function RaceAnalysisComponent_div_1_ng_template_3_tr_16_Template(rf, ctx) {
+      function RaceAnalysisComponent_div_1_ng_template_3_tr_18_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵelementStart */
           .TgZ(0, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "th", 19);
+          .TgZ(1, "th", 26);
 
           core
           /* ɵɵtext */
@@ -76427,7 +76507,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(5, "td", 20);
+          .TgZ(5, "td", 27);
 
           core
           /* ɵɵtext */
@@ -76460,10 +76540,10 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(11, "td", 21);
+          .TgZ(11, "td", 28);
           core
           /* ɵɵtemplate */
-          .YNc(12, RaceAnalysisComponent_div_1_ng_template_3_tr_16_button_12_Template, 3, 0, "button", 22);
+          .YNc(12, RaceAnalysisComponent_div_1_ng_template_3_tr_18_button_12_Template, 3, 0, "button", 29);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -76473,43 +76553,43 @@
         }
 
         if (rf & 2) {
-          var standing_r11 = ctx.$implicit;
+          var standing_r15 = ctx.$implicit;
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r11.position);
+          .Oqu(standing_r15.position);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r11.FullName);
+          .Oqu(standing_r15.FullName);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r11.TeamName);
+          .Oqu(standing_r15.TeamName);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r11.timingDataF1.GapToLeader);
+          .Oqu(standing_r15.timingDataF1.GapToLeader);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r11.timingDataF1.IntervalToPositionAhead.Value);
+          .Oqu(standing_r15.timingDataF1.IntervalToPositionAhead.Value);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵproperty */
-          .Q6J("ngIf", standing_r11.radioData.length > 0);
+          .Q6J("ngIf", standing_r15.radioData.length > 0);
         }
       }
 
@@ -76519,65 +76599,74 @@
           /* ɵɵelementStart */
           .TgZ(0, "div", 13);
           core
-          /* ɵɵelementStart */
-          .TgZ(1, "table", 14);
+          /* ɵɵtemplate */
+          .YNc(1, RaceAnalysisComponent_div_1_ng_template_3_div_1_Template, 6, 4, "div", 14);
+          core
+          /* ɵɵelementEnd */
+          .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(2, "thead");
+          .TgZ(2, "div", 15);
           core
           /* ɵɵelementStart */
-          .TgZ(3, "tr");
+          .TgZ(3, "table", 16);
           core
           /* ɵɵelementStart */
-          .TgZ(4, "th", 15);
+          .TgZ(4, "thead");
+          core
+          /* ɵɵelementStart */
+          .TgZ(5, "tr");
+          core
+          /* ɵɵelementStart */
+          .TgZ(6, "th", 17);
 
           core
           /* ɵɵtext */
-          ._uU(5, "#");
+          ._uU(7, "#");
 
           core
           /* ɵɵelementEnd */
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(6, "th", 15);
+          .TgZ(8, "th", 17);
 
           core
           /* ɵɵtext */
-          ._uU(7, "Name");
+          ._uU(9, "Name");
 
           core
           /* ɵɵelementEnd */
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(8, "th", 16);
+          .TgZ(10, "th", 18);
 
           core
           /* ɵɵtext */
-          ._uU(9, "Team");
+          ._uU(11, "Team");
 
           core
           /* ɵɵelementEnd */
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(10, "th", 15);
+          .TgZ(12, "th", 17);
 
           core
           /* ɵɵtext */
-          ._uU(11, "Gap to leader");
+          ._uU(13, "Gap to leader");
 
           core
           /* ɵɵelementEnd */
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(12, "th", 15);
+          .TgZ(14, "th", 17);
 
           core
           /* ɵɵtext */
-          ._uU(13, "Gap to previous");
+          ._uU(15, "Gap to previous");
 
           core
           /* ɵɵelementEnd */
@@ -76585,7 +76674,7 @@
 
           core
           /* ɵɵelement */
-          ._UZ(14, "th", 17);
+          ._UZ(16, "th", 19);
 
           core
           /* ɵɵelementEnd */
@@ -76595,10 +76684,10 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(15, "tbody");
+          .TgZ(17, "tbody");
           core
           /* ɵɵtemplate */
-          .YNc(16, RaceAnalysisComponent_div_1_ng_template_3_tr_16_Template, 13, 6, "tr", 18);
+          .YNc(18, RaceAnalysisComponent_div_1_ng_template_3_tr_18_Template, 13, 6, "tr", 20);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -76616,7 +76705,13 @@
           .oxw(2);
           core
           /* ɵɵadvance */
-          .xp6(16);
+          .xp6(1);
+          core
+          /* ɵɵproperty */
+          .Q6J("ngForOf", ctx_r1.raceYoutube);
+          core
+          /* ɵɵadvance */
+          .xp6(17);
           core
           /* ɵɵproperty */
           .Q6J("ngForOf", ctx_r1.drivers);
@@ -76627,20 +76722,20 @@
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 24);
+          .TgZ(0, "div", 13);
           core
           /* ɵɵelementStart */
-          .TgZ(1, "div", 25);
+          .TgZ(1, "div", 31);
           core
           /* ɵɵelementStart */
-          .TgZ(2, "div", 26);
+          .TgZ(2, "div", 32);
           core
           /* ɵɵelementStart */
-          .TgZ(3, "div", 27);
+          .TgZ(3, "div", 33);
 
           core
           /* ɵɵelement */
-          ._UZ(4, "apx-chart", 28);
+          ._UZ(4, "apx-chart", 34);
 
           core
           /* ɵɵelement */
@@ -76668,20 +76763,20 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(8, "div", 24);
+          .TgZ(8, "div", 13);
           core
           /* ɵɵelementStart */
-          .TgZ(9, "div", 25);
+          .TgZ(9, "div", 31);
           core
           /* ɵɵelementStart */
-          .TgZ(10, "div", 26);
+          .TgZ(10, "div", 32);
           core
           /* ɵɵelementStart */
-          .TgZ(11, "div", 29);
+          .TgZ(11, "div", 35);
 
           core
           /* ɵɵelement */
-          ._UZ(12, "apx-chart", 30);
+          ._UZ(12, "apx-chart", 36);
 
           core
           /* ɵɵelementEnd */
@@ -76732,10 +76827,10 @@
         }
 
         if (rf & 2) {
-          var standing_r19 = core
+          var standing_r23 = core
           /* ɵɵnextContext */
           .oxw().$implicit;
-          var ctx_r21 = core
+          var ctx_r25 = core
           /* ɵɵnextContext */
           .oxw(3);
           core
@@ -76743,7 +76838,7 @@
           .xp6(1);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(ctx_r21.positionChange(standing_r19));
+          .Oqu(ctx_r25.positionChange(standing_r23));
         }
       }
 
@@ -76768,128 +76863,7 @@
           .qZA();
           core
           /* ɵɵtemplate */
-          .YNc(4, RaceAnalysisComponent_div_1_ng_template_7_tr_14_span_4_Template, 2, 1, "span", 38);
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(5, "td");
-
-          core
-          /* ɵɵtext */
-          ._uU(6);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(7, "td");
-
-          core
-          /* ɵɵtext */
-          ._uU(8);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-        }
-
-        if (rf & 2) {
-          var standing_r19 = ctx.$implicit;
-          var ctx_r17 = core
-          /* ɵɵnextContext */
-          .oxw(3);
-          core
-          /* ɵɵadvance */
-          .xp6(1);
-          core
-          /* ɵɵclassMap */
-          .Tol("text-left " + ctx_r17.standingsChangeClass(standing_r19));
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵtextInterpolate */
-          .Oqu(standing_r19.PredictedPosition);
-          core
-          /* ɵɵadvance */
-          .xp6(1);
-          core
-          /* ɵɵproperty */
-          .Q6J("ngIf", standing_r19.PredictedPosition != standing_r19.CurrentPosition);
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵtextInterpolate */
-          .Oqu(standing_r19.name);
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵtextInterpolate */
-          .Oqu(ctx_r17.pointsChange(standing_r19));
-        }
-      }
-
-      function RaceAnalysisComponent_div_1_ng_template_7_tr_28_span_4_Template(rf, ctx) {
-        if (rf & 1) {
-          core
-          /* ɵɵelementStart */
-          .TgZ(0, "span");
-
-          core
-          /* ɵɵtext */
-          ._uU(1);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-        }
-
-        if (rf & 2) {
-          var standing_r23 = core
-          /* ɵɵnextContext */
-          .oxw().$implicit;
-          var ctx_r25 = core
-          /* ɵɵnextContext */
-          .oxw(3);
-          core
-          /* ɵɵadvance */
-          .xp6(1);
-          core
-          /* ɵɵtextInterpolate */
-          .Oqu(ctx_r25.positionChange(standing_r23));
-        }
-      }
-
-      function RaceAnalysisComponent_div_1_ng_template_7_tr_28_Template(rf, ctx) {
-        if (rf & 1) {
-          core
-          /* ɵɵelementStart */
-          .TgZ(0, "tr");
-          core
-          /* ɵɵelementStart */
-          .TgZ(1, "td", 39);
-          core
-          /* ɵɵelementStart */
-          .TgZ(2, "span");
-
-          core
-          /* ɵɵtext */
-          ._uU(3);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵtemplate */
-          .YNc(4, RaceAnalysisComponent_div_1_ng_template_7_tr_28_span_4_Template, 2, 1, "span", 38);
+          .YNc(4, RaceAnalysisComponent_div_1_ng_template_7_tr_14_span_4_Template, 2, 1, "span", 44);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -76922,15 +76896,18 @@
 
         if (rf & 2) {
           var standing_r23 = ctx.$implicit;
-          var ctx_r18 = core
+          var ctx_r21 = core
           /* ɵɵnextContext */
           .oxw(3);
           core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
           /* ɵɵclassMap */
-          .Tol(ctx_r18.standingsChangeClass(standing_r23));
+          .Tol("text-left " + ctx_r21.standingsChangeClass(standing_r23));
           core
           /* ɵɵadvance */
-          .xp6(3);
+          .xp6(2);
           core
           /* ɵɵtextInterpolate */
           .Oqu(standing_r23.PredictedPosition);
@@ -76945,13 +76922,131 @@
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(standing_r23.TeamName);
+          .Oqu(standing_r23.name);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(ctx_r18.pointsChange(standing_r23));
+          .Oqu(ctx_r21.pointsChange(standing_r23));
+        }
+      }
+
+      function RaceAnalysisComponent_div_1_ng_template_7_tr_28_span_4_Template(rf, ctx) {
+        if (rf & 1) {
+          core
+          /* ɵɵelementStart */
+          .TgZ(0, "span");
+
+          core
+          /* ɵɵtext */
+          ._uU(1);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+        }
+
+        if (rf & 2) {
+          var standing_r27 = core
+          /* ɵɵnextContext */
+          .oxw().$implicit;
+          var ctx_r29 = core
+          /* ɵɵnextContext */
+          .oxw(3);
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵtextInterpolate */
+          .Oqu(ctx_r29.positionChange(standing_r27));
+        }
+      }
+
+      function RaceAnalysisComponent_div_1_ng_template_7_tr_28_Template(rf, ctx) {
+        if (rf & 1) {
+          core
+          /* ɵɵelementStart */
+          .TgZ(0, "tr");
+          core
+          /* ɵɵelementStart */
+          .TgZ(1, "td", 45);
+          core
+          /* ɵɵelementStart */
+          .TgZ(2, "span");
+
+          core
+          /* ɵɵtext */
+          ._uU(3);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵtemplate */
+          .YNc(4, RaceAnalysisComponent_div_1_ng_template_7_tr_28_span_4_Template, 2, 1, "span", 44);
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(5, "td");
+
+          core
+          /* ɵɵtext */
+          ._uU(6);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(7, "td");
+
+          core
+          /* ɵɵtext */
+          ._uU(8);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+        }
+
+        if (rf & 2) {
+          var standing_r27 = ctx.$implicit;
+          var ctx_r22 = core
+          /* ɵɵnextContext */
+          .oxw(3);
+          core
+          /* ɵɵclassMap */
+          .Tol(ctx_r22.standingsChangeClass(standing_r27));
+          core
+          /* ɵɵadvance */
+          .xp6(3);
+          core
+          /* ɵɵtextInterpolate */
+          .Oqu(standing_r27.PredictedPosition);
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵproperty */
+          .Q6J("ngIf", standing_r27.PredictedPosition != standing_r27.CurrentPosition);
+          core
+          /* ɵɵadvance */
+          .xp6(2);
+          core
+          /* ɵɵtextInterpolate */
+          .Oqu(standing_r27.TeamName);
+          core
+          /* ɵɵadvance */
+          .xp6(2);
+          core
+          /* ɵɵtextInterpolate */
+          .Oqu(ctx_r22.pointsChange(standing_r27));
         }
       }
 
@@ -76959,22 +77054,22 @@
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 24);
+          .TgZ(0, "div", 13);
           core
           /* ɵɵelementStart */
-          .TgZ(1, "div", 31);
+          .TgZ(1, "div", 37);
           core
           /* ɵɵelementStart */
-          .TgZ(2, "table", 14);
+          .TgZ(2, "table", 16);
           core
           /* ɵɵelementStart */
           .TgZ(3, "thead");
           core
           /* ɵɵelementStart */
-          .TgZ(4, "tr", 32);
+          .TgZ(4, "tr", 38);
           core
           /* ɵɵelementStart */
-          .TgZ(5, "th", 33);
+          .TgZ(5, "th", 39);
 
           core
           /* ɵɵtext */
@@ -76988,15 +77083,15 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(7, "tr", 32);
+          .TgZ(7, "tr", 38);
 
           core
           /* ɵɵelement */
-          ._UZ(8, "th", 34);
+          ._UZ(8, "th", 40);
 
           core
           /* ɵɵelementStart */
-          .TgZ(9, "th", 15);
+          .TgZ(9, "th", 17);
 
           core
           /* ɵɵtext */
@@ -77007,7 +77102,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(11, "th", 35);
+          .TgZ(11, "th", 41);
 
           core
           /* ɵɵtext */
@@ -77027,7 +77122,7 @@
           .TgZ(13, "tbody");
           core
           /* ɵɵtemplate */
-          .YNc(14, RaceAnalysisComponent_div_1_ng_template_7_tr_14_Template, 9, 7, "tr", 18);
+          .YNc(14, RaceAnalysisComponent_div_1_ng_template_7_tr_14_Template, 9, 7, "tr", 20);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -77039,19 +77134,19 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(15, "div", 36);
+          .TgZ(15, "div", 42);
           core
           /* ɵɵelementStart */
-          .TgZ(16, "table", 14);
+          .TgZ(16, "table", 16);
           core
           /* ɵɵelementStart */
           .TgZ(17, "thead");
           core
           /* ɵɵelementStart */
-          .TgZ(18, "tr", 32);
+          .TgZ(18, "tr", 38);
           core
           /* ɵɵelementStart */
-          .TgZ(19, "th", 33);
+          .TgZ(19, "th", 39);
 
           core
           /* ɵɵtext */
@@ -77065,15 +77160,15 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(21, "tr", 32);
+          .TgZ(21, "tr", 38);
 
           core
           /* ɵɵelement */
-          ._UZ(22, "th", 34);
+          ._UZ(22, "th", 40);
 
           core
           /* ɵɵelementStart */
-          .TgZ(23, "th", 15);
+          .TgZ(23, "th", 17);
 
           core
           /* ɵɵtext */
@@ -77084,7 +77179,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(25, "th", 35);
+          .TgZ(25, "th", 41);
 
           core
           /* ɵɵtext */
@@ -77104,7 +77199,7 @@
           .TgZ(27, "tbody");
           core
           /* ɵɵtemplate */
-          .YNc(28, RaceAnalysisComponent_div_1_ng_template_7_tr_28_Template, 9, 7, "tr", 37);
+          .YNc(28, RaceAnalysisComponent_div_1_ng_template_7_tr_28_Template, 9, 7, "tr", 43);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -77248,86 +77343,86 @@
         }
 
         if (rf & 2) {
-          var stat_r28 = ctx.$implicit;
+          var stat_r32 = ctx.$implicit;
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(stat_r28.name);
+          .Oqu(stat_r32.name);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(stat_r28.PersonalBestLapTime.Value);
+          .Oqu(stat_r32.PersonalBestLapTime.Value);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(stat_r28.PersonalBestLapTime.Position);
+          .Oqu(stat_r32.PersonalBestLapTime.Position);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(stat_r28.BestSectors[0].Value);
+          .Oqu(stat_r32.BestSectors[0].Value);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(stat_r28.BestSectors[0].Position);
+          .Oqu(stat_r32.BestSectors[0].Position);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(stat_r28.BestSectors[1].Value);
+          .Oqu(stat_r32.BestSectors[1].Value);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(stat_r28.BestSectors[1].Position);
+          .Oqu(stat_r32.BestSectors[1].Position);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(stat_r28.BestSectors[2].Value);
+          .Oqu(stat_r32.BestSectors[2].Value);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(stat_r28.BestSectors[2].Position);
+          .Oqu(stat_r32.BestSectors[2].Position);
         }
       }
 
       function RaceAnalysisComponent_div_1_ng_template_9_Template(rf, ctx) {
         if (rf & 1) {
-          var _r31 = core
+          var _r35 = core
           /* ɵɵgetCurrentView */
           .EpF();
 
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 13);
+          .TgZ(0, "div", 15);
           core
           /* ɵɵelementStart */
-          .TgZ(1, "table", 40);
+          .TgZ(1, "table", 46);
           core
           /* ɵɵlistener */
           .NdJ("matSortChange", function RaceAnalysisComponent_div_1_ng_template_9_Template_table_matSortChange_1_listener($event) {
             core
             /* ɵɵrestoreView */
-            .CHM(_r31);
-            var ctx_r30 = core
+            .CHM(_r35);
+            var ctx_r34 = core
             /* ɵɵnextContext */
             .oxw(2);
-            return ctx_r30.sortTimingStats($event);
+            return ctx_r34.sortTimingStats($event);
           });
           core
           /* ɵɵelementStart */
@@ -77338,11 +77433,11 @@
 
           core
           /* ɵɵelement */
-          ._UZ(4, "th", 41);
+          ._UZ(4, "th", 47);
 
           core
           /* ɵɵelementStart */
-          .TgZ(5, "th", 42);
+          .TgZ(5, "th", 48);
 
           core
           /* ɵɵtext */
@@ -77353,7 +77448,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(7, "th", 43);
+          .TgZ(7, "th", 49);
 
           core
           /* ɵɵtext */
@@ -77364,7 +77459,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(9, "th", 44);
+          .TgZ(9, "th", 50);
 
           core
           /* ɵɵtext */
@@ -77375,7 +77470,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(11, "th", 45);
+          .TgZ(11, "th", 51);
 
           core
           /* ɵɵtext */
@@ -77392,7 +77487,7 @@
           .TgZ(13, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(14, "th", 46);
+          .TgZ(14, "th", 52);
 
           core
           /* ɵɵtext */
@@ -77403,7 +77498,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(16, "th", 47);
+          .TgZ(16, "th", 53);
 
           core
           /* ɵɵtext */
@@ -77414,7 +77509,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(18, "th", 48);
+          .TgZ(18, "th", 54);
 
           core
           /* ɵɵtext */
@@ -77425,7 +77520,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(20, "th", 49);
+          .TgZ(20, "th", 55);
 
           core
           /* ɵɵtext */
@@ -77436,7 +77531,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(22, "th", 50);
+          .TgZ(22, "th", 56);
 
           core
           /* ɵɵtext */
@@ -77447,7 +77542,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(24, "th", 51);
+          .TgZ(24, "th", 57);
 
           core
           /* ɵɵtext */
@@ -77458,7 +77553,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(26, "th", 52);
+          .TgZ(26, "th", 58);
 
           core
           /* ɵɵtext */
@@ -77469,7 +77564,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(28, "th", 53);
+          .TgZ(28, "th", 59);
 
           core
           /* ɵɵtext */
@@ -77480,7 +77575,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(30, "th", 54);
+          .TgZ(30, "th", 60);
 
           core
           /* ɵɵtext */
@@ -77500,7 +77595,7 @@
           .TgZ(32, "tbody");
           core
           /* ɵɵtemplate */
-          .YNc(33, RaceAnalysisComponent_div_1_ng_template_9_tr_33_Template, 19, 9, "tr", 18);
+          .YNc(33, RaceAnalysisComponent_div_1_ng_template_9_tr_33_Template, 19, 9, "tr", 20);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -77529,7 +77624,7 @@
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "th", 60);
+          .TgZ(0, "th", 66);
 
           core
           /* ɵɵtext */
@@ -77541,13 +77636,13 @@
         }
 
         if (rf & 2) {
-          var key_r35 = ctx.$implicit;
+          var key_r39 = ctx.$implicit;
           core
           /* ɵɵadvance */
           .xp6(1);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(" " + key_r35);
+          .Oqu(" " + key_r39);
         }
       }
 
@@ -77558,7 +77653,7 @@
           .ynx(0);
           core
           /* ɵɵelementStart */
-          .TgZ(1, "th", 61);
+          .TgZ(1, "th", 67);
 
           core
           /* ɵɵtext */
@@ -77569,7 +77664,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(3, "th", 62);
+          .TgZ(3, "th", 68);
 
           core
           /* ɵɵtext */
@@ -77584,19 +77679,19 @@
         }
 
         if (rf & 2) {
-          var key_r37 = ctx.$implicit;
+          var key_r41 = ctx.$implicit;
           core
           /* ɵɵadvance */
           .xp6(1);
           core
           /* ɵɵproperty */
-          .Q6J("mat-sort-header", key_r37);
+          .Q6J("mat-sort-header", key_r41);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵproperty */
-          .Q6J("mat-sort-header", key_r37);
+          .Q6J("mat-sort-header", key_r41);
         }
       }
 
@@ -77607,7 +77702,7 @@
           .ynx(0);
           core
           /* ɵɵelementStart */
-          .TgZ(1, "td", 64);
+          .TgZ(1, "td", 70);
 
           core
           /* ɵɵtext */
@@ -77618,7 +77713,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(3, "td", 63);
+          .TgZ(3, "td", 69);
 
           core
           /* ɵɵtext */
@@ -77633,8 +77728,8 @@
         }
 
         if (rf & 2) {
-          var key_r42 = ctx.$implicit;
-          var stat_r39 = core
+          var key_r46 = ctx.$implicit;
+          var stat_r43 = core
           /* ɵɵnextContext */
           .oxw().$implicit;
           core
@@ -77642,13 +77737,13 @@
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(stat_r39.BestSpeeds[key_r42].Value);
+          .Oqu(stat_r43.BestSpeeds[key_r46].Value);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(stat_r39.BestSpeeds[key_r42].Position);
+          .Oqu(stat_r43.BestSpeeds[key_r46].Position);
         }
       }
 
@@ -77670,7 +77765,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(3, "td", 63);
+          .TgZ(3, "td", 69);
 
           core
           /* ɵɵtext */
@@ -77681,15 +77776,15 @@
           .qZA();
           core
           /* ɵɵtemplate */
-          .YNc(5, RaceAnalysisComponent_div_1_ng_template_11_tr_19_ng_container_5_Template, 5, 2, "ng-container", 18);
+          .YNc(5, RaceAnalysisComponent_div_1_ng_template_11_tr_19_ng_container_5_Template, 5, 2, "ng-container", 20);
           core
           /* ɵɵelementEnd */
           .qZA();
         }
 
         if (rf & 2) {
-          var stat_r39 = ctx.$implicit;
-          var ctx_r34 = core
+          var stat_r43 = ctx.$implicit;
+          var ctx_r38 = core
           /* ɵɵnextContext */
           .oxw(3);
           core
@@ -77697,44 +77792,44 @@
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(stat_r39.name);
+          .Oqu(stat_r43.name);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(stat_r39.topSpeed);
+          .Oqu(stat_r43.topSpeed);
           core
           /* ɵɵadvance */
           .xp6(1);
           core
           /* ɵɵproperty */
-          .Q6J("ngForOf", ctx_r34.bestSpeedKeys);
+          .Q6J("ngForOf", ctx_r38.bestSpeedKeys);
         }
       }
 
       function RaceAnalysisComponent_div_1_ng_template_11_Template(rf, ctx) {
         if (rf & 1) {
-          var _r45 = core
+          var _r49 = core
           /* ɵɵgetCurrentView */
           .EpF();
 
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 13);
+          .TgZ(0, "div", 15);
           core
           /* ɵɵelementStart */
-          .TgZ(1, "table", 40);
+          .TgZ(1, "table", 46);
           core
           /* ɵɵlistener */
           .NdJ("matSortChange", function RaceAnalysisComponent_div_1_ng_template_11_Template_table_matSortChange_1_listener($event) {
             core
             /* ɵɵrestoreView */
-            .CHM(_r45);
-            var ctx_r44 = core
+            .CHM(_r49);
+            var ctx_r48 = core
             /* ɵɵnextContext */
             .oxw(2);
-            return ctx_r44.sortTopSpeedTimingStats($event);
+            return ctx_r48.sortTopSpeedTimingStats($event);
           });
           core
           /* ɵɵelementStart */
@@ -77745,15 +77840,15 @@
 
           core
           /* ɵɵelement */
-          ._UZ(4, "th", 55);
+          ._UZ(4, "th", 61);
 
           core
           /* ɵɵelement */
-          ._UZ(5, "th", 56);
+          ._UZ(5, "th", 62);
 
           core
           /* ɵɵelementStart */
-          .TgZ(6, "th", 57);
+          .TgZ(6, "th", 63);
 
           core
           /* ɵɵtext */
@@ -77771,11 +77866,11 @@
 
           core
           /* ɵɵelement */
-          ._UZ(9, "th", 41);
+          ._UZ(9, "th", 47);
 
           core
           /* ɵɵelementStart */
-          .TgZ(10, "th", 58);
+          .TgZ(10, "th", 64);
 
           core
           /* ɵɵtext */
@@ -77786,7 +77881,7 @@
           .qZA();
           core
           /* ɵɵtemplate */
-          .YNc(12, RaceAnalysisComponent_div_1_ng_template_11_th_12_Template, 2, 1, "th", 59);
+          .YNc(12, RaceAnalysisComponent_div_1_ng_template_11_th_12_Template, 2, 1, "th", 65);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -77795,7 +77890,7 @@
           .TgZ(13, "tr");
           core
           /* ɵɵelementStart */
-          .TgZ(14, "th", 41);
+          .TgZ(14, "th", 47);
 
           core
           /* ɵɵtext */
@@ -77807,11 +77902,11 @@
 
           core
           /* ɵɵelement */
-          ._UZ(16, "th", 15);
+          ._UZ(16, "th", 17);
 
           core
           /* ɵɵtemplate */
-          .YNc(17, RaceAnalysisComponent_div_1_ng_template_11_ng_container_17_Template, 5, 2, "ng-container", 18);
+          .YNc(17, RaceAnalysisComponent_div_1_ng_template_11_ng_container_17_Template, 5, 2, "ng-container", 20);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -77823,7 +77918,7 @@
           .TgZ(18, "tbody");
           core
           /* ɵɵtemplate */
-          .YNc(19, RaceAnalysisComponent_div_1_ng_template_11_tr_19_Template, 6, 3, "tr", 18);
+          .YNc(19, RaceAnalysisComponent_div_1_ng_template_11_tr_19_Template, 6, 3, "tr", 20);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -77888,26 +77983,26 @@
 
       function RaceAnalysisComponent_div_1_ng_template_14_tr_10_div_7_Template(rf, ctx) {
         if (rf & 1) {
-          var _r53 = core
+          var _r57 = core
           /* ɵɵgetCurrentView */
           .EpF();
 
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 66);
+          .TgZ(0, "div", 72);
           core
           /* ɵɵelementStart */
-          .TgZ(1, "button", 67);
+          .TgZ(1, "button", 73);
           core
           /* ɵɵlistener */
           .NdJ("click", function RaceAnalysisComponent_div_1_ng_template_14_tr_10_div_7_Template_button_click_1_listener() {
             core
             /* ɵɵrestoreView */
-            .CHM(_r53);
-            var radio_r47 = core
+            .CHM(_r57);
+            var radio_r51 = core
             /* ɵɵnextContext */
             .oxw().$implicit;
-            return radio_r47.active = true;
+            return radio_r51.active = true;
           });
           core
           /* ɵɵelementStart */
@@ -77936,11 +78031,11 @@
           .TgZ(0, "div");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "audio", 68);
+          .TgZ(1, "audio", 74);
 
           core
           /* ɵɵelement */
-          ._UZ(2, "source", 69);
+          ._UZ(2, "source", 75);
 
           core
           /* ɵɵelementEnd */
@@ -77951,10 +78046,10 @@
         }
 
         if (rf & 2) {
-          var radio_r47 = core
+          var radio_r51 = core
           /* ɵɵnextContext */
           .oxw().$implicit;
-          var ctx_r50 = core
+          var ctx_r54 = core
           /* ɵɵnextContext */
           .oxw(3);
           core
@@ -77962,7 +78057,7 @@
           .xp6(2);
           core
           /* ɵɵpropertyInterpolate */
-          .s9C("src", ctx_r50.livetimingUrl + radio_r47.path, core
+          .s9C("src", ctx_r54.livetimingUrl + radio_r51.path, core
           /* ɵɵsanitizeUrl */
           .LSH);
         }
@@ -78003,10 +78098,10 @@
           .TgZ(6, "td");
           core
           /* ɵɵtemplate */
-          .YNc(7, RaceAnalysisComponent_div_1_ng_template_14_tr_10_div_7_Template, 4, 0, "div", 65);
+          .YNc(7, RaceAnalysisComponent_div_1_ng_template_14_tr_10_div_7_Template, 4, 0, "div", 71);
           core
           /* ɵɵtemplate */
-          .YNc(8, RaceAnalysisComponent_div_1_ng_template_14_tr_10_div_8_Template, 3, 1, "div", 38);
+          .YNc(8, RaceAnalysisComponent_div_1_ng_template_14_tr_10_div_8_Template, 3, 1, "div", 44);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -78016,7 +78111,7 @@
         }
 
         if (rf & 2) {
-          var radio_r47 = ctx.$implicit;
+          var radio_r51 = ctx.$implicit;
           core
           /* ɵɵadvance */
           .xp6(2);
@@ -78024,25 +78119,25 @@
           /* ɵɵtextInterpolate */
           .Oqu(core
           /* ɵɵpipeBind2 */
-          .xi3(3, 4, radio_r47.utc, " HH:mm:ss"));
+          .xi3(3, 4, radio_r51.utc, " HH:mm:ss"));
           core
           /* ɵɵadvance */
           .xp6(3);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(radio_r47.driverName);
+          .Oqu(radio_r51.driverName);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵproperty */
-          .Q6J("ngIf", !radio_r47.active);
+          .Q6J("ngIf", !radio_r51.active);
           core
           /* ɵɵadvance */
           .xp6(1);
           core
           /* ɵɵproperty */
-          .Q6J("ngIf", radio_r47.active);
+          .Q6J("ngIf", radio_r51.active);
         }
       }
 
@@ -78050,16 +78145,16 @@
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "table", 14);
+          .TgZ(0, "table", 16);
           core
           /* ɵɵelementStart */
           .TgZ(1, "thead");
           core
           /* ɵɵelementStart */
-          .TgZ(2, "tr", 32);
+          .TgZ(2, "tr", 38);
           core
           /* ɵɵelementStart */
-          .TgZ(3, "th", 15);
+          .TgZ(3, "th", 17);
 
           core
           /* ɵɵtext */
@@ -78070,7 +78165,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(5, "th", 15);
+          .TgZ(5, "th", 17);
 
           core
           /* ɵɵtext */
@@ -78081,7 +78176,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(7, "th", 15);
+          .TgZ(7, "th", 17);
 
           core
           /* ɵɵtext */
@@ -78101,7 +78196,7 @@
           .TgZ(9, "tbody");
           core
           /* ɵɵtemplate */
-          .YNc(10, RaceAnalysisComponent_div_1_ng_template_14_tr_10_Template, 9, 7, "tr", 18);
+          .YNc(10, RaceAnalysisComponent_div_1_ng_template_14_tr_10_Template, 9, 7, "tr", 20);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -78192,31 +78287,31 @@
         }
 
         if (rf & 2) {
-          var message_r56 = ctx.$implicit;
+          var message_r60 = ctx.$implicit;
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(message_r56.Lap);
+          .Oqu(message_r60.Lap);
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(message_r56.Category + " " + (message_r56.Flag || ""));
+          .Oqu(message_r60.Category + " " + (message_r60.Flag || ""));
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu((message_r56.Scope || "") + " " + (message_r56.Sector || "") + " " + (message_r56.RacingNumber || ""));
+          .Oqu((message_r60.Scope || "") + " " + (message_r60.Sector || "") + " " + (message_r60.RacingNumber || ""));
           core
           /* ɵɵadvance */
           .xp6(2);
           core
           /* ɵɵtextInterpolate */
-          .Oqu(message_r56.Message);
+          .Oqu(message_r60.Message);
           core
           /* ɵɵadvance */
           .xp6(2);
@@ -78224,7 +78319,7 @@
           /* ɵɵtextInterpolate */
           .Oqu(core
           /* ɵɵpipeBind2 */
-          .xi3(11, 5, message_r56.Utc, " HH:mm:ss"));
+          .xi3(11, 5, message_r60.Utc, " HH:mm:ss"));
         }
       }
 
@@ -78232,16 +78327,16 @@
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "table", 14);
+          .TgZ(0, "table", 16);
           core
           /* ɵɵelementStart */
           .TgZ(1, "thead");
           core
           /* ɵɵelementStart */
-          .TgZ(2, "tr", 32);
+          .TgZ(2, "tr", 38);
           core
           /* ɵɵelementStart */
-          .TgZ(3, "th", 15);
+          .TgZ(3, "th", 17);
 
           core
           /* ɵɵtext */
@@ -78252,7 +78347,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(5, "th", 70);
+          .TgZ(5, "th", 76);
 
           core
           /* ɵɵtext */
@@ -78263,7 +78358,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(7, "th", 71);
+          .TgZ(7, "th", 77);
 
           core
           /* ɵɵtext */
@@ -78274,7 +78369,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(9, "th", 15);
+          .TgZ(9, "th", 17);
 
           core
           /* ɵɵtext */
@@ -78285,7 +78380,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(11, "th", 35);
+          .TgZ(11, "th", 41);
 
           core
           /* ɵɵtext */
@@ -78305,7 +78400,7 @@
           .TgZ(13, "tbody");
           core
           /* ɵɵtemplate */
-          .YNc(14, RaceAnalysisComponent_div_1_ng_template_16_tr_14_Template, 12, 8, "tr", 18);
+          .YNc(14, RaceAnalysisComponent_div_1_ng_template_16_tr_14_Template, 12, 8, "tr", 20);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -78331,20 +78426,20 @@
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 24);
+          .TgZ(0, "div", 13);
           core
           /* ɵɵelementStart */
-          .TgZ(1, "div", 25);
+          .TgZ(1, "div", 31);
           core
           /* ɵɵelementStart */
-          .TgZ(2, "div", 26);
+          .TgZ(2, "div", 32);
           core
           /* ɵɵelementStart */
-          .TgZ(3, "div", 77);
+          .TgZ(3, "div", 83);
 
           core
           /* ɵɵelement */
-          ._UZ(4, "apx-chart", 78);
+          ._UZ(4, "apx-chart", 84);
 
           core
           /* ɵɵelementEnd */
@@ -78361,7 +78456,7 @@
         }
 
         if (rf & 2) {
-          var ctx_r58 = core
+          var ctx_r62 = core
           /* ɵɵnextContext */
           .oxw(3);
           core
@@ -78369,55 +78464,55 @@
           .xp6(4);
           core
           /* ɵɵproperty */
-          .Q6J("series", ctx_r58.lapsHeatMapChartOptions.series)("chart", ctx_r58.lapsHeatMapChartOptions.chart)("dataLabels", ctx_r58.lapsHeatMapChartOptions.dataLabels)("plotOptions", ctx_r58.lapsHeatMapChartOptions.plotOptions)("colors", ctx_r58.lapsHeatMapChartOptions.colors)("tooltip", ctx_r58.lapsHeatMapChartOptions.tooltip);
+          .Q6J("series", ctx_r62.lapsHeatMapChartOptions.series)("chart", ctx_r62.lapsHeatMapChartOptions.chart)("dataLabels", ctx_r62.lapsHeatMapChartOptions.dataLabels)("plotOptions", ctx_r62.lapsHeatMapChartOptions.plotOptions)("colors", ctx_r62.lapsHeatMapChartOptions.colors)("tooltip", ctx_r62.lapsHeatMapChartOptions.tooltip);
         }
       }
 
       function RaceAnalysisComponent_div_1_ng_template_18_Template(rf, ctx) {
         if (rf & 1) {
-          var _r60 = core
+          var _r64 = core
           /* ɵɵgetCurrentView */
           .EpF();
 
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 24);
+          .TgZ(0, "div", 13);
           core
           /* ɵɵelementStart */
-          .TgZ(1, "div", 25);
+          .TgZ(1, "div", 31);
           core
           /* ɵɵelementStart */
-          .TgZ(2, "div", 26);
+          .TgZ(2, "div", 32);
           core
           /* ɵɵelementStart */
           .TgZ(3, "div");
           core
           /* ɵɵelementStart */
-          .TgZ(4, "mat-radio-group", 72);
+          .TgZ(4, "mat-radio-group", 78);
           core
           /* ɵɵlistener */
           .NdJ("ngModelChange", function RaceAnalysisComponent_div_1_ng_template_18_Template_mat_radio_group_ngModelChange_4_listener($event) {
             core
             /* ɵɵrestoreView */
-            .CHM(_r60);
-            var ctx_r59 = core
+            .CHM(_r64);
+            var ctx_r63 = core
             /* ɵɵnextContext */
             .oxw(2);
-            return ctx_r59.selectedHeatmapRadio = $event;
+            return ctx_r63.selectedHeatmapRadio = $event;
           });
           core
           /* ɵɵelementStart */
-          .TgZ(5, "mat-radio-button", 73);
+          .TgZ(5, "mat-radio-button", 79);
           core
           /* ɵɵlistener */
           .NdJ("change", function RaceAnalysisComponent_div_1_ng_template_18_Template_mat_radio_button_change_5_listener($event) {
             core
             /* ɵɵrestoreView */
-            .CHM(_r60);
-            var ctx_r61 = core
+            .CHM(_r64);
+            var ctx_r65 = core
             /* ɵɵnextContext */
             .oxw(2);
-            return ctx_r61.heatRadioChange($event);
+            return ctx_r65.heatRadioChange($event);
           });
 
           core
@@ -78429,17 +78524,17 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(7, "mat-radio-button", 74);
+          .TgZ(7, "mat-radio-button", 80);
           core
           /* ɵɵlistener */
           .NdJ("change", function RaceAnalysisComponent_div_1_ng_template_18_Template_mat_radio_button_change_7_listener($event) {
             core
             /* ɵɵrestoreView */
-            .CHM(_r60);
-            var ctx_r62 = core
+            .CHM(_r64);
+            var ctx_r66 = core
             /* ɵɵnextContext */
             .oxw(2);
-            return ctx_r62.heatRadioChange($event);
+            return ctx_r66.heatRadioChange($event);
           });
 
           core
@@ -78456,17 +78551,17 @@
 
           core
           /* ɵɵelementStart */
-          .TgZ(10, "mat-radio-button", 75);
+          .TgZ(10, "mat-radio-button", 81);
           core
           /* ɵɵlistener */
           .NdJ("change", function RaceAnalysisComponent_div_1_ng_template_18_Template_mat_radio_button_change_10_listener($event) {
             core
             /* ɵɵrestoreView */
-            .CHM(_r60);
-            var ctx_r63 = core
+            .CHM(_r64);
+            var ctx_r67 = core
             /* ɵɵnextContext */
             .oxw(2);
-            return ctx_r63.heatRadioChange($event);
+            return ctx_r67.heatRadioChange($event);
           });
 
           core
@@ -78493,7 +78588,7 @@
           .qZA();
           core
           /* ɵɵtemplate */
-          .YNc(12, RaceAnalysisComponent_div_1_ng_template_18_div_12_Template, 5, 6, "div", 76);
+          .YNc(12, RaceAnalysisComponent_div_1_ng_template_18_div_12_Template, 5, 6, "div", 82);
         }
 
         if (rf & 2) {
@@ -78517,7 +78612,7 @@
 
       function RaceAnalysisComponent_div_1_Template(rf, ctx) {
         if (rf & 1) {
-          var _r65 = core
+          var _r69 = core
           /* ɵɵgetCurrentView */
           .EpF();
 
@@ -78532,26 +78627,26 @@
           .NdJ("selectedIndexChange", function RaceAnalysisComponent_div_1_Template_mat_tab_group_selectedIndexChange_1_listener($event) {
             core
             /* ɵɵrestoreView */
-            .CHM(_r65);
-            var ctx_r64 = core
+            .CHM(_r69);
+            var ctx_r68 = core
             /* ɵɵnextContext */
             .oxw();
-            return ctx_r64.selectedTab = $event;
+            return ctx_r68.selectedTab = $event;
           })("selectedTabChange", function RaceAnalysisComponent_div_1_Template_mat_tab_group_selectedTabChange_1_listener($event) {
             core
             /* ɵɵrestoreView */
-            .CHM(_r65);
-            var ctx_r66 = core
+            .CHM(_r69);
+            var ctx_r70 = core
             /* ɵɵnextContext */
             .oxw();
-            return ctx_r66.tabChanged($event);
+            return ctx_r70.tabChanged($event);
           });
           core
           /* ɵɵelementStart */
           .TgZ(2, "mat-tab", 3);
           core
           /* ɵɵtemplate */
-          .YNc(3, RaceAnalysisComponent_div_1_ng_template_3_Template, 17, 1, "ng-template", 4);
+          .YNc(3, RaceAnalysisComponent_div_1_ng_template_3_Template, 19, 2, "ng-template", 4);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -78726,6 +78821,7 @@
               _this84.radioData = data.radioData;
               _this84.status = data.status;
               _this84.drivers = data.driverData;
+              _this84.raceYoutube = data.raceYoutube;
               _this84.driversChampionshipPrediction = data.driversChampionshipPrediction;
               _this84.teamsChampionshipPrediction = data.teamsChampionshipPrediction;
               _this84.raceControlMessages = data.raceControlMessages;
@@ -79447,7 +79543,7 @@
         },
         decls: 2,
         vars: 1,
-        consts: [["class", "\u201Dmat-content\u201D", 4, "ngIf"], [1, "\u201Dmat-content\u201D"], [3, "selectedIndex", "selectedIndexChange", "selectedTabChange"], ["label", "Result"], ["matTabContent", ""], ["label", "Lap-by-Lap"], ["label", "New standings"], ["label", "Fastest laps"], ["label", "Top speeds"], ["label", "Radio"], ["mat-tab-label", ""], ["label", "RaceControl Messages"], ["disabled", "true", "label", "Laps heatmap"], [1, "row", "col-padding-1"], [1, "table", "table-striped"], ["scope", "col"], ["scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], ["scope", "col", 1, "w-20px"], [4, "ngFor", "ngForOf"], ["scope", "row"], [1, "d-sm-none", "d-none", "d-lg-table-cell"], [1, "no-padding-td"], ["color", "primary", "mat-mini-fab", "", 3, "click", 4, "ngIf"], ["color", "primary", "mat-mini-fab", "", 3, "click"], [1, "row"], [1, "col-md-12"], [1, "card"], [1, "overflowX", "card-body-padded"], [3, "series", "chart", "dataLabels", "grid", "stroke", "title", "yaxis", "xaxis"], [1, "card-body-padded"], [3, "title", "series", "chart", "fill", "legend", "plotOptions", "xaxis", "tooltip"], [1, "col-12", "col-xl-6", "pl-xl-4", "pt-2"], [1, "text-center", "bg-primary", "text-white"], ["colspan", "3"], ["scope", "col", 2, "width", "55px"], ["scope", "col", 2, "width", "100px"], [1, "col-12", "col-xl-6", "px-xl-4", "pt-2"], [3, "class", 4, "ngFor", "ngForOf"], [4, "ngIf"], [1, "text-left"], ["matSort", "", 1, "table", "table-striped", 3, "matSortChange"], ["scope", "col", 1, "bg-grey"], ["mat-sort-header", "1", "colspan", "2", "scope", "col", 1, "text-center"], ["mat-sort-header", "2", "colspan", "2", "scope", "col", 1, "text-center", "bg-grey"], ["mat-sort-header", "3", "colspan", "2", "scope", "col", 1, "text-center"], ["mat-sort-header", "4", "colspan", "2", "scope", "col", 1, "text-center", "bg-grey"], ["scope", "col", 1, "bg-grey", 2, "width", "200px"], ["mat-sort-header", "1", "scope", "col", 2, "width", "70px"], ["mat-sort-header", "1", "scope", "col", 2, "width", "40px"], ["mat-sort-header", "2", "scope", "col", 1, "bg-grey", 2, "width", "70px"], ["mat-sort-header", "2", "scope", "col", 1, "bg-grey", 2, "width", "40px"], ["mat-sort-header", "3", "scope", "col", 2, "width", "70px"], ["mat-sort-header", "3", "scope", "col", 2, "width", "40px"], ["mat-sort-header", "4", "scope", "col", 1, "bg-grey", 2, "width", "70px"], ["mat-sort-header", "4", "scope", "col", 1, "bg-grey", 2, "width", "40px"], ["scope", "col", 1, "bg-grey", 2, "width", "150px"], ["scope", "col", 2, "width", "150px"], ["scope", "col", 1, "bg-grey", "text-center"], ["scope", "col", 1, "text-center"], ["style", "width: 50px", "colspan", "2", "class", " bg-grey text-center", "scope", "col", 4, "ngFor", "ngForOf"], ["colspan", "2", "scope", "col", 1, "bg-grey", "text-center", 2, "width", "50px"], ["scope", "col", 1, "text-center", "bg-grey", 2, "width", "90px", 3, "mat-sort-header"], ["scope", "col", 1, "text-center", "bg-grey", 2, "width", "40px", 3, "mat-sort-header"], [1, "text-center"], [1, "text-right"], ["class", "div-padded-always-left-right-1", 4, "ngIf"], [1, "div-padded-always-left-right-1"], ["color", "accent", "mat-mini-fab", "", 3, "click"], ["controls", ""], [3, "src"], ["scope", "col", 2, "width", "120px"], ["scope", "col", 2, "width", "110px"], ["aria-label", "Select an option", 3, "ngModel", "ngModelChange"], ["checked", "", "value", "1", 1, "div-padded-always-0-3rem", 3, "change"], ["value", "2", 1, "div-padded-always-0-3rem", 3, "change"], ["value", "3", 1, "div-padded-always-0-3rem", 3, "change"], ["class", "row", 4, "ngIf"], [1, "overflowXAlways", "pr-1"], [3, "series", "chart", "dataLabels", "plotOptions", "colors", "tooltip"]],
+        consts: [["class", "\u201Dmat-content\u201D", 4, "ngIf"], [1, "\u201Dmat-content\u201D"], [3, "selectedIndex", "selectedIndexChange", "selectedTabChange"], ["label", "Result"], ["matTabContent", ""], ["label", "Lap-by-Lap"], ["label", "New standings"], ["label", "Fastest laps"], ["label", "Top speeds"], ["label", "Radio"], ["mat-tab-label", ""], ["label", "RaceControl Messages"], ["disabled", "true", "label", "Laps heatmap"], [1, "row"], ["class", "col-12", 3, "ngClass", 4, "ngFor", "ngForOf"], [1, "row", "col-padding-1"], [1, "table", "table-striped"], ["scope", "col"], ["scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], ["scope", "col", 1, "w-20px"], [4, "ngFor", "ngForOf"], [1, "col-12", 3, "ngClass"], [1, "card", "card-body-padded", "text-center", "bg-black", "m-1"], ["target", "_blank", 3, "href"], ["alt", "NO IMAGE", 1, "video-thumbnail", 3, "src"], [1, "text-white"], ["scope", "row"], [1, "d-sm-none", "d-none", "d-lg-table-cell"], [1, "no-padding-td"], ["color", "primary", "mat-mini-fab", "", 3, "click", 4, "ngIf"], ["color", "primary", "mat-mini-fab", "", 3, "click"], [1, "col-md-12"], [1, "card"], [1, "overflowX", "card-body-padded"], [3, "series", "chart", "dataLabels", "grid", "stroke", "title", "yaxis", "xaxis"], [1, "card-body-padded"], [3, "title", "series", "chart", "fill", "legend", "plotOptions", "xaxis", "tooltip"], [1, "col-12", "col-xl-6", "pl-xl-4", "pt-2"], [1, "text-center", "bg-primary", "text-white"], ["colspan", "3"], ["scope", "col", 2, "width", "55px"], ["scope", "col", 2, "width", "100px"], [1, "col-12", "col-xl-6", "px-xl-4", "pt-2"], [3, "class", 4, "ngFor", "ngForOf"], [4, "ngIf"], [1, "text-left"], ["matSort", "", 1, "table", "table-striped", 3, "matSortChange"], ["scope", "col", 1, "bg-grey"], ["mat-sort-header", "1", "colspan", "2", "scope", "col", 1, "text-center"], ["mat-sort-header", "2", "colspan", "2", "scope", "col", 1, "text-center", "bg-grey"], ["mat-sort-header", "3", "colspan", "2", "scope", "col", 1, "text-center"], ["mat-sort-header", "4", "colspan", "2", "scope", "col", 1, "text-center", "bg-grey"], ["scope", "col", 1, "bg-grey", 2, "width", "200px"], ["mat-sort-header", "1", "scope", "col", 2, "width", "70px"], ["mat-sort-header", "1", "scope", "col", 2, "width", "40px"], ["mat-sort-header", "2", "scope", "col", 1, "bg-grey", 2, "width", "70px"], ["mat-sort-header", "2", "scope", "col", 1, "bg-grey", 2, "width", "40px"], ["mat-sort-header", "3", "scope", "col", 2, "width", "70px"], ["mat-sort-header", "3", "scope", "col", 2, "width", "40px"], ["mat-sort-header", "4", "scope", "col", 1, "bg-grey", 2, "width", "70px"], ["mat-sort-header", "4", "scope", "col", 1, "bg-grey", 2, "width", "40px"], ["scope", "col", 1, "bg-grey", 2, "width", "150px"], ["scope", "col", 2, "width", "150px"], ["scope", "col", 1, "bg-grey", "text-center"], ["scope", "col", 1, "text-center"], ["style", "width: 50px", "colspan", "2", "class", " bg-grey text-center", "scope", "col", 4, "ngFor", "ngForOf"], ["colspan", "2", "scope", "col", 1, "bg-grey", "text-center", 2, "width", "50px"], ["scope", "col", 1, "text-center", "bg-grey", 2, "width", "90px", 3, "mat-sort-header"], ["scope", "col", 1, "text-center", "bg-grey", 2, "width", "40px", 3, "mat-sort-header"], [1, "text-center"], [1, "text-right"], ["class", "div-padded-always-left-right-1", 4, "ngIf"], [1, "div-padded-always-left-right-1"], ["color", "accent", "mat-mini-fab", "", 3, "click"], ["controls", ""], [3, "src"], ["scope", "col", 2, "width", "120px"], ["scope", "col", 2, "width", "110px"], ["aria-label", "Select an option", 3, "ngModel", "ngModelChange"], ["checked", "", "value", "1", 1, "div-padded-always-0-3rem", 3, "change"], ["value", "2", 1, "div-padded-always-0-3rem", 3, "change"], ["value", "3", 1, "div-padded-always-0-3rem", 3, "change"], ["class", "row", 4, "ngIf"], [1, "overflowXAlways", "pr-1"], [3, "series", "chart", "dataLabels", "plotOptions", "colors", "tooltip"]],
         template: function RaceAnalysisComponent_Template(rf, ctx) {
           if (rf & 1) {
             core
@@ -79482,7 +79578,9 @@
         /* MatTabLabel */
         .uD, common
         /* NgForOf */
-        .sg, fesm2015_button
+        .sg, common
+        /* NgClass */
+        .mk, fesm2015_button
         /* MatButton */
         .lW, icon
         /* MatIcon */
@@ -103908,7 +104006,7 @@
         if (rf & 1) {
           core
           /* ɵɵelement */
-          ._UZ(0, "img", 22);
+          ._UZ(0, "img", 20);
         }
       }
 
@@ -103916,7 +104014,7 @@
         if (rf & 1) {
           core
           /* ɵɵelement */
-          ._UZ(0, "img", 23);
+          ._UZ(0, "img", 21);
         }
 
         if (rf & 2) {
@@ -103931,7 +104029,63 @@
         }
       }
 
-      function F1CountdownComponent_div_1_div_1_mat_tab_4_ng_template_1_div_4_Template(rf, ctx) {
+      function F1CountdownComponent_div_1_div_1_mat_tab_4_ng_template_1_Template(rf, ctx) {
+        if (rf & 1) {
+          core
+          /* ɵɵelementStart */
+          .TgZ(0, "div");
+          core
+          /* ɵɵelementStart */
+          .TgZ(1, "div", 24);
+
+          core
+          /* ɵɵtext */
+          ._uU(2);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(3, "div", 25);
+
+          core
+          /* ɵɵtext */
+          ._uU(4);
+
+          core
+          /* ɵɵpipe */
+          .ALo(5, "date");
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+        }
+
+        if (rf & 2) {
+          var ctx_r22 = core
+          /* ɵɵnextContext */
+          .oxw(4);
+          core
+          /* ɵɵadvance */
+          .xp6(2);
+          core
+          /* ɵɵtextInterpolate */
+          .Oqu(ctx_r22.calendarData.f1Calendar.practice1Name);
+          core
+          /* ɵɵadvance */
+          .xp6(2);
+          core
+          /* ɵɵtextInterpolate1 */
+          .hij(" ", core
+          /* ɵɵpipeBind2 */
+          .xi3(5, 2, ctx_r22.checkTime(ctx_r22.calendarData.f1Calendar.practice1), "EEEE, h:mm a"), " ");
+        }
+      }
+
+      function F1CountdownComponent_div_1_div_1_mat_tab_4_ng_template_2_div_4_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵelementStart */
@@ -103971,7 +104125,7 @@
         }
       }
 
-      function F1CountdownComponent_div_1_div_1_mat_tab_4_ng_template_1_div_5_Template(rf, ctx) {
+      function F1CountdownComponent_div_1_div_1_mat_tab_4_ng_template_2_div_5_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵelementStart */
@@ -104005,7 +104159,7 @@
         };
       };
 
-      function F1CountdownComponent_div_1_div_1_mat_tab_4_ng_template_1_Template(rf, ctx) {
+      function F1CountdownComponent_div_1_div_1_mat_tab_4_ng_template_2_Template(rf, ctx) {
         if (rf & 1) {
           var _r28 = core
           /* ɵɵgetCurrentView */
@@ -104013,10 +104167,10 @@
 
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 25);
+          .TgZ(0, "div", 26);
           core
           /* ɵɵlistener */
-          .NdJ("click", function F1CountdownComponent_div_1_div_1_mat_tab_4_ng_template_1_Template_div_click_0_listener() {
+          .NdJ("click", function F1CountdownComponent_div_1_div_1_mat_tab_4_ng_template_2_Template_div_click_0_listener() {
             core
             /* ɵɵrestoreView */
             .CHM(_r28);
@@ -104030,7 +104184,7 @@
           .TgZ(1, "h1");
           core
           /* ɵɵelementStart */
-          .TgZ(2, "span", 26);
+          .TgZ(2, "span", 27);
 
           core
           /* ɵɵtext */
@@ -104044,10 +104198,10 @@
           .qZA();
           core
           /* ɵɵtemplate */
-          .YNc(4, F1CountdownComponent_div_1_div_1_mat_tab_4_ng_template_1_div_4_Template, 4, 1, "div", 27);
+          .YNc(4, F1CountdownComponent_div_1_div_1_mat_tab_4_ng_template_2_div_4_Template, 4, 1, "div", 19);
           core
           /* ɵɵtemplate */
-          .YNc(5, F1CountdownComponent_div_1_div_1_mat_tab_4_ng_template_1_div_5_Template, 4, 0, "div", 27);
+          .YNc(5, F1CountdownComponent_div_1_div_1_mat_tab_4_ng_template_2_div_5_Template, 4, 0, "div", 19);
           core
           /* ɵɵelementStart */
           .TgZ(6, "h1");
@@ -104127,26 +104281,76 @@
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "mat-tab", 24);
+          .TgZ(0, "mat-tab");
           core
           /* ɵɵtemplate */
-          .YNc(1, F1CountdownComponent_div_1_div_1_mat_tab_4_ng_template_1_Template, 15, 6, "ng-template", 21);
+          .YNc(1, F1CountdownComponent_div_1_div_1_mat_tab_4_ng_template_1_Template, 6, 5, "ng-template", 22);
+          core
+          /* ɵɵtemplate */
+          .YNc(2, F1CountdownComponent_div_1_div_1_mat_tab_4_ng_template_2_Template, 15, 6, "ng-template", 23);
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+        }
+      }
+
+      function F1CountdownComponent_div_1_div_1_mat_tab_5_ng_template_1_Template(rf, ctx) {
+        if (rf & 1) {
+          core
+          /* ɵɵelementStart */
+          .TgZ(0, "div");
+          core
+          /* ɵɵelementStart */
+          .TgZ(1, "div", 24);
+
+          core
+          /* ɵɵtext */
+          ._uU(2);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(3, "div", 25);
+
+          core
+          /* ɵɵtext */
+          ._uU(4);
+
+          core
+          /* ɵɵpipe */
+          .ALo(5, "date");
+          core
+          /* ɵɵelementEnd */
+          .qZA();
           core
           /* ɵɵelementEnd */
           .qZA();
         }
 
         if (rf & 2) {
-          var ctx_r16 = core
+          var ctx_r29 = core
           /* ɵɵnextContext */
-          .oxw(3);
+          .oxw(4);
           core
-          /* ɵɵpropertyInterpolate */
-          .s9C("label", ctx_r16.calendarData.f1Calendar.practice1Name);
+          /* ɵɵadvance */
+          .xp6(2);
+          core
+          /* ɵɵtextInterpolate */
+          .Oqu(ctx_r29.calendarData.f1Calendar.practice2Name);
+          core
+          /* ɵɵadvance */
+          .xp6(2);
+          core
+          /* ɵɵtextInterpolate1 */
+          .hij(" ", core
+          /* ɵɵpipeBind2 */
+          .xi3(5, 2, ctx_r29.checkTime(ctx_r29.calendarData.f1Calendar.practice2), "EEEE, h:mm a"), " ");
         }
       }
 
-      function F1CountdownComponent_div_1_div_1_mat_tab_5_ng_template_1_div_4_Template(rf, ctx) {
+      function F1CountdownComponent_div_1_div_1_mat_tab_5_ng_template_2_div_4_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵelementStart */
@@ -104174,7 +104378,7 @@
         }
 
         if (rf & 2) {
-          var ctx_r30 = core
+          var ctx_r31 = core
           /* ɵɵnextContext */
           .oxw(5);
           core
@@ -104182,11 +104386,11 @@
           .xp6(3);
           core
           /* ɵɵtextInterpolate1 */
-          .hij("", ctx_r30.FP2Days, " days");
+          .hij("", ctx_r31.FP2Days, " days");
         }
       }
 
-      function F1CountdownComponent_div_1_div_1_mat_tab_5_ng_template_1_div_5_Template(rf, ctx) {
+      function F1CountdownComponent_div_1_div_1_mat_tab_5_ng_template_2_div_5_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵelementStart */
@@ -104214,32 +104418,32 @@
         }
       }
 
-      function F1CountdownComponent_div_1_div_1_mat_tab_5_ng_template_1_Template(rf, ctx) {
+      function F1CountdownComponent_div_1_div_1_mat_tab_5_ng_template_2_Template(rf, ctx) {
         if (rf & 1) {
-          var _r34 = core
+          var _r35 = core
           /* ɵɵgetCurrentView */
           .EpF();
 
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 25);
+          .TgZ(0, "div", 26);
           core
           /* ɵɵlistener */
-          .NdJ("click", function F1CountdownComponent_div_1_div_1_mat_tab_5_ng_template_1_Template_div_click_0_listener() {
+          .NdJ("click", function F1CountdownComponent_div_1_div_1_mat_tab_5_ng_template_2_Template_div_click_0_listener() {
             core
             /* ɵɵrestoreView */
-            .CHM(_r34);
-            var ctx_r33 = core
+            .CHM(_r35);
+            var ctx_r34 = core
             /* ɵɵnextContext */
             .oxw(4);
-            return ctx_r33.countdownWasClicked(2);
+            return ctx_r34.countdownWasClicked(2);
           });
           core
           /* ɵɵelementStart */
           .TgZ(1, "h1");
           core
           /* ɵɵelementStart */
-          .TgZ(2, "span", 26);
+          .TgZ(2, "span", 27);
 
           core
           /* ɵɵtext */
@@ -104253,10 +104457,10 @@
           .qZA();
           core
           /* ɵɵtemplate */
-          .YNc(4, F1CountdownComponent_div_1_div_1_mat_tab_5_ng_template_1_div_4_Template, 4, 1, "div", 27);
+          .YNc(4, F1CountdownComponent_div_1_div_1_mat_tab_5_ng_template_2_div_4_Template, 4, 1, "div", 19);
           core
           /* ɵɵtemplate */
-          .YNc(5, F1CountdownComponent_div_1_div_1_mat_tab_5_ng_template_1_div_5_Template, 4, 0, "div", 27);
+          .YNc(5, F1CountdownComponent_div_1_div_1_mat_tab_5_ng_template_2_div_5_Template, 4, 0, "div", 19);
           core
           /* ɵɵelementStart */
           .TgZ(6, "h1");
@@ -104300,7 +104504,7 @@
         }
 
         if (rf & 2) {
-          var ctx_r29 = core
+          var ctx_r30 = core
           /* ɵɵnextContext */
           .oxw(4);
           core
@@ -104308,19 +104512,19 @@
           .xp6(3);
           core
           /* ɵɵtextInterpolate1 */
-          .hij(" ", ctx_r29.calendarData.f1Calendar.practice2Name, " in: ");
+          .hij(" ", ctx_r30.calendarData.f1Calendar.practice2Name, " in: ");
           core
           /* ɵɵadvance */
           .xp6(1);
           core
           /* ɵɵproperty */
-          .Q6J("ngIf", ctx_r29.FP2Days > 1);
+          .Q6J("ngIf", ctx_r30.FP2Days > 1);
           core
           /* ɵɵadvance */
           .xp6(1);
           core
           /* ɵɵproperty */
-          .Q6J("ngIf", ctx_r29.FP2Days == 1);
+          .Q6J("ngIf", ctx_r30.FP2Days == 1);
           core
           /* ɵɵadvance */
           .xp6(3);
@@ -104328,7 +104532,7 @@
           /* ɵɵproperty */
           .Q6J("config", core
           /* ɵɵpureFunction1 */
-          .VKq(4, f1_countdown_component_c1, ctx_r29.FP2Seconds));
+          .VKq(4, f1_countdown_component_c1, ctx_r30.FP2Seconds));
         }
       }
 
@@ -104336,44 +104540,46 @@
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "mat-tab", 24);
+          .TgZ(0, "mat-tab");
           core
           /* ɵɵtemplate */
-          .YNc(1, F1CountdownComponent_div_1_div_1_mat_tab_5_ng_template_1_Template, 15, 6, "ng-template", 21);
+          .YNc(1, F1CountdownComponent_div_1_div_1_mat_tab_5_ng_template_1_Template, 6, 5, "ng-template", 22);
+          core
+          /* ɵɵtemplate */
+          .YNc(2, F1CountdownComponent_div_1_div_1_mat_tab_5_ng_template_2_Template, 15, 6, "ng-template", 23);
           core
           /* ɵɵelementEnd */
           .qZA();
         }
-
-        if (rf & 2) {
-          var ctx_r17 = core
-          /* ɵɵnextContext */
-          .oxw(3);
-          core
-          /* ɵɵpropertyInterpolate */
-          .s9C("label", ctx_r17.calendarData.f1Calendar.practice2Name);
-        }
       }
 
-      function F1CountdownComponent_div_1_div_1_mat_tab_6_ng_template_1_div_4_Template(rf, ctx) {
+      function F1CountdownComponent_div_1_div_1_mat_tab_6_ng_template_1_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵelementStart */
           .TgZ(0, "div");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "h1");
-          core
-          /* ɵɵelementStart */
-          .TgZ(2, "span", 30);
+          .TgZ(1, "div", 24);
 
           core
           /* ɵɵtext */
-          ._uU(3);
+          ._uU(2);
 
           core
           /* ɵɵelementEnd */
           .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(3, "div", 25);
+
+          core
+          /* ɵɵtext */
+          ._uU(4);
+
+          core
+          /* ɵɵpipe */
+          .ALo(5, "date");
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -104385,17 +104591,65 @@
         if (rf & 2) {
           var ctx_r36 = core
           /* ɵɵnextContext */
+          .oxw(4);
+          core
+          /* ɵɵadvance */
+          .xp6(2);
+          core
+          /* ɵɵtextInterpolate */
+          .Oqu(ctx_r36.calendarData.f1Calendar.practice3Name);
+          core
+          /* ɵɵadvance */
+          .xp6(2);
+          core
+          /* ɵɵtextInterpolate1 */
+          .hij(" ", core
+          /* ɵɵpipeBind2 */
+          .xi3(5, 2, ctx_r36.checkTime(ctx_r36.calendarData.f1Calendar.practice3), "EEEE, h:mm a"), " ");
+        }
+      }
+
+      function F1CountdownComponent_div_1_div_1_mat_tab_6_ng_template_2_div_4_Template(rf, ctx) {
+        if (rf & 1) {
+          core
+          /* ɵɵelementStart */
+          .TgZ(0, "div");
+          core
+          /* ɵɵelementStart */
+          .TgZ(1, "h1");
+          core
+          /* ɵɵelementStart */
+          .TgZ(2, "span", 30);
+
+          core
+          /* ɵɵtext */
+          ._uU(3);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+        }
+
+        if (rf & 2) {
+          var ctx_r38 = core
+          /* ɵɵnextContext */
           .oxw(5);
           core
           /* ɵɵadvance */
           .xp6(3);
           core
           /* ɵɵtextInterpolate1 */
-          .hij("", ctx_r36.FP3Days, " days");
+          .hij("", ctx_r38.FP3Days, " days");
         }
       }
 
-      function F1CountdownComponent_div_1_div_1_mat_tab_6_ng_template_1_div_5_Template(rf, ctx) {
+      function F1CountdownComponent_div_1_div_1_mat_tab_6_ng_template_2_div_5_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵelementStart */
@@ -104423,32 +104677,32 @@
         }
       }
 
-      function F1CountdownComponent_div_1_div_1_mat_tab_6_ng_template_1_Template(rf, ctx) {
+      function F1CountdownComponent_div_1_div_1_mat_tab_6_ng_template_2_Template(rf, ctx) {
         if (rf & 1) {
-          var _r40 = core
+          var _r42 = core
           /* ɵɵgetCurrentView */
           .EpF();
 
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 25);
+          .TgZ(0, "div", 26);
           core
           /* ɵɵlistener */
-          .NdJ("click", function F1CountdownComponent_div_1_div_1_mat_tab_6_ng_template_1_Template_div_click_0_listener() {
+          .NdJ("click", function F1CountdownComponent_div_1_div_1_mat_tab_6_ng_template_2_Template_div_click_0_listener() {
             core
             /* ɵɵrestoreView */
-            .CHM(_r40);
-            var ctx_r39 = core
+            .CHM(_r42);
+            var ctx_r41 = core
             /* ɵɵnextContext */
             .oxw(4);
-            return ctx_r39.countdownWasClicked(3);
+            return ctx_r41.countdownWasClicked(3);
           });
           core
           /* ɵɵelementStart */
           .TgZ(1, "h1");
           core
           /* ɵɵelementStart */
-          .TgZ(2, "span", 26);
+          .TgZ(2, "span", 27);
 
           core
           /* ɵɵtext */
@@ -104462,10 +104716,10 @@
           .qZA();
           core
           /* ɵɵtemplate */
-          .YNc(4, F1CountdownComponent_div_1_div_1_mat_tab_6_ng_template_1_div_4_Template, 4, 1, "div", 27);
+          .YNc(4, F1CountdownComponent_div_1_div_1_mat_tab_6_ng_template_2_div_4_Template, 4, 1, "div", 19);
           core
           /* ɵɵtemplate */
-          .YNc(5, F1CountdownComponent_div_1_div_1_mat_tab_6_ng_template_1_div_5_Template, 4, 0, "div", 27);
+          .YNc(5, F1CountdownComponent_div_1_div_1_mat_tab_6_ng_template_2_div_5_Template, 4, 0, "div", 19);
           core
           /* ɵɵelementStart */
           .TgZ(6, "h1");
@@ -104509,7 +104763,7 @@
         }
 
         if (rf & 2) {
-          var ctx_r35 = core
+          var ctx_r37 = core
           /* ɵɵnextContext */
           .oxw(4);
           core
@@ -104517,19 +104771,19 @@
           .xp6(3);
           core
           /* ɵɵtextInterpolate1 */
-          .hij(" ", ctx_r35.calendarData.f1Calendar.practice3Name, " in: ");
+          .hij(" ", ctx_r37.calendarData.f1Calendar.practice3Name, " in: ");
           core
           /* ɵɵadvance */
           .xp6(1);
           core
           /* ɵɵproperty */
-          .Q6J("ngIf", ctx_r35.FP3Days > 1);
+          .Q6J("ngIf", ctx_r37.FP3Days > 1);
           core
           /* ɵɵadvance */
           .xp6(1);
           core
           /* ɵɵproperty */
-          .Q6J("ngIf", ctx_r35.FP3Days == 1);
+          .Q6J("ngIf", ctx_r37.FP3Days == 1);
           core
           /* ɵɵadvance */
           .xp6(3);
@@ -104537,7 +104791,7 @@
           /* ɵɵproperty */
           .Q6J("config", core
           /* ɵɵpureFunction1 */
-          .VKq(4, f1_countdown_component_c1, ctx_r35.FP3Seconds));
+          .VKq(4, f1_countdown_component_c1, ctx_r37.FP3Seconds));
         }
       }
 
@@ -104545,87 +104799,13 @@
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "mat-tab", 24);
+          .TgZ(0, "mat-tab");
           core
           /* ɵɵtemplate */
-          .YNc(1, F1CountdownComponent_div_1_div_1_mat_tab_6_ng_template_1_Template, 15, 6, "ng-template", 21);
+          .YNc(1, F1CountdownComponent_div_1_div_1_mat_tab_6_ng_template_1_Template, 6, 5, "ng-template", 22);
           core
-          /* ɵɵelementEnd */
-          .qZA();
-        }
-
-        if (rf & 2) {
-          var ctx_r18 = core
-          /* ɵɵnextContext */
-          .oxw(3);
-          core
-          /* ɵɵpropertyInterpolate */
-          .s9C("label", ctx_r18.calendarData.f1Calendar.practice3Name);
-        }
-      }
-
-      function F1CountdownComponent_div_1_div_1_mat_tab_7_ng_template_1_div_4_Template(rf, ctx) {
-        if (rf & 1) {
-          core
-          /* ɵɵelementStart */
-          .TgZ(0, "div");
-          core
-          /* ɵɵelementStart */
-          .TgZ(1, "h1");
-          core
-          /* ɵɵelementStart */
-          .TgZ(2, "span", 30);
-
-          core
-          /* ɵɵtext */
-          ._uU(3);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-        }
-
-        if (rf & 2) {
-          var ctx_r42 = core
-          /* ɵɵnextContext */
-          .oxw(5);
-          core
-          /* ɵɵadvance */
-          .xp6(3);
-          core
-          /* ɵɵtextInterpolate1 */
-          .hij("", ctx_r42.sprintDays, " days");
-        }
-      }
-
-      function F1CountdownComponent_div_1_div_1_mat_tab_7_ng_template_1_div_5_Template(rf, ctx) {
-        if (rf & 1) {
-          core
-          /* ɵɵelementStart */
-          .TgZ(0, "div");
-          core
-          /* ɵɵelementStart */
-          .TgZ(1, "h1");
-          core
-          /* ɵɵelementStart */
-          .TgZ(2, "span", 30);
-
-          core
-          /* ɵɵtext */
-          ._uU(3, "1 day");
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
+          /* ɵɵtemplate */
+          .YNc(2, F1CountdownComponent_div_1_div_1_mat_tab_6_ng_template_2_Template, 15, 6, "ng-template", 23);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -104634,146 +104814,61 @@
 
       function F1CountdownComponent_div_1_div_1_mat_tab_7_ng_template_1_Template(rf, ctx) {
         if (rf & 1) {
-          var _r46 = core
-          /* ɵɵgetCurrentView */
-          .EpF();
-
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 25);
-          core
-          /* ɵɵlistener */
-          .NdJ("click", function F1CountdownComponent_div_1_div_1_mat_tab_7_ng_template_1_Template_div_click_0_listener() {
-            core
-            /* ɵɵrestoreView */
-            .CHM(_r46);
-            var ctx_r45 = core
-            /* ɵɵnextContext */
-            .oxw(4);
-            return ctx_r45.countdownWasClicked(6);
-          });
+          .TgZ(0, "div");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "h1");
-          core
-          /* ɵɵelementStart */
-          .TgZ(2, "span", 26);
+          .TgZ(1, "div", 24);
 
           core
           /* ɵɵtext */
-          ._uU(3);
+          ._uU(2);
 
           core
           /* ɵɵelementEnd */
           .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵtemplate */
-          .YNc(4, F1CountdownComponent_div_1_div_1_mat_tab_7_ng_template_1_div_4_Template, 4, 1, "div", 27);
-          core
-          /* ɵɵtemplate */
-          .YNc(5, F1CountdownComponent_div_1_div_1_mat_tab_7_ng_template_1_div_5_Template, 4, 0, "div", 27);
           core
           /* ɵɵelementStart */
-          .TgZ(6, "h1");
-          core
-          /* ɵɵelementStart */
-          .TgZ(7, "span");
+          .TgZ(3, "div", 25);
 
           core
-          /* ɵɵelement */
-          ._UZ(8, "countdown", 28, 29);
+          /* ɵɵtext */
+          ._uU(4);
 
+          core
+          /* ɵɵpipe */
+          .ALo(5, "date");
           core
           /* ɵɵelementEnd */
           .qZA();
           core
           /* ɵɵelementEnd */
           .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-
-          core
-          /* ɵɵelement */
-          ._UZ(10, "br");
-
-          core
-          /* ɵɵelement */
-          ._UZ(11, "br");
-
-          core
-          /* ɵɵelement */
-          ._UZ(12, "br");
-
-          core
-          /* ɵɵelement */
-          ._UZ(13, "br");
-
-          core
-          /* ɵɵelement */
-          ._UZ(14, "br");
         }
 
         if (rf & 2) {
-          var ctx_r41 = core
+          var ctx_r43 = core
           /* ɵɵnextContext */
           .oxw(4);
           core
           /* ɵɵadvance */
-          .xp6(3);
+          .xp6(2);
+          core
+          /* ɵɵtextInterpolate */
+          .Oqu(ctx_r43.calendarData.f1Calendar.sprintName);
+          core
+          /* ɵɵadvance */
+          .xp6(2);
           core
           /* ɵɵtextInterpolate1 */
-          .hij(" ", ctx_r41.calendarData.f1Calendar.sprintName, " in: ");
-          core
-          /* ɵɵadvance */
-          .xp6(1);
-          core
-          /* ɵɵproperty */
-          .Q6J("ngIf", ctx_r41.sprintDays > 1);
-          core
-          /* ɵɵadvance */
-          .xp6(1);
-          core
-          /* ɵɵproperty */
-          .Q6J("ngIf", ctx_r41.sprintDays == 1);
-          core
-          /* ɵɵadvance */
-          .xp6(3);
-          core
-          /* ɵɵproperty */
-          .Q6J("config", core
-          /* ɵɵpureFunction1 */
-          .VKq(4, f1_countdown_component_c1, ctx_r41.sprintSeconds));
+          .hij(" ", core
+          /* ɵɵpipeBind2 */
+          .xi3(5, 2, ctx_r43.checkTime(ctx_r43.calendarData.f1Calendar.sprint), "EEEE, h:mm a"), " ");
         }
       }
 
-      function F1CountdownComponent_div_1_div_1_mat_tab_7_Template(rf, ctx) {
-        if (rf & 1) {
-          core
-          /* ɵɵelementStart */
-          .TgZ(0, "mat-tab", 24);
-          core
-          /* ɵɵtemplate */
-          .YNc(1, F1CountdownComponent_div_1_div_1_mat_tab_7_ng_template_1_Template, 15, 6, "ng-template", 21);
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-        }
-
-        if (rf & 2) {
-          var ctx_r19 = core
-          /* ɵɵnextContext */
-          .oxw(3);
-          core
-          /* ɵɵpropertyInterpolate */
-          .s9C("label", ctx_r19.calendarData.f1Calendar.sprintName);
-        }
-      }
-
-      function F1CountdownComponent_div_1_div_1_mat_tab_8_ng_template_1_div_4_Template(rf, ctx) {
+      function F1CountdownComponent_div_1_div_1_mat_tab_7_ng_template_2_div_4_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵelementStart */
@@ -104801,7 +104896,7 @@
         }
 
         if (rf & 2) {
-          var ctx_r48 = core
+          var ctx_r45 = core
           /* ɵɵnextContext */
           .oxw(5);
           core
@@ -104809,11 +104904,11 @@
           .xp6(3);
           core
           /* ɵɵtextInterpolate1 */
-          .hij("", ctx_r48.qualifyingDays, " days");
+          .hij("", ctx_r45.sprintDays, " days");
         }
       }
 
-      function F1CountdownComponent_div_1_div_1_mat_tab_8_ng_template_1_div_5_Template(rf, ctx) {
+      function F1CountdownComponent_div_1_div_1_mat_tab_7_ng_template_2_div_5_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵelementStart */
@@ -104841,32 +104936,32 @@
         }
       }
 
-      function F1CountdownComponent_div_1_div_1_mat_tab_8_ng_template_1_Template(rf, ctx) {
+      function F1CountdownComponent_div_1_div_1_mat_tab_7_ng_template_2_Template(rf, ctx) {
         if (rf & 1) {
-          var _r52 = core
+          var _r49 = core
           /* ɵɵgetCurrentView */
           .EpF();
 
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 25);
+          .TgZ(0, "div", 26);
           core
           /* ɵɵlistener */
-          .NdJ("click", function F1CountdownComponent_div_1_div_1_mat_tab_8_ng_template_1_Template_div_click_0_listener() {
+          .NdJ("click", function F1CountdownComponent_div_1_div_1_mat_tab_7_ng_template_2_Template_div_click_0_listener() {
             core
             /* ɵɵrestoreView */
-            .CHM(_r52);
-            var ctx_r51 = core
+            .CHM(_r49);
+            var ctx_r48 = core
             /* ɵɵnextContext */
             .oxw(4);
-            return ctx_r51.countdownWasClicked(4);
+            return ctx_r48.countdownWasClicked(6);
           });
           core
           /* ɵɵelementStart */
           .TgZ(1, "h1");
           core
           /* ɵɵelementStart */
-          .TgZ(2, "span", 26);
+          .TgZ(2, "span", 27);
 
           core
           /* ɵɵtext */
@@ -104880,10 +104975,10 @@
           .qZA();
           core
           /* ɵɵtemplate */
-          .YNc(4, F1CountdownComponent_div_1_div_1_mat_tab_8_ng_template_1_div_4_Template, 4, 1, "div", 27);
+          .YNc(4, F1CountdownComponent_div_1_div_1_mat_tab_7_ng_template_2_div_4_Template, 4, 1, "div", 19);
           core
           /* ɵɵtemplate */
-          .YNc(5, F1CountdownComponent_div_1_div_1_mat_tab_8_ng_template_1_div_5_Template, 4, 0, "div", 27);
+          .YNc(5, F1CountdownComponent_div_1_div_1_mat_tab_7_ng_template_2_div_5_Template, 4, 0, "div", 19);
           core
           /* ɵɵelementStart */
           .TgZ(6, "h1");
@@ -104927,7 +105022,7 @@
         }
 
         if (rf & 2) {
-          var ctx_r47 = core
+          var ctx_r44 = core
           /* ɵɵnextContext */
           .oxw(4);
           core
@@ -104935,19 +105030,19 @@
           .xp6(3);
           core
           /* ɵɵtextInterpolate1 */
-          .hij(" ", ctx_r47.calendarData.f1Calendar.qualifyingName, " in: ");
+          .hij(" ", ctx_r44.calendarData.f1Calendar.sprintName, " in: ");
           core
           /* ɵɵadvance */
           .xp6(1);
           core
           /* ɵɵproperty */
-          .Q6J("ngIf", ctx_r47.qualifyingDays > 1);
+          .Q6J("ngIf", ctx_r44.sprintDays > 1);
           core
           /* ɵɵadvance */
           .xp6(1);
           core
           /* ɵɵproperty */
-          .Q6J("ngIf", ctx_r47.qualifyingDays == 1);
+          .Q6J("ngIf", ctx_r44.sprintDays == 1);
           core
           /* ɵɵadvance */
           .xp6(3);
@@ -104955,7 +105050,266 @@
           /* ɵɵproperty */
           .Q6J("config", core
           /* ɵɵpureFunction1 */
-          .VKq(4, f1_countdown_component_c1, ctx_r47.qualifyingSeconds));
+          .VKq(4, f1_countdown_component_c1, ctx_r44.sprintSeconds));
+        }
+      }
+
+      function F1CountdownComponent_div_1_div_1_mat_tab_7_Template(rf, ctx) {
+        if (rf & 1) {
+          core
+          /* ɵɵelementStart */
+          .TgZ(0, "mat-tab");
+          core
+          /* ɵɵtemplate */
+          .YNc(1, F1CountdownComponent_div_1_div_1_mat_tab_7_ng_template_1_Template, 6, 5, "ng-template", 22);
+          core
+          /* ɵɵtemplate */
+          .YNc(2, F1CountdownComponent_div_1_div_1_mat_tab_7_ng_template_2_Template, 15, 6, "ng-template", 23);
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+        }
+      }
+
+      function F1CountdownComponent_div_1_div_1_mat_tab_8_ng_template_1_Template(rf, ctx) {
+        if (rf & 1) {
+          core
+          /* ɵɵelementStart */
+          .TgZ(0, "div");
+          core
+          /* ɵɵelementStart */
+          .TgZ(1, "div", 24);
+
+          core
+          /* ɵɵtext */
+          ._uU(2);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(3, "div", 25);
+
+          core
+          /* ɵɵtext */
+          ._uU(4);
+
+          core
+          /* ɵɵpipe */
+          .ALo(5, "date");
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+        }
+
+        if (rf & 2) {
+          var ctx_r50 = core
+          /* ɵɵnextContext */
+          .oxw(4);
+          core
+          /* ɵɵadvance */
+          .xp6(2);
+          core
+          /* ɵɵtextInterpolate */
+          .Oqu(ctx_r50.calendarData.f1Calendar.qualifyingName);
+          core
+          /* ɵɵadvance */
+          .xp6(2);
+          core
+          /* ɵɵtextInterpolate1 */
+          .hij(" ", core
+          /* ɵɵpipeBind2 */
+          .xi3(5, 2, ctx_r50.checkTime(ctx_r50.calendarData.f1Calendar.qualifying), "EEEE, h:mm a"), " ");
+        }
+      }
+
+      function F1CountdownComponent_div_1_div_1_mat_tab_8_ng_template_2_div_4_Template(rf, ctx) {
+        if (rf & 1) {
+          core
+          /* ɵɵelementStart */
+          .TgZ(0, "div");
+          core
+          /* ɵɵelementStart */
+          .TgZ(1, "h1");
+          core
+          /* ɵɵelementStart */
+          .TgZ(2, "span", 30);
+
+          core
+          /* ɵɵtext */
+          ._uU(3);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+        }
+
+        if (rf & 2) {
+          var ctx_r52 = core
+          /* ɵɵnextContext */
+          .oxw(5);
+          core
+          /* ɵɵadvance */
+          .xp6(3);
+          core
+          /* ɵɵtextInterpolate1 */
+          .hij("", ctx_r52.qualifyingDays, " days");
+        }
+      }
+
+      function F1CountdownComponent_div_1_div_1_mat_tab_8_ng_template_2_div_5_Template(rf, ctx) {
+        if (rf & 1) {
+          core
+          /* ɵɵelementStart */
+          .TgZ(0, "div");
+          core
+          /* ɵɵelementStart */
+          .TgZ(1, "h1");
+          core
+          /* ɵɵelementStart */
+          .TgZ(2, "span", 30);
+
+          core
+          /* ɵɵtext */
+          ._uU(3, "1 day");
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+        }
+      }
+
+      function F1CountdownComponent_div_1_div_1_mat_tab_8_ng_template_2_Template(rf, ctx) {
+        if (rf & 1) {
+          var _r56 = core
+          /* ɵɵgetCurrentView */
+          .EpF();
+
+          core
+          /* ɵɵelementStart */
+          .TgZ(0, "div", 26);
+          core
+          /* ɵɵlistener */
+          .NdJ("click", function F1CountdownComponent_div_1_div_1_mat_tab_8_ng_template_2_Template_div_click_0_listener() {
+            core
+            /* ɵɵrestoreView */
+            .CHM(_r56);
+            var ctx_r55 = core
+            /* ɵɵnextContext */
+            .oxw(4);
+            return ctx_r55.countdownWasClicked(4);
+          });
+          core
+          /* ɵɵelementStart */
+          .TgZ(1, "h1");
+          core
+          /* ɵɵelementStart */
+          .TgZ(2, "span", 27);
+
+          core
+          /* ɵɵtext */
+          ._uU(3);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵtemplate */
+          .YNc(4, F1CountdownComponent_div_1_div_1_mat_tab_8_ng_template_2_div_4_Template, 4, 1, "div", 19);
+          core
+          /* ɵɵtemplate */
+          .YNc(5, F1CountdownComponent_div_1_div_1_mat_tab_8_ng_template_2_div_5_Template, 4, 0, "div", 19);
+          core
+          /* ɵɵelementStart */
+          .TgZ(6, "h1");
+          core
+          /* ɵɵelementStart */
+          .TgZ(7, "span");
+
+          core
+          /* ɵɵelement */
+          ._UZ(8, "countdown", 28, 29);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+
+          core
+          /* ɵɵelement */
+          ._UZ(10, "br");
+
+          core
+          /* ɵɵelement */
+          ._UZ(11, "br");
+
+          core
+          /* ɵɵelement */
+          ._UZ(12, "br");
+
+          core
+          /* ɵɵelement */
+          ._UZ(13, "br");
+
+          core
+          /* ɵɵelement */
+          ._UZ(14, "br");
+        }
+
+        if (rf & 2) {
+          var ctx_r51 = core
+          /* ɵɵnextContext */
+          .oxw(4);
+          core
+          /* ɵɵadvance */
+          .xp6(3);
+          core
+          /* ɵɵtextInterpolate1 */
+          .hij(" ", ctx_r51.calendarData.f1Calendar.qualifyingName, " in: ");
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵproperty */
+          .Q6J("ngIf", ctx_r51.qualifyingDays > 1);
+          core
+          /* ɵɵadvance */
+          .xp6(1);
+          core
+          /* ɵɵproperty */
+          .Q6J("ngIf", ctx_r51.qualifyingDays == 1);
+          core
+          /* ɵɵadvance */
+          .xp6(3);
+          core
+          /* ɵɵproperty */
+          .Q6J("config", core
+          /* ɵɵpureFunction1 */
+          .VKq(4, f1_countdown_component_c1, ctx_r51.qualifyingSeconds));
         }
       }
 
@@ -104963,28 +105317,78 @@
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "mat-tab", 24);
+          .TgZ(0, "mat-tab");
           core
           /* ɵɵtemplate */
-          .YNc(1, F1CountdownComponent_div_1_div_1_mat_tab_8_ng_template_1_Template, 15, 6, "ng-template", 21);
+          .YNc(1, F1CountdownComponent_div_1_div_1_mat_tab_8_ng_template_1_Template, 6, 5, "ng-template", 22);
+          core
+          /* ɵɵtemplate */
+          .YNc(2, F1CountdownComponent_div_1_div_1_mat_tab_8_ng_template_2_Template, 15, 6, "ng-template", 23);
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+        }
+      }
+
+      function F1CountdownComponent_div_1_div_1_mat_tab_9_ng_template_1_Template(rf, ctx) {
+        if (rf & 1) {
+          core
+          /* ɵɵelementStart */
+          .TgZ(0, "div");
+          core
+          /* ɵɵelementStart */
+          .TgZ(1, "div", 24);
+
+          core
+          /* ɵɵtext */
+          ._uU(2);
+
+          core
+          /* ɵɵelementEnd */
+          .qZA();
+          core
+          /* ɵɵelementStart */
+          .TgZ(3, "div", 25);
+
+          core
+          /* ɵɵtext */
+          ._uU(4);
+
+          core
+          /* ɵɵpipe */
+          .ALo(5, "date");
+          core
+          /* ɵɵelementEnd */
+          .qZA();
           core
           /* ɵɵelementEnd */
           .qZA();
         }
 
         if (rf & 2) {
-          var ctx_r20 = core
+          var ctx_r57 = core
           /* ɵɵnextContext */
-          .oxw(3);
+          .oxw(4);
           core
-          /* ɵɵpropertyInterpolate */
-          .s9C("label", ctx_r20.calendarData.f1Calendar.qualifyingName);
+          /* ɵɵadvance */
+          .xp6(2);
+          core
+          /* ɵɵtextInterpolate */
+          .Oqu(ctx_r57.calendarData.f1Calendar.raceName);
+          core
+          /* ɵɵadvance */
+          .xp6(2);
+          core
+          /* ɵɵtextInterpolate1 */
+          .hij(" ", core
+          /* ɵɵpipeBind2 */
+          .xi3(5, 2, ctx_r57.checkTime(ctx_r57.calendarData.f1Calendar.race), "EEEE, h:mm a"), " ");
         }
       }
 
-      function F1CountdownComponent_div_1_div_1_mat_tab_9_ng_template_1_mat_slide_toggle_0_Template(rf, ctx) {
+      function F1CountdownComponent_div_1_div_1_mat_tab_9_ng_template_2_mat_slide_toggle_0_Template(rf, ctx) {
         if (rf & 1) {
-          var _r57 = core
+          var _r62 = core
           /* ɵɵgetCurrentView */
           .EpF();
 
@@ -104993,22 +105397,22 @@
           .TgZ(0, "mat-slide-toggle", 33);
           core
           /* ɵɵlistener */
-          .NdJ("change", function F1CountdownComponent_div_1_div_1_mat_tab_9_ng_template_1_mat_slide_toggle_0_Template_mat_slide_toggle_change_0_listener($event) {
+          .NdJ("change", function F1CountdownComponent_div_1_div_1_mat_tab_9_ng_template_2_mat_slide_toggle_0_Template_mat_slide_toggle_change_0_listener($event) {
             core
             /* ɵɵrestoreView */
-            .CHM(_r57);
-            var ctx_r56 = core
+            .CHM(_r62);
+            var ctx_r61 = core
             /* ɵɵnextContext */
             .oxw(5);
-            return ctx_r56.toggleMusic($event);
-          })("ngModelChange", function F1CountdownComponent_div_1_div_1_mat_tab_9_ng_template_1_mat_slide_toggle_0_Template_mat_slide_toggle_ngModelChange_0_listener($event) {
+            return ctx_r61.toggleMusic($event);
+          })("ngModelChange", function F1CountdownComponent_div_1_div_1_mat_tab_9_ng_template_2_mat_slide_toggle_0_Template_mat_slide_toggle_ngModelChange_0_listener($event) {
             core
             /* ɵɵrestoreView */
-            .CHM(_r57);
-            var ctx_r58 = core
+            .CHM(_r62);
+            var ctx_r63 = core
             /* ɵɵnextContext */
             .oxw(5);
-            return ctx_r58.isPlayingMusic = $event;
+            return ctx_r63.isPlayingMusic = $event;
           });
 
           core
@@ -105021,16 +105425,16 @@
         }
 
         if (rf & 2) {
-          var ctx_r54 = core
+          var ctx_r59 = core
           /* ɵɵnextContext */
           .oxw(5);
           core
           /* ɵɵproperty */
-          .Q6J("ngModel", ctx_r54.isPlayingMusic);
+          .Q6J("ngModel", ctx_r59.isPlayingMusic);
         }
       }
 
-      function F1CountdownComponent_div_1_div_1_mat_tab_9_ng_template_1_div_1_div_4_Template(rf, ctx) {
+      function F1CountdownComponent_div_1_div_1_mat_tab_9_ng_template_2_div_1_div_4_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵelementStart */
@@ -105058,7 +105462,7 @@
         }
 
         if (rf & 2) {
-          var ctx_r59 = core
+          var ctx_r64 = core
           /* ɵɵnextContext */
           .oxw(6);
           core
@@ -105066,11 +105470,11 @@
           .xp6(3);
           core
           /* ɵɵtextInterpolate1 */
-          .hij("", ctx_r59.raceDays, " days");
+          .hij("", ctx_r64.raceDays, " days");
         }
       }
 
-      function F1CountdownComponent_div_1_div_1_mat_tab_9_ng_template_1_div_1_div_5_Template(rf, ctx) {
+      function F1CountdownComponent_div_1_div_1_mat_tab_9_ng_template_2_div_1_div_5_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵelementStart */
@@ -105098,32 +105502,32 @@
         }
       }
 
-      function F1CountdownComponent_div_1_div_1_mat_tab_9_ng_template_1_div_1_Template(rf, ctx) {
+      function F1CountdownComponent_div_1_div_1_mat_tab_9_ng_template_2_div_1_Template(rf, ctx) {
         if (rf & 1) {
-          var _r63 = core
+          var _r68 = core
           /* ɵɵgetCurrentView */
           .EpF();
 
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 25);
+          .TgZ(0, "div", 26);
           core
           /* ɵɵlistener */
-          .NdJ("click", function F1CountdownComponent_div_1_div_1_mat_tab_9_ng_template_1_div_1_Template_div_click_0_listener() {
+          .NdJ("click", function F1CountdownComponent_div_1_div_1_mat_tab_9_ng_template_2_div_1_Template_div_click_0_listener() {
             core
             /* ɵɵrestoreView */
-            .CHM(_r63);
-            var ctx_r62 = core
+            .CHM(_r68);
+            var ctx_r67 = core
             /* ɵɵnextContext */
             .oxw(5);
-            return ctx_r62.countdownWasClicked(5);
+            return ctx_r67.countdownWasClicked(5);
           });
           core
           /* ɵɵelementStart */
           .TgZ(1, "h1");
           core
           /* ɵɵelementStart */
-          .TgZ(2, "span", 26);
+          .TgZ(2, "span", 27);
 
           core
           /* ɵɵtext */
@@ -105137,10 +105541,10 @@
           .qZA();
           core
           /* ɵɵtemplate */
-          .YNc(4, F1CountdownComponent_div_1_div_1_mat_tab_9_ng_template_1_div_1_div_4_Template, 4, 1, "div", 27);
+          .YNc(4, F1CountdownComponent_div_1_div_1_mat_tab_9_ng_template_2_div_1_div_4_Template, 4, 1, "div", 19);
           core
           /* ɵɵtemplate */
-          .YNc(5, F1CountdownComponent_div_1_div_1_mat_tab_9_ng_template_1_div_1_div_5_Template, 4, 0, "div", 27);
+          .YNc(5, F1CountdownComponent_div_1_div_1_mat_tab_9_ng_template_2_div_1_div_5_Template, 4, 0, "div", 19);
           core
           /* ɵɵelementStart */
           .TgZ(6, "h1");
@@ -105164,7 +105568,7 @@
         }
 
         if (rf & 2) {
-          var ctx_r55 = core
+          var ctx_r60 = core
           /* ɵɵnextContext */
           .oxw(5);
           core
@@ -105172,19 +105576,19 @@
           .xp6(3);
           core
           /* ɵɵtextInterpolate1 */
-          .hij(" ", ctx_r55.calendarData.f1Calendar.raceName, " in: ");
+          .hij(" ", ctx_r60.calendarData.f1Calendar.raceName, " in: ");
           core
           /* ɵɵadvance */
           .xp6(1);
           core
           /* ɵɵproperty */
-          .Q6J("ngIf", ctx_r55.raceDays > 1);
+          .Q6J("ngIf", ctx_r60.raceDays > 1);
           core
           /* ɵɵadvance */
           .xp6(1);
           core
           /* ɵɵproperty */
-          .Q6J("ngIf", ctx_r55.raceDays == 1);
+          .Q6J("ngIf", ctx_r60.raceDays == 1);
           core
           /* ɵɵadvance */
           .xp6(3);
@@ -105192,18 +105596,18 @@
           /* ɵɵproperty */
           .Q6J("config", core
           /* ɵɵpureFunction1 */
-          .VKq(4, f1_countdown_component_c1, ctx_r55.raceSeconds));
+          .VKq(4, f1_countdown_component_c1, ctx_r60.raceSeconds));
         }
       }
 
-      function F1CountdownComponent_div_1_div_1_mat_tab_9_ng_template_1_Template(rf, ctx) {
+      function F1CountdownComponent_div_1_div_1_mat_tab_9_ng_template_2_Template(rf, ctx) {
         if (rf & 1) {
           core
           /* ɵɵtemplate */
-          .YNc(0, F1CountdownComponent_div_1_div_1_mat_tab_9_ng_template_1_mat_slide_toggle_0_Template, 2, 1, "mat-slide-toggle", 31);
+          .YNc(0, F1CountdownComponent_div_1_div_1_mat_tab_9_ng_template_2_mat_slide_toggle_0_Template, 2, 1, "mat-slide-toggle", 31);
           core
           /* ɵɵtemplate */
-          .YNc(1, F1CountdownComponent_div_1_div_1_mat_tab_9_ng_template_1_div_1_Template, 10, 6, "div", 32);
+          .YNc(1, F1CountdownComponent_div_1_div_1_mat_tab_9_ng_template_2_div_1_Template, 10, 6, "div", 32);
 
           core
           /* ɵɵelement */
@@ -105227,18 +105631,18 @@
         }
 
         if (rf & 2) {
-          var ctx_r53 = core
+          var ctx_r58 = core
           /* ɵɵnextContext */
           .oxw(4);
           core
           /* ɵɵproperty */
-          .Q6J("ngIf", ctx_r53.itsTime);
+          .Q6J("ngIf", ctx_r58.itsTime);
           core
           /* ɵɵadvance */
           .xp6(1);
           core
           /* ɵɵproperty */
-          .Q6J("ngIf", ctx_r53.calendarData != null);
+          .Q6J("ngIf", ctx_r58.calendarData != null);
         }
       }
 
@@ -105246,615 +105650,22 @@
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "mat-tab", 24);
+          .TgZ(0, "mat-tab");
           core
           /* ɵɵtemplate */
-          .YNc(1, F1CountdownComponent_div_1_div_1_mat_tab_9_ng_template_1_Template, 7, 2, "ng-template", 21);
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-        }
-
-        if (rf & 2) {
-          var ctx_r21 = core
-          /* ɵɵnextContext */
-          .oxw(3);
-          core
-          /* ɵɵpropertyInterpolate */
-          .s9C("label", ctx_r21.calendarData.f1Calendar.raceName);
-        }
-      }
-
-      function F1CountdownComponent_div_1_div_1_ng_template_11_div_0_div_9_Template(rf, ctx) {
-        if (rf & 1) {
-          core
-          /* ɵɵelementStart */
-          .TgZ(0, "div", 42);
-
-          core
-          /* ɵɵtext */
-          ._uU(1);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-        }
-
-        if (rf & 2) {
-          var ctx_r65 = core
-          /* ɵɵnextContext */
-          .oxw(5);
-          core
-          /* ɵɵadvance */
-          .xp6(1);
-          core
-          /* ɵɵtextInterpolate1 */
-          .hij(" ", ctx_r65.calendarData.f1Calendar.practice1Name, " : ");
-        }
-      }
-
-      function F1CountdownComponent_div_1_div_1_ng_template_11_div_0_div_14_Template(rf, ctx) {
-        if (rf & 1) {
-          core
-          /* ɵɵelementStart */
-          .TgZ(0, "div", 42);
-
-          core
-          /* ɵɵtext */
-          ._uU(1);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-        }
-
-        if (rf & 2) {
-          var ctx_r66 = core
-          /* ɵɵnextContext */
-          .oxw(5);
-          core
-          /* ɵɵadvance */
-          .xp6(1);
-          core
-          /* ɵɵtextInterpolate1 */
-          .hij(" ", ctx_r66.calendarData.f1Calendar.practice2Name, " : ");
-        }
-      }
-
-      function F1CountdownComponent_div_1_div_1_ng_template_11_div_0_div_15_Template(rf, ctx) {
-        if (rf & 1) {
-          core
-          /* ɵɵelementStart */
-          .TgZ(0, "div", 39);
-
-          core
-          /* ɵɵtext */
-          ._uU(1);
-
-          core
-          /* ɵɵpipe */
-          .ALo(2, "date");
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-        }
-
-        if (rf & 2) {
-          var ctx_r67 = core
-          /* ɵɵnextContext */
-          .oxw(5);
-          core
-          /* ɵɵadvance */
-          .xp6(1);
-          core
-          /* ɵɵtextInterpolate1 */
-          .hij(" ", core
-          /* ɵɵpipeBind2 */
-          .xi3(2, 1, ctx_r67.checkTime(ctx_r67.calendarData.f1Calendar.practice2), "EEEE, MMMM d, HH:mm"), " ");
-        }
-      }
-
-      function F1CountdownComponent_div_1_div_1_ng_template_11_div_0_div_17_Template(rf, ctx) {
-        if (rf & 1) {
-          core
-          /* ɵɵelementStart */
-          .TgZ(0, "div", 42);
-
-          core
-          /* ɵɵtext */
-          ._uU(1);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-        }
-
-        if (rf & 2) {
-          var ctx_r68 = core
-          /* ɵɵnextContext */
-          .oxw(5);
-          core
-          /* ɵɵadvance */
-          .xp6(1);
-          core
-          /* ɵɵtextInterpolate1 */
-          .hij(" ", ctx_r68.calendarData.f1Calendar.practice3Name, " : ");
-        }
-      }
-
-      function F1CountdownComponent_div_1_div_1_ng_template_11_div_0_div_18_Template(rf, ctx) {
-        if (rf & 1) {
-          core
-          /* ɵɵelementStart */
-          .TgZ(0, "div", 39);
-
-          core
-          /* ɵɵtext */
-          ._uU(1);
-
-          core
-          /* ɵɵpipe */
-          .ALo(2, "date");
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-        }
-
-        if (rf & 2) {
-          var ctx_r69 = core
-          /* ɵɵnextContext */
-          .oxw(5);
-          core
-          /* ɵɵadvance */
-          .xp6(1);
-          core
-          /* ɵɵtextInterpolate1 */
-          .hij(" ", core
-          /* ɵɵpipeBind2 */
-          .xi3(2, 1, ctx_r69.checkTime(ctx_r69.calendarData.f1Calendar.practice3), "EEEE, MMMM d, HH:mm"), " ");
-        }
-      }
-
-      function F1CountdownComponent_div_1_div_1_ng_template_11_div_0_div_19_Template(rf, ctx) {
-        if (rf & 1) {
-          core
-          /* ɵɵelementStart */
-          .TgZ(0, "div", 42);
-
-          core
-          /* ɵɵtext */
-          ._uU(1);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-        }
-
-        if (rf & 2) {
-          var ctx_r70 = core
-          /* ɵɵnextContext */
-          .oxw(5);
-          core
-          /* ɵɵadvance */
-          .xp6(1);
-          core
-          /* ɵɵtextInterpolate1 */
-          .hij(" ", ctx_r70.calendarData.f1Calendar.sprintName, " : ");
-        }
-      }
-
-      function F1CountdownComponent_div_1_div_1_ng_template_11_div_0_div_20_Template(rf, ctx) {
-        if (rf & 1) {
-          core
-          /* ɵɵelementStart */
-          .TgZ(0, "div", 39);
-
-          core
-          /* ɵɵtext */
-          ._uU(1);
-
-          core
-          /* ɵɵpipe */
-          .ALo(2, "date");
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-        }
-
-        if (rf & 2) {
-          var ctx_r71 = core
-          /* ɵɵnextContext */
-          .oxw(5);
-          core
-          /* ɵɵadvance */
-          .xp6(1);
-          core
-          /* ɵɵtextInterpolate1 */
-          .hij(" ", core
-          /* ɵɵpipeBind2 */
-          .xi3(2, 1, ctx_r71.checkTime(ctx_r71.calendarData.f1Calendar.sprint), "EEEE, MMMM d, HH:mm"), " ");
-        }
-      }
-
-      function F1CountdownComponent_div_1_div_1_ng_template_11_div_0_div_22_Template(rf, ctx) {
-        if (rf & 1) {
-          core
-          /* ɵɵelementStart */
-          .TgZ(0, "div", 42);
-
-          core
-          /* ɵɵtext */
-          ._uU(1);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-        }
-
-        if (rf & 2) {
-          var ctx_r72 = core
-          /* ɵɵnextContext */
-          .oxw(5);
-          core
-          /* ɵɵadvance */
-          .xp6(1);
-          core
-          /* ɵɵtextInterpolate1 */
-          .hij(" ", ctx_r72.calendarData.f1Calendar.qualifyingName, " : ");
-        }
-      }
-
-      function F1CountdownComponent_div_1_div_1_ng_template_11_div_0_div_23_Template(rf, ctx) {
-        if (rf & 1) {
-          core
-          /* ɵɵelementStart */
-          .TgZ(0, "div", 39);
-
-          core
-          /* ɵɵtext */
-          ._uU(1);
-
-          core
-          /* ɵɵpipe */
-          .ALo(2, "date");
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-        }
-
-        if (rf & 2) {
-          var ctx_r73 = core
-          /* ɵɵnextContext */
-          .oxw(5);
-          core
-          /* ɵɵadvance */
-          .xp6(1);
-          core
-          /* ɵɵtextInterpolate1 */
-          .hij(" ", core
-          /* ɵɵpipeBind2 */
-          .xi3(2, 1, ctx_r73.checkTime(ctx_r73.calendarData.f1Calendar.qualifying), "EEEE, MMMM d, HH:mm"), " ");
-        }
-      }
-
-      function F1CountdownComponent_div_1_div_1_ng_template_11_div_0_div_25_Template(rf, ctx) {
-        if (rf & 1) {
-          core
-          /* ɵɵelementStart */
-          .TgZ(0, "div", 42);
-
-          core
-          /* ɵɵtext */
-          ._uU(1);
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-        }
-
-        if (rf & 2) {
-          var ctx_r74 = core
-          /* ɵɵnextContext */
-          .oxw(5);
-          core
-          /* ɵɵadvance */
-          .xp6(1);
-          core
-          /* ɵɵtextInterpolate1 */
-          .hij(" ", ctx_r74.calendarData.f1Calendar.raceName, " : ");
-        }
-      }
-
-      function F1CountdownComponent_div_1_div_1_ng_template_11_div_0_div_26_Template(rf, ctx) {
-        if (rf & 1) {
-          core
-          /* ɵɵelementStart */
-          .TgZ(0, "div", 39);
-
-          core
-          /* ɵɵtext */
-          ._uU(1);
-
-          core
-          /* ɵɵpipe */
-          .ALo(2, "date");
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-        }
-
-        if (rf & 2) {
-          var ctx_r75 = core
-          /* ɵɵnextContext */
-          .oxw(5);
-          core
-          /* ɵɵadvance */
-          .xp6(1);
-          core
-          /* ɵɵtextInterpolate1 */
-          .hij(" ", core
-          /* ɵɵpipeBind2 */
-          .xi3(2, 1, ctx_r75.checkTime(ctx_r75.calendarData.f1Calendar.race), "EEEE, MMMM d, HH:mm"), " ");
-        }
-      }
-
-      function F1CountdownComponent_div_1_div_1_ng_template_11_div_0_Template(rf, ctx) {
-        if (rf & 1) {
-          var _r77 = core
-          /* ɵɵgetCurrentView */
-          .EpF();
-
-          core
-          /* ɵɵelementStart */
-          .TgZ(0, "div");
-          core
-          /* ɵɵelementStart */
-          .TgZ(1, "div", 35);
-          core
-          /* ɵɵelementStart */
-          .TgZ(2, "span");
-
-          core
-          /* ɵɵtext */
-          ._uU(3, "My time ");
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(4, "mat-slide-toggle", 36);
-          core
-          /* ɵɵlistener */
-          .NdJ("ngModelChange", function F1CountdownComponent_div_1_div_1_ng_template_11_div_0_Template_mat_slide_toggle_ngModelChange_4_listener($event) {
-            core
-            /* ɵɵrestoreView */
-            .CHM(_r77);
-            var ctx_r76 = core
-            /* ɵɵnextContext */
-            .oxw(4);
-            return ctx_r76.isUtc = $event;
-          });
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(5, "span");
-
-          core
-          /* ɵɵtext */
-          ._uU(6, " UTC time");
-
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementStart */
-          .TgZ(7, "div");
-          core
-          /* ɵɵelementStart */
-          .TgZ(8, "div", 37);
+          .YNc(1, F1CountdownComponent_div_1_div_1_mat_tab_9_ng_template_1_Template, 6, 5, "ng-template", 22);
           core
           /* ɵɵtemplate */
-          .YNc(9, F1CountdownComponent_div_1_div_1_ng_template_11_div_0_div_9_Template, 2, 1, "div", 38);
-          core
-          /* ɵɵelementStart */
-          .TgZ(10, "div", 39);
-
-          core
-          /* ɵɵtext */
-          ._uU(11);
-
-          core
-          /* ɵɵpipe */
-          .ALo(12, "date");
+          .YNc(2, F1CountdownComponent_div_1_div_1_mat_tab_9_ng_template_2_Template, 7, 2, "ng-template", 23);
           core
           /* ɵɵelementEnd */
           .qZA();
-
-          core
-          /* ɵɵelement */
-          ._UZ(13, "div", 40);
-
-          core
-          /* ɵɵtemplate */
-          .YNc(14, F1CountdownComponent_div_1_div_1_ng_template_11_div_0_div_14_Template, 2, 1, "div", 38);
-          core
-          /* ɵɵtemplate */
-          .YNc(15, F1CountdownComponent_div_1_div_1_ng_template_11_div_0_div_15_Template, 3, 4, "div", 41);
-
-          core
-          /* ɵɵelement */
-          ._UZ(16, "div", 40);
-
-          core
-          /* ɵɵtemplate */
-          .YNc(17, F1CountdownComponent_div_1_div_1_ng_template_11_div_0_div_17_Template, 2, 1, "div", 38);
-          core
-          /* ɵɵtemplate */
-          .YNc(18, F1CountdownComponent_div_1_div_1_ng_template_11_div_0_div_18_Template, 3, 4, "div", 41);
-          core
-          /* ɵɵtemplate */
-          .YNc(19, F1CountdownComponent_div_1_div_1_ng_template_11_div_0_div_19_Template, 2, 1, "div", 38);
-          core
-          /* ɵɵtemplate */
-          .YNc(20, F1CountdownComponent_div_1_div_1_ng_template_11_div_0_div_20_Template, 3, 4, "div", 41);
-
-          core
-          /* ɵɵelement */
-          ._UZ(21, "div", 40);
-
-          core
-          /* ɵɵtemplate */
-          .YNc(22, F1CountdownComponent_div_1_div_1_ng_template_11_div_0_div_22_Template, 2, 1, "div", 38);
-          core
-          /* ɵɵtemplate */
-          .YNc(23, F1CountdownComponent_div_1_div_1_ng_template_11_div_0_div_23_Template, 3, 4, "div", 41);
-
-          core
-          /* ɵɵelement */
-          ._UZ(24, "div", 40);
-
-          core
-          /* ɵɵtemplate */
-          .YNc(25, F1CountdownComponent_div_1_div_1_ng_template_11_div_0_div_25_Template, 2, 1, "div", 38);
-          core
-          /* ɵɵtemplate */
-          .YNc(26, F1CountdownComponent_div_1_div_1_ng_template_11_div_0_div_26_Template, 3, 4, "div", 41);
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-          core
-          /* ɵɵelementEnd */
-          .qZA();
-        }
-
-        if (rf & 2) {
-          var ctx_r64 = core
-          /* ɵɵnextContext */
-          .oxw(4);
-          core
-          /* ɵɵadvance */
-          .xp6(4);
-          core
-          /* ɵɵproperty */
-          .Q6J("ngModel", ctx_r64.isUtc);
-          core
-          /* ɵɵadvance */
-          .xp6(5);
-          core
-          /* ɵɵproperty */
-          .Q6J("ngIf", ctx_r64.calendarData.f1Calendar.practice1Name != null);
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵtextInterpolate1 */
-          .hij(" ", core
-          /* ɵɵpipeBind2 */
-          .xi3(12, 13, ctx_r64.checkTime(ctx_r64.calendarData.f1Calendar.practice1), "EEEE, MMMM d, HH:mm"), " ");
-          core
-          /* ɵɵadvance */
-          .xp6(3);
-          core
-          /* ɵɵproperty */
-          .Q6J("ngIf", ctx_r64.calendarData.f1Calendar.practice2Name != null);
-          core
-          /* ɵɵadvance */
-          .xp6(1);
-          core
-          /* ɵɵproperty */
-          .Q6J("ngIf", ctx_r64.calendarData.f1Calendar.practice2Name != null);
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵproperty */
-          .Q6J("ngIf", ctx_r64.calendarData.f1Calendar.practice3Name != null);
-          core
-          /* ɵɵadvance */
-          .xp6(1);
-          core
-          /* ɵɵproperty */
-          .Q6J("ngIf", ctx_r64.calendarData.f1Calendar.practice3Name != null);
-          core
-          /* ɵɵadvance */
-          .xp6(1);
-          core
-          /* ɵɵproperty */
-          .Q6J("ngIf", ctx_r64.calendarData.f1Calendar.sprintName != null);
-          core
-          /* ɵɵadvance */
-          .xp6(1);
-          core
-          /* ɵɵproperty */
-          .Q6J("ngIf", ctx_r64.calendarData.f1Calendar.sprint != null);
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵproperty */
-          .Q6J("ngIf", ctx_r64.calendarData.f1Calendar.qualifyingName != null);
-          core
-          /* ɵɵadvance */
-          .xp6(1);
-          core
-          /* ɵɵproperty */
-          .Q6J("ngIf", ctx_r64.calendarData.f1Calendar.qualifyingName != null);
-          core
-          /* ɵɵadvance */
-          .xp6(2);
-          core
-          /* ɵɵproperty */
-          .Q6J("ngIf", ctx_r64.calendarData.f1Calendar.raceName != null);
-          core
-          /* ɵɵadvance */
-          .xp6(1);
-          core
-          /* ɵɵproperty */
-          .Q6J("ngIf", ctx_r64.calendarData.f1Calendar.raceName != null);
-        }
-      }
-
-      function F1CountdownComponent_div_1_div_1_ng_template_11_Template(rf, ctx) {
-        if (rf & 1) {
-          core
-          /* ɵɵtemplate */
-          .YNc(0, F1CountdownComponent_div_1_div_1_ng_template_11_div_0_Template, 27, 16, "div", 27);
-
-          core
-          /* ɵɵelement */
-          ._UZ(1, "br");
-
-          core
-          /* ɵɵelement */
-          ._UZ(2, "br");
-
-          core
-          /* ɵɵelement */
-          ._UZ(3, "br");
-        }
-
-        if (rf & 2) {
-          var ctx_r22 = core
-          /* ɵɵnextContext */
-          .oxw(3);
-          core
-          /* ɵɵproperty */
-          .Q6J("ngIf", ctx_r22.calendarData != null);
         }
       }
 
       function F1CountdownComponent_div_1_div_1_Template(rf, ctx) {
         if (rf & 1) {
-          var _r79 = core
+          var _r70 = core
           /* ɵɵgetCurrentView */
           .EpF();
 
@@ -105866,19 +105677,19 @@
           .NdJ("touchstart", function F1CountdownComponent_div_1_div_1_Template_div_touchstart_0_listener($event) {
             core
             /* ɵɵrestoreView */
-            .CHM(_r79);
-            var ctx_r78 = core
+            .CHM(_r70);
+            var ctx_r69 = core
             /* ɵɵnextContext */
             .oxw(2);
-            return ctx_r78.touchstart($event);
+            return ctx_r69.touchstart($event);
           })("touchend", function F1CountdownComponent_div_1_div_1_Template_div_touchend_0_listener($event) {
             core
             /* ɵɵrestoreView */
-            .CHM(_r79);
-            var ctx_r80 = core
+            .CHM(_r70);
+            var ctx_r71 = core
             /* ɵɵnextContext */
             .oxw(2);
-            return ctx_r80.touchend($event);
+            return ctx_r71.touchend($event);
           });
           core
           /* ɵɵtemplate */
@@ -105894,47 +105705,38 @@
           .NdJ("selectedIndexChange", function F1CountdownComponent_div_1_div_1_Template_mat_tab_group_selectedIndexChange_3_listener($event) {
             core
             /* ɵɵrestoreView */
-            .CHM(_r79);
-            var ctx_r81 = core
+            .CHM(_r70);
+            var ctx_r72 = core
             /* ɵɵnextContext */
             .oxw(2);
-            return ctx_r81.selectedTab = $event;
+            return ctx_r72.selectedTab = $event;
           })("selectedTabChange", function F1CountdownComponent_div_1_div_1_Template_mat_tab_group_selectedTabChange_3_listener($event) {
             core
             /* ɵɵrestoreView */
-            .CHM(_r79);
-            var ctx_r82 = core
+            .CHM(_r70);
+            var ctx_r73 = core
             /* ɵɵnextContext */
             .oxw(2);
-            return ctx_r82.tabChanged($event);
+            return ctx_r73.tabChanged($event);
           });
           core
           /* ɵɵtemplate */
-          .YNc(4, F1CountdownComponent_div_1_div_1_mat_tab_4_Template, 2, 1, "mat-tab", 19);
+          .YNc(4, F1CountdownComponent_div_1_div_1_mat_tab_4_Template, 3, 0, "mat-tab", 19);
           core
           /* ɵɵtemplate */
-          .YNc(5, F1CountdownComponent_div_1_div_1_mat_tab_5_Template, 2, 1, "mat-tab", 19);
+          .YNc(5, F1CountdownComponent_div_1_div_1_mat_tab_5_Template, 3, 0, "mat-tab", 19);
           core
           /* ɵɵtemplate */
-          .YNc(6, F1CountdownComponent_div_1_div_1_mat_tab_6_Template, 2, 1, "mat-tab", 19);
+          .YNc(6, F1CountdownComponent_div_1_div_1_mat_tab_6_Template, 3, 0, "mat-tab", 19);
           core
           /* ɵɵtemplate */
-          .YNc(7, F1CountdownComponent_div_1_div_1_mat_tab_7_Template, 2, 1, "mat-tab", 19);
+          .YNc(7, F1CountdownComponent_div_1_div_1_mat_tab_7_Template, 3, 0, "mat-tab", 19);
           core
           /* ɵɵtemplate */
-          .YNc(8, F1CountdownComponent_div_1_div_1_mat_tab_8_Template, 2, 1, "mat-tab", 19);
+          .YNc(8, F1CountdownComponent_div_1_div_1_mat_tab_8_Template, 3, 0, "mat-tab", 19);
           core
           /* ɵɵtemplate */
-          .YNc(9, F1CountdownComponent_div_1_div_1_mat_tab_9_Template, 2, 1, "mat-tab", 19);
-          core
-          /* ɵɵelementStart */
-          .TgZ(10, "mat-tab", 20);
-          core
-          /* ɵɵtemplate */
-          .YNc(11, F1CountdownComponent_div_1_div_1_ng_template_11_Template, 4, 1, "ng-template", 21);
-          core
-          /* ɵɵelementEnd */
-          .qZA();
+          .YNc(9, F1CountdownComponent_div_1_div_1_mat_tab_9_Template, 3, 0, "mat-tab", 19);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -106008,16 +105810,16 @@
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 43);
+          .TgZ(0, "div", 35);
           core
           /* ɵɵelementStart */
-          .TgZ(1, "div", 44);
+          .TgZ(1, "div", 36);
           core
           /* ɵɵelementStart */
           .TgZ(2, "h2");
           core
           /* ɵɵelementStart */
-          .TgZ(3, "span", 26);
+          .TgZ(3, "span", 27);
 
           core
           /* ɵɵtext */
@@ -106047,7 +105849,7 @@
         if (rf & 1) {
           core
           /* ɵɵelement */
-          ._UZ(0, "img", 45);
+          ._UZ(0, "img", 37);
         }
 
         if (rf & 2) {
@@ -106066,7 +105868,7 @@
         if (rf & 1) {
           core
           /* ɵɵelement */
-          ._UZ(0, "img", 46);
+          ._UZ(0, "img", 38);
         }
 
         if (rf & 2) {
@@ -106085,7 +105887,7 @@
         if (rf & 1) {
           core
           /* ɵɵelement */
-          ._UZ(0, "img", 47);
+          ._UZ(0, "img", 39);
         }
 
         if (rf & 2) {
@@ -106107,7 +105909,7 @@
         if (rf & 1) {
           core
           /* ɵɵelement */
-          ._UZ(0, "div", 48);
+          ._UZ(0, "div", 40);
         }
       }
 
@@ -106115,7 +105917,7 @@
         if (rf & 1) {
           core
           /* ɵɵelement */
-          ._UZ(0, "div", 49);
+          ._UZ(0, "div", 41);
         }
       }
 
@@ -106123,7 +105925,7 @@
         if (rf & 1) {
           core
           /* ɵɵelement */
-          ._UZ(0, "div", 50);
+          ._UZ(0, "div", 42);
         }
       }
 
@@ -106131,7 +105933,7 @@
         if (rf & 1) {
           core
           /* ɵɵelement */
-          ._UZ(0, "div", 51);
+          ._UZ(0, "div", 43);
         }
       }
 
@@ -106139,7 +105941,7 @@
         if (rf & 1) {
           core
           /* ɵɵelement */
-          ._UZ(0, "div", 52);
+          ._UZ(0, "div", 44);
         }
       }
 
@@ -106147,7 +105949,7 @@
         if (rf & 1) {
           core
           /* ɵɵelement */
-          ._UZ(0, "div", 53);
+          ._UZ(0, "div", 45);
         }
       }
 
@@ -106155,7 +105957,7 @@
         if (rf & 1) {
           core
           /* ɵɵelement */
-          ._UZ(0, "div", 54);
+          ._UZ(0, "div", 46);
         }
       }
 
@@ -106166,7 +105968,7 @@
           .TgZ(0, "div", 2);
           core
           /* ɵɵtemplate */
-          .YNc(1, F1CountdownComponent_div_1_div_1_Template, 12, 9, "div", 3);
+          .YNc(1, F1CountdownComponent_div_1_div_1_Template, 10, 9, "div", 3);
           core
           /* ɵɵtemplate */
           .YNc(2, F1CountdownComponent_div_1_div_2_Template, 6, 0, "div", 4);
@@ -106288,7 +106090,7 @@
         if (rf & 1) {
           core
           /* ɵɵelement */
-          ._UZ(0, "div", 55);
+          ._UZ(0, "div", 47);
         }
       }
 
@@ -106773,7 +106575,7 @@
         },
         decls: 3,
         vars: 2,
-        consts: [["class", "height-fill-screen", 4, "ngIf"], ["class", "max-on-top-div", 4, "ngIf"], [1, "height-fill-screen"], ["class", "mat-content", 3, "touchstart", "touchend", 4, "ngIf"], ["class", "\u201Dmat-content\u201D", 4, "ngIf"], ["class", "bottom-left-image", "alt", "bottom-left-image", 3, "src", 4, "ngIf"], ["class", "bottom-right-image", "alt", "bottom-right-image", 3, "src", 4, "ngIf"], ["class", "bottom-center-image max-height-40-vh", "alt", "bottom-center-image", 3, "style", "src", 4, "ngIf"], ["class", "chika-div overlay-bottom-div-fixed overlay-animation-1", 4, "ngIf"], ["class", "boat-div overlay-bottom-div-fixed overlay-animation-boat-1", 4, "ngIf"], ["class", "boat-div overlay-bottom-div-fixed overlay-animation-boat-2", 4, "ngIf"], ["class", "forza-ferrari-div overlay-top-right-div-fixed", 4, "ngIf"], ["class", "hamilton-div overlay-bottom-right-div-fixed", 4, "ngIf"], ["class", "toto-div overlay-bottom-right-div-fixed", 4, "ngIf"], ["class", "fail-ferrari-div overlay-bottom-left-div-fixed", 4, "ngIf"], [1, "mat-content", 3, "touchstart", "touchend"], ["class", "basic-bg-1", "src", "assets/img/overlays/miami_waters1.jpg", "alt", "transparent-bg", 4, "ngIf"], ["class", "basic-bg-1", "alt", "transparent-bg", 3, "src", 4, "ngIf"], [3, "selectedIndex", "selectedIndexChange", "selectedTabChange"], [3, "label", 4, "ngIf"], ["label", "Start times"], ["matTabContent", ""], ["src", "assets/img/overlays/miami_waters1.jpg", "alt", "transparent-bg", 1, "basic-bg-1"], ["alt", "transparent-bg", 1, "basic-bg-1", 3, "src"], [3, "label"], [3, "click"], [1, "countdown-desc", "f1-glow"], [4, "ngIf"], [3, "config"], ["cd", ""], [1, "count-down"], [3, "ngModel", "change", "ngModelChange", 4, "ngIf"], [3, "click", 4, "ngIf"], [3, "ngModel", "change", "ngModelChange"], [1, "nc-icon", "nc-note-03"], [1, "div-padded-always-1rem"], [3, "ngModel", "ngModelChange"], [1, "row"], ["class", "col-lg-5 countdown-desc-2 text-lg-right", 4, "ngIf"], [1, "col-lg-7", "countdown-desc-2", "text-lg-left"], [1, "col-12", "mobile-space"], ["class", "col-lg-7 countdown-desc-2 text-lg-left", 4, "ngIf"], [1, "col-lg-5", "countdown-desc-2", "text-lg-right"], [1, "\u201Dmat-content\u201D"], [1, "pt-5"], ["alt", "bottom-left-image", 1, "bottom-left-image", 3, "src"], ["alt", "bottom-right-image", 1, "bottom-right-image", 3, "src"], ["alt", "bottom-center-image", 1, "bottom-center-image", "max-height-40-vh", 3, "src"], [1, "chika-div", "overlay-bottom-div-fixed", "overlay-animation-1"], [1, "boat-div", "overlay-bottom-div-fixed", "overlay-animation-boat-1"], [1, "boat-div", "overlay-bottom-div-fixed", "overlay-animation-boat-2"], [1, "forza-ferrari-div", "overlay-top-right-div-fixed"], [1, "hamilton-div", "overlay-bottom-right-div-fixed"], [1, "toto-div", "overlay-bottom-right-div-fixed"], [1, "fail-ferrari-div", "overlay-bottom-left-div-fixed"], [1, "max-on-top-div"]],
+        consts: [["class", "height-fill-screen", 4, "ngIf"], ["class", "max-on-top-div", 4, "ngIf"], [1, "height-fill-screen"], ["class", "mat-content", 3, "touchstart", "touchend", 4, "ngIf"], ["class", "\u201Dmat-content\u201D", 4, "ngIf"], ["class", "bottom-left-image", "alt", "bottom-left-image", 3, "src", 4, "ngIf"], ["class", "bottom-right-image", "alt", "bottom-right-image", 3, "src", 4, "ngIf"], ["class", "bottom-center-image max-height-40-vh", "alt", "bottom-center-image", 3, "style", "src", 4, "ngIf"], ["class", "chika-div overlay-bottom-div-fixed overlay-animation-1", 4, "ngIf"], ["class", "boat-div overlay-bottom-div-fixed overlay-animation-boat-1", 4, "ngIf"], ["class", "boat-div overlay-bottom-div-fixed overlay-animation-boat-2", 4, "ngIf"], ["class", "forza-ferrari-div overlay-top-right-div-fixed", 4, "ngIf"], ["class", "hamilton-div overlay-bottom-right-div-fixed", 4, "ngIf"], ["class", "toto-div overlay-bottom-right-div-fixed", 4, "ngIf"], ["class", "fail-ferrari-div overlay-bottom-left-div-fixed", 4, "ngIf"], [1, "mat-content", 3, "touchstart", "touchend"], ["class", "basic-bg-1", "src", "assets/img/overlays/miami_waters1.jpg", "alt", "transparent-bg", 4, "ngIf"], ["class", "basic-bg-1", "alt", "transparent-bg", 3, "src", 4, "ngIf"], [3, "selectedIndex", "selectedIndexChange", "selectedTabChange"], [4, "ngIf"], ["src", "assets/img/overlays/miami_waters1.jpg", "alt", "transparent-bg", 1, "basic-bg-1"], ["alt", "transparent-bg", 1, "basic-bg-1", 3, "src"], ["mat-tab-label", ""], ["matTabContent", ""], [1, "pt-2", "teko-text-medium"], [2, "font-size", "12px"], [3, "click"], [1, "countdown-desc", "f1-glow"], [3, "config"], ["cd", ""], [1, "count-down"], [3, "ngModel", "change", "ngModelChange", 4, "ngIf"], [3, "click", 4, "ngIf"], [3, "ngModel", "change", "ngModelChange"], [1, "nc-icon", "nc-note-03"], [1, "\u201Dmat-content\u201D"], [1, "pt-5"], ["alt", "bottom-left-image", 1, "bottom-left-image", 3, "src"], ["alt", "bottom-right-image", 1, "bottom-right-image", 3, "src"], ["alt", "bottom-center-image", 1, "bottom-center-image", "max-height-40-vh", 3, "src"], [1, "chika-div", "overlay-bottom-div-fixed", "overlay-animation-1"], [1, "boat-div", "overlay-bottom-div-fixed", "overlay-animation-boat-1"], [1, "boat-div", "overlay-bottom-div-fixed", "overlay-animation-boat-2"], [1, "forza-ferrari-div", "overlay-top-right-div-fixed"], [1, "hamilton-div", "overlay-bottom-right-div-fixed"], [1, "toto-div", "overlay-bottom-right-div-fixed"], [1, "fail-ferrari-div", "overlay-bottom-left-div-fixed"], [1, "max-on-top-div"]],
         template: function F1CountdownComponent_Template(rf, ctx) {
           if (rf & 1) {
             core
@@ -106812,6 +106614,8 @@
         .SP, tabs
         /* MatTab */
         .uX, tabs
+        /* MatTabLabel */
+        .uD, tabs
         /* MatTabContent */
         .Vc, ngx_countdown
         /* CountdownComponent */

@@ -111,25 +111,11 @@ public class RedditServiceImpl implements RedditService {
                 }
                 if (post.getUrl().contains("dubz.")) {
                     post.setStatus(1);
-                    filteredVideoPosts.add(post);
-//                    if (post.getUrl().contains("dubz.live/c/")) {
-//                        post.setUrl(post.getUrl().replace("dubz.live/c/", "dubzalt.com/storage/videos/"));
-//                        post.setUrl(post.getUrl() + ".mp4");
-//                        filteredVideoPosts.add(post);
-//                    } else if (post.getUrl().contains("dubz.co/c/")) {
-//                        post.setUrl(post.getUrl().replace("dubz.co/c/", "dubzalt.com/storage/videos/"));
-//                        post.setUrl(post.getUrl() + ".mp4");
-//                        filteredVideoPosts.add(post);
-//                    } else if (post.getUrl().contains("dubz.link/c/")) {
-//                        post.setUrl(post.getUrl().replace("dubz.link/c/", "dubzalt.com/storage/videos/"));
-//                        post.setUrl(post.getUrl() + ".mp4");
-//                        filteredVideoPosts.add(post);
-//                    } else {
-//                        log.warn("unknown dubz link");
-//                        post.setStatus(1);
-//                        filteredVideoPosts.add(post);
-//                    }
-
+                        String[] parts = post.getUrl().split("/c/");
+                        if(parts.length > 1){
+                            post.setImageUrl("https://cdn.makevos.com/thumbnails/"+ parts[1] + ".jpg");
+                        }
+                        filteredVideoPosts.add(post);
                 }
                 if (post.getUrl().contains("youtu")) {
                     post.setIconUrl("https://www.youtube.com/favicon.ico");

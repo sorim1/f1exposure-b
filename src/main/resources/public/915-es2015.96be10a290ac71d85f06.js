@@ -47371,6 +47371,10 @@ class StandingsComponent {
         };
     }
     setDriversHeatMapChart() {
+        if (this.driversHeatMapStandingsSeries.length > 0 && this.driversHeatMapStandingsSeries[0] == null) {
+            // dont know why this happens
+            this.driversHeatMapStandingsSeries.shift();
+        }
         this.driversHeatMapChartOptions = {
             colors: ['#0000ff'],
             series: this.driversHeatMapStandingsSeries,
@@ -49453,12 +49457,12 @@ function UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_11_Template(rf, ctx) 
     const ctx_r9 = core/* ɵɵnextContext */.oxw(3);
     core/* ɵɵproperty */.Q6J("disabled", ctx_r9.upcomingRaceAnalysis.sprint == null);
 } }
-function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_div_1_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "div", 66);
-    core/* ɵɵelementStart */.TgZ(1, "div", 67);
+function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_div_2_Template(rf, ctx) { if (rf & 1) {
+    core/* ɵɵelementStart */.TgZ(0, "div", 45);
+    core/* ɵɵelementStart */.TgZ(1, "div", 46);
     core/* ɵɵelementStart */.TgZ(2, "a", 14);
     core/* ɵɵelement */._UZ(3, "img", 47);
-    core/* ɵɵelementStart */.TgZ(4, "p", 68);
+    core/* ɵɵelementStart */.TgZ(4, "p", 48);
     core/* ɵɵtext */._uU(5);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -49475,7 +49479,7 @@ function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_div_1_Te
     core/* ɵɵadvance */.xp6(2);
     core/* ɵɵtextInterpolate */.Oqu(video_r146.title);
 } }
-function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_24_div_8_div_1_Template(rf, ctx) { if (rf & 1) {
+function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_25_div_8_div_1_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div");
     core/* ɵɵelementStart */.TgZ(1, "span", 56);
     core/* ɵɵtext */._uU(2);
@@ -49491,17 +49495,17 @@ function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_24_di
     core/* ɵɵadvance */.xp6(1);
     core/* ɵɵtextInterpolate1 */.hij(" ", lap_r155.Value, " ");
 } }
-function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_24_div_8_div_2_Template(rf, ctx) { if (rf & 1) {
+function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_25_div_8_div_2_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div");
     core/* ɵɵelementStart */.TgZ(1, "span");
     core/* ɵɵtext */._uU(2, "-");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } }
-function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_24_div_8_Template(rf, ctx) { if (rf & 1) {
+function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_25_div_8_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div");
-    core/* ɵɵtemplate */.YNc(1, UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_24_div_8_div_1_Template, 4, 2, "div", 0);
-    core/* ɵɵtemplate */.YNc(2, UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_24_div_8_div_2_Template, 3, 0, "div", 0);
+    core/* ɵɵtemplate */.YNc(1, UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_25_div_8_div_1_Template, 4, 2, "div", 0);
+    core/* ɵɵtemplate */.YNc(2, UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_25_div_8_div_2_Template, 3, 0, "div", 0);
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
     const lap_r155 = ctx.$implicit;
@@ -49510,7 +49514,7 @@ function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_24_di
     core/* ɵɵadvance */.xp6(1);
     core/* ɵɵproperty */.Q6J("ngIf", lap_r155.Value == null);
 } }
-function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_24_div_11_div_1_Template(rf, ctx) { if (rf & 1) {
+function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_25_div_11_div_1_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div");
     core/* ɵɵelementStart */.TgZ(1, "span");
     core/* ɵɵtext */._uU(2);
@@ -49521,17 +49525,17 @@ function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_24_di
     core/* ɵɵadvance */.xp6(2);
     core/* ɵɵtextInterpolate */.Oqu(stat_r160.TimeDiffToFastest);
 } }
-function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_24_div_11_div_2_Template(rf, ctx) { if (rf & 1) {
+function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_25_div_11_div_2_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div");
     core/* ɵɵelementStart */.TgZ(1, "span");
     core/* ɵɵtext */._uU(2, "-");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } }
-function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_24_div_11_Template(rf, ctx) { if (rf & 1) {
+function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_25_div_11_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div");
-    core/* ɵɵtemplate */.YNc(1, UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_24_div_11_div_1_Template, 3, 1, "div", 0);
-    core/* ɵɵtemplate */.YNc(2, UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_24_div_11_div_2_Template, 3, 0, "div", 0);
+    core/* ɵɵtemplate */.YNc(1, UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_25_div_11_div_1_Template, 3, 1, "div", 0);
+    core/* ɵɵtemplate */.YNc(2, UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_25_div_11_div_2_Template, 3, 0, "div", 0);
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
     const stat_r160 = ctx.$implicit;
@@ -49540,7 +49544,7 @@ function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_24_di
     core/* ɵɵadvance */.xp6(1);
     core/* ɵɵproperty */.Q6J("ngIf", stat_r160.TimeDiffToFastest == "");
 } }
-function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_24_div_14_div_1_Template(rf, ctx) { if (rf & 1) {
+function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_25_div_14_div_1_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div");
     core/* ɵɵelementStart */.TgZ(1, "span");
     core/* ɵɵtext */._uU(2);
@@ -49551,17 +49555,17 @@ function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_24_di
     core/* ɵɵadvance */.xp6(2);
     core/* ɵɵtextInterpolate */.Oqu(stat_r164.TimeDifftoPositionAhead);
 } }
-function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_24_div_14_div_2_Template(rf, ctx) { if (rf & 1) {
+function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_25_div_14_div_2_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div");
     core/* ɵɵelementStart */.TgZ(1, "span");
     core/* ɵɵtext */._uU(2, "-");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } }
-function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_24_div_14_Template(rf, ctx) { if (rf & 1) {
+function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_25_div_14_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div");
-    core/* ɵɵtemplate */.YNc(1, UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_24_div_14_div_1_Template, 3, 1, "div", 0);
-    core/* ɵɵtemplate */.YNc(2, UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_24_div_14_div_2_Template, 3, 0, "div", 0);
+    core/* ɵɵtemplate */.YNc(1, UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_25_div_14_div_1_Template, 3, 1, "div", 0);
+    core/* ɵɵtemplate */.YNc(2, UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_25_div_14_div_2_Template, 3, 0, "div", 0);
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
     const stat_r164 = ctx.$implicit;
@@ -49570,16 +49574,16 @@ function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_24_di
     core/* ɵɵadvance */.xp6(1);
     core/* ɵɵproperty */.Q6J("ngIf", stat_r164.TimeDifftoPositionAhead == "");
 } }
-function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_24_button_18_Template(rf, ctx) { if (rf & 1) {
+function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_25_button_18_Template(rf, ctx) { if (rf & 1) {
     const _r170 = core/* ɵɵgetCurrentView */.EpF();
     core/* ɵɵelementStart */.TgZ(0, "button", 51);
-    core/* ɵɵlistener */.NdJ("click", function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_24_button_18_Template_button_click_0_listener() { core/* ɵɵrestoreView */.CHM(_r170); const standing_r149 = core/* ɵɵnextContext */.oxw().$implicit; const ctx_r168 = core/* ɵɵnextContext */.oxw(5); return ctx_r168.openRadioDialog(standing_r149.radioData, ctx_r168.upcomingRaceAnalysis.qualiLivetimingUrl); });
+    core/* ɵɵlistener */.NdJ("click", function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_25_button_18_Template_button_click_0_listener() { core/* ɵɵrestoreView */.CHM(_r170); const standing_r149 = core/* ɵɵnextContext */.oxw().$implicit; const ctx_r168 = core/* ɵɵnextContext */.oxw(5); return ctx_r168.openRadioDialog(standing_r149.radioData, ctx_r168.upcomingRaceAnalysis.qualiLivetimingUrl); });
     core/* ɵɵelementStart */.TgZ(1, "mat-icon");
     core/* ɵɵtext */._uU(2, "volume_up");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } }
-function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_24_Template(rf, ctx) { if (rf & 1) {
+function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_25_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "tr");
     core/* ɵɵelementStart */.TgZ(1, "th", 27);
     core/* ɵɵtext */._uU(2);
@@ -49591,21 +49595,21 @@ function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_24_Te
     core/* ɵɵtext */._uU(6);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(7, "td");
-    core/* ɵɵtemplate */.YNc(8, UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_24_div_8_Template, 3, 2, "div", 26);
+    core/* ɵɵtemplate */.YNc(8, UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_25_div_8_Template, 3, 2, "div", 26);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(9, "td");
     core/* ɵɵtext */._uU(10);
-    core/* ɵɵtemplate */.YNc(11, UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_24_div_11_Template, 3, 2, "div", 26);
+    core/* ɵɵtemplate */.YNc(11, UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_25_div_11_Template, 3, 2, "div", 26);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(12, "td");
     core/* ɵɵtext */._uU(13);
-    core/* ɵɵtemplate */.YNc(14, UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_24_div_14_Template, 3, 2, "div", 26);
+    core/* ɵɵtemplate */.YNc(14, UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_25_div_14_Template, 3, 2, "div", 26);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(15, "td");
     core/* ɵɵtext */._uU(16);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(17, "td", 49);
-    core/* ɵɵtemplate */.YNc(18, UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_24_button_18_Template, 3, 0, "button", 50);
+    core/* ɵɵtemplate */.YNc(18, UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_25_button_18_Template, 3, 0, "button", 50);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
@@ -49633,47 +49637,49 @@ function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_24_Te
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div");
-    core/* ɵɵtemplate */.YNc(1, UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_div_1_Template, 6, 4, "div", 65);
-    core/* ɵɵelementStart */.TgZ(2, "table", 33);
-    core/* ɵɵelementStart */.TgZ(3, "thead");
-    core/* ɵɵelementStart */.TgZ(4, "tr");
-    core/* ɵɵelementStart */.TgZ(5, "th", 42);
-    core/* ɵɵtext */._uU(6, "Result");
+    core/* ɵɵelementStart */.TgZ(1, "div", 40);
+    core/* ɵɵtemplate */.YNc(2, UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_div_2_Template, 6, 4, "div", 41);
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(3, "table", 33);
+    core/* ɵɵelementStart */.TgZ(4, "thead");
+    core/* ɵɵelementStart */.TgZ(5, "tr");
+    core/* ɵɵelementStart */.TgZ(6, "th", 42);
+    core/* ɵɵtext */._uU(7, "Result");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(7, "tr");
-    core/* ɵɵelementStart */.TgZ(8, "th", 37);
-    core/* ɵɵtext */._uU(9, "#");
+    core/* ɵɵelementStart */.TgZ(8, "tr");
+    core/* ɵɵelementStart */.TgZ(9, "th", 37);
+    core/* ɵɵtext */._uU(10, "#");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(10, "th", 43);
-    core/* ɵɵtext */._uU(11, "Driver");
+    core/* ɵɵelementStart */.TgZ(11, "th", 43);
+    core/* ɵɵtext */._uU(12, "Driver");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(12, "th", 43);
-    core/* ɵɵtext */._uU(13, "Team");
+    core/* ɵɵelementStart */.TgZ(13, "th", 43);
+    core/* ɵɵtext */._uU(14, "Team");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(14, "th", 37);
-    core/* ɵɵtext */._uU(15, "Lap time");
+    core/* ɵɵelementStart */.TgZ(15, "th", 37);
+    core/* ɵɵtext */._uU(16, "Lap time");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(16, "th", 43);
-    core/* ɵɵtext */._uU(17, "Gap to leader");
+    core/* ɵɵelementStart */.TgZ(17, "th", 43);
+    core/* ɵɵtext */._uU(18, "Gap to leader");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(18, "th", 43);
-    core/* ɵɵtext */._uU(19, "Gap to previous");
+    core/* ɵɵelementStart */.TgZ(19, "th", 43);
+    core/* ɵɵtext */._uU(20, "Gap to previous");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(20, "th", 43);
-    core/* ɵɵtext */._uU(21, "Lap count");
+    core/* ɵɵelementStart */.TgZ(21, "th", 43);
+    core/* ɵɵtext */._uU(22, "Lap count");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelement */._UZ(22, "th", 44);
+    core/* ɵɵelement */._UZ(23, "th", 44);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(23, "tbody");
-    core/* ɵɵtemplate */.YNc(24, UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_24_Template, 19, 10, "tr", 26);
+    core/* ɵɵelementStart */.TgZ(24, "tbody");
+    core/* ɵɵtemplate */.YNc(25, UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_25_Template, 19, 10, "tr", 26);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
     const ctx_r141 = core/* ɵɵnextContext */.oxw(4);
-    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵadvance */.xp6(2);
     core/* ɵɵproperty */.Q6J("ngForOf", ctx_r141.upcomingRaceAnalysis.qualiYoutube);
     core/* ɵɵadvance */.xp6(23);
     core/* ɵɵproperty */.Q6J("ngForOf", ctx_r141.upcomingRaceAnalysis.quali);
@@ -49728,7 +49734,7 @@ function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_tr_35_Template
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_Template(rf, ctx) { if (rf & 1) {
     const _r176 = core/* ɵɵgetCurrentView */.EpF();
-    core/* ɵɵtemplate */.YNc(0, UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_Template, 25, 2, "div", 0);
+    core/* ɵɵtemplate */.YNc(0, UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_Template, 26, 2, "div", 0);
     core/* ɵɵelementStart */.TgZ(1, "div", 31);
     core/* ɵɵelementStart */.TgZ(2, "div", 32);
     core/* ɵɵelementStart */.TgZ(3, "div", 22);
@@ -49831,7 +49837,7 @@ function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_15_tr_20_Template
 function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_15_Template(rf, ctx) { if (rf & 1) {
     const _r181 = core/* ɵɵgetCurrentView */.EpF();
     core/* ɵɵelementStart */.TgZ(0, "div", 31);
-    core/* ɵɵelementStart */.TgZ(1, "div", 69);
+    core/* ɵɵelementStart */.TgZ(1, "div", 65);
     core/* ɵɵelementStart */.TgZ(2, "div", 22);
     core/* ɵɵelementStart */.TgZ(3, "table", 36);
     core/* ɵɵlistener */.NdJ("matSortChange", function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_15_Template_table_matSortChange_3_listener($event) { core/* ɵɵrestoreView */.CHM(_r181); const ctx_r180 = core/* ɵɵnextContext */.oxw(3); return ctx_r180.sortResultData($event, 7); });
@@ -49920,8 +49926,8 @@ function UpcomingRaceAnalysisComponent_div_0_div_1_Template(rf, ctx) { if (rf & 
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_2_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div");
-    core/* ɵɵelementStart */.TgZ(1, "div", 70);
-    core/* ɵɵelement */._UZ(2, "img", 71);
+    core/* ɵɵelementStart */.TgZ(1, "div", 66);
+    core/* ɵɵelement */._UZ(2, "img", 67);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } }
@@ -50319,7 +50325,7 @@ UpcomingRaceAnalysisComponent.ɵcmp = /*@__PURE__*/ core/* ɵɵdefineComponent *
     } if (rf & 2) {
         let _t;
         core/* ɵɵqueryRefresh */.iGM(_t = core/* ɵɵloadQuery */.CRH()) && (ctx.chart = _t.first);
-    } }, decls: 1, vars: 1, consts: [[4, "ngIf"], [3, "selectedIndex", "selectedTabChange", "selectedIndexChange"], ["label", "Circuit"], ["matTabContent", ""], ["label", "Circuit winners", 3, "disabled"], ["label", "Practice 1", 3, "disabled"], ["label", "Practice 2", 3, "disabled", 4, "ngIf"], ["label", "Practice 3", 3, "disabled", 4, "ngIf"], ["label", "Sprint quali", 3, "disabled", 4, "ngIf"], ["label", "Sprint", 3, "disabled", 4, "ngIf"], ["label", "Qualifying", 3, "disabled"], ["label", "All laps", 3, "disabled"], [1, "black-footer", "text-center"], [1, "image"], ["target", "_blank", 3, "href"], [3, "src"], ["class", "div-padded-1rem row", 4, "ngIf"], ["class", "div-padded-1rem div-padded-left-2 row", 4, "ngIf"], [1, "div-padded-1rem", "row"], ["class", "col-lg-6 col-12", 4, "ngFor", "ngForOf"], [1, "col-lg-6", "col-12"], [1, "card", "hover-effects-row", 3, "click"], [1, "card-body-padded"], [1, "table", "table-striped"], ["colspan", "2", "scope", "col"], [2, "width", "35px"], [4, "ngFor", "ngForOf"], ["scope", "row"], [1, "div-padded-1rem", "div-padded-left-2", "row"], [1, "card"], [3, "href"], [1, "div-padded-1rem", "div-padded-left-2", "div-padded-right-2", "row"], [1, "card", "col-lg-6", "col-12"], ["matSort", "", 1, "table", "table-striped"], ["colspan", "4", 1, "text-center"], [2, "width", "100px"], ["matSort", "", 1, "table", "table-striped", 3, "matSortChange"], ["mat-sort-header", "position", "scope", "col"], ["mat-sort-header", "name", "scope", "col"], ["mat-sort-header", "lapNumber", "scope", "col"], [1, "row"], ["class", "col-12", 3, "ngClass", 4, "ngFor", "ngForOf"], ["colspan", "8", 1, "text-center"], ["scope", "col"], ["scope", "col", 1, "w-20px"], [1, "col-12", 3, "ngClass"], [1, "card", "card-body-padded", "text-center", "bg-black", "m-1"], ["alt", "NO IMAGE", 1, "video-thumbnail", 3, "src"], [1, "text-white"], [1, "no-padding-td"], ["color", "primary", "mat-mini-fab", "", 3, "click", 4, "ngIf"], ["color", "primary", "mat-mini-fab", "", 3, "click"], ["label", "Practice 2", 3, "disabled"], ["label", "Practice 3", 3, "disabled"], ["label", "Sprint quali", 3, "disabled"], ["scope", "col", 1, "text-center"], [1, "font-weight-bold"], ["label", "Sprint", 3, "disabled"], [1, "col-12"], [3, "chart", "dataLabels", "grid", "series", "stroke", "title", "xaxis", "yaxis"], [1, "card", "col-12"], [2, "width", "150px"], ["scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], [1, "d-sm-none", "d-none", "d-lg-table-cell"], [1, "text-center"], ["class", "card col-12", 3, "ngClass", 4, "ngFor", "ngForOf"], [1, "card", "col-12", 3, "ngClass"], [1, "card-body-padded", "text-center"], [1, "text-black-50"], [1, "card", "col-lg-12", "col-12"], [1, "icon-big", "text-center", "icon-warning"], ["src", "assets/img/tifosi/kimi-raikkonen-smile.gif", 1, "div-height-70vh"]], template: function UpcomingRaceAnalysisComponent_Template(rf, ctx) { if (rf & 1) {
+    } }, decls: 1, vars: 1, consts: [[4, "ngIf"], [3, "selectedIndex", "selectedTabChange", "selectedIndexChange"], ["label", "Circuit"], ["matTabContent", ""], ["label", "Circuit winners", 3, "disabled"], ["label", "Practice 1", 3, "disabled"], ["label", "Practice 2", 3, "disabled", 4, "ngIf"], ["label", "Practice 3", 3, "disabled", 4, "ngIf"], ["label", "Sprint quali", 3, "disabled", 4, "ngIf"], ["label", "Sprint", 3, "disabled", 4, "ngIf"], ["label", "Qualifying", 3, "disabled"], ["label", "All laps", 3, "disabled"], [1, "black-footer", "text-center"], [1, "image"], ["target", "_blank", 3, "href"], [3, "src"], ["class", "div-padded-1rem row", 4, "ngIf"], ["class", "div-padded-1rem div-padded-left-2 row", 4, "ngIf"], [1, "div-padded-1rem", "row"], ["class", "col-lg-6 col-12", 4, "ngFor", "ngForOf"], [1, "col-lg-6", "col-12"], [1, "card", "hover-effects-row", 3, "click"], [1, "card-body-padded"], [1, "table", "table-striped"], ["colspan", "2", "scope", "col"], [2, "width", "35px"], [4, "ngFor", "ngForOf"], ["scope", "row"], [1, "div-padded-1rem", "div-padded-left-2", "row"], [1, "card"], [3, "href"], [1, "div-padded-1rem", "div-padded-left-2", "div-padded-right-2", "row"], [1, "card", "col-lg-6", "col-12"], ["matSort", "", 1, "table", "table-striped"], ["colspan", "4", 1, "text-center"], [2, "width", "100px"], ["matSort", "", 1, "table", "table-striped", 3, "matSortChange"], ["mat-sort-header", "position", "scope", "col"], ["mat-sort-header", "name", "scope", "col"], ["mat-sort-header", "lapNumber", "scope", "col"], [1, "row"], ["class", "col-12", 3, "ngClass", 4, "ngFor", "ngForOf"], ["colspan", "8", 1, "text-center"], ["scope", "col"], ["scope", "col", 1, "w-20px"], [1, "col-12", 3, "ngClass"], [1, "card", "card-body-padded", "text-center", "bg-black", "m-1"], ["alt", "NO IMAGE", 1, "video-thumbnail", 3, "src"], [1, "text-white"], [1, "no-padding-td"], ["color", "primary", "mat-mini-fab", "", 3, "click", 4, "ngIf"], ["color", "primary", "mat-mini-fab", "", 3, "click"], ["label", "Practice 2", 3, "disabled"], ["label", "Practice 3", 3, "disabled"], ["label", "Sprint quali", 3, "disabled"], ["scope", "col", 1, "text-center"], [1, "font-weight-bold"], ["label", "Sprint", 3, "disabled"], [1, "col-12"], [3, "chart", "dataLabels", "grid", "series", "stroke", "title", "xaxis", "yaxis"], [1, "card", "col-12"], [2, "width", "150px"], ["scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], [1, "d-sm-none", "d-none", "d-lg-table-cell"], [1, "text-center"], [1, "card", "col-lg-12", "col-12"], [1, "icon-big", "text-center", "icon-warning"], ["src", "assets/img/tifosi/kimi-raikkonen-smile.gif", 1, "div-height-70vh"]], template: function UpcomingRaceAnalysisComponent_Template(rf, ctx) { if (rf & 1) {
         core/* ɵɵtemplate */.YNc(0, UpcomingRaceAnalysisComponent_div_0_Template, 3, 2, "div", 0);
     } if (rf & 2) {
         core/* ɵɵproperty */.Q6J("ngIf", ctx.upcomingRaceAnalysis !== undefined);
@@ -50384,24 +50390,46 @@ var fesm2015_radio = __webpack_require__(2613);
 
 
 const race_analysis_component_c0 = ["chart"];
-function RaceAnalysisComponent_div_1_ng_template_3_tr_16_button_12_Template(rf, ctx) { if (rf & 1) {
-    const _r16 = core/* ɵɵgetCurrentView */.EpF();
-    core/* ɵɵelementStart */.TgZ(0, "button", 23);
-    core/* ɵɵlistener */.NdJ("click", function RaceAnalysisComponent_div_1_ng_template_3_tr_16_button_12_Template_button_click_0_listener() { core/* ɵɵrestoreView */.CHM(_r16); const standing_r11 = core/* ɵɵnextContext */.oxw().$implicit; const ctx_r14 = core/* ɵɵnextContext */.oxw(3); return ctx_r14.openRadioDialog(standing_r11.radioData); });
+function RaceAnalysisComponent_div_1_ng_template_3_div_1_Template(rf, ctx) { if (rf & 1) {
+    core/* ɵɵelementStart */.TgZ(0, "div", 21);
+    core/* ɵɵelementStart */.TgZ(1, "div", 22);
+    core/* ɵɵelementStart */.TgZ(2, "a", 23);
+    core/* ɵɵelement */._UZ(3, "img", 24);
+    core/* ɵɵelementStart */.TgZ(4, "p", 25);
+    core/* ɵɵtext */._uU(5);
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+} if (rf & 2) {
+    const video_r12 = ctx.$implicit;
+    const count_r14 = ctx.count;
+    core/* ɵɵproperty */.Q6J("ngClass", "col-lg-" + 12 / count_r14);
+    core/* ɵɵadvance */.xp6(2);
+    core/* ɵɵproperty */.Q6J("href", video_r12.url, core/* ɵɵsanitizeUrl */.LSH);
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵproperty */.Q6J("src", video_r12.thumbnailUrl, core/* ɵɵsanitizeUrl */.LSH);
+    core/* ɵɵadvance */.xp6(2);
+    core/* ɵɵtextInterpolate */.Oqu(video_r12.title);
+} }
+function RaceAnalysisComponent_div_1_ng_template_3_tr_18_button_12_Template(rf, ctx) { if (rf & 1) {
+    const _r20 = core/* ɵɵgetCurrentView */.EpF();
+    core/* ɵɵelementStart */.TgZ(0, "button", 30);
+    core/* ɵɵlistener */.NdJ("click", function RaceAnalysisComponent_div_1_ng_template_3_tr_18_button_12_Template_button_click_0_listener() { core/* ɵɵrestoreView */.CHM(_r20); const standing_r15 = core/* ɵɵnextContext */.oxw().$implicit; const ctx_r18 = core/* ɵɵnextContext */.oxw(3); return ctx_r18.openRadioDialog(standing_r15.radioData); });
     core/* ɵɵelementStart */.TgZ(1, "mat-icon");
     core/* ɵɵtext */._uU(2, "volume_up");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } }
-function RaceAnalysisComponent_div_1_ng_template_3_tr_16_Template(rf, ctx) { if (rf & 1) {
+function RaceAnalysisComponent_div_1_ng_template_3_tr_18_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "tr");
-    core/* ɵɵelementStart */.TgZ(1, "th", 19);
+    core/* ɵɵelementStart */.TgZ(1, "th", 26);
     core/* ɵɵtext */._uU(2);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(3, "td");
     core/* ɵɵtext */._uU(4);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(5, "td", 20);
+    core/* ɵɵelementStart */.TgZ(5, "td", 27);
     core/* ɵɵtext */._uU(6);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(7, "td");
@@ -50410,64 +50438,69 @@ function RaceAnalysisComponent_div_1_ng_template_3_tr_16_Template(rf, ctx) { if 
     core/* ɵɵelementStart */.TgZ(9, "td");
     core/* ɵɵtext */._uU(10);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(11, "td", 21);
-    core/* ɵɵtemplate */.YNc(12, RaceAnalysisComponent_div_1_ng_template_3_tr_16_button_12_Template, 3, 0, "button", 22);
+    core/* ɵɵelementStart */.TgZ(11, "td", 28);
+    core/* ɵɵtemplate */.YNc(12, RaceAnalysisComponent_div_1_ng_template_3_tr_18_button_12_Template, 3, 0, "button", 29);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const standing_r11 = ctx.$implicit;
+    const standing_r15 = ctx.$implicit;
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r11.position);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r15.position);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r11.FullName);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r15.FullName);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r11.TeamName);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r15.TeamName);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r11.timingDataF1.GapToLeader);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r15.timingDataF1.GapToLeader);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r11.timingDataF1.IntervalToPositionAhead.Value);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r15.timingDataF1.IntervalToPositionAhead.Value);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵproperty */.Q6J("ngIf", standing_r11.radioData.length > 0);
+    core/* ɵɵproperty */.Q6J("ngIf", standing_r15.radioData.length > 0);
 } }
 function RaceAnalysisComponent_div_1_ng_template_3_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div", 13);
-    core/* ɵɵelementStart */.TgZ(1, "table", 14);
-    core/* ɵɵelementStart */.TgZ(2, "thead");
-    core/* ɵɵelementStart */.TgZ(3, "tr");
-    core/* ɵɵelementStart */.TgZ(4, "th", 15);
-    core/* ɵɵtext */._uU(5, "#");
+    core/* ɵɵtemplate */.YNc(1, RaceAnalysisComponent_div_1_ng_template_3_div_1_Template, 6, 4, "div", 14);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(6, "th", 15);
-    core/* ɵɵtext */._uU(7, "Name");
+    core/* ɵɵelementStart */.TgZ(2, "div", 15);
+    core/* ɵɵelementStart */.TgZ(3, "table", 16);
+    core/* ɵɵelementStart */.TgZ(4, "thead");
+    core/* ɵɵelementStart */.TgZ(5, "tr");
+    core/* ɵɵelementStart */.TgZ(6, "th", 17);
+    core/* ɵɵtext */._uU(7, "#");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(8, "th", 16);
-    core/* ɵɵtext */._uU(9, "Team");
+    core/* ɵɵelementStart */.TgZ(8, "th", 17);
+    core/* ɵɵtext */._uU(9, "Name");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(10, "th", 15);
-    core/* ɵɵtext */._uU(11, "Gap to leader");
+    core/* ɵɵelementStart */.TgZ(10, "th", 18);
+    core/* ɵɵtext */._uU(11, "Team");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(12, "th", 15);
-    core/* ɵɵtext */._uU(13, "Gap to previous");
+    core/* ɵɵelementStart */.TgZ(12, "th", 17);
+    core/* ɵɵtext */._uU(13, "Gap to leader");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelement */._UZ(14, "th", 17);
+    core/* ɵɵelementStart */.TgZ(14, "th", 17);
+    core/* ɵɵtext */._uU(15, "Gap to previous");
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelement */._UZ(16, "th", 19);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(15, "tbody");
-    core/* ɵɵtemplate */.YNc(16, RaceAnalysisComponent_div_1_ng_template_3_tr_16_Template, 13, 6, "tr", 18);
+    core/* ɵɵelementStart */.TgZ(17, "tbody");
+    core/* ɵɵtemplate */.YNc(18, RaceAnalysisComponent_div_1_ng_template_3_tr_18_Template, 13, 6, "tr", 20);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
     const ctx_r1 = core/* ɵɵnextContext */.oxw(2);
-    core/* ɵɵadvance */.xp6(16);
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵproperty */.Q6J("ngForOf", ctx_r1.raceYoutube);
+    core/* ɵɵadvance */.xp6(17);
     core/* ɵɵproperty */.Q6J("ngForOf", ctx_r1.drivers);
 } }
 function RaceAnalysisComponent_div_1_ng_template_5_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "div", 24);
-    core/* ɵɵelementStart */.TgZ(1, "div", 25);
-    core/* ɵɵelementStart */.TgZ(2, "div", 26);
-    core/* ɵɵelementStart */.TgZ(3, "div", 27);
-    core/* ɵɵelement */._UZ(4, "apx-chart", 28);
+    core/* ɵɵelementStart */.TgZ(0, "div", 13);
+    core/* ɵɵelementStart */.TgZ(1, "div", 31);
+    core/* ɵɵelementStart */.TgZ(2, "div", 32);
+    core/* ɵɵelementStart */.TgZ(3, "div", 33);
+    core/* ɵɵelement */._UZ(4, "apx-chart", 34);
     core/* ɵɵelement */._UZ(5, "br");
     core/* ɵɵelement */._UZ(6, "br");
     core/* ɵɵelement */._UZ(7, "br");
@@ -50475,11 +50508,11 @@ function RaceAnalysisComponent_div_1_ng_template_5_Template(rf, ctx) { if (rf & 
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(8, "div", 24);
-    core/* ɵɵelementStart */.TgZ(9, "div", 25);
-    core/* ɵɵelementStart */.TgZ(10, "div", 26);
-    core/* ɵɵelementStart */.TgZ(11, "div", 29);
-    core/* ɵɵelement */._UZ(12, "apx-chart", 30);
+    core/* ɵɵelementStart */.TgZ(8, "div", 13);
+    core/* ɵɵelementStart */.TgZ(9, "div", 31);
+    core/* ɵɵelementStart */.TgZ(10, "div", 32);
+    core/* ɵɵelementStart */.TgZ(11, "div", 35);
+    core/* ɵɵelement */._UZ(12, "apx-chart", 36);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -50496,10 +50529,10 @@ function RaceAnalysisComponent_div_1_ng_template_7_tr_14_span_4_Template(rf, ctx
     core/* ɵɵtext */._uU(1);
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const standing_r19 = core/* ɵɵnextContext */.oxw().$implicit;
-    const ctx_r21 = core/* ɵɵnextContext */.oxw(3);
+    const standing_r23 = core/* ɵɵnextContext */.oxw().$implicit;
+    const ctx_r25 = core/* ɵɵnextContext */.oxw(3);
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵtextInterpolate */.Oqu(ctx_r21.positionChange(standing_r19));
+    core/* ɵɵtextInterpolate */.Oqu(ctx_r25.positionChange(standing_r23));
 } }
 function RaceAnalysisComponent_div_1_ng_template_7_tr_14_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "tr");
@@ -50507,46 +50540,7 @@ function RaceAnalysisComponent_div_1_ng_template_7_tr_14_Template(rf, ctx) { if 
     core/* ɵɵelementStart */.TgZ(2, "span");
     core/* ɵɵtext */._uU(3);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵtemplate */.YNc(4, RaceAnalysisComponent_div_1_ng_template_7_tr_14_span_4_Template, 2, 1, "span", 38);
-    core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(5, "td");
-    core/* ɵɵtext */._uU(6);
-    core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(7, "td");
-    core/* ɵɵtext */._uU(8);
-    core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementEnd */.qZA();
-} if (rf & 2) {
-    const standing_r19 = ctx.$implicit;
-    const ctx_r17 = core/* ɵɵnextContext */.oxw(3);
-    core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵclassMap */.Tol("text-left " + ctx_r17.standingsChangeClass(standing_r19));
-    core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r19.PredictedPosition);
-    core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("ngIf", standing_r19.PredictedPosition != standing_r19.CurrentPosition);
-    core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r19.name);
-    core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(ctx_r17.pointsChange(standing_r19));
-} }
-function RaceAnalysisComponent_div_1_ng_template_7_tr_28_span_4_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "span");
-    core/* ɵɵtext */._uU(1);
-    core/* ɵɵelementEnd */.qZA();
-} if (rf & 2) {
-    const standing_r23 = core/* ɵɵnextContext */.oxw().$implicit;
-    const ctx_r25 = core/* ɵɵnextContext */.oxw(3);
-    core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵtextInterpolate */.Oqu(ctx_r25.positionChange(standing_r23));
-} }
-function RaceAnalysisComponent_div_1_ng_template_7_tr_28_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "tr");
-    core/* ɵɵelementStart */.TgZ(1, "td", 39);
-    core/* ɵɵelementStart */.TgZ(2, "span");
-    core/* ɵɵtext */._uU(3);
-    core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵtemplate */.YNc(4, RaceAnalysisComponent_div_1_ng_template_7_tr_28_span_4_Template, 2, 1, "span", 38);
+    core/* ɵɵtemplate */.YNc(4, RaceAnalysisComponent_div_1_ng_template_7_tr_14_span_4_Template, 2, 1, "span", 44);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(5, "td");
     core/* ɵɵtext */._uU(6);
@@ -50557,62 +50551,101 @@ function RaceAnalysisComponent_div_1_ng_template_7_tr_28_Template(rf, ctx) { if 
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
     const standing_r23 = ctx.$implicit;
-    const ctx_r18 = core/* ɵɵnextContext */.oxw(3);
-    core/* ɵɵclassMap */.Tol(ctx_r18.standingsChangeClass(standing_r23));
-    core/* ɵɵadvance */.xp6(3);
+    const ctx_r21 = core/* ɵɵnextContext */.oxw(3);
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵclassMap */.Tol("text-left " + ctx_r21.standingsChangeClass(standing_r23));
+    core/* ɵɵadvance */.xp6(2);
     core/* ɵɵtextInterpolate */.Oqu(standing_r23.PredictedPosition);
     core/* ɵɵadvance */.xp6(1);
     core/* ɵɵproperty */.Q6J("ngIf", standing_r23.PredictedPosition != standing_r23.CurrentPosition);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(standing_r23.TeamName);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r23.name);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(ctx_r18.pointsChange(standing_r23));
+    core/* ɵɵtextInterpolate */.Oqu(ctx_r21.pointsChange(standing_r23));
+} }
+function RaceAnalysisComponent_div_1_ng_template_7_tr_28_span_4_Template(rf, ctx) { if (rf & 1) {
+    core/* ɵɵelementStart */.TgZ(0, "span");
+    core/* ɵɵtext */._uU(1);
+    core/* ɵɵelementEnd */.qZA();
+} if (rf & 2) {
+    const standing_r27 = core/* ɵɵnextContext */.oxw().$implicit;
+    const ctx_r29 = core/* ɵɵnextContext */.oxw(3);
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵtextInterpolate */.Oqu(ctx_r29.positionChange(standing_r27));
+} }
+function RaceAnalysisComponent_div_1_ng_template_7_tr_28_Template(rf, ctx) { if (rf & 1) {
+    core/* ɵɵelementStart */.TgZ(0, "tr");
+    core/* ɵɵelementStart */.TgZ(1, "td", 45);
+    core/* ɵɵelementStart */.TgZ(2, "span");
+    core/* ɵɵtext */._uU(3);
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵtemplate */.YNc(4, RaceAnalysisComponent_div_1_ng_template_7_tr_28_span_4_Template, 2, 1, "span", 44);
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(5, "td");
+    core/* ɵɵtext */._uU(6);
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(7, "td");
+    core/* ɵɵtext */._uU(8);
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+} if (rf & 2) {
+    const standing_r27 = ctx.$implicit;
+    const ctx_r22 = core/* ɵɵnextContext */.oxw(3);
+    core/* ɵɵclassMap */.Tol(ctx_r22.standingsChangeClass(standing_r27));
+    core/* ɵɵadvance */.xp6(3);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r27.PredictedPosition);
+    core/* ɵɵadvance */.xp6(1);
+    core/* ɵɵproperty */.Q6J("ngIf", standing_r27.PredictedPosition != standing_r27.CurrentPosition);
+    core/* ɵɵadvance */.xp6(2);
+    core/* ɵɵtextInterpolate */.Oqu(standing_r27.TeamName);
+    core/* ɵɵadvance */.xp6(2);
+    core/* ɵɵtextInterpolate */.Oqu(ctx_r22.pointsChange(standing_r27));
 } }
 function RaceAnalysisComponent_div_1_ng_template_7_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "div", 24);
-    core/* ɵɵelementStart */.TgZ(1, "div", 31);
-    core/* ɵɵelementStart */.TgZ(2, "table", 14);
+    core/* ɵɵelementStart */.TgZ(0, "div", 13);
+    core/* ɵɵelementStart */.TgZ(1, "div", 37);
+    core/* ɵɵelementStart */.TgZ(2, "table", 16);
     core/* ɵɵelementStart */.TgZ(3, "thead");
-    core/* ɵɵelementStart */.TgZ(4, "tr", 32);
-    core/* ɵɵelementStart */.TgZ(5, "th", 33);
+    core/* ɵɵelementStart */.TgZ(4, "tr", 38);
+    core/* ɵɵelementStart */.TgZ(5, "th", 39);
     core/* ɵɵtext */._uU(6, "Drivers");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(7, "tr", 32);
-    core/* ɵɵelement */._UZ(8, "th", 34);
-    core/* ɵɵelementStart */.TgZ(9, "th", 15);
+    core/* ɵɵelementStart */.TgZ(7, "tr", 38);
+    core/* ɵɵelement */._UZ(8, "th", 40);
+    core/* ɵɵelementStart */.TgZ(9, "th", 17);
     core/* ɵɵtext */._uU(10, "Name");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(11, "th", 35);
+    core/* ɵɵelementStart */.TgZ(11, "th", 41);
     core/* ɵɵtext */._uU(12, "Points");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(13, "tbody");
-    core/* ɵɵtemplate */.YNc(14, RaceAnalysisComponent_div_1_ng_template_7_tr_14_Template, 9, 7, "tr", 18);
+    core/* ɵɵtemplate */.YNc(14, RaceAnalysisComponent_div_1_ng_template_7_tr_14_Template, 9, 7, "tr", 20);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(15, "div", 36);
-    core/* ɵɵelementStart */.TgZ(16, "table", 14);
+    core/* ɵɵelementStart */.TgZ(15, "div", 42);
+    core/* ɵɵelementStart */.TgZ(16, "table", 16);
     core/* ɵɵelementStart */.TgZ(17, "thead");
-    core/* ɵɵelementStart */.TgZ(18, "tr", 32);
-    core/* ɵɵelementStart */.TgZ(19, "th", 33);
+    core/* ɵɵelementStart */.TgZ(18, "tr", 38);
+    core/* ɵɵelementStart */.TgZ(19, "th", 39);
     core/* ɵɵtext */._uU(20, "Teams");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(21, "tr", 32);
-    core/* ɵɵelement */._UZ(22, "th", 34);
-    core/* ɵɵelementStart */.TgZ(23, "th", 15);
+    core/* ɵɵelementStart */.TgZ(21, "tr", 38);
+    core/* ɵɵelement */._UZ(22, "th", 40);
+    core/* ɵɵelementStart */.TgZ(23, "th", 17);
     core/* ɵɵtext */._uU(24, "Name");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(25, "th", 35);
+    core/* ɵɵelementStart */.TgZ(25, "th", 41);
     core/* ɵɵtext */._uU(26, "Points");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(27, "tbody");
-    core/* ɵɵtemplate */.YNc(28, RaceAnalysisComponent_div_1_ng_template_7_tr_28_Template, 9, 7, "tr", 37);
+    core/* ɵɵtemplate */.YNc(28, RaceAnalysisComponent_div_1_ng_template_7_tr_28_Template, 9, 7, "tr", 43);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -50655,79 +50688,79 @@ function RaceAnalysisComponent_div_1_ng_template_9_tr_33_Template(rf, ctx) { if 
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const stat_r28 = ctx.$implicit;
+    const stat_r32 = ctx.$implicit;
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(stat_r28.name);
+    core/* ɵɵtextInterpolate */.Oqu(stat_r32.name);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(stat_r28.PersonalBestLapTime.Value);
+    core/* ɵɵtextInterpolate */.Oqu(stat_r32.PersonalBestLapTime.Value);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(stat_r28.PersonalBestLapTime.Position);
+    core/* ɵɵtextInterpolate */.Oqu(stat_r32.PersonalBestLapTime.Position);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(stat_r28.BestSectors[0].Value);
+    core/* ɵɵtextInterpolate */.Oqu(stat_r32.BestSectors[0].Value);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(stat_r28.BestSectors[0].Position);
+    core/* ɵɵtextInterpolate */.Oqu(stat_r32.BestSectors[0].Position);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(stat_r28.BestSectors[1].Value);
+    core/* ɵɵtextInterpolate */.Oqu(stat_r32.BestSectors[1].Value);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(stat_r28.BestSectors[1].Position);
+    core/* ɵɵtextInterpolate */.Oqu(stat_r32.BestSectors[1].Position);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(stat_r28.BestSectors[2].Value);
+    core/* ɵɵtextInterpolate */.Oqu(stat_r32.BestSectors[2].Value);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(stat_r28.BestSectors[2].Position);
+    core/* ɵɵtextInterpolate */.Oqu(stat_r32.BestSectors[2].Position);
 } }
 function RaceAnalysisComponent_div_1_ng_template_9_Template(rf, ctx) { if (rf & 1) {
-    const _r31 = core/* ɵɵgetCurrentView */.EpF();
-    core/* ɵɵelementStart */.TgZ(0, "div", 13);
-    core/* ɵɵelementStart */.TgZ(1, "table", 40);
-    core/* ɵɵlistener */.NdJ("matSortChange", function RaceAnalysisComponent_div_1_ng_template_9_Template_table_matSortChange_1_listener($event) { core/* ɵɵrestoreView */.CHM(_r31); const ctx_r30 = core/* ɵɵnextContext */.oxw(2); return ctx_r30.sortTimingStats($event); });
+    const _r35 = core/* ɵɵgetCurrentView */.EpF();
+    core/* ɵɵelementStart */.TgZ(0, "div", 15);
+    core/* ɵɵelementStart */.TgZ(1, "table", 46);
+    core/* ɵɵlistener */.NdJ("matSortChange", function RaceAnalysisComponent_div_1_ng_template_9_Template_table_matSortChange_1_listener($event) { core/* ɵɵrestoreView */.CHM(_r35); const ctx_r34 = core/* ɵɵnextContext */.oxw(2); return ctx_r34.sortTimingStats($event); });
     core/* ɵɵelementStart */.TgZ(2, "thead");
     core/* ɵɵelementStart */.TgZ(3, "tr");
-    core/* ɵɵelement */._UZ(4, "th", 41);
-    core/* ɵɵelementStart */.TgZ(5, "th", 42);
+    core/* ɵɵelement */._UZ(4, "th", 47);
+    core/* ɵɵelementStart */.TgZ(5, "th", 48);
     core/* ɵɵtext */._uU(6, "Best Lap");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(7, "th", 43);
+    core/* ɵɵelementStart */.TgZ(7, "th", 49);
     core/* ɵɵtext */._uU(8, "Best Sector 1");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(9, "th", 44);
+    core/* ɵɵelementStart */.TgZ(9, "th", 50);
     core/* ɵɵtext */._uU(10, "Best Sector 2");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(11, "th", 45);
+    core/* ɵɵelementStart */.TgZ(11, "th", 51);
     core/* ɵɵtext */._uU(12, "Best Sector 3");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(13, "tr");
-    core/* ɵɵelementStart */.TgZ(14, "th", 46);
+    core/* ɵɵelementStart */.TgZ(14, "th", 52);
     core/* ɵɵtext */._uU(15, "Name");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(16, "th", 47);
+    core/* ɵɵelementStart */.TgZ(16, "th", 53);
     core/* ɵɵtext */._uU(17, "Time");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(18, "th", 48);
+    core/* ɵɵelementStart */.TgZ(18, "th", 54);
     core/* ɵɵtext */._uU(19, "Position");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(20, "th", 49);
+    core/* ɵɵelementStart */.TgZ(20, "th", 55);
     core/* ɵɵtext */._uU(21, "Time");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(22, "th", 50);
+    core/* ɵɵelementStart */.TgZ(22, "th", 56);
     core/* ɵɵtext */._uU(23, "Position");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(24, "th", 51);
+    core/* ɵɵelementStart */.TgZ(24, "th", 57);
     core/* ɵɵtext */._uU(25, "Time");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(26, "th", 52);
+    core/* ɵɵelementStart */.TgZ(26, "th", 58);
     core/* ɵɵtext */._uU(27, "Position");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(28, "th", 53);
+    core/* ɵɵelementStart */.TgZ(28, "th", 59);
     core/* ɵɵtext */._uU(29, "Time");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(30, "th", 54);
+    core/* ɵɵelementStart */.TgZ(30, "th", 60);
     core/* ɵɵtext */._uU(31, "Position");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(32, "tbody");
-    core/* ɵɵtemplate */.YNc(33, RaceAnalysisComponent_div_1_ng_template_9_tr_33_Template, 19, 9, "tr", 18);
+    core/* ɵɵtemplate */.YNc(33, RaceAnalysisComponent_div_1_ng_template_9_tr_33_Template, 19, 9, "tr", 20);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -50737,97 +50770,97 @@ function RaceAnalysisComponent_div_1_ng_template_9_Template(rf, ctx) { if (rf & 
     core/* ɵɵproperty */.Q6J("ngForOf", ctx_r4.timingStats);
 } }
 function RaceAnalysisComponent_div_1_ng_template_11_th_12_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "th", 60);
+    core/* ɵɵelementStart */.TgZ(0, "th", 66);
     core/* ɵɵtext */._uU(1);
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const key_r35 = ctx.$implicit;
+    const key_r39 = ctx.$implicit;
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵtextInterpolate */.Oqu(" " + key_r35);
+    core/* ɵɵtextInterpolate */.Oqu(" " + key_r39);
 } }
 function RaceAnalysisComponent_div_1_ng_template_11_ng_container_17_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementContainerStart */.ynx(0);
-    core/* ɵɵelementStart */.TgZ(1, "th", 61);
+    core/* ɵɵelementStart */.TgZ(1, "th", 67);
     core/* ɵɵtext */._uU(2, "Speed (kph)");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(3, "th", 62);
+    core/* ɵɵelementStart */.TgZ(3, "th", 68);
     core/* ɵɵtext */._uU(4, "Position");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementContainerEnd */.BQk();
 } if (rf & 2) {
-    const key_r37 = ctx.$implicit;
+    const key_r41 = ctx.$implicit;
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("mat-sort-header", key_r37);
+    core/* ɵɵproperty */.Q6J("mat-sort-header", key_r41);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵproperty */.Q6J("mat-sort-header", key_r37);
+    core/* ɵɵproperty */.Q6J("mat-sort-header", key_r41);
 } }
 function RaceAnalysisComponent_div_1_ng_template_11_tr_19_ng_container_5_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementContainerStart */.ynx(0);
-    core/* ɵɵelementStart */.TgZ(1, "td", 64);
+    core/* ɵɵelementStart */.TgZ(1, "td", 70);
     core/* ɵɵtext */._uU(2);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(3, "td", 63);
+    core/* ɵɵelementStart */.TgZ(3, "td", 69);
     core/* ɵɵtext */._uU(4);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementContainerEnd */.BQk();
 } if (rf & 2) {
-    const key_r42 = ctx.$implicit;
-    const stat_r39 = core/* ɵɵnextContext */.oxw().$implicit;
+    const key_r46 = ctx.$implicit;
+    const stat_r43 = core/* ɵɵnextContext */.oxw().$implicit;
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(stat_r39.BestSpeeds[key_r42].Value);
+    core/* ɵɵtextInterpolate */.Oqu(stat_r43.BestSpeeds[key_r46].Value);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(stat_r39.BestSpeeds[key_r42].Position);
+    core/* ɵɵtextInterpolate */.Oqu(stat_r43.BestSpeeds[key_r46].Position);
 } }
 function RaceAnalysisComponent_div_1_ng_template_11_tr_19_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "tr");
     core/* ɵɵelementStart */.TgZ(1, "td");
     core/* ɵɵtext */._uU(2);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(3, "td", 63);
+    core/* ɵɵelementStart */.TgZ(3, "td", 69);
     core/* ɵɵtext */._uU(4);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵtemplate */.YNc(5, RaceAnalysisComponent_div_1_ng_template_11_tr_19_ng_container_5_Template, 5, 2, "ng-container", 18);
+    core/* ɵɵtemplate */.YNc(5, RaceAnalysisComponent_div_1_ng_template_11_tr_19_ng_container_5_Template, 5, 2, "ng-container", 20);
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const stat_r39 = ctx.$implicit;
-    const ctx_r34 = core/* ɵɵnextContext */.oxw(3);
+    const stat_r43 = ctx.$implicit;
+    const ctx_r38 = core/* ɵɵnextContext */.oxw(3);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(stat_r39.name);
+    core/* ɵɵtextInterpolate */.Oqu(stat_r43.name);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(stat_r39.topSpeed);
+    core/* ɵɵtextInterpolate */.Oqu(stat_r43.topSpeed);
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("ngForOf", ctx_r34.bestSpeedKeys);
+    core/* ɵɵproperty */.Q6J("ngForOf", ctx_r38.bestSpeedKeys);
 } }
 function RaceAnalysisComponent_div_1_ng_template_11_Template(rf, ctx) { if (rf & 1) {
-    const _r45 = core/* ɵɵgetCurrentView */.EpF();
-    core/* ɵɵelementStart */.TgZ(0, "div", 13);
-    core/* ɵɵelementStart */.TgZ(1, "table", 40);
-    core/* ɵɵlistener */.NdJ("matSortChange", function RaceAnalysisComponent_div_1_ng_template_11_Template_table_matSortChange_1_listener($event) { core/* ɵɵrestoreView */.CHM(_r45); const ctx_r44 = core/* ɵɵnextContext */.oxw(2); return ctx_r44.sortTopSpeedTimingStats($event); });
+    const _r49 = core/* ɵɵgetCurrentView */.EpF();
+    core/* ɵɵelementStart */.TgZ(0, "div", 15);
+    core/* ɵɵelementStart */.TgZ(1, "table", 46);
+    core/* ɵɵlistener */.NdJ("matSortChange", function RaceAnalysisComponent_div_1_ng_template_11_Template_table_matSortChange_1_listener($event) { core/* ɵɵrestoreView */.CHM(_r49); const ctx_r48 = core/* ɵɵnextContext */.oxw(2); return ctx_r48.sortTopSpeedTimingStats($event); });
     core/* ɵɵelementStart */.TgZ(2, "thead");
     core/* ɵɵelementStart */.TgZ(3, "tr");
-    core/* ɵɵelement */._UZ(4, "th", 55);
-    core/* ɵɵelement */._UZ(5, "th", 56);
-    core/* ɵɵelementStart */.TgZ(6, "th", 57);
+    core/* ɵɵelement */._UZ(4, "th", 61);
+    core/* ɵɵelement */._UZ(5, "th", 62);
+    core/* ɵɵelementStart */.TgZ(6, "th", 63);
     core/* ɵɵtext */._uU(7, "Detection points");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(8, "tr");
-    core/* ɵɵelement */._UZ(9, "th", 41);
-    core/* ɵɵelementStart */.TgZ(10, "th", 58);
+    core/* ɵɵelement */._UZ(9, "th", 47);
+    core/* ɵɵelementStart */.TgZ(10, "th", 64);
     core/* ɵɵtext */._uU(11, "Top recorded speed (kph)");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵtemplate */.YNc(12, RaceAnalysisComponent_div_1_ng_template_11_th_12_Template, 2, 1, "th", 59);
+    core/* ɵɵtemplate */.YNc(12, RaceAnalysisComponent_div_1_ng_template_11_th_12_Template, 2, 1, "th", 65);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(13, "tr");
-    core/* ɵɵelementStart */.TgZ(14, "th", 41);
+    core/* ɵɵelementStart */.TgZ(14, "th", 47);
     core/* ɵɵtext */._uU(15, "Name");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelement */._UZ(16, "th", 15);
-    core/* ɵɵtemplate */.YNc(17, RaceAnalysisComponent_div_1_ng_template_11_ng_container_17_Template, 5, 2, "ng-container", 18);
+    core/* ɵɵelement */._UZ(16, "th", 17);
+    core/* ɵɵtemplate */.YNc(17, RaceAnalysisComponent_div_1_ng_template_11_ng_container_17_Template, 5, 2, "ng-container", 20);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(18, "tbody");
-    core/* ɵɵtemplate */.YNc(19, RaceAnalysisComponent_div_1_ng_template_11_tr_19_Template, 6, 3, "tr", 18);
+    core/* ɵɵtemplate */.YNc(19, RaceAnalysisComponent_div_1_ng_template_11_tr_19_Template, 6, 3, "tr", 20);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -50849,10 +50882,10 @@ function RaceAnalysisComponent_div_1_ng_template_13_Template(rf, ctx) { if (rf &
     core/* ɵɵelementEnd */.qZA();
 } }
 function RaceAnalysisComponent_div_1_ng_template_14_tr_10_div_7_Template(rf, ctx) { if (rf & 1) {
-    const _r53 = core/* ɵɵgetCurrentView */.EpF();
-    core/* ɵɵelementStart */.TgZ(0, "div", 66);
-    core/* ɵɵelementStart */.TgZ(1, "button", 67);
-    core/* ɵɵlistener */.NdJ("click", function RaceAnalysisComponent_div_1_ng_template_14_tr_10_div_7_Template_button_click_1_listener() { core/* ɵɵrestoreView */.CHM(_r53); const radio_r47 = core/* ɵɵnextContext */.oxw().$implicit; return radio_r47.active = true; });
+    const _r57 = core/* ɵɵgetCurrentView */.EpF();
+    core/* ɵɵelementStart */.TgZ(0, "div", 72);
+    core/* ɵɵelementStart */.TgZ(1, "button", 73);
+    core/* ɵɵlistener */.NdJ("click", function RaceAnalysisComponent_div_1_ng_template_14_tr_10_div_7_Template_button_click_1_listener() { core/* ɵɵrestoreView */.CHM(_r57); const radio_r51 = core/* ɵɵnextContext */.oxw().$implicit; return radio_r51.active = true; });
     core/* ɵɵelementStart */.TgZ(2, "mat-icon");
     core/* ɵɵtext */._uU(3, "volume_up");
     core/* ɵɵelementEnd */.qZA();
@@ -50861,15 +50894,15 @@ function RaceAnalysisComponent_div_1_ng_template_14_tr_10_div_7_Template(rf, ctx
 } }
 function RaceAnalysisComponent_div_1_ng_template_14_tr_10_div_8_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div");
-    core/* ɵɵelementStart */.TgZ(1, "audio", 68);
-    core/* ɵɵelement */._UZ(2, "source", 69);
+    core/* ɵɵelementStart */.TgZ(1, "audio", 74);
+    core/* ɵɵelement */._UZ(2, "source", 75);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const radio_r47 = core/* ɵɵnextContext */.oxw().$implicit;
-    const ctx_r50 = core/* ɵɵnextContext */.oxw(3);
+    const radio_r51 = core/* ɵɵnextContext */.oxw().$implicit;
+    const ctx_r54 = core/* ɵɵnextContext */.oxw(3);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵpropertyInterpolate */.s9C("src", ctx_r50.livetimingUrl + radio_r47.path, core/* ɵɵsanitizeUrl */.LSH);
+    core/* ɵɵpropertyInterpolate */.s9C("src", ctx_r54.livetimingUrl + radio_r51.path, core/* ɵɵsanitizeUrl */.LSH);
 } }
 function RaceAnalysisComponent_div_1_ng_template_14_tr_10_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "tr");
@@ -50881,38 +50914,38 @@ function RaceAnalysisComponent_div_1_ng_template_14_tr_10_Template(rf, ctx) { if
     core/* ɵɵtext */._uU(5);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(6, "td");
-    core/* ɵɵtemplate */.YNc(7, RaceAnalysisComponent_div_1_ng_template_14_tr_10_div_7_Template, 4, 0, "div", 65);
-    core/* ɵɵtemplate */.YNc(8, RaceAnalysisComponent_div_1_ng_template_14_tr_10_div_8_Template, 3, 1, "div", 38);
+    core/* ɵɵtemplate */.YNc(7, RaceAnalysisComponent_div_1_ng_template_14_tr_10_div_7_Template, 4, 0, "div", 71);
+    core/* ɵɵtemplate */.YNc(8, RaceAnalysisComponent_div_1_ng_template_14_tr_10_div_8_Template, 3, 1, "div", 44);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const radio_r47 = ctx.$implicit;
+    const radio_r51 = ctx.$implicit;
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(core/* ɵɵpipeBind2 */.xi3(3, 4, radio_r47.utc, " HH:mm:ss"));
+    core/* ɵɵtextInterpolate */.Oqu(core/* ɵɵpipeBind2 */.xi3(3, 4, radio_r51.utc, " HH:mm:ss"));
     core/* ɵɵadvance */.xp6(3);
-    core/* ɵɵtextInterpolate */.Oqu(radio_r47.driverName);
+    core/* ɵɵtextInterpolate */.Oqu(radio_r51.driverName);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵproperty */.Q6J("ngIf", !radio_r47.active);
+    core/* ɵɵproperty */.Q6J("ngIf", !radio_r51.active);
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("ngIf", radio_r47.active);
+    core/* ɵɵproperty */.Q6J("ngIf", radio_r51.active);
 } }
 function RaceAnalysisComponent_div_1_ng_template_14_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "table", 14);
+    core/* ɵɵelementStart */.TgZ(0, "table", 16);
     core/* ɵɵelementStart */.TgZ(1, "thead");
-    core/* ɵɵelementStart */.TgZ(2, "tr", 32);
-    core/* ɵɵelementStart */.TgZ(3, "th", 15);
+    core/* ɵɵelementStart */.TgZ(2, "tr", 38);
+    core/* ɵɵelementStart */.TgZ(3, "th", 17);
     core/* ɵɵtext */._uU(4, "Time");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(5, "th", 15);
+    core/* ɵɵelementStart */.TgZ(5, "th", 17);
     core/* ɵɵtext */._uU(6, "Driver");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(7, "th", 15);
+    core/* ɵɵelementStart */.TgZ(7, "th", 17);
     core/* ɵɵtext */._uU(8, "Audio");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(9, "tbody");
-    core/* ɵɵtemplate */.YNc(10, RaceAnalysisComponent_div_1_ng_template_14_tr_10_Template, 9, 7, "tr", 18);
+    core/* ɵɵtemplate */.YNc(10, RaceAnalysisComponent_div_1_ng_template_14_tr_10_Template, 9, 7, "tr", 20);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
@@ -50940,41 +50973,41 @@ function RaceAnalysisComponent_div_1_ng_template_16_tr_14_Template(rf, ctx) { if
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const message_r56 = ctx.$implicit;
+    const message_r60 = ctx.$implicit;
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(message_r56.Lap);
+    core/* ɵɵtextInterpolate */.Oqu(message_r60.Lap);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(message_r56.Category + " " + (message_r56.Flag || ""));
+    core/* ɵɵtextInterpolate */.Oqu(message_r60.Category + " " + (message_r60.Flag || ""));
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu((message_r56.Scope || "") + " " + (message_r56.Sector || "") + " " + (message_r56.RacingNumber || ""));
+    core/* ɵɵtextInterpolate */.Oqu((message_r60.Scope || "") + " " + (message_r60.Sector || "") + " " + (message_r60.RacingNumber || ""));
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(message_r56.Message);
+    core/* ɵɵtextInterpolate */.Oqu(message_r60.Message);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(core/* ɵɵpipeBind2 */.xi3(11, 5, message_r56.Utc, " HH:mm:ss"));
+    core/* ɵɵtextInterpolate */.Oqu(core/* ɵɵpipeBind2 */.xi3(11, 5, message_r60.Utc, " HH:mm:ss"));
 } }
 function RaceAnalysisComponent_div_1_ng_template_16_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "table", 14);
+    core/* ɵɵelementStart */.TgZ(0, "table", 16);
     core/* ɵɵelementStart */.TgZ(1, "thead");
-    core/* ɵɵelementStart */.TgZ(2, "tr", 32);
-    core/* ɵɵelementStart */.TgZ(3, "th", 15);
+    core/* ɵɵelementStart */.TgZ(2, "tr", 38);
+    core/* ɵɵelementStart */.TgZ(3, "th", 17);
     core/* ɵɵtext */._uU(4, "Lap");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(5, "th", 70);
+    core/* ɵɵelementStart */.TgZ(5, "th", 76);
     core/* ɵɵtext */._uU(6, "Category");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(7, "th", 71);
+    core/* ɵɵelementStart */.TgZ(7, "th", 77);
     core/* ɵɵtext */._uU(8, "Scope");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(9, "th", 15);
+    core/* ɵɵelementStart */.TgZ(9, "th", 17);
     core/* ɵɵtext */._uU(10, "Message");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(11, "th", 35);
+    core/* ɵɵelementStart */.TgZ(11, "th", 41);
     core/* ɵɵtext */._uU(12, "Time");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(13, "tbody");
-    core/* ɵɵtemplate */.YNc(14, RaceAnalysisComponent_div_1_ng_template_16_tr_14_Template, 12, 8, "tr", 18);
+    core/* ɵɵtemplate */.YNc(14, RaceAnalysisComponent_div_1_ng_template_16_tr_14_Template, 12, 8, "tr", 20);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
@@ -50983,39 +51016,39 @@ function RaceAnalysisComponent_div_1_ng_template_16_Template(rf, ctx) { if (rf &
     core/* ɵɵproperty */.Q6J("ngForOf", ctx_r8.raceControlMessages);
 } }
 function RaceAnalysisComponent_div_1_ng_template_18_div_12_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "div", 24);
-    core/* ɵɵelementStart */.TgZ(1, "div", 25);
-    core/* ɵɵelementStart */.TgZ(2, "div", 26);
-    core/* ɵɵelementStart */.TgZ(3, "div", 77);
-    core/* ɵɵelement */._UZ(4, "apx-chart", 78);
+    core/* ɵɵelementStart */.TgZ(0, "div", 13);
+    core/* ɵɵelementStart */.TgZ(1, "div", 31);
+    core/* ɵɵelementStart */.TgZ(2, "div", 32);
+    core/* ɵɵelementStart */.TgZ(3, "div", 83);
+    core/* ɵɵelement */._UZ(4, "apx-chart", 84);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const ctx_r58 = core/* ɵɵnextContext */.oxw(3);
+    const ctx_r62 = core/* ɵɵnextContext */.oxw(3);
     core/* ɵɵadvance */.xp6(4);
-    core/* ɵɵproperty */.Q6J("series", ctx_r58.lapsHeatMapChartOptions.series)("chart", ctx_r58.lapsHeatMapChartOptions.chart)("dataLabels", ctx_r58.lapsHeatMapChartOptions.dataLabels)("plotOptions", ctx_r58.lapsHeatMapChartOptions.plotOptions)("colors", ctx_r58.lapsHeatMapChartOptions.colors)("tooltip", ctx_r58.lapsHeatMapChartOptions.tooltip);
+    core/* ɵɵproperty */.Q6J("series", ctx_r62.lapsHeatMapChartOptions.series)("chart", ctx_r62.lapsHeatMapChartOptions.chart)("dataLabels", ctx_r62.lapsHeatMapChartOptions.dataLabels)("plotOptions", ctx_r62.lapsHeatMapChartOptions.plotOptions)("colors", ctx_r62.lapsHeatMapChartOptions.colors)("tooltip", ctx_r62.lapsHeatMapChartOptions.tooltip);
 } }
 function RaceAnalysisComponent_div_1_ng_template_18_Template(rf, ctx) { if (rf & 1) {
-    const _r60 = core/* ɵɵgetCurrentView */.EpF();
-    core/* ɵɵelementStart */.TgZ(0, "div", 24);
-    core/* ɵɵelementStart */.TgZ(1, "div", 25);
-    core/* ɵɵelementStart */.TgZ(2, "div", 26);
+    const _r64 = core/* ɵɵgetCurrentView */.EpF();
+    core/* ɵɵelementStart */.TgZ(0, "div", 13);
+    core/* ɵɵelementStart */.TgZ(1, "div", 31);
+    core/* ɵɵelementStart */.TgZ(2, "div", 32);
     core/* ɵɵelementStart */.TgZ(3, "div");
-    core/* ɵɵelementStart */.TgZ(4, "mat-radio-group", 72);
-    core/* ɵɵlistener */.NdJ("ngModelChange", function RaceAnalysisComponent_div_1_ng_template_18_Template_mat_radio_group_ngModelChange_4_listener($event) { core/* ɵɵrestoreView */.CHM(_r60); const ctx_r59 = core/* ɵɵnextContext */.oxw(2); return ctx_r59.selectedHeatmapRadio = $event; });
-    core/* ɵɵelementStart */.TgZ(5, "mat-radio-button", 73);
-    core/* ɵɵlistener */.NdJ("change", function RaceAnalysisComponent_div_1_ng_template_18_Template_mat_radio_button_change_5_listener($event) { core/* ɵɵrestoreView */.CHM(_r60); const ctx_r61 = core/* ɵɵnextContext */.oxw(2); return ctx_r61.heatRadioChange($event); });
+    core/* ɵɵelementStart */.TgZ(4, "mat-radio-group", 78);
+    core/* ɵɵlistener */.NdJ("ngModelChange", function RaceAnalysisComponent_div_1_ng_template_18_Template_mat_radio_group_ngModelChange_4_listener($event) { core/* ɵɵrestoreView */.CHM(_r64); const ctx_r63 = core/* ɵɵnextContext */.oxw(2); return ctx_r63.selectedHeatmapRadio = $event; });
+    core/* ɵɵelementStart */.TgZ(5, "mat-radio-button", 79);
+    core/* ɵɵlistener */.NdJ("change", function RaceAnalysisComponent_div_1_ng_template_18_Template_mat_radio_button_change_5_listener($event) { core/* ɵɵrestoreView */.CHM(_r64); const ctx_r65 = core/* ɵɵnextContext */.oxw(2); return ctx_r65.heatRadioChange($event); });
     core/* ɵɵtext */._uU(6, "Lap times ");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(7, "mat-radio-button", 74);
-    core/* ɵɵlistener */.NdJ("change", function RaceAnalysisComponent_div_1_ng_template_18_Template_mat_radio_button_change_7_listener($event) { core/* ɵɵrestoreView */.CHM(_r60); const ctx_r62 = core/* ɵɵnextContext */.oxw(2); return ctx_r62.heatRadioChange($event); });
+    core/* ɵɵelementStart */.TgZ(7, "mat-radio-button", 80);
+    core/* ɵɵlistener */.NdJ("change", function RaceAnalysisComponent_div_1_ng_template_18_Template_mat_radio_button_change_7_listener($event) { core/* ɵɵrestoreView */.CHM(_r64); const ctx_r66 = core/* ɵɵnextContext */.oxw(2); return ctx_r66.heatRadioChange($event); });
     core/* ɵɵtext */._uU(8, "Lap time positions ");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelement */._UZ(9, "span");
-    core/* ɵɵelementStart */.TgZ(10, "mat-radio-button", 75);
-    core/* ɵɵlistener */.NdJ("change", function RaceAnalysisComponent_div_1_ng_template_18_Template_mat_radio_button_change_10_listener($event) { core/* ɵɵrestoreView */.CHM(_r60); const ctx_r63 = core/* ɵɵnextContext */.oxw(2); return ctx_r63.heatRadioChange($event); });
+    core/* ɵɵelementStart */.TgZ(10, "mat-radio-button", 81);
+    core/* ɵɵlistener */.NdJ("change", function RaceAnalysisComponent_div_1_ng_template_18_Template_mat_radio_button_change_10_listener($event) { core/* ɵɵrestoreView */.CHM(_r64); const ctx_r67 = core/* ɵɵnextContext */.oxw(2); return ctx_r67.heatRadioChange($event); });
     core/* ɵɵtext */._uU(11, "Driver positions ");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -51023,7 +51056,7 @@ function RaceAnalysisComponent_div_1_ng_template_18_Template(rf, ctx) { if (rf &
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵtemplate */.YNc(12, RaceAnalysisComponent_div_1_ng_template_18_div_12_Template, 5, 6, "div", 76);
+    core/* ɵɵtemplate */.YNc(12, RaceAnalysisComponent_div_1_ng_template_18_div_12_Template, 5, 6, "div", 82);
 } if (rf & 2) {
     const ctx_r9 = core/* ɵɵnextContext */.oxw(2);
     core/* ɵɵadvance */.xp6(4);
@@ -51032,12 +51065,12 @@ function RaceAnalysisComponent_div_1_ng_template_18_Template(rf, ctx) { if (rf &
     core/* ɵɵproperty */.Q6J("ngIf", ctx_r9.status == 1);
 } }
 function RaceAnalysisComponent_div_1_Template(rf, ctx) { if (rf & 1) {
-    const _r65 = core/* ɵɵgetCurrentView */.EpF();
+    const _r69 = core/* ɵɵgetCurrentView */.EpF();
     core/* ɵɵelementStart */.TgZ(0, "div", 1);
     core/* ɵɵelementStart */.TgZ(1, "mat-tab-group", 2);
-    core/* ɵɵlistener */.NdJ("selectedIndexChange", function RaceAnalysisComponent_div_1_Template_mat_tab_group_selectedIndexChange_1_listener($event) { core/* ɵɵrestoreView */.CHM(_r65); const ctx_r64 = core/* ɵɵnextContext */.oxw(); return ctx_r64.selectedTab = $event; })("selectedTabChange", function RaceAnalysisComponent_div_1_Template_mat_tab_group_selectedTabChange_1_listener($event) { core/* ɵɵrestoreView */.CHM(_r65); const ctx_r66 = core/* ɵɵnextContext */.oxw(); return ctx_r66.tabChanged($event); });
+    core/* ɵɵlistener */.NdJ("selectedIndexChange", function RaceAnalysisComponent_div_1_Template_mat_tab_group_selectedIndexChange_1_listener($event) { core/* ɵɵrestoreView */.CHM(_r69); const ctx_r68 = core/* ɵɵnextContext */.oxw(); return ctx_r68.selectedTab = $event; })("selectedTabChange", function RaceAnalysisComponent_div_1_Template_mat_tab_group_selectedTabChange_1_listener($event) { core/* ɵɵrestoreView */.CHM(_r69); const ctx_r70 = core/* ɵɵnextContext */.oxw(); return ctx_r70.tabChanged($event); });
     core/* ɵɵelementStart */.TgZ(2, "mat-tab", 3);
-    core/* ɵɵtemplate */.YNc(3, RaceAnalysisComponent_div_1_ng_template_3_Template, 17, 1, "ng-template", 4);
+    core/* ɵɵtemplate */.YNc(3, RaceAnalysisComponent_div_1_ng_template_3_Template, 19, 2, "ng-template", 4);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(4, "mat-tab", 5);
     core/* ɵɵtemplate */.YNc(5, RaceAnalysisComponent_div_1_ng_template_5_Template, 13, 16, "ng-template", 4);
@@ -51146,6 +51179,7 @@ class RaceAnalysisComponent {
                 this.radioData = data.radioData;
                 this.status = data.status;
                 this.drivers = data.driverData;
+                this.raceYoutube = data.raceYoutube;
                 this.driversChampionshipPrediction = data.driversChampionshipPrediction;
                 this.teamsChampionshipPrediction = data.teamsChampionshipPrediction;
                 this.raceControlMessages = data.raceControlMessages;
@@ -51674,14 +51708,14 @@ RaceAnalysisComponent.ɵcmp = /*@__PURE__*/ core/* ɵɵdefineComponent */.Xpm({ 
     } if (rf & 2) {
         let _t;
         core/* ɵɵqueryRefresh */.iGM(_t = core/* ɵɵloadQuery */.CRH()) && (ctx.chart = _t.first);
-    } }, decls: 2, vars: 1, consts: [["class", "\u201Dmat-content\u201D", 4, "ngIf"], [1, "\u201Dmat-content\u201D"], [3, "selectedIndex", "selectedIndexChange", "selectedTabChange"], ["label", "Result"], ["matTabContent", ""], ["label", "Lap-by-Lap"], ["label", "New standings"], ["label", "Fastest laps"], ["label", "Top speeds"], ["label", "Radio"], ["mat-tab-label", ""], ["label", "RaceControl Messages"], ["disabled", "true", "label", "Laps heatmap"], [1, "row", "col-padding-1"], [1, "table", "table-striped"], ["scope", "col"], ["scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], ["scope", "col", 1, "w-20px"], [4, "ngFor", "ngForOf"], ["scope", "row"], [1, "d-sm-none", "d-none", "d-lg-table-cell"], [1, "no-padding-td"], ["color", "primary", "mat-mini-fab", "", 3, "click", 4, "ngIf"], ["color", "primary", "mat-mini-fab", "", 3, "click"], [1, "row"], [1, "col-md-12"], [1, "card"], [1, "overflowX", "card-body-padded"], [3, "series", "chart", "dataLabels", "grid", "stroke", "title", "yaxis", "xaxis"], [1, "card-body-padded"], [3, "title", "series", "chart", "fill", "legend", "plotOptions", "xaxis", "tooltip"], [1, "col-12", "col-xl-6", "pl-xl-4", "pt-2"], [1, "text-center", "bg-primary", "text-white"], ["colspan", "3"], ["scope", "col", 2, "width", "55px"], ["scope", "col", 2, "width", "100px"], [1, "col-12", "col-xl-6", "px-xl-4", "pt-2"], [3, "class", 4, "ngFor", "ngForOf"], [4, "ngIf"], [1, "text-left"], ["matSort", "", 1, "table", "table-striped", 3, "matSortChange"], ["scope", "col", 1, "bg-grey"], ["mat-sort-header", "1", "colspan", "2", "scope", "col", 1, "text-center"], ["mat-sort-header", "2", "colspan", "2", "scope", "col", 1, "text-center", "bg-grey"], ["mat-sort-header", "3", "colspan", "2", "scope", "col", 1, "text-center"], ["mat-sort-header", "4", "colspan", "2", "scope", "col", 1, "text-center", "bg-grey"], ["scope", "col", 1, "bg-grey", 2, "width", "200px"], ["mat-sort-header", "1", "scope", "col", 2, "width", "70px"], ["mat-sort-header", "1", "scope", "col", 2, "width", "40px"], ["mat-sort-header", "2", "scope", "col", 1, "bg-grey", 2, "width", "70px"], ["mat-sort-header", "2", "scope", "col", 1, "bg-grey", 2, "width", "40px"], ["mat-sort-header", "3", "scope", "col", 2, "width", "70px"], ["mat-sort-header", "3", "scope", "col", 2, "width", "40px"], ["mat-sort-header", "4", "scope", "col", 1, "bg-grey", 2, "width", "70px"], ["mat-sort-header", "4", "scope", "col", 1, "bg-grey", 2, "width", "40px"], ["scope", "col", 1, "bg-grey", 2, "width", "150px"], ["scope", "col", 2, "width", "150px"], ["scope", "col", 1, "bg-grey", "text-center"], ["scope", "col", 1, "text-center"], ["style", "width: 50px", "colspan", "2", "class", " bg-grey text-center", "scope", "col", 4, "ngFor", "ngForOf"], ["colspan", "2", "scope", "col", 1, "bg-grey", "text-center", 2, "width", "50px"], ["scope", "col", 1, "text-center", "bg-grey", 2, "width", "90px", 3, "mat-sort-header"], ["scope", "col", 1, "text-center", "bg-grey", 2, "width", "40px", 3, "mat-sort-header"], [1, "text-center"], [1, "text-right"], ["class", "div-padded-always-left-right-1", 4, "ngIf"], [1, "div-padded-always-left-right-1"], ["color", "accent", "mat-mini-fab", "", 3, "click"], ["controls", ""], [3, "src"], ["scope", "col", 2, "width", "120px"], ["scope", "col", 2, "width", "110px"], ["aria-label", "Select an option", 3, "ngModel", "ngModelChange"], ["checked", "", "value", "1", 1, "div-padded-always-0-3rem", 3, "change"], ["value", "2", 1, "div-padded-always-0-3rem", 3, "change"], ["value", "3", 1, "div-padded-always-0-3rem", 3, "change"], ["class", "row", 4, "ngIf"], [1, "overflowXAlways", "pr-1"], [3, "series", "chart", "dataLabels", "plotOptions", "colors", "tooltip"]], template: function RaceAnalysisComponent_Template(rf, ctx) { if (rf & 1) {
+    } }, decls: 2, vars: 1, consts: [["class", "\u201Dmat-content\u201D", 4, "ngIf"], [1, "\u201Dmat-content\u201D"], [3, "selectedIndex", "selectedIndexChange", "selectedTabChange"], ["label", "Result"], ["matTabContent", ""], ["label", "Lap-by-Lap"], ["label", "New standings"], ["label", "Fastest laps"], ["label", "Top speeds"], ["label", "Radio"], ["mat-tab-label", ""], ["label", "RaceControl Messages"], ["disabled", "true", "label", "Laps heatmap"], [1, "row"], ["class", "col-12", 3, "ngClass", 4, "ngFor", "ngForOf"], [1, "row", "col-padding-1"], [1, "table", "table-striped"], ["scope", "col"], ["scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], ["scope", "col", 1, "w-20px"], [4, "ngFor", "ngForOf"], [1, "col-12", 3, "ngClass"], [1, "card", "card-body-padded", "text-center", "bg-black", "m-1"], ["target", "_blank", 3, "href"], ["alt", "NO IMAGE", 1, "video-thumbnail", 3, "src"], [1, "text-white"], ["scope", "row"], [1, "d-sm-none", "d-none", "d-lg-table-cell"], [1, "no-padding-td"], ["color", "primary", "mat-mini-fab", "", 3, "click", 4, "ngIf"], ["color", "primary", "mat-mini-fab", "", 3, "click"], [1, "col-md-12"], [1, "card"], [1, "overflowX", "card-body-padded"], [3, "series", "chart", "dataLabels", "grid", "stroke", "title", "yaxis", "xaxis"], [1, "card-body-padded"], [3, "title", "series", "chart", "fill", "legend", "plotOptions", "xaxis", "tooltip"], [1, "col-12", "col-xl-6", "pl-xl-4", "pt-2"], [1, "text-center", "bg-primary", "text-white"], ["colspan", "3"], ["scope", "col", 2, "width", "55px"], ["scope", "col", 2, "width", "100px"], [1, "col-12", "col-xl-6", "px-xl-4", "pt-2"], [3, "class", 4, "ngFor", "ngForOf"], [4, "ngIf"], [1, "text-left"], ["matSort", "", 1, "table", "table-striped", 3, "matSortChange"], ["scope", "col", 1, "bg-grey"], ["mat-sort-header", "1", "colspan", "2", "scope", "col", 1, "text-center"], ["mat-sort-header", "2", "colspan", "2", "scope", "col", 1, "text-center", "bg-grey"], ["mat-sort-header", "3", "colspan", "2", "scope", "col", 1, "text-center"], ["mat-sort-header", "4", "colspan", "2", "scope", "col", 1, "text-center", "bg-grey"], ["scope", "col", 1, "bg-grey", 2, "width", "200px"], ["mat-sort-header", "1", "scope", "col", 2, "width", "70px"], ["mat-sort-header", "1", "scope", "col", 2, "width", "40px"], ["mat-sort-header", "2", "scope", "col", 1, "bg-grey", 2, "width", "70px"], ["mat-sort-header", "2", "scope", "col", 1, "bg-grey", 2, "width", "40px"], ["mat-sort-header", "3", "scope", "col", 2, "width", "70px"], ["mat-sort-header", "3", "scope", "col", 2, "width", "40px"], ["mat-sort-header", "4", "scope", "col", 1, "bg-grey", 2, "width", "70px"], ["mat-sort-header", "4", "scope", "col", 1, "bg-grey", 2, "width", "40px"], ["scope", "col", 1, "bg-grey", 2, "width", "150px"], ["scope", "col", 2, "width", "150px"], ["scope", "col", 1, "bg-grey", "text-center"], ["scope", "col", 1, "text-center"], ["style", "width: 50px", "colspan", "2", "class", " bg-grey text-center", "scope", "col", 4, "ngFor", "ngForOf"], ["colspan", "2", "scope", "col", 1, "bg-grey", "text-center", 2, "width", "50px"], ["scope", "col", 1, "text-center", "bg-grey", 2, "width", "90px", 3, "mat-sort-header"], ["scope", "col", 1, "text-center", "bg-grey", 2, "width", "40px", 3, "mat-sort-header"], [1, "text-center"], [1, "text-right"], ["class", "div-padded-always-left-right-1", 4, "ngIf"], [1, "div-padded-always-left-right-1"], ["color", "accent", "mat-mini-fab", "", 3, "click"], ["controls", ""], [3, "src"], ["scope", "col", 2, "width", "120px"], ["scope", "col", 2, "width", "110px"], ["aria-label", "Select an option", 3, "ngModel", "ngModelChange"], ["checked", "", "value", "1", 1, "div-padded-always-0-3rem", 3, "change"], ["value", "2", 1, "div-padded-always-0-3rem", 3, "change"], ["value", "3", 1, "div-padded-always-0-3rem", 3, "change"], ["class", "row", 4, "ngIf"], [1, "overflowXAlways", "pr-1"], [3, "series", "chart", "dataLabels", "plotOptions", "colors", "tooltip"]], template: function RaceAnalysisComponent_Template(rf, ctx) { if (rf & 1) {
         core/* ɵɵelementStart */.TgZ(0, "div");
         core/* ɵɵtemplate */.YNc(1, RaceAnalysisComponent_div_1_Template, 19, 1, "div", 0);
         core/* ɵɵelementEnd */.qZA();
     } if (rf & 2) {
         core/* ɵɵadvance */.xp6(1);
         core/* ɵɵproperty */.Q6J("ngIf", ctx.drivers != undefined);
-    } }, directives: [common/* NgIf */.O5, tabs/* MatTabGroup */.SP, tabs/* MatTab */.uX, tabs/* MatTabContent */.Vc, tabs/* MatTabLabel */.uD, common/* NgForOf */.sg, fesm2015_button/* MatButton */.lW, icon/* MatIcon */.Hw, ng_apexcharts/* ChartComponent */.x, MatSort, MatSortHeader, fesm2015_radio/* MatRadioGroup */.VQ, fesm2015_forms/* NgControlStatus */.JJ, fesm2015_forms/* NgModel */.On, fesm2015_radio/* MatRadioButton */.U0], pipes: [common/* DatePipe */.uU], encapsulation: 2 });
+    } }, directives: [common/* NgIf */.O5, tabs/* MatTabGroup */.SP, tabs/* MatTab */.uX, tabs/* MatTabContent */.Vc, tabs/* MatTabLabel */.uD, common/* NgForOf */.sg, common/* NgClass */.mk, fesm2015_button/* MatButton */.lW, icon/* MatIcon */.Hw, ng_apexcharts/* ChartComponent */.x, MatSort, MatSortHeader, fesm2015_radio/* MatRadioGroup */.VQ, fesm2015_forms/* NgControlStatus */.JJ, fesm2015_forms/* NgModel */.On, fesm2015_radio/* MatRadioButton */.U0], pipes: [common/* DatePipe */.uU], encapsulation: 2 });
 
 ;// CONCATENATED MODULE: ./src/app/model/TrippleInstagramFeed.ts
 class TrippleInstagramFeed {
@@ -63947,15 +63981,32 @@ var ngx_countdown = __webpack_require__(8591);
 
 const f1_countdown_component_c0 = ["countdown"];
 function F1CountdownComponent_div_1_div_1_img_1_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelement */._UZ(0, "img", 22);
+    core/* ɵɵelement */._UZ(0, "img", 20);
 } }
 function F1CountdownComponent_div_1_div_1_img_2_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelement */._UZ(0, "img", 23);
+    core/* ɵɵelement */._UZ(0, "img", 21);
 } if (rf & 2) {
     const ctx_r15 = core/* ɵɵnextContext */.oxw(3);
     core/* ɵɵproperty */.Q6J("src", ctx_r15.getCustomBgUrl(), core/* ɵɵsanitizeUrl */.LSH);
 } }
-function F1CountdownComponent_div_1_div_1_mat_tab_4_ng_template_1_div_4_Template(rf, ctx) { if (rf & 1) {
+function F1CountdownComponent_div_1_div_1_mat_tab_4_ng_template_1_Template(rf, ctx) { if (rf & 1) {
+    core/* ɵɵelementStart */.TgZ(0, "div");
+    core/* ɵɵelementStart */.TgZ(1, "div", 24);
+    core/* ɵɵtext */._uU(2);
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(3, "div", 25);
+    core/* ɵɵtext */._uU(4);
+    core/* ɵɵpipe */.ALo(5, "date");
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+} if (rf & 2) {
+    const ctx_r22 = core/* ɵɵnextContext */.oxw(4);
+    core/* ɵɵadvance */.xp6(2);
+    core/* ɵɵtextInterpolate */.Oqu(ctx_r22.calendarData.f1Calendar.practice1Name);
+    core/* ɵɵadvance */.xp6(2);
+    core/* ɵɵtextInterpolate1 */.hij(" ", core/* ɵɵpipeBind2 */.xi3(5, 2, ctx_r22.checkTime(ctx_r22.calendarData.f1Calendar.practice1), "EEEE, h:mm a"), " ");
+} }
+function F1CountdownComponent_div_1_div_1_mat_tab_4_ng_template_2_div_4_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div");
     core/* ɵɵelementStart */.TgZ(1, "h1");
     core/* ɵɵelementStart */.TgZ(2, "span", 30);
@@ -63968,7 +64019,7 @@ function F1CountdownComponent_div_1_div_1_mat_tab_4_ng_template_1_div_4_Template
     core/* ɵɵadvance */.xp6(3);
     core/* ɵɵtextInterpolate1 */.hij("", ctx_r24.FP1Days, " days");
 } }
-function F1CountdownComponent_div_1_div_1_mat_tab_4_ng_template_1_div_5_Template(rf, ctx) { if (rf & 1) {
+function F1CountdownComponent_div_1_div_1_mat_tab_4_ng_template_2_div_5_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div");
     core/* ɵɵelementStart */.TgZ(1, "h1");
     core/* ɵɵelementStart */.TgZ(2, "span", 30);
@@ -63978,17 +64029,17 @@ function F1CountdownComponent_div_1_div_1_mat_tab_4_ng_template_1_div_5_Template
     core/* ɵɵelementEnd */.qZA();
 } }
 const f1_countdown_component_c1 = function (a0) { return { leftTime: a0 }; };
-function F1CountdownComponent_div_1_div_1_mat_tab_4_ng_template_1_Template(rf, ctx) { if (rf & 1) {
+function F1CountdownComponent_div_1_div_1_mat_tab_4_ng_template_2_Template(rf, ctx) { if (rf & 1) {
     const _r28 = core/* ɵɵgetCurrentView */.EpF();
-    core/* ɵɵelementStart */.TgZ(0, "div", 25);
-    core/* ɵɵlistener */.NdJ("click", function F1CountdownComponent_div_1_div_1_mat_tab_4_ng_template_1_Template_div_click_0_listener() { core/* ɵɵrestoreView */.CHM(_r28); const ctx_r27 = core/* ɵɵnextContext */.oxw(4); return ctx_r27.countdownWasClicked(1); });
+    core/* ɵɵelementStart */.TgZ(0, "div", 26);
+    core/* ɵɵlistener */.NdJ("click", function F1CountdownComponent_div_1_div_1_mat_tab_4_ng_template_2_Template_div_click_0_listener() { core/* ɵɵrestoreView */.CHM(_r28); const ctx_r27 = core/* ɵɵnextContext */.oxw(4); return ctx_r27.countdownWasClicked(1); });
     core/* ɵɵelementStart */.TgZ(1, "h1");
-    core/* ɵɵelementStart */.TgZ(2, "span", 26);
+    core/* ɵɵelementStart */.TgZ(2, "span", 27);
     core/* ɵɵtext */._uU(3);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵtemplate */.YNc(4, F1CountdownComponent_div_1_div_1_mat_tab_4_ng_template_1_div_4_Template, 4, 1, "div", 27);
-    core/* ɵɵtemplate */.YNc(5, F1CountdownComponent_div_1_div_1_mat_tab_4_ng_template_1_div_5_Template, 4, 0, "div", 27);
+    core/* ɵɵtemplate */.YNc(4, F1CountdownComponent_div_1_div_1_mat_tab_4_ng_template_2_div_4_Template, 4, 1, "div", 19);
+    core/* ɵɵtemplate */.YNc(5, F1CountdownComponent_div_1_div_1_mat_tab_4_ng_template_2_div_5_Template, 4, 0, "div", 19);
     core/* ɵɵelementStart */.TgZ(6, "h1");
     core/* ɵɵelementStart */.TgZ(7, "span");
     core/* ɵɵelement */._UZ(8, "countdown", 28, 29);
@@ -64012,46 +64063,61 @@ function F1CountdownComponent_div_1_div_1_mat_tab_4_ng_template_1_Template(rf, c
     core/* ɵɵproperty */.Q6J("config", core/* ɵɵpureFunction1 */.VKq(4, f1_countdown_component_c1, ctx_r23.FP1Seconds));
 } }
 function F1CountdownComponent_div_1_div_1_mat_tab_4_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "mat-tab", 24);
-    core/* ɵɵtemplate */.YNc(1, F1CountdownComponent_div_1_div_1_mat_tab_4_ng_template_1_Template, 15, 6, "ng-template", 21);
-    core/* ɵɵelementEnd */.qZA();
-} if (rf & 2) {
-    const ctx_r16 = core/* ɵɵnextContext */.oxw(3);
-    core/* ɵɵpropertyInterpolate */.s9C("label", ctx_r16.calendarData.f1Calendar.practice1Name);
-} }
-function F1CountdownComponent_div_1_div_1_mat_tab_5_ng_template_1_div_4_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "div");
-    core/* ɵɵelementStart */.TgZ(1, "h1");
-    core/* ɵɵelementStart */.TgZ(2, "span", 30);
-    core/* ɵɵtext */._uU(3);
-    core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementEnd */.qZA();
-} if (rf & 2) {
-    const ctx_r30 = core/* ɵɵnextContext */.oxw(5);
-    core/* ɵɵadvance */.xp6(3);
-    core/* ɵɵtextInterpolate1 */.hij("", ctx_r30.FP2Days, " days");
-} }
-function F1CountdownComponent_div_1_div_1_mat_tab_5_ng_template_1_div_5_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "div");
-    core/* ɵɵelementStart */.TgZ(1, "h1");
-    core/* ɵɵelementStart */.TgZ(2, "span", 30);
-    core/* ɵɵtext */._uU(3, "1 day");
-    core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(0, "mat-tab");
+    core/* ɵɵtemplate */.YNc(1, F1CountdownComponent_div_1_div_1_mat_tab_4_ng_template_1_Template, 6, 5, "ng-template", 22);
+    core/* ɵɵtemplate */.YNc(2, F1CountdownComponent_div_1_div_1_mat_tab_4_ng_template_2_Template, 15, 6, "ng-template", 23);
     core/* ɵɵelementEnd */.qZA();
 } }
 function F1CountdownComponent_div_1_div_1_mat_tab_5_ng_template_1_Template(rf, ctx) { if (rf & 1) {
-    const _r34 = core/* ɵɵgetCurrentView */.EpF();
-    core/* ɵɵelementStart */.TgZ(0, "div", 25);
-    core/* ɵɵlistener */.NdJ("click", function F1CountdownComponent_div_1_div_1_mat_tab_5_ng_template_1_Template_div_click_0_listener() { core/* ɵɵrestoreView */.CHM(_r34); const ctx_r33 = core/* ɵɵnextContext */.oxw(4); return ctx_r33.countdownWasClicked(2); });
+    core/* ɵɵelementStart */.TgZ(0, "div");
+    core/* ɵɵelementStart */.TgZ(1, "div", 24);
+    core/* ɵɵtext */._uU(2);
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(3, "div", 25);
+    core/* ɵɵtext */._uU(4);
+    core/* ɵɵpipe */.ALo(5, "date");
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+} if (rf & 2) {
+    const ctx_r29 = core/* ɵɵnextContext */.oxw(4);
+    core/* ɵɵadvance */.xp6(2);
+    core/* ɵɵtextInterpolate */.Oqu(ctx_r29.calendarData.f1Calendar.practice2Name);
+    core/* ɵɵadvance */.xp6(2);
+    core/* ɵɵtextInterpolate1 */.hij(" ", core/* ɵɵpipeBind2 */.xi3(5, 2, ctx_r29.checkTime(ctx_r29.calendarData.f1Calendar.practice2), "EEEE, h:mm a"), " ");
+} }
+function F1CountdownComponent_div_1_div_1_mat_tab_5_ng_template_2_div_4_Template(rf, ctx) { if (rf & 1) {
+    core/* ɵɵelementStart */.TgZ(0, "div");
     core/* ɵɵelementStart */.TgZ(1, "h1");
-    core/* ɵɵelementStart */.TgZ(2, "span", 26);
+    core/* ɵɵelementStart */.TgZ(2, "span", 30);
     core/* ɵɵtext */._uU(3);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵtemplate */.YNc(4, F1CountdownComponent_div_1_div_1_mat_tab_5_ng_template_1_div_4_Template, 4, 1, "div", 27);
-    core/* ɵɵtemplate */.YNc(5, F1CountdownComponent_div_1_div_1_mat_tab_5_ng_template_1_div_5_Template, 4, 0, "div", 27);
+    core/* ɵɵelementEnd */.qZA();
+} if (rf & 2) {
+    const ctx_r31 = core/* ɵɵnextContext */.oxw(5);
+    core/* ɵɵadvance */.xp6(3);
+    core/* ɵɵtextInterpolate1 */.hij("", ctx_r31.FP2Days, " days");
+} }
+function F1CountdownComponent_div_1_div_1_mat_tab_5_ng_template_2_div_5_Template(rf, ctx) { if (rf & 1) {
+    core/* ɵɵelementStart */.TgZ(0, "div");
+    core/* ɵɵelementStart */.TgZ(1, "h1");
+    core/* ɵɵelementStart */.TgZ(2, "span", 30);
+    core/* ɵɵtext */._uU(3, "1 day");
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+} }
+function F1CountdownComponent_div_1_div_1_mat_tab_5_ng_template_2_Template(rf, ctx) { if (rf & 1) {
+    const _r35 = core/* ɵɵgetCurrentView */.EpF();
+    core/* ɵɵelementStart */.TgZ(0, "div", 26);
+    core/* ɵɵlistener */.NdJ("click", function F1CountdownComponent_div_1_div_1_mat_tab_5_ng_template_2_Template_div_click_0_listener() { core/* ɵɵrestoreView */.CHM(_r35); const ctx_r34 = core/* ɵɵnextContext */.oxw(4); return ctx_r34.countdownWasClicked(2); });
+    core/* ɵɵelementStart */.TgZ(1, "h1");
+    core/* ɵɵelementStart */.TgZ(2, "span", 27);
+    core/* ɵɵtext */._uU(3);
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵtemplate */.YNc(4, F1CountdownComponent_div_1_div_1_mat_tab_5_ng_template_2_div_4_Template, 4, 1, "div", 19);
+    core/* ɵɵtemplate */.YNc(5, F1CountdownComponent_div_1_div_1_mat_tab_5_ng_template_2_div_5_Template, 4, 0, "div", 19);
     core/* ɵɵelementStart */.TgZ(6, "h1");
     core/* ɵɵelementStart */.TgZ(7, "span");
     core/* ɵɵelement */._UZ(8, "countdown", 28, 29);
@@ -64064,57 +64130,72 @@ function F1CountdownComponent_div_1_div_1_mat_tab_5_ng_template_1_Template(rf, c
     core/* ɵɵelement */._UZ(13, "br");
     core/* ɵɵelement */._UZ(14, "br");
 } if (rf & 2) {
-    const ctx_r29 = core/* ɵɵnextContext */.oxw(4);
+    const ctx_r30 = core/* ɵɵnextContext */.oxw(4);
     core/* ɵɵadvance */.xp6(3);
-    core/* ɵɵtextInterpolate1 */.hij(" ", ctx_r29.calendarData.f1Calendar.practice2Name, " in: ");
+    core/* ɵɵtextInterpolate1 */.hij(" ", ctx_r30.calendarData.f1Calendar.practice2Name, " in: ");
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r29.FP2Days > 1);
+    core/* ɵɵproperty */.Q6J("ngIf", ctx_r30.FP2Days > 1);
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r29.FP2Days == 1);
+    core/* ɵɵproperty */.Q6J("ngIf", ctx_r30.FP2Days == 1);
     core/* ɵɵadvance */.xp6(3);
-    core/* ɵɵproperty */.Q6J("config", core/* ɵɵpureFunction1 */.VKq(4, f1_countdown_component_c1, ctx_r29.FP2Seconds));
+    core/* ɵɵproperty */.Q6J("config", core/* ɵɵpureFunction1 */.VKq(4, f1_countdown_component_c1, ctx_r30.FP2Seconds));
 } }
 function F1CountdownComponent_div_1_div_1_mat_tab_5_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "mat-tab", 24);
-    core/* ɵɵtemplate */.YNc(1, F1CountdownComponent_div_1_div_1_mat_tab_5_ng_template_1_Template, 15, 6, "ng-template", 21);
-    core/* ɵɵelementEnd */.qZA();
-} if (rf & 2) {
-    const ctx_r17 = core/* ɵɵnextContext */.oxw(3);
-    core/* ɵɵpropertyInterpolate */.s9C("label", ctx_r17.calendarData.f1Calendar.practice2Name);
-} }
-function F1CountdownComponent_div_1_div_1_mat_tab_6_ng_template_1_div_4_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "div");
-    core/* ɵɵelementStart */.TgZ(1, "h1");
-    core/* ɵɵelementStart */.TgZ(2, "span", 30);
-    core/* ɵɵtext */._uU(3);
-    core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementEnd */.qZA();
-} if (rf & 2) {
-    const ctx_r36 = core/* ɵɵnextContext */.oxw(5);
-    core/* ɵɵadvance */.xp6(3);
-    core/* ɵɵtextInterpolate1 */.hij("", ctx_r36.FP3Days, " days");
-} }
-function F1CountdownComponent_div_1_div_1_mat_tab_6_ng_template_1_div_5_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "div");
-    core/* ɵɵelementStart */.TgZ(1, "h1");
-    core/* ɵɵelementStart */.TgZ(2, "span", 30);
-    core/* ɵɵtext */._uU(3, "1 day");
-    core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(0, "mat-tab");
+    core/* ɵɵtemplate */.YNc(1, F1CountdownComponent_div_1_div_1_mat_tab_5_ng_template_1_Template, 6, 5, "ng-template", 22);
+    core/* ɵɵtemplate */.YNc(2, F1CountdownComponent_div_1_div_1_mat_tab_5_ng_template_2_Template, 15, 6, "ng-template", 23);
     core/* ɵɵelementEnd */.qZA();
 } }
 function F1CountdownComponent_div_1_div_1_mat_tab_6_ng_template_1_Template(rf, ctx) { if (rf & 1) {
-    const _r40 = core/* ɵɵgetCurrentView */.EpF();
-    core/* ɵɵelementStart */.TgZ(0, "div", 25);
-    core/* ɵɵlistener */.NdJ("click", function F1CountdownComponent_div_1_div_1_mat_tab_6_ng_template_1_Template_div_click_0_listener() { core/* ɵɵrestoreView */.CHM(_r40); const ctx_r39 = core/* ɵɵnextContext */.oxw(4); return ctx_r39.countdownWasClicked(3); });
+    core/* ɵɵelementStart */.TgZ(0, "div");
+    core/* ɵɵelementStart */.TgZ(1, "div", 24);
+    core/* ɵɵtext */._uU(2);
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(3, "div", 25);
+    core/* ɵɵtext */._uU(4);
+    core/* ɵɵpipe */.ALo(5, "date");
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+} if (rf & 2) {
+    const ctx_r36 = core/* ɵɵnextContext */.oxw(4);
+    core/* ɵɵadvance */.xp6(2);
+    core/* ɵɵtextInterpolate */.Oqu(ctx_r36.calendarData.f1Calendar.practice3Name);
+    core/* ɵɵadvance */.xp6(2);
+    core/* ɵɵtextInterpolate1 */.hij(" ", core/* ɵɵpipeBind2 */.xi3(5, 2, ctx_r36.checkTime(ctx_r36.calendarData.f1Calendar.practice3), "EEEE, h:mm a"), " ");
+} }
+function F1CountdownComponent_div_1_div_1_mat_tab_6_ng_template_2_div_4_Template(rf, ctx) { if (rf & 1) {
+    core/* ɵɵelementStart */.TgZ(0, "div");
     core/* ɵɵelementStart */.TgZ(1, "h1");
-    core/* ɵɵelementStart */.TgZ(2, "span", 26);
+    core/* ɵɵelementStart */.TgZ(2, "span", 30);
     core/* ɵɵtext */._uU(3);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵtemplate */.YNc(4, F1CountdownComponent_div_1_div_1_mat_tab_6_ng_template_1_div_4_Template, 4, 1, "div", 27);
-    core/* ɵɵtemplate */.YNc(5, F1CountdownComponent_div_1_div_1_mat_tab_6_ng_template_1_div_5_Template, 4, 0, "div", 27);
+    core/* ɵɵelementEnd */.qZA();
+} if (rf & 2) {
+    const ctx_r38 = core/* ɵɵnextContext */.oxw(5);
+    core/* ɵɵadvance */.xp6(3);
+    core/* ɵɵtextInterpolate1 */.hij("", ctx_r38.FP3Days, " days");
+} }
+function F1CountdownComponent_div_1_div_1_mat_tab_6_ng_template_2_div_5_Template(rf, ctx) { if (rf & 1) {
+    core/* ɵɵelementStart */.TgZ(0, "div");
+    core/* ɵɵelementStart */.TgZ(1, "h1");
+    core/* ɵɵelementStart */.TgZ(2, "span", 30);
+    core/* ɵɵtext */._uU(3, "1 day");
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+} }
+function F1CountdownComponent_div_1_div_1_mat_tab_6_ng_template_2_Template(rf, ctx) { if (rf & 1) {
+    const _r42 = core/* ɵɵgetCurrentView */.EpF();
+    core/* ɵɵelementStart */.TgZ(0, "div", 26);
+    core/* ɵɵlistener */.NdJ("click", function F1CountdownComponent_div_1_div_1_mat_tab_6_ng_template_2_Template_div_click_0_listener() { core/* ɵɵrestoreView */.CHM(_r42); const ctx_r41 = core/* ɵɵnextContext */.oxw(4); return ctx_r41.countdownWasClicked(3); });
+    core/* ɵɵelementStart */.TgZ(1, "h1");
+    core/* ɵɵelementStart */.TgZ(2, "span", 27);
+    core/* ɵɵtext */._uU(3);
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵtemplate */.YNc(4, F1CountdownComponent_div_1_div_1_mat_tab_6_ng_template_2_div_4_Template, 4, 1, "div", 19);
+    core/* ɵɵtemplate */.YNc(5, F1CountdownComponent_div_1_div_1_mat_tab_6_ng_template_2_div_5_Template, 4, 0, "div", 19);
     core/* ɵɵelementStart */.TgZ(6, "h1");
     core/* ɵɵelementStart */.TgZ(7, "span");
     core/* ɵɵelement */._UZ(8, "countdown", 28, 29);
@@ -64127,57 +64208,72 @@ function F1CountdownComponent_div_1_div_1_mat_tab_6_ng_template_1_Template(rf, c
     core/* ɵɵelement */._UZ(13, "br");
     core/* ɵɵelement */._UZ(14, "br");
 } if (rf & 2) {
-    const ctx_r35 = core/* ɵɵnextContext */.oxw(4);
+    const ctx_r37 = core/* ɵɵnextContext */.oxw(4);
     core/* ɵɵadvance */.xp6(3);
-    core/* ɵɵtextInterpolate1 */.hij(" ", ctx_r35.calendarData.f1Calendar.practice3Name, " in: ");
+    core/* ɵɵtextInterpolate1 */.hij(" ", ctx_r37.calendarData.f1Calendar.practice3Name, " in: ");
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r35.FP3Days > 1);
+    core/* ɵɵproperty */.Q6J("ngIf", ctx_r37.FP3Days > 1);
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r35.FP3Days == 1);
+    core/* ɵɵproperty */.Q6J("ngIf", ctx_r37.FP3Days == 1);
     core/* ɵɵadvance */.xp6(3);
-    core/* ɵɵproperty */.Q6J("config", core/* ɵɵpureFunction1 */.VKq(4, f1_countdown_component_c1, ctx_r35.FP3Seconds));
+    core/* ɵɵproperty */.Q6J("config", core/* ɵɵpureFunction1 */.VKq(4, f1_countdown_component_c1, ctx_r37.FP3Seconds));
 } }
 function F1CountdownComponent_div_1_div_1_mat_tab_6_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "mat-tab", 24);
-    core/* ɵɵtemplate */.YNc(1, F1CountdownComponent_div_1_div_1_mat_tab_6_ng_template_1_Template, 15, 6, "ng-template", 21);
-    core/* ɵɵelementEnd */.qZA();
-} if (rf & 2) {
-    const ctx_r18 = core/* ɵɵnextContext */.oxw(3);
-    core/* ɵɵpropertyInterpolate */.s9C("label", ctx_r18.calendarData.f1Calendar.practice3Name);
-} }
-function F1CountdownComponent_div_1_div_1_mat_tab_7_ng_template_1_div_4_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "div");
-    core/* ɵɵelementStart */.TgZ(1, "h1");
-    core/* ɵɵelementStart */.TgZ(2, "span", 30);
-    core/* ɵɵtext */._uU(3);
-    core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementEnd */.qZA();
-} if (rf & 2) {
-    const ctx_r42 = core/* ɵɵnextContext */.oxw(5);
-    core/* ɵɵadvance */.xp6(3);
-    core/* ɵɵtextInterpolate1 */.hij("", ctx_r42.sprintDays, " days");
-} }
-function F1CountdownComponent_div_1_div_1_mat_tab_7_ng_template_1_div_5_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "div");
-    core/* ɵɵelementStart */.TgZ(1, "h1");
-    core/* ɵɵelementStart */.TgZ(2, "span", 30);
-    core/* ɵɵtext */._uU(3, "1 day");
-    core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(0, "mat-tab");
+    core/* ɵɵtemplate */.YNc(1, F1CountdownComponent_div_1_div_1_mat_tab_6_ng_template_1_Template, 6, 5, "ng-template", 22);
+    core/* ɵɵtemplate */.YNc(2, F1CountdownComponent_div_1_div_1_mat_tab_6_ng_template_2_Template, 15, 6, "ng-template", 23);
     core/* ɵɵelementEnd */.qZA();
 } }
 function F1CountdownComponent_div_1_div_1_mat_tab_7_ng_template_1_Template(rf, ctx) { if (rf & 1) {
-    const _r46 = core/* ɵɵgetCurrentView */.EpF();
-    core/* ɵɵelementStart */.TgZ(0, "div", 25);
-    core/* ɵɵlistener */.NdJ("click", function F1CountdownComponent_div_1_div_1_mat_tab_7_ng_template_1_Template_div_click_0_listener() { core/* ɵɵrestoreView */.CHM(_r46); const ctx_r45 = core/* ɵɵnextContext */.oxw(4); return ctx_r45.countdownWasClicked(6); });
+    core/* ɵɵelementStart */.TgZ(0, "div");
+    core/* ɵɵelementStart */.TgZ(1, "div", 24);
+    core/* ɵɵtext */._uU(2);
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(3, "div", 25);
+    core/* ɵɵtext */._uU(4);
+    core/* ɵɵpipe */.ALo(5, "date");
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+} if (rf & 2) {
+    const ctx_r43 = core/* ɵɵnextContext */.oxw(4);
+    core/* ɵɵadvance */.xp6(2);
+    core/* ɵɵtextInterpolate */.Oqu(ctx_r43.calendarData.f1Calendar.sprintName);
+    core/* ɵɵadvance */.xp6(2);
+    core/* ɵɵtextInterpolate1 */.hij(" ", core/* ɵɵpipeBind2 */.xi3(5, 2, ctx_r43.checkTime(ctx_r43.calendarData.f1Calendar.sprint), "EEEE, h:mm a"), " ");
+} }
+function F1CountdownComponent_div_1_div_1_mat_tab_7_ng_template_2_div_4_Template(rf, ctx) { if (rf & 1) {
+    core/* ɵɵelementStart */.TgZ(0, "div");
     core/* ɵɵelementStart */.TgZ(1, "h1");
-    core/* ɵɵelementStart */.TgZ(2, "span", 26);
+    core/* ɵɵelementStart */.TgZ(2, "span", 30);
     core/* ɵɵtext */._uU(3);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵtemplate */.YNc(4, F1CountdownComponent_div_1_div_1_mat_tab_7_ng_template_1_div_4_Template, 4, 1, "div", 27);
-    core/* ɵɵtemplate */.YNc(5, F1CountdownComponent_div_1_div_1_mat_tab_7_ng_template_1_div_5_Template, 4, 0, "div", 27);
+    core/* ɵɵelementEnd */.qZA();
+} if (rf & 2) {
+    const ctx_r45 = core/* ɵɵnextContext */.oxw(5);
+    core/* ɵɵadvance */.xp6(3);
+    core/* ɵɵtextInterpolate1 */.hij("", ctx_r45.sprintDays, " days");
+} }
+function F1CountdownComponent_div_1_div_1_mat_tab_7_ng_template_2_div_5_Template(rf, ctx) { if (rf & 1) {
+    core/* ɵɵelementStart */.TgZ(0, "div");
+    core/* ɵɵelementStart */.TgZ(1, "h1");
+    core/* ɵɵelementStart */.TgZ(2, "span", 30);
+    core/* ɵɵtext */._uU(3, "1 day");
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+} }
+function F1CountdownComponent_div_1_div_1_mat_tab_7_ng_template_2_Template(rf, ctx) { if (rf & 1) {
+    const _r49 = core/* ɵɵgetCurrentView */.EpF();
+    core/* ɵɵelementStart */.TgZ(0, "div", 26);
+    core/* ɵɵlistener */.NdJ("click", function F1CountdownComponent_div_1_div_1_mat_tab_7_ng_template_2_Template_div_click_0_listener() { core/* ɵɵrestoreView */.CHM(_r49); const ctx_r48 = core/* ɵɵnextContext */.oxw(4); return ctx_r48.countdownWasClicked(6); });
+    core/* ɵɵelementStart */.TgZ(1, "h1");
+    core/* ɵɵelementStart */.TgZ(2, "span", 27);
+    core/* ɵɵtext */._uU(3);
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵtemplate */.YNc(4, F1CountdownComponent_div_1_div_1_mat_tab_7_ng_template_2_div_4_Template, 4, 1, "div", 19);
+    core/* ɵɵtemplate */.YNc(5, F1CountdownComponent_div_1_div_1_mat_tab_7_ng_template_2_div_5_Template, 4, 0, "div", 19);
     core/* ɵɵelementStart */.TgZ(6, "h1");
     core/* ɵɵelementStart */.TgZ(7, "span");
     core/* ɵɵelement */._UZ(8, "countdown", 28, 29);
@@ -64190,57 +64286,72 @@ function F1CountdownComponent_div_1_div_1_mat_tab_7_ng_template_1_Template(rf, c
     core/* ɵɵelement */._UZ(13, "br");
     core/* ɵɵelement */._UZ(14, "br");
 } if (rf & 2) {
-    const ctx_r41 = core/* ɵɵnextContext */.oxw(4);
+    const ctx_r44 = core/* ɵɵnextContext */.oxw(4);
     core/* ɵɵadvance */.xp6(3);
-    core/* ɵɵtextInterpolate1 */.hij(" ", ctx_r41.calendarData.f1Calendar.sprintName, " in: ");
+    core/* ɵɵtextInterpolate1 */.hij(" ", ctx_r44.calendarData.f1Calendar.sprintName, " in: ");
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r41.sprintDays > 1);
+    core/* ɵɵproperty */.Q6J("ngIf", ctx_r44.sprintDays > 1);
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r41.sprintDays == 1);
+    core/* ɵɵproperty */.Q6J("ngIf", ctx_r44.sprintDays == 1);
     core/* ɵɵadvance */.xp6(3);
-    core/* ɵɵproperty */.Q6J("config", core/* ɵɵpureFunction1 */.VKq(4, f1_countdown_component_c1, ctx_r41.sprintSeconds));
+    core/* ɵɵproperty */.Q6J("config", core/* ɵɵpureFunction1 */.VKq(4, f1_countdown_component_c1, ctx_r44.sprintSeconds));
 } }
 function F1CountdownComponent_div_1_div_1_mat_tab_7_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "mat-tab", 24);
-    core/* ɵɵtemplate */.YNc(1, F1CountdownComponent_div_1_div_1_mat_tab_7_ng_template_1_Template, 15, 6, "ng-template", 21);
-    core/* ɵɵelementEnd */.qZA();
-} if (rf & 2) {
-    const ctx_r19 = core/* ɵɵnextContext */.oxw(3);
-    core/* ɵɵpropertyInterpolate */.s9C("label", ctx_r19.calendarData.f1Calendar.sprintName);
-} }
-function F1CountdownComponent_div_1_div_1_mat_tab_8_ng_template_1_div_4_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "div");
-    core/* ɵɵelementStart */.TgZ(1, "h1");
-    core/* ɵɵelementStart */.TgZ(2, "span", 30);
-    core/* ɵɵtext */._uU(3);
-    core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementEnd */.qZA();
-} if (rf & 2) {
-    const ctx_r48 = core/* ɵɵnextContext */.oxw(5);
-    core/* ɵɵadvance */.xp6(3);
-    core/* ɵɵtextInterpolate1 */.hij("", ctx_r48.qualifyingDays, " days");
-} }
-function F1CountdownComponent_div_1_div_1_mat_tab_8_ng_template_1_div_5_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "div");
-    core/* ɵɵelementStart */.TgZ(1, "h1");
-    core/* ɵɵelementStart */.TgZ(2, "span", 30);
-    core/* ɵɵtext */._uU(3, "1 day");
-    core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(0, "mat-tab");
+    core/* ɵɵtemplate */.YNc(1, F1CountdownComponent_div_1_div_1_mat_tab_7_ng_template_1_Template, 6, 5, "ng-template", 22);
+    core/* ɵɵtemplate */.YNc(2, F1CountdownComponent_div_1_div_1_mat_tab_7_ng_template_2_Template, 15, 6, "ng-template", 23);
     core/* ɵɵelementEnd */.qZA();
 } }
 function F1CountdownComponent_div_1_div_1_mat_tab_8_ng_template_1_Template(rf, ctx) { if (rf & 1) {
-    const _r52 = core/* ɵɵgetCurrentView */.EpF();
-    core/* ɵɵelementStart */.TgZ(0, "div", 25);
-    core/* ɵɵlistener */.NdJ("click", function F1CountdownComponent_div_1_div_1_mat_tab_8_ng_template_1_Template_div_click_0_listener() { core/* ɵɵrestoreView */.CHM(_r52); const ctx_r51 = core/* ɵɵnextContext */.oxw(4); return ctx_r51.countdownWasClicked(4); });
+    core/* ɵɵelementStart */.TgZ(0, "div");
+    core/* ɵɵelementStart */.TgZ(1, "div", 24);
+    core/* ɵɵtext */._uU(2);
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(3, "div", 25);
+    core/* ɵɵtext */._uU(4);
+    core/* ɵɵpipe */.ALo(5, "date");
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+} if (rf & 2) {
+    const ctx_r50 = core/* ɵɵnextContext */.oxw(4);
+    core/* ɵɵadvance */.xp6(2);
+    core/* ɵɵtextInterpolate */.Oqu(ctx_r50.calendarData.f1Calendar.qualifyingName);
+    core/* ɵɵadvance */.xp6(2);
+    core/* ɵɵtextInterpolate1 */.hij(" ", core/* ɵɵpipeBind2 */.xi3(5, 2, ctx_r50.checkTime(ctx_r50.calendarData.f1Calendar.qualifying), "EEEE, h:mm a"), " ");
+} }
+function F1CountdownComponent_div_1_div_1_mat_tab_8_ng_template_2_div_4_Template(rf, ctx) { if (rf & 1) {
+    core/* ɵɵelementStart */.TgZ(0, "div");
     core/* ɵɵelementStart */.TgZ(1, "h1");
-    core/* ɵɵelementStart */.TgZ(2, "span", 26);
+    core/* ɵɵelementStart */.TgZ(2, "span", 30);
     core/* ɵɵtext */._uU(3);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵtemplate */.YNc(4, F1CountdownComponent_div_1_div_1_mat_tab_8_ng_template_1_div_4_Template, 4, 1, "div", 27);
-    core/* ɵɵtemplate */.YNc(5, F1CountdownComponent_div_1_div_1_mat_tab_8_ng_template_1_div_5_Template, 4, 0, "div", 27);
+    core/* ɵɵelementEnd */.qZA();
+} if (rf & 2) {
+    const ctx_r52 = core/* ɵɵnextContext */.oxw(5);
+    core/* ɵɵadvance */.xp6(3);
+    core/* ɵɵtextInterpolate1 */.hij("", ctx_r52.qualifyingDays, " days");
+} }
+function F1CountdownComponent_div_1_div_1_mat_tab_8_ng_template_2_div_5_Template(rf, ctx) { if (rf & 1) {
+    core/* ɵɵelementStart */.TgZ(0, "div");
+    core/* ɵɵelementStart */.TgZ(1, "h1");
+    core/* ɵɵelementStart */.TgZ(2, "span", 30);
+    core/* ɵɵtext */._uU(3, "1 day");
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+} }
+function F1CountdownComponent_div_1_div_1_mat_tab_8_ng_template_2_Template(rf, ctx) { if (rf & 1) {
+    const _r56 = core/* ɵɵgetCurrentView */.EpF();
+    core/* ɵɵelementStart */.TgZ(0, "div", 26);
+    core/* ɵɵlistener */.NdJ("click", function F1CountdownComponent_div_1_div_1_mat_tab_8_ng_template_2_Template_div_click_0_listener() { core/* ɵɵrestoreView */.CHM(_r56); const ctx_r55 = core/* ɵɵnextContext */.oxw(4); return ctx_r55.countdownWasClicked(4); });
+    core/* ɵɵelementStart */.TgZ(1, "h1");
+    core/* ɵɵelementStart */.TgZ(2, "span", 27);
+    core/* ɵɵtext */._uU(3);
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵtemplate */.YNc(4, F1CountdownComponent_div_1_div_1_mat_tab_8_ng_template_2_div_4_Template, 4, 1, "div", 19);
+    core/* ɵɵtemplate */.YNc(5, F1CountdownComponent_div_1_div_1_mat_tab_8_ng_template_2_div_5_Template, 4, 0, "div", 19);
     core/* ɵɵelementStart */.TgZ(6, "h1");
     core/* ɵɵelementStart */.TgZ(7, "span");
     core/* ɵɵelement */._UZ(8, "countdown", 28, 29);
@@ -64253,35 +64364,50 @@ function F1CountdownComponent_div_1_div_1_mat_tab_8_ng_template_1_Template(rf, c
     core/* ɵɵelement */._UZ(13, "br");
     core/* ɵɵelement */._UZ(14, "br");
 } if (rf & 2) {
-    const ctx_r47 = core/* ɵɵnextContext */.oxw(4);
+    const ctx_r51 = core/* ɵɵnextContext */.oxw(4);
     core/* ɵɵadvance */.xp6(3);
-    core/* ɵɵtextInterpolate1 */.hij(" ", ctx_r47.calendarData.f1Calendar.qualifyingName, " in: ");
+    core/* ɵɵtextInterpolate1 */.hij(" ", ctx_r51.calendarData.f1Calendar.qualifyingName, " in: ");
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r47.qualifyingDays > 1);
+    core/* ɵɵproperty */.Q6J("ngIf", ctx_r51.qualifyingDays > 1);
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r47.qualifyingDays == 1);
+    core/* ɵɵproperty */.Q6J("ngIf", ctx_r51.qualifyingDays == 1);
     core/* ɵɵadvance */.xp6(3);
-    core/* ɵɵproperty */.Q6J("config", core/* ɵɵpureFunction1 */.VKq(4, f1_countdown_component_c1, ctx_r47.qualifyingSeconds));
+    core/* ɵɵproperty */.Q6J("config", core/* ɵɵpureFunction1 */.VKq(4, f1_countdown_component_c1, ctx_r51.qualifyingSeconds));
 } }
 function F1CountdownComponent_div_1_div_1_mat_tab_8_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "mat-tab", 24);
-    core/* ɵɵtemplate */.YNc(1, F1CountdownComponent_div_1_div_1_mat_tab_8_ng_template_1_Template, 15, 6, "ng-template", 21);
+    core/* ɵɵelementStart */.TgZ(0, "mat-tab");
+    core/* ɵɵtemplate */.YNc(1, F1CountdownComponent_div_1_div_1_mat_tab_8_ng_template_1_Template, 6, 5, "ng-template", 22);
+    core/* ɵɵtemplate */.YNc(2, F1CountdownComponent_div_1_div_1_mat_tab_8_ng_template_2_Template, 15, 6, "ng-template", 23);
+    core/* ɵɵelementEnd */.qZA();
+} }
+function F1CountdownComponent_div_1_div_1_mat_tab_9_ng_template_1_Template(rf, ctx) { if (rf & 1) {
+    core/* ɵɵelementStart */.TgZ(0, "div");
+    core/* ɵɵelementStart */.TgZ(1, "div", 24);
+    core/* ɵɵtext */._uU(2);
+    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵelementStart */.TgZ(3, "div", 25);
+    core/* ɵɵtext */._uU(4);
+    core/* ɵɵpipe */.ALo(5, "date");
+    core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const ctx_r20 = core/* ɵɵnextContext */.oxw(3);
-    core/* ɵɵpropertyInterpolate */.s9C("label", ctx_r20.calendarData.f1Calendar.qualifyingName);
+    const ctx_r57 = core/* ɵɵnextContext */.oxw(4);
+    core/* ɵɵadvance */.xp6(2);
+    core/* ɵɵtextInterpolate */.Oqu(ctx_r57.calendarData.f1Calendar.raceName);
+    core/* ɵɵadvance */.xp6(2);
+    core/* ɵɵtextInterpolate1 */.hij(" ", core/* ɵɵpipeBind2 */.xi3(5, 2, ctx_r57.checkTime(ctx_r57.calendarData.f1Calendar.race), "EEEE, h:mm a"), " ");
 } }
-function F1CountdownComponent_div_1_div_1_mat_tab_9_ng_template_1_mat_slide_toggle_0_Template(rf, ctx) { if (rf & 1) {
-    const _r57 = core/* ɵɵgetCurrentView */.EpF();
+function F1CountdownComponent_div_1_div_1_mat_tab_9_ng_template_2_mat_slide_toggle_0_Template(rf, ctx) { if (rf & 1) {
+    const _r62 = core/* ɵɵgetCurrentView */.EpF();
     core/* ɵɵelementStart */.TgZ(0, "mat-slide-toggle", 33);
-    core/* ɵɵlistener */.NdJ("change", function F1CountdownComponent_div_1_div_1_mat_tab_9_ng_template_1_mat_slide_toggle_0_Template_mat_slide_toggle_change_0_listener($event) { core/* ɵɵrestoreView */.CHM(_r57); const ctx_r56 = core/* ɵɵnextContext */.oxw(5); return ctx_r56.toggleMusic($event); })("ngModelChange", function F1CountdownComponent_div_1_div_1_mat_tab_9_ng_template_1_mat_slide_toggle_0_Template_mat_slide_toggle_ngModelChange_0_listener($event) { core/* ɵɵrestoreView */.CHM(_r57); const ctx_r58 = core/* ɵɵnextContext */.oxw(5); return ctx_r58.isPlayingMusic = $event; });
+    core/* ɵɵlistener */.NdJ("change", function F1CountdownComponent_div_1_div_1_mat_tab_9_ng_template_2_mat_slide_toggle_0_Template_mat_slide_toggle_change_0_listener($event) { core/* ɵɵrestoreView */.CHM(_r62); const ctx_r61 = core/* ɵɵnextContext */.oxw(5); return ctx_r61.toggleMusic($event); })("ngModelChange", function F1CountdownComponent_div_1_div_1_mat_tab_9_ng_template_2_mat_slide_toggle_0_Template_mat_slide_toggle_ngModelChange_0_listener($event) { core/* ɵɵrestoreView */.CHM(_r62); const ctx_r63 = core/* ɵɵnextContext */.oxw(5); return ctx_r63.isPlayingMusic = $event; });
     core/* ɵɵelement */._UZ(1, "i", 34);
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const ctx_r54 = core/* ɵɵnextContext */.oxw(5);
-    core/* ɵɵproperty */.Q6J("ngModel", ctx_r54.isPlayingMusic);
+    const ctx_r59 = core/* ɵɵnextContext */.oxw(5);
+    core/* ɵɵproperty */.Q6J("ngModel", ctx_r59.isPlayingMusic);
 } }
-function F1CountdownComponent_div_1_div_1_mat_tab_9_ng_template_1_div_1_div_4_Template(rf, ctx) { if (rf & 1) {
+function F1CountdownComponent_div_1_div_1_mat_tab_9_ng_template_2_div_1_div_4_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div");
     core/* ɵɵelementStart */.TgZ(1, "h1");
     core/* ɵɵelementStart */.TgZ(2, "span", 30);
@@ -64290,11 +64416,11 @@ function F1CountdownComponent_div_1_div_1_mat_tab_9_ng_template_1_div_1_div_4_Te
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const ctx_r59 = core/* ɵɵnextContext */.oxw(6);
+    const ctx_r64 = core/* ɵɵnextContext */.oxw(6);
     core/* ɵɵadvance */.xp6(3);
-    core/* ɵɵtextInterpolate1 */.hij("", ctx_r59.raceDays, " days");
+    core/* ɵɵtextInterpolate1 */.hij("", ctx_r64.raceDays, " days");
 } }
-function F1CountdownComponent_div_1_div_1_mat_tab_9_ng_template_1_div_1_div_5_Template(rf, ctx) { if (rf & 1) {
+function F1CountdownComponent_div_1_div_1_mat_tab_9_ng_template_2_div_1_div_5_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div");
     core/* ɵɵelementStart */.TgZ(1, "h1");
     core/* ɵɵelementStart */.TgZ(2, "span", 30);
@@ -64303,17 +64429,17 @@ function F1CountdownComponent_div_1_div_1_mat_tab_9_ng_template_1_div_1_div_5_Te
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } }
-function F1CountdownComponent_div_1_div_1_mat_tab_9_ng_template_1_div_1_Template(rf, ctx) { if (rf & 1) {
-    const _r63 = core/* ɵɵgetCurrentView */.EpF();
-    core/* ɵɵelementStart */.TgZ(0, "div", 25);
-    core/* ɵɵlistener */.NdJ("click", function F1CountdownComponent_div_1_div_1_mat_tab_9_ng_template_1_div_1_Template_div_click_0_listener() { core/* ɵɵrestoreView */.CHM(_r63); const ctx_r62 = core/* ɵɵnextContext */.oxw(5); return ctx_r62.countdownWasClicked(5); });
+function F1CountdownComponent_div_1_div_1_mat_tab_9_ng_template_2_div_1_Template(rf, ctx) { if (rf & 1) {
+    const _r68 = core/* ɵɵgetCurrentView */.EpF();
+    core/* ɵɵelementStart */.TgZ(0, "div", 26);
+    core/* ɵɵlistener */.NdJ("click", function F1CountdownComponent_div_1_div_1_mat_tab_9_ng_template_2_div_1_Template_div_click_0_listener() { core/* ɵɵrestoreView */.CHM(_r68); const ctx_r67 = core/* ɵɵnextContext */.oxw(5); return ctx_r67.countdownWasClicked(5); });
     core/* ɵɵelementStart */.TgZ(1, "h1");
-    core/* ɵɵelementStart */.TgZ(2, "span", 26);
+    core/* ɵɵelementStart */.TgZ(2, "span", 27);
     core/* ɵɵtext */._uU(3);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵtemplate */.YNc(4, F1CountdownComponent_div_1_div_1_mat_tab_9_ng_template_1_div_1_div_4_Template, 4, 1, "div", 27);
-    core/* ɵɵtemplate */.YNc(5, F1CountdownComponent_div_1_div_1_mat_tab_9_ng_template_1_div_1_div_5_Template, 4, 0, "div", 27);
+    core/* ɵɵtemplate */.YNc(4, F1CountdownComponent_div_1_div_1_mat_tab_9_ng_template_2_div_1_div_4_Template, 4, 1, "div", 19);
+    core/* ɵɵtemplate */.YNc(5, F1CountdownComponent_div_1_div_1_mat_tab_9_ng_template_2_div_1_div_5_Template, 4, 0, "div", 19);
     core/* ɵɵelementStart */.TgZ(6, "h1");
     core/* ɵɵelementStart */.TgZ(7, "span");
     core/* ɵɵelement */._UZ(8, "countdown", 28, 29);
@@ -64321,235 +64447,50 @@ function F1CountdownComponent_div_1_div_1_mat_tab_9_ng_template_1_div_1_Template
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const ctx_r55 = core/* ɵɵnextContext */.oxw(5);
+    const ctx_r60 = core/* ɵɵnextContext */.oxw(5);
     core/* ɵɵadvance */.xp6(3);
-    core/* ɵɵtextInterpolate1 */.hij(" ", ctx_r55.calendarData.f1Calendar.raceName, " in: ");
+    core/* ɵɵtextInterpolate1 */.hij(" ", ctx_r60.calendarData.f1Calendar.raceName, " in: ");
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r55.raceDays > 1);
+    core/* ɵɵproperty */.Q6J("ngIf", ctx_r60.raceDays > 1);
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r55.raceDays == 1);
+    core/* ɵɵproperty */.Q6J("ngIf", ctx_r60.raceDays == 1);
     core/* ɵɵadvance */.xp6(3);
-    core/* ɵɵproperty */.Q6J("config", core/* ɵɵpureFunction1 */.VKq(4, f1_countdown_component_c1, ctx_r55.raceSeconds));
+    core/* ɵɵproperty */.Q6J("config", core/* ɵɵpureFunction1 */.VKq(4, f1_countdown_component_c1, ctx_r60.raceSeconds));
 } }
-function F1CountdownComponent_div_1_div_1_mat_tab_9_ng_template_1_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵtemplate */.YNc(0, F1CountdownComponent_div_1_div_1_mat_tab_9_ng_template_1_mat_slide_toggle_0_Template, 2, 1, "mat-slide-toggle", 31);
-    core/* ɵɵtemplate */.YNc(1, F1CountdownComponent_div_1_div_1_mat_tab_9_ng_template_1_div_1_Template, 10, 6, "div", 32);
+function F1CountdownComponent_div_1_div_1_mat_tab_9_ng_template_2_Template(rf, ctx) { if (rf & 1) {
+    core/* ɵɵtemplate */.YNc(0, F1CountdownComponent_div_1_div_1_mat_tab_9_ng_template_2_mat_slide_toggle_0_Template, 2, 1, "mat-slide-toggle", 31);
+    core/* ɵɵtemplate */.YNc(1, F1CountdownComponent_div_1_div_1_mat_tab_9_ng_template_2_div_1_Template, 10, 6, "div", 32);
     core/* ɵɵelement */._UZ(2, "br");
     core/* ɵɵelement */._UZ(3, "br");
     core/* ɵɵelement */._UZ(4, "br");
     core/* ɵɵelement */._UZ(5, "br");
     core/* ɵɵelement */._UZ(6, "br");
 } if (rf & 2) {
-    const ctx_r53 = core/* ɵɵnextContext */.oxw(4);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r53.itsTime);
+    const ctx_r58 = core/* ɵɵnextContext */.oxw(4);
+    core/* ɵɵproperty */.Q6J("ngIf", ctx_r58.itsTime);
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r53.calendarData != null);
+    core/* ɵɵproperty */.Q6J("ngIf", ctx_r58.calendarData != null);
 } }
 function F1CountdownComponent_div_1_div_1_mat_tab_9_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "mat-tab", 24);
-    core/* ɵɵtemplate */.YNc(1, F1CountdownComponent_div_1_div_1_mat_tab_9_ng_template_1_Template, 7, 2, "ng-template", 21);
+    core/* ɵɵelementStart */.TgZ(0, "mat-tab");
+    core/* ɵɵtemplate */.YNc(1, F1CountdownComponent_div_1_div_1_mat_tab_9_ng_template_1_Template, 6, 5, "ng-template", 22);
+    core/* ɵɵtemplate */.YNc(2, F1CountdownComponent_div_1_div_1_mat_tab_9_ng_template_2_Template, 7, 2, "ng-template", 23);
     core/* ɵɵelementEnd */.qZA();
-} if (rf & 2) {
-    const ctx_r21 = core/* ɵɵnextContext */.oxw(3);
-    core/* ɵɵpropertyInterpolate */.s9C("label", ctx_r21.calendarData.f1Calendar.raceName);
-} }
-function F1CountdownComponent_div_1_div_1_ng_template_11_div_0_div_9_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "div", 42);
-    core/* ɵɵtext */._uU(1);
-    core/* ɵɵelementEnd */.qZA();
-} if (rf & 2) {
-    const ctx_r65 = core/* ɵɵnextContext */.oxw(5);
-    core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵtextInterpolate1 */.hij(" ", ctx_r65.calendarData.f1Calendar.practice1Name, " : ");
-} }
-function F1CountdownComponent_div_1_div_1_ng_template_11_div_0_div_14_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "div", 42);
-    core/* ɵɵtext */._uU(1);
-    core/* ɵɵelementEnd */.qZA();
-} if (rf & 2) {
-    const ctx_r66 = core/* ɵɵnextContext */.oxw(5);
-    core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵtextInterpolate1 */.hij(" ", ctx_r66.calendarData.f1Calendar.practice2Name, " : ");
-} }
-function F1CountdownComponent_div_1_div_1_ng_template_11_div_0_div_15_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "div", 39);
-    core/* ɵɵtext */._uU(1);
-    core/* ɵɵpipe */.ALo(2, "date");
-    core/* ɵɵelementEnd */.qZA();
-} if (rf & 2) {
-    const ctx_r67 = core/* ɵɵnextContext */.oxw(5);
-    core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵtextInterpolate1 */.hij(" ", core/* ɵɵpipeBind2 */.xi3(2, 1, ctx_r67.checkTime(ctx_r67.calendarData.f1Calendar.practice2), "EEEE, MMMM d, HH:mm"), " ");
-} }
-function F1CountdownComponent_div_1_div_1_ng_template_11_div_0_div_17_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "div", 42);
-    core/* ɵɵtext */._uU(1);
-    core/* ɵɵelementEnd */.qZA();
-} if (rf & 2) {
-    const ctx_r68 = core/* ɵɵnextContext */.oxw(5);
-    core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵtextInterpolate1 */.hij(" ", ctx_r68.calendarData.f1Calendar.practice3Name, " : ");
-} }
-function F1CountdownComponent_div_1_div_1_ng_template_11_div_0_div_18_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "div", 39);
-    core/* ɵɵtext */._uU(1);
-    core/* ɵɵpipe */.ALo(2, "date");
-    core/* ɵɵelementEnd */.qZA();
-} if (rf & 2) {
-    const ctx_r69 = core/* ɵɵnextContext */.oxw(5);
-    core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵtextInterpolate1 */.hij(" ", core/* ɵɵpipeBind2 */.xi3(2, 1, ctx_r69.checkTime(ctx_r69.calendarData.f1Calendar.practice3), "EEEE, MMMM d, HH:mm"), " ");
-} }
-function F1CountdownComponent_div_1_div_1_ng_template_11_div_0_div_19_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "div", 42);
-    core/* ɵɵtext */._uU(1);
-    core/* ɵɵelementEnd */.qZA();
-} if (rf & 2) {
-    const ctx_r70 = core/* ɵɵnextContext */.oxw(5);
-    core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵtextInterpolate1 */.hij(" ", ctx_r70.calendarData.f1Calendar.sprintName, " : ");
-} }
-function F1CountdownComponent_div_1_div_1_ng_template_11_div_0_div_20_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "div", 39);
-    core/* ɵɵtext */._uU(1);
-    core/* ɵɵpipe */.ALo(2, "date");
-    core/* ɵɵelementEnd */.qZA();
-} if (rf & 2) {
-    const ctx_r71 = core/* ɵɵnextContext */.oxw(5);
-    core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵtextInterpolate1 */.hij(" ", core/* ɵɵpipeBind2 */.xi3(2, 1, ctx_r71.checkTime(ctx_r71.calendarData.f1Calendar.sprint), "EEEE, MMMM d, HH:mm"), " ");
-} }
-function F1CountdownComponent_div_1_div_1_ng_template_11_div_0_div_22_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "div", 42);
-    core/* ɵɵtext */._uU(1);
-    core/* ɵɵelementEnd */.qZA();
-} if (rf & 2) {
-    const ctx_r72 = core/* ɵɵnextContext */.oxw(5);
-    core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵtextInterpolate1 */.hij(" ", ctx_r72.calendarData.f1Calendar.qualifyingName, " : ");
-} }
-function F1CountdownComponent_div_1_div_1_ng_template_11_div_0_div_23_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "div", 39);
-    core/* ɵɵtext */._uU(1);
-    core/* ɵɵpipe */.ALo(2, "date");
-    core/* ɵɵelementEnd */.qZA();
-} if (rf & 2) {
-    const ctx_r73 = core/* ɵɵnextContext */.oxw(5);
-    core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵtextInterpolate1 */.hij(" ", core/* ɵɵpipeBind2 */.xi3(2, 1, ctx_r73.checkTime(ctx_r73.calendarData.f1Calendar.qualifying), "EEEE, MMMM d, HH:mm"), " ");
-} }
-function F1CountdownComponent_div_1_div_1_ng_template_11_div_0_div_25_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "div", 42);
-    core/* ɵɵtext */._uU(1);
-    core/* ɵɵelementEnd */.qZA();
-} if (rf & 2) {
-    const ctx_r74 = core/* ɵɵnextContext */.oxw(5);
-    core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵtextInterpolate1 */.hij(" ", ctx_r74.calendarData.f1Calendar.raceName, " : ");
-} }
-function F1CountdownComponent_div_1_div_1_ng_template_11_div_0_div_26_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "div", 39);
-    core/* ɵɵtext */._uU(1);
-    core/* ɵɵpipe */.ALo(2, "date");
-    core/* ɵɵelementEnd */.qZA();
-} if (rf & 2) {
-    const ctx_r75 = core/* ɵɵnextContext */.oxw(5);
-    core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵtextInterpolate1 */.hij(" ", core/* ɵɵpipeBind2 */.xi3(2, 1, ctx_r75.checkTime(ctx_r75.calendarData.f1Calendar.race), "EEEE, MMMM d, HH:mm"), " ");
-} }
-function F1CountdownComponent_div_1_div_1_ng_template_11_div_0_Template(rf, ctx) { if (rf & 1) {
-    const _r77 = core/* ɵɵgetCurrentView */.EpF();
-    core/* ɵɵelementStart */.TgZ(0, "div");
-    core/* ɵɵelementStart */.TgZ(1, "div", 35);
-    core/* ɵɵelementStart */.TgZ(2, "span");
-    core/* ɵɵtext */._uU(3, "My time ");
-    core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(4, "mat-slide-toggle", 36);
-    core/* ɵɵlistener */.NdJ("ngModelChange", function F1CountdownComponent_div_1_div_1_ng_template_11_div_0_Template_mat_slide_toggle_ngModelChange_4_listener($event) { core/* ɵɵrestoreView */.CHM(_r77); const ctx_r76 = core/* ɵɵnextContext */.oxw(4); return ctx_r76.isUtc = $event; });
-    core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(5, "span");
-    core/* ɵɵtext */._uU(6, " UTC time");
-    core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(7, "div");
-    core/* ɵɵelementStart */.TgZ(8, "div", 37);
-    core/* ɵɵtemplate */.YNc(9, F1CountdownComponent_div_1_div_1_ng_template_11_div_0_div_9_Template, 2, 1, "div", 38);
-    core/* ɵɵelementStart */.TgZ(10, "div", 39);
-    core/* ɵɵtext */._uU(11);
-    core/* ɵɵpipe */.ALo(12, "date");
-    core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelement */._UZ(13, "div", 40);
-    core/* ɵɵtemplate */.YNc(14, F1CountdownComponent_div_1_div_1_ng_template_11_div_0_div_14_Template, 2, 1, "div", 38);
-    core/* ɵɵtemplate */.YNc(15, F1CountdownComponent_div_1_div_1_ng_template_11_div_0_div_15_Template, 3, 4, "div", 41);
-    core/* ɵɵelement */._UZ(16, "div", 40);
-    core/* ɵɵtemplate */.YNc(17, F1CountdownComponent_div_1_div_1_ng_template_11_div_0_div_17_Template, 2, 1, "div", 38);
-    core/* ɵɵtemplate */.YNc(18, F1CountdownComponent_div_1_div_1_ng_template_11_div_0_div_18_Template, 3, 4, "div", 41);
-    core/* ɵɵtemplate */.YNc(19, F1CountdownComponent_div_1_div_1_ng_template_11_div_0_div_19_Template, 2, 1, "div", 38);
-    core/* ɵɵtemplate */.YNc(20, F1CountdownComponent_div_1_div_1_ng_template_11_div_0_div_20_Template, 3, 4, "div", 41);
-    core/* ɵɵelement */._UZ(21, "div", 40);
-    core/* ɵɵtemplate */.YNc(22, F1CountdownComponent_div_1_div_1_ng_template_11_div_0_div_22_Template, 2, 1, "div", 38);
-    core/* ɵɵtemplate */.YNc(23, F1CountdownComponent_div_1_div_1_ng_template_11_div_0_div_23_Template, 3, 4, "div", 41);
-    core/* ɵɵelement */._UZ(24, "div", 40);
-    core/* ɵɵtemplate */.YNc(25, F1CountdownComponent_div_1_div_1_ng_template_11_div_0_div_25_Template, 2, 1, "div", 38);
-    core/* ɵɵtemplate */.YNc(26, F1CountdownComponent_div_1_div_1_ng_template_11_div_0_div_26_Template, 3, 4, "div", 41);
-    core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementEnd */.qZA();
-} if (rf & 2) {
-    const ctx_r64 = core/* ɵɵnextContext */.oxw(4);
-    core/* ɵɵadvance */.xp6(4);
-    core/* ɵɵproperty */.Q6J("ngModel", ctx_r64.isUtc);
-    core/* ɵɵadvance */.xp6(5);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r64.calendarData.f1Calendar.practice1Name != null);
-    core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate1 */.hij(" ", core/* ɵɵpipeBind2 */.xi3(12, 13, ctx_r64.checkTime(ctx_r64.calendarData.f1Calendar.practice1), "EEEE, MMMM d, HH:mm"), " ");
-    core/* ɵɵadvance */.xp6(3);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r64.calendarData.f1Calendar.practice2Name != null);
-    core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r64.calendarData.f1Calendar.practice2Name != null);
-    core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r64.calendarData.f1Calendar.practice3Name != null);
-    core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r64.calendarData.f1Calendar.practice3Name != null);
-    core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r64.calendarData.f1Calendar.sprintName != null);
-    core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r64.calendarData.f1Calendar.sprint != null);
-    core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r64.calendarData.f1Calendar.qualifyingName != null);
-    core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r64.calendarData.f1Calendar.qualifyingName != null);
-    core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r64.calendarData.f1Calendar.raceName != null);
-    core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r64.calendarData.f1Calendar.raceName != null);
-} }
-function F1CountdownComponent_div_1_div_1_ng_template_11_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵtemplate */.YNc(0, F1CountdownComponent_div_1_div_1_ng_template_11_div_0_Template, 27, 16, "div", 27);
-    core/* ɵɵelement */._UZ(1, "br");
-    core/* ɵɵelement */._UZ(2, "br");
-    core/* ɵɵelement */._UZ(3, "br");
-} if (rf & 2) {
-    const ctx_r22 = core/* ɵɵnextContext */.oxw(3);
-    core/* ɵɵproperty */.Q6J("ngIf", ctx_r22.calendarData != null);
 } }
 function F1CountdownComponent_div_1_div_1_Template(rf, ctx) { if (rf & 1) {
-    const _r79 = core/* ɵɵgetCurrentView */.EpF();
+    const _r70 = core/* ɵɵgetCurrentView */.EpF();
     core/* ɵɵelementStart */.TgZ(0, "div", 15);
-    core/* ɵɵlistener */.NdJ("touchstart", function F1CountdownComponent_div_1_div_1_Template_div_touchstart_0_listener($event) { core/* ɵɵrestoreView */.CHM(_r79); const ctx_r78 = core/* ɵɵnextContext */.oxw(2); return ctx_r78.touchstart($event); })("touchend", function F1CountdownComponent_div_1_div_1_Template_div_touchend_0_listener($event) { core/* ɵɵrestoreView */.CHM(_r79); const ctx_r80 = core/* ɵɵnextContext */.oxw(2); return ctx_r80.touchend($event); });
+    core/* ɵɵlistener */.NdJ("touchstart", function F1CountdownComponent_div_1_div_1_Template_div_touchstart_0_listener($event) { core/* ɵɵrestoreView */.CHM(_r70); const ctx_r69 = core/* ɵɵnextContext */.oxw(2); return ctx_r69.touchstart($event); })("touchend", function F1CountdownComponent_div_1_div_1_Template_div_touchend_0_listener($event) { core/* ɵɵrestoreView */.CHM(_r70); const ctx_r71 = core/* ɵɵnextContext */.oxw(2); return ctx_r71.touchend($event); });
     core/* ɵɵtemplate */.YNc(1, F1CountdownComponent_div_1_div_1_img_1_Template, 1, 0, "img", 16);
     core/* ɵɵtemplate */.YNc(2, F1CountdownComponent_div_1_div_1_img_2_Template, 1, 1, "img", 17);
     core/* ɵɵelementStart */.TgZ(3, "mat-tab-group", 18);
-    core/* ɵɵlistener */.NdJ("selectedIndexChange", function F1CountdownComponent_div_1_div_1_Template_mat_tab_group_selectedIndexChange_3_listener($event) { core/* ɵɵrestoreView */.CHM(_r79); const ctx_r81 = core/* ɵɵnextContext */.oxw(2); return ctx_r81.selectedTab = $event; })("selectedTabChange", function F1CountdownComponent_div_1_div_1_Template_mat_tab_group_selectedTabChange_3_listener($event) { core/* ɵɵrestoreView */.CHM(_r79); const ctx_r82 = core/* ɵɵnextContext */.oxw(2); return ctx_r82.tabChanged($event); });
-    core/* ɵɵtemplate */.YNc(4, F1CountdownComponent_div_1_div_1_mat_tab_4_Template, 2, 1, "mat-tab", 19);
-    core/* ɵɵtemplate */.YNc(5, F1CountdownComponent_div_1_div_1_mat_tab_5_Template, 2, 1, "mat-tab", 19);
-    core/* ɵɵtemplate */.YNc(6, F1CountdownComponent_div_1_div_1_mat_tab_6_Template, 2, 1, "mat-tab", 19);
-    core/* ɵɵtemplate */.YNc(7, F1CountdownComponent_div_1_div_1_mat_tab_7_Template, 2, 1, "mat-tab", 19);
-    core/* ɵɵtemplate */.YNc(8, F1CountdownComponent_div_1_div_1_mat_tab_8_Template, 2, 1, "mat-tab", 19);
-    core/* ɵɵtemplate */.YNc(9, F1CountdownComponent_div_1_div_1_mat_tab_9_Template, 2, 1, "mat-tab", 19);
-    core/* ɵɵelementStart */.TgZ(10, "mat-tab", 20);
-    core/* ɵɵtemplate */.YNc(11, F1CountdownComponent_div_1_div_1_ng_template_11_Template, 4, 1, "ng-template", 21);
-    core/* ɵɵelementEnd */.qZA();
+    core/* ɵɵlistener */.NdJ("selectedIndexChange", function F1CountdownComponent_div_1_div_1_Template_mat_tab_group_selectedIndexChange_3_listener($event) { core/* ɵɵrestoreView */.CHM(_r70); const ctx_r72 = core/* ɵɵnextContext */.oxw(2); return ctx_r72.selectedTab = $event; })("selectedTabChange", function F1CountdownComponent_div_1_div_1_Template_mat_tab_group_selectedTabChange_3_listener($event) { core/* ɵɵrestoreView */.CHM(_r70); const ctx_r73 = core/* ɵɵnextContext */.oxw(2); return ctx_r73.tabChanged($event); });
+    core/* ɵɵtemplate */.YNc(4, F1CountdownComponent_div_1_div_1_mat_tab_4_Template, 3, 0, "mat-tab", 19);
+    core/* ɵɵtemplate */.YNc(5, F1CountdownComponent_div_1_div_1_mat_tab_5_Template, 3, 0, "mat-tab", 19);
+    core/* ɵɵtemplate */.YNc(6, F1CountdownComponent_div_1_div_1_mat_tab_6_Template, 3, 0, "mat-tab", 19);
+    core/* ɵɵtemplate */.YNc(7, F1CountdownComponent_div_1_div_1_mat_tab_7_Template, 3, 0, "mat-tab", 19);
+    core/* ɵɵtemplate */.YNc(8, F1CountdownComponent_div_1_div_1_mat_tab_8_Template, 3, 0, "mat-tab", 19);
+    core/* ɵɵtemplate */.YNc(9, F1CountdownComponent_div_1_div_1_mat_tab_9_Template, 3, 0, "mat-tab", 19);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
@@ -64574,10 +64515,10 @@ function F1CountdownComponent_div_1_div_1_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵproperty */.Q6J("ngIf", ctx_r2.calendarData.f1Calendar.raceName != undefined);
 } }
 function F1CountdownComponent_div_1_div_2_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "div", 43);
-    core/* ɵɵelementStart */.TgZ(1, "div", 44);
+    core/* ɵɵelementStart */.TgZ(0, "div", 35);
+    core/* ɵɵelementStart */.TgZ(1, "div", 36);
     core/* ɵɵelementStart */.TgZ(2, "h2");
-    core/* ɵɵelementStart */.TgZ(3, "span", 26);
+    core/* ɵɵelementStart */.TgZ(3, "span", 27);
     core/* ɵɵtext */._uU(4, "It's finally over.");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -64586,48 +64527,48 @@ function F1CountdownComponent_div_1_div_2_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementEnd */.qZA();
 } }
 function F1CountdownComponent_div_1_img_3_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelement */._UZ(0, "img", 45);
+    core/* ɵɵelement */._UZ(0, "img", 37);
 } if (rf & 2) {
     const ctx_r4 = core/* ɵɵnextContext */.oxw(2);
     core/* ɵɵproperty */.Q6J("src", ctx_r4.getBottomLeftUrl(), core/* ɵɵsanitizeUrl */.LSH);
 } }
 function F1CountdownComponent_div_1_img_4_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelement */._UZ(0, "img", 46);
+    core/* ɵɵelement */._UZ(0, "img", 38);
 } if (rf & 2) {
     const ctx_r5 = core/* ɵɵnextContext */.oxw(2);
     core/* ɵɵproperty */.Q6J("src", ctx_r5.getBottomRightUrl(), core/* ɵɵsanitizeUrl */.LSH);
 } }
 function F1CountdownComponent_div_1_img_5_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelement */._UZ(0, "img", 47);
+    core/* ɵɵelement */._UZ(0, "img", 39);
 } if (rf & 2) {
     const ctx_r6 = core/* ɵɵnextContext */.oxw(2);
     core/* ɵɵstyleMap */.Akn(ctx_r6.movingImageStyle);
     core/* ɵɵproperty */.Q6J("src", ctx_r6.getBottomCenterUrl(), core/* ɵɵsanitizeUrl */.LSH);
 } }
 function F1CountdownComponent_div_1_div_6_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelement */._UZ(0, "div", 48);
+    core/* ɵɵelement */._UZ(0, "div", 40);
 } }
 function F1CountdownComponent_div_1_div_7_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelement */._UZ(0, "div", 49);
+    core/* ɵɵelement */._UZ(0, "div", 41);
 } }
 function F1CountdownComponent_div_1_div_8_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelement */._UZ(0, "div", 50);
+    core/* ɵɵelement */._UZ(0, "div", 42);
 } }
 function F1CountdownComponent_div_1_div_9_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelement */._UZ(0, "div", 51);
+    core/* ɵɵelement */._UZ(0, "div", 43);
 } }
 function F1CountdownComponent_div_1_div_10_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelement */._UZ(0, "div", 52);
+    core/* ɵɵelement */._UZ(0, "div", 44);
 } }
 function F1CountdownComponent_div_1_div_11_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelement */._UZ(0, "div", 53);
+    core/* ɵɵelement */._UZ(0, "div", 45);
 } }
 function F1CountdownComponent_div_1_div_12_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelement */._UZ(0, "div", 54);
+    core/* ɵɵelement */._UZ(0, "div", 46);
 } }
 function F1CountdownComponent_div_1_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div", 2);
-    core/* ɵɵtemplate */.YNc(1, F1CountdownComponent_div_1_div_1_Template, 12, 9, "div", 3);
+    core/* ɵɵtemplate */.YNc(1, F1CountdownComponent_div_1_div_1_Template, 10, 9, "div", 3);
     core/* ɵɵtemplate */.YNc(2, F1CountdownComponent_div_1_div_2_Template, 6, 0, "div", 4);
     core/* ɵɵtemplate */.YNc(3, F1CountdownComponent_div_1_img_3_Template, 1, 1, "img", 5);
     core/* ɵɵtemplate */.YNc(4, F1CountdownComponent_div_1_img_4_Template, 1, 1, "img", 6);
@@ -64668,7 +64609,7 @@ function F1CountdownComponent_div_1_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵproperty */.Q6J("ngIf", ctx_r0.calendarData.overlays.includes("loser-ferrari"));
 } }
 function F1CountdownComponent_div_2_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelement */._UZ(0, "div", 55);
+    core/* ɵɵelement */._UZ(0, "div", 47);
 } }
 class F1CountdownComponent {
     constructor(restService, utilityService, toastr, router, route, sanitizer) {
@@ -65006,7 +64947,7 @@ F1CountdownComponent.ɵcmp = /*@__PURE__*/ core/* ɵɵdefineComponent */.Xpm({ t
     } if (rf & 2) {
         let _t;
         core/* ɵɵqueryRefresh */.iGM(_t = core/* ɵɵloadQuery */.CRH()) && (ctx.countdown = _t.first);
-    } }, decls: 3, vars: 2, consts: [["class", "height-fill-screen", 4, "ngIf"], ["class", "max-on-top-div", 4, "ngIf"], [1, "height-fill-screen"], ["class", "mat-content", 3, "touchstart", "touchend", 4, "ngIf"], ["class", "\u201Dmat-content\u201D", 4, "ngIf"], ["class", "bottom-left-image", "alt", "bottom-left-image", 3, "src", 4, "ngIf"], ["class", "bottom-right-image", "alt", "bottom-right-image", 3, "src", 4, "ngIf"], ["class", "bottom-center-image max-height-40-vh", "alt", "bottom-center-image", 3, "style", "src", 4, "ngIf"], ["class", "chika-div overlay-bottom-div-fixed overlay-animation-1", 4, "ngIf"], ["class", "boat-div overlay-bottom-div-fixed overlay-animation-boat-1", 4, "ngIf"], ["class", "boat-div overlay-bottom-div-fixed overlay-animation-boat-2", 4, "ngIf"], ["class", "forza-ferrari-div overlay-top-right-div-fixed", 4, "ngIf"], ["class", "hamilton-div overlay-bottom-right-div-fixed", 4, "ngIf"], ["class", "toto-div overlay-bottom-right-div-fixed", 4, "ngIf"], ["class", "fail-ferrari-div overlay-bottom-left-div-fixed", 4, "ngIf"], [1, "mat-content", 3, "touchstart", "touchend"], ["class", "basic-bg-1", "src", "assets/img/overlays/miami_waters1.jpg", "alt", "transparent-bg", 4, "ngIf"], ["class", "basic-bg-1", "alt", "transparent-bg", 3, "src", 4, "ngIf"], [3, "selectedIndex", "selectedIndexChange", "selectedTabChange"], [3, "label", 4, "ngIf"], ["label", "Start times"], ["matTabContent", ""], ["src", "assets/img/overlays/miami_waters1.jpg", "alt", "transparent-bg", 1, "basic-bg-1"], ["alt", "transparent-bg", 1, "basic-bg-1", 3, "src"], [3, "label"], [3, "click"], [1, "countdown-desc", "f1-glow"], [4, "ngIf"], [3, "config"], ["cd", ""], [1, "count-down"], [3, "ngModel", "change", "ngModelChange", 4, "ngIf"], [3, "click", 4, "ngIf"], [3, "ngModel", "change", "ngModelChange"], [1, "nc-icon", "nc-note-03"], [1, "div-padded-always-1rem"], [3, "ngModel", "ngModelChange"], [1, "row"], ["class", "col-lg-5 countdown-desc-2 text-lg-right", 4, "ngIf"], [1, "col-lg-7", "countdown-desc-2", "text-lg-left"], [1, "col-12", "mobile-space"], ["class", "col-lg-7 countdown-desc-2 text-lg-left", 4, "ngIf"], [1, "col-lg-5", "countdown-desc-2", "text-lg-right"], [1, "\u201Dmat-content\u201D"], [1, "pt-5"], ["alt", "bottom-left-image", 1, "bottom-left-image", 3, "src"], ["alt", "bottom-right-image", 1, "bottom-right-image", 3, "src"], ["alt", "bottom-center-image", 1, "bottom-center-image", "max-height-40-vh", 3, "src"], [1, "chika-div", "overlay-bottom-div-fixed", "overlay-animation-1"], [1, "boat-div", "overlay-bottom-div-fixed", "overlay-animation-boat-1"], [1, "boat-div", "overlay-bottom-div-fixed", "overlay-animation-boat-2"], [1, "forza-ferrari-div", "overlay-top-right-div-fixed"], [1, "hamilton-div", "overlay-bottom-right-div-fixed"], [1, "toto-div", "overlay-bottom-right-div-fixed"], [1, "fail-ferrari-div", "overlay-bottom-left-div-fixed"], [1, "max-on-top-div"]], template: function F1CountdownComponent_Template(rf, ctx) { if (rf & 1) {
+    } }, decls: 3, vars: 2, consts: [["class", "height-fill-screen", 4, "ngIf"], ["class", "max-on-top-div", 4, "ngIf"], [1, "height-fill-screen"], ["class", "mat-content", 3, "touchstart", "touchend", 4, "ngIf"], ["class", "\u201Dmat-content\u201D", 4, "ngIf"], ["class", "bottom-left-image", "alt", "bottom-left-image", 3, "src", 4, "ngIf"], ["class", "bottom-right-image", "alt", "bottom-right-image", 3, "src", 4, "ngIf"], ["class", "bottom-center-image max-height-40-vh", "alt", "bottom-center-image", 3, "style", "src", 4, "ngIf"], ["class", "chika-div overlay-bottom-div-fixed overlay-animation-1", 4, "ngIf"], ["class", "boat-div overlay-bottom-div-fixed overlay-animation-boat-1", 4, "ngIf"], ["class", "boat-div overlay-bottom-div-fixed overlay-animation-boat-2", 4, "ngIf"], ["class", "forza-ferrari-div overlay-top-right-div-fixed", 4, "ngIf"], ["class", "hamilton-div overlay-bottom-right-div-fixed", 4, "ngIf"], ["class", "toto-div overlay-bottom-right-div-fixed", 4, "ngIf"], ["class", "fail-ferrari-div overlay-bottom-left-div-fixed", 4, "ngIf"], [1, "mat-content", 3, "touchstart", "touchend"], ["class", "basic-bg-1", "src", "assets/img/overlays/miami_waters1.jpg", "alt", "transparent-bg", 4, "ngIf"], ["class", "basic-bg-1", "alt", "transparent-bg", 3, "src", 4, "ngIf"], [3, "selectedIndex", "selectedIndexChange", "selectedTabChange"], [4, "ngIf"], ["src", "assets/img/overlays/miami_waters1.jpg", "alt", "transparent-bg", 1, "basic-bg-1"], ["alt", "transparent-bg", 1, "basic-bg-1", 3, "src"], ["mat-tab-label", ""], ["matTabContent", ""], [1, "pt-2", "teko-text-medium"], [2, "font-size", "12px"], [3, "click"], [1, "countdown-desc", "f1-glow"], [3, "config"], ["cd", ""], [1, "count-down"], [3, "ngModel", "change", "ngModelChange", 4, "ngIf"], [3, "click", 4, "ngIf"], [3, "ngModel", "change", "ngModelChange"], [1, "nc-icon", "nc-note-03"], [1, "\u201Dmat-content\u201D"], [1, "pt-5"], ["alt", "bottom-left-image", 1, "bottom-left-image", 3, "src"], ["alt", "bottom-right-image", 1, "bottom-right-image", 3, "src"], ["alt", "bottom-center-image", 1, "bottom-center-image", "max-height-40-vh", 3, "src"], [1, "chika-div", "overlay-bottom-div-fixed", "overlay-animation-1"], [1, "boat-div", "overlay-bottom-div-fixed", "overlay-animation-boat-1"], [1, "boat-div", "overlay-bottom-div-fixed", "overlay-animation-boat-2"], [1, "forza-ferrari-div", "overlay-top-right-div-fixed"], [1, "hamilton-div", "overlay-bottom-right-div-fixed"], [1, "toto-div", "overlay-bottom-right-div-fixed"], [1, "fail-ferrari-div", "overlay-bottom-left-div-fixed"], [1, "max-on-top-div"]], template: function F1CountdownComponent_Template(rf, ctx) { if (rf & 1) {
         core/* ɵɵelementStart */.TgZ(0, "div");
         core/* ɵɵtemplate */.YNc(1, F1CountdownComponent_div_1_Template, 13, 12, "div", 0);
         core/* ɵɵtemplate */.YNc(2, F1CountdownComponent_div_2_Template, 1, 0, "div", 1);
@@ -65016,7 +64957,7 @@ F1CountdownComponent.ɵcmp = /*@__PURE__*/ core/* ɵɵdefineComponent */.Xpm({ t
         core/* ɵɵproperty */.Q6J("ngIf", ctx.calendarData != null);
         core/* ɵɵadvance */.xp6(1);
         core/* ɵɵproperty */.Q6J("ngIf", ctx.calendarData != null && ctx.calendarData.overlays.includes("winner-verstappen") && ctx.selectedTab != 5);
-    } }, directives: [common/* NgIf */.O5, tabs/* MatTabGroup */.SP, tabs/* MatTab */.uX, tabs/* MatTabContent */.Vc, ngx_countdown/* CountdownComponent */.MR, slide_toggle/* MatSlideToggle */.Rr, fesm2015_forms/* NgControlStatus */.JJ, fesm2015_forms/* NgModel */.On], pipes: [common/* DatePipe */.uU], styles: [""] });
+    } }, directives: [common/* NgIf */.O5, tabs/* MatTabGroup */.SP, tabs/* MatTab */.uX, tabs/* MatTabLabel */.uD, tabs/* MatTabContent */.Vc, ngx_countdown/* CountdownComponent */.MR, slide_toggle/* MatSlideToggle */.Rr, fesm2015_forms/* NgControlStatus */.JJ, fesm2015_forms/* NgModel */.On], pipes: [common/* DatePipe */.uU], styles: [""] });
 
 ;// CONCATENATED MODULE: ./src/app/layouts/admin-layout/admin-layout.routing.ts
 

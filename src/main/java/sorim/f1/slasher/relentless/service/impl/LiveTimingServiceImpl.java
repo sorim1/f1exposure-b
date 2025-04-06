@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.converter.StringHttpMessageConverter;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import sorim.f1.slasher.relentless.configuration.MainProperties;
@@ -26,6 +27,9 @@ import java.nio.charset.StandardCharsets;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.BiConsumer;
 import java.util.function.Function;
@@ -58,6 +62,8 @@ public class LiveTimingServiceImpl implements LiveTimingService {
     private final ObjectMapper mapper = new ObjectMapper();
     RestTemplate restTemplate = new RestTemplate();
     private String temporaryUrl;
+    private final ScheduledExecutorService scheduler = Executors.newSingleThreadScheduledExecutor();
+
 
     @Override
     public void getAllRaceDataFromErgastTable(String year, Boolean detailed, Boolean deleteOld) throws InterruptedException {
@@ -556,15 +562,48 @@ public class LiveTimingServiceImpl implements LiveTimingService {
                         liveTimingRadioService.enrichUpcomingRaceAnalysisWithRadioData(raceData.getUpcomingRaceAnalysis(), radioDataResponse, RoundEnum.SPRINT);
                     }
                 }
-
             enrichUpcomingRaceWithYoutube(raceData);
             ergastService.saveRace(raceData);
+            enrichUpcomingRaceWithYoutubeWithDelay();
         } else {
             properties.checkCurrentSeasonFuture();
         }
 
         clientService.setNavbarData();
         return getNextRefreshTime(-6000);
+    }
+
+    @Async
+    public void enrichUpcomingRaceWithYoutubeWithDelay() {
+        log.info("enrichUpcomingRaceWithYoutubeWithDelay 1");
+        scheduler.schedule(() -> {
+            try {
+                log.info("enrichUpcomingRaceWithYoutubeWithDelay 2");
+                RaceData raceData = ergastService.getLatestNonAnalyzedRace(properties.getCurrentSeasonFuture());
+                enrichUpcomingRaceWithYoutube(raceData);
+                ergastService.saveRace(raceData);
+                log.info("enrichUpcomingRaceWithYoutubeWithDelay 3");
+            } catch (Exception e) {
+                // Log or handle exception
+                e.printStackTrace();
+            }
+        }, 60, TimeUnit.MINUTES);
+    }
+
+    @Async
+    public void enrichLatestRaceWithYoutubeWithDelay(RaceData raceData) {
+        log.info("enrichLatestRaceWithYoutubeWithDelay 1");
+        scheduler.schedule(() -> {
+            try {
+                log.info("enrichLatestRaceWithYoutubeWithDelay 2");
+                enrichLatestRaceWithYoutube(raceData);
+                ergastService.saveRace(raceData);
+                log.info("enrichLatestRaceWithYoutubeWithDelay 3");
+            } catch (Exception e) {
+                // Log or handle exception
+                e.printStackTrace();
+            }
+        }, 60, TimeUnit.MINUTES);
     }
 
     private void enrichUpcomingRaceWithYoutube(RaceData raceData) {
@@ -789,6 +828,7 @@ public class LiveTimingServiceImpl implements LiveTimingService {
             }
             race.setRaceAnalysis(analysis);
             enrichLatestRaceWithYoutube(race);
+            enrichLatestRaceWithYoutubeWithDelay(race);
             ergastService.saveRace(race);
             log.info("raceAnalysis done");
             return analysis;
