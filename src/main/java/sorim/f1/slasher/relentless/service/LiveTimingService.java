@@ -53,4 +53,6 @@ public interface LiveTimingService {
 
     List<YouTubeVideo> getYoutubeVideos();
 
+    public void enrichLatestRaceWithYoutubeWithDelay();
+
 }

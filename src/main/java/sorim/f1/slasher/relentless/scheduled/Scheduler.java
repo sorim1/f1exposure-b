@@ -38,14 +38,14 @@ public class Scheduler {
     @Scheduled(cron = "0 0 4 * * MON")
     public void mondayJobs() throws IOException {
         log.info(CODE + " mondayJobs called");
-        exposureService.closeExposurePoll(true);
+      //  exposureService.closeExposurePoll(true);
         analysisDone = true;
         strawpollFound = false;
         if (!standingsUpdated) {
             adminService.initializeStandings(true);
             standingsUpdated = true;
         }
-        ergastService.fetchStatisticsFullFromPartial(true);
+       // ergastService.fetchStatisticsFullFromPartial(true);
         isItRaceWeek();
     }
 

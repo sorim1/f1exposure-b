@@ -24,7 +24,9 @@ import sorim.f1.slasher.relentless.util.MainUtility;
 
 import javax.annotation.PostConstruct;
 import java.nio.charset.StandardCharsets;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
 import java.util.concurrent.Executors;
@@ -591,22 +593,50 @@ public class LiveTimingServiceImpl implements LiveTimingService {
     }
 
     @Async
-    public void enrichLatestRaceWithYoutubeWithDelay(RaceData raceData) {
+    public void enrichLatestRaceWithYoutubeWithDelay() {
         log.info("enrichLatestRaceWithYoutubeWithDelay 1");
+        enrichLatestRaceWithYoutubeCore();
         scheduler.schedule(() -> {
+            enrichLatestRaceWithYoutubeCore();
+        }, 120, TimeUnit.MINUTES);
+    }
+
+    private void enrichLatestRaceWithYoutubeCore() {
+        log.info("enrichLatestRaceWithYoutubeWithDelay 1");
             try {
                 log.info("enrichLatestRaceWithYoutubeWithDelay 2");
-                enrichLatestRaceWithYoutube(raceData);
-                ergastService.saveRace(raceData);
-                log.info("enrichLatestRaceWithYoutubeWithDelay 3");
+                RaceData raceData = ergastService.getLatestAnalyzedRace();
+                if(howManyDaysAgo(raceData.getDate(), true)<3){
+                    enrichLatestRaceWithYoutube(raceData);
+                    ergastService.saveRace(raceData);
+                    log.info("enrichLatestRaceWithYoutubeWithDelay 3A");
+                } else {
+                    log.info("enrichLatestRaceWithYoutubeWithDelay 3B: " + raceData.getDate());
+                }
+
             } catch (Exception e) {
                 // Log or handle exception
                 e.printStackTrace();
             }
-        }, 60, TimeUnit.MINUTES);
     }
 
+    private long howManyDaysAgo(String input, Boolean past) {
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDate d1 = LocalDate.parse(input, dtf);
+        LocalDate today = LocalDate.now();
+        if(past){
+            return d1.datesUntil(today).count();
+        } else {
+            return today.datesUntil(d1).count();
+        }
+    }
+
+
     private void enrichUpcomingRaceWithYoutube(RaceData raceData) {
+        if(howManyDaysAgo(raceData.getDate(), false)>3){
+            log.info("enrichUpcomingRaceWithYoutube too early");
+            return;
+        }
         List<YouTubeVideo> videos = youtubeService.getYoutubeVideos();
         LocalDateTime twoDaysAgo = LocalDateTime.now().minusDays(2);
 
@@ -827,9 +857,8 @@ public class LiveTimingServiceImpl implements LiveTimingService {
                 analysis.setStatus(2);
             }
             race.setRaceAnalysis(analysis);
-            enrichLatestRaceWithYoutube(race);
-            enrichLatestRaceWithYoutubeWithDelay(race);
             ergastService.saveRace(race);
+            enrichLatestRaceWithYoutubeWithDelay();
             log.info("raceAnalysis done");
             return analysis;
         } catch (Exception e) {

@@ -25,7 +25,6 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.util.*;
-import java.util.concurrent.ThreadLocalRandom;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -59,7 +58,6 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
     private final OpenF1Service openF1Service;
     private final StrawpollService strawpollService;
     private final RestTemplate restTemplate;
-
     private final JsonRepository jsonRepository;
     private final JsonRepositoryTwo jsonRepository2;
 
@@ -69,7 +67,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
         if (app != null) {
             currentExposureRound = Integer.parseInt(app.getValue());
         } else {
-            updateCurrentExposureRound(0);
+            updateCurrentExposureRound();
         }
         setupExposureVariables(null);
     }
@@ -105,7 +103,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
             Duration duration = Duration.between(gmtDateTime, f1calendar.getRace());
             if (duration.toDays() > 0) {
                 log.info("setupExposureForNextRace->updateCurrentExposureRound A");
-                updateCurrentExposureRound(0);
+                updateCurrentExposureRound();
                 exposureToday = false;
                 Logger.logAdmin("exposureToday: " + exposureToday);
 
@@ -113,7 +111,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
                 exposureToday = true;
                 title = f1calendar.getLocation();
                 log.info("setupExposureForNextRace->updateCurrentExposureRound B");
-                updateCurrentExposureRound(1);
+                updateCurrentExposureRound();
                 resetStrawpoll();
                 exposureTime = LocalDateTime.now().plus(duration).plusHours(1).plusMinutes(10);
                 Logger.logAdmin("initializeExposure-exposureToday: " + exposureToday);
@@ -168,13 +166,13 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
         showWinner = false;
     }
 
-    private void updateCurrentExposureRound(Integer increment) {
+    private void updateCurrentExposureRound() {
         Integer round;
         log.info("updateCurrentExposureRound2: " + currentExposureRound);
         try {
             round = ergastService.getCurrentDriverStandings().getMrData().getStandingsTable().getStandingsLists().get(0).getRound();
             if (currentExposureRound == null || currentExposureRound <= round) {
-                currentExposureRound = round + increment;
+                currentExposureRound = round;
             } else {
                 //nova sezona
 //                currentExposureRound = round;
@@ -187,7 +185,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
             log.error("updateCurrentExposureRound error", e);
             AppProperty app = propertiesRepository.findDistinctFirstByName("exposureRound");
             if (app != null) {
-                currentExposureRound = Integer.parseInt(app.getValue()) + increment;
+                currentExposureRound = Integer.parseInt(app.getValue()) + 0;
             }
         }
     }
