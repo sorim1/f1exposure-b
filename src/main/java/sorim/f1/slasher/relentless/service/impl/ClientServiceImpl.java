@@ -448,7 +448,7 @@ public class ClientServiceImpl implements ClientService {
 
     @Override
     public List<NewsComment> getNewsComments(String code) {
-        return newsCommentRepository.findAllByContentCodeAndStatusLessThanOrderByTimestampCreatedDesc(code, 3);
+        return newsCommentRepository.findAllByContentCodeAndStatusLessThanOrderByTimestampCreatedDesc(code, 5);
     }
 
     @Override
