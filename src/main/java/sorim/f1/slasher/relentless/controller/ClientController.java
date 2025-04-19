@@ -225,16 +225,16 @@ public class ClientController {
         return service.getNextNewsList(timestampActivity);
     }
 
-    @GetMapping("/getNavbarData")
-    NavbarData getNavbarData(@RequestHeader String client) throws Exception {
+    @GetMapping("/getCountdownFooterData")
+    List<NavbarData> getNavbarData(@RequestHeader String client) throws Exception {
         securityService.validateHeader(client);
-        return service.getNavbarData();
+        return service.getCountdownFooterData();
     }
 
-    @GetMapping("/updateNavbarData")
-    NavbarData updateNavbarData(@RequestHeader String client, @RequestBody NavbarData navbarData) throws Exception {
+    @GetMapping("/updateCountdownFooterData")
+    List<NavbarData> updateCountdownFooterData(@RequestHeader String client, @RequestBody List<NavbarData> countdownFooterData) throws Exception {
         securityService.validateHeader(client);
-        return service.updateNavbarData(navbarData);
+        return service.updateCountdownFooterData(countdownFooterData);
     }
 
     @GetMapping("/bumpNewsPost/{code}/{mode}")

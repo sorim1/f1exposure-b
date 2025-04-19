@@ -9,8 +9,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class NavbarData {
-    private String sessionName = "";
-    private String winner;
-    private String radioUrl;
+    private String message;
     private Integer tabNumber;
 }

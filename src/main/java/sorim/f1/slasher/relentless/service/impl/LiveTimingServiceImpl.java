@@ -627,7 +627,8 @@ public class LiveTimingServiceImpl implements LiveTimingService {
         if(past){
             return d1.datesUntil(today).count();
         } else {
-            return today.datesUntil(d1).count();
+            long days = ChronoUnit.DAYS.between(today, d1);
+            return days;
         }
     }
 
