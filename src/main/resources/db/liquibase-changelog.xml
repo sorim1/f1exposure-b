@@ -52,4 +52,8 @@
         <validCheckSum>ANY</validCheckSum>
         <sqlFile path="changelog/013_exposure_cleanup.sql" endDelimiter="/" relativeToChangelogFile="true"/>
     </changeSet>
+    <changeSet author="mdragicevic" id="014_image_types">
+        <validCheckSum>ANY</validCheckSum>
+        <sqlFile path="changelog/014_image_types.sql" endDelimiter="/" relativeToChangelogFile="true"/>
+    </changeSet>
 </databaseChangeLog>

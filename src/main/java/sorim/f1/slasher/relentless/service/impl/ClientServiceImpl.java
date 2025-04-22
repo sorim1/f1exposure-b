@@ -227,7 +227,7 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
-    public byte[] getImage(String code) {
+    public ImageRow getImage(String code) {
         return instagramService.getImage(code);
     }
 

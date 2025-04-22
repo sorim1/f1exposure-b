@@ -31,16 +31,14 @@ public class ArtController {
     @PostMapping("/saveImage/{code}")
     Boolean saveImage(@RequestHeader String client, @RequestParam("image") MultipartFile image, @PathVariable("code") String code) throws Exception {
         securityService.validateAdminHeader(client);
-        byte[] bytes = image.getBytes();
-        return artService.saveImage(code, bytes);
+        return artService.saveImage(code, image);
     }
 
     @PostMapping("/saveCommentImage/{code}")
     Boolean saveCommentImage(@RequestHeader String client, @RequestParam("image") MultipartFile image, @PathVariable("code") String code) throws Exception {
         securityService.validateHeader(client);
-        byte[] bytes = image.getBytes();
         String newsCode = "comment_" + code;
-        return artService.saveImage(newsCode, bytes);
+        return artService.saveImage(newsCode, image);
     }
 
     @GetMapping("/deleteImage/{code}")

@@ -1,10 +1,7 @@
 package sorim.f1.slasher.relentless.service;
 
 import com.github.instagram4j.instagram4j.exceptions.IGLoginException;
-import sorim.f1.slasher.relentless.entities.FourChanImageRow;
-import sorim.f1.slasher.relentless.entities.FourChanPostEntity;
-import sorim.f1.slasher.relentless.entities.InstagramPost;
-import sorim.f1.slasher.relentless.entities.MyRedditPost;
+import sorim.f1.slasher.relentless.entities.*;
 import sorim.f1.slasher.relentless.model.KeyValue;
 import sorim.f1.slasher.relentless.model.TripleInstagramFeed;
 
@@ -18,7 +15,7 @@ public interface InstagramService {
 
     List<KeyValue> getInstagramFollows() throws Exception;
 
-    byte[] getImage(String code);
+    ImageRow getImage(String code);
 
     byte[] getImageFromUrl(String urlString);
 

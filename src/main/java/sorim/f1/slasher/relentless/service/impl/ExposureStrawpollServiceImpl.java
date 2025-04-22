@@ -447,7 +447,10 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
         List<RaceControlDto> response = new ArrayList<>();
         Integer triggerLap = getLapCount(properties.getCurrentSeasonFuture(), currentExposureRound);
         if(triggerLap!=null){
-            triggerLap= triggerLap-7;
+            triggerLap= triggerLap-10;
+        }
+        if(!exposureNow){
+            exposureReady = true;
         }
         int counter = 0;
         try {
@@ -461,7 +464,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
                         throw ex1;
                     }
                 }
-                Thread.sleep(170000);
+                Thread.sleep(200000);
                 log.info("response.isEmpty(): {}, exposureNow: {}", response.isEmpty(), exposureNow);
             } while (response.isEmpty() && counter < 60 && !exposureNow);
             log.info("CHEQUERED flag ili final 5 laps found found; response size: {}", response.size());

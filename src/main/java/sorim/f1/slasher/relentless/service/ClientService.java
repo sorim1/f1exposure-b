@@ -47,7 +47,7 @@ public interface ClientService {
 
     Boolean fetchTwitterPosts() throws Exception;
 
-    byte[] getImage(String code);
+    ImageRow getImage(String code);
 
     byte[] getArt(String code);
 

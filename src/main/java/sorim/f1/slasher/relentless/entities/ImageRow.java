@@ -20,4 +20,6 @@ public class ImageRow {
     @Id
     private String code;
     private byte[] image;
+    private String type;
+
 }
