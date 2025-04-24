@@ -54883,35 +54883,39 @@ function NewsComponent_div_1_div_22_div_8_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵadvance */.xp6(1);
     core/* ɵɵproperty */.Q6J("ngIf", comment_r19.sections != null);
 } }
+const news_component_c0 = function (a0, a1) { return { "max-width-30-pc px-3": a0, "expanded-comment-image": a1 }; };
 function NewsComponent_div_1_div_22_div_9_div_1_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "div", 66);
-    core/* ɵɵelement */._UZ(1, "img", 67);
+    const _r38 = core/* ɵɵgetCurrentView */.EpF();
+    core/* ɵɵelementStart */.TgZ(0, "div", 67);
+    core/* ɵɵlistener */.NdJ("click", function NewsComponent_div_1_div_22_div_9_div_1_Template_div_click_0_listener() { core/* ɵɵrestoreView */.CHM(_r38); const comment_r19 = core/* ɵɵnextContext */.oxw(2).$implicit; const ctx_r36 = core/* ɵɵnextContext */.oxw(2); return ctx_r36.toggleImageSize(comment_r19.id); });
+    core/* ɵɵelement */._UZ(1, "img", 68);
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
     const comment_r19 = core/* ɵɵnextContext */.oxw(2).$implicit;
     const ctx_r33 = core/* ɵɵnextContext */.oxw(2);
+    core/* ɵɵproperty */.Q6J("ngClass", core/* ɵɵpureFunction2 */.WLB(2, news_component_c0, !ctx_r33.isExpanded(comment_r19.id), ctx_r33.isExpanded(comment_r19.id)));
     core/* ɵɵadvance */.xp6(1);
     core/* ɵɵproperty */.Q6J("src", ctx_r33.getCommentImageUrl(comment_r19.id), core/* ɵɵsanitizeUrl */.LSH);
 } }
 function NewsComponent_div_1_div_22_div_9_div_2_source_2_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelement */._UZ(0, "source", 71);
+    core/* ɵɵelement */._UZ(0, "source", 73);
 } if (rf & 2) {
     const comment_r19 = core/* ɵɵnextContext */.oxw(3).$implicit;
-    const ctx_r37 = core/* ɵɵnextContext */.oxw(2);
-    core/* ɵɵproperty */.Q6J("src", ctx_r37.getCommentImageUrl(comment_r19.id), core/* ɵɵsanitizeUrl */.LSH);
+    const ctx_r40 = core/* ɵɵnextContext */.oxw(2);
+    core/* ɵɵproperty */.Q6J("src", ctx_r40.getCommentImageUrl(comment_r19.id), core/* ɵɵsanitizeUrl */.LSH);
 } }
 function NewsComponent_div_1_div_22_div_9_div_2_source_3_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelement */._UZ(0, "source", 53);
 } if (rf & 2) {
     const comment_r19 = core/* ɵɵnextContext */.oxw(3).$implicit;
-    const ctx_r38 = core/* ɵɵnextContext */.oxw(2);
-    core/* ɵɵproperty */.Q6J("src", ctx_r38.getCommentImageUrl(comment_r19.id), core/* ɵɵsanitizeUrl */.LSH);
+    const ctx_r41 = core/* ɵɵnextContext */.oxw(2);
+    core/* ɵɵproperty */.Q6J("src", ctx_r41.getCommentImageUrl(comment_r19.id), core/* ɵɵsanitizeUrl */.LSH);
 } }
 function NewsComponent_div_1_div_22_div_9_div_2_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "div", 66);
-    core/* ɵɵelementStart */.TgZ(1, "video", 68);
-    core/* ɵɵtemplate */.YNc(2, NewsComponent_div_1_div_22_div_9_div_2_source_2_Template, 1, 1, "source", 69);
-    core/* ɵɵtemplate */.YNc(3, NewsComponent_div_1_div_22_div_9_div_2_source_3_Template, 1, 1, "source", 70);
+    core/* ɵɵelementStart */.TgZ(0, "div", 69);
+    core/* ɵɵelementStart */.TgZ(1, "video", 70);
+    core/* ɵɵtemplate */.YNc(2, NewsComponent_div_1_div_22_div_9_div_2_source_2_Template, 1, 1, "source", 71);
+    core/* ɵɵtemplate */.YNc(3, NewsComponent_div_1_div_22_div_9_div_2_source_3_Template, 1, 1, "source", 72);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
@@ -54935,9 +54939,9 @@ function NewsComponent_div_1_div_22_div_9_div_3_div_2_div_1_div_3_Template(rf, c
     core/* ɵɵelement */._UZ(1, "iframe", 63);
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const section_r46 = core/* ɵɵnextContext */.oxw().$implicit;
+    const section_r49 = core/* ɵɵnextContext */.oxw().$implicit;
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("src", section_r46.youtubeLink, core/* ɵɵsanitizeResourceUrl */.uOi);
+    core/* ɵɵproperty */.Q6J("src", section_r49.youtubeLink, core/* ɵɵsanitizeResourceUrl */.uOi);
 } }
 function NewsComponent_div_1_div_22_div_9_div_3_div_2_div_1_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div");
@@ -54947,11 +54951,11 @@ function NewsComponent_div_1_div_22_div_9_div_3_div_2_div_1_Template(rf, ctx) { 
     core/* ɵɵtemplate */.YNc(3, NewsComponent_div_1_div_22_div_9_div_3_div_2_div_1_div_3_Template, 2, 1, "div", 62);
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const section_r46 = ctx.$implicit;
+    const section_r49 = ctx.$implicit;
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate */.Oqu(section_r46.textContent);
+    core/* ɵɵtextInterpolate */.Oqu(section_r49.textContent);
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("ngIf", section_r46.youtubeLink != null);
+    core/* ɵɵproperty */.Q6J("ngIf", section_r49.youtubeLink != null);
 } }
 function NewsComponent_div_1_div_22_div_9_div_3_div_2_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div");
@@ -54976,8 +54980,8 @@ function NewsComponent_div_1_div_22_div_9_div_3_Template(rf, ctx) { if (rf & 1) 
 } }
 function NewsComponent_div_1_div_22_div_9_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div", 64);
-    core/* ɵɵtemplate */.YNc(1, NewsComponent_div_1_div_22_div_9_div_1_Template, 2, 1, "div", 65);
-    core/* ɵɵtemplate */.YNc(2, NewsComponent_div_1_div_22_div_9_div_2_Template, 4, 2, "div", 65);
+    core/* ɵɵtemplate */.YNc(1, NewsComponent_div_1_div_22_div_9_div_1_Template, 2, 5, "div", 65);
+    core/* ɵɵtemplate */.YNc(2, NewsComponent_div_1_div_22_div_9_div_2_Template, 4, 2, "div", 66);
     core/* ɵɵtemplate */.YNc(3, NewsComponent_div_1_div_22_div_9_div_3_Template, 3, 2, "div", 60);
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
@@ -54990,16 +54994,16 @@ function NewsComponent_div_1_div_22_div_9_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵproperty */.Q6J("ngIf", comment_r19.sections != null);
 } }
 function NewsComponent_div_1_div_22_Template(rf, ctx) { if (rf & 1) {
-    const _r53 = core/* ɵɵgetCurrentView */.EpF();
+    const _r56 = core/* ɵɵgetCurrentView */.EpF();
     core/* ɵɵelementStart */.TgZ(0, "div");
     core/* ɵɵelementStart */.TgZ(1, "div", 54);
     core/* ɵɵelementStart */.TgZ(2, "div");
     core/* ɵɵelementStart */.TgZ(3, "div", 55);
-    core/* ɵɵlistener */.NdJ("click", function NewsComponent_div_1_div_22_Template_div_click_3_listener() { const restoredCtx = core/* ɵɵrestoreView */.CHM(_r53); const comment_r19 = restoredCtx.$implicit; const ctx_r52 = core/* ɵɵnextContext */.oxw(2); return ctx_r52.addressUser(comment_r19.username); });
+    core/* ɵɵlistener */.NdJ("click", function NewsComponent_div_1_div_22_Template_div_click_3_listener() { const restoredCtx = core/* ɵɵrestoreView */.CHM(_r56); const comment_r19 = restoredCtx.$implicit; const ctx_r55 = core/* ɵɵnextContext */.oxw(2); return ctx_r55.addressUser(comment_r19.username); });
     core/* ɵɵtext */._uU(4);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(5, "div", 56);
-    core/* ɵɵlistener */.NdJ("click", function NewsComponent_div_1_div_22_Template_div_click_5_listener() { const restoredCtx = core/* ɵɵrestoreView */.CHM(_r53); const comment_r19 = restoredCtx.$implicit; const ctx_r54 = core/* ɵɵnextContext */.oxw(2); return ctx_r54.addressUser("" + comment_r19.id); });
+    core/* ɵɵlistener */.NdJ("click", function NewsComponent_div_1_div_22_Template_div_click_5_listener() { const restoredCtx = core/* ɵɵrestoreView */.CHM(_r56); const comment_r19 = restoredCtx.$implicit; const ctx_r57 = core/* ɵɵnextContext */.oxw(2); return ctx_r57.addressUser("" + comment_r19.id); });
     core/* ɵɵtext */._uU(6);
     core/* ɵɵpipe */.ALo(7, "date");
     core/* ɵɵelementEnd */.qZA();
@@ -55014,72 +55018,72 @@ function NewsComponent_div_1_div_22_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵadvance */.xp6(4);
     core/* ɵɵtextInterpolate */.Oqu(comment_r19.username);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵtextInterpolate2 */.AsE("", core/* ɵɵpipeBind2 */.xi3(7, 5, comment_r19.timestampCreated, "MMM d, y, HH:mm"), " - No.", comment_r19.id, "");
+    core/* ɵɵtextInterpolate2 */.AsE("", core/* ɵɵpipeBind2 */.xi3(7, 5, comment_r19.timestampCreated, "MMM d, y, HH:mm"), " - No.", comment_r19.id, " ");
     core/* ɵɵadvance */.xp6(2);
     core/* ɵɵproperty */.Q6J("ngIf", comment_r19.status == 1);
     core/* ɵɵadvance */.xp6(1);
     core/* ɵɵproperty */.Q6J("ngIf", comment_r19.status > 1);
 } }
 function NewsComponent_div_1_div_26_div_1_img_8_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelement */._UZ(0, "img", 82);
+    core/* ɵɵelement */._UZ(0, "img", 84);
 } if (rf & 2) {
-    const news_r56 = core/* ɵɵnextContext */.oxw().$implicit;
-    core/* ɵɵproperty */.Q6J("src", news_r56.iconUrl, core/* ɵɵsanitizeUrl */.LSH);
+    const news_r59 = core/* ɵɵnextContext */.oxw().$implicit;
+    core/* ɵɵproperty */.Q6J("src", news_r59.iconUrl, core/* ɵɵsanitizeUrl */.LSH);
 } }
 function NewsComponent_div_1_div_26_div_1_img_9_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelement */._UZ(0, "img", 83);
+    core/* ɵɵelement */._UZ(0, "img", 85);
 } if (rf & 2) {
-    const news_r56 = core/* ɵɵnextContext */.oxw().$implicit;
-    core/* ɵɵproperty */.Q6J("src", news_r56.imageUrl, core/* ɵɵsanitizeUrl */.LSH);
+    const news_r59 = core/* ɵɵnextContext */.oxw().$implicit;
+    core/* ɵɵproperty */.Q6J("src", news_r59.imageUrl, core/* ɵɵsanitizeUrl */.LSH);
 } }
 function NewsComponent_div_1_div_26_div_1_img_10_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelement */._UZ(0, "img", 84);
+    core/* ɵɵelement */._UZ(0, "img", 86);
 } }
 function NewsComponent_div_1_div_26_div_1_Template(rf, ctx) { if (rf & 1) {
-    const _r63 = core/* ɵɵgetCurrentView */.EpF();
-    core/* ɵɵelementStart */.TgZ(0, "div", 74);
-    core/* ɵɵelementStart */.TgZ(1, "div", 75);
-    core/* ɵɵlistener */.NdJ("click", function NewsComponent_div_1_div_26_div_1_Template_div_click_1_listener() { const restoredCtx = core/* ɵɵrestoreView */.CHM(_r63); const news_r56 = restoredCtx.$implicit; const ctx_r62 = core/* ɵɵnextContext */.oxw(3); return ctx_r62.redirectToNews(news_r56.code); });
-    core/* ɵɵelementStart */.TgZ(2, "div", 76);
-    core/* ɵɵelementStart */.TgZ(3, "div", 77);
-    core/* ɵɵelementStart */.TgZ(4, "div", 78);
+    const _r66 = core/* ɵɵgetCurrentView */.EpF();
+    core/* ɵɵelementStart */.TgZ(0, "div", 76);
+    core/* ɵɵelementStart */.TgZ(1, "div", 77);
+    core/* ɵɵlistener */.NdJ("click", function NewsComponent_div_1_div_26_div_1_Template_div_click_1_listener() { const restoredCtx = core/* ɵɵrestoreView */.CHM(_r66); const news_r59 = restoredCtx.$implicit; const ctx_r65 = core/* ɵɵnextContext */.oxw(3); return ctx_r65.redirectToNews(news_r59.code); });
+    core/* ɵɵelementStart */.TgZ(2, "div", 78);
+    core/* ɵɵelementStart */.TgZ(3, "div", 79);
+    core/* ɵɵelementStart */.TgZ(4, "div", 80);
     core/* ɵɵelementStart */.TgZ(5, "span");
     core/* ɵɵtext */._uU(6);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(7, "div");
-    core/* ɵɵtemplate */.YNc(8, NewsComponent_div_1_div_26_div_1_img_8_Template, 1, 1, "img", 79);
+    core/* ɵɵtemplate */.YNc(8, NewsComponent_div_1_div_26_div_1_img_8_Template, 1, 1, "img", 81);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵtemplate */.YNc(9, NewsComponent_div_1_div_26_div_1_img_9_Template, 1, 1, "img", 80);
-    core/* ɵɵtemplate */.YNc(10, NewsComponent_div_1_div_26_div_1_img_10_Template, 1, 0, "img", 81);
+    core/* ɵɵtemplate */.YNc(9, NewsComponent_div_1_div_26_div_1_img_9_Template, 1, 1, "img", 82);
+    core/* ɵɵtemplate */.YNc(10, NewsComponent_div_1_div_26_div_1_img_10_Template, 1, 0, "img", 83);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
-    const news_r56 = ctx.$implicit;
+    const news_r59 = ctx.$implicit;
     core/* ɵɵadvance */.xp6(6);
-    core/* ɵɵtextInterpolate */.Oqu(news_r56.title);
+    core/* ɵɵtextInterpolate */.Oqu(news_r59.title);
     core/* ɵɵadvance */.xp6(2);
-    core/* ɵɵproperty */.Q6J("ngIf", news_r56.iconUrl != null);
+    core/* ɵɵproperty */.Q6J("ngIf", news_r59.iconUrl != null);
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("ngIf", news_r56.imageUrl != null);
+    core/* ɵɵproperty */.Q6J("ngIf", news_r59.imageUrl != null);
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("ngIf", news_r56.imageUrl == null);
+    core/* ɵɵproperty */.Q6J("ngIf", news_r59.imageUrl == null);
 } }
 function NewsComponent_div_1_div_26_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "div", 72);
-    core/* ɵɵtemplate */.YNc(1, NewsComponent_div_1_div_26_div_1_Template, 11, 4, "div", 73);
+    core/* ɵɵelementStart */.TgZ(0, "div", 74);
+    core/* ɵɵtemplate */.YNc(1, NewsComponent_div_1_div_26_div_1_Template, 11, 4, "div", 75);
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
     const ctx_r6 = core/* ɵɵnextContext */.oxw(2);
     core/* ɵɵadvance */.xp6(1);
     core/* ɵɵproperty */.Q6J("ngForOf", ctx_r6.nextNews);
 } }
-const news_component_c0 = function () { return [1, 3, 4]; };
-const news_component_c1 = function () { return [5, 6]; };
+const news_component_c1 = function () { return [1, 3, 4]; };
+const news_component_c2 = function () { return [5, 6]; };
 function NewsComponent_div_1_Template(rf, ctx) { if (rf & 1) {
-    const _r65 = core/* ɵɵgetCurrentView */.EpF();
+    const _r68 = core/* ɵɵgetCurrentView */.EpF();
     core/* ɵɵelementStart */.TgZ(0, "div", 1);
     core/* ɵɵelementStart */.TgZ(1, "div", 2);
     core/* ɵɵelementStart */.TgZ(2, "div");
@@ -55090,26 +55094,26 @@ function NewsComponent_div_1_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(7, "div", 6);
     core/* ɵɵelementStart */.TgZ(8, "div");
     core/* ɵɵelementStart */.TgZ(9, "textarea", 7);
-    core/* ɵɵlistener */.NdJ("ngModelChange", function NewsComponent_div_1_Template_textarea_ngModelChange_9_listener($event) { core/* ɵɵrestoreView */.CHM(_r65); const ctx_r64 = core/* ɵɵnextContext */.oxw(); return ctx_r64.commentText = $event; });
+    core/* ɵɵlistener */.NdJ("ngModelChange", function NewsComponent_div_1_Template_textarea_ngModelChange_9_listener($event) { core/* ɵɵrestoreView */.CHM(_r68); const ctx_r67 = core/* ɵɵnextContext */.oxw(); return ctx_r67.commentText = $event; });
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(10, "div", 8);
     core/* ɵɵelementStart */.TgZ(11, "button", 9);
-    core/* ɵɵlistener */.NdJ("click", function NewsComponent_div_1_Template_button_click_11_listener() { core/* ɵɵrestoreView */.CHM(_r65); const ctx_r66 = core/* ɵɵnextContext */.oxw(); return ctx_r66.postNewsComment(); });
+    core/* ɵɵlistener */.NdJ("click", function NewsComponent_div_1_Template_button_click_11_listener() { core/* ɵɵrestoreView */.CHM(_r68); const ctx_r69 = core/* ɵɵnextContext */.oxw(); return ctx_r69.postNewsComment(); });
     core/* ɵɵtext */._uU(12, "Leave comment");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(13, "input", 10);
-    core/* ɵɵlistener */.NdJ("change", function NewsComponent_div_1_Template_input_change_13_listener($event) { core/* ɵɵrestoreView */.CHM(_r65); const ctx_r67 = core/* ɵɵnextContext */.oxw(); return ctx_r67.addFileToComment($event); });
+    core/* ɵɵlistener */.NdJ("change", function NewsComponent_div_1_Template_input_change_13_listener($event) { core/* ɵɵrestoreView */.CHM(_r68); const ctx_r70 = core/* ɵɵnextContext */.oxw(); return ctx_r70.addFileToComment($event); });
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(14, "label", 11);
     core/* ɵɵtext */._uU(15);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(16, "button", 12);
-    core/* ɵɵlistener */.NdJ("click", function NewsComponent_div_1_Template_button_click_16_listener() { core/* ɵɵrestoreView */.CHM(_r65); const ctx_r68 = core/* ɵɵnextContext */.oxw(); return ctx_r68.reloadAwsComments(); });
-    core/* ɵɵtext */._uU(17, "Refresh comments");
+    core/* ɵɵlistener */.NdJ("click", function NewsComponent_div_1_Template_button_click_16_listener() { core/* ɵɵrestoreView */.CHM(_r68); const ctx_r71 = core/* ɵɵnextContext */.oxw(); return ctx_r71.reloadAwsComments(); });
+    core/* ɵɵtext */._uU(17, "Refresh comments ");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(18, "label", 13);
     core/* ɵɵelementStart */.TgZ(19, "input", 14);
-    core/* ɵɵlistener */.NdJ("ngModelChange", function NewsComponent_div_1_Template_input_ngModelChange_19_listener($event) { core/* ɵɵrestoreView */.CHM(_r65); const ctx_r69 = core/* ɵɵnextContext */.oxw(); return ctx_r69.cycleOn = $event; })("change", function NewsComponent_div_1_Template_input_change_19_listener() { core/* ɵɵrestoreView */.CHM(_r65); const ctx_r70 = core/* ɵɵnextContext */.oxw(); return ctx_r70.toggleCycle(); });
+    core/* ɵɵlistener */.NdJ("ngModelChange", function NewsComponent_div_1_Template_input_ngModelChange_19_listener($event) { core/* ɵɵrestoreView */.CHM(_r68); const ctx_r72 = core/* ɵɵnextContext */.oxw(); return ctx_r72.cycleOn = $event; })("change", function NewsComponent_div_1_Template_input_change_19_listener() { core/* ɵɵrestoreView */.CHM(_r68); const ctx_r73 = core/* ɵɵnextContext */.oxw(); return ctx_r73.toggleCycle(); });
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵtext */._uU(20, " Auto-refresh comments ");
     core/* ɵɵelementEnd */.qZA();
@@ -55131,11 +55135,11 @@ function NewsComponent_div_1_Template(rf, ctx) { if (rf & 1) {
 } if (rf & 2) {
     const ctx_r0 = core/* ɵɵnextContext */.oxw();
     core/* ɵɵadvance */.xp6(3);
-    core/* ɵɵproperty */.Q6J("ngIf", core/* ɵɵpureFunction0 */.DdM(9, news_component_c0).includes(ctx_r0.post.status));
+    core/* ɵɵproperty */.Q6J("ngIf", core/* ɵɵpureFunction0 */.DdM(9, news_component_c1).includes(ctx_r0.post.status));
     core/* ɵɵadvance */.xp6(1);
     core/* ɵɵproperty */.Q6J("ngIf", ctx_r0.post.status == 2);
     core/* ɵɵadvance */.xp6(1);
-    core/* ɵɵproperty */.Q6J("ngIf", core/* ɵɵpureFunction0 */.DdM(10, news_component_c1).includes(ctx_r0.post.status));
+    core/* ɵɵproperty */.Q6J("ngIf", core/* ɵɵpureFunction0 */.DdM(10, news_component_c2).includes(ctx_r0.post.status));
     core/* ɵɵadvance */.xp6(4);
     core/* ɵɵproperty */.Q6J("ngModel", ctx_r0.commentText);
     core/* ɵɵadvance */.xp6(6);
@@ -55164,6 +55168,7 @@ class NewsComponent {
         this.fileUploadLabel = 'Add image';
         this.cycleOn = false;
         this.secondsLeft = 60;
+        this.expandedCommentIds = new Set();
     }
     ngOnInit() {
         this.utilityService.disablePeriodicFetchOfComments();
@@ -55211,6 +55216,17 @@ class NewsComponent {
         else {
             this.stopCycle();
         }
+    }
+    toggleImageSize(commentId) {
+        if (this.expandedCommentIds.has(commentId)) {
+            this.expandedCommentIds.delete(commentId);
+        }
+        else {
+            this.expandedCommentIds.add(commentId);
+        }
+    }
+    isExpanded(commentId) {
+        return this.expandedCommentIds.has(commentId);
     }
     startCycle() {
         this.getNewsComments();
@@ -55444,14 +55460,14 @@ class NewsComponent {
     }
 }
 NewsComponent.ɵfac = function NewsComponent_Factory(t) { return new (t || NewsComponent)(core/* ɵɵdirectiveInject */.Y36(rest_service/* RestService */.v), core/* ɵɵdirectiveInject */.Y36(utility_service/* UtilityService */.t), core/* ɵɵdirectiveInject */.Y36(router/* ActivatedRoute */.gz), core/* ɵɵdirectiveInject */.Y36(router/* Router */.F0), core/* ɵɵdirectiveInject */.Y36(MatDialog), core/* ɵɵdirectiveInject */.Y36(platform_browser/* DomSanitizer */.H7)); };
-NewsComponent.ɵcmp = /*@__PURE__*/ core/* ɵɵdefineComponent */.Xpm({ type: NewsComponent, selectors: [["app-aws-cmp"]], decls: 2, vars: 1, consts: [["class", "height-fill-screen bg-grey", 4, "ngIf"], [1, "height-fill-screen", "bg-grey"], [1, "px-sm-0", "pt-sm-0", "px-lg-2", "pt-lg-3"], ["class", "div-padded-left-right-0-5", 4, "ngIf"], [4, "ngIf"], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area-100", 3, "ngModel", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "black-button", 3, "click"], ["id", "file-upload", "type", "file", 2, "display", "none", 3, "change"], ["for", "file-upload", 1, "mat-focus-indicator", "black-button", "mat-flat-button", "mat-button-base"], ["mat-flat-button", "", 1, "bg-success", "text-white", 3, "click"], [1, "mr-1"], ["type", "checkbox", 3, "ngModel", "ngModelChange", "change"], [4, "ngFor", "ngForOf"], [1, "mt-1", "basic-news-comment", "border", "border-dark", "text-center", "p-1"], ["class", "row px-2", 4, "ngIf"], [1, "div-padded-left-right-0-5"], [1, "card", "card-stats"], [1, "card-body"], [1, "col-12", "col-lg-12", "div-padded-always-left-right-1-2", "text-right"], ["class", "col-12 col-lg-2 no-right-padding", 4, "ngIf"], ["class", "pre-line col-12 col-lg-10 div-padded-always-left-right-1-2", 4, "ngIf"], ["class", "pre-line col-12", 4, "ngIf"], [1, "col-12", "col-lg-2", "no-right-padding"], [1, "icon-big", "text-center", "icon-warning"], [1, "nc-icon", "nc-align-left-2", "text-success"], ["target", "_blank", 3, "href"], [1, "text-center"], ["class", "icon-big text-center icon-warning", 4, "ngIf"], [1, "teko-text-small"], ["alt", "iconUrl", "onerror", "this.src='assets/img/favicon2.png'", 1, "w-42px", 3, "src"], [1, "nc-icon", "nc-globe", "text-success"], [1, "pre-line", "col-12", "col-lg-10", "div-padded-always-left-right-1-2"], ["target", "_blank", 3, "href", 4, "ngIf"], ["alt", "NO IMAGE", 3, "src", 4, "ngIf"], ["alt", "NO IMAGE", 3, "src"], [1, "pre-line", "col-12"], [1, "px-4", "pt-2"], [1, "px-4"], [1, "twitter-tweet"], ["dir", "ltr", "lang", "en"], [1, "postLinks", 3, "href"], ["alt", "loading", "src", "assets/img/loading.gif", 2, "max-width", "35px"], ["alt", "imageUrl", 3, "src"], [1, "col-12", "col-lg-12", "div-padded-always-top-right-2rem", "text-right"], [1, "div-padded-left-right-0-5", "pb-3"], [3, "innerHTML"], [1, "div-padded-left-right-0-5", "w-100", "pb-3"], ["style", "width: 100%; position: relative; display: flex; justify-content: center;", 4, "ngIf"], [2, "width", "100%", "position", "relative", "display", "flex", "justify-content", "center"], ["autoplay", "", "loop", "", "id", "myVideo", "controls", "", 2, "max-width", "100%"], ["type", "video/mp4", 3, "src"], [1, "basic-news-comment"], [1, "one-aws", "hover-pointer", 3, "click"], [1, "two-aws", "hover-pointer", 3, "click"], ["class", "basic-comment-body", 4, "ngIf"], ["class", "basic-comment-body-no-padding d-flex", 4, "ngIf"], [1, "basic-comment-body"], ["class", "pl-3 pr-5", 4, "ngIf"], [1, "pl-3", "pr-5"], ["class", "text-center", 4, "ngIf"], ["allow", "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture", "allowfullscreen", "", "height", "315", "title", "YouTube video player", "width", "560", 3, "src"], [1, "basic-comment-body-no-padding", "d-flex"], ["class", "max-width-30-pc px-3", 4, "ngIf"], [1, "max-width-30-pc", "px-3"], ["alt", "commentImage", "onerror", "this.src='assets/img/drivers/default.png'", 3, "src"], ["controls", "", "preload", "metadata", "width", "100%"], ["type", "video/webm", 3, "src", 4, "ngIf"], ["type", "video/mp4", 3, "src", 4, "ngIf"], ["type", "video/webm", 3, "src"], [1, "row", "px-2"], ["class", "col-12 col-lg-3 pt-1 px-lg-2", 4, "ngFor", "ngForOf"], [1, "col-12", "col-lg-3", "pt-1", "px-lg-2"], [1, "card", "card-stats", "bg-light", "border", "border-dark", "cursor-pointer", 3, "click"], [1, "card-body", "mx-2"], [1, "row", "mb-1"], [1, "col-11"], ["alt", "n", "style", "max-width: 15px;", 3, "src", 4, "ngIf"], ["alt", "n", 3, "src", 4, "ngIf"], ["alt", "no image", "src", "https://i.imgur.com/t4bVLeg.jpg", 4, "ngIf"], ["alt", "n", 2, "max-width", "15px", 3, "src"], ["alt", "n", 3, "src"], ["alt", "no image", "src", "https://i.imgur.com/t4bVLeg.jpg"]], template: function NewsComponent_Template(rf, ctx) { if (rf & 1) {
+NewsComponent.ɵcmp = /*@__PURE__*/ core/* ɵɵdefineComponent */.Xpm({ type: NewsComponent, selectors: [["app-aws-cmp"]], decls: 2, vars: 1, consts: [["class", "height-fill-screen bg-grey", 4, "ngIf"], [1, "height-fill-screen", "bg-grey"], [1, "px-sm-0", "pt-sm-0", "px-lg-2", "pt-lg-3"], ["class", "div-padded-left-right-0-5", 4, "ngIf"], [4, "ngIf"], [1, "row"], [1, "col-md-12"], ["matInput", "", "placeholder", "Leave a comment", 1, "chat-text-area-100", 3, "ngModel", "ngModelChange"], [1, "post-comment"], ["mat-flat-button", "", 1, "my-2", "black-button", 3, "click"], ["id", "file-upload", "type", "file", 2, "display", "none", 3, "change"], ["for", "file-upload", 1, "my-2", "mat-focus-indicator", "black-button", "mat-flat-button", "mat-button-base"], ["mat-flat-button", "", 1, "my-2", "bg-success", "text-white", 3, "click"], [1, "mr-1"], ["type", "checkbox", 3, "ngModel", "ngModelChange", "change"], [4, "ngFor", "ngForOf"], [1, "mt-1", "basic-news-comment", "border", "border-dark", "text-center", "p-1"], ["class", "row px-2", 4, "ngIf"], [1, "div-padded-left-right-0-5"], [1, "card", "card-stats"], [1, "card-body"], [1, "col-12", "col-lg-12", "div-padded-always-left-right-1-2", "text-right"], ["class", "col-12 col-lg-2 no-right-padding", 4, "ngIf"], ["class", "pre-line col-12 col-lg-10 div-padded-always-left-right-1-2", 4, "ngIf"], ["class", "pre-line col-12", 4, "ngIf"], [1, "col-12", "col-lg-2", "no-right-padding"], [1, "icon-big", "text-center", "icon-warning"], [1, "nc-icon", "nc-align-left-2", "text-success"], ["target", "_blank", 3, "href"], [1, "text-center"], ["class", "icon-big text-center icon-warning", 4, "ngIf"], [1, "teko-text-small"], ["alt", "iconUrl", "onerror", "this.src='assets/img/favicon2.png'", 1, "w-42px", 3, "src"], [1, "nc-icon", "nc-globe", "text-success"], [1, "pre-line", "col-12", "col-lg-10", "div-padded-always-left-right-1-2"], ["target", "_blank", 3, "href", 4, "ngIf"], ["alt", "NO IMAGE", 3, "src", 4, "ngIf"], ["alt", "NO IMAGE", 3, "src"], [1, "pre-line", "col-12"], [1, "px-4", "pt-2"], [1, "px-4"], [1, "twitter-tweet"], ["dir", "ltr", "lang", "en"], [1, "postLinks", 3, "href"], ["alt", "loading", "src", "assets/img/loading.gif", 2, "max-width", "35px"], ["alt", "imageUrl", 3, "src"], [1, "col-12", "col-lg-12", "div-padded-always-top-right-2rem", "text-right"], [1, "div-padded-left-right-0-5", "pb-3"], [3, "innerHTML"], [1, "div-padded-left-right-0-5", "w-100", "pb-3"], ["style", "width: 100%; position: relative; display: flex; justify-content: center;", 4, "ngIf"], [2, "width", "100%", "position", "relative", "display", "flex", "justify-content", "center"], ["autoplay", "", "loop", "", "id", "myVideo", "controls", "", 2, "max-width", "100%"], ["type", "video/mp4", 3, "src"], [1, "basic-news-comment"], [1, "one-aws", "hover-pointer", 3, "click"], [1, "two-aws", "hover-pointer", 3, "click"], ["class", "basic-comment-body", 4, "ngIf"], ["class", "basic-comment-body-no-padding d-flex", 4, "ngIf"], [1, "basic-comment-body"], ["class", "pl-3 pr-5", 4, "ngIf"], [1, "pl-3", "pr-5"], ["class", "text-center", 4, "ngIf"], ["allow", "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture", "allowfullscreen", "", "height", "315", "title", "YouTube video player", "width", "560", 3, "src"], [1, "basic-comment-body-no-padding", "d-flex"], [3, "ngClass", "click", 4, "ngIf"], ["class", "max-width-30-pc px-3", 4, "ngIf"], [3, "ngClass", "click"], ["alt", "commentImage", "onerror", "this.src='assets/img/drivers/default.png'", 3, "src"], [1, "max-width-30-pc", "px-3"], ["controls", "", "preload", "metadata", "width", "100%"], ["type", "video/webm", 3, "src", 4, "ngIf"], ["type", "video/mp4", 3, "src", 4, "ngIf"], ["type", "video/webm", 3, "src"], [1, "row", "px-2"], ["class", "col-12 col-lg-3 pt-1 px-lg-2", 4, "ngFor", "ngForOf"], [1, "col-12", "col-lg-3", "pt-1", "px-lg-2"], [1, "card", "card-stats", "bg-light", "border", "border-dark", "cursor-pointer", 3, "click"], [1, "card-body", "mx-2"], [1, "row", "mb-1"], [1, "col-11"], ["alt", "n", "style", "max-width: 15px;", 3, "src", 4, "ngIf"], ["alt", "n", 3, "src", 4, "ngIf"], ["alt", "no image", "src", "https://i.imgur.com/t4bVLeg.jpg", 4, "ngIf"], ["alt", "n", 2, "max-width", "15px", 3, "src"], ["alt", "n", 3, "src"], ["alt", "no image", "src", "https://i.imgur.com/t4bVLeg.jpg"]], template: function NewsComponent_Template(rf, ctx) { if (rf & 1) {
         core/* ɵɵelementStart */.TgZ(0, "div");
         core/* ɵɵtemplate */.YNc(1, NewsComponent_div_1_Template, 27, 11, "div", 0);
         core/* ɵɵelementEnd */.qZA();
     } if (rf & 2) {
         core/* ɵɵadvance */.xp6(1);
         core/* ɵɵproperty */.Q6J("ngIf", ctx.post != null);
-    } }, directives: [common/* NgIf */.O5, MatInput, fesm2015_forms/* DefaultValueAccessor */.Fj, fesm2015_forms/* NgControlStatus */.JJ, fesm2015_forms/* NgModel */.On, fesm2015_button/* MatButton */.lW, fesm2015_forms/* CheckboxControlValueAccessor */.Wl, common/* NgForOf */.sg, bidi/* Dir */.Lv], pipes: [common/* DatePipe */.uU], encapsulation: 2 });
+    } }, directives: [common/* NgIf */.O5, MatInput, fesm2015_forms/* DefaultValueAccessor */.Fj, fesm2015_forms/* NgControlStatus */.JJ, fesm2015_forms/* NgModel */.On, fesm2015_button/* MatButton */.lW, fesm2015_forms/* CheckboxControlValueAccessor */.Wl, common/* NgForOf */.sg, bidi/* Dir */.Lv, common/* NgClass */.mk], pipes: [common/* DatePipe */.uU], encapsulation: 2 });
 
 ;// CONCATENATED MODULE: ./src/app/model/commentModeration.ts
 class CommentModeration {
@@ -65171,9 +65187,12 @@ class F1CountdownComponent {
         this.iframeLink = this.sanitizer.bypassSecurityTrustResourceUrl(url);
     }
     setupOverlays() {
+        let root = document.documentElement;
         if (this.calendarData.overlays.includes('boat')) {
-            let root = document.documentElement;
             root.style.setProperty('--f1-countdown-color', "#ffc107");
+        }
+        else if (this.calendarData.overlays.includes('unboat')) {
+            root.style.setProperty('--f1-countdown-color', "#4db1bc");
         }
     }
     setTimezoneOffset() {

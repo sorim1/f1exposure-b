@@ -117,7 +117,11 @@ public class ClientController {
         ImageRow image = service.getImage(code);
         byte[] imageBytes = image.getImage();
         HttpHeaders headers = new HttpHeaders();
-        headers.setContentType(MediaType.parseMediaType(image.getType()));
+        if(image.getType()!=null){
+            headers.setContentType(MediaType.parseMediaType(image.getType()));
+        } else {
+            headers.setContentType(MediaType.IMAGE_JPEG);
+        }
         return new ResponseEntity<>(imageBytes, headers, HttpStatus.OK);
     }
 
