@@ -634,14 +634,25 @@ public class LiveTimingServiceImpl implements LiveTimingService {
 
 
     private void enrichUpcomingRaceWithYoutube(RaceData raceData) {
-        if(howManyDaysAgo(raceData.getDate(), false)>3){
+        if (howManyDaysAgo(raceData.getDate(), false) > 3) {
             log.info("enrichUpcomingRaceWithYoutube too early");
             return;
         }
+
         List<YouTubeVideo> videos = youtubeService.getYoutubeVideos();
         LocalDateTime twoDaysAgo = LocalDateTime.now().minusDays(2);
 
         List<String> sessionOrder = List.of("FP1", "FP2", "FP3", "Sprint Qualifying", "Qualifying", "Sprint");
+
+        Map<String, List<String>> sessionAliases = Map.of(
+                "FP1", List.of("FP1"),
+                "FP2", List.of("FP2"),
+                "FP3", List.of("FP3"),
+                "Sprint Qualifying", List.of("Sprint Qualifying", "Sprint Pole"),
+                "Qualifying", List.of("Qualifying", "Pole"),
+                "Sprint", List.of("Sprint")
+        );
+
         Map<String, Function<UpcomingRaceAnalysis, List<YouTubeVideo>>> sessionGetters = Map.of(
                 "FP1", UpcomingRaceAnalysis::getFp1Youtube,
                 "FP2", UpcomingRaceAnalysis::getFp2Youtube,
@@ -662,7 +673,10 @@ public class LiveTimingServiceImpl implements LiveTimingService {
 
         videos.forEach(video -> {
             for (String session : sessionOrder) {
-                if (video.getTitle().contains(session) && video.getPublishedAt().isAfter(twoDaysAgo)) {
+                List<String> aliases = sessionAliases.get(session);
+                boolean titleMatches = aliases.stream().anyMatch(alias -> video.getTitle().contains(alias));
+
+                if (titleMatches && video.getPublishedAt().isAfter(twoDaysAgo)) {
                     UpcomingRaceAnalysis analysis = raceData.getUpcomingRaceAnalysis();
                     List<YouTubeVideo> sessionVideos = sessionGetters.get(session).apply(analysis);
 
@@ -680,12 +694,14 @@ public class LiveTimingServiceImpl implements LiveTimingService {
         });
     }
 
+
     private void enrichLatestRaceWithYoutube(RaceData raceData) {
         log.info("enrichLatestRaceWithYoutube");
         List<YouTubeVideo> videos = youtubeService.getYoutubeVideos();
         LocalDateTime twoDaysAgo = LocalDateTime.now().minusDays(2);
 
-        List<String> ignoreTitles = List.of("FP1", "FP2", "FP3", "Sprint Qualifying", "Qualifying", "Sprint");
+        List<String> ignoreTitles = List.of("FP1", "FP2", "FP3", "Sprint Qualifying", "Qualifying",
+                "Sprint", "Formula 2", "Formula 3", "F2", "F3", "Pole Lap");
 
         videos.forEach(video -> {
             String lowerCaseTitle = video.getTitle().toLowerCase(); // Convert title to lowercase for case-insensitive checks
@@ -709,10 +725,12 @@ public class LiveTimingServiceImpl implements LiveTimingService {
                 }
             }
         });
+        if (raceData.getRaceAnalysis().getRaceYoutube() != null && raceData.getRaceAnalysis().getRaceYoutube().size() > 6) {
+            List<YouTubeVideo> trimmedList = raceData.getRaceAnalysis().getRaceYoutube().subList(0, 6);
+            raceData.getRaceAnalysis().setRaceYoutube(new ArrayList<>(trimmedList));
+        }
+
     }
-
-
-
 
     private List<LapTimeData> createLapTimeDataList(String timingAppData, Map<String, String> driverMap, String sessionName) {
         TypeReference<HashMap<String, Object>> typeRef = new TypeReference<>() {

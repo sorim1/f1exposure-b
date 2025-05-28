@@ -69785,21 +69785,21 @@
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 45);
+          .TgZ(0, "div", 46);
           core
           /* ɵɵelementStart */
-          .TgZ(1, "div", 46);
+          .TgZ(1, "div", 47);
           core
           /* ɵɵelementStart */
           .TgZ(2, "a", 14);
 
           core
           /* ɵɵelement */
-          ._UZ(3, "img", 47);
+          ._UZ(3, "img", 48);
 
           core
           /* ɵɵelementStart */
-          .TgZ(4, "p", 48);
+          .TgZ(4, "p", 49);
 
           core
           /* ɵɵtext */
@@ -69858,7 +69858,7 @@
 
           core
           /* ɵɵelementStart */
-          .TgZ(0, "button", 51);
+          .TgZ(0, "button", 53);
           core
           /* ɵɵlistener */
           .NdJ("click", function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_7_div_0_tr_25_button_16_Template_button_click_0_listener() {
@@ -69919,7 +69919,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(5, "td");
+          .TgZ(5, "td", 50);
 
           core
           /* ɵɵtext */
@@ -69941,7 +69941,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(9, "td");
+          .TgZ(9, "td", 50);
 
           core
           /* ɵɵtext */
@@ -69952,7 +69952,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(11, "td");
+          .TgZ(11, "td", 50);
 
           core
           /* ɵɵtext */
@@ -69963,7 +69963,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(13, "td");
+          .TgZ(13, "td", 50);
 
           core
           /* ɵɵtext */
@@ -69974,10 +69974,10 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(15, "td", 49);
+          .TgZ(15, "td", 51);
           core
           /* ɵɵtemplate */
-          .YNc(16, UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_7_div_0_tr_25_button_16_Template, 3, 0, "button", 50);
+          .YNc(16, UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_7_div_0_tr_25_button_16_Template, 3, 0, "button", 52);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -70103,7 +70103,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(13, "th", 43);
+          .TgZ(13, "th", 44);
 
           core
           /* ɵɵtext */
@@ -70125,7 +70125,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(17, "th", 43);
+          .TgZ(17, "th", 44);
 
           core
           /* ɵɵtext */
@@ -70136,7 +70136,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(19, "th", 43);
+          .TgZ(19, "th", 44);
 
           core
           /* ɵɵtext */
@@ -70147,7 +70147,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(21, "th", 43);
+          .TgZ(21, "th", 44);
 
           core
           /* ɵɵtext */
@@ -70159,7 +70159,7 @@
 
           core
           /* ɵɵelement */
-          ._UZ(23, "th", 44);
+          ._UZ(23, "th", 45);
 
           core
           /* ɵɵelementEnd */
@@ -70596,21 +70596,21 @@
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 45);
+          .TgZ(0, "div", 46);
           core
           /* ɵɵelementStart */
-          .TgZ(1, "div", 46);
+          .TgZ(1, "div", 47);
           core
           /* ɵɵelementStart */
           .TgZ(2, "a", 14);
 
           core
           /* ɵɵelement */
-          ._UZ(3, "img", 47);
+          ._UZ(3, "img", 48);
 
           core
           /* ɵɵelementStart */
-          .TgZ(4, "p", 48);
+          .TgZ(4, "p", 49);
 
           core
           /* ɵɵtext */
@@ -70669,7 +70669,7 @@
 
           core
           /* ɵɵelementStart */
-          .TgZ(0, "button", 51);
+          .TgZ(0, "button", 53);
           core
           /* ɵɵlistener */
           .NdJ("click", function UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_8_ng_template_1_div_0_tr_25_button_16_Template_button_click_0_listener() {
@@ -70730,7 +70730,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(5, "td");
+          .TgZ(5, "td", 50);
 
           core
           /* ɵɵtext */
@@ -70752,7 +70752,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(9, "td");
+          .TgZ(9, "td", 50);
 
           core
           /* ɵɵtext */
@@ -70763,7 +70763,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(11, "td");
+          .TgZ(11, "td", 50);
 
           core
           /* ɵɵtext */
@@ -70774,7 +70774,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(13, "td");
+          .TgZ(13, "td", 50);
 
           core
           /* ɵɵtext */
@@ -70785,10 +70785,10 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(15, "td", 49);
+          .TgZ(15, "td", 51);
           core
           /* ɵɵtemplate */
-          .YNc(16, UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_8_ng_template_1_div_0_tr_25_button_16_Template, 3, 0, "button", 50);
+          .YNc(16, UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_8_ng_template_1_div_0_tr_25_button_16_Template, 3, 0, "button", 52);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -70929,7 +70929,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(13, "th", 43);
+          .TgZ(13, "th", 44);
 
           core
           /* ɵɵtext */
@@ -70951,7 +70951,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(17, "th", 43);
+          .TgZ(17, "th", 44);
 
           core
           /* ɵɵtext */
@@ -70962,7 +70962,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(19, "th", 43);
+          .TgZ(19, "th", 44);
 
           core
           /* ɵɵtext */
@@ -70973,7 +70973,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(21, "th", 43);
+          .TgZ(21, "th", 44);
 
           core
           /* ɵɵtext */
@@ -70985,7 +70985,7 @@
 
           core
           /* ɵɵelement */
-          ._UZ(23, "th", 44);
+          ._UZ(23, "th", 45);
 
           core
           /* ɵɵelementEnd */
@@ -71422,7 +71422,7 @@
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "mat-tab", 52);
+          .TgZ(0, "mat-tab", 54);
           core
           /* ɵɵtemplate */
           .YNc(1, UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_8_ng_template_1_Template, 36, 3, "ng-template", 3);
@@ -71445,21 +71445,21 @@
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 45);
+          .TgZ(0, "div", 46);
           core
           /* ɵɵelementStart */
-          .TgZ(1, "div", 46);
+          .TgZ(1, "div", 47);
           core
           /* ɵɵelementStart */
           .TgZ(2, "a", 14);
 
           core
           /* ɵɵelement */
-          ._UZ(3, "img", 47);
+          ._UZ(3, "img", 48);
 
           core
           /* ɵɵelementStart */
-          .TgZ(4, "p", 48);
+          .TgZ(4, "p", 49);
 
           core
           /* ɵɵtext */
@@ -71518,7 +71518,7 @@
 
           core
           /* ɵɵelementStart */
-          .TgZ(0, "button", 51);
+          .TgZ(0, "button", 53);
           core
           /* ɵɵlistener */
           .NdJ("click", function UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_9_ng_template_1_div_0_tr_25_button_16_Template_button_click_0_listener() {
@@ -71579,7 +71579,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(5, "td");
+          .TgZ(5, "td", 50);
 
           core
           /* ɵɵtext */
@@ -71601,7 +71601,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(9, "td");
+          .TgZ(9, "td", 50);
 
           core
           /* ɵɵtext */
@@ -71612,7 +71612,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(11, "td");
+          .TgZ(11, "td", 50);
 
           core
           /* ɵɵtext */
@@ -71623,7 +71623,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(13, "td");
+          .TgZ(13, "td", 50);
 
           core
           /* ɵɵtext */
@@ -71634,10 +71634,10 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(15, "td", 49);
+          .TgZ(15, "td", 51);
           core
           /* ɵɵtemplate */
-          .YNc(16, UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_9_ng_template_1_div_0_tr_25_button_16_Template, 3, 0, "button", 50);
+          .YNc(16, UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_9_ng_template_1_div_0_tr_25_button_16_Template, 3, 0, "button", 52);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -71778,7 +71778,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(13, "th", 43);
+          .TgZ(13, "th", 44);
 
           core
           /* ɵɵtext */
@@ -71800,7 +71800,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(17, "th", 43);
+          .TgZ(17, "th", 44);
 
           core
           /* ɵɵtext */
@@ -71811,7 +71811,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(19, "th", 43);
+          .TgZ(19, "th", 44);
 
           core
           /* ɵɵtext */
@@ -71822,7 +71822,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(21, "th", 43);
+          .TgZ(21, "th", 44);
 
           core
           /* ɵɵtext */
@@ -71834,7 +71834,7 @@
 
           core
           /* ɵɵelement */
-          ._UZ(23, "th", 44);
+          ._UZ(23, "th", 45);
 
           core
           /* ɵɵelementEnd */
@@ -72271,7 +72271,7 @@
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "mat-tab", 53);
+          .TgZ(0, "mat-tab", 55);
           core
           /* ɵɵtemplate */
           .YNc(1, UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_9_ng_template_1_Template, 36, 3, "ng-template", 3);
@@ -72294,21 +72294,21 @@
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 45);
+          .TgZ(0, "div", 46);
           core
           /* ɵɵelementStart */
-          .TgZ(1, "div", 46);
+          .TgZ(1, "div", 47);
           core
           /* ɵɵelementStart */
           .TgZ(2, "a", 14);
 
           core
           /* ɵɵelement */
-          ._UZ(3, "img", 47);
+          ._UZ(3, "img", 48);
 
           core
           /* ɵɵelementStart */
-          .TgZ(4, "p", 48);
+          .TgZ(4, "p", 49);
 
           core
           /* ɵɵtext */
@@ -72366,7 +72366,7 @@
           .TgZ(0, "div");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "span", 56);
+          .TgZ(1, "span", 58);
 
           core
           /* ɵɵtext */
@@ -72647,7 +72647,7 @@
 
           core
           /* ɵɵelementStart */
-          .TgZ(0, "button", 51);
+          .TgZ(0, "button", 53);
           core
           /* ɵɵlistener */
           .NdJ("click", function UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_10_ng_template_1_div_0_tr_25_button_18_Template_button_click_0_listener() {
@@ -72708,7 +72708,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(5, "td");
+          .TgZ(5, "td", 50);
 
           core
           /* ɵɵtext */
@@ -72728,7 +72728,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(9, "td");
+          .TgZ(9, "td", 50);
 
           core
           /* ɵɵtext */
@@ -72742,7 +72742,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(12, "td");
+          .TgZ(12, "td", 50);
 
           core
           /* ɵɵtext */
@@ -72756,7 +72756,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(15, "td");
+          .TgZ(15, "td", 50);
 
           core
           /* ɵɵtext */
@@ -72767,10 +72767,10 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(17, "td", 49);
+          .TgZ(17, "td", 51);
           core
           /* ɵɵtemplate */
-          .YNc(18, UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_10_ng_template_1_div_0_tr_25_button_18_Template, 3, 0, "button", 50);
+          .YNc(18, UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_10_ng_template_1_div_0_tr_25_button_18_Template, 3, 0, "button", 52);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -72897,7 +72897,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(11, "th", 55);
+          .TgZ(11, "th", 57);
 
           core
           /* ɵɵtext */
@@ -72908,7 +72908,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(13, "th", 43);
+          .TgZ(13, "th", 44);
 
           core
           /* ɵɵtext */
@@ -72930,7 +72930,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(17, "th", 43);
+          .TgZ(17, "th", 44);
 
           core
           /* ɵɵtext */
@@ -72941,7 +72941,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(19, "th", 43);
+          .TgZ(19, "th", 44);
 
           core
           /* ɵɵtext */
@@ -72952,7 +72952,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(21, "th", 43);
+          .TgZ(21, "th", 44);
 
           core
           /* ɵɵtext */
@@ -72964,7 +72964,7 @@
 
           core
           /* ɵɵelement */
-          ._UZ(23, "th", 44);
+          ._UZ(23, "th", 45);
 
           core
           /* ɵɵelementEnd */
@@ -73401,7 +73401,7 @@
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "mat-tab", 54);
+          .TgZ(0, "mat-tab", 56);
           core
           /* ɵɵtemplate */
           .YNc(1, UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_10_ng_template_1_Template, 36, 3, "ng-template", 3);
@@ -73424,21 +73424,21 @@
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 45);
+          .TgZ(0, "div", 46);
           core
           /* ɵɵelementStart */
-          .TgZ(1, "div", 46);
+          .TgZ(1, "div", 47);
           core
           /* ɵɵelementStart */
           .TgZ(2, "a", 14);
 
           core
           /* ɵɵelement */
-          ._UZ(3, "img", 47);
+          ._UZ(3, "img", 48);
 
           core
           /* ɵɵelementStart */
-          .TgZ(4, "p", 48);
+          .TgZ(4, "p", 49);
 
           core
           /* ɵɵtext */
@@ -73497,7 +73497,7 @@
 
           core
           /* ɵɵelementStart */
-          .TgZ(0, "button", 51);
+          .TgZ(0, "button", 53);
           core
           /* ɵɵlistener */
           .NdJ("click", function UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_11_ng_template_1_div_0_tr_20_button_12_Template_button_click_0_listener() {
@@ -73558,7 +73558,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(5, "td", 63);
+          .TgZ(5, "td", 50);
 
           core
           /* ɵɵtext */
@@ -73569,7 +73569,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(7, "td");
+          .TgZ(7, "td", 50);
 
           core
           /* ɵɵtext */
@@ -73580,7 +73580,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(9, "td");
+          .TgZ(9, "td", 50);
 
           core
           /* ɵɵtext */
@@ -73591,10 +73591,10 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(11, "td", 49);
+          .TgZ(11, "td", 51);
           core
           /* ɵɵtemplate */
-          .YNc(12, UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_11_ng_template_1_div_0_tr_20_button_12_Template, 3, 0, "button", 50);
+          .YNc(12, UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_11_ng_template_1_div_0_tr_20_button_12_Template, 3, 0, "button", 52);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -73717,7 +73717,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(10, "th", 62);
+          .TgZ(10, "th", 44);
 
           core
           /* ɵɵtext */
@@ -73728,7 +73728,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(12, "th", 43);
+          .TgZ(12, "th", 44);
 
           core
           /* ɵɵtext */
@@ -73739,7 +73739,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(14, "th", 43);
+          .TgZ(14, "th", 44);
 
           core
           /* ɵɵtext */
@@ -73751,11 +73751,11 @@
 
           core
           /* ɵɵelement */
-          ._UZ(16, "th", 44);
+          ._UZ(16, "th", 45);
 
           core
           /* ɵɵelementStart */
-          .TgZ(17, "th", 55);
+          .TgZ(17, "th", 57);
 
           core
           /* ɵɵtext */
@@ -73883,7 +73883,7 @@
           .TgZ(1, "div", 40);
           core
           /* ɵɵelementStart */
-          .TgZ(2, "div", 58);
+          .TgZ(2, "div", 60);
           core
           /* ɵɵelementStart */
           .TgZ(3, "div", 29);
@@ -73893,7 +73893,7 @@
 
           core
           /* ɵɵelement */
-          ._UZ(5, "apx-chart", 59);
+          ._UZ(5, "apx-chart", 61);
 
           core
           /* ɵɵelement */
@@ -73918,7 +73918,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(9, "div", 60);
+          .TgZ(9, "div", 62);
           core
           /* ɵɵelementStart */
           .TgZ(10, "div", 22);
@@ -73961,7 +73961,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(19, "th", 61);
+          .TgZ(19, "th", 63);
 
           core
           /* ɵɵtext */
@@ -74036,7 +74036,7 @@
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "mat-tab", 57);
+          .TgZ(0, "mat-tab", 59);
           core
           /* ɵɵtemplate */
           .YNc(1, UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_11_ng_template_1_Template, 25, 10, "ng-template", 3);
@@ -74059,21 +74059,21 @@
         if (rf & 1) {
           core
           /* ɵɵelementStart */
-          .TgZ(0, "div", 45);
+          .TgZ(0, "div", 46);
           core
           /* ɵɵelementStart */
-          .TgZ(1, "div", 46);
+          .TgZ(1, "div", 47);
           core
           /* ɵɵelementStart */
           .TgZ(2, "a", 14);
 
           core
           /* ɵɵelement */
-          ._UZ(3, "img", 47);
+          ._UZ(3, "img", 48);
 
           core
           /* ɵɵelementStart */
-          .TgZ(4, "p", 48);
+          .TgZ(4, "p", 49);
 
           core
           /* ɵɵtext */
@@ -74131,7 +74131,7 @@
           .TgZ(0, "div");
           core
           /* ɵɵelementStart */
-          .TgZ(1, "span", 56);
+          .TgZ(1, "span", 58);
 
           core
           /* ɵɵtext */
@@ -74412,7 +74412,7 @@
 
           core
           /* ɵɵelementStart */
-          .TgZ(0, "button", 51);
+          .TgZ(0, "button", 53);
           core
           /* ɵɵlistener */
           .NdJ("click", function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_25_button_18_Template_button_click_0_listener() {
@@ -74473,7 +74473,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(5, "td");
+          .TgZ(5, "td", 50);
 
           core
           /* ɵɵtext */
@@ -74493,7 +74493,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(9, "td");
+          .TgZ(9, "td", 50);
 
           core
           /* ɵɵtext */
@@ -74507,7 +74507,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(12, "td");
+          .TgZ(12, "td", 50);
 
           core
           /* ɵɵtext */
@@ -74521,7 +74521,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(15, "td");
+          .TgZ(15, "td", 50);
 
           core
           /* ɵɵtext */
@@ -74532,10 +74532,10 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(17, "td", 49);
+          .TgZ(17, "td", 51);
           core
           /* ɵɵtemplate */
-          .YNc(18, UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_25_button_18_Template, 3, 0, "button", 50);
+          .YNc(18, UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_25_button_18_Template, 3, 0, "button", 52);
           core
           /* ɵɵelementEnd */
           .qZA();
@@ -74673,7 +74673,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(13, "th", 43);
+          .TgZ(13, "th", 44);
 
           core
           /* ɵɵtext */
@@ -74695,7 +74695,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(17, "th", 43);
+          .TgZ(17, "th", 44);
 
           core
           /* ɵɵtext */
@@ -74706,7 +74706,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(19, "th", 43);
+          .TgZ(19, "th", 44);
 
           core
           /* ɵɵtext */
@@ -74717,7 +74717,7 @@
           .qZA();
           core
           /* ɵɵelementStart */
-          .TgZ(21, "th", 43);
+          .TgZ(21, "th", 44);
 
           core
           /* ɵɵtext */
@@ -74729,7 +74729,7 @@
 
           core
           /* ɵɵelement */
-          ._UZ(23, "th", 44);
+          ._UZ(23, "th", 45);
 
           core
           /* ɵɵelementEnd */
@@ -75978,8 +75978,9 @@
           value: function getTyresString(tyres) {
             var response = '';
             tyres.forEach(function (tyre) {
-              response = response + tyre.Compound + '';
+              response = response + tyre.Compound + ' - ';
             });
+            response = response.slice(0, -3);
             return response;
           }
         }, {
@@ -76204,7 +76205,7 @@
         },
         decls: 1,
         vars: 1,
-        consts: [[4, "ngIf"], [3, "selectedIndex", "selectedTabChange", "selectedIndexChange"], ["label", "Circuit"], ["matTabContent", ""], ["label", "Circuit winners", 3, "disabled"], ["label", "Practice 1", 3, "disabled"], ["label", "Practice 2", 3, "disabled", 4, "ngIf"], ["label", "Practice 3", 3, "disabled", 4, "ngIf"], ["label", "Sprint quali", 3, "disabled", 4, "ngIf"], ["label", "Sprint", 3, "disabled", 4, "ngIf"], ["label", "Qualifying", 3, "disabled"], ["label", "All laps", 3, "disabled"], [1, "black-footer", "text-center"], [1, "image"], ["target", "_blank", 3, "href"], [3, "src"], ["class", "div-padded-1rem row", 4, "ngIf"], ["class", "div-padded-1rem div-padded-left-2 row", 4, "ngIf"], [1, "div-padded-1rem", "row"], ["class", "col-lg-6 col-12", 4, "ngFor", "ngForOf"], [1, "col-lg-6", "col-12"], [1, "card", "hover-effects-row", 3, "click"], [1, "card-body-padded"], [1, "table", "table-striped"], ["colspan", "2", "scope", "col"], [2, "width", "35px"], [4, "ngFor", "ngForOf"], ["scope", "row"], [1, "div-padded-1rem", "div-padded-left-2", "row"], [1, "card"], [3, "href"], [1, "div-padded-1rem", "div-padded-left-2", "div-padded-right-2", "row"], [1, "card", "col-lg-6", "col-12"], ["matSort", "", 1, "table", "table-striped"], ["colspan", "4", 1, "text-center"], [2, "width", "100px"], ["matSort", "", 1, "table", "table-striped", 3, "matSortChange"], ["mat-sort-header", "position", "scope", "col"], ["mat-sort-header", "name", "scope", "col"], ["mat-sort-header", "lapNumber", "scope", "col"], [1, "row"], ["class", "col-12", 3, "ngClass", 4, "ngFor", "ngForOf"], ["colspan", "8", 1, "text-center"], ["scope", "col"], ["scope", "col", 1, "w-20px"], [1, "col-12", 3, "ngClass"], [1, "card", "card-body-padded", "text-center", "bg-black", "m-1"], ["alt", "NO IMAGE", 1, "video-thumbnail", 3, "src"], [1, "text-white"], [1, "no-padding-td"], ["color", "primary", "mat-mini-fab", "", 3, "click", 4, "ngIf"], ["color", "primary", "mat-mini-fab", "", 3, "click"], ["label", "Practice 2", 3, "disabled"], ["label", "Practice 3", 3, "disabled"], ["label", "Sprint quali", 3, "disabled"], ["scope", "col", 1, "text-center"], [1, "font-weight-bold"], ["label", "Sprint", 3, "disabled"], [1, "col-12"], [3, "chart", "dataLabels", "grid", "series", "stroke", "title", "xaxis", "yaxis"], [1, "card", "col-12"], [2, "width", "150px"], ["scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], [1, "d-sm-none", "d-none", "d-lg-table-cell"], [1, "text-center"], [1, "card", "col-lg-12", "col-12"], [1, "icon-big", "text-center", "icon-warning"], ["src", "assets/img/tifosi/kimi-raikkonen-smile.gif", 1, "div-height-70vh"]],
+        consts: [[4, "ngIf"], [3, "selectedIndex", "selectedTabChange", "selectedIndexChange"], ["label", "Circuit"], ["matTabContent", ""], ["label", "Circuit winners", 3, "disabled"], ["label", "Practice 1", 3, "disabled"], ["label", "Practice 2", 3, "disabled", 4, "ngIf"], ["label", "Practice 3", 3, "disabled", 4, "ngIf"], ["label", "Sprint quali", 3, "disabled", 4, "ngIf"], ["label", "Sprint", 3, "disabled", 4, "ngIf"], ["label", "Qualifying", 3, "disabled"], ["label", "All laps", 3, "disabled"], [1, "black-footer", "text-center"], [1, "image"], ["target", "_blank", 3, "href"], [3, "src"], ["class", "div-padded-1rem row", 4, "ngIf"], ["class", "div-padded-1rem div-padded-left-2 row", 4, "ngIf"], [1, "div-padded-1rem", "row"], ["class", "col-lg-6 col-12", 4, "ngFor", "ngForOf"], [1, "col-lg-6", "col-12"], [1, "card", "hover-effects-row", 3, "click"], [1, "card-body-padded"], [1, "table", "table-striped"], ["colspan", "2", "scope", "col"], [2, "width", "35px"], [4, "ngFor", "ngForOf"], ["scope", "row"], [1, "div-padded-1rem", "div-padded-left-2", "row"], [1, "card"], [3, "href"], [1, "div-padded-1rem", "div-padded-left-2", "div-padded-right-2", "row"], [1, "card", "col-lg-6", "col-12"], ["matSort", "", 1, "table", "table-striped"], ["colspan", "4", 1, "text-center"], [2, "width", "100px"], ["matSort", "", 1, "table", "table-striped", 3, "matSortChange"], ["mat-sort-header", "position", "scope", "col"], ["mat-sort-header", "name", "scope", "col"], ["mat-sort-header", "lapNumber", "scope", "col"], [1, "row"], ["class", "col-12", 3, "ngClass", 4, "ngFor", "ngForOf"], ["colspan", "8", 1, "text-center"], ["scope", "col"], ["scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], ["scope", "col", 1, "w-20px"], [1, "col-12", 3, "ngClass"], [1, "card", "card-body-padded", "text-center", "bg-black", "m-1"], ["alt", "NO IMAGE", 1, "video-thumbnail", 3, "src"], [1, "text-white"], [1, "d-sm-none", "d-none", "d-lg-table-cell"], [1, "no-padding-td"], ["color", "primary", "mat-mini-fab", "", 3, "click", 4, "ngIf"], ["color", "primary", "mat-mini-fab", "", 3, "click"], ["label", "Practice 2", 3, "disabled"], ["label", "Practice 3", 3, "disabled"], ["label", "Sprint quali", 3, "disabled"], ["scope", "col", 1, "text-center"], [1, "font-weight-bold"], ["label", "Sprint", 3, "disabled"], [1, "col-12"], [3, "chart", "dataLabels", "grid", "series", "stroke", "title", "xaxis", "yaxis"], [1, "card", "col-12"], [2, "width", "150px"], [1, "text-center"], [1, "card", "col-lg-12", "col-12"], [1, "icon-big", "text-center", "icon-warning"], ["src", "assets/img/tifosi/kimi-raikkonen-smile.gif", 1, "div-height-70vh"]],
         template: function UpcomingRaceAnalysisComponent_Template(rf, ctx) {
           if (rf & 1) {
             core

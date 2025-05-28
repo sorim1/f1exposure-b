@@ -28,6 +28,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.atomic.AtomicReference;
@@ -298,7 +299,7 @@ public class ClientServiceImpl implements ClientService {
     public void setNavbarData() {
         countdownFooterData = new ArrayList<>();
         RaceData raceData = ergastService.getUpcomingRace(properties.getCurrentSeasonFuture());
-        if (raceData != null) {
+        if (raceData != null && howManyDaysAgo(raceData.getDate(), false)<4) {
             UpcomingRaceAnalysis upcomingRaceAnalysis = raceData.getUpcomingRaceAnalysis();
             if (upcomingRaceAnalysis.getFp1() != null) {
                 NavbarData navbarData = new NavbarData();
@@ -341,23 +342,31 @@ public class ClientServiceImpl implements ClientService {
                 countdownFooterData.add(navbarData);
             }
         }else {
+            log.info("navbarData else 1");
                 raceData = ergastService.getLatestAnalyzedRace();
-                long daysAgo = howManyDaysAgo(raceData.getDate());
+                long daysAgo = howManyDaysAgo(raceData.getDate(), true);
                 if (daysAgo < 3) {
+                    log.info("navbarData else 2");
                     NavbarData navbarData = new NavbarData();
                     Driver winner = raceData.getRaceAnalysis().getDriverData().stream()
                             .filter(driver -> driver.getPosition() == 1).findFirst().get();
+                    log.info("navbarData else 3: {}", winner.getLastName());
                     navbarData.setMessage(winner.getLastName() + " wins " + raceData.getRaceName().replace("Grand Prix", "GP"));
                     countdownFooterData.add(navbarData);
                 }
             }
         }
 
-    private long howManyDaysAgo(String input) {
+    private long howManyDaysAgo(String input, Boolean past) {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         LocalDate d1 = LocalDate.parse(input, dtf);
         LocalDate today = LocalDate.now();
-        return d1.datesUntil(today).count();
+        if(past){
+            return d1.datesUntil(today).count();
+        } else {
+            long days = ChronoUnit.DAYS.between(today, d1);
+            return days;
+        }
     }
 
     private void setNavbarDriver(String baseUrl, Driver driver) {
@@ -623,7 +632,6 @@ public class ClientServiceImpl implements ClientService {
             ex.printStackTrace();
         }
 
-        log.info("clientServiceInit: {} -{}", iframeLink, overlays);
     }
 
     private String getRandomImgur() {

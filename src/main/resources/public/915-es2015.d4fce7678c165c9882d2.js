@@ -48154,11 +48154,11 @@ function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_5_Template(rf, ct
     core/* ɵɵproperty */.Q6J("ngIf", ctx_r4.upcomingRaceAnalysis.basicRaces.length == 0);
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_7_div_0_div_2_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "div", 45);
-    core/* ɵɵelementStart */.TgZ(1, "div", 46);
+    core/* ɵɵelementStart */.TgZ(0, "div", 46);
+    core/* ɵɵelementStart */.TgZ(1, "div", 47);
     core/* ɵɵelementStart */.TgZ(2, "a", 14);
-    core/* ɵɵelement */._UZ(3, "img", 47);
-    core/* ɵɵelementStart */.TgZ(4, "p", 48);
+    core/* ɵɵelement */._UZ(3, "img", 48);
+    core/* ɵɵelementStart */.TgZ(4, "p", 49);
     core/* ɵɵtext */._uU(5);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -48177,7 +48177,7 @@ function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_7_div_0_div_2_Tem
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_7_div_0_tr_25_button_16_Template(rf, ctx) { if (rf & 1) {
     const _r35 = core/* ɵɵgetCurrentView */.EpF();
-    core/* ɵɵelementStart */.TgZ(0, "button", 51);
+    core/* ɵɵelementStart */.TgZ(0, "button", 53);
     core/* ɵɵlistener */.NdJ("click", function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_7_div_0_tr_25_button_16_Template_button_click_0_listener() { core/* ɵɵrestoreView */.CHM(_r35); const standing_r30 = core/* ɵɵnextContext */.oxw().$implicit; const ctx_r33 = core/* ɵɵnextContext */.oxw(5); return ctx_r33.openRadioDialog(standing_r30.radioData, ctx_r33.upcomingRaceAnalysis.fp1LivetimingUrl); });
     core/* ɵɵelementStart */.TgZ(1, "mat-icon");
     core/* ɵɵtext */._uU(2, "volume_up");
@@ -48192,23 +48192,23 @@ function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_7_div_0_tr_25_Tem
     core/* ɵɵelementStart */.TgZ(3, "td");
     core/* ɵɵtext */._uU(4);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(5, "td");
+    core/* ɵɵelementStart */.TgZ(5, "td", 50);
     core/* ɵɵtext */._uU(6);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(7, "td");
     core/* ɵɵtext */._uU(8);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(9, "td");
+    core/* ɵɵelementStart */.TgZ(9, "td", 50);
     core/* ɵɵtext */._uU(10);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(11, "td");
+    core/* ɵɵelementStart */.TgZ(11, "td", 50);
     core/* ɵɵtext */._uU(12);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(13, "td");
+    core/* ɵɵelementStart */.TgZ(13, "td", 50);
     core/* ɵɵtext */._uU(14);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(15, "td", 49);
-    core/* ɵɵtemplate */.YNc(16, UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_7_div_0_tr_25_button_16_Template, 3, 0, "button", 50);
+    core/* ɵɵelementStart */.TgZ(15, "td", 51);
+    core/* ɵɵtemplate */.YNc(16, UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_7_div_0_tr_25_button_16_Template, 3, 0, "button", 52);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
@@ -48249,22 +48249,22 @@ function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_7_div_0_Template(
     core/* ɵɵelementStart */.TgZ(11, "th", 43);
     core/* ɵɵtext */._uU(12, "Name");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(13, "th", 43);
+    core/* ɵɵelementStart */.TgZ(13, "th", 44);
     core/* ɵɵtext */._uU(14, "Team");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(15, "th", 37);
     core/* ɵɵtext */._uU(16, "Lap time");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(17, "th", 43);
+    core/* ɵɵelementStart */.TgZ(17, "th", 44);
     core/* ɵɵtext */._uU(18, "Gap to leader");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(19, "th", 43);
+    core/* ɵɵelementStart */.TgZ(19, "th", 44);
     core/* ɵɵtext */._uU(20, "Gap to previous");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(21, "th", 43);
+    core/* ɵɵelementStart */.TgZ(21, "th", 44);
     core/* ɵɵtext */._uU(22, "Lap count");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelement */._UZ(23, "th", 44);
+    core/* ɵɵelement */._UZ(23, "th", 45);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(24, "tbody");
@@ -48399,11 +48399,11 @@ function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_7_Template(rf, ct
     core/* ɵɵproperty */.Q6J("ngForOf", ctx_r5.upcomingRaceAnalysis.fp1Laps);
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_8_ng_template_1_div_0_div_2_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "div", 45);
-    core/* ɵɵelementStart */.TgZ(1, "div", 46);
+    core/* ɵɵelementStart */.TgZ(0, "div", 46);
+    core/* ɵɵelementStart */.TgZ(1, "div", 47);
     core/* ɵɵelementStart */.TgZ(2, "a", 14);
-    core/* ɵɵelement */._UZ(3, "img", 47);
-    core/* ɵɵelementStart */.TgZ(4, "p", 48);
+    core/* ɵɵelement */._UZ(3, "img", 48);
+    core/* ɵɵelementStart */.TgZ(4, "p", 49);
     core/* ɵɵtext */._uU(5);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -48422,7 +48422,7 @@ function UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_8_ng_template_1_div_0
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_8_ng_template_1_div_0_tr_25_button_16_Template(rf, ctx) { if (rf & 1) {
     const _r56 = core/* ɵɵgetCurrentView */.EpF();
-    core/* ɵɵelementStart */.TgZ(0, "button", 51);
+    core/* ɵɵelementStart */.TgZ(0, "button", 53);
     core/* ɵɵlistener */.NdJ("click", function UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_8_ng_template_1_div_0_tr_25_button_16_Template_button_click_0_listener() { core/* ɵɵrestoreView */.CHM(_r56); const standing_r51 = core/* ɵɵnextContext */.oxw().$implicit; const ctx_r54 = core/* ɵɵnextContext */.oxw(6); return ctx_r54.openRadioDialog(standing_r51.radioData, ctx_r54.upcomingRaceAnalysis.fp2LivetimingUrl); });
     core/* ɵɵelementStart */.TgZ(1, "mat-icon");
     core/* ɵɵtext */._uU(2, "volume_up");
@@ -48437,23 +48437,23 @@ function UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_8_ng_template_1_div_0
     core/* ɵɵelementStart */.TgZ(3, "td");
     core/* ɵɵtext */._uU(4);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(5, "td");
+    core/* ɵɵelementStart */.TgZ(5, "td", 50);
     core/* ɵɵtext */._uU(6);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(7, "td");
     core/* ɵɵtext */._uU(8);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(9, "td");
+    core/* ɵɵelementStart */.TgZ(9, "td", 50);
     core/* ɵɵtext */._uU(10);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(11, "td");
+    core/* ɵɵelementStart */.TgZ(11, "td", 50);
     core/* ɵɵtext */._uU(12);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(13, "td");
+    core/* ɵɵelementStart */.TgZ(13, "td", 50);
     core/* ɵɵtext */._uU(14);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(15, "td", 49);
-    core/* ɵɵtemplate */.YNc(16, UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_8_ng_template_1_div_0_tr_25_button_16_Template, 3, 0, "button", 50);
+    core/* ɵɵelementStart */.TgZ(15, "td", 51);
+    core/* ɵɵtemplate */.YNc(16, UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_8_ng_template_1_div_0_tr_25_button_16_Template, 3, 0, "button", 52);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
@@ -48496,22 +48496,22 @@ function UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_8_ng_template_1_div_0
     core/* ɵɵelementStart */.TgZ(11, "th", 43);
     core/* ɵɵtext */._uU(12, "Name");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(13, "th", 43);
+    core/* ɵɵelementStart */.TgZ(13, "th", 44);
     core/* ɵɵtext */._uU(14, "Team");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(15, "th", 37);
     core/* ɵɵtext */._uU(16, "Lap time");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(17, "th", 43);
+    core/* ɵɵelementStart */.TgZ(17, "th", 44);
     core/* ɵɵtext */._uU(18, "Gap to leader");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(19, "th", 43);
+    core/* ɵɵelementStart */.TgZ(19, "th", 44);
     core/* ɵɵtext */._uU(20, "Gap to previous");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(21, "th", 43);
+    core/* ɵɵelementStart */.TgZ(21, "th", 44);
     core/* ɵɵtext */._uU(22, "Lap count");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelement */._UZ(23, "th", 44);
+    core/* ɵɵelement */._UZ(23, "th", 45);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(24, "tbody");
@@ -48646,7 +48646,7 @@ function UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_8_ng_template_1_Templ
     core/* ɵɵproperty */.Q6J("ngForOf", ctx_r42.upcomingRaceAnalysis.fp2Laps);
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_8_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "mat-tab", 52);
+    core/* ɵɵelementStart */.TgZ(0, "mat-tab", 54);
     core/* ɵɵtemplate */.YNc(1, UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_8_ng_template_1_Template, 36, 3, "ng-template", 3);
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
@@ -48654,11 +48654,11 @@ function UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_8_Template(rf, ctx) {
     core/* ɵɵproperty */.Q6J("disabled", ctx_r6.upcomingRaceAnalysis.fp2 == null);
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_9_ng_template_1_div_0_div_2_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "div", 45);
-    core/* ɵɵelementStart */.TgZ(1, "div", 46);
+    core/* ɵɵelementStart */.TgZ(0, "div", 46);
+    core/* ɵɵelementStart */.TgZ(1, "div", 47);
     core/* ɵɵelementStart */.TgZ(2, "a", 14);
-    core/* ɵɵelement */._UZ(3, "img", 47);
-    core/* ɵɵelementStart */.TgZ(4, "p", 48);
+    core/* ɵɵelement */._UZ(3, "img", 48);
+    core/* ɵɵelementStart */.TgZ(4, "p", 49);
     core/* ɵɵtext */._uU(5);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -48677,7 +48677,7 @@ function UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_9_ng_template_1_div_0
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_9_ng_template_1_div_0_tr_25_button_16_Template(rf, ctx) { if (rf & 1) {
     const _r79 = core/* ɵɵgetCurrentView */.EpF();
-    core/* ɵɵelementStart */.TgZ(0, "button", 51);
+    core/* ɵɵelementStart */.TgZ(0, "button", 53);
     core/* ɵɵlistener */.NdJ("click", function UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_9_ng_template_1_div_0_tr_25_button_16_Template_button_click_0_listener() { core/* ɵɵrestoreView */.CHM(_r79); const standing_r74 = core/* ɵɵnextContext */.oxw().$implicit; const ctx_r77 = core/* ɵɵnextContext */.oxw(6); return ctx_r77.openRadioDialog(standing_r74.radioData, ctx_r77.upcomingRaceAnalysis.fp3LivetimingUrl); });
     core/* ɵɵelementStart */.TgZ(1, "mat-icon");
     core/* ɵɵtext */._uU(2, "volume_up");
@@ -48692,23 +48692,23 @@ function UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_9_ng_template_1_div_0
     core/* ɵɵelementStart */.TgZ(3, "td");
     core/* ɵɵtext */._uU(4);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(5, "td");
+    core/* ɵɵelementStart */.TgZ(5, "td", 50);
     core/* ɵɵtext */._uU(6);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(7, "td");
     core/* ɵɵtext */._uU(8);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(9, "td");
+    core/* ɵɵelementStart */.TgZ(9, "td", 50);
     core/* ɵɵtext */._uU(10);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(11, "td");
+    core/* ɵɵelementStart */.TgZ(11, "td", 50);
     core/* ɵɵtext */._uU(12);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(13, "td");
+    core/* ɵɵelementStart */.TgZ(13, "td", 50);
     core/* ɵɵtext */._uU(14);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(15, "td", 49);
-    core/* ɵɵtemplate */.YNc(16, UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_9_ng_template_1_div_0_tr_25_button_16_Template, 3, 0, "button", 50);
+    core/* ɵɵelementStart */.TgZ(15, "td", 51);
+    core/* ɵɵtemplate */.YNc(16, UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_9_ng_template_1_div_0_tr_25_button_16_Template, 3, 0, "button", 52);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
@@ -48751,22 +48751,22 @@ function UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_9_ng_template_1_div_0
     core/* ɵɵelementStart */.TgZ(11, "th", 43);
     core/* ɵɵtext */._uU(12, "Name");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(13, "th", 43);
+    core/* ɵɵelementStart */.TgZ(13, "th", 44);
     core/* ɵɵtext */._uU(14, "Team");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(15, "th", 37);
     core/* ɵɵtext */._uU(16, "Lap time");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(17, "th", 43);
+    core/* ɵɵelementStart */.TgZ(17, "th", 44);
     core/* ɵɵtext */._uU(18, "Gap to leader");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(19, "th", 43);
+    core/* ɵɵelementStart */.TgZ(19, "th", 44);
     core/* ɵɵtext */._uU(20, "Gap to previous");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(21, "th", 43);
+    core/* ɵɵelementStart */.TgZ(21, "th", 44);
     core/* ɵɵtext */._uU(22, "Lap count");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelement */._UZ(23, "th", 44);
+    core/* ɵɵelement */._UZ(23, "th", 45);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(24, "tbody");
@@ -48901,7 +48901,7 @@ function UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_9_ng_template_1_Templ
     core/* ɵɵproperty */.Q6J("ngForOf", ctx_r65.upcomingRaceAnalysis.fp3Laps);
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_9_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "mat-tab", 53);
+    core/* ɵɵelementStart */.TgZ(0, "mat-tab", 55);
     core/* ɵɵtemplate */.YNc(1, UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_9_ng_template_1_Template, 36, 3, "ng-template", 3);
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
@@ -48909,11 +48909,11 @@ function UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_9_Template(rf, ctx) {
     core/* ɵɵproperty */.Q6J("disabled", ctx_r7.upcomingRaceAnalysis.fp3 == null);
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_10_ng_template_1_div_0_div_2_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "div", 45);
-    core/* ɵɵelementStart */.TgZ(1, "div", 46);
+    core/* ɵɵelementStart */.TgZ(0, "div", 46);
+    core/* ɵɵelementStart */.TgZ(1, "div", 47);
     core/* ɵɵelementStart */.TgZ(2, "a", 14);
-    core/* ɵɵelement */._UZ(3, "img", 47);
-    core/* ɵɵelementStart */.TgZ(4, "p", 48);
+    core/* ɵɵelement */._UZ(3, "img", 48);
+    core/* ɵɵelementStart */.TgZ(4, "p", 49);
     core/* ɵɵtext */._uU(5);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -48932,7 +48932,7 @@ function UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_10_ng_template_1_div_
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_10_ng_template_1_div_0_tr_25_div_8_div_1_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div");
-    core/* ɵɵelementStart */.TgZ(1, "span", 56);
+    core/* ɵɵelementStart */.TgZ(1, "span", 58);
     core/* ɵɵtext */._uU(2);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵtext */._uU(3);
@@ -49027,7 +49027,7 @@ function UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_10_ng_template_1_div_
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_10_ng_template_1_div_0_tr_25_button_18_Template(rf, ctx) { if (rf & 1) {
     const _r118 = core/* ɵɵgetCurrentView */.EpF();
-    core/* ɵɵelementStart */.TgZ(0, "button", 51);
+    core/* ɵɵelementStart */.TgZ(0, "button", 53);
     core/* ɵɵlistener */.NdJ("click", function UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_10_ng_template_1_div_0_tr_25_button_18_Template_button_click_0_listener() { core/* ɵɵrestoreView */.CHM(_r118); const standing_r97 = core/* ɵɵnextContext */.oxw().$implicit; const ctx_r116 = core/* ɵɵnextContext */.oxw(6); return ctx_r116.openRadioDialog(standing_r97.radioData, ctx_r116.upcomingRaceAnalysis.sprintQualiLivetimingUrl); });
     core/* ɵɵelementStart */.TgZ(1, "mat-icon");
     core/* ɵɵtext */._uU(2, "volume_up");
@@ -49042,25 +49042,25 @@ function UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_10_ng_template_1_div_
     core/* ɵɵelementStart */.TgZ(3, "td");
     core/* ɵɵtext */._uU(4);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(5, "td");
+    core/* ɵɵelementStart */.TgZ(5, "td", 50);
     core/* ɵɵtext */._uU(6);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(7, "td");
     core/* ɵɵtemplate */.YNc(8, UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_10_ng_template_1_div_0_tr_25_div_8_Template, 3, 2, "div", 26);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(9, "td");
+    core/* ɵɵelementStart */.TgZ(9, "td", 50);
     core/* ɵɵtext */._uU(10);
     core/* ɵɵtemplate */.YNc(11, UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_10_ng_template_1_div_0_tr_25_div_11_Template, 3, 2, "div", 26);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(12, "td");
+    core/* ɵɵelementStart */.TgZ(12, "td", 50);
     core/* ɵɵtext */._uU(13);
     core/* ɵɵtemplate */.YNc(14, UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_10_ng_template_1_div_0_tr_25_div_14_Template, 3, 2, "div", 26);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(15, "td");
+    core/* ɵɵelementStart */.TgZ(15, "td", 50);
     core/* ɵɵtext */._uU(16);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(17, "td", 49);
-    core/* ɵɵtemplate */.YNc(18, UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_10_ng_template_1_div_0_tr_25_button_18_Template, 3, 0, "button", 50);
+    core/* ɵɵelementStart */.TgZ(17, "td", 51);
+    core/* ɵɵtemplate */.YNc(18, UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_10_ng_template_1_div_0_tr_25_button_18_Template, 3, 0, "button", 52);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
@@ -49102,25 +49102,25 @@ function UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_10_ng_template_1_div_
     core/* ɵɵelementStart */.TgZ(9, "th", 37);
     core/* ɵɵtext */._uU(10, "#");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(11, "th", 55);
+    core/* ɵɵelementStart */.TgZ(11, "th", 57);
     core/* ɵɵtext */._uU(12, "Driver");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(13, "th", 43);
+    core/* ɵɵelementStart */.TgZ(13, "th", 44);
     core/* ɵɵtext */._uU(14, "Team");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(15, "th", 43);
     core/* ɵɵtext */._uU(16, "Lap time");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(17, "th", 43);
+    core/* ɵɵelementStart */.TgZ(17, "th", 44);
     core/* ɵɵtext */._uU(18, "Gap to leader");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(19, "th", 43);
+    core/* ɵɵelementStart */.TgZ(19, "th", 44);
     core/* ɵɵtext */._uU(20, "Gap to previous");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(21, "th", 43);
+    core/* ɵɵelementStart */.TgZ(21, "th", 44);
     core/* ɵɵtext */._uU(22, "Lap count");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelement */._UZ(23, "th", 44);
+    core/* ɵɵelement */._UZ(23, "th", 45);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(24, "tbody");
@@ -49255,7 +49255,7 @@ function UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_10_ng_template_1_Temp
     core/* ɵɵproperty */.Q6J("ngForOf", ctx_r88.upcomingRaceAnalysis.sprintQualiLaps);
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_10_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "mat-tab", 54);
+    core/* ɵɵelementStart */.TgZ(0, "mat-tab", 56);
     core/* ɵɵtemplate */.YNc(1, UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_10_ng_template_1_Template, 36, 3, "ng-template", 3);
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
@@ -49263,11 +49263,11 @@ function UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_10_Template(rf, ctx) 
     core/* ɵɵproperty */.Q6J("disabled", ctx_r8.upcomingRaceAnalysis.sprintQuali == null);
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_11_ng_template_1_div_0_div_2_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "div", 45);
-    core/* ɵɵelementStart */.TgZ(1, "div", 46);
+    core/* ɵɵelementStart */.TgZ(0, "div", 46);
+    core/* ɵɵelementStart */.TgZ(1, "div", 47);
     core/* ɵɵelementStart */.TgZ(2, "a", 14);
-    core/* ɵɵelement */._UZ(3, "img", 47);
-    core/* ɵɵelementStart */.TgZ(4, "p", 48);
+    core/* ɵɵelement */._UZ(3, "img", 48);
+    core/* ɵɵelementStart */.TgZ(4, "p", 49);
     core/* ɵɵtext */._uU(5);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -49286,7 +49286,7 @@ function UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_11_ng_template_1_div_
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_11_ng_template_1_div_0_tr_20_button_12_Template(rf, ctx) { if (rf & 1) {
     const _r138 = core/* ɵɵgetCurrentView */.EpF();
-    core/* ɵɵelementStart */.TgZ(0, "button", 51);
+    core/* ɵɵelementStart */.TgZ(0, "button", 53);
     core/* ɵɵlistener */.NdJ("click", function UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_11_ng_template_1_div_0_tr_20_button_12_Template_button_click_0_listener() { core/* ɵɵrestoreView */.CHM(_r138); const standing_r133 = core/* ɵɵnextContext */.oxw().$implicit; const ctx_r136 = core/* ɵɵnextContext */.oxw(6); return ctx_r136.openRadioDialog(standing_r133.radioData, ctx_r136.upcomingRaceAnalysis.sprintLivetimingUrl); });
     core/* ɵɵelementStart */.TgZ(1, "mat-icon");
     core/* ɵɵtext */._uU(2, "volume_up");
@@ -49301,17 +49301,17 @@ function UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_11_ng_template_1_div_
     core/* ɵɵelementStart */.TgZ(3, "td");
     core/* ɵɵtext */._uU(4);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(5, "td", 63);
+    core/* ɵɵelementStart */.TgZ(5, "td", 50);
     core/* ɵɵtext */._uU(6);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(7, "td");
+    core/* ɵɵelementStart */.TgZ(7, "td", 50);
     core/* ɵɵtext */._uU(8);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(9, "td");
+    core/* ɵɵelementStart */.TgZ(9, "td", 50);
     core/* ɵɵtext */._uU(10);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(11, "td", 49);
-    core/* ɵɵtemplate */.YNc(12, UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_11_ng_template_1_div_0_tr_20_button_12_Template, 3, 0, "button", 50);
+    core/* ɵɵelementStart */.TgZ(11, "td", 51);
+    core/* ɵɵtemplate */.YNc(12, UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_11_ng_template_1_div_0_tr_20_button_12_Template, 3, 0, "button", 52);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(13, "td", 64);
     core/* ɵɵtext */._uU(14);
@@ -49351,17 +49351,17 @@ function UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_11_ng_template_1_div_
     core/* ɵɵelementStart */.TgZ(8, "th", 43);
     core/* ɵɵtext */._uU(9, "Name");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(10, "th", 62);
+    core/* ɵɵelementStart */.TgZ(10, "th", 44);
     core/* ɵɵtext */._uU(11, "Team");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(12, "th", 43);
+    core/* ɵɵelementStart */.TgZ(12, "th", 44);
     core/* ɵɵtext */._uU(13, "Gap to leader");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(14, "th", 43);
+    core/* ɵɵelementStart */.TgZ(14, "th", 44);
     core/* ɵɵtext */._uU(15, "Gap to previous");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelement */._UZ(16, "th", 44);
-    core/* ɵɵelementStart */.TgZ(17, "th", 55);
+    core/* ɵɵelement */._UZ(16, "th", 45);
+    core/* ɵɵelementStart */.TgZ(17, "th", 57);
     core/* ɵɵtext */._uU(18, "Tyre");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -49403,17 +49403,17 @@ function UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_11_ng_template_1_tr_2
 function UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_11_ng_template_1_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵtemplate */.YNc(0, UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_11_ng_template_1_div_0_Template, 21, 2, "div", 0);
     core/* ɵɵelementStart */.TgZ(1, "div", 40);
-    core/* ɵɵelementStart */.TgZ(2, "div", 58);
+    core/* ɵɵelementStart */.TgZ(2, "div", 60);
     core/* ɵɵelementStart */.TgZ(3, "div", 29);
     core/* ɵɵelementStart */.TgZ(4, "div", 22);
-    core/* ɵɵelement */._UZ(5, "apx-chart", 59);
+    core/* ɵɵelement */._UZ(5, "apx-chart", 61);
     core/* ɵɵelement */._UZ(6, "br");
     core/* ɵɵelement */._UZ(7, "br");
     core/* ɵɵelement */._UZ(8, "br");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(9, "div", 60);
+    core/* ɵɵelementStart */.TgZ(9, "div", 62);
     core/* ɵɵelementStart */.TgZ(10, "div", 22);
     core/* ɵɵelementStart */.TgZ(11, "table", 33);
     core/* ɵɵelementStart */.TgZ(12, "thead");
@@ -49426,7 +49426,7 @@ function UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_11_ng_template_1_Temp
     core/* ɵɵelementStart */.TgZ(17, "th", 25);
     core/* ɵɵtext */._uU(18, "#");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(19, "th", 61);
+    core/* ɵɵelementStart */.TgZ(19, "th", 63);
     core/* ɵɵtext */._uU(20, "Name");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(21, "th");
@@ -49450,7 +49450,7 @@ function UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_11_ng_template_1_Temp
     core/* ɵɵproperty */.Q6J("ngForOf", ctx_r125.upcomingRaceAnalysis.topSpeeds.sprint);
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_11_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "mat-tab", 57);
+    core/* ɵɵelementStart */.TgZ(0, "mat-tab", 59);
     core/* ɵɵtemplate */.YNc(1, UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_11_ng_template_1_Template, 25, 10, "ng-template", 3);
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
@@ -49458,11 +49458,11 @@ function UpcomingRaceAnalysisComponent_div_0_div_1_mat_tab_11_Template(rf, ctx) 
     core/* ɵɵproperty */.Q6J("disabled", ctx_r9.upcomingRaceAnalysis.sprint == null);
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_div_2_Template(rf, ctx) { if (rf & 1) {
-    core/* ɵɵelementStart */.TgZ(0, "div", 45);
-    core/* ɵɵelementStart */.TgZ(1, "div", 46);
+    core/* ɵɵelementStart */.TgZ(0, "div", 46);
+    core/* ɵɵelementStart */.TgZ(1, "div", 47);
     core/* ɵɵelementStart */.TgZ(2, "a", 14);
-    core/* ɵɵelement */._UZ(3, "img", 47);
-    core/* ɵɵelementStart */.TgZ(4, "p", 48);
+    core/* ɵɵelement */._UZ(3, "img", 48);
+    core/* ɵɵelementStart */.TgZ(4, "p", 49);
     core/* ɵɵtext */._uU(5);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
@@ -49481,7 +49481,7 @@ function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_div_2_Te
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_25_div_8_div_1_Template(rf, ctx) { if (rf & 1) {
     core/* ɵɵelementStart */.TgZ(0, "div");
-    core/* ɵɵelementStart */.TgZ(1, "span", 56);
+    core/* ɵɵelementStart */.TgZ(1, "span", 58);
     core/* ɵɵtext */._uU(2);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵtext */._uU(3);
@@ -49576,7 +49576,7 @@ function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_25_di
 } }
 function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_25_button_18_Template(rf, ctx) { if (rf & 1) {
     const _r170 = core/* ɵɵgetCurrentView */.EpF();
-    core/* ɵɵelementStart */.TgZ(0, "button", 51);
+    core/* ɵɵelementStart */.TgZ(0, "button", 53);
     core/* ɵɵlistener */.NdJ("click", function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_25_button_18_Template_button_click_0_listener() { core/* ɵɵrestoreView */.CHM(_r170); const standing_r149 = core/* ɵɵnextContext */.oxw().$implicit; const ctx_r168 = core/* ɵɵnextContext */.oxw(5); return ctx_r168.openRadioDialog(standing_r149.radioData, ctx_r168.upcomingRaceAnalysis.qualiLivetimingUrl); });
     core/* ɵɵelementStart */.TgZ(1, "mat-icon");
     core/* ɵɵtext */._uU(2, "volume_up");
@@ -49591,25 +49591,25 @@ function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_25_Te
     core/* ɵɵelementStart */.TgZ(3, "td");
     core/* ɵɵtext */._uU(4);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(5, "td");
+    core/* ɵɵelementStart */.TgZ(5, "td", 50);
     core/* ɵɵtext */._uU(6);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(7, "td");
     core/* ɵɵtemplate */.YNc(8, UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_25_div_8_Template, 3, 2, "div", 26);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(9, "td");
+    core/* ɵɵelementStart */.TgZ(9, "td", 50);
     core/* ɵɵtext */._uU(10);
     core/* ɵɵtemplate */.YNc(11, UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_25_div_11_Template, 3, 2, "div", 26);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(12, "td");
+    core/* ɵɵelementStart */.TgZ(12, "td", 50);
     core/* ɵɵtext */._uU(13);
     core/* ɵɵtemplate */.YNc(14, UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_25_div_14_Template, 3, 2, "div", 26);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(15, "td");
+    core/* ɵɵelementStart */.TgZ(15, "td", 50);
     core/* ɵɵtext */._uU(16);
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(17, "td", 49);
-    core/* ɵɵtemplate */.YNc(18, UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_25_button_18_Template, 3, 0, "button", 50);
+    core/* ɵɵelementStart */.TgZ(17, "td", 51);
+    core/* ɵɵtemplate */.YNc(18, UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_tr_25_button_18_Template, 3, 0, "button", 52);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
 } if (rf & 2) {
@@ -49654,22 +49654,22 @@ function UpcomingRaceAnalysisComponent_div_0_div_1_ng_template_13_div_0_Template
     core/* ɵɵelementStart */.TgZ(11, "th", 43);
     core/* ɵɵtext */._uU(12, "Driver");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(13, "th", 43);
+    core/* ɵɵelementStart */.TgZ(13, "th", 44);
     core/* ɵɵtext */._uU(14, "Team");
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(15, "th", 37);
     core/* ɵɵtext */._uU(16, "Lap time");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(17, "th", 43);
+    core/* ɵɵelementStart */.TgZ(17, "th", 44);
     core/* ɵɵtext */._uU(18, "Gap to leader");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(19, "th", 43);
+    core/* ɵɵelementStart */.TgZ(19, "th", 44);
     core/* ɵɵtext */._uU(20, "Gap to previous");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelementStart */.TgZ(21, "th", 43);
+    core/* ɵɵelementStart */.TgZ(21, "th", 44);
     core/* ɵɵtext */._uU(22, "Lap count");
     core/* ɵɵelementEnd */.qZA();
-    core/* ɵɵelement */._UZ(23, "th", 44);
+    core/* ɵɵelement */._UZ(23, "th", 45);
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementEnd */.qZA();
     core/* ɵɵelementStart */.TgZ(24, "tbody");
@@ -50190,8 +50190,9 @@ class UpcomingRaceAnalysisComponent {
     getTyresString(tyres) {
         let response = '';
         tyres.forEach((tyre) => {
-            response = response + tyre.Compound + '';
+            response = response + tyre.Compound + ' - ';
         });
+        response = response.slice(0, -3);
         return response;
     }
     getTyresClass(tyres) {
@@ -50325,7 +50326,7 @@ UpcomingRaceAnalysisComponent.ɵcmp = /*@__PURE__*/ core/* ɵɵdefineComponent *
     } if (rf & 2) {
         let _t;
         core/* ɵɵqueryRefresh */.iGM(_t = core/* ɵɵloadQuery */.CRH()) && (ctx.chart = _t.first);
-    } }, decls: 1, vars: 1, consts: [[4, "ngIf"], [3, "selectedIndex", "selectedTabChange", "selectedIndexChange"], ["label", "Circuit"], ["matTabContent", ""], ["label", "Circuit winners", 3, "disabled"], ["label", "Practice 1", 3, "disabled"], ["label", "Practice 2", 3, "disabled", 4, "ngIf"], ["label", "Practice 3", 3, "disabled", 4, "ngIf"], ["label", "Sprint quali", 3, "disabled", 4, "ngIf"], ["label", "Sprint", 3, "disabled", 4, "ngIf"], ["label", "Qualifying", 3, "disabled"], ["label", "All laps", 3, "disabled"], [1, "black-footer", "text-center"], [1, "image"], ["target", "_blank", 3, "href"], [3, "src"], ["class", "div-padded-1rem row", 4, "ngIf"], ["class", "div-padded-1rem div-padded-left-2 row", 4, "ngIf"], [1, "div-padded-1rem", "row"], ["class", "col-lg-6 col-12", 4, "ngFor", "ngForOf"], [1, "col-lg-6", "col-12"], [1, "card", "hover-effects-row", 3, "click"], [1, "card-body-padded"], [1, "table", "table-striped"], ["colspan", "2", "scope", "col"], [2, "width", "35px"], [4, "ngFor", "ngForOf"], ["scope", "row"], [1, "div-padded-1rem", "div-padded-left-2", "row"], [1, "card"], [3, "href"], [1, "div-padded-1rem", "div-padded-left-2", "div-padded-right-2", "row"], [1, "card", "col-lg-6", "col-12"], ["matSort", "", 1, "table", "table-striped"], ["colspan", "4", 1, "text-center"], [2, "width", "100px"], ["matSort", "", 1, "table", "table-striped", 3, "matSortChange"], ["mat-sort-header", "position", "scope", "col"], ["mat-sort-header", "name", "scope", "col"], ["mat-sort-header", "lapNumber", "scope", "col"], [1, "row"], ["class", "col-12", 3, "ngClass", 4, "ngFor", "ngForOf"], ["colspan", "8", 1, "text-center"], ["scope", "col"], ["scope", "col", 1, "w-20px"], [1, "col-12", 3, "ngClass"], [1, "card", "card-body-padded", "text-center", "bg-black", "m-1"], ["alt", "NO IMAGE", 1, "video-thumbnail", 3, "src"], [1, "text-white"], [1, "no-padding-td"], ["color", "primary", "mat-mini-fab", "", 3, "click", 4, "ngIf"], ["color", "primary", "mat-mini-fab", "", 3, "click"], ["label", "Practice 2", 3, "disabled"], ["label", "Practice 3", 3, "disabled"], ["label", "Sprint quali", 3, "disabled"], ["scope", "col", 1, "text-center"], [1, "font-weight-bold"], ["label", "Sprint", 3, "disabled"], [1, "col-12"], [3, "chart", "dataLabels", "grid", "series", "stroke", "title", "xaxis", "yaxis"], [1, "card", "col-12"], [2, "width", "150px"], ["scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], [1, "d-sm-none", "d-none", "d-lg-table-cell"], [1, "text-center"], [1, "card", "col-lg-12", "col-12"], [1, "icon-big", "text-center", "icon-warning"], ["src", "assets/img/tifosi/kimi-raikkonen-smile.gif", 1, "div-height-70vh"]], template: function UpcomingRaceAnalysisComponent_Template(rf, ctx) { if (rf & 1) {
+    } }, decls: 1, vars: 1, consts: [[4, "ngIf"], [3, "selectedIndex", "selectedTabChange", "selectedIndexChange"], ["label", "Circuit"], ["matTabContent", ""], ["label", "Circuit winners", 3, "disabled"], ["label", "Practice 1", 3, "disabled"], ["label", "Practice 2", 3, "disabled", 4, "ngIf"], ["label", "Practice 3", 3, "disabled", 4, "ngIf"], ["label", "Sprint quali", 3, "disabled", 4, "ngIf"], ["label", "Sprint", 3, "disabled", 4, "ngIf"], ["label", "Qualifying", 3, "disabled"], ["label", "All laps", 3, "disabled"], [1, "black-footer", "text-center"], [1, "image"], ["target", "_blank", 3, "href"], [3, "src"], ["class", "div-padded-1rem row", 4, "ngIf"], ["class", "div-padded-1rem div-padded-left-2 row", 4, "ngIf"], [1, "div-padded-1rem", "row"], ["class", "col-lg-6 col-12", 4, "ngFor", "ngForOf"], [1, "col-lg-6", "col-12"], [1, "card", "hover-effects-row", 3, "click"], [1, "card-body-padded"], [1, "table", "table-striped"], ["colspan", "2", "scope", "col"], [2, "width", "35px"], [4, "ngFor", "ngForOf"], ["scope", "row"], [1, "div-padded-1rem", "div-padded-left-2", "row"], [1, "card"], [3, "href"], [1, "div-padded-1rem", "div-padded-left-2", "div-padded-right-2", "row"], [1, "card", "col-lg-6", "col-12"], ["matSort", "", 1, "table", "table-striped"], ["colspan", "4", 1, "text-center"], [2, "width", "100px"], ["matSort", "", 1, "table", "table-striped", 3, "matSortChange"], ["mat-sort-header", "position", "scope", "col"], ["mat-sort-header", "name", "scope", "col"], ["mat-sort-header", "lapNumber", "scope", "col"], [1, "row"], ["class", "col-12", 3, "ngClass", 4, "ngFor", "ngForOf"], ["colspan", "8", 1, "text-center"], ["scope", "col"], ["scope", "col", 1, "d-sm-none", "d-none", "d-lg-table-cell"], ["scope", "col", 1, "w-20px"], [1, "col-12", 3, "ngClass"], [1, "card", "card-body-padded", "text-center", "bg-black", "m-1"], ["alt", "NO IMAGE", 1, "video-thumbnail", 3, "src"], [1, "text-white"], [1, "d-sm-none", "d-none", "d-lg-table-cell"], [1, "no-padding-td"], ["color", "primary", "mat-mini-fab", "", 3, "click", 4, "ngIf"], ["color", "primary", "mat-mini-fab", "", 3, "click"], ["label", "Practice 2", 3, "disabled"], ["label", "Practice 3", 3, "disabled"], ["label", "Sprint quali", 3, "disabled"], ["scope", "col", 1, "text-center"], [1, "font-weight-bold"], ["label", "Sprint", 3, "disabled"], [1, "col-12"], [3, "chart", "dataLabels", "grid", "series", "stroke", "title", "xaxis", "yaxis"], [1, "card", "col-12"], [2, "width", "150px"], [1, "text-center"], [1, "card", "col-lg-12", "col-12"], [1, "icon-big", "text-center", "icon-warning"], ["src", "assets/img/tifosi/kimi-raikkonen-smile.gif", 1, "div-height-70vh"]], template: function UpcomingRaceAnalysisComponent_Template(rf, ctx) { if (rf & 1) {
         core/* ɵɵtemplate */.YNc(0, UpcomingRaceAnalysisComponent_div_0_Template, 3, 2, "div", 0);
     } if (rf & 2) {
         core/* ɵɵproperty */.Q6J("ngIf", ctx.upcomingRaceAnalysis !== undefined);
