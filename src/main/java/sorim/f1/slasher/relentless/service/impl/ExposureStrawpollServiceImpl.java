@@ -171,6 +171,10 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
         log.info("updateCurrentExposureRound2: " + currentExposureRound);
         try {
             round = ergastService.getCurrentDriverStandings().getMrData().getStandingsTable().getStandingsLists().get(0).getRound();
+
+            Integer previousRound = getPreviousExposureRoundFromDb();
+            log.info("round-A: " + round);
+            log.info("round-B: " + previousRound + 1);
             if (currentExposureRound == null || currentExposureRound <= round) {
                 currentExposureRound = round;
             } else {
@@ -181,12 +185,24 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
             log.info("updateCurrentExposureRound3: " + currentExposureRound + " - " + round);
             AppProperty exposureProperty = AppProperty.builder().name("exposureRound").value(currentExposureRound.toString()).build();
             propertiesRepository.save(exposureProperty);
+            Integer dbRound = getLatestExposureRound();
+            log.info("round-C (dbRound): " + dbRound + 1);
         } catch (Exception e) {
             log.error("updateCurrentExposureRound error", e);
             AppProperty app = propertiesRepository.findDistinctFirstByName("exposureRound");
             if (app != null) {
-                currentExposureRound = Integer.parseInt(app.getValue()) + 0;
+                currentExposureRound = Integer.parseInt(app.getValue());
             }
+        }
+    }
+
+    private Integer getPreviousExposureRoundFromDb() {
+        try {
+            String year = String.valueOf(properties.getCurrentSeasonFuture());
+            AppProperty exposureProperty = propertiesRepository.findDistinctFirstByName(year + "_exposureRound");
+            return Integer.valueOf(exposureProperty.getValue());
+        } catch (Exception e) {
+            return 0;
         }
     }
 
@@ -343,10 +359,24 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
                     .id("EXPOSURE_" + currentExposureRound + "_" + strawpollId)
                     .json(fullExposure).build();
             jsonRepository.save(fullExposureJson);
+            String year = String.valueOf(properties.getCurrentSeasonFuture());
+            AppProperty exposureProperty = AppProperty.builder().name(year + "_exposureRound").value(currentExposureRound.toString()).build();
+            propertiesRepository.save(exposureProperty);
             log.info("backupExposureToDatabase end");
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    private Integer getLatestExposureRound() {
+        try {
+            String year = String.valueOf(properties.getCurrentSeasonFuture());
+            AppProperty property = propertiesRepository.findDistinctFirstByName(year + "_exposureRound");
+            return Integer.valueOf(property.getValue());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return 0;
     }
 
     private List<ExposureChampionshipStanding> getExposureStandings() {
@@ -432,9 +462,9 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
                     @SneakyThrows
                     @Override
                     public void run() {
-                        if(!exposureReady){
-                        log.info(" - PROŠLO JE 70 minuta (4200000ms) UTRKE: ");
-                        checkRaceStatusUsingOpenF1Service();
+                        if (!exposureReady) {
+                            log.info(" - PROŠLO JE 70 minuta (4200000ms) UTRKE: ");
+                            checkRaceStatusUsingOpenF1Service();
                         }
                     }
 
@@ -446,10 +476,10 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
     private void checkRaceStatusUsingOpenF1Service() {
         List<RaceControlDto> response = new ArrayList<>();
         Integer triggerLap = getLapCount(properties.getCurrentSeasonFuture(), currentExposureRound);
-        if(triggerLap!=null){
-            triggerLap= triggerLap-10;
+        if (triggerLap != null) {
+            triggerLap = triggerLap - 10;
         }
-        if(!exposureNow){
+        if (!exposureNow) {
             exposureReady = true;
         }
         int counter = 0;
@@ -457,9 +487,9 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
             do {
                 log.info("POZIVAM getTodayRaceControlData: {}", counter++);
                 try {
-                response = openF1Service.getTodayRaceControlData("CHEQUERED", triggerLap);
+                    response = openF1Service.getTodayRaceControlData("CHEQUERED", triggerLap);
                 } catch (Exception ex1) {
-                    if(!ex1.getMessage().contains("Traceback")){
+                    if (!ex1.getMessage().contains("Traceback")) {
                         log.warn("'Traceback error': {}", ex1.getMessage());
                         throw ex1;
                     }
@@ -468,7 +498,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
                 log.info("response.isEmpty(): {}, exposureNow: {}", response.isEmpty(), exposureNow);
             } while (response.isEmpty() && counter < 60 && !exposureNow);
             log.info("CHEQUERED flag ili final 5 laps found found; response size: {}", response.size());
-            if(!response.isEmpty() && !exposureNow){
+            if (!response.isEmpty() && !exposureNow) {
                 log.info("SADA SAM AUTOMATSKI STARTAO POLL");
                 setExposureNow(true);
                 StrawpollPoll poll = strawpollService.postStrawpoll();
@@ -477,10 +507,10 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
                 log.info("SADA BI AUTOMATSKI STARTAO POLL ALI NEĆU JER NESTO NIJE OK, exposureNow=" + exposureNow);
             }
         } catch (Exception ex2) {
-            if(!exposureNow){
+            if (!exposureNow) {
                 exposureReady = true;
             }
-           log.error("error2 checkRaceStatusUsingOpenF1Service ", ex2);
+            log.error("error2 checkRaceStatusUsingOpenF1Service ", ex2);
         }
     }
 
@@ -488,7 +518,7 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
     public Integer getLapCount(Integer year, Integer round) {
         try {
             List<LinkedHashMap<String, Object>> listOfTotalLaps = (List<LinkedHashMap<String, Object>>) jsonRepository2.findAllById(year + "_RACE_LAPS").getJson();
-            return (Integer) listOfTotalLaps.get(round-1).get("laps");
+            return (Integer) listOfTotalLaps.get(round - 1).get("laps");
         } catch (Exception e) {
             log.error("getLapCount error:", e);
             e.printStackTrace();
@@ -501,11 +531,11 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
         ZonedDateTime gmtZoned = ZonedDateTime.now(ZoneId.of("Europe/London"));
         LocalDateTime gmtDateTime = gmtZoned.toLocalDateTime();
         F1Calendar f1calendar = calendarRepository.findFirstByRaceAfterOrderByRace(gmtDateTime);
-         if (f1calendar != null) {
-             log.info("timeToExposurePollWindow: {}", f1calendar.getRaceName());
-             Duration nextRaceTimeTo = Duration.between(gmtDateTime, f1calendar.getRace());
+        if (f1calendar != null) {
+            log.info("timeToExposurePollWindow: {}", f1calendar.getRaceName());
+            Duration nextRaceTimeTo = Duration.between(gmtDateTime, f1calendar.getRace());
             log.info("days1: {}", nextRaceTimeTo.toDays());
-            if(nextRaceTimeTo.toDays()<3){
+            if (nextRaceTimeTo.toDays() < 3) {
                 log.info("minutes1: {}", nextRaceTimeTo.toMinutes());
                 return nextRaceTimeTo.toMinutes();
             }
@@ -569,41 +599,41 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
     private Boolean updateExposureDataFromStrawpoll(StrawpollModelThree strawpoll) {
         List<ExposureChampionship> list = new ArrayList<>();
         Integer voters = strawpoll.getPoll().getPoll_meta().getParticipant_count();
-            Integer totalVotes = strawpoll.getPoll().getPoll_meta().getVote_count();
-            if (totalVotes > latestVoteCount) {
-                reloadDelay = 20000;
+        Integer totalVotes = strawpoll.getPoll().getPoll_meta().getVote_count();
+        if (totalVotes > latestVoteCount) {
+            reloadDelay = 20000;
+        } else {
+            reloadDelay = reloadDelay + 20000;
+            log.info("reloadDelay increased:" + reloadDelay);
+        }
+        latestVoteCount = totalVotes;
+        strawpoll.getPoll().getPoll_options().forEach(pollAnswer -> {
+            String code = getDriverCodeFromName(pollAnswer.getValue());
+            SeasonRoundDriverId exposedId = SeasonRoundDriverId.builder()
+                    .season(properties.getCurrentSeasonFuture())
+                    .round(currentExposureRound)
+                    .driver(code).build();
+            BigDecimal exposure = null;
+            if (voters > 0) {
+                exposure = new BigDecimal(pollAnswer.getVote_count() * 100).divide(new BigDecimal(voters), 2, RoundingMode.HALF_UP);
             } else {
-                reloadDelay = reloadDelay + 20000;
-                log.info("reloadDelay increased:" + reloadDelay);
+                exposure = new BigDecimal(0);
             }
-            latestVoteCount = totalVotes;
-            strawpoll.getPoll().getPoll_options().forEach(pollAnswer -> {
-                String code = getDriverCodeFromName(pollAnswer.getValue());
-                SeasonRoundDriverId exposedId = SeasonRoundDriverId.builder()
-                        .season(properties.getCurrentSeasonFuture())
-                        .round(currentExposureRound)
-                        .driver(code).build();
-                BigDecimal exposure = null;
-                if(voters>0) {
-                    exposure = new BigDecimal(pollAnswer.getVote_count() * 100).divide(new BigDecimal(voters), 2, RoundingMode.HALF_UP);
-                } else {
-                    exposure = new BigDecimal(0);
-                }
-                    ExposureChampionship newRow = ExposureChampionship.builder().id(exposedId)
-                            .exposure(exposure)
-                            .color(getColorFromDriverCode(code))
-                            .status(2)
-                            .name(pollAnswer.getValue())
-                            .votes(pollAnswer.getVote_count()).build();
-                    list.add(newRow);
-            });
-            exposureChampionshipRepository.saveAll(list);
-            ExposedTotalsId totalsId = ExposedTotalsId.builder().season(properties.getCurrentSeasonFuture())
-                    .round(currentExposureRound).build();
-            ExposedVoteTotals totals = ExposedVoteTotals.builder().id(totalsId).voters(voters).votes(totalVotes)
-                    .strawpoll(strawpollId)
-                    .build();
-            exposedVoteTotalsRepository.save(totals);
+            ExposureChampionship newRow = ExposureChampionship.builder().id(exposedId)
+                    .exposure(exposure)
+                    .color(getColorFromDriverCode(code))
+                    .status(2)
+                    .name(pollAnswer.getValue())
+                    .votes(pollAnswer.getVote_count()).build();
+            list.add(newRow);
+        });
+        exposureChampionshipRepository.saveAll(list);
+        ExposedTotalsId totalsId = ExposedTotalsId.builder().season(properties.getCurrentSeasonFuture())
+                .round(currentExposureRound).build();
+        ExposedVoteTotals totals = ExposedVoteTotals.builder().id(totalsId).voters(voters).votes(totalVotes)
+                .strawpoll(strawpollId)
+                .build();
+        exposedVoteTotalsRepository.save(totals);
         return strawpoll.getPoll().getIs_votable();
     }
 
