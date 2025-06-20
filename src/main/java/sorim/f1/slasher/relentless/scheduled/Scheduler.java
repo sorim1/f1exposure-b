@@ -12,6 +12,7 @@ import sorim.f1.slasher.relentless.service.*;
 import sorim.f1.slasher.relentless.util.MainUtility;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 
@@ -161,6 +162,7 @@ public class Scheduler {
                                 log.info(CODE + " - POCINJE LI UTRKA, PRIPREMI STRAWPOLL?: ");
                                     if(liveTimingService.checkIfRaceIsGenerating()){
                                         exposureService.raceHasStarted();
+                                        clientService.updateCountdownFooterData(new ArrayList<>());
                                     }
                                 }
                             },
