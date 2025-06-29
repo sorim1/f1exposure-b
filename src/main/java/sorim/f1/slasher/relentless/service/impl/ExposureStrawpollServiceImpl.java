@@ -173,20 +173,20 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
             round = ergastService.getCurrentDriverStandings().getMrData().getStandingsTable().getStandingsLists().get(0).getRound();
 
             Integer previousRound = getPreviousExposureRoundFromDb();
-            log.info("round-A: " + round);
-            log.info("round-B: " + previousRound + 1);
+            log.info("round-A: " + (round + 1));
+            log.info("round-B: " + (previousRound + 1));
             if (currentExposureRound == null || currentExposureRound <= round) {
-                currentExposureRound = round;
+                currentExposureRound = round+1;
             } else {
                 //nova sezona
 //                currentExposureRound = round;
 //                properties.checkCurrentSeasonFuture();
             }
-            log.info("updateCurrentExposureRound3: " + currentExposureRound + " - " + round);
+            log.info("updateCurrentExposureRound3: " + currentExposureRound);
             AppProperty exposureProperty = AppProperty.builder().name("exposureRound").value(currentExposureRound.toString()).build();
             propertiesRepository.save(exposureProperty);
             Integer dbRound = getLatestExposureRound();
-            log.info("round-C (dbRound): " + dbRound + 1);
+            log.info("round-C (dbRound): " + (dbRound + 1));
         } catch (Exception e) {
             log.error("updateCurrentExposureRound error", e);
             AppProperty app = propertiesRepository.findDistinctFirstByName("exposureRound");
