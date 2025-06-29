@@ -14,6 +14,8 @@ import java.util.List;
 public interface AdminService {
     void initialize() throws Exception;
 
+    List<Driver> fetchDrivers();
+
     Boolean refreshCalendarOfCurrentSeason(String urlString) throws Exception;
 
     Boolean refreshCalendarOfCurrentSeasonSecondary(String urlString) throws Exception;

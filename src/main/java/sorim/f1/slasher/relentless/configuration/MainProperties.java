@@ -53,11 +53,13 @@ public class MainProperties {
         ap = propertiesRepository.findDistinctFirstByName("CURRENT_SEASON_FUTURE");
         if (ap != null) {
             this.currentSeasonFuture = Integer.valueOf(ap.getValue());
+            checkCurrentSeasonFuture();
         } else {
             Integer currentYear = LocalDate.now().getYear();
             saveProperty("CURRENT_SEASON_FUTURE", String.valueOf(currentYear));
             this.currentSeasonFuture = currentYear;
         }
+        System.out.println(this.currentSeasonPast + " : " + this.currentSeasonFuture);
     }
 
     public String updateCurrentSeasonPast(Integer newValue) {
@@ -71,7 +73,11 @@ public class MainProperties {
     }
 
     public void checkCurrentSeasonFuture() {
-        this.currentSeasonFuture = Calendar.getInstance().get(Calendar.YEAR);
+        Integer currentYear = LocalDate.now().getYear();
+        if(currentYear!=this.currentSeasonFuture){
+            saveProperty("CURRENT_SEASON_FUTURE", String.valueOf(currentYear));
+            this.currentSeasonFuture = currentYear;
+        }
     }
 
     public void saveProperty(String name, String value) {

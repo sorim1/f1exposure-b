@@ -8,6 +8,7 @@ import sorim.f1.slasher.relentless.entities.ergast.RaceData;
 import sorim.f1.slasher.relentless.model.livetiming.RaceAnalysis;
 import sorim.f1.slasher.relentless.model.livetiming.SessionInfo;
 import sorim.f1.slasher.relentless.model.livetiming.UpcomingRaceAnalysis;
+import sorim.f1.slasher.relentless.model.youtube.YouTubeVideo;
 import sorim.f1.slasher.relentless.service.LiveTimingRadioService;
 import sorim.f1.slasher.relentless.service.LiveTimingService;
 import sorim.f1.slasher.relentless.service.SecurityService;
@@ -146,7 +147,12 @@ public class LiveTimingController {
     }
 
     @GetMapping("/generatePostRaceRadio")
-    public String generatePostRaceRadio() throws Exception {
+    public String generatePostRaceRadio() {
         return liveTimingRadioService.generatePostRaceRadio();
+    }
+
+    @GetMapping("/getYoutubeVideos")
+    public List<YouTubeVideo> getYoutubeVideos() {
+        return service.getYoutubeVideos();
     }
 }

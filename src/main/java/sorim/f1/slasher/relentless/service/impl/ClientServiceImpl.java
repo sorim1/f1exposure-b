@@ -28,6 +28,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.atomic.AtomicReference;
@@ -40,7 +41,7 @@ public class ClientServiceImpl implements ClientService {
     private static final String SYSTEM_MESSAGE = "### SYSTEM MESSAGE ###";
     public static String overlays;
     public static List<String> overlayList;
-    public static NavbarData navbarData = new NavbarData();
+    public static List<NavbarData> countdownFooterData = new ArrayList<>();
     public static String iframeLink;
     public static Boolean fourchanDisabled;
 
@@ -227,7 +228,7 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
-    public byte[] getImage(String code) {
+    public ImageRow getImage(String code) {
         return instagramService.getImage(code);
     }
 
@@ -284,105 +285,94 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
-    public NavbarData getNavbarData() {
-        return navbarData;
+    public List<NavbarData> getCountdownFooterData() {
+        return countdownFooterData;
     }
 
     @Override
-    public NavbarData updateNavbarData(NavbarData input) {
-        navbarData = input;
-        return navbarData;
+    public List<NavbarData> updateCountdownFooterData(List<NavbarData> input) {
+        countdownFooterData = input;
+        return countdownFooterData;
     }
 
     @Override
-    public Boolean setNavbarData() {
+    public void setNavbarData() {
+        countdownFooterData = new ArrayList<>();
         RaceData raceData = ergastService.getUpcomingRace(properties.getCurrentSeasonFuture());
-        if (raceData != null) {
+        if (raceData != null && howManyDaysAgo(raceData.getDate(), false)<4) {
             UpcomingRaceAnalysis upcomingRaceAnalysis = raceData.getUpcomingRaceAnalysis();
-            if (upcomingRaceAnalysis.getQualiRadio() != null) {
-                if (navbarData.getSessionName().equals("Qualifying") && upcomingRaceAnalysis.getSprintQuali() == null) {
-                    return true;
-                } else {
-                    navbarData.setSessionName("Qualifying");
-                    if (upcomingRaceAnalysis.getFp3Radio() != null) {
-                        navbarData.setTabNumber(6);
-                    } else {
-                        navbarData.setTabNumber(4);
-                    }
-                    setNavbarDriver(upcomingRaceAnalysis.getQualiLivetimingUrl(), upcomingRaceAnalysis.getQuali().get(0));
-                }
-            } else if (upcomingRaceAnalysis.getSprintRadio() != null) {
-                if (navbarData.getSessionName().equals("Sprint")) {
-                    return true;
-                } else {
-                    navbarData.setSessionName("Sprint");
-                    navbarData.setTabNumber(5);
-                    setNavbarDriver(upcomingRaceAnalysis.getSprintLivetimingUrl(), upcomingRaceAnalysis.getSprint().get(0));
-                }
-            } else if (upcomingRaceAnalysis.getSprintQualiRadio() != null) {
-                if (navbarData.getSessionName().equals("Sprint Quali")) {
-                    return true;
-                } else {
-                    navbarData.setSessionName("Sprint Quali");
-                    navbarData.setTabNumber(4);
-                    setNavbarDriver(upcomingRaceAnalysis.getSprintQualiLivetimingUrl(), upcomingRaceAnalysis.getSprintQuali().get(0));
-                }
-            } else if (upcomingRaceAnalysis.getFp3Radio() != null) {
-                if (navbarData.getSessionName().equals("Practice3")) {
-                    return true;
-                } else {
-                    navbarData.setSessionName("Practice3");
-                    navbarData.setTabNumber(5);
-                    setNavbarDriver(upcomingRaceAnalysis.getFp3LivetimingUrl(), upcomingRaceAnalysis.getFp3().get(0));
-                }
-            } else if (upcomingRaceAnalysis.getFp2Radio() != null) {
-                if (navbarData.getSessionName().equals("Practice2")) {
-                    return true;
-                } else {
-                    navbarData.setSessionName("Practice2");
-                    navbarData.setTabNumber(4);
-                    setNavbarDriver(upcomingRaceAnalysis.getFp2LivetimingUrl(), upcomingRaceAnalysis.getFp2().get(0));
-                }
-            } else if (upcomingRaceAnalysis.getFp1Radio() != null) {
-                if (navbarData.getSessionName().equals("Practice1")) {
-                    return true;
-                } else {
-                    navbarData.setSessionName("Practice1");
+            if (upcomingRaceAnalysis.getFp1() != null) {
+                NavbarData navbarData = new NavbarData();
                     navbarData.setTabNumber(3);
-                    setNavbarDriver(upcomingRaceAnalysis.getFp1LivetimingUrl(), upcomingRaceAnalysis.getFp1().get(0));
+                    navbarData.setMessage(upcomingRaceAnalysis.getFp1().get(0).getLastName() + " wins Practice1");
+                countdownFooterData.add(navbarData);
+            }
+            if (upcomingRaceAnalysis.getFp2() != null) {
+                NavbarData navbarData = new NavbarData();
+                navbarData.setTabNumber(4);
+                navbarData.setMessage(upcomingRaceAnalysis.getFp2().get(0).getLastName() + " wins Practice2");
+                countdownFooterData.add(navbarData);
+            }
+            if (upcomingRaceAnalysis.getFp3() != null) {
+                NavbarData navbarData = new NavbarData();
+                navbarData.setTabNumber(5);
+                navbarData.setMessage(upcomingRaceAnalysis.getFp3().get(0).getLastName() + " wins Practice3");
+                countdownFooterData.add(navbarData);
+            }
+            if (upcomingRaceAnalysis.getSprintQuali() != null) {
+                NavbarData navbarData = new NavbarData();
+                navbarData.setTabNumber(4);
+                navbarData.setMessage(upcomingRaceAnalysis.getSprintQuali().get(0).getLastName() + " wins Sprint Quali");
+                countdownFooterData.add(navbarData);
+            }
+            if (upcomingRaceAnalysis.getSprint() != null) {
+                NavbarData navbarData = new NavbarData();
+                navbarData.setTabNumber(5);
+                navbarData.setMessage(upcomingRaceAnalysis.getSprint().get(0).getLastName() + " wins Sprint");
+                countdownFooterData.add(navbarData);
+            }
+            if (upcomingRaceAnalysis.getQuali() != null) {
+                NavbarData navbarData = new NavbarData();
+                if (upcomingRaceAnalysis.getFp3() != null) {
+                    navbarData.setTabNumber(6);
+                } else {
+                    navbarData.setTabNumber(4);
                 }
-            } else {
+                navbarData.setMessage(upcomingRaceAnalysis.getQuali().get(0).getLastName() + " wins Qualifying");
+                countdownFooterData.add(navbarData);
+            }
+        }else {
+            log.info("navbarData else 1");
                 raceData = ergastService.getLatestAnalyzedRace();
-                long daysAgo = howManyDaysAgo(raceData.getDate());
+                long daysAgo = howManyDaysAgo(raceData.getDate(), true);
                 if (daysAgo < 3) {
-                    navbarData.setSessionName(raceData.getRaceName().replace("Grand Prix", "GP"));
-                    navbarData.setTabNumber(null);
+                    log.info("navbarData else 2");
+                    NavbarData navbarData = new NavbarData();
                     Driver winner = raceData.getRaceAnalysis().getDriverData().stream()
                             .filter(driver -> driver.getPosition() == 1).findFirst().get();
-                    setNavbarDriver(raceData.getRaceAnalysis().getLivetimingUrl(), winner);
-                } else {
-                    navbarData.setSessionName("");
-                    navbarData.setTabNumber(null);
+                    log.info("navbarData else 3: {}", winner.getLastName());
+                    navbarData.setMessage(winner.getLastName() + " wins " + raceData.getRaceName().replace("Grand Prix", "GP"));
+                    countdownFooterData.add(navbarData);
                 }
             }
-        } else {
-            navbarData.setSessionName("");
-            navbarData.setTabNumber(null);
         }
-        return true;
-    }
 
-    private long howManyDaysAgo(String input) {
+    private long howManyDaysAgo(String input, Boolean past) {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         LocalDate d1 = LocalDate.parse(input, dtf);
         LocalDate today = LocalDate.now();
-        return d1.datesUntil(today).count();
+        if(past){
+            return d1.datesUntil(today).count();
+        } else {
+            long days = ChronoUnit.DAYS.between(today, d1);
+            return days;
+        }
     }
 
     private void setNavbarDriver(String baseUrl, Driver driver) {
-        navbarData.setWinner(driver.getLastName());
-        if (driver.getRadioData().isEmpty()) {
-            navbarData.setRadioUrl(null);
+    //    navbarData.setWinner(driver.getLastName());
+        if (driver.getRadioData() == null || driver.getRadioData().isEmpty()) {
+          //  navbarData.setRadioUrl(null);
         } else {
             RestTemplate restTemplate = new RestTemplate();
             AtomicReference<Integer> finalAudioSize = new AtomicReference<>(0);
@@ -390,7 +380,7 @@ public class ClientServiceImpl implements ClientService {
                 Integer audioSize = getAudioSize(restTemplate, baseUrl + entry.getPath());
                 if (audioSize > finalAudioSize.get()) {
                     finalAudioSize.set(audioSize);
-                    navbarData.setRadioUrl(baseUrl + entry.getPath());
+                  //  navbarData.setRadioUrl(baseUrl + entry.getPath());
                 }
             });
         }
@@ -448,7 +438,7 @@ public class ClientServiceImpl implements ClientService {
 
     @Override
     public List<NewsComment> getNewsComments(String code) {
-        return newsCommentRepository.findAllByContentCodeAndStatusLessThanOrderByTimestampCreatedDesc(code, 3);
+        return newsCommentRepository.findAllByContentCodeAndStatusLessThanOrderByTimestampCreatedDesc(code, 5);
     }
 
     @Override
@@ -642,7 +632,6 @@ public class ClientServiceImpl implements ClientService {
             ex.printStackTrace();
         }
 
-        log.info("clientServiceInit: {} -{}", iframeLink, overlays);
     }
 
     private String getRandomImgur() {

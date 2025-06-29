@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import sorim.f1.slasher.relentless.model.KeyValueInteger;
+import sorim.f1.slasher.relentless.model.youtube.YouTubeVideo;
 
 import java.util.List;
 
@@ -30,4 +31,5 @@ public class RaceAnalysis {
     List<TimingStat> timingStats;
     List<String> bestSpeedKeys;
     List<KeyValueInteger> topSpeeds;
+    List<YouTubeVideo> raceYoutube;
 }

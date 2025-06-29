@@ -272,9 +272,8 @@ public class InstagramServiceImpl implements InstagramService {
     }
 
     @Override
-    public byte[] getImage(String code) {
-        ImageRow result = imageRepository.findFirstByCode(code);
-        return result.getImage();
+    public ImageRow getImage(String code) {
+        return imageRepository.findFirstByCode(code);
     }
 
     @Override

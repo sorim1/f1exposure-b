@@ -28,6 +28,7 @@ public class NewsComment {
     private Date timestampCreated;
     @Builder.Default
     private Integer status = 1;
+
     private String username;
 
     @JsonIgnore

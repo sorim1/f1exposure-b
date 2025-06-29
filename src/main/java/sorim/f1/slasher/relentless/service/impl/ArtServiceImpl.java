@@ -4,12 +4,14 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 import sorim.f1.slasher.relentless.entities.ArtImageRow;
 import sorim.f1.slasher.relentless.entities.ImageRow;
 import sorim.f1.slasher.relentless.repository.ArtImageRepository;
 import sorim.f1.slasher.relentless.repository.ImageRepository;
 import sorim.f1.slasher.relentless.service.ArtService;
 
+import java.io.IOException;
 import java.util.List;
 
 @Slf4j
@@ -41,8 +43,10 @@ public class ArtServiceImpl implements ArtService {
     }
 
     @Override
-    public Boolean saveImage(String code, byte[] image) {
-        ImageRow imageRow = ImageRow.builder().code(code).image(image).build();
+    public Boolean saveImage(String code, MultipartFile image) throws IOException {
+        ImageRow imageRow = ImageRow.builder().code(code).image(image.getBytes())
+                .type(image.getContentType())
+                .build();
         imageRepository.save(imageRow);
         return true;
     }

@@ -3,7 +3,10 @@ package sorim.f1.slasher.relentless.controller;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import sorim.f1.slasher.relentless.entities.*;
 import sorim.f1.slasher.relentless.model.*;
@@ -109,12 +112,17 @@ public class ClientController {
         return service.getInstagramFeedPage(mode, page);
     }
 
-    @GetMapping(
-            value = "/image/{code}",
-            produces = MediaType.IMAGE_JPEG_VALUE
-    )
-    byte[] getImage(@PathVariable("code") String code) {
-        return service.getImage(code);
+    @GetMapping("/image/{code}")
+    public ResponseEntity<byte[]> getImage(@PathVariable("code") String code) {
+        ImageRow image = service.getImage(code);
+        byte[] imageBytes = image.getImage();
+        HttpHeaders headers = new HttpHeaders();
+        if(image.getType()!=null){
+            headers.setContentType(MediaType.parseMediaType(image.getType()));
+        } else {
+            headers.setContentType(MediaType.IMAGE_JPEG);
+        }
+        return new ResponseEntity<>(imageBytes, headers, HttpStatus.OK);
     }
 
     @GetMapping(
@@ -225,16 +233,16 @@ public class ClientController {
         return service.getNextNewsList(timestampActivity);
     }
 
-    @GetMapping("/getNavbarData")
-    NavbarData getNavbarData(@RequestHeader String client) throws Exception {
+    @GetMapping("/getCountdownFooterData")
+    List<NavbarData> getNavbarData(@RequestHeader String client) throws Exception {
         securityService.validateHeader(client);
-        return service.getNavbarData();
+        return service.getCountdownFooterData();
     }
 
-    @GetMapping("/updateNavbarData")
-    NavbarData updateNavbarData(@RequestHeader String client, @RequestBody NavbarData navbarData) throws Exception {
+    @GetMapping("/updateCountdownFooterData")
+    List<NavbarData> updateCountdownFooterData(@RequestHeader String client, @RequestBody List<NavbarData> countdownFooterData) throws Exception {
         securityService.validateHeader(client);
-        return service.updateNavbarData(navbarData);
+        return service.updateCountdownFooterData(countdownFooterData);
     }
 
     @GetMapping("/bumpNewsPost/{code}/{mode}")

@@ -12,6 +12,7 @@ import sorim.f1.slasher.relentless.service.*;
 import sorim.f1.slasher.relentless.util.MainUtility;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 
@@ -38,14 +39,14 @@ public class Scheduler {
     @Scheduled(cron = "0 0 4 * * MON")
     public void mondayJobs() throws IOException {
         log.info(CODE + " mondayJobs called");
-        exposureService.closeExposurePoll(true);
+      //  exposureService.closeExposurePoll(true);
         analysisDone = true;
         strawpollFound = false;
         if (!standingsUpdated) {
             adminService.initializeStandings(true);
             standingsUpdated = true;
         }
-        ergastService.fetchStatisticsFullFromPartial(true);
+       // ergastService.fetchStatisticsFullFromPartial(true);
         isItRaceWeek();
     }
 
@@ -161,6 +162,7 @@ public class Scheduler {
                                 log.info(CODE + " - POCINJE LI UTRKA, PRIPREMI STRAWPOLL?: ");
                                     if(liveTimingService.checkIfRaceIsGenerating()){
                                         exposureService.raceHasStarted();
+                                        clientService.updateCountdownFooterData(new ArrayList<>());
                                     }
                                 }
                             },

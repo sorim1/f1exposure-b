@@ -4,12 +4,13 @@ import sorim.f1.slasher.relentless.entities.ergast.RaceData;
 import sorim.f1.slasher.relentless.model.livetiming.RaceAnalysis;
 import sorim.f1.slasher.relentless.model.livetiming.SessionInfo;
 import sorim.f1.slasher.relentless.model.livetiming.UpcomingRaceAnalysis;
+import sorim.f1.slasher.relentless.model.youtube.YouTubeVideo;
 
 import java.util.List;
 
 public interface LiveTimingService {
 
-    void getAllRaceDataFromErgastTable(String year, Boolean detailed, Boolean deleteOld);
+    void getAllRaceDataFromErgastTable(String year, Boolean detailed, Boolean deleteOld) throws InterruptedException;
 
     RaceAnalysis getRaceAnalysis() throws Exception;
 
@@ -27,7 +28,7 @@ public interface LiveTimingService {
 
     RaceData getUpcomingRace();
 
-    Boolean upcomingRacesAnalysisInitialLoad(String season);
+    Boolean upcomingRacesAnalysisInitialLoad(String season) throws InterruptedException;
 
     Integer analyzeUpcomingRace(Boolean redo);
 
@@ -49,5 +50,9 @@ public interface LiveTimingService {
     boolean checkIfRaceIsGenerating();
 
     SessionInfo getSessionInfo();
+
+    List<YouTubeVideo> getYoutubeVideos();
+
+    public void enrichLatestRaceWithYoutubeWithDelay();
 
 }

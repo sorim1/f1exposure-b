@@ -47,7 +47,7 @@ public interface ClientService {
 
     Boolean fetchTwitterPosts() throws Exception;
 
-    byte[] getImage(String code);
+    ImageRow getImage(String code);
 
     byte[] getArt(String code);
 
@@ -89,11 +89,11 @@ public interface ClientService {
 
     void setAllowNonRedditNewsProperty(Boolean bool);
 
-    NavbarData getNavbarData();
+    List<NavbarData> getCountdownFooterData();
 
-    Boolean setNavbarData();
+    void setNavbarData();
 
-    NavbarData updateNavbarData(NavbarData navbarData);
+    List<NavbarData> updateCountdownFooterData(List<NavbarData> countdownFooterData);
 
     SidebarData setSidebarExposureDriver(KeyValue exposureDriver);
     SidebarData setSidebarStrawpoll(KeyValue strawpoll);

@@ -32,7 +32,7 @@ f1:
       sportSurgeStreams: https://api.sportsurge.net/streams/list?event=
       formula1RacingUrl: https://www.formula1.com/en/racing/
       replaysUrl: https://f1hd.net/
-      howManySeasonsBack: 10
+      howManySeasonsBack: 6
       admins:
         - fb26e2db-da1b-462e-aeea-fec3955b3e40
         - sorimsquare33
@@ -100,6 +100,6 @@ upload:
   path: /uploads-deleteme
 twitter:
   accounts:
-    list: formula1,SkySportsF1,fia,redbullracing,ScuderiaFerrari,Carlossainz55,Charles_Leclerc,Max33Verstappen,SChecoPerez,MercedesAMGF1,LewisHamilton,GeorgeRussell63,WilliamsRacing,alex_albon,LoganSargeant,McLarenF1,LandoNorris,OscarPiastri,AlpineF1Team,OconEsteban,PierreGASLY,visacashapprb,danielricciardo,yukitsunoda07,stakef1team_ks,ValtteriBottas,ZhouGuanyu24,HaasF1Team,KevinMagnussen,HulkHulkenberg,AstonMartinF1,alo_oficial,lance_stroll
-    ferrari: ScuderiaFerrari,Carlossainz55,Charles_Leclerc
+    list: formula1,SkySportsF1,fia,redbullracing,ScuderiaFerrari,LewisHamilton,Charles_Leclerc,Max33Verstappen,liamlawson30,MercedesAMGF1,AndreaKimiNews,GeorgeRussell63,WilliamsRacing,alex_albon,Carlossainz55,McLarenF1,LandoNorris,OscarPiastri,AlpineF1Team,jackdoohan33,PierreGASLY,visacashapprb,Isack_Hadjar,yukitsunoda07,stakef1team_ks,HulkHulkenberg,gabortoleto85,HaasF1Team,HulkHulkenberg,AstonMartinF1,alo_oficial,lance_stroll
+    ferrari: ScuderiaFerrari,LewisHamilton,Charles_Leclerc
 
