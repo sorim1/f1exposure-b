@@ -2,7 +2,6 @@ package sorim.f1.slasher.relentless.entities.ergast;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.vladmihalcea.hibernate.type.json.JsonBinaryType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -19,7 +18,6 @@ import java.util.List;
 
 @Entity
 @Table(name = "RACE_DATA")
-@Convert(attributeName = "entityAttrName", converter = JsonBinaryType.class)
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

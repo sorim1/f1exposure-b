@@ -1,6 +1,5 @@
 package sorim.f1.slasher.relentless.entities;
 
-import com.vladmihalcea.hibernate.type.json.JsonBinaryType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -17,7 +16,6 @@ import org.hibernate.type.SqlTypes;
 
 @Entity
 @Table(name = "JSON_REPOSITORY")
-@Convert(attributeName = "entityAttrName", converter = JsonBinaryType.class)
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

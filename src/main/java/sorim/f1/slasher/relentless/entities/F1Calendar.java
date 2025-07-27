@@ -24,7 +24,7 @@ import java.util.concurrent.ThreadLocalRandom;
 public class F1Calendar {
 
     @Id
-    @Column(columnDefinition = "race_id")
+    @Column(name = "race_id")
     private Integer raceId;
     private LocalDateTime practice1;
     private LocalDateTime practice2;
