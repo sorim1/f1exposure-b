@@ -168,41 +168,27 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
 
     private void updateCurrentExposureRound() {
         Integer round;
-        log.info("updateCurrentExposureRound2: " + currentExposureRound);
+        log.info("exposure-Strawpoll- old round: " + currentExposureRound);
         try {
             round = ergastService.getCurrentDriverStandings().getMrData().getStandingsTable().getStandingsLists().get(0).getRound();
 
             Integer previousRound = getPreviousExposureRoundFromDb();
-            log.info("round-A: " + (round + 1));
-            log.info("round-B: " + (previousRound + 1));
-            if (currentExposureRound == null || currentExposureRound <= round) {
-                currentExposureRound = round+1;
+            log.info("exposure-Strawpoll-previous round from ergast + 1: " + (round + 1));
+            log.info("exposure-Strawpoll-previous round from database + 1: " + (previousRound + 1));
+            if (currentExposureRound == null || currentExposureRound <= previousRound) {
+                currentExposureRound = previousRound+1;
             } else {
                 //nova sezona
-//                currentExposureRound = round;
-//                properties.checkCurrentSeasonFuture();
             }
-            log.info("updateCurrentExposureRound3: " + currentExposureRound);
+            log.info("exposure-Strawpoll- new round:  " + currentExposureRound);
             AppProperty exposureProperty = AppProperty.builder().name("exposureRound").value(currentExposureRound.toString()).build();
             propertiesRepository.save(exposureProperty);
-            Integer dbRound = getLatestExposureRound();
-            log.info("round-C (dbRound): " + (dbRound + 1));
         } catch (Exception e) {
             log.error("updateCurrentExposureRound error", e);
             AppProperty app = propertiesRepository.findDistinctFirstByName("exposureRound");
             if (app != null) {
                 currentExposureRound = Integer.parseInt(app.getValue());
             }
-        }
-    }
-
-    private Integer getPreviousExposureRoundFromDb() {
-        try {
-            String year = String.valueOf(properties.getCurrentSeasonFuture());
-            AppProperty exposureProperty = propertiesRepository.findDistinctFirstByName(year + "_exposureRound");
-            return Integer.valueOf(exposureProperty.getValue());
-        } catch (Exception e) {
-            return 0;
         }
     }
 
@@ -368,16 +354,18 @@ public class ExposureStrawpollServiceImpl implements ExposureStrawpollService {
         }
     }
 
-    private Integer getLatestExposureRound() {
+    private Integer getPreviousExposureRoundFromDb() {
         try {
             String year = String.valueOf(properties.getCurrentSeasonFuture());
-            AppProperty property = propertiesRepository.findDistinctFirstByName(year + "_exposureRound");
-            return Integer.valueOf(property.getValue());
+            AppProperty exposureProperty = propertiesRepository.findDistinctFirstByName(year + "_exposureRound");
+            return Integer.valueOf(exposureProperty.getValue());
         } catch (Exception e) {
             e.printStackTrace();
+            return 0;
         }
-        return 0;
     }
+
+
 
     private List<ExposureChampionshipStanding> getExposureStandings() {
         return exposureChampionshipStandingsRepository.findAllByIdSeasonOrderByExposureDesc(properties.getCurrentSeasonPast());
