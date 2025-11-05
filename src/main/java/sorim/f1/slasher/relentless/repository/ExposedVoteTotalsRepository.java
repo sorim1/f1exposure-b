@@ -1,7 +1,6 @@
 package sorim.f1.slasher.relentless.repository;
 
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -11,7 +10,6 @@ import java.util.List;
 
 @Repository
 @Transactional
-@EnableJpaAuditing
 public interface ExposedVoteTotalsRepository extends CrudRepository<ExposedVoteTotals, String> {
 
     @Query("select t from ExposedVoteTotals t where t.id.season = ?1 and t.id.round = ?2")
