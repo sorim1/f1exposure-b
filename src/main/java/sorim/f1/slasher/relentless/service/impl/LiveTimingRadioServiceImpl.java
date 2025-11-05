@@ -14,22 +14,35 @@ import sorim.f1.slasher.relentless.model.enums.RoundEnum;
 import sorim.f1.slasher.relentless.model.livetiming.*;
 import sorim.f1.slasher.relentless.service.LiveTimingRadioService;
 
-import java.io.*;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.time.ZonedDateTime;
-import java.util.*;
-import java.util.concurrent.atomic.AtomicReference;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import java.util.TreeMap;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
 @Slf4j
 @Service
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class LiveTimingRadioServiceImpl implements LiveTimingRadioService {
+    private static final ObjectMapper MAPPER = new ObjectMapper();
+    private static final TypeReference<Map<String, Object>> RADIO_ENTRY_TYPE = new TypeReference<>() {
+    };
     private static final String SESSION_INFO_URL = "SessionInfo.json";
     private static final String TEAM_RADIO_STREAM = "TeamRadio.jsonStream";
     private static final String LIVETIMING_URL = "https://livetiming.formula1.com/static/";
-    private final ObjectMapper mapper = new ObjectMapper();
+
     private final MainProperties properties;
-    RestTemplate restTemplate = new RestTemplate();
+    private final RestTemplate restTemplate;
     private String relativePath;
     private ZonedDateTime finishedDate;
 
@@ -58,17 +71,24 @@ public class LiveTimingRadioServiceImpl implements LiveTimingRadioService {
 
     private Boolean getPostRaceRadioMessages2() {
         List<Driver> drivers = getDriversData();
+        if (drivers.isEmpty()) {
+            log.warn("Unable to load driver data; skipping radio generation");
+            return false;
+        }
+
         String jsonStream = restTemplate.getForObject(LIVETIMING_URL + relativePath + TEAM_RADIO_STREAM, String.class);
         List<RadioData> radioData = getRadioData(null, jsonStream);
-        List<RadioData> postRaceRadioData = radioData.stream().filter(entry -> entry.getUtc().isAfter(this.finishedDate)).collect(Collectors.toList());
+        List<RadioData> postRaceRadioData = radioData.stream()
+                .filter(entry -> entry.getUtc().isAfter(this.finishedDate))
+                .collect(Collectors.toList());
         Map<Integer, byte[]> radioMap = new TreeMap<>();
         postRaceRadioData.forEach(entry -> {
             byte[] byteArray = restTemplate.getForObject(LIVETIMING_URL + relativePath + entry.getPath(), byte[].class);
-            if (!radioMap.containsKey(Integer.valueOf(entry.getDriverNumber()))) {
-                radioMap.put(Integer.valueOf(entry.getDriverNumber()), byteArray);
-            } else if (radioMap.get(Integer.valueOf(entry.getDriverNumber())).length < byteArray.length) {
-                radioMap.put(Integer.valueOf(entry.getDriverNumber()), byteArray);
+            if (byteArray == null) {
+                return;
             }
+            radioMap.merge(Integer.valueOf(entry.getDriverNumber()), byteArray, (existing, replacement) ->
+                    existing.length >= replacement.length ? existing : replacement);
         });
         saveRadioMessagesToFiles(radioMap, drivers);
         return true;
@@ -76,111 +96,121 @@ public class LiveTimingRadioServiceImpl implements LiveTimingRadioService {
 
     private void saveRadioMessagesToFiles(Map<Integer, byte[]> radioMap, List<Driver> drivers) {
         drivers.sort(Comparator.comparing(Driver::getPosition));
-        String rootPath = properties.getSaveRadioLocation();
-        String directoryName = rootPath + finishedDate.toString().substring(0, 10);
-        createRadioDirectories(directoryName);
-        AtomicReference<String> mergeImageAndAudioString = new AtomicReference<>("");
-        AtomicReference<String> bottomImage = new AtomicReference<>("ffmpeg ");
-        AtomicReference<String> topImageString = new AtomicReference<>("");
-        AtomicReference<String> mkvListString = new AtomicReference<>("");
+        Path directory = Paths.get(properties.getSaveRadioLocation(), finishedDate.toString().substring(0, 10));
+        createRadioDirectories(directory);
+
+        StringBuilder mergeImageAndAudio = new StringBuilder();
+        StringBuilder bottomImage = new StringBuilder("ffmpeg ");
+        StringBuilder topImage = new StringBuilder();
+        StringBuilder mkvList = new StringBuilder();
 
         drivers.forEach(driver -> {
-            bottomImage.set(generateBottomImageString(bottomImage.get(), String.valueOf(driver.getNum()), driver.getPosition()));
-            topImageString.set(generateTopImageString(topImageString.get(), String.valueOf(driver.getNum()), driver.getPosition()));
+            String driverNumber = String.valueOf(driver.getNum());
+            appendBottomImageCommand(bottomImage, driverNumber, driver.getPosition());
+            appendTopImageCommand(topImage, driverNumber, driver.getPosition());
 
-            if (radioMap.containsKey(Integer.valueOf(driver.getNum()))) {
-                mergeImageAndAudioString.set(generateMergeImageAndAudioString(directoryName, mergeImageAndAudioString.get(), String.valueOf(driver.getNum())));
-                mkvListString.set(generateMkvListString(directoryName, mkvListString.get(), String.valueOf(driver.getNum())));
-
-                File file = new File(directoryName + "/mp3/" + driver.getNum() + ".mp3");
+            byte[] radioBytes = radioMap.get(Integer.valueOf(driverNumber));
+            if (radioBytes != null) {
+                appendMergeImageAndAudioCommand(mergeImageAndAudio, directory, driverNumber);
+                appendMkvListEntry(mkvList, directory, driverNumber);
+                Path targetFile = directory.resolve("mp3").resolve(driverNumber + ".mp3");
                 try {
-                    OutputStream os = new FileOutputStream(file);
-                    os.write(radioMap.get(Integer.valueOf(driver.getNum())));
-                    os.close();
-                } catch (Exception e) {
-                    throw new RuntimeException(e);
+                    Files.write(targetFile, radioBytes);
+                } catch (IOException e) {
+                    throw new IllegalStateException("Failed to write radio message for driver " + driverNumber, e);
                 }
             }
         });
+
+        appendCloseImagesCommand(bottomImage, drivers.size());
+        appendMergeImageAndAudioEnding(mergeImageAndAudio, directory);
+
+        try (BufferedWriter writer = Files.newBufferedWriter(directory.resolve("generate.bat"))) {
+            writer.append(bottomImage).append(topImage).append(mergeImageAndAudio);
+        } catch (IOException e) {
+            throw new IllegalStateException("Failed to write generate.bat", e);
+        }
+
+        try (BufferedWriter writer = Files.newBufferedWriter(directory.resolve("list.txt"))) {
+            writer.append(mkvList);
+        } catch (IOException e) {
+            throw new IllegalStateException("Failed to write list.txt", e);
+        }
+    }
+
+    private void createRadioDirectories(Path directory) {
         try {
-            bottomImage.set(closeImagesString(bottomImage.get(), drivers.size()));
-            mergeImageAndAudioString.set(generateMergeImageAndAudioStringEnding(directoryName, mergeImageAndAudioString.get()));
-
-            BufferedWriter writer = new BufferedWriter(new FileWriter(directoryName + "/generate.bat"));
-            writer.write(bottomImage.get() + topImageString.get() + mergeImageAndAudioString.get());
-            writer.close();
-            writer = new BufferedWriter(new FileWriter(directoryName + "/list.txt"));
-            writer.write(mkvListString.get());
-            writer.close();
-        } catch (Exception e) {
-            throw new RuntimeException(e);
+            Files.createDirectories(directory);
+            Files.createDirectories(directory.resolve("mp3"));
+            Files.createDirectories(directory.resolve("images"));
+        } catch (IOException e) {
+            throw new IllegalStateException("Failed to create radio directories", e);
         }
     }
 
-    private void createRadioDirectories(String directoryName) {
-        File directory = new File(directoryName);
-        if (!directory.exists()) {
-            directory.mkdir();
-        }
-        File directory2 = new File(directoryName + "/mp3");
-        if (!directory2.exists()) {
-            directory2.mkdir();
-        }
-        File directory3 = new File(directoryName + "/images");
-        if (!directory3.exists()) {
-            directory3.mkdir();
-        }
+    private void appendMkvListEntry(StringBuilder builder, Path directory, String driverNumber) {
+        builder.append("file '")
+                .append(directory.resolve(driverNumber + ".mkv"))
+                .append("'")
+                .append(System.lineSeparator());
     }
 
-    private String generateMkvListString(String dateDirectory, String input, String key) {
-        String response = input;
-        response += "file '" + dateDirectory + "/" + key + ".mkv'";
-        response += System.lineSeparator();
-        return response;
+    private void appendMergeImageAndAudioCommand(StringBuilder builder, Path directory, String driverNumber) {
+        builder.append("ffmpeg -loop 1 -i images/F")
+                .append(driverNumber)
+                .append(".png -i mp3/")
+                .append(driverNumber)
+                .append(".mp3 -af volume=+6dB -shortest -tune stillimage ")
+                .append(directory.resolve(driverNumber + ".mkv"))
+                .append(System.lineSeparator());
     }
 
-    private String generateMergeImageAndAudioString(String dateDirectory, String input, String key) {
-        String response = input;
-        response += "ffmpeg -loop 1 -i images/F" + key + ".png -i " + "mp3/" + key + ".mp3 -af volume=+6dB -shortest -tune stillimage " + dateDirectory + "/" + key + ".mkv";
-        response += System.lineSeparator();
-        return response;
-    }
-
-    private String generateBottomImageString(String input, String key, Integer position) {
-        String response = input;
-        response += "-i C:/root/drivers/L" + key + ".png ";
+    private void appendBottomImageCommand(StringBuilder builder, String driverNumber, Integer position) {
+        builder.append("-i C:/root/drivers/L")
+                .append(driverNumber)
+                .append(".png ");
         if (position == 10) {
-            response += "-filter_complex \"hstack=inputs=" + 10 + "[v]\" -map \"[v]\" images/bottom-image-1.png";
-            response += System.lineSeparator();
-            response += "ffmpeg ";
+            builder.append("-filter_complex \"hstack=inputs=10[v]\" -map \"[v]\" images/bottom-image-1.png")
+                    .append(System.lineSeparator())
+                    .append("ffmpeg ");
         }
-        return response;
     }
 
-    private String generateTopImageString(String input, String key, Integer position) {
-        String response = input;
-        response += "ffmpeg -i C:/root/drivers/P" + position + ".png -i C:/root/drivers/T" + key + ".png -filter_complex hstack images/T" + key + ".png";
-        response += System.lineSeparator();
-        response += "ffmpeg -i images/T" + key + ".png -i images/bottom-image.png -filter_complex vstack images/F" + key + ".png";
-        response += System.lineSeparator();
-        return response;
+    private void appendTopImageCommand(StringBuilder builder, String driverNumber, Integer position) {
+        builder.append("ffmpeg -i C:/root/drivers/P")
+                .append(position)
+                .append(".png -i C:/root/drivers/T")
+                .append(driverNumber)
+                .append(".png -filter_complex hstack images/T")
+                .append(driverNumber)
+                .append(".png")
+                .append(System.lineSeparator())
+                .append("ffmpeg -i images/T")
+                .append(driverNumber)
+                .append(".png -i images/bottom-image.png -filter_complex vstack images/F")
+                .append(driverNumber)
+                .append(".png")
+                .append(System.lineSeparator());
     }
 
-    private String closeImagesString(String input, Integer size) {
-        String response = input;
-        response += "-filter_complex \"hstack=inputs=" + (size - 10) + "[v]\" -map \"[v]\" images/bottom-image-2.png";
-        response += System.lineSeparator();
-        response += "ffmpeg -i images/bottom-image-1.png -i images/bottom-image-2.png -filter_complex vstack images/bottom-image.png";
-        response += System.lineSeparator();
-        return response;
+    private void appendCloseImagesCommand(StringBuilder builder, int size) {
+        int remaining = size - 10;
+        if (remaining > 0) {
+            builder.append("-filter_complex \"hstack=inputs=")
+                    .append(remaining)
+                    .append("[v]\" -map \"[v]\" images/bottom-image-2.png")
+                    .append(System.lineSeparator())
+                    .append("ffmpeg -i images/bottom-image-1.png -i images/bottom-image-2.png -filter_complex vstack images/bottom-image.png")
+                    .append(System.lineSeparator());
+        } else {
+            builder.append(System.lineSeparator());
+        }
     }
 
-
-    private String generateMergeImageAndAudioStringEnding(String dateDirectory, String input) {
-        String response = input;
-        response += "ffmpeg -safe 0 -f concat -i list.txt -c copy " + dateDirectory + "\\000.mp4";
-        response += System.lineSeparator();
-        return response;
+    private void appendMergeImageAndAudioEnding(StringBuilder builder, Path directory) {
+        builder.append("ffmpeg -safe 0 -f concat -i list.txt -c copy ")
+                .append(directory.resolve("000.mp4"))
+                .append(System.lineSeparator());
     }
 
     private Boolean getPathAndTimestamp() {
@@ -201,44 +231,68 @@ public class LiveTimingRadioServiceImpl implements LiveTimingRadioService {
     private List<Driver> getDriversData() {
         log.info(LIVETIMING_URL + relativePath + "SPFeed.json");
         String liveTimingResponse = restTemplate.getForObject(LIVETIMING_URL + relativePath + "SPFeed.json", String.class);
-        liveTimingResponse = liveTimingResponse.substring(liveTimingResponse.indexOf("{"));
-        List<Driver> driversResponse = null;
+        if (liveTimingResponse == null || !liveTimingResponse.contains("{")) {
+            return Collections.emptyList();
+        }
+        String jsonPayload = liveTimingResponse.substring(liveTimingResponse.indexOf("{"));
         try {
-            LiveTimingData response = mapper.readValue(liveTimingResponse, LiveTimingData.class);
-            driversResponse = response.getInit().getData().getDrivers();
-            List<LinkedHashMap> freeDr = (List<LinkedHashMap>) response.getFree().data.getDataField("DR");
-
-            for (int i = 0; i < driversResponse.size(); i++) {
-                List<String> fData = (List<String>) freeDr.get(i).get("F");
-                driversResponse.get(i).setPosition(Integer.valueOf(fData.get(3)));
+            LiveTimingData response = MAPPER.readValue(jsonPayload, LiveTimingData.class);
+            List<Driver> driversResponse = response.getInit().getData().getDrivers();
+            List<?> freeDr = (List<?>) response.getFree().data.getDataField("DR");
+            if (freeDr == null || freeDr.isEmpty()) {
+                return Collections.emptyList();
             }
+
+            AtomicInteger index = new AtomicInteger();
+            driversResponse.forEach(driver -> {
+                if (index.get() >= freeDr.size()) {
+                    return;
+                }
+                Object entry = freeDr.get(index.getAndIncrement());
+                if (entry instanceof Map<?, ?> map) {
+                    Object field = map.get("F");
+                    if (field instanceof List<?> values && values.size() > 3) {
+                        driver.setPosition(Integer.valueOf(values.get(3).toString()));
+                    }
+                }
+            });
+            driversResponse.sort(Comparator.comparing(Driver::getPosition));
+            return driversResponse;
         } catch (JsonProcessingException e) {
             Logger.log("getDriversData failed", e.getMessage());
+            return Collections.emptyList();
         }
-        driversResponse.sort(Comparator.comparing(Driver::getPosition));
-        return driversResponse;
     }
 
-    private RadioData getRadioDataFromObject(Integer id, Object object, List<Driver> drivers) {
-        LinkedHashMap<String, Object> dataMap = (LinkedHashMap<String, Object>) object;
+    private RadioData getRadioDataFromObject(Integer id, Map<String, Object> dataMap, List<Driver> drivers) {
         RadioData entry = new RadioData();
         entry.setId(id);
-        ZonedDateTime dateTime = ZonedDateTime.parse((String) dataMap.get("Utc"));
-        entry.setUtc(dateTime);
+        Object utcValue = dataMap.get("Utc");
+        if (utcValue instanceof String utc) {
+            entry.setUtc(ZonedDateTime.parse(utc));
+        }
         entry.setDriverNumber((String) dataMap.get("RacingNumber"));
         entry.setPath((String) dataMap.get("Path"));
         if (drivers != null) {
-            Optional<Driver> driver = drivers.stream().filter(ds -> ds.getNum().equals(entry.getDriverNumber()))
-                    .findFirst();
-            if (driver.isPresent()) {
-                entry.setDriverName(driver.get().firstName + " " + driver.get().lastName);
-                driver.get().getRadioData().add(entry);
-            } else {
-                entry.setDriverName(entry.getPath().substring(10, 16));
-                log.error("driver not found: " + entry.getDriverNumber());
-            }
+            drivers.stream()
+                    .filter(ds -> ds.getNum().equals(entry.getDriverNumber()))
+                    .findFirst()
+                    .ifPresentOrElse(driver -> {
+                        entry.setDriverName(driver.firstName + " " + driver.lastName);
+                        driver.getRadioData().add(entry);
+                    }, () -> {
+                        entry.setDriverName(resolveDriverNameFallback(entry));
+                        log.error("driver not found: {}", entry.getDriverNumber());
+                    });
         }
         return entry;
+    }
+
+    private String resolveDriverNameFallback(RadioData entry) {
+        if (entry.getPath() != null && entry.getPath().length() >= 16) {
+            return entry.getPath().substring(10, 16);
+        }
+        return entry.getDriverNumber();
     }
 
     private void updateDriverList(UpcomingRaceAnalysis upcomingRaceAnalysis, List<Driver> drivers, RoundEnum session, List<RadioData> radioData) {
@@ -293,38 +347,54 @@ public class LiveTimingRadioServiceImpl implements LiveTimingRadioService {
     }
 
     public List<RadioData> getRadioData(List<Driver> drivers, String jsonStream) {
-        TypeReference<HashMap<String, Object>> typeRef = new TypeReference<>() {
-        };
+        if (jsonStream == null || jsonStream.isBlank()) {
+            return Collections.emptyList();
+        }
+
         List<RadioData> radioData = new ArrayList<>();
-        List<String> radioDataLines = Arrays.asList(jsonStream.split(System.lineSeparator()));
-        radioDataLines.forEach(stringLine -> {
-            String jsonLine = stringLine.substring(stringLine.indexOf("{"));
-            Map<String, Object> mapping = null;
+        String[] lines = jsonStream.split(System.lineSeparator());
+        for (String stringLine : lines) {
+            String trimmedLine = stringLine.trim();
+            if (trimmedLine.isEmpty()) {
+                continue;
+            }
+            int jsonStart = trimmedLine.indexOf('{');
+            if (jsonStart < 0) {
+                log.debug("Skipping malformed radio stream line: {}", trimmedLine);
+                continue;
+            }
+            Map<String, Object> mapping;
             try {
-                mapping = mapper.readValue(jsonLine, typeRef);
+                mapping = MAPPER.readValue(trimmedLine.substring(jsonStart), RADIO_ENTRY_TYPE);
             } catch (JsonProcessingException e) {
-                log.error("enrichUpcomingRaceAnalysisWithRadioData JsonProcessingException", e);
-                e.printStackTrace();
+                log.error("Unable to parse radio stream line", e);
+                continue;
             }
 
             Object captures = mapping.get("Captures");
-            if (captures instanceof ArrayList) {
-                ((ArrayList<?>) captures).forEach(object -> {
-                    RadioData entry = getRadioDataFromObject(0, object, drivers);
-                    radioData.add(entry);
-                });
-            } else {
-                LinkedHashMap<String, Object> capturesMap = (LinkedHashMap<String, Object>) captures;
-                capturesMap.forEach((k, v) -> {
-                    LinkedHashMap<String, Object> dataMap = (LinkedHashMap<String, Object>) v;
-                    RadioData entry = getRadioDataFromObject(Integer.valueOf(k), dataMap, drivers);
-                    radioData.add(entry);
+            if (captures instanceof List<?> capturesList) {
+                capturesList.stream()
+                        .filter(Map.class::isInstance)
+                        .map(Map.class::cast)
+                        .map(map -> getRadioDataFromObject(0, castToStringObjectMap(map), drivers))
+                        .forEach(radioData::add);
+            } else if (captures instanceof Map<?, ?> capturesMap) {
+                capturesMap.forEach((key, value) -> {
+                    if (value instanceof Map<?, ?> dataMap) {
+                        RadioData entry = getRadioDataFromObject(Integer.valueOf(key.toString()), castToStringObjectMap(dataMap), drivers);
+                        radioData.add(entry);
+                    }
                 });
             }
-        });
+        }
         if (!radioData.isEmpty()) {
             radioData.get(0).setActive(true);
         }
         return radioData;
+    }
+
+    @SuppressWarnings("unchecked")
+    private Map<String, Object> castToStringObjectMap(Map<?, ?> source) {
+        return (Map<String, Object>) source;
     }
 }
