@@ -18,7 +18,7 @@ import sorim.f1.slasher.relentless.entities.Replay;
 import sorim.f1.slasher.relentless.repository.ReplayRepository;
 import sorim.f1.slasher.relentless.service.VideoService;
 
-import javax.annotation.PostConstruct;
+import jakarta.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;

@@ -13,7 +13,7 @@ import sorim.f1.slasher.relentless.model.*;
 import sorim.f1.slasher.relentless.service.ClientService;
 import sorim.f1.slasher.relentless.service.SecurityService;
 
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @RestController
