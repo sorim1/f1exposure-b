@@ -8,7 +8,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.Type;
-import org.hibernate.annotations.TypeDef;
 import sorim.f1.slasher.relentless.model.ergast.Circuit;
 import sorim.f1.slasher.relentless.model.ergast.ErgastStanding;
 import sorim.f1.slasher.relentless.model.livetiming.RaceAnalysis;
@@ -19,7 +18,6 @@ import java.util.List;
 
 @Entity
 @Table(name = "RACE_DATA")
-@TypeDef(name = "jsonb", typeClass = JsonBinaryType.class)
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -43,15 +41,15 @@ public class RaceData {
     private List<Lap> laps;
 
     @JsonProperty("Circuit")
-    @Type(type = "jsonb")
+    @Type(value = JsonBinaryType.class)
     @Column(columnDefinition = "jsonb")
     private Circuit circuit;
 
-    @Type(type = "jsonb")
+    @Type(value = JsonBinaryType.class)
     @Column(columnDefinition = "jsonb")
     private RaceAnalysis raceAnalysis;
 
-    @Type(type = "jsonb")
+    @Type(value = JsonBinaryType.class)
     @Column(columnDefinition = "jsonb")
     private UpcomingRaceAnalysis upcomingRaceAnalysis;
 

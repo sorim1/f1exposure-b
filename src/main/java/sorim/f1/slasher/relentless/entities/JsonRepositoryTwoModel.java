@@ -6,7 +6,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.Type;
-import org.hibernate.annotations.TypeDef;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -15,7 +14,6 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "JSON_REPOSITORY_2023")
-@TypeDef(name = "jsonb", typeClass = JsonBinaryType.class)
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -24,7 +22,7 @@ public class JsonRepositoryTwoModel {
 
     @Id
     private String id;
-    @Type(type = "jsonb")
+    @Type(value = JsonBinaryType.class)
     @Column(columnDefinition = "jsonb")
     private Object json;
 
