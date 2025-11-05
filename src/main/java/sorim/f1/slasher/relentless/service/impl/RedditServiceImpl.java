@@ -31,7 +31,7 @@ import sorim.f1.slasher.relentless.service.InstagramService;
 import sorim.f1.slasher.relentless.service.RedditService;
 import sorim.f1.slasher.relentless.util.MainUtility;
 
-import javax.annotation.PostConstruct;
+import jakarta.annotation.PostConstruct;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;

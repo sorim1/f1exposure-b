@@ -14,7 +14,7 @@ import sorim.f1.slasher.relentless.model.ergast.ErgastStanding;
 import sorim.f1.slasher.relentless.model.livetiming.RaceAnalysis;
 import sorim.f1.slasher.relentless.model.livetiming.UpcomingRaceAnalysis;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.List;
 
 @Entity

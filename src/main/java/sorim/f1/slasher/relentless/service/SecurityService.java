@@ -2,7 +2,7 @@ package sorim.f1.slasher.relentless.service;
 
 import sorim.f1.slasher.relentless.entities.Log;
 
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletRequest;
 import java.util.List;
 
 public interface SecurityService {
